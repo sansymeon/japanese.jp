@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KML – Kanji Mnemonic Learning</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fdfaf5, #e0f0ff);
+      margin: 0;
+      padding: 2em;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #2e4a21;
+      margin-bottom: 0.2em;
+    }
+
+    p.subtitle {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 2.5em;
+    }
+
+    /* ===== Intro Banner ===== */
+    .intro {
+      background-color: #fffdf6;
+      border-radius: 10px;
+      padding: 2em;
+      margin: 0 auto 3em auto;
+      max-width: 800px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .intro h2 {
+      font-size: 2em;
+      color: #2e4a21;
+      margin-bottom: 0.5em;
+    }
+    .intro p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .intro strong { color: #2e4a21; }
+
+    /* ===== Book Cards ===== */
+    .books {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .book-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5em;
+      width: 100%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .book-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .book-card h2 {
+      color: #003366;
+      margin-bottom: 0.4em;
+    }
+    .book-card p {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 1em;
+    }
+    .book-card a {
+      display: inline-block;
+      background-color: #003366;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.7em 1.5em;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .book-card a:hover {
+      background-color: #0055aa;
+    }
+    .coming-soon {
+      opacity: 0.6;
+      font-style: italic;
+      padding: 0.7em 1.5em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      display: inline-block;
+      background: #fafafa;
+      cursor: default;
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro Banner -->
+  <div class="intro">
+    <h2>📚 Kanji Mnemonic Learning (KML)</h2>
+    <p><strong>Welcome to Kanji Mnemonic Learning (KML)</strong> — a visual and emotional journey through Japanese characters. Explore each lesson through <em>stories, strokes, and emoji</em>, building memory that grows like art — layer by layer.</p>
+  </div>
+
+  <!-- Book Selector -->
+  <h1>KML – Series Index</h1>
+  <p class="subtitle">Choose your Book below</p>
+
+  <div class="books">
+    <div class="book-card">
+      <h2>📗 Book 1 – Foundations</h2>
+      <p>Lessons 0–10: From numbers and directions to nature and emotion.</p>
+      <a href="kml_book1/index.html">Enter Book 1</a>
+    </div>
+
+    <div class="book-card">
+      <h2>📘 Book 2 – Expression & Meaning</h2>
+      <p>Lessons 11–20: Coming soon.</p>
+      <a href="kml_book2/index.html">Enter Book 2</a>
+    </div>
+  </div>
+
+  <footer>
+    © SanSymeon Productions – KML Project
+  </footer>
+
+</body>
+</html>

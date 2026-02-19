@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Different Strokes – Eye</title>
+
+  <!-- Load Yomogi BEFORE CSS so it's available -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="../../styles/style.css" />
+
+  <style>
+    /* Closing Screen Override */
+    #closing {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      z-index: 10;
+    }
+    #closing.visible { opacity: 1; }
+    .closing-art {
+      max-width: 220px;
+      margin: 0 auto 1rem;
+      display: block;
+      filter: grayscale(100%) contrast(120%);
+    }
+    .closing-buttons button {
+      background: #fffaf0;
+      border: 2px solid #333;
+      border-radius: 8px;
+      padding: 0.5rem 1.2rem;
+      margin: 0.5rem;
+      font-family: 'Yomogi', cursive;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .closing-buttons button:hover { background: #e5e5e5; }
+  </style>
+</head>
+<body>
+
+  <!-- Washi Background -->
+  <div id="washi-bg"></div>
+  <div id="washi-messy"></div>
+
+  <div id="intro" class="intro">
+    <p><strong>Welcome to Different Strokes:<br>
+    A unique way of learning Kanji stroke orders</strong></p>
+    <p>While watching, trace the character on your palm.</p>
+    <p><em>Introducing 目 – (me) “eye”</em></p>
+  </div>
+
+  <div class="page">
+    <!-- Kanji Stroke Layers -->
+    <img id="color1" class="fade-in" src="color1.png" alt="Stroke 1 Color" />
+    <img id="black1" class="fade-in" src="black1.png" alt="Stroke 1 Black" />
+
+    <img id="color2" class="fade-in" src="color2.png" alt="Stroke 2 Color" />
+    <img id="black2" class="fade-in" src="black2.png" alt="Stroke 2 Black" />
+
+    <img id="color3" class="fade-in" src="color3.png" alt="Stroke 3 Color" />
+    <img id="black3" class="fade-in" src="black3.png" alt="Stroke 3 Black" />
+
+    <img id="color4" class="fade-in" src="color4.png" alt="Stroke 4 Color" />
+    <img id="black4" class="fade-in" src="black4.png" alt="Stroke 4 Black" />
+
+    <img id="color5" class="fade-in" src="color5.png" alt="Stroke 5 Color" />
+    <img id="black5" class="fade-in" src="black5.png" alt="Stroke 5 Black" />
+
+ <!-- Optional full color kanji (pulse before final black) -->
+    <img id="color-final" class="fade-in" src="color-final.png" alt="Full Kanji Color" />
+
+    <!-- Final sealed black -->
+
+    <img id="black" class="fade-in" src="black.png" alt="Final Black Clear Form" />
+    <img id="stamp" src="../../images/stamp.png" alt="Inkan Stamp" />
+
+    <!-- Optional top kanji (kept hidden) -->
+    <div id="final-word" class="final-word">一</div>
+
+    <!-- Final Story -->
+    <div id="final-story" class="final-story">
+      A window to the world — <br />
+     eye-shaped lines gazing outward.
+    </div>
+
+    <!-- Signature -->
+    <div id="signature" class="signature">
+      Drawn by One. Remembered by Many.
+    </div>
+
+    <!-- Attribution -->
+    <div id="attribution" class="attribution">
+      Brought to you by SanSymeon &amp; ChatGPT
+    </div>
+  </div>
+
+  <!-- Closing Art + Buttons -->
+  <div id="closing" class="closing">
+    <img src="../../images/mountain.png" alt="Mountain" class="closing-art" />
+    <div class="closing-buttons">
+      <button onclick="location.reload()">🔁 Repeat</button>
+      <a href="../rice-field/index.html"><button>➡️ Next</button></a>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bell-short" src="../sound/bell-short.mp3"></audio>
+  <audio id="bell-long" src="../sound/bell-long.mp3"></audio>
+
+  <!-- JS -->
+<script>
+  const delay = (ms) => new Promise(res => setTimeout(res, ms));
+  const SHOW_TOP_KANJI = false;
+
+  // Timing constants
+  const COLOR_HOLD = 1500;        // ms to hold each stroke color
+  const BLACK_PAUSE = 500;        // ms pause after each black stroke
+  const FINAL_COLOR_PULSE = 1000;  // ms to flash the full color kanji
+  const FINAL_BLACK_HOLD = 1000;  // ms to hold the final black
+  const STAMP_HOLD = 1500;
+  const STORY_HOLD = 4000;
+  const STORY_FADE = 2000;
+
+  async function fadeSequence() {
+    // ====== Intro ======
+    const intro = document.getElementById('intro');
+    intro?.classList.add('visible');
+    await delay(3500);
+    intro?.classList.add('fade-out');
+    await delay(1200);
+
+    // ====== Stroke loop ======
+    let i = 1;
+    while (true) {
+      const color = document.getElementById(`color${i}`);
+      const black = document.getElementById(`black${i}`);
+      if (!color) break; // stop when no more strokes
+
+      // Show color
+      color.classList.add('visible');
+      document.getElementById('bell-short')?.play();
+      await delay(COLOR_HOLD);
+
+      // Show black (if exists)
+      if (black) {
+        black.classList.add('visible');
+        await delay(BLACK_PAUSE);
+      }
+
+      i++;
+    }
+
+   // ====== DEBUG: Full color pulse ======
+const finalColor = document.getElementById('color-final');
+if (finalColor) {
+  console.log("DEBUG: Found color-final element");  // browser console check
+  finalColor.classList.add('visible');
+  await delay(2000);   // show for 4 seconds so you can see it
+  // comment fade-out for now to keep it on screen
+  // finalColor.classList.add('fade-out');
+  // await delay(800);
+}
+// ====== Final full kanji ======
+const finalBlack = document.getElementById('black');
+if (finalBlack) {
+  finalBlack.classList.add('visible');
+  document.getElementById('bell-long')?.play();
+  await delay(FINAL_BLACK_HOLD);
+}
+
+    const stamp = document.getElementById('stamp');
+    if (stamp) {
+      stamp.classList.add('visible');
+      await delay(STAMP_HOLD);
+    }
+
+    // ====== Fade-out strokes ======
+    for (let j = 1; j < i; j++) {
+      document.getElementById(`color${j}`)?.classList.add('fade-out');
+      document.getElementById(`black${j}`)?.classList.add('fade-out');
+    }
+    finalColor?.classList.add('fade-out');
+    finalBlack?.classList.add('fade-out');
+    await delay(2000);
+
+    // ====== Optional top kanji ======
+    const topKanji = document.getElementById('final-word');
+    if (SHOW_TOP_KANJI) {
+      topKanji?.classList.add('visible');
+      await delay(900);
+    } else {
+      topKanji?.classList.add('fade-out');
+    }
+
+    // ====== Story in ======
+    document.getElementById('final-story')?.classList.add('visible');
+    await delay(STORY_HOLD);
+
+    // ====== Fade out story + stamp ======
+    ['final-story','stamp'].forEach(id =>
+      document.getElementById(id)?.classList.add('fade-out')
+    );
+    await delay(STORY_FADE);
+
+    // ====== Cross-fade backgrounds ======
+    document.getElementById('washi-messy')?.classList.add('visible');
+    document.getElementById('washi-bg')?.classList.add('fade-out');
+    await delay(600);
+
+    // ====== Signature + attribution ======
+    document.getElementById('signature')?.classList.add('visible');
+    await delay(900);
+    document.getElementById('attribution')?.classList.add('visible');
+    await delay(3000);
+
+    // ====== Final fade ======
+    ['signature','attribution','washi-messy','final-word'].forEach(
+      id => document.getElementById(id)?.classList.add('fade-out')
+    );
+
+    // ====== Closing screen ======
+    await delay(1800);
+    document.getElementById('closing')?.classList.add('visible');
+  }
+
+  window.onload = fadeSequence;
+</script>
+
+</body>
+</html>

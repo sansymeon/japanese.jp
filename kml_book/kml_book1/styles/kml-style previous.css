@@ -1,0 +1,297 @@
+/* ===== Layout / Vars ===== */
+:root {
+  --content-max: 800px;
+  --card-max: 600px;
+  --card-radius: 12px;
+  --card-bg: #fff;
+  --card-border: rgba(0, 0, 0, 0.10);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.06),
+                 0 6px 20px rgba(0, 0, 0, 0.06);
+  --header-offset: 70px; /* adjust if you make the header sticky */
+  --label-font: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 1em;
+}
+
+/* ===== Top nav ===== */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+  max-width: var(--content-max);
+  margin: 0 auto 2em;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* ===== Stroke hint ===== */
+.stroke-hint {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #666;
+  margin-top: -8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ===== Hero (chapter art) ===== */
+.chapter-art img {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 100%;
+  max-width: min(300px, 85vw);
+  height: auto;
+}
+
+.kanji-title-img {
+  height: 80px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 4px;
+  background: #fff;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+}
+
+.kanji-title-img:hover {
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
+  cursor: pointer;
+}
+
+/* ===== Anchor list ===== */
+.anchor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0 0 1rem;
+}
+
+.anchor-list a {
+  text-decoration: none;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+.anchor-list a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.anchor-list a:focus-visible {
+  outline: 2px solid #0055aa;
+  outline-offset: 2px;
+}
+
+/* ===== Kanji cards ===== */
+.kanji-entry {
+  max-width: var(--card-max);
+  margin: 1.25rem auto 2rem;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: 1rem 1.25rem 1rem;
+  box-shadow: var(--card-shadow);
+  scroll-margin-top: var(--header-offset);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.kanji-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08),
+              0 10px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Big kanji + English gloss */
+.kanji-header {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0.25em 0 0.1em;
+}
+
+.kanji-header span {
+  font-size: 0.72em;
+  font-weight: 500;
+  margin-left: 0.3em;
+}
+
+@media (max-width: 480px) {
+  .kanji-header span {
+    font-size: 0.48em;
+  }
+}
+
+/* ===== Memart image ===== */
+.kanji-memart {
+  width: 100%;
+  max-width: 180px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kanji-memart img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+/* ===== Emoji hints ===== */
+.kanji-emoji {
+  width: 100%;
+  max-width: 150px;
+  margin: 0.75rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.kanji-emoji img {
+  width: 100%;
+  max-width: 64px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+/* Printed/Handwritten row */
+.style-row {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+  margin-bottom: 0.5rem;
+}
+
+.style-row div {
+  text-align: center;
+}
+
+.style-row .kanji-font {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.style-label {
+  font-size: var(--label-font);
+  margin-top: 0.25rem;
+  color: #333;
+}
+
+/* Back-to-Top link */
+.kanji-entry a[href="#top"] {
+  display: block;
+  text-align: center;
+  margin: 0.75rem 0 0;
+  color: #0066aa;
+  text-decoration: none;
+}
+
+.kanji-entry a[href="#top"]:hover {
+  text-decoration: underline;
+}
+
+/* ===== Accessibility ===== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* ===== CTA button (Compounds link) ===== */
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-compounds {
+  display: inline-block;
+  background: #f
+
+/* ===== Kanji combo for components ===== */
+.kanji-combo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.element-headtop {
+  width: 5px !important;        /* final physical width */
+  height: auto !important;       /* maintain aspect ratio */
+  display: inline !important;    /* prevent flex expansion */
+  vertical-align: middle;
+  max-height: 10px;              /* safety clamp */
+  transform: translateY(3px);
+}
+
+
+.plus {
+  font-size: 26px;
+  line-height: 1;
+  padding: 0 4px;
+  color: #111;
+}
+
+.kanji-bottom {
+  font-size: 42px;          /* same size as radicals in other entries */
+  line-height: 1;
+}
+/* ===== FORCE FIX for top element in 頁 ===== */
+.element-headtop {
+  display: inline-block !important;
+  width: 28px !important;       /* narrow but visible */
+  height: 6px !important;       /* FLATTENED, stops vertical stretching */
+  vertical-align: middle;
+  object-fit: cover !important; /* trims excess transparent area */
+  transform: translateY(3px);
+  image-rendering: pixelated;   /* keeps edges crisp */
+}
+
+/* ===== Dark mode ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #121417;
+    --card-border: rgba(255, 255, 255, 0.12);
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.7),
+                   0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+}

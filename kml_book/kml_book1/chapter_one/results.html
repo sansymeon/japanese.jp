@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KML – Results</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 3em;
+    }
+    .score-box {
+      background: #fff;
+      border: 2px solid #444;
+      border-radius: 10px;
+      display: inline-block;
+      padding: 2em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="score-box">
+    <h1>Your Score:</h1>
+    <p id="scoreDisplay"></p>
+    <p id="message"></p>
+    <button onclick="retry()">Try Again</button>
+  </div>
+
+  <script>
+    const score = parseInt(localStorage.getItem("kmlScore")) || 0;
+    document.getElementById("scoreDisplay").innerText = `${score} / 5`;
+
+    let msg = "";
+    if (score === 5) msg = "🌟 Perfect! You are a kanji ninja!";
+    else if (score >= 3) msg = "👍 Not bad! Study a bit more and you'll be pro.";
+    else msg = "😅 It's okay... we all start somewhere. Try again!";
+
+    document.getElementById("message").innerText = msg;
+
+    function retry() {
+      window.location.href = "kml_quiz_page.html";
+    }
+  </script>
+</body>
+</html>

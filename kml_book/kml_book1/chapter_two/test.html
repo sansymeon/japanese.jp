@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>KML – Chapter Two</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #222;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f3f3f3;
+      padding: 1em 2em;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+    .kanji-entry {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 1.5em;
+      padding-bottom: 1.5em;
+      width: 100%;
+      max-width: 800px;
+    }
+    .kanji-header {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 2em;
+      margin-bottom: 0.3em;
+    }
+    .kanji-emoji {
+      height: 42px;
+      width: auto;
+      vertical-align: middle;
+      border-radius: 8px;
+    }
+    .kanji-entry h2 {
+      font-size: 2.2em;
+    }
+    .image-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2em;
+      flex-wrap: wrap;
+      margin: 1em 0;
+    }
+    .image-row img {
+      height: 140px;
+      width: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .kanji-box {
+      font-size: 130px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9f9f9;
+    }
+    .kanji-story {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .kanji-story p {
+      margin: 0.5em 0;
+    }
+    .jp {
+      font-size: 1.1em;
+      color: #444;
+    }
+    .en {
+      font-size: 1em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="../home.html">⬅️ Back to Home</a>
+    <a href="../chapter_three/index.html">➡️ Lesson 3</a>
+  </div>
+
+  <div style="text-align: center; margin-bottom: 2em;">
+    <img src="lesson2_art.png" alt="Artistic Kanji" style="max-height: 250px;">
+  </div>
+
+  <h1>KML – Chapter Two</h1>
+
+  <div class="kanji-entry">
+    <div class="kanji-header">
+      <span>古 – Old</span>
+      <img src="emoji_old.png" alt="Old Emoji" class="kanji-emoji" />
+    </div>
+    <div style="font-size: 1em; margin-bottom: 0.5em; color: #666;">
+      On: コ ・ Kun: ふる(い)
+    </div>
+    <div class="image-row">
+      <div class="kanji-box">古</div>
+      <div><img alt="古 pictograph" src="old.png" /></div>
+    </div>
+    <div class="kanji-story">
+      <p class="en">📗 A mouth 口 speaking through time like an ancient urn telling stories.</p>
+      <p class="jp">📘 口が昔の石碑に刻まれた言葉を語るように。壺が時代を超えて話しかけてくる感じ！</p>
+    </div>
+  </div>
+</body>
+</html>

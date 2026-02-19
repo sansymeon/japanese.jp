@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome - SanSymeon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Segoe UI', 'Helvetica Neue', sans-serif;
+      color: #f0f0f0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding-top: 30px;
+    }
+    .logo {
+      max-width: 140px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px #222;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 1px #222;
+    }
+    .button {
+      font-size: 1.2rem;
+      padding: 10px 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #003366;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin: 10px;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #e0e0e0;
+    }
+    .books-section {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      max-width: 900px;
+    }
+    .books-section h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #ffd700;
+    }
+    .book-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .book-item {
+      width: 140px;
+      position: relative;
+    }
+    .book-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    .book-item span {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background-color: #ffd700;
+      color: #003366;
+      padding: 3px 6px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .book-item p {
+      font-size: 0.9rem;
+      color: #fff;
+      margin-top: 4px;
+    }
+    footer {
+      font-size: 0.7rem;
+      color: #bbb;
+      margin-top: 40px;
+      padding: 20px;
+    }
+    @media (max-width: 600px) {
+      .button {
+        width: 80%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="logo_small.jpg" alt="SanSymeon Logo" class="logo" />
+  <h1>ようこそ・Welcome to SanSymeon</h1>
+    <div class="coming-soon">
+  </div>
+    <h2>Now Available:</h2>
+    <div class="book-list">
+      <div class="book-item">
+        <a href="https://sansymeon.com/my_life_with_ai/index.html" target="_blank" style="text-decoration: none;">
+          <img src="life_with_ai.png" alt="My Life with AI">
+          <p style="color: white; font-weight: bold;">AIと共に生きる日々</p>
+        </a>
+      </div>
+      <div class="book-item">
+        <a href="https://sansymeon.com/digital_nomad/index.html" target="_blank" style="text-decoration: none;">
+          <img src="digital_nomad.png" alt="Digital Nomad Book">
+          <p style="color: white; font-weight: bold;">旅するワークスタイルとAIの知恵</p>
+        </a>
+      </div>
+      <div class="book-item">
+        <a href="https://sansymeon.com/my_journey/index.html" target="_blank" style="text-decoration: none;">
+          <img src="hikari_wo.png" alt="光を運ぶ人 – シメオンの物語">
+          <p style="color: white; font-weight: bold;">光を運ぶ人 – シメオンの物語</p>
+        </a>
+      </div>
+    <div class="book-item">
+  <a href="/pronunciation_ebook/index.html" target="_blank" style="text-decoration: none;">
+    <img src="square_cover_chat_sensei.png" alt="Pronunciation According to Chat Sensei">
+    <p style="color: white; font-weight: bold;">Pronunciation According to Chat Sensei</p>
+  </a>
+</div>
+   <div class="book-item">
+  <a href="kml_book/index.html" target="_blank" style="text-decoration: none;">
+    <img src="kml_book_square.png" alt="Kanji Mnemonic Learning">
+    <p style="color: white; font-weight: bold;">Kanji Mnemonic Learning: Stories, Symbols and Sparks of Memory</p>
+  </a>
+</div>
+<div class="book-item">
+  <a href="/merch.html" target="_blank" style="text-decoration: none;">
+    <img src="common_sound_mug.jpg" alt="Chat Sensei Merch">
+    <p style="color: white; font-weight: bold;">Chat Sensei Merch</p>
+  </a>
+    </div>
+  </div>
+  <footer>
+    © 2025 SanSymeon Productions.<br>
+    Materials may be shared with appropriate attribution.<br>
+    本サイトの内容は適切なクレジットを添えて共有可能です。
+  </footer>
+</body>
+</html>
