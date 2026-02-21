@@ -11,52 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 
   <!-- Your stylesheet -->
-  <link rel="stylesheet" href="../../kml_book1/styles/strokes.css" />
+  <link rel="stylesheet" href="../../kml_book1/strokes/strokes.css" />
 
-  <style>
-    /* Closing Screen Override */
-    #closing {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      text-align: center; opacity: 0; transition: opacity 1.5s ease; z-index: 10;
-    }
-    #closing.visible { opacity: 1; }
-    .closing-art { max-width: 220px; margin: 0 auto 1rem; display: block; filter: grayscale(100%) contrast(120%); }
-    .closing-buttons button {
-      background: #fffaf0; border: 2px solid #333; border-radius: 8px;
-      padding: 0.5rem 1.2rem; margin: 0.5rem; font-family: 'Yomogi', cursive;
-      font-size: 1rem; cursor: pointer; transition: background 0.3s;
-    }
-    .closing-buttons button:hover { background: #e5e5e5; }
-
-    /* ===== Emoji Block at Top ===== */
-    .emoji-block {
-      position: absolute; top: 8%; left: 50%; transform: translateX(-50%);
-      text-align: center; opacity: 0; transition: opacity 1.5s ease-in-out;
-      z-index: 3; max-width: 90%;
-    }
-    .emoji-block.visible { opacity: 1; }
-    .emoji-icon { width: 70px; height: auto; display: block; margin: 0 auto 0.6rem; }
-    .emoji-keyword { font-family: 'Yomogi', cursive; font-size: 1.6rem; color: #ff5722; font-weight: bold; margin-bottom: 0.8rem; }
-    .emoji-block .attribution { font-size: 1rem; font-family: var(--font-main); color: #444; margin-bottom: 0.8rem; }
-    .emoji-block .signature { font-size: 1rem; font-family: 'Yomogi', cursive; color: #222; }
-
-    /* ===== Story Block (inline safety) ===== */
-    .final-story {
-      position: absolute; top: 35%; left: 50%; transform: translateX(-50%);
-      max-width: 600px; font-size: 1.1rem; line-height: 1.6; color: #222;
-      text-align: center; font-family: var(--font-main); opacity: 0;
-      transition: opacity 1s ease-in-out; z-index: 4;
-    }
-    .final-story.visible { opacity: 1; }
-
-    @media (max-width: 480px) {
-      .emoji-keyword { font-size: 1.3rem; }
-      .emoji-block .attribution { font-size: 0.9rem; }
-      .emoji-block .signature { font-size: 1rem; }
-      .emoji-icon { width: 55px; }
-      .final-story { max-width: 85vw; font-size: 1rem; top: 34%; }
-    }
-  </style>
 </head>
 <body>
 
@@ -74,21 +30,21 @@
 
   <div class="page">
     <!-- Kanji Stroke Layers -->
-    <img id="color1" class="fade-in" src="images/five/color1.png" alt="Stroke 1 Color" />
-    <img id="black1" class="fade-in" src="images/five/black1.png" alt="Stroke 1 Black" />
+    <img id="color1" class="fade-in" src="../strokes/images/five/color1.png" alt="Stroke 1 Color" />
+    <img id="black1" class="fade-in" src="../strokes/images/five/black1.png" alt="Stroke 1 Black" />
 
-    <img id="color2" class="fade-in" src="images/five/color2.png" alt="Stroke 2 Color" />
-    <img id="black2" class="fade-in" src="images/five/black2.png" alt="Stroke 2 Black" />
+    <img id="color2" class="fade-in" src="../strokes/images/five/color2.png" alt="Stroke 2 Color" />
+    <img id="black2" class="fade-in" src="../strokes/images/five/black2.png" alt="Stroke 2 Black" />
 
-    <img id="color3" class="fade-in" src="images/five/color3.png" alt="Stroke 3 Color" />
-    <img id="black3" class="fade-in" src="images/five/black3.png" alt="Stroke 3 Black" />
+    <img id="color3" class="fade-in" src="../strokes/images/five/color3.png" alt="Stroke 3 Color" />
+    <img id="black3" class="fade-in" src="../strokes/images/five/black3.png" alt="Stroke 3 Black" />
 
-    <img id="color4" class="fade-in" src="images/five/color4.png" alt="Stroke 4 Color" />
-    <img id="black4" class="fade-in" src="images/five/black4.png" alt="Stroke 4 Black" />
+    <img id="color4" class="fade-in" src="../strokes/images/five/color4.png" alt="Stroke 4 Color" />
+    <img id="black4" class="fade-in" src="../strokes/images/five/black4.png" alt="Stroke 4 Black" />
 
-    <img id="color-final" class="fade-in" src="images/five/color_final.png" alt="Full Kanji Color" />
-    <img id="black" class="fade-in" src="images/five/black_final.png" alt="Final Black Clear Form" />
-    <img id="stamp" src="../images/stamp.png" alt="Inkan Stamp" />
+    <img id="color-final" class="fade-in" src="../strokes/images/five/color_final.png" alt="Full Kanji Color" />
+    <img id="black" class="fade-in" src="../strokes/images/five/black_final.png" alt="Final Black Clear Form" />
+    <img id="stamp" src="../../assets/stamps/stamp.png" alt="Inkan Stamp" />
 
     <!-- Story Block -->
     <div id="final-story" class="final-story">
@@ -98,7 +54,7 @@
 
     <!-- Top Emoji Block -->
     <div id="emoji-block" class="emoji-block">
-      <img src="images/five/emoji.png" alt="Emoji" class="emoji-icon" />
+      <img src="../../assets/emoji/five.jpg" alt="Emoji" class="emoji-icon" />
       <div class="emoji-keyword">Five</div>
       <div class="attribution">Brought to you by SanSymeon &amp; ChatGPT</div>
       <div class="signature">Drawn by One. Remembered by Many.</div>
@@ -107,11 +63,11 @@
 
 <!-- Closing Art + Buttons -->
 <div id="closing" class="closing">
-  <img src="../images/castle.png" alt="" class="closing-art" />
+  <img src="../../assets/illustrations/koi.png" alt="" class="closing-art" />
   <div class="closing-buttons">
     <button onclick="location.reload()">🔁 Repeat</button>
     <a href="../index.html"><button class="study-btn">📖 Study Kanji</button></a>
-    <a href="strokes_six.html"><button class="next-btn">➡️ Next</button></a>
+    <a href="six.html"><button class="next-btn">➡️ Next</button></a>
   </div>
 </div>
 
