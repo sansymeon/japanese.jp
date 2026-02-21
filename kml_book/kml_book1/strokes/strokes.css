@@ -1,0 +1,341 @@
+/* =====================================================
+   DIFFERENT STROKES – CANONICAL STYLESHEET
+   ===================================================== */
+
+/* ===== Base Reset ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  text-align: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ===== Root Variables ===== */
+:root {
+  --content-max: 800px;
+  --fade-duration: 1.2s;
+
+  --font-main: Georgia, serif;
+}
+
+/* =====================================================
+   BACKGROUNDS
+   ===================================================== */
+#washi-bg {
+  position: fixed;
+  inset: 0;
+  background: url("../../assets/backgrounds/washi.png") center / cover no-repeat;
+  opacity: 0.3;
+  z-index: -3;
+  pointer-events: none;
+}
+
+#washi-messy {
+  position: fixed;
+  inset: 0;
+  background: url("../../assets/backgrounds/washi-messy.png") center / cover no-repeat;
+  opacity: 0;
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity 1.5s ease-in-out;
+}
+
+#washi-messy.visible {
+  opacity: 0.4;
+}
+
+/* =====================================================
+   INTRO
+   ===================================================== */
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  font-family: 'Yomogi', cursive;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 20;
+}
+
+.intro.visible {
+  opacity: 1;
+}
+
+.intro.fade-out {
+  opacity: 0;
+}
+
+/* =====================================================
+   PAGE CANVAS
+   ===================================================== */
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* =====================================================
+   STROKE IMAGES
+   ===================================================== */
+.fade-in {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity var(--fade-duration) ease-in-out;
+  z-index: 2;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Utility fade-out */
+.fade-out {
+  opacity: 0 !important;
+  transition: opacity 1.2s ease-in-out;
+  pointer-events: none;
+}
+
+/* =====================================================
+   FINAL STORY
+   ===================================================== */
+.final-story {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #222;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 4;
+}
+
+.final-story.visible {
+  opacity: 1;
+}
+
+/* =====================================================
+   EMOJI BLOCK
+   ===================================================== */
+.emoji-block {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 5;
+}
+
+.emoji-block.visible {
+  opacity: 1;
+}
+
+.emoji-icon {
+  width: 70px;
+  display: block;
+  margin: 0 auto 0.6rem;
+}
+
+.emoji-keyword {
+  font-family: 'Yomogi', cursive;
+  font-size: 1.6rem;
+  color: #ff5722;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.emoji-block .attribution {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.6rem;
+}
+
+.emoji-block .signature {
+  font-family: 'Yomogi', cursive;
+  font-size: 1rem;
+  color: #222;
+}
+
+/* =====================================================
+   STAMP
+   ===================================================== */
+#stamp {
+  position: absolute;
+  bottom: 15px;
+  right: 60px;
+  width: 100px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 3;
+}
+
+#stamp.visible {
+  opacity: 1;
+}
+
+/* =====================================================
+   CLOSING SCREEN
+   ===================================================== */
+#closing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 10;
+}
+
+#closing.visible {
+  opacity: 1;
+}
+
+.closing-art {
+  max-width: 220px;
+  margin: 0 auto 1rem;
+  display: block;
+  filter: grayscale(100%) contrast(120%);
+}
+
+/* Buttons */
+.closing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.closing-buttons button {
+  background: #fffaf0;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-family: 'Yomogi', cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.closing-buttons button:hover {
+  background: #e5e5e5;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+@media (max-width: 480px) {
+  .final-story {
+    max-width: 85vw;
+    font-size: 1rem;
+    top: 34%;
+  }
+
+  .emoji-keyword {
+    font-size: 1.3rem;
+  }
+
+  .emoji-icon {
+    width: 55px;
+  }
+
+  #stamp {
+    right: 24px;
+    width: 80px;
+  }
+}
+/* ===== Unified Closing Buttons ===== */
+.closing-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Base button style (applies to BOTH <button> and <a>) */
+.closing-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+
+  font-family: 'Yomogi', cursive;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 2px solid #333;
+
+  background-color: #fffaf3;
+  color: #222;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Hover + focus */
+.closing-buttons .btn:hover,
+.closing-buttons .btn:focus {
+  background-color: #f0e4d7;
+  transform: scale(1.05);
+}
+
+/* Remove browser quirks */
+.closing-buttons button.btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+}
+
+/* ===== Role accents ===== */
+
+/* Study Kanji (calm, informational) */
+.study-btn {
+  background-color: #d8ecff;
+  border-color: #2b7fc1;
+  color: #1a3f5f;
+}
+.study-btn:hover {
+  background-color: #bfe2ff;
+}
+
+/* Next (gentle emphasis, not aggressive) */
+.next-btn {
+  background-color: #ffd24d;
+  border-color: #cc9a00;
+  color: #3a2a00;
+}
+.next-btn:hover {
+  background-color: #ffce2e;
+}
