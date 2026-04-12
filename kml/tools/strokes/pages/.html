@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/kml/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Different Strokes – </title>
+
+  <!-- Yomogi font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="tools/strokes/css/strokes.css" />
+</head>
+
+<body>
+
+<!-- Washi Background -->
+<div id="washi-bg"></div>
+<div id="washi-messy"></div>
+
+<!-- Intro -->
+<div id="intro" class="intro">
+  <p><strong>Welcome to Different Strokes:<br>
+  A unique way of learning Kanji stroke orders</strong></p>
+  <p>While watching, trace the character on your palm.</p>
+  <p><em>Introducing  – {{READING}} ""</em></p>
+</div>
+
+<div class="page">
+
+  {{STROKE_ORDER_CONTENT}}
+
+  <!-- Story Block -->
+  <div id="final-story" class="final-story">
+    One horizontal line — <br />
+    everything begins with one stroke.
+  </div>
+
+  <div id="emoji-block" class="emoji-block">
+    <img src="assets/emoji/.jpg"
+         alt="Emoji"
+         class="emoji-icon"
+         loading="lazy"
+         decoding="async" />
+    <div class="emoji-keyword"></div>
+    <div class="attribution">Brought to you by SanSymeon &amp; ChatGPT</div>
+    <div class="signature">Drawn by One. Remembered by Many.</div>
+  </div>
+
+</div>
+
+<!-- Closing -->
+<div id="closing" class="closing">
+
+  <img src="assets/site/illustrations/castle.png"
+       class="closing-art"
+       loading="lazy"
+       decoding="async" />
+
+  <div class="closing-buttons">
+
+    <button class="btn" onclick="location.reload()">
+      🔁 Repeat
+    </button>
+
+    <a class="btn study-btn"
+       href="contents/books/book_01/lessons/index.html">
+       📖 Study Kanji
+    </a>
+
+    <a class="btn next-btn"
+       href="tools/strokes/pages/{{NEXT}}.html">
+       ➡️ Next
+    </a>
+
+  </div>
+</div>
+
+<script src="tools/strokes/js/strokes_sequence.js" defer></script>
+
+</body>
+</html>

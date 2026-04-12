@@ -1,0 +1,357 @@
+/* =====================================================
+   DIFFERENT STROKES – CLEAN STABLE STYLESHEET (FIXED)
+   ===================================================== */
+
+:root {
+  --content-max: 800px;
+  --fade-duration: 1.2s;
+  --font-main: Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  text-align: center;
+  background: #fff;
+}
+
+/* =====================================================
+   WASHI BACKGROUND
+   ===================================================== */
+
+#washi-bg {
+  position: fixed;
+  inset: 0;
+  background: url("../../../assets/site/backgrounds/washi.png") center / cover no-repeat;
+  opacity: 0;
+  z-index: -3;
+  pointer-events: none;
+  transition: opacity var(--fade-duration) ease-in-out;
+}
+
+#washi-bg.visible {
+  opacity: 0.3;
+}
+
+#washi-messy {
+  position: fixed;
+  inset: 0;
+  background: url("../../../assets/site/backgrounds/4k_washi_messy.png") center / cover no-repeat;
+  opacity: 0;
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity var(--fade-duration) ease-in-out;
+}
+
+#washi-messy.visible {
+  opacity: 0.4;
+}
+
+/* =====================================================
+   INTRO
+   ===================================================== */
+
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  font-family: 'Yomogi', cursive;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity var(--fade-duration) ease;
+  z-index: 20;
+}
+
+.intro-highlight {
+  font-family: 'Yomogi', cursive;
+  font-size: 4rem;
+  margin-bottom: 10px;
+  color: #000;
+  line-height: 1.1;
+}
+
+.intro-sub {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+.intro.visible {
+  opacity: 1;
+}
+
+.intro.fade-out {
+  opacity: 0;
+}
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--fade-duration) ease-in-out;
+}
+
+.page.visible {
+  opacity: 1;
+}
+
+/* =====================================================
+   UNIVERSAL FADE
+   ===================================================== */
+
+.fade-out {
+  opacity: 0 !important;
+  transition: opacity var(--fade-duration) ease-in-out;
+}
+
+/* =====================================================
+   STROKE DISPLAY (FIXED)
+   ===================================================== */
+
+.stroke-order {
+  opacity: 0;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;           /* 👈 ADD THIS */
+  max-width: 1000px;     /* 👈 MOVE THIS HERE */
+}
+/* hide stroke numbers */
+.stroke-order text {
+  display: none;
+}
+
+/* ✅ FIXED: DO NOT hide strokes */
+.stroke-order path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 6;
+  /* animation prep */
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+
+  opacity: 1;
+}
+
+/* =====================================================
+   EMOJI BLOCK
+   ===================================================== */
+
+.emoji-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity var(--fade-duration) ease;
+  z-index: 5;
+}
+/* ===== Intro kanji ===== */
+
+.intro-highlight img {
+  max-width: 160px;
+  height: auto;
+}
+
+/* ===== Final kanji + stamp ===== */
+
+.emoji-kanji-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.final-kanji {
+  max-width: 180px;
+  display: block;
+}
+
+.stamp {
+  position: absolute;
+  bottom: -10px;
+  right: -12px;
+
+  width: 28px;
+  opacity: 0.85;
+}
+
+.emoji-block.visible {
+  opacity: 1;
+}
+
+.emoji-block.fade-out {
+  opacity: 0;
+}
+
+
+.emoji-image {
+  display: none;
+}
+
+.emoji-keyword {
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.attribution {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.signature {
+  margin-top: 5px;
+  font-family: 'Yomogi', cursive;
+}
+
+/* =====================================================
+   EMOJI PAGE STAMP (GALLERY FEEL)
+   ===================================================== */
+
+.emoji-stamp {
+  position: absolute;
+
+  /* anchor near kanji */
+  top: 85%;
+  left: 75%;
+
+  /* stable positioning + subtle entry */
+  transform: translate(-50%, -50%) rotate(-8deg) scale(0.85);
+  opacity: 0;
+
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* visible state */
+#emoji-block.visible .emoji-stamp {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(-8deg) scale(1);
+  transition-delay: 0.35s;
+}
+
+/* stamp image sizing (KEY FIX) */
+.emoji-stamp img {
+  width: 16px;       /* 👈 adjust 14–18 if needed */
+  height: auto;
+  display: block;
+
+  opacity: 0.8;
+  filter: blur(0.2px);
+}
+
+/* container anchors */
+#emoji-block {
+  position: relative;
+}
+
+.emoji-kanji-wrap {
+  position: relative;
+  display: inline-block;
+}
+/* =====================================================
+   CLOSING
+   ===================================================== */
+
+#closing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity var(--fade-duration) ease-in-out;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#closing.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closing-art {
+  max-width: 220px;
+  margin: 0 auto 1rem;
+  display: block;
+  filter: saturate(90%) contrast(105%) brightness(98%);}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.closing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.closing-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;   /* 👈 ensures full tap area */
+  padding: 12px 22px;
+  line-height: 1.2;
+  gap: 0.4em;
+  font-family: 'Yomogi', cursive;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid #333;
+  background-color: #fffaf3;
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.closing-buttons .btn:hover {
+  background-color: #f0e4d7;
+  transform: scale(1.05);
+}
+
+
+.next-btn {
+  background-color: #ffd24d;
+  border-color: #cc9a00;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .stroke-order svg {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .emoji-keyword {
+    font-size: 1.3rem;
+  }
+}

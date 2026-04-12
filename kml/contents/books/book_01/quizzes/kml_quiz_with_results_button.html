@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KML – Advanced Quiz Types</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2em;
+      background-color: #f9f9f9;
+      color: #222;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    .quiz-block {
+      background-color: #fff;
+      border: 2px solid #333;
+      border-radius: 8px;
+      padding: 1em;
+      margin-bottom: 2em;
+    }
+    .question {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    .choices label {
+      display: block;
+      margin-bottom: 0.3em;
+      cursor: pointer;
+    }
+    .submit-btn {
+      margin-top: 0.8em;
+      padding: 0.5em 1em;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .results-link {
+      text-align: center;
+      margin-top: 2em;
+    }
+    .results-link button {
+      background-color: #28a745;
+      color: white;
+      padding: 0.7em 1.5em;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>KML – Quiz Types Sampler</h1>
+
+  <div class="quiz-block">
+    <div class="question">1. Match the Memory 🧠</div>
+    <p>Which memory matches this kanji: <strong>田</strong>?</p>
+    <div class="choices">
+      <label><input type="radio" name="q1"> A field shaped like a checkerboard</label>
+      <label><input type="radio" name="q1"> A doorway to the sun</label>
+      <label><input type="radio" name="q1"> A place where the moon sleeps</label>
+      <label><input type="radio" name="q1"> A noisy karaoke room</label>
+    </div>
+    <button class="submit-btn">Check Answer</button>
+  </div>
+
+  <div class="quiz-block">
+    <div class="question">2. Spot the Kanji 👀</div>
+    <p>Which sentence contains the kanji <strong>目</strong>?</p>
+    <div class="choices">
+      <label><input type="radio" name="q2"> A. ご飯を食べました。</label>
+      <label><input type="radio" name="q2"> B. 昨日、目が痛かったです。</label>
+      <label><input type="radio" name="q2"> C. 本を買いました。</label>
+      <label><input type="radio" name="q2"> D. 明日、海に行きます。</label>
+    </div>
+    <button class="submit-btn">Check Answer</button>
+  </div>
+
+  <div class="quiz-block">
+    <div class="question">3. Emoji Swap Game 🔄</div>
+    <p>Replace the emoji with the correct kanji: 「今日は 🌞 が見えない。」</p>
+    <div class="choices">
+      <label><input type="radio" name="q3"> 日</label>
+      <label><input type="radio" name="q3"> 月</label>
+      <label><input type="radio" name="q3"> 目</label>
+      <label><input type="radio" name="q3"> 田</label>
+    </div>
+    <button class="submit-btn">Check Answer</button>
+  </div>
+
+  <div class="quiz-block">
+    <div class="question">4. Wrong Reading Trap 😈</div>
+    <p>Which reading is incorrect for the kanji <strong>口</strong>?</p>
+    <div class="choices">
+      <label><input type="radio" name="q4"> くち</label>
+      <label><input type="radio" name="q4"> こう</label>
+      <label><input type="radio" name="q4"> ぐち</label>
+      <label><input type="radio" name="q4"> くん</label>
+    </div>
+    <button class="submit-btn">Check Answer</button>
+  </div>
+
+  <div class="quiz-block">
+    <div class="question">5. Mini Story Fill-In ✍️</div>
+    <p>Fill in the blank:「夜に<span style='border-bottom:1px dotted #000;'>____</span>を見て、静かな気持ちになった。」</p>
+    <div class="choices">
+      <label><input type="radio" name="q5"> 月</label>
+      <label><input type="radio" name="q5"> 田</label>
+      <label><input type="radio" name="q5"> 口</label>
+      <label><input type="radio" name="q5"> 一</label>
+    </div>
+    <button class="submit-btn">Check Answer</button>
+  </div>
+
+  <div class="results-link">
+    <button onclick="window.location.href='results.html'">View Results</button>
+  </div>
+
+</body>
+</html>

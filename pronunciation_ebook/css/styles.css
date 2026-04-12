@@ -1,0 +1,138 @@
+body {
+  font-family: sans-serif;
+  background: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #f5f2eb;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+header div {
+  font-size: 0.9rem;
+  color: #666;
+}
+section {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+/* Book cover size: adjust width % here */
+.cover-img {
+  width: 30%; /* change this percentage as needed */
+  max-width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buttons a {
+  display: inline-block;
+  margin: 1rem 0.5rem 2rem 0;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+}
+.blue { background: #2563eb; color: white; }
+.gray { background: #f0f0f0; color: #333; }
+ul { padding-left: 1.5rem; }
+li { margin-bottom: 0.75rem; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; 
+}
+.intro-text {
+  margin-top: 1.5rem;
+}
+.merch-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.merch-link img {
+  width: 200px;      /* adjust as needed */
+  height: auto;      /* keeps proportions correct */
+  display: block;    /* removes inline spacing issues */
+  margin: 0 auto;    /* centers it */
+}
+
+.merch-page {
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.merch-page header {
+  background: #eee;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.merch-page header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.merch-page nav {
+  margin-top: 0.5rem;
+}
+
+.merch-page nav a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.merch-page .container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.merch-page .merch-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.merch-page .merch-item {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.merch-page .merch-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.merch-page .merch-item a:hover {
+  background: #1e4bb8;
+}
+
+.merch-page .footer-note {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+.merch-note {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
