@@ -1,141 +1,13 @@
-<!--
-CURSOR GENERATION RULES
-
-You are generating lesson pages for the KML (Kanji Mnemonic Learning) website.
-
-Follow these rules strictly.
-
-DO NOT MODIFY
-- HTML structure
-- CSS class names
-- image paths
-- JavaScript
-- folder paths
-
-ONLY replace placeholders.
-
-────────────────────
-PLACEHOLDERS
-────────────────────
-
-18
-17
-19
-
-{KANJI}
-{SLUG}
-{HEISIG_KEYWORD}
-{STORY}
-
-{ON_READING}
-{KUN_READING}
-
-────────────────────
-KANJI CARD RULES
-────────────────────
-
-Duplicate the KANJI CARD block once for each kanji in the lesson.
-
-For every card:
-
-{KANJI}
-- exactly one kanji character
-
-{SLUG}
-- lowercase English keyword
-- no spaces
-- use underscores if needed
-
-Examples:
-one
-two
-three
-mouth
-bright
-sunrise
-
-The slug must match filenames in:
-
-assets/kanji/{SLUG}.png
-assets/mnemonics/{SLUG}.png
-assets/chunks/{SLUG}.png
-assets/emoji/{SLUG}.jpg
-strokes/pages/{SLUG}.html
-
-────────────────────
-ANCHOR RULE
-────────────────────
-Duplicate the anchor entry for each kanji in the lesson.
-
-The anchor ID must always be:
-
-id="kanji-{SLUG}"
-
-
-The anchor list link must always be:
-
-href="#kanji-{SLUG}"
-
-────────────────────
-STORY RULE
-────────────────────
-
-Stories must be:
-
-- vivid
-- visual
-- short (1–2 sentences)
-- easy to imagine
-
-Do NOT explain the kanji logically.
-Use imagery.
-
-Example:
-
-BAD:
-"The kanji for tree looks like branches."
-
-GOOD:
-"A giant tree spreads its branches so wide that birds build entire villages inside."
-
-────────────────────
-READINGS RULE
-────────────────────
-
-Format exactly:
-
-On: {ON_READING} ・ Kun: {KUN_READING}
-
-Use romaji.
-
-Example:
-
-On: NICHI ・ Kun: hi
-
-────────────────────
-IMPORTANT
-────────────────────
-
-Do NOT add attributes.
-Do NOT change element order.
-Do NOT insert extra HTML.
-Do NOT modify image paths.
-
-Only fill placeholders and duplicate kanji blocks.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<base href="/kml/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload"
-      as="image"
-      href="assets/covers/lesson_18.png">
-
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Mai&display=swap" rel="stylesheet">
 
 <meta charset="utf-8">
@@ -143,117 +15,95 @@ Only fill placeholders and duplicate kanji blocks.
 
 <title>KML - Lesson 18</title>
 
-<link rel="stylesheet" href="assets/site/css/kml_style.css">
-
+<link rel="stylesheet" href="../../../../assets/site/css/kml_style.css">
 </head>
 
 <body id="top">
 
+<!-- NAVBAR -->
 <div class="navbar">
-  <a href="content/books/book_01/lessons/lesson_17.html">⬅️ Lesson 17</a>
-  <a href="content/books/index.html">⬅️ Back to Home</a>
-  <a href="content/books/book_01/lessons/lesson_19.html">➡️ Lesson 19</a>
+  <a href="lesson_17.html">⬅️ Lesson 17</a>
+  <a href="../../index.html">⬅️ Back to Home</a>
+  <a href="lesson_19.html">➡️ Lesson 19</a>
 </div>
 
+<!-- LESSON ART -->
 <div class="lesson-art">
-  <img src="/kml/assets/covers/lesson_18.png"
-       alt="Artistic Kanji Scroll for Lesson 18"
+  <img src="../../../../assets/covers/lesson_18.png"
+       alt="Lesson 18 cover"
        width="380" height="250"
        fetchpriority="high">
 </div>
 
 <h1>KML - Lesson 18</h1>
 
-<nav class="anchor-list" aria-label="Kanji index">
-  <a href="#kanji-gentleman">士</a>
-  <a href="#kanji-good_luck">吉</a>
-  <a href="#kanji-robust">壮</a>
-  <a href="#kanji-villa">荘</a>
-  <a href="#kanji-sell">売</a>
-  <a href="#kanji-study">学</a>
-  <a href="#kanji-memorize">覚</a>
-  <a href="#kanji-flourish">栄</a>
-  <a href="#kanji-write">書</a>
-  <a href="#kanji-haven">津</a>
-  <a href="#kanji-breed">牧</a>
-  <a href="#kanji-aggression">攻</a>
-  <a href="#kanji-failure">敗</a>
-  <a href="#kanji-a_sheet_of">枚</a>
-  <a href="#kanji-happenstance">故</a>
-  <a href="#kanji-awe">敬</a>
-  <a href="#kanji-say">言</a>
-  <a href="#kanji-admonish">警</a>
-  <a href="#kanji-plot">計</a>
-  <a href="#kanji-elucidate">詮</a>
+<!-- ANCHOR LIST -->
+<nav class="anchor-list">
+<a href="#kanji-gentleman">士</a>
+<a href="#kanji-good_luck">吉</a>
+<a href="#kanji-robust">壮</a>
+<a href="#kanji-villa">荘</a>
+<a href="#kanji-sell">売</a>
+<a href="#kanji-study">学</a>
+<a href="#kanji-memorize">覚</a>
+<a href="#kanji-flourish">栄</a>
+<a href="#kanji-write">書</a>
+<a href="#kanji-haven">津</a>
+<a href="#kanji-breed">牧</a>
+<a href="#kanji-aggression">攻</a>
+<a href="#kanji-failure">敗</a>
+<a href="#kanji-sheet_of">枚</a>
+<a href="#kanji-happenstance">故</a>
+<a href="#kanji-awe">敬</a>
+<a href="#kanji-say">言</a>
+<a href="#kanji-admonish">警</a>
+<a href="#kanji-plot">計</a>
+<a href="#kanji-elucidate">詮</a>
 </nav>
 
 <p class="stroke-hint">
 💡 Tip: Click the colored kanji to view stroke order animations
 </p>
 
-<!-- KANJI CARD -->
-
+<!-- KANJI BLOCKS -->
 <section class="kanji-entry"
          id="kanji-gentleman"
          data-kanji="士"
          data-slug="gentleman">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/gentleman.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/gentleman.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/gentleman.png"
+           alt="士">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/gentleman.png"
-     alt="士">
+      <span>gentleman</span>
+    </a>
+  </h2>
 
-<span>gentleman</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/gentleman.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: シ ・ Kun: さむらい
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/gentleman.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture gentleman. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: シ ・ Kun: —
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">士</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">士</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/gentleman.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/gentleman.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/gentleman.png">
+  </div>
 
 </section>
 
@@ -262,62 +112,39 @@ On: シ ・ Kun: —
          data-kanji="吉"
          data-slug="good_luck">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/good_luck.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/good_luck.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/good_luck.png"
+           alt="吉">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/good_luck.png"
-     alt="吉">
+      <span>good_luck</span>
+    </a>
+  </h2>
 
-<span>good luck</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/good_luck.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: キチ ・ Kun: よし
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/good_luck.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture good luck. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: キチ、キツ ・ Kun: —
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">吉</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">吉</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/good_luck.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/good_luck.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/good_luck.png">
+  </div>
 
 </section>
 
@@ -326,62 +153,39 @@ On: キチ、キツ ・ Kun: —
          data-kanji="壮"
          data-slug="robust">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/robust.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/robust.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/robust.png"
+           alt="壮">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/robust.png"
-     alt="壮">
+      <span>robust</span>
+    </a>
+  </h2>
 
-<span>robust</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/robust.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ソウ ・ Kun: さかん
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/robust.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture robust. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ソウ ・ Kun: —
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">壮</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">壮</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/robust.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/robust.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/robust.png">
+  </div>
 
 </section>
 
@@ -390,62 +194,39 @@ On: ソウ ・ Kun: —
          data-kanji="荘"
          data-slug="villa">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/villa.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/villa.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/villa.png"
+           alt="荘">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/villa.png"
-     alt="荘">
+      <span>villa</span>
+    </a>
+  </h2>
 
-<span>villa</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/villa.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ソウ ・ Kun: ほうき
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/villa.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture villa. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ソウ ・ Kun: —
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">荘</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">荘</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/villa.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/villa.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/villa.png">
+  </div>
 
 </section>
 
@@ -454,62 +235,39 @@ On: ソウ ・ Kun: —
          data-kanji="売"
          data-slug="sell">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/sell.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/sell.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/sell.png"
+           alt="売">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/sell.png"
-     alt="売">
+      <span>sell</span>
+    </a>
+  </h2>
 
-<span>sell</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/sell.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: バイ ・ Kun: う-る
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/sell.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture sell. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: バイ ・ Kun: う-る、う-れる
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">売</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">売</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/sell.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/sell.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/sell.png">
+  </div>
 
 </section>
 
@@ -518,62 +276,39 @@ On: バイ ・ Kun: う-る、う-れる
          data-kanji="学"
          data-slug="study">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/study.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/study.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/study.png"
+           alt="学">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/study.png"
-     alt="学">
+      <span>study</span>
+    </a>
+  </h2>
 
-<span>study</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/study.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ガク ・ Kun: まな-ぶ
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/study.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture study. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ガク ・ Kun: まな-ぶ
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">学</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">学</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/study.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/study.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/study.png">
+  </div>
 
 </section>
 
@@ -582,62 +317,39 @@ On: ガク ・ Kun: まな-ぶ
          data-kanji="覚"
          data-slug="memorize">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/memorize.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/memorize.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/memorize.png"
+           alt="覚">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/memorize.png"
-     alt="覚">
+      <span>memorize</span>
+    </a>
+  </h2>
 
-<span>memorize</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/memorize.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: カク ・ Kun: おぼ-える
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/memorize.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture memorize. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: カク ・ Kun: おぼ-える、さ-ます、さ-める
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">覚</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">覚</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/memorize.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/memorize.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/memorize.png">
+  </div>
 
 </section>
 
@@ -646,62 +358,39 @@ On: カク ・ Kun: おぼ-える、さ-ます、さ-める
          data-kanji="栄"
          data-slug="flourish">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/flourish.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/flourish.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/flourish.png"
+           alt="栄">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/flourish.png"
-     alt="栄">
+      <span>flourish</span>
+    </a>
+  </h2>
 
-<span>flourish</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/flourish.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: エイ ・ Kun: さか-える
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/flourish.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture flourish. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: エイ ・ Kun: さか-える、は-え、は-える
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">栄</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">栄</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/flourish.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/flourish.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/flourish.png">
+  </div>
 
 </section>
 
@@ -710,62 +399,39 @@ On: エイ ・ Kun: さか-える、は-え、は-える
          data-kanji="書"
          data-slug="write">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/write.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/write.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/write.png"
+           alt="書">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/write.png"
-     alt="書">
+      <span>write</span>
+    </a>
+  </h2>
 
-<span>write</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/write.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ショ ・ Kun: か-く
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/write.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture write. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ショ ・ Kun: か-く
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">書</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">書</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/write.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/write.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/write.png">
+  </div>
 
 </section>
 
@@ -774,62 +440,39 @@ On: ショ ・ Kun: か-く
          data-kanji="津"
          data-slug="haven">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/haven.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/haven.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/haven.png"
+           alt="津">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/haven.png"
-     alt="津">
+      <span>haven</span>
+    </a>
+  </h2>
 
-<span>haven</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/haven.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: シン ・ Kun: つ
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/haven.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture haven. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: シン ・ Kun: つ
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">津</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">津</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/haven.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/haven.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/haven.png">
+  </div>
 
 </section>
 
@@ -838,62 +481,39 @@ On: シン ・ Kun: つ
          data-kanji="牧"
          data-slug="breed">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/breed.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/breed.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/breed.png"
+           alt="牧">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/breed.png"
-     alt="牧">
+      <span>breed</span>
+    </a>
+  </h2>
 
-<span>breed</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/breed.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ボク ・ Kun: まき
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/breed.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture breed. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ボク ・ Kun: まき
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">牧</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">牧</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/breed.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/breed.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/breed.png">
+  </div>
 
 </section>
 
@@ -902,62 +522,39 @@ On: ボク ・ Kun: まき
          data-kanji="攻"
          data-slug="aggression">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/aggression.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/aggression.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/aggression.png"
+           alt="攻">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/aggression.png"
-     alt="攻">
+      <span>aggression</span>
+    </a>
+  </h2>
 
-<span>aggression</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/aggression.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: コウ ・ Kun: せ-める
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/aggression.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture aggression. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: コウ ・ Kun: せ-める
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">攻</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">攻</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/aggression.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/aggression.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/aggression.png">
+  </div>
 
 </section>
 
@@ -966,126 +563,80 @@ On: コウ ・ Kun: せ-める
          data-kanji="敗"
          data-slug="failure">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/failure.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/failure.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/failure.png"
+           alt="敗">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/failure.png"
-     alt="敗">
+      <span>failure</span>
+    </a>
+  </h2>
 
-<span>failure</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/failure.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ハイ ・ Kun: やぶ-れる
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/failure.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture failure. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ハイ ・ Kun: やぶ-れる
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">敗</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">敗</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/failure.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/failure.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/failure.png">
+  </div>
 
 </section>
 
 <section class="kanji-entry"
-         id="kanji-a_sheet_of"
+         id="kanji-sheet_of"
          data-kanji="枚"
-         data-slug="a_sheet_of">
+         data-slug="sheet_of">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/sheet_of.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/a_sheet_of.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/sheet_of.png"
+           alt="枚">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/a_sheet_of.png"
-     alt="枚">
+      <span>sheet_of</span>
+    </a>
+  </h2>
 
-<span>a sheet of</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/sheet_of.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: マイ ・ Kun: 
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/a_sheet_of.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture a sheet of. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: マイ ・ Kun: —
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">枚</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">枚</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/a_sheet_of.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/a_sheet_of.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/sheet_of.png">
+  </div>
 
 </section>
 
@@ -1094,62 +645,39 @@ On: マイ ・ Kun: —
          data-kanji="故"
          data-slug="happenstance">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/happenstance.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/happenstance.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/happenstance.png"
+           alt="故">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/happenstance.png"
-     alt="故">
+      <span>happenstance</span>
+    </a>
+  </h2>
 
-<span>happenstance</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/happenstance.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: コ ・ Kun: ゆえ
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/happenstance.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture happenstance. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: コ ・ Kun: ゆえ
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">故</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">故</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/happenstance.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/happenstance.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/happenstance.png">
+  </div>
 
 </section>
 
@@ -1158,62 +686,39 @@ On: コ ・ Kun: ゆえ
          data-kanji="敬"
          data-slug="awe">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/awe.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/awe.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/awe.png"
+           alt="敬">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/awe.png"
-     alt="敬">
+      <span>awe</span>
+    </a>
+  </h2>
 
-<span>awe</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/awe.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ケイ ・ Kun: うやま-う
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/awe.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture awe. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ケイ ・ Kun: うやま-う
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">敬</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">敬</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/awe.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/awe.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/awe.png">
+  </div>
 
 </section>
 
@@ -1222,62 +727,39 @@ On: ケイ ・ Kun: うやま-う
          data-kanji="言"
          data-slug="say">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/say.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/say.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/say.png"
+           alt="言">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/say.png"
-     alt="言">
+      <span>say</span>
+    </a>
+  </h2>
 
-<span>say</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/say.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ゲン ・ Kun: い-う
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/say.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture say. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ゲン、ゴン ・ Kun: い-う、こと
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">言</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">言</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/say.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/say.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/say.png">
+  </div>
 
 </section>
 
@@ -1286,62 +768,39 @@ On: ゲン、ゴン ・ Kun: い-う、こと
          data-kanji="警"
          data-slug="admonish">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/admonish.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/admonish.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/admonish.png"
+           alt="警">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/admonish.png"
-     alt="警">
+      <span>admonish</span>
+    </a>
+  </h2>
 
-<span>admonish</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/admonish.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ケイ ・ Kun: いまし-める
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/admonish.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture admonish. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ケイ ・ Kun: —
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">警</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">警</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/admonish.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/admonish.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/admonish.png">
+  </div>
 
 </section>
 
@@ -1350,62 +809,39 @@ On: ケイ ・ Kun: —
          data-kanji="計"
          data-slug="plot">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/plot.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/plot.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/plot.png"
+           alt="計">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/plot.png"
-     alt="計">
+      <span>plot</span>
+    </a>
+  </h2>
 
-<span>plot</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/plot.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: ケイ ・ Kun: はか-る
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/plot.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture plot. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: ケイ ・ Kun: はか-る、はか-らう
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">計</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">計</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/plot.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/plot.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/plot.png">
+  </div>
 
 </section>
 
@@ -1414,121 +850,67 @@ On: ケイ ・ Kun: はか-る、はか-らう
          data-kanji="詮"
          data-slug="elucidate">
 
-<h2 class="kanji-header">
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/elucidate.html">
 
-<a target="_blank"
-   class="stroke-link"
-   href="tools/strokes/pages/elucidate.html">
+      <img class="kanji-main"
+           src="../../../../assets/art/kanji-art/elucidate.png"
+           alt="詮">
 
-<img class="kanji-title-img"
-     src="/kml/assets/kanji/elucidate.png"
-     alt="詮">
+      <span>elucidate</span>
+    </a>
+  </h2>
 
-<span>elucidate</span>
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/elucidate.png">
+  </div>
 
-</a>
+  <div class="kml-verses">
+    <p class="jp-verse"></p>
+    <p class="en-verse"></p>
+  </div>
 
-</h2>
+  <div class="kanji-readings">
+    On: セン ・ Kun: せん-ずる
+  </div>
 
-<div class="mnemonic">
-<img class="mnemonic-img"
-     src="/kml/assets/mnemonics/elucidate.png"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="kanji-primitives">
+    
+  </div>
 
-<div class="kanji-story">
-<p>Picture elucidate. A clear image holds in the mind.</p>
-</div>
-
-<div class="kanji-readings">
-On: セン ・ Kun: —
-</div>
-
-<div class="style-row">
-
-<div>
-<span class="kanji-font kanji-font-printed">詮</span>
-<div class="style-label">Printed Kanji</div>
-</div>
-
-<div>
-<span class="kanji-font kanji-font-handwritten">詮</span>
-<div class="style-label">Handwritten Kanji</div>
-</div>
-
-</div>
-
-<div class="kanji-chunks-frame">
-<img src="/kml/assets/chunks/elucidate.png"
-     loading="lazy"
-     decoding="async">
-</div>
-
-<div class="emoji-hint">
-<img src="/kml/assets/emoji/elucidate.jpg"
-     loading="lazy"
-     decoding="async">
-</div>
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/elucidate.png">
+  </div>
 
 </section>
 
-
-
+<!-- CTA -->
 <div class="cta">
   <a class="btn-compounds"
-     href="contents/books/book_01/compounds/lesson_18.html"
+     href="../compounds/lesson_18.html"
      target="_blank">
     ▶️ View Common Compounds for Lesson 18
   </a>
 </div>
 
+<!-- STAMPS -->
 <div class="stamps">
+  <img src="../../../../assets/site/stamps/symeon_stamp.png"
+       alt="Symeon Stamp"
+       width="48"
+       loading="lazy"
+       decoding="async">
 
-  <img src="/kml/assets/site/stamps/symeon_stamp.png"
-       alt="Symeon Inkan"
-       width="48" height="48"
-       loading="lazy" decoding="async">
-
-  <img src="/kml/assets/site/stamps/chatgpt_stamp.png"
-       alt="ChatGPT Inkan"
-       width="48" height="48"
-       loading="lazy" decoding="async">
-
+  <img src="../../../../assets/site/stamps/chatgpt_stamp.png"
+       alt="ChatGPT Stamp"
+       width="48"
+       loading="lazy"
+       decoding="async">
 </div>
 
-<script>
-
-/* Active Kanji Highlight */
-
-const sections = document.querySelectorAll(".kanji-entry");
-const navLinks = document.querySelectorAll(".anchor-list a");
-
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
-if (entry.isIntersecting) {
-
-navLinks.forEach(link => link.classList.remove("active"));
-
-const id = entry.target.getAttribute("id");
-const activeLink = document.querySelector(`.anchor-list a[href="#${id}"]`);
-
-if (activeLink) activeLink.classList.add("active");
-
-}
-
-});
-
-},{
-rootMargin: "-40% 0px -55% 0px",
-threshold: 0
-});
-
-sections.forEach(section => observer.observe(section));
-
-</script>
+<script src="../../../../assets/site/js/kml.js"></script>
 
 </body>
 </html>
