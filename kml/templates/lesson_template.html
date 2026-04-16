@@ -74,6 +74,13 @@
 </div>
 
 <script src="../../../../assets/site/js/kml.js"></script>
-
+<script>
+(function() {
+  const match = window.location.pathname.match(/lesson_(\d+)\.html/);
+  if (match) {
+    localStorage.setItem("kml_last_lesson", match[1]);
+  }
+})();
+</script>
 </body>
 </html>
