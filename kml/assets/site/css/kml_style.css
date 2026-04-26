@@ -199,15 +199,77 @@ h1 {
   display: block;
   margin: 0 auto;
 }
-/* ===== Emoji ===== */
+/* ===== Emoji Container ===== */
+/* ===== Emoji Container ===== */
 .emoji-hint {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 20px auto; /* centers on page */
 }
 
-.emoji-hint img {
-  height: 130px;
+/* ===== Centering Layer ===== */
+.emoji-layout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== Base Emoji Image ===== */
+.emoji-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* ===== Vertical Stack (呂・昌) ===== */
+.stack-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.thin {
+  height: 12px;
+  width: 32px;
+}
+/* ===== Horizontal Row (朋・林) ===== */
+.row-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===== Triangle Layout (晶・品) ===== */
+.grid-1-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.grid-1-2 .bottom {
+  display: flex;
+  gap: 6px;
+}
+
+/* ===== Nested Right Stack (唱) ===== */
+.row-with-stack {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stack-small {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ===== Optional Glow (KML style) ===== */
+.emoji-img {
+  filter: drop-shadow(0 0 2px rgba(255, 200, 100, 0.3));
 }
 
 /* ===== Printed / Handwritten ===== */
