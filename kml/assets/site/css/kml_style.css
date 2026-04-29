@@ -199,12 +199,21 @@ h1 {
   display: block;
   margin: 0 auto;
 }
-/* ===== Emoji Container ===== */
+
+/* ===== Primitive / Emoji Layout Variables ===== */
+:root {
+  --kanji-primitive-size: 36px;
+  --kanji-gap-vertical: 2px;
+  --kanji-gap-horizontal: 6px;
+  --kanji-color: #8a6b2e;
+}
+
+/* ===== Emoji / Primitive Container ===== */
 .emoji-hint {
   position: relative;
   width: 120px;
   height: 120px;
-  margin: 20px auto; /* centers on page */
+  margin: 20px auto;
 }
 
 /* ===== Centering Layer ===== */
@@ -215,62 +224,102 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-/* ===== Base Emoji Image ===== */
+/* ===== Image-Based Emoji Parts ===== */
 .emoji-img {
   width: 62px;
   height: 62px;
   object-fit: contain;
 }
 
-/* ===== Vertical Stack (呂・昌) ===== */
+/* ===== Font-Based Kanji Primitive Parts ===== */
+.kanji-part {
+  font-family: 'Noto Serif JP', serif;
+  font-size: var(--kanji-primitive-size);
+  color: var(--kanji-color);
+  line-height: 1;
+}
+
+/* ===== Vertical Stack: max 3 parts ===== */
 .stack-vertical {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: var(--kanji-gap-vertical);
 }
-.thin {
-  height: 12px;
-  width: 32px;
-}
-.emoji-layout.stack-horizontal {
+
+/* ===== Horizontal Group: max 3 parts ===== */
+.stack-horizontal {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  gap: 6px; /* adjust spacing */
+  gap: var(--kanji-gap-horizontal);
 }
 
-/* ===== Horizontal Row (朋・林) ===== */
-.row-horizontal {
+/* ===== Left-Right Composite Cluster ===== */
+.kanji-composite {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: var(--kanji-gap-horizontal);
 }
 
-/* ===== Triangle Layout (晶・品) ===== */
-.grid-1-2 {
+/* ===== Left Side Vertical Cluster ===== */
+.kanji-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: var(--kanji-gap-vertical);
 }
 
-.grid-1-2 .bottom {
-  display: flex;
-  gap: 6px;
-}
-
-/* ===== Nested Right Stack (唱) ===== */
-.row-with-stack {
+/* ===== Right Side Single / Cluster ===== */
+.kanji-right {
   display: flex;
   align-items: center;
-  gap: 6px;
 }
 
-.stack-small {
+/* Slight optical adjustment for right-side kanji parts */
+.kanji-right .kanji-part {
+  transform: translateY(2px);
+}
+.drop {
+  display: inline-block;
+  width: 6px;
+  height: 16px;
+  background: #8a6b2e;
+  border-radius: 50% 50% 60% 60%;
+
+  gap: 4px; /* slightly tighter */
+}
+.v-line {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background: #8a6b2e;
+  border-radius: 2px;
+
+  /* alignment tweak */
+  transform: translateY(2px);
+}
+.stack-horizontal {
+  gap: 4px; /* slightly tighter */
+}
+  /* alignment tweak */
+  transform: translateY(4px) rotate(8deg);}
+
+.anchor-box {
+  padding: 4px 6px;
+  border: 1px solid rgba(140, 110, 50, 0.25); /* light frame */
+  border-radius: 6px;
+  background: rgba(180, 140, 60, 0.05); /* soft wash */
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make the boxed kanji feel like a frame, not content */
+.anchor-box .kanji-part {
+  color: rgba(138, 107, 46, 0.7); /* lighter than main parts */
+  transform: scale(1.08, 1.12); /* slightly larger + subtle vertical stretch */
 }
 
 /* ===== Optional Glow (KML style) ===== */

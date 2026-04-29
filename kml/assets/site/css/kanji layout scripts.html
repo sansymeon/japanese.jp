@@ -1,0 +1,141 @@
+<!-- =====================================================
+KML KANJI / EMOJI LAYOUT SNIPPETS
+Use inside the compound block where the breakdown image appears.
+===================================================== -->
+
+
+<!-- 1. SINGLE IMAGE EMOJI -->
+<div class="emoji-hint">
+  <div class="emoji-layout">
+    <img src="../../../../assets/art/kanji-art/example.png" class="emoji-img">
+  </div>
+</div>
+
+
+<!-- 2. SINGLE FONT-BASED KANJI / PRIMITIVE -->
+<div class="emoji-hint">
+  <div class="emoji-layout">
+    <span class="kanji-part">月</span>
+  </div>
+</div>
+
+
+<!-- 3. VERTICAL STACK: max 3 -->
+<div class="emoji-hint">
+  <div class="emoji-layout stack-vertical">
+    <span class="kanji-part">十</span>
+    <span class="kanji-part">田</span>
+    <span class="kanji-part">寸</span>
+  </div>
+</div>
+
+
+<!-- 4. HORIZONTAL GROUP: max 3 -->
+<div class="emoji-hint">
+  <div class="emoji-layout stack-horizontal">
+    <span class="kanji-part">口</span>
+    <span class="kanji-part">口</span>
+    <span class="kanji-part">口</span>
+  </div>
+</div>
+
+
+<!-- 5. LEFT-HEAVY CLUSTER: left stack + right single -->
+<div class="emoji-hint">
+  <div class="emoji-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">十</span>
+      <span class="kanji-part">早</span>
+    </div>
+
+    <div class="kanji-right">
+      <span class="kanji-part">月</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- 6. RIGHT-HEAVY CLUSTER: left single + right stack -->
+<div class="emoji-hint">
+  <div class="emoji-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">月</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">十</span>
+      <span class="kanji-part">早</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- 7. TRIANGLE: one top, two bottom -->
+<div class="emoji-hint">
+  <div class="emoji-layout stack-vertical">
+
+    <span class="kanji-part">日</span>
+
+    <div class="stack-horizontal">
+      <span class="kanji-part">日</span>
+      <span class="kanji-part">日</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- 8. TRIANGLE: two top, one bottom -->
+<div class="emoji-hint">
+  <div class="emoji-layout stack-vertical">
+
+    <div class="stack-horizontal">
+      <span class="kanji-part">日</span>
+      <span class="kanji-part">日</span>
+    </div>
+
+    <span class="kanji-part">日</span>
+
+  </div>
+</div>
+
+
+<!-- 9. MIXED IMAGE + KANJI: horizontal -->
+<div class="emoji-hint">
+  <div class="emoji-layout stack-horizontal">
+    <img src="../../../../assets/art/kanji-art/signal.png" class="emoji-img">
+    <span class="kanji-part">口</span>
+  </div>
+</div>
+
+
+<!-- 10. MIXED IMAGE + KANJI: vertical -->
+<div class="emoji-hint">
+  <div class="emoji-layout stack-vertical">
+    <img src="../../../../assets/art/kanji-art/signal.png" class="emoji-img">
+    <span class="kanji-part">口</span>
+  </div>
+</div>
+
+<!-- 11. Box kanji -->
+
+<div class="emoji-hint">
+  <div class="emoji-layout kanji-composite">
+
+    <!-- LEFT: anchor (boxed) -->
+    <div class="kanji-left anchor-box">
+      <span class="kanji-part">田</span>
+    </div>
+
+    <!-- RIGHT: remaining parts -->
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">力</span>
+      <span class="kanji-part">口</span>
+    </div>
+
+  </div>
+</div>
