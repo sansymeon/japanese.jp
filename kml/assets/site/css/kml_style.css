@@ -72,27 +72,38 @@ h1 {
 /* ===== Kanji Header ===== */
 .kanji-header {
   border-bottom: 1px solid rgba(0,0,0,0.08);
-  padding-bottom: .5rem;
-  margin-bottom: 1rem;
+  padding-bottom: .6rem;
+  margin-bottom: 1.2rem;
 
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
-  font-weight: 700;
-  line-height: 1.05;
+  text-align: center;
+  line-height: 1.1;
 }
+.kanji-main-font {
+  display: block;
 
-.kanji-header span {
-  font-size: 0.65em;
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: clamp(4rem, 11vw, 6.5rem);
+  font-weight: 400;
+
+color: #b79a52;
+
+  margin-bottom: 0.15rem;
+
+  text-shadow:
+    0 0 3px rgba(183,154,82,0.35),
+    0 0 8px rgba(183,154,82,0.18);
+}
+.kanji-keyword {
+  display: block;
+  font-size: 1rem;
   font-weight: 500;
-  margin-left: 0.3em;
-  opacity: 0.85;
+  margin-top: 0.5rem;
+  opacity: 0.75;
 }
-
 /* ===== Stroke link ===== */
 .stroke-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35em;
+  display: inline-block;
+  text-align: center;
   text-decoration: none;
   color: inherit;
 }
