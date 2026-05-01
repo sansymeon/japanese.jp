@@ -356,3 +356,13 @@ body {
     width: 22px; /* slightly smaller helps balance */
   }
 }
+/* make buttons always clickable */
+.closing-buttons {
+  position: relative;
+  z-index: 50;
+}
+
+.btn {
+  position: relative;
+  z-index: 60;
+}
