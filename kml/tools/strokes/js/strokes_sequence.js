@@ -62,9 +62,8 @@ function animateKanjiStrokes(strokes) {
 
   return strokes.length * GAP;
 }
-
 /* =====================================================
-   MAIN FLOW
+   MAIN FLOW (SAFE VERSION)
    ===================================================== */
 async function fadeSequence() {
   const intro = document.getElementById('intro');
@@ -89,31 +88,42 @@ async function fadeSequence() {
   intro?.classList.add('fade-out');
   await delay(INTRO_FADE);
 
-  /* ===== KANJI OUT ===== */
+  /* ===== KANJI FADE OUT ===== */
 
   if (kanjiDisplay) {
+    kanjiDisplay.style.transition = "opacity 0.5s ease-out";
     kanjiDisplay.style.opacity = 0;
   }
 
-  /* ===== STROKES ===== */
+  await delay(500);
+  await delay(150);
 
-  if (stroke) {
-    stroke.style.opacity = 1;
+  /* ===== STROKES BEGIN ===== */
+
+  if (stroke) stroke.style.opacity = 1;
+
+  let duration = 2000; // fallback
+
+  try {
+    const strokes = prepareKanjiStrokes();
+
+    if (strokes && strokes.length) {
+      await delay(PRE_DRAW_PAUSE);
+      duration = animateKanjiStrokes(strokes);
+    }
+  } catch (e) {
+    console.warn("Stroke animation skipped:", e);
   }
 
-  const strokes = prepareKanjiStrokes();
-
-  await delay(PRE_DRAW_PAUSE);
-
-  const duration = animateKanjiStrokes(strokes);
   await delay(duration + POST_STROKE_BUFFER);
 
   /* ===== STROKES OUT ===== */
 
   if (stroke) {
-  stroke.style.transition = "opacity 0.6s ease";
-  stroke.style.opacity = 0;
-}
+    stroke.style.transition = "opacity 0.6s ease";
+    stroke.style.opacity = 0;
+  }
+
   await delay(EMOJI_FADE);
 
   /* ===== FINAL ===== */
@@ -129,6 +139,7 @@ async function fadeSequence() {
 
   closing?.classList.add('visible');
 }
+
 
 /* =====================================================
    INIT

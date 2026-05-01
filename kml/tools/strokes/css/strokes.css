@@ -66,6 +66,8 @@ body {
   transform: translateX(-50%) scale(1.05);
   left: 50%;
   z-index: 10;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 .kanji-main-font {
@@ -228,12 +230,12 @@ body {
 /* ===== STAMP FIX (FOR CURRENT TEMPLATE) ===== */
 
 .stamp {
-  width: 29px;
+  width: 28px;
   height: auto;
 
   position: absolute;
-  top: 63%;
-  left: 75%;
+  top: 58%;
+  left: 66%;
   transform: translate(-50%, -50%) rotate(-8deg);
 
   opacity: 0.85;
