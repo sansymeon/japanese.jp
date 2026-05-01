@@ -356,13 +356,23 @@ body {
     width: 22px; /* slightly smaller helps balance */
   }
 }
-/* make buttons always clickable */
-.closing-buttons {
+/* ===== FIX MOBILE BUTTON BLOCKING ===== */
+
+.closing-art {
+  pointer-events: none;   /* 🔥 prevents image from blocking taps */
   position: relative;
-  z-index: 50;
+  z-index: 1;
 }
 
-.btn {
+.closing-buttons {
   position: relative;
-  z-index: 60;
+  z-index: 10;            /* 🔥 ensures buttons sit above */
+}
+
+/* Optional: tighten layout on mobile */
+@media (max-width: 600px) {
+  .closing-art {
+    max-width: 180px;
+    margin-bottom: 10px;
+  }
 }
