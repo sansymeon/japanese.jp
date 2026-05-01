@@ -368,11 +368,18 @@ body {
   position: relative;
   z-index: 10;            /* 🔥 ensures buttons sit above */
 }
-
+footer {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
 /* Optional: tighten layout on mobile */
 @media (max-width: 600px) {
   .closing-art {
     max-width: 180px;
     margin-bottom: 10px;
   }
+}
+footer {
+  margin-top: 40px;
+  padding-bottom: 60px;
 }
