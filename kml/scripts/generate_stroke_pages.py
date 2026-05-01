@@ -48,6 +48,9 @@ def get_slug(row):
 def get_reading(row):
     on = clean_field(row.get("on_reading"))
     kun = clean_field(row.get("kun_readings"))
+
+    if on and kun:
+        return f"{on} / {kun}"
     return on or kun or ""
 
 # =====================================================
