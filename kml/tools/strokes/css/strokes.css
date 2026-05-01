@@ -263,10 +263,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+
   opacity: 0;
-  transition: opacity var(--fade-duration) ease-in-out;
-  z-index: 10;
   pointer-events: none;
+
+  z-index: 50; /* 🔥 strong and clear */
+
+  transition: opacity var(--fade-duration) ease-in-out;
 }
 
 #closing.visible {
@@ -347,14 +350,7 @@ body {
     font-size: 1.3rem;
   }
 }
-/* ===== DEFAULT (desktop stays as you set) ===== */
 
-.stamp {
-  position: absolute;
-  top: 63%;
-  left: 65%;
-  transform: translate(-50%, -50%) rotate(-8deg);
-}
 
 /* ===== MOBILE FIX ===== */
 
@@ -404,4 +400,16 @@ footer {
 .card {
   position: relative;
   z-index: 1;
+}
+/* ===== FIX BUTTON CLICKABILITY (DESKTOP + MOBILE) ===== */
+
+
+.closing-buttons {
+  position: relative;
+  z-index: 20;
+}
+
+.btn {
+  position: relative;
+  z-index: 30;
 }
