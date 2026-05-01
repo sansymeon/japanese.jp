@@ -138,9 +138,12 @@ window.addEventListener('load', async () => {
   const washi = document.getElementById('washi-bg');
   const page = document.querySelector('.page');
 
-  document.getElementById("loop-btn")?.addEventListener("click", () => {
-    location.reload();
-  });
+  const loopBtn = document.getElementById("loop-btn");
+
+if (loopBtn) {
+  loopBtn.addEventListener("click", () => location.reload());
+  loopBtn.addEventListener("touchstart", () => location.reload());
+}
 
   washi?.classList.add('visible');
   await delay(400);
