@@ -1,123 +1,184 @@
 import csv
 import os
+import math
 
-TEMPLATE = open("templates/lesson_template.html", encoding="utf-8").read()
-KANJI_TEMPLATE = open("templates/kanji_block.html", encoding="utf-8").read()
+# ===== CONFIG =====
+CSV_PATH = "data/kanji/kanji_master.csv"
+TEMPLATE_PATH = "templates/lesson_template.html"
+OUTPUT_DIR = "contents/books/book_01/lessons/"
 
-OUTPUT_DIR = "contents/books/book_01/lessons"
+START_KANJI = "苛"
+LESSON_SIZE = 20
+START_LESSON_NUMBER = 13
 
+# ===== LOAD TEMPLATE =====
+with open(TEMPLATE_PATH, encoding="utf-8") as f:
+    template = f.read()
+
+# ===== LOAD CSV =====
+rows = []
+with open(CSV_PATH, encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for r in reader:
+        rows.append(r)
+
+# ===== FIND START INDEX =====
+start_index = next(
+    i for i, r in enumerate(rows)
+    if r["kanji"] == START_KANJI
+)
+
+print(f"Start index found: {start_index} ({START_KANJI})")
+
+current = start_index
 
 # ===== HELPERS =====
 
-def build_anchor_list(kanji_list):
-    return "\n".join([
-        f'<a href="#kanji-{k["slug"]}">{k["kanji"]}</a>'
-        for k in kanji_list
-    ])
+def pad(n):
+    return str(n).zfill(2)
 
-
-def build_primitives(primitives):
-    if not primitives:
+def clean_keyword(raw):
+    if not raw:
         return ""
-    return "\n".join([
-        f'<span data-primitive="{p}">{p}</span>'
-        for p in primitives.split("|")
-    ])
+    keyword = raw.strip()
+    keyword = keyword.replace("_", " ")
+    keyword = keyword.replace("variant", "")
+    keyword = keyword.replace("form", "")
+    keyword = " ".join(keyword.split())
+    return keyword
 
+def make_anchor_list(lesson_rows):
+    return "\n".join(
+        f'<a href="#kanji-{r["slug"]}">{r["kanji"]}</a>'
+        for r in lesson_rows
+    )
 
-def format_multiline(text):
-    if not text:
-        return ""
-    lines = [line.strip() for line in text.split("\\n") if line.strip()]
-    return "<br>".join(lines)
+def make_kanji_block(r):
+    kanji = r["kanji"]
+    slug = r["slug"]
 
+    keyword = clean_keyword(r.get("keyword", ""))
 
-def build_kanji_blocks(kanji_list):
-    blocks = []
+    on = r.get("on_reading", "").strip()
+    kun = r.get("kun_readings", "").strip()
 
-    for k in kanji_list:
-        block = KANJI_TEMPLATE
+    # ===== READINGS (hide if empty)
+    on_display = f"On: {on}" if on else ""
+    kun_display = f"Kun: {kun}" if kun else ""
+    readings = " ・ ".join([x for x in [on_display, kun_display] if x])
 
-        block = block.replace("{{KANJI}}", k["kanji"])
-        block = block.replace("{{SLUG}}", k["slug"])
-        block = block.replace("{{KEYWORD}}", k["keyword"])
+    readings_html = f"""
+  <div class="kanji-readings">
+    {readings}
+  </div>
+""" if readings else ""
 
-        block = block.replace("{{ON}}", k.get("on_reading", ""))
-        block = block.replace("{{KUN}}", k.get("kun_readings", ""))
+    # ===== MNEMONIC (auto-hide via onerror)
+    mnemonic_html = f"""
+  <div class="mnemonic">
+    <img src="../../../../assets/art/mnemonics/{slug}.png"
+         onerror="this.style.display='none'">
+  </div>
+"""
 
-        block = block.replace(
-            "{{JP_VERSE}}",
-            format_multiline(k.get("jp_verse", ""))
-        )
+    # ===== EMOJI (auto-hide via onerror)
+    emoji_html = f"""
+  <div class="emoji-hint">
+    <img src="../../../../assets/emoji/{slug}.png"
+         onerror="this.style.display='none'">
+  </div>
+"""
 
-        block = block.replace(
-            "{{EN_VERSE}}",
-            format_multiline(k.get("en_verse", ""))
-        )
+    return f"""
+<section class="kanji-entry"
+         id="kanji-{slug}"
+         data-kanji="{kanji}"
+         data-slug="{slug}">
 
-        block = block.replace(
-            "{{PRIMITIVES}}",
-            build_primitives(k.get("kml_primitives", ""))
-        )
+  <h2 class="kanji-header">
+    <a target="_blank"
+       class="stroke-link"
+       href="../../../../tools/strokes/pages/{slug}.html">
 
-        blocks.append(block)
+      <span class="kanji-main-font">{kanji}</span>
+      <span class="kanji-keyword">{keyword}</span>
+    </a>
+  </h2>
 
-    return "\n\n".join(blocks)
+  {mnemonic_html}
 
+  {readings_html}
 
-def build_nav_links(lesson, total_lessons):
+  <div class="style-row">
+    <div>
+      <span class="kanji-font kanji-font-printed">{kanji}</span>
+      <div class="style-label">Printed</div>
+    </div>
+
+    <div>
+      <span class="kanji-font kanji-font-handwritten">{kanji}</span>
+      <div class="style-label">Written</div>
+    </div>
+  </div>
+
+  {emoji_html}
+
+</section>
+"""
+
+def make_nav_links(lesson_number, max_lesson):
     prev_link = ""
     next_link = ""
 
-    if lesson > 1:
-        prev = str(lesson - 1).zfill(2)
-        prev_link = f'<a href="lesson_{prev}.html">⬅️ Lesson {prev}</a>'
+    if lesson_number > START_LESSON_NUMBER:
+        prev_link = f'<a href="lesson_{pad(lesson_number-1)}.html">⬅️ Lesson {lesson_number-1}</a>'
 
-    if lesson < total_lessons:
-        nxt = str(lesson + 1).zfill(2)
-        next_link = f'<a href="lesson_{nxt}.html">➡️ Lesson {nxt}</a>'
+    if lesson_number < max_lesson:
+        next_link = f'<a href="lesson_{pad(lesson_number+1)}.html">➡️ Lesson {lesson_number+1}</a>'
 
     return prev_link, next_link
-# ===== CORE =====
 
-def generate_lesson(lesson_number, kanji_list, total_lessons):
-    html = TEMPLATE
+# ===== GENERATION =====
 
+lesson_number = START_LESSON_NUMBER
+total_rows = len(rows)
+
+remaining = total_rows - start_index
+total_lessons = math.ceil(remaining / LESSON_SIZE)
+max_lesson_number = START_LESSON_NUMBER + total_lessons - 1
+
+while current < total_rows:
+
+    lesson_rows = rows[current:current + LESSON_SIZE]
+
+    if not lesson_rows:
+        break
+
+    print(f"Lesson {lesson_number} starts with {lesson_rows[0]['kanji']}")
+
+    kanji_blocks = "\n".join(make_kanji_block(r) for r in lesson_rows)
+    anchor_list = make_anchor_list(lesson_rows)
+    prev_link, next_link = make_nav_links(lesson_number, max_lesson_number)
+
+    html = template
     html = html.replace("{{LESSON_NUMBER}}", str(lesson_number))
-    html = html.replace("{{LESSON_NUMBER_PAD}}", str(lesson_number).zfill(2))
-
-    prev_link, next_link = build_nav_links(lesson_number, total_lessons)
+    html = html.replace("{{LESSON_NUMBER_PAD}}", pad(lesson_number))
+    html = html.replace("{{KANJI_BLOCKS}}", kanji_blocks)
+    html = html.replace("{{ANCHOR_LIST}}", anchor_list)
     html = html.replace("{{PREV_LINK}}", prev_link)
     html = html.replace("{{NEXT_LINK}}", next_link)
 
-    html = html.replace("{{ANCHOR_LIST}}", build_anchor_list(kanji_list))
-    html = html.replace("{{KANJI_BLOCKS}}", build_kanji_blocks(kanji_list))
+    output_file = os.path.join(
+        OUTPUT_DIR,
+        f"lesson_{pad(lesson_number)}.html"
+    )
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    with open(f"{OUTPUT_DIR}/lesson_{lesson_number:02}.html", "w", encoding="utf-8") as f:
+    with open(output_file, "w", encoding="utf-8") as f:
         f.write(html)
 
-def load_csv(csv_file):
-    with open(csv_file, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+    print(f"Generated: {output_file}")
 
+    current += LESSON_SIZE
+    lesson_number += 1
 
-# ===== RUN =====
-
-data = load_csv("data/kanji/kanji_master.csv")
-
-data_sorted = sorted(
-    data,
-    key=lambda x: int(x["heisig_number"]) if x["heisig_number"] and x["heisig_number"].isdigit() else 9999
-)
-
-total_lessons = (len(data_sorted) + 19) // 20
-
-for i in range(total_lessons):
-    chunk = data_sorted[i*20:(i+1)*20]
-    generate_lesson(i + 1, chunk, total_lessons)
-
-# ===== FULL GENERATION (uncomment when ready) =====
-# for i in range(25):
-#     generate_lesson(i + 1, data_sorted[i * 20:(i + 1) * 20])
+print("✅ All lessons generated.")

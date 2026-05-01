@@ -1,5 +1,5 @@
 /* =====================================================
-   DIFFERENT STROKES – CLEAN STABLE STYLESHEET (FIXED)
+   DIFFERENT STROKES – CLEAN STABLE STYLESHEET (UPDATED)
    ===================================================== */
 
 :root {
@@ -57,6 +57,31 @@ body {
 }
 
 /* =====================================================
+   KANJI DISPLAY (NEW)
+   ===================================================== */
+
+.kanji-display {
+  position: absolute;
+  top: 2%;
+  transform: translateX(-50%) scale(1.05);
+  left: 50%;
+  z-index: 10;
+}
+
+.kanji-main-font {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: clamp(5rem, 12vw, 9rem);
+  color: #b79a52;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+
+  text-shadow:
+    0 0 3px rgba(183,154,82,0.35),
+    0 0 8px rgba(183,154,82,0.18);
+}
+
+/* =====================================================
    INTRO
    ===================================================== */
 
@@ -94,10 +119,6 @@ body {
 .intro.fade-out {
   opacity: 0;
 }
-.stroke-order:first-of-type {
-  margin-top: 40px;
-  padding-top: 10px;
-}
 
 /* =====================================================
    PAGE
@@ -119,40 +140,32 @@ body {
 }
 
 /* =====================================================
-   UNIVERSAL FADE
-   ===================================================== */
-
-.fade-out {
-  opacity: 0 !important;
-  transition: opacity var(--fade-duration) ease-in-out;
-}
-
-/* =====================================================
-   STROKE DISPLAY (FIXED)
+   STROKE DISPLAY (REFINED)
    ===================================================== */
 
 .stroke-order {
   opacity: 0;
   position: absolute;
 
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 100%;           /* 👈 ADD THIS */
-  max-width: 1000px;     /* 👈 MOVE THIS HERE */
+  width: 100%;
+  max-width: 1000px;
 }
+
 /* hide stroke numbers */
 .stroke-order text {
   display: none;
 }
 
-/* ✅ FIXED: DO NOT hide strokes */
+/* stroke animation prep */
 .stroke-order path {
   fill: none;
   stroke: #000;
   stroke-width: 6;
-  /* animation prep */
+
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
 
@@ -174,33 +187,6 @@ body {
   transition: opacity var(--fade-duration) ease;
   z-index: 5;
 }
-/* ===== Intro kanji ===== */
-
-.intro-highlight img {
-  max-width: 160px;
-  height: auto;
-}
-
-/* ===== Final kanji + stamp ===== */
-
-.emoji-kanji-wrap {
-  position: relative;
-  display: inline-block;
-}
-
-.final-kanji {
-  max-width: 180px;
-  display: block;
-}
-
-.stamp {
-  position: absolute;
-  bottom: -10px;
-  right: -12px;
-
-  width: 28px;
-  opacity: 0.85;
-}
 
 .emoji-block.visible {
   opacity: 1;
@@ -208,11 +194,6 @@ body {
 
 .emoji-block.fade-out {
   opacity: 0;
-}
-
-
-.emoji-image {
-  display: none;
 }
 
 .emoji-keyword {
@@ -232,49 +213,37 @@ body {
 }
 
 /* =====================================================
-   EMOJI PAGE STAMP (GALLERY FEEL)
+   STAMP
    ===================================================== */
 
-.emoji-stamp {
+/* ===== STAMP FIX (FOR CURRENT TEMPLATE) ===== */
+
+.stamp {
+  width: 29px;
+  height: auto;
+
   position: absolute;
-
-  /* anchor near kanji */
-  top: 85%;
+  top: 63%;
   left: 75%;
+  transform: translate(-50%, -50%) rotate(-8deg);
 
-  /* stable positioning + subtle entry */
-  transform: translate(-50%, -50%) rotate(-8deg) scale(0.85);
-  opacity: 0;
-
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  opacity: 0.85;
 }
 
-/* visible state */
 #emoji-block.visible .emoji-stamp {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(-8deg) scale(1);
   transition-delay: 0.35s;
 }
 
-/* stamp image sizing (KEY FIX) */
 .emoji-stamp img {
-  width: 16px;       /* 👈 adjust 14–18 if needed */
+  width: 16px;
   height: auto;
   display: block;
-
   opacity: 0.8;
   filter: blur(0.2px);
 }
 
-/* container anchors */
-#emoji-block {
-  position: relative;
-}
-
-.emoji-kanji-wrap {
-  position: relative;
-  display: inline-block;
-}
 /* =====================================================
    CLOSING
    ===================================================== */
@@ -300,7 +269,8 @@ body {
   max-width: 220px;
   margin: 0 auto 1rem;
   display: block;
-  filter: saturate(90%) contrast(105%) brightness(98%);}
+  filter: saturate(90%) contrast(105%) brightness(98%);
+}
 
 /* =====================================================
    BUTTONS
@@ -316,19 +286,22 @@ body {
 .closing-buttons .btn {
   display: inline-flex;
   align-items: center;
-  min-height: 48px;   /* 👈 ensures full tap area */
+  min-height: 48px;
   padding: 12px 22px;
-  line-height: 1.2;
   gap: 0.4em;
+
   font-family: 'Yomogi', cursive;
   font-size: 1.1rem;
   font-weight: bold;
+
   border-radius: 10px;
   border: 2px solid #333;
   background-color: #fffaf3;
   color: #222;
+
   text-decoration: none;
   cursor: pointer;
+
   transition: background-color 0.25s ease, transform 0.2s ease;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
@@ -337,7 +310,6 @@ body {
   background-color: #f0e4d7;
   transform: scale(1.05);
 }
-
 
 .next-btn {
   background-color: #ffd24d;
@@ -349,18 +321,20 @@ body {
    ===================================================== */
 
 @media (max-width: 600px) {
-  .stroke-order svg {
-    width: 80%;
-  }
-}
 
-@media (max-width: 480px) {
+  .kanji-main-font {
+    font-size: clamp(4rem, 14vw, 7rem);
+  }
+
+  .kanji-display {
+    top: 15%;
+  }
+
+  .stroke-order {
+    top: 58%;
+  }
+
   .emoji-keyword {
     font-size: 1.3rem;
-  }
-}
-@media (min-width: 768px) {
-  .stroke-order:first-of-type {
-    margin-top: 60px;
   }
 }

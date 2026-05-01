@@ -3,9 +3,9 @@ import re
 from pathlib import Path
 
 # =====================================================
-# ROOT (script is now in /kml/)
+# ROOT
 # =====================================================
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 
 # =====================================================
 # PATHS
@@ -13,37 +13,34 @@ ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "tools/strokes/template/stroke_template.html"
 OUTPUT_DIR = ROOT / "tools/strokes/pages"
 CSV_FILE = ROOT / "data/kanji/kanji_master.csv"
-SVG_DIR = ROOT / "data/kanjivg"
+SVG_DIR = ROOT.parent / "data/archive/kanjivg"
 
 # =====================================================
-# DEBUG (safe now)
+# DEBUG
 # =====================================================
 print("ROOT:", ROOT)
 print("TEMPLATE EXISTS:", TEMPLATE.exists())
 print("CSV EXISTS:", CSV_FILE.exists())
 print("SVG DIR EXISTS:", SVG_DIR.exists())
+print((ROOT / "data/archive/kanjivg/04e00.svg").exists())
 
-# ensure output folder exists
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # =====================================================
-# BUILD CONTROL (CHANGE THIS ONLY)
+# BUILD CONTROL
 # =====================================================
-MODE = "test"   # "single", "test", "full"
-
-TARGET = {"二"}     # used when MODE = "single"
-TEST_COUNT = 5      # used when MODE = "test"
+MODE = "full"   # "single", "test", "full"
+TARGET = {"二"}
+TEST_COUNT = 5
 
 # =====================================================
 # HELPERS
 # =====================================================
 def clean_field(val):
-    if not val:
-        return ""
-    return str(val).replace('"', '').strip()
+    return val.strip() if val else ""
 
 def get_slug(row):
-    slug = clean_field(row.get("slug"))
+    slug = clean_field(row.get("slug", ""))
     if not slug:
         raise ValueError(f"Missing slug for kanji: {row.get('kanji')}")
     return slug
@@ -52,19 +49,6 @@ def get_reading(row):
     on = clean_field(row.get("on_reading"))
     kun = clean_field(row.get("kun_readings"))
     return on or kun or ""
-
-# =====================================================
-# SORTING
-# =====================================================
-def sort_key(row):
-    grade = clean_field(row.get("grade"))
-    heisig = clean_field(row.get("heisig_number")) or "999999"
-    freq = clean_field(row.get("frequency_rank")) or "999999"
-
-    if grade in ["1", "2", "3", "4", "5", "6"]:
-        return (0, int(grade), int(heisig))
-    else:
-        return (1, int(freq))
 
 # =====================================================
 # SVG CLEANING
@@ -76,37 +60,51 @@ def clean_svg(svg):
     svg = re.sub(r'<g id="kvg:StrokeNumbers.*?</g>', '', svg, flags=re.DOTALL)
     return svg.strip()
 
+
 def load_svg_inline(unicode_val):
     if not unicode_val:
         return ""
 
-    # Extract hex safely (handles U+4E00, 4E00, etc.)
-    match = re.search(r'([0-9A-Fa-f]{4,5})', unicode_val)
+    # extract unicode hex safely
+    match = re.search(r'U\+?([0-9A-Fa-f]{4,5})', unicode_val)
     if not match:
         print(f"⚠️ Bad unicode: {unicode_val}")
         return ""
 
-    code = match.group(1).lower().zfill(5)
+    code = match.group(1).lower()
 
-    svg_path = SVG_DIR / f"{code}.svg"
+    # try multiple filename formats (covers all your cases)
+    candidates = [
+        SVG_DIR / f"{code.zfill(5)}.svg",   # 04ea5.svg
+        SVG_DIR / f"{code}.svg",            # 4ea5.svg
+        SVG_DIR / f"u{code}.svg",           # u4ea5.svg
+        SVG_DIR / f"u{code.zfill(5)}.svg"   # u04ea5.svg
+    ]
 
-    if not svg_path.exists():
-        print(f"⚠️ Missing SVG: {code}.svg")
-        return ""
+    for path in candidates:
+        print("TRYING:", path)
+        if path.exists():
+            svg = path.read_text(encoding="utf-8")
+            return clean_svg(svg)
 
-    svg = svg_path.read_text(encoding="utf-8")
-    return clean_svg(svg)
-
+    print(f"❌ Missing SVG: {code}")
+    return ""
 # =====================================================
 # LOAD DATA
 # =====================================================
 template = TEMPLATE.read_text(encoding="utf-8")
 
-with open(CSV_FILE, encoding="utf-8") as f:
+with open(CSV_FILE, newline='', encoding='utf-8-sig') as f:
     reader = csv.DictReader(f)
-    rows = [row for row in reader if clean_field(row.get("kanji"))]
+    rows = list(reader)
 
-rows_sorted = sorted(rows, key=sort_key)
+    print("HEADERS:", reader.fieldnames)
+
+# remove empty kanji rows
+rows = [row for row in rows if clean_field(row.get("kanji"))]
+
+# KEEP CSV ORDER (important)
+rows_sorted = rows
 
 # =====================================================
 # GENERATE
@@ -116,11 +114,11 @@ count = 0
 for i, row in enumerate(rows_sorted):
     kanji = clean_field(row.get("kanji"))
 
-    # --- MODE: single ---
+    print("LOOP HIT:", kanji)
+
     if MODE == "single" and kanji not in TARGET:
         continue
 
-    # --- MODE: test ---
     if MODE == "test" and count >= TEST_COUNT:
         break
 
@@ -129,7 +127,11 @@ for i, row in enumerate(rows_sorted):
     keyword = (clean_field(row.get("keyword")) or slug).replace("_", " ")
     unicode_val = clean_field(row.get("unicode"))
 
+    print("UNICODE:", unicode_val)
+
     svg_inline = load_svg_inline(unicode_val)
+
+    print("SVG FOUND:", bool(svg_inline))
 
     if not svg_inline:
         print(f"⚠️ Skipping {kanji} (no SVG)")
@@ -137,14 +139,18 @@ for i, row in enumerate(rows_sorted):
 
     count += 1
 
-    # --- navigation ---
-    prev_slug = rows_sorted[i - 1]["slug"] if i > 0 else ""
-    next_slug = rows_sorted[i + 1]["slug"] if i < len(rows_sorted) - 1 else ""
+    # =====================================================
+    # NAVIGATION (FIXED — SAFE SLUG ACCESS)
+    # =====================================================
+    prev_slug = get_slug(rows_sorted[i - 1]) if i > 0 else ""
+    next_slug = get_slug(rows_sorted[i + 1]) if i < len(rows_sorted) - 1 else ""
 
     prev_link = f"{prev_slug}.html" if prev_slug else ""
     next_link = f"{next_slug}.html" if next_slug else ""
 
-    # --- build html ---
+    # =====================================================
+    # BUILD HTML
+    # =====================================================
     html = template
     html = html.replace("{{KANJI}}", kanji)
     html = html.replace("{{KEYWORD}}", keyword)

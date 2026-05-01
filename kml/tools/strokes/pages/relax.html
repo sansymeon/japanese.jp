@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/kml/">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Different Strokes – relax</title>
 
-  <!-- Yomogi font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yomogi&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="tools/strokes/css/strokes.css" />
+  <link rel="stylesheet" href="../../strokes/css/strokes.css" />
 </head>
 
 <body>
@@ -22,12 +23,8 @@
 <div id="washi-bg"></div>
 <div id="washi-messy"></div>
 
-<!-- Intro -->
+<!-- INTRO -->
 <div id="intro" class="intro">
-
-  <div class="intro-highlight">
-    <img src="/kml/assets/art/kanji-art/relax.png" alt="安">
-  </div>
 
   <div class="intro-sub">アン "relax"</div>
 
@@ -44,7 +41,12 @@
   <!-- STAGE -->
   <div class="kanji-stage">
 
-    <!-- STROKES -->
+    <!-- FONT KANJI DISPLAY -->
+    <div class="kanji-display">
+      <span class="kanji-main-font">安</span>
+    </div>
+
+    <!-- STROKE SVG (ONLY ONE — IMPORTANT) -->
     <div class="stroke-order">
       <!--
 Copyright (C) 2009/2010/2011 Ulrich Apel.
@@ -92,12 +94,14 @@ See http://creativecommons.org/licenses/by-sa/3.0/ for more details.
 
     <div class="emoji-kanji-wrap">
 
-      <img class="final-kanji"
-           src="/kml/assets/art/kanji-art/relax.png"
-           alt="安">
+      <!-- FINAL KANJI (FONT-BASED) -->
+      <div class="final-kanji kanji-main-font">
+        安
+      </div>
 
+      <!-- STAMP -->
       <img class="stamp"
-           src="/kml/assets/site/stamps/symeon_stamp.png"
+           src="../../../assets/site/stamps/symeon_stamp.png"
            alt="stamp">
 
     </div>
@@ -113,25 +117,53 @@ See http://creativecommons.org/licenses/by-sa/3.0/ for more details.
 <!-- CLOSING -->
 <div id="closing" class="closing">
 
-  <img src="/kml/assets/site/illustrations/castle.png"
+  <img src="../../../assets/site/illustrations/castle.png"
        class="closing-art"
        loading="lazy"
        decoding="async" />
 
   <div class="closing-buttons">
 
-    <button class="btn" id="loop-btn">🔁 Repeat</button>
+  <button class="btn" id="loop-btn">🔁 Repeat</button>
 
-    <a class="btn next-btn"
-       href="tools/strokes/pages/plant.html">
-       ➡️ Next
-    </a>
+  <a class="btn" id="back-btn" href="#">
+    ⬅️ Back
+  </a>
 
-  </div>
+  <a class="btn next-btn"
+     href="banquet.html">
+    ➡️ Next
+  </a>
 
 </div>
 
-<script src="tools/strokes/js/strokes_sequence.js" defer></script>
+</div>
 
+<!-- SCRIPT -->
+<script src="../../strokes/js/strokes_sequence.js" defer></script>
+<script>
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const from = params.get("from");
+
+  const backBtn = document.getElementById("back-btn");
+
+  if (from) {
+    backBtn.href = "../../contents/books/book_01/lessons/" + from;
+  } else {
+    backBtn.style.display = "none";
+  }
+})();
+</script>
+<script>
+(function() {
+  const nextBtn = document.querySelector(".next-btn");
+  const href = nextBtn.getAttribute("href");
+
+  if (!href || href === "None") {
+    nextBtn.style.display = "none";
+  }
+})();
+</script>
 </body>
 </html>
