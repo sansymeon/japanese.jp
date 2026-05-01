@@ -338,3 +338,21 @@ body {
     font-size: 1.3rem;
   }
 }
+/* ===== DEFAULT (desktop stays as you set) ===== */
+
+.stamp {
+  position: absolute;
+  top: 63%;
+  left: 65%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+}
+
+/* ===== MOBILE FIX ===== */
+
+@media (max-width: 600px) {
+  .stamp {
+    top: 55%;   /* move it UP on small screens */
+    left: 60%;  /* optional slight shift */
+    width: 32px; /* slightly smaller helps balance */
+  }
+}
