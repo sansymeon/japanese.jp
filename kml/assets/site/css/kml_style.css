@@ -78,6 +78,7 @@ h1 {
   text-align: center;
   line-height: 1.1;
 }
+
 .kanji-main-font {
   display: block;
 
@@ -85,20 +86,23 @@ h1 {
   font-size: clamp(4rem, 11vw, 6.5rem);
   font-weight: 400;
 
-color: #b79a52;
+  color: #1f1e1b;
 
   margin-bottom: 0.15rem;
 
   text-shadow:
-    0 0 3px rgba(183,154,82,0.35),
-    0 0 8px rgba(183,154,82,0.18);
+    0 0 1px rgba(0,0,0,0.08);
 }
+
 .kanji-keyword {
   display: block;
   font-size: 1rem;
   font-weight: 500;
   margin-top: 0.5rem;
-  opacity: 0.75;
+
+  color: rgba(0,0,0,0.72);
+
+  letter-spacing: 0.02em;
 }
 /* ===== Stroke link ===== */
 .stroke-link {
