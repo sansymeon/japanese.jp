@@ -409,6 +409,20 @@ color: #b79a52;
   margin-top: 20px; /* optional breathing space */
 }
 
+
+.kanji-compound-font {
+  display: block;
+
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: 3.2rem;
+  color: #b79a52;
+
+  text-align: center;
+
+  text-shadow:
+    0 0 2px rgba(183,154,82,0.3),
+    0 0 6px rgba(183,154,82,0.15);
+}
 /* ===== Mobile ===== */
 @media (max-width: 600px) {
   .anchor-list {
@@ -424,16 +438,27 @@ color: #b79a52;
     align-items: center;
   }
 }
-.kanji-compound-font {
-  display: block;
+/* ===== Mobile Image Scaling ===== */
+@media (max-width: 700px) {
 
-  font-family: "Yuji Syuku", "Noto Serif JP", serif;
-  font-size: 3.2rem;
-  color: #b79a52;
+  .lesson-art img {
+    max-width: 280px;
+  }
 
-  text-align: center;
+  .mnemonic img {
+    max-width: 240px;
+  }
 
-  text-shadow:
-    0 0 2px rgba(183,154,82,0.3),
-    0 0 6px rgba(183,154,82,0.15);
+  .kanji-med {
+    width: 90px;
+  }
+
+  .kanji-main-font {
+    font-size: clamp(3rem, 14vw, 4.8rem);
+  }
+
+  .kanji-entry {
+    padding: 1rem 0.9rem 1.1rem;
+  }
+
 }
