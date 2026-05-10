@@ -193,14 +193,14 @@ h1 {
   padding-top: 0.6rem;
 }
 
-/* ===== Mnemonic ===== */
-.mnemonic {
+/* ===== Kanji Study ===== */
+.kanji-study {
   margin: 2rem auto 1.5rem;
   display: flex;
   justify-content: center;
 }
 
-.mnemonic img {
+.kanji-study img {
   max-width: 400px;
   width: auto;
   height: auto;
@@ -215,7 +215,7 @@ h1 {
   margin: 0 auto;
 }
 
-/* ===== Primitive / Emoji Layout Variables ===== */
+/* ===== Primitive / Component Layout Variables ===== */
 :root {
   --kanji-primitive-size: 36px;
   --kanji-gap-vertical: 2px;
@@ -223,8 +223,8 @@ h1 {
   --kanji-color: #8a6b2e;
 }
 
-/* ===== Emoji / Primitive Container ===== */
-.emoji-hint {
+/* ===== Component / Primitive Container ===== */
+.kanji-components {
   position: relative;
   width: 120px;
   height: 120px;
@@ -232,15 +232,15 @@ h1 {
 }
 
 /* ===== Centering Layer ===== */
-.emoji-layout {
+.component-layout {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-/* ===== Image-Based Emoji Parts ===== */
-.emoji-img {
+/* ===== Image-Based Component Parts ===== */
+.component-img {
   width: 62px;
   height: 62px;
   object-fit: contain;
@@ -318,9 +318,6 @@ h1 {
 .stack-horizontal {
   gap: 4px; /* slightly tighter */
 }
-  /* alignment tweak */
-  transform: translateY(4px) rotate(8deg);}
-
 .anchor-box {
   padding: 4px 6px;
   border: 1px solid rgba(140, 110, 50, 0.25); /* light frame */
@@ -337,10 +334,6 @@ h1 {
   transform: scale(1.08, 1.12); /* slightly larger + subtle vertical stretch */
 }
 
-/* ===== Optional Glow (KML style) ===== */
-.emoji-img {
-  filter: drop-shadow(0 0 2px rgba(255, 200, 100, 0.3));
-}
 
 /* ===== Printed / Handwritten ===== */
 .kanji-font {
@@ -449,7 +442,7 @@ h1 {
     max-width: 280px;
   }
 
-  .mnemonic img {
+  .kanji-study img {
     max-width: 240px;
   }
 

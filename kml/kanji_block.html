@@ -8,16 +8,17 @@
        class="stroke-link"
        href="../../../../tools/strokes/pages/{{SLUG}}.html">
 
-      <img class="kanji-main"
-           src="../../../../assets/art/kanji-art/{{SLUG}}.png"
-           alt="{{KANJI}}">
+      <span class="kanji-main-font">{{KANJI}}</span>
+      <span class="kanji-keyword">{{KEYWORD}}</span>
 
-      <span>{{KEYWORD}}</span>
     </a>
   </h2>
 
-  <div class="mnemonic">
-    <img src="../../../../assets/art/mnemonics/{{SLUG}}.png">
+  <div class="kanji-study">
+    <img src="../../../../assets/studies/{{SLUG}}.png"
+         alt="Kanji study for {{KANJI}}"
+         loading="lazy"
+         onerror="this.style.display='none'">
   </div>
 
   <div class="kml-verses">
@@ -29,12 +30,8 @@
     On: {{ON}} ・ Kun: {{KUN}}
   </div>
 
-  <div class="kanji-primitives">
-    {{PRIMITIVES}}
-  </div>
-
-  <div class="emoji-hint">
-    <img src="../../../../assets/emoji/{{SLUG}}.png">
-  </div>
+  <div class="kanji-components">
+    {{COMPONENTS}}
+</div>
 
 </section>

@@ -1,15 +1,19 @@
 import csv
 import os
 import math
+from pathlib import Path
+
+# ===== BASE PATH =====
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ===== CONFIG =====
-CSV_PATH = "data/kanji/kanji_master.csv"
-TEMPLATE_PATH = "templates/lesson_template.html"
-OUTPUT_DIR = "contents/books/book_01/lessons/"
+CSV_PATH = BASE_DIR / "data/kanji/kanji_master.csv"
+TEMPLATE_PATH = BASE_DIR / "templates/lesson_template.html"
+OUTPUT_DIR = BASE_DIR / "contents/books/book_01/lessons/"
 
-START_KANJI = "苛"
+START_KANJI = "一"
 LESSON_SIZE = 20
-START_LESSON_NUMBER = 13
+START_LESSON_NUMBER = 1
 
 # ===== LOAD TEMPLATE =====
 with open(TEMPLATE_PATH, encoding="utf-8") as f:
@@ -73,18 +77,29 @@ def make_kanji_block(r):
   </div>
 """ if readings else ""
 
-    # ===== MNEMONIC (auto-hide via onerror)
-    mnemonic_html = f"""
-  <div class="mnemonic">
-    <img src="../../../../assets/art/mnemonics/{slug}.png"
-         onerror="this.style.display='none'">
-  </div>
-"""
+    # ===== VERSES =====
+    jp_verse = r.get("jp_verse", "").strip()
+    en_verse = r.get("en_verse", "").strip()
 
-    # ===== EMOJI (auto-hide via onerror)
-    emoji_html = f"""
-  <div class="emoji-hint">
-    <img src="../../../../assets/emoji/{slug}.png"
+    jp_verse = jp_verse.replace("\n", "<br>")
+    en_verse = en_verse.replace("\n", "<br>")
+
+    jp_html = f'<p class="jp-verse">{jp_verse}</p>' if jp_verse else ""
+    en_html = f'<p class="en-verse">{en_verse}</p>' if en_verse else ""
+
+    verses_html = f"""
+  <div class="kml-verses">
+    {jp_html}
+    {en_html}
+  </div>
+""" if jp_html or en_html else ""
+    
+    # ===== KANJI STUDY (auto-hide via onerror)
+    study_html = f"""
+  <div class="kanji-study">
+    <img src="../../../../assets/studies/{slug}.png"
+         alt="Kanji study for {kanji}"
+         loading="lazy"
          onerror="this.style.display='none'">
   </div>
 """
@@ -105,7 +120,9 @@ def make_kanji_block(r):
     </a>
   </h2>
 
-  {mnemonic_html}
+  {study_html}
+
+  {verses_html}
 
   {readings_html}
 
@@ -121,7 +138,6 @@ def make_kanji_block(r):
     </div>
   </div>
 
-  {emoji_html}
 
 </section>
 """
