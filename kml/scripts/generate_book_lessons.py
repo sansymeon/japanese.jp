@@ -7,13 +7,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ===== CONFIG =====
-CSV_PATH = BASE_DIR / "data/kanji/kanji_master.csv"
+CSV_PATH = BASE_DIR / "data/kanji/kanji_master_with_components.csv"
 TEMPLATE_PATH = BASE_DIR / "templates/lesson_template.html"
 OUTPUT_DIR = BASE_DIR / "contents/books/book_01/lessons/"
 
-START_KANJI = "一"
+START_KANJI = "昌"
 LESSON_SIZE = 20
-START_LESSON_NUMBER = 1
+START_LESSON_NUMBER = 2
 
 # ===== LOAD TEMPLATE =====
 with open(TEMPLATE_PATH, encoding="utf-8") as f:
@@ -57,9 +57,113 @@ def make_anchor_list(lesson_rows):
         for r in lesson_rows
     )
 
+# ===== COMPONENT LAYOUTS =====
+
+def make_component_block(r):
+
+    layout = r.get("layout_type", "").strip()
+
+    # ===== UNKNOWN / EMPTY =====
+    if not layout or layout == "unknown":
+        return ""
+
+    # ===== COMPONENT SOURCE =====
+    components_raw = (
+        r.get("cluster_components", "")
+        or r.get("kml_primitives", "")
+    ).strip()
+
+    # ===== PLACEHOLDER FALLBACK =====
+    if not components_raw:
+
+        kanji = r.get("kanji", "").strip()
+
+        if layout == "horizontal":
+            components = [kanji, kanji]
+
+        elif layout == "vertical":
+            components = [kanji, kanji]
+
+        elif layout == "box":
+            components = [kanji, kanji]
+
+        else:
+            return ""
+
+    # ===== REAL COMPONENTS =====
+    else:
+
+        components = [
+            c.strip()
+            for c in components_raw.split("|")
+            if c.strip()
+        ]
+
+    # ===== HORIZONTAL =====
+    if layout == "horizontal":
+
+        spans = "\n".join(
+            f'<span class="kanji-part">{c}</span>'
+            for c in components
+        )
+
+        return f"""
+<div class="component-box">
+  <div class="component-layout stack-horizontal">
+    {spans}
+  </div>
+</div>
+"""
+
+    # ===== VERTICAL =====
+    elif layout == "vertical":
+
+        spans = "\n".join(
+            f'<span class="kanji-part">{c}</span>'
+            for c in components
+        )
+
+        return f"""
+<div class="component-box">
+  <div class="component-layout stack-vertical">
+    {spans}
+  </div>
+</div>
+"""
+
+    # ===== BOX =====
+    elif layout == "box":
+
+        if len(components) < 2:
+            return ""
+
+        outer = components[0]
+        inner = components[1]
+
+        return f"""
+<div class="component-box">
+  <div class="component-layout enclosure-layout">
+
+    <div class="outer-kanji">
+      {outer}
+    </div>
+
+    <div class="inner-kanji">
+      {inner}
+    </div>
+
+  </div>
+</div>
+"""
+
+    return ""
+
 def make_kanji_block(r):
     kanji = r["kanji"]
     slug = r["slug"]
+    print(f"Building block: {kanji}")
+    components_html = make_component_block(r)
+
 
     keyword = clean_keyword(r.get("keyword", ""))
 
@@ -77,16 +181,20 @@ def make_kanji_block(r):
   </div>
 """ if readings else ""
 
-    # ===== VERSES =====
+# ===== VERSES =====
     jp_verse = r.get("jp_verse", "").strip()
     en_verse = r.get("en_verse", "").strip()
 
-    jp_verse = jp_verse.replace("\n", "<br>")
-    en_verse = en_verse.replace("\n", "<br>")
+# Convert escaped CSV newlines
+    jp_verse = jp_verse.replace("\\n", "<br>")
+    en_verse = en_verse.replace("\\n", "<br>")
+
+# Collapse excessive breaks
+    jp_verse = jp_verse.replace("<br><br><br>", "<br><br>")
+    en_verse = en_verse.replace("<br><br><br>", "<br><br>")
 
     jp_html = f'<p class="jp-verse">{jp_verse}</p>' if jp_verse else ""
     en_html = f'<p class="en-verse">{en_verse}</p>' if en_verse else ""
-
     verses_html = f"""
   <div class="kml-verses">
     {jp_html}
@@ -126,7 +234,7 @@ def make_kanji_block(r):
 
   {readings_html}
 
-  <div class="style-row">
+    <div class="style-row">
     <div>
       <span class="kanji-font kanji-font-printed">{kanji}</span>
       <div class="style-label">Printed</div>
@@ -137,6 +245,8 @@ def make_kanji_block(r):
       <div class="style-label">Written</div>
     </div>
   </div>
+
+  {components_html}
 
 
 </section>
@@ -170,29 +280,73 @@ while current < total_rows:
     if not lesson_rows:
         break
 
-    print(f"Lesson {lesson_number} starts with {lesson_rows[0]['kanji']}")
+    print(
+        f"Lesson {lesson_number} starts with "
+        f"{lesson_rows[0]['kanji']}"
+    )
 
-    kanji_blocks = "\n".join(make_kanji_block(r) for r in lesson_rows)
-    anchor_list = make_anchor_list(lesson_rows)
-    prev_link, next_link = make_nav_links(lesson_number, max_lesson_number)
+    kanji_blocks = "\n".join(
+        make_kanji_block(r)
+        for r in lesson_rows
+    )
+
+    anchor_list = make_anchor_list(
+        lesson_rows
+    )
+
+    prev_link, next_link = make_nav_links(
+        lesson_number,
+        max_lesson_number
+    )
 
     html = template
-    html = html.replace("{{LESSON_NUMBER}}", str(lesson_number))
-    html = html.replace("{{LESSON_NUMBER_PAD}}", pad(lesson_number))
-    html = html.replace("{{KANJI_BLOCKS}}", kanji_blocks)
-    html = html.replace("{{ANCHOR_LIST}}", anchor_list)
-    html = html.replace("{{PREV_LINK}}", prev_link)
-    html = html.replace("{{NEXT_LINK}}", next_link)
+
+    html = html.replace(
+        "{{LESSON_NUMBER}}",
+        str(lesson_number)
+    )
+
+    html = html.replace(
+        "{{LESSON_NUMBER_PAD}}",
+        pad(lesson_number)
+    )
+
+    html = html.replace(
+        "{{KANJI_BLOCKS}}",
+        kanji_blocks
+    )
+
+    html = html.replace(
+        "{{ANCHOR_LIST}}",
+        anchor_list
+    )
+
+    html = html.replace(
+        "{{PREV_LINK}}",
+        prev_link
+    )
+
+    html = html.replace(
+        "{{NEXT_LINK}}",
+        next_link
+    )
 
     output_file = os.path.join(
         OUTPUT_DIR,
         f"lesson_{pad(lesson_number)}.html"
     )
 
-    with open(output_file, "w", encoding="utf-8") as f:
+    with open(
+        output_file,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
         f.write(html)
 
-    print(f"Generated: {output_file}")
+    print(
+        f"Generated: {output_file}"
+    )
 
     current += LESSON_SIZE
     lesson_number += 1

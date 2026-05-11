@@ -201,7 +201,7 @@ h1 {
 }
 
 .kanji-study img {
-  max-width: 400px;
+  max-width: 300px;
   width: auto;
   height: auto;
   display: block;
@@ -224,7 +224,7 @@ h1 {
 }
 
 /* ===== Component / Primitive Container ===== */
-.kanji-components {
+.component-box {
   position: relative;
   width: 120px;
   height: 120px;
@@ -245,7 +245,39 @@ h1 {
   height: 62px;
   object-fit: contain;
 }
+/* ===== Enclosure Layout ===== */
+.enclosure-layout {
+  position: relative;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer enclosing kanji */
+.outer-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 4rem;
+  line-height: 1;
+
+  color: var(--kanji-color);
+}
+
+/* Inner enclosed component */
+.inner-kanji {
+  position: absolute;
+
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.4rem;
+  line-height: 1;
+
+  color: var(--kanji-color);
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
 /* ===== Font-Based Kanji Primitive Parts ===== */
 .kanji-part {
   font-family: 'Noto Serif JP', serif;
@@ -261,25 +293,44 @@ h1 {
   align-items: center;
   gap: var(--kanji-gap-vertical);
 }
-
+/* ===== Vertical Composite Cluster ===== */
+.composite-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kanji-gap-vertical);
+}
 /* ===== Horizontal Group: max 3 parts ===== */
 .stack-horizontal {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--kanji-gap-horizontal);
+  gap: 4px;
 }
 
 /* ===== Left-Right Composite Cluster ===== */
-.kanji-composite {
+.component-horizontal {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--kanji-gap-horizontal);
 }
+/* ===== Top Component ===== */
+.component-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* ===== Bottom Component ===== */
+.component-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* ===== Left Side Vertical Cluster ===== */
-.kanji-left {
+.component-left {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -287,13 +338,13 @@ h1 {
 }
 
 /* ===== Right Side Single / Cluster ===== */
-.kanji-right {
+.component-right {
   display: flex;
   align-items: center;
 }
 
 /* Slight optical adjustment for right-side kanji parts */
-.kanji-right .kanji-part {
+.component-right .kanji-part {
   transform: translateY(2px);
 }
 .drop {
@@ -305,6 +356,13 @@ h1 {
 
   gap: 4px; /* slightly tighter */
 }
+.drop {
+  display: inline-block;
+  width: 4px;
+  height: 14px;
+  background: #8a6b2e;
+  border-radius: 2px;
+}
 .v-line {
   display: inline-block;
   width: 3px;
@@ -315,9 +373,7 @@ h1 {
   /* alignment tweak */
   transform: translateY(2px);
 }
-.stack-horizontal {
-  gap: 4px; /* slightly tighter */
-}
+
 .anchor-box {
   padding: 4px 6px;
   border: 1px solid rgba(140, 110, 50, 0.25); /* light frame */
