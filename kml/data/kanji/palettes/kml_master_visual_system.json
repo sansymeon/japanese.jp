@@ -1,0 +1,362 @@
+{
+  "schema_version": "2.0",
+  "system_name": "kml_master_visual_system",
+  "description": "Master visual orchestration system for KML kanji image generation. Separates emotional lesson identity from material execution strategy.",
+
+  "core_principle": {
+    "lesson_role": "Determines emotional atmosphere and environmental identity",
+    "variant_role": "Determines physical material execution and visual application behavior",
+    "hero_role": "Determines showcase-level artistic treatment for selected kanji"
+  },
+
+  "global_rules": {
+    "kanji_integrity": [
+      "Preserve kanji structure exactly",
+      "Do not invent strokes",
+      "Do not remove strokes",
+      "Do not distort balance unless explicitly requested",
+      "Material effects must respect kanji readability"
+    ],
+
+    "surface_philosophy": [
+      "Paint should feel integrated into the surface",
+      "Texture should feel physical rather than simulated",
+      "Imperfection is welcomed when controlled",
+      "No sterile digital appearance",
+      "Every brush interaction should feel intentional"
+    ],
+
+    "rarity_behavior": {
+      "common": 0.65,
+      "uncommon": 0.22,
+      "rare": 0.10,
+      "legendary": 0.03
+    }
+  },
+
+  "lesson_families": [
+    {
+      "id": "warm_foundational",
+      "lesson_start": 1,
+      "lesson_end": 12,
+      "notes": "Warm inviting foundational atmosphere"
+    },
+    {
+      "id": "earth_organic",
+      "lesson_start": 13,
+      "lesson_end": 24,
+      "notes": "Grounded mineral and growth energy"
+    },
+    {
+      "id": "cool_contemplative",
+      "lesson_start": 25,
+      "lesson_end": 36,
+      "notes": "Quiet inward contemplative atmosphere"
+    },
+    {
+      "id": "dramatic_high_contrast",
+      "lesson_start": 37,
+      "lesson_end": 48,
+      "notes": "Pressure, tension, ember contrast"
+    },
+    {
+      "id": "luminous_depth",
+      "lesson_start": 49,
+      "lesson_end": 60,
+      "notes": "Radiant jewel-like luminosity"
+    },
+    {
+      "id": "twilight_atmosphere",
+      "lesson_start": 61,
+      "lesson_end": 72,
+      "notes": "Atmospheric turbulence and oxidation"
+    },
+    {
+      "id": "tempered_warmth",
+      "lesson_start": 73,
+      "lesson_end": 84,
+      "notes": "Matured warmth and balance"
+    },
+    {
+      "id": "shadow_earth",
+      "lesson_start": 85,
+      "lesson_end": 96,
+      "notes": "Heavy atmospheric earth pressure"
+    },
+    {
+      "id": "mist_cool",
+      "lesson_start": 97,
+      "lesson_end": 108,
+      "notes": "Cool fog and restrained motion"
+    },
+    {
+      "id": "voltaic_contrast",
+      "lesson_start": 109,
+      "lesson_end": 120,
+      "notes": "Electrical contrast and charged motion"
+    },
+    {
+      "id": "polychrome_synthesis",
+      "lesson_start": 121,
+      "lesson_end": 132,
+      "notes": "Full vocabulary synthesis phase"
+    },
+    {
+      "id": "mastery_return",
+      "lesson_start": 133,
+      "lesson_end": 144,
+      "notes": "Controlled return to core identity"
+    },
+    {
+      "id": "coda_coherent",
+      "lesson_start": 145,
+      "lesson_end": 153,
+      "notes": "Final convergence and cohesion"
+    }
+  ],
+
+  "palette_vocabulary": [
+    "warm red and orange with ivory strokes",
+    "deep indigo and muted gold with cool ivory strokes",
+    "moss green and aged bronze",
+    "smoky violet and oxidized copper",
+    "cold blue-grey with pale ivory",
+    "charcoal black and ember red",
+    "earth umber and parchment cream",
+    "turquoise and weathered gold"
+  ],
+
+  "flow_vocabulary": [
+    "vertical downward pull",
+    "diagonal bottom-left to top-right",
+    "diagonal top-left to bottom-right",
+    "circular drift",
+    "subtle horizontal sweep",
+    "organic atmospheric turbulence"
+  ],
+
+  "energy_vocabulary": [
+    "quiet",
+    "balanced",
+    "controlled tension",
+    "meditative",
+    "subtle movement"
+  ],
+
+  "application_variants": [
+    {
+      "id": "full_impasto",
+      "rarity": "common",
+      "description": "Full integrated impasto material behavior",
+      "surface_behavior": [
+        "rich paint buildup",
+        "material depth",
+        "integrated brush texture"
+      ]
+    },
+
+    {
+      "id": "substrate_overpaint",
+      "rarity": "uncommon",
+      "description": "Kanji painted over pre-existing impasto substrate",
+      "surface_behavior": [
+        "background established first",
+        "kanji overlaid afterward",
+        "visible interaction between substrate and symbol"
+      ]
+    },
+
+    {
+      "id": "reflective_black",
+      "rarity": "rare",
+      "description": "Reflective near-black kanji with mineral sheen",
+      "surface_behavior": [
+        "black not fully flat",
+        "reflective mineral highlights",
+        "subtle deep color undertones"
+      ]
+    },
+
+    {
+      "id": "oxidized_metal",
+      "rarity": "rare",
+      "description": "Metallic oxidation and rust interaction",
+      "surface_behavior": [
+        "aged metallic reaction",
+        "controlled corrosion",
+        "earth mineral transitions"
+      ]
+    },
+
+    {
+      "id": "gold_leaf",
+      "rarity": "legendary",
+      "description": "Leaf-like metallic reflective stroke treatment",
+      "surface_behavior": [
+        "metallic fragmentation",
+        "light-catching stroke edges",
+        "luxury sacred-object feel"
+      ]
+    },
+
+    {
+      "id": "matte_mineral",
+      "rarity": "common",
+      "description": "Dry mineral paint surface",
+      "surface_behavior": [
+        "powdered pigment feeling",
+        "low reflection",
+        "quiet museum wall texture"
+      ]
+    },
+
+    {
+      "id": "ink_fragment",
+      "rarity": "uncommon",
+      "description": "Fragmenting ink-like edges with painterly breakup",
+      "surface_behavior": [
+        "brush fragmentation",
+        "energy splatter",
+        "partial dissolution"
+      ]
+    }
+  ],
+
+  "artist_aspects": [
+    {
+      "id": "luminous_swirl",
+      "traits": [
+        "circular atmospheric movement",
+        "energetic directional strokes",
+        "compressed glowing contrast"
+      ]
+    },
+
+    {
+      "id": "light_diffusion",
+      "traits": [
+        "broken color interaction",
+        "soft optical blending",
+        "light suspended in atmosphere"
+      ]
+    },
+
+    {
+      "id": "mineral_weight",
+      "traits": [
+        "earth heaviness",
+        "dense tactile presence",
+        "aged material feel"
+      ]
+    },
+
+    {
+      "id": "ember_pressure",
+      "traits": [
+        "heated darkness",
+        "compressed warm contrast",
+        "internal glow tension"
+      ]
+    },
+
+    {
+      "id": "quiet_surface",
+      "traits": [
+        "restraint",
+        "minimal movement",
+        "museum stillness"
+      ]
+    },
+
+    {
+      "id": "storm_motion",
+      "traits": [
+        "directional turbulence",
+        "chaotic flow fields",
+        "energetic atmospheric movement"
+      ]
+    }
+  ],
+
+  "hero_image_system": {
+    "description": "High-attention artistic showcase mode for selected kanji",
+
+    "rules": [
+      "More artistic freedom permitted",
+      "Surface richness increased",
+      "Brush behavior more expressive",
+      "Lighting more dramatic",
+      "Can include advanced material interactions"
+    ],
+
+    "hero_variants": [
+      "reflective_black",
+      "gold_leaf",
+      "oxidized_metal",
+      "full_impasto"
+    ]
+  },
+
+  "special_states": [
+    {
+      "id": "still_point",
+      "meaning": "Calm centered suspension"
+    },
+
+    {
+      "id": "threshold",
+      "meaning": "Crossing tension and transition"
+    },
+
+    {
+      "id": "open_sky",
+      "meaning": "Expansion and release"
+    },
+
+    {
+      "id": "ember_surge",
+      "meaning": "Compressed internal heat"
+    },
+
+    {
+      "id": "brightening",
+      "meaning": "Increasing luminosity"
+    },
+
+    {
+      "id": "afterglow",
+      "meaning": "Quiet residual resonance"
+    }
+  ],
+
+  "generation_logic": {
+    "lesson_controls": [
+      "palette",
+      "flow",
+      "energy",
+      "special_state"
+    ],
+
+    "variant_controls": [
+      "material behavior",
+      "surface treatment",
+      "paint density",
+      "reflectivity",
+      "substrate interaction"
+    ],
+
+    "hero_controls": [
+      "advanced lighting",
+      "maximum material richness",
+      "rare variant access",
+      "extended brush complexity"
+    ]
+  },
+
+  "manual_override_rules": {
+    "allow_per_kanji_override": true,
+    "allow_hero_manual_assignment": true,
+    "allow_custom_variant_assignment": true,
+    "allow_surface_override": true
+  }
+}
