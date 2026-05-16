@@ -192,7 +192,39 @@ h1 {
   border-top: 1px dashed rgba(0,0,0,0.08);
   padding-top: 0.6rem;
 }
+/* =========================================
+   LEFT/RIGHT COMPOSITE LAYOUT
+========================================= */
 
+.composite-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.component-left,
+.component-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   VERTICAL STACK
+========================================= */
+
+.stack-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
 /* ===== Kanji Study ===== */
 .kanji-study {
   margin: 2rem auto 1.5rem;
