@@ -421,7 +421,23 @@ h1 {
   color: rgba(138, 107, 46, 0.7); /* lighter than main parts */
   transform: scale(1.08, 1.12); /* slightly larger + subtle vertical stretch */
 }
+/* =========================================
+   TRIPLE COMPOSITE
+========================================= */
 
+.composite-triple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* floating / lighter components */
+
+.component-float {
+    transform: translateY(-10px);
+    opacity: 0.9;
+}
 
 /* ===== Printed / Handwritten ===== */
 .kanji-font {
@@ -507,6 +523,15 @@ h1 {
   text-shadow:
     0 0 2px rgba(183,154,82,0.3),
     0 0 6px rgba(183,154,82,0.15);
+}
+.future-kanji-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.future-kanji-link:hover {
+    opacity: 0.7;
 }
 /* ===== Mobile ===== */
 @media (max-width: 600px) {
