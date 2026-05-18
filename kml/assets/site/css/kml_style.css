@@ -416,7 +416,31 @@ h1 {
   font-size: 1.6rem;
   line-height: 1;
 }
+.enclosure-layout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 120px;
+  height: 120px;
+}
+
+.enclosure-part {
+  position: absolute;
+  font-size: 4rem;
+  z-index: 1;
+}
+
+.inner-part {
+  position: relative;
+  z-index: 2;
+
+  margin-left: 12px;
+  margin-top: 10px;
+
+  font-size: 2rem;
+}
 /* =====================================================
    SPECIAL SIMPLE SHAPES
    ===================================================== */
