@@ -192,16 +192,7 @@ h1 {
   border-top: 1px dashed rgba(0,0,0,0.08);
   padding-top: 0.6rem;
 }
-/* =========================================
-   LEFT/RIGHT COMPOSITE LAYOUT
-========================================= */
 
-.composite-horizontal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-}
 
 /* =========================================
    LEFT SIDE
@@ -247,198 +238,271 @@ h1 {
   margin: 0 auto;
 }
 
-/* ===== Primitive / Component Layout Variables ===== */
+/* =====================================================
+   KML COMPONENT SYSTEM – CLEANED VERSION
+   ===================================================== */
+
+/* ===== Variables ===== */
+
 :root {
   --kanji-primitive-size: 36px;
-  --kanji-gap-vertical: 2px;
-  --kanji-gap-horizontal: 6px;
+  --kanji-gap-vertical: 4px;
+  --kanji-gap-horizontal: 8px;
   --kanji-color: #8a6b2e;
 }
 
-/* ===== Component / Primitive Container ===== */
+.gaku-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+
+  font-size: 1.5rem;
+  line-height: 1;
+}
+/* =====================================================
+   COMPONENT BOX
+   ===================================================== */
+
 .component-box {
-  position: relative;
   width: 120px;
-  height: 120px;
+  min-height: 120px;
+
   margin: 20px auto;
-}
-
-/* ===== Centering Layer ===== */
-.component-layout {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* ===== Image-Based Component Parts ===== */
-.component-img {
-  width: 62px;
-  height: 62px;
-  object-fit: contain;
-}
-/* ===== Enclosure Layout ===== */
-.enclosure-layout {
-  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Outer enclosing kanji */
-.outer-kanji {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 4rem;
-  line-height: 1;
+/* =====================================================
+   BASE LAYOUT
+   ===================================================== */
 
-  color: var(--kanji-color);
+.component-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Inner enclosed component */
-.inner-kanji {
-  position: absolute;
+/* =====================================================
+   FONT-BASED PARTS
+   ===================================================== */
 
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.4rem;
-  line-height: 1;
-
-  color: var(--kanji-color);
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-}
-/* ===== Font-Based Kanji Primitive Parts ===== */
 .kanji-part {
   font-family: 'Noto Serif JP', serif;
   font-size: var(--kanji-primitive-size);
-  color: var(--kanji-color);
   line-height: 1;
+  color: var(--kanji-color);
 }
 
-/* ===== Vertical Stack: max 3 parts ===== */
+/* =====================================================
+   STACKS
+   ===================================================== */
+
 .stack-vertical {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
   gap: var(--kanji-gap-vertical);
 }
-/* ===== Vertical Composite Cluster ===== */
+
+.stack-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--kanji-gap-horizontal);
+}
+
+/* =====================================================
+   LEFT / RIGHT COMPOSITES
+   ===================================================== */
+
+.composite-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
 .composite-vertical {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--kanji-gap-vertical);
-}
-/* ===== Horizontal Group: max 3 parts ===== */
-.stack-horizontal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
 
-/* ===== Left-Right Composite Cluster ===== */
-.component-horizontal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--kanji-gap-horizontal);
-}
-/* ===== Top Component ===== */
-.component-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===== Bottom Component ===== */
-.component-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* ===== Left Side Vertical Cluster ===== */
-.component-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: var(--kanji-gap-vertical);
 }
 
-/* ===== Right Side Single / Cluster ===== */
+/* =====================================================
+   LEFT / RIGHT SIDE CLUSTERS
+   ===================================================== */
+
+.component-left,
 .component-right {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-/* Slight optical adjustment for right-side kanji parts */
-.component-right .kanji-part {
-  transform: translateY(2px);
-}
-.drop {
-  display: inline-block;
-  width: 6px;
-  height: 16px;
-  background: #8a6b2e;
-  border-radius: 50% 50% 60% 60%;
-
-  gap: 4px; /* slightly tighter */
-}
-.drop {
-  display: inline-block;
-  width: 4px;
-  height: 14px;
-  background: #8a6b2e;
-  border-radius: 2px;
-}
-.v-line {
-  display: inline-block;
-  width: 3px;
-  height: 20px;
-  background: #8a6b2e;
-  border-radius: 2px;
-
-  /* alignment tweak */
-  transform: translateY(2px);
+.component-left.stack-vertical,
+.component-right.stack-vertical {
+  flex-direction: column;
 }
 
-.anchor-box {
-  padding: 4px 6px;
-  border: 1px solid rgba(140, 110, 50, 0.25); /* light frame */
-  border-radius: 6px;
-  background: rgba(180, 140, 60, 0.05); /* soft wash */
+/* =====================================================
+   TRIPLE COMPOSITE
+   ===================================================== */
+
+.composite-triple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+/* floating lightweight component */
+
+.component-float {
+  transform: translateY(-8px);
+  opacity: 0.9;
+}
+
+/* =====================================================
+   ENCLOSURE SYSTEM
+   ===================================================== */
+
+.enclosure-layout {
+  position: relative;
+
+  width: 120px;
+  height: 120px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Make the boxed kanji feel like a frame, not content */
-.anchor-box .kanji-part {
-  color: rgba(138, 107, 46, 0.7); /* lighter than main parts */
-  transform: scale(1.08, 1.12); /* slightly larger + subtle vertical stretch */
-}
-/* =========================================
-   TRIPLE COMPOSITE
-========================================= */
+/* outer enclosure */
 
-.composite-triple {
+.enclosure-part {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+/* centered interior */
+
+.enclosure-inner {
+  position: absolute;
+
+  top: 52%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* smaller interior kanji */
+
+.enclosure-inner .kanji-part {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* =====================================================
+   SPECIAL SIMPLE SHAPES
+   ===================================================== */
+
+.drop {
+  display: inline-block;
+
+  width: 4px;
+  height: 14px;
+
+  background: var(--kanji-color);
+
+  border-radius: 2px;
+}
+
+.v-line {
+  display: inline-block;
+
+  width: 3px;
+  height: 20px;
+
+  background: var(--kanji-color);
+
+  border-radius: 2px;
+
+  transform: translateY(2px);
+}
+
+/* =====================================================
+   ANCHOR / CLUSTER BOX
+   ===================================================== */
+
+.anchor-box {
+  padding: 4px 6px;
+
+  border: 1px solid rgba(140, 110, 50, 0.25);
+  border-radius: 6px;
+
+  background: rgba(180, 140, 60, 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anchor-box .kanji-part {
+  color: rgba(138, 107, 46, 0.7);
+
+  transform: scale(1.08, 1.12);
+}
+.mini-line {
+  width: 18px;
+  height: 3px;
+  background: black;
+  border-radius: 2px;
+}
+.inner-stack {
+    position: absolute;
+
+    top: 56%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+
+    gap: 2px;
 }
 
-/* floating / lighter components */
+/* =====================================================
+   FUTURE LINKS
+   ===================================================== */
 
-.component-float {
-    transform: translateY(-10px);
-    opacity: 0.9;
+.future-kanji-link {
+  text-decoration: none;
+  color: inherit;
+
+  transition: opacity 0.2s ease;
 }
 
+.future-kanji-link:hover {
+  opacity: 0.7;
+}
 /* ===== Printed / Handwritten ===== */
 .kanji-font {
   font-size: 2.2rem;
