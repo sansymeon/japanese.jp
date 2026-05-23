@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KML Render Engine — Proof</title>
+  <link rel="stylesheet" href="../../assets/site/css/kml_style.css">
+  <style>
+    body { max-width: 1100px; margin: 0 auto; padding: 1.5rem; font-family: system-ui, sans-serif; }
+    h1 { font-size: 1.4rem; }
+    .proof-card { border: 1px solid #ccc; margin: 1.5rem 0; padding: 1rem; border-radius: 8px; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .render-panel { min-height: 80px; padding: 0.5rem; background: #fafafa; border: 1px dashed #ddd; }
+    .badge { font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 4px; background: #eee; }
+    .badge.ok { background: #d4edda; }
+    .badge.partial { background: #fff3cd; }
+    .badge.incomplete { background: #f8d7da; }
+    .badge.skipped_override { background: #e2e3e5; }
+    .kw { font-weight: normal; color: #555; }
+    .meta { font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>KML Component Render Engine — Proof (PASS 3)</h1>
+  <p>Compare CSV-driven <code>component-box</code> output vs handcrafted lessons 1–22.
+     No lessons were regenerated.</p>
+  <p><strong>Override policy:</strong> rows with <code>render_override=manual</code> in notes
+     skip auto-render (handcrafted preserved).</p>
+  
+<section class="proof-card" data-kanji="一" data-status="ok">
+  <h2>一 <span class="kw">(one)</span>
+    <span class="badge layout">a</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L1 · parts CSV: 一 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="a">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part" data-visibility="visible" data-part="一">一</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part">一</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="二" data-status="ok">
+  <h2>二 <span class="kw">(two)</span>
+    <span class="badge layout">a</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L1 · parts CSV: 二 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="a">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part" data-visibility="visible" data-part="二">二</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part">二</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="四" data-status="ok">
+  <h2>四 <span class="kw">(four)</span>
+    <span class="badge layout">ei</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L1 · parts CSV: 口|儿 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="ei">
+  <div class="component-layout enclosure-layout">
+    <span class="kanji-part enclosure-part" data-visibility="visible" data-part="口">口</span>
+    <div class="enclosure-inner">
+      <span class="kanji-part" data-visibility="visible" data-part="儿">儿</span>
+
+    </div>
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout enclosure-layout">
+
+    <div class="outer-kanji">口</div>
+
+    <div class="inner-kanji">儿</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="古" data-status="ok">
+  <h2>古 <span class="kw">(old)</span>
+    <span class="badge layout">v</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L1 · parts CSV: 十|口 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="v">
+  <div class="component-layout stack-vertical">
+    <span class="kanji-part" data-visibility="visible" data-part="十">十</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="口">口</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout stack-vertical">
+    <span class="kanji-part">十</span>
+    <span class="kanji-part">口</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="朋" data-status="ok">
+  <h2>朋 <span class="kw">(companion)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L1 · parts CSV: 月|月 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="月">月</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="月">月</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part">月</span>
+    <span class="kanji-part">月</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="明" data-status="ok">
+  <h2>明 <span class="kw">(bright)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L1 · parts CSV: 日|月 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="日">日</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="月">月</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part">日</span>
+    <span class="kanji-part">月</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="唱" data-status="ok">
+  <h2>唱 <span class="kw">(chant)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L2 · parts CSV: 口|昌 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="口">口</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="昌">昌</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part">口</span>
+<span class="kanji-part">昌</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="晶" data-status="ok">
+  <h2>晶 <span class="kw">(sparkle)</span>
+    <span class="badge layout">2t</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L2 · parts CSV: 日|日|日 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2t">
+  <div class="component-layout stack-vertical">
+    <div class="stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="日">日</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="日">日</span>
+    
+    </div>
+    <span class="kanji-part" data-visibility="visible" data-part="日">日</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout composite-vertical">
+
+    <div class="component-top">
+      <span class="kanji-part">日</span>
+    </div>
+
+    <div class="component-bottom stack-horizontal">
+      <span class="kanji-part">日</span>
+      <span class="kanji-part">日</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="品" data-status="ok">
+  <h2>品 <span class="kw">(goods)</span>
+    <span class="badge layout">2t</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L2 · parts CSV: 口|口|口 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2t">
+  <div class="component-layout stack-vertical">
+    <div class="stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="口">口</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="口">口</span>
+    
+    </div>
+    <span class="kanji-part" data-visibility="visible" data-part="口">口</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout composite-vertical">
+
+    <div class="component-top">
+      <span class="kanji-part">口</span>
+    </div>
+
+    <div class="component-bottom stack-horizontal">
+      <span class="kanji-part">口</span>
+      <span class="kanji-part">口</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="旭" data-status="ok">
+  <h2>旭 <span class="kw">(rising_sun)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L2 · parts CSV: 九|日 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="九">九</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="日">日</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part">九</span>
+    <span class="kanji-part">日</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="負" data-status="ok">
+  <h2>負 <span class="kw">(defeat)</span>
+    <span class="badge layout">v</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L4 · parts CSV: 𠂊|貝 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="v">
+  <div class="component-layout stack-vertical">
+    <span class="kanji-part" data-visibility="visible" data-part="𠂊">𠂊</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="貝">貝</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout stack-vertical">
+<span class="kanji-part">𠂊</span>
+<span class="kanji-part">貝</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="別" data-status="ok">
+  <h2>別 <span class="kw">(separate)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L5 · parts CSV: 口|刀|刂 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="口">口</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="刀">刀</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="刂">刂</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout composite-horizontal">
+
+    <div class="kanji-left stack-vertical">
+      <span class="kanji-part">口</span>
+      <span class="kanji-part">刀</span>
+
+    </div>
+
+    <div class="kanji-right">
+      <span class="kanji-part">刂</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="森" data-status="ok">
+  <h2>森 <span class="kw">(forest)</span>
+    <span class="badge layout">2t</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L11 · parts CSV: 木|木|木 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2t">
+  <div class="component-layout stack-vertical">
+    <div class="stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="木">木</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="木">木</span>
+    
+    </div>
+    <span class="kanji-part" data-visibility="visible" data-part="木">木</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout composite-vertical">
+
+    <div class="component-top">
+      <span class="kanji-part">木</span>
+    </div>
+
+    <div class="component-bottom stack-horizontal">
+      <span class="kanji-part">木</span>
+      <span class="kanji-part">木</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="暦" data-status="ok">
+  <h2>暦 <span class="kw">(calendar)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L12 · parts CSV: 厂|木|木|日 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="厂">厂</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="木">木</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="木">木</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="日">日</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout composite-horizontal">
+
+    <div class="kanji-left">
+      <span class="kanji-part">厂</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">木</span>
+      <span class="kanji-part">木</span>
+      <span class="kanji-part">日</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="婿" data-status="ok">
+  <h2>婿 <span class="kw">(bridegroom)</span>
+    <span class="badge layout">2r</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 女|疋|月 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2r">
+  <div class="component-layout kanji-composite">
+    <div class="kanji-left">
+    <span class="kanji-part" data-visibility="visible" data-part="女">女</span>
+    
+    </div>
+    <div class="kanji-right stack-vertical">
+    <span class="kanji-part" data-visibility="visible" data-part="疋">疋</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="月">月</span>
+    
+    </div>
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">女</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">疋</span>
+      <span class="kanji-part">月</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="裁" data-status="ok">
+  <h2>裁 <span class="kw">(judge)</span>
+    <span class="badge layout">2l</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 土|衣|戈 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2l">
+  <div class="component-layout kanji-composite">
+    <div class="kanji-left stack-vertical">
+    <span class="kanji-part" data-visibility="visible" data-part="土">土</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="衣">衣</span>
+    
+    </div>
+    <div class="kanji-right">
+    <span class="kanji-part" data-visibility="visible" data-part="戈">戈</span>
+    
+    </div>
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout kanji-composite">
+    <div class="kanji-left stack-vertical">
+      <span class="kanji-part">土</span>
+      <span class="kanji-part">衣</span>
+    </div>
+    <div class="kanji-right">
+      <span class="kanji-part">戈</span>
+    </div>
+
+  </div>
+</div>
+
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="壊" data-status="ok">
+  <h2>壊 <span class="kw">(demolition)</span>
+    <span class="badge layout">2r</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 土|⼇|罒|衣 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2r">
+  <div class="component-layout kanji-composite">
+    <div class="kanji-left">
+    <span class="kanji-part" data-visibility="visible" data-part="土">土</span>
+    
+    </div>
+    <div class="kanji-right stack-vertical">
+    <span class="kanji-part" data-visibility="visible" data-part="⼇">⼇</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="罒">罒</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="衣">衣</span>
+    
+    </div>
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">土</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+    <span class="kanji-part">⼇</span>
+    <span class="kanji-part">罒</span>
+    <span class="kanji-part">衣</span>
+    </div>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="遠" data-status="ok">
+  <h2>遠 <span class="kw">(far)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 廴|袁 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="廴">廴</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="袁">袁</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+
+  <div class="component-layout composite-horizontal">
+
+    <span class="kanji-part">廴</span>
+
+    <span class="kanji-part">袁</span>
+
+  </div>
+
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="布" data-status="ok">
+  <h2>布 <span class="kw">(linen)</span>
+    <span class="badge layout">h</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 𠂇|巾 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="h">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part" data-visibility="visible" data-part="𠂇">𠂇</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="巾">巾</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part">𠂇</span>
+    <span class="kanji-part">巾</span>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="幌" data-status="ok">
+  <h2>幌 <span class="kw">(canopy)</span>
+    <span class="badge layout">2r</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 巾|日|光 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2r">
+  <div class="component-layout kanji-composite">
+    <div class="kanji-left">
+    <span class="kanji-part" data-visibility="visible" data-part="巾">巾</span>
+    
+    </div>
+    <div class="kanji-right stack-vertical">
+    <span class="kanji-part" data-visibility="visible" data-part="日">日</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="光">光</span>
+    
+    </div>
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">巾</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">日</span>
+      <span class="kanji-part">光</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="錦" data-status="ok">
+  <h2>錦 <span class="kw">(brocade)</span>
+    <span class="badge layout">2r</span>
+    <span class="badge ok">ok</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 金|白|巾 · ok</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="2r">
+  <div class="component-layout kanji-composite">
+    <div class="kanji-left">
+    <span class="kanji-part" data-visibility="visible" data-part="金">金</span>
+    
+    </div>
+    <div class="kanji-right stack-vertical">
+    <span class="kanji-part" data-visibility="visible" data-part="白">白</span>
+    
+    <span class="kanji-part" data-visibility="visible" data-part="巾">巾</span>
+    
+    </div>
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">金</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">白</span>
+      <span class="kanji-part">巾</span>
+    </div>
+
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="戈" data-status="partial">
+  <h2>戈 <span class="kw">(halberd)</span>
+    <span class="badge layout">a</span>
+    <span class="badge partial">partial</span>
+  </h2>
+  <p class="meta">L19 · parts CSV: 戈 · partial</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="a">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part" data-visibility="visible" data-part="戈">戈</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><em>no component-box</em></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="俞" data-status="partial">
+  <h2>俞 <span class="kw">(yu)</span>
+    <span class="badge layout">a</span>
+    <span class="badge partial">partial</span>
+  </h2>
+  <p class="meta">L16 · parts CSV: 俞 · partial</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="a">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part" data-visibility="visible" data-part="俞">俞</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><em>no component-box</em></div>
+    </div>
+  </div>
+</section>
+<section class="proof-card" data-kanji="袁" data-status="partial">
+  <h2>袁 <span class="kw">(robe_family)</span>
+    <span class="badge layout">a</span>
+    <span class="badge partial">partial</span>
+  </h2>
+  <p class="meta">L22 · parts CSV: 袁 · partial</p>
+  <div class="compare">
+    <div class="col">
+      <h3>Generated (CSV → engine)</h3>
+      <div class="render-panel"><div class="component-box" data-render-layout="a">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part" data-visibility="visible" data-part="袁">袁</span>
+    
+  </div>
+</div></div>
+    </div>
+    <div class="col">
+      <h3>Handcrafted (lesson HTML)</h3>
+      <div class="render-panel"><em>no component-box</em></div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

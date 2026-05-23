@@ -1,0 +1,411 @@
+# KML Espanso shortcuts — PASS 5 (typing acceleration only)
+# Paste into your Espanso config; merge manually — do not overwrite wholesale.
+# Source: primitive_dictionary.csv + kanji_master_with_components.v4.csv
+
+matches:
+
+# --- layout codes ---
+  - trigger: ":a"
+    replace: a
+  - trigger: ":h"
+    replace: h
+  - trigger: ":v"
+    replace: v
+  - trigger: ":2l"
+    replace: 2l
+  - trigger: ":2r"
+    replace: 2r
+  - trigger: ":2t"
+    replace: 2t
+  - trigger: ":2b"
+    replace: 2b
+  - trigger: ":e"
+    replace: e
+  - trigger: ":ei"
+    replace: ei
+
+# --- CSV / editing workflow ---
+  - trigger: ":pipe"
+    replace: "|||"
+  - trigger: ":csvh"
+    replace: "|||,,,h,,"
+  - trigger: ":csva"
+    replace: "|||,,,a,,"
+  - trigger: ":csvv"
+    replace: "|||,,,v,,"
+
+# --- structure tokens ---
+  - trigger: ":bar"
+    replace: "|"
+
+# --- primitives & components ---
+  - trigger: ":nabe"
+    replace: ⼇
+  - trigger: ":hane"
+    replace: ㇵ
+  - trigger: ":legs"
+    replace: 儿
+  - trigger: ":accent"
+    replace: ´
+  - trigger: ":generation"
+    replace: 世
+  - trigger: ":convex"
+    replace: 凸
+  - trigger: ":concave"
+    replace: 凹
+  - trigger: ":dawn"
+    replace: 旦
+  - trigger: ":prosperous"
+    replace: 昌
+  - trigger: ":white"
+    replace: 白
+  - trigger: ":dot"
+    replace: 丶
+  - trigger: ":thousand"
+    replace: 千
+  - trigger: ":measuringbox"
+    replace: 升
+  - trigger: ":signal"
+    replace: 卜
+  - trigger: ":measurement"
+    replace: 寸
+  - trigger: ":specialty"
+    replace: 専
+  - trigger: ":early"
+    replace: 早
+  - trigger: ":morning"
+    replace: 朝
+  - trigger: ":shellfish"
+    replace: 貝
+  - trigger: ":tenthousand"
+    replace: 万
+  - trigger: ":hachi"
+    replace: 丷
+  - trigger: ":hook"
+    replace: 乙
+  - trigger: ":kane"
+    replace: 乚
+  - trigger: ":two"
+    replace: 二
+  - trigger: ":beginning"
+    replace: 元
+  - trigger: ":tool"
+    replace: 具
+  - trigger: ":tsukue"
+    replace: 几
+  - trigger: ":tsutsumi"
+    replace: 勹
+  - trigger: ":ladle"
+    replace: 勺
+  - trigger: ":fortunetelling"
+    replace: 占
+  - trigger: ":oldentimes"
+    replace: 旧
+  - trigger: ":hundred"
+    replace: 百
+  - trigger: ":oneself"
+    replace: 自
+  - trigger: ":tongue"
+    replace: 舌
+  - trigger: ":page"
+    replace: 頁
+  - trigger: ":legs2"
+    replace: 𠂊
+  - trigger: ":eleft"
+    replace: エ
+  - trigger: ":street"
+    replace: 丁
+  - trigger: ":sword"
+    replace: 刀
+  - trigger: ":ritto"
+    replace: 刂
+  - trigger: ":seduce"
+    replace: 召
+  - trigger: ":child"
+    replace: 子
+  - trigger: ":craft"
+    replace: 工
+  - trigger: ":possess"
+    replace: 有
+  - trigger: ":vicep"
+    replace: 畐
+  - trigger: ":hidari"
+    replace: 𠂇
+  - trigger: ":shao"
+    replace: ⺌
+  - trigger: ":no"
+    replace: ノ
+  - trigger: ":finish"
+    replace: 了
+  - trigger: ":olderbrother"
+    replace: 兄
+  - trigger: ":gan"
+    replace: 厂
+  - trigger: ":evening"
+    replace: 夕
+  - trigger: ":large"
+    replace: 大
+  - trigger: ":woman"
+    replace: 女
+  - trigger: ":small"
+    replace: 小
+  - trigger: ":mother"
+    replace: 母
+  - trigger: ":nami"
+    replace: 氵
+  - trigger: ":possible"
+    replace: 可
+  - trigger: ":few"
+    replace: 少
+  - trigger: ":river"
+    replace: 川
+  - trigger: ":water"
+    replace: 水
+  - trigger: ":ice"
+    replace: 氷
+  - trigger: ":stone"
+    replace: 石
+  - trigger: ":resemblance"
+    replace: 肖
+  - trigger: ":stinking"
+    replace: 臭
+  - trigger: ":middle"
+    replace: 中
+  - trigger: ":mediocre"
+    replace: 凡
+  - trigger: ":meadow"
+    replace: 原
+  - trigger: ":plump"
+    replace: 太
+  - trigger: ":eternity"
+    replace: 永
+  - trigger: ":spring"
+    replace: 泉
+  - trigger: ":uncivilized"
+    replace: 胡
+  - trigger: ":span"
+    replace: 亘
+  - trigger: ":rule"
+    replace: 則
+  - trigger: ":kin"
+    replace: 匀
+  - trigger: ":soil"
+    replace: 土
+  - trigger: ":jade"
+    replace: 圭
+  - trigger: ":strange"
+    replace: 奇
+  - trigger: ":temple"
+    replace: 寺
+  - trigger: ":kawa"
+    replace: 巛
+  - trigger: ":fire"
+    replace: 火
+  - trigger: ":inflammation"
+    replace: 炎
+  - trigger: ":true"
+    replace: 真
+  - trigger: ":madogawa"
+    replace: 冂
+  - trigger: ":same"
+    replace: 同
+  - trigger: ":yonder"
+    replace: 向
+  - trigger: ":kanmuri"
+    replace: 宀
+  - trigger: ":esteem"
+    replace: 尚
+  - trigger: ":shining"
+    replace: 昭
+  - trigger: ":rekka"
+    replace: 灬
+  - trigger: ":fishpipe"
+    replace: 田｜
+  - trigger: ":homevillage"
+    replace: 里
+  - trigger: ":fish"
+    replace: 魚
+  - trigger: ":black"
+    replace: 黒
+  - trigger: ":old"
+    replace: 古
+  - trigger: ":companion"
+    replace: 朋
+  - trigger: ":tree"
+    replace: 木
+  - trigger: ":straightaway"
+    replace: 直
+  - trigger: ":right"
+    replace: 右
+  - trigger: ":goods"
+    replace: 品
+  - trigger: ":notyet"
+    replace: 未
+  - trigger: ":extremity"
+    replace: 末
+  - trigger: ":book"
+    replace: 本
+  - trigger: ":vermilion"
+    replace: 朱
+  - trigger: ":kusa"
+    replace: 艹
+  - trigger: ":shou"
+    replace: 丬
+  - trigger: ":portent"
+    replace: 兆
+  - trigger: ":guard"
+    replace: 守
+  - trigger: ":dog"
+    replace: 犬
+  - trigger: ":inu"
+    replace: 犭
+  - trigger: ":seedling"
+    replace: 苗
+  - trigger: ":see"
+    replace: 見
+  - trigger: ":nikkei"
+    replace: ニ
+  - trigger: ":person"
+    replace: 人
+  - trigger: ":jammedin"
+    replace: 介
+  - trigger: ":previous"
+    replace: 先
+  - trigger: ":fit"
+    replace: 合
+  - trigger: ":cow"
+    replace: 牛
+  - trigger: ":ball"
+    replace: 玉
+  - trigger: ":king"
+    replace: 王
+  - trigger: ":master"
+    replace: 主
+  - trigger: ":whole"
+    replace: 全
+  - trigger: ":nobori"
+    replace: 卂
+  - trigger: ":name"
+    replace: 名
+  - trigger: ":revelation"
+    replace: 告
+  - trigger: ":walk"
+    replace: 辶
+  - trigger: ":michi"
+    replace: 道
+  - trigger: ":gold"
+    replace: 金
+  - trigger: ":neck"
+    replace: 首
+  - trigger: ":yu"
+    replace: 俞
+  - trigger: ":yu2"
+    replace: 兪
+  - trigger: ":infront"
+    replace: 前
+  - trigger: ":each"
+    replace: 各
+  - trigger: ":winter"
+    replace: 夂
+  - trigger: ":guest"
+    replace: 客
+  - trigger: ":car"
+    replace: 車
+  - trigger: ":round"
+    replace: 丸
+  - trigger: ":receive"
+    replace: 享
+  - trigger: ":capital"
+    replace: 京
+  - trigger: ":ray"
+    replace: 光
+  - trigger: ":six"
+    replace: 六
+  - trigger: ":wa"
+    replace: 冖
+  - trigger: ":goodluck"
+    replace: 吉
+  - trigger: ":ami"
+    replace: 罒
+  - trigger: ":army"
+    replace: 軍
+  - trigger: ":superfluous"
+    replace: 冗
+  - trigger: ":phrase"
+    replace: 句
+  - trigger: ":circumference"
+    replace: 周
+  - trigger: ":gentleman"
+    replace: 士
+  - trigger: ":robust"
+    replace: 壮
+  - trigger: ":fude"
+    replace: 聿
+  - trigger: ":ifatall"
+    replace: 苟
+  - trigger: ":say"
+    replace: 言
+  - trigger: ":i"
+    replace: 吾
+  - trigger: ":sell"
+    replace: 売
+  - trigger: ":style"
+    replace: 式
+  - trigger: ":halberd"
+    replace: 戈
+  - trigger: ":young"
+    replace: 若
+  - trigger: ":power"
+    replace: 力
+  - trigger: ":become"
+    replace: 成
+  - trigger: ":sen"
+    replace: 戔
+  - trigger: ":stop"
+    replace: 止
+  - trigger: ":walk2"
+    replace: 歩
+  - trigger: ":red"
+    replace: 赤
+  - trigger: ":determine"
+    replace: 定
+  - trigger: ":innyou"
+    replace: 廴
+  - trigger: ":build"
+    replace: 建
+  - trigger: ":axe"
+    replace: 戉
+  - trigger: ":justso"
+    replace: 是
+  - trigger: ":correct"
+    replace: 正
+  - trigger: ":warrior"
+    replace: 武
+  - trigger: ":shitaji"
+    replace: 疋
+  - trigger: ":run"
+    replace: 走
+  - trigger: ":risk"
+    replace: 冒
+  - trigger: ":towel"
+    replace: 巾
+  - trigger: ":prolong"
+    replace: 延
+  - trigger: ":thicket"
+    replace: 楚
+  - trigger: ":garment"
+    replace: 衣
+  - trigger: ":koromesc"
+    replace: 衤
+  - trigger: ":robe"
+    replace: 袁
+  - trigger: ":koromo"
+    replace: 𧘇
+  - trigger: ":san"
+    replace: 三
+  - trigger: ":kokoro"
+    replace: 忄
+  - trigger: ":hand"
+    replace: 扌
+  - trigger: ":road"
+    replace: ⻌

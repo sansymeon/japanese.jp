@@ -1,0 +1,226 @@
+PASS 7 — GLOSSARY FOUNDATION ARCHITECTURE REPORT
+======================================================================
+
+Scaffolding pass only. No glossary pages generated.
+Source dictionary: primitive_dictionary.v2.csv
+Source master:     kanji_master_with_components.v4.csv
+
+## SUMMARY
+
+  glossary families defined:     134
+    stable:                      44
+    experimental:                1
+    candidate:                   89
+  high-priority hubs:            7
+  kanji navigation links:        774
+
+## FOUNDATION TIER (HIGH PRIORITY)
+
+  siesta_family	Siesta Family	anchor=曷	type=visual_family	font=font-sensitive
+  merchant_family	Merchant Family	anchor=啇	type=phonetic_family	font=stable-form
+  deal_family	Deal Family	anchor=商	type=visual_family	font=stable-form
+  robe_family	Robe Family	anchor=袁	type=visual_family	font=stable-form
+  spear_family	Spear Family	anchor=戈	type=hidden_reusable	font=stable-form
+  meeting_family	Meeting Family	anchor=俞	type=hidden_reusable	font=stable-form
+  koromo_family	Koromo Family	anchor=𧘇	type=visual_family	font=font-sensitive
+
+## CLICK-FOR-DETAILS NAVIGATION (sample)
+
+  嫡 → merchant_family, deal_family
+  褐 → siesta_family
+  渇 → siesta_family
+  適 → merchant_family, deal_family
+  競 → competition_family
+  遠 → robe_family
+  式 → spear_family
+  輸 → meeting_family
+  各 → winter_family, each_family
+
+## RECURSIVE GLOSSARY ARCHITECTURE
+
+  Layer 0: lesson cognition (authoritative in lesson HTML / v4 harvest)
+  Layer 1: glossary_family.csv hub row (this pass)
+  Layer 2: future glossary page — variation tolerance, family evolution
+  Layer 3: future member kanji detail — links back to hub + siblings
+
+  Navigation rule:
+    kanji in example_kanji → click → family hub page
+    family hub → lists siblings, font notes, related families
+    optional phonetic-core vs display-wrapper split (商 vs 啇)
+
+## FONT VARIATION METADATA
+
+  font-sensitive     — glyph shape shifts across fonts (曷, 竟, 𧘇)
+  handwriting-shift  — cursive transforms identity (夂, 書, 聿)
+  compressed-print   — small-type collapse risk (田｜, 飛)
+  stable-form        — robust cross-font identity (啇, 袁, 戈)
+
+  Families by font risk:
+
+  compressed-print: fishpipe_family
+  font-sensitive: siesta_family, competition_family, koromo_family, clothes_family
+  handwriting-shift: winter_family
+  stable-form: merchant_family, deal_family, robe_family, spear_family, meeting_family, direction_family, someone_family, too_much_family, shalt_family, moreover_family, wherefore_family, deceased_family...
+
+## FAMILY TYPE LEGEND
+
+  visual_family          n=12 — recognizable visual cluster; mutation-tolerant
+  phonetic_family        n=116 — sound-family core; stable phonetic identity
+  visual_repeat          n=1 — repeated stand/fin pattern (竟/競/鏡)
+  hidden_reusable        n=3 — lesson-hidden anchor; glossary expands later
+  structural_primitive   n=2 — pipe-editing primitive; not full kanji hub
+  hybrid_family          n=0 — mixed visual+phonetic (reserved for review)
+
+## STABLE FOUNDATION FAMILIES (full list)
+
+  siesta_family	曷	examples=渇|喝|褐|謁|葛|掲|靄
+  merchant_family	啇	examples=啇|嫡|摘|敵|滴|適|鏑
+  deal_family	商	examples=商|嫡|滴|適|敵
+  robe_family	袁	examples=遠|園|猿|袁
+  spear_family	戈	examples=域|威|式|戈|成|戚|栽|武
+  meeting_family	俞	examples=俞|諭|輸
+  winter_family	夂	examples=夂|処|各|夏|攻|政|故|敗
+  koromo_family	𧘇	examples=𧘇|衣
+  clothes_family	衤	examples=衤|初
+  fishpipe_family	田｜	examples=田｜|魚
+  direction_family	方	examples=方|傍|坊|妨|房|放|敷|紡
+  someone_family	者	examples=者|儲|堵|暑|曙|書|渚|煮
+  too_much_family	余	examples=余|叙|塗|徐|斜|舎|茶|途
+  shalt_family	莫	examples=莫|募|墓|幕|慕|暮|模|漠
+  moreover_family	且	examples=且|助|姐|宜|査|狙|祖|租
+  wherefore_family	由	examples=由|宙|専|届|抽|柚|油|笛
+  deceased_family	亡	examples=亡|妄|忘|忙|望|盲|荒
+  兌_family	兌	examples=兌|悦|税|脱|説|鋭|閲
+  其_family	其	examples=其|基|旗|期|棋|欺|碁|箕
+  part_family	分	examples=分|扮|盆|粉|紛|貧|雰|頒
+  anti_family	反	examples=反|仮|叛|坂|板|版|販|返
+  self_family	己	examples=己|圏|妃|巻|巽|忌|撰|改
+  pelt_family	皮	examples=皮|婆|彼|披|波|疲|破|簸
+  stand_up_family	立	examples=立|位|剖|培|拉|泣|竪|笠
+  valley_family	谷	examples=谷|俗|容|欲|浴|溶|熔|蓉
+  blue_family	青	examples=青|情|晴|清|精|請|錆|靖
+  also_family	也	examples=也|他|地|弛|施|池|蛇|馳
+  mingle_family	交	examples=交|佼|効|校|狡|絞|較|郊
+  now_family	今	examples=今|吟|含|念|琴|衿|金
+  orders_family	令	examples=令|伶|冷|怜|澪|玲|苓|鈴
+  wrap_family	包	examples=包|抱|泡|砲|胞|鞄|飽
+  圣_family	圣	examples=圣|径|怪|経|茎|軽
+  shaku_family	尺	examples=尺|呎|択|沢|訳|釈|駅
+  dry_family	干	examples=干|倖|刊|午|執|報|幸|幹
+  戋_family	戋	examples=戋|桟|残|浅|践|銭
+  昜_family	昜	examples=昜|場|揚|暢|楊|湯|腸|蕩
+  formerly_family	曽	examples=曽|僧|噌|増|層|憎|贈
+  east_family	東	examples=東|凍|棟|煉|練|諌|錬|陳
+  oversee_family	監	examples=監|塩|濫|艦|藍|覧|鑑
+  艮_family	艮	examples=艮|墾|恨|懇|根|眼|銀|限
+  襄_family	襄	examples=襄|壌|嬢|薫|譲|醸
+  non_family	非	examples=非|俳|悲|扉|排|琲|緋|罪
+  tanned_leather_family	韋	examples=韋|偉|囲|緯|葦|衛|違|韓
+  noisy_family	喿	examples=喿|操|燥|繰|藻
+
+## CANDIDATE / EXPERIMENTAL (review queue)
+
+  competition_family	竟	status=experimental	priority=medium
+  乍_family	乍	status=candidate	priority=low
+  boar_zodiac_family	亥	status=candidate	priority=low
+  僉_family	僉	status=candidate	priority=low
+  冓_family	冓	status=candidate	priority=low
+  ward_family	区	status=candidate	priority=low
+  pedestal_family	台	status=candidate	priority=low
+  director_family	司	status=candidate	priority=low
+  壬_family	壬	status=candidate	priority=low
+  branch_family	支	status=candidate	priority=low
+  long_ago_family	昔	status=candidate	priority=low
+  朮_family	朮	status=candidate	priority=low
+  every_family	毎	status=candidate	priority=low
+  氐_family	氐	status=candidate	priority=low
+  life_family	生	status=candidate	priority=low
+  newly_family	甫	status=candidate	priority=low
+  甬_family	甬	status=candidate	priority=low
+  monkey_zodiac_family	申	status=candidate	priority=low
+  禺_family	禺	status=candidate	priority=low
+  good_family	良	status=candidate	priority=low
+  虍_family	虍	status=candidate	priority=low
+  蜀_family	蜀	status=candidate	priority=low
+  blame_family	責	status=candidate	priority=low
+  dragon_zodiac_family	辰	status=candidate	priority=low
+  heavy_family	重	status=candidate	priority=low
+  隹_family	隹	status=candidate	priority=low
+  雚_family	雚	status=candidate	priority=low
+  丂_family	丂	status=candidate	priority=low
+  丰_family	丰	status=candidate	priority=low
+  of_family	之	status=candidate	priority=low
+  in_advance_family	予	status=candidate	priority=low
+  quote_family	云	status=candidate	priority=low
+  亢_family	亢	status=candidate	priority=low
+  亦_family	亦	status=candidate	priority=low
+  adhere_family	付	status=candidate	priority=low
+  侖_family	侖	status=candidate	priority=low
+  public_family	公	status=candidate	priority=low
+  together_family	共	status=candidate	priority=low
+  兹_family	兹	status=candidate	priority=low
+  concurrently_family	兼	status=candidate	priority=low
+  file_family	列	status=candidate	priority=low
+  change_family	化	status=candidate	priority=low
+  half_family	半	status=candidate	priority=low
+  graduate_family	卒	status=candidate	priority=low
+  simple_family	単	status=candidate	priority=low
+  reach_out_family	及	status=candidate	priority=low
+  uncle_family	叔	status=candidate	priority=low
+  give_family	呉	status=candidate	priority=low
+  咼_family	咼	status=candidate	priority=low
+  夋_family	夋	status=candidate	priority=low
+  复_family	复	status=candidate	priority=low
+  lose_family	失	status=candidate	priority=low
+  夹_family	夹	status=candidate	priority=low
+  bureaucrat_family	官	status=candidate	priority=low
+  尞_family	尞	status=candidate	priority=low
+  hills_family	岡	status=candidate	priority=low
+  left_family	左	status=candidate	priority=low
+  commoner_family	庶	status=candidate	priority=low
+  some_family	或	status=candidate	priority=low
+  戠_family	戠	status=candidate	priority=low
+  door_family	戸	status=candidate	priority=low
+  扁_family	扁	status=candidate	priority=low
+  genius_family	才	status=candidate	priority=low
+  fold_family	折	status=candidate	priority=low
+  攸_family	攸	status=candidate	priority=low
+  adjusted_family	斉	status=candidate	priority=low
+  朿_family	朿	status=candidate	priority=low
+  爰_family	爰	status=candidate	priority=low
+  畾_family	畾	status=candidate	priority=low
+  mutual_family	相	status=candidate	priority=low
+  chapter_family	章	status=candidate	priority=low
+  righteousness_family	義	status=candidate	priority=low
+  翟_family	翟	status=candidate	priority=low
+  nurture_family	育	status=candidate	priority=low
+  臤_family	臤	status=candidate	priority=low
+  climax_family	至	status=candidate	priority=low
+  蒦_family	蒦	status=candidate	priority=low
+  beans_family	豆	status=candidate	priority=low
+  賁_family	賁	status=candidate	priority=low
+  辟_family	辟	status=candidate	priority=low
+  grab_family	采	status=candidate	priority=low
+  long_family	長	status=candidate	priority=low
+  hemp_family	麻	status=candidate	priority=low
+  ghost_family	鬼	status=candidate	priority=low
+  can_family	可	status=candidate	priority=low
+  each_family	各	status=candidate	priority=low
+  temple_family	寺	status=candidate	priority=low
+  esteem_family	尚	status=candidate	priority=low
+  resemblance_family	肖	status=candidate	priority=low
+  barbarian_family	胡	status=candidate	priority=low
+
+## EXCLUDED FROM GLOSSARY LAYER (this pass)
+  family_anchor rows below phon threshold (<3): 0
+  (remain in primitive_dictionary.v2 for editor use; not promoted yet)
+
+
+## KEY PRINCIPLE
+
+  Glossary = recursive cognition map, NOT static decomposition dictionary.
+  Lesson cognition stays authoritative; glossary adds precision + exploration.
+
+Output CSV:    glossary_family.csv
+Output report: glossary_architecture_report.txt
+

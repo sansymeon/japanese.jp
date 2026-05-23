@@ -1,0 +1,128 @@
+PASS 4D — PIPE PREFILL ASSIST REPORT
+============================================================
+
+Keyboard assist only: kml_primitives <- ||| for empty/placeholder cells.
+Source: kanji_master_with_components.v4b.csv
+Output: kanji_master_with_components.v4c.csv
+
+NOT modified: layout_type, notes, cluster_components, harvested structures.
+
+## SUMMARY
+
+  prefilled with |||:           2607
+  protected (skipped):         442
+  already meaningful:          6
+  already |||:                  0
+
+## PROTECTED ROWS (sample)
+
+  pass4: harvested
+  render_override=manual
+
+  一	primitives=一
+  二	primitives=二
+  三	primitives=三
+  四	primitives=口|儿
+  五	primitives=五
+  六	primitives=⼇|ㇵ
+  七	primitives=七
+  八	primitives=八
+  九	primitives=九
+  十	primitives=十
+  ... total protected: 442
+
+## PREFILL LOG (sample)
+
+  肺	L23	(blank) -> |||
+  帯	L23	(blank) -> |||
+  滞	L23	(blank) -> |||
+  刺	L23	(blank) -> |||
+  制	L23	(blank) -> |||
+  製	L23	(blank) -> |||
+  転	L23	(blank) -> |||
+  芸	L23	(blank) -> |||
+  雨	L23	(blank) -> |||
+  雲	L23	(blank) -> |||
+  曇	L23	(blank) -> |||
+  雷	L23	(blank) -> |||
+  霜	L23	(blank) -> |||
+  冬	L23	(blank) -> |||
+  天	L23	(blank) -> |||
+  妖	L23	(blank) -> |||
+  沃	L23	(blank) -> |||
+  橋	L24	(blank) -> |||
+  嬌	L24	(blank) -> |||
+  立	L24	(blank) -> |||
+  泣	L24	(blank) -> |||
+  章	L24	(blank) -> |||
+  競	L24	(blank) -> |||
+  帝	L24	(blank) -> |||
+  諦	L24	(blank) -> |||
+  童	L24	(blank) -> |||
+  瞳	L24	(blank) -> |||
+  鐘	L24	(blank) -> |||
+  商	L24	(blank) -> |||
+  嫡	L24	(blank) -> |||
+  適	L24	(blank) -> |||
+  滴	L24	(blank) -> |||
+  敵	L24	(blank) -> |||
+  匕	L24	(blank) -> |||
+  叱	L24	(blank) -> |||
+  匂	L24	(blank) -> |||
+  頃	L24	(blank) -> |||
+  北	L25	(blank) -> |||
+  背	L25	(blank) -> |||
+  比	L25	(blank) -> |||
+  昆	L25	(blank) -> |||
+  皆	L25	(blank) -> |||
+  楷	L25	(blank) -> |||
+  諧	L25	(blank) -> |||
+  混	L25	(blank) -> |||
+  渇	L25	(blank) -> |||
+  謁	L25	(blank) -> |||
+  褐	L25	(blank) -> |||
+  喝	L25	(blank) -> |||
+  葛	L25	(blank) -> |||
+  旨	L25	(blank) -> |||
+  脂	L25	(blank) -> |||
+  詣	L25	(blank) -> |||
+  壱	L25	(blank) -> |||
+  毎	L25	(blank) -> |||
+  敏	L25	(blank) -> |||
+  梅	L25	(blank) -> |||
+  海	L26	(blank) -> |||
+  乞	L26	(blank) -> |||
+  乾	L26	(blank) -> |||
+  腹	L26	(blank) -> |||
+  複	L26	(blank) -> |||
+  欠	L26	(blank) -> |||
+  吹	L26	(blank) -> |||
+  炊	L26	(blank) -> |||
+  歌	L26	(blank) -> |||
+  軟	L26	(blank) -> |||
+  次	L26	(blank) -> |||
+  茨	L26	(blank) -> |||
+  資	L26	(blank) -> |||
+  姿	L26	(blank) -> |||
+  諮	L26	(blank) -> |||
+  賠	L26	(blank) -> |||
+  培	L26	(blank) -> |||
+  剖	L26	(blank) -> |||
+  音	L26	(blank) -> |||
+  暗	L26	(blank) -> |||
+  韻	L27	(blank) -> |||
+  識	L27	(blank) -> |||
+  鏡	L27	(blank) -> |||
+  ... +2527 more
+
+## EXAMPLES
+
+  肺,lungs,23,|||,,,,,
+  帯,sash,23,|||,,,,,
+
+## NOTE ON v4c
+
+  This file is rebuilt from v4b with pipe prefill only.
+  If you previously ran PASS 4C (layout prefill), re-run 4C after 4D
+  or merge layout_type/notes from the earlier v4c backup.
+

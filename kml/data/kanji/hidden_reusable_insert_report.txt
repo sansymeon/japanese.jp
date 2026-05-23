@@ -1,0 +1,61 @@
+PASS 2B — HIDDEN REUSABLE KANJI INSERT REPORT
+============================================================
+
+Source: kanji_master_with_components.v3.csv
+Output: kanji_master_with_components.v3b.csv
+Rows before insert: 3052
+
+## DUPLICATE CHECK (before insert)
+
+  WARNING: 6 duplicate kanji in v3:
+    '子' x2
+    '未' x2
+    '午' x2
+    '申' x2
+    '酉' x2
+    '亥' x2
+
+## INSERTIONS
+
+  ADD 戈
+    keyword: halberd
+    lesson_number: 19
+    layout_type: a
+    first_use: 式
+    kml_primitives: 戈
+    notes: status=hidden_reusable; pass2b placeholder; weapon-family anchor; readings/verses TBD
+
+  ADD 俞
+    keyword: yu
+    lesson_number: 16
+    layout_type: a
+    first_use: 輸
+    kml_primitives: 俞
+    notes: status=hidden_reusable; pass2b placeholder; meeting-family anchor; readings/verses TBD
+
+  ADD 袁
+    keyword: robe_family
+    lesson_number: 22
+    layout_type: a
+    first_use: 遠
+    kml_primitives: 袁
+    notes: status=hidden_reusable; pass2b placeholder; robe-family anchor; readings/verses TBD
+
+## DUPLICATE CHECK (after insert)
+
+  OK: 戈, 俞, 袁 — no duplicate rows for inserted kanji.
+  Pre-existing duplicates in v3 (unchanged by pass2b): 6 kanji
+    '子' x2
+    '未' x2
+    '午' x2
+    '申' x2
+    '酉' x2
+    '亥' x2
+
+Rows after insert: 3055
+Inserted: 3 (戈, 俞, 袁)
+Skipped: 0
+
+## LESSONS NOT REGENERATED
+
+  HTML lesson files unchanged (pass2b).

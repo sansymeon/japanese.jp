@@ -1,0 +1,321 @@
+PASS 6A — GLOBAL COMPONENT FAMILY HARVEST REPORT
+======================================================================
+
+Review-first exploratory pass. Does NOT modify kanji_master.
+Source master: kanji_master_with_components.v4.csv
+Source dictionary: primitive_dictionary.csv
+KanjiVG pages scanned: 3053
+
+## SUMMARY
+
+  v1 dictionary entries (preserved):     192
+  new harvested entries:                 217
+  v2 dictionary total:                   409
+    family_anchor:                       120
+    probable_family:                     1
+    uncertain_candidate:                 96
+
+## NEW PROBABLE FAMILY ANCHORS
+(phonetic-family signal >= 3 parents, or curated hub)
+
+  隹	parents≈39	keyword=	sample=催,准,唯,堆,奪,奮
+  者	parents≈18	keyword=someone	sample=儲,堵,暑,曙,書,渚
+  干	parents≈18	keyword=dry	sample=倖,刊,午,執,報,幸
+  且	parents≈12	keyword=moreover	sample=助,姐,宜,査,狙,祖
+  己	parents≈12	keyword=self	sample=圏,妃,巻,巽,忌,撰
+  立	parents≈12	keyword=stand_up	sample=位,剖,培,拉,泣,竪
+  方	parents≈11	keyword=direction	sample=傍,坊,妨,房,放,敷
+  云	parents≈11	keyword=quote	sample=会,伝,曇,桧,芸,蔭
+  豆	parents≈11	keyword=beans	sample=凱,澄,燈,痘,登,短
+  由	parents≈10	keyword=wherefore	sample=宙,専,届,抽,柚,油
+  令	parents≈10	keyword=orders	sample=伶,冷,怜,澪,玲,苓
+  共	parents≈10	keyword=together	sample=供,巽,恭,戴,撰,洪
+  反	parents≈9	keyword=anti	sample=仮,叛,坂,板,版,販
+  青	parents≈9	keyword=blue	sample=情,晴,清,精,請,錆
+  非	parents≈9	keyword=non	sample=俳,悲,扉,排,琲,緋
+  辰	parents≈9	keyword=dragon_zodiac	sample=唇,娠,振,晨,濃,膿
+  余	parents≈8	keyword=too_much	sample=叙,塗,徐,斜,舎,茶
+  莫	parents≈8	keyword=shalt	sample=募,墓,幕,慕,暮,模
+  其	parents≈8	keyword=	sample=基,旗,期,棋,欺,碁
+  皮	parents≈8	keyword=pelt	sample=婆,彼,披,波,疲,破
+  谷	parents≈8	keyword=valley	sample=俗,容,欲,浴,溶,熔
+  交	parents≈8	keyword=mingle	sample=佼,効,校,狡,絞,較
+  昜	parents≈8	keyword=	sample=場,揚,暢,楊,湯,腸
+  台	parents≈8	keyword=pedestal	sample=冶,始,怠,殆,治,胎
+  甫	parents≈8	keyword=newly	sample=哺,捕,浦,舗,蒲,補
+  分	parents≈7	keyword=part	sample=扮,盆,粉,紛,貧,雰
+  也	parents≈7	keyword=also	sample=他,地,弛,施,池,蛇
+  東	parents≈7	keyword=east	sample=凍,棟,煉,練,諌,錬
+  艮	parents≈7	keyword=	sample=墾,恨,懇,根,眼,銀
+  韋	parents≈7	keyword=	sample=偉,囲,緯,葦,衛,違
+  支	parents≈7	keyword=branch	sample=伎,妓,岐,技,枝,肢
+  生	parents≈7	keyword=life	sample=姓,性,星,牲,笙,醒
+  禺	parents≈7	keyword=	sample=偶,寓,愚,萬,遇,邁
+  夋	parents≈7	keyword=	sample=俊,唆,峻,悛,竣,酸
+  亡	parents≈6	keyword=deceased	sample=妄,忘,忙,望,盲,荒
+  兌	parents≈6	keyword=	sample=悦,税,脱,説,鋭,閲
+  今	parents≈6	keyword=now	sample=吟,含,念,琴,衿,金
+  包	parents≈6	keyword=wrap	sample=抱,泡,砲,胞,鞄,飽
+  啇	parents≈6	keyword=	sample=嫡,摘,敵,滴,適,鏑
+  尺	parents≈6	keyword=shaku	sample=呎,択,沢,訳,釈,駅
+  曷	parents≈6	keyword=	sample=喝,掲,渇,褐,謁,靄
+  曽	parents≈6	keyword=formerly	sample=僧,噌,増,層,憎,贈
+  監	parents≈6	keyword=oversee	sample=塩,濫,艦,藍,覧,鑑
+  乍	parents≈6	keyword=	sample=作,搾,昨,窄,詐,酢
+  亥	parents≈6	keyword=boar_zodiac	sample=刻,劾,咳,核,該,骸
+  壬	parents≈6	keyword=	sample=任,呈,妊,廷,淫,賃
+  申	parents≈6	keyword=monkey_zodiac	sample=伸,坤,榊,神,紳,電
+  良	parents≈6	keyword=good	sample=娘,朗,浪,狼,莨,郎
+  重	parents≈6	keyword=heavy	sample=動,種,童,腫,衝,鍾
+  単	parents≈6	keyword=simple	sample=弾,戦,禅,箪,蝉,騨
+  翟	parents≈6	keyword=	sample=擢,曜,濯,燿,耀,躍
+  鬼	parents≈6	keyword=ghost	sample=塊,蒐,醜,魁,魂,魅
+  圣	parents≈5	keyword=	sample=径,怪,経,茎,軽
+  戋	parents≈5	keyword=	sample=桟,残,浅,践,銭
+  襄	parents≈5	keyword=	sample=壌,嬢,薫,譲,醸
+  区	parents≈5	keyword=ward	sample=枢,欧,殴,躯,駆
+  司	parents≈5	keyword=director	sample=伺,嗣,笥,詞,飼
+  昔	parents≈5	keyword=long_ago	sample=借,惜,措,籍,錯
+  毎	parents≈5	keyword=every	sample=侮,悔,晦,梅,海
+  甬	parents≈5	keyword=	sample=勇,桶,痛,踊,通
+  蜀	parents≈5	keyword=	sample=属,濁,燭,独,触
+  責	parents≈5	keyword=blame	sample=債,漬,積,績,蹟
+  丰	parents≈5	keyword=	sample=峰,彗,慧,蜂,邦
+  卒	parents≈5	keyword=graduate	sample=倅,砕,粋,翠,酔
+  及	parents≈5	keyword=reach_out	sample=吸,扱,汲,笈,級
+  复	parents≈5	keyword=	sample=履,復,腹,複,覆
+  官	parents≈5	keyword=bureaucrat	sample=棺,管,舘,菅,館
+  尞	parents≈5	keyword=	sample=僚,寮,燎,療,瞭
+  扁	parents≈5	keyword=	sample=偏,篇,編,遍,騙
+  至	parents≈5	keyword=climax	sample=姪,室,窒,致,蛭
+  僉	parents≈4	keyword=	sample=剣,検,険,験
+  冓	parents≈4	keyword=	sample=構,溝,講,購
+  朮	parents≈4	keyword=	sample=肺,術,述,鉢
+  氐	parents≈4	keyword=	sample=低,底,抵,邸
+  虍	parents≈4	keyword=	sample=劇,慮,虚,虜
+  雚	parents≈4	keyword=	sample=勧,権,歓,観
+  之	parents≈4	keyword=of	sample=乏,寺,志,芝
+  亢	parents≈4	keyword=	sample=坑,抗,杭,航
+  亦	parents≈4	keyword=	sample=夜,恋,蛮,跡
+  付	parents≈4	keyword=adhere	sample=府,符,附,鮒
+
+## UNCERTAIN CANDIDATES
+(phonetic-family signal = 2 parents — human review recommended)
+
+  斤	parents≈20	sample=哲,噺,所,折,斧,斬
+  豕	parents≈13	sample=啄,塚,壕,嫁,家,濠
+  辛	parents≈11	sample=僻,壁,宰,新,梓,璧
+  巴	parents≈9	sample=把,杷,琶,絶,肥,色
+  我	parents≈9	sample=俄,儀,峨,犠,義,蛾
+  甲	parents≈9	sample=単,岬,弾,戦,押,禅
+  耳	parents≈8	sample=囁,恥,揖,敢,聾,茸
+  旨	parents≈6	sample=嘗,指,稽,脂,詣,鮨
+  比	parents≈6	sample=批,昆,枇,混,琵,陛
+  牙	parents≈6	sample=冴,穿,芽,訝,邪,雅
+  食	parents≈6	sample=喰,飲,飾,養,餐,饗
+  喬	parents≈5	sample=僑,嬌,橋,矯,蕎
+  弋	parents≈5	sample=代,式,袋,貸,黛
+  曼	parents≈5	sample=慢,漫,蔓,饅,鰻
+  瓜	parents≈5	sample=孤,弧,狐,瓢,菰
+  高	parents≈5	sample=嵩,稿,縞,藁,豪
+  叚	parents≈4	sample=仮,暇,蝦,霞
+  員	parents≈4	sample=円,損,隕,韻
+  夬	parents≈4	sample=快,抉,決,訣
+  尃	parents≈4	sample=博,簿,縛,薄
+  巨	parents≈4	sample=拒,炬,矩,距
+  旡	parents≈4	sample=愛,慨,既,概
+  束	parents≈4	sample=疎,辣,速,頼
+  果	parents≈4	sample=巣,菓,裸,課
+  乇	parents≈3	sample=宅,託,詫
+  免	parents≈3	sample=勉,挽,晩
+  关	parents≈3	sample=咲,朕,関
+  劦	parents≈3	sample=協,脅,脇
+  午	parents≈3	sample=卸,杵,許
+  卯	parents≈3	sample=昴,柳,貿
+  因	parents≈3	sample=咽,姻,恩
+  固	parents≈3	sample=個,箇,錮
+  垂	parents≈3	sample=唾,睡,華
+  央	parents≈3	sample=映,瑛,英
+  奉	parents≈3	sample=俸,捧,棒
+  屈	parents≈3	sample=堀,掘,窟
+  屯	parents≈3	sample=沌,純,鈍
+  平	parents≈3	sample=坪,秤,評
+  并	parents≈3	sample=併,瓶,餅
+  廷	parents≈3	sample=庭,挺,艇
+  弗	parents≈3	sample=沸,狒,費
+  意	parents≈3	sample=億,憶,臆
+  敝	parents≈3	sample=幣,弊,蔽
+  文	parents≈3	sample=斐,紋,蚊
+  曹	parents≈3	sample=槽,糟,遭
+  某	parents≈3	sample=媒,煤,謀
+  次	parents≈3	sample=姿,茨,資
+  此	parents≈3	sample=紫,雌,髭
+  甚	parents≈3	sample=勘,堪,湛
+  祭	parents≈3	sample=察,擦,際
+  耑	parents≈3	sample=段,瑞,端
+  隶	parents≈3	sample=康,逮,隷
+  不	parents≈2	sample=否,杯
+  丙	parents≈2	sample=柄,病
+  丩	parents≈2	sample=叫,糾
+  于	parents≈2	sample=宇,芋
+  井	parents≈2	sample=刑,耕
+  代	parents≈2	sample=袋,貸
+  充	parents≈2	sample=統,銃
+  凶	parents≈2	sample=悩,脳
+
+## HIGH-FREQUENCY RECURRING STRUCTURES (phon hubs)
+
+  方	phon=9	right=9	v4=0
+  者	phon=9	right=14	v4=0
+  余	phon=8	right=3	v4=0
+  莫	phon=8	right=3	v4=0
+  且	phon=7	right=11	v4=0
+  由	phon=7	right=8	v4=0
+  亡	phon=6	right=1	v4=0
+  兌	phon=6	right=5	v4=0
+  其	phon=6	right=3	v4=0
+  分	phon=6	right=4	v4=0
+  反	phon=6	right=8	v4=0
+  己	phon=6	right=9	v4=0
+  皮	phon=6	right=7	v4=0
+  立	phon=6	right=7	v4=0
+  谷	phon=6	right=7	v4=0
+  青	phon=6	right=8	v4=0
+  也	phon=5	right=5	v4=0
+  交	phon=5	right=6	v4=0
+  今	phon=5	right=3	v4=0
+  令	phon=5	right=9	v4=0
+  包	phon=5	right=6	v4=0
+  啇	phon=5	right=4	v4=0
+  圣	phon=5	right=5	v4=0
+  尺	phon=5	right=6	v4=0
+  干	phon=5	right=17	v4=0
+  戋	phon=5	right=5	v4=0
+  昜	phon=5	right=8	v4=0
+  曷	phon=5	right=6	v4=0
+  曽	phon=5	right=5	v4=0
+  東	phon=5	right=7	v4=0
+  監	phon=5	right=4	v4=0
+  艮	phon=5	right=7	v4=0
+  襄	phon=5	right=0	v4=0
+  非	phon=5	right=6	v4=0
+  韋	phon=5	right=4	v4=0
+  乍	phon=4	right=6	v4=0
+  亥	phon=4	right=4	v4=0
+  僉	phon=4	right=0	v4=0
+  冓	phon=4	right=4	v4=0
+  区	phon=4	right=3	v4=0
+
+## POSSIBLE GLOSSARY-FAMILY HUBS
+(curated + strong cross-system recurrence)
+
+  京	capital	phon=2 right=8 v4=3
+  俞	yu	phon=0 right=0 v4=3
+  可	can	phon=3 right=10 v4=3
+  各	each	phon=7 right=14 v4=5
+  商	deal	phon=0 right=0 v4=0
+  啇	merchant	phon=5 right=4 v4=0
+  喿	noisy	phon=0 right=4 v4=0
+  夂	winter	phon=0 right=20 v4=13
+  寺	temple	phon=7 right=8 v4=3
+  尚	esteem	phon=6 right=0 v4=1
+  戈	halberd	phon=0 right=7 v4=15
+  是	just_so	phon=3 right=5 v4=2
+  曷	why	phon=5 right=6 v4=0
+  監	oversee	phon=5 right=4 v4=0
+  真	true	phon=2 right=4 v4=2
+  竟	compete	phon=2 right=2 v4=0
+  肖	resemblance	phon=4 right=7 v4=5
+  胡	barbarian	phon=1 right=4 v4=1
+  袁	robe_family	phon=3 right=1 v4=3
+  軍	army	phon=3 right=5 v4=2
+  青	blue	phon=6 right=8 v4=0
+  韋	tanned_leather	phon=5 right=4 v4=0
+
+## STRUCTURES SKIPPED INTENTIONALLY
+(generic IME atoms, stroke radicals, or insufficient family signal)
+
+  又	reason=generic	phon=1 right=72
+  乂	reason=radical	phon=1 right=67
+  心	reason=generic	phon=0 right=63
+  攵	reason=radical	phon=0 right=46
+  匕	reason=radical	phon=0 right=37
+  卩	reason=radical	phon=1 right=33
+  厶	reason=radical	phon=5 right=27
+  欠	reason=radical	phon=0 right=25
+  殳	reason=radical	phon=3 right=24
+  示	reason=low_signal	phon=1 right=23
+  鳥	reason=generic	phon=1 right=17
+  勿	reason=low_signal	phon=1 right=15
+  皿	reason=radical	phon=0 right=15
+  糸	reason=generic	phon=0 right=15
+  虫	reason=generic	phon=1 right=15
+  冋	reason=radical	phon=0 right=13
+  彡	reason=radical	phon=1 right=12
+  酉	reason=low_signal	phon=1 right=11
+  幺	reason=radical	phon=2 right=9
+  廾	reason=radical	phon=0 right=10
+  兀	reason=radical	phon=0 right=9
+  毋	reason=radical	phon=0 right=9
+  父	reason=low_signal	phon=1 right=8
+  龰	reason=radical	phon=0 right=9
+  三	reason=generic	phon=0 right=7
+  用	reason=low_signal	phon=1 right=7
+  电	reason=low_signal	phon=0 right=8
+  羊	reason=generic	phon=6 right=5
+  舛	reason=low_signal	phon=0 right=8
+  玄	reason=low_signal	phon=1 right=7
+  而	reason=low_signal	phon=1 right=6
+  业	reason=radical	phon=0 right=6
+  匂	reason=low_signal	phon=0 right=6
+  夫	reason=low_signal	phon=1 right=6
+  手	reason=generic	phon=0 right=6
+  番	reason=low_signal	phon=1 right=5
+  禾	reason=low_signal	phon=1 right=5
+  馬	reason=generic	phon=0 right=6
+  加	reason=low_signal	phon=1 right=4
+  取	reason=low_signal	phon=1 right=4
+  咅	reason=low_signal	phon=0 right=5
+  夗	reason=low_signal	phon=0 right=5
+  天	reason=low_signal	phon=1 right=4
+  更	reason=low_signal	phon=1 right=5
+  枼	reason=low_signal	phon=0 right=5
+  氺	reason=low_signal	phon=0 right=5
+  米	reason=generic	phon=1 right=4
+  粦	reason=low_signal	phon=1 right=5
+  西	reason=low_signal	phon=1 right=4
+  丿	reason=radical	phon=2 right=2
+
+## RECURRING V4 PIPE CHUNKS (informational)
+Multi-token patterns from harvested L1–22 rows — not promoted to dictionary.
+
+  '艹|日'	count=6
+  '木|木'	count=5
+  '艹|日|大'	count=5
+  '日|大'	count=5
+  '⼇|口'	count=4
+  '日|日'	count=3
+  '口|口'	count=3
+  '口|儿'	count=2
+  '丶|専'	count=2
+  '口|貝'	count=2
+  '九|十'	count=2
+  '大|丶'	count=2
+  '宀|女'	count=2
+  '厂|木'	count=2
+  '厂|木|木'	count=2
+  '氵|艹'	count=2
+  '犬|灬'	count=2
+  '艹|罒'	count=2
+  '土|⼇'	count=2
+  '享|丸'	count=2
+  '土|口'	count=2
+  '口|戈'	count=2
+
+## KEY PRINCIPLE
+
+  Discover probable KML cognition families — NOT finalize decomposition.
+
+Output dictionary: primitive_dictionary.v2.csv
+Output report:     global_harvest_report.txt
+

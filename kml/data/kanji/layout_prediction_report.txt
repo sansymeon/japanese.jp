@@ -1,0 +1,232 @@
+PASS 4B — LAYOUT PREDICTION ASSIST REPORT
+============================================================
+
+Non-authoritative prefill. Human editor may erase or override.
+Source: kanji_master_with_components.v4.csv
+Output: kanji_master_with_components.v4b.csv
+
+Philosophy: conservative bias (anchors, simple layouts); false positives OK.
+
+## SUMMARY
+
+  layout_type filled (was blank):     104
+  pass4b_suggest notes (scratch):     2506
+  unchanged:                          443
+  skipped (manual override):          2
+  intentionally left blank:           0
+
+  learned pipe patterns (L1-22):      435
+
+## ROWS UPDATED (blank -> predicted)
+
+  比	-> a	no_primitives_anchor_default	prim=—
+  欠	-> a	no_primitives_anchor_default	prim=—
+  東	-> a	no_primitives_anchor_default	prim=—
+  虫	-> a	no_primitives_anchor_default	prim=—
+  己	-> a	no_primitives_anchor_default	prim=—
+  曰	-> a	no_primitives_anchor_default	prim=—
+  心	-> a	no_primitives_anchor_default	prim=—
+  串	-> a	no_primitives_anchor_default	prim=—
+  必	-> a	no_primitives_anchor_default	prim=—
+  手	-> a	no_primitives_anchor_default	prim=—
+  我	-> a	no_primitives_anchor_default	prim=—
+  才	-> a	no_primitives_anchor_default	prim=—
+  及	-> a	no_primitives_anchor_default	prim=—
+  丈	-> a	no_primitives_anchor_default	prim=—
+  史	-> a	no_primitives_anchor_default	prim=—
+  吏	-> a	no_primitives_anchor_default	prim=—
+  又	-> a	no_primitives_anchor_default	prim=—
+  爪	-> a	no_primitives_anchor_default	prim=—
+  山	-> a	no_primitives_anchor_default	prim=—
+  入	-> a	no_primitives_anchor_default	prim=—
+  谷	-> a	no_primitives_anchor_default	prim=—
+  皮	-> a	no_primitives_anchor_default	prim=—
+  耳	-> a	no_primitives_anchor_default	prim=—
+  夫	-> a	no_primitives_anchor_default	prim=—
+  臣	-> a	no_primitives_anchor_default	prim=—
+  巨	-> a	no_primitives_anchor_default	prim=—
+  力	-> a	no_primitives_anchor_default	prim=—
+  米	-> a	no_primitives_anchor_default	prim=—
+  人	-> a	no_primitives_anchor_default	prim=—
+  久	-> a	no_primitives_anchor_default	prim=—
+  内	-> a	no_primitives_anchor_default	prim=—
+  肉	-> a	no_primitives_anchor_default	prim=—
+  匁	-> a	no_primitives_anchor_default	prim=—
+  以	-> a	no_primitives_anchor_default	prim=—
+  瓦	-> a	no_primitives_anchor_default	prim=—
+  年	-> a	no_primitives_anchor_default	prim=—
+  尺	-> a	no_primitives_anchor_default	prim=—
+  示	-> a	no_primitives_anchor_default	prim=—
+  由	-> a	no_primitives_anchor_default	prim=—
+  甲	-> a	no_primitives_anchor_default	prim=—
+  申	-> a	no_primitives_anchor_default	prim=—
+  果	-> a	no_primitives_anchor_default	prim=—
+  斥	-> a	no_primitives_anchor_default	prim=—
+  事	-> a	no_primitives_anchor_default	prim=—
+  曲	-> a	no_primitives_anchor_default	prim=—
+  斗	-> a	no_primitives_anchor_default	prim=—
+  廿	-> a	no_primitives_anchor_default	prim=—
+  片	-> a	no_primitives_anchor_default	prim=—
+  弓	-> a	no_primitives_anchor_default	prim=—
+  弔	-> a	no_primitives_anchor_default	prim=—
+  身	-> a	no_primitives_anchor_default	prim=—
+  丘	-> a	no_primitives_anchor_default	prim=—
+  幽	-> a	no_primitives_anchor_default	prim=—
+  臼	-> a	no_primitives_anchor_default	prim=—
+  酉	-> a	no_primitives_anchor_default	prim=—
+  豆	-> a	no_primitives_anchor_default	prim=—
+  皿	-> a	no_primitives_anchor_default	prim=—
+  平	-> a	no_primitives_anchor_default	prim=—
+  爽	-> a	no_primitives_anchor_default	prim=—
+  生	-> a	no_primitives_anchor_default	prim=—
+  乗	-> a	no_primitives_anchor_default	prim=—
+  非	-> a	no_primitives_anchor_default	prim=—
+  干	-> a	no_primitives_anchor_default	prim=—
+  束	-> a	no_primitives_anchor_default	prim=—
+  重	-> a	no_primitives_anchor_default	prim=—
+  粛	-> a	no_primitives_anchor_default	prim=—
+  央	-> a	no_primitives_anchor_default	prim=—
+  甘	-> a	no_primitives_anchor_default	prim=—
+  井	-> a	no_primitives_anchor_default	prim=—
+  亜	-> a	no_primitives_anchor_default	prim=—
+  円	-> a	no_primitives_anchor_default	prim=—
+  角	-> a	no_primitives_anchor_default	prim=—
+  冊	-> a	no_primitives_anchor_default	prim=—
+  氏	-> a	no_primitives_anchor_default	prim=—
+  民	-> a	no_primitives_anchor_default	prim=—
+  舟	-> a	no_primitives_anchor_default	prim=—
+  瓜	-> a	no_primitives_anchor_default	prim=—
+  来	-> a	no_primitives_anchor_default	prim=—
+  飛	-> a	no_primitives_anchor_default	prim=—
+  革	-> a	no_primitives_anchor_default	prim=—
+  承	-> a	no_primitives_anchor_default	prim=—
+  牙	-> a	no_primitives_anchor_default	prim=—
+  為	-> a	no_primitives_anchor_default	prim=—
+  缶	-> a	no_primitives_anchor_default	prim=—
+  屯	-> a	no_primitives_anchor_default	prim=—
+  且	-> a	no_primitives_anchor_default	prim=—
+  丹	-> a	no_primitives_anchor_default	prim=—
+  丑	-> a	no_primitives_anchor_default	prim=—
+  巳	-> a	no_primitives_anchor_default	prim=—
+  也	-> a	no_primitives_anchor_default	prim=—
+  巴	-> a	no_primitives_anchor_default	prim=—
+  疋	-> a	no_primitives_anchor_default	prim=—
+  畢	-> a	no_primitives_anchor_default	prim=—
+  坐	-> a	no_primitives_anchor_default	prim=—
+  曳	-> a	no_primitives_anchor_default	prim=—
+  夷	-> a	no_primitives_anchor_default	prim=—
+  乖	-> a	no_primitives_anchor_default	prim=—
+  巫	-> a	no_primitives_anchor_default	prim=—
+  已	-> a	no_primitives_anchor_default	prim=—
+  申	-> a	no_primitives_anchor_default	prim=—
+  酉	-> a	no_primitives_anchor_default	prim=—
+  苟	-> a	no_primitives_anchor_default	prim=—
+  戉	-> a	no_primitives_anchor_default	prim=—
+  楚	-> a	no_primitives_anchor_default	prim=—
+
+## SCRATCH SUGGESTIONS (layout kept; note only)
+
+  市	L23	v -> suggest a	no_primitives_anchor_default
+  柿	L23	h -> suggest a	no_primitives_anchor_default
+  姉	L23	h -> suggest a	no_primitives_anchor_default
+  肺	L23	h -> suggest a	no_primitives_anchor_default
+  帯	L23	v -> suggest a	no_primitives_anchor_default
+  滞	L23	h -> suggest a	no_primitives_anchor_default
+  刺	L23	h -> suggest a	no_primitives_anchor_default
+  制	L23	h -> suggest a	no_primitives_anchor_default
+  製	L23	v -> suggest a	no_primitives_anchor_default
+  転	L23	h -> suggest a	no_primitives_anchor_default
+  芸	L23	v -> suggest a	no_primitives_anchor_default
+  雨	L23	v -> suggest a	no_primitives_anchor_default
+  雲	L23	v -> suggest a	no_primitives_anchor_default
+  曇	L23	v -> suggest a	no_primitives_anchor_default
+  雷	L23	v -> suggest a	no_primitives_anchor_default
+  霜	L23	v -> suggest a	no_primitives_anchor_default
+  冬	L23	v -> suggest a	no_primitives_anchor_default
+  天	L23	v -> suggest a	no_primitives_anchor_default
+  妖	L23	h -> suggest a	no_primitives_anchor_default
+  沃	L23	h -> suggest a	no_primitives_anchor_default
+  橋	L24	h -> suggest a	no_primitives_anchor_default
+  嬌	L24	h -> suggest a	no_primitives_anchor_default
+  立	L24	v -> suggest a	no_primitives_anchor_default
+  泣	L24	h -> suggest a	no_primitives_anchor_default
+  章	L24	v -> suggest a	no_primitives_anchor_default
+  競	L24	h -> suggest a	no_primitives_anchor_default
+  帝	L24	v -> suggest a	no_primitives_anchor_default
+  諦	L24	h -> suggest a	no_primitives_anchor_default
+  童	L24	v -> suggest a	no_primitives_anchor_default
+  瞳	L24	h -> suggest a	no_primitives_anchor_default
+  鐘	L24	h -> suggest a	no_primitives_anchor_default
+  商	L24	v -> suggest a	no_primitives_anchor_default
+  嫡	L24	h -> suggest a	no_primitives_anchor_default
+  適	L24	e -> suggest a	no_primitives_anchor_default
+  滴	L24	h -> suggest a	no_primitives_anchor_default
+  敵	L24	h -> suggest a	no_primitives_anchor_default
+  匕	L24	e -> suggest a	no_primitives_anchor_default
+  叱	L24	h -> suggest a	no_primitives_anchor_default
+  匂	L24	e -> suggest a	no_primitives_anchor_default
+  頃	L24	h -> suggest a	no_primitives_anchor_default
+  北	L25	h -> suggest a	no_primitives_anchor_default
+  背	L25	v -> suggest a	no_primitives_anchor_default
+  昆	L25	v -> suggest a	no_primitives_anchor_default
+  皆	L25	v -> suggest a	no_primitives_anchor_default
+  楷	L25	h -> suggest a	no_primitives_anchor_default
+  諧	L25	h -> suggest a	no_primitives_anchor_default
+  混	L25	h -> suggest a	no_primitives_anchor_default
+  渇	L25	h -> suggest a	no_primitives_anchor_default
+  謁	L25	h -> suggest a	no_primitives_anchor_default
+  褐	L25	h -> suggest a	no_primitives_anchor_default
+  喝	L25	h -> suggest a	no_primitives_anchor_default
+  葛	L25	v -> suggest a	no_primitives_anchor_default
+  旨	L25	v -> suggest a	no_primitives_anchor_default
+  脂	L25	h -> suggest a	no_primitives_anchor_default
+  詣	L25	h -> suggest a	no_primitives_anchor_default
+  壱	L25	v -> suggest a	no_primitives_anchor_default
+  毎	L25	v -> suggest a	no_primitives_anchor_default
+  敏	L25	h -> suggest a	no_primitives_anchor_default
+  梅	L25	h -> suggest a	no_primitives_anchor_default
+  海	L26	h -> suggest a	no_primitives_anchor_default
+  乞	L26	v -> suggest a	no_primitives_anchor_default
+  乾	L26	h -> suggest a	no_primitives_anchor_default
+  腹	L26	h -> suggest a	no_primitives_anchor_default
+  複	L26	h -> suggest a	no_primitives_anchor_default
+  吹	L26	h -> suggest a	no_primitives_anchor_default
+  炊	L26	h -> suggest a	no_primitives_anchor_default
+  歌	L26	h -> suggest a	no_primitives_anchor_default
+  軟	L26	h -> suggest a	no_primitives_anchor_default
+  次	L26	h -> suggest a	no_primitives_anchor_default
+  茨	L26	v -> suggest a	no_primitives_anchor_default
+  資	L26	v -> suggest a	no_primitives_anchor_default
+  姿	L26	v -> suggest a	no_primitives_anchor_default
+  諮	L26	h -> suggest a	no_primitives_anchor_default
+  賠	L26	h -> suggest a	no_primitives_anchor_default
+  培	L26	h -> suggest a	no_primitives_anchor_default
+  剖	L26	h -> suggest a	no_primitives_anchor_default
+  音	L26	v -> suggest a	no_primitives_anchor_default
+  暗	L26	h -> suggest a	no_primitives_anchor_default
+  韻	L27	h -> suggest a	no_primitives_anchor_default
+  識	L27	h -> suggest a	no_primitives_anchor_default
+  ... +2426 more
+
+## AMBIGUOUS / REVIEW
+
+  (none flagged)
+
+## INTENTIONALLY LEFT BLANK
+
+  (none)
+
+## EXAMPLES (editor reference)
+
+  市 → suggest a (stable anchor; was v in source)
+  柿 → h (unchanged if already h)
+  姉 → h (unchanged if already h)
+
+## HEURISTIC DEFAULTS
+
+  no primitives     -> a
+  1 part            -> a
+  2 parts           -> h (or ei if shell+inner)
+  3 parts           -> 2t (or h if repeated glyphs)
+  4+ parts          -> 2r
+

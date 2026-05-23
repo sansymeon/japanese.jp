@@ -1,0 +1,164 @@
+PASS 2A — LAYOUT ALIGNMENT REPORT
+============================================================
+Rule: Lessons 1–22 HTML structure wins over CSV.
+
+Kanji in lessons 1–22 with HTML harvest: 438
+layout_type updated from HTML: 437
+layout_type changes (old != new): 140
+
+## CONFIRMED EXAMPLES (user + verified in HTML)
+
+  婿  expected=2r  html=2r  OK
+  裁  expected=2l  html=2l  OK
+  壊  expected=2r  html=2r  OK
+  遠  expected=h  html=h  OK
+  布  expected=h  html=h  OK
+  幌  expected=2r  html=2r  OK
+  錦  expected=2r  html=2r  OK
+
+## ALL LAYOUT CHANGES (lessons 1–22)
+
+  L 1  一	—    -> a   	outer=anchor-box	parts=一
+  L 1  七	—    -> a   	outer=anchor-box	parts=七
+  L 1  三	v    -> a   	outer=anchor-box	parts=三
+  L 1  九	—    -> a   	outer=anchor-box	parts=九
+  L 1  二	v    -> a   	outer=anchor-box	parts=二
+  L 1  五	v    -> a   	outer=anchor-box	parts=五
+  L 1  八	—    -> a   	outer=anchor-box	parts=八
+  L 1  十	—    -> a   	outer=anchor-box	parts=十
+  L 1  口	—    -> a   	outer=anchor-box	parts=口
+  L 1  四	e    -> ei  	outer=enclosure-layout	parts=口|儿
+  L 1  日	—    -> a   	outer=anchor-box	parts=日
+  L 1  月	—    -> a   	outer=anchor-box	parts=月
+  L 1  田	—    -> a   	outer=anchor-box	parts=田
+  L 1  目	—    -> a   	outer=anchor-box	parts=目
+  L 2  世	—    -> a   	outer=anchor-box	parts=世
+  L 2  中	—    -> a   	outer=anchor-box	parts=中
+  L 2  凸	—    -> a   	outer=anchor-box	parts=凸
+  L 2  凹	—    -> a   	outer=anchor-box	parts=凹
+  L 2  品	v    -> 2t  	outer=composite-vertical	parts=口|口|口
+  L 2  旭	e    -> h   	outer=stack-horizontal	parts=九|日
+  L 2  晶	v    -> 2t  	outer=composite-vertical	parts=日|日|日
+  L 2  白	—    -> v   	outer=stack-vertical	parts=´|日
+  L 2  自	—    -> v   	outer=stack-vertical	parts=´|目
+  L 3  丸	—    -> h   	outer=stack-horizontal	parts=丶|九
+  L 3  升	v    -> a   	outer=anchor-box	parts=升
+  L 3  博	h    -> 2r  	outer=component-horizontal	parts=十|丶|専
+  L 3  卜	—    -> a   	outer=anchor-box	parts=卜
+  L 3  寸	—    -> a   	outer=anchor-box	parts=寸
+  L 3  朝	h    -> 2l  	outer=component-horizontal	parts=十|早|月
+  L 4  万	v    -> a   	outer=anchor-box	parts=万
+  L 4  乙	—    -> a   	outer=anchor-box	parts=乙
+  L 4  凡	e    -> ei  	outer=enclosure-layout	parts=几|丶|丶
+  L 4  勺	e    -> ei  	outer=enclosure-layout	parts=勹|丶|丶
+  L 4  句	e    -> ei  	outer=enclosure-layout	parts=勹|口
+  L 4  旬	e    -> ei  	outer=enclosure-layout	parts=勹|日
+  L 4  頁	—    -> v   	outer=stack-vertical	parts=百|ㇵ
+  L 5  丁	v    -> a   	outer=anchor-box	parts=丁
+  L 5  刀	e    -> a   	outer=anchor-box	parts=刀
+  L 5  刃	e    -> h   	outer=stack-horizontal	parts=丶|刀
+  L 5  可	e    -> h   	outer=stack-horizontal	parts=口|丁
+  L 5  右	e    -> h   	outer=stack-horizontal	parts=𠂇|口
+  L 5  工	—    -> a   	outer=anchor-box	parts=工
+  L 5  左	e    -> h   	outer=stack-horizontal	parts=𠂇|エ
+  L 5  有	e    -> h   	outer=stack-horizontal	parts=𠂇|月
+  L 6  了	v    -> a   	outer=anchor-box	parts=了
+  L 6  夕	e    -> a   	outer=anchor-box	parts=夕
+  L 6  大	—    -> a   	outer=anchor-box	parts=大
+  L 6  女	—    -> a   	outer=anchor-box	parts=女
+  L 6  小	—    -> a   	outer=anchor-box	parts=小
+  L 6  母	—    -> a   	outer=anchor-box	parts=母
+  L 6  石	e    -> v   	outer=stack-vertical	parts=厂|口
+  L 7  厚	e    -> v   	outer=stack-vertical	parts=厂|日|子
+  L 7  太	e    -> v   	outer=stack-vertical	parts=大|丶
+  L 7  川	—    -> a   	outer=anchor-box	parts=川
+  L 7  州	—    -> h   	outer=stack-horizontal	parts=川|丶
+  L 7  水	h    -> a   	outer=anchor-box	parts=水
+  L 7  氷	—    -> v   	outer=stack-vertical	parts=丶|水
+  L 7  永	—    -> v   	outer=stack-vertical	parts=丶|氷
+  L 7  砕	h    -> 2r  	outer=component-horizontal	parts=石|九|十
+  L 8  原	e    -> ei  	outer=enclosure-layout	parts=厂|泉
+  L 9  土	v    -> a   	outer=anchor-box	parts=土
+  L 9  圧	e    -> ei  	outer=enclosure-layout	parts=厂|土|土
+  L 9  火	v    -> a   	outer=anchor-box	parts=火
+  L10  厘	e    -> ei  	outer=enclosure-layout	parts=厂|里
+  L10  向	e    -> a   	outer=anchor-box	parts=向
+  L10  完	v    -> (no component-box)	outer=	parts=
+  L10  尚	v    -> a   	outer=anchor-box	parts=尚
+  L10  灰	e    -> ei  	outer=enclosure-layout	parts=厂|火|火
+  L11  木	—    -> a   	outer=anchor-box	parts=木
+  L11  枠	h    -> 2r  	outer=component-horizontal	parts=木|九|十
+  L11  森	v    -> 2t  	outer=composite-vertical	parts=木|木|木
+  L11  貯	h    -> 2r  	outer=component-horizontal	parts=月|宀|丁
+  L12  暦	e    -> h   	outer=composite-horizontal	parts=厂|木|木|日
+  L12  末	—    -> a   	outer=anchor-box	parts=末
+  L12  本	—    -> a   	outer=anchor-box	parts=本
+  L12  朱	—    -> h   	outer=stack-horizontal	parts=´|未
+  L12  燥	h    -> 2r  	outer=component-horizontal	parts=火|品|木
+  L13  兆	—    -> a   	outer=anchor-box	parts=兆
+  L13  模	h    -> 2r  	outer=component-horizontal	parts=木|艹|日|大
+  L13  漠	h    -> 2r  	outer=component-horizontal	parts=氵|艹|日|大
+  L13  然	v    -> 2t  	outer=composite-vertical	parts=夕|犬|灬
+  L13  犬	—    -> h   	outer=stack-horizontal	parts=大|丶
+  L13  膜	h    -> 2r  	outer=component-horizontal	parts=月|艹|日|大
+  L13  荻	v    -> 2t  	outer=composite-vertical	parts=艹|犭|火
+  L13  薄	v    -> 2r  	outer=component-horizontal	parts=氵|艹|丶|専
+  L13  黙	v    -> 2t  	outer=composite-vertical	parts=里|犬|灬
+  L14  介	v    -> a   	outer=anchor-box	parts=介
+  L14  塔	h    -> 2r  	outer=component-horizontal	parts=土|艹|合
+  L14  牛	—    -> a   	outer=anchor-box	parts=牛
+  L14  玉	e    -> v   	outer=stack-vertical	parts=王|丶
+  L14  王	v    -> a   	outer=anchor-box	parts=王
+  L15  辻	e    -> ei  	outer=enclosure-layout	parts=辶|十|十
+  L15  迅	e    -> ei  	outer=enclosure-layout	parts=辶|卂|卂
+  L15  造	e    -> ei  	outer=enclosure-layout	parts=辶|告|告
+  L15  道	e    -> ei  	outer=enclosure-layout	parts=辶|首|首
+  L15  金	v    -> a   	outer=anchor-box	parts=金
+  L16  処	e    -> h   	outer=stack-horizontal	parts=夂|几
+  L16  前	v    -> 2t  	outer=composite-vertical	parts=丷|月|刂
+  L16  巡	e    -> ei  	outer=enclosure-layout	parts=辶|巛|巛
+  L16  車	—    -> a   	outer=anchor-box	parts=車
+  L16  辺	e    -> ei  	outer=enclosure-layout	parts=辶|刀|刀
+  L16  迫	e    -> ei  	outer=enclosure-layout	parts=辶|白|白
+  L16  逃	e    -> ei  	outer=enclosure-layout	parts=辶|兆|兆
+  L16  連	e    -> ei  	outer=enclosure-layout	parts=辶|車|車
+  L17  冠	v    -> 2t  	outer=composite-vertical	parts=冖|元|寸
+  L17  周	e    -> ei  	outer=enclosure-layout	parts=冂|吉|吉
+  L17  坑	h    -> 2r  	outer=component-horizontal	parts=土|⼇|几
+  L17  塾	v    -> 2t  	outer=composite-vertical	parts=享|丸|土
+  L17  熟	v    -> 2t  	outer=composite-vertical	parts=享|丸|灬
+  L17  落	v    -> 2t  	outer=composite-vertical	parts=艹|氵|各
+  L17  運	e    -> ei  	outer=enclosure-layout	parts=辶|軍|軍
+  L18  士	v    -> a   	outer=anchor-box	parts=士
+  L18  言	—    -> a   	outer=anchor-box	parts=言
+  L18  警	v    -> 2t  	outer=composite-vertical	parts=苟|夂|言
+  L18  週	e    -> ei  	outer=enclosure-layout	parts=辶|周|周
+  L19  式	e    -> h   	outer=stack-horizontal	parts=エ|戈
+  L19  弐	—    -> h   	outer=stack-horizontal	parts=ニ|式
+  L20  威	e    -> h   	outer=stack-horizontal	parts=女|戈
+  L20  成	e    -> v   	outer=stack-vertical	parts=力|戈
+  L20  戚	e    -> v   	outer=stack-vertical	parts=赤|戈
+  L20  栽	e    -> h   	outer=stack-horizontal	parts=土|木|戈
+  L20  止	—    -> a   	outer=anchor-box	parts=止
+  L20  載	e    -> h   	outer=stack-horizontal	parts=土|車|戈
+  L21  延	e    -> h   	outer=composite-horizontal	parts=廴|正
+  L21  建	e    -> h   	outer=composite-horizontal	parts=廴|聿
+  L21  正	v    -> a   	outer=anchor-box	parts=正
+  L21  武	e    -> h   	outer=stack-horizontal	parts=一|止|戈
+  L21  歴	e    -> h   	outer=composite-horizontal	parts=厂|木|木|止
+  L21  赴	e    -> h   	outer=stack-horizontal	parts=走|卜
+  L21  超	e    -> h   	outer=stack-horizontal	parts=走|召
+  L21  越	e    -> h   	outer=stack-horizontal	parts=走|戉
+  L21  題	e    -> h   	outer=stack-horizontal	parts=是|頁
+  L22  壊	h    -> 2r  	outer=kanji-composite	parts=土|⼇|罒|衣
+  L22  婿	h    -> 2r  	outer=kanji-composite	parts=女|疋|月
+  L22  巾	—    -> a   	outer=anchor-box	parts=巾
+  L22  布	e    -> h   	outer=stack-horizontal	parts=𠂇|巾
+  L22  幌	h    -> 2r  	outer=kanji-composite	parts=巾|日|光
+  L22  裁	e    -> 2l  	outer=kanji-composite	parts=土|衣|戈
+  L22  遠	e    -> h   	outer=composite-horizontal	parts=廴|袁
+  L22  錦	h    -> 2r  	outer=kanji-composite	parts=金|白|巾
+
+## HTML CLASS RENAMES (lessons 1–22)
+
+  (none applied)

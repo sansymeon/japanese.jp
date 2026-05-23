@@ -1,0 +1,151 @@
+# KML Espanso shortcuts v2 — PASS 5B (editor / structural typing)
+# Paste into Espanso config manually. Optimized for recognition + speed.
+# Drops ordinary IME-friendly kanji; keeps radicals, anchors, layout helpers.
+
+matches:
+
+# --- layout & workflow ---
+  - trigger: ":a"
+    replace: a
+  - trigger: ":h"
+    replace: h
+  - trigger: ":v"
+    replace: v
+  - trigger: ":2l"
+    replace: 2l
+  - trigger: ":2r"
+    replace: 2r
+  - trigger: ":2t"
+    replace: 2t
+  - trigger: ":2b"
+    replace: 2b
+  - trigger: ":e"
+    replace: e
+  - trigger: ":ei"
+    replace: ei
+  - trigger: ":pipe"
+    replace: "|||"
+  - trigger: ":csvh"
+    replace: "|||,,,h,,"
+  - trigger: ":csva"
+    replace: "|||,,,a,,"
+  - trigger: ":csvv"
+    replace: "|||,,,v,,"
+
+# --- strokes & micro ---
+  - trigger: ":one"
+    replace: 一
+  - trigger: ":drop"
+    replace: 丶
+  - trigger: ":slash"
+    replace: ノ
+  - trigger: ":prime"
+    replace: ´
+  - trigger: ":lid"
+    replace: ⼇
+  - trigger: ":slide"
+    replace: ㇵ
+  - trigger: ":legs"
+    replace: 儿
+  - trigger: ":tusks"
+    replace: 丷
+  - trigger: ":hook"
+    replace: 乚
+  - trigger: ":two"
+    replace: ニ
+
+# --- water / fire ---
+  - trigger: ":nami"
+    replace: 氵
+  - trigger: ":fire"
+    replace: 灬
+  - trigger: ":river"
+    replace: 巛
+
+# --- human / body ---
+  - trigger: ":koko"
+    replace: 忄
+  - trigger: ":hand"
+    replace: 扌
+  - trigger: ":animal"
+    replace: 犭
+  - trigger: ":winter"
+    replace: 夂
+
+# --- enclosure & frames ---
+  - trigger: ":crown"
+    replace: 宀
+  - trigger: ":cover"
+    replace: 冖
+  - trigger: ":belt"
+    replace: 冂
+  - trigger: ":cliff"
+    replace: 厂
+  - trigger: ":table"
+    replace: 几
+  - trigger: ":wrap"
+    replace: 勹
+  - trigger: ":small"
+    replace: ⺌
+  - trigger: ":fold"
+    replace: 𠂊
+  - trigger: ":left"
+    replace: 𠂇
+  - trigger: ":leftbar"
+    replace: エ
+  - trigger: ":bed"
+    replace: 丬
+  - trigger: ":swift"
+    replace: 卂
+  - trigger: ":level"
+    replace: 匀
+  - trigger: ":full"
+    replace: 畐
+
+# --- road / movement ---
+  - trigger: ":walk"
+    replace: 辶
+  - trigger: ":road"
+    replace: ⻌
+
+# --- nature & modifiers ---
+  - trigger: ":grass"
+    replace: 艹
+  - trigger: ":sword"
+    replace: 刂
+
+# --- clothes family ---
+  - trigger: ":koromo"
+    replace: 𧘇
+  - trigger: ":cloth"
+    replace: 衤
+  - trigger: ":robe"
+    replace: 袁
+
+# --- nets & misc primitives ---
+  - trigger: ":net"
+    replace: 罒
+  - trigger: ":stride"
+    replace: 廴
+  - trigger: ":brush"
+    replace: 聿
+  - trigger: ":tiny"
+    replace: 戔
+
+# --- family anchors & hidden ---
+  - trigger: ":spear"
+    replace: 戈
+  - trigger: ":meet"
+    replace: 俞
+  - trigger: ":yu"
+    replace: 兪
+  - trigger: ":fishpipe"
+    replace: 田｜
+
+# --- structural components ---
+  - trigger: ":mouth"
+    replace: 口
+  - trigger: ":thread"
+    replace: 糸
+  - trigger: ":siesta"
+    replace: 曷

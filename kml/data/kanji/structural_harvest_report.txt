@@ -1,0 +1,131 @@
+PASS 4 — STRUCTURAL HARVEST REPORT
+============================================================
+
+Philosophy: handcrafted HTML is authoritative; no IDS/radical inference.
+Source: kanji_master_with_components.v3b.csv
+Output: kanji_master_with_components.v4.csv
+
+HTML entries harvested (lessons 1–22): 440
+  with component-box + parts: 440
+
+## BACKFILL STATS
+
+  primitives newly filled/updated: 423
+  primitives unchanged (matched):  17
+  layout_type updated (HTML≠CSV):  4
+  render_override=manual flagged:  2
+  skipped (already manual):        2
+  no box / no parts in HTML:       0
+
+## CONFIRMED FAMILY EXAMPLES
+
+  裁: HTML=土|衣|戈 CSV=土|衣|戈 layout=2l
+  壊: HTML=土|⼇|罒|衣 CSV=土|⼇|罒|衣 layout=2r
+  遠: HTML=廴|袁 CSV=廴|袁 layout=h
+  錦: HTML=金|白|巾 CSV=金|白|巾 layout=2r
+  布: HTML=𠂇|巾 CSV=𠂇|巾 layout=h
+  幌: HTML=巾|日|光 CSV=巾|日|光 layout=2r
+  婿: HTML=女|疋|月 CSV=女|疋|月 layout=2r
+
+## PRIMITIVE UPDATES (sample)
+
+  二: primitives '一|一' -> '二' (HTML order)
+  三: primitives '一|一|一' -> '三' (HTML order)
+  六: primitives '⼇|八' -> '⼇|ㇵ' (HTML order)
+  昌: filled '日|日'
+  唱: filled '口|昌'
+  晶: filled '日|日|日'
+  品: filled '口|口|口'
+  呂: filled '口|口'
+  早: filled '日|十'
+  旭: filled '九|日'
+  世: filled '世'
+  胃: filled '田|月'
+  旦: filled '日|一'
+  胆: filled '月|旦'
+  亘: filled '一|旦'
+  凹: filled '凹'
+  凸: filled '凸'
+  旧: filled '日'
+  自: filled '´|目'
+  白: filled '´|日'
+  百: filled '一|白'
+  中: filled '中'
+  千: filled '´|十'
+  舌: filled '千|口'
+  升: filled '升'
+  昇: filled '日|升'
+  丸: filled '丶|九'
+  寸: filled '寸'
+  肘: filled '月|寸'
+  専: filled '十|田|寸'
+  博: filled '十|丶|専'
+  卜: filled '卜'
+  占: filled '卜|口'
+  上: filled '卜|一'
+  下: filled '一|卜'
+  卓: filled '卜|早'
+  朝: filled '十|早|月'
+  嘲: filled '口|朝'
+  只: filled '口|ㇵ'
+  貝: filled '目|ㇵ'
+  唄: filled '口|貝'
+  貞: filled '卜|貝'
+  員: filled '口|貝'
+  貼: filled '貝|占'
+  見: filled '目|儿'
+  児: filled '旧|儿'
+  元: filled '二|儿'
+  頁: filled '百|ㇵ'
+  頑: filled '元|頁'
+  凡: filled '几|丶'
+  負: filled '𠂊|貝'
+  万: filled '万'
+  句: filled '勹|口'
+  肌: filled '月|几'
+  旬: filled '勹|日'
+  勺: filled '勹|丶'
+  的: filled '白|勺'
+  首: filled '丷|一|自'
+  乙: filled '乙'
+  乱: filled '舌|乚'
+  直: filled '十|目'
+  具: filled '目|一|ㇵ'
+  真: filled '十|具'
+  工: filled '工'
+  左: filled '𠂇|エ'
+  右: filled '𠂇|口'
+  有: filled '𠂇|月'
+  賄: filled '貝|有'
+  貢: filled 'エ|貝'
+  項: filled 'エ|頁'
+  刀: filled '刀'
+  刃: filled '丶|刀'
+  切: filled '七|刀'
+  召: filled '刀|口'
+  昭: filled '日|召'
+  則: filled '貝|刂'
+  副: filled '畐|刂'
+  別: filled '口|刀|刂'
+  丁: filled '丁'
+  町: filled '田|丁'
+  ... +343 more
+
+## LAYOUT CHANGES (HTML differed from PASS 2A)
+
+  子: layout — -> a (outer=anchor-box)
+  未: layout — -> a (outer=anchor-box)
+  子: layout — -> a (outer=anchor-box)
+  未: layout — -> a (outer=anchor-box)
+
+Remaining incomplete (L1-22): 0
+See: remaining_incomplete_structures.txt
+
+
+## POST-HARVEST RENDER PROOF
+
+PASS 3 proof complete.
+  ok=21 partial=3 mismatch=0
+  incomplete=0
+  /home/sjnelson/japanese.jp/kml/tools/render_proof/index.html
+  /home/sjnelson/japanese.jp/kml/data/kanji/render_engine_report.txt

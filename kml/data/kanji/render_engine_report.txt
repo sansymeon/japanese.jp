@@ -1,0 +1,103 @@
+KML COMPONENT RENDER ENGINE — PASS 3 REPORT
+============================================================
+
+Mode: proof-of-concept only; lessons NOT regenerated.
+Templates: /home/sjnelson/japanese.jp/kml/templates/layouts
+Data: /home/sjnelson/japanese.jp/kml/data/kanji/kanji_master_with_components.v4.csv
+Proof kanji sample: 24
+
+## SUCCESSFUL RENDERS (layout + parts match handcrafted)
+
+  一
+  二
+  四
+  古
+  朋
+  明
+  唱
+  晶
+  品
+  旭
+  負
+  別
+  森
+  暦
+  婿
+  裁
+  壊
+  遠
+  布
+  幌
+  錦
+
+## PARTIAL (layout match, parts differ)
+
+  戈: generated only (no handcrafted box in lesson)
+  俞: generated only (no handcrafted box in lesson)
+  袁: generated only (no handcrafted box in lesson)
+
+## MISMATCHES
+
+  (none)
+
+## INCOMPLETE DATA (needs CSV primitives or override)
+
+  (none)
+
+## AMBIGUOUS LAYOUT
+
+  (none)
+
+## MANUAL OVERRIDE SKIPS
+
+  (none)
+
+## UNSUPPORTED / ERROR
+
+  (none)
+
+## OVERRIDE SYSTEM
+
+  Mark rows with notes containing: render_override=manual
+  Engine returns status=skipped_override and empty HTML.
+  Handcrafted lesson HTML remains authoritative.
+
+## VISIBILITY HOOKS
+
+  All generated kanji-part spans include data-visibility="visible".
+  Future: hidden | study | quiz (logic not implemented).
+
+## LAYOUT TEMPLATES
+
+  2b  -> templates/layouts/2b.html
+  2l  -> templates/layouts/2l.html
+  2r  -> templates/layouts/2r.html
+  2t  -> templates/layouts/2t.html
+  a   -> templates/layouts/anchor.html
+  e   -> templates/layouts/enclosure.html
+  ei  -> templates/layouts/enclosure_inner.html
+  h   -> templates/layouts/horizontal.html
+  v   -> templates/layouts/vertical.html
+
+## SUMMARY
+
+  ok:         21
+  partial:    3
+  mismatch:   0
+  incomplete: 0
+  ambiguous:  0
+
+## NEXT STEPS (not in PASS 3)
+
+  1. Backfill kml_primitives for rows with layout but empty components.
+  2. Mark handcrafted exceptions: render_override=manual in notes.
+  3. Enable allow_hidden_links for future-kanji-link parity when ready.
+  4. Do not mass-regenerate lessons until CSV + overrides are stable.
+
+## ENGINE USAGE
+
+  from lib.kml_render_engine import ComponentRenderEngine
+  engine = ComponentRenderEngine.from_csv('...v3b.csv')
+  result = engine.render(row)
+
+Proof page: /home/sjnelson/japanese.jp/kml/tools/render_proof/index.html

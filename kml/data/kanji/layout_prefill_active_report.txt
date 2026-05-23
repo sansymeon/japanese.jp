@@ -1,0 +1,155 @@
+PASS 4C — ACTIVE LAYOUT PREFILL REPORT
+============================================================
+
+Active overwrite of layout_type on non-authoritative rows.
+Source: kanji_master_with_components.v4b.csv
+Output: kanji_master_with_components.v4c.csv
+
+## PROTECTED (not modified)
+
+  pass4: harvested
+  render_override=manual
+
+  一	kept a	pass2a: — -> a; pass4: harvested L01 HTML (一)
+  二	kept a	pass2a: v -> a; pass4: harvested L01 HTML (二)
+  三	kept a	pass2a: v -> a; pass4: harvested L01 HTML (三)
+  四	kept ei	pass2a: e -> ei; pass4: harvested L01 HTML (口|儿)
+  五	kept a	pass2a: v -> a; pass4: harvested L01 HTML (五)
+  六	kept v	pass4: harvested L01 HTML (⼇|ㇵ)
+  七	kept a	pass2a: — -> a; pass4: harvested L01 HTML (七)
+  八	kept a	pass2a: — -> a; pass4: harvested L01 HTML (八)
+  九	kept a	pass2a: — -> a; pass4: harvested L01 HTML (九)
+  十	kept a	pass2a: — -> a; pass4: harvested L01 HTML (十)
+  口	kept a	pass2a: — -> a; pass4: harvested L01 HTML (口)
+  日	kept a	pass2a: — -> a; pass4: harvested L01 HTML (日)
+  月	kept a	pass2a: — -> a; pass4: harvested L01 HTML (月)
+  田	kept a	pass2a: — -> a; pass4: harvested L01 HTML (田)
+  目	kept a	pass2a: — -> a; pass4: harvested L01 HTML (目)
+  ... total protected: 442
+
+## SUMMARY
+
+  layout_type actively prefilled:  2607
+    from blank:                    104
+    overwrote existing:            2503
+  already matched prediction:      6
+  protected (authoritative):       442
+
+## CONFIRMED EXAMPLES
+
+  (see prefill log)
+
+## PREFILL LOG (sample)
+
+  肺	h -> a	no_primitives_anchor_default	prim=—
+  帯	v -> a	no_primitives_anchor_default	prim=—
+  滞	h -> a	no_primitives_anchor_default	prim=—
+  刺	h -> a	no_primitives_anchor_default	prim=—
+  制	h -> a	no_primitives_anchor_default	prim=—
+  製	v -> a	no_primitives_anchor_default	prim=—
+  転	h -> a	no_primitives_anchor_default	prim=—
+  芸	v -> a	no_primitives_anchor_default	prim=—
+  雨	v -> a	no_primitives_anchor_default	prim=—
+  雲	v -> a	no_primitives_anchor_default	prim=—
+  曇	v -> a	no_primitives_anchor_default	prim=—
+  雷	v -> a	no_primitives_anchor_default	prim=—
+  霜	v -> a	no_primitives_anchor_default	prim=—
+  冬	v -> a	no_primitives_anchor_default	prim=—
+  天	v -> a	no_primitives_anchor_default	prim=—
+  妖	h -> a	no_primitives_anchor_default	prim=—
+  沃	h -> a	no_primitives_anchor_default	prim=—
+  橋	h -> a	no_primitives_anchor_default	prim=—
+  嬌	h -> a	no_primitives_anchor_default	prim=—
+  立	v -> a	no_primitives_anchor_default	prim=—
+  泣	h -> a	no_primitives_anchor_default	prim=—
+  章	v -> a	no_primitives_anchor_default	prim=—
+  競	h -> a	no_primitives_anchor_default	prim=—
+  帝	v -> a	no_primitives_anchor_default	prim=—
+  諦	h -> a	no_primitives_anchor_default	prim=—
+  童	v -> a	no_primitives_anchor_default	prim=—
+  瞳	h -> a	no_primitives_anchor_default	prim=—
+  鐘	h -> a	no_primitives_anchor_default	prim=—
+  商	v -> a	no_primitives_anchor_default	prim=—
+  嫡	h -> a	no_primitives_anchor_default	prim=—
+  適	e -> a	no_primitives_anchor_default	prim=—
+  滴	h -> a	no_primitives_anchor_default	prim=—
+  敵	h -> a	no_primitives_anchor_default	prim=—
+  匕	e -> a	no_primitives_anchor_default	prim=—
+  叱	h -> a	no_primitives_anchor_default	prim=—
+  匂	e -> a	no_primitives_anchor_default	prim=—
+  頃	h -> a	no_primitives_anchor_default	prim=—
+  北	h -> a	no_primitives_anchor_default	prim=—
+  背	v -> a	no_primitives_anchor_default	prim=—
+  比	— -> a	no_primitives_anchor_default	prim=—
+  昆	v -> a	no_primitives_anchor_default	prim=—
+  皆	v -> a	no_primitives_anchor_default	prim=—
+  楷	h -> a	no_primitives_anchor_default	prim=—
+  諧	h -> a	no_primitives_anchor_default	prim=—
+  混	h -> a	no_primitives_anchor_default	prim=—
+  渇	h -> a	no_primitives_anchor_default	prim=—
+  謁	h -> a	no_primitives_anchor_default	prim=—
+  褐	h -> a	no_primitives_anchor_default	prim=—
+  喝	h -> a	no_primitives_anchor_default	prim=—
+  葛	v -> a	no_primitives_anchor_default	prim=—
+  旨	v -> a	no_primitives_anchor_default	prim=—
+  脂	h -> a	no_primitives_anchor_default	prim=—
+  詣	h -> a	no_primitives_anchor_default	prim=—
+  壱	v -> a	no_primitives_anchor_default	prim=—
+  毎	v -> a	no_primitives_anchor_default	prim=—
+  敏	h -> a	no_primitives_anchor_default	prim=—
+  梅	h -> a	no_primitives_anchor_default	prim=—
+  海	h -> a	no_primitives_anchor_default	prim=—
+  乞	v -> a	no_primitives_anchor_default	prim=—
+  乾	h -> a	no_primitives_anchor_default	prim=—
+  腹	h -> a	no_primitives_anchor_default	prim=—
+  複	h -> a	no_primitives_anchor_default	prim=—
+  欠	— -> a	no_primitives_anchor_default	prim=—
+  吹	h -> a	no_primitives_anchor_default	prim=—
+  炊	h -> a	no_primitives_anchor_default	prim=—
+  歌	h -> a	no_primitives_anchor_default	prim=—
+  軟	h -> a	no_primitives_anchor_default	prim=—
+  次	h -> a	no_primitives_anchor_default	prim=—
+  茨	v -> a	no_primitives_anchor_default	prim=—
+  資	v -> a	no_primitives_anchor_default	prim=—
+  姿	v -> a	no_primitives_anchor_default	prim=—
+  諮	h -> a	no_primitives_anchor_default	prim=—
+  賠	h -> a	no_primitives_anchor_default	prim=—
+  培	h -> a	no_primitives_anchor_default	prim=—
+  剖	h -> a	no_primitives_anchor_default	prim=—
+  音	v -> a	no_primitives_anchor_default	prim=—
+  暗	h -> a	no_primitives_anchor_default	prim=—
+  韻	h -> a	no_primitives_anchor_default	prim=—
+  識	h -> a	no_primitives_anchor_default	prim=—
+  鏡	h -> a	no_primitives_anchor_default	prim=—
+  境	h -> a	no_primitives_anchor_default	prim=—
+  亡	v -> a	no_primitives_anchor_default	prim=—
+  盲	v -> a	no_primitives_anchor_default	prim=—
+  妄	v -> a	no_primitives_anchor_default	prim=—
+  荒	v -> a	no_primitives_anchor_default	prim=—
+  望	v -> a	no_primitives_anchor_default	prim=—
+  方	v -> a	no_primitives_anchor_default	prim=—
+  妨	h -> a	no_primitives_anchor_default	prim=—
+  坊	h -> a	no_primitives_anchor_default	prim=—
+  芳	v -> a	no_primitives_anchor_default	prim=—
+  肪	h -> a	no_primitives_anchor_default	prim=—
+  訪	h -> a	no_primitives_anchor_default	prim=—
+  放	h -> a	no_primitives_anchor_default	prim=—
+  激	h -> a	no_primitives_anchor_default	prim=—
+  脱	h -> a	no_primitives_anchor_default	prim=—
+  説	h -> a	no_primitives_anchor_default	prim=—
+  鋭	h -> a	no_primitives_anchor_default	prim=—
+  曽	v -> a	no_primitives_anchor_default	prim=—
+  増	h -> a	no_primitives_anchor_default	prim=—
+  贈	h -> a	no_primitives_anchor_default	prim=—
+  ... +20 more in full run
+
+## CONSERVATIVE SIMPLIFICATION
+
+  Low-confidence 2l/2r/2t/2b/ei heuristics -> h (unless exact_pipe_match)
+  No primitives -> a
+
+## NOTES TRACE
+
+  pass4c:auto_prefill:<code>
+  pass4c:auto_prefill:<code> (was <old>)
+

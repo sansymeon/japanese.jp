@@ -1,0 +1,124 @@
+KML STRUCTURE AUDIT — PASS 1
+============================================================
+
+SCOPE: Lessons 1–22 HTML + kanji_master_with_components.csv
+MODE: Audit only (no rewrites)
+
+## 1. OUTER LAYOUT CLASSES (HTML, lessons 1–22)
+
+   193  stack-horizontal              tier=preferred   std_hint=h
+   136  stack-vertical                tier=preferred   std_hint=v
+    39  anchor-box                    tier=preferred   std_hint=a
+    24  enclosure-layout              tier=preferred   std_hint=e
+    12  composite-vertical            tier=legacy      std_hint=—
+    12  component-horizontal          tier=legacy      std_hint=2l
+     8  composite-horizontal          tier=legacy      std_hint=—
+     5  kanji-composite               tier=preferred   std_hint=—
+
+## 2. INFERRED STANDARD LAYOUT CODES (from HTML)
+
+   197  h
+   136  v
+    39  a
+    23  ei
+    17  2l
+    12  2t
+     4  2b
+     1  e
+
+## 3. NESTED LAYOUT HELPERS (HTML)
+
+   205  stack-horizontal              tier=preferred
+   157  stack-vertical                tier=preferred
+    21  enclosure-part                tier=preferred
+    20  enclosure-inner               tier=preferred
+    16  component-left                tier=legacy
+    16  component-right               tier=legacy
+     5  outer-kanji                   tier=preferred
+     5  inner-kanji                   tier=preferred
+     5  kanji-left                    tier=preferred
+     5  kanji-right                   tier=preferred
+
+## 4. CSV layout_type VALUES (full master)
+
+  1717  horizontal            -> std 'h'
+   868  vertical              -> std 'v'
+   317  box                   -> std 'e'
+   147  unknown               -> std '—'
+     3  (empty)               -> std '—'
+
+## 5. LEGACY / DUPLICATE NAMING
+
+Assume kanji-* preferred over component-*.
+
+  component-horizontal      html_uses= 12   preferred: kanji-composite / stack-horizontal
+  component-left            html_uses= 16   preferred: kanji-left
+  component-right           html_uses= 16   preferred: kanji-right
+  component-composite       html_uses=  0   preferred: kanji-composite
+  outer-kanji               html_uses=  5   preferred: enclosure-part / enclosure outer
+  inner-kanji               html_uses=  5   preferred: enclosure-inner
+
+## 6. PREFERRED vs LEGACY OUTER SYSTEMS
+
+Preferred (newer): stack-vertical, stack-horizontal, kanji-composite,
+  enclosure-layout, anchor-box
+Legacy: composite-horizontal, composite-vertical, component-horizontal
+
+  preferred outer layouts: 397
+  legacy outer layouts:    32
+  unmapped outer layouts:  0
+
+## 7. INCONSISTENCIES (HTML std vs CSV std, lessons 1–22 only)
+
+  四 (L1): csv=e html=ei outer=enclosure-layout
+  晶 (L2): csv=v html=2t outer=enclosure-layout
+  品 (L2): csv=v html=2t outer=enclosure-layout
+  旭 (L2): csv=e html=h outer=enclosure-layout
+  升 (L3): csv=v html=a outer=enclosure-layout
+  博 (L3): csv=h html=2l outer=enclosure-layout
+  朝 (L3): csv=h html=2l outer=enclosure-layout
+  凡 (L4): csv=e html=ei outer=enclosure-layout
+  万 (L4): csv=v html=a outer=enclosure-layout
+  句 (L4): csv=e html=ei outer=enclosure-layout
+  旬 (L4): csv=e html=ei outer=enclosure-layout
+  勺 (L4): csv=e html=ei outer=enclosure-layout
+  左 (L5): csv=e html=h outer=enclosure-layout
+  右 (L5): csv=e html=h outer=enclosure-layout
+  有 (L5): csv=e html=h outer=enclosure-layout
+  刀 (L5): csv=e html=a outer=enclosure-layout
+  刃 (L5): csv=e html=h outer=enclosure-layout
+  別 (L5): csv=h html=2b outer=enclosure-layout
+  丁 (L5): csv=v html=a outer=enclosure-layout
+  可 (L5): csv=e html=h outer=enclosure-layout
+  了 (L6): csv=v html=a outer=enclosure-layout
+  夕 (L6): csv=e html=a outer=enclosure-layout
+  石 (L6): csv=e html=v outer=enclosure-layout
+  砕 (L7): csv=h html=2l outer=enclosure-layout
+  太 (L7): csv=e html=v outer=enclosure-layout
+  厚 (L7): csv=e html=v outer=enclosure-layout
+  水 (L7): csv=h html=a outer=enclosure-layout
+  原 (L8): csv=e html=ei outer=enclosure-layout
+  土 (L9): csv=v html=a outer=enclosure-layout
+  圧 (L9): csv=e html=ei outer=enclosure-layout
+  火 (L9): csv=v html=a outer=enclosure-layout
+  灰 (L10): csv=e html=ei outer=enclosure-layout
+  厘 (L10): csv=e html=ei outer=enclosure-layout
+  向 (L10): csv=e html=a outer=enclosure-layout
+  尚 (L10): csv=v html=a outer=enclosure-layout
+  貯 (L11): csv=h html=2l outer=enclosure-layout
+  森 (L11): csv=v html=2t outer=enclosure-layout
+  枠 (L11): csv=h html=2l outer=enclosure-layout
+  暦 (L12): csv=e html=2b outer=enclosure-layout
+  燥 (L12): csv=h html=2l outer=enclosure-layout
+  Total mismatches (capped listing at 40): 96
+
+## 8. DATA QUALITY (kanji_master)
+
+  kanji fields with trailing/leading whitespace: 1
+    '楚 '
+
+## 9. STANDARD CODE LEGEND
+
+  a=anchor  v=vertical  h=horizontal  2l=two-left  2r=two-right
+  2t=two-top  2b=two-bottom  e=enclosure  ei=enclosure-inner
+
