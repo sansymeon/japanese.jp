@@ -27,6 +27,7 @@ LAYOUT_TEMPLATE_MAP = {
     "2b": "2b.html",
     "e": "enclosure.html",
     "ei": "enclosure_inner.html",
+    "3r": "3r.html",
 }
 
 MANUAL_OVERRIDE_MARKERS = (
@@ -52,6 +53,8 @@ class RenderEngineConfig:
     visibility_default: str = "visible"
     allow_hidden_links: bool = False
     hidden_kanji: set[str] = field(default_factory=set)
+    family_by_symbol: dict[str, str] = field(default_factory=dict)
+    glossary_hub_symbols: set[str] = field(default_factory=set)
 
 
 class ComponentRenderEngine:
@@ -86,7 +89,7 @@ class ComponentRenderEngine:
                     if "hidden_reusable" in notes:
                         hidden.add(k)
         cfg = config or RenderEngineConfig()
-        cfg.hidden_kanji = hidden
+        cfg.hidden_kanji = cfg.hidden_kanji | hidden
         return cls(config=cfg, master_by_kanji=rows)
 
     def _layout_template(self, layout: str) -> str:
@@ -133,6 +136,14 @@ class ComponentRenderEngine:
             .replace("{{VISIBILITY}}", vis)
             .replace("{{EXTRA_CLASS}}", extra_class)
         )
+        fam = self.config.family_by_symbol.get(symbol, "")
+        if fam:
+            html = html.replace(
+                f'data-part="{symbol}"',
+                f'data-part="{symbol}" data-family="{fam}"',
+            )
+        if symbol in self.config.glossary_hub_symbols:
+            html = html.replace('class="kanji-part', 'class="kanji-part glossary-hub', 1)
         if href and self.config.allow_hidden_links:
             html = (
                 f'<a href="{href}" class="future-kanji-link" '
@@ -308,6 +319,13 @@ class ComponentRenderEngine:
             return tpl.replace("{{OUTER_PART}}", self._outer_enclosure_part(parts[0])).replace(
                 "{{INNER_PART}}", "      " + self.render_part(parts[1])
             )
+
+        if layout == "3r":
+            if len(parts) < 4:
+                raise ValueError("3r requires 4 parts (left anchor + 3 vertical)")
+            left = self._render_parts_block([parts[0]], indent="      ", sep="\n")
+            right = self._render_parts_block(parts[1:4], indent="      ", sep="\n")
+            return tpl.replace("{{LEFT_PART}}", left).replace("{{RIGHT_PARTS}}", right)
 
         raise KeyError(layout)
 

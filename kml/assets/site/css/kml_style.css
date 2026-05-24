@@ -391,55 +391,30 @@ h1 {
 /* outer enclosure */
 
 .enclosure-part {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
-/* centered interior */
-
-.enclosure-inner {
   position: absolute;
 
-  top: 52%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* smaller interior kanji */
-
-.enclosure-inner .kanji-part {
-  font-size: 1.6rem;
+  font-size: 4.2rem;
   line-height: 1;
-}
-.enclosure-layout {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  width: 120px;
-  height: 120px;
-}
-
-.enclosure-part {
-  position: absolute;
-  font-size: 4rem;
   z-index: 1;
 }
 
+/* interior component */
+
 .inner-part {
   position: relative;
+
   z-index: 2;
 
-  margin-left: 12px;
-  margin-top: 10px;
+  font-size: 1.9rem;
+  line-height: 1;
 
-  font-size: 2rem;
+  margin-left: 10px;
+  margin-top: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* =====================================================
    SPECIAL SIMPLE SHAPES

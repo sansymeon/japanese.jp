@@ -1,5 +1,12 @@
-===stack-horizontal====
+===anchor composite===
+<div class="component-box">
+  <div class="component-layout anchor-box">
+    <span class="kanji-part">{{KANJI}}</span>
+  </div>
 </div>
+
+===stack-horizontal====
+
    <div class="component-box">
   <div class="component-layout stack-horizontal">
     <span class="kanji-part">{{KANJI}}</span>
@@ -8,7 +15,7 @@
 </div>
 
 ====stack-vertical====
-</div>
+
    <div class="component-box">
   <div class="component-layout stack-vertical">
     <span class="kanji-part">{{KANJI}}</span>
@@ -56,8 +63,8 @@
 
     <span class="kanji-part">{{KANJI}}</span>
 
-    <div class="stack-horizontal">
-      <span class="kanji-part">{{KANJI}}</span>
+<div class="component-layout stack-horizontal">
+     <span class="kanji-part">{{KANJI}}</span>
       <span class="kanji-part">{{KANJI}}</span>
     </div>
 
@@ -73,20 +80,14 @@
   </div>
 </div>
 
-===enclosure composite===
-<div class="component-box">
-  <div class="component-layout anchor-box">
-    <span class="kanji-part">{{KANJI}}</span>
-  </div>
-</div>
+
 
 ===enclosure composite with inner component===
 <div class="component-box">
   <div class="component-layout enclosure-layout">
 
-    <div class="outer-kanji">{{KANJI}}</div>
-
-    <div class="inner-kanji">{{KANJI}}</div>
+<span class="kanji-part enclosure-part">{{KANJI}}</span>
+<span class="kanji-part inner-part">{{KANJI}}</span>
 
   </div>
 </div>
@@ -96,7 +97,7 @@
 <div class="component-box">
   <div class="component-layout stack-vertical">
 
-    <div class="stack-horizontal">
+<div class="component-layout stack-horizontal">
       <span class="kanji-part">{{KANJI}}</span>
       <span class="kanji-part">{{KANJI}}</span>
     </div>
@@ -114,3 +115,42 @@
        class="future-kanji-link">
       <span class="kanji-part">楚</span>
     </a>
+
+
+===three on right composite===
+
+<div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">{{KANJI}}</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">{{KANJI}}</span>
+      <span class="kanji-part">{{KANJI}}</span>
+      <span class="kanji-part">{{KANJI}}</span>
+    </div>
+
+  </div>
+</div>
+
+===central pillar layout===
+
+  <div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">{{KANJI}}</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">{{KANJI}}</span>
+      <span class="kanji-part">{{KANJI}}</span>
+    </div>
+    <div class="kanji-right">
+      <span class="kanji-part">戈</span>
+    </div>
+
+  </div>
+</div>

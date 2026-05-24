@@ -1,0 +1,78 @@
+PASS 8 — LESSON GENERATION REPORT (Lessons 23–27 v2)
+======================================================================
+
+Source CSV: kanji_master_with_components.v4c.csv
+Glossary:   glossary_family.csv
+Output:     lesson_XX_v2.html (does NOT overwrite originals)
+
+## LESSON 23
+
+  GLOSSARY PART: 冬 uses hub 夂
+  FAMILY TAGS: 冬 -> winter_family
+  Lesson 23 stats: {'ok': 20, 'incomplete': 0, 'error': 0, '3r': 0}
+  Written: lesson_23_v2.html
+
+## LESSON 24
+
+  ANCHOR COMPRESS: 競 立|兄 -> anchor layout a
+  ANCHOR COMPRESS: 商 立|冂|儿|口 -> anchor layout a
+  GLOSSARY PART: 嫡 uses hub 商
+  FAMILY TAGS: 嫡 -> deal_family
+  GLOSSARY PART: 適 uses hub 商
+  FAMILY TAGS: 適 -> deal_family
+  GLOSSARY PART: 滴 uses hub 商
+  FAMILY TAGS: 滴 -> deal_family
+  GLOSSARY PART: 敵 uses hub 商
+  GLOSSARY PART: 敵 uses hub 夂
+  FAMILY TAGS: 敵 -> deal_family,winter_family
+  Lesson 24 stats: {'ok': 20, 'incomplete': 0, 'error': 0, '3r': 0}
+  Written: lesson_24_v2.html
+
+## LESSON 25
+
+  LAYOUT INFER: 比 -> h (was blank, parts=2)
+  GLOSSARY PART: 渇 uses hub 曷
+  FAMILY TAGS: 渇 -> siesta_family
+  GLOSSARY PART: 謁 uses hub 曷
+  FAMILY TAGS: 謁 -> siesta_family
+  GLOSSARY PART: 褐 uses hub 曷
+  FAMILY TAGS: 褐 -> clothes_family,siesta_family
+  GLOSSARY PART: 喝 uses hub 曷
+  FAMILY TAGS: 喝 -> siesta_family
+  GLOSSARY PART: 葛 uses hub 曷
+  FAMILY TAGS: 葛 -> siesta_family
+  GLOSSARY PART: 敏 uses hub 夂
+  FAMILY TAGS: 敏 -> every_family,winter_family
+  Lesson 25 stats: {'ok': 20, 'incomplete': 0, 'error': 0, '3r': 0}
+  Written: lesson_25_v2.html
+
+## LESSON 26
+
+  GLOSSARY PART: 腹 uses hub 夂
+  3r USED: 腹 parts=月|𠂉|日|夂
+  FAMILY TAGS: 腹 -> winter_family
+  Lesson 26 stats: {'ok': 20, 'incomplete': 0, 'error': 0, '3r': 1}
+  Written: lesson_26_v2.html
+
+## LESSON 27
+
+  GLOSSARY PART: 識 uses hub 戈
+  FAMILY TAGS: 識 -> spear_family
+  ANCHOR COMPRESS: 鏡 金|立|見 -> anchor layout a
+  ANCHOR COMPRESS: 境 土|竟 -> anchor layout a
+  GLOSSARY PART: 激 uses hub 夂
+  FAMILY TAGS: 激 -> winter_family
+  Lesson 27 stats: {'ok': 20, 'incomplete': 0, 'error': 0, '3r': 0}
+  Written: lesson_27_v2.html
+
+## ARCHITECTURE NOTES
+
+  - Glossary hubs tagged with data-family + glossary-hub class
+  - Anchor compression: hub kanji rendered as layout a (no atomization)
+  - Hidden reusables (戈/俞/袁/夂) use future-kanji-link when configured
+  - 3r: left anchor + right vertical stack of three (experimental)
+
+## KEY PRINCIPLE
+
+  Human-guided assisted cognition rendering — not authoritative decomposition.
+
