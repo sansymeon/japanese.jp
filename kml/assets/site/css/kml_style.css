@@ -538,6 +538,19 @@ h1 {
   font-size: 1.5em;
 }
 
+.jp-verse.toggle-reading {
+  cursor: pointer;
+}
+
+.jp-verse ruby rt {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.toggle-reading.show-reading rt {
+  opacity: 1;
+}
+
 .en-verse {
   font-size: 1.25em;
   color: rgba(0,0,0,0.65);

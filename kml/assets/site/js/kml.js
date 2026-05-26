@@ -126,3 +126,15 @@ document.querySelectorAll("[data-primitive]").forEach(el => {
 });
 
 })();
+
+// ==============================
+// Click-to-reveal verse furigana
+// ==============================
+
+(function () {
+  document.querySelectorAll(".toggle-reading").forEach((el) => {
+    el.addEventListener("click", () => {
+      el.classList.toggle("show-reading");
+    });
+  });
+})();
