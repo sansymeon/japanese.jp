@@ -535,7 +535,7 @@ h1 {
 /* ===== Verses ===== */
 .jp-verse {
   font-family: 'Noto Serif JP', serif;
-  font-size: 1.5em;
+  font-size: 1.35em;
 }
 
 .jp-verse.toggle-reading {
@@ -552,7 +552,7 @@ h1 {
 }
 
 .en-verse {
-  font-size: 1.25em;
+  font-size: 1.1em;
   color: rgba(0,0,0,0.65);
 }
 
@@ -645,6 +645,23 @@ h1 {
 
   .kanji-entry {
     padding: 1rem 0.9rem 1.1rem;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .jp-verse {
+    font-size: 2.1rem;
+    line-height: 1.45;
+  }
+
+  .jp-verse rt {
+    font-size: 0.42em;
+  }
+
+  .en-verse {
+    font-size: 1.15rem;
+    line-height: 1.5;
   }
 
 }
