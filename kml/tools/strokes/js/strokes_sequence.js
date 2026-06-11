@@ -12,7 +12,7 @@ const INTRO_HOLD = 4000;
 const INTRO_FADE = 800;
 const PRE_DRAW_PAUSE = 200;
 const POST_STROKE_BUFFER = 400;
-const EMOJI_HOLD = 2600;
+const EMOJI_HOLD = 5500;
 const EMOJI_FADE = 800;
 
 /* =====================================================
