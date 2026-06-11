@@ -1,0 +1,374 @@
+/* Digital Art Exhibition – gallery presentation */
+
+:root {
+  --ex-fade: 5500ms;
+  --ex-exhale: 16s;
+  --ex-kanji-exhale: 20s;
+  --ex-kanji: clamp(4.5rem, 16vw, 10rem);
+  --ex-text: #f3ede3;
+  --ex-muted: rgba(243, 237, 227, 0.68);
+  --ex-accent: #c9b48a;
+  --ken-burns-duration: 300s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  color: var(--ex-text);
+  font-family: "Noto Serif JP", "Yuji Mai", Georgia, serif;
+}
+
+.exhibition-root {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  isolation: isolate;
+}
+
+/* ── Black curtain (between exhibits) ── */
+
+.exhibition-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #000;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity var(--ex-fade) ease-in-out;
+}
+
+.exhibition-veil.is-clear {
+  opacity: 0;
+}
+
+/* ── Artwork (permanent anchor) ── */
+
+.exhibition-artwork {
+  position: absolute;
+  inset: -6%;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--ex-fade) ease-in-out;
+}
+
+.exhibition-artwork.is-visible {
+  opacity: 1;
+}
+
+.exhibition-artwork.is-exhaling {
+  transition-duration: var(--ex-exhale, 16s);
+  transition-timing-function: ease-in;
+  opacity: 0;
+}
+
+.exhibition-artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.96) contrast(1.02);
+}
+
+.exhibition-artwork img.ken-burns {
+  animation: exhibition-drift var(--ken-burns-duration, 300s) ease-in-out infinite alternate;
+}
+
+.exhibition-root.is-paused .exhibition-artwork img.ken-burns {
+  animation-play-state: paused;
+}
+
+@keyframes exhibition-drift {
+  from {
+    transform: scale(1.02) translate(0, 0);
+  }
+  to {
+    transform: scale(1.1) translate(-1.2%, -0.8%);
+  }
+}
+
+.exhibition-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 42%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+/* ── Gallery entrance / exit marker (gold foil bookend artwork) ── */
+
+.exhibition-bookend {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ex-bookend-fade, 5500ms) ease-in-out;
+}
+
+.exhibition-bookend.is-visible {
+  opacity: 1;
+}
+
+.exhibition-bookend.is-exhaling {
+  transition-duration: var(--ex-bookend-exhale, 16s);
+  transition-timing-function: ease-in;
+  opacity: 0;
+}
+
+.exhibition-bookend img {
+  max-width: min(78vw, 560px);
+  max-height: min(82vh, 760px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.55));
+}
+
+/* ── Title card (kanji + keyword) ── */
+
+.exhibition-title {
+  position: absolute;
+  z-index: 3;
+  top: clamp(2rem, 10vh, 5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: min(90vw, 720px);
+  pointer-events: none;
+}
+
+
+.exhibition-kanji {
+  color: #f3ede3 !important;
+  text-shadow:
+      0 0 20px rgba(243,237,227,0.25),
+      0 0 40px rgba(243,237,227,0.12);
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: var(--ex-kanji);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--ex-fade) ease-in-out,
+    transform var(--ex-fade) ease-in-out;
+}
+
+.exhibition-kanji.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exhibition-kanji.is-exhaling {
+  transition-duration: var(--ex-kanji-exhale, 20s);
+  transition-timing-function: ease-in;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.exhibition-kanji.is-floating,
+.exhibition-kanji.is-on-black {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  text-shadow: 0 0 48px rgba(255, 255, 255, 0.06);
+}
+
+.exhibition-kanji.is-floating.is-visible {
+  transform: translate(-50%, -50%);
+}
+
+.exhibition-kanji.is-floating.is-exhaling {
+  transform: translate(-50%, -52%);
+}
+
+.exhibition-keyword {
+  margin-top: 0.75rem;
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  letter-spacing: 0.28em;
+  text-transform: lowercase;
+  color: var(--ex-accent);
+  opacity: 0;
+  transition: opacity var(--ex-keyword-fade, var(--ex-fade)) ease-in-out;
+}
+
+.exhibition-keyword.is-visible {
+  opacity: 0.92;
+}
+
+.exhibition-root.is-fixed-kanji .exhibition-keyword.is-visible {
+  opacity: 1;
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.9),
+    0 0 24px rgba(0, 0, 0, 0.65);
+}
+
+/* ── Curator's notes (verses) ── */
+
+.exhibition-notes {
+  position: absolute;
+  z-index: 3;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(88vw, 760px);
+  text-align: center;
+  pointer-events: none;
+}
+
+.exhibition-verse-jp {
+  margin: 0;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  line-height: 1.85;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--ex-fade) ease-in-out,
+    transform var(--ex-fade) ease-in-out;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.8);
+}
+
+.exhibition-verse-jp.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exhibition-verse-jp ruby rt {
+  opacity: 0;
+}
+
+.exhibition-verse-en {
+  margin: 1.1rem 0 0;
+  font-size: clamp(0.88rem, 1.9vw, 1.02rem);
+  line-height: 1.7;
+  color: var(--ex-muted);
+  font-style: italic;
+  white-space: pre-line;
+  opacity: 0;
+  transition: opacity var(--ex-fade) ease-in-out;
+}
+
+.exhibition-verse-en.is-visible {
+  opacity: 1;
+}
+
+/* ── Boot / error (hidden after start) ── */
+
+.exhibition-loading,
+.exhibition-error {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background: #000;
+  color: rgba(243, 237, 227, 0.5);
+}
+
+.exhibition-error {
+  color: #d4a0a0;
+}
+
+/* ── Autoplay gate ── */
+
+.exhibition-autoplay-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 2rem;
+  border: 0;
+  background: rgba(0, 0, 0, 0.72);
+  color: rgba(243, 237, 227, 0.82);
+  font: inherit;
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 600ms ease-in-out;
+}
+
+.exhibition-autoplay-gate.is-visible {
+  opacity: 1;
+}
+
+.exhibition-autoplay-gate:focus-visible {
+  outline: 1px solid rgba(201, 180, 138, 0.55);
+  outline-offset: -6px;
+}
+
+.exhibition-hidden {
+  display: none !important;
+}
+
+/* ── Fixed kanji mode (opacity-only text; no drift or floating) ── */
+
+.exhibition-root.is-fixed-kanji .exhibition-kanji {
+  transform: none;
+  transition: opacity var(--ex-fade) ease-in-out;
+}
+
+.exhibition-root.is-fixed-kanji .exhibition-kanji.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.exhibition-root.is-fixed-kanji .exhibition-kanji.is-exhaling {
+  opacity: 0;
+  transform: none;
+  transition-duration: var(--ex-kanji-exhale, 20s);
+  transition-timing-function: ease-in-out;
+}
+
+.exhibition-root.is-fixed-kanji .exhibition-kanji.is-on-black.is-visible,
+.exhibition-root.is-fixed-kanji .exhibition-kanji.is-on-black.is-exhaling {
+  transform: translate(-50%, -50%);
+}
+
+.exhibition-root.is-fixed-kanji .exhibition-verse-jp {
+  transform: none;
+  transition: opacity var(--ex-fade) ease-in-out;
+}
+
+.exhibition-root.is-fixed-kanji .exhibition-verse-jp.is-visible {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exhibition-artwork img.ken-burns {
+    animation: none;
+  }
+
+  .exhibition-artwork,
+  .exhibition-bookend,
+  .exhibition-kanji,
+  .exhibition-keyword,
+  .exhibition-verse-jp,
+  .exhibition-verse-en,
+  .exhibition-veil {
+    transition-duration: 0.01ms !important;
+  }
+}

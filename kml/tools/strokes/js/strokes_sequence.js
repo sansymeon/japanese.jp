@@ -8,7 +8,7 @@ function delay(ms) {
 
 /* ===== Timing ===== */
 
-const INTRO_HOLD = 3000;
+const INTRO_HOLD = 4000;
 const INTRO_FADE = 800;
 const PRE_DRAW_PAUSE = 200;
 const POST_STROKE_BUFFER = 400;
@@ -41,8 +41,8 @@ function prepareKanjiStrokes() {
 function animateKanjiStrokes(strokes) {
   if (!strokes) return 2000;
 
-  const DRAW = 650;
-  const GAP = 850;
+  const DRAW = 750;
+  const GAP = 950;
 
   strokes.forEach(stroke => {
     stroke.style.transition =
@@ -145,9 +145,19 @@ async function fadeSequence() {
    INIT
    ===================================================== */
 
+function formatSignatureLine() {
+  const sig = document.querySelector('.signature');
+  if (!sig || sig.dataset.formatted) return;
+
+  sig.dataset.formatted = '1';
+  sig.innerHTML = 'Drawn by One. <span class="signature-part2">Remembered by Many.</span>';
+}
+
 window.addEventListener('load', async () => {
   const washi = document.getElementById('washi-bg');
   const page = document.querySelector('.page');
+
+  formatSignatureLine();
 
   const loopBtn = document.getElementById("loop-btn");
 

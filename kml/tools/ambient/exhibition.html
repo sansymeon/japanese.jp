@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KML Digital Art Exhibition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/exhibition.css">
+</head>
+<body>
+
+<!--
+  Digital Art Exhibition – Lesson 40 test gallery
+
+  Heart v5:   ?collection=heart_v5  (default)
+  Heart v3:   ?collection=heart_v3
+  Heart v4:   ?collection=heart_v4  (fixed kanji)
+  Heart v5:   ?collection=heart_v5  (gold foil bookends + soundtrack)
+  Audio:      audio/flute_intro.mp3, audio/ambient_kanji_exhibition.mp3 in ambient folder
+  Debug:      add &debug=1 to log bookend diagnostics
+  Keyboard (hidden): Space pause · → next · ← previous
+
+  No on-screen controls. Museum projection only.
+-->
+
+<div class="exhibition-root" data-exhibition-root>
+
+  <div class="exhibition-loading" data-exhibition-loading aria-hidden="true"></div>
+  <div class="exhibition-error exhibition-hidden" data-exhibition-error></div>
+
+  <div class="exhibition-artwork" data-exhibition-artwork aria-hidden="true">
+    <img data-exhibition-artwork-img alt="">
+  </div>
+
+  <div class="exhibition-bookend" data-exhibition-bookend aria-hidden="true">
+    <img data-exhibition-bookend-img alt="">
+  </div>
+
+  <div class="exhibition-vignette" aria-hidden="true"></div>
+
+  <div class="exhibition-title">
+    <div class="exhibition-kanji" data-exhibition-kanji></div>
+    <div class="exhibition-keyword" data-exhibition-keyword></div>
+  </div>
+
+  <div class="exhibition-notes">
+    <p class="exhibition-verse-jp" data-exhibition-verse-jp></p>
+    <p class="exhibition-verse-en" data-exhibition-verse-en></p>
+  </div>
+
+  <div class="exhibition-veil" data-exhibition-veil aria-hidden="true"></div>
+
+  <button
+    type="button"
+    class="exhibition-autoplay-gate exhibition-hidden"
+    data-exhibition-autoplay-gate
+    aria-label="Tap or click to begin the exhibition"
+  >
+    Tap or click to begin the exhibition
+  </button>
+
+  <div class="exhibition-audio" aria-hidden="true" hidden>
+    <audio data-exhibition-intro-audio preload="auto"></audio>
+    <audio data-exhibition-ambient-audio preload="auto"></audio>
+  </div>
+
+</div>
+
+<script src="./js/exhibition-engine.js?v=11"></script>
+</body>
+</html>

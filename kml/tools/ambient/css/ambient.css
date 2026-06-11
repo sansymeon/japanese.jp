@@ -1,0 +1,386 @@
+/* KML Ambient Player – reusable rendering shell */
+
+:root {
+  --ambient-fade: 4000ms;
+  --ambient-overlay: 0.52;
+  --ambient-kanji: clamp(5rem, 18vw, 11rem);
+  --ambient-text: #f5f0e6;
+  --ambient-muted: rgba(245, 240, 230, 0.72);
+  --ambient-accent: #d4bc82;
+  --ken-burns-duration: 180s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #0e0d0b;
+  color: var(--ambient-text);
+  font-family: "Noto Serif JP", "Yuji Mai", Georgia, serif;
+}
+
+.ambient-root {
+  position: fixed;
+  inset: 0;
+  isolation: isolate;
+}
+
+/* ── Background layers (video or image fallback) ── */
+
+.ambient-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ambient-bg-layer {
+  position: absolute;
+  inset: -8%;
+  opacity: 0;
+  transition: opacity var(--ambient-fade) ease-in-out;
+  will-change: opacity, transform;
+}
+
+.ambient-bg-layer.is-active {
+  opacity: 1;
+}
+
+.ambient-bg-layer video,
+.ambient-bg-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ambient-bg-layer img.ken-burns {
+  animation: ken-burns var(--ken-burns-duration, 120s) ease-in-out infinite alternate;
+}
+
+.ambient-root.is-paused .ambient-bg-layer img.ken-burns {
+  animation-play-state: paused;
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(1.12) translate(-2%, -1.5%);
+  }
+}
+
+.ambient-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(14, 13, 11, 0.15) 0%, rgba(14, 13, 11, 0.75) 100%),
+    linear-gradient(to bottom, rgba(14, 13, 11, 0.35), rgba(14, 13, 11, 0.65));
+  opacity: var(--ambient-overlay);
+  pointer-events: none;
+}
+
+/* ── Foreground content ── */
+
+.ambient-stage {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  align-items: end;
+  justify-items: center;
+  height: 100%;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  text-align: center;
+}
+
+.ambient-kanji-block {
+  align-self: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--ambient-fade) ease-in-out,
+    transform var(--ambient-fade) ease-in-out;
+}
+
+.ambient-kanji-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ambient-kanji {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: var(--ambient-kanji);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 24px rgba(0, 0, 0, 0.55),
+    0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.ambient-keyword {
+  margin-top: 0.35rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  color: var(--ambient-accent);
+  opacity: 0.9;
+}
+
+.ambient-image-wrap {
+  width: min(420px, 72vw);
+  opacity: 0;
+  transform: scale(0.97);
+  transition:
+    opacity var(--ambient-fade) ease-in-out,
+    transform var(--ambient-fade) ease-in-out;
+}
+
+.ambient-image-wrap.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ambient-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.ambient-verses {
+  max-width: min(680px, 92vw);
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--ambient-fade) ease-in-out,
+    transform var(--ambient-fade) ease-in-out;
+}
+
+.ambient-verses.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ambient-verse-jp {
+  font-size: clamp(1.05rem, 2.6vw, 1.45rem);
+  line-height: 1.75;
+  margin: 0 0 0.65rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+.ambient-verse-jp ruby rt {
+  font-size: 0.55em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ambient-verse-jp.show-furigana ruby rt {
+  opacity: 0.85;
+}
+
+.ambient-verse-en {
+  margin: 0;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--ambient-muted);
+  font-style: italic;
+  white-space: pre-line;
+}
+
+/* ── Study mode (guided flashcards) ── */
+
+.ambient-root.is-study .ambient-image-wrap {
+  display: none;
+}
+
+.ambient-root.is-study .ambient-verses {
+  opacity: 1;
+  transform: none;
+}
+
+.ambient-root.is-study .ambient-kanji-block,
+.ambient-root.is-study .ambient-verse-jp {
+  opacity: 0;
+  transform: none;
+  transition: opacity var(--ambient-fade) ease-in-out;
+}
+
+.ambient-root.is-study .ambient-keyword {
+  opacity: 0;
+  transition: opacity var(--ambient-fade) ease-in-out;
+}
+
+.ambient-root.is-study .ambient-kanji-block.is-visible,
+.ambient-root.is-study .ambient-verse-jp.is-visible {
+  opacity: 1;
+}
+
+.ambient-root.is-study .ambient-keyword.is-visible {
+  opacity: 0.92;
+}
+
+.ambient-root.is-study .ambient-verse-en {
+  display: none;
+}
+
+.ambient-root.is-study .ambient-bg-layer.is-intro img {
+  object-fit: contain;
+  animation: none;
+}
+
+.ambient-autoplay-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 2rem;
+  border: 0;
+  background: rgba(14, 13, 11, 0.72);
+  color: rgba(245, 240, 230, 0.82);
+  font: inherit;
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 600ms ease-in-out;
+}
+
+.ambient-autoplay-gate.is-visible {
+  opacity: 1;
+}
+
+.ambient-autoplay-gate:focus-visible {
+  outline: 1px solid rgba(212, 188, 130, 0.55);
+  outline-offset: -6px;
+}
+
+.ambient-root.is-study.is-foreground-exiting .ambient-kanji-block,
+.ambient-root.is-study.is-foreground-exiting .ambient-keyword,
+.ambient-root.is-study.is-foreground-exiting .ambient-verse-jp {
+  transition: opacity var(--ambient-study-exit-fade, 800ms) ease-in-out;
+}
+
+/* ── Chrome / controls ── */
+
+.ambient-chrome {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ambient-title {
+  position: absolute;
+  top: clamp(0.75rem, 2vw, 1.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.55);
+  pointer-events: none;
+}
+
+.ambient-controls {
+  position: absolute;
+  bottom: clamp(0.75rem, 2vw, 1.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  pointer-events: auto;
+}
+
+.ambient-controls button {
+  appearance: none;
+  border: 1px solid rgba(245, 240, 230, 0.22);
+  background: rgba(14, 13, 11, 0.55);
+  color: var(--ambient-text);
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.ambient-controls button:hover {
+  background: rgba(14, 13, 11, 0.75);
+}
+
+.ambient-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, transparent, var(--ambient-accent), transparent);
+  transition: width 120ms linear;
+}
+
+.ambient-root.is-manual .ambient-progress {
+  display: none;
+}
+
+.ambient-root.is-capture .ambient-chrome {
+  display: none;
+}
+
+.ambient-status {
+  position: absolute;
+  top: clamp(0.75rem, 2vw, 1.25rem);
+  right: clamp(0.75rem, 2vw, 1.25rem);
+  font-size: 0.72rem;
+  color: rgba(245, 240, 230, 0.45);
+  pointer-events: none;
+}
+
+.ambient-loading,
+.ambient-error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  background: #0e0d0b;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ambient-error {
+  color: #e8b4b4;
+}
+
+.ambient-hidden {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-bg-layer img.ken-burns {
+    animation: none;
+  }
+
+  .ambient-bg-layer,
+  .ambient-kanji-block,
+  .ambient-image-wrap,
+  .ambient-verses {
+    transition-duration: 0.01ms !important;
+  }
+}

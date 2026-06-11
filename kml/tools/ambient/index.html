@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KML Ambient Player</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/ambient.css">
+</head>
+<body>
+
+<!--
+  KML Ambient Player
+
+  Collections:
+    ?collection=lesson_38_study
+    ?collection=lesson_39_study
+    ?collection=lesson_40_study   (default)
+    ?collection=lesson_41_study
+    ?collection=heart_v2
+
+  Archived (50 min Lesson 40 ambient/exhibition): collections/archive/
+
+  YouTube / screen capture (hides controls):
+    ?collection=heart_v2&capture=1
+
+  Serve from this directory (assets symlink required):
+    ./serve.sh
+
+  The player resolves ../../assets → /assets/... in the browser.
+  studies live at kml/assets/studies/ — exposed via ./assets → ../../assets
+-->
+
+<div class="ambient-root" data-ambient-root>
+
+  <div class="ambient-loading" data-ambient-loading>Loading collection…</div>
+  <div class="ambient-error ambient-hidden" data-ambient-error></div>
+
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-bg-layer" data-ambient-bg="0"></div>
+    <div class="ambient-bg-layer" data-ambient-bg="1"></div>
+    <div class="ambient-overlay" data-ambient-overlay></div>
+  </div>
+
+  <div class="ambient-stage">
+    <div class="ambient-kanji-block" data-ambient-kanji-block>
+      <div class="ambient-kanji" data-ambient-kanji></div>
+      <div class="ambient-keyword" data-ambient-keyword></div>
+    </div>
+
+    <div class="ambient-image-wrap" data-ambient-image-wrap>
+      <img data-ambient-image alt="">
+    </div>
+
+    <div class="ambient-verses" data-ambient-verses>
+      <p class="ambient-verse-jp" data-ambient-verse-jp></p>
+      <p class="ambient-verse-en" data-ambient-verse-en></p>
+    </div>
+  </div>
+
+  <div class="ambient-chrome">
+    <div class="ambient-title" data-ambient-title>KML Ambient</div>
+    <div class="ambient-status" data-ambient-status></div>
+    <div class="ambient-controls">
+      <button type="button" data-ambient-prev>Previous</button>
+      <button type="button" data-ambient-toggle>Pause motion</button>
+      <button type="button" data-ambient-next>Next</button>
+      <button type="button" data-ambient-furigana>Furigana</button>
+    </div>
+    <div class="ambient-progress" data-ambient-progress></div>
+  </div>
+
+  <button
+    type="button"
+    class="ambient-autoplay-gate ambient-hidden"
+    data-ambient-autoplay-gate
+    aria-label="Tap or click to begin"
+  >
+    Tap or click to begin
+  </button>
+
+  <div class="ambient-audio" aria-hidden="true" hidden>
+    <audio data-ambient-intro-audio preload="auto"></audio>
+    <audio data-ambient-lesson-audio preload="auto"></audio>
+  </div>
+
+</div>
+
+<script src="./js/ambient-engine.js?v=study8"></script>
+</body>
+</html>
