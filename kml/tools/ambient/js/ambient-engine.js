@@ -30,6 +30,10 @@
     },
   };
 
+  function formatKeyword(keyword) {
+    return String(keyword || "").replace(/_/g, " ").trim();
+  }
+
   class AmbientPlayer {
     constructor(root, collection) {
       this.root = root;
@@ -39,8 +43,10 @@
       this.background = { ...DEFAULTS.background, ...(collection.background || {}) };
       this.display = { ...DEFAULTS.display, ...(collection.display || {}) };
       const params = new URLSearchParams(window.location.search);
-      if (params.get("capture") === "1") {
+      this.captureMode = params.get("capture") === "1";
+      if (this.captureMode) {
         this.display.hideChrome = true;
+        this.display.loop = false;
       }
       this.assetsBase = (collection.assetsBase || "../../assets").replace(/\/$/, "");
       this.soundtrack = collection.soundtrack || null;
@@ -55,6 +61,9 @@
       this.audioUnlocked = false;
       this._studyForegroundHidden = false;
       this._studyLoopFinishing = false;
+      this._captureEnding = false;
+      this.presentationEnded = false;
+      this._cursorTimer = null;
 
       this.els = {
         loading: root.querySelector("[data-ambient-loading]"),
@@ -82,9 +91,31 @@
 
       this.applyTheme();
       this.bindControls();
+      if (this.captureMode) {
+        this.initCaptureMode();
+      }
       if (this.isStudy && this.hasStudyAudio()) {
         this.initAudio();
       }
+    }
+
+    initCaptureMode() {
+      document.documentElement.classList.add("is-capture-doc");
+      this.root.classList.add("is-presentation");
+
+      const idleMs = this.timing.captureCursorIdleMs ?? 3000;
+      const hideCursor = () => {
+        this.root.classList.add("is-cursor-idle");
+      };
+      const showCursor = () => {
+        this.root.classList.remove("is-cursor-idle");
+        clearTimeout(this._cursorTimer);
+        this._cursorTimer = window.setTimeout(hideCursor, idleMs);
+      };
+
+      document.addEventListener("mousemove", showCursor);
+      document.addEventListener("mousedown", showCursor);
+      showCursor();
     }
 
     hasStudyAudio() {
@@ -272,12 +303,172 @@
       this.root.classList.remove("is-foreground-exiting");
     }
 
-    async fadeStudyBackgroundToBlack(t) {
+    async fadeToBlackForGallerySeal(t) {
+      const fadeMs = t.gallerySealFadeToBlackMs ?? 2500;
+      document.documentElement.style.setProperty(
+        "--ambient-gallery-fade-to-black",
+        `${fadeMs}ms`
+      );
+      document.documentElement.style.setProperty(
+        "--ambient-capture-fade",
+        `${fadeMs}ms`
+      );
+
+      this.root.classList.add("is-gallery-seal-fading");
+      const curtain = this.captureCurtainEl();
+      requestAnimationFrame(() => curtain.classList.add("is-visible"));
+
+      await this.wait(fadeMs);
+
+      const currentEl = this.bgSlotEl(this.activeBgSlot);
+      currentEl.classList.remove("is-active");
+      this.clearBgSlot(currentEl);
+      this.root.classList.remove("is-gallery-seal-fading");
+      this.root.classList.add("is-gallery-seal-active");
+    }
+
+    async fadeStudyBackgroundToBlack(t, { forGallerySeal = false } = {}) {
+      if (forGallerySeal) {
+        await this.fadeToBlackForGallerySeal(t);
+        return;
+      }
       const fadeMs = t.studyLoopFadeMs ?? t.crossfadeMs ?? 2500;
       const currentEl = this.bgSlotEl(this.activeBgSlot);
       currentEl.classList.remove("is-active");
       await this.wait(fadeMs);
       this.clearBgSlot(currentEl);
+    }
+
+    usesGallerySeal() {
+      return this.collection.ending?.type === "gallerySeal";
+    }
+
+    gallerySealImage() {
+      return this.collection.ending?.sealImage || "images/gold_closing.png";
+    }
+
+    gallerySealEl() {
+      let seal = this.root.querySelector("[data-ambient-gallery-seal]");
+      if (!seal) {
+        seal = document.createElement("div");
+        seal.className = "ambient-gallery-seal";
+        seal.setAttribute("data-ambient-gallery-seal", "");
+        seal.setAttribute("aria-hidden", "true");
+        const img = document.createElement("img");
+        img.setAttribute("data-ambient-gallery-seal-img", "");
+        img.alt = "";
+        seal.appendChild(img);
+        this.root.appendChild(seal);
+      }
+      return seal;
+    }
+
+    async fadeOutStudyVerses(t) {
+      const fadeMs = t.gallerySealVerseFadeMs ?? t.studyExitFadeMs ?? 1800;
+      document.documentElement.style.setProperty(
+        "--ambient-gallery-verse-fade",
+        `${fadeMs}ms`
+      );
+      this.root.classList.add("is-verse-exiting");
+      this.els.verseJp?.classList.remove("is-visible");
+      await this.wait(fadeMs);
+    }
+
+    async fadeOutStudyKanji(t) {
+      const fadeMs = t.gallerySealKanjiFadeMs ?? t.studyExitFadeMs ?? 1800;
+      document.documentElement.style.setProperty(
+        "--ambient-gallery-kanji-fade",
+        `${fadeMs}ms`
+      );
+      this.root.classList.add("is-kanji-exiting");
+      this.els.kanjiBlock?.classList.remove("is-visible");
+      this.els.keyword?.classList.remove("is-visible");
+      await this.wait(fadeMs);
+    }
+
+    async preloadGallerySeal() {
+      if (!this.usesGallerySeal()) return;
+      const url = this.assetUrl(this.gallerySealImage());
+      await new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve();
+        img.onerror = () => resolve();
+        img.src = url;
+      });
+    }
+
+    async revealGallerySeal(t) {
+      const fadeMs = t.gallerySealFadeInMs ?? 2500;
+      const seal = this.gallerySealEl();
+      const img = seal.querySelector("img");
+      if (img) {
+        img.src = this.assetUrl(this.gallerySealImage());
+        if (img.decode) {
+          try {
+            await img.decode();
+          } catch (_) {
+            /* decode optional */
+          }
+        }
+      }
+
+      document.documentElement.style.setProperty(
+        "--ambient-gallery-seal-fade",
+        `${fadeMs}ms`
+      );
+      requestAnimationFrame(() => seal.classList.add("is-visible"));
+      await this.wait(fadeMs);
+    }
+
+    async beginGallerySealEnding(t) {
+      if (this._studyLoopFinishing) return;
+      this._studyLoopFinishing = true;
+      this.clearTimers();
+
+      try {
+        await this.preloadGallerySeal();
+
+        await this.fadeOutStudyVerses(t);
+        if (this.destroyed || this.paused) return;
+
+        await this.fadeOutStudyKanji(t);
+        if (this.destroyed || this.paused) return;
+
+        await this.wait(t.gallerySealImageHoldMs ?? 4000);
+        if (this.destroyed || this.paused) return;
+
+        await this.fadeStudyBackgroundToBlack(t, { forGallerySeal: true });
+        if (this.destroyed || this.paused) return;
+
+        await this.revealGallerySeal(t);
+        if (this.destroyed || this.paused) return;
+
+        const sealHold = t.gallerySealHoldMs ?? 9000;
+        await Promise.all([
+          this.wait(sealHold),
+          this.hasStudyAudio() ? this.waitForSoundtrackEnd() : Promise.resolve(),
+        ]);
+        if (this.destroyed) return;
+
+        this.finishPresentationOnSeal();
+      } finally {
+        this._studyLoopFinishing = false;
+      }
+    }
+
+    finishPresentationOnSeal() {
+      if (this.presentationEnded) return;
+      this.presentationEnded = true;
+      this.paused = true;
+      this.clearTimers();
+      this.stopAllAudio();
+      this.root.classList.add("is-presentation-ended", "is-gallery-seal-ending");
+      this.root.querySelectorAll("video").forEach((v) => v.pause());
+      document.dispatchEvent(
+        new CustomEvent("kml-ambient-presentation-end", {
+          detail: { collection: this.collection.id, ending: "gallerySeal" },
+        })
+      );
     }
 
     async beginStudyConcert(t, count) {
@@ -294,10 +485,76 @@
         await this.fadeStudyBackgroundToBlack(t);
         if (this.destroyed || this.paused) return;
 
+        if (this.captureMode) {
+          await this.holdCaptureBlack(t);
+          return;
+        }
+
         await this.playScene(0, { syncSoundtrack: true, loopRestart: true });
       } finally {
         this._studyLoopFinishing = false;
       }
+    }
+
+    captureCurtainEl() {
+      let curtain = this.root.querySelector("[data-ambient-capture-curtain]");
+      if (!curtain) {
+        curtain = document.createElement("div");
+        curtain.className = "ambient-capture-curtain";
+        curtain.setAttribute("data-ambient-capture-curtain", "");
+        curtain.setAttribute("aria-hidden", "true");
+        this.root.appendChild(curtain);
+      }
+      return curtain;
+    }
+
+    async holdCaptureBlack(t) {
+      const fadeMs = t.studyLoopFadeMs ?? t.crossfadeMs ?? 2500;
+      const holdMs = t.captureHoldBlackMs ?? 4000;
+      const curtain = this.captureCurtainEl();
+
+      document.documentElement.style.setProperty(
+        "--ambient-capture-fade",
+        `${fadeMs}ms`
+      );
+      curtain.classList.add("is-visible");
+      await this.wait(holdMs);
+      this.finishPresentation();
+    }
+
+    async beginCaptureEnding(t) {
+      if (this._captureEnding || this.presentationEnded) return;
+      this._captureEnding = true;
+
+      try {
+        this.clearTimers();
+        this.setForegroundVisible({});
+        const fgFade = t.studyExitFadeMs ?? t.fadeMs ?? 1800;
+        await this.wait(fgFade);
+        if (this.destroyed) return;
+
+        await this.fadeStudyBackgroundToBlack(t);
+        if (this.destroyed) return;
+
+        await this.holdCaptureBlack(t);
+      } finally {
+        this._captureEnding = false;
+      }
+    }
+
+    finishPresentation() {
+      if (this.presentationEnded) return;
+      this.presentationEnded = true;
+      this.paused = true;
+      this.clearTimers();
+      this.stopAllAudio();
+      this.root.classList.add("is-presentation-ended");
+      this.root.querySelectorAll("video").forEach((v) => v.pause());
+      document.dispatchEvent(
+        new CustomEvent("kml-ambient-presentation-end", {
+          detail: { collection: this.collection.id },
+        })
+      );
     }
 
     async startSoundtrack(forceRestart = false) {
@@ -372,6 +629,8 @@
     }
 
     bindControls() {
+      if (this.captureMode) return;
+
       this.els.btnToggle?.addEventListener("click", () => this.togglePause());
       this.els.btnPrev?.addEventListener("click", () => this.prevScene());
       this.els.btnNext?.addEventListener("click", () => this.nextScene());
@@ -448,6 +707,9 @@
       const img = document.createElement("img");
       img.src = src;
       img.alt = scene.kanji || "";
+      if (scene.imageFocus) {
+        img.style.objectPosition = scene.imageFocus;
+      }
       if (this.background.kenBurns) {
         img.classList.add("ken-burns");
       }
@@ -489,7 +751,7 @@
     populateForeground(scene) {
       if (this.els.kanji) this.els.kanji.textContent = scene.kanji || "";
       if (this.els.keyword) {
-        this.els.keyword.textContent = scene.keyword || "";
+        this.els.keyword.textContent = formatKeyword(scene.keyword);
         this.els.keyword.hidden = !this.display.showKeyword || !scene.keyword;
       }
       if (this.els.image) {
@@ -505,7 +767,7 @@
       if (this.els.verseEn) {
         this.els.verseEn.textContent = scene.verse?.en || "";
       }
-      if (this.els.status) {
+      if (this.els.status && !this.captureMode) {
         const parts = [
           `${this.sceneIndex + 1} / ${this.scenes.length}`,
           scene.kanji || scene.id,
@@ -591,8 +853,19 @@
     }
 
     scheduleStudyAdvance(t, count) {
+      const isLastCard = this.sceneIndex === count - 1;
+
+      if (isLastCard && this.usesGallerySeal()) {
+        this.schedule(() => {
+          if (!this.destroyed && !this.paused) this.beginGallerySealEnding(t);
+        }, this.totalSceneDuration(t));
+        return;
+      }
+
       const isLastInLoop =
-        this.sceneIndex === count - 1 && this.display.loop && this.soundtrack?.main;
+        isLastCard &&
+        this.soundtrack?.main &&
+        (this.display.loop || this.captureMode);
 
       if (isLastInLoop) {
         const exitMs = (t.studyExitFadeMs ?? 800) + (t.studyEmptyBeatMs ?? 400);
@@ -614,8 +887,12 @@
       this.schedule(() => {
         const next = this.sceneIndex + 1;
         if (next >= count && !this.display.loop) {
-          this.paused = true;
-          this.updateToggleLabel();
+          if (this.captureMode) {
+            this.beginCaptureEnding(t);
+          } else {
+            this.paused = true;
+            this.updateToggleLabel();
+          }
           return;
         }
         this.playScene(next);
@@ -748,8 +1025,12 @@
           this.schedule(() => {
             const next = this.sceneIndex + 1;
             if (next >= count && !this.display.loop) {
-              this.paused = true;
-              this.updateToggleLabel();
+              if (this.captureMode) {
+                this.beginCaptureEnding(t);
+              } else {
+                this.paused = true;
+                this.updateToggleLabel();
+              }
               return;
             }
             this.playScene(next);
@@ -800,7 +1081,12 @@
       this.els.loading?.classList.add("ambient-hidden");
       this.els.error?.classList.add("ambient-hidden");
       if (this.isStudy && this.hasStudyAudio()) {
-        await this.ensureAudioUnlocked();
+        await Promise.all([
+          this.ensureAudioUnlocked(),
+          this.preloadGallerySeal(),
+        ]);
+      } else {
+        await this.preloadGallerySeal();
       }
       if (this.collection.intro) {
         await this.playIntro(this.collection.intro);
@@ -812,8 +1098,11 @@
     destroy() {
       this.destroyed = true;
       this.clearTimers();
+      clearTimeout(this._cursorTimer);
       this.stopAllAudio();
-      document.removeEventListener("keydown", this.onKeyDown);
+      if (this.onKeyDown) {
+        document.removeEventListener("keydown", this.onKeyDown);
+      }
       this.root.querySelectorAll("video").forEach((v) => {
         v.pause();
         v.removeAttribute("src");
@@ -823,10 +1112,26 @@
   }
 
   async function loadCollection(name) {
-    const url = `./collections/${name}.json`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Could not load collection "${name}" (${res.status}).`);
-    return res.json();
+    const params = new URLSearchParams(window.location.search);
+    const capture = params.get("capture") === "1";
+
+    const candidates = [];
+    if (name.startsWith("exhibition/")) {
+      candidates.push(`./${name}.json`);
+    } else {
+      if (capture) {
+        candidates.push(`./exhibition/${name}.json`);
+      }
+      candidates.push(`./collections/${name}.json`);
+    }
+
+    let lastStatus = 0;
+    for (const url of candidates) {
+      const res = await fetch(url);
+      if (res.ok) return res.json();
+      lastStatus = res.status;
+    }
+    throw new Error(`Could not load collection "${name}" (${lastStatus}).`);
   }
 
   function collectionFromQuery() {

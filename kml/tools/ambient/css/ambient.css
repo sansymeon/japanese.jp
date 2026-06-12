@@ -339,8 +339,109 @@ body {
   display: none;
 }
 
+/* ── Presentation / OBS capture mode ── */
+
 .ambient-root.is-capture .ambient-chrome {
   display: none;
+}
+
+.ambient-root.is-capture .ambient-loading {
+  color: transparent;
+  user-select: none;
+}
+
+.ambient-root.is-capture .ambient-autoplay-gate {
+  color: transparent;
+  background: transparent;
+  backdrop-filter: none;
+  letter-spacing: 0;
+}
+
+.ambient-root.is-capture.is-cursor-idle,
+.ambient-root.is-capture.is-cursor-idle * {
+  cursor: none !important;
+}
+
+html.is-capture-doc,
+html.is-capture-doc body {
+  overflow: hidden;
+}
+
+.ambient-capture-curtain {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  background: #0e0d0b;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ambient-capture-fade, 2500ms) ease-in-out;
+}
+
+.ambient-capture-curtain.is-visible {
+  opacity: 1;
+}
+
+.ambient-root.is-presentation-ended .ambient-stage,
+.ambient-root.is-presentation-ended .ambient-bg {
+  visibility: hidden;
+}
+
+/* ── Gallery Seal Ending ── */
+
+.ambient-root.is-study.is-verse-exiting .ambient-verse-jp {
+  transition: opacity var(--ambient-gallery-verse-fade, 1800ms) ease-in-out;
+  opacity: 0 !important;
+}
+
+.ambient-root.is-study.is-kanji-exiting .ambient-kanji-block,
+.ambient-root.is-study.is-kanji-exiting .ambient-keyword {
+  transition: opacity var(--ambient-gallery-kanji-fade, 1800ms) ease-in-out;
+  opacity: 0 !important;
+}
+
+.ambient-root.is-gallery-seal-fading .ambient-overlay {
+  transition: opacity var(--ambient-gallery-fade-to-black, 2500ms) ease-in-out;
+  opacity: 0;
+}
+
+.ambient-root.is-gallery-seal-fading .ambient-bg-layer.is-active img.ken-burns {
+  animation-play-state: running;
+}
+
+.ambient-root.is-gallery-seal-active .ambient-overlay {
+  opacity: 0;
+}
+
+.ambient-gallery-seal {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ambient-gallery-seal-fade, 2500ms) ease-in-out;
+}
+
+.ambient-gallery-seal.is-visible {
+  opacity: 1;
+}
+
+.ambient-gallery-seal img {
+  width: min(56vw, 400px);
+  height: min(56vw, 400px);
+  object-fit: cover;
+  display: block;
+  clip-path: circle(42% at 50% 50%);
+  filter: drop-shadow(0 6px 28px rgba(0, 0, 0, 0.45));
+  will-change: opacity;
+}
+
+.ambient-root.is-presentation-ended.is-gallery-seal-ending .ambient-gallery-seal {
+  visibility: visible;
+  opacity: 1;
 }
 
 .ambient-status {

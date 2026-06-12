@@ -1,9 +1,13 @@
 {
   "id": "lesson_39_study",
-  "title": "KML Ambient Study — Lesson 39",
+  "title": "KML Ambient Study — Lesson 39 (Exhibition)",
   "presentation": "study",
   "assetsBase": "../../assets",
-  "notes": "Study template (~8 min loop). Silent hero, lesson bed with cards. Friend opens; Uncle closes with concert fade.",
+  "notes": "Exhibition / presentation build. Friend opens; Uncle closes with Gallery Seal Ending (image hold, fade to black, gold 漢 seal, music resolves, end on seal).",
+  "ending": {
+    "type": "gallerySeal",
+    "sealImage": "images/gold_closing.png"
+  },
   "intro": {
     "image": "covers/lesson_39.png",
     "title": "Lesson 39",
@@ -26,7 +30,13 @@
     "studyLoopConcertFadeMs": 2500,
     "studyLoopFadeMs": 2500,
     "crossfadeMs": 2500,
-    "kenBurnsDurationMs": 60000
+    "kenBurnsDurationMs": 60000,
+    "gallerySealVerseFadeMs": 1800,
+    "gallerySealKanjiFadeMs": 1800,
+    "gallerySealImageHoldMs": 4000,
+    "gallerySealFadeToBlackMs": 2500,
+    "gallerySealFadeInMs": 2500,
+    "gallerySealHoldMs": 9000
   },
   "background": {
     "mode": "image",
@@ -37,7 +47,7 @@
   "display": {
     "showKeyword": true,
     "showFurigana": false,
-    "loop": true,
+    "loop": false,
     "autoAdvance": true
   },
   "scenes": [

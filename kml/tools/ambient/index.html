@@ -16,17 +16,27 @@
 <!--
   KML Ambient Player
 
-  Collections:
+  Collections (YouTube / loop — collections/):
     ?collection=lesson_38_study
     ?collection=lesson_39_study
-    ?collection=lesson_40_study   (default)
+    ?collection=lesson_40_study
     ?collection=lesson_41_study
     ?collection=heart_v2
 
+  Exhibition / presentation (Gallery Seal Ending — exhibition/):
+    ?collection=exhibition/lesson_39_study&capture=1
+    ?collection=exhibition/lesson_40_study&capture=1
+
   Archived (50 min Lesson 40 ambient/exhibition): collections/archive/
 
-  YouTube / screen capture (hides controls):
-    ?collection=heart_v2&capture=1
+  OBS / presentation mode (no chrome, no loop, clean ending):
+    ?collection=lesson_40_study&capture=1
+
+  Flow: intro → cards → Gallery Seal Ending. With capture=1, loads exhibition/ build automatically.
+
+  Record Study Exhibition MP4s:
+    ./scripts/record_study_exhibition.sh
+    → study_exhibitions/lesson_XX_study.mp4
 
   Serve from this directory (assets symlink required):
     ./serve.sh
@@ -90,6 +100,6 @@
 
 </div>
 
-<script src="./js/ambient-engine.js?v=study8"></script>
+<script src="./js/ambient-engine.js?v=study13"></script>
 </body>
 </html>

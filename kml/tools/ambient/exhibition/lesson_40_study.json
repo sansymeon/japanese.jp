@@ -1,9 +1,13 @@
 {
   "id": "lesson_40_study",
-  "title": "KML Ambient Study — Lesson 40",
+  "title": "KML Ambient Study — Lesson 40 (Exhibition)",
   "presentation": "study",
   "assetsBase": "../../assets",
-  "notes": "YouTube / loop build. Original lesson order. Last card: kanji/verse fade to image-only concert until music ends, then fade to black and loop.",
+  "notes": "Exhibition / presentation build. Love opens; Wide closes with Gallery Seal Ending (image hold, fade to black, gold 漢 seal, music resolves, end on seal).",
+  "ending": {
+    "type": "gallerySeal",
+    "sealImage": "images/gold_closing.png"
+  },
   "intro": {
     "image": "covers/lesson_40.png",
     "title": "Lesson 40",
@@ -26,7 +30,13 @@
     "studyLoopConcertFadeMs": 2500,
     "studyLoopFadeMs": 2500,
     "crossfadeMs": 2500,
-    "kenBurnsDurationMs": 60000
+    "kenBurnsDurationMs": 60000,
+    "gallerySealVerseFadeMs": 1800,
+    "gallerySealKanjiFadeMs": 1800,
+    "gallerySealImageHoldMs": 4000,
+    "gallerySealFadeToBlackMs": 2500,
+    "gallerySealFadeInMs": 2500,
+    "gallerySealHoldMs": 9000
   },
   "background": {
     "mode": "image",
@@ -37,10 +47,21 @@
   "display": {
     "showKeyword": true,
     "showFurigana": false,
-    "loop": true,
+    "loop": false,
     "autoAdvance": true
   },
   "scenes": [
+    {
+      "id": "love",
+      "kanji": "愛",
+      "keyword": "love",
+      "image": "studies/love.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>愛<rt>あい</rt></ruby>は<ruby>強<rt>つよ</rt></ruby>さではなく、<br>    <ruby>誰<rt>だれ</rt></ruby>かを<ruby>抱<rt>だ</rt></ruby>く<ruby>静<rt>しず</rt></ruby>かな<ruby>力<rt>ちから</rt></ruby>だった。",
+        "en": "Love was not strength,\nbut the quiet power to hold another close."
+      }
+    },
     {
       "id": "slope",
       "kanji": "坂",
@@ -215,17 +236,6 @@
       "verse": {
         "jpHtml": "<ruby>授<rt>さず</rt></ruby>けられた<ruby>言葉<rt>ことば</rt></ruby>は<ruby>巻物<rt>まきもの</rt></ruby>より<ruby>長<rt>なが</rt></ruby>く、<br>    <ruby>後<rt>のち</rt></ruby>の<ruby>世<rt>よ</rt></ruby>まで<ruby>残<rt>のこ</rt></ruby>った。",
         "en": "The lesson bestowed endured longer than any scroll,\nremaining for generations."
-      }
-    },
-    {
-      "id": "love",
-      "kanji": "愛",
-      "keyword": "love",
-      "image": "studies/love.png",
-      "video": null,
-      "verse": {
-        "jpHtml": "<ruby>愛<rt>あい</rt></ruby>は<ruby>強<rt>つよ</rt></ruby>さではなく、<br>    <ruby>誰<rt>だれ</rt></ruby>かを<ruby>抱<rt>だ</rt></ruby>く<ruby>静<rt>しず</rt></ruby>かな<ruby>力<rt>ちから</rt></ruby>だった。",
-        "en": "Love was not strength,\nbut the quiet power to hold another close."
       }
     },
     {
