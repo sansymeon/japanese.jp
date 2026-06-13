@@ -304,21 +304,38 @@
     }
 
     async fadeToBlackForGallerySeal(t) {
-      const fadeMs = t.gallerySealFadeToBlackMs ?? 2500;
+      const blackMs = t.gallerySealFadeToBlackMs ?? 5000;
+      const sealMs = t.gallerySealFadeInMs ?? 4000;
+      const overlapMs = t.gallerySealOverlapMs ?? 2800;
+      const sealDelay = Math.max(0, blackMs - overlapMs);
+
       document.documentElement.style.setProperty(
         "--ambient-gallery-fade-to-black",
-        `${fadeMs}ms`
+        `${blackMs}ms`
       );
       document.documentElement.style.setProperty(
         "--ambient-capture-fade",
-        `${fadeMs}ms`
+        `${blackMs}ms`
       );
+      document.documentElement.style.setProperty(
+        "--ambient-gallery-seal-fade",
+        `${sealMs}ms`
+      );
+
+      const seal = this.gallerySealEl();
+      seal.classList.remove("is-visible");
 
       this.root.classList.add("is-gallery-seal-fading");
       const curtain = this.captureCurtainEl();
+      curtain.classList.remove("is-visible");
       requestAnimationFrame(() => curtain.classList.add("is-visible"));
 
-      await this.wait(fadeMs);
+      await this.wait(sealDelay);
+      if (this.destroyed || this.paused) return;
+
+      requestAnimationFrame(() => seal.classList.add("is-visible"));
+      await this.wait(Math.max(blackMs - sealDelay, sealMs));
+      if (this.destroyed || this.paused) return;
 
       const currentEl = this.bgSlotEl(this.activeBgSlot);
       currentEl.classList.remove("is-active");
@@ -398,7 +415,7 @@
     }
 
     async revealGallerySeal(t) {
-      const fadeMs = t.gallerySealFadeInMs ?? 2500;
+      const fadeMs = t.gallerySealFadeInMs ?? 3200;
       const seal = this.gallerySealEl();
       const img = seal.querySelector("img");
       if (img) {
@@ -420,7 +437,7 @@
       await this.wait(fadeMs);
     }
 
-    async beginGallerySealEnding(t) {
+    async beginGallerySealEnding(t, { skipForegroundFades = false } = {}) {
       if (this._studyLoopFinishing) return;
       this._studyLoopFinishing = true;
       this.clearTimers();
@@ -428,19 +445,35 @@
       try {
         await this.preloadGallerySeal();
 
-        await this.fadeOutStudyVerses(t);
+        if (!skipForegroundFades) {
+          await this.fadeOutStudyVerses(t);
+          if (this.destroyed || this.paused) return;
+
+          await this.fadeOutStudyKanji(t);
+          if (this.destroyed || this.paused) return;
+        } else {
+          this.setForegroundVisible({});
+          this.root.classList.remove("is-verse-exiting", "is-kanji-exiting");
+        }
+
+        const holdMs = t.gallerySealImageHoldMs ?? 6000;
+        const darkenMs =
+          t.gallerySealHoldDarkenMs ?? Math.min(4000, Math.max(2000, holdMs - 1200));
+        const darkenDelay = t.gallerySealHoldDarkenDelayMs ?? 1500;
+        document.documentElement.style.setProperty(
+          "--ambient-gallery-hold-darken",
+          `${darkenMs}ms`
+        );
+        document.documentElement.style.setProperty(
+          "--ambient-gallery-hold-darken-delay",
+          `${darkenDelay}ms`
+        );
+        this.root.classList.add("is-gallery-seal-holding");
+        await this.wait(holdMs);
         if (this.destroyed || this.paused) return;
 
-        await this.fadeOutStudyKanji(t);
-        if (this.destroyed || this.paused) return;
-
-        await this.wait(t.gallerySealImageHoldMs ?? 4000);
-        if (this.destroyed || this.paused) return;
-
-        await this.fadeStudyBackgroundToBlack(t, { forGallerySeal: true });
-        if (this.destroyed || this.paused) return;
-
-        await this.revealGallerySeal(t);
+        this.root.classList.remove("is-gallery-seal-holding");
+        await this.fadeToBlackForGallerySeal(t);
         if (this.destroyed || this.paused) return;
 
         const sealHold = t.gallerySealHoldMs ?? 9000;
@@ -864,8 +897,17 @@
       const isLastCard = this.sceneIndex === count - 1;
 
       if (isLastCard && this.usesGallerySeal()) {
+        const exitMs = (t.studyExitFadeMs ?? 1800) + (t.studyEmptyBeatMs ?? 500);
+        const fadeAt = Math.max(0, this.totalSceneDuration(t) - exitMs);
+
         this.schedule(() => {
-          if (!this.destroyed && !this.paused) this.beginGallerySealEnding(t);
+          if (!this.destroyed && !this.paused) this.fadeOutStudyForeground(t);
+        }, fadeAt);
+
+        this.schedule(() => {
+          if (!this.destroyed && !this.paused) {
+            this.beginGallerySealEnding(t, { skipForegroundFades: true });
+          }
         }, this.totalSceneDuration(t));
         return;
       }
@@ -1126,10 +1168,9 @@
     const candidates = [];
     if (name.startsWith("exhibition/")) {
       candidates.push(`./${name}.json`);
+    } else if (capture) {
+      candidates.push(`./exhibition/${name}.json`);
     } else {
-      if (capture) {
-        candidates.push(`./exhibition/${name}.json`);
-      }
       candidates.push(`./collections/${name}.json`);
     }
 
@@ -1138,6 +1179,13 @@
       const res = await fetch(url);
       if (res.ok) return res.json();
       lastStatus = res.status;
+    }
+
+    if (capture && !name.startsWith("exhibition/")) {
+      throw new Error(
+        `Exhibition build missing for "${name}" (${lastStatus}). ` +
+          `Run: python3 scripts/build_lesson_37_exhibition.py (or the matching build script).`
+      );
     }
     throw new Error(`Could not load collection "${name}" (${lastStatus}).`);
   }

@@ -12,13 +12,16 @@ if [[ ! -e bookends/lesson_32.png ]]; then
   exit 1
 fi
 PORT="${1:-8765}"
+echo "YouTube L37:  http://localhost:${PORT}/index.html?collection=lesson_37_study"
+echo "YouTube L38:  http://localhost:${PORT}/index.html?collection=lesson_38_study"
 echo "YouTube L39:  http://localhost:${PORT}/index.html?collection=lesson_39_study"
 echo "YouTube L40:  http://localhost:${PORT}/index.html?collection=lesson_40_study"
+echo "Exhibit L37:  http://localhost:${PORT}/index.html?collection=lesson_37_study&capture=1"
+echo "Exhibit L38:  http://localhost:${PORT}/index.html?collection=lesson_38_study&capture=1"
 echo "Exhibit L39:  http://localhost:${PORT}/index.html?collection=lesson_39_study&capture=1"
 echo "Exhibit L40:  http://localhost:${PORT}/index.html?collection=lesson_40_study&capture=1"
 echo "Exhibit L41:  http://localhost:${PORT}/index.html?collection=lesson_41_study&capture=1"
 echo "Record MP4s:  ./scripts/record_study_exhibition.sh   (lessons 40–41)"
-echo "Study L38:    http://localhost:${PORT}/index.html?collection=lesson_38_study"
 echo "Study L41:    http://localhost:${PORT}/index.html?collection=lesson_41_study"
 echo "Heart Expo:   http://localhost:${PORT}/exhibition.html?collection=heart_v5"
 python3 -m http.server "$PORT"

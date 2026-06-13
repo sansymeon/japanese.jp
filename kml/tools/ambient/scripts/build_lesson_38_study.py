@@ -31,6 +31,11 @@ IMAGE_OVERRIDES = {
         "imageFocus": "50% 54%",
         "imageScale": 0.94,
     },
+    # suck.png — man stands left; lift framing so his head and face stay visible.
+    "suck": {
+        "imageFocus": "38% 34%",
+        "imageScale": 0.96,
+    },
 }
 
 SECTION_RE = re.compile(

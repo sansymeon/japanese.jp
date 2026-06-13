@@ -187,6 +187,8 @@ def record_lesson(*, lesson: int, port: int, output_dir: Path) -> Path:
 
 def build_exhibition_configs(lessons: list[int]) -> None:
     builders = {
+        37: "build_lesson_37_exhibition.py",
+        38: "build_lesson_38_exhibition.py",
         39: "build_lesson_39_exhibition.py",
         40: "build_lesson_40_exhibition.py",
         41: "build_lesson_41_exhibition.py",

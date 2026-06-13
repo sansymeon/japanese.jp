@@ -12,7 +12,7 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_37.html"
 OUT_PATH = ROOT / "collections" / "lesson_37_study.json"
 
-STUDY_LESSON = "audio/study_lesson.mp3"
+STUDY_LESSON = "audio/Study_Version2.mp3"
 INTRO_HOLD_MS = 1000
 INTRO_DURATION_MS = 9000
 
@@ -61,7 +61,7 @@ def study_config(*, lesson: int, title: str, scenes: list[dict]) -> dict:
         "presentation": "study",
         "assetsBase": "../../assets",
         "notes": (
-            "Study template (~8 min loop). Silent hero, lesson bed with cards. "
+            "Study template (~8 min loop). Silent hero, Study Version 2 bed with cards. "
             "Original lesson order; last card concert fade until music ends."
         ),
         "intro": {
