@@ -700,6 +700,16 @@
       this.mountImageBackground(slotEl, scene);
     }
 
+    applyImageFraming(img, scene) {
+      if (scene.imageFocus) {
+        img.style.objectPosition = scene.imageFocus;
+        img.style.setProperty("--image-transform-origin", scene.imageFocus);
+      }
+      if (scene.imageScale) {
+        img.style.setProperty("--image-scale", String(scene.imageScale));
+      }
+    }
+
     mountImageBackground(slotEl, scene) {
       const src = this.assetUrl(scene.image || scene.videoPoster);
       if (!src) return;
@@ -707,9 +717,7 @@
       const img = document.createElement("img");
       img.src = src;
       img.alt = scene.kanji || "";
-      if (scene.imageFocus) {
-        img.style.objectPosition = scene.imageFocus;
-      }
+      this.applyImageFraming(img, scene);
       if (this.background.kenBurns) {
         img.classList.add("ken-burns");
       }

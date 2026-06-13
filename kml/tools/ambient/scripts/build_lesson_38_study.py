@@ -19,6 +19,20 @@ INTRO_DURATION_MS = 9000
 FIRST_SCENE = "pair"
 LAST_SCENE = "further"
 
+# Per-scene background framing (object-position / zoom in ambient player).
+IMAGE_OVERRIDES = {
+    # length.png has baked-in side letterboxing; zoom for full-screen impression.
+    "length": {
+        "imageFocus": "50% 48%",
+        "imageScale": 1.5,
+    },
+    # portable.png — lantern is the hero; slight zoom-out for horizon sun.
+    "portable": {
+        "imageFocus": "50% 54%",
+        "imageScale": 0.94,
+    },
+}
+
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
     re.DOTALL,
@@ -37,19 +51,20 @@ def parse_scenes(html: str) -> list[dict]:
 
         slug = slug_m.group(1)
         en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
-        scenes.append(
-            {
-                "id": slug,
-                "kanji": kanji_m.group(1),
-                "keyword": slug,
-                "image": f"studies/{slug}.png",
-                "video": None,
-                "verse": {
-                    "jpHtml": jp_m.group(1).strip(),
-                    "en": en,
-                },
-            }
-        )
+        scene = {
+            "id": slug,
+            "kanji": kanji_m.group(1),
+            "keyword": slug,
+            "image": f"studies/{slug}.png",
+            "video": None,
+            "verse": {
+                "jpHtml": jp_m.group(1).strip(),
+                "en": en,
+            },
+        }
+        if slug in IMAGE_OVERRIDES:
+            scene.update(IMAGE_OVERRIDES[slug])
+        scenes.append(scene)
     return scenes
 
 
