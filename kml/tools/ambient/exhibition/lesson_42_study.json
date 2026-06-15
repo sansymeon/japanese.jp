@@ -3,7 +3,7 @@
   "title": "KML Ambient Study — Lesson 42 (Exhibition)",
   "presentation": "study",
   "assetsBase": "../../assets",
-  "notes": "Exhibition / presentation build. Original lesson order; Gallery Seal Ending.",
+  "notes": "Exhibition / presentation build. Mountain opens; Exit closes with Gallery Seal Ending. Soundtrack: Study Version 2.",
   "ending": {
     "type": "gallerySeal",
     "sealImage": "images/gold_closing.png"
@@ -15,7 +15,7 @@
     "durationMs": 9000
   },
   "soundtrack": {
-    "main": "audio/study_lesson.mp3"
+    "main": "audio/Study_Version2.mp3"
   },
   "timing": {
     "fadeMs": 1800,
@@ -38,7 +38,8 @@
     "gallerySealHoldDarkenDelayMs": 2000,
     "gallerySealFadeToBlackMs": 6500,
     "gallerySealFadeInMs": 2500,
-    "gallerySealFadeOutMs": 3000,
+    "gallerySealCrestFadeLeadMs": 3000,
+    "gallerySealMinCrestHoldMs": 2000,
     "gallerySealBlackHoldMs": 1500,
     "gallerySealHoldMs": 3500
   },
@@ -55,6 +56,17 @@
     "autoAdvance": true
   },
   "scenes": [
+    {
+      "id": "mountain",
+      "kanji": "山",
+      "keyword": "mountain",
+      "image": "studies/mountain.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>動<rt>うご</rt></ruby>かぬ<ruby>姿<rt>すがた</rt></ruby>が、<br>    <ruby>空<rt>そら</rt></ruby>より<ruby>深<rt>ふか</rt></ruby>く<ruby>語<rt>かた</rt></ruby>っていた。",
+        "en": "Its unmoving form\nspoke more deeply than the sky."
+      }
+    },
     {
       "id": "abandon",
       "kanji": "棄",
@@ -155,28 +167,6 @@
       }
     },
     {
-      "id": "exit",
-      "kanji": "出",
-      "keyword": "exit",
-      "image": "studies/exit.png",
-      "video": null,
-      "verse": {
-        "jpHtml": "<ruby>長<rt>なが</rt></ruby>い<ruby>闇<rt>やみ</rt></ruby>を<ruby>抜<rt>ぬ</rt></ruby>けて、<br>    <ruby>朝<rt>あさ</rt></ruby>の<ruby>空<rt>くう</rt></ruby><ruby>気<rt>き</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れた。",
-        "en": "Emerging from a long darkness,\nthe morning air was touched at last."
-      }
-    },
-    {
-      "id": "mountain",
-      "kanji": "山",
-      "keyword": "mountain",
-      "image": "studies/mountain.png",
-      "video": null,
-      "verse": {
-        "jpHtml": "<ruby>動<rt>うご</rt></ruby>かぬ<ruby>姿<rt>すがた</rt></ruby>が、<br>    <ruby>空<rt>そら</rt></ruby>より<ruby>深<rt>ふか</rt></ruby>く<ruby>語<rt>かた</rt></ruby>っていた。",
-        "en": "Its unmoving form\nspoke more deeply than the sky."
-      }
-    },
-    {
       "id": "bungling",
       "kanji": "拙",
       "keyword": "bungling",
@@ -273,6 +263,17 @@
       "verse": {
         "jpHtml": "<ruby>嵐<rt>あらし</rt></ruby>は<ruby>全<rt>すべ</rt></ruby>てを<ruby>揺<rt>ゆ</rt></ruby>らしたが、<br>    <ruby>山<rt>やま</rt></ruby>はなお<ruby>立<rt>た</rt></ruby>っていた。",
         "en": "The storm shook everything,\nyet the mountain still stood."
+      }
+    },
+    {
+      "id": "exit",
+      "kanji": "出",
+      "keyword": "exit",
+      "image": "studies/exit.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>長<rt>なが</rt></ruby>い<ruby>闇<rt>やみ</rt></ruby>を<ruby>抜<rt>ぬ</rt></ruby>けて、<br>    <ruby>朝<rt>あさ</rt></ruby>の<ruby>空<rt>くう</rt></ruby><ruby>気<rt>き</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れた。",
+        "en": "Emerging from a long darkness,\nthe morning air was touched at last."
       }
     }
   ]

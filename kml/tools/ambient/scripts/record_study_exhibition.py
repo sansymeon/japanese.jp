@@ -202,6 +202,7 @@ def build_exhibition_configs(lessons: list[int]) -> None:
         39: "build_lesson_39_exhibition.py",
         40: "build_lesson_40_exhibition.py",
         41: "build_lesson_41_exhibition.py",
+        42: "build_lesson_42_exhibition.py",
     }
     for lesson in lessons:
         script = builders.get(lesson)

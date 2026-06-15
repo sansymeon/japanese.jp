@@ -1,5 +1,7 @@
-const DATA_URL = "data/lesson_01_kml_v1.json";
-const IMAGE_DIR = "images";
+const params = new URLSearchParams(window.location.search);
+const REVIEW_SET = params.get("set") === "v2" ? "v2" : "v1";
+const DATA_URL = REVIEW_SET === "v2" ? "data/lesson_01_kml_v2.json" : "data/lesson_01_kml_v1.json";
+const IMAGE_DIR = REVIEW_SET === "v2" ? "images_v2" : "images";
 
 let allItems = [];
 let activeFilter = "all";
@@ -15,6 +17,15 @@ async function init() {
   allItems = data.items.sort((a, b) => a.order - b.order);
   document.getElementById("page-title").textContent = data.title;
   document.getElementById("page-source").textContent = data.source;
+  document.querySelector("footer p").textContent =
+    REVIEW_SET === "v2"
+      ? "KML Visual Layout v2 test · Sorted by lesson order"
+      : "KML Visual Styles v1 evaluation run · Sorted by lesson order";
+  if (REVIEW_SET === "v2") {
+    document.querySelectorAll('[data-filter="WASH"],[data-filter="GLOW"],[data-filter="CINE"]').forEach((el) => {
+      el.style.display = "none";
+    });
+  }
   bindFilters();
   bindLightbox();
   render();
@@ -36,13 +47,19 @@ function matchesFilter(item) {
     case "all":
       return true;
     case "strongest":
-      return item.tier === "strongest";
+      return item.tier === "strongest" || item.tier === "hero" || item.styleShort === "HERO";
     case "weakest":
-      return item.tier === "weakest";
+      return item.tier === "weakest" || item.flagged;
     case "WASH":
+      return item.styleShort === "WASH";
     case "GLOW":
+      return item.styleShort === "GLOW";
     case "CINE":
-      return item.styleShort === activeFilter;
+      return item.styleShort === "CINE";
+    case "HERO":
+      return item.galleryPriority === "hero" || item.styleShort === "HERO";
+    case "FEAT":
+      return item.galleryPriority === "feature" || item.styleShort === "FEAT";
     default:
       return true;
   }
@@ -98,7 +115,7 @@ function buildCard(item) {
         </div>
       </div>
       <div class="style-row">
-        <span class="style-badge ${item.styleShort}">${item.styleShort}</span>
+        <span class="style-badge ${item.styleShort}">${item.galleryPriority || item.styleShort}</span>
         ${accentTag}
         <span class="distance">${item.image_distance || ""}</span>
       </div>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_42_study.json — ON HOLD until lesson HTML has verses."""
+"""Build exhibition/lesson_42_study.json — Mountain first, Exit last, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -13,8 +13,13 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_42.html"
 OUT_PATH = ROOT / "exhibition" / "lesson_42_study.json"
 
+STUDY_LESSON = "audio/Study_Version2.mp3"
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from study_exhibition_common import exhibition_study_config  # noqa: E402
+from study_exhibition_common import exhibition_study_config, reorder_scenes  # noqa: E402
+
+FIRST_SCENE = "mountain"
+LAST_SCENE = "exit"
 
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
@@ -31,22 +36,13 @@ def parse_scenes(html: str) -> list[dict]:
         img_m = re.search(r"assets/studies/([^\"']+\.png)", block)
         jp_m = re.search(r'<p class="jp-verse[^"]*">(.*?)</p>', block, re.DOTALL)
         en_m = re.search(r'<p class="en-verse">(.*?)</p>', block, re.DOTALL)
-        if not (kanji_m and slug_m):
+        if not (kanji_m and slug_m and jp_m and en_m):
             continue
 
         slug = slug_m.group(1)
-        keyword = (
-            keyword_m.group(1).strip()
-            if keyword_m
-            else slug
-        )
+        keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
         image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.png"
-        en = (
-            re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
-            if en_m
-            else ""
-        )
-        jp_html = jp_m.group(1).strip() if jp_m else ""
+        en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
         scenes.append(
             {
                 "id": slug,
@@ -55,7 +51,7 @@ def parse_scenes(html: str) -> list[dict]:
                 "image": image,
                 "video": None,
                 "verse": {
-                    "jpHtml": jp_html,
+                    "jpHtml": jp_m.group(1).strip(),
                     "en": en,
                 },
             }
@@ -65,14 +61,18 @@ def parse_scenes(html: str) -> list[dict]:
 
 def build() -> dict:
     html = LESSON_HTML.read_text(encoding="utf-8")
-    return exhibition_study_config(
+    scenes = reorder_scenes(parse_scenes(html), first=FIRST_SCENE, last=LAST_SCENE)
+    config = exhibition_study_config(
         lesson=42,
         title="KML Ambient Study — Lesson 42 (Exhibition)",
         notes=(
-            "Exhibition / presentation build. Original lesson order; Gallery Seal Ending."
+            "Exhibition / presentation build. Mountain opens; Exit closes with Gallery Seal Ending. "
+            "Soundtrack: Study Version 2."
         ),
-        scenes=parse_scenes(html),
+        scenes=scenes,
     )
+    config["soundtrack"] = {"main": STUDY_LESSON}
+    return config
 
 
 def main() -> int:
@@ -82,6 +82,7 @@ def main() -> int:
     print(f"Wrote {len(config['scenes'])} scenes → {OUT_PATH}")
     print(f"  First: {config['scenes'][0]['kanji']} ({config['scenes'][0]['id']})")
     print(f"  Last:  {config['scenes'][-1]['kanji']} ({config['scenes'][-1]['id']})")
+    print(f"  Audio: {config['soundtrack']['main']}")
     return 0
 
 
