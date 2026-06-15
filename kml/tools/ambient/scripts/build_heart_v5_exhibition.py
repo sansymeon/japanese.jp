@@ -14,6 +14,15 @@ BOOKEND_IMAGE = "bookends/lesson_32.png"
 FLUTE_AUDIO = "audio/flute_intro.mp3"
 SOUNDTRACK = "audio/ambient_kanji_exhibition.mp3"
 
+# Per-scene Ken Burns framing (object-position + scale)
+IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {
+    "L34_melancholy": {
+        # Shift away from top-left wind chime; show rainy mountain through window
+        "imageFocus": "56% 54%",
+        "imageScale": 0.9,
+    },
+}
+
 
 def swap_love_and_heart(scenes: list[dict]) -> list[dict]:
     """First exhibit becomes 愛; 心 exhibit stays in collection at former 愛 position."""
@@ -46,6 +55,10 @@ def build() -> dict:
         "closingBlackAfterMs": 2000,
     }
     scenes = swap_love_and_heart(heart_v4["scenes"])
+    for scene in scenes:
+        override = IMAGE_FRAMING_OVERRIDES.get(scene.get("id", ""))
+        if override:
+            scene.update(override)
 
     return {
         **{

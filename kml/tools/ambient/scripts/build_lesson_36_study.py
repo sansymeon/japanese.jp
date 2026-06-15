@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build lesson_36_study.json from lesson_36 HTML. Strike first, Challenge last."""
+"""Build lesson_36_study.json from lesson_36 HTML. Strike first, Infer last."""
 
 from __future__ import annotations
 
@@ -12,12 +12,12 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_36.html"
 OUT_PATH = ROOT / "collections" / "lesson_36_study.json"
 
-STUDY_LESSON = "audio/study_lesson.mp3"
+STUDY_LESSON = "audio/Study_Version2.mp3"
 INTRO_HOLD_MS = 1000
 INTRO_DURATION_MS = 9000
 
 FIRST_SCENE = "strike"
-LAST_SCENE = "challenge"
+LAST_SCENE = "infer"
 
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',

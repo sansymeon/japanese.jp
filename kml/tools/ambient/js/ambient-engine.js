@@ -5,6 +5,9 @@
 (function () {
   "use strict";
 
+  const ENGINE_VERSION = "study22";
+  console.log("ambient-engine.js", ENGINE_VERSION);
+
   const DEFAULTS = {
     timing: {
       fadeMs: 4000,
@@ -303,19 +306,106 @@
       this.root.classList.remove("is-foreground-exiting");
     }
 
-    async fadeToBlackForGallerySeal(t) {
-      const blackMs = t.gallerySealFadeToBlackMs ?? 5000;
-      const sealMs = t.gallerySealFadeInMs ?? 4000;
-      const overlapMs = t.gallerySealOverlapMs ?? 2800;
-      const sealDelay = Math.max(0, blackMs - overlapMs);
+    getSoundtrackRemainingMs(audio = this.mainAudio) {
+      if (!audio?.duration || !isFinite(audio.duration)) return 0;
+      return Math.max(0, (audio.duration - audio.currentTime) * 1000);
+    }
+
+    async waitForAudioDuration(audio = this.mainAudio) {
+      if (!audio) return 0;
+      if (audio.duration && isFinite(audio.duration) && audio.duration > 0) {
+        return audio.duration;
+      }
+      await new Promise((resolve) => {
+        let settled = false;
+        const finish = () => {
+          if (settled) return;
+          settled = true;
+          audio.removeEventListener("loadedmetadata", finish);
+          audio.removeEventListener("durationchange", finish);
+          resolve();
+        };
+        audio.addEventListener("loadedmetadata", finish);
+        audio.addEventListener("durationchange", finish);
+        window.setTimeout(finish, 800);
+      });
+      return audio.duration || 0;
+    }
+
+    computeGallerySealPlan(t, audio = this.mainAudio) {
+      const crestFadeLeadMs =
+        t.gallerySealCrestFadeLeadMs ?? t.gallerySealFadeOutMs ?? 3000;
+      const crestFadeInMs = t.gallerySealFadeInMs ?? 2500;
+      const blackHoldMs = t.gallerySealBlackHoldMs ?? 1500;
+      const minCrestHoldMs = t.gallerySealMinCrestHoldMs ?? 2000;
+
+      let imageHoldMs = t.gallerySealImageHoldMs ?? 9000;
+      let fadeToBlackMs = t.gallerySealFadeToBlackMs ?? 6500;
+
+      const remainingMs = this.getSoundtrackRemainingMs(audio);
+      const endingReserveMs =
+        crestFadeInMs + minCrestHoldMs + crestFadeLeadMs + blackHoldMs;
+      const preCrestBudget = remainingMs - endingReserveMs;
+      const desiredPreCrest = imageHoldMs + fadeToBlackMs;
+
+      if (preCrestBudget > 0 && preCrestBudget < desiredPreCrest) {
+        const scale = preCrestBudget / desiredPreCrest;
+        imageHoldMs = Math.max(2500, Math.round(imageHoldMs * scale));
+        fadeToBlackMs = Math.max(3000, Math.round(fadeToBlackMs * scale));
+      } else if (preCrestBudget <= 0) {
+        imageHoldMs = Math.min(imageHoldMs, 3000);
+        fadeToBlackMs = Math.max(4500, Math.min(fadeToBlackMs, 5500));
+      }
+
+      return {
+        imageHoldMs,
+        fadeToBlackMs,
+        crestFadeInMs,
+        crestFadeLeadMs,
+        blackHoldMs,
+        minCrestHoldMs,
+        soundtrackRemainingMs: remainingMs,
+        soundtrackDurationMs: (audio?.duration || 0) * 1000,
+      };
+    }
+
+    async waitUntilSoundtrackRemaining(audio, leadMs) {
+      if (!audio || audio.ended) return;
+      await this.waitForAudioDuration(audio);
+
+      await new Promise((resolve) => {
+        let settled = false;
+        const done = () => {
+          if (settled || this.destroyed) return;
+          settled = true;
+          audio.removeEventListener("timeupdate", tick);
+          audio.removeEventListener("ended", onEnded);
+          resolve();
+        };
+        const tick = () => {
+          if (this.getSoundtrackRemainingMs(audio) <= leadMs || audio.ended) {
+            done();
+          }
+        };
+        const onEnded = () => done();
+        audio.addEventListener("timeupdate", tick);
+        audio.addEventListener("ended", onEnded);
+        tick();
+      });
+    }
+
+    async fadeToBlackForGallerySeal(t, { endHold = false, blackMs, crestInMs } = {}) {
+      const fadeMs = blackMs ?? t.gallerySealFadeToBlackMs ?? 6500;
+      const sealMs = crestInMs ?? t.gallerySealFadeInMs ?? 2500;
+      const sealDelay = Math.max(0, fadeMs - sealMs);
 
       document.documentElement.style.setProperty(
         "--ambient-gallery-fade-to-black",
-        `${blackMs}ms`
+        `${fadeMs}ms`
       );
       document.documentElement.style.setProperty(
         "--ambient-capture-fade",
-        `${blackMs}ms`
+        `${fadeMs}ms`
       );
       document.documentElement.style.setProperty(
         "--ambient-gallery-seal-fade",
@@ -323,18 +413,30 @@
       );
 
       const seal = this.gallerySealEl();
+      const img = seal.querySelector("img");
+      const sealUrl = this.assetUrl(this.gallerySealImage());
+      if (img && !img.getAttribute("src")) {
+        img.src = sealUrl;
+      }
       seal.classList.remove("is-visible");
 
       this.root.classList.add("is-gallery-seal-fading");
+      if (endHold) {
+        this.root.classList.remove("is-gallery-seal-holding");
+      }
       const curtain = this.captureCurtainEl();
       curtain.classList.remove("is-visible");
       requestAnimationFrame(() => curtain.classList.add("is-visible"));
 
-      await this.wait(sealDelay);
-      if (this.destroyed || this.paused) return;
+      if (sealDelay <= 0) {
+        requestAnimationFrame(() => seal.classList.add("is-visible"));
+      } else {
+        await this.wait(sealDelay);
+        if (this.destroyed || this.paused) return;
+        requestAnimationFrame(() => seal.classList.add("is-visible"));
+      }
 
-      requestAnimationFrame(() => seal.classList.add("is-visible"));
-      await this.wait(Math.max(blackMs - sealDelay, sealMs));
+      await this.wait(Math.max(fadeMs - sealDelay, sealMs));
       if (this.destroyed || this.paused) return;
 
       const currentEl = this.bgSlotEl(this.activeBgSlot);
@@ -342,6 +444,47 @@
       this.clearBgSlot(currentEl);
       this.root.classList.remove("is-gallery-seal-fading");
       this.root.classList.add("is-gallery-seal-active");
+    }
+
+    async fadeOutGallerySeal(t, fadeMs) {
+      const leadMs = t.gallerySealCrestFadeLeadMs ?? t.gallerySealFadeOutMs ?? 3000;
+      const actualMs = Math.max(150, Math.round(fadeMs ?? leadMs));
+      document.documentElement.style.setProperty(
+        "--ambient-gallery-seal-fade-out",
+        `${actualMs}ms`
+      );
+      const seal = this.gallerySealEl();
+      this.root.classList.add("is-gallery-seal-exiting");
+      seal.classList.remove("is-visible");
+      await this.wait(actualMs);
+      if (this.destroyed || this.paused) return;
+      this.root.classList.remove("is-gallery-seal-active", "is-gallery-seal-exiting");
+    }
+
+    async syncCrestFadeOutToSoundtrack(t) {
+      const leadMs = t.gallerySealCrestFadeLeadMs ?? t.gallerySealFadeOutMs ?? 3000;
+      const audio = this.mainAudio;
+      if (!audio) {
+        await this.fadeOutGallerySeal(t, leadMs);
+        return;
+      }
+
+      await this.waitUntilSoundtrackRemaining(audio, leadMs);
+      if (this.destroyed || this.paused) return;
+
+      const remainingMs = this.getSoundtrackRemainingMs(audio);
+      this.audioLog("gallery crest fade-out synced to soundtrack", {
+        leadMs,
+        fadeMs: remainingMs,
+        currentTime: audio.currentTime,
+        duration: audio.duration,
+      });
+      await this.fadeOutGallerySeal(t, remainingMs);
+      if (this.destroyed || this.paused) return;
+
+      if (!audio.ended) {
+        await this.waitForSoundtrackEnd();
+      }
     }
 
     async fadeStudyBackgroundToBlack(t, { forGallerySeal = false } = {}) {
@@ -406,41 +549,95 @@
     async preloadGallerySeal() {
       if (!this.usesGallerySeal()) return;
       const url = this.assetUrl(this.gallerySealImage());
-      await new Promise((resolve) => {
-        const img = new Image();
-        img.onload = () => resolve();
-        img.onerror = () => resolve();
-        img.src = url;
-      });
-    }
-
-    async revealGallerySeal(t) {
-      const fadeMs = t.gallerySealFadeInMs ?? 3200;
       const seal = this.gallerySealEl();
       const img = seal.querySelector("img");
-      if (img) {
-        img.src = this.assetUrl(this.gallerySealImage());
-        if (img.decode) {
-          try {
-            await img.decode();
-          } catch (_) {
-            /* decode optional */
-          }
+      console.log("GALLERY CREST IMAGE:", url);
+
+      await new Promise((resolve) => {
+        const probe = new Image();
+        probe.onload = () => {
+          console.log("GALLERY CREST IMAGE: loaded OK");
+          if (img) img.src = url;
+          resolve();
+        };
+        probe.onerror = () => {
+          console.error("GALLERY CREST IMAGE: failed to load (404?)", url);
+          if (img) img.src = url;
+          resolve();
+        };
+        probe.src = url;
+      });
+
+      if (img?.decode) {
+        try {
+          await img.decode();
+        } catch (_) {
+          /* decode optional */
+        }
+      }
+    }
+
+    async debugShowGallerySealImmediate() {
+      console.log("GALLERY CREST TEST: showing immediately (crestTest=1)");
+      const t = this.timing;
+      await this.preloadGallerySeal();
+      const seal = this.gallerySealEl();
+      const curtain = this.captureCurtainEl();
+      document.documentElement.style.setProperty(
+        "--ambient-gallery-seal-fade",
+        "1200ms"
+      );
+      curtain.classList.add("is-visible");
+      this.root.classList.add("is-gallery-seal-active");
+      requestAnimationFrame(() => seal.classList.add("is-visible"));
+      await this.wait(1200);
+      console.log("GALLERY CREST TEST: seal should be visible now");
+    }
+
+    async revealGallerySeal(t, fadeMs) {
+      const inMs = fadeMs ?? t.gallerySealFadeInMs ?? 2500;
+      const seal = this.gallerySealEl();
+      const img = seal.querySelector("img");
+      const sealUrl = this.assetUrl(this.gallerySealImage());
+      if (img && !img.getAttribute("src")) {
+        img.src = sealUrl;
+      }
+      if (img?.decode) {
+        try {
+          await img.decode();
+        } catch (_) {
+          /* decode optional */
         }
       }
 
+      seal.classList.remove("is-visible");
       document.documentElement.style.setProperty(
         "--ambient-gallery-seal-fade",
-        `${fadeMs}ms`
+        `${inMs}ms`
       );
       requestAnimationFrame(() => seal.classList.add("is-visible"));
-      await this.wait(fadeMs);
+      await this.wait(inMs);
     }
 
     async beginGallerySealEnding(t, { skipForegroundFades = false } = {}) {
       if (this._studyLoopFinishing) return;
       this._studyLoopFinishing = true;
       this.clearTimers();
+
+      const audio = this.mainAudio;
+      let plan = null;
+      if (this.hasStudyAudio() && audio) {
+        await this.waitForAudioDuration(audio);
+        plan = this.computeGallerySealPlan(t, audio);
+        this.audioLog("gallery seal plan from soundtrack", plan);
+      }
+
+      console.log("GALLERY CREST START", {
+        collection: this.collection.id,
+        ending: this.collection.ending?.type,
+        sealImage: this.gallerySealImage(),
+        plan,
+      });
 
       try {
         await this.preloadGallerySeal();
@@ -456,10 +653,11 @@
           this.root.classList.remove("is-verse-exiting", "is-kanji-exiting");
         }
 
-        const holdMs = t.gallerySealImageHoldMs ?? 6000;
+        const holdMs = plan?.imageHoldMs ?? t.gallerySealImageHoldMs ?? 9000;
         const darkenMs =
-          t.gallerySealHoldDarkenMs ?? Math.min(4000, Math.max(2000, holdMs - 1200));
-        const darkenDelay = t.gallerySealHoldDarkenDelayMs ?? 1500;
+          t.gallerySealHoldDarkenMs ??
+          Math.min(5000, Math.max(2500, holdMs - 2000));
+        const darkenDelay = t.gallerySealHoldDarkenDelayMs ?? 2000;
         document.documentElement.style.setProperty(
           "--ambient-gallery-hold-darken",
           `${darkenMs}ms`
@@ -472,15 +670,25 @@
         await this.wait(holdMs);
         if (this.destroyed || this.paused) return;
 
-        this.root.classList.remove("is-gallery-seal-holding");
-        await this.fadeToBlackForGallerySeal(t);
+        await this.fadeToBlackForGallerySeal(t, {
+          endHold: true,
+          blackMs: plan?.fadeToBlackMs,
+          crestInMs: plan?.crestFadeInMs,
+        });
         if (this.destroyed || this.paused) return;
 
-        const sealHold = t.gallerySealHoldMs ?? 9000;
-        await Promise.all([
-          this.wait(sealHold),
-          this.hasStudyAudio() ? this.waitForSoundtrackEnd() : Promise.resolve(),
-        ]);
+        if (this.hasStudyAudio()) {
+          await this.syncCrestFadeOutToSoundtrack(t);
+        } else {
+          const leadMs = t.gallerySealCrestFadeLeadMs ?? t.gallerySealFadeOutMs ?? 3000;
+          await this.wait(t.gallerySealHoldMs ?? leadMs);
+          if (this.destroyed || this.paused) return;
+          await this.fadeOutGallerySeal(t, leadMs);
+        }
+        if (this.destroyed || this.paused) return;
+
+        const blackHold = plan?.blackHoldMs ?? t.gallerySealBlackHoldMs ?? 1500;
+        await this.wait(blackHold);
         if (this.destroyed) return;
 
         this.finishPresentationOnSeal();
@@ -915,7 +1123,8 @@
       const isLastInLoop =
         isLastCard &&
         this.soundtrack?.main &&
-        (this.display.loop || this.captureMode);
+        this.display.loop &&
+        !this.usesGallerySeal();
 
       if (isLastInLoop) {
         const exitMs = (t.studyExitFadeMs ?? 800) + (t.studyEmptyBeatMs ?? 400);
@@ -1130,6 +1339,10 @@
       if (!this.scenes.length) throw new Error("Collection has no scenes.");
       this.els.loading?.classList.add("ambient-hidden");
       this.els.error?.classList.add("ambient-hidden");
+
+      const params = new URLSearchParams(window.location.search);
+      const crestTest = this.captureMode && params.get("crestTest") === "1";
+
       if (this.isStudy && this.hasStudyAudio()) {
         await Promise.all([
           this.ensureAudioUnlocked(),
@@ -1138,6 +1351,12 @@
       } else {
         await this.preloadGallerySeal();
       }
+
+      if (crestTest) {
+        await this.debugShowGallerySealImmediate();
+        return;
+      }
+
       if (this.collection.intro) {
         await this.playIntro(this.collection.intro);
       }
@@ -1175,10 +1394,29 @@
     }
 
     let lastStatus = 0;
+    let resolvedUrl = "";
     for (const url of candidates) {
       const res = await fetch(url);
-      if (res.ok) return res.json();
+      if (res.ok) {
+        resolvedUrl = url;
+        if (capture) {
+          console.log("CAPTURE COLLECTION:", resolvedUrl);
+        }
+        const data = await res.json();
+        if (capture) {
+          console.log("CAPTURE COLLECTION META:", {
+            id: data.id,
+            ending: data.ending?.type,
+            loop: data.display?.loop,
+            soundtrack: data.soundtrack?.main,
+          });
+        }
+        return data;
+      }
       lastStatus = res.status;
+      if (capture) {
+        console.warn("CAPTURE COLLECTION: miss", url, res.status);
+      }
     }
 
     if (capture && !name.startsWith("exhibition/")) {

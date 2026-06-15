@@ -375,7 +375,7 @@ html.is-capture-doc body {
   background: #0e0d0b;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--ambient-capture-fade, 5000ms) ease-out;
+  transition: opacity var(--ambient-capture-fade, 5000ms) ease-in-out;
 }
 
 .ambient-capture-curtain.is-visible {
@@ -390,8 +390,8 @@ html.is-capture-doc body {
 /* ── Gallery Seal Ending ── */
 
 .ambient-root.is-gallery-seal-holding .ambient-overlay {
-  transition: opacity var(--ambient-gallery-hold-darken, 4000ms) ease-in-out
-    var(--ambient-gallery-hold-darken-delay, 1500ms);
+  transition: opacity var(--ambient-gallery-hold-darken, 5000ms) ease-in-out
+    var(--ambient-gallery-hold-darken-delay, 2000ms);
   opacity: 0.88;
 }
 
@@ -407,8 +407,12 @@ html.is-capture-doc body {
 }
 
 .ambient-root.is-gallery-seal-fading .ambient-overlay {
-  transition: opacity var(--ambient-gallery-fade-to-black, 4000ms) ease-in-out;
-  opacity: 0;
+  transition: opacity var(--ambient-gallery-fade-to-black, 6500ms) ease-in-out;
+  opacity: 0.92;
+}
+
+.ambient-root.is-gallery-seal-fading .ambient-bg-layer.is-active {
+  opacity: 1;
 }
 
 .ambient-root.is-gallery-seal-fading .ambient-bg-layer.is-active img.ken-burns {
@@ -451,13 +455,20 @@ html.is-capture-doc body {
   transform: scale(1);
 }
 
+.ambient-root.is-gallery-seal-exiting .ambient-gallery-seal img {
+  opacity: 0;
+  transform: scale(0.98);
+  transition:
+    opacity var(--ambient-gallery-seal-fade-out, 3000ms) ease-in-out,
+    transform var(--ambient-gallery-seal-fade-out, 3000ms) ease-in-out;
+}
+
 .ambient-root.is-presentation-ended.is-gallery-seal-ending .ambient-gallery-seal {
-  visibility: visible;
+  visibility: hidden;
 }
 
 .ambient-root.is-presentation-ended.is-gallery-seal-ending .ambient-gallery-seal img {
-  opacity: 1;
-  transform: scale(1);
+  opacity: 0;
 }
 
 .ambient-status {

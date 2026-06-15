@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson Visual Review — KML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Syuku&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/review.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="page-title">Lesson Visual Review</h1>
+      <p class="subtitle">Temporary evaluation gallery — not production</p>
+      <p class="meta">Source: <code id="page-source">assets/images/lesson_01_kml_v1_test</code></p>
+    </header>
+
+    <nav class="toolbar" aria-label="Filters">
+      <button type="button" class="filter-btn active" data-filter="all">All</button>
+      <button type="button" class="filter-btn" data-filter="strongest">Strongest 5</button>
+      <button type="button" class="filter-btn" data-filter="weakest">Weakest 5</button>
+      <button type="button" class="filter-btn" data-filter="WASH">WASH</button>
+      <button type="button" class="filter-btn" data-filter="GLOW">GLOW</button>
+      <button type="button" class="filter-btn" data-filter="CINE">CINE</button>
+      <span class="count-label" id="count-label">Loading…</span>
+    </nav>
+
+    <main class="grid" id="grid" aria-live="polite"></main>
+
+    <footer>
+      <p>KML Visual Styles v1 evaluation run · Sorted by lesson order</p>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Full size image">
+    <img src="" alt="" />
+  </div>
+
+  <script src="js/review.js"></script>
+</body>
+</html>

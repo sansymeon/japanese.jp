@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "2026-06-11-v11";
+  const ENGINE_VERSION = "2026-06-11-v12";
 
   const DEFAULTS = {
     artworkArrivalMs: 8000,
@@ -511,11 +511,27 @@
       this.resetBookendLayer();
     }
 
+    applyImageFraming(img, scene) {
+      if (scene.imageFocus) {
+        img.style.objectPosition = scene.imageFocus;
+        img.style.setProperty("--image-transform-origin", scene.imageFocus);
+      } else {
+        img.style.removeProperty("object-position");
+        img.style.removeProperty("--image-transform-origin");
+      }
+      if (scene.imageScale) {
+        img.style.setProperty("--image-scale", String(scene.imageScale));
+      } else {
+        img.style.removeProperty("--image-scale");
+      }
+    }
+
     populateScene(scene) {
       const src = this.assetUrl(scene.image);
       if (this.els.artworkImg && src) {
         this.els.artworkImg.src = src;
         this.els.artworkImg.alt = scene.kanji || "";
+        this.applyImageFraming(this.els.artworkImg, scene);
         this.els.artworkImg.classList.add("ken-burns");
       }
       if (this.els.kanji) this.els.kanji.textContent = scene.kanji || "";

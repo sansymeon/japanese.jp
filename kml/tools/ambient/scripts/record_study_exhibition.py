@@ -112,12 +112,18 @@ def record_lesson(*, lesson: int, port: int, output_dir: Path) -> Path:
             color_scheme="dark",
         )
         page = context.new_page()
-        page.goto(url, wait_until="networkidle", timeout=180_000)
+        page.goto(url, wait_until="load", timeout=60_000)
+        page.wait_for_function(
+            "() => window.kmlAmbient",
+            timeout=120_000,
+        )
 
+        gate = page.locator("[data-ambient-autoplay-gate]")
         try:
-            gate = page.locator("[data-ambient-autoplay-gate]")
-            gate.wait_for(state="visible", timeout=8000)
-            gate.click()
+            if gate.is_visible():
+                gate.click()
+            else:
+                page.wait_for_timeout(300)
         except Exception:
             page.mouse.click(VIEWPORT["width"] // 2, VIEWPORT["height"] // 2)
 
@@ -138,8 +144,11 @@ def record_lesson(*, lesson: int, port: int, output_dir: Path) -> Path:
     if not webm or not webm.is_file():
         raise RuntimeError(f"No video captured for lesson {lesson}")
 
-    if not AUDIO_PATH.is_file():
-        raise FileNotFoundError(f"Missing soundtrack: {AUDIO_PATH}")
+    soundtrack = collection.get("soundtrack") or {}
+    audio_rel = soundtrack.get("main") or "audio/study_lesson.mp3"
+    audio_path = ROOT / audio_rel
+    if not audio_path.is_file():
+        raise FileNotFoundError(f"Missing soundtrack: {audio_path}")
 
     audio_delay_s = audio_delay_ms / 1000.0
     tmp_mp4 = tmp_dir / "muxed.mp4"
@@ -153,7 +162,7 @@ def record_lesson(*, lesson: int, port: int, output_dir: Path) -> Path:
             "-itsoffset",
             f"{audio_delay_s:.3f}",
             "-i",
-            str(AUDIO_PATH),
+            str(audio_path),
             "-map",
             "0:v:0",
             "-map",
@@ -187,6 +196,7 @@ def record_lesson(*, lesson: int, port: int, output_dir: Path) -> Path:
 
 def build_exhibition_configs(lessons: list[int]) -> None:
     builders = {
+        36: "build_lesson_36_exhibition.py",
         37: "build_lesson_37_exhibition.py",
         38: "build_lesson_38_exhibition.py",
         39: "build_lesson_39_exhibition.py",

@@ -19,6 +19,18 @@ INTRO_DURATION_MS = 9000
 FIRST_SCENE = "commence"
 LAST_SCENE = "climax"
 
+# Presentation-only background framing (object-position / scale in ambient player).
+IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {
+    "valve": {
+        # River fork at the rock wedge — lift framing to keep the split visible.
+        "imageFocus": "50% 30%",
+    },
+    "womb": {
+        # Fetus close-up — pull back for more surrounding context.
+        "imageScale": 0.82,
+    },
+}
+
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
     re.DOTALL,
@@ -37,19 +49,20 @@ def parse_scenes(html: str) -> list[dict]:
 
         slug = slug_m.group(1)
         en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
-        scenes.append(
-            {
-                "id": slug,
-                "kanji": kanji_m.group(1),
-                "keyword": slug,
-                "image": f"studies/{slug}.png",
-                "video": None,
-                "verse": {
-                    "jpHtml": jp_m.group(1).strip(),
-                    "en": en,
-                },
-            }
-        )
+        scene = {
+            "id": slug,
+            "kanji": kanji_m.group(1),
+            "keyword": slug,
+            "image": f"studies/{slug}.png",
+            "video": None,
+            "verse": {
+                "jpHtml": jp_m.group(1).strip(),
+                "en": en,
+            },
+        }
+        if slug in IMAGE_FRAMING_OVERRIDES:
+            scene.update(IMAGE_FRAMING_OVERRIDES[slug])
+        scenes.append(scene)
     return scenes
 
 

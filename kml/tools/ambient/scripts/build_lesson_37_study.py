@@ -16,6 +16,14 @@ STUDY_LESSON = "audio/Study_Version2.mp3"
 INTRO_HOLD_MS = 1000
 INTRO_DURATION_MS = 9000
 
+# Per-scene background framing (object-position / zoom in ambient player).
+IMAGE_OVERRIDES = {
+    # sharpen.png — shift down so the blade and sparks stay in frame.
+    "sharpen": {
+        "imageFocus": "50% 64%",
+    },
+}
+
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
     re.DOTALL,
@@ -38,19 +46,20 @@ def parse_scenes(html: str) -> list[dict]:
         keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
         image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.png"
         en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
-        scenes.append(
-            {
-                "id": slug,
-                "kanji": kanji_m.group(1),
-                "keyword": keyword,
-                "image": image,
-                "video": None,
-                "verse": {
-                    "jpHtml": jp_m.group(1).strip(),
-                    "en": en,
-                },
-            }
-        )
+        scene = {
+            "id": slug,
+            "kanji": kanji_m.group(1),
+            "keyword": keyword,
+            "image": image,
+            "video": None,
+            "verse": {
+                "jpHtml": jp_m.group(1).strip(),
+                "en": en,
+            },
+        }
+        if slug in IMAGE_OVERRIDES:
+            scene.update(IMAGE_OVERRIDES[slug])
+        scenes.append(scene)
     return scenes
 
 
