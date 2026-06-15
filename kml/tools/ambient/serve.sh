@@ -12,6 +12,7 @@ if [[ ! -e bookends/lesson_32.png ]]; then
   exit 1
 fi
 PORT="${1:-8765}"
+echo "Exhibit L01:  http://localhost:${PORT}/index.html?collection=lesson_1_study&capture=1"
 echo "YouTube L36:  http://localhost:${PORT}/index.html?collection=lesson_36_study"
 echo "YouTube L37:  http://localhost:${PORT}/index.html?collection=lesson_37_study"
 echo "YouTube L38:  http://localhost:${PORT}/index.html?collection=lesson_38_study"
