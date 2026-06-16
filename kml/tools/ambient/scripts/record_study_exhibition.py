@@ -198,6 +198,7 @@ def build_exhibition_configs(lessons: list[int]) -> None:
     builders = {
         1: "build_lesson_01_exhibition.py",
         2: "build_lesson_02_exhibition.py",
+        3: "build_lesson_03_exhibition.py",
         36: "build_lesson_36_exhibition.py",
         37: "build_lesson_37_exhibition.py",
         38: "build_lesson_38_exhibition.py",

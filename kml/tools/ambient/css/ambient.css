@@ -4,9 +4,9 @@
   --ambient-fade: 4000ms;
   --ambient-overlay: 0.52;
   --ambient-kanji: clamp(5rem, 18vw, 11rem);
-  --ambient-text: #f5f0e6;
-  --ambient-muted: rgba(245, 240, 230, 0.72);
-  --ambient-accent: #d4bc82;
+  --ambient-text: #efe6d8;
+  --ambient-muted: rgba(229, 217, 196, 0.76);
+  --ambient-accent: #c4a052;
   --ken-burns-duration: 180s;
 }
 
@@ -123,17 +123,10 @@ body {
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.04em;
-  text-shadow:
-    0 0 24px rgba(0, 0, 0, 0.55),
-    0 4px 18px rgba(0, 0, 0, 0.45);
 }
 
 .ambient-keyword {
-  margin-top: 0.35rem;
-  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
-  letter-spacing: 0.18em;
-  text-transform: lowercase;
-  color: var(--ambient-accent);
+  margin-top: 0.5rem;
   opacity: 0.9;
 }
 
@@ -176,10 +169,7 @@ body {
 }
 
 .ambient-verse-jp {
-  font-size: clamp(1.05rem, 2.6vw, 1.45rem);
-  line-height: 1.75;
   margin: 0 0 0.65rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
 }
 
 .ambient-verse-jp ruby rt {
@@ -194,10 +184,6 @@ body {
 
 .ambient-verse-en {
   margin: 0;
-  font-size: clamp(0.9rem, 2vw, 1.05rem);
-  line-height: 1.6;
-  color: var(--ambient-muted);
-  font-style: italic;
   white-space: pre-line;
 }
 

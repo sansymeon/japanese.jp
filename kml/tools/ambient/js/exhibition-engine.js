@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "2026-06-11-v12";
+  const ENGINE_VERSION = "2026-06-16-guardian-v1";
 
   const DEFAULTS = {
     artworkArrivalMs: 8000,
@@ -52,6 +52,14 @@
       this.soundtrack = collection.soundtrack || null;
       this.assetsBase = (collection.assetsBase || "../../assets").replace(/\/$/, "");
 
+      const params = new URLSearchParams(window.location.search);
+      this.timingScale = Math.max(0.05, parseFloat(params.get("timingScale") || "1") || 1);
+      this.startExhibit = Math.max(0, parseInt(params.get("exhibit") || "0", 10) || 0);
+      this.singleExhibit = params.get("singleExhibit") === "1";
+      this.skipBookends = params.get("skipBookends") === "1";
+      this._cameraParam = params.get("camera");
+      this.cameraHistory = [];
+
       this.sceneIndex = 0;
       this.paused = false;
       this.destroyed = false;
@@ -61,6 +69,7 @@
       this.mainAudio = null;
       this.audioUnlocked = false;
       this.introPlayingFromGate = false;
+      this.presentationEnded = false;
 
       this.els = {
         loading: root.querySelector("[data-exhibition-loading]"),
@@ -87,6 +96,14 @@
 
     get showKeyword() {
       return this.display.showKeyword !== false;
+    }
+
+    get useGalleryGuardian() {
+      if (this._cameraParam === "legacy") return false;
+      if (this._cameraParam === "guardian") return true;
+      const id = this.collection.id || "";
+      const theme = this.collection.meta?.theme;
+      return id.startsWith("heart_") || theme === "heart";
     }
 
     get debug() {
@@ -517,22 +534,98 @@
         img.style.setProperty("--image-transform-origin", scene.imageFocus);
       } else {
         img.style.removeProperty("object-position");
-        img.style.removeProperty("--image-transform-origin");
+        img.style.setProperty("--image-transform-origin", "center center");
       }
-      if (scene.imageScale) {
+      if (this.useGalleryGuardian) {
+        img.style.setProperty("--image-scale", "1");
+      } else if (scene.imageScale) {
         img.style.setProperty("--image-scale", String(scene.imageScale));
       } else {
-        img.style.removeProperty("--image-scale");
+        img.style.setProperty("--image-scale", "1");
       }
+    }
+
+    exhibitDurationMs(t = this.timing) {
+      let ms =
+        t.artworkArrivalMs +
+        t.artworkAloneMs +
+        t.kanjiRevealMs +
+        t.keywordDelayMs +
+        t.titleHoldMs +
+        t.titleFadeMs +
+        t.verseJpRevealMs +
+        t.verseEnDelayMs +
+        t.verseEnFadeMs +
+        t.reflectionHoldMs +
+        t.versesFadeMs +
+        t.essenceKanjiRevealMs +
+        (t.essenceHoldMs || 0) +
+        t.imageExhaleFadeMs +
+        t.kanjiAloneHoldMs +
+        t.kanjiExhaleFadeMs;
+      if (this.showKeyword) {
+        ms += t.keywordFadeMs;
+      }
+      return ms;
+    }
+
+    async waitForArtworkImage(img) {
+      if (!img) return;
+      if (img.complete && img.naturalWidth > 0) return;
+      await new Promise((resolve) => {
+        img.addEventListener("load", resolve, { once: true });
+        img.addEventListener("error", resolve, { once: true });
+      });
+    }
+
+    async applySceneCamera(scene) {
+      const img = this.els.artworkImg;
+      if (!img?.src) return;
+
+      img.classList.remove("ken-burns", "gallery-guardian");
+      await this.waitForArtworkImage(img);
+
+      if (this.useGalleryGuardian && window.GalleryGuardian) {
+        const aspectRatio =
+          img.naturalWidth > 0 ? img.naturalWidth / img.naturalHeight : 0.75;
+        const coverBoost = window.GalleryGuardian.measureCoverBoost(img);
+        const durationMs = Math.round(this.exhibitDurationMs() * this.timingScale);
+        const plan = window.GalleryGuardian.plan(scene, {
+          sceneIndex: this.sceneIndex,
+          history: this.cameraHistory,
+          aspectRatio,
+          framingScale: 1,
+          durationMs,
+          coverBoost,
+        });
+        this.cameraHistory.push(plan);
+        if (this.cameraHistory.length > 6) {
+          this.cameraHistory.shift();
+        }
+        window.GalleryGuardian.applyToImage(img, plan);
+        this.debugLog("gallery guardian", {
+          scene: scene.id,
+          kanji: scene.kanji,
+          shot: plan.shot,
+          coverBoost: plan.coverBoost,
+          scaleFrom: plan.scaleFrom,
+          scaleTo: plan.scaleTo,
+          durationMs: plan.durationMs,
+        });
+        return;
+      }
+
+      img.classList.add("ken-burns");
     }
 
     populateScene(scene) {
       const src = this.assetUrl(scene.image);
       if (this.els.artworkImg && src) {
+        this.els.artworkImg.classList.remove("ken-burns", "gallery-guardian");
+        this.els.artworkImg.removeAttribute("data-gallery-shot");
         this.els.artworkImg.src = src;
         this.els.artworkImg.alt = scene.kanji || "";
         this.applyImageFraming(this.els.artworkImg, scene);
-        this.els.artworkImg.classList.add("ken-burns");
       }
       if (this.els.kanji) this.els.kanji.textContent = scene.kanji || "";
       if (this.els.keyword) this.els.keyword.textContent = scene.keyword || "";
@@ -546,10 +639,11 @@
 
     wait(ms) {
       const runId = this.runId;
+      const delay = Math.max(0, Math.round(ms * this.timingScale));
       return new Promise((resolve) => {
         const id = window.setTimeout(() => {
           if (!this.destroyed && runId === this.runId) resolve();
-        }, ms);
+        }, delay);
         this.wakeResolvers.push(() => clearTimeout(id));
       });
     }
@@ -720,7 +814,20 @@
       if (!stillRunning()) return;
       await this.wait(t.closingBlackAfterMs);
       this.stopAllAudio();
+      this.finishPresentation();
       this.debugLog("exit playClosingImageBookend");
+    }
+
+    finishPresentation() {
+      if (this.presentationEnded) return;
+      this.presentationEnded = true;
+      this.paused = true;
+      this.clearRun();
+      document.dispatchEvent(
+        new CustomEvent("kml-exhibition-presentation-end", {
+          detail: { collection: this.collection.id },
+        })
+      );
     }
 
     async playClosingKanjiBookend(closing) {
@@ -749,6 +856,8 @@
       this.setClass(this.els.kanji, "is-exhaling", false);
       this.setKanjiCentered(false);
       await this.wait(t.closingBlackAfterMs);
+      this.stopAllAudio();
+      this.finishPresentation();
     }
 
     async playExhibit(index) {
@@ -767,6 +876,8 @@
 
       this.resetLayers();
       this.populateScene(scene);
+      await this.applySceneCamera(scene);
+      if (!stillRunning()) return;
 
       // ── 1. Artwork arrival from black ──
       this.setClass(this.els.veil, "is-clear", true);
@@ -838,6 +949,15 @@
       await this.wait(t.blackHoldMs);
       if (!stillRunning()) return;
 
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
       // ── 6. Next exhibit, loop, or closing bookend ──
       const next = this.sceneIndex + 1;
 
@@ -867,14 +987,20 @@
       });
       this.els.loading?.classList.add("exhibition-hidden");
       this.els.error?.classList.add("exhibition-hidden");
-      await this.ensureAudioUnlocked();
+      if (!this.skipBookends) {
+        await this.ensureAudioUnlocked();
+      }
       if (this.destroyed) return;
-      if (this.bookends?.opening) {
+      if (!this.skipBookends && this.bookends?.opening) {
         await this.playOpeningBookend();
         if (this.destroyed) return;
         this.debugLog("opening bookend complete, starting playExhibit(0)");
       }
-      await this.playExhibit(0);
+      const startAt = Math.min(
+        Math.max(0, this.startExhibit),
+        Math.max(0, this.scenes.length - 1)
+      );
+      await this.playExhibit(startAt);
     }
 
     destroy() {

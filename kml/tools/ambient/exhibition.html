@@ -7,11 +7,18 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="./css/gallery-typography.css">
   <link rel="stylesheet" href="./css/exhibition.css">
 </head>
 <body>
+
+<script>
+  if (new URLSearchParams(location.search).get("typography") === "legacy") {
+    document.documentElement.classList.add("kml-typography-legacy");
+  }
+</script>
 
 <!--
   Digital Art Exhibition – Lesson 40 test gallery
@@ -42,12 +49,12 @@
 
   <div class="exhibition-vignette" aria-hidden="true"></div>
 
-  <div class="exhibition-title">
+  <div class="exhibition-title kml-title-block">
     <div class="exhibition-kanji" data-exhibition-kanji></div>
     <div class="exhibition-keyword" data-exhibition-keyword></div>
   </div>
 
-  <div class="exhibition-notes">
+  <div class="exhibition-notes kml-verse-block">
     <p class="exhibition-verse-jp" data-exhibition-verse-jp></p>
     <p class="exhibition-verse-en" data-exhibition-verse-en></p>
   </div>
@@ -70,6 +77,7 @@
 
 </div>
 
-<script src="./js/exhibition-engine.js?v=11"></script>
+<script src="./js/gallery-guardian.js?v=2"></script>
+<script src="./js/exhibition-engine.js?v=13"></script>
 </body>
 </html>

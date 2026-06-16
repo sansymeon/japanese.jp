@@ -1,0 +1,177 @@
+/**
+ * KML Gallery Typography – shared readability system for all Ambient viewers.
+ * Study, exhibition, Heart, and future gallery variants.
+ */
+
+:root {
+  /* Gallery palette – warm, never pure white */
+  --kml-ivory: #efe6d8;
+  --kml-parchment: #e5d9c4;
+  --kml-aged-gold: #c4a052;
+  --kml-muted-bronze: #9a7544;
+
+  /* Hierarchy: image (primary) > JP verse > EN verse > keyword (accent, high legibility) */
+  --kml-color-kanji: var(--kml-parchment);
+  --kml-color-keyword: var(--kml-aged-gold);
+  --kml-color-verse-jp: var(--kml-ivory);
+  --kml-color-verse-en: rgba(229, 217, 196, 0.76);
+
+  /* TV distance scale (55" across a room) */
+  --kml-size-keyword: clamp(1.08rem, 2.35vw, 1.52rem);
+  --kml-size-verse-jp: clamp(1.4rem, 3.1vw, 2.55rem);
+  --kml-size-verse-en: clamp(1.08rem, 2.25vw, 1.72rem);
+
+  /* Feathered title-block strength (0–1); kept subtle */
+  --kml-title-block-strength: 0.68;
+  --kml-verse-block-strength: 0.58;
+
+  /* Legibility halos – dark bloom, not outlines */
+  --kml-shadow-kanji:
+    0 1px 2px rgba(6, 4, 2, 0.82),
+    0 3px 18px rgba(0, 0, 0, 0.58),
+    0 0 32px rgba(0, 0, 0, 0.34);
+
+  --kml-shadow-keyword:
+    0 1px 2px rgba(6, 4, 2, 0.92),
+    0 2px 12px rgba(0, 0, 0, 0.72),
+    0 0 24px rgba(0, 0, 0, 0.48);
+
+  --kml-shadow-verse-jp:
+    0 1px 3px rgba(6, 4, 2, 0.78),
+    0 3px 16px rgba(0, 0, 0, 0.62),
+    0 0 28px rgba(0, 0, 0, 0.4);
+
+  --kml-shadow-verse-en:
+    0 1px 2px rgba(6, 4, 2, 0.7),
+    0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Feathered title-block (no boxes, no banners) ── */
+
+.kml-title-block {
+  position: relative;
+  isolation: isolate;
+}
+
+.kml-title-block::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(118%, 52rem);
+  height: 165%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 72% 78% at 50% 48%,
+    rgba(10, 7, 4, 0.5) 0%,
+    rgba(10, 7, 4, 0.22) 42%,
+    rgba(10, 7, 4, 0.06) 62%,
+    transparent 78%
+  );
+  opacity: var(--kml-title-block-strength);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.kml-verse-block {
+  position: relative;
+  isolation: isolate;
+}
+
+.kml-verse-block::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(128%, 56rem);
+  height: 150%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 88% 72% at 50% 54%,
+    rgba(10, 7, 4, 0.46) 0%,
+    rgba(10, 7, 4, 0.18) 44%,
+    rgba(10, 7, 4, 0.05) 64%,
+    transparent 80%
+  );
+  opacity: var(--kml-verse-block-strength);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── Kanji ── */
+
+.ambient-kanji,
+.exhibition-kanji {
+  color: var(--kml-color-kanji) !important;
+  text-shadow: var(--kml-shadow-kanji);
+}
+
+/* ── Keyword – weight before size; aged gold, semibold ── */
+
+.ambient-keyword,
+.exhibition-keyword {
+  font-size: var(--kml-size-keyword);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+  color: var(--kml-color-keyword);
+  text-shadow: var(--kml-shadow-keyword);
+}
+
+/* ── Verses ── */
+
+.ambient-verse-jp,
+.exhibition-verse-jp {
+  font-size: var(--kml-size-verse-jp);
+  line-height: 1.82;
+  color: var(--kml-color-verse-jp);
+  text-shadow: var(--kml-shadow-verse-jp);
+}
+
+.ambient-verse-en,
+.exhibition-verse-en {
+  font-size: var(--kml-size-verse-en);
+  line-height: 1.68;
+  color: var(--kml-color-verse-en);
+  font-style: italic;
+  text-shadow: var(--kml-shadow-verse-en);
+}
+
+/* Legacy comparison (add ?typography=legacy to URL) */
+html.kml-typography-legacy {
+  --kml-title-block-strength: 0;
+  --kml-verse-block-strength: 0;
+}
+
+html.kml-typography-legacy .ambient-keyword,
+html.kml-typography-legacy .exhibition-keyword {
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  font-weight: 500;
+  color: #c9b48a;
+  text-shadow:
+    0 1px 2px rgba(8, 6, 4, 0.88),
+    0 2px 14px rgba(0, 0, 0, 0.62);
+}
+
+html.kml-typography-legacy .ambient-verse-jp,
+html.kml-typography-legacy .exhibition-verse-jp {
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  color: #f3ede3;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.8);
+}
+
+html.kml-typography-legacy .ambient-verse-en,
+html.kml-typography-legacy .exhibition-verse-en {
+  font-size: clamp(0.88rem, 1.9vw, 1.02rem);
+  color: rgba(243, 237, 227, 0.68);
+}
+
+html.kml-typography-legacy .ambient-kanji,
+html.kml-typography-legacy .exhibition-kanji {
+  color: #f3ede3 !important;
+  text-shadow:
+    0 0 20px rgba(243, 237, 227, 0.25),
+    0 0 40px rgba(243, 237, 227, 0.12);
+}
