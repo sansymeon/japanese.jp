@@ -40,6 +40,10 @@ body {
   overflow: hidden;
 }
 
+.ambient-root.is-presentation .ambient-bg-layer {
+  inset: 0;
+}
+
 .ambient-bg-layer {
   position: absolute;
   inset: -8%;
@@ -65,8 +69,25 @@ body {
   animation: ken-burns var(--ken-burns-duration, 120s) ease-in-out infinite alternate;
 }
 
-.ambient-root.is-paused .ambient-bg-layer img.ken-burns {
+.ambient-bg-layer img.gallery-guardian {
+  animation: gallery-guardian-move var(--gallery-guardian-duration, 125s)
+    var(--gallery-guardian-ease, cubic-bezier(0.15, 0, 0.25, 1)) forwards;
+}
+
+.ambient-root.is-paused .ambient-bg-layer img.ken-burns,
+.ambient-root.is-paused .ambient-bg-layer img.gallery-guardian {
   animation-play-state: paused;
+}
+
+@keyframes gallery-guardian-move {
+  from {
+    transform: scale(calc(var(--image-scale, 1) * var(--gg-scale-from, 1)))
+      translate(var(--gg-x-from, 0%), var(--gg-y-from, 0%));
+  }
+  to {
+    transform: scale(calc(var(--image-scale, 1) * var(--gg-scale-to, 1.08)))
+      translate(var(--gg-x-to, 0%), var(--gg-y-to, 0%));
+  }
 }
 
 @keyframes ken-burns {
@@ -401,7 +422,8 @@ html.is-capture-doc body {
   opacity: 1;
 }
 
-.ambient-root.is-gallery-seal-fading .ambient-bg-layer.is-active img.ken-burns {
+.ambient-root.is-gallery-seal-fading .ambient-bg-layer.is-active img.ken-burns,
+.ambient-root.is-gallery-seal-fading .ambient-bg-layer.is-active img.gallery-guardian {
   animation-play-state: running;
 }
 

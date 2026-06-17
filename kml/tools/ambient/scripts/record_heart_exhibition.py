@@ -78,7 +78,7 @@ def start_server(port: int) -> subprocess.Popen:
         print("Missing assets symlink. From kml/tools/ambient: ln -s ../../assets assets", file=sys.stderr)
         sys.exit(1)
     proc = subprocess.Popen(
-        [sys.executable, "-m", "http.server", str(port)],
+        [sys.executable, "-m", "http.server", str(port), "--bind", "127.0.0.1"],
         cwd=ROOT,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,

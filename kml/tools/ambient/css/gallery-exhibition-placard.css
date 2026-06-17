@@ -1,0 +1,105 @@
+/**
+ * Image + verse placard — Japanese Reflections family.
+ * Enable: ?typography=placard  (with family japaneseReflections)
+ */
+
+html.kml-typography-placard {
+  --kml-size-verse-jp: clamp(1.5rem, 5vmin, 2.5rem);
+  --kml-size-verse-en: clamp(1.5rem, 5vmin, 2.5rem);
+  --kml-color-verse-jp: #f0e8da;
+  --kml-color-verse-en: #f0e8da;
+  --kml-shadow-verse-jp: 0 1px 3px rgba(0, 0, 0, 0.42);
+  --kml-shadow-verse-en: 0 1px 3px rgba(0, 0, 0, 0.42);
+  --kml-verse-block-strength: 0.34;
+}
+
+html.kml-typography-placard .exhibition-verse-jp,
+html.kml-typography-placard .exhibition-verse-en {
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 1.58;
+  white-space: normal;
+  word-break: normal;
+  line-break: strict;
+  text-wrap: balance;
+}
+
+html.kml-typography-placard .exhibition-verse-jp br,
+html.kml-typography-placard .exhibition-verse-en br {
+  display: block;
+  content: "";
+  margin-top: 0.32em;
+}
+
+html.kml-typography-placard .exhibition-verse-en {
+  white-space: pre-line;
+}
+
+html.kml-typography-placard .exhibition-verse-jp ruby rt {
+  opacity: 0;
+}
+
+html.kml-typography-placard .exhibition-notes {
+  top: auto;
+  bottom: clamp(1.75rem, 9vh, 4.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94vw, 40rem);
+  min-height: 4rem;
+}
+
+html.kml-typography-placard.kml-verse-sequential .exhibition-verse-jp,
+html.kml-typography-placard.kml-verse-sequential .exhibition-verse-en {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  transform: none !important;
+  transition: opacity var(--ex-verse-fade, 1s) ease-in-out;
+}
+
+/* Japanese Reflections — no kanji, keyword, or title chrome */
+.exhibition-root.is-japanese-reflections .exhibition-title,
+.exhibition-root.is-image-verse .exhibition-title {
+  display: none !important;
+}
+
+.exhibition-root.is-japanese-reflections .exhibition-veil,
+.exhibition-root.is-image-verse .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-japanese-reflections .exhibition-artwork,
+.exhibition-root.is-image-verse .exhibition-artwork {
+  transition: opacity var(--ex-transition, 4s) ease-in-out;
+}
+
+.exhibition-root.is-japanese-reflections .exhibition-artwork.is-exhaling,
+.exhibition-root.is-image-verse .exhibition-artwork.is-exhaling {
+  transition-duration: var(--ex-transition, 4s);
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+}
+
+.exhibition-root.is-japanese-reflections .exhibition-artwork.is-on-top,
+.exhibition-root.is-image-verse .exhibition-artwork.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-japanese-reflections .exhibition-bookend,
+.exhibition-root.is-image-verse .exhibition-bookend {
+  transition: opacity var(--ex-transition, 4s) ease-in-out;
+}
+
+.exhibition-root.is-japanese-reflections .exhibition-bookend.is-exhaling,
+.exhibition-root.is-image-verse .exhibition-bookend.is-exhaling {
+  transition-duration: var(--ex-transition, 4s);
+  transition-timing-function: ease-in-out;
+}

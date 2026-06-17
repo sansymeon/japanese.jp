@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "2026-06-16-guardian-v1";
+  const ENGINE_VERSION = "2026-06-16-mobile-verse-v1";
 
   const DEFAULTS = {
     artworkArrivalMs: 8000,
@@ -20,12 +20,18 @@
     verseEnFadeMs: 5500,
     reflectionHoldMs: 12000,
     versesFadeMs: 5500,
+    verseJpHoldMs: null,
+    verseJpFadeMs: null,
+    verseEnRevealMs: null,
+    verseEnHoldMs: null,
+    verseEnFadeMs: null,
     essenceKanjiRevealMs: 2500,
     essenceHoldMs: 0,
     imageExhaleFadeMs: 16000,
     kanjiAloneHoldMs: 9000,
     kanjiExhaleFadeMs: 20000,
     blackHoldMs: 3500,
+    exhibitBlackHoldMs: 500,
     kenBurnsDurationMs: 300000,
     openingBlackBeforeMs: 2000,
     openingFluteMs: 16000,
@@ -57,6 +63,8 @@
       this.startExhibit = Math.max(0, parseInt(params.get("exhibit") || "0", 10) || 0);
       this.singleExhibit = params.get("singleExhibit") === "1";
       this.skipBookends = params.get("skipBookends") === "1";
+      this.verseMode =
+        params.get("verseMode") || this.display.verseMode || "simultaneous";
       this._cameraParam = params.get("camera");
       this.cameraHistory = [];
 
@@ -86,8 +94,21 @@
         verseEn: root.querySelector("[data-exhibition-verse-en]"),
       };
 
+      this.applyPresentationMode();
       this.applyTheme();
       this.bindKeys();
+    }
+
+    applyPresentationMode() {
+      const params = new URLSearchParams(window.location.search);
+      const typo = params.get("typography") || this.display.typography || "";
+      const verseMode = params.get("verseMode") || this.display.verseMode || "simultaneous";
+      const root = document.documentElement;
+
+      root.classList.toggle("kml-typography-legacy", typo === "legacy");
+      root.classList.toggle("kml-typography-mobile", typo === "mobile");
+      root.classList.toggle("kml-typography-mobile-refine", typo === "mobile-refine");
+      root.classList.toggle("kml-verse-sequential", verseMode === "sequential");
     }
 
     get fixedKanji() {
@@ -96,6 +117,22 @@
 
     get showKeyword() {
       return this.display.showKeyword !== false;
+    }
+
+    get isSequentialVerses() {
+      return this.verseMode === "sequential";
+    }
+
+    sequentialVerseTiming(t = this.timing) {
+      const holdPool = t.verseEnDelayMs + t.reflectionHoldMs;
+      return {
+        verseJpRevealMs: t.verseJpRevealMs,
+        verseJpHoldMs: t.verseJpHoldMs ?? Math.round(holdPool * 0.42),
+        verseJpFadeMs: t.verseJpFadeMs ?? t.titleFadeMs,
+        verseEnRevealMs: t.verseEnRevealMs ?? t.verseEnFadeMs,
+        verseEnHoldMs: t.verseEnHoldMs ?? holdPool - Math.round(holdPool * 0.42),
+        verseEnFadeMs: t.verseEnFadeMs ?? t.versesFadeMs,
+      };
     }
 
     get useGalleryGuardian() {
@@ -150,7 +187,10 @@
       root.style.setProperty("--ken-burns-duration", `${t.kenBurnsDurationMs}ms`);
       root.style.setProperty("--ex-bookend-fade", `${t.openingRevealMs}ms`);
       root.style.setProperty("--ex-bookend-exhale", `${t.openingExhaleMs}ms`);
+      const verseFade = t.titleFadeMs;
+      root.style.setProperty("--ex-verse-fade", `${verseFade}ms`);
       this.root.classList.toggle("is-fixed-kanji", this.fixedKanji);
+      this.root.classList.toggle("is-sequential-verses", this.isSequentialVerses);
       if (this.els.artworkImg) {
         this.els.artworkImg.style.transition = `opacity ${t.imageExhaleFadeMs}ms ease-in`;
       }
@@ -553,11 +593,6 @@
         t.keywordDelayMs +
         t.titleHoldMs +
         t.titleFadeMs +
-        t.verseJpRevealMs +
-        t.verseEnDelayMs +
-        t.verseEnFadeMs +
-        t.reflectionHoldMs +
-        t.versesFadeMs +
         t.essenceKanjiRevealMs +
         (t.essenceHoldMs || 0) +
         t.imageExhaleFadeMs +
@@ -565,6 +600,23 @@
         t.kanjiExhaleFadeMs;
       if (this.showKeyword) {
         ms += t.keywordFadeMs;
+      }
+      if (this.isSequentialVerses) {
+        const s = this.sequentialVerseTiming(t);
+        ms +=
+          s.verseJpRevealMs +
+          s.verseJpHoldMs +
+          s.verseJpFadeMs +
+          s.verseEnRevealMs +
+          s.verseEnHoldMs +
+          s.verseEnFadeMs;
+      } else {
+        ms +=
+          t.verseJpRevealMs +
+          t.verseEnDelayMs +
+          t.verseEnFadeMs +
+          t.reflectionHoldMs +
+          t.versesFadeMs;
       }
       return ms;
     }
@@ -860,6 +912,28 @@
       this.finishPresentation();
     }
 
+    async playSequentialVerses(stillRunning) {
+      const s = this.sequentialVerseTiming();
+
+      this.setClass(this.els.verseJp, "is-visible", true);
+      await this.wait(s.verseJpRevealMs);
+      if (!stillRunning()) return;
+      await this.wait(s.verseJpHoldMs);
+      if (!stillRunning()) return;
+      this.setClass(this.els.verseJp, "is-visible", false);
+      await this.wait(s.verseJpFadeMs);
+      if (!stillRunning()) return;
+
+      this.setClass(this.els.verseEn, "is-visible", true);
+      await this.wait(s.verseEnRevealMs);
+      if (!stillRunning()) return;
+      await this.wait(s.verseEnHoldMs);
+      if (!stillRunning()) return;
+      this.setClass(this.els.verseEn, "is-visible", false);
+      await this.wait(s.verseEnFadeMs);
+      if (!stillRunning()) return;
+    }
+
     async playExhibit(index) {
       if (this.destroyed || !this.scenes.length) return;
 
@@ -908,18 +982,25 @@
       this.setClass(this.els.keyword, "is-visible", false);
       await this.wait(t.titleFadeMs);
       if (!stillRunning()) return;
-      this.setClass(this.els.verseJp, "is-visible", true);
-      await this.wait(t.verseJpRevealMs + t.verseEnDelayMs);
-      if (!stillRunning()) return;
-      this.setClass(this.els.verseEn, "is-visible", true);
-      await this.wait(t.verseEnFadeMs + t.reflectionHoldMs);
-      if (!stillRunning()) return;
 
-      // ── 4. Return to essence — verses fade, kanji alone ──
+      if (this.isSequentialVerses) {
+        await this.playSequentialVerses(stillRunning);
+      } else {
+        this.setClass(this.els.verseJp, "is-visible", true);
+        await this.wait(t.verseJpRevealMs + t.verseEnDelayMs);
+        if (!stillRunning()) return;
+        this.setClass(this.els.verseEn, "is-visible", true);
+        await this.wait(t.verseEnFadeMs + t.reflectionHoldMs);
+        if (!stillRunning()) return;
+        this.setClass(this.els.verseJp, "is-visible", false);
+        this.setClass(this.els.verseEn, "is-visible", false);
+        await this.wait(t.versesFadeMs);
+        if (!stillRunning()) return;
+      }
+
+      // ── 4. Return to essence — kanji alone ──
       this.setClass(this.els.verseJp, "is-visible", false);
       this.setClass(this.els.verseEn, "is-visible", false);
-      await this.wait(t.versesFadeMs);
-      if (!stillRunning()) return;
       this.setClass(this.els.kanji, "is-visible", true);
       await this.wait(t.essenceKanjiRevealMs);
       if (!stillRunning()) return;
@@ -946,7 +1027,7 @@
       this.setClass(this.els.kanji, "is-visible", false);
       this.setClass(this.els.kanji, "is-exhaling", false);
       this.setKanjiCentered(false);
-      await this.wait(t.blackHoldMs);
+      await this.wait(t.exhibitBlackHoldMs ?? t.blackHoldMs);
       if (!stillRunning()) return;
 
       if (this.singleExhibit) {

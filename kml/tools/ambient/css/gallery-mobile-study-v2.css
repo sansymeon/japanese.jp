@@ -1,0 +1,99 @@
+/**
+ * Mobile Study Readability V2 — lower-third placard, coherent verse blocks.
+ * Enable: ?typography=mobile-v2  (study capture / index.html)
+ */
+
+html.kml-typography-mobile-v2 {
+  --kml-size-verse-jp: clamp(1.85rem, 6.5vmin, 3.75rem);
+  --kml-size-verse-en: clamp(1.28rem, 4.6vmin, 2.45rem);
+  --kml-size-keyword: clamp(1.82rem, 5.25vmin, 3.06rem);
+  --kml-color-verse-jp: #f0e8da;
+  --kml-color-verse-en: rgba(235, 224, 206, 0.88);
+  --kml-shadow-verse-jp: 0 1px 3px rgba(0, 0, 0, 0.42);
+  --kml-shadow-verse-en: 0 1px 3px rgba(0, 0, 0, 0.38);
+  --kml-shadow-keyword: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --kml-verse-block-strength: 0.36;
+}
+
+/* Study capture — image primary, text in lower third */
+html.kml-typography-mobile-v2 .ambient-root.is-study {
+  --ambient-overlay: 0.38;
+}
+
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-stage {
+  display: block;
+  position: relative;
+  height: 100%;
+  padding: 0;
+  gap: 0;
+}
+
+/* Kanji + keyword: upper area during title beats */
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-kanji-block {
+  position: absolute;
+  top: clamp(2.5rem, 11vh, 5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92vw, 34rem);
+  z-index: 3;
+}
+
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-keyword {
+  letter-spacing: 0.16em;
+}
+
+/* Verse placard — lower third, single coherent block */
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verses {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.95rem, 10vh, 5rem);
+  transform: translateX(-50%);
+  width: min(94vw, 40rem);
+  max-width: 40rem;
+  padding: 0 clamp(0.75rem, 3.5vw, 1.5rem);
+  z-index: 3;
+}
+
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-jp,
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-en {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-jp {
+  margin: 0;
+  text-align: center;
+  line-height: 1.62;
+  white-space: normal;
+  word-break: normal;
+  line-break: strict;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+/* Collapse source indentation after manual <br> — keeps phrase lines only */
+html.kml-typography-mobile-v2 .ambient-verse-jp br {
+  display: block;
+  content: "";
+  margin-top: 0.35em;
+}
+
+html.kml-typography-mobile-v2 .ambient-verse-jp ruby {
+  ruby-position: over;
+}
+
+html.kml-typography-mobile-v2 .ambient-verse-jp ruby rt {
+  opacity: 0;
+}
+
+/* Verse phase: hide centre kanji so artwork stays unobstructed */
+html.kml-typography-mobile-v2
+  .ambient-root.is-study:has(.ambient-verse-jp.is-visible)
+  .ambient-kanji-block {
+  opacity: 0 !important;
+  transition: opacity var(--ambient-fade) ease-in-out;
+}
+
+html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-en {
+  display: none;
+}

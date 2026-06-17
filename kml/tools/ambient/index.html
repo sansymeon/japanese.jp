@@ -9,15 +9,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/gallery-typography.css">
+  <link rel="stylesheet" href="./css/gallery-typography.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-mobile-study-v2.css">
+  <link rel="stylesheet" href="./css/gallery-mobile-refine.css">
   <link rel="stylesheet" href="./css/ambient.css">
 </head>
 <body>
 
 <script>
-  if (new URLSearchParams(location.search).get("typography") === "legacy") {
-    document.documentElement.classList.add("kml-typography-legacy");
-  }
+  (function () {
+    const typo = new URLSearchParams(location.search).get("typography");
+    if (typo === "legacy") document.documentElement.classList.add("kml-typography-legacy");
+    if (typo === "mobile") document.documentElement.classList.add("kml-typography-mobile");
+    if (typo === "mobile-v2") document.documentElement.classList.add("kml-typography-mobile-v2");
+    if (typo === "mobile-refine") document.documentElement.classList.add("kml-typography-mobile-refine");
+  })();
 </script>
 
 <!--
@@ -46,6 +52,14 @@
   Record Study Exhibition MP4s:
     ./scripts/record_study_exhibition.sh
     → study_exhibitions/lesson_XX_study.mp4
+
+  Lesson 1 mobile readability refine (test):
+    ?collection=lesson_1_study&capture=1&typography=mobile-refine
+
+  Lesson 1 mobile layout V2 (previous):
+    ?collection=lesson_1_study&capture=1&typography=mobile-v2
+    ./scripts/record_lesson_01_mobile_test_v2.py
+    → study_exhibitions/lesson_01_study_mobile_test_v2.mp4
 
   Serve from this directory (assets symlink required):
     ./serve.sh
@@ -109,6 +123,6 @@
 
 </div>
 
-<script src="./js/ambient-engine.js?v=study18"></script>
+<script src="./js/ambient-engine.js?v=study23"></script>
 </body>
 </html>

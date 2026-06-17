@@ -54,6 +54,8 @@
       this.assetsBase = (collection.assetsBase || "../../assets").replace(/\/$/, "");
       this.soundtrack = collection.soundtrack || null;
 
+      this.cameraHistory = [];
+      this.cameraHistory = [];
       this.sceneIndex = 0;
       this.paused = false;
       this.destroyed = false;
@@ -92,6 +94,7 @@
         btnFurigana: root.querySelector("[data-ambient-furigana]"),
       };
 
+      this.applyPresentationMode();
       this.applyTheme();
       this.bindControls();
       if (this.captureMode) {
@@ -105,6 +108,9 @@
     initCaptureMode() {
       document.documentElement.classList.add("is-capture-doc");
       this.root.classList.add("is-presentation");
+      if (this.useGalleryGuardian) {
+        this.root.classList.add("is-gallery-guardian");
+      }
 
       const idleMs = this.timing.captureCursorIdleMs ?? 3000;
       const hideCursor = () => {
@@ -836,6 +842,29 @@
       return this.collection.presentation === "study";
     }
 
+    get isMobileStudyV2() {
+      const root = document.documentElement;
+      return (
+        root.classList.contains("kml-typography-mobile-v2") ||
+        root.classList.contains("kml-typography-mobile-refine")
+      );
+    }
+
+    applyPresentationMode() {
+      const params = new URLSearchParams(window.location.search);
+      const typo = params.get("typography") || this.display.typography || "";
+      const root = document.documentElement;
+      root.classList.toggle("kml-typography-legacy", typo === "legacy");
+      root.classList.toggle("kml-typography-mobile", typo === "mobile");
+      root.classList.toggle("kml-typography-mobile-v2", typo === "mobile-v2");
+      root.classList.toggle("kml-typography-mobile-refine", typo === "mobile-refine");
+    }
+
+    formatVerseHtml(html) {
+      if (!html) return "";
+      return html.replace(/<br\s*\/?>\s+/gi, "<br>");
+    }
+
     applyTheme() {
       const root = document.documentElement;
       root.style.setProperty("--ambient-fade", `${this.timing.fadeMs}ms`);
@@ -938,7 +967,20 @@
         }
       }
 
-      this.mountImageBackground(slotEl, scene);
+      await this.mountImageBackground(slotEl, scene);
+    }
+
+    get useGalleryGuardian() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("camera") === "legacy") return false;
+      return this.captureMode && Boolean(window.GalleryGuardian);
+    }
+
+    get motionProfile() {
+      const params = new URLSearchParams(window.location.search);
+      const override = params.get("motion") || this.display.motionProfile;
+      if (override === "reflection" || override === "comprehension") return override;
+      return "reflection";
     }
 
     applyImageFraming(img, scene) {
@@ -951,7 +993,29 @@
       }
     }
 
-    mountImageBackground(slotEl, scene) {
+    async waitForImageLoad(img) {
+      if (!img) return;
+      if (img.complete && img.naturalWidth > 0) return;
+      await new Promise((resolve) => {
+        img.addEventListener("load", resolve, { once: true });
+        img.addEventListener("error", resolve, { once: true });
+      });
+    }
+
+    applyGalleryGuardian(img, scene) {
+      if (!window.GalleryGuardian) return;
+      const coverBoost = window.GalleryGuardian.measureCoverBoost(img);
+      const durationMs = this.totalSceneDuration(this.timing);
+      const plan = window.GalleryGuardian.plan(scene, {
+        sceneIndex: this.sceneIndex,
+        durationMs,
+        coverBoost,
+        motionProfile: this.motionProfile,
+      });
+      window.GalleryGuardian.applyToImage(img, plan);
+    }
+
+    async mountImageBackground(slotEl, scene) {
       const src = this.assetUrl(scene.image || scene.videoPoster);
       if (!src) return;
 
@@ -959,10 +1023,14 @@
       img.src = src;
       img.alt = scene.kanji || "";
       this.applyImageFraming(img, scene);
-      if (this.background.kenBurns) {
+      slotEl.appendChild(img);
+
+      if (this.useGalleryGuardian) {
+        await this.waitForImageLoad(img);
+        this.applyGalleryGuardian(img, scene);
+      } else if (this.background.kenBurns) {
         img.classList.add("ken-burns");
       }
-      slotEl.appendChild(img);
     }
 
     async crossfadeBackground(scene) {
@@ -1010,7 +1078,8 @@
         this.els.imageWrap.hidden = !src;
       }
       if (this.els.verseJp) {
-        this.els.verseJp.innerHTML = scene.verse?.jpHtml || scene.verse?.jp || "";
+        const raw = scene.verse?.jpHtml || scene.verse?.jp || "";
+        this.els.verseJp.innerHTML = this.formatVerseHtml(raw);
         this.els.verseJp.classList.toggle("show-furigana", this.display.showFurigana);
       }
       if (this.els.verseEn) {

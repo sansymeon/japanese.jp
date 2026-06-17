@@ -1,10 +1,39 @@
 /**
- * Gallery Guardian – lightweight exhibition camera planner (Heart collections).
- * Shot grammar + Director sequencing; no CV/ML.
+ * Gallery Guardian – exhibition camera planner.
+ *
+ * Shared philosophy (both families): widest 100% cover, centered start,
+ * composition before detail, gentle push-in. Trust the artwork.
  */
 (function () {
   "use strict";
 
+  const IMMERSIVE_SCALE_MIN = 1.0;
+  const COVER_BOOST_MAX = 1.28;
+
+  const EASE = {
+    comprehension:
+      "cubic-bezier(0.15, 0.0, 0.25, 1.0)",
+    reflection:
+      "cubic-bezier(0.1, 0.0, 0.2, 1.0)",
+  };
+
+  /** @type {Record<string, { fromMul: number, toDelta: number, toJitter: number, panMax: number }>} */
+  const MOTION_PROFILES = {
+    comprehension: {
+      fromMul: 1.0,
+      toDelta: 0.085,
+      toJitter: 0.018,
+      panMax: 1.35,
+    },
+    reflection: {
+      fromMul: 1.0,
+      toDelta: 0.145,
+      toJitter: 0.025,
+      panMax: 0.85,
+    },
+  };
+
+  // Legacy shot table retained for diagnostics and sample renders.
   const SHOTS = {
     contemplate: { s0: 1.02, s1: 1.08, x0: 0, y0: 0, x1: 0.6, y1: 0.4, weight: 30 },
     drift: { s0: 1.04, s1: 1.11, x0: -3.2, y0: 0.2, x1: 3.2, y1: -0.4, weight: 25 },
@@ -15,17 +44,6 @@
     approach: { s0: 1.06, s1: 1.18, x0: 1.5, y0: 1.2, x1: -2.8, y1: -2.0, weight: 2 },
     reflect: { s0: 1.04, s1: 1.12, x0: -1.2, y0: 2.8, x1: 1.4, y1: -3.5, weight: 10 },
   };
-
-  const IMMERSIVE_SCALE_MIN = 1.0;
-  const COVER_BOOST_MAX = 1.28;
-
-  const VERSE_HINTS = [
-    { re: /mist|fog|dissolv|hidden|beyond|haze|霞|霧/i, boost: ["reveal", "drift", "reflect"] },
-    { re: /path|foot|continu|flow|river|journey|bridge|道|流|歩|旅/i, boost: ["follow", "establish"] },
-    { re: /stood|still|quiet|silence|unmoving|静|黙/i, boost: ["contemplate", "withdraw"] },
-    { re: /moon|water|reflect|surface|light|月|水|光|映/i, boost: ["reflect", "reveal"] },
-    { re: /mountain|valley|land|山|谷|野/i, boost: ["establish", "withdraw"] },
-  ];
 
   function hashSeed(str) {
     let h = 0;
@@ -41,105 +59,21 @@
     return x - Math.floor(x);
   }
 
-  function verseText(scene) {
-    const jp = scene.verse?.jp || "";
-    const en = scene.verse?.en || "";
-    const html = scene.verse?.jpHtml || "";
-    return `${jp} ${en} ${html}`.replace(/<[^>]+>/g, " ");
-  }
-
-  function shotWeights(scene, aspectRatio, framingScale) {
-    const weights = {};
-    Object.keys(SHOTS).forEach((key) => {
-      weights[key] = SHOTS[key].weight;
-    });
-
-    if (aspectRatio < 0.88) {
-      weights.reflect += 8;
-      weights.drift += 6;
-      weights.establish -= 4;
-    } else if (aspectRatio > 1.12) {
-      weights.establish += 10;
-      weights.follow += 8;
-      weights.reflect -= 4;
-    }
-
-    if (framingScale < 0.92) {
-      weights.approach = 0;
-      weights.reveal = Math.max(4, weights.reveal - 4);
-      weights.contemplate += 6;
-      weights.drift += 4;
-    }
-
-    const text = verseText(scene);
-    VERSE_HINTS.forEach((hint) => {
-      if (!hint.re.test(text)) return;
-      hint.boost.forEach((name) => {
-        if (weights[name] != null) weights[name] += 12;
-      });
-    });
-
-    if (scene.id === "L40_love" || scene.kanji === "愛") {
-      weights.approach += 6;
-      weights.reveal += 4;
-    }
-    if (scene.id === "L32_heart" || scene.kanji === "心") {
-      weights.contemplate += 14;
-      weights.withdraw += 6;
-      weights.approach = 0;
-    }
-
-    return weights;
-  }
-
-  function pickShot(scene, sceneIndex, history, aspectRatio, framingScale) {
-    const seed = hashSeed(`${scene.id}:${sceneIndex}`);
-    const weights = shotWeights(scene, aspectRatio, framingScale);
-    const last = history[history.length - 1];
-    const prev = history[history.length - 2];
-
-    const entries = Object.entries(weights).filter(([, w]) => w > 0);
-    const filtered = entries.filter(([name]) => {
-      if (name === last) return false;
-      if (name === prev && entries.length > 3) return false;
-      return true;
-    });
-    const pool = filtered.length ? filtered : entries;
-
-    let total = 0;
-    pool.forEach(([, w]) => {
-      total += w;
-    });
-
-    let pick = seededUnit(seed) * total;
-    let chosen = pool[0][0];
-    for (const [name, w] of pool) {
-      pick -= w;
-      if (pick <= 0) {
-        chosen = name;
-        break;
-      }
-    }
-
-    return chosen;
-  }
-
-  function directionFlip(seed, history) {
-    const last = history[history.length - 1];
-    if (last && last.flipX) return { flipX: !last.flipX, flipY: last.flipY };
-    return {
-      flipX: seededUnit(seed + 1) > 0.5,
-      flipY: seededUnit(seed + 2) > 0.35,
-    };
+  function minimumCoverScale() {
+    return IMMERSIVE_SCALE_MIN;
   }
 
   function immersiveScale(value, coverBoost) {
     return Math.max(IMMERSIVE_SCALE_MIN, value * coverBoost);
   }
 
+  function resolveProfile(name) {
+    if (name === "reflection") return MOTION_PROFILES.reflection;
+    return MOTION_PROFILES.comprehension;
+  }
+
   /**
    * Detect baked-in black margins in source art; return a cover boost >= 1.
-   * Lightweight edge sampling only — no ML.
    */
   function measureCoverBoost(img) {
     if (!img?.naturalWidth || !img?.naturalHeight) return 1;
@@ -207,36 +141,39 @@
   function plan(scene, options = {}) {
     const {
       sceneIndex = 0,
-      history = [],
-      aspectRatio = 0.75,
-      framingScale = 1,
       durationMs = 125000,
       coverBoost = 1,
+      motionProfile = "comprehension",
     } = options;
 
-    const seed = hashSeed(`${scene.id}:${sceneIndex}`);
-    const shotName = pickShot(scene, sceneIndex, history, aspectRatio, framingScale);
-    const shot = SHOTS[shotName];
-    const dir = directionFlip(seed, history);
+    const profile = resolveProfile(motionProfile);
+    const seed = hashSeed(`${scene.id}:${sceneIndex}:${motionProfile}`);
+    const jitter = (spread) => (seededUnit(seed + spread) - 0.5);
 
-    const mul = (v, flip) => (flip ? -v : v);
-    const jitter = (base, spread) => base + (seededUnit(seed + spread) - 0.5) * 0.8;
+    // Widest composition at 100% cover: object-fit:cover baseline (scale 1.0), centered.
+    const scaleFrom = minimumCoverScale();
+    const pushDelta = profile.toDelta + jitter(10) * profile.toJitter;
+    const scaleTo = scaleFrom + Math.max(profile.toDelta * 0.55, pushDelta);
 
-    const plan = {
-      shot: shotName,
+    const panEnd = profile.panMax * 0.25;
+    const xFrom = 0;
+    const yFrom = 0;
+    const xTo = jitter(14) * panEnd;
+    const yTo = jitter(15) * panEnd;
+
+    return {
+      shot: motionProfile,
+      motionProfile,
       durationMs,
       coverBoost,
-      scaleFrom: immersiveScale(jitter(shot.s0, 10), coverBoost),
-      scaleTo: immersiveScale(jitter(shot.s1, 11), coverBoost),
-      xFrom: mul(jitter(shot.x0, 12), dir.flipX),
-      yFrom: mul(jitter(shot.y0, 13), dir.flipY),
-      xTo: mul(jitter(shot.x1, 14), dir.flipX),
-      yTo: mul(jitter(shot.y1, 15), dir.flipY),
-      flipX: dir.flipX,
-      flipY: dir.flipY,
+      scaleFrom,
+      scaleTo,
+      xFrom,
+      yFrom,
+      xTo,
+      yTo,
+      ease: EASE[motionProfile] || EASE.comprehension,
     };
-
-    return plan;
   }
 
   function applyToImage(img, cameraPlan) {
@@ -253,6 +190,10 @@
     img.style.setProperty("--gg-x-to", `${cameraPlan.xTo}%`);
     img.style.setProperty("--gg-y-to", `${cameraPlan.yTo}%`);
     img.style.setProperty("--gallery-guardian-duration", `${cameraPlan.durationMs}ms`);
+    img.style.setProperty(
+      "--gallery-guardian-ease",
+      cameraPlan.ease || EASE.comprehension
+    );
 
     img.classList.add("gallery-guardian");
     img.dataset.galleryShot = cameraPlan.shot;
@@ -262,7 +203,10 @@
     plan,
     applyToImage,
     measureCoverBoost,
+    minimumCoverScale,
     SHOTS,
+    MOTION_PROFILES,
+    EASE,
     IMMERSIVE_SCALE_MIN,
   };
 })();

@@ -9,15 +9,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/gallery-typography.css">
+  <link rel="stylesheet" href="./css/gallery-typography.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
+  <link rel="stylesheet" href="./css/gallery-mobile-refine.css">
   <link rel="stylesheet" href="./css/exhibition.css">
 </head>
 <body>
 
 <script>
-  if (new URLSearchParams(location.search).get("typography") === "legacy") {
-    document.documentElement.classList.add("kml-typography-legacy");
-  }
+  (function () {
+    const p = new URLSearchParams(location.search);
+    const typo = p.get("typography");
+    if (typo === "legacy") document.documentElement.classList.add("kml-typography-legacy");
+    if (typo === "mobile") document.documentElement.classList.add("kml-typography-mobile");
+    if (typo === "mobile-refine") document.documentElement.classList.add("kml-typography-mobile-refine");
+    if (p.get("verseMode") === "sequential") {
+      document.documentElement.classList.add("kml-verse-sequential");
+    }
+  })();
 </script>
 
 <!--
@@ -29,6 +38,8 @@
   Heart v5:   ?collection=heart_v5  (gold foil bookends + soundtrack)
   Audio:      audio/flute_intro.mp3, audio/ambient_kanji_exhibition.mp3 in ambient folder
   Debug:      add &debug=1 to log bookend diagnostics
+  Mobile refine test: ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&verseMode=sequential&typography=mobile-refine
+  Mobile test: ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&verseMode=sequential&typography=mobile
   Keyboard (hidden): Space pause · → next · ← previous
 
   No on-screen controls. Museum projection only.
@@ -78,6 +89,6 @@
 </div>
 
 <script src="./js/gallery-guardian.js?v=2"></script>
-<script src="./js/exhibition-engine.js?v=13"></script>
+<script src="./js/exhibition-engine.js?v=16"></script>
 </body>
 </html>

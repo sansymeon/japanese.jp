@@ -1,0 +1,108 @@
+/**
+ * Mobile / YouTube placard typography — sequential verses, gallery quiet.
+ * Enable: ?typography=mobile  (optionally with &verseMode=sequential)
+ */
+
+html.kml-typography-mobile {
+  /* Phone-first scale — ~75% larger than desktop gallery defaults */
+  --kml-size-verse-jp: clamp(1.65rem, 5.8vmin, 3.35rem);
+  --kml-size-verse-en: clamp(1.28rem, 4.6vmin, 2.45rem);
+  --kml-size-keyword: clamp(1.45rem, 4.2vmin, 2.45rem);
+
+  /* Placard palette — warm ivory, EN slightly softer */
+  --kml-color-verse-jp: #f0e8da;
+  --kml-color-verse-en: rgba(235, 224, 206, 0.88);
+
+  /* Minimal shadow — no glow halos */
+  --kml-shadow-verse-jp: 0 1px 3px rgba(0, 0, 0, 0.42);
+  --kml-shadow-verse-en: 0 1px 3px rgba(0, 0, 0, 0.38);
+  --kml-shadow-keyword: 0 1px 3px rgba(0, 0, 0, 0.45);
+
+  /* Nearly invisible contrast well — not a caption box */
+  --kml-verse-block-strength: 0.38;
+}
+
+html.kml-typography-mobile.kml-verse-sequential {
+  --kml-verse-block-strength: 0.32;
+}
+
+html.kml-typography-mobile .exhibition-verse-jp,
+html.kml-typography-mobile .exhibition-verse-en {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.62;
+  white-space: normal;
+  word-break: normal;
+  line-break: strict;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+html.kml-typography-mobile .exhibition-verse-jp br,
+html.kml-typography-mobile .exhibition-verse-en br {
+  display: block;
+  content: "";
+  margin-top: 0.35em;
+}
+
+html.kml-typography-mobile .exhibition-verse-jp ruby {
+  ruby-position: over;
+}
+
+html.kml-typography-mobile .exhibition-verse-en {
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.58;
+}
+
+html.kml-typography-mobile .exhibition-keyword {
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+
+/* Lower-third placard — keep centre clear for artwork */
+html.kml-typography-mobile .exhibition-notes {
+  top: auto;
+  bottom: clamp(1.75rem, 9vh, 4.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94vw, 40rem);
+}
+
+html.kml-typography-mobile .exhibition-root.is-fixed-kanji .exhibition-verse-jp,
+html.kml-typography-mobile .exhibition-root.is-fixed-kanji .exhibition-verse-en,
+html.kml-typography-mobile .exhibition-root.is-fixed-kanji .exhibition-verse-jp.is-visible,
+html.kml-typography-mobile .exhibition-root.is-fixed-kanji .exhibition-verse-en.is-visible {
+  transform: none !important;
+}
+
+/* Sequential — one verse at a time in the placard slot */
+html.kml-typography-mobile.kml-verse-sequential .exhibition-notes {
+  min-height: 4.5rem;
+}
+
+html.kml-verse-sequential .exhibition-verse-jp,
+html.kml-verse-sequential .exhibition-verse-en {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  transform: none !important;
+  transition: opacity var(--ex-verse-fade, var(--ex-fade)) ease-in-out;
+}
+
+/* fixed-kanji exhibition zeros transform — must not recentre to wrong axis */
+html.kml-verse-sequential .exhibition-root.is-fixed-kanji .exhibition-verse-jp,
+html.kml-verse-sequential .exhibition-root.is-fixed-kanji .exhibition-verse-en,
+html.kml-verse-sequential .exhibition-root.is-fixed-kanji .exhibition-verse-jp.is-visible,
+html.kml-verse-sequential .exhibition-root.is-fixed-kanji .exhibition-verse-en.is-visible {
+  transform: none !important;
+  transition: opacity var(--ex-verse-fade, var(--ex-fade)) ease-in-out;
+}

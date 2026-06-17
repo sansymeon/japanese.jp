@@ -44,6 +44,7 @@ def build() -> dict:
         "closingSilenceHoldMs": 5000,
         "closingFadeToBlackMs": 12000,
         "closingBlackAfterMs": 2000,
+        "exhibitBlackHoldMs": 500,
     }
     scenes = swap_love_and_heart(heart_v4["scenes"])
 
@@ -87,6 +88,8 @@ def build() -> dict:
         "display": {
             **heart_v4.get("display", {}),
             "showKeyword": True,
+            "verseMode": "sequential",
+            "typography": "mobile",
         },
         "meta": {
             **heart_v4.get("meta", {}),

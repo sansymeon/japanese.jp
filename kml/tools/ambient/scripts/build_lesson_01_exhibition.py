@@ -13,7 +13,7 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_01.html"
 OUT_PATH = ROOT / "exhibition" / "lesson_1_study.json"
 
-STUDY_LESSON = "audio/study_version_3.mp3"
+STUDY_LESSON = "audio/study_version_3_minus3db.mp3"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from study_exhibition_common import exhibition_study_config  # noqa: E402
@@ -69,6 +69,7 @@ def build() -> dict:
     )
     config["intro"]["image"] = "covers/lesson_01.png"
     config["soundtrack"] = {"main": STUDY_LESSON}
+    config["display"]["typography"] = "mobile-refine"
     return config
 
 
