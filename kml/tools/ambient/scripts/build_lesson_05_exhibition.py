@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_4_study.json — original order, Gallery Seal Ending."""
+"""Build exhibition/lesson_5_study.json — original order, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -10,39 +10,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
-LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_04.html"
+LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_05.html"
 ASSETS = REPO / "assets"
-OUT_PATH = ROOT / "exhibition" / "lesson_4_study.json"
+OUT_PATH = ROOT / "exhibition" / "lesson_5_study.json"
 
-STUDY_LESSON = "audio/study_version_3_minus3db.mp3"
+STUDY_LESSON = "audio/study_version_1_minus3db.mp3"
 
-IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {
-    "beginning": {
-        # Landscape engawa — pull back so Fuji peak stays in frame
-        "imageFocus": "48% 38%",
-        "imageScale": 0.88,
-    },
-    "newborn": {
-        # Wide room view — subjects centered; lift verse above figures
-        "imageFocus": "52% 50%",
-        "verseTop": "44%",
-        "verseScale": 1.12,
-    },
-    "page": {
-        # Open book spread sits lower-center — frame on the 頁, not the face
-        "imageFocus": "50% 58%",
-        "imageScale": 0.88,
-    },
-    "mediocre": {
-        "imageFocus": "48% 42%",
-        "imageScale": 0.82,
-    },
-    "ten_thousand": {
-        # Crane strings + hooks at top-left — tilt frame up to reveal the beam
-        "imageFocus": "42% 30%",
-        "imageScale": 0.90,
-    },
-}
+IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {}
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from study_exhibition_common import exhibition_study_config  # noqa: E402
@@ -98,15 +72,15 @@ def parse_scenes(html: str) -> list[dict]:
 def build() -> dict:
     html = LESSON_HTML.read_text(encoding="utf-8")
     config = exhibition_study_config(
-        lesson=4,
-        title="KML Ambient Study — Lesson 4 (Exhibition)",
+        lesson=5,
+        title="KML Ambient Study — Lesson 5 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Original lesson order; "
-            "True closes with Gallery Seal Ending. Soundtrack: Study Version 3."
+            "Child closes with Gallery Seal Ending. Soundtrack: Study Version 1."
         ),
         scenes=parse_scenes(html),
     )
-    config["intro"]["image"] = "covers/lesson_04.png"
+    config["intro"]["image"] = "covers/lesson_05.png"
     config["soundtrack"] = {"main": STUDY_LESSON}
     return config
 
