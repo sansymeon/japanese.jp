@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_3_study.json — original order, Gallery Seal Ending."""
+"""Build exhibition/lesson_4_study.json — original order, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -10,64 +10,32 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
-LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_03.html"
+LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_04.html"
 ASSETS = REPO / "assets"
-OUT_PATH = ROOT / "exhibition" / "lesson_3_study.json"
+OUT_PATH = ROOT / "exhibition" / "lesson_4_study.json"
 
-STUDY_LESSON = "audio/study_version_2_minus3db.mp3"
+STUDY_LESSON = "audio/study_version_3_minus3db.mp3"
 
 IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {
-    "round": {
-        # Full moon upper-right — pull back so the round light stays in frame
-        "imageFocus": "62% 28%",
+    "newborn": {
+        # Wide room view — subjects centered; lift verse above figures
+        "imageFocus": "52% 50%",
+        "verseTop": "44%",
+        "verseScale": 1.12,
+    },
+    "page": {
+        # Open book spread sits lower-center — frame on the 頁, not the face
+        "imageFocus": "50% 58%",
+        "imageScale": 0.88,
+    },
+    "mediocre": {
+        "imageFocus": "48% 42%",
         "imageScale": 0.82,
     },
-    "up": {
-        # Kite climbing — keep kite, boy, and village in frame
-        "imageFocus": "54% 38%",
-        "imageScale": 0.84,
-    },
-    "rise": {
-        # Sky lantern above village — pull back to keep kite in frame
-        "imageFocus": "55% 32%",
-        "imageScale": 0.82,
-    },
-    "signal": {
-        # 卜 — divination stick on mountain cairn; pull back for full cairn
-        "imageFocus": "50% 42%",
-        "imageScale": 0.78,
-    },
-    "below": {
-        # Cat under shrine step — pull back to show full cat
-        "imageFocus": "42% 55%",
-        "imageScale": 0.85,
-    },
-    "eminent": {
-        # 卓 — tokonoma ikebana and stand
-        "imageScale": 0.85,
-    },
-    "pop_song": {
-        "imageScale": 0.88,
-    },
-    "only": {
-        # Tea master — keep head and raised finger in frame during Ken Burns drift
-        "imageFocus": "50% 32%",
-        "imageScale": 0.88,
-    },
-    "elbow": {
-        # Woman at railing — keep face in frame during Ken Burns drift
-        "imageFocus": "48% 32%",
-        "imageScale": 0.88,
-    },
-    "virtue": {
-        # Samurai profile — pan to left shoulder and face
-        "imageFocus": "32% 30%",
-        "imageScale": 0.88,
-    },
-    "employee": {
-        # Group portrait — keep all four faces in frame
-        "imageFocus": "50% 34%",
-        "imageScale": 0.85,
+    "ten_thousand": {
+        # Crane strings + hooks at top-left — tilt frame up to reveal the beam
+        "imageFocus": "42% 30%",
+        "imageScale": 0.90,
     },
 }
 
@@ -125,15 +93,15 @@ def parse_scenes(html: str) -> list[dict]:
 def build() -> dict:
     html = LESSON_HTML.read_text(encoding="utf-8")
     config = exhibition_study_config(
-        lesson=3,
-        title="KML Ambient Study — Lesson 3 (Exhibition)",
+        lesson=4,
+        title="KML Ambient Study — Lesson 4 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Original lesson order; "
-            "Employee closes with Gallery Seal Ending. Soundtrack: Study Version 2."
+            "True closes with Gallery Seal Ending. Soundtrack: Study Version 3."
         ),
         scenes=parse_scenes(html),
     )
-    config["intro"]["image"] = "covers/lesson_03.png"
+    config["intro"]["image"] = "covers/lesson_04.png"
     config["soundtrack"] = {"main": STUDY_LESSON}
     return config
 

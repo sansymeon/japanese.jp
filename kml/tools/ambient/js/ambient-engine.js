@@ -943,10 +943,11 @@
       });
     }
 
-    assetUrl(relative) {
+    assetUrl(relative, rev) {
       if (!relative) return "";
       if (/^https?:\/\//.test(relative) || relative.startsWith("/")) return relative;
-      return `${this.assetsBase}/${relative.replace(/^\//, "")}`;
+      const base = `${this.assetsBase}/${relative.replace(/^\//, "")}`;
+      return rev != null && rev !== "" ? `${base}?v=${rev}` : base;
     }
 
     resolveBackgroundMode(scene) {
@@ -1016,6 +1017,15 @@
       }
     }
 
+    applySceneVerseLayout(scene) {
+      if (!this.root) return;
+      this.root.style.setProperty("--kml-verse-top", scene.verseTop || "50%");
+      this.root.style.setProperty(
+        "--kml-verse-scale",
+        scene.verseScale != null ? String(scene.verseScale) : "1",
+      );
+    }
+
     async waitForImageLoad(img) {
       if (!img) return;
       if (img.complete && img.naturalWidth > 0) return;
@@ -1039,7 +1049,7 @@
     }
 
     async mountImageBackground(slotEl, scene) {
-      const src = this.assetUrl(scene.image || scene.videoPoster);
+      const src = this.assetUrl(scene.image || scene.videoPoster, scene.imageRev);
       if (!src) return;
 
       const img = document.createElement("img");
@@ -1095,7 +1105,7 @@
         this.els.keyword.hidden = !this.display.showKeyword || !scene.keyword;
       }
       if (this.els.image) {
-        const src = this.assetUrl(scene.image);
+        const src = this.assetUrl(scene.image, scene.imageRev);
         this.els.image.src = src;
         this.els.image.alt = `Study image for ${scene.kanji || scene.id}`;
         this.els.imageWrap.hidden = !src;
@@ -1113,6 +1123,7 @@
       if (this.els.verseEn) {
         this.els.verseEn.textContent = scene.verse?.en || "";
       }
+      this.applySceneVerseLayout(scene);
       if (this.els.status && !this.captureMode) {
         const parts = [
           `${this.sceneIndex + 1} / ${this.scenes.length}`,

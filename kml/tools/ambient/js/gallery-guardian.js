@@ -182,7 +182,7 @@
     img.classList.remove("ken-burns", "gallery-guardian");
     void img.offsetWidth;
 
-    img.style.setProperty("--image-scale", "1");
+    // Preserve --image-scale from applyImageFraming (authored zoom / focus).
     img.style.setProperty("--gg-scale-from", String(cameraPlan.scaleFrom));
     img.style.setProperty("--gg-scale-to", String(cameraPlan.scaleTo));
     img.style.setProperty("--gg-x-from", `${cameraPlan.xFrom}%`);
