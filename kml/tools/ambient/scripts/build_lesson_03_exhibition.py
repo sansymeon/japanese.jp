@@ -13,9 +13,19 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_03.html"
 OUT_PATH = ROOT / "exhibition" / "lesson_3_study.json"
 
-STUDY_LESSON = "audio/study_version_2.mp3"
+STUDY_LESSON = "audio/study_version_2_minus3db.mp3"
 
 IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {
+    "round": {
+        # Full moon upper-right — pull back so the round light stays in frame
+        "imageFocus": "62% 28%",
+        "imageScale": 0.82,
+    },
+    "up": {
+        # Kite climbing — keep kite, boy, and village in frame
+        "imageFocus": "54% 38%",
+        "imageScale": 0.84,
+    },
     "rise": {
         # Sky lantern above village — pull back to keep kite in frame
         "imageFocus": "55% 32%",

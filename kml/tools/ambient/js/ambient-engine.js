@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "study22";
+  const ENGINE_VERSION = "study25";
   console.log("ambient-engine.js", ENGINE_VERSION);
 
   const DEFAULTS = {
@@ -250,6 +250,11 @@
         gate.addEventListener("click", finish, { once: true });
         gate.addEventListener("keydown", onKeyDown);
         gate.focus();
+
+        // OBS / capture: gate is invisible; auto-unlock so recordings start without a manual click.
+        if (this.captureMode) {
+          window.setTimeout(() => finish(), 500);
+        }
       });
     }
 
@@ -858,10 +863,28 @@
       root.classList.toggle("kml-typography-mobile", typo === "mobile");
       root.classList.toggle("kml-typography-mobile-v2", typo === "mobile-v2");
       root.classList.toggle("kml-typography-mobile-refine", typo === "mobile-refine");
+      root.classList.toggle(
+        "kml-verse-authored",
+        this.useAuthoredVerseLayout(typo)
+      );
+    }
+
+    useAuthoredVerseLayout(typo) {
+      const layout = this.display.verseLayout;
+      if (layout === "authored") return true;
+      if (layout === "legacy") return false;
+      const profile = typo ?? new URLSearchParams(window.location.search).get("typography");
+      return this.captureMode && profile === "mobile-refine";
     }
 
     formatVerseHtml(html) {
       if (!html) return "";
+      if (this.useAuthoredVerseLayout() && window.KmlVerseDisplay) {
+        return window.KmlVerseDisplay.formatAuthoredVerseHtml(html);
+      }
+      if (window.KmlVerseDisplay) {
+        return window.KmlVerseDisplay.legacyFormatter(html);
+      }
       return html.replace(/<br\s*\/?>\s+/gi, "<br>");
     }
 
@@ -1079,7 +1102,12 @@
       }
       if (this.els.verseJp) {
         const raw = scene.verse?.jpHtml || scene.verse?.jp || "";
+        this.els.verseJp.lang = "ja";
         this.els.verseJp.innerHTML = this.formatVerseHtml(raw);
+        const authored =
+          this.useAuthoredVerseLayout() &&
+          window.KmlVerseDisplay?.usesAuthoredLines(raw);
+        this.els.verseJp.classList.toggle("has-authored-lines", Boolean(authored));
         this.els.verseJp.classList.toggle("show-furigana", this.display.showFurigana);
       }
       if (this.els.verseEn) {

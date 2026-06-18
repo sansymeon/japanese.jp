@@ -86,10 +86,11 @@ html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-jp {
   text-align: center;
   line-height: 1.62;
   white-space: normal;
-  word-break: normal;
+  word-break: keep-all;
   line-break: strict;
   overflow-wrap: normal;
-  text-wrap: balance;
+  text-wrap: wrap;
+  hanging-punctuation: allow-end;
 }
 
 html.kml-typography-mobile-refine .ambient-verse-jp br {
@@ -117,6 +118,24 @@ html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-en {
   display: none;
 }
 
+/* ── Authored display lines (capture / exhibition; one <br> = one line) ── */
+
+html.kml-typography-mobile-refine.kml-verse-authored .ambient-verse-jp.has-authored-lines .kml-verse-line,
+html.kml-typography-mobile-refine.kml-verse-authored .exhibition-verse-jp.has-authored-lines .kml-verse-line {
+  display: block;
+  white-space: nowrap;
+  text-wrap: unset;
+}
+
+html.kml-typography-mobile-refine.kml-verse-authored .ambient-verse-jp.has-authored-lines br,
+html.kml-typography-mobile-refine.kml-verse-authored .exhibition-verse-jp.has-authored-lines br {
+  display: none;
+}
+
+html.kml-typography-mobile-refine.kml-verse-authored .kml-verse-line + .kml-verse-line {
+  margin-top: 0.35em;
+}
+
 /* ── Exhibition (exhibition.html) ── */
 
 html.kml-typography-mobile-refine .exhibition-verse-jp,
@@ -125,10 +144,10 @@ html.kml-typography-mobile-refine .exhibition-verse-en {
   letter-spacing: 0.02em;
   line-height: 1.62;
   white-space: normal;
-  word-break: normal;
+  word-break: keep-all;
   line-break: strict;
   overflow-wrap: normal;
-  text-wrap: balance;
+  text-wrap: wrap;
 }
 
 html.kml-typography-mobile-refine .exhibition-verse-jp br,

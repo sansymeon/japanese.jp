@@ -13,7 +13,7 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_02.html"
 OUT_PATH = ROOT / "exhibition" / "lesson_2_study.json"
 
-STUDY_LESSON = "audio/study_version_1.mp3"
+STUDY_LESSON = "audio/study_version_1_minus3db.mp3"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from study_exhibition_common import exhibition_study_config  # noqa: E402

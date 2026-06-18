@@ -109,6 +109,26 @@
       root.classList.toggle("kml-typography-mobile", typo === "mobile");
       root.classList.toggle("kml-typography-mobile-refine", typo === "mobile-refine");
       root.classList.toggle("kml-verse-sequential", verseMode === "sequential");
+      root.classList.toggle("kml-verse-authored", this.useAuthoredVerseLayout(typo));
+    }
+
+    useAuthoredVerseLayout(typo) {
+      const layout = this.display.verseLayout;
+      if (layout === "authored") return true;
+      if (layout === "legacy") return false;
+      const profile = typo ?? new URLSearchParams(window.location.search).get("typography");
+      return profile === "mobile-refine";
+    }
+
+    formatVerseHtml(html) {
+      if (!html) return "";
+      if (this.useAuthoredVerseLayout() && window.KmlVerseDisplay) {
+        return window.KmlVerseDisplay.formatAuthoredVerseHtml(html);
+      }
+      if (window.KmlVerseDisplay) {
+        return window.KmlVerseDisplay.legacyFormatter(html);
+      }
+      return html;
     }
 
     get fixedKanji() {
@@ -682,7 +702,13 @@
       if (this.els.kanji) this.els.kanji.textContent = scene.kanji || "";
       if (this.els.keyword) this.els.keyword.textContent = scene.keyword || "";
       if (this.els.verseJp) {
-        this.els.verseJp.innerHTML = scene.verse?.jpHtml || scene.verse?.jp || "";
+        const raw = scene.verse?.jpHtml || scene.verse?.jp || "";
+        this.els.verseJp.lang = "ja";
+        this.els.verseJp.innerHTML = this.formatVerseHtml(raw);
+        const authored =
+          this.useAuthoredVerseLayout() &&
+          window.KmlVerseDisplay?.usesAuthoredLines(raw);
+        this.els.verseJp.classList.toggle("has-authored-lines", Boolean(authored));
       }
       if (this.els.verseEn) {
         this.els.verseEn.textContent = scene.verse?.en || "";
