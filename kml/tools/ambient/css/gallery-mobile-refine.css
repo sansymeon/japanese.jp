@@ -168,9 +168,10 @@ html.kml-typography-mobile-refine .exhibition-kanji {
   text-shadow: var(--kml-shadow-kanji);
 }
 
-/* Exhibition title — Cormorant upright, same family as EN verse */
+/* Exhibition title — Cormorant upright (same family as EN verse), ~12% larger */
 html.kml-typography-mobile-refine .exhibition-keyword {
   font-family: var(--kml-font-heart-voice);
+  font-size: calc(var(--kml-size-keyword) * 1.125);
   color: var(--kml-color-kanji);
   font-weight: 500;
   font-style: normal;
