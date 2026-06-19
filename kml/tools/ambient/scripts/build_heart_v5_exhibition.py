@@ -11,7 +11,7 @@ HEART_V4 = ROOT / "collections" / "heart_v4.json"
 OUT_PATH = ROOT / "collections" / "heart_v5.json"
 
 BOOKEND_IMAGE = "bookends/lesson_32.png"
-FLUTE_AUDIO = "audio/flute_intro.mp3"
+FLUTE_AUDIO = "audio/exhibition_flute_intro.mp3"
 SOUNDTRACK = "audio/ambient_kanji_exhibition.mp3"
 
 
@@ -38,13 +38,15 @@ def build() -> dict:
         "openingHoldMs": 4000,
         "openingExhaleMs": 6000,
         "openingBlackAfterMs": 0,
-        "closingRevealMs": 8000,
+        "closingBlackBeforeMs": 4500,
+        "closingRevealMs": 9000,
         "closingHoldMs": 0,
+        "closingPostSoundtrackHoldMs": 1000,
         "closingExhaleMs": 20000,
-        "closingSilenceHoldMs": 5000,
-        "closingFadeToBlackMs": 12000,
-        "closingBlackAfterMs": 2000,
-        "exhibitBlackHoldMs": 500,
+        "closingSilenceHoldMs": 6000,
+        "closingFadeToBlackMs": 13000,
+        "closingBlackAfterMs": 3000,
+        "exhibitBlackHoldMs": 0,
     }
     scenes = swap_love_and_heart(heart_v4["scenes"])
 
@@ -70,7 +72,7 @@ def build() -> dict:
         "notes": (
             "Gold foil lesson_32.png marks gallery entrance and exit. Flute intro holds on hero "
             "until audio ends; main soundtrack plays through 44 exhibits (~96 min). Closing hero "
-            "returns and holds until soundtrack ends, then silent hold and fade to black."
+            "holds until soundtrack ends, extra beat on closing hero, then silent hold and fade to black."
         ),
         "soundtrack": {"main": SOUNDTRACK},
         "bookends": {
@@ -89,7 +91,7 @@ def build() -> dict:
             **heart_v4.get("display", {}),
             "showKeyword": True,
             "verseMode": "sequential",
-            "typography": "mobile",
+            "typography": "mobile-refine",
         },
         "meta": {
             **heart_v4.get("meta", {}),

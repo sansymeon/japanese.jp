@@ -42,6 +42,8 @@
     closingRevealMs: 8000,
     closingHoldMs: 14000,
     closingExhaleMs: 22000,
+    closingBlackBeforeMs: 3500,
+    closingPostSoundtrackHoldMs: 0,
     closingSilenceHoldMs: 5000,
     closingFadeToBlackMs: 12000,
     closingBlackAfterMs: 5000,
@@ -61,8 +63,13 @@
       const params = new URLSearchParams(window.location.search);
       this.timingScale = Math.max(0.05, parseFloat(params.get("timingScale") || "1") || 1);
       this.startExhibit = Math.max(0, parseInt(params.get("exhibit") || "0", 10) || 0);
-      this.singleExhibit = params.get("singleExhibit") === "1";
+      this.singleExhibit =
+        params.get("singleExhibit") === "1" || params.get("exhibitLimit") === "1";
       this.skipBookends = params.get("skipBookends") === "1";
+      const startPhase = (params.get("startPhase") || params.get("skipTo") || "")
+        .trim()
+        .toLowerCase();
+      this.startPhase = startPhase;
       this.verseMode =
         params.get("verseMode") || this.display.verseMode || "simultaneous";
       this._cameraParam = params.get("camera");
@@ -97,6 +104,9 @@
       this.applyPresentationMode();
       this.applyTheme();
       this.bindKeys();
+      if (this.hasExhibitionAudio()) {
+        this.initAudio();
+      }
     }
 
     applyPresentationMode() {
@@ -109,6 +119,7 @@
       root.classList.toggle("kml-typography-mobile", typo === "mobile");
       root.classList.toggle("kml-typography-mobile-refine", typo === "mobile-refine");
       root.classList.toggle("kml-verse-sequential", verseMode === "sequential");
+      root.classList.toggle("kml-verse-staggered", verseMode === "staggered");
       root.classList.toggle("kml-verse-authored", this.useAuthoredVerseLayout(typo));
     }
 
@@ -141,6 +152,24 @@
 
     get isSequentialVerses() {
       return this.verseMode === "sequential";
+    }
+
+    get isStaggeredVerses() {
+      return this.verseMode === "staggered";
+    }
+
+    skipsToReflection(index = this.sceneIndex) {
+      if (index !== this.startExhibit) return false;
+      return this.startPhase === "reflection" || this.startPhase === "verses";
+    }
+
+    preambleUntilVersesMs(t = this.timing) {
+      let ms = t.artworkArrivalMs + t.artworkAloneMs + t.kanjiRevealMs;
+      if (this.showKeyword) {
+        ms += t.keywordDelayMs + t.keywordFadeMs;
+      }
+      ms += t.titleHoldMs + t.titleFadeMs;
+      return ms;
     }
 
     sequentialVerseTiming(t = this.timing) {
@@ -211,6 +240,7 @@
       root.style.setProperty("--ex-verse-fade", `${verseFade}ms`);
       this.root.classList.toggle("is-fixed-kanji", this.fixedKanji);
       this.root.classList.toggle("is-sequential-verses", this.isSequentialVerses);
+      this.root.classList.toggle("is-staggered-verses", this.isStaggeredVerses);
       if (this.els.artworkImg) {
         this.els.artworkImg.style.transition = `opacity ${t.imageExhaleFadeMs}ms ease-in`;
       }
@@ -366,6 +396,7 @@
 
     async ensureAudioUnlocked() {
       if (this.audioUnlocked || !this.hasExhibitionAudio()) return;
+      if (!this.bookendAudio && !this.mainAudio) this.initAudio();
 
       const audio = this.bookendAudio || this.mainAudio;
       if (!audio) return;
@@ -406,6 +437,7 @@
           gate.removeEventListener("keydown", onKeyDown);
 
           const introPath = this.bookends?.opening?.audio;
+          if (!this.bookendAudio) this.initAudio();
           const audio = this.bookendAudio;
           if (introPath && audio) {
             const url = this.localUrl(introPath);
@@ -869,7 +901,7 @@
       this.resetLayers();
       this.clearBookendText();
 
-      await this.wait(t.blackHoldMs);
+      await this.wait(t.closingBlackBeforeMs ?? t.blackHoldMs);
       if (!stillRunning()) return;
 
       await this.showBookendImage(closing.image, t.closingRevealMs);
@@ -880,6 +912,12 @@
         if (!stillRunning()) return;
       } else {
         await this.wait(t.closingHoldMs);
+        if (!stillRunning()) return;
+      }
+
+      const postSoundtrackMs = t.closingPostSoundtrackHoldMs ?? 0;
+      if (postSoundtrackMs > 0) {
+        await this.wait(postSoundtrackMs);
         if (!stillRunning()) return;
       }
 
@@ -960,6 +998,32 @@
       if (!stillRunning()) return;
     }
 
+    async playStaggeredVerses(stillRunning) {
+      const t = this.timing;
+      this.debugLog("reflection: staggered verses", {
+        verseJpRevealMs: t.verseJpRevealMs,
+        verseEnDelayMs: t.verseEnDelayMs,
+      });
+      this.setClass(this.els.verseJp, "is-visible", true);
+      await this.wait(t.verseJpRevealMs + t.verseEnDelayMs);
+      if (!stillRunning()) return;
+      this.setClass(this.els.verseEn, "is-visible", true);
+      await this.wait(t.verseEnFadeMs + t.reflectionHoldMs);
+      if (!stillRunning()) return;
+      this.setClass(this.els.verseJp, "is-visible", false);
+      this.setClass(this.els.verseEn, "is-visible", false);
+      await this.wait(t.versesFadeMs);
+      if (!stillRunning()) return;
+    }
+
+    async playReflectionPhase(stillRunning) {
+      if (this.isSequentialVerses) {
+        await this.playSequentialVerses(stillRunning);
+        return;
+      }
+      await this.playStaggeredVerses(stillRunning);
+    }
+
     async playExhibit(index) {
       if (this.destroyed || !this.scenes.length) return;
 
@@ -979,50 +1043,50 @@
       await this.applySceneCamera(scene);
       if (!stillRunning()) return;
 
-      // ── 1. Artwork arrival from black ──
-      this.setClass(this.els.veil, "is-clear", true);
-      await this.wait(80);
-      if (!stillRunning()) return;
-      this.setClass(this.els.artwork, "is-visible", true);
-      await this.wait(t.artworkArrivalMs + t.artworkAloneMs);
-      if (!stillRunning()) return;
+      const jumpToReflection = this.skipsToReflection(this.sceneIndex);
 
-      // ── 2. Kanji reveal, then keyword (exhibit title) ──
-      this.setClass(this.els.kanji, "is-visible", true);
-      await this.wait(t.kanjiRevealMs);
-      if (!stillRunning()) return;
-
-      if (this.showKeyword && scene.keyword) {
-        await this.wait(t.keywordDelayMs);
-        if (!stillRunning()) return;
-        this.setClass(this.els.keyword, "is-visible", true);
-        await this.wait(t.keywordFadeMs + t.titleHoldMs);
-        if (!stillRunning()) return;
+      if (jumpToReflection) {
+        this.debugLog("startPhase skip → reflection", {
+          startPhase: this.startPhase,
+          sceneId: scene.id,
+          verseMode: this.verseMode,
+        });
+        this.setClass(this.els.veil, "is-clear", true);
+        this.setClass(this.els.artwork, "is-visible", true);
       } else {
-        await this.wait(t.keywordDelayMs + t.titleHoldMs);
+        // ── 1. Artwork arrival from black ──
+        this.setClass(this.els.veil, "is-corridor", false);
+        this.setClass(this.els.veil, "is-clear", true);
+        await this.wait(80);
+        if (!stillRunning()) return;
+        this.setClass(this.els.artwork, "is-visible", true);
+        await this.wait(t.artworkArrivalMs + t.artworkAloneMs);
+        if (!stillRunning()) return;
+
+        // ── 2. Kanji reveal, then keyword (exhibit title) ──
+        this.setClass(this.els.kanji, "is-visible", true);
+        await this.wait(t.kanjiRevealMs);
+        if (!stillRunning()) return;
+
+        if (this.showKeyword && scene.keyword) {
+          await this.wait(t.keywordDelayMs);
+          if (!stillRunning()) return;
+          this.setClass(this.els.keyword, "is-visible", true);
+          await this.wait(t.keywordFadeMs + t.titleHoldMs);
+          if (!stillRunning()) return;
+        } else {
+          await this.wait(t.keywordDelayMs + t.titleHoldMs);
+          if (!stillRunning()) return;
+        }
+
+        // ── 3. Reflection — title fades, curator's notes ──
+        this.setClass(this.els.kanji, "is-visible", false);
+        this.setClass(this.els.keyword, "is-visible", false);
+        await this.wait(t.titleFadeMs);
         if (!stillRunning()) return;
       }
 
-      // ── 3. Reflection — title fades, curator's notes ──
-      this.setClass(this.els.kanji, "is-visible", false);
-      this.setClass(this.els.keyword, "is-visible", false);
-      await this.wait(t.titleFadeMs);
-      if (!stillRunning()) return;
-
-      if (this.isSequentialVerses) {
-        await this.playSequentialVerses(stillRunning);
-      } else {
-        this.setClass(this.els.verseJp, "is-visible", true);
-        await this.wait(t.verseJpRevealMs + t.verseEnDelayMs);
-        if (!stillRunning()) return;
-        this.setClass(this.els.verseEn, "is-visible", true);
-        await this.wait(t.verseEnFadeMs + t.reflectionHoldMs);
-        if (!stillRunning()) return;
-        this.setClass(this.els.verseJp, "is-visible", false);
-        this.setClass(this.els.verseEn, "is-visible", false);
-        await this.wait(t.versesFadeMs);
-        if (!stillRunning()) return;
-      }
+      await this.playReflectionPhase(stillRunning);
 
       // ── 4. Return to essence — kanji alone ──
       this.setClass(this.els.verseJp, "is-visible", false);
@@ -1036,9 +1100,7 @@
       }
 
       // ── 5. Long exhale — artwork fades, kanji on black, then kanji fades ──
-      if (!this.fixedKanji) {
-        this.setKanjiCentered(true);
-      }
+      this.setKanjiCentered(true);
       this.setClass(this.els.artwork, "is-exhaling", true);
       await this.wait(t.imageExhaleFadeMs + t.kanjiAloneHoldMs);
       if (!stillRunning()) return;
@@ -1046,7 +1108,8 @@
       await this.wait(t.kanjiExhaleFadeMs);
       if (!stillRunning()) return;
 
-      // Black corridor between exhibits
+      // Black corridor between exhibits (post-kanji; kanji-on-black beat is kanjiAloneHoldMs above)
+      this.setClass(this.els.veil, "is-corridor", true);
       this.setClass(this.els.veil, "is-clear", false);
       this.setClass(this.els.artwork, "is-visible", false);
       this.setClass(this.els.artwork, "is-exhaling", false);
@@ -1086,11 +1149,18 @@
 
     async start() {
       if (!this.scenes.length) throw new Error("Collection has no scenes.");
+      const preambleMs = Math.round(this.preambleUntilVersesMs() * this.timingScale);
       this.debugLog("start", {
         engineVersion: ENGINE_VERSION,
         collection: this.collection.id,
         hasOpeningBookend: Boolean(this.bookends?.opening),
         firstScene: this.scenes[0]?.kanji,
+        startExhibit: this.startExhibit,
+        singleExhibit: this.singleExhibit,
+        startPhase: this.startPhase || "full",
+        verseMode: this.verseMode,
+        timingScale: this.timingScale,
+        msUntilVerses: this.skipsToReflection(this.startExhibit) ? 0 : preambleMs,
       });
       this.els.loading?.classList.add("exhibition-hidden");
       this.els.error?.classList.add("exhibition-hidden");

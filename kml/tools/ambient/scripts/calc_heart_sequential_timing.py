@@ -95,8 +95,9 @@ def main() -> int:
         + t.get("openingBlackAfterMs", 0)
     )
     closing_min = (
-        t["blackHoldMs"]
+        t.get("closingBlackBeforeMs", t["blackHoldMs"])
         + t["closingRevealMs"]
+        + t.get("closingPostSoundtrackHoldMs", 0)
         + t.get("closingSilenceHoldMs", 0)
         + t.get("closingFadeToBlackMs", t["closingExhaleMs"])
         + t.get("closingBlackAfterMs", 0)

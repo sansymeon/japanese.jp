@@ -7,11 +7,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500&family=Yuji+Syuku&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/gallery-typography.css?v=2">
   <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
-  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=3">
+  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=12">
   <link rel="stylesheet" href="./css/exhibition.css">
 </head>
 <body>
@@ -26,6 +26,9 @@
     if (p.get("verseMode") === "sequential") {
       document.documentElement.classList.add("kml-verse-sequential");
     }
+    if (p.get("verseMode") === "staggered") {
+      document.documentElement.classList.add("kml-verse-staggered");
+    }
   })();
 </script>
 
@@ -37,9 +40,18 @@
   Heart v4:   ?collection=heart_v4  (fixed kanji)
   Heart v5:   ?collection=heart_v5  (gold foil bookends + soundtrack)
   Audio:      audio/flute_intro.mp3, audio/ambient_kanji_exhibition.mp3 in ambient folder
-  Debug:      add &debug=1 to log bookend diagnostics
-  Mobile refine test: ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&verseMode=sequential&typography=mobile-refine
-  Mobile test: ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&verseMode=sequential&typography=mobile
+  Debug:      add &debug=1 to log bookend diagnostics and msUntilVerses
+  Single exhibit (full pipeline, exhibit 0 only — verses begin ~41s; not a preview mode):
+              ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1
+  Faster full pipeline (5% timing): add &timingScale=0.05  (~2s preamble, ~1.5s before EN)
+  Verse typography QA (skips title phases; still runs verse + essence + exit):
+              ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&startPhase=reflection
+  Scene tests (add &timingScale=0.05 for speed):
+              愛 love      exhibit=0
+              忘 forget     exhibit=1
+              怒 angry      exhibit=41  (sunset)
+              怪 suspicious exhibit=42  (noir / moonlight)
+  Typography: mobile-refine (default in heart_v5); Cormorant keyword + EN verse
   Keyboard (hidden): Space pause · → next · ← previous
 
   No on-screen controls. Museum projection only.
@@ -90,6 +102,6 @@
 
 <script src="./js/verse-display.js?v=1"></script>
 <script src="./js/gallery-guardian.js?v=2"></script>
-<script src="./js/exhibition-engine.js?v=17"></script>
+<script src="./js/exhibition-engine.js?v=22"></script>
 </body>
 </html>

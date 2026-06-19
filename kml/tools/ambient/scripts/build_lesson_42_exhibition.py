@@ -13,7 +13,7 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_42.html"
 OUT_PATH = ROOT / "exhibition" / "lesson_42_study.json"
 
-STUDY_LESSON = "audio/Study_Version2.mp3"
+STUDY_LESSON = "audio/study_version_1_minus3db.mp3"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from study_exhibition_common import exhibition_study_config, reorder_scenes  # noqa: E402
@@ -67,7 +67,7 @@ def build() -> dict:
         title="KML Ambient Study — Lesson 42 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Mountain opens; Exit closes with Gallery Seal Ending. "
-            "Soundtrack: Study Version 2."
+            "Soundtrack: Study Version 1 (−3 dB)."
         ),
         scenes=scenes,
     )

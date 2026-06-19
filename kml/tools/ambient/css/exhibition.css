@@ -50,11 +50,12 @@ body {
   opacity: 0;
 }
 
-/* ── Artwork (permanent anchor) ── */
-
-.exhibition-root.is-japanese-reflections .exhibition-artwork {
-  inset: 0;
+/* Inter-exhibit corridor — snap shut; arrival still uses --ex-fade */
+.exhibition-veil.is-corridor {
+  transition: none;
 }
+
+/* ── Artwork (permanent anchor) ── */
 
 .exhibition-artwork {
   position: absolute;
@@ -92,7 +93,7 @@ body {
 
 .exhibition-artwork img.gallery-guardian {
   animation: gallery-guardian-move var(--gallery-guardian-duration, 125s)
-    var(--gallery-guardian-ease, cubic-bezier(0.15, 0, 0.25, 1)) forwards;
+    cubic-bezier(0.42, 0.02, 0.58, 0.98) forwards;
 }
 
 .exhibition-root.is-paused .exhibition-artwork img.ken-burns,
@@ -111,7 +112,7 @@ body {
 
 @keyframes gallery-guardian-move {
   from {
-    transform: scale(calc(var(--image-scale, 1) * var(--gg-scale-from, 1)))
+    transform: scale(calc(var(--image-scale, 1) * var(--gg-scale-from, 1.02)))
       translate(var(--gg-x-from, 0%), var(--gg-y-from, 0%));
   }
   to {

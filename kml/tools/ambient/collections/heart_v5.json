@@ -3,14 +3,14 @@
   "assetsBase": "../../assets",
   "id": "heart_v5",
   "title": "Digital Art Exhibition – Heart 心・㣺・忄 (v5)",
-  "notes": "Gold foil lesson_32.png marks gallery entrance and exit. Flute intro holds on hero until audio ends; main soundtrack plays through 44 exhibits (~96 min). Closing hero returns and holds until soundtrack ends, then silent hold and fade to black.",
+  "notes": "Gold foil lesson_32.png marks gallery entrance and exit. Flute intro holds on hero until audio ends; main soundtrack plays through 44 exhibits (~96 min). Closing hero holds until soundtrack ends, extra beat on closing hero, then silent hold and fade to black.",
   "soundtrack": {
     "main": "audio/ambient_kanji_exhibition.mp3"
   },
   "bookends": {
     "opening": {
       "image": "bookends/lesson_32.png",
-      "audio": "audio/flute_intro.mp3",
+      "audio": "audio/exhibition_flute_intro.mp3",
       "holdUntilAudioEnds": true
     },
     "closing": {
@@ -42,15 +42,17 @@
     "openingRevealMs": 6000,
     "openingHoldMs": 4000,
     "openingExhaleMs": 6000,
-    "closingRevealMs": 8000,
+    "closingRevealMs": 9000,
     "closingHoldMs": 0,
     "closingExhaleMs": 20000,
-    "closingBlackAfterMs": 2000,
+    "closingBlackAfterMs": 3000,
     "openingFluteMs": 16000,
     "openingBlackAfterMs": 0,
-    "closingSilenceHoldMs": 5000,
-    "closingFadeToBlackMs": 12000,
-    "exhibitBlackHoldMs": 500
+    "closingBlackBeforeMs": 4500,
+    "closingPostSoundtrackHoldMs": 1000,
+    "closingSilenceHoldMs": 6000,
+    "closingFadeToBlackMs": 13000,
+    "exhibitBlackHoldMs": 0
   },
   "display": {
     "loop": false,
@@ -58,10 +60,9 @@
     "fixedKanji": true,
     "showKeyword": true,
     "verseMode": "sequential",
-    "typography": "mobile"
+    "typography": "mobile-refine"
   },
   "meta": {
-    "family": "ambientKanjiGallery",
     "theme": "heart",
     "heartParts": [
       "心",

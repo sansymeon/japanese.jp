@@ -13,7 +13,6 @@ if [[ ! -e bookends/lesson_32.png ]]; then
 fi
 PORT="${1:-8765}"
 echo "Exhibit L01:  http://localhost:${PORT}/index.html?collection=lesson_1_study&capture=1"
-echo "L01 mobile:  http://localhost:${PORT}/index.html?collection=lesson_1_study&capture=1  (typography=mobile-v2 default)"
 echo "Exhibit L02:  http://localhost:${PORT}/index.html?collection=lesson_2_study&capture=1"
 echo "Exhibit L03:  http://localhost:${PORT}/index.html?collection=lesson_3_study&capture=1"
 echo "YouTube L36:  http://localhost:${PORT}/index.html?collection=lesson_36_study"
@@ -30,8 +29,7 @@ echo "Exhibit L41:  http://localhost:${PORT}/index.html?collection=lesson_41_stu
 echo "Exhibit L42:  http://localhost:${PORT}/index.html?collection=lesson_42_study&capture=1"
 echo "Record MP4s:  ./scripts/record_study_exhibition.sh   (lessons 40–42)"
 echo "Study L41:    http://localhost:${PORT}/index.html?collection=lesson_41_study"
-echo "Heart Expo:   http://localhost:${PORT}/exhibition.html?collection=heart_v5  (Ambient Kanji Gallery)"
-echo "Reflections:  http://localhost:${PORT}/exhibition.html?collection=lessons_1_5_prototype  (Japanese Reflections)"
-echo "L1-5 single:  http://localhost:${PORT}/exhibition.html?collection=lessons_1_5_prototype&skipBookends=1&exhibit=0&singleExhibit=1"
+echo "Heart Expo:   http://localhost:${PORT}/exhibition.html?collection=heart_v5"
+echo "Heart test:   http://localhost:${PORT}/exhibition.html?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&timingScale=0.05&debug=1"
 echo "Record Heart: ./scripts/record_heart_exhibition.sh  → heart_exhibitions/heart_v5.mp4"
 python3 -m http.server "$PORT"

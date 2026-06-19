@@ -1,6 +1,7 @@
 /**
  * Mobile Readability Refinement — warm off-white, larger type, middle-third verse.
- * No shadows, glow, or background plates (test profile).
+ * Study: flat type + image overlay (no shadows/plates).
+ * Exhibition: study v2 legibility (feather plates + subtle shadows) on bright artwork.
  * Enable: ?typography=mobile-refine
  */
 
@@ -10,28 +11,36 @@ html.kml-typography-mobile-refine {
   --kml-size-verse-jp: clamp(2.13rem, 7.48vmin, 4.31rem);
   --kml-size-verse-en: clamp(1.47rem, 5.29vmin, 2.82rem);
 
-  --kml-color-keyword: #f2eee6;
-  --kml-color-verse-jp: #f2eee6;
-  --kml-color-verse-en: #f2eee6;
+  /* Unified ivory — kanji, keyword, verses (study capture palette) */
+  --kml-color-kanji: #f2eee6;
+  --kml-color-keyword: var(--kml-color-kanji);
+  --kml-color-verse-jp: #f0e8da;
+  --kml-color-verse-en: #f0e8da;
 
-  --kml-shadow-keyword: none;
-  --kml-shadow-verse-jp: none;
-  --kml-shadow-verse-en: none;
+  --kml-shadow-kanji: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --kml-shadow-keyword: var(--kml-shadow-kanji);
+  --kml-shadow-verse-jp: 0 1px 3px rgba(0, 0, 0, 0.42);
+  --kml-shadow-verse-en: 0 1px 3px rgba(0, 0, 0, 0.42);
   --kml-title-block-strength: 0;
   --kml-verse-block-strength: 0;
 }
 
-html.kml-typography-mobile-refine .ambient-keyword,
-html.kml-typography-mobile-refine .exhibition-keyword,
-html.kml-typography-mobile-refine .ambient-verse-jp,
-html.kml-typography-mobile-refine .exhibition-verse-jp,
-html.kml-typography-mobile-refine .ambient-verse-en,
-html.kml-typography-mobile-refine .exhibition-verse-en {
+html.kml-typography-mobile-refine .ambient-kanji {
+  color: var(--kml-color-kanji) !important;
+}
+
+html.kml-typography-mobile-refine .ambient-keyword {
+  color: var(--kml-color-keyword);
+}
+
+html.kml-typography-mobile-refine .ambient-root.is-study .ambient-keyword,
+html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-jp,
+html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-en {
   text-shadow: none !important;
 }
 
-html.kml-typography-mobile-refine .kml-title-block::before,
-html.kml-typography-mobile-refine .kml-verse-block::before {
+html.kml-typography-mobile-refine .ambient-root.is-study .kml-title-block::before,
+html.kml-typography-mobile-refine .ambient-root.is-study .kml-verse-block::before {
   display: none;
 }
 
@@ -137,18 +146,77 @@ html.kml-typography-mobile-refine.kml-verse-authored .kml-verse-line + .kml-vers
   margin-top: 0.35em;
 }
 
-/* ── Exhibition (exhibition.html) ── */
+/* ── Exhibition (exhibition.html) — study legibility on bright artwork ── */
+
+html.kml-typography-mobile-refine .exhibition-root {
+  /* Study v2 legibility on bright artwork — feather plate + shadow (no full-image overlay) */
+  --kml-title-block-strength: 0.58;
+  --kml-verse-block-strength: 0.5;
+  --kml-shadow-verse-jp:
+    0 1px 3px rgba(0, 0, 0, 0.42),
+    0 2px 12px rgba(0, 0, 0, 0.38);
+  --kml-shadow-verse-en: var(--kml-shadow-verse-jp);
+  /* Heart voice — Cormorant (Latin) + Noto Serif JP (CJK verses) */
+  --kml-font-heart-voice: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --kml-font-heart-verse-jp: "Noto Serif JP", serif;
+  --kml-exhibition-keyword-opacity: 1;
+  --kml-exhibition-verse-opacity: 1;
+}
+
+html.kml-typography-mobile-refine .exhibition-kanji {
+  color: var(--kml-color-kanji) !important;
+  text-shadow: var(--kml-shadow-kanji);
+}
+
+/* Exhibition title — Cormorant upright, same family as EN verse */
+html.kml-typography-mobile-refine .exhibition-keyword {
+  font-family: var(--kml-font-heart-voice);
+  color: var(--kml-color-kanji);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-shadow: var(--kml-shadow-kanji);
+}
+
+html.kml-typography-mobile-refine .exhibition-keyword.is-visible {
+  opacity: var(--kml-exhibition-keyword-opacity, 1);
+}
+
+html.kml-typography-mobile-refine .exhibition-title.kml-title-block::before,
+html.kml-typography-mobile-refine .exhibition-notes.kml-verse-block::before {
+  display: block;
+}
 
 html.kml-typography-mobile-refine .exhibition-verse-jp,
 html.kml-typography-mobile-refine .exhibition-verse-en {
-  font-weight: 400;
+  color: var(--kml-color-verse-jp);
   letter-spacing: 0.02em;
-  line-height: 1.62;
+  line-height: 1.68;
   white-space: normal;
   word-break: keep-all;
   line-break: strict;
   overflow-wrap: normal;
   text-wrap: wrap;
+  text-shadow: var(--kml-shadow-verse-jp);
+}
+
+html.kml-typography-mobile-refine .exhibition-verse-jp {
+  font-family: var(--kml-font-heart-verse-jp);
+  font-weight: 400;
+  font-style: normal;
+}
+
+html.kml-typography-mobile-refine .exhibition-verse-en {
+  font-family: var(--kml-font-heart-voice);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--kml-color-verse-en);
+  text-shadow: var(--kml-shadow-verse-en);
+}
+
+html.kml-typography-mobile-refine .exhibition-verse-jp.is-visible,
+html.kml-typography-mobile-refine .exhibition-verse-en.is-visible {
+  opacity: var(--kml-exhibition-verse-opacity, 1);
 }
 
 html.kml-typography-mobile-refine .exhibition-verse-jp br,
@@ -160,18 +228,6 @@ html.kml-typography-mobile-refine .exhibition-verse-en br {
 
 html.kml-typography-mobile-refine .exhibition-verse-jp ruby {
   ruby-position: over;
-}
-
-html.kml-typography-mobile-refine .exhibition-verse-en {
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.58;
-}
-
-html.kml-typography-mobile-refine .exhibition-keyword {
-  letter-spacing: 0.16em;
-  font-weight: 600;
 }
 
 html.kml-typography-mobile-refine .exhibition-title {
@@ -186,15 +242,16 @@ html.kml-typography-mobile-refine .exhibition-notes {
   width: min(94vw, 40rem);
 }
 
-html.kml-typography-mobile-refine .exhibition-root.is-fixed-kanji .exhibition-verse-jp,
-html.kml-typography-mobile-refine .exhibition-root.is-fixed-kanji .exhibition-verse-en,
-html.kml-typography-mobile-refine .exhibition-root.is-fixed-kanji .exhibition-verse-jp.is-visible,
-html.kml-typography-mobile-refine .exhibition-root.is-fixed-kanji .exhibition-verse-en.is-visible {
-  transform: none !important;
-}
-
 html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-notes {
-  min-height: 4.5rem;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94vw, 40rem);
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-verse-jp,
@@ -202,14 +259,14 @@ html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-verse-en {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  top: auto;
+  top: 50%;
+  bottom: auto;
   display: block;
   width: 100%;
   margin: 0;
   padding: 0 clamp(0.5rem, 2vw, 1rem);
   text-align: center;
-  transform: none !important;
+  transform: translateY(-50%) !important;
   transition: opacity var(--ex-verse-fade, var(--ex-fade)) ease-in-out;
 }
 
@@ -225,6 +282,37 @@ html.kml-typography-mobile-refine.kml-verse-sequential
 html.kml-typography-mobile-refine.kml-verse-sequential
   .exhibition-root.is-fixed-kanji
   .exhibition-verse-en.is-visible {
-  transform: none !important;
+  transform: translateY(-50%) !important;
   transition: opacity var(--ex-verse-fade, var(--ex-fade)) ease-in-out;
+}
+
+/* Sequential — EN: Cormorant italic, same slot as JP */
+html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-verse-en {
+  font-family: var(--kml-font-heart-voice);
+  font-size: var(--kml-size-verse-jp);
+  line-height: 1.68;
+  letter-spacing: 0.02em;
+  color: var(--kml-color-verse-en);
+  font-style: italic;
+  font-weight: 400;
+  white-space: pre-line;
+  text-shadow: var(--kml-shadow-verse-en);
+}
+
+/* Staggered — JP first, EN fades in later as supporting translation */
+html.kml-typography-mobile-refine.kml-verse-staggered {
+  --kml-verse-en-support-opacity: 0.55;
+  --kml-color-verse-en: rgba(242, 238, 230, 0.72);
+}
+
+html.kml-typography-mobile-refine.kml-verse-staggered .exhibition-verse-jp {
+  margin-bottom: 0;
+}
+
+html.kml-typography-mobile-refine.kml-verse-staggered .exhibition-verse-en {
+  margin-top: clamp(0.85rem, 2.8vh, 1.35rem);
+}
+
+html.kml-typography-mobile-refine.kml-verse-staggered .exhibition-verse-en.is-visible {
+  opacity: var(--kml-verse-en-support-opacity);
 }

@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 LESSON_40 = ROOT / "collections" / "archive" / "lesson_40.json"
 OUT_PATH = ROOT / "collections" / "lesson_40_study.json"
 
+STUDY_LESSON = "audio/study_version_2_minus3db.mp3"
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from study_exhibition_common import youtube_study_config  # noqa: E402
 
@@ -44,16 +46,19 @@ def apply_image_overrides(scenes: list[dict]) -> list[dict]:
 def build() -> dict:
     base = json.loads(LESSON_40.read_text(encoding="utf-8"))
     scenes = apply_image_overrides(list(base["scenes"]))
-    return youtube_study_config(
+    config = youtube_study_config(
         lesson=40,
         title="KML Ambient Study — Lesson 40",
         notes=(
             "YouTube / loop build. Original lesson order. Last card: kanji/verse fade to "
-            "image-only concert until music ends, then fade to black and loop."
+            "image-only concert until music ends, then fade to black and loop. "
+            "Soundtrack: Study Version 2 (−3 dB)."
         ),
         scenes=scenes,
         assets_base=base["assetsBase"],
     )
+    config["soundtrack"] = {"main": STUDY_LESSON}
+    return config
 
 
 def main() -> int:

@@ -106,3 +106,8 @@ html.kml-verse-sequential .exhibition-root.is-fixed-kanji .exhibition-verse-en.i
   transform: none !important;
   transition: opacity var(--ex-verse-fade, var(--ex-fade)) ease-in-out;
 }
+
+/* Staggered — JP stays visible; EN appears later at reduced opacity */
+html.kml-verse-staggered .exhibition-verse-en.is-visible {
+  opacity: var(--kml-verse-en-support-opacity, 0.58);
+}

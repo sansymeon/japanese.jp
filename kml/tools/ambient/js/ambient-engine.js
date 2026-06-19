@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "study25";
+  const ENGINE_VERSION = "study28";
   console.log("ambient-engine.js", ENGINE_VERSION);
 
   const DEFAULTS = {
@@ -125,6 +125,18 @@
       document.addEventListener("mousemove", showCursor);
       document.addEventListener("mousedown", showCursor);
       showCursor();
+
+      // Capture preview: strict browsers may still block programmatic unlock — retry on any tap.
+      if (this.isStudy && this.hasStudyAudio()) {
+        const retryAudio = () => {
+          if (this.destroyed || this.presentationEnded || !this.mainAudio) return;
+          if (!this.mainAudio.paused && this.mainAudio.currentTime > 0.05) return;
+          this.ensureAudioUnlocked()
+            .then(() => this.startSoundtrack())
+            .catch((err) => this.audioError("capture interaction unlock error", err, {}));
+        };
+        document.addEventListener("pointerdown", retryAudio, { passive: true });
+      }
     }
 
     hasStudyAudio() {
@@ -198,7 +210,6 @@
       } catch (err) {
         if (err.name !== "NotAllowedError") {
           this.audioError("autoplay probe error", err, {});
-          return;
         }
       }
 
@@ -809,6 +820,23 @@
       );
     }
 
+    async waitForAudioReady(audio, timeoutMs = 4000) {
+      if (!audio || audio.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) return;
+      await new Promise((resolve) => {
+        let settled = false;
+        const finish = () => {
+          if (settled) return;
+          settled = true;
+          audio.removeEventListener("canplay", finish);
+          audio.removeEventListener("loadeddata", finish);
+          resolve();
+        };
+        audio.addEventListener("canplay", finish);
+        audio.addEventListener("loadeddata", finish);
+        window.setTimeout(finish, timeoutMs);
+      });
+    }
+
     async startSoundtrack(forceRestart = false) {
       const path = this.soundtrack?.main;
       if (!path || !this.mainAudio) return;
@@ -816,15 +844,29 @@
       const audio = this.mainAudio;
       if (!forceRestart && !audio.paused && audio.src && !audio.ended) return;
 
-      audio.src = this.localUrl(path);
+      const url = this.localUrl(path);
+      if (audio.src !== url) {
+        audio.src = url;
+      }
       audio.currentTime = 0;
       audio.loop = false;
+      audio.load();
+      await this.waitForAudioReady(audio);
 
       try {
         await audio.play();
         this.audioLog("ambient audio started", { url: audio.src, forceRestart });
       } catch (err) {
         this.audioError("ambient play() error", err, { url: audio.src });
+        if (err.name === "NotAllowedError") {
+          await this.ensureAudioUnlocked();
+          try {
+            await audio.play();
+            this.audioLog("ambient audio started", { url: audio.src, forceRestart, retry: true });
+          } catch (retryErr) {
+            this.audioError("ambient play() retry error", retryErr, { url: audio.src });
+          }
+        }
       }
     }
 
@@ -1504,7 +1546,7 @@
     let lastStatus = 0;
     let resolvedUrl = "";
     for (const url of candidates) {
-      const res = await fetch(url);
+      const res = await fetch(url, capture ? { cache: "no-store" } : undefined);
       if (res.ok) {
         resolvedUrl = url;
         if (capture) {
