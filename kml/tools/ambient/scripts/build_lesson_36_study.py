@@ -12,7 +12,7 @@ REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_36.html"
 OUT_PATH = ROOT / "collections" / "lesson_36_study.json"
 
-STUDY_LESSON = "audio/Study_Version2.mp3"
+STUDY_LESSON = "audio/study_version_3_minus3db.mp3"
 INTRO_HOLD_MS = 1000
 INTRO_DURATION_MS = 9000
 

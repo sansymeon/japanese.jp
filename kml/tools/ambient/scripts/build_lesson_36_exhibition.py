@@ -27,7 +27,7 @@ def build() -> dict:
         notes=(
             "Exhibition / presentation build. Strike opens; Infer closes with Gallery Seal Ending "
             "(image hold, fade to black, gold 漢 seal, music resolves, end on seal). "
-            "Soundtrack: Study Version 2."
+            "Soundtrack: Study Version 3."
         ),
         scenes=study["scenes"],
         assets_base=study["assetsBase"],
