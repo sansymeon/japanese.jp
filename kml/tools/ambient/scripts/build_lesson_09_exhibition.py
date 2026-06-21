@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_01_study.json — original order, Gallery Seal Ending."""
+"""Build exhibition/lesson_9_study.json — original order, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -10,10 +10,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
-LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_01.html"
-OUT_PATH = ROOT / "exhibition" / "lesson_1_study.json"
+LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_09.html"
+ASSETS = REPO / "assets"
+OUT_PATH = ROOT / "exhibition" / "lesson_9_study.json"
 
-STUDY_LESSON = "audio/study_version_3_minus3db.mp3"
+STUDY_LESSON = "audio/study_version_1_minus3db.mp3"
+
+IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {}
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from study_exhibition_common import exhibition_study_config  # noqa: E402
@@ -22,6 +25,13 @@ SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
     re.DOTALL,
 )
+
+
+def image_rev(relative: str) -> int | None:
+    path = ASSETS / relative
+    if path.is_file():
+        return int(path.stat().st_mtime)
+    return None
 
 
 def parse_scenes(html: str) -> list[dict]:
@@ -40,34 +50,37 @@ def parse_scenes(html: str) -> list[dict]:
         keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
         image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.png"
         en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
-        scenes.append(
-            {
-                "id": slug,
-                "kanji": kanji_m.group(1),
-                "keyword": keyword,
-                "image": image,
-                "video": None,
-                "verse": {
-                    "jpHtml": jp_m.group(1).strip(),
-                    "en": en,
-                },
-            }
-        )
+        scene = {
+            "id": slug,
+            "kanji": kanji_m.group(1),
+            "keyword": keyword,
+            "image": image,
+            "video": None,
+            "verse": {
+                "jpHtml": jp_m.group(1).strip(),
+                "en": en,
+            },
+            **IMAGE_FRAMING_OVERRIDES.get(slug, {}),
+        }
+        rev = image_rev(image)
+        if rev is not None:
+            scene["imageRev"] = rev
+        scenes.append(scene)
     return scenes
 
 
 def build() -> dict:
     html = LESSON_HTML.read_text(encoding="utf-8")
     config = exhibition_study_config(
-        lesson=1,
-        title="KML Ambient Study — Lesson 1 (Exhibition)",
+        lesson=9,
+        title="KML Ambient Study — Lesson 9 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Original lesson order; "
-            "Bright closes with Gallery Seal Ending. Soundtrack: Study Version 3."
+            "Disaster closes with Gallery Seal Ending. Soundtrack: Study Version 1."
         ),
         scenes=parse_scenes(html),
     )
-    config["intro"]["image"] = "covers/lesson_01.png"
+    config["intro"]["image"] = "covers/lesson_09.png"
     config["soundtrack"] = {"main": STUDY_LESSON}
     return config
 

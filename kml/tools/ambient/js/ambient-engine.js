@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "study28";
+  const ENGINE_VERSION = "study29";
   console.log("ambient-engine.js", ENGINE_VERSION);
 
   const DEFAULTS = {
@@ -64,6 +64,8 @@
       this.introAudio = null;
       this.mainAudio = null;
       this.audioUnlocked = false;
+      this._introComplete = false;
+      this._soundtrackStarted = false;
       this._studyForegroundHidden = false;
       this._studyLoopFinishing = false;
       this._captureEnding = false;
@@ -126,13 +128,12 @@
       document.addEventListener("mousedown", showCursor);
       showCursor();
 
-      // Capture preview: strict browsers may still block programmatic unlock — retry on any tap.
+      // Capture / OBS: unlock autoplay on interaction; resume if paused — never restart mid-run.
       if (this.isStudy && this.hasStudyAudio()) {
         const retryAudio = () => {
           if (this.destroyed || this.presentationEnded || !this.mainAudio) return;
-          if (!this.mainAudio.paused && this.mainAudio.currentTime > 0.05) return;
           this.ensureAudioUnlocked()
-            .then(() => this.startSoundtrack())
+            .then(() => this.resumeSoundtrackIfNeeded("capture interaction"))
             .catch((err) => this.audioError("capture interaction unlock error", err, {}));
         };
         document.addEventListener("pointerdown", retryAudio, { passive: true });
@@ -187,6 +188,16 @@
           src: audio.currentSrc || audio.src,
         });
       });
+
+      if (kind === "ambient" && this.captureMode) {
+        audio.addEventListener("pause", () => {
+          if (this.destroyed || this.presentationEnded || this.paused) return;
+          if (audio.ended || !this._soundtrackStarted) return;
+          window.setTimeout(() => {
+            this.resumeSoundtrackIfNeeded("unexpected pause");
+          }, 120);
+        });
+      }
 
       const label = kind === "intro" ? "intro audio created" : "ambient audio created";
       this.audioLog(label, { src: audio.currentSrc || audio.src || null });
@@ -837,12 +848,49 @@
       });
     }
 
+    async resumeSoundtrackIfNeeded(reason = "resume") {
+      const audio = this.mainAudio;
+      if (!audio || audio.ended || this.destroyed || this.presentationEnded) return false;
+
+      if (this._soundtrackStarted) {
+        if (audio.paused) {
+          try {
+            await audio.play();
+            this.audioLog("ambient audio resumed", { reason, currentTime: audio.currentTime });
+            return true;
+          } catch (err) {
+            this.audioError("ambient resume play() error", err, { reason });
+          }
+        }
+        return false;
+      }
+
+      if (!this._introComplete) return false;
+      await this.startSoundtrack();
+      return this._soundtrackStarted;
+    }
+
     async startSoundtrack(forceRestart = false) {
       const path = this.soundtrack?.main;
       if (!path || !this.mainAudio) return;
 
       const audio = this.mainAudio;
-      if (!forceRestart && !audio.paused && audio.src && !audio.ended) return;
+      if (this._soundtrackStarted && !forceRestart) {
+        if (audio.paused && !audio.ended) {
+          try {
+            await audio.play();
+            this.audioLog("ambient audio resumed", { currentTime: audio.currentTime });
+          } catch (err) {
+            this.audioError("ambient resume play() error", err, {});
+          }
+        }
+        return;
+      }
+
+      if (!forceRestart && !audio.paused && audio.src && !audio.ended) {
+        this._soundtrackStarted = true;
+        return;
+      }
 
       const url = this.localUrl(path);
       if (audio.src !== url) {
@@ -855,6 +903,7 @@
 
       try {
         await audio.play();
+        this._soundtrackStarted = true;
         this.audioLog("ambient audio started", { url: audio.src, forceRestart });
       } catch (err) {
         this.audioError("ambient play() error", err, { url: audio.src });
@@ -862,6 +911,7 @@
           await this.ensureAudioUnlocked();
           try {
             await audio.play();
+            this._soundtrackStarted = true;
             this.audioLog("ambient audio started", { url: audio.src, forceRestart, retry: true });
           } catch (retryErr) {
             this.audioError("ambient play() retry error", retryErr, { url: audio.src });
@@ -1381,6 +1431,7 @@
       await this.wait(introFade);
       slot.classList.remove("is-intro");
       this.clearBgSlot(slot);
+      this._introComplete = true;
     }
 
     async playScene(index, options = {}) {
@@ -1509,6 +1560,8 @@
 
       if (this.collection.intro) {
         await this.playIntro(this.collection.intro);
+      } else {
+        this._introComplete = true;
       }
       const syncSoundtrack = this.isStudy && Boolean(this.soundtrack?.main);
       await this.playScene(0, { syncSoundtrack });

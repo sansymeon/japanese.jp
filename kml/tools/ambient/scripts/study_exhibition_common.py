@@ -110,6 +110,7 @@ def exhibition_study_config(
             "showFurigana": False,
             "loop": False,
             "autoAdvance": True,
+            "typography": "mobile-refine",
         },
         "scenes": scenes,
     }
