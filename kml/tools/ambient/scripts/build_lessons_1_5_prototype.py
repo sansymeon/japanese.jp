@@ -13,35 +13,60 @@ REPO = ROOT.parents[1]
 LESSONS = (1, 2, 3, 4, 5)
 OUT_PATH = ROOT / "collections" / "lessons_1_5_prototype.json"
 
+INTRO_AUDIO = "audio/fifty_minute_intro.mp3"
+OUTRO_AUDIO = "audio/fifty_minute_outro.mp3"
+SOUNDTRACK = "audio/-3db_fifty_minutes.mp3"
+SOUNDTRACK_NORMAL = "audio/fifty_minutes.mp3"
+# Swap to images/gold_closing_hanko.png when the hanko seal variant is ready.
+GALLERY_CREST = "images/gold_closing.png"
+CLOSING_TITLE_HTML = "Ambient Kanji Gallery<br>Lessons 1–5"
+
+# slug → imageScale / imageFocus tweaks (imageScale < 1 zooms out; > 1 crops letterboxing)
+IMAGE_OVERRIDES: dict[str, dict] = {
+    "concave": {"imageScale": 0.88},
+    "convex": {"imageScale": 0.88},
+    "pop_song": {
+        # Baked-in horizontal letterbox bars — zoom to full cover
+        "imageScale": 1.14,
+        "imageFocus": "50% 48%",
+    },
+}
+
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
     re.DOTALL,
 )
 
-# All timing values configurable in collection JSON (milliseconds)
+# Image → kanji (quick) → JP → EN → crossfade; 30s per exhibit
 DEFAULT_EXHIBITION = {
     "artworkArrivalMs": 0,
-    "artworkAloneMs": 8000,
+    "artworkAloneMs": 4800,
+    "kanjiRevealMs": 1600,
+    "imageVerseKanjiHoldMs": 2000,
+    "imageVerseKanjiFadeMs": 1600,
+    "titleFadeMs": 1600,
     "verseJpRevealMs": 1000,
-    "verseJpHoldMs": 7000,
+    "verseJpHoldMs": 6000,
     "verseJpFadeMs": 1000,
     "verseEnRevealMs": 1000,
-    "verseEnHoldMs": 7000,
+    "verseEnHoldMs": 6000,
     "verseEnFadeMs": 1000,
     "exhibitTransitionMs": 4000,
     "exhibitBlackHoldMs": 0,
     "kenBurnsDurationMs": 30000,
     "openingBlackBeforeMs": 0,
-    "openingRevealMs": 3000,
-    "openingHoldMs": 12000,
-    "openingExhaleMs": 3000,
-    "openingBlackAfterMs": 0,
+    "openingRevealMs": 8000,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 3500,
+    "openingBlackAfterMs": 1200,
     "closingRevealMs": 3000,
-    "closingHoldMs": 12000,
+    "closingHoldMs": 0,
     "closingExhaleMs": 3000,
+    "closingTitleRevealMs": 2500,
+    "closingTitleFadeMs": 3500,
     "closingBlackAfterMs": 0,
     "closingSilenceHoldMs": 0,
-    "closingFadeToBlackMs": 3000,
+    "closingFadeToBlackMs": 3500,
     "blackHoldMs": 0,
 }
 
@@ -64,19 +89,20 @@ def parse_lesson_scenes(lesson: int) -> list[dict]:
         keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
         image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.png"
         en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
-        scenes.append(
-            {
-                "id": f"L{lesson:02d}_{slug}",
-                "kanji": kanji_m.group(1),
-                "keyword": keyword,
-                "image": image,
-                "verse": {
-                    "jpHtml": jp_m.group(1).strip(),
-                    "en": en,
-                },
-                "meta": {"lesson": lesson},
-            }
-        )
+        scene = {
+            "id": f"L{lesson:02d}_{slug}",
+            "kanji": kanji_m.group(1),
+            "keyword": keyword,
+            "image": image,
+            "verse": {
+                "jpHtml": jp_m.group(1).strip(),
+                "en": en,
+            },
+            "meta": {"lesson": lesson},
+        }
+        if slug in IMAGE_OVERRIDES:
+            scene.update(IMAGE_OVERRIDES[slug])
+        scenes.append(scene)
     return scenes
 
 
@@ -91,17 +117,23 @@ def build() -> dict:
         "id": "lessons_1_5_prototype",
         "title": "Japanese Reflections — Lessons 1–5 (Prototype)",
         "notes": (
-            "Japanese Reflections family: image → JP verse → EN verse → crossfade. "
-            "No kanji, keywords, or lesson numbers. 30s per exhibit."
+            "Japanese Reflections family: image → kanji → JP verse → EN verse → crossfade. "
+            "30s per exhibit; kanji is a brief reference only."
         ),
+        "soundtrack": {"main": SOUNDTRACK},
         "bookends": {
             "opening": {
-                "image": "covers/lesson_01.png",
-                "holdUntilAudioEnds": False,
+                "image": GALLERY_CREST,
+                "bookendSize": "large",
+                "audio": INTRO_AUDIO,
+                "holdUntilAudioEnds": True,
             },
             "closing": {
-                "image": "covers/lesson_05.png",
-                "holdUntilSoundtrackEnds": False,
+                "image": GALLERY_CREST,
+                "bookendSize": "small",
+                "holdUntilSoundtrackEnds": True,
+                "titleHtml": CLOSING_TITLE_HTML,
+                "audio": OUTRO_AUDIO,
             },
         },
         "exhibition": dict(DEFAULT_EXHIBITION),
@@ -110,16 +142,18 @@ def build() -> dict:
             "hideChrome": True,
             "family": "japaneseReflections",
             "showKeyword": False,
-            "showKanji": False,
+            "showKanji": True,
             "exhibitProfile": "imageVerse",
             "verseMode": "sequential",
             "typography": "placard",
+            "bookendStyle": "galleryCrest",
         },
         "meta": {
             "family": "japaneseReflections",
             "prototype": True,
             "lessons": list(LESSONS),
             "sceneCount": len(scenes),
+            "soundtrackNormal": SOUNDTRACK_NORMAL,
         },
         "scenes": scenes,
     }

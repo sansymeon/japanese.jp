@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/gallery-typography.css?v=2">
   <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
   <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=13">
+  <link rel="stylesheet" href="./css/gallery-exhibition-placard.css?v=7">
   <link rel="stylesheet" href="./css/exhibition.css">
 </head>
 <body>
@@ -62,12 +63,20 @@
   <div class="exhibition-loading" data-exhibition-loading aria-hidden="true"></div>
   <div class="exhibition-error exhibition-hidden" data-exhibition-error></div>
 
-  <div class="exhibition-artwork" data-exhibition-artwork aria-hidden="true">
-    <img data-exhibition-artwork-img alt="">
+  <div class="exhibition-artwork" data-exhibition-artwork="a" aria-hidden="true">
+    <img data-exhibition-artwork-img="a" alt="">
+  </div>
+
+  <div class="exhibition-artwork" data-exhibition-artwork="b" aria-hidden="true">
+    <img data-exhibition-artwork-img="b" alt="">
   </div>
 
   <div class="exhibition-bookend" data-exhibition-bookend aria-hidden="true">
-    <img data-exhibition-bookend-img alt="">
+    <div class="exhibition-bookend-composition" data-exhibition-bookend-composition>
+      <img data-exhibition-bookend-img alt="">
+      <img class="exhibition-bookend-stamp exhibition-hidden" data-exhibition-bookend-stamp alt="">
+      <div class="exhibition-bookend-title exhibition-hidden" data-exhibition-bookend-title aria-hidden="true"></div>
+    </div>
   </div>
 
   <div class="exhibition-vignette" aria-hidden="true"></div>
@@ -102,6 +111,6 @@
 
 <script src="./js/verse-display.js?v=1"></script>
 <script src="./js/gallery-guardian.js?v=2"></script>
-<script src="./js/exhibition-engine.js?v=22"></script>
+<script src="./js/exhibition-engine.js?v=26"></script>
 </body>
 </html>

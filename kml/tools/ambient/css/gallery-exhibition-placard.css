@@ -4,7 +4,7 @@
  */
 
 html.kml-typography-placard {
-  --kml-size-verse-jp: clamp(1.5rem, 5vmin, 2.5rem);
+  --kml-size-verse-jp: clamp(1.65rem, 5.5vmin, 2.75rem);
   --kml-size-verse-en: clamp(1.5rem, 5vmin, 2.5rem);
   --kml-color-verse-jp: #f0e8da;
   --kml-color-verse-en: #f0e8da;
@@ -64,9 +64,50 @@ html.kml-typography-placard.kml-verse-sequential .exhibition-verse-en {
   transition: opacity var(--ex-verse-fade, 1s) ease-in-out;
 }
 
-/* Japanese Reflections — no kanji, keyword, or title chrome */
-.exhibition-root.is-japanese-reflections .exhibition-title,
+/* Japanese Reflections — keyword hidden; kanji shown as brief reference */
+.exhibition-root.is-japanese-reflections .exhibition-keyword,
+.exhibition-root.is-image-verse .exhibition-keyword {
+  display: none !important;
+}
+
 .exhibition-root.is-image-verse .exhibition-title {
+  display: block;
+  top: clamp(2.5rem, 11vh, 5rem);
+  z-index: 4;
+}
+
+.exhibition-root.is-image-verse .exhibition-kanji {
+  --ex-kanji: clamp(5rem, 18vw, 11rem);
+  color: #f2eee6;
+  transform: translateY(12px);
+  transition:
+    opacity var(--ex-kanji-fade, 1.6s) ease-in-out,
+    transform var(--ex-kanji-fade, 1.6s) ease-in-out;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.exhibition-root.is-image-verse .exhibition-kanji.is-visible {
+  transform: translateY(0);
+}
+
+/* Verses — screen centre (study exhibition placement) */
+.exhibition-root.is-image-verse .exhibition-notes {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vw, 40rem);
+  min-height: 4rem;
+}
+
+html.kml-typography-placard.kml-verse-sequential .exhibition-root.is-image-verse .exhibition-verse-jp,
+html.kml-typography-placard.kml-verse-sequential .exhibition-root.is-image-verse .exhibition-verse-en {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%) !important;
+}
+
+.exhibition-root.is-japanese-reflections:not(.is-image-verse) .exhibition-title {
   display: none !important;
 }
 
@@ -102,4 +143,92 @@ html.kml-typography-placard.kml-verse-sequential .exhibition-verse-en {
 .exhibition-root.is-image-verse .exhibition-bookend.is-exhaling {
   transition-duration: var(--ex-transition, 4s);
   transition-timing-function: ease-in-out;
+}
+
+/* Gallery crest bookends — same asset, intro large / outro small (CSS-controlled) */
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend-composition {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-opening-bookend {
+  transition: opacity var(--ex-bookend-fade, 8s) ease-in;
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-opening-bookend.is-exhaling {
+  transition: opacity var(--ex-bookend-exhale, 3.5s) ease-in-out;
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend-composition > [data-exhibition-bookend-img] {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  clip-path: circle(42% at 50% 50%);
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-bookend-large img[data-exhibition-bookend-img] {
+  max-width: min(78vw, 580px);
+  max-height: min(78vw, 580px);
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-bookend-small img[data-exhibition-bookend-img] {
+  max-width: min(40vw, 260px);
+  max-height: min(40vw, 260px);
+}
+
+/* Symeon hanko — lower-right of large intro crest (matches stroke-page placement) */
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend-stamp {
+  position: absolute;
+  top: 58%;
+  left: 65%;
+  width: min(11vw, 72px);
+  max-width: none;
+  max-height: none;
+  height: auto;
+  clip-path: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  opacity: 0.88;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-bookend-small .exhibition-bookend-stamp {
+  display: none;
+}
+
+/* Crest fades out alone; bookend layer stays black for closing title */
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-crest-exhaling img[data-exhibition-bookend-img] {
+  opacity: 0;
+  transition: opacity var(--ex-bookend-exhale, 3s) ease-in-out;
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  font-family: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  font-size: clamp(1.75rem, 4.5vmin, 2.75rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+  text-align: center;
+  color: #f2eee6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-title-visible .exhibition-bookend-title {
+  opacity: 1;
+  transition: opacity var(--ex-bookend-title-fade, 2.5s) ease-in-out;
+}
+
+.exhibition-root.is-gallery-crest-bookends .exhibition-bookend.is-title-exhaling .exhibition-bookend-title {
+  opacity: 0;
+  transition: opacity var(--ex-bookend-title-fade, 3s) ease-in-out;
 }
