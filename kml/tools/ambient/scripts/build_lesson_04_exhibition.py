@@ -17,30 +17,10 @@ OUT_PATH = ROOT / "exhibition" / "lesson_4_study.json"
 STUDY_LESSON = "audio/study_version_3_minus3db.mp3"
 
 IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {
-    "beginning": {
-        # Landscape engawa — pull back so Fuji peak stays in frame
-        "imageFocus": "48% 38%",
-        "imageScale": 0.88,
-    },
     "newborn": {
-        # Wide room view — subjects centered; lift verse above figures
-        "imageFocus": "52% 50%",
+        # Verse layout only — image is native 16:9 landscape
         "verseTop": "44%",
         "verseScale": 1.12,
-    },
-    "page": {
-        # Open book spread sits lower-center — frame on the 頁, not the face
-        "imageFocus": "50% 58%",
-        "imageScale": 0.88,
-    },
-    "mediocre": {
-        "imageFocus": "48% 42%",
-        "imageScale": 0.82,
-    },
-    "ten_thousand": {
-        # Crane strings + hooks at top-left — tilt frame up to reveal the beam
-        "imageFocus": "42% 30%",
-        "imageScale": 0.90,
     },
 }
 

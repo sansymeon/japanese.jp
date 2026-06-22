@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
+ASSETS = REPO / "assets"
 LESSONS = (1, 2, 3, 4, 5)
 OUT_PATH = ROOT / "collections" / "lessons_1_5_prototype.json"
 
@@ -23,14 +24,31 @@ CLOSING_TITLE_HTML = "Ambient Kanji Gallery<br>Lessons 1–5"
 
 # slug → imageScale / imageFocus tweaks (imageScale < 1 zooms out; > 1 crops letterboxing)
 IMAGE_OVERRIDES: dict[str, dict] = {
-    "concave": {"imageScale": 0.88},
-    "convex": {"imageScale": 0.88},
     "pop_song": {
         # Baked-in horizontal letterbox bars — zoom to full cover
         "imageScale": 1.14,
         "imageFocus": "50% 48%",
     },
+    # Lesson 2 — strong baked-in letterbox bars on horizontal art
+    "prosperous": {"imageScale": 1.12, "imageFocus": "50% 48%"},
+    "early": {"imageScale": 1.12, "imageFocus": "50% 48%"},
+    "dawn": {"imageScale": 1.12, "imageFocus": "50% 48%"},
+    # Lesson 2 — exhibition ken-burns felt too tight on full-bleed landscape
+    "stomach": {"imageScale": 0.90},
+    "gallbladder": {"imageScale": 0.90},
+    "concave": {"imageScale": 0.90},
+    "convex": {"imageScale": 0.90},
+    # Lesson 3 — reported too tight / stale cache risk
+    "elbow": {"imageScale": 0.90, "imageFocus": "50% 42%"},
 }
+
+
+def image_rev(relative: str) -> int | None:
+    path = ASSETS / relative
+    if path.is_file():
+        return int(path.stat().st_mtime)
+    return None
+
 
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
@@ -54,7 +72,7 @@ DEFAULT_EXHIBITION = {
     "exhibitTransitionMs": 4000,
     "exhibitBlackHoldMs": 0,
     "kenBurnsDurationMs": 30000,
-    "openingBlackBeforeMs": 0,
+    "openingBlackBeforeMs": 2500,
     "openingRevealMs": 8000,
     "openingHoldMs": 0,
     "openingExhaleMs": 3500,
@@ -102,6 +120,9 @@ def parse_lesson_scenes(lesson: int) -> list[dict]:
         }
         if slug in IMAGE_OVERRIDES:
             scene.update(IMAGE_OVERRIDES[slug])
+        rev = image_rev(image)
+        if rev is not None:
+            scene["imageRev"] = rev
         scenes.append(scene)
     return scenes
 

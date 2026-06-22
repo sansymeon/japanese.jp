@@ -4,36 +4,60 @@
  */
 
 html.kml-typography-placard {
-  --kml-size-verse-jp: clamp(1.65rem, 5.5vmin, 2.75rem);
-  --kml-size-verse-en: clamp(1.5rem, 5vmin, 2.5rem);
+  /* JP: match ambient study exhibition (mobile-refine) */
+  --kml-size-verse-jp: clamp(2.13rem, 7.48vmin, 4.31rem);
+  --kml-font-heart-verse-jp: "Noto Serif JP", serif;
   --kml-color-verse-jp: #f0e8da;
+  --kml-shadow-verse-jp:
+    0 1px 3px rgba(0, 0, 0, 0.42),
+    0 2px 12px rgba(0, 0, 0, 0.38);
+  --kml-verse-block-strength: 0.5;
+
+  /* EN: keep placard sizing */
+  --kml-size-verse-en: clamp(1.5rem, 5vmin, 2.5rem);
   --kml-color-verse-en: #f0e8da;
-  --kml-shadow-verse-jp: 0 1px 3px rgba(0, 0, 0, 0.42);
   --kml-shadow-verse-en: 0 1px 3px rgba(0, 0, 0, 0.42);
-  --kml-verse-block-strength: 0.34;
 }
 
-html.kml-typography-placard .exhibition-verse-jp,
+html.kml-typography-placard .exhibition-verse-jp {
+  font-family: var(--kml-font-heart-verse-jp);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 1.68;
+  white-space: normal;
+  word-break: keep-all;
+  line-break: strict;
+  overflow-wrap: normal;
+  text-wrap: wrap;
+  text-shadow: var(--kml-shadow-verse-jp);
+}
+
 html.kml-typography-placard .exhibition-verse-en {
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.02em;
   line-height: 1.58;
-  white-space: normal;
+  white-space: pre-line;
   word-break: normal;
   line-break: strict;
   text-wrap: balance;
 }
 
-html.kml-typography-placard .exhibition-verse-jp br,
+html.kml-typography-placard .exhibition-verse-jp br {
+  display: block;
+  content: "";
+  margin-top: 0.35em;
+}
+
 html.kml-typography-placard .exhibition-verse-en br {
   display: block;
   content: "";
   margin-top: 0.32em;
 }
 
-html.kml-typography-placard .exhibition-verse-en {
-  white-space: pre-line;
+html.kml-typography-placard .exhibition-verse-jp ruby {
+  ruby-position: over;
 }
 
 html.kml-typography-placard .exhibition-verse-jp ruby rt {

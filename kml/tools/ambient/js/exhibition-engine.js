@@ -330,10 +330,11 @@
       });
     }
 
-    assetUrl(relative) {
+    assetUrl(relative, rev) {
       if (!relative) return "";
       if (/^https?:\/\//.test(relative) || relative.startsWith("/")) return relative;
-      return `${this.assetsBase}/${relative.replace(/^\//, "")}`;
+      const base = `${this.assetsBase}/${relative.replace(/^\//, "")}`;
+      return rev != null && rev !== "" ? `${base}?v=${rev}` : base;
     }
 
     localUrl(relative) {
@@ -586,20 +587,16 @@
           gate.classList.add("exhibition-hidden");
           gate.removeEventListener("keydown", onKeyDown);
 
-          const introPath = this.bookends?.opening?.audio;
-          if (!this.bookendAudio) this.initAudio();
-          const audio = this.bookendAudio;
-          if (introPath && audio) {
-            const url = this.localUrl(introPath);
-            audio.src = url;
-            audio.currentTime = 0;
-            audio.loop = false;
+          if (!this.bookendAudio && !this.mainAudio) this.initAudio();
+          const audio = this.bookendAudio || this.mainAudio;
+          if (audio) {
             try {
               await audio.play();
-              this.introPlayingFromGate = true;
-              this.audioLog("intro started", { url, via: "autoplay gate" });
+              audio.pause();
+              audio.currentTime = 0;
+              this.audioLog("autoplay unlocked", { via: "autoplay gate" });
             } catch (err) {
-              this.audioError("intro play() error", err, { url, via: "autoplay gate" });
+              this.audioError("autoplay unlock error", err, { via: "autoplay gate" });
             }
           }
 
@@ -785,7 +782,7 @@
     populateArtworkLayer(key, scene) {
       const layer = this.artworkLayers[key];
       if (!layer?.img || !scene) return;
-      const src = this.assetUrl(scene.image);
+      const src = this.assetUrl(scene.image, scene.imageRev);
       layer.img.classList.remove("ken-burns", "gallery-guardian");
       layer.img.removeAttribute("data-gallery-shot");
       layer.img.src = src;

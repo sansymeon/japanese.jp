@@ -9,43 +9,13 @@ REPO = Path(__file__).resolve().parents[2].parent
 ASSETS = REPO / "assets"
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_03.html"
 
-# imageScale < 1 zooms out and leaves gaps; avoid on full-bleed art unless intentional.
+# imageScale < 1 zooms out and leaves gaps on full-bleed landscape art.
+# Only keep overrides for baked-in letterboxing (scale > 1) or rare composition tweaks.
 IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {
-    "round": {
-        "imageFocus": "62% 28%",
-        "imageScale": 0.82,
-    },
-    "up": {
-        "imageFocus": "54% 38%",
-    },
-    "rise": {
-        "imageFocus": "55% 32%",
-        "imageScale": 0.82,
-    },
-    "below": {
-        "imageFocus": "42% 55%",
-        "imageScale": 0.85,
-    },
     "pop_song": {
         # Baked-in horizontal letterbox bars — zoom to full cover
         "imageScale": 1.14,
         "imageFocus": "50% 48%",
-    },
-    "only": {
-        "imageFocus": "50% 32%",
-        "imageScale": 0.88,
-    },
-    "elbow": {
-        "imageFocus": "48% 32%",
-        "imageScale": 0.88,
-    },
-    "virtue": {
-        "imageFocus": "32% 30%",
-        "imageScale": 0.88,
-    },
-    "employee": {
-        # Group portrait — keep faces centered at full cover
-        "imageFocus": "50% 34%",
     },
 }
 
