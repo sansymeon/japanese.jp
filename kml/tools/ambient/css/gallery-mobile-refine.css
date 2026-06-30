@@ -9,7 +9,7 @@ html.kml-typography-mobile-refine {
   /* +30% keyword / +15% verse over mobile-v2 study baseline */
   --kml-size-keyword: clamp(2.37rem, 6.83vmin, 3.98rem);
   --kml-size-verse-jp: clamp(2.13rem, 7.48vmin, 4.31rem);
-  --kml-size-verse-en: clamp(1.47rem, 5.29vmin, 2.82rem);
+  --kml-size-verse-en: var(--kml-size-verse-en-display);
 
   /* Unified ivory — kanji, keyword, verses (study capture palette) */
   --kml-color-kanji: #f2eee6;
@@ -33,24 +33,24 @@ html.kml-typography-mobile-refine .ambient-keyword {
   color: var(--kml-color-keyword);
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-keyword,
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-jp,
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-en {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-keyword,
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-jp,
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-en {
   text-shadow: none !important;
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .kml-title-block::before,
-html.kml-typography-mobile-refine .ambient-root.is-study .kml-verse-block::before {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .kml-title-block::before,
+html.kml-typography-mobile-refine .ambient-root.is-foundations .kml-verse-block::before {
   display: none;
 }
 
 /* ── Study (ambient / index.html) ── */
 
-html.kml-typography-mobile-refine .ambient-root.is-study {
+html.kml-typography-mobile-refine .ambient-root.is-foundations {
   --ambient-overlay: 0.38;
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-stage {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-stage {
   display: block;
   position: relative;
   height: 100%;
@@ -58,7 +58,7 @@ html.kml-typography-mobile-refine .ambient-root.is-study .ambient-stage {
   gap: 0;
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-kanji-block {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-kanji-block {
   position: absolute;
   top: clamp(2.5rem, 11vh, 5rem);
   left: 50%;
@@ -67,12 +67,12 @@ html.kml-typography-mobile-refine .ambient-root.is-study .ambient-kanji-block {
   z-index: 3;
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-keyword {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-keyword {
   letter-spacing: 0.16em;
 }
 
 /* Verse — middle third (~100px+ above mobile-v2 lower-third at 1080p) */
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verses {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verses {
   position: absolute;
   left: 50%;
   top: var(--kml-verse-top, 50%);
@@ -84,13 +84,13 @@ html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verses {
   z-index: 3;
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-jp,
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-en {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-jp,
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-en {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-jp {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-jp {
   margin: 0;
   text-align: center;
   font-size: calc(var(--kml-size-verse-jp) * var(--kml-verse-scale, 1));
@@ -118,13 +118,13 @@ html.kml-typography-mobile-refine .ambient-verse-jp ruby rt {
 }
 
 html.kml-typography-mobile-refine
-  .ambient-root.is-study:has(.ambient-verse-jp.is-visible)
+  .ambient-root.is-foundations:has(.ambient-verse-jp.is-visible)
   .ambient-kanji-block {
   opacity: 0 !important;
   transition: opacity var(--ambient-fade) ease-in-out;
 }
 
-html.kml-typography-mobile-refine .ambient-root.is-study .ambient-verse-en {
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-en {
   display: none;
 }
 
@@ -186,6 +186,22 @@ html.kml-typography-mobile-refine .exhibition-keyword.is-visible {
 html.kml-typography-mobile-refine .exhibition-title.kml-title-block::before,
 html.kml-typography-mobile-refine .exhibition-notes.kml-verse-block::before {
   display: block;
+  opacity: 0;
+}
+
+/* Feather plates track visible title / verse — fade with text, not an abrupt pop-off */
+html.kml-typography-mobile-refine .exhibition-title.kml-title-block:has(
+  .exhibition-kanji.is-visible,
+  .exhibition-keyword.is-visible
+)::before {
+  opacity: var(--kml-title-block-strength);
+}
+
+html.kml-typography-mobile-refine .exhibition-notes.kml-verse-block:has(
+  .exhibition-verse-jp.is-visible,
+  .exhibition-verse-en.is-visible
+)::before {
+  opacity: var(--kml-verse-block-strength);
 }
 
 html.kml-typography-mobile-refine .exhibition-verse-jp,
@@ -290,7 +306,7 @@ html.kml-typography-mobile-refine.kml-verse-sequential
 /* Sequential — EN: Cormorant italic, same slot as JP */
 html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-verse-en {
   font-family: var(--kml-font-heart-voice);
-  font-size: var(--kml-size-verse-jp);
+  font-size: var(--kml-size-verse-en);
   line-height: 1.68;
   letter-spacing: 0.02em;
   color: var(--kml-color-verse-en);
@@ -298,6 +314,35 @@ html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-verse-en {
   font-weight: 400;
   white-space: pre-line;
   text-shadow: var(--kml-shadow-verse-en);
+}
+
+/* Heart exhibition — ambient study typography on bright artwork */
+html.kml-typography-mobile-refine .exhibition-root.is-foundations-typography .exhibition-keyword {
+  color: var(--kml-color-kanji) !important;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-shadow: var(--kml-shadow-kanji);
+}
+
+html.kml-typography-mobile-refine .exhibition-root.is-foundations-typography {
+  --kml-size-verse-jp: var(--kml-foundations-exhibition-verse-jp);
+  --kml-size-verse-en: var(--kml-foundations-exhibition-verse-en);
+}
+
+html.kml-typography-mobile-refine .exhibition-root.is-foundations-typography .exhibition-verse-jp {
+  font-size: var(--kml-foundations-exhibition-verse-jp);
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-foundations-typography
+  .exhibition-verse-jp {
+  font-size: var(--kml-foundations-exhibition-verse-jp);
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-foundations-typography
+  .exhibition-verse-en {
+  font-size: var(--kml-foundations-exhibition-verse-en);
 }
 
 /* Staggered — JP first, EN fades in later as supporting translation */

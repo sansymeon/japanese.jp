@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_9_study.json — original order, Gallery Seal Ending."""
+"""Build exhibition/lesson_9_foundations.json — original order, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -12,14 +12,14 @@ ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_09.html"
 ASSETS = REPO / "assets"
-OUT_PATH = ROOT / "exhibition" / "lesson_9_study.json"
+OUT_PATH = ROOT / "exhibition" / "lesson_9_foundations.json"
 
 STUDY_LESSON = "audio/study_version_1_minus3db.mp3"
 
 IMAGE_FRAMING_OVERRIDES: dict[str, dict[str, str | float]] = {}
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from study_exhibition_common import exhibition_study_config  # noqa: E402
+from foundations_exhibition_common import exhibition_foundations_config  # noqa: E402
 
 SECTION_RE = re.compile(
     r'<section class="kanji-entry"(.*?)</section>',
@@ -71,9 +71,9 @@ def parse_scenes(html: str) -> list[dict]:
 
 def build() -> dict:
     html = LESSON_HTML.read_text(encoding="utf-8")
-    config = exhibition_study_config(
+    config = exhibition_foundations_config(
         lesson=9,
-        title="KML Ambient Study — Lesson 9 (Exhibition)",
+        title="KML Ambient Foundations — Lesson 9 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Original lesson order; "
             "Disaster closes with Gallery Seal Ending. Soundtrack: Study Version 1."

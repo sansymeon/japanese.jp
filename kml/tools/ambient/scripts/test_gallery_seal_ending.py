@@ -29,7 +29,7 @@ def start_server(port: int) -> subprocess.Popen:
 def run_test(*, lesson: int, port: int, out_dir: Path) -> int:
     from playwright.sync_api import sync_playwright
 
-    collection = f"lesson_{lesson}_study"
+    collection = f"lesson_{lesson}_foundations"
     url = f"http://127.0.0.1:{port}/index.html?collection={collection}&capture=1"
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -205,7 +205,7 @@ def main() -> int:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=ROOT / "study_exhibitions" / ".ending_test",
+        default=ROOT / "foundations_exhibitions" / ".ending_test",
     )
     parser.add_argument(
         "--no-server",
@@ -225,7 +225,7 @@ def main() -> int:
         server = start_server(args.port)
 
     try:
-        out = args.output_dir / f"lesson_{args.lesson}_study"
+        out = args.output_dir / f"lesson_{args.lesson}_foundations"
         return run_test(lesson=args.lesson, port=args.port, out_dir=out)
     finally:
         if server:

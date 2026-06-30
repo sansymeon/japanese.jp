@@ -1,0 +1,141 @@
+/**
+ * Kanji Soundtrack — calligraphy edition.
+ * Large handwritten kanji: fade in → hold → crossfade. No strokes.
+ */
+
+.exhibition-root.is-kanji-soundtrack {
+  --kml-font-kanji-handwritten: "Yuji Syuku", "Noto Serif JP", serif;
+  /* Match .exhibition-bookend img footprint (exhibition.css) */
+  --kml-soundtrack-kanji-size: min(78vw, 560px, 82vh, 760px);
+  --kml-soundtrack-kanji-fade-in: var(--ex-soundtrack-kanji-fade-in, 2.6s);
+  --kml-soundtrack-kanji-fade-out: var(--ex-soundtrack-kanji-fade-out, 1.4s);
+  --ex-soundtrack-kanji-fade-in: 2.6s;
+  --ex-soundtrack-kanji-fade-out: 1.4s;
+  background: #000;
+}
+
+.exhibition-root.is-kanji-soundtrack .exhibition-artwork,
+.exhibition-root.is-kanji-soundtrack .exhibition-title,
+.exhibition-root.is-kanji-soundtrack .exhibition-notes,
+.exhibition-root.is-kanji-soundtrack .exhibition-vignette,
+.exhibition-root.is-kanji-soundtrack .party-kanji-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-kanji-soundtrack .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-kanji-soundtrack .stroke-order-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.exhibition-root.is-kanji-soundtrack .stroke-order-layer.exhibition-hidden {
+  display: none;
+}
+
+.exhibition-root.is-kanji-soundtrack .stroke-order-stage {
+  position: relative;
+  width: min(98vw, 80rem);
+  height: min(92vh, 64rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exhibition-root.is-kanji-soundtrack .soundtrack-slot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.exhibition-root.is-kanji-soundtrack .soundtrack-slot.is-active,
+.exhibition-root.is-kanji-soundtrack .soundtrack-slot.is-handoff-out {
+  visibility: visible;
+}
+
+.exhibition-root.is-kanji-soundtrack .soundtrack-slot.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-kanji-soundtrack .stroke-order-svg {
+  display: none !important;
+}
+
+.exhibition-root.is-kanji-soundtrack .stroke-order-kanji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--kml-font-kanji-handwritten);
+  font-size: var(--kml-soundtrack-kanji-size);
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.97);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  transform: translateY(-0.06em);
+  opacity: 0;
+  transition: opacity var(--kml-soundtrack-kanji-fade-out) cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.exhibition-root.is-kanji-soundtrack .stroke-order-kanji.is-visible {
+  opacity: 1;
+  transition: opacity var(--kml-soundtrack-kanji-fade-in) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exhibition-root.is-kanji-soundtrack .soundtrack-slot.is-handoff .stroke-order-kanji {
+  will-change: opacity;
+}
+
+.exhibition-root.is-kanji-soundtrack .exhibition-bookend {
+  background: #000;
+}
+
+.exhibition-root.is-kanji-soundtrack .exhibition-bookend-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  letter-spacing: 0.04em;
+}
+
+.exhibition-root.is-kanji-soundtrack .kanji-soundtrack-title {
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.exhibition-root.is-kanji-soundtrack .kanji-soundtrack-part {
+  font-size: clamp(1.1rem, 2.4vw, 1.55rem);
+  font-weight: 400;
+  opacity: 0.88;
+}
+
+.exhibition-root.is-kanji-soundtrack .kanji-soundtrack-range {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  opacity: 0.72;
+  margin-top: 0.35rem;
+}

@@ -7,12 +7,21 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/gallery-typography.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-typography.css?v=6">
   <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
-  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=13">
-  <link rel="stylesheet" href="./css/gallery-exhibition-placard.css?v=8">
+  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=18">
+  <link rel="stylesheet" href="./css/gallery-exhibition-placard.css?v=12">
+  <link rel="stylesheet" href="./css/gallery-verse-reading.css?v=3">
+  <link rel="stylesheet" href="./css/gallery-assisted-reading.css?v=7">
+  <link rel="stylesheet" href="./css/gallery-vocabulary-exhibition.css?v=6">
+  <link rel="stylesheet" href="./css/gallery-compounds-exhibition.css?v=3">
+  <link rel="stylesheet" href="./css/gallery-stroke-order.css?v=7">
+  <link rel="stylesheet" href="./css/gallery-kanji-soundtrack.css?v=17">
+  <link rel="stylesheet" href="./css/gallery-grade1-kanji-soundtrack.css?v=7">
+  <link rel="stylesheet" href="./css/gallery-party-kanji.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-lesson.css?v=2">
   <link rel="stylesheet" href="./css/exhibition.css">
 </head>
 <body>
@@ -37,6 +46,7 @@
   Digital Art Exhibition – Lesson 40 test gallery
 
   Heart v5:   ?collection=heart_v5  (default)
+  Heart QA (2-scene handoff loop): ?collection=heart_v5_transition_prototype&skipBookends=1
   Heart v3:   ?collection=heart_v3
   Heart v4:   ?collection=heart_v4  (fixed kanji)
   Heart v5:   ?collection=heart_v5  (gold foil bookends + soundtrack)
@@ -45,6 +55,15 @@
   Single exhibit (full pipeline, exhibit 0 only — verses begin ~41s; not a preview mode):
               ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1
   Faster full pipeline (5% timing): add &timingScale=0.05  (~2s preamble, ~1.5s before EN)
+  PARTY KANJI v1 (Episode 1 — 龘):
+              ?collection=party_kanji_v1&skipBookends=1&singleExhibit=1
+  Flow: Shock → Reveal → Proof → Final pulse → Closing → End card
+  Stroke Order L1 (calligraphy studio — 一):
+              ?collection=lesson_01_strokes&exhibit=0&singleExhibit=1
+  Compounds L1 (一 → 一日):
+              ?collection=lesson_01_compounds&exhibit=0&singleExhibit=1
+  Stroke QA:  add &timingScale=0.05
+  Record:     python3 scripts/record_party_kanji.py
   Verse typography QA (skips title phases; still runs verse + essence + exit):
               ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&startPhase=reflection
   Scene tests (add &timingScale=0.05 for speed):
@@ -93,6 +112,56 @@
 
   <div class="exhibition-veil" data-exhibition-veil aria-hidden="true"></div>
 
+  <div class="stroke-order-layer exhibition-hidden" data-stroke-order-layer aria-hidden="true">
+    <div class="stroke-order-stage" data-stroke-order-stage>
+      <div class="soundtrack-slot" data-soundtrack-slot="a">
+        <div class="stroke-order-kanji kanji-main-font" data-stroke-order-kanji="a" lang="ja"></div>
+        <div class="stroke-order-svg" data-stroke-order-svg="a" aria-hidden="true"></div>
+      </div>
+      <div class="soundtrack-slot" data-soundtrack-slot="b">
+        <div class="stroke-order-kanji kanji-main-font" data-stroke-order-kanji="b" lang="ja"></div>
+        <div class="stroke-order-svg" data-stroke-order-svg="b" aria-hidden="true"></div>
+      </div>
+      <div class="grade1-confetti-layer exhibition-hidden" data-grade1-confetti-layer aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="party-kanji-layer exhibition-hidden" data-party-kanji-layer aria-hidden="true">
+    <div class="party-kanji-phase party-kanji-shock" data-party-phase="shock">
+      <div class="party-kanji-giant party-kanji-giant--enter" data-party-shock-kanji></div>
+      <div class="party-kanji-challenge party-kanji-challenge--hidden" data-party-challenge></div>
+    </div>
+    <div class="party-kanji-phase party-kanji-reveal" data-party-phase="reveal">
+      <div class="party-kanji-playlist" data-party-playlist></div>
+      <div class="party-kanji-components party-kanji-components--burst" data-party-components></div>
+      <div class="party-kanji-equation party-kanji-equation--hidden" data-party-equation></div>
+      <div class="party-kanji-reading" data-party-reading></div>
+      <div class="party-kanji-trivia" data-party-trivia></div>
+    </div>
+    <div class="party-kanji-phase party-kanji-proof" data-party-phase="proof">
+      <div class="party-kanji-strokes-wrap">
+        <iframe data-party-strokes-frame title="Stroke order" loading="lazy"></iframe>
+      </div>
+      <div class="party-kanji-stroke-note" data-party-stroke-note></div>
+    </div>
+    <div class="party-kanji-phase party-kanji-final" data-party-phase="final">
+      <div class="party-kanji-final-wrap">
+        <div class="party-kanji-component-pulse" data-party-component-pulse aria-hidden="true"></div>
+        <div class="party-kanji-giant party-kanji-giant--reward" data-party-final-kanji></div>
+      </div>
+      <div class="party-kanji-reading" data-party-final-reading></div>
+    </div>
+    <div class="party-kanji-phase party-kanji-closing" data-party-phase="closing">
+      <p class="party-kanji-closing-message" data-party-closing-message></p>
+    </div>
+    <div class="party-kanji-phase party-kanji-endcard" data-party-phase="endcard">
+      <div class="party-kanji-brand" data-party-brand>PARTY KANJI</div>
+      <div class="party-kanji-playlist-end" data-party-playlist-end></div>
+      <div class="party-kanji-tagline" data-party-tagline></div>
+      <div class="party-kanji-disclaimer" data-party-disclaimer></div>
+    </div>
+  </div>
+
   <button
     type="button"
     class="exhibition-autoplay-gate exhibition-hidden"
@@ -102,15 +171,18 @@
     Tap or click to begin the exhibition
   </button>
 
-  <div class="exhibition-audio" aria-hidden="true" hidden>
+  <div class="exhibition-audio" aria-hidden="true">
     <audio data-exhibition-intro-audio preload="auto"></audio>
     <audio data-exhibition-ambient-audio preload="auto"></audio>
   </div>
 
 </div>
 
+<script src="./js/collection-paths.js?v=1"></script>
 <script src="./js/verse-display.js?v=1"></script>
-<script src="./js/gallery-guardian.js?v=2"></script>
-<script src="./js/exhibition-engine.js?v=28"></script>
+<script src="./js/gallery-guardian.js?v=5"></script>
+<script src="./strokes/js/stroke-page-loader.js?v=1"></script>
+<script src="./js/stroke-order-player.js?v=3"></script>
+<script src="./js/exhibition-engine.js?v=93"></script>
 </body>
 </html>

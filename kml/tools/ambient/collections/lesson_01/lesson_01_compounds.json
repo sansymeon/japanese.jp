@@ -1,0 +1,924 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_01_compounds",
+  "title": "Lesson 1 — Compounds (Prototype)",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Curated from kml/contents/books/book_01/compounds/lesson_01.html. ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 1,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.5,
+    "totalCompounds": 89,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1314500,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_01.html"
+  },
+  "scenes": [
+    {
+      "id": "L01_one",
+      "kanji": "一",
+      "keyword": "one",
+      "image": "studies/one.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "一日",
+            "reading": "いちにち",
+            "en": "one day"
+          },
+          {
+            "jp": "一番",
+            "reading": "いちばん",
+            "en": "number one"
+          },
+          {
+            "jp": "一生",
+            "reading": "いっしょう",
+            "en": "one's whole life"
+          },
+          {
+            "jp": "一人",
+            "reading": "ひとり",
+            "en": "one person"
+          },
+          {
+            "jp": "一息",
+            "reading": "ひといき",
+            "en": "one breath / a short rest"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "one",
+        "prototype": true
+      },
+      "imageRev": 1781510593
+    },
+    {
+      "id": "L01_two",
+      "kanji": "二",
+      "keyword": "two",
+      "image": "studies/two.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 42%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "二人",
+            "reading": "ふたり",
+            "en": "two people"
+          },
+          {
+            "jp": "二月",
+            "reading": "にがつ",
+            "en": "February"
+          },
+          {
+            "jp": "二重",
+            "reading": "にじゅう",
+            "en": "double"
+          },
+          {
+            "jp": "二度",
+            "reading": "にど",
+            "en": "twice"
+          },
+          {
+            "jp": "第二",
+            "reading": "だいに",
+            "en": "second"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "two",
+        "prototype": true
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1781525287
+    },
+    {
+      "id": "L01_three",
+      "kanji": "三",
+      "keyword": "three",
+      "image": "studies/three.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "三人",
+            "reading": "さんにん",
+            "en": "three people"
+          },
+          {
+            "jp": "三日",
+            "reading": "みっか",
+            "en": "third day"
+          },
+          {
+            "jp": "三角",
+            "reading": "さんかく",
+            "en": "triangle"
+          },
+          {
+            "jp": "三年生",
+            "reading": "さんねんせい",
+            "en": "third-year student"
+          },
+          {
+            "jp": "三倍",
+            "reading": "さんばい",
+            "en": "triple"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "three",
+        "prototype": true
+      },
+      "imageRev": 1781510612
+    },
+    {
+      "id": "L01_four",
+      "kanji": "四",
+      "keyword": "four",
+      "image": "studies/four.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "四日",
+            "reading": "よっか",
+            "en": "fourth day"
+          },
+          {
+            "jp": "四季",
+            "reading": "しき",
+            "en": "four seasons"
+          },
+          {
+            "jp": "四角",
+            "reading": "しかく",
+            "en": "square"
+          },
+          {
+            "jp": "四年",
+            "reading": "よねん",
+            "en": "four years"
+          },
+          {
+            "jp": "四人",
+            "reading": "よにん",
+            "en": "four people"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "four",
+        "prototype": true
+      },
+      "imageRev": 1781524101
+    },
+    {
+      "id": "L01_five",
+      "kanji": "五",
+      "keyword": "five",
+      "image": "studies/five.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "五月",
+            "reading": "ごがつ",
+            "en": "May"
+          },
+          {
+            "jp": "五人",
+            "reading": "ごにん",
+            "en": "five people"
+          },
+          {
+            "jp": "五回",
+            "reading": "ごかい",
+            "en": "five times"
+          },
+          {
+            "jp": "五感",
+            "reading": "ごかん",
+            "en": "five senses"
+          },
+          {
+            "jp": "五百",
+            "reading": "ごひゃく",
+            "en": "five hundred"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "five",
+        "prototype": true
+      },
+      "imageRev": 1781529238
+    },
+    {
+      "id": "L01_six",
+      "kanji": "六",
+      "keyword": "six",
+      "image": "studies/six.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "六月",
+            "reading": "ろくがつ",
+            "en": "June"
+          },
+          {
+            "jp": "六人",
+            "reading": "ろくにん",
+            "en": "six people"
+          },
+          {
+            "jp": "六回",
+            "reading": "ろっかい",
+            "en": "six times"
+          },
+          {
+            "jp": "第六",
+            "reading": "だいろく",
+            "en": "sixth"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "six",
+        "prototype": true
+      },
+      "imageRev": 1781524307
+    },
+    {
+      "id": "L01_seven",
+      "kanji": "七",
+      "keyword": "seven",
+      "image": "studies/seven.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "七月",
+            "reading": "しちがつ",
+            "en": "July"
+          },
+          {
+            "jp": "七人",
+            "reading": "しちにん",
+            "en": "seven people"
+          },
+          {
+            "jp": "七夕",
+            "reading": "たなばた",
+            "en": "Star Festival"
+          },
+          {
+            "jp": "第七",
+            "reading": "だいなな",
+            "en": "seventh"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "seven",
+        "prototype": true
+      },
+      "imageRev": 1781510731
+    },
+    {
+      "id": "L01_eight",
+      "kanji": "八",
+      "keyword": "eight",
+      "image": "studies/eight.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "八月",
+            "reading": "はちがつ",
+            "en": "August"
+          },
+          {
+            "jp": "八人",
+            "reading": "はちにん",
+            "en": "eight people"
+          },
+          {
+            "jp": "八百",
+            "reading": "はっぴゃく",
+            "en": "eight hundred"
+          },
+          {
+            "jp": "第八",
+            "reading": "だいはち",
+            "en": "eighth"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "eight",
+        "prototype": true
+      },
+      "imageRev": 1781524482
+    },
+    {
+      "id": "L01_nine",
+      "kanji": "九",
+      "keyword": "nine",
+      "image": "studies/nine.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "九月",
+            "reading": "くがつ",
+            "en": "September"
+          },
+          {
+            "jp": "九人",
+            "reading": "きゅうにん",
+            "en": "nine people"
+          },
+          {
+            "jp": "九回",
+            "reading": "きゅうかい",
+            "en": "nine times"
+          },
+          {
+            "jp": "第九",
+            "reading": "だいきゅう",
+            "en": "ninth"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "nine",
+        "prototype": true
+      },
+      "imageRev": 1781524631
+    },
+    {
+      "id": "L01_ten",
+      "kanji": "十",
+      "keyword": "ten",
+      "image": "studies/ten.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "十月",
+            "reading": "じゅうがつ",
+            "en": "October"
+          },
+          {
+            "jp": "十分",
+            "reading": "じゅうぶん",
+            "en": "enough"
+          },
+          {
+            "jp": "十人",
+            "reading": "じゅうにん",
+            "en": "ten people"
+          },
+          {
+            "jp": "十回",
+            "reading": "じゅっかい",
+            "en": "ten times"
+          },
+          {
+            "jp": "第十",
+            "reading": "だいじゅう",
+            "en": "tenth"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "ten",
+        "prototype": true
+      },
+      "imageRev": 1781525131
+    },
+    {
+      "id": "L01_mouth",
+      "kanji": "口",
+      "keyword": "mouth",
+      "image": "studies/mouth.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 55%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "人口",
+            "reading": "じんこう",
+            "en": "population"
+          },
+          {
+            "jp": "口調",
+            "reading": "くちょう",
+            "en": "tone of voice, manner of speaking"
+          },
+          {
+            "jp": "入口",
+            "reading": "いりぐち",
+            "en": "entrance"
+          },
+          {
+            "jp": "出口",
+            "reading": "でぐち",
+            "en": "exit"
+          },
+          {
+            "jp": "口実",
+            "reading": "こうじつ",
+            "en": "excuse, pretext"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "mouth",
+        "prototype": true
+      },
+      "imageFocus": "50% 55%",
+      "imageRev": 1781510769
+    },
+    {
+      "id": "L01_sun",
+      "kanji": "日",
+      "keyword": "sun",
+      "image": "studies/sun.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 32%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "日本",
+            "reading": "にほん",
+            "en": "Japan"
+          },
+          {
+            "jp": "日記",
+            "reading": "にっき",
+            "en": "Diary, journal"
+          },
+          {
+            "jp": "祝日",
+            "reading": "しゅくじつ",
+            "en": "National holiday"
+          },
+          {
+            "jp": "今日",
+            "reading": "きょう",
+            "en": "Today"
+          },
+          {
+            "jp": "日焼け",
+            "reading": "ひやけ",
+            "en": "Sunburn, suntan"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "sun",
+        "prototype": true
+      },
+      "imageFocus": "50% 32%",
+      "imageRev": 1781525623
+    },
+    {
+      "id": "L01_moon",
+      "kanji": "月",
+      "keyword": "moon",
+      "image": "studies/moon.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 35%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "月曜日",
+            "reading": "げつようび",
+            "en": "Monday"
+          },
+          {
+            "jp": "今月",
+            "reading": "こんげつ",
+            "en": "This month"
+          },
+          {
+            "jp": "満月",
+            "reading": "まんげつ",
+            "en": "Full moon"
+          },
+          {
+            "jp": "月明かり",
+            "reading": "つきあかり",
+            "en": "Moonlight"
+          },
+          {
+            "jp": "お月見",
+            "reading": "おつきみ",
+            "en": "Moon viewing"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "moon",
+        "prototype": true
+      },
+      "imageFocus": "50% 35%",
+      "imageRev": 1781511558
+    },
+    {
+      "id": "L01_field",
+      "kanji": "田",
+      "keyword": "field",
+      "image": "studies/field.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "田園",
+            "reading": "でんえん",
+            "en": "Countryside, rural district"
+          },
+          {
+            "jp": "田畑",
+            "reading": "たはた",
+            "en": "Fields and paddies"
+          },
+          {
+            "jp": "田舎",
+            "reading": "いなか",
+            "en": "Countryside, hometown"
+          },
+          {
+            "jp": "水田",
+            "reading": "すいでん",
+            "en": "Rice paddy (wet field)"
+          },
+          {
+            "jp": "田中",
+            "reading": "たなか",
+            "en": "Tanaka"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "field",
+        "prototype": true
+      },
+      "imageRev": 1781525742
+    },
+    {
+      "id": "L01_eye",
+      "kanji": "目",
+      "keyword": "eye",
+      "image": "studies/eye.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 48%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "目的",
+            "reading": "もくてき",
+            "en": "Purpose, goal"
+          },
+          {
+            "jp": "注目",
+            "reading": "ちゅうもく",
+            "en": "Attention, notice"
+          },
+          {
+            "jp": "目標",
+            "reading": "もくひょう",
+            "en": "Target, aim"
+          },
+          {
+            "jp": "目玉",
+            "reading": "めだま",
+            "en": "Eyeball, a highlight"
+          },
+          {
+            "jp": "一目",
+            "reading": "ひとめ",
+            "en": "A glance, a glimpse"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "eye",
+        "prototype": true
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781526247
+    },
+    {
+      "id": "L01_old",
+      "kanji": "古",
+      "keyword": "old",
+      "image": "studies/old.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "古代",
+            "reading": "こだい",
+            "en": "Ancient times"
+          },
+          {
+            "jp": "中古",
+            "reading": "ちゅうこ",
+            "en": "Secondhand / used"
+          },
+          {
+            "jp": "古文",
+            "reading": "こぶん",
+            "en": "Classical literature"
+          },
+          {
+            "jp": "古本",
+            "reading": "ふるほん",
+            "en": "Used book"
+          },
+          {
+            "jp": "古寺",
+            "reading": "ふるでら",
+            "en": "Old temple"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "old",
+        "prototype": true
+      },
+      "imageRev": 1782000070
+    },
+    {
+      "id": "L01_I",
+      "kanji": "吾",
+      "keyword": "I",
+      "image": "studies/I.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "吾輩",
+            "reading": "わがはい",
+            "en": "I, myself"
+          },
+          {
+            "jp": "吾",
+            "reading": "われ",
+            "en": "I"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "I",
+        "prototype": true
+      },
+      "imageRev": 1781526680
+    },
+    {
+      "id": "L01_risk",
+      "kanji": "冒",
+      "keyword": "risk",
+      "image": "studies/risk.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "冒険",
+            "reading": "ぼうけん",
+            "en": "Adventure, risk"
+          },
+          {
+            "jp": "冒頭",
+            "reading": "ぼうとう",
+            "en": "Beginning (of a speech, etc.)"
+          },
+          {
+            "jp": "冒す",
+            "reading": "おかす",
+            "en": "To brave, to risk"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "risk",
+        "prototype": true
+      },
+      "imageRev": 1781527059
+    },
+    {
+      "id": "L01_companion",
+      "kanji": "朋",
+      "keyword": "companion",
+      "image": "studies/companion.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "朋友",
+            "reading": "ほうゆう",
+            "en": "Friend, companion"
+          },
+          {
+            "jp": "親朋",
+            "reading": "しんぽう",
+            "en": "Close friend"
+          },
+          {
+            "jp": "朋輩",
+            "reading": "ほうばい",
+            "en": "Peer, colleague"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "companion",
+        "prototype": true
+      },
+      "imageRev": 1781527220
+    },
+    {
+      "id": "L01_bright",
+      "kanji": "明",
+      "keyword": "bright",
+      "image": "studies/bright.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 40%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "明日",
+            "reading": "あした",
+            "en": "Tomorrow"
+          },
+          {
+            "jp": "説明",
+            "reading": "せつめい",
+            "en": "Explanation"
+          },
+          {
+            "jp": "明白",
+            "reading": "めいはく",
+            "en": "Clear, obvious"
+          },
+          {
+            "jp": "文明",
+            "reading": "ぶんめい",
+            "en": "Civilization"
+          },
+          {
+            "jp": "明かり",
+            "reading": "あかり",
+            "en": "Light, illumination"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "bright",
+        "prototype": true
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1781528950
+    }
+  ]
+}

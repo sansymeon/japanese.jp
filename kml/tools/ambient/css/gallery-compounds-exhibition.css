@@ -1,0 +1,245 @@
+/**
+ * Compounds Exhibition — target kanji → familiar compounds on gallery artwork.
+ * Enable: exhibitProfile compoundsExhibition + typography mobile-refine
+ */
+
+.exhibition-root.is-compounds-exhibition {
+  /* Compound kanji — larger than verse baseline for artwork legibility */
+  --kml-compounds-jp: clamp(2.55rem, 8.8vmin, 5.15rem);
+  --kml-compounds-reading: clamp(1.75rem, 6.1vmin, 3.05rem);
+  --kml-compounds-en: var(--kml-size-verse-en-display);
+  --kml-compounds-hint: clamp(1.4rem, 4.9vmin, 2.35rem);
+  --kml-compounds-target: clamp(6rem, 19vmin, 12rem);
+  --kml-compounds-shadow-jp:
+    0 1px 3px rgba(0, 0, 0, 0.78),
+    0 3px 20px rgba(0, 0, 0, 0.62),
+    0 0 36px rgba(0, 0, 0, 0.45);
+  --kml-compounds-shadow-en:
+    0 1px 3px rgba(0, 0, 0, 0.72),
+    0 3px 16px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(0, 0, 0, 0.4);
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-keyword {
+  display: none !important;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-compounds-exhibition.is-initial-black .exhibition-veil {
+  opacity: 1 !important;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-artwork {
+  transition: opacity var(--ex-artwork-arrival, var(--ex-transition, 3.5s)) ease-in-out;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-artwork.is-exhaling {
+  transition-duration: var(--ex-transition, 3.5s);
+  opacity: 0;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-artwork.is-on-top {
+  z-index: 2;
+}
+
+/* Target kanji — brief bookends within each exhibit */
+.exhibition-root.is-compounds-exhibition .exhibition-title {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  width: min(92vw, 40rem);
+  pointer-events: none;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-kanji {
+  font-family: var(--kml-font-kanji-main);
+  font-size: var(--kml-compounds-target);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: var(--kml-kanji-letter-spacing);
+  color: rgba(245, 240, 232, 0.98);
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.65),
+    0 0 32px rgba(0, 0, 0, 0.48);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--ex-compounds-fade, 1.4s) ease-in-out,
+    transform var(--ex-compounds-fade, 1.4s) ease-in-out;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-kanji.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-kanji.is-target-return {
+  font-size: calc(var(--kml-compounds-target) * 0.88);
+}
+
+/* Compound stack — true vertical center (override sequential verse overlap) */
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-notes {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92vw, 44rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  min-height: 100%;
+  z-index: 9;
+  pointer-events: none;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp,
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-en {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  width: 100%;
+  margin: 0;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  font-size: var(--kml-compounds-jp);
+  line-height: 1.2;
+  opacity: 0;
+  transition: opacity var(--ex-verse-fade, 1.4s) ease-in-out;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.is-visible {
+  opacity: 1;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-en {
+  padding: 0 clamp(0.75rem, 3vw, 1.5rem);
+  text-align: center;
+  font-family: var(--kml-font-heart-voice);
+  font-size: var(--kml-compounds-en);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: var(--kml-color-verse-en);
+  text-shadow: var(--kml-compounds-shadow-en);
+  opacity: 0;
+  transition: opacity var(--ex-compounds-en-fade, var(--ex-verse-fade, 1.4s)) ease-in-out;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-en.is-visible {
+  opacity: 1;
+}
+
+.exhibition-root.is-compounds-exhibition .kml-compound-jp {
+  display: block;
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: var(--kml-compounds-jp);
+  font-weight: 600;
+  line-height: 1.15;
+  color: rgba(255, 252, 245, 0.98);
+  text-shadow: var(--kml-compounds-shadow-jp);
+}
+
+.exhibition-root.is-compounds-exhibition .kml-compound-reading {
+  display: block;
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: var(--kml-compounds-reading);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: var(--kml-compounds-shadow-jp);
+  opacity: 0;
+  transition: opacity var(--ex-verse-fade, 1.4s) ease-in-out;
+}
+
+.exhibition-root.is-compounds-exhibition .kml-compound-reading.is-visible {
+  opacity: 1;
+}
+
+.exhibition-root.is-compounds-exhibition .kml-compound-hint {
+  display: block;
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: var(--kml-compounds-hint);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: rgba(235, 226, 210, 0.88);
+  text-shadow: var(--kml-compounds-shadow-jp);
+  opacity: 0;
+  transition: opacity var(--ex-verse-fade, 1.4s) ease-in-out;
+}
+
+.exhibition-root.is-compounds-exhibition .kml-compound-hint.is-visible {
+  opacity: 1;
+}
+
+/* Furigana — same gentle reveal as vocabulary */
+.exhibition-root.is-compounds-exhibition .exhibition-verse-jp.show-furigana ruby {
+  ruby-position: over;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-verse-jp.show-furigana ruby rt {
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: 0.46em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-shadow: var(--kml-compounds-shadow-jp);
+  transition: opacity var(--ex-furigana-fade, 2.2s) ease-in-out;
+}
+
+.exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.show-furigana.is-furigana-hidden
+  ruby
+  rt,
+.exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.show-furigana.is-furigana-entering
+  ruby
+  rt {
+  opacity: 0;
+}
+
+.exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.show-furigana:not(.is-furigana-hidden):not(.is-furigana-fading):not(
+    .is-furigana-entering
+  )
+  ruby
+  rt {
+  opacity: 1;
+}
+
+.exhibition-root.is-compounds-exhibition .exhibition-verse-jp.show-furigana.is-furigana-fading ruby rt {
+  opacity: 0;
+}

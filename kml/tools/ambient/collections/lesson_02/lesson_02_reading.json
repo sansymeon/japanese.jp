@@ -1,0 +1,389 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_02_reading",
+  "title": "Lesson 2 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/reading_v2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 2,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v2",
+    "soundtrackTarget": "12:41",
+    "soundtrackDurationSec": 760.97,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L02_prosperous",
+      "kanji": "昌",
+      "keyword": "prosperous",
+      "image": "studies/prosperous.png",
+      "verse": {
+        "jpHtml": "<ruby>湖<rt>みずうみ</rt></ruby><ruby>面<rt>めん</rt></ruby>に　<ruby>二<rt>ふた</rt></ruby>つの<ruby>日<rt>ひ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>並<rt>なら</rt></ruby>び<br><ruby>霧<rt>きり</rt></ruby>の<ruby>谷<rt>たに</rt></ruby>だけが　<ruby>光<rt>ひかり</rt></ruby>を<ruby>留<rt>と</rt></ruby>めていた",
+        "en": "Two suns rested quietly upon the lake,\nwhile only the misty valley held their light."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782104994
+    },
+    {
+      "id": "L02_chant",
+      "kanji": "唱",
+      "keyword": "chant",
+      "image": "studies/chant.png",
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby><ruby>暮<rt>ぐ</rt></ruby>れの<ruby>鐘<rt>しょう</rt></ruby><ruby>楼<rt>ろう</rt></ruby>に　<ruby>釣<rt>つ</rt></ruby>り<ruby>鐘<rt>がね</rt></ruby>が<ruby>吊<rt>つ</rt></ruby>る<br><ruby>静<rt>しず</rt></ruby>かな<ruby>光<rt>ひかり</rt></ruby>だけが　<ruby>声<rt>こえ</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>んでいた",
+        "en": "In the belfry at dusk the temple bell hung still,\nwhile only the quiet light wrapped around its voice."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782105152
+    },
+    {
+      "id": "L02_sparkle",
+      "kanji": "晶",
+      "keyword": "sparkle",
+      "image": "studies/sparkle.png",
+      "verse": {
+        "jpHtml": "<ruby>三<rt>みっ</rt></ruby>つの<ruby>水<rt>すい</rt></ruby><ruby>晶<rt>しょう</rt></ruby>が　<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>置<rt>お</rt></ruby>かれ<br><ruby>棱<rt>りょう</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>だけが　<ruby>森<rt>もり</rt></ruby>へ<ruby>溢<rt>あふ</rt></ruby>れていた",
+        "en": "Three crystals rested upon the wooden table,\nwhile only their faceted light spilled toward the forest."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782105217
+    },
+    {
+      "id": "L02_goods",
+      "kanji": "品",
+      "keyword": "goods",
+      "image": "studies/goods.png",
+      "verse": {
+        "jpHtml": "<ruby>三<rt>みっ</rt></ruby>つの<ruby>碗<rt>わん</rt></ruby>が　<ruby>重<rt>かさ</rt></ruby>ねて<ruby>置<rt>お</rt></ruby>かれ<br><ruby>障<rt>しょう</rt></ruby><ruby>子<rt>じ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>だけが　<ruby>金<rt>きん</rt></ruby>を<ruby>温<rt>あたた</rt></ruby>めていた",
+        "en": "Three bowls were stacked upon the table,\nwhile only the shoji light warmed their metal."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782105567
+    },
+    {
+      "id": "L02_spine",
+      "kanji": "呂",
+      "keyword": "spine",
+      "image": "studies/spine.png",
+      "verse": {
+        "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つの<ruby>碗<rt>わん</rt></ruby>が　<ruby>空<rt>くう</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>に<ruby>並<rt>なら</rt></ruby>び<br><ruby>縦<rt>たて</rt></ruby>の<ruby>隙<rt>すき</rt></ruby><ruby>間<rt>ま</rt></ruby>だけが　<ruby>姿<rt>すがた</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>えていた",
+        "en": "Two bowls aligned in midair one above the other,\nwhile only the vertical gap between them held their form."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782105581
+    },
+    {
+      "id": "L02_early",
+      "kanji": "早",
+      "keyword": "early",
+      "image": "studies/early.png",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>平<rt>へい</rt></ruby><ruby>原<rt>げん</rt></ruby>に　<ruby>一<rt>いっ</rt></ruby><ruby>本<rt>ぽん</rt></ruby>の<ruby>柱<rt>はしら</rt></ruby>が<ruby>立<rt>た</rt></ruby>ち<br><ruby>水<rt>みず</rt></ruby>の<ruby>十<rt>じゅう</rt></ruby><ruby>字<rt>じ</rt></ruby>だけが　<ruby>一<rt>いち</rt></ruby><ruby>日<rt>にち</rt></ruby>を<ruby>告<rt>つ</rt></ruby>げていた",
+        "en": "Upon the morning plain a single post stood tall,\nwhile only the cross of water heralded the day."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782107193
+    },
+    {
+      "id": "L02_rising_sun",
+      "kanji": "旭",
+      "keyword": "rising sun",
+      "image": "studies/rising_sun.png",
+      "verse": {
+        "jpHtml": "<ruby>山<rt>やま</rt></ruby>の<ruby>端<rt>は</rt></ruby>から　<ruby>朝<rt>あさ</rt></ruby><ruby>日<rt>ひ</rt></ruby>が<ruby>顔<rt>かお</rt></ruby>を<ruby>出<rt>だ</rt></ruby>し<br><ruby>池<rt>いけ</rt></ruby>の<ruby>柱<rt>はしら</rt></ruby>だけが　<ruby>影<rt>かげ</rt></ruby>を<ruby>留<rt>と</rt></ruby>めていた",
+        "en": "From behind the mountain's edge the sun appeared,\nwhile only the post in the pond kept its shadow."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782107209
+    },
+    {
+      "id": "L02_generation",
+      "kanji": "世",
+      "keyword": "generation",
+      "image": "studies/generation.png",
+      "verse": {
+        "jpHtml": "<ruby>幾<rt>いく</rt></ruby><ruby>世<rt>せ</rt></ruby><ruby>代<rt>だい</rt></ruby>も　<ruby>同<rt>おな</rt></ruby>じ<ruby>湖<rt>みずうみ</rt></ruby>を<ruby>照<rt>て</rt></ruby>らし<br><ruby>黄<rt>おう</rt></ruby><ruby>金<rt>ごん</rt></ruby>の<ruby>霧<rt>きり</rt></ruby>だけが　<ruby>岸<rt>きし</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>んでいた",
+        "en": "For countless generations the same lake was lit,\nwhile only the golden mist wrapped the shoreline."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782107836
+    },
+    {
+      "id": "L02_stomach",
+      "kanji": "胃",
+      "keyword": "stomach",
+      "image": "studies/stomach.png",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>に　<ruby>碗<rt>わん</rt></ruby>から<ruby>光<rt>ひかり</rt></ruby>が<ruby>溢<rt>あふ</rt></ruby>れ<br><ruby>夕<rt>ゆう</rt></ruby>の<ruby>山<rt>やま</rt></ruby>だけが　<ruby>窓<rt>まど</rt></ruby>の<ruby>外<rt>そと</rt></ruby>に<ruby>続<rt>つづ</rt></ruby>いた",
+        "en": "In the quiet room light overflowed from the bowl,\nwhile only the evening mountains continued beyond the window."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782107855
+    },
+    {
+      "id": "L02_dawn",
+      "kanji": "旦",
+      "keyword": "dawn",
+      "image": "studies/dawn.png",
+      "verse": {
+        "jpHtml": "<ruby>水<rt>すい</rt></ruby><ruby>平<rt>へい</rt></ruby><ruby>線<rt>せん</rt></ruby>から　<ruby>朝<rt>あさ</rt></ruby><ruby>日<rt>ひ</rt></ruby>が<ruby>顔<rt>かお</rt></ruby>を<ruby>出<rt>だ</rt></ruby>し<br><ruby>空<rt>そら</rt></ruby>の<ruby>余<rt>よ</rt></ruby><ruby>白<rt>はく</rt></ruby>だけが　<ruby>光<rt>ひかり</rt></ruby>を<ruby>迎<rt>むか</rt></ruby>えていた",
+        "en": "From the horizon the morning sun showed its face,\nwhile only the open sky welcomed the light."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782108026
+    },
+    {
+      "id": "L02_gallbladder",
+      "kanji": "胆",
+      "keyword": "gallbladder",
+      "image": "studies/gallbladder.png",
+      "verse": {
+        "jpHtml": "<ruby>碗<rt>わん</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に　<ruby>一<rt>いっ</rt></ruby><ruby>滴<rt>てき</rt></ruby>が<ruby>静<rt>し</rt></ruby><ruby>止<rt>し</rt></ruby>し<br><ruby>黄<rt>おう</rt></ruby><ruby>金<rt>ごん</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>だけが　<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>を<ruby>満<rt>み</rt></ruby>たしていた",
+        "en": "Above the bowl a single drop hung motionless,\nwhile only its golden light filled the room."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782108650
+    },
+    {
+      "id": "L02_span",
+      "kanji": "亘",
+      "keyword": "span",
+      "image": "studies/span.png",
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby>の<ruby>谷<rt>たに</rt></ruby><ruby>底<rt>そこ</rt></ruby>に　<ruby>川<rt>かわ</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きく<ruby>曲<rt>ま</rt></ruby>がり<br><ruby>光<rt>ひかり</rt></ruby>の<ruby>帯<rt>おび</rt></ruby>だけが　<ruby>山<rt>やま</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて<ruby>続<rt>つづ</rt></ruby>いた",
+        "en": "Through the evening valley the river curved wide,\nwhile only the band of light continued across the mountains."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782110820
+    },
+    {
+      "id": "L02_concave",
+      "kanji": "凹",
+      "keyword": "concave",
+      "image": "studies/concave.png",
+      "verse": {
+        "jpHtml": "<ruby>三<rt>み</rt></ruby><ruby>日<rt>か</rt></ruby><ruby>月<rt>づき</rt></ruby>の<ruby>碗<rt>わん</rt></ruby>が　<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>で<ruby>光<rt>ひか</rt></ruby>り<br><ruby>窓<rt>まど</rt></ruby>の<ruby>夕<rt>ゆう</rt></ruby><ruby>景<rt>け</rt></ruby>だけが　<ruby>窪<rt>くぼ</rt></ruby>みを<ruby>映<rt>うつ</rt></ruby>していた",
+        "en": "The crescent bowl glowed upon the wooden table,\nwhile only the sunset through the window mirrored its hollow."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782109354
+    },
+    {
+      "id": "L02_convex",
+      "kanji": "凸",
+      "keyword": "convex",
+      "image": "studies/convex.png",
+      "verse": {
+        "jpHtml": "<ruby>舟<rt>ふね</rt></ruby><ruby>形<rt>がた</rt></ruby>の<ruby>碗<rt>わん</rt></ruby>が　<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>で<ruby>膨<rt>ふく</rt></ruby>らみ<br><ruby>内<rt>うち</rt></ruby><ruby>側<rt>がわ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>だけが　<ruby>影<rt>かげ</rt></ruby>を<ruby>押<rt>お</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げた",
+        "en": "The boat-shaped bowl swelled upon the table,\nwhile only the light within pushed the shadow upward."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782112975
+    },
+    {
+      "id": "L02_olden_times",
+      "kanji": "旧",
+      "keyword": "olden times",
+      "image": "studies/olden_times.png",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>窓<rt>まど</rt></ruby><ruby>辺<rt>べ</rt></ruby>に　<ruby>夕<rt>ゆう</rt></ruby><ruby>日<rt>ひ</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<br><ruby>削<rt>けず</rt></ruby>れた<ruby>壁<rt>かべ</rt></ruby>だけが　<ruby>年<rt>とし</rt></ruby><ruby>月<rt>つき</rt></ruby>を<ruby>留<rt>と</rt></ruby>めていた",
+        "en": "Sunset light streamed through the aged window,\nwhile only the worn walls kept the passing years."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782112510
+    },
+    {
+      "id": "L02_oneself",
+      "kanji": "自",
+      "keyword": "oneself",
+      "image": "studies/oneself.png",
+      "verse": {
+        "jpHtml": "<ruby>窓<rt>まど</rt></ruby><ruby>辺<rt>べ</rt></ruby>の<ruby>台<rt>だい</rt></ruby>に　<ruby>光<rt>ひか</rt></ruby>る<ruby>球<rt>たま</rt></ruby>が<ruby>置<rt>お</rt></ruby>かれ<br><ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby>の<ruby>静<rt>しず</rt></ruby>けさだけが　<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>に<ruby>在<rt>あ</rt></ruby>った",
+        "en": "Upon the ledge by the window a glowing sphere rested,\nand only a solitary stillness remained in the room."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782111809
+    },
+    {
+      "id": "L02_white",
+      "kanji": "白",
+      "keyword": "white",
+      "image": "studies/white.png",
+      "verse": {
+        "jpHtml": "<ruby>白<rt>しろ</rt></ruby>い<ruby>花<rt>はな</rt></ruby><ruby>束<rt>たば</rt></ruby>が　<ruby>窓<rt>まど</rt></ruby><ruby>辺<rt>べ</rt></ruby>に<ruby>置<rt>お</rt></ruby>かれ<br><ruby>夕<rt>ゆう</rt></ruby><ruby>焼<rt>や</rt></ruby>けだけが　<ruby>花<rt>はな</rt></ruby>びらを<ruby>染<rt>そ</rt></ruby>めていた",
+        "en": "A bouquet of white flowers rested by the window,\nwhile only the sunset stained the petals."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782111954
+    },
+    {
+      "id": "L02_hundred",
+      "kanji": "百",
+      "keyword": "hundred",
+      "image": "studies/hundred.png",
+      "verse": {
+        "jpHtml": "<ruby>折<rt>おり</rt></ruby>り<ruby>紙<rt>がみ</rt></ruby>の<ruby>鶴<rt>つる</rt></ruby>が　<ruby>木<rt>き</rt></ruby>の<ruby>盆<rt>ぼん</rt></ruby>に<ruby>溢<rt>あふ</rt></ruby>れ<br><ruby>夕<rt>ゆう</rt></ruby><ruby>光<rt>こう</rt></ruby>だけが　<ruby>百<rt>ひゃく</rt></ruby>の<ruby>翼<rt>つばさ</rt></ruby>を<ruby>照<rt>て</rt></ruby>らした",
+        "en": "Origami cranes overflowed the wooden tray,\nwhile only the evening light lit a hundred wings."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782112460
+    },
+    {
+      "id": "L02_middle",
+      "kanji": "中",
+      "keyword": "middle",
+      "image": "studies/middle.png",
+      "verse": {
+        "jpHtml": "<ruby>光<rt>ひか</rt></ruby>る<ruby>球<rt>たま</rt></ruby>の　<ruby>中<rt>ちゅう</rt></ruby><ruby>央<rt>おう</rt></ruby>を<ruby>光<rt>ひかり</rt></ruby>が<ruby>貫<rt>つら</rt></ruby>き<br><ruby>縦<rt>たて</rt></ruby>の<ruby>筋<rt>すじ</rt></ruby>だけが　<ruby>静<rt>しず</rt></ruby>けさを<ruby>留<rt>と</rt></ruby>めていた",
+        "en": "Light passed through the center of the glowing sphere,\nwhile only a vertical line held the stillness."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782112289
+    },
+    {
+      "id": "L02_thousand",
+      "kanji": "千",
+      "keyword": "thousand",
+      "image": "studies/thousand.png",
+      "verse": {
+        "jpHtml": "<ruby>廊<rt>ろう</rt></ruby><ruby>下<rt>か</rt></ruby>の<ruby>天<rt>てん</rt></ruby><ruby>井<rt>じょう</rt></ruby>に　<ruby>千<rt>せん</rt></ruby>の<ruby>鶴<rt>つる</rt></ruby>が<ruby>吊<rt>つ</rt></ruby>る<br><ruby>尽<rt>つ</rt></ruby>きぬ<ruby>光<rt>ひかり</rt></ruby>だけが　<ruby>奥<rt>おく</rt></ruby>へ<ruby>続<rt>つづ</rt></ruby>いていた",
+        "en": "From the corridor ceiling a thousand cranes hung down,\nwhile only the endless light continued toward the back."
+      },
+      "meta": {
+        "lesson": 2,
+        "experimental": true
+      },
+      "imageRev": 1782112481
+    }
+  ]
+}

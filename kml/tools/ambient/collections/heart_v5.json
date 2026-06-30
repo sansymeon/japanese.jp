@@ -3,7 +3,7 @@
   "assetsBase": "../../assets",
   "id": "heart_v5",
   "title": "Digital Art Exhibition – Heart 心・㣺・忄 (v5)",
-  "notes": "Gold foil lesson_32.png marks gallery entrance and exit. Flute intro holds on hero until audio ends; main soundtrack plays through 44 exhibits (~96 min). Closing hero holds until soundtrack ends, extra beat on closing hero, then silent hold and fade to black.",
+  "notes": "Gold foil lesson_32.png marks gallery entrance and exit. Flute intro holds on hero until audio ends; main soundtrack plays through 44 exhibits (~96 min). Closing hero holds until soundtrack ends, extra beat on closing hero, then silent hold and fade to black. Exhibits 42–43: invariably (必) and honey (蜜) replace angry and suspicious.",
   "soundtrack": {
     "main": "audio/ambient_kanji_exhibition.mp3"
   },
@@ -29,12 +29,12 @@
     "verseJpRevealMs": 6500,
     "verseEnDelayMs": 9000,
     "verseEnFadeMs": 5500,
-    "reflectionHoldMs": 12000,
+    "reflectionHoldMs": 11000,
     "versesFadeMs": 5500,
-    "essenceKanjiRevealMs": 2500,
-    "essenceHoldMs": 0,
+    "essenceKanjiRevealMs": 7000,
+    "essenceHoldMs": 12000,
     "imageExhaleFadeMs": 16000,
-    "kanjiAloneHoldMs": 9000,
+    "kanjiAloneHoldMs": 0,
     "kanjiExhaleFadeMs": 20000,
     "blackHoldMs": 3500,
     "kenBurnsDurationMs": 300000,
@@ -45,14 +45,21 @@
     "closingRevealMs": 9000,
     "closingHoldMs": 0,
     "closingExhaleMs": 20000,
-    "closingBlackAfterMs": 3000,
+    "closingBlackAfterMs": 1000,
+    "imageHandoffExhaleMs": 20000,
+    "imageHandoffArrivalMs": 18000,
+    "kanjiBridgeFadeMs": 10000,
+    "finalKanjiAloneHoldMs": 6000,
+    "kanjiHandoffFadeMs": 10000,
     "openingFluteMs": 16000,
     "openingBlackAfterMs": 0,
     "closingBlackBeforeMs": 4500,
-    "closingPostSoundtrackHoldMs": 1000,
-    "closingSilenceHoldMs": 6000,
+    "closingPostSoundtrackHoldMs": 0,
+    "closingSilenceHoldMs": 0,
     "closingFadeToBlackMs": 13000,
-    "exhibitBlackHoldMs": 0
+    "exhibitBlackHoldMs": 0,
+    "seamlessExhibitHandoff": true,
+    "exhibitTransitionMs": 18000
   },
   "display": {
     "loop": false,
@@ -60,7 +67,8 @@
     "fixedKanji": true,
     "showKeyword": true,
     "verseMode": "sequential",
-    "typography": "mobile-refine"
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations"
   },
   "meta": {
     "theme": "heart",
@@ -87,7 +95,7 @@
     "presentation": "exhibition",
     "fixedKanji": true,
     "bookendArtwork": "bookends/lesson_32.png",
-    "sceneOrder": "愛 first after opening; 心 exhibit at index 43"
+    "sceneOrder": "愛 first after opening; 心 exhibit at index 43; invariably/honey at 42–43"
   },
   "scenes": [
     {
@@ -101,7 +109,10 @@
       "verse": {
         "jpHtml": "<ruby>愛<rt>あい</rt></ruby>は<ruby>強<rt>つよ</rt></ruby>さではなく、<br>    <ruby>誰<rt>だれ</rt></ruby>かを<ruby>抱<rt>だ</rt></ruby>く<ruby>静<rt>しず</rt></ruby>かな<ruby>力<rt>ちから</rt></ruby>だった。",
         "en": "Love was not strength,\nbut the quiet power to hold another close."
-      }
+      },
+      "imageRev": 1780895276,
+      "imageScale": 0.74,
+      "imageFocus": "50% 48%"
     },
     {
       "id": "L33_forget",
@@ -114,7 +125,8 @@
       "verse": {
         "jpHtml": "<ruby>忘<rt>わす</rt></ruby>れられたのではなく<br>    <ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうへ　<ruby>溶<rt>と</rt></ruby>けていった",
         "en": "Not lost from memory—\nsimply dissolved into the mist."
-      }
+      },
+      "imageRev": 1782137665
     },
     {
       "id": "L33_selfish",
@@ -127,7 +139,8 @@
       "verse": {
         "jpHtml": "<ruby>港<rt>みなと</rt></ruby>を<ruby>離<rt>はな</rt></ruby>れた<ruby>舟<rt>ふね</rt></ruby>は<br>    まだ<ruby>知<rt>し</rt></ruby>らぬ<ruby>空<rt>そら</rt></ruby>を<ruby>選<rt>えら</rt></ruby>んだ",
         "en": "The boat left the harbor\nand chose an unknown sky."
-      }
+      },
+      "imageRev": 1782137690
     },
     {
       "id": "L33_endure_silently",
@@ -140,7 +153,8 @@
       "verse": {
         "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける<ruby>石灯籠<rt>いしどうろう</rt></ruby>は<br>    <ruby>何<rt>なに</rt></ruby>も<ruby>語<rt>かた</rt></ruby>らず　<ruby>冬<rt>ふゆ</rt></ruby>を<ruby>越<rt>こ</rt></ruby>える",
         "en": "The stone lantern bears the snow\nand passes through winter without complaint."
-      }
+      },
+      "imageRev": 1782137762
     },
     {
       "id": "L33_mourning",
@@ -153,7 +167,8 @@
       "verse": {
         "jpHtml": "<ruby>空<rt>あ</rt></ruby>いた<ruby>椅子<rt>いす</rt></ruby>のそばで<br>    <ruby>夕暮<rt>ゆうぐ</rt></ruby>れだけが<ruby>残<rt>のこ</rt></ruby>っていた",
         "en": "Beside the empty chair\nonly evening remained."
-      }
+      },
+      "imageRev": 1782137829
     },
     {
       "id": "L33_intention",
@@ -166,7 +181,8 @@
       "verse": {
         "jpHtml": "<ruby>雲<rt>くも</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>は<ruby>見<rt>み</rt></ruby>えなくても<br>    <ruby>足<rt>あし</rt></ruby>は<ruby>上<rt>のぼ</rt></ruby>る<ruby>方<rt>ほう</rt></ruby>を<ruby>知<rt>し</rt></ruby>っている",
         "en": "Though the summit cannot be seen,\nthe feet know which way is upward."
-      }
+      },
+      "imageRev": 1782137860
     },
     {
       "id": "L33_core",
@@ -179,7 +195,8 @@
       "verse": {
         "jpHtml": "<ruby>寒<rt>さむ</rt></ruby>さの<ruby>中<rt>なか</rt></ruby>で<ruby>咲<rt>さ</rt></ruby>く<ruby>梅<rt>うめ</rt></ruby>は<br>    <ruby>見<rt>み</rt></ruby>えない<ruby>強<rt>つよ</rt></ruby>さを<ruby>抱<rt>だ</rt></ruby>いている",
         "en": "The winter plum blossom\nholds a strength unseen."
-      }
+      },
+      "imageRev": 1782137907
     },
     {
       "id": "L33_loyalty",
@@ -192,7 +209,8 @@
       "verse": {
         "jpHtml": "<ruby>嵐<rt>あらし</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えた<ruby>鳥居<rt>とりい</rt></ruby>は<br>    <ruby>今<rt>いま</rt></ruby>もそこに<ruby>立<rt>た</rt></ruby>っている",
         "en": "The shrine gate survived the storms\nand still stands where it always has."
-      }
+      },
+      "imageRev": 1782137928
     },
     {
       "id": "L33_afflicted",
@@ -205,7 +223,8 @@
       "verse": {
         "jpHtml": "<ruby>雨粒<rt>あまつぶ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうで<br>    <ruby>街<rt>まち</rt></ruby>の<ruby>灯<rt>ひ</rt></ruby>が<ruby>滲<rt>にじ</rt></ruby>んでいた",
         "en": "Beyond the rain-streaked glass\nthe city lights blurred softly."
-      }
+      },
+      "imageRev": 1782137955
     },
     {
       "id": "L33_think",
@@ -218,7 +237,8 @@
       "verse": {
         "jpHtml": "<ruby>言葉<rt>ことば</rt></ruby>になる<ruby>前<rt>まえ</rt></ruby>に<br>    <ruby>海<rt>うみ</rt></ruby>はすでに<ruby>答<rt>こた</rt></ruby>えていた",
         "en": "Before thought became words,\nthe sea had already answered."
-      }
+      },
+      "imageRev": 1782138052
     },
     {
       "id": "L33_grace",
@@ -231,7 +251,8 @@
       "verse": {
         "jpHtml": "<ruby>森<rt>もり</rt></ruby>を<ruby>抜<rt>ぬ</rt></ruby>けた<ruby>光<rt>ひかり</rt></ruby>が<br>    <ruby>理由<rt>りゆう</rt></ruby>もなく<ruby>道<rt>みち</rt></ruby>を<ruby>照<rt>て</rt></ruby>らした",
         "en": "Light passed through the forest\nand illuminated the path for no reason at all."
-      }
+      },
+      "imageRev": 1782138073
     },
     {
       "id": "L33_respond",
@@ -244,7 +265,8 @@
       "verse": {
         "jpHtml": "<ruby>鐘<rt>かね</rt></ruby>の<ruby>響<rt>ひび</rt></ruby>きは<ruby>消<rt>き</rt></ruby>えても<br>    <ruby>波紋<rt>はもん</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>がり<ruby>続<rt>つづ</rt></ruby>ける",
         "en": "Though the bell's sound fades,\nthe ripples continue outward."
-      }
+      },
+      "imageRev": 1782138096
     },
     {
       "id": "L33_idea",
@@ -257,7 +279,8 @@
       "verse": {
         "jpHtml": "<ruby>白紙<rt>はくし</rt></ruby>の<ruby>静<rt>しず</rt></ruby>けさに<br>    <ruby>最初<rt>さいしょ</rt></ruby>の<ruby>一線<rt>いっせん</rt></ruby>が<ruby>生<rt>う</rt></ruby>まれた",
         "en": "Upon the silence of blank paper\nthe first line was born."
-      }
+      },
+      "imageRev": 1782138116
     },
     {
       "id": "L33_concept",
@@ -270,7 +293,8 @@
       "verse": {
         "jpHtml": "ひとつの<ruby>月<rt>つき</rt></ruby>なのに<br>    <ruby>水面<rt>みなも</rt></ruby>ごとに<ruby>姿<rt>すがた</rt></ruby>を<ruby>変<rt>か</rt></ruby>えていた",
         "en": "Though there is only one moon,\nevery pool reflects it differently."
-      }
+      },
+      "imageRev": 1782138157
     },
     {
       "id": "L33_breath",
@@ -283,7 +307,8 @@
       "verse": {
         "jpHtml": "<ruby>松<rt>まつ</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>を<ruby>流<rt>なが</rt></ruby>れる<ruby>霧<rt>きり</rt></ruby>は<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>呼吸<rt>こきゅう</rt></ruby>のようだった",
         "en": "The mist drifting through the pines\nfelt like a quiet breath."
-      }
+      },
+      "imageRev": 1782138179
     },
     {
       "id": "L33_recess",
@@ -296,7 +321,8 @@
       "verse": {
         "jpHtml": "<ruby>座<rt>すわ</rt></ruby>る<ruby>人<rt>ひと</rt></ruby>がいなくても<br>    <ruby>木陰<rt>こかげ</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みを<ruby>知<rt>し</rt></ruby>っている",
         "en": "Even with no one seated there,\nthe shade understands rest."
-      }
+      },
+      "imageRev": 1782138234
     },
     {
       "id": "L33_favor",
@@ -309,7 +335,8 @@
       "verse": {
         "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>降<rt>ふ</rt></ruby>り<br>    <ruby>庭<rt>にわ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>った",
         "en": "The rain fell quietly,\nand the garden quietly received it."
-      }
+      },
+      "imageRev": 1782138253
     },
     {
       "id": "L34_fear",
@@ -322,7 +349,8 @@
       "verse": {
         "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>橋<rt>はし</rt></ruby>は<br>    <ruby>向<rt>む</rt></ruby>こう<ruby>岸<rt>ぎし</rt></ruby>を<ruby>隠<rt>かく</rt></ruby>したまま<br>    <ruby>一歩<rt>いっぽ</rt></ruby>だけが　<ruby>確<rt>たし</rt></ruby>かな<ruby>道<rt>みち</rt></ruby>",
         "en": "The bridge of mist\nhides the far shore from sight—\nonly the next step is certain."
-      }
+      },
+      "imageRev": 1782138286
     },
     {
       "id": "L34_beguile",
@@ -335,7 +363,8 @@
       "verse": {
         "jpHtml": "<ruby>灯<rt>あかり</rt></ruby>は<ruby>水面<rt>みなも</rt></ruby>に<ruby>増<rt>ふ</rt></ruby>え<br>    どれが<ruby>本当<rt>ほんとう</rt></ruby>か<ruby>分<rt>わ</rt></ruby>からない<br>    <ruby>波紋<rt>はもん</rt></ruby>だけが　<ruby>答<rt>こた</rt></ruby>えを<ruby>揺<rt>ゆ</rt></ruby>らす",
         "en": "The lanterns multiply upon the water.\nNo one can tell which is real.\nOnly the ripples disturb the answer."
-      }
+      },
+      "imageRev": 1782138305
     },
     {
       "id": "L34_feeling",
@@ -348,7 +377,8 @@
       "verse": {
         "jpHtml": "<ruby>草<rt>くさ</rt></ruby>の<ruby>穂<rt>ほ</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れた<ruby>指<rt>ゆび</rt></ruby>が<br>    <ruby>言葉<rt>ことば</rt></ruby>にならない<ruby>何<rt>なに</rt></ruby>かを<ruby>知<rt>し</rt></ruby>る<br>    <ruby>夕暮<rt>ゆうぐ</rt></ruby>れは<ruby>静<rt>しず</rt></ruby>かに<ruby>頷<rt>うなず</rt></ruby>いた",
         "en": "Fingers brush the grass.\nSomething beyond words is understood.\nTwilight quietly nods."
-      }
+      },
+      "imageRev": 1782138326
     },
     {
       "id": "L34_melancholy",
@@ -361,7 +391,8 @@
       "verse": {
         "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>筋<rt>すじ</rt></ruby>が<ruby>窓<rt>まど</rt></ruby>を<ruby>流<rt>なが</rt></ruby>れ<br>    <ruby>遠<rt>とお</rt></ruby>い<ruby>山<rt>やま</rt></ruby>は<ruby>霞<rt>かす</rt></ruby>んで<ruby>消<rt>き</rt></ruby>える<br>    <ruby>心<rt>こころ</rt></ruby>だけが　そこに<ruby>残<rt>のこ</rt></ruby>った",
         "en": "Rain traces the window.\nThe distant mountain fades into haze.\nOnly the heart remains."
-      }
+      },
+      "imageRev": 1782138351
     },
     {
       "id": "L34_busy",
@@ -374,7 +405,8 @@
       "verse": {
         "jpHtml": "<ruby>祈<rt>いの</rt></ruby>りの<ruby>帯<rt>おび</rt></ruby>は<ruby>風<rt>かぜ</rt></ruby>に<ruby>踊<rt>おど</rt></ruby>り<br>    あちらこちらへ<ruby>走<rt>はし</rt></ruby>り<ruby>続<rt>つづ</rt></ruby>ける<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>中心<rt>ちゅうしん</rt></ruby>は<ruby>見<rt>み</rt></ruby>えなかった",
         "en": "Prayer ribbons dance in the wind,\nrushing in every direction.\nNo still center can be found."
-      }
+      },
+      "imageRev": 1782138411
     },
     {
       "id": "L34_ecstasy",
@@ -387,7 +419,8 @@
       "verse": {
         "jpHtml": "<ruby>朝日<rt>あさひ</rt></ruby>が<ruby>鳥居<rt>とりい</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れた<ruby>瞬間<rt>しゅんかん</rt></ruby><br>    <ruby>石畳<rt>いしだたみ</rt></ruby>は<ruby>金色<rt>きんいろ</rt></ruby>に<ruby>変<rt>か</rt></ruby>わる<br>    <ruby>喜<rt>よろこ</rt></ruby>びは<ruby>声<rt>こえ</rt></ruby>を<ruby>持<rt>も</rt></ruby>たない",
         "en": "The first sunlight touches the gate.\nStone becomes gold.\nJoy arrives without a sound."
-      }
+      },
+      "imageRev": 1782138430
     },
     {
       "id": "L34_constancy",
@@ -400,7 +433,8 @@
       "verse": {
         "jpHtml": "<ruby>磨<rt>みが</rt></ruby>かれた<ruby>石段<rt>いしだん</rt></ruby>は<br>    <ruby>数<rt>かぞ</rt></ruby>えきれない<ruby>足跡<rt>あしあと</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えている<br>    <ruby>霧<rt>きり</rt></ruby>だけが<ruby>昔<rt>むかし</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じだった",
         "en": "The worn stone steps\nremember countless footsteps.\nThe mist remains unchanged."
-      }
+      },
+      "imageRev": 1782138462
     },
     {
       "id": "L34_lament",
@@ -413,7 +447,8 @@
       "verse": {
         "jpHtml": "<ruby>白<rt>しろ</rt></ruby>い<ruby>花<rt>はな</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>を<ruby>受<rt>う</rt></ruby>け<br>    <ruby>名<rt>な</rt></ruby>もない<ruby>祈<rt>いの</rt></ruby>りを<ruby>捧<rt>ささ</rt></ruby>げている<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>悲<rt>かな</rt></ruby>しみは<ruby>美<rt>うつく</rt></ruby>しい",
         "en": "White flowers gather rain,\noffering an unnamed prayer.\nQuiet grief holds beauty."
-      }
+      },
+      "imageRev": 1782138482
     },
     {
       "id": "L34_enlightenment",
@@ -426,7 +461,8 @@
       "verse": {
         "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに<ruby>光<rt>ひかり</rt></ruby>が<ruby>現<rt>あらわ</rt></ruby>れ<br>    <ruby>道<rt>みち</rt></ruby>は<ruby>突然<rt>とつぜん</rt></ruby>はっきりした<br>    <ruby>迷<rt>まよ</rt></ruby>いは<ruby>朝<rt>あさ</rt></ruby>へ<ruby>溶<rt>と</rt></ruby>けてゆく",
         "en": "Beyond the mist a light appears.\nThe path suddenly becomes clear.\nConfusion melts into morning."
-      }
+      },
+      "imageRev": 1782138499
     },
     {
       "id": "L34_dreadful",
@@ -439,7 +475,8 @@
       "verse": {
         "jpHtml": "<ruby>断崖<rt>だんがい</rt></ruby>の<ruby>下<rt>した</rt></ruby>で<ruby>波<rt>なみ</rt></ruby>が<ruby>砕<rt>くだ</rt></ruby>ける<br>    <ruby>見<rt>み</rt></ruby>えない<ruby>深<rt>ふか</rt></ruby>さが<ruby>口<rt>くち</rt></ruby>を<ruby>開<rt>あ</rt></ruby>ける<br>    <ruby>海<rt>うみ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>も<ruby>語<rt>かた</rt></ruby>らない",
         "en": "Waves break beneath the cliffs.\nInvisible depths open below.\nThe sea says nothing."
-      }
+      },
+      "imageRev": 1782138523
     },
     {
       "id": "L34_disconcerted",
@@ -452,7 +489,8 @@
       "verse": {
         "jpHtml": "<ruby>紙<rt>かみ</rt></ruby>は<ruby>風<rt>かぜ</rt></ruby>に<ruby>奪<rt>うば</rt></ruby>われ<br>    <ruby>整<rt>ととの</rt></ruby>っていた<ruby>形<rt>かたち</rt></ruby>は<ruby>崩<rt>くず</rt></ruby>れてゆく<br>    <ruby>空<rt>そら</rt></ruby>まで<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>かなかった",
         "en": "The papers are seized by the wind.\nOrder scatters apart.\nEven the sky seems unsettled."
-      }
+      },
+      "imageRev": 1782138540
     },
     {
       "id": "L34_repent",
@@ -465,7 +503,8 @@
       "verse": {
         "jpHtml": "<ruby>足跡<rt>あしあと</rt></ruby>は<ruby>波<rt>なみ</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れられ<br>    <ruby>少<rt>すこ</rt></ruby>しずつ<ruby>消<rt>き</rt></ruby>えてゆく<br>    <ruby>海<rt>うみ</rt></ruby>は<ruby>責<rt>せ</rt></ruby>めずに<ruby>赦<rt>ゆる</rt></ruby>していた",
         "en": "The tide reaches the footprints,\nslowly erasing each one.\nThe sea forgives without accusation."
-      }
+      },
+      "imageRev": 1782138558
     },
     {
       "id": "L34_hate",
@@ -478,7 +517,8 @@
       "verse": {
         "jpHtml": "<ruby>割<rt>わ</rt></ruby>れた<ruby>鏡<rt>かがみ</rt></ruby>は<br>    <ruby>光<rt>ひかり</rt></ruby>を<ruby>細<rt>こま</rt></ruby>かく<ruby>裂<rt>さ</rt></ruby>いてしまう<br>    <ruby>一<rt>ひと</rt></ruby>つだったものが<ruby>遠<rt>とお</rt></ruby>くなる",
         "en": "The broken mirror\nsplits the light into fragments.\nWhat was one becomes distant."
-      }
+      },
+      "imageRev": 1782138581
     },
     {
       "id": "L34_accustomed",
@@ -491,7 +531,8 @@
       "verse": {
         "jpHtml": "いつもの<ruby>道<rt>みち</rt></ruby>は<br>    <ruby>考<rt>かんが</rt></ruby>えなくても<ruby>足<rt>あし</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>ぶ<br>    <ruby>森<rt>もり</rt></ruby>が<ruby>名前<rt>なまえ</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えていた",
         "en": "The familiar path\nguides the feet without thought.\nThe forest remembers your name."
-      }
+      },
+      "imageRev": 1782138601
     },
     {
       "id": "L34_pleasure",
@@ -504,7 +545,8 @@
       "verse": {
         "jpHtml": "<ruby>湯気<rt>ゆげ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>昇<rt>のぼ</rt></ruby>り<br>    <ruby>雨<rt>あめ</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>くで<ruby>歌<rt>うた</rt></ruby>っている<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>幸<rt>しあわ</rt></ruby>せで<ruby>十分<rt>じゅうぶん</rt></ruby>だった",
         "en": "Steam rises quietly.\nRain sings in the distance.\nA small happiness is enough."
-      }
+      },
+      "imageRev": 1782138637
     },
     {
       "id": "L34_lazy",
@@ -517,7 +559,8 @@
       "verse": {
         "jpHtml": "<ruby>舟<rt>ふね</rt></ruby>は<ruby>葦<rt>あし</rt></ruby>のそばを<ruby>漂<rt>ただよ</rt></ruby>い<br>    どこへも<ruby>向<rt>む</rt></ruby>かわない<br>    <ruby>水面<rt>みなも</rt></ruby>だけが<ruby>時<rt>とき</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>んでいた",
         "en": "The boat drifts beside the reeds,\nheading nowhere at all.\nOnly the water carries time."
-      }
+      },
+      "imageRev": 1782138658
     },
     {
       "id": "L34_humility",
@@ -530,7 +573,8 @@
       "verse": {
         "jpHtml": "<ruby>石灯籠<rt>いしどうろう</rt></ruby>は<ruby>苔<rt>こけ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>立<rt>た</rt></ruby>ち<br>    <ruby>自分<rt>じぶん</rt></ruby>を<ruby>誇<rt>ほこ</rt></ruby>ることはない<br>    <ruby>静<rt>しず</rt></ruby>けさがその<ruby>美<rt>うつく</rt></ruby>しさだった",
         "en": "The stone lantern stands among moss,\nnever boasting of itself.\nIts beauty is quietness."
-      }
+      },
+      "imageRev": 1782138679
     },
     {
       "id": "L34_remorse",
@@ -543,7 +587,8 @@
       "verse": {
         "jpHtml": "<ruby>落<rt>お</rt></ruby>ちた<ruby>花<rt>はな</rt></ruby>は<ruby>石<rt>いし</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>り<br>    <ruby>過<rt>す</rt></ruby>ぎた<ruby>春<rt>はる</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>している<br>    <ruby>惜<rt>お</rt></ruby>しさだけが<ruby>風<rt>かぜ</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れた",
         "en": "A fallen blossom rests on stone,\nreflecting a spring now gone.\nOnly longing moves with the wind."
-      }
+      },
+      "imageRev": 1782138699
     },
     {
       "id": "L34_recollection",
@@ -556,7 +601,8 @@
       "verse": {
         "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>浜辺<rt>はまべ</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る<ruby>足跡<rt>あしあと</rt></ruby>は<br>    <ruby>遠<rt>とお</rt></ruby>い<ruby>朝<rt>あさ</rt></ruby>へ<ruby>続<rt>つづ</rt></ruby>いていた<br>    <ruby>記憶<rt>きおく</rt></ruby>は<ruby>波<rt>なみ</rt></ruby>のように<ruby>帰<rt>かえ</rt></ruby>ってくる",
         "en": "The footprints remain upon the misty shore,\nleading toward a distant morning.\nMemory returns like the sea."
-      }
+      },
+      "imageRev": 1782138718
     },
     {
       "id": "L35_disquieting",
@@ -569,7 +615,8 @@
       "verse": {
         "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに　<ruby>何<rt>なに</rt></ruby>も<ruby>見<rt>み</rt></ruby>えず<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>水<rt>みず</rt></ruby>だけが　<ruby>広<rt>ひろ</rt></ruby>がっていた",
         "en": "Beyond the mist, nothing could be seen.\nOnly still water stretched outward."
-      }
+      },
+      "imageRev": 1782138750
     },
     {
       "id": "L35_desire",
@@ -582,7 +629,8 @@
       "verse": {
         "jpHtml": "<ruby>遠<rt>とお</rt></ruby>い<ruby>灯<rt>あか</rt></ruby>りが　<ruby>水面<rt>みなも</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れ<br>    <ruby>届<rt>とど</rt></ruby>かぬ<ruby>美<rt>うつく</rt></ruby>しさが　<ruby>胸<rt>むね</rt></ruby>を<ruby>照<rt>て</rt></ruby>らした",
         "en": "A distant lantern trembled upon the water.\nAn unreachable beauty illuminated the heart."
-      }
+      },
+      "imageRev": 1782139831
     },
     {
       "id": "L35_long_for",
@@ -595,7 +643,8 @@
       "verse": {
         "jpHtml": "<ruby>霞<rt>かす</rt></ruby>む<ruby>山寺<rt>やまでら</rt></ruby>に　<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>触<rt>ふ</rt></ruby>れ<br>    <ruby>願<rt>ねが</rt></ruby>いではなく　<ruby>姿<rt>すがた</rt></ruby>が<ruby>見<rt>み</rt></ruby>えた",
         "en": "Morning light touched the distant temple.\nNot a wish, but a vision appeared."
-      }
+      },
+      "imageRev": 1782138776
     },
     {
       "id": "L35_pining",
@@ -608,7 +657,8 @@
       "verse": {
         "jpHtml": "<ruby>誰<rt>だれ</rt></ruby>も<ruby>座<rt>すわ</rt></ruby>らぬ<ruby>椅子<rt>いす</rt></ruby>に<br>    <ruby>落<rt>お</rt></ruby>ち<ruby>葉<rt>ば</rt></ruby>だけが　<ruby>静<rt>しず</rt></ruby>かに<ruby>集<rt>あつ</rt></ruby>まった",
         "en": "Leaves gathered quietly\naround a chair no one occupied."
-      }
+      },
+      "imageRev": 1782138798
     },
     {
       "id": "L35_annexed",
@@ -621,33 +671,36 @@
       "verse": {
         "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>流<rt>なが</rt></ruby>れが　<ruby>川<rt>かわ</rt></ruby>へ<ruby>溶<rt>と</rt></ruby>け<ruby>込<rt>こ</rt></ruby>み<br>    <ruby>別々<rt>べつべつ</rt></ruby>だった<ruby>歌<rt>うた</rt></ruby>が　<ruby>一<rt>ひと</rt></ruby>つになった",
         "en": "A small stream merged into the river.\nTwo separate songs became one."
-      }
+      },
+      "imageRev": 1782138823
     },
     {
-      "id": "L38_angry",
-      "lesson": 38,
-      "kanji": "怒",
-      "keyword": "angry",
-      "heartPart": "心",
-      "image": "studies/angry.png",
+      "id": "L35_invariably",
+      "lesson": 35,
+      "kanji": "必",
+      "keyword": "invariably",
+      "heartPart": "必",
+      "image": "studies/invariably.png",
       "video": null,
       "verse": {
-        "jpHtml": "<ruby>怒<rt>いか</rt></ruby>りの<ruby>雲<rt>くも</rt></ruby>は<ruby>過<rt>す</rt></ruby>ぎ<ruby>去<rt>さ</rt></ruby>り、<br>    <ruby>夕焼<rt>ゆうや</rt></ruby>けだけが<ruby>残<rt>のこ</rt></ruby>っていた。",
-        "en": "The storm of anger passed,\nand only the sunset remained."
-      }
+        "jpHtml": "<ruby>道<rt>みち</rt></ruby>は<ruby>皆<rt>みな</rt></ruby>　<ruby>石<rt>いし</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>り<br>    <ruby>避<rt>さ</rt></ruby>けることのできぬ　<ruby>一歩<rt>いっぽ</rt></ruby>となった",
+        "en": "Every path crossed the stone.\nIt became the step that could not be avoided."
+      },
+      "imageRev": 1782138843
     },
     {
-      "id": "L39_suspicious",
-      "lesson": 39,
-      "kanji": "怪",
-      "keyword": "suspicious",
-      "heartPart": "忄",
-      "image": "studies/suspicious.png",
+      "id": "L42_honey",
+      "lesson": 42,
+      "kanji": "蜜",
+      "keyword": "honey",
+      "heartPart": "蜜",
+      "image": "studies/honey.png",
       "video": null,
       "verse": {
-        "jpHtml": "<ruby>怪<rt>あや</rt></ruby>しい<ruby>影<rt>かげ</rt></ruby>が<ruby>月明<rt>つきあ</rt></ruby>かりを<ruby>横切<rt>よこぎ</rt></ruby>り、<br>    <ruby>夜<rt>よる</rt></ruby>はさらに<ruby>深<rt>ふか</rt></ruby>くなった。",
-        "en": "A suspicious shadow crossed the moonlight,\nand the night grew deeper."
-      }
+        "jpHtml": "<ruby>隠<rt>かく</rt></ruby>された<ruby>甘<rt>あま</rt></ruby>さほど、<br>    <ruby>忘<rt>わす</rt></ruby>れがたいものはない。",
+        "en": "Nothing is remembered longer\nthan sweetness once hidden."
+      },
+      "imageRev": 1781493023
     },
     {
       "id": "L32_heart",
@@ -660,7 +713,8 @@
       "verse": {
         "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>湖<rt>みずうみ</rt></ruby>に<br>    <ruby>紅<rt>くれない</rt></ruby>の<ruby>葉<rt>は</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かぶ<br>    すべての<ruby>旅<rt>たび</rt></ruby>は<br>    ここで<ruby>静<rt>しず</rt></ruby>かに<ruby>沈<rt>しず</rt></ruby>む",
         "en": "Upon the quiet lake\nfloated a crimson leaf.\nEvery journey\ncame gently to rest here."
-      }
+      },
+      "imageRev": 1782137627
     }
   ]
 }

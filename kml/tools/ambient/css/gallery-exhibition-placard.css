@@ -88,9 +88,9 @@ html.kml-typography-placard.kml-verse-sequential .exhibition-verse-en {
   transition: opacity var(--ex-verse-fade, 1s) ease-in-out;
 }
 
-/* Japanese Reflections — keyword hidden; kanji shown as brief reference */
-.exhibition-root.is-japanese-reflections .exhibition-keyword,
-.exhibition-root.is-image-verse .exhibition-keyword {
+/* Japanese Reflections placard — keyword hidden; kanji shown as brief reference */
+html.kml-typography-placard .exhibition-root.is-japanese-reflections .exhibition-keyword,
+html.kml-typography-placard .exhibition-root.is-image-verse .exhibition-keyword {
   display: none !important;
 }
 
@@ -146,16 +146,39 @@ html.kml-typography-placard.kml-verse-sequential .exhibition-root.is-image-verse
   transition: opacity var(--ex-transition, 4s) ease-in-out;
 }
 
-.exhibition-root.is-japanese-reflections .exhibition-artwork.is-exhaling,
-.exhibition-root.is-image-verse .exhibition-artwork.is-exhaling {
-  transition-duration: var(--ex-transition, 4s);
-  transition-timing-function: ease-in-out;
+.exhibition-root.is-japanese-reflections .exhibition-artwork.is-exhaling {
+  transition-duration: var(--ex-exhale, var(--ex-transition, 4s));
+  transition-timing-function: ease-in;
   opacity: 0;
+}
+
+.exhibition-root.is-image-verse .exhibition-artwork.is-exhaling {
+  /* Match exhibit crossfade — not the 16s gallery exhale default */
+  transition-duration: var(--ex-transition, 4s);
+  transition-timing-function: ease-in;
+  opacity: 0;
+}
+
+.exhibition-root.is-image-verse .exhibition-artwork:not(.is-visible) {
+  visibility: hidden;
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-image-verse .exhibition-artwork.is-visible {
+  visibility: visible;
+  z-index: 1;
 }
 
 .exhibition-root.is-japanese-reflections .exhibition-artwork.is-on-top,
 .exhibition-root.is-image-verse .exhibition-artwork.is-on-top {
   z-index: 2;
+}
+
+/* Image+verse prototypes — static artwork (no Ken Burns drift) */
+.exhibition-root.is-image-verse .exhibition-artwork img {
+  animation: none !important;
+  transform: scale(var(--image-scale, 1));
 }
 
 .exhibition-root.is-japanese-reflections .exhibition-bookend,

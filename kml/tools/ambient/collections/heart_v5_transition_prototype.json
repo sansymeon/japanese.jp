@@ -1,0 +1,124 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "heart_v5_transition_prototype",
+  "title": "Heart — transition QA (愛 → 忘)",
+  "notes": "Two-scene loop: love → forget gallery-bridge handoff. Same pacing as heart_v5. Preview with music: exhibition.html?collection=heart_v5_transition_prototype&skipBookends=1 (add &timingScale=0.1 for a quick pass).",
+  "soundtrack": {
+    "main": "audio/ambient_kanji_exhibition.mp3"
+  },
+  "bookends": {},
+  "exhibition": {
+    "artworkArrivalMs": 8000,
+    "artworkAloneMs": 6000,
+    "kanjiRevealMs": 5500,
+    "keywordDelayMs": 3000,
+    "keywordFadeMs": 5000,
+    "titleHoldMs": 8000,
+    "titleFadeMs": 5500,
+    "verseJpRevealMs": 6500,
+    "verseEnDelayMs": 9000,
+    "verseEnFadeMs": 5500,
+    "reflectionHoldMs": 11000,
+    "versesFadeMs": 5500,
+    "essenceKanjiRevealMs": 7000,
+    "essenceHoldMs": 12000,
+    "imageExhaleFadeMs": 16000,
+    "kanjiAloneHoldMs": 0,
+    "kanjiExhaleFadeMs": 20000,
+    "blackHoldMs": 3500,
+    "kenBurnsDurationMs": 300000,
+    "openingBlackBeforeMs": 2000,
+    "openingRevealMs": 6000,
+    "openingHoldMs": 4000,
+    "openingExhaleMs": 6000,
+    "closingRevealMs": 9000,
+    "closingHoldMs": 0,
+    "closingExhaleMs": 20000,
+    "closingBlackAfterMs": 1000,
+    "imageHandoffExhaleMs": 20000,
+    "imageHandoffArrivalMs": 18000,
+    "kanjiBridgeFadeMs": 10000,
+    "finalKanjiAloneHoldMs": 6000,
+    "kanjiHandoffFadeMs": 10000,
+    "openingFluteMs": 16000,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 4500,
+    "closingPostSoundtrackHoldMs": 0,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 13000,
+    "exhibitBlackHoldMs": 0,
+    "seamlessExhibitHandoff": true,
+    "exhibitTransitionMs": 18000
+  },
+  "display": {
+    "loop": true,
+    "hideChrome": true,
+    "fixedKanji": true,
+    "showKeyword": true,
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations"
+  },
+  "meta": {
+    "theme": "heart",
+    "heartParts": [
+      "心",
+      "㣺",
+      "忄"
+    ],
+    "lessonRange": [
+      1,
+      40
+    ],
+    "sceneCount": 2,
+    "lessonsRepresented": [
+      32,
+      33,
+      34,
+      35,
+      38,
+      39,
+      40
+    ],
+    "sourceCollection": "heart_v5",
+    "presentation": "exhibition",
+    "fixedKanji": true,
+    "bookendArtwork": "bookends/lesson_32.png",
+    "sceneOrder": "愛 first after opening; 心 exhibit at index 43; invariably/honey at 42–43",
+    "prototype": true,
+    "qa": "handoff + verse shadow fade"
+  },
+  "scenes": [
+    {
+      "id": "L40_love",
+      "lesson": 40,
+      "kanji": "愛",
+      "keyword": "love",
+      "heartPart": "心",
+      "image": "studies/love.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>愛<rt>あい</rt></ruby>は<ruby>強<rt>つよ</rt></ruby>さではなく、<br>    <ruby>誰<rt>だれ</rt></ruby>かを<ruby>抱<rt>だ</rt></ruby>く<ruby>静<rt>しず</rt></ruby>かな<ruby>力<rt>ちから</rt></ruby>だった。",
+        "en": "Love was not strength,\nbut the quiet power to hold another close."
+      },
+      "imageRev": 1780895276,
+      "imageScale": 0.74,
+      "imageFocus": "50% 48%"
+    },
+    {
+      "id": "L33_forget",
+      "lesson": 33,
+      "kanji": "忘",
+      "keyword": "forget",
+      "heartPart": "心",
+      "image": "studies/forget.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>忘<rt>わす</rt></ruby>れられたのではなく<br>    <ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうへ　<ruby>溶<rt>と</rt></ruby>けていった",
+        "en": "Not lost from memory—\nsimply dissolved into the mist."
+      },
+      "imageRev": 1782137665
+    }
+  ]
+}

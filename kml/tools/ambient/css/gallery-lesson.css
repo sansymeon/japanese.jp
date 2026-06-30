@@ -1,0 +1,28 @@
+/**
+ * Lesson Gallery — image + music only (final learning stage).
+ * Enable: exhibitProfile gallery
+ */
+
+.exhibition-root.is-gallery .exhibition-title,
+.exhibition-root.is-gallery .exhibition-notes,
+.exhibition-root.is-gallery .exhibition-kanji,
+.exhibition-root.is-gallery .exhibition-keyword,
+.exhibition-root.is-gallery .exhibition-verse-jp,
+.exhibition-root.is-gallery .exhibition-verse-en {
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-gallery .exhibition-artwork {
+  transition: opacity var(--ex-artwork-arrival, var(--ex-fade)) ease-in-out;
+}
+
+.exhibition-root.is-gallery .exhibition-artwork.is-exhaling {
+  transition-duration: var(--ex-transition, 4s);
+  transition-timing-function: ease-in-out;
+}
+
+.exhibition-root.is-gallery .exhibition-artwork img.gallery-guardian {
+  animation: gallery-guardian-move var(--gallery-guardian-duration, 30s)
+    var(--gallery-guardian-ease, cubic-bezier(0.15, 0, 0.25, 1)) forwards;
+}

@@ -1,0 +1,115 @@
+/**
+ * Stroke Order Exhibition — quiet calligraphy studio on matte black.
+ * Enable: exhibitProfile strokeOrder
+ */
+
+.exhibition-root.is-stroke-order {
+  --kml-stroke-order-kanji: clamp(18rem, 48vmin, 34rem);
+  --kml-stroke-order-fade-in: var(--ex-stroke-order-fade-in, 2.2s);
+  --kml-stroke-order-fade-out: var(--ex-stroke-order-fade-out, 3.2s);
+  --kml-stroke-order-stroke-width: 10;
+  background: #0a0a0a;
+}
+
+.exhibition-root.is-stroke-order .exhibition-artwork,
+.exhibition-root.is-stroke-order .exhibition-title,
+.exhibition-root.is-stroke-order .exhibition-notes,
+.exhibition-root.is-stroke-order .exhibition-vignette,
+.exhibition-root.is-stroke-order .party-kanji-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-stroke-order .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-layer.exhibition-hidden {
+  display: none;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-stage {
+  position: relative;
+  width: min(98vw, 80rem);
+  height: min(92vh, 64rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-kanji {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--kml-font-kanji-main);
+  font-size: var(--kml-stroke-order-kanji);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: var(--kml-kanji-letter-spacing);
+  color: rgba(245, 240, 232, 0.96);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--kml-stroke-order-fade-out) ease-in-out,
+    visibility 0s linear var(--kml-stroke-order-fade-out);
+}
+
+.exhibition-root.is-stroke-order .stroke-order-kanji.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--kml-stroke-order-fade-in) ease-in-out,
+    visibility 0s linear 0s;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-svg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--kml-stroke-order-fade-out) ease-in-out,
+    visibility 0s linear var(--kml-stroke-order-fade-out);
+}
+
+.exhibition-root.is-stroke-order .stroke-order-svg.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--kml-stroke-order-fade-in) ease-in-out,
+    visibility 0s linear 0s;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-svg svg {
+  width: var(--kml-stroke-order-kanji);
+  height: auto;
+  overflow: visible;
+  filter: none;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-svg text {
+  display: none;
+}
+
+.exhibition-root.is-stroke-order .stroke-order-svg path {
+  fill: none;
+  stroke-width: var(--kml-stroke-order-stroke-width);
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+}

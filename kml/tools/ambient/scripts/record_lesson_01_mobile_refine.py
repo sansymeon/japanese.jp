@@ -11,8 +11,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "study_exhibitions" / "lesson_01_study_mobile_refine.mp4"
-COLLECTION = ROOT / "exhibition" / "lesson_1_study.json"
+OUTPUT = ROOT / "foundations_exhibitions" / "lesson_01_foundations_mobile_refine.mp4"
+COLLECTION = ROOT / "exhibition" / "lesson_1_foundations.json"
 PORT = 8775
 VIEWPORT = {"width": 1920, "height": 1080}
 
@@ -59,7 +59,7 @@ def main() -> int:
 
     url = (
         f"http://127.0.0.1:{PORT}/index.html"
-        f"?collection=lesson_1_study&capture=1&typography=mobile-refine"
+        f"?collection=lesson_1_foundations&capture=1&typography=mobile-refine"
     )
     print("Recording Lesson 1 mobile refine …")
     print(f"  URL: {url}")

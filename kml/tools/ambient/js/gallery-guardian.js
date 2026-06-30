@@ -7,7 +7,8 @@
 (function () {
   "use strict";
 
-  const IMMERSIVE_SCALE_MIN = 1.0;
+  /** Match ken-burns baseline (1.02) so edges stay hidden during drift. */
+  const IMMERSIVE_SCALE_MIN = 1.02;
   const COVER_BOOST_MAX = 1.28;
 
   const EASE = {
@@ -63,8 +64,8 @@
     return IMMERSIVE_SCALE_MIN;
   }
 
-  function immersiveScale(value, coverBoost) {
-    return Math.max(IMMERSIVE_SCALE_MIN, value * coverBoost);
+  function immersiveScale(value, scaleMin = IMMERSIVE_SCALE_MIN) {
+    return Math.max(scaleMin, value);
   }
 
   function resolveProfile(name) {
@@ -138,24 +139,82 @@
     return Math.min(COVER_BOOST_MAX, Math.round(boost * 1000) / 1000);
   }
 
+  const GALLERY_EASE = "cubic-bezier(0.12, 0.0, 0.22, 1.0)";
+
+  /** One-direction gallery drift (~3–5% over exhibit). Values are % translate / scale delta. */
+  const GALLERY_MOTION = {
+    "push-in": { scale: 0.044, x0: 0, y0: 0.4, x1: 0.15, y1: -0.25 },
+    "drift-x": { scale: 0.026, x0: -2.1, y0: 0, x1: 2.1, y1: 0.15 },
+    "drift-y": { scale: 0.026, x0: 0.2, y0: 2.0, x1: -0.1, y1: -2.0 },
+    "drift-diagonal": { scale: 0.032, x0: -1.8, y0: 1.6, x1: 1.9, y1: -1.7 },
+    rise: { scale: 0.038, x0: 0.1, y0: 2.2, x1: -0.05, y1: -2.4 },
+  };
+
+  function planGallery(scene, options = {}) {
+    const cam = scene.galleryCamera || {};
+    const motion = cam.motion || "push-in";
+    const spec = GALLERY_MOTION[motion] || GALLERY_MOTION["push-in"];
+    const {
+      durationMs = 30000,
+      coverBoost = 1,
+      framingScale = 1,
+      scaleMin = IMMERSIVE_SCALE_MIN,
+      motionScale = 1,
+    } = options;
+
+    const seed = hashSeed(`${scene.id}:gallery:${motion}`);
+    const jitter = (n, spread) => (seededUnit(seed + n) - 0.5) * spread;
+
+    const scaleFrom = immersiveScale(
+      minimumCoverScale() * coverBoost * framingScale,
+      scaleMin
+    );
+    const scaleTo =
+      scaleFrom + (spec.scale + jitter(1, 0.006)) * motionScale;
+
+    return {
+      shot: motion,
+      motionProfile: "gallery",
+      durationMs,
+      coverBoost,
+      scaleFrom,
+      scaleTo,
+      xFrom: spec.x0 + jitter(2, 0.35),
+      yFrom: spec.y0 + jitter(3, 0.35),
+      xTo: spec.x1 + jitter(4, 0.35),
+      yTo: spec.y1 + jitter(5, 0.35),
+      ease: GALLERY_EASE,
+    };
+  }
+
   function plan(scene, options = {}) {
+    if (scene.galleryCamera) {
+      return planGallery(scene, options);
+    }
+
     const {
       sceneIndex = 0,
       durationMs = 125000,
       coverBoost = 1,
+      framingScale = 1,
       motionProfile = "comprehension",
+      scaleMin = IMMERSIVE_SCALE_MIN,
+      motionScale = 1,
     } = options;
 
     const profile = resolveProfile(motionProfile);
     const seed = hashSeed(`${scene.id}:${sceneIndex}:${motionProfile}`);
     const jitter = (spread) => (seededUnit(seed + spread) - 0.5);
 
-    // Widest composition at 100% cover: object-fit:cover baseline (scale 1.0), centered.
-    const scaleFrom = minimumCoverScale();
-    const pushDelta = profile.toDelta + jitter(10) * profile.toJitter;
-    const scaleTo = scaleFrom + Math.max(profile.toDelta * 0.55, pushDelta);
+    const scaleFrom = immersiveScale(
+      minimumCoverScale() * coverBoost * framingScale,
+      scaleMin
+    );
+    const pushDelta = (profile.toDelta + jitter(10) * profile.toJitter) * motionScale;
+    const scaleTo =
+      scaleFrom + Math.max(profile.toDelta * 0.55 * motionScale, pushDelta);
 
-    const panEnd = profile.panMax * 0.25;
+    const panEnd = profile.panMax * 0.25 * motionScale;
     const xFrom = 0;
     const yFrom = 0;
     const xTo = jitter(14) * panEnd;
@@ -201,11 +260,13 @@
 
   window.GalleryGuardian = {
     plan,
+    planGallery,
     applyToImage,
     measureCoverBoost,
     minimumCoverScale,
     SHOTS,
     MOTION_PROFILES,
+    GALLERY_MOTION,
     EASE,
     IMMERSIVE_SCALE_MIN,
   };

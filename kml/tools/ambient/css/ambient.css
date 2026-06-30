@@ -139,11 +139,11 @@ body {
 }
 
 .ambient-kanji {
-  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-family: var(--kml-font-kanji-main);
   font-size: var(--ambient-kanji);
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--kml-kanji-letter-spacing);
 }
 
 .ambient-keyword {
@@ -210,41 +210,41 @@ body {
 
 /* ── Study mode (guided flashcards) ── */
 
-.ambient-root.is-study .ambient-image-wrap {
+.ambient-root.is-foundations .ambient-image-wrap {
   display: none;
 }
 
-.ambient-root.is-study .ambient-verses {
+.ambient-root.is-foundations .ambient-verses {
   opacity: 1;
   transform: none;
 }
 
-.ambient-root.is-study .ambient-kanji-block,
-.ambient-root.is-study .ambient-verse-jp {
+.ambient-root.is-foundations .ambient-kanji-block,
+.ambient-root.is-foundations .ambient-verse-jp {
   opacity: 0;
   transform: none;
   transition: opacity var(--ambient-fade) ease-in-out;
 }
 
-.ambient-root.is-study .ambient-keyword {
+.ambient-root.is-foundations .ambient-keyword {
   opacity: 0;
   transition: opacity var(--ambient-fade) ease-in-out;
 }
 
-.ambient-root.is-study .ambient-kanji-block.is-visible,
-.ambient-root.is-study .ambient-verse-jp.is-visible {
+.ambient-root.is-foundations .ambient-kanji-block.is-visible,
+.ambient-root.is-foundations .ambient-verse-jp.is-visible {
   opacity: 1;
 }
 
-.ambient-root.is-study .ambient-keyword.is-visible {
+.ambient-root.is-foundations .ambient-keyword.is-visible {
   opacity: 0.92;
 }
 
-.ambient-root.is-study .ambient-verse-en {
+.ambient-root.is-foundations .ambient-verse-en {
   display: none;
 }
 
-.ambient-root.is-study .ambient-bg-layer.is-intro img {
+.ambient-root.is-foundations .ambient-bg-layer.is-intro img {
   object-fit: contain;
   animation: none;
 }
@@ -279,9 +279,9 @@ body {
   outline-offset: -6px;
 }
 
-.ambient-root.is-study.is-foreground-exiting .ambient-kanji-block,
-.ambient-root.is-study.is-foreground-exiting .ambient-keyword,
-.ambient-root.is-study.is-foreground-exiting .ambient-verse-jp {
+.ambient-root.is-foundations.is-foreground-exiting .ambient-kanji-block,
+.ambient-root.is-foundations.is-foreground-exiting .ambient-keyword,
+.ambient-root.is-foundations.is-foreground-exiting .ambient-verse-jp {
   transition: opacity var(--ambient-study-exit-fade, 800ms) ease-in-out;
 }
 
@@ -402,13 +402,13 @@ html.is-capture-doc body {
   opacity: 0.88;
 }
 
-.ambient-root.is-study.is-verse-exiting .ambient-verse-jp {
+.ambient-root.is-foundations.is-verse-exiting .ambient-verse-jp {
   transition: opacity var(--ambient-gallery-verse-fade, 1800ms) ease-in-out;
   opacity: 0 !important;
 }
 
-.ambient-root.is-study.is-kanji-exiting .ambient-kanji-block,
-.ambient-root.is-study.is-kanji-exiting .ambient-keyword {
+.ambient-root.is-foundations.is-kanji-exiting .ambient-kanji-block,
+.ambient-root.is-foundations.is-kanji-exiting .ambient-keyword {
   transition: opacity var(--ambient-gallery-kanji-fade, 1800ms) ease-in-out;
   opacity: 0 !important;
 }

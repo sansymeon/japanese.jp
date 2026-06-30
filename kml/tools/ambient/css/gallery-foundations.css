@@ -1,0 +1,35 @@
+/**
+ * Foundations (ambient study) — kanji → keyword → verse on gallery artwork.
+ * Legibility via image overlay (no text halos); type scale matches later L1 stages.
+ * Enable: presentation foundations + typography mobile-refine on index.html
+ */
+
+html.kml-typography-mobile-refine .ambient-root.is-foundations {
+  --kml-font-heart-verse-jp: "Noto Serif JP", serif;
+  --kml-foundations-kanji: clamp(6rem, 19vmin, 12rem);
+  --kml-foundations-verse-jp: clamp(2.55rem, 8.8vmin, 5.15rem);
+}
+
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-kanji {
+  font-size: var(--kml-foundations-kanji);
+  color: rgba(245, 240, 232, 0.98);
+}
+
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-keyword {
+  font-weight: 600;
+  color: rgba(245, 240, 232, 0.96);
+}
+
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-jp {
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: var(--kml-foundations-verse-jp);
+  font-weight: 600;
+  color: rgba(255, 252, 245, 0.98);
+}
+
+html.kml-typography-mobile-refine .ambient-root.is-foundations .ambient-verse-jp.show-furigana ruby rt {
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: 0.46em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}

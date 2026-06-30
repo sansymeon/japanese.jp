@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Print Heart v5 timing impact when switching to sequential verses."""
+"""Print Heart v5 runtime vs ambient_kanji_exhibition.mp3 (engine-accurate)."""
 
 from __future__ import annotations
 
@@ -11,7 +11,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTION = ROOT / "collections" / "heart_v5.json"
 SOUNDTRACK = ROOT / "audio" / "ambient_kanji_exhibition.mp3"
-FLUTE = ROOT / "audio" / "flute_intro.mp3"
 
 
 def probe_duration(path: Path) -> float:
@@ -55,23 +54,69 @@ def simultaneous_phase_ms(t: dict) -> int:
     )
 
 
-def exhibit_ms(t: dict, *, sequential: bool) -> int:
+def gallery_bridge_ms(t: dict) -> int:
+    exhale = int(t.get("imageHandoffExhaleMs") or t["imageExhaleFadeMs"])
+    arrival = int(
+        t.get("imageHandoffArrivalMs")
+        or t.get("exhibitTransitionMs")
+        or (t["artworkArrivalMs"] + t.get("blackHoldMs", 0))
+    )
+    return exhale + arrival
+
+
+def exhibit_body_ms(t: dict, *, sequential: bool) -> int:
     ms = (
-        t["artworkArrivalMs"]
-        + t["artworkAloneMs"]
-        + t["kanjiRevealMs"]
+        t["kanjiRevealMs"]
         + t["keywordDelayMs"]
         + t["keywordFadeMs"]
         + t["titleHoldMs"]
         + t["titleFadeMs"]
         + t["essenceKanjiRevealMs"]
         + t.get("essenceHoldMs", 0)
-        + t["imageExhaleFadeMs"]
-        + t["kanjiAloneHoldMs"]
-        + t["kanjiExhaleFadeMs"]
     )
     ms += sequential_phase_ms(t) if sequential else simultaneous_phase_ms(t)
     return ms
+
+
+def handoff_exit_ms(t: dict) -> int:
+    if t.get("seamlessExhibitHandoff"):
+        return gallery_bridge_ms(t)
+    crossfade = int(
+        t.get("exhibitTransitionMs") or (t["artworkArrivalMs"] + t.get("blackHoldMs", 0))
+    )
+    handoff_fade = int(
+        t.get("kanjiBridgeFadeMs")
+        or t.get("kanjiHandoffFadeMs")
+        or min(4500, t["kanjiExhaleFadeMs"])
+    )
+    return handoff_fade + crossfade
+
+
+def final_exit_ms(t: dict) -> int:
+    hold = int(t.get("finalKanjiAloneHoldMs") or t.get("kanjiAloneHoldMs") or 0)
+    return t["imageExhaleFadeMs"] + hold + t["kanjiExhaleFadeMs"]
+
+
+def engine_exhibits_ms(t: dict, scene_count: int, *, sequential: bool) -> int:
+    """Mirror playExhibit(): first full arrival, gallery-bridge handoffs thereafter."""
+    body = exhibit_body_ms(t, sequential=sequential)
+    first_intro = 80 + t["artworkArrivalMs"] + t["artworkAloneMs"]
+    handoff_exit = handoff_exit_ms(t)
+    handoff_intro = t["artworkAloneMs"]
+    final_exit = final_exit_ms(t)
+    if scene_count <= 0:
+        return 0
+    if scene_count == 1:
+        return first_intro + body + final_exit
+    return (
+        first_intro
+        + body
+        + handoff_exit
+        + (scene_count - 2) * (handoff_intro + body + handoff_exit)
+        + handoff_intro
+        + body
+        + final_exit
+    )
 
 
 def main() -> int:
@@ -82,47 +127,44 @@ def main() -> int:
     collection = json.loads(COLLECTION.read_text(encoding="utf-8"))
     t = collection["exhibition"]
     scenes = len(collection["scenes"])
+    bookends = collection.get("bookends") or {}
+    sequential = (collection.get("display") or {}).get("verseMode") == "sequential"
 
-    sim_exhibit = exhibit_ms(t, sequential=False)
-    seq_exhibit = exhibit_ms(t, sequential=True)
-    delta = seq_exhibit - sim_exhibit
-    total_delta = delta * scenes
+    flute_rel = (bookends.get("opening") or {}).get("audio") or "audio/exhibition_flute_intro.mp3"
+    flute_path = ROOT / flute_rel
 
     opening = (
         t["openingBlackBeforeMs"]
-        + int(probe_duration(FLUTE) * 1000)
+        + int(probe_duration(flute_path) * 1000)
         + t["openingExhaleMs"]
         + t.get("openingBlackAfterMs", 0)
     )
-    closing_min = (
-        t.get("closingBlackBeforeMs", t["blackHoldMs"])
-        + t["closingRevealMs"]
-        + t.get("closingPostSoundtrackHoldMs", 0)
-        + t.get("closingSilenceHoldMs", 0)
-        + t.get("closingFadeToBlackMs", t["closingExhaleMs"])
-        + t.get("closingBlackAfterMs", 0)
-    )
-
-    sim_total = opening + sim_exhibit * scenes + closing_min
-    seq_total = opening + seq_exhibit * scenes + closing_min
-    black_saved = (t.get("blackHoldMs", 3500) - t.get("exhibitBlackHoldMs", 500)) * max(
-        0, scenes - 1
-    )
-    seq_total -= black_saved
+    exhibits = engine_exhibits_ms(t, scenes, sequential=sequential)
+    closing_before_wait = t.get("closingBlackBeforeMs", t["blackHoldMs"]) + t["closingRevealMs"]
+    # Fade runs in parallel with soundtrack tail; only closingBlackAfter remains after music ends.
+    closing_after_soundtrack = t.get("closingBlackAfterMs", 0)
     soundtrack_s = probe_duration(SOUNDTRACK)
 
-    print("Heart v5 sequential verse timing")
-    print(f"  Per exhibit: {sim_exhibit/1000:.1f}s → {seq_exhibit/1000:.1f}s (+{delta/1000:.1f}s)")
-    print(f"  44 exhibits: +{total_delta/1000:.0f}s ({total_delta/60000:.1f} min)")
-    print(f"  Black corridor savings: {black_saved/1000:.0f}s ({black_saved/60000:.1f} min)")
-    print(f"  Est. presentation (exhibits+bookends): {sim_total/60000:.1f} → {seq_total/60000:.1f} min")
-    print(f"  Soundtrack length: {soundtrack_s/60:.2f} min")
+    soundtrack_to_wait_ms = exhibits + closing_before_wait
+    gap_s = soundtrack_to_wait_ms / 1000 - soundtrack_s
+
+    print("Heart v5 engine-accurate timing")
+    print(f"  Verse mode: {'sequential' if sequential else 'staggered'}")
+    print(f"  Exhibit body: {exhibit_body_ms(t, sequential=sequential) / 1000:.1f}s")
+    print(f"  Gallery bridge (handoff): {gallery_bridge_ms(t) / 1000:.1f}s")
+    print(f"  Final exhibit exit: {final_exit_ms(t) / 1000:.1f}s")
+    print(f"  {scenes} exhibits: {exhibits / 60000:.2f} min")
+    print(f"  Opening (pre-soundtrack): {opening / 1000:.1f}s")
+    print(f"  Soundtrack start → waitForSoundtrackEnd: {soundtrack_to_wait_ms / 60000:.2f} min")
+    print(f"  Soundtrack length: {soundtrack_s / 60:.2f} min")
+    print(f"  Visual tail after soundtrack ends: {closing_after_soundtrack / 1000:.1f}s")
     print()
-    gap = seq_total / 1000 - soundtrack_s
-    if gap > 0:
-        print(f"  MP3 extension recommended: ~{gap:.0f}s ({gap/60:.1f} min) to keep music through closing.")
+    if gap_s > 1:
+        print(f"  ⚠ Visuals reach closing ~{gap_s:.0f}s before music ends (extend MP3 or shorten timing).")
+    elif gap_s < -5:
+        print(f"  Closing hero will hold ~{-gap_s:.0f}s on music after last exhibit.")
     else:
-        print(f"  No MP3 extension required (headroom ~{-gap:.0f}s).")
+        print("  Sync OK (music and closing hero align within a few seconds).")
     return 0
 
 

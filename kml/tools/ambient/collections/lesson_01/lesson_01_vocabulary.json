@@ -1,0 +1,2415 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_01_vocabulary",
+  "title": "Lesson 1 — Vocabulary Exhibition (Prototype)",
+  "notes": "Intro: 3s black → 2s artwork fade-in (gallery style); no opening crest. Outro: gold gallery crest hold, fades with soundtrack end. Rebuild each verse from vocabulary and phrases; same gallery atmosphere. ~15 steps per exhibit. Soundtrack 1:01:56; crest exhale syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/vocabulary_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "vocabularyPauseBeforeMs": 4000,
+    "vocabularyStepRevealMs": 1400,
+    "vocabularyStepHoldMs": 3500,
+    "vocabularyStepFadeMs": 1400,
+    "vocabularyFuriganaEnterDelayMs": 700,
+    "vocabularyFuriganaEnterMs": 2200,
+    "vocabularyFuriganaHoldMs": 3500,
+    "vocabularyFuriganaFadeMs": 2200,
+    "vocabularyNativeHoldMs": 2000,
+    "vocabularyVerseJpRevealMs": 1600,
+    "vocabularyVerseKanjiHoldMs": 3500,
+    "vocabularyVerseFuriganaEnterDelayMs": 900,
+    "vocabularyVerseFuriganaEnterMs": 2500,
+    "vocabularyVerseFuriganaHoldMs": 4500,
+    "vocabularyVerseFuriganaFadeMs": 2500,
+    "vocabularyVerseNativeHoldMs": 3000,
+    "vocabularyVerseJpFadeMs": 1400,
+    "vocabularyVerseEnRevealMs": 1400,
+    "vocabularyVerseEnHoldMs": 6000,
+    "vocabularyVerseEnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "vocabularyExhibition",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 1,
+    "stage": "vocabulary",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgVocabularySteps": 15.0,
+    "introLeadMs": 5000,
+    "introBlackMs": 3000,
+    "artworkArrivalFadeMs": 2000,
+    "bookendMode": "silentCrest",
+    "galleryCameraSlugs": [
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "mouth",
+      "sun",
+      "moon",
+      "field",
+      "eye",
+      "old",
+      "I",
+      "risk",
+      "companion",
+      "bright"
+    ],
+    "soundtrackDurationMs": 3716153,
+    "estimatedContentRuntimeMs": 3699700
+  },
+  "scenes": [
+    {
+      "id": "L01_one",
+      "kanji": "一",
+      "keyword": "one",
+      "image": "studies/one.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>木<rt>き</rt></ruby>の<ruby>床<rt>ゆか</rt></ruby>に　<ruby>一<rt>ひと</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が<ruby>光<rt>ひか</rt></ruby>り<br>    <ruby>障子<rt>しょうじ</rt></ruby>の<ruby>午後<rt>ごご</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>けさを<ruby>包<rt>つつ</rt></ruby>む",
+        "en": "A single persimmon glowed upon the wooden floor,\nwhile afternoon light through the shoji held the room in stillness."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "木",
+            "reading": "き",
+            "en": "wood"
+          },
+          {
+            "jp": "床",
+            "reading": "ゆか",
+            "en": "floor"
+          },
+          {
+            "jp": "木の床",
+            "en": "the wooden floor",
+            "phrase": true,
+            "jpHtml": "<ruby>木<rt>き</rt></ruby>の<ruby>床<rt>ゆか</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "木の床に",
+            "en": "upon the wooden floor",
+            "phrase": true,
+            "jpHtml": "<ruby>木<rt>き</rt></ruby>の<ruby>床<rt>ゆか</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "一",
+            "reading": "ひと",
+            "en": "one"
+          },
+          {
+            "jp": "一つ",
+            "en": "one / a single",
+            "phrase": true,
+            "jpHtml": "<ruby>一<rt>ひと</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "柿",
+            "reading": "かき",
+            "en": "persimmon"
+          },
+          {
+            "jp": "一つの柿",
+            "en": "a single persimmon",
+            "phrase": true,
+            "jpHtml": "<ruby>一<rt>ひと</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "光る",
+            "reading": "ひかる",
+            "en": "to glow"
+          },
+          {
+            "jp": "光り",
+            "reading": "ひかり",
+            "en": "a glow",
+            "phrase": true,
+            "jpHtml": "<ruby>光<rt>ひか</rt></ruby>り",
+            "furigana": true
+          },
+          {
+            "jp": "一つの柿が光り",
+            "en": "a single persimmon glowed",
+            "phrase": true,
+            "jpHtml": "<ruby>一<rt>ひと</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が<ruby>光<rt>ひか</rt></ruby>り",
+            "furigana": true
+          },
+          {
+            "jp": "木の床に　一つの柿が光り",
+            "en": "A single persimmon glowed upon the wooden floor",
+            "phrase": true,
+            "jpHtml": "<ruby>木<rt>き</rt></ruby>の<ruby>床<rt>ゆか</rt></ruby>に　<ruby>一<rt>ひと</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が<ruby>光<rt>ひか</rt></ruby>り",
+            "furigana": true
+          },
+          {
+            "jp": "障子",
+            "reading": "しょうじ",
+            "en": "shoji (paper screen door)"
+          },
+          {
+            "jp": "午後",
+            "reading": "ごご",
+            "en": "afternoon"
+          },
+          {
+            "jp": "障子の午後",
+            "en": "afternoon through the shoji",
+            "phrase": true,
+            "jpHtml": "<ruby>障子<rt>しょうじ</rt></ruby>の<ruby>午後<rt>ごご</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "静けさ",
+            "reading": "しずけさ",
+            "en": "stillness"
+          },
+          {
+            "jp": "包む",
+            "reading": "つつむ",
+            "en": "to enfold / wrap"
+          },
+          {
+            "jp": "静けさを包む",
+            "en": "held the room in stillness",
+            "phrase": true,
+            "jpHtml": "<ruby>静<rt>しず</rt></ruby>けさを<ruby>包<rt>つつ</rt></ruby>む",
+            "furigana": true
+          },
+          {
+            "jp": "障子の午後が　静けさを包む",
+            "en": "…while afternoon light through the shoji held the room in stillness",
+            "phrase": true,
+            "jpHtml": "<ruby>障子<rt>しょうじ</rt></ruby>の<ruby>午後<rt>ごご</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>けさを<ruby>包<rt>つつ</rt></ruby>む",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "one",
+        "prototype": true
+      },
+      "imageRev": 1781510593
+    },
+    {
+      "id": "L01_two",
+      "kanji": "二",
+      "keyword": "two",
+      "image": "studies/two.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 42%"
+      },
+      "verse": {
+        "jpHtml": "<ruby>夜<rt>よる</rt></ruby>の<ruby>寺<rt>てら</rt></ruby>に　<ruby>二<rt>ふた</rt></ruby>つの<ruby>灯<rt>あか</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かび<br>    やわらかな<ruby>闇<rt>やみ</rt></ruby>だけが　<ruby>揺<rt>ゆ</rt></ruby>れていた",
+        "en": "Two lanterns drifted above the temple at night,\nwhile only the gentle darkness swayed."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "夜",
+            "reading": "よる",
+            "en": "night"
+          },
+          {
+            "jp": "寺",
+            "reading": "てら",
+            "en": "temple"
+          },
+          {
+            "jp": "夜の寺",
+            "en": "the temple at night",
+            "phrase": true,
+            "jpHtml": "<ruby>夜<rt>よる</rt></ruby>の<ruby>寺<rt>てら</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "夜の寺に",
+            "en": "at the temple at night",
+            "phrase": true,
+            "jpHtml": "<ruby>夜<rt>よる</rt></ruby>の<ruby>寺<rt>てら</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "二",
+            "reading": "ふた",
+            "en": "two"
+          },
+          {
+            "jp": "二つ",
+            "en": "two",
+            "phrase": true,
+            "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "灯",
+            "reading": "あかり",
+            "en": "lantern light"
+          },
+          {
+            "jp": "二つの灯",
+            "en": "two lanterns",
+            "phrase": true,
+            "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つの<ruby>灯<rt>あか</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "浮かぶ",
+            "reading": "うかぶ",
+            "en": "to drift / float"
+          },
+          {
+            "jp": "浮かび",
+            "reading": "うかび",
+            "en": "drifting",
+            "phrase": true,
+            "jpHtml": "<ruby>浮<rt>う</rt></ruby>かび",
+            "furigana": true
+          },
+          {
+            "jp": "二つの灯が浮かび",
+            "en": "two lanterns drifted",
+            "phrase": true,
+            "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つの<ruby>灯<rt>あか</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かび",
+            "furigana": true
+          },
+          {
+            "jp": "夜の寺に　二つの灯が浮かび",
+            "en": "Two lanterns drifted above the temple at night",
+            "phrase": true,
+            "jpHtml": "<ruby>夜<rt>よる</rt></ruby>の<ruby>寺<rt>てら</rt></ruby>に　<ruby>二<rt>ふた</rt></ruby>つの<ruby>灯<rt>あか</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かび",
+            "furigana": true
+          },
+          {
+            "jp": "やわらか",
+            "reading": "やわらか",
+            "en": "gentle / soft"
+          },
+          {
+            "jp": "闇",
+            "reading": "やみ",
+            "en": "darkness"
+          },
+          {
+            "jp": "やわらかな闇",
+            "en": "gentle darkness",
+            "phrase": true,
+            "jpHtml": "やわらかな<ruby>闇<rt>やみ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "やわらかな闇だけ",
+            "en": "only the gentle darkness",
+            "phrase": true,
+            "jpHtml": "やわらかな<ruby>闇<rt>やみ</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "揺れる",
+            "reading": "ゆれる",
+            "en": "to sway"
+          },
+          {
+            "jp": "揺れていた",
+            "en": "was swaying",
+            "phrase": true,
+            "jpHtml": "<ruby>揺<rt>ゆ</rt></ruby>れていた",
+            "furigana": true
+          },
+          {
+            "jp": "やわらかな闇だけが　揺れていた",
+            "en": "while only the gentle darkness swayed",
+            "phrase": true,
+            "jpHtml": "やわらかな<ruby>闇<rt>やみ</rt></ruby>だけが　<ruby>揺<rt>ゆ</rt></ruby>れていた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "two",
+        "prototype": true
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1781525287
+    },
+    {
+      "id": "L01_three",
+      "kanji": "三",
+      "keyword": "three",
+      "image": "studies/three.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "verse": {
+        "jpHtml": "<ruby>黒<rt>くろ</rt></ruby>い<ruby>台<rt>だい</rt></ruby>に　<ruby>三<rt>みっ</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が<ruby>並<rt>なら</rt></ruby>び<br>    <ruby>扇<rt>おうぎ</rt></ruby>のそばで　<ruby>秋<rt>あき</rt></ruby>が<ruby>息<rt>いき</rt></ruby>づいていた",
+        "en": "Three persimmons rested upon the dark tray,\nand beside the folded fan, autumn quietly breathed."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "黒い",
+            "reading": "くろい",
+            "en": "black"
+          },
+          {
+            "jp": "台",
+            "reading": "だい",
+            "en": "stand / tray"
+          },
+          {
+            "jp": "黒い台",
+            "en": "the dark stand",
+            "phrase": true,
+            "jpHtml": "<ruby>黒<rt>くろ</rt></ruby>い<ruby>台<rt>だい</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "黒い台に",
+            "en": "upon the dark stand",
+            "phrase": true,
+            "jpHtml": "<ruby>黒<rt>くろ</rt></ruby>い<ruby>台<rt>だい</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "三",
+            "reading": "みっ",
+            "en": "three"
+          },
+          {
+            "jp": "三つ",
+            "en": "three",
+            "phrase": true,
+            "jpHtml": "<ruby>三<rt>みっ</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "三つの柿",
+            "en": "three persimmons",
+            "phrase": true,
+            "jpHtml": "<ruby>三<rt>みっ</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "並ぶ",
+            "reading": "ならぶ",
+            "en": "to line up"
+          },
+          {
+            "jp": "並び",
+            "reading": "ならび",
+            "en": "lined up",
+            "phrase": true,
+            "jpHtml": "<ruby>並<rt>なら</rt></ruby>び",
+            "furigana": true
+          },
+          {
+            "jp": "三つの柿が並び",
+            "en": "three persimmons lined up",
+            "phrase": true,
+            "jpHtml": "<ruby>三<rt>みっ</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が<ruby>並<rt>なら</rt></ruby>び",
+            "furigana": true
+          },
+          {
+            "jp": "黒い台に　三つの柿が並び",
+            "en": "Three persimmons rested upon the dark tray",
+            "phrase": true,
+            "jpHtml": "<ruby>黒<rt>くろ</rt></ruby>い<ruby>台<rt>だい</rt></ruby>に　<ruby>三<rt>みっ</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が<ruby>並<rt>なら</rt></ruby>び",
+            "furigana": true
+          },
+          {
+            "jp": "扇",
+            "reading": "おうぎ",
+            "en": "folding fan"
+          },
+          {
+            "jp": "そば",
+            "reading": "そば",
+            "en": "beside"
+          },
+          {
+            "jp": "扇のそば",
+            "en": "beside the fan",
+            "phrase": true,
+            "jpHtml": "<ruby>扇<rt>おうぎ</rt></ruby>のそば",
+            "furigana": true
+          },
+          {
+            "jp": "扇のそばで",
+            "en": "beside the folded fan",
+            "phrase": true,
+            "jpHtml": "<ruby>扇<rt>おうぎ</rt></ruby>のそばで",
+            "furigana": true
+          },
+          {
+            "jp": "秋",
+            "reading": "あき",
+            "en": "autumn"
+          },
+          {
+            "jp": "息づく",
+            "reading": "いきづく",
+            "en": "to stir to life / breathe"
+          },
+          {
+            "jp": "秋が息づいていた",
+            "en": "autumn quietly breathed",
+            "phrase": true,
+            "jpHtml": "<ruby>秋<rt>あき</rt></ruby>が<ruby>息<rt>いき</rt></ruby>づいていた",
+            "furigana": true
+          },
+          {
+            "jp": "扇のそばで　秋が息づいていた",
+            "en": "…and beside the folded fan, autumn quietly breathed",
+            "phrase": true,
+            "jpHtml": "<ruby>扇<rt>おうぎ</rt></ruby>のそばで　<ruby>秋<rt>あき</rt></ruby>が<ruby>息<rt>いき</rt></ruby>づいていた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "three",
+        "prototype": true
+      },
+      "imageRev": 1781510612
+    },
+    {
+      "id": "L01_four",
+      "kanji": "四",
+      "keyword": "four",
+      "image": "studies/four.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>四<rt>よ</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が　<ruby>盆<rt>ぼん</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>並<rt>なら</rt></ruby>び<br>    <ruby>障子<rt>しょうじ</rt></ruby>の<ruby>影<rt>かげ</rt></ruby>が　<ruby>秋<rt>あき</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>む",
+        "en": "Four persimmons lined up upon the tray,\nwhile maple shadows on the shoji wrapped the autumn room."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "四",
+            "reading": "よ",
+            "en": "four"
+          },
+          {
+            "jp": "四つ",
+            "en": "four",
+            "phrase": true,
+            "jpHtml": "<ruby>四<rt>よ</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "四つの柿",
+            "en": "four persimmons",
+            "phrase": true,
+            "jpHtml": "<ruby>四<rt>よ</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "盆",
+            "reading": "ぼん",
+            "en": "tray"
+          },
+          {
+            "jp": "上",
+            "reading": "うえ",
+            "en": "top / upon"
+          },
+          {
+            "jp": "盆の上",
+            "en": "upon the tray",
+            "phrase": true,
+            "jpHtml": "<ruby>盆<rt>ぼん</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "盆の上に",
+            "en": "upon the tray",
+            "phrase": true,
+            "jpHtml": "<ruby>盆<rt>ぼん</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "四つの柿が　盆の上に並び",
+            "en": "Four persimmons lined up upon the tray",
+            "phrase": true,
+            "jpHtml": "<ruby>四<rt>よ</rt></ruby>つの<ruby>柿<rt>かき</rt></ruby>が　<ruby>盆<rt>ぼん</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>並<rt>なら</rt></ruby>び",
+            "furigana": true
+          },
+          {
+            "jp": "影",
+            "reading": "かげ",
+            "en": "shadow"
+          },
+          {
+            "jp": "障子の影",
+            "en": "shadows on the shoji",
+            "phrase": true,
+            "jpHtml": "<ruby>障子<rt>しょうじ</rt></ruby>の<ruby>影<rt>かげ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "部屋",
+            "reading": "へや",
+            "en": "room"
+          },
+          {
+            "jp": "秋の部屋",
+            "en": "the autumn room",
+            "phrase": true,
+            "jpHtml": "<ruby>秋<rt>あき</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "秋の部屋を包む",
+            "en": "wrapped the autumn room",
+            "phrase": true,
+            "jpHtml": "<ruby>秋<rt>あき</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>む",
+            "furigana": true
+          },
+          {
+            "jp": "障子の影が　秋の部屋を包む",
+            "en": "…while maple shadows on the shoji wrapped the autumn room",
+            "phrase": true,
+            "jpHtml": "<ruby>障子<rt>しょうじ</rt></ruby>の<ruby>影<rt>かげ</rt></ruby>が　<ruby>秋<rt>あき</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>む",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "four",
+        "prototype": true
+      },
+      "imageRev": 1781524101
+    },
+    {
+      "id": "L01_five",
+      "kanji": "五",
+      "keyword": "five",
+      "image": "studies/five.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "verse": {
+        "jpHtml": "<ruby>五<rt>いつ</rt></ruby>つの<ruby>鯉<rt>こい</rt></ruby>のぼりが　<ruby>風<rt>かぜ</rt></ruby>に<ruby>泳<rt>およ</rt></ruby>ぎ<br>    <ruby>川<rt>かわ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>だけが　<ruby>春<rt>はる</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>していた",
+        "en": "Five carp streamed in the wind above the river,\nwhile only the water mirrored the spring."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "五",
+            "reading": "いつ",
+            "en": "five"
+          },
+          {
+            "jp": "五つ",
+            "en": "five",
+            "phrase": true,
+            "jpHtml": "<ruby>五<rt>いつ</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "鯉",
+            "reading": "こい",
+            "en": "carp"
+          },
+          {
+            "jp": "のぼり",
+            "reading": "のぼり",
+            "en": "streamer"
+          },
+          {
+            "jp": "鯉のぼり",
+            "en": "carp streamer",
+            "phrase": true,
+            "jpHtml": "<ruby>鯉<rt>こい</rt></ruby>のぼり",
+            "furigana": true
+          },
+          {
+            "jp": "五つの鯉のぼり",
+            "en": "five carp streamers",
+            "phrase": true,
+            "jpHtml": "<ruby>五<rt>いつ</rt></ruby>つの<ruby>鯉<rt>こい</rt></ruby>のぼり",
+            "furigana": true
+          },
+          {
+            "jp": "風",
+            "reading": "かぜ",
+            "en": "wind"
+          },
+          {
+            "jp": "泳ぐ",
+            "reading": "およぐ",
+            "en": "to swim"
+          },
+          {
+            "jp": "泳ぎ",
+            "reading": "およぎ",
+            "en": "swimming",
+            "phrase": true,
+            "jpHtml": "<ruby>泳<rt>およ</rt></ruby>ぎ",
+            "furigana": true
+          },
+          {
+            "jp": "風に泳ぎ",
+            "en": "swimming in the wind",
+            "phrase": true,
+            "jpHtml": "<ruby>風<rt>かぜ</rt></ruby>に<ruby>泳<rt>およ</rt></ruby>ぎ",
+            "furigana": true
+          },
+          {
+            "jp": "五つの鯉のぼりが　風に泳ぎ",
+            "en": "Five carp streamed in the wind above the river",
+            "phrase": true,
+            "jpHtml": "<ruby>五<rt>いつ</rt></ruby>つの<ruby>鯉<rt>こい</rt></ruby>のぼりが　<ruby>風<rt>かぜ</rt></ruby>に<ruby>泳<rt>およ</rt></ruby>ぎ",
+            "furigana": true
+          },
+          {
+            "jp": "川",
+            "reading": "かわ",
+            "en": "river"
+          },
+          {
+            "jp": "川の上",
+            "en": "above the river",
+            "phrase": true,
+            "jpHtml": "<ruby>川<rt>かわ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "川の上だけ",
+            "en": "only above the river",
+            "phrase": true,
+            "jpHtml": "<ruby>川<rt>かわ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "春",
+            "reading": "はる",
+            "en": "spring"
+          },
+          {
+            "jp": "映す",
+            "reading": "うつす",
+            "en": "to reflect / mirror"
+          },
+          {
+            "jp": "春を映していた",
+            "en": "mirrored the spring",
+            "phrase": true,
+            "jpHtml": "<ruby>春<rt>はる</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>していた",
+            "furigana": true
+          },
+          {
+            "jp": "川の上だけが　春を映していた",
+            "en": "…while only the water mirrored the spring",
+            "phrase": true,
+            "jpHtml": "<ruby>川<rt>かわ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>だけが　<ruby>春<rt>はる</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>していた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "five",
+        "prototype": true
+      },
+      "imageRev": 1781529238
+    },
+    {
+      "id": "L01_six",
+      "kanji": "六",
+      "keyword": "six",
+      "image": "studies/six.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>六<rt>むっ</rt></ruby>つの<ruby>茶碗<rt>ちゃわん</rt></ruby>に　<ruby>湯気<rt>ゆげ</rt></ruby>が<ruby>立<rt>た</rt></ruby>ち<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>席<rt>せき</rt></ruby>が　<ruby>人<rt>ひと</rt></ruby>を<ruby>待<rt>ま</rt></ruby>っていた",
+        "en": "Steam rose from six tea bowls in a row,\nwhile the quiet seats waited for their guests."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "六",
+            "reading": "むっ",
+            "en": "six"
+          },
+          {
+            "jp": "六つ",
+            "en": "six",
+            "phrase": true,
+            "jpHtml": "<ruby>六<rt>むっ</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "茶碗",
+            "reading": "ちゃわん",
+            "en": "tea bowl"
+          },
+          {
+            "jp": "六つの茶碗",
+            "en": "six tea bowls",
+            "phrase": true,
+            "jpHtml": "<ruby>六<rt>むっ</rt></ruby>つの<ruby>茶碗<rt>ちゃわん</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "六つの茶碗に",
+            "en": "in six tea bowls",
+            "phrase": true,
+            "jpHtml": "<ruby>六<rt>むっ</rt></ruby>つの<ruby>茶碗<rt>ちゃわん</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "湯気",
+            "reading": "ゆげ",
+            "en": "rising steam"
+          },
+          {
+            "jp": "立つ",
+            "reading": "たつ",
+            "en": "to rise"
+          },
+          {
+            "jp": "湯気が立ち",
+            "en": "steam rose",
+            "phrase": true,
+            "jpHtml": "<ruby>湯気<rt>ゆげ</rt></ruby>が<ruby>立<rt>た</rt></ruby>ち",
+            "furigana": true
+          },
+          {
+            "jp": "六つの茶碗に　湯気が立ち",
+            "en": "Steam rose from six tea bowls in a row",
+            "phrase": true,
+            "jpHtml": "<ruby>六<rt>むっ</rt></ruby>つの<ruby>茶碗<rt>ちゃわん</rt></ruby>に　<ruby>湯気<rt>ゆげ</rt></ruby>が<ruby>立<rt>た</rt></ruby>ち",
+            "furigana": true
+          },
+          {
+            "jp": "静か",
+            "reading": "しずか",
+            "en": "quiet"
+          },
+          {
+            "jp": "席",
+            "reading": "せき",
+            "en": "seat"
+          },
+          {
+            "jp": "静かな席",
+            "en": "the quiet seats",
+            "phrase": true,
+            "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>席<rt>せき</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "人",
+            "reading": "ひと",
+            "en": "person"
+          },
+          {
+            "jp": "待つ",
+            "reading": "まつ",
+            "en": "to wait"
+          },
+          {
+            "jp": "人を待っていた",
+            "en": "waited for their guests",
+            "phrase": true,
+            "jpHtml": "<ruby>人<rt>ひと</rt></ruby>を<ruby>待<rt>ま</rt></ruby>っていた",
+            "furigana": true
+          },
+          {
+            "jp": "静かな席が　人を待っていた",
+            "en": "…while the quiet seats waited for their guests",
+            "phrase": true,
+            "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>席<rt>せき</rt></ruby>が　<ruby>人<rt>ひと</rt></ruby>を<ruby>待<rt>ま</rt></ruby>っていた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "six",
+        "prototype": true
+      },
+      "imageRev": 1781524307
+    },
+    {
+      "id": "L01_seven",
+      "kanji": "七",
+      "keyword": "seven",
+      "image": "studies/seven.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "verse": {
+        "jpHtml": "<ruby>七匹<rt>ななひき</rt></ruby>の<ruby>鯉<rt>こい</rt></ruby>が　<ruby>池<rt>いけ</rt></ruby>を<ruby>泳<rt>およ</rt></ruby>ぎ<br>    <ruby>一匹<rt>いっぴき</rt></ruby>だけが　<ruby>月<rt>つき</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かっていた",
+        "en": "Seven koi glided through the moonlit pond,\nwhile one alone turned toward the moon."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "七",
+            "reading": "なな",
+            "en": "seven"
+          },
+          {
+            "jp": "匹",
+            "reading": "ひき",
+            "en": "counter (small animals)"
+          },
+          {
+            "jp": "七匹",
+            "reading": "ななひき",
+            "en": "seven (animals)",
+            "phrase": true,
+            "jpHtml": "<ruby>七匹<rt>ななひき</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "七匹の鯉",
+            "en": "seven koi",
+            "phrase": true,
+            "jpHtml": "<ruby>七匹<rt>ななひき</rt></ruby>の<ruby>鯉<rt>こい</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "池",
+            "reading": "いけ",
+            "en": "pond"
+          },
+          {
+            "jp": "池を泳ぎ",
+            "en": "glided through the pond",
+            "phrase": true,
+            "jpHtml": "<ruby>池<rt>いけ</rt></ruby>を<ruby>泳<rt>およ</rt></ruby>ぎ",
+            "furigana": true
+          },
+          {
+            "jp": "七匹の鯉が　池を泳ぎ",
+            "en": "Seven koi glided through the moonlit pond",
+            "phrase": true,
+            "jpHtml": "<ruby>七匹<rt>ななひき</rt></ruby>の<ruby>鯉<rt>こい</rt></ruby>が　<ruby>池<rt>いけ</rt></ruby>を<ruby>泳<rt>およ</rt></ruby>ぎ",
+            "furigana": true
+          },
+          {
+            "jp": "一匹",
+            "reading": "いっぴき",
+            "en": "one (animal)",
+            "phrase": true,
+            "jpHtml": "<ruby>一匹<rt>いっぴき</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "一匹だけ",
+            "en": "one alone",
+            "phrase": true,
+            "jpHtml": "<ruby>一匹<rt>いっぴき</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "月",
+            "reading": "つき",
+            "en": "moon"
+          },
+          {
+            "jp": "向かう",
+            "reading": "むかう",
+            "en": "to head toward"
+          },
+          {
+            "jp": "月へ向かっていた",
+            "en": "turned toward the moon",
+            "phrase": true,
+            "jpHtml": "<ruby>月<rt>つき</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かっていた",
+            "furigana": true
+          },
+          {
+            "jp": "一匹だけが　月へ向かっていた",
+            "en": "…while one alone turned toward the moon",
+            "phrase": true,
+            "jpHtml": "<ruby>一匹<rt>いっぴき</rt></ruby>だけが　<ruby>月<rt>つき</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かっていた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "seven",
+        "prototype": true
+      },
+      "imageRev": 1781510731
+    },
+    {
+      "id": "L01_eight",
+      "kanji": "八",
+      "keyword": "eight",
+      "image": "studies/eight.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "verse": {
+        "jpHtml": "<ruby>巨木<rt>きょぼく</rt></ruby>の<ruby>根<rt>ね</rt></ruby>で　<ruby>道<rt>みち</rt></ruby>が<ruby>二<rt>ふた</rt></ruby>つに<ruby>裂<rt>さ</rt></ruby>け<br>    <ruby>旅人<rt>たびびと</rt></ruby>だけが　<ruby>選択<rt>せんたく</rt></ruby>を<ruby>止<rt>と</rt></ruby>めていた",
+        "en": "At the roots of the great tree the path split in two,\nand the traveler alone paused before the choice."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "巨木",
+            "reading": "きょぼく",
+            "en": "great tree"
+          },
+          {
+            "jp": "根",
+            "reading": "ね",
+            "en": "roots"
+          },
+          {
+            "jp": "巨木の根",
+            "en": "the roots of the great tree",
+            "phrase": true,
+            "jpHtml": "<ruby>巨木<rt>きょぼく</rt></ruby>の<ruby>根<rt>ね</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "巨木の根で",
+            "en": "at the roots of the great tree",
+            "phrase": true,
+            "jpHtml": "<ruby>巨木<rt>きょぼく</rt></ruby>の<ruby>根<rt>ね</rt></ruby>で",
+            "furigana": true
+          },
+          {
+            "jp": "道",
+            "reading": "みち",
+            "en": "path"
+          },
+          {
+            "jp": "二つ",
+            "en": "two",
+            "phrase": true,
+            "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "裂ける",
+            "reading": "さける",
+            "en": "to split"
+          },
+          {
+            "jp": "二つに裂け",
+            "en": "split in two",
+            "phrase": true,
+            "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つに<ruby>裂<rt>さ</rt></ruby>け",
+            "furigana": true
+          },
+          {
+            "jp": "道が二つに裂け",
+            "en": "the path split in two",
+            "phrase": true,
+            "jpHtml": "<ruby>道<rt>みち</rt></ruby>が<ruby>二<rt>ふた</rt></ruby>つに<ruby>裂<rt>さ</rt></ruby>け",
+            "furigana": true
+          },
+          {
+            "jp": "巨木の根で　道が二つに裂け",
+            "en": "At the roots of the great tree the path split in two",
+            "phrase": true,
+            "jpHtml": "<ruby>巨木<rt>きょぼく</rt></ruby>の<ruby>根<rt>ね</rt></ruby>で　<ruby>道<rt>みち</rt></ruby>が<ruby>二<rt>ふた</rt></ruby>つに<ruby>裂<rt>さ</rt></ruby>け",
+            "furigana": true
+          },
+          {
+            "jp": "旅",
+            "reading": "たび",
+            "en": "journey / travel"
+          },
+          {
+            "jp": "旅人",
+            "reading": "たびびと",
+            "en": "traveler"
+          },
+          {
+            "jp": "旅人だけ",
+            "en": "the traveler alone",
+            "phrase": true,
+            "jpHtml": "<ruby>旅人<rt>たびびと</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "選択",
+            "reading": "せんたく",
+            "en": "choice"
+          },
+          {
+            "jp": "止める",
+            "reading": "とめる",
+            "en": "to stop / pause"
+          },
+          {
+            "jp": "選択を止めていた",
+            "en": "paused before the choice",
+            "phrase": true,
+            "jpHtml": "<ruby>選択<rt>せんたく</rt></ruby>を<ruby>止<rt>と</rt></ruby>めていた",
+            "furigana": true
+          },
+          {
+            "jp": "旅人だけが　選択を止めていた",
+            "en": "…and the traveler alone paused before the choice",
+            "phrase": true,
+            "jpHtml": "<ruby>旅人<rt>たびびと</rt></ruby>だけが　<ruby>選択<rt>せんたく</rt></ruby>を<ruby>止<rt>と</rt></ruby>めていた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "eight",
+        "prototype": true
+      },
+      "imageRev": 1781524482
+    },
+    {
+      "id": "L01_nine",
+      "kanji": "九",
+      "keyword": "nine",
+      "image": "studies/nine.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>橋<rt>はし</rt></ruby>に<br>    <ruby>灯<rt>あか</rt></ruby>りが<ruby>続<rt>つづ</rt></ruby>く",
+        "en": "Lights continuing across the wet bridge"
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "濡れる",
+            "reading": "ぬれる",
+            "en": "to become wet"
+          },
+          {
+            "jp": "濡れた",
+            "en": "wet",
+            "phrase": true,
+            "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた",
+            "furigana": true
+          },
+          {
+            "jp": "橋",
+            "reading": "はし",
+            "en": "bridge"
+          },
+          {
+            "jp": "濡れた橋",
+            "en": "the wet bridge",
+            "phrase": true,
+            "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>橋<rt>はし</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "濡れた橋に",
+            "en": "across the wet bridge",
+            "phrase": true,
+            "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>橋<rt>はし</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "灯り",
+            "reading": "あかり",
+            "en": "lamplight"
+          },
+          {
+            "jp": "続く",
+            "reading": "つづく",
+            "en": "to continue"
+          },
+          {
+            "jp": "灯りが続く",
+            "en": "the lights continue",
+            "phrase": true,
+            "jpHtml": "<ruby>灯<rt>あか</rt></ruby>りが<ruby>続<rt>つづ</rt></ruby>く",
+            "furigana": true
+          },
+          {
+            "jp": "濡れた橋に　灯りが続く",
+            "en": "Lights continuing across the wet bridge",
+            "phrase": true,
+            "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>橋<rt>はし</rt></ruby>に<ruby>灯<rt>あか</rt></ruby>りが<ruby>続<rt>つづ</rt></ruby>く",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "nine",
+        "prototype": true
+      },
+      "imageRev": 1781524631
+    },
+    {
+      "id": "L01_ten",
+      "kanji": "十",
+      "keyword": "ten",
+      "image": "studies/ten.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>市<rt>いち</rt></ruby>で　<ruby>藍<rt>あい</rt></ruby>の<ruby>布<rt>ぬの</rt></ruby>を<ruby>畳<rt>たた</rt></ruby>み<br>    <ruby>十<rt>じゅう</rt></ruby>の<ruby>交<rt>ま</rt></ruby>わりが　<ruby>布<rt>ぬの</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>刻<rt>きざ</rt></ruby>まれた",
+        "en": "At the morning market he folded indigo cloth,\nand the crossing of ten lay quietly woven in the fabric."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "朝",
+            "reading": "あさ",
+            "en": "morning"
+          },
+          {
+            "jp": "市",
+            "reading": "いち",
+            "en": "market"
+          },
+          {
+            "jp": "朝の市",
+            "en": "the morning market",
+            "phrase": true,
+            "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>市<rt>いち</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "朝の市で",
+            "en": "at the morning market",
+            "phrase": true,
+            "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>市<rt>いち</rt></ruby>で",
+            "furigana": true
+          },
+          {
+            "jp": "藍",
+            "reading": "あい",
+            "en": "indigo"
+          },
+          {
+            "jp": "布",
+            "reading": "ぬの",
+            "en": "cloth"
+          },
+          {
+            "jp": "藍の布",
+            "en": "indigo cloth",
+            "phrase": true,
+            "jpHtml": "<ruby>藍<rt>あい</rt></ruby>の<ruby>布<rt>ぬの</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "畳む",
+            "reading": "たたむ",
+            "en": "to fold"
+          },
+          {
+            "jp": "藍の布を畳み",
+            "en": "folded indigo cloth",
+            "phrase": true,
+            "jpHtml": "<ruby>藍<rt>あい</rt></ruby>の<ruby>布<rt>ぬの</rt></ruby>を<ruby>畳<rt>たた</rt></ruby>み",
+            "furigana": true
+          },
+          {
+            "jp": "朝の市で　藍の布を畳み",
+            "en": "At the morning market he folded indigo cloth",
+            "phrase": true,
+            "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>市<rt>いち</rt></ruby>で　<ruby>藍<rt>あい</rt></ruby>の<ruby>布<rt>ぬの</rt></ruby>を<ruby>畳<rt>たた</rt></ruby>み",
+            "furigana": true
+          },
+          {
+            "jp": "十",
+            "reading": "じゅう",
+            "en": "ten"
+          },
+          {
+            "jp": "交わり",
+            "reading": "まじわり",
+            "en": "crossing / intersection"
+          },
+          {
+            "jp": "十の交わり",
+            "en": "the crossing of ten",
+            "phrase": true,
+            "jpHtml": "<ruby>十<rt>じゅう</rt></ruby>の<ruby>交<rt>ま</rt></ruby>わり",
+            "furigana": true
+          },
+          {
+            "jp": "刻む",
+            "reading": "きざむ",
+            "en": "to carve / weave in"
+          },
+          {
+            "jp": "布に静かに刻まれた",
+            "en": "lay quietly woven in the fabric",
+            "phrase": true,
+            "jpHtml": "<ruby>布<rt>ぬの</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>刻<rt>きざ</rt></ruby>まれた",
+            "furigana": true
+          },
+          {
+            "jp": "十の交わりが　布に静かに刻まれた",
+            "en": "…and the crossing of ten lay quietly woven in the fabric",
+            "phrase": true,
+            "jpHtml": "<ruby>十<rt>じゅう</rt></ruby>の<ruby>交<rt>ま</rt></ruby>わりが　<ruby>布<rt>ぬの</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>刻<rt>きざ</rt></ruby>まれた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "ten",
+        "prototype": true
+      },
+      "imageRev": 1781525131
+    },
+    {
+      "id": "L01_mouth",
+      "kanji": "口",
+      "keyword": "mouth",
+      "image": "studies/mouth.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 55%"
+      },
+      "verse": {
+        "jpHtml": "<ruby>湯気<rt>ゆげ</rt></ruby>の<ruby>立<rt>た</rt></ruby>つ<ruby>碗<rt>わん</rt></ruby>を　<ruby>両手<rt>りょうて</rt></ruby>で<ruby>包<rt>つつ</rt></ruby>み<br>    <ruby>口<rt>くち</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けて　<ruby>笑<rt>わら</rt></ruby>いが<ruby>部屋<rt>へや</rt></ruby>に<ruby>溢<rt>あふ</rt></ruby>れた",
+        "en": "Holding the steaming bowl in both hands,\nshe opened her mouth and laughter filled the room."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "湯気の立つ",
+            "en": "the steaming …",
+            "phrase": true,
+            "jpHtml": "<ruby>湯気<rt>ゆげ</rt></ruby>の<ruby>立<rt>た</rt></ruby>つ",
+            "furigana": true
+          },
+          {
+            "jp": "碗",
+            "reading": "わん",
+            "en": "bowl"
+          },
+          {
+            "jp": "湯気の立つ碗",
+            "en": "the steaming bowl",
+            "phrase": true,
+            "jpHtml": "<ruby>湯気<rt>ゆげ</rt></ruby>の<ruby>立<rt>た</rt></ruby>つ<ruby>碗<rt>わん</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "両手",
+            "reading": "りょうて",
+            "en": "both hands"
+          },
+          {
+            "jp": "両手で包み",
+            "en": "holding in both hands",
+            "phrase": true,
+            "jpHtml": "<ruby>両手<rt>りょうて</rt></ruby>で<ruby>包<rt>つつ</rt></ruby>み",
+            "furigana": true
+          },
+          {
+            "jp": "湯気の立つ碗を　両手で包み",
+            "en": "Holding the steaming bowl in both hands",
+            "phrase": true,
+            "jpHtml": "<ruby>湯気<rt>ゆげ</rt></ruby>の<ruby>立<rt>た</rt></ruby>つ<ruby>碗<rt>わん</rt></ruby>を　<ruby>両手<rt>りょうて</rt></ruby>で<ruby>包<rt>つつ</rt></ruby>み",
+            "furigana": true
+          },
+          {
+            "jp": "口",
+            "reading": "くち",
+            "en": "mouth"
+          },
+          {
+            "jp": "開ける",
+            "reading": "あける",
+            "en": "to open"
+          },
+          {
+            "jp": "口を開けて",
+            "en": "she opened her mouth",
+            "phrase": true,
+            "jpHtml": "<ruby>口<rt>くち</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けて",
+            "furigana": true
+          },
+          {
+            "jp": "笑い",
+            "reading": "わらい",
+            "en": "laughter"
+          },
+          {
+            "jp": "溢れる",
+            "reading": "あふれる",
+            "en": "to overflow / fill"
+          },
+          {
+            "jp": "笑いが部屋に溢れた",
+            "en": "laughter filled the room",
+            "phrase": true,
+            "jpHtml": "<ruby>笑<rt>わら</rt></ruby>いが<ruby>部屋<rt>へや</rt></ruby>に<ruby>溢<rt>あふ</rt></ruby>れた",
+            "furigana": true
+          },
+          {
+            "jp": "口を開けて　笑いが部屋に溢れた",
+            "en": "…she opened her mouth and laughter filled the room",
+            "phrase": true,
+            "jpHtml": "<ruby>口<rt>くち</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けて　<ruby>笑<rt>わら</rt></ruby>いが<ruby>部屋<rt>へや</rt></ruby>に<ruby>溢<rt>あふ</rt></ruby>れた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "mouth",
+        "prototype": true
+      },
+      "imageFocus": "50% 55%",
+      "imageRev": 1781510769
+    },
+    {
+      "id": "L01_sun",
+      "kanji": "日",
+      "keyword": "sun",
+      "image": "studies/sun.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 32%"
+      },
+      "verse": {
+        "jpHtml": "<ruby>棚田<rt>たなだ</rt></ruby>に　<ruby>朝日<rt>あさひ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>り<ruby>注<rt>そそ</rt></ruby>ぎ<br>    <ruby>水面<rt>みなも</rt></ruby>だけが　<ruby>黄金<rt>こがね</rt></ruby>に<ruby>燃<rt>も</rt></ruby>えていた",
+        "en": "Morning sun poured across the terraced fields,\nwhile only the water burned with gold."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "棚田",
+            "reading": "たなだ",
+            "en": "terraced rice fields"
+          },
+          {
+            "jp": "棚田に",
+            "en": "across the terraced fields",
+            "phrase": true,
+            "jpHtml": "<ruby>棚田<rt>たなだ</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "日",
+            "reading": "ひ",
+            "en": "sun"
+          },
+          {
+            "jp": "朝日",
+            "reading": "あさひ",
+            "en": "morning sun"
+          },
+          {
+            "jp": "降り注ぐ",
+            "reading": "ふりそそぐ",
+            "en": "to pour down"
+          },
+          {
+            "jp": "棚田に　朝日が降り注ぐ",
+            "en": "Morning sun poured across the terraced fields",
+            "phrase": true,
+            "jpHtml": "<ruby>棚田<rt>たなだ</rt></ruby>に　<ruby>朝日<rt>あさひ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>り<ruby>注<rt>そそ</rt></ruby>ぐ",
+            "furigana": true
+          },
+          {
+            "jp": "水面",
+            "reading": "みなも",
+            "en": "water's surface"
+          },
+          {
+            "jp": "水面だけ",
+            "en": "only the water's surface",
+            "phrase": true,
+            "jpHtml": "<ruby>水面<rt>みなも</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "黄金",
+            "reading": "こがね",
+            "en": "gold"
+          },
+          {
+            "jp": "燃える",
+            "reading": "もえる",
+            "en": "to burn / glow"
+          },
+          {
+            "jp": "黄金に燃えていた",
+            "en": "burned with gold",
+            "phrase": true,
+            "jpHtml": "<ruby>黄金<rt>こがね</rt></ruby>に<ruby>燃<rt>も</rt></ruby>えていた",
+            "furigana": true
+          },
+          {
+            "jp": "水面だけが　黄金に燃えていた",
+            "en": "…while only the water burned with gold",
+            "phrase": true,
+            "jpHtml": "<ruby>水面<rt>みなも</rt></ruby>だけが　<ruby>黄金<rt>こがね</rt></ruby>に<ruby>燃<rt>も</rt></ruby>えていた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "sun",
+        "prototype": true
+      },
+      "imageFocus": "50% 32%",
+      "imageRev": 1781525623
+    },
+    {
+      "id": "L01_moon",
+      "kanji": "月",
+      "keyword": "moon",
+      "image": "studies/moon.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 35%"
+      },
+      "verse": {
+        "jpHtml": "<ruby>船上<rt>せんじょう</rt></ruby>で<ruby>網<rt>あみ</rt></ruby>を<ruby>直<rt>なお</rt></ruby>す<ruby>漁師<rt>りょうし</rt></ruby>に<br>    <ruby>月<rt>つき</rt></ruby>あかりだけが　<ruby>静<rt>しず</rt></ruby>かに<ruby>寄<rt>よ</rt></ruby>り<ruby>添<rt>そ</rt></ruby>った",
+        "en": "A fisherman mended his net upon the boat,\nwhile moonlight alone quietly kept him company."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "船上",
+            "reading": "せんじょう",
+            "en": "onboard a boat"
+          },
+          {
+            "jp": "船上で",
+            "en": "upon the boat",
+            "phrase": true,
+            "jpHtml": "<ruby>船上<rt>せんじょう</rt></ruby>で",
+            "furigana": true
+          },
+          {
+            "jp": "網",
+            "reading": "あみ",
+            "en": "net"
+          },
+          {
+            "jp": "直す",
+            "reading": "なおす",
+            "en": "to mend / repair"
+          },
+          {
+            "jp": "網を直す",
+            "en": "mending his net",
+            "phrase": true,
+            "jpHtml": "<ruby>網<rt>あみ</rt></ruby>を<ruby>直<rt>なお</rt></ruby>す",
+            "furigana": true
+          },
+          {
+            "jp": "漁師",
+            "reading": "りょうし",
+            "en": "fisherman"
+          },
+          {
+            "jp": "網を直す漁師",
+            "en": "a fisherman mending his net",
+            "phrase": true,
+            "jpHtml": "<ruby>網<rt>あみ</rt></ruby>を<ruby>直<rt>なお</rt></ruby>す<ruby>漁師<rt>りょうし</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "船上で網を直す漁師に",
+            "en": "to a fisherman mending his net upon the boat",
+            "phrase": true,
+            "jpHtml": "<ruby>船上<rt>せんじょう</rt></ruby>で<ruby>網<rt>あみ</rt></ruby>を<ruby>直<rt>なお</rt></ruby>す<ruby>漁師<rt>りょうし</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "あかり",
+            "reading": "あかり",
+            "en": "light"
+          },
+          {
+            "jp": "月あかり",
+            "reading": "つきあかり",
+            "en": "moonlight"
+          },
+          {
+            "jp": "月あかりだけ",
+            "en": "only moonlight",
+            "phrase": true,
+            "jpHtml": "<ruby>月<rt>つき</rt></ruby>あかりだけ",
+            "furigana": true
+          },
+          {
+            "jp": "寄り添う",
+            "reading": "よりそう",
+            "en": "to draw near / keep company"
+          },
+          {
+            "jp": "静かに寄り添った",
+            "en": "quietly kept him company",
+            "phrase": true,
+            "jpHtml": "<ruby>静<rt>しず</rt></ruby>かに<ruby>寄<rt>よ</rt></ruby>り<ruby>添<rt>そ</rt></ruby>った",
+            "furigana": true
+          },
+          {
+            "jp": "月あかりだけが　静かに寄り添った",
+            "en": "…while moonlight alone quietly kept him company",
+            "phrase": true,
+            "jpHtml": "<ruby>月<rt>つき</rt></ruby>あかりだけが　<ruby>静<rt>しず</rt></ruby>かに<ruby>寄<rt>よ</rt></ruby>り<ruby>添<rt>そ</rt></ruby>った",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "moon",
+        "prototype": true
+      },
+      "imageFocus": "50% 35%",
+      "imageRev": 1781511558
+    },
+    {
+      "id": "L01_field",
+      "kanji": "田",
+      "keyword": "field",
+      "image": "studies/field.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "verse": {
+        "jpHtml": "<ruby>方眼<rt>ほうがん</rt></ruby>の<ruby>田<rt>た</rt></ruby>が　<ruby>朝日<rt>あさひ</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>し<br>    <ruby>霧<rt>きり</rt></ruby>の<ruby>谷<rt>たに</rt></ruby>だけが　<ruby>静<rt>しず</rt></ruby>かに<ruby>包<rt>つつ</rt></ruby>んでいた",
+        "en": "The grid of paddies mirrored the morning sun,\nwhile only the misty valley quietly held them."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "方眼",
+            "reading": "ほうがん",
+            "en": "grid pattern"
+          },
+          {
+            "jp": "田",
+            "reading": "た",
+            "en": "rice field"
+          },
+          {
+            "jp": "方眼の田",
+            "en": "the grid of paddies",
+            "phrase": true,
+            "jpHtml": "<ruby>方眼<rt>ほうがん</rt></ruby>の<ruby>田<rt>た</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "映し",
+            "reading": "うつし",
+            "en": "mirrored",
+            "phrase": true,
+            "jpHtml": "<ruby>映<rt>うつ</rt></ruby>し",
+            "furigana": true
+          },
+          {
+            "jp": "方眼の田が　朝日を映し",
+            "en": "The grid of paddies mirrored the morning sun",
+            "phrase": true,
+            "jpHtml": "<ruby>方眼<rt>ほうがん</rt></ruby>の<ruby>田<rt>た</rt></ruby>が　<ruby>朝日<rt>あさひ</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>し",
+            "furigana": true
+          },
+          {
+            "jp": "霧",
+            "reading": "きり",
+            "en": "mist"
+          },
+          {
+            "jp": "谷",
+            "reading": "たに",
+            "en": "valley"
+          },
+          {
+            "jp": "霧の谷",
+            "en": "the misty valley",
+            "phrase": true,
+            "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>谷<rt>たに</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "霧の谷だけ",
+            "en": "only the misty valley",
+            "phrase": true,
+            "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>谷<rt>たに</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "静かに包んでいた",
+            "en": "quietly held them",
+            "phrase": true,
+            "jpHtml": "<ruby>静<rt>しず</rt></ruby>かに<ruby>包<rt>つつ</rt></ruby>んでいた",
+            "furigana": true
+          },
+          {
+            "jp": "霧の谷だけが　静かに包んでいた",
+            "en": "…while only the misty valley quietly held them",
+            "phrase": true,
+            "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>谷<rt>たに</rt></ruby>だけが　<ruby>静<rt>しず</rt></ruby>かに<ruby>包<rt>つつ</rt></ruby>んでいた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "field",
+        "prototype": true
+      },
+      "imageRev": 1781525742
+    },
+    {
+      "id": "L01_eye",
+      "kanji": "目",
+      "keyword": "eye",
+      "image": "studies/eye.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 48%"
+      },
+      "verse": {
+        "jpHtml": "<ruby>橋<rt>はし</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>で　<ruby>灯<rt>あか</rt></ruby>りの<ruby>流<rt>なが</rt></ruby>れを<ruby>見<rt>み</rt></ruby>つめ<br>    <ruby>少年<rt>しょうねん</rt></ruby>の<ruby>目<rt>め</rt></ruby>だけが　<ruby>夜<rt>よる</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えていた",
+        "en": "Upon the bridge he watched the lanterns drift,\nwhile only the boy's eyes remembered the night."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "橋の上",
+            "en": "upon the bridge",
+            "phrase": true,
+            "jpHtml": "<ruby>橋<rt>はし</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "橋の上で",
+            "en": "upon the bridge",
+            "phrase": true,
+            "jpHtml": "<ruby>橋<rt>はし</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>で",
+            "furigana": true
+          },
+          {
+            "jp": "流れ",
+            "reading": "ながれ",
+            "en": "flow / drift"
+          },
+          {
+            "jp": "灯りの流れ",
+            "en": "the flow of lanterns",
+            "phrase": true,
+            "jpHtml": "<ruby>灯<rt>あか</rt></ruby>りの<ruby>流<rt>なが</rt></ruby>れ",
+            "furigana": true
+          },
+          {
+            "jp": "見つめる",
+            "reading": "みつめる",
+            "en": "to gaze at / watch"
+          },
+          {
+            "jp": "灯りの流れを見つめ",
+            "en": "watching the lanterns drift",
+            "phrase": true,
+            "jpHtml": "<ruby>灯<rt>あか</rt></ruby>りの<ruby>流<rt>なが</rt></ruby>れを<ruby>見<rt>み</rt></ruby>つめ",
+            "furigana": true
+          },
+          {
+            "jp": "橋の上で　灯りの流れを見つめ",
+            "en": "Upon the bridge he watched the lanterns drift",
+            "phrase": true,
+            "jpHtml": "<ruby>橋<rt>はし</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>で　<ruby>灯<rt>あか</rt></ruby>りの<ruby>流<rt>なが</rt></ruby>れを<ruby>見<rt>み</rt></ruby>つめ",
+            "furigana": true
+          },
+          {
+            "jp": "少",
+            "reading": "しょう",
+            "en": "young"
+          },
+          {
+            "jp": "年",
+            "reading": "ねん",
+            "en": "year"
+          },
+          {
+            "jp": "少年",
+            "reading": "しょうねん",
+            "en": "boy"
+          },
+          {
+            "jp": "目",
+            "reading": "め",
+            "en": "eye"
+          },
+          {
+            "jp": "少年の目",
+            "en": "the boy's eyes",
+            "phrase": true,
+            "jpHtml": "<ruby>少年<rt>しょうねん</rt></ruby>の<ruby>目<rt>め</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "少年の目だけ",
+            "en": "only the boy's eyes",
+            "phrase": true,
+            "jpHtml": "<ruby>少年<rt>しょうねん</rt></ruby>の<ruby>目<rt>め</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "覚える",
+            "reading": "おぼえる",
+            "en": "to remember"
+          },
+          {
+            "jp": "夜を覚えていた",
+            "en": "remembered the night",
+            "phrase": true,
+            "jpHtml": "<ruby>夜<rt>よる</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えていた",
+            "furigana": true
+          },
+          {
+            "jp": "少年の目だけが　夜を覚えていた",
+            "en": "…while only the boy's eyes remembered the night",
+            "phrase": true,
+            "jpHtml": "<ruby>少年<rt>しょうねん</rt></ruby>の<ruby>目<rt>め</rt></ruby>だけが　<ruby>夜<rt>よる</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えていた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "eye",
+        "prototype": true
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781526247
+    },
+    {
+      "id": "L01_old",
+      "kanji": "古",
+      "keyword": "old",
+      "image": "studies/old.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>杉<rt>すぎ</rt></ruby>の<ruby>幹<rt>みき</rt></ruby>に<br>    <ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し<br>    <ruby>幾世代<rt>いくせだい</rt></ruby>もの<ruby>祈<rt>いの</rt></ruby>りを<br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>宿<rt>やど</rt></ruby>していた",
+        "en": "Morning light touched\nthe trunk of the ancient cedar,\nwhich quietly carried\nthe prayers of generations."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "古い",
+            "reading": "ふるい",
+            "en": "old / ancient"
+          },
+          {
+            "jp": "杉",
+            "reading": "すぎ",
+            "en": "cedar"
+          },
+          {
+            "jp": "古い杉",
+            "en": "an ancient cedar",
+            "phrase": true,
+            "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>杉<rt>すぎ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "幹",
+            "reading": "みき",
+            "en": "trunk"
+          },
+          {
+            "jp": "古い杉の幹",
+            "en": "the trunk of the ancient cedar",
+            "phrase": true,
+            "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>杉<rt>すぎ</rt></ruby>の<ruby>幹<rt>みき</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "古い杉の幹に",
+            "en": "upon the trunk of the ancient cedar",
+            "phrase": true,
+            "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>杉<rt>すぎ</rt></ruby>の<ruby>幹<rt>みき</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "光",
+            "reading": "ひかり",
+            "en": "light"
+          },
+          {
+            "jp": "朝の光",
+            "en": "morning light",
+            "phrase": true,
+            "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "差す",
+            "reading": "さす",
+            "en": "to shine upon"
+          },
+          {
+            "jp": "朝の光が差し",
+            "en": "morning light touched",
+            "phrase": true,
+            "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し",
+            "furigana": true
+          },
+          {
+            "jp": "古い杉の幹に　朝の光が差し",
+            "en": "Morning light touched the trunk of the ancient cedar",
+            "phrase": true,
+            "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>杉<rt>すぎ</rt></ruby>の<ruby>幹<rt>みき</rt></ruby>に<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し",
+            "furigana": true
+          },
+          {
+            "jp": "幾",
+            "reading": "いく",
+            "en": "several"
+          },
+          {
+            "jp": "世代",
+            "reading": "せだい",
+            "en": "generations"
+          },
+          {
+            "jp": "幾世代",
+            "reading": "いくせだい",
+            "en": "generations"
+          },
+          {
+            "jp": "祈り",
+            "reading": "いのり",
+            "en": "prayer"
+          },
+          {
+            "jp": "幾世代もの祈り",
+            "en": "the prayers of generations",
+            "phrase": true,
+            "jpHtml": "<ruby>幾世代<rt>いくせだい</rt></ruby>もの<ruby>祈<rt>いの</rt></ruby>り",
+            "furigana": true
+          },
+          {
+            "jp": "宿す",
+            "reading": "やどす",
+            "en": "to carry / dwell within"
+          },
+          {
+            "jp": "幾世代もの祈りを　静かに宿していた",
+            "en": "…which quietly carried the prayers of generations",
+            "phrase": true,
+            "jpHtml": "<ruby>幾世代<rt>いくせだい</rt></ruby>もの<ruby>祈<rt>いの</rt></ruby>りを<ruby>静<rt>しず</rt></ruby>かに<ruby>宿<rt>やど</rt></ruby>していた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "old",
+        "prototype": true
+      },
+      "imageRev": 1782000070
+    },
+    {
+      "id": "L01_I",
+      "kanji": "吾",
+      "keyword": "I",
+      "image": "studies/I.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>鏡<rt>かがみ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に　<ruby>静<rt>しず</rt></ruby>かに<ruby>立<rt>た</rt></ruby>ち<br>    <ruby>言葉<rt>ことば</rt></ruby>なくして　<ruby>我<rt>われ</rt></ruby>だけが<ruby>在<rt>あ</rt></ruby>った",
+        "en": "He stood quietly before the mirror,\nand without words, only himself remained."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "鏡",
+            "reading": "かがみ",
+            "en": "mirror"
+          },
+          {
+            "jp": "前",
+            "reading": "まえ",
+            "en": "before / in front"
+          },
+          {
+            "jp": "鏡の前",
+            "en": "before the mirror",
+            "phrase": true,
+            "jpHtml": "<ruby>鏡<rt>かがみ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "鏡の前に",
+            "en": "before the mirror",
+            "phrase": true,
+            "jpHtml": "<ruby>鏡<rt>かがみ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に",
+            "furigana": true
+          },
+          {
+            "jp": "立つ",
+            "reading": "たつ",
+            "en": "to stand"
+          },
+          {
+            "jp": "静かに立ち",
+            "en": "stood quietly",
+            "phrase": true,
+            "jpHtml": "<ruby>静<rt>しず</rt></ruby>かに<ruby>立<rt>た</rt></ruby>ち",
+            "furigana": true
+          },
+          {
+            "jp": "鏡の前に　静かに立ち",
+            "en": "He stood quietly before the mirror",
+            "phrase": true,
+            "jpHtml": "<ruby>鏡<rt>かがみ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に　<ruby>静<rt>しず</rt></ruby>かに<ruby>立<rt>た</rt></ruby>ち",
+            "furigana": true
+          },
+          {
+            "jp": "言葉",
+            "reading": "ことば",
+            "en": "words"
+          },
+          {
+            "jp": "言葉なくして",
+            "en": "without words",
+            "phrase": true,
+            "jpHtml": "<ruby>言葉<rt>ことば</rt></ruby>なくして",
+            "furigana": true
+          },
+          {
+            "jp": "我",
+            "reading": "われ",
+            "en": "I / oneself"
+          },
+          {
+            "jp": "我だけ",
+            "en": "only himself",
+            "phrase": true,
+            "jpHtml": "<ruby>我<rt>われ</rt></ruby>だけ",
+            "furigana": true
+          },
+          {
+            "jp": "在る",
+            "reading": "ある",
+            "en": "to be / exist"
+          },
+          {
+            "jp": "我だけが在った",
+            "en": "only himself remained",
+            "phrase": true,
+            "jpHtml": "<ruby>我<rt>われ</rt></ruby>だけが<ruby>在<rt>あ</rt></ruby>った",
+            "furigana": true
+          },
+          {
+            "jp": "言葉なくして　我だけが在った",
+            "en": "…and without words, only himself remained",
+            "phrase": true,
+            "jpHtml": "<ruby>言葉<rt>ことば</rt></ruby>なくして　<ruby>我<rt>われ</rt></ruby>だけが<ruby>在<rt>あ</rt></ruby>った",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "I",
+        "prototype": true
+      },
+      "imageRev": 1781526680
+    },
+    {
+      "id": "L01_risk",
+      "kanji": "冒",
+      "keyword": "risk",
+      "image": "studies/risk.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>嶺<rt>みね</rt></ruby>で　<ruby>伸<rt>の</rt></ruby>ばした<ruby>手<rt>て</rt></ruby>を<ruby>握<rt>にぎ</rt></ruby>り<br>    <ruby>見<rt>み</rt></ruby>えぬ<ruby>一歩<rt>いっぽ</rt></ruby>が　<ruby>二人<rt>ふたり</rt></ruby>を<ruby>結<rt>むす</rt></ruby>んでいた",
+        "en": "Upon the snowy ridge they clasped reaching hands,\nand one unseen step bound them together."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "嶺",
+            "reading": "みね",
+            "en": "ridge / peak"
+          },
+          {
+            "jp": "雪の嶺",
+            "en": "the snowy ridge",
+            "phrase": true,
+            "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>嶺<rt>みね</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "雪の嶺で",
+            "en": "upon the snowy ridge",
+            "phrase": true,
+            "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>嶺<rt>みね</rt></ruby>で",
+            "furigana": true
+          },
+          {
+            "jp": "伸ばす",
+            "reading": "のばす",
+            "en": "to extend / reach out"
+          },
+          {
+            "jp": "伸ばした手",
+            "en": "reaching hands",
+            "phrase": true,
+            "jpHtml": "<ruby>伸<rt>の</rt></ruby>ばした<ruby>手<rt>て</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "握る",
+            "reading": "にぎる",
+            "en": "to clasp / grasp"
+          },
+          {
+            "jp": "伸ばした手を握り",
+            "en": "they clasped reaching hands",
+            "phrase": true,
+            "jpHtml": "<ruby>伸<rt>の</rt></ruby>ばした<ruby>手<rt>て</rt></ruby>を<ruby>握<rt>にぎ</rt></ruby>り",
+            "furigana": true
+          },
+          {
+            "jp": "雪の嶺で　伸ばした手を握り",
+            "en": "Upon the snowy ridge they clasped reaching hands",
+            "phrase": true,
+            "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>嶺<rt>みね</rt></ruby>で　<ruby>伸<rt>の</rt></ruby>ばした<ruby>手<rt>て</rt></ruby>を<ruby>握<rt>にぎ</rt></ruby>り",
+            "furigana": true
+          },
+          {
+            "jp": "見えぬ",
+            "reading": "みえぬ",
+            "en": "unseen"
+          },
+          {
+            "jp": "歩",
+            "reading": "ぽ",
+            "en": "step"
+          },
+          {
+            "jp": "一歩",
+            "reading": "いっぽ",
+            "en": "one step"
+          },
+          {
+            "jp": "見えぬ一歩が",
+            "en": "one unseen step …",
+            "phrase": true,
+            "jpHtml": "<ruby>見<rt>み</rt></ruby>えぬ<ruby>一歩<rt>いっぽ</rt></ruby>が",
+            "furigana": true
+          },
+          {
+            "jp": "二人",
+            "reading": "ふたり",
+            "en": "two people"
+          },
+          {
+            "jp": "結ぶ",
+            "reading": "むすぶ",
+            "en": "to bind / join"
+          },
+          {
+            "jp": "二人を結んでいた",
+            "en": "bound them together",
+            "phrase": true,
+            "jpHtml": "<ruby>二人<rt>ふたり</rt></ruby>を<ruby>結<rt>むす</rt></ruby>んでいた",
+            "furigana": true
+          },
+          {
+            "jp": "見えぬ一歩が　二人を結んでいた",
+            "en": "…and one unseen step bound them together",
+            "phrase": true,
+            "jpHtml": "<ruby>見<rt>み</rt></ruby>えぬ<ruby>一歩<rt>いっぽ</rt></ruby>が　<ruby>二人<rt>ふたり</rt></ruby>を<ruby>結<rt>むす</rt></ruby>んでいた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "risk",
+        "prototype": true
+      },
+      "imageRev": 1781527059
+    },
+    {
+      "id": "L01_companion",
+      "kanji": "朋",
+      "keyword": "companion",
+      "image": "studies/companion.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>を　<ruby>向<rt>む</rt></ruby>かい<ruby>合<rt>あ</rt></ruby>いながら<br>    <ruby>火鉢<rt>ひばち</rt></ruby>のぬくもりだけが　<ruby>二人<rt>ふたり</rt></ruby>をつないでいた",
+        "en": "Facing each other across the snowy garden,\nonly the warmth of the brazier joined them together."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "庭",
+            "reading": "にわ",
+            "en": "garden"
+          },
+          {
+            "jp": "雪の庭",
+            "en": "the snow-covered garden",
+            "phrase": true,
+            "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "向かい合う",
+            "reading": "むかいあう",
+            "en": "to face one another"
+          },
+          {
+            "jp": "向かい合いながら",
+            "en": "facing each other",
+            "phrase": true,
+            "jpHtml": "<ruby>向<rt>む</rt></ruby>かい<ruby>合<rt>あ</rt></ruby>いながら",
+            "furigana": true
+          },
+          {
+            "jp": "雪の庭を　向かい合いながら",
+            "en": "Facing each other across the snowy garden",
+            "phrase": true,
+            "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>を　<ruby>向<rt>む</rt></ruby>かい<ruby>合<rt>あ</rt></ruby>いながら",
+            "furigana": true
+          },
+          {
+            "jp": "火",
+            "reading": "ひ",
+            "en": "fire"
+          },
+          {
+            "jp": "鉢",
+            "reading": "ばち",
+            "en": "brazier"
+          },
+          {
+            "jp": "火鉢",
+            "reading": "ひばち",
+            "en": "brazier"
+          },
+          {
+            "jp": "ぬくもり",
+            "reading": "ぬくもり",
+            "en": "warmth"
+          },
+          {
+            "jp": "火鉢のぬくもり",
+            "en": "the warmth of the brazier",
+            "phrase": true,
+            "jpHtml": "<ruby>火鉢<rt>ひばち</rt></ruby>のぬくもり",
+            "furigana": true
+          },
+          {
+            "jp": "火鉢のぬくもりだけ",
+            "en": "only the warmth of the brazier",
+            "phrase": true,
+            "jpHtml": "<ruby>火鉢<rt>ひばち</rt></ruby>のぬくもりだけ",
+            "furigana": true
+          },
+          {
+            "jp": "つなぐ",
+            "reading": "つなぐ",
+            "en": "to join / connect"
+          },
+          {
+            "jp": "二人をつないでいた",
+            "en": "joined them together",
+            "phrase": true,
+            "jpHtml": "<ruby>二人<rt>ふたり</rt></ruby>をつないでいた",
+            "furigana": true
+          },
+          {
+            "jp": "火鉢のぬくもりだけが　二人をつないでいた",
+            "en": "…only the warmth of the brazier joined them together",
+            "phrase": true,
+            "jpHtml": "<ruby>火鉢<rt>ひばち</rt></ruby>のぬくもりだけが　<ruby>二人<rt>ふたり</rt></ruby>をつないでいた",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "companion",
+        "prototype": true
+      },
+      "imageRev": 1781527220
+    },
+    {
+      "id": "L01_bright",
+      "kanji": "明",
+      "keyword": "bright",
+      "image": "studies/bright.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 40%"
+      },
+      "verse": {
+        "jpHtml": "<ruby>炉<rt>ろ</rt></ruby>の<ruby>火<rt>ひ</rt></ruby>が　<ruby>二人<rt>ふたり</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>を<ruby>照<rt>て</rt></ruby>らし<br>    <ruby>明<rt>あか</rt></ruby>るい<ruby>笑<rt>わら</rt></ruby>いだけが　<ruby>部屋<rt>へや</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>った",
+        "en": "The hearth fire lit their faces with warmth,\nand only their bright laughter lingered in the room."
+      },
+      "vocabulary": {
+        "steps": [
+          {
+            "jp": "炉",
+            "reading": "ろ",
+            "en": "hearth"
+          },
+          {
+            "jp": "炉の火",
+            "en": "the hearth fire",
+            "phrase": true,
+            "jpHtml": "<ruby>炉<rt>ろ</rt></ruby>の<ruby>火<rt>ひ</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "顔",
+            "reading": "かお",
+            "en": "faces"
+          },
+          {
+            "jp": "二人の顔",
+            "en": "their faces",
+            "phrase": true,
+            "jpHtml": "<ruby>二人<rt>ふたり</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>",
+            "furigana": true
+          },
+          {
+            "jp": "照らす",
+            "reading": "てらす",
+            "en": "to illuminate"
+          },
+          {
+            "jp": "炉の火が　二人の顔を照らし",
+            "en": "The hearth fire lit their faces with warmth",
+            "phrase": true,
+            "jpHtml": "<ruby>炉<rt>ろ</rt></ruby>の<ruby>火<rt>ひ</rt></ruby>が　<ruby>二人<rt>ふたり</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>を<ruby>照<rt>て</rt></ruby>らし",
+            "furigana": true
+          },
+          {
+            "jp": "明るい",
+            "reading": "あかるい",
+            "en": "bright"
+          },
+          {
+            "jp": "明るい笑い",
+            "en": "their bright laughter",
+            "phrase": true,
+            "jpHtml": "<ruby>明<rt>あか</rt></ruby>るい<ruby>笑<rt>わら</rt></ruby>い",
+            "furigana": true
+          },
+          {
+            "jp": "明るい笑いだけ",
+            "en": "only their bright laughter",
+            "phrase": true,
+            "jpHtml": "<ruby>明<rt>あか</rt></ruby>るい<ruby>笑<rt>わら</rt></ruby>いだけ",
+            "furigana": true
+          },
+          {
+            "jp": "残る",
+            "reading": "のこる",
+            "en": "to linger / remain"
+          },
+          {
+            "jp": "部屋に残った",
+            "en": "lingered in the room",
+            "phrase": true,
+            "jpHtml": "<ruby>部屋<rt>へや</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>った",
+            "furigana": true
+          },
+          {
+            "jp": "明るい笑いだけが　部屋に残った",
+            "en": "…and only their bright laughter lingered in the room",
+            "phrase": true,
+            "jpHtml": "<ruby>明<rt>あか</rt></ruby>るい<ruby>笑<rt>わら</rt></ruby>いだけが　<ruby>部屋<rt>へや</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>った",
+            "furigana": true
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "bright",
+        "prototype": true
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1781528950
+    }
+  ]
+}

@@ -7,11 +7,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/gallery-typography.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-typography.css?v=5">
   <link rel="stylesheet" href="./css/gallery-mobile-study-v2.css">
-  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=11">
+  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=17">
+  <link rel="stylesheet" href="./css/gallery-foundations.css?v=1">
   <link rel="stylesheet" href="./css/ambient.css">
 </head>
 <body>
@@ -29,37 +30,37 @@
 <!--
   KML Ambient Player
 
-  Collections (YouTube / loop — collections/):
-    ?collection=lesson_38_study
-    ?collection=lesson_39_study
-    ?collection=lesson_40_study
-    ?collection=lesson_41_study
+  Collections (YouTube / loop — collections/; lessons 1–10 under collections/lesson_XX/):
+    ?collection=lesson_38_foundations
+    ?collection=lesson_39_foundations
+    ?collection=lesson_40_foundations
+    ?collection=lesson_41_foundations
     ?collection=heart_v2
 
   Exhibition / presentation (Gallery Seal Ending — exhibition/):
-    ?collection=lesson_37_study&capture=1
-    ?collection=lesson_38_study&capture=1
-    ?collection=lesson_39_study&capture=1
-    ?collection=lesson_40_study&capture=1
+    ?collection=lesson_37_foundations&capture=1
+    ?collection=lesson_38_foundations&capture=1
+    ?collection=lesson_39_foundations&capture=1
+    ?collection=lesson_40_foundations&capture=1
 
   Archived (50 min Lesson 40 ambient/exhibition): collections/archive/
 
   OBS / presentation mode (no chrome, no loop, clean ending):
-    ?collection=lesson_40_study&capture=1
+    ?collection=lesson_40_foundations&capture=1
 
   Flow: intro → cards → Gallery Seal Ending. With capture=1, loads exhibition/ build automatically.
 
   Record Study Exhibition MP4s:
-    ./scripts/record_study_exhibition.sh
-    → study_exhibitions/lesson_XX_study.mp4
+    ./scripts/record_foundations_exhibition.sh
+    → foundations_exhibitions/lesson_XX_foundations.mp4
 
   Lesson 1 mobile readability refine (test):
-    ?collection=lesson_1_study&capture=1&typography=mobile-refine
+    ?collection=lesson_1_foundations&capture=1&typography=mobile-refine
 
   Lesson 1 mobile layout V2 (previous):
-    ?collection=lesson_1_study&capture=1&typography=mobile-v2
+    ?collection=lesson_1_foundations&capture=1&typography=mobile-v2
     ./scripts/record_lesson_01_mobile_test_v2.py
-    → study_exhibitions/lesson_01_study_mobile_test_v2.mp4
+    → foundations_exhibitions/lesson_01_foundations_mobile_test_v2.mp4
 
   Serve from this directory (assets symlink required):
     ./serve.sh
@@ -123,7 +124,8 @@
 
 </div>
 
+<script src="./js/collection-paths.js?v=1"></script>
 <script src="./js/verse-display.js?v=1"></script>
-<script src="./js/ambient-engine.js?v=study29"></script>
+<script src="./js/ambient-engine.js?v=study31"></script>
 </body>
 </html>

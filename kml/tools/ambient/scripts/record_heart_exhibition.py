@@ -154,10 +154,11 @@ def record(*, port: int, output_dir: Path, log_path: Path | None) -> Path:
     if not webm or not webm.is_file():
         raise RuntimeError("No video captured for Heart exhibition")
 
-    flute = ROOT / "audio" / "flute_intro.mp3"
-    ambient = ROOT / "audio" / "ambient_kanji_exhibition.mp3"
+    bookends = collection.get("bookends") or {}
+    flute = ROOT / (bookends.get("opening", {}).get("audio") or "audio/exhibition_flute_intro.mp3")
+    ambient = ROOT / (collection.get("soundtrack") or {}).get("main", "audio/ambient_kanji_exhibition.mp3")
     if not flute.is_file() or not ambient.is_file():
-        raise FileNotFoundError("Missing flute_intro.mp3 or ambient_kanji_exhibition.mp3")
+        raise FileNotFoundError(f"Missing flute ({flute}) or ambient ({ambient})")
 
     tmp_mux = tmp_dir / "muxed.mp4"
     flute_delay_s = flute_delay_ms / 1000.0

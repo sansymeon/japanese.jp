@@ -1,0 +1,389 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_05_reading",
+  "title": "Lesson 5 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 5,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v1",
+    "soundtrackTarget": "12:51",
+    "soundtrackDurationSec": 771.29,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L05_craft",
+      "kanji": "工",
+      "keyword": "craft",
+      "image": "studies/craft.png",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>な<ruby>工<rt>こう</rt></ruby><ruby>房<rt>ぼう</rt></ruby>に　<ruby>刃<rt>は</rt></ruby><ruby>物<rt>もの</rt></ruby>が<ruby>並<rt>なら</rt></ruby>び<br><ruby>職<rt>しょく</rt></ruby><ruby>人<rt>にん</rt></ruby>の<ruby>息<rt>いき</rt></ruby>だけが　<ruby>夜<rt>よる</rt></ruby>を<ruby>刻<rt>きざ</rt></ruby>んでいた",
+        "en": "In the silent workshop the tools lay in order,\nwhile only the craftsman's breath measured the night."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781696805
+    },
+    {
+      "id": "L05_left",
+      "kanji": "左",
+      "keyword": "left",
+      "image": "studies/left.png",
+      "verse": {
+        "jpHtml": "<ruby>細<rt>ほそ</rt></ruby>い<ruby>路<rt>ろ</rt></ruby><ruby>地<rt>じ</rt></ruby>に　<ruby>左<rt>ひだり</rt></ruby>への<ruby>印<rt>しるし</rt></ruby><br><ruby>知<rt>し</rt></ruby>らない<ruby>灯<rt>あか</rt></ruby>りが　<ruby>奥<rt>おく</rt></ruby>で<ruby>揺<rt>ゆ</rt></ruby>れていた",
+        "en": "In the narrow alley a sign pointed left,\nand an unfamiliar lantern flickered deeper within."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1782117203
+    },
+    {
+      "id": "L05_right",
+      "kanji": "右",
+      "keyword": "right",
+      "image": "studies/right.png",
+      "verse": {
+        "jpHtml": "<ruby>右<rt>みぎ</rt></ruby>へ<ruby>曲<rt>ま</rt></ruby>がる<ruby>道<rt>みち</rt></ruby>に　<ruby>影<rt>かげ</rt></ruby>が<ruby>伸<rt>の</rt></ruby>び<br><ruby>古<rt>ふる</rt></ruby>い<ruby>街<rt>まち</rt></ruby><ruby>並<rt>な</rt></ruby>みが　<ruby>静<rt>しず</rt></ruby>かに<ruby>続<rt>つづ</rt></ruby>いていた",
+        "en": "Along the road turning right, shadows stretched,\nand the old town carried on in silence."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1782117220
+    },
+    {
+      "id": "L05_possess",
+      "kanji": "有",
+      "keyword": "possess",
+      "image": "studies/possess.png",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>宝<rt>たから</rt></ruby>を　<ruby>手<rt>て</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>包<rt>つつ</rt></ruby>み<br><ruby>持<rt>も</rt></ruby>つという<ruby>幸<rt>しあわ</rt></ruby>せが　<ruby>静<rt>しず</rt></ruby>かに<ruby>満<rt>み</rt></ruby>ちていた",
+        "en": "An old treasure\nrested within her hands;\nthe happiness of possessing it\nquietly filled her heart."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781689004
+    },
+    {
+      "id": "L05_bribe",
+      "kanji": "賄",
+      "keyword": "bribe",
+      "image": "studies/bribe.png",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>で　<ruby>包<rt>つつ</rt></ruby>みが<ruby>置<rt>お</rt></ruby>かれ<br><ruby>誰<rt>だれ</rt></ruby>も<ruby>語<rt>かた</rt></ruby>らぬまま　<ruby>話<rt>はなし</rt></ruby>は<ruby>進<rt>すす</rt></ruby>んでいった",
+        "en": "In a quiet room a wrapped package was set down;\nwithout a word being spoken,\nthe discussion moved forward."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781689036
+    },
+    {
+      "id": "L05_tribute",
+      "kanji": "貢",
+      "keyword": "tribute",
+      "image": "studies/tribute.png",
+      "verse": {
+        "jpHtml": "<ruby>捧<rt>ささ</rt></ruby>げられた<ruby>箱<rt>はこ</rt></ruby>に　<ruby>金<rt>きん</rt></ruby><ruby>貨<rt>か</rt></ruby>が<ruby>重<rt>おも</rt></ruby>なり<br><ruby>人<rt>ひと</rt></ruby><ruby>々<rt>びと</rt></ruby>の<ruby>敬<rt>けい</rt></ruby><ruby>意<rt>い</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>形<rt>かたち</rt></ruby>となった",
+        "en": "Coins gathered within the offered chest,\nand the people's respect quietly took form."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_paragraph",
+      "kanji": "項",
+      "keyword": "paragraph",
+      "image": "studies/paragraph.png",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>書<rt>しょ</rt></ruby><ruby>物<rt>もつ</rt></ruby>を　<ruby>指<rt>ゆび</rt></ruby>でなぞりながら<br><ruby>一<rt>ひと</rt></ruby>つの<ruby>段<rt>だん</rt></ruby><ruby>落<rt>らく</rt></ruby>が　<ruby>時<rt>とき</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて<ruby>語<rt>かた</rt></ruby>りかける",
+        "en": "Tracing the ancient pages with a finger,\na single paragraph spoke across the years."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_sword",
+      "kanji": "刀",
+      "keyword": "sword",
+      "image": "studies/sword.png",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby><ruby>日<rt>ひ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で　<ruby>刀<rt>かたな</rt></ruby>は<ruby>眠<rt>ねむ</rt></ruby>り<br><ruby>触<rt>ふ</rt></ruby>れぬ<ruby>静<rt>しず</rt></ruby>けさが　<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>を<ruby>満<rt>み</rt></ruby>たしていた",
+        "en": "Within the morning light the sword lay resting;\nan untouchable stillness filled the room."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781614218
+    },
+    {
+      "id": "L05_blade",
+      "kanji": "刃",
+      "keyword": "blade",
+      "image": "studies/blade.png",
+      "verse": {
+        "jpHtml": "<ruby>細<rt>ほそ</rt></ruby>い<ruby>刃<rt>は</rt></ruby><ruby>先<rt>さき</rt></ruby>に　<ruby>冷<rt>つめ</rt></ruby>たい<ruby>光<rt>ひかり</rt></ruby><br>わずかな<ruby>動<rt>うご</rt></ruby>きが　<ruby>運<rt>うん</rt></ruby><ruby>命<rt>めい</rt></ruby>を<ruby>分<rt>わ</rt></ruby>けてゆく",
+        "en": "Cold light rested upon the blade,\nwhere the slightest movement divided fate."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781614270
+    },
+    {
+      "id": "L05_cut",
+      "kanji": "切",
+      "keyword": "cut",
+      "image": "studies/cut.png",
+      "verse": {
+        "jpHtml": "<ruby>黒<rt>くろ</rt></ruby>い<ruby>裂<rt>さ</rt></ruby>け<ruby>目<rt>め</rt></ruby>が　<ruby>夜<rt>よる</rt></ruby>を<ruby>断<rt>たん</rt></ruby>ち<ruby>切<rt>き</rt></ruby>り<br><ruby>一<rt>いっ</rt></ruby><ruby>瞬<rt>しゅん</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が　<ruby>静寂<rt>しじま</rt></ruby>を<ruby>貫<rt>つらぬ</rt></ruby>いていた",
+        "en": "A dark incision split the night apart,\nand a single flash pierced the silence."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1782117492
+    },
+    {
+      "id": "L05_seduce",
+      "kanji": "召",
+      "keyword": "seduce",
+      "image": "studies/seduce.png",
+      "verse": {
+        "jpHtml": "<ruby>差<rt>さ</rt></ruby>し<ruby>出<rt>だ</rt></ruby>された<ruby>餌<rt>えさ</rt></ruby>へ　<ruby>鯉<rt>こい</rt></ruby>たちが<ruby>集<rt>あつ</rt></ruby>まり<br><ruby>静<rt>しず</rt></ruby>かな<ruby>水<rt>みな</rt></ruby><ruby>面<rt>も</rt></ruby>に　<ruby>波<rt>なみ</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>がった",
+        "en": "Toward the offered food the koi gathered,\nacross the quiet surface ripples spread outward."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781765112
+    },
+    {
+      "id": "L05_shining",
+      "kanji": "昭",
+      "keyword": "shining",
+      "image": "studies/shining.png",
+      "verse": {
+        "jpHtml": "<ruby>森<rt>もり</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>へ　<ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<br><ruby>立<rt>た</rt></ruby>つ<ruby>人<rt>ひと</rt></ruby>の<ruby>影<rt>かげ</rt></ruby>が　<ruby>金<rt>きん</rt></ruby><ruby>色<rt>いろ</rt></ruby>に<ruby>包<rt>つつ</rt></ruby>まれていた",
+        "en": "Light poured deep into the forest,\nand the standing figure was wrapped in gold."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781868894
+    },
+    {
+      "id": "L05_rule",
+      "kanji": "則",
+      "keyword": "rule",
+      "image": "studies/rule.png",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>法<rt>ほう</rt></ruby>の<ruby>書<rt>しょ</rt></ruby>に　<ruby>蝋<rt>ろう</rt></ruby><ruby>燭<rt>そく</rt></ruby>が<ruby>揺<rt>ゆ</rt></ruby>れ<br><ruby>村<rt>むら</rt></ruby><ruby>人<rt>びと</rt></ruby>たちは<ruby>静<rt>しず</rt></ruby>かに　<ruby>耳<rt>みみ</rt></ruby>を<ruby>傾<rt>かたむ</rt></ruby>けていた",
+        "en": "Candles flickered beside the ancient law,\nand the villagers sat quietly, listening to its words."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781868219
+    },
+    {
+      "id": "L05_vice",
+      "kanji": "副",
+      "keyword": "vice",
+      "image": "studies/vice.png",
+      "verse": {
+        "jpHtml": "<ruby>並<rt>なら</rt></ruby>んで<ruby>座<rt>すわ</rt></ruby>る<ruby>二人<rt>ふたり</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>に<br><ruby>語<rt>かた</rt></ruby>られぬ<ruby>力<rt>ちから</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>流<rt>なが</rt></ruby>れていた",
+        "en": "Between the two seated figures,\nunspoken power quietly moved."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781689154
+    },
+    {
+      "id": "L05_separate",
+      "kanji": "別",
+      "keyword": "separate",
+      "image": "studies/separate.png",
+      "verse": {
+        "jpHtml": "<ruby>壁<rt>かべ</rt></ruby>を<ruby>背<rt>せ</rt></ruby>にして　<ruby>互<rt>たが</rt></ruby>いに<ruby>離<rt>はな</rt></ruby>れ<br><ruby>同<rt>おな</rt></ruby>じ<ruby>空<rt>くう</rt></ruby><ruby>気<rt>き</rt></ruby>だけが　<ruby>二人<rt>ふたり</rt></ruby>を<ruby>結<rt>むす</rt></ruby>んでいた",
+        "en": "Leaning against the wall, they turned apart,\nwhile only the same air connected them."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_street",
+      "kanji": "丁",
+      "keyword": "street",
+      "image": "studies/street.png",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby><ruby>霧<rt>ぎり</rt></ruby>の<ruby>街<rt>まち</rt></ruby>に　<ruby>幾<rt>いく</rt></ruby>つもの<ruby>道<rt>みち</rt></ruby>が<ruby>伸<rt>の</rt></ruby>び<br><ruby>遠<rt>とお</rt></ruby>い<ruby>海<rt>うみ</rt></ruby>まで　<ruby>人<rt>ひと</rt></ruby>の<ruby>流<rt>なが</rt></ruby>れが<ruby>続<rt>つづ</rt></ruby>いていた",
+        "en": "Across the morning city,\nmany roads stretched outward,\nand the flow of people\ncontinued all the way to the distant sea."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781689138
+    },
+    {
+      "id": "L05_town",
+      "kanji": "町",
+      "keyword": "town",
+      "image": "studies/town.png",
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby><ruby>暮<rt>ぐ</rt></ruby>れの<ruby>町<rt>まち</rt></ruby>に　<ruby>灯<rt>ひか</rt></ruby>りがともり<br><ruby>人<rt>ひと</rt></ruby><ruby>々<rt>ら</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>が　<ruby>窓<rt>まど</rt></ruby><ruby>辺<rt>べ</rt></ruby>に<ruby>溶<rt>と</rt></ruby>けてゆく",
+        "en": "Lights awakened throughout the evening town,\nand human voices melted into the windows."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_possible",
+      "kanji": "可",
+      "keyword": "possible",
+      "image": "studies/possible.png",
+      "verse": {
+        "jpHtml": "<ruby>雲<rt>くも</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに　<ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し<br>まだ<ruby>名<rt>な</rt></ruby>もない<ruby>未<rt>み</rt></ruby><ruby>来<rt>らい</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>待<rt>ま</rt></ruby>っていた",
+        "en": "Beyond the clouds a light appeared,\nand an unnamed future waited quietly."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781689119
+    },
+    {
+      "id": "L05_top",
+      "kanji": "頂",
+      "keyword": "top",
+      "image": "studies/top.png",
+      "verse": {
+        "jpHtml": "<ruby>山<rt>やま</rt></ruby>の<ruby>頂<rt>いただき</rt></ruby>から　<ruby>朝<rt>あさ</rt></ruby><ruby>霧<rt>ぎり</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて<br><ruby>遠<rt>とお</rt></ruby>い<ruby>景<rt>け</rt></ruby><ruby>色<rt>しき</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>開<rt>ひら</rt></ruby>いていた",
+        "en": "From the mountain summit, beyond the morning mist,\na distant landscape quietly opened before him."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781689064
+    },
+    {
+      "id": "L05_child",
+      "kanji": "子",
+      "keyword": "child",
+      "image": "studies/child.png",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>足<rt>あし</rt></ruby>で　<ruby>石<rt>いし</rt></ruby><ruby>畳<rt>だたみ</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>き<br><ruby>知<rt>し</rt></ruby>らない<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>が　<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>広<rt>ひろ</rt></ruby>がった",
+        "en": "With tiny feet she walked the stone road,\nand the unknown world slowly grew wider."
+      },
+      "meta": {
+        "lesson": 5,
+        "experimental": true
+      },
+      "imageRev": 1781689050
+    }
+  ]
+}

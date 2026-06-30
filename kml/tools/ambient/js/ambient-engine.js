@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "study29";
+  const ENGINE_VERSION = "study31";
   console.log("ambient-engine.js", ENGINE_VERSION);
 
   const DEFAULTS = {
@@ -30,6 +30,7 @@
       loop: true,
       autoAdvance: true,
       hideChrome: false,
+      typography: "mobile-refine",
     },
   };
 
@@ -66,8 +67,8 @@
       this.audioUnlocked = false;
       this._introComplete = false;
       this._soundtrackStarted = false;
-      this._studyForegroundHidden = false;
-      this._studyLoopFinishing = false;
+      this._foundationsForegroundHidden = false;
+      this._foundationsLoopFinishing = false;
       this._captureEnding = false;
       this.presentationEnded = false;
       this._cursorTimer = null;
@@ -102,7 +103,7 @@
       if (this.captureMode) {
         this.initCaptureMode();
       }
-      if (this.isStudy && this.hasStudyAudio()) {
+      if (this.isFoundations && this.hasFoundationsAudio()) {
         this.initAudio();
       }
     }
@@ -129,7 +130,7 @@
       showCursor();
 
       // Capture / OBS: unlock autoplay on interaction; resume if paused — never restart mid-run.
-      if (this.isStudy && this.hasStudyAudio()) {
+      if (this.isFoundations && this.hasFoundationsAudio()) {
         const retryAudio = () => {
           if (this.destroyed || this.presentationEnded || !this.mainAudio) return;
           this.ensureAudioUnlocked()
@@ -140,7 +141,7 @@
       }
     }
 
-    hasStudyAudio() {
+    hasFoundationsAudio() {
       return Boolean(this.soundtrack?.main);
     }
 
@@ -148,6 +149,18 @@
       if (!relative) return "";
       if (/^https?:\/\//.test(relative) || relative.startsWith("/")) return relative;
       return `./${relative.replace(/^\.\//, "")}`;
+    }
+
+    audioSrcMatches(audio, relativePath) {
+      if (!audio?.src || !relativePath) return false;
+      try {
+        const expected = new URL(this.localUrl(relativePath), window.location.href).href;
+        const current = new URL(audio.src, window.location.href).href;
+        return expected === current;
+      } catch {
+        const tail = relativePath.replace(/^\.\//, "");
+        return audio.src.endsWith(tail);
+      }
     }
 
     audioLog(label, detail = {}) {
@@ -206,7 +219,7 @@
     }
 
     async ensureAudioUnlocked() {
-      if (this.audioUnlocked || !this.hasStudyAudio()) return;
+      if (this.audioUnlocked || !this.hasFoundationsAudio()) return;
 
       const audio = this.mainAudio;
       if (!audio) return;
@@ -326,11 +339,11 @@
     }
 
     async fadeOutStudyForegroundOnly(t) {
-      if (this._studyForegroundHidden) return;
-      this._studyForegroundHidden = true;
+      if (this._foundationsForegroundHidden) return;
+      this._foundationsForegroundHidden = true;
       this.root.classList.add("is-foreground-exiting");
       this.setForegroundVisible({});
-      const fadeMs = t.studyLoopConcertFadeMs ?? t.studyExitFadeMs ?? 1800;
+      const fadeMs = t.foundationsLoopConcertFadeMs ?? t.foundationsExitFadeMs ?? 1800;
       document.documentElement.style.setProperty(
         "--ambient-study-exit-fade",
         `${fadeMs}ms`
@@ -525,7 +538,7 @@
         await this.fadeToBlackForGallerySeal(t);
         return;
       }
-      const fadeMs = t.studyLoopFadeMs ?? t.crossfadeMs ?? 2500;
+      const fadeMs = t.foundationsLoopFadeMs ?? t.crossfadeMs ?? 2500;
       const currentEl = this.bgSlotEl(this.activeBgSlot);
       currentEl.classList.remove("is-active");
       await this.wait(fadeMs);
@@ -557,7 +570,7 @@
     }
 
     async fadeOutStudyVerses(t) {
-      const fadeMs = t.gallerySealVerseFadeMs ?? t.studyExitFadeMs ?? 1800;
+      const fadeMs = t.gallerySealVerseFadeMs ?? t.foundationsExitFadeMs ?? 1800;
       document.documentElement.style.setProperty(
         "--ambient-gallery-verse-fade",
         `${fadeMs}ms`
@@ -568,7 +581,7 @@
     }
 
     async fadeOutStudyKanji(t) {
-      const fadeMs = t.gallerySealKanjiFadeMs ?? t.studyExitFadeMs ?? 1800;
+      const fadeMs = t.gallerySealKanjiFadeMs ?? t.foundationsExitFadeMs ?? 1800;
       document.documentElement.style.setProperty(
         "--ambient-gallery-kanji-fade",
         `${fadeMs}ms`
@@ -653,13 +666,13 @@
     }
 
     async beginGallerySealEnding(t, { skipForegroundFades = false } = {}) {
-      if (this._studyLoopFinishing) return;
-      this._studyLoopFinishing = true;
+      if (this._foundationsLoopFinishing) return;
+      this._foundationsLoopFinishing = true;
       this.clearTimers();
 
       const audio = this.mainAudio;
       let plan = null;
-      if (this.hasStudyAudio() && audio) {
+      if (this.hasFoundationsAudio() && audio) {
         await this.waitForAudioDuration(audio);
         plan = this.computeGallerySealPlan(t, audio);
         this.audioLog("gallery seal plan from soundtrack", plan);
@@ -710,7 +723,7 @@
         });
         if (this.destroyed || this.paused) return;
 
-        if (this.hasStudyAudio()) {
+        if (this.hasFoundationsAudio()) {
           await this.syncCrestFadeOutToSoundtrack(t);
         } else {
           const leadMs = t.gallerySealCrestFadeLeadMs ?? t.gallerySealFadeOutMs ?? 3000;
@@ -726,7 +739,7 @@
 
         this.finishPresentationOnSeal();
       } finally {
-        this._studyLoopFinishing = false;
+        this._foundationsLoopFinishing = false;
       }
     }
 
@@ -746,8 +759,8 @@
     }
 
     async beginStudyConcert(t, count) {
-      if (this._studyLoopFinishing) return;
-      this._studyLoopFinishing = true;
+      if (this._foundationsLoopFinishing) return;
+      this._foundationsLoopFinishing = true;
 
       try {
         await this.fadeOutStudyForegroundOnly(t);
@@ -766,7 +779,7 @@
 
         await this.playScene(0, { syncSoundtrack: true, loopRestart: true });
       } finally {
-        this._studyLoopFinishing = false;
+        this._foundationsLoopFinishing = false;
       }
     }
 
@@ -783,7 +796,7 @@
     }
 
     async holdCaptureBlack(t) {
-      const fadeMs = t.studyLoopFadeMs ?? t.crossfadeMs ?? 2500;
+      const fadeMs = t.foundationsLoopFadeMs ?? t.crossfadeMs ?? 2500;
       const holdMs = t.captureHoldBlackMs ?? 4000;
       const curtain = this.captureCurtainEl();
 
@@ -803,7 +816,7 @@
       try {
         this.clearTimers();
         this.setForegroundVisible({});
-        const fgFade = t.studyExitFadeMs ?? t.fadeMs ?? 1800;
+        const fgFade = t.foundationsExitFadeMs ?? t.fadeMs ?? 1800;
         await this.wait(fgFade);
         if (this.destroyed) return;
 
@@ -893,13 +906,18 @@
       }
 
       const url = this.localUrl(path);
-      if (audio.src !== url) {
+      const needsLoad = !this.audioSrcMatches(audio, path);
+      if (needsLoad) {
         audio.src = url;
       }
-      audio.currentTime = 0;
-      audio.loop = false;
-      audio.load();
-      await this.waitForAudioReady(audio);
+      if (needsLoad || forceRestart) {
+        audio.currentTime = 0;
+        audio.loop = false;
+      }
+      if (needsLoad) {
+        audio.load();
+        await this.waitForAudioReady(audio);
+      }
 
       try {
         await audio.play();
@@ -935,8 +953,9 @@
       }
     }
 
-    get isStudy() {
-      return this.collection.presentation === "study";
+    get isFoundations() {
+      const mode = this.collection.presentation;
+      return mode === "foundations" || mode === "study";
     }
 
     get isMobileStudyV2() {
@@ -949,7 +968,7 @@
 
     applyPresentationMode() {
       const params = new URLSearchParams(window.location.search);
-      const typo = params.get("typography") || this.display.typography || "";
+      const typo = params.get("typography") || this.display.typography || "mobile-refine";
       const root = document.documentElement;
       root.classList.toggle("kml-typography-legacy", typo === "legacy");
       root.classList.toggle("kml-typography-mobile", typo === "mobile");
@@ -985,11 +1004,11 @@
       root.style.setProperty("--ambient-fade", `${this.timing.fadeMs}ms`);
       root.style.setProperty(
         "--ambient-study-exit-fade",
-        `${this.timing.studyExitFadeMs ?? 800}ms`
+        `${this.timing.foundationsExitFadeMs ?? 800}ms`
       );
       root.style.setProperty("--ambient-overlay", String(this.background.overlayOpacity));
       root.style.setProperty("--ken-burns-duration", `${this.timing.kenBurnsDurationMs}ms`);
-      this.root.classList.toggle("is-study", this.isStudy);
+      this.root.classList.toggle("is-foundations", this.isFoundations);
 
       if (this.els.overlay) {
         this.els.overlay.style.opacity = String(this.background.overlayOpacity);
@@ -1135,6 +1154,7 @@
         sceneIndex: this.sceneIndex,
         durationMs,
         coverBoost,
+        framingScale: scene.imageScale || 1,
         motionProfile: this.motionProfile,
       });
       window.GalleryGuardian.applyToImage(img, plan);
@@ -1176,7 +1196,7 @@
     }
 
     setForegroundVisible({ kanji = false, keyword = false, image = false, verses = false, verseJp = false, verseEn = false }) {
-      if (this.isStudy) {
+      if (this.isFoundations) {
         this.els.kanjiBlock?.classList.toggle("is-visible", kanji);
         if (this.display.showKeyword) {
           this.els.keyword?.classList.toggle("is-visible", keyword);
@@ -1246,7 +1266,7 @@
     }
 
     totalSceneDuration(t) {
-      if (this.isStudy) {
+      if (this.isFoundations) {
         return t.sceneDurationMs || 20000;
       }
       return t.crossfadeMs + t.kanjiLeadMs + t.imageLeadMs + t.verseLeadMs + (t.holdMs || 0);
@@ -1264,7 +1284,7 @@
     }
 
     revealScene(t) {
-      if (this.isStudy) {
+      if (this.isFoundations) {
         this.revealStudyScene(t);
         return;
       }
@@ -1292,20 +1312,20 @@
     }
 
     async fadeOutStudyForeground(t) {
-      if (this._studyForegroundHidden) return;
-      this._studyForegroundHidden = true;
+      if (this._foundationsForegroundHidden) return;
+      this._foundationsForegroundHidden = true;
       this.root.classList.add("is-foreground-exiting");
       this.setForegroundVisible({});
-      await this.wait(t.studyExitFadeMs ?? 800);
+      await this.wait(t.foundationsExitFadeMs ?? 800);
       this.root.classList.remove("is-foreground-exiting");
-      await this.wait(t.studyEmptyBeatMs ?? 400);
+      await this.wait(t.foundationsEmptyBeatMs ?? 400);
     }
 
     scheduleStudyAdvance(t, count) {
       const isLastCard = this.sceneIndex === count - 1;
 
       if (isLastCard && this.usesGallerySeal()) {
-        const exitMs = (t.studyExitFadeMs ?? 1800) + (t.studyEmptyBeatMs ?? 500);
+        const exitMs = (t.foundationsExitFadeMs ?? 1800) + (t.foundationsEmptyBeatMs ?? 500);
         const fadeAt = Math.max(0, this.totalSceneDuration(t) - exitMs);
 
         this.schedule(() => {
@@ -1327,7 +1347,7 @@
         !this.usesGallerySeal();
 
       if (isLastInLoop) {
-        const exitMs = (t.studyExitFadeMs ?? 800) + (t.studyEmptyBeatMs ?? 400);
+        const exitMs = (t.foundationsExitFadeMs ?? 800) + (t.foundationsEmptyBeatMs ?? 400);
         const fadeAt = Math.max(0, this.totalSceneDuration(t) - exitMs);
 
         this.schedule(() => {
@@ -1336,7 +1356,7 @@
         return;
       }
 
-      const exitMs = (t.studyExitFadeMs ?? 800) + (t.studyEmptyBeatMs ?? 400);
+      const exitMs = (t.foundationsExitFadeMs ?? 800) + (t.foundationsEmptyBeatMs ?? 400);
       const fadeAt = Math.max(0, this.totalSceneDuration(t) - exitMs);
 
       this.schedule(() => {
@@ -1359,32 +1379,32 @@
     }
 
     async prepareStudyScene(scene, t, hasPriorForeground) {
-      if (hasPriorForeground && !this._studyForegroundHidden) {
+      if (hasPriorForeground && !this._foundationsForegroundHidden) {
         await this.fadeOutStudyForeground(t);
       } else {
         this.setForegroundVisible({});
       }
-      this._studyForegroundHidden = false;
+      this._foundationsForegroundHidden = false;
 
       await this.crossfadeBackground(scene);
       this.populateForeground(scene);
-      await this.wait(t.studyKanjiGapMs ?? 350);
+      await this.wait(t.foundationsKanjiGapMs ?? 350);
     }
 
     async prepareStudySceneWithSoundtrack(scene, t, hasPriorForeground, forceRestart = false) {
-      if (hasPriorForeground && !this._studyForegroundHidden) {
+      if (hasPriorForeground && !this._foundationsForegroundHidden) {
         await this.fadeOutStudyForeground(t);
       } else {
         this.setForegroundVisible({});
       }
-      this._studyForegroundHidden = false;
+      this._foundationsForegroundHidden = false;
 
       await Promise.all([
         this.startSoundtrack(forceRestart || hasPriorForeground),
         this.crossfadeBackground(scene),
       ]);
       this.populateForeground(scene);
-      await this.wait(t.studyKanjiGapMs ?? 350);
+      await this.wait(t.foundationsKanjiGapMs ?? 350);
     }
 
     wait(ms) {
@@ -1417,7 +1437,7 @@
 
       const holdUntilAudioEnds = Boolean(intro.audio && intro.holdUntilAudioEnds);
 
-      if (holdUntilAudioEnds && this.isStudy) {
+      if (holdUntilAudioEnds && this.isFoundations) {
         await this.playAudioUntilEnd(intro.audio, {
           element: this.introAudio,
           label: "intro",
@@ -1441,17 +1461,17 @@
       if (index >= count && !this.display.loop) return;
 
       const loopRestart =
-        options.loopRestart || (this.isStudy && index >= count && this.display.loop);
+        options.loopRestart || (this.isFoundations && index >= count && this.display.loop);
       this.sceneIndex = ((index % count) + count) % count;
 
       const scene = this.scenes[this.sceneIndex];
       const t = this.sceneTiming(scene);
 
       this.clearTimers();
-      this._studyLoopFinishing = false;
+      this._foundationsLoopFinishing = false;
 
-      if (this.isStudy) {
-        const hasPriorForeground = this._studySceneReady;
+      if (this.isFoundations) {
+        const hasPriorForeground = this._foundationsSceneReady;
         const syncSoundtrack =
           options.syncSoundtrack || (loopRestart && this.sceneIndex === 0);
 
@@ -1466,7 +1486,7 @@
         await this.crossfadeBackground(scene);
       }
 
-      this._studySceneReady = true;
+      this._foundationsSceneReady = true;
 
       if (this.display.autoAdvance) {
         const startedAt = Date.now();
@@ -1478,7 +1498,7 @@
       this.revealScene(t);
 
       if (this.display.autoAdvance) {
-        if (this.isStudy) {
+        if (this.isFoundations) {
           this.scheduleStudyAdvance(t, count);
         } else {
           const advanceAt = this.totalSceneDuration(t);
@@ -1507,7 +1527,7 @@
         if (this.paused) v.pause();
         else v.play().catch(() => {});
       });
-      if (this.isStudy) this.setAudioPaused(this.paused);
+      if (this.isFoundations) this.setAudioPaused(this.paused);
       if (this.display.autoAdvance) {
         if (!this.paused) {
           this.clearTimers();
@@ -1544,7 +1564,7 @@
       const params = new URLSearchParams(window.location.search);
       const crestTest = this.captureMode && params.get("crestTest") === "1";
 
-      if (this.isStudy && this.hasStudyAudio()) {
+      if (this.isFoundations && this.hasFoundationsAudio()) {
         await Promise.all([
           this.ensureAudioUnlocked(),
           this.preloadGallerySeal(),
@@ -1563,7 +1583,7 @@
       } else {
         this._introComplete = true;
       }
-      const syncSoundtrack = this.isStudy && Boolean(this.soundtrack?.main);
+      const syncSoundtrack = this.isFoundations && Boolean(this.soundtrack?.main);
       await this.playScene(0, { syncSoundtrack });
     }
 
@@ -1586,14 +1606,26 @@
   async function loadCollection(name) {
     const params = new URLSearchParams(window.location.search);
     const capture = params.get("capture") === "1";
+    const resolvedName =
+      window.KmlCollectionPaths?.resolveCollectionId?.(name) || name.replace(/_study$/, "_foundations");
 
     const candidates = [];
     if (name.startsWith("exhibition/")) {
       candidates.push(`./${name}.json`);
     } else if (capture) {
-      candidates.push(`./exhibition/${name}.json`);
+      candidates.push(`./exhibition/${resolvedName}.json`);
+      if (resolvedName !== name) candidates.push(`./exhibition/${name}.json`);
+    } else if (window.KmlCollectionPaths) {
+      candidates.push(...window.KmlCollectionPaths.collectionUrls(name));
+      candidates.push(`./ambient_exhibitions/${resolvedName}.json`);
+      candidates.push(`./exhibition/${resolvedName}.json`);
+      if (resolvedName !== name) {
+        candidates.push(`./ambient_exhibitions/${name}.json`);
+        candidates.push(`./exhibition/${name}.json`);
+      }
     } else {
-      candidates.push(`./collections/${name}.json`);
+      candidates.push(`./collections/${resolvedName}.json`);
+      if (resolvedName !== name) candidates.push(`./collections/${name}.json`);
     }
 
     let lastStatus = 0;
@@ -1633,7 +1665,7 @@
 
   function collectionFromQuery() {
     const params = new URLSearchParams(window.location.search);
-    return params.get("collection") || "lesson_40_study";
+    return params.get("collection") || "lesson_40_foundations";
   }
 
   async function boot() {

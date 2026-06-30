@@ -16,11 +16,11 @@ html.kml-typography-mobile-v2 {
 }
 
 /* Study capture — image primary, text in lower third */
-html.kml-typography-mobile-v2 .ambient-root.is-study {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations {
   --ambient-overlay: 0.38;
 }
 
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-stage {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-stage {
   display: block;
   position: relative;
   height: 100%;
@@ -29,7 +29,7 @@ html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-stage {
 }
 
 /* Kanji + keyword: upper area during title beats */
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-kanji-block {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-kanji-block {
   position: absolute;
   top: clamp(2.5rem, 11vh, 5rem);
   left: 50%;
@@ -38,12 +38,12 @@ html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-kanji-block {
   z-index: 3;
 }
 
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-keyword {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-keyword {
   letter-spacing: 0.16em;
 }
 
 /* Verse placard — lower third, single coherent block */
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verses {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-verses {
   position: absolute;
   left: 50%;
   bottom: clamp(1.95rem, 10vh, 5rem);
@@ -54,13 +54,13 @@ html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verses {
   z-index: 3;
 }
 
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-jp,
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-en {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-verse-jp,
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-verse-en {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-jp {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-verse-jp {
   margin: 0;
   text-align: center;
   line-height: 1.62;
@@ -88,12 +88,12 @@ html.kml-typography-mobile-v2 .ambient-verse-jp ruby rt {
 
 /* Verse phase: hide centre kanji so artwork stays unobstructed */
 html.kml-typography-mobile-v2
-  .ambient-root.is-study:has(.ambient-verse-jp.is-visible)
+  .ambient-root.is-foundations:has(.ambient-verse-jp.is-visible)
   .ambient-kanji-block {
   opacity: 0 !important;
   transition: opacity var(--ambient-fade) ease-in-out;
 }
 
-html.kml-typography-mobile-v2 .ambient-root.is-study .ambient-verse-en {
+html.kml-typography-mobile-v2 .ambient-root.is-foundations .ambient-verse-en {
   display: none;
 }

@@ -1,0 +1,280 @@
+{
+  "id": "lesson_36_foundations",
+  "title": "KML Ambient Foundations — Lesson 36 (Exhibition)",
+  "presentation": "foundations",
+  "assetsBase": "../../assets",
+  "notes": "Exhibition / presentation build. Strike opens; Infer closes with Gallery Seal Ending (image hold, fade to black, gold 漢 seal, music resolves, end on seal). Soundtrack: Study Version 3.",
+  "ending": {
+    "type": "gallerySeal",
+    "sealImage": "images/gold_closing.png"
+  },
+  "intro": {
+    "image": "covers/lesson_36.png",
+    "title": "Lesson 36",
+    "holdBeforeMs": 1000,
+    "durationMs": 9000
+  },
+  "soundtrack": {
+    "main": "audio/study_version_3_minus3db.mp3"
+  },
+  "timing": {
+    "fadeMs": 1800,
+    "kanjiLeadMs": 2000,
+    "keywordLeadMs": 5000,
+    "verseJpLeadMs": 8500,
+    "sceneDurationMs": 22000,
+    "foundationsExitFadeMs": 1800,
+    "foundationsEmptyBeatMs": 500,
+    "foundationsKanjiGapMs": 350,
+    "introExitFadeMs": 1200,
+    "foundationsLoopConcertFadeMs": 2500,
+    "foundationsLoopFadeMs": 2500,
+    "crossfadeMs": 2500,
+    "kenBurnsDurationMs": 60000,
+    "gallerySealVerseFadeMs": 2200,
+    "gallerySealKanjiFadeMs": 2200,
+    "gallerySealImageHoldMs": 9000,
+    "gallerySealHoldDarkenMs": 5000,
+    "gallerySealHoldDarkenDelayMs": 2000,
+    "gallerySealFadeToBlackMs": 6500,
+    "gallerySealFadeInMs": 2500,
+    "gallerySealCrestFadeLeadMs": 3000,
+    "gallerySealMinCrestHoldMs": 2000,
+    "gallerySealBlackHoldMs": 1500,
+    "gallerySealHoldMs": 3500
+  },
+  "background": {
+    "mode": "image",
+    "kenBurns": true,
+    "overlayOpacity": 0.45,
+    "blurPx": 0
+  },
+  "display": {
+    "showKeyword": true,
+    "showFurigana": false,
+    "loop": false,
+    "autoAdvance": true
+  },
+  "scenes": [
+    {
+      "id": "strike",
+      "kanji": "打",
+      "keyword": "strike",
+      "image": "studies/strike.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>鐘<rt>かね</rt></ruby>が<ruby>鳴<rt>な</rt></ruby>り<br>    <ruby>霧<rt>きり</rt></ruby>が<ruby>揺<rt>ゆ</rt></ruby>れる<br>    <ruby>一度<rt>いちど</rt></ruby>の<ruby>響<rt>ひび</rt></ruby>きが<br>    <ruby>遠<rt>とお</rt></ruby>くまで<ruby>届<rt>とど</rt></ruby>く",
+        "en": "The bell rang.\nThe mist trembled.\nOne resonance\ntraveled far away."
+      }
+    },
+    {
+      "id": "confront",
+      "kanji": "抗",
+      "keyword": "confront",
+      "image": "studies/confront.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>風<rt>かぜ</rt></ruby>は<ruby>強<rt>つよ</rt></ruby>く<br>    <ruby>海<rt>うみ</rt></ruby>は<ruby>荒<rt>あ</rt></ruby>れていた<br>    それでも<ruby>岩<rt>いわ</rt></ruby>は<br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>立<rt>た</rt></ruby>っていた",
+        "en": "The wind grew fierce.\nThe sea became rough.\nYet the stone\nremained standing in silence."
+      }
+    },
+    {
+      "id": "criticism",
+      "kanji": "批",
+      "keyword": "criticism",
+      "image": "studies/criticism.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>曇<rt>くも</rt></ruby>る<ruby>鏡<rt>かがみ</rt></ruby>にも<br>    <ruby>空<rt>そら</rt></ruby>は<ruby>映<rt>うつ</rt></ruby>っていた<br>    <ruby>受<rt>う</rt></ruby>け<ruby>入<rt>い</rt></ruby>れることから<br>    <ruby>真実<rt>しんじつ</rt></ruby>は<ruby>始<rt>はじ</rt></ruby>まる",
+        "en": "Even in a clouded mirror\nthe sky was reflected.\nTruth begins\nby receiving what is there."
+      }
+    },
+    {
+      "id": "beckon",
+      "kanji": "招",
+      "keyword": "beckon",
+      "image": "studies/beckon.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうから<br>    <ruby>風<rt>かぜ</rt></ruby>が<ruby>名<rt>な</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>ぶ<br>    まだ<ruby>見<rt>み</rt></ruby>ぬ<ruby>道<rt>みち</rt></ruby>が<br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>招<rt>まね</rt></ruby>いていた",
+        "en": "From beyond the mist\nthe wind called a name.\nAn unseen path\nquietly beckoned."
+      }
+    },
+    {
+      "id": "clear_land",
+      "kanji": "拓",
+      "keyword": "clear land",
+      "image": "studies/clear_land.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>草<rt>くさ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<br>    <ruby>新<rt>あたら</rt></ruby>しい<ruby>道<rt>みち</rt></ruby>が<ruby>現<rt>あらわ</rt></ruby>れる<br>    <ruby>最初<rt>さいしょ</rt></ruby>の<ruby>一歩<rt>いっぽ</rt></ruby>が<br>    <ruby>世界<rt>せかい</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>く",
+        "en": "A new path\nappeared among the grass.\nThe first step\nopened the world."
+      }
+    },
+    {
+      "id": "clap",
+      "kanji": "拍",
+      "keyword": "clap",
+      "image": "studies/clap.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>広<rt>ひろ</rt></ruby>がる<ruby>波紋<rt>はもん</rt></ruby>は<br>    <ruby>音<rt>おと</rt></ruby>の<ruby>名残<rt>なごり</rt></ruby><br>    <ruby>触<rt>ふ</rt></ruby>れた<ruby>一瞬<rt>いっしゅん</rt></ruby>が<br>    <ruby>水面<rt>みなも</rt></ruby>に<ruby>生<rt>い</rt></ruby>きている",
+        "en": "The widening ripples\nwere the echo of a sound.\nA single touch\nstill lived upon the water."
+      }
+    },
+    {
+      "id": "arrest",
+      "kanji": "拘",
+      "keyword": "arrest",
+      "image": "studies/arrest.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>岸辺<rt>きしべ</rt></ruby>につながれた<ruby>舟<rt>ふね</rt></ruby><br>    <ruby>急<rt>いそ</rt></ruby>がぬことも<br>    <ruby>旅<rt>たび</rt></ruby>の<ruby>一部<rt>いちぶ</rt></ruby>だった",
+        "en": "The boat remained tied\nalong the shore.\nNot hurrying\nwas also part of the journey."
+      }
+    },
+    {
+      "id": "discard",
+      "kanji": "捨",
+      "keyword": "discard",
+      "image": "studies/discard.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>手紙<rt>てがみ</rt></ruby>が<br>    <ruby>川<rt>かわ</rt></ruby>へ<ruby>流<rt>なが</rt></ruby>れてゆく<br>    <ruby>離<rt>はな</rt></ruby>すことで<br>    <ruby>軽<rt>かる</rt></ruby>くなるものもある",
+        "en": "An old letter\ndrifted downriver.\nSome things\ngrow lighter when released."
+      }
+    },
+    {
+      "id": "kidnap",
+      "kanji": "拐",
+      "keyword": "kidnap",
+      "image": "studies/kidnap.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>玩具<rt>おもちゃ</rt></ruby>だけが<br>    <ruby>道<rt>みち</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>った<br>    <ruby>霧<rt>きり</rt></ruby>は<ruby>何<rt>なに</rt></ruby>も<ruby>語<rt>かた</rt></ruby>らず<br>    ただ<ruby>静<rt>しず</rt></ruby>かだった",
+        "en": "Only a small toy\nremained upon the path.\nThe mist explained nothing.\nIt was simply silent."
+      }
+    },
+    {
+      "id": "pinch",
+      "kanji": "摘",
+      "keyword": "pinch",
+      "image": "studies/pinch.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>花<rt>はな</rt></ruby>を<br>    そっと<ruby>摘<rt>つ</rt></ruby>み<ruby>取<rt>と</rt></ruby>る<br>    <ruby>選<rt>えら</rt></ruby>ぶことは<br>    <ruby>失<rt>うしな</rt></ruby>うことでもある",
+        "en": "A small flower\nwas gently plucked.\nTo choose\nis also to leave behind."
+      }
+    },
+    {
+      "id": "challenge",
+      "kanji": "挑",
+      "keyword": "challenge",
+      "image": "studies/challenge.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>雲<rt>くも</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>へ<br>    <ruby>続<rt>つづ</rt></ruby>く<ruby>石段<rt>いしだん</rt></ruby><br>    <ruby>登<rt>のぼ</rt></ruby>る<ruby>者<rt>もの</rt></ruby>だけが<br>    <ruby>景色<rt>けしき</rt></ruby>を<ruby>知<rt>し</rt></ruby>る",
+        "en": "Stone steps\nrose into the clouds.\nOnly those who climb\nsee the view."
+      }
+    },
+    {
+      "id": "finger",
+      "kanji": "指",
+      "keyword": "finger",
+      "image": "studies/finger.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>指<rt>ゆび</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>くを<ruby>示<rt>しめ</rt></ruby>す<br>    だが<ruby>歩<rt>ある</rt></ruby>くのは<br>    <ruby>自分<rt>じぶん</rt></ruby><ruby>自身<rt>じしん</rt></ruby>だった",
+        "en": "The finger pointed far away.\nYet the walking\nwas my own."
+      }
+    },
+    {
+      "id": "hold",
+      "kanji": "持",
+      "keyword": "hold",
+      "image": "studies/hold.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>灯<rt>ひ</rt></ruby>を<br>    <ruby>両手<rt>りょうて</rt></ruby>で<ruby>守<rt>まも</rt></ruby>る<br>    <ruby>大切<rt>たいせつ</rt></ruby>なものは<br>    <ruby>力<rt>ちから</rt></ruby>より<ruby>優<rt>やさ</rt></ruby>しさで<ruby>残<rt>のこ</rt></ruby>る",
+        "en": "A small flame\nwas protected by two hands.\nWhat matters most\nsurvives through gentleness."
+      }
+    },
+    {
+      "id": "imminent",
+      "kanji": "拶",
+      "keyword": "imminent",
+      "image": "studies/imminent.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>扉<rt>とびら</rt></ruby>の<ruby>下<rt>した</rt></ruby>に<br>    <ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し<ruby>込<rt>こ</rt></ruby>む<br>    <ruby>何<rt>なに</rt></ruby>かが<br>    <ruby>近<rt>ちか</rt></ruby>づいていた",
+        "en": "Light slipped\nbeneath the door.\nSomething\nwas drawing near."
+      }
+    },
+    {
+      "id": "fasten",
+      "kanji": "括",
+      "keyword": "fasten",
+      "image": "studies/fasten.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>結<rt>むす</rt></ruby>ばれた<ruby>結<rt>むす</rt></ruby>び<ruby>目<rt>め</rt></ruby><br>    <ruby>散<rt>ち</rt></ruby>らばるものを<br>    <ruby>一<rt>ひと</rt></ruby>つにした",
+        "en": "A tied knot.\nIt gathered\nwhat had been scattered."
+      }
+    },
+    {
+      "id": "brandish",
+      "kanji": "揮",
+      "keyword": "brandish",
+      "image": "studies/brandish.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>筆<rt>ふで</rt></ruby>は<ruby>空<rt>くう</rt></ruby>を<ruby>切<rt>き</rt></ruby>り<br>    <ruby>墨<rt>すみ</rt></ruby>は<ruby>紙<rt>かみ</rt></ruby>へ<ruby>降<rt>お</rt></ruby>りる<br>    <ruby>動<rt>うご</rt></ruby>きの<ruby>中<rt>なか</rt></ruby>に<br>    <ruby>意志<rt>いし</rt></ruby>が<ruby>宿<rt>やど</rt></ruby>る",
+        "en": "The brush cut through empty space.\nInk descended onto paper.\nWithin movement\ndwelt intention."
+      }
+    },
+    {
+      "id": "hoist",
+      "kanji": "揚",
+      "keyword": "hoist",
+      "image": "studies/hoist.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>旗<rt>はた</rt></ruby>が<ruby>風<rt>かぜ</rt></ruby>を<ruby>受<rt>う</rt></ruby>け<br>    <ruby>空<rt>そら</rt></ruby>へ<ruby>広<rt>ひろ</rt></ruby>がる<br>    <ruby>上<rt>あ</rt></ruby>げるものは<br>    <ruby>布<rt>ぬの</rt></ruby>だけではない",
+        "en": "The banner caught the wind\nand spread into the sky.\nWhat is raised\nis not cloth alone."
+      }
+    },
+    {
+      "id": "propose",
+      "kanji": "提",
+      "keyword": "propose",
+      "image": "studies/propose.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>一<rt>ひと</rt></ruby>つの<ruby>考<rt>かんが</rt></ruby>えが<br>    <ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>置<rt>お</rt></ruby>かれる<br>    <ruby>未来<rt>みらい</rt></ruby>は<br>    そこから<ruby>始<rt>はじ</rt></ruby>まる",
+        "en": "An idea\nwas placed upon the table.\nThe future\nbegan there."
+      }
+    },
+    {
+      "id": "damage",
+      "kanji": "損",
+      "keyword": "damage",
+      "image": "studies/damage.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>鏡<rt>かがみ</rt></ruby>には<br>    ひびが<ruby>入<rt>はい</rt></ruby>っていた<br>    それでも<ruby>光<rt>ひかり</rt></ruby>は<br>    なお<ruby>映<rt>うつ</rt></ruby>っていた",
+        "en": "A crack\nran through the mirror.\nEven so,\nit still reflected the light."
+      }
+    },
+    {
+      "id": "infer",
+      "kanji": "推",
+      "keyword": "infer",
+      "image": "studies/infer.png",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>断片<rt>だんぺん</rt></ruby>を<ruby>見<rt>み</rt></ruby>つめ<br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>考<rt>かんが</rt></ruby>える<br>    <ruby>答<rt>こた</rt></ruby>えは<br>    <ruby>少<rt>すこ</rt></ruby>しずつ<ruby>姿<rt>すがた</rt></ruby>を<ruby>現<rt>あらわ</rt></ruby>した",
+        "en": "Studying fragments,\nI thought in silence.\nThe answer\nslowly appeared."
+      }
+    }
+  ]
+}

@@ -9,7 +9,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-COLLECTION = ROOT / "collections" / "lessons_1_5_prototype.json"
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from collection_paths import collection_json_path  # noqa: E402
+
+COLLECTION = collection_json_path(ROOT, "lessons_1_5_prototype")
 
 
 def probe_duration_seconds(path: Path) -> float | None:

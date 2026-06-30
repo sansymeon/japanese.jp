@@ -1,0 +1,454 @@
+/**
+ * PARTY KANJI — short-form kanji episodes.
+ * Enable: exhibitProfile partyKanji + typography party-kanji
+ */
+
+html.kml-typography-party-kanji {
+  --pk-bg: #0a0a0c;
+  --pk-text: #f4efe4;
+  --pk-accent: #e8c547;
+  --pk-muted: rgba(244, 239, 228, 0.62);
+  --pk-giant: clamp(6rem, 22vmin, 14rem);
+  --pk-component: clamp(2.5rem, 8vmin, 5rem);
+  --pk-challenge: clamp(1.35rem, 3.8vmin, 2.2rem);
+  --pk-brand: clamp(1.8rem, 5vmin, 3rem);
+  --pk-tagline: clamp(1rem, 2.6vmin, 1.35rem);
+  --pk-disclaimer: clamp(0.75rem, 1.8vmin, 0.95rem);
+  --pk-closing: clamp(1.25rem, 3.6vmin, 2rem);
+  --pk-pulse-opacity: 0.18;
+  --pk-transition-fast: 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  --pk-transition-reward: 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exhibition-root.is-party-kanji {
+  background: var(--pk-bg);
+}
+
+.exhibition-root.is-party-kanji .exhibition-artwork,
+.exhibition-root.is-party-kanji .exhibition-title,
+.exhibition-root.is-party-kanji .exhibition-notes,
+.exhibition-root.is-party-kanji .exhibition-vignette {
+  display: none !important;
+}
+
+.exhibition-root.is-party-kanji .exhibition-veil.is-clear {
+  opacity: 0;
+}
+
+/* ── Party Kanji layer ── */
+
+.party-kanji-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  color: var(--pk-text);
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+}
+
+.party-kanji-phase {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 2.5vh, 1.5rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--pk-transition-fast), visibility var(--pk-transition-fast);
+}
+
+.party-kanji-phase.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.party-kanji-phase.is-fading {
+  opacity: 0;
+  visibility: visible;
+}
+
+/* Shock + Final — giant kanji */
+
+.party-kanji-giant {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: var(--pk-giant);
+  line-height: 1;
+  color: var(--pk-text);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
+}
+
+.party-kanji-giant--enter {
+  animation: pk-giant-enter 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.party-kanji-giant--reward {
+  transform: scale(0.92);
+  opacity: 0;
+}
+
+.party-kanji-giant--reward.is-reward-glow {
+  animation: pk-reward-glow var(--pk-transition-reward) forwards;
+}
+
+.party-kanji-challenge {
+  font-size: var(--pk-challenge);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pk-accent);
+  text-align: center;
+  max-width: 28ch;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.party-kanji-challenge--hidden {
+  opacity: 0;
+  transform: translateY(0.35rem);
+}
+
+.party-kanji-challenge.is-visible {
+  animation: pk-challenge-pop 350ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Reveal — component breakdown */
+
+.party-kanji-playlist {
+  font-size: clamp(0.75rem, 1.8vmin, 0.9rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--pk-muted);
+}
+
+.party-kanji-components {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 2.5vw, 1.5rem);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.party-kanji-components.is-vertical {
+  flex-direction: column;
+}
+
+.party-kanji-components.is-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.party-kanji-components--burst.is-bursting {
+  animation: pk-burst 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.party-kanji-components--slide .party-component-cell {
+  transform: translateY(1.5rem);
+}
+
+.party-component-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0;
+  transform: scale(0.35) translateY(0);
+  filter: blur(4px);
+}
+
+.party-kanji-components--slide .party-component-cell.is-arrived {
+  animation: pk-slide-in 450ms cubic-bezier(0.34, 1.35, 0.64, 1) forwards;
+}
+
+.party-kanji-components--burst .party-component-cell.is-arrived {
+  animation: pk-pop-in 450ms cubic-bezier(0.34, 1.45, 0.64, 1) forwards;
+}
+
+.party-component-cell.is-glowing .party-component-kanji {
+  text-shadow:
+    0 0 18px rgba(232, 197, 71, 0.55),
+    0 0 36px rgba(232, 197, 71, 0.25);
+}
+
+.party-component-kanji {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: var(--pk-component);
+  line-height: 1;
+  transition: text-shadow 200ms ease;
+}
+
+.party-component-label {
+  font-size: clamp(0.8rem, 1.8vmin, 1rem);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--pk-muted);
+}
+
+.party-kanji-equation {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: clamp(1.6rem, 4.5vmin, 2.8rem);
+  letter-spacing: 0.06em;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 350ms ease, transform 350ms ease;
+}
+
+.party-kanji-equation--hidden {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+.party-kanji-equation.is-visible {
+  animation: pk-equation-in 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.party-kanji-equation .party-result {
+  color: var(--pk-accent);
+}
+
+.party-kanji-reading,
+.party-kanji-trivia {
+  display: none;
+}
+
+/* Final — reward + pulse */
+
+.party-kanji-final-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.party-kanji-component-pulse {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 1.5vw, 0.85rem);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.party-kanji-component-pulse.is-vertical {
+  flex-direction: column;
+}
+
+.party-kanji-component-pulse.is-horizontal {
+  flex-direction: row;
+}
+
+.party-kanji-component-pulse.is-visible {
+  opacity: var(--pk-pulse-opacity);
+}
+
+.party-kanji-component-pulse.is-pulsing {
+  animation: pk-pulse 2.5s ease-in-out;
+}
+
+.party-component-cell--pulse .party-component-kanji {
+  font-size: clamp(3rem, 10vmin, 6.5rem);
+  color: var(--pk-text);
+}
+
+.party-kanji-final-wrap .party-kanji-giant {
+  position: relative;
+  z-index: 1;
+}
+
+.party-kanji-final .party-kanji-reading {
+  display: block;
+  color: var(--pk-accent);
+  font-style: normal;
+  letter-spacing: 0.18em;
+  font-size: clamp(0.95rem, 2.2vmin, 1.15rem);
+}
+
+/* Proof — stroke order */
+
+.party-kanji-proof {
+  padding: 0;
+}
+
+.party-kanji-strokes-wrap {
+  width: min(92vw, 960px);
+  height: min(78vh, 720px);
+  border: 1px solid rgba(244, 239, 228, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f5f0e6;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+}
+
+.party-kanji-strokes-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.party-kanji-stroke-note {
+  font-size: clamp(0.85rem, 2vmin, 1rem);
+  color: var(--pk-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Closing message */
+
+.party-kanji-closing-message {
+  margin: 0;
+  font-size: var(--pk-closing);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  max-width: 22ch;
+  color: var(--pk-text);
+  letter-spacing: 0.02em;
+}
+
+/* End card */
+
+.party-kanji-endcard {
+  gap: clamp(0.5rem, 1.5vh, 0.85rem);
+}
+
+.party-kanji-brand {
+  font-size: var(--pk-brand);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pk-text);
+}
+
+.party-kanji-playlist-end {
+  font-size: clamp(0.7rem, 1.6vmin, 0.85rem);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pk-muted);
+}
+
+.party-kanji-tagline {
+  font-size: var(--pk-tagline);
+  font-style: italic;
+  color: var(--pk-accent);
+  letter-spacing: 0.04em;
+}
+
+.party-kanji-disclaimer {
+  margin-top: clamp(0.75rem, 2vh, 1.25rem);
+  font-size: var(--pk-disclaimer);
+  color: var(--pk-muted);
+  letter-spacing: 0.04em;
+  text-align: center;
+  max-width: 42ch;
+}
+
+@keyframes pk-giant-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pk-challenge-pop {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pk-burst {
+  0% {
+    transform: scale(1.35);
+    opacity: 0.2;
+    filter: blur(6px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes pk-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) translateY(1rem);
+    filter: blur(6px);
+  }
+  70% {
+    transform: scale(1.08) translateY(-0.15rem);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pk-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pk-equation-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pk-reward-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+    filter: brightness(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+    text-shadow:
+      0 0 30px rgba(232, 197, 71, 0.22),
+      0 2px 24px rgba(0, 0, 0, 0.55);
+  }
+}
+
+@keyframes pk-pulse {
+  0%,
+  100% {
+    opacity: calc(var(--pk-pulse-opacity) * 0.65);
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: var(--pk-pulse-opacity);
+    transform: scale(1.02);
+  }
+}

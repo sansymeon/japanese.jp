@@ -1,0 +1,167 @@
+/**
+ * Elementary cheerful kanji soundtrack — Grade 1 & Grade 2.
+ * White stage, colorful handwritten kanji, soft crossfades, milestone confetti.
+ */
+
+.exhibition-root.is-grade1-kanji-soundtrack,
+.exhibition-root.is-grade2-kanji-soundtrack {
+  --kml-font-kanji-handwritten: "Yuji Syuku", "Hachi Maru Pop", "Noto Sans JP", sans-serif;
+  --kml-grade1-kanji-size: min(72vw, 520px, 78vh, 680px);
+  --kml-grade1-kanji-fade-in: var(--ex-grade1-kanji-fade-in, 3s);
+  --kml-grade1-kanji-fade-out: var(--ex-grade1-kanji-fade-out, 2.2s);
+  --ex-grade1-kanji-fade-in: 3s;
+  --ex-grade1-kanji-fade-out: 2.2s;
+  background: #ffffff;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .exhibition-artwork,
+.exhibition-root.is-grade1-kanji-soundtrack .exhibition-title,
+.exhibition-root.is-grade1-kanji-soundtrack .exhibition-notes,
+.exhibition-root.is-grade1-kanji-soundtrack .exhibition-vignette,
+.exhibition-root.is-grade1-kanji-soundtrack .party-kanji-layer,
+.exhibition-root.is-grade2-kanji-soundtrack .exhibition-artwork,
+.exhibition-root.is-grade2-kanji-soundtrack .exhibition-title,
+.exhibition-root.is-grade2-kanji-soundtrack .exhibition-notes,
+.exhibition-root.is-grade2-kanji-soundtrack .exhibition-vignette,
+.exhibition-root.is-grade2-kanji-soundtrack .party-kanji-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .exhibition-bookend,
+.exhibition-root.is-grade2-kanji-soundtrack .exhibition-bookend {
+  background: #000;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack.is-grade1-bookend-outro,
+.exhibition-root.is-grade2-kanji-soundtrack.is-grade2-bookend-outro {
+  background: #000;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .exhibition-veil,
+.exhibition-root.is-grade2-kanji-soundtrack .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .stroke-order-layer,
+.exhibition-root.is-grade2-kanji-soundtrack .stroke-order-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .stroke-order-layer.exhibition-hidden,
+.exhibition-root.is-grade2-kanji-soundtrack .stroke-order-layer.exhibition-hidden {
+  display: none;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .stroke-order-stage,
+.exhibition-root.is-grade2-kanji-soundtrack .stroke-order-stage {
+  position: relative;
+  width: min(98vw, 80rem);
+  height: min(92vh, 64rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .soundtrack-slot,
+.exhibition-root.is-grade2-kanji-soundtrack .soundtrack-slot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .soundtrack-slot.is-active,
+.exhibition-root.is-grade1-kanji-soundtrack .soundtrack-slot.is-handoff-out,
+.exhibition-root.is-grade2-kanji-soundtrack .soundtrack-slot.is-active,
+.exhibition-root.is-grade2-kanji-soundtrack .soundtrack-slot.is-handoff-out {
+  visibility: visible;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .soundtrack-slot.is-on-top,
+.exhibition-root.is-grade2-kanji-soundtrack .soundtrack-slot.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .stroke-order-svg,
+.exhibition-root.is-grade2-kanji-soundtrack .stroke-order-svg {
+  display: none !important;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .stroke-order-kanji,
+.exhibition-root.is-grade2-kanji-soundtrack .stroke-order-kanji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--kml-font-kanji-handwritten);
+  font-size: var(--kml-grade1-kanji-size);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ex-grade1-kanji-color, #1e88e5);
+  text-shadow: 0 0.06em 0.18em rgba(0, 0, 0, 0.08);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  transform: translateY(-0.04em);
+  opacity: 0;
+  transition: opacity var(--kml-grade1-kanji-fade-out) cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .stroke-order-kanji.is-visible,
+.exhibition-root.is-grade2-kanji-soundtrack .stroke-order-kanji.is-visible {
+  opacity: 1;
+  transition: opacity var(--kml-grade1-kanji-fade-in) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .soundtrack-slot.is-handoff .stroke-order-kanji,
+.exhibition-root.is-grade2-kanji-soundtrack .soundtrack-slot.is-handoff .stroke-order-kanji {
+  will-change: opacity;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .grade1-confetti-layer,
+.exhibition-root.is-grade2-kanji-soundtrack .grade1-confetti-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.exhibition-root.is-grade1-kanji-soundtrack .grade1-confetti-piece,
+.exhibition-root.is-grade2-kanji-soundtrack .grade1-confetti-piece {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.9rem;
+  border-radius: 0.12rem;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  animation: grade1-confetti-fall var(--grade1-confetti-duration, 1.4s) cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+@keyframes grade1-confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--grade1-dx, 0), var(--grade1-dy, 120px), 0)
+      rotate(var(--grade1-rot, 180deg));
+  }
+}

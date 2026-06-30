@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_39_study.json — Friend first, Uncle last, Gallery Seal Ending."""
+"""Build exhibition/lesson_39_foundations.json — Friend first, Uncle last, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -11,12 +11,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
 LESSON_HTML = REPO / "contents/books/book_01/lessons/lesson_39.html"
-OUT_PATH = ROOT / "exhibition" / "lesson_39_study.json"
+OUT_PATH = ROOT / "exhibition" / "lesson_39_foundations.json"
 
 STUDY_LESSON = "audio/study_version_1_minus3db.mp3"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from study_exhibition_common import exhibition_study_config, reorder_scenes  # noqa: E402
+from foundations_exhibition_common import exhibition_foundations_config, reorder_scenes  # noqa: E402
 
 FIRST_SCENE = "friend"
 LAST_SCENE = "uncle"
@@ -68,9 +68,9 @@ def parse_scenes(html: str) -> list[dict]:
 def build() -> dict:
     html = LESSON_HTML.read_text(encoding="utf-8")
     scenes = reorder_scenes(parse_scenes(html), first=FIRST_SCENE, last=LAST_SCENE)
-    config = exhibition_study_config(
+    config = exhibition_foundations_config(
         lesson=39,
-        title="KML Ambient Study — Lesson 39 (Exhibition)",
+        title="KML Ambient Foundations — Lesson 39 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Friend opens; Uncle closes with Gallery Seal Ending "
             "(image hold, fade to black, gold 漢 seal, music resolves, end on seal). "

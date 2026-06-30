@@ -12,7 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
 ASSETS = REPO / "assets"
 LESSONS = (1, 2, 3, 4, 5)
-OUT_PATH = ROOT / "collections" / "lessons_1_5_prototype.json"
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from collection_paths import write_collection_path  # noqa: E402
+
+OUT_PATH = write_collection_path(ROOT, "lessons_1_5_prototype")
 
 INTRO_AUDIO = "audio/fifty_minute_intro.mp3"
 OUTRO_AUDIO = "audio/fifty_minute_outro.mp3"
@@ -22,24 +26,13 @@ SOUNDTRACK_NORMAL = "audio/fifty_minutes.mp3"
 GALLERY_CREST = "images/gold_closing.png"
 CLOSING_TITLE_HTML = "Ambient Kanji Gallery<br>Lessons 1–5"
 
-# slug → imageScale / imageFocus tweaks (imageScale < 1 zooms out; > 1 crops letterboxing)
+# imageScale < 1 zooms out and leaves gaps on full-bleed landscape art.
+# Only keep overrides for baked-in letterboxing (scale > 1).
 IMAGE_OVERRIDES: dict[str, dict] = {
     "pop_song": {
-        # Baked-in horizontal letterbox bars — zoom to full cover
         "imageScale": 1.14,
         "imageFocus": "50% 48%",
     },
-    # Lesson 2 — strong baked-in letterbox bars on horizontal art
-    "prosperous": {"imageScale": 1.12, "imageFocus": "50% 48%"},
-    "early": {"imageScale": 1.12, "imageFocus": "50% 48%"},
-    "dawn": {"imageScale": 1.12, "imageFocus": "50% 48%"},
-    # Lesson 2 — exhibition ken-burns felt too tight on full-bleed landscape
-    "stomach": {"imageScale": 0.90},
-    "gallbladder": {"imageScale": 0.90},
-    "concave": {"imageScale": 0.90},
-    "convex": {"imageScale": 0.90},
-    # Lesson 3 — reported too tight / stale cache risk
-    "elbow": {"imageScale": 0.90, "imageFocus": "50% 42%"},
 }
 
 
@@ -71,7 +64,7 @@ DEFAULT_EXHIBITION = {
     "verseEnFadeMs": 1000,
     "exhibitTransitionMs": 4000,
     "exhibitBlackHoldMs": 0,
-    "kenBurnsDurationMs": 30000,
+    "kenBurnsDurationMs": 180000,
     "openingBlackBeforeMs": 2500,
     "openingRevealMs": 8000,
     "openingHoldMs": 0,
@@ -166,7 +159,8 @@ def build() -> dict:
             "showKanji": True,
             "exhibitProfile": "imageVerse",
             "verseMode": "sequential",
-            "typography": "placard",
+            "typography": "mobile-refine",
+            "typographyStyle": "foundations",
             "bookendStyle": "galleryCrest",
         },
         "meta": {

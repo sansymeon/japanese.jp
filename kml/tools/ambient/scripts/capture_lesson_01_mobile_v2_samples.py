@@ -53,7 +53,7 @@ def main() -> int:
     )
     time.sleep(2.5)
 
-    qs = "collection=lesson_1_study&capture=1&typography=mobile-v2"
+    qs = "collection=lesson_1_foundations&capture=1&typography=mobile-v2"
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)

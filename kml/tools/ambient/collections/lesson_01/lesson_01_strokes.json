@@ -1,0 +1,338 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_01_strokes",
+  "title": "Lesson 1 — Stroke Order (Prototype)",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. No crest — soundtrack 14:32 with jazz outro after exhibits.",
+  "soundtrack": {
+    "main": "audio/stroke_order_minus3db.mp3"
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 1,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 4.2,
+    "soundtrackDurationMs": 872672,
+    "estimatedContentRuntimeMs": 514000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L01_one",
+      "kanji": "一",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/one.html",
+        "strokeCount": 1,
+        "kanji": "一"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "one",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_two",
+      "kanji": "二",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/two.html",
+        "strokeCount": 2,
+        "kanji": "二"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "two",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_three",
+      "kanji": "三",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/three.html",
+        "strokeCount": 3,
+        "kanji": "三"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "three",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_four",
+      "kanji": "四",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/four.html",
+        "strokeCount": 5,
+        "kanji": "四"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "four",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_five",
+      "kanji": "五",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/five.html",
+        "strokeCount": 4,
+        "kanji": "五"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "five",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_six",
+      "kanji": "六",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/six.html",
+        "strokeCount": 4,
+        "kanji": "六"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "six",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_seven",
+      "kanji": "七",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/seven.html",
+        "strokeCount": 2,
+        "kanji": "七"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "seven",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_eight",
+      "kanji": "八",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eight.html",
+        "strokeCount": 2,
+        "kanji": "八"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "eight",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_nine",
+      "kanji": "九",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/nine.html",
+        "strokeCount": 2,
+        "kanji": "九"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "nine",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_ten",
+      "kanji": "十",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/ten.html",
+        "strokeCount": 2,
+        "kanji": "十"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "ten",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_mouth",
+      "kanji": "口",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mouth.html",
+        "strokeCount": 3,
+        "kanji": "口"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "mouth",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_sun",
+      "kanji": "日",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sun.html",
+        "strokeCount": 4,
+        "kanji": "日"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "sun",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_moon",
+      "kanji": "月",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/moon.html",
+        "strokeCount": 4,
+        "kanji": "月"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "moon",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_field",
+      "kanji": "田",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/field.html",
+        "strokeCount": 5,
+        "kanji": "田"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "field",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_eye",
+      "kanji": "目",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eye.html",
+        "strokeCount": 5,
+        "kanji": "目"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "eye",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_old",
+      "kanji": "古",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/old.html",
+        "strokeCount": 5,
+        "kanji": "古"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "old",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_I",
+      "kanji": "吾",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/I.html",
+        "strokeCount": 7,
+        "kanji": "吾"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "I",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_risk",
+      "kanji": "冒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/risk.html",
+        "strokeCount": 9,
+        "kanji": "冒"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "risk",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_companion",
+      "kanji": "朋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/companion.html",
+        "strokeCount": 8,
+        "kanji": "朋"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "companion",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L01_bright",
+      "kanji": "明",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bright.html",
+        "strokeCount": 8,
+        "kanji": "明"
+      },
+      "meta": {
+        "lesson": 1,
+        "slug": "bright",
+        "prototype": true
+      }
+    }
+  ]
+}

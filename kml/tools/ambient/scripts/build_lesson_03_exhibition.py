@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_3_study.json — original order, Gallery Seal Ending."""
+"""Build exhibition/lesson_3_foundations.json — original order, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -8,19 +8,19 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT_PATH = ROOT / "exhibition" / "lesson_3_study.json"
+OUT_PATH = ROOT / "exhibition" / "lesson_3_foundations.json"
 
 STUDY_LESSON = "audio/study_version_2_minus3db.mp3"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lesson_03_common import load_scenes  # noqa: E402
-from study_exhibition_common import exhibition_study_config  # noqa: E402
+from foundations_exhibition_common import exhibition_foundations_config  # noqa: E402
 
 
 def build() -> dict:
-    config = exhibition_study_config(
+    config = exhibition_foundations_config(
         lesson=3,
-        title="KML Ambient Study — Lesson 3 (Exhibition)",
+        title="KML Ambient Foundations — Lesson 3 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Original lesson order; "
             "Employee closes with Gallery Seal Ending. Soundtrack: Study Version 2."

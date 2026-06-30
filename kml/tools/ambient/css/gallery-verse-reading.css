@@ -1,0 +1,112 @@
+/**
+ * Verse-reading exhibition — hiragana → mixed → natural → optional EN.
+ * Enable: exhibitProfile verseReading + typography mobile-refine
+ */
+
+.exhibition-root.is-verse-reading .exhibition-keyword,
+.exhibition-root.is-verse-reading .exhibition-kanji,
+.exhibition-root.is-verse-reading .exhibition-title {
+  display: none !important;
+}
+
+.exhibition-root.is-verse-reading .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-verse-reading .exhibition-artwork {
+  transition: opacity var(--ex-transition, 4s) ease-in-out;
+}
+
+.exhibition-root.is-verse-reading .exhibition-artwork.is-exhaling {
+  transition-duration: var(--ex-transition, 4s);
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+}
+
+.exhibition-root.is-verse-reading .exhibition-artwork.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-verse-reading .exhibition-bookend {
+  transition: opacity var(--ex-transition, 4s) ease-in-out;
+}
+
+.exhibition-root.is-verse-reading .exhibition-bookend.is-exhaling {
+  transition-duration: var(--ex-transition, 4s);
+  transition-timing-function: ease-in-out;
+}
+
+.exhibition-root.is-verse-reading .exhibition-notes {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vw, 40rem);
+  min-height: 4rem;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-verse-reading
+  .exhibition-verse-jp {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  transform: translateY(-50%) !important;
+  transition: opacity var(--ex-verse-fade, 1s) ease-in-out;
+  font-size: var(--kml-foundations-exhibition-verse-jp);
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-verse-reading
+  .exhibition-verse-en {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(0.75rem, 3vw, 1.5rem);
+  text-align: center;
+  transform: translateY(-50%) !important;
+  transition: opacity var(--ex-verse-fade, 1s) ease-in-out;
+}
+
+html.kml-typography-mobile-refine
+  .exhibition-root.is-verse-reading
+  .exhibition-verse-jp
+  br {
+  display: block;
+  content: "";
+  margin-top: 0.35em;
+}
+
+html.kml-typography-mobile-refine
+  .exhibition-root.is-verse-reading
+  .exhibition-verse-en.is-reading-reflection {
+  font-family: var(--kml-font-heart-voice);
+  font-size: var(--kml-foundations-exhibition-verse-en);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  line-height: 1.68;
+  opacity: 1;
+  white-space: pre-line;
+  color: var(--kml-color-verse-en);
+  text-shadow: var(--kml-shadow-verse-en);
+}
+
+html.kml-typography-mobile-refine
+  .exhibition-root.is-verse-reading
+  .exhibition-verse-en.is-reading-reflection.is-visible {
+  opacity: 1;
+}

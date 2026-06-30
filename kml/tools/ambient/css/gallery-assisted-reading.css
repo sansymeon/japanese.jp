@@ -1,0 +1,176 @@
+/**
+ * Assisted-reading exhibition — pause → natural JP → furigana in/out → EN.
+ * Enable: exhibitProfile assistedReading + typography mobile-refine
+ */
+
+.exhibition-root.is-assisted-reading {
+  /* Verse JP — bumped over mobile-refine baseline for artwork legibility */
+  --kml-assisted-verse-jp: clamp(2.55rem, 8.8vmin, 5.15rem);
+  --kml-assisted-verse-en: var(--kml-size-verse-en-display);
+  --kml-assisted-shadow-jp:
+    0 1px 3px rgba(0, 0, 0, 0.78),
+    0 3px 20px rgba(0, 0, 0, 0.62),
+    0 0 36px rgba(0, 0, 0, 0.45);
+  --kml-assisted-shadow-en:
+    0 1px 3px rgba(0, 0, 0, 0.72),
+    0 3px 16px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(0, 0, 0, 0.4);
+}
+
+.exhibition-root.is-assisted-reading .exhibition-keyword,
+.exhibition-root.is-assisted-reading .exhibition-kanji,
+.exhibition-root.is-assisted-reading .exhibition-title {
+  display: none !important;
+}
+
+.exhibition-root.is-assisted-reading .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-assisted-reading.is-initial-black .exhibition-veil {
+  opacity: 1 !important;
+}
+
+.exhibition-root.is-assisted-reading .exhibition-artwork {
+  transition: opacity var(--ex-artwork-arrival, var(--ex-transition, 4s)) ease-in-out;
+}
+
+.exhibition-root.is-assisted-reading .exhibition-artwork.is-exhaling {
+  transition-duration: var(--ex-transition, 4s);
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+}
+
+.exhibition-root.is-assisted-reading .exhibition-artwork.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-assisted-reading .exhibition-notes {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(96vw, 48rem);
+  min-height: 4rem;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-assisted-reading
+  .exhibition-verse-jp {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  transform: translateY(-50%) !important;
+  transition: opacity var(--ex-verse-fade, 1s) ease-in-out;
+  font-size: var(--kml-assisted-verse-jp);
+  font-family: var(--kml-font-heart-verse-jp);
+  font-weight: 600;
+  line-height: 1.72;
+  color: rgba(255, 252, 245, 0.98);
+  text-shadow: var(--kml-assisted-shadow-jp);
+}
+
+/* English — same centre slot as JP, study-scale legibility (no small reflection tier) */
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-assisted-reading
+  .exhibition-verse-en {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(0.75rem, 3vw, 1.5rem);
+  text-align: center;
+  transform: translateY(-50%) !important;
+  font-family: var(--kml-font-heart-voice);
+  font-size: var(--kml-assisted-verse-en);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.66;
+  letter-spacing: 0.02em;
+  white-space: pre-line;
+  color: var(--kml-color-verse-en);
+  text-shadow: var(--kml-assisted-shadow-en);
+  opacity: 0;
+  transition: opacity var(--ex-verse-fade, 1s) ease-in-out;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-assisted-reading
+  .exhibition-verse-en.is-visible {
+  opacity: 1;
+}
+
+/* Two-line prose */
+html.kml-typography-mobile-refine.kml-verse-authored
+  .exhibition-root.is-assisted-reading
+  .exhibition-verse-jp.has-authored-lines
+  .kml-verse-line {
+  display: block;
+  white-space: nowrap;
+  text-wrap: unset;
+}
+
+html.kml-typography-mobile-refine.kml-verse-authored
+  .exhibition-root.is-assisted-reading
+  .exhibition-verse-jp.has-authored-lines
+  .kml-verse-line
+  + .kml-verse-line {
+  margin-top: 0.42em;
+}
+
+html.kml-typography-mobile-refine.kml-verse-authored
+  .exhibition-root.is-assisted-reading
+  .exhibition-verse-jp.has-authored-lines
+  br {
+  display: none;
+}
+
+/* Furigana */
+.exhibition-root.is-assisted-reading .exhibition-verse-jp.show-furigana ruby {
+  ruby-position: over;
+}
+
+.exhibition-root.is-assisted-reading .exhibition-verse-jp.show-furigana ruby rt {
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: 0.46em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-shadow: var(--kml-assisted-shadow-jp);
+  transition: opacity var(--ex-furigana-fade, 2.5s) ease-in-out;
+}
+
+.exhibition-root.is-assisted-reading
+  .exhibition-verse-jp.show-furigana.is-furigana-hidden
+  ruby
+  rt,
+.exhibition-root.is-assisted-reading
+  .exhibition-verse-jp.show-furigana.is-furigana-entering
+  ruby
+  rt {
+  opacity: 0;
+}
+
+.exhibition-root.is-assisted-reading
+  .exhibition-verse-jp.show-furigana:not(.is-furigana-hidden):not(.is-furigana-fading):not(
+    .is-furigana-entering
+  )
+  ruby
+  rt {
+  opacity: 1;
+}
+
+.exhibition-root.is-assisted-reading .exhibition-verse-jp.is-furigana-fading ruby rt {
+  opacity: 0;
+}

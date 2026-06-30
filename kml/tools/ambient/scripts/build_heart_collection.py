@@ -21,7 +21,7 @@ ASSETS_DIR = ROOT.parents[1] / "assets" / "studies"
 OUT_PATH = ROOT / "collections" / "heart_v2.json"
 
 
-def parse_section(section: str, lesson_num: int) -> dict | None:
+def parse_section(section: str, lesson_num: int, *, require_heart: bool = True) -> dict | None:
     kanji_m = re.search(r'data-kanji="([^"]+)"', section)
     if not kanji_m:
         return None
@@ -36,7 +36,7 @@ def parse_section(section: str, lesson_num: int) -> dict | None:
 
     parts = set(re.findall(r'<span class="kanji-part">([^<]+)</span>', section))
     heart_parts = sorted(parts & HEART_PARTS)
-    if kanji not in HEART_PARTS and not heart_parts:
+    if require_heart and kanji not in HEART_PARTS and not heart_parts:
         return None
 
     img_m = re.search(r'assets/studies/([^"]+\.png)', section)
@@ -64,6 +64,18 @@ def parse_section(section: str, lesson_num: int) -> dict | None:
     }
 
 
+def load_scene(lesson_num: int, slug: str, *, require_heart: bool = True) -> dict | None:
+    path = LESSONS_DIR / f"lesson_{lesson_num:02d}.html"
+    if not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8")
+    for section in re.split(r'<section class="kanji-entry"', text)[1:]:
+        entry = parse_section(section, lesson_num, require_heart=require_heart)
+        if entry and entry.get("id") == f"L{lesson_num:02d}_{slug}":
+            return entry
+    return None
+
+
 def collect_scenes(lesson_max: int = LESSON_MAX) -> list[dict]:
     scenes: list[dict] = []
     seen: set[str] = set()
@@ -74,7 +86,7 @@ def collect_scenes(lesson_max: int = LESSON_MAX) -> list[dict]:
             continue
         text = path.read_text(encoding="utf-8")
         for section in re.split(r'<section class="kanji-entry"', text)[1:]:
-            entry = parse_section(section, n)
+            entry = parse_section(section, n, require_heart=True)
             if not entry or entry["kanji"] in seen:
                 continue
             seen.add(entry["kanji"])

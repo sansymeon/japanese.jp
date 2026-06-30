@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build exhibition/lesson_40_study.json — Love first, Wide last, Gallery Seal Ending."""
+"""Build exhibition/lesson_40_foundations.json — Love first, Wide last, Gallery Seal Ending."""
 
 from __future__ import annotations
 
@@ -9,13 +9,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LESSON_40 = ROOT / "collections" / "archive" / "lesson_40.json"
-OUT_PATH = ROOT / "exhibition" / "lesson_40_study.json"
+OUT_PATH = ROOT / "exhibition" / "lesson_40_foundations.json"
 
 STUDY_LESSON = "audio/study_version_2_minus3db.mp3"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_lesson_40_study import apply_image_overrides  # noqa: E402
-from study_exhibition_common import exhibition_study_config, reorder_scenes  # noqa: E402
+from build_lesson_40_foundations import apply_image_overrides  # noqa: E402
+from foundations_exhibition_common import exhibition_foundations_config, reorder_scenes  # noqa: E402
 
 FIRST_SCENE = "love"
 LAST_SCENE = "wide"
@@ -26,9 +26,9 @@ def build() -> dict:
     scenes = apply_image_overrides(
         reorder_scenes(base["scenes"], first=FIRST_SCENE, last=LAST_SCENE)
     )
-    config = exhibition_study_config(
+    config = exhibition_foundations_config(
         lesson=40,
-        title="KML Ambient Study — Lesson 40 (Exhibition)",
+        title="KML Ambient Foundations — Lesson 40 (Exhibition)",
         notes=(
             "Exhibition / presentation build. Love opens; Wide closes with Gallery Seal Ending "
             "(image hold, fade to black, gold 漢 seal, music resolves, end on seal). "
