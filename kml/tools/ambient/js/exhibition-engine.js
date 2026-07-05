@@ -73,6 +73,13 @@
       this.startPhase = startPhase;
       this.verseMode =
         params.get("verseMode") || this.display.verseMode || "simultaneous";
+      const modeParam = (params.get("confirmationMode") || "").trim().toLowerCase();
+      const defaultMode = (this.display.confirmationMode || "stacked").toLowerCase();
+      this.confirmationMode = ["stacked", "replace", "crossfade"].includes(modeParam)
+        ? modeParam
+        : defaultMode;
+      this.contentType = collection.contentType || this.display.contentType || "";
+      this.edition = collection.edition || this.display.edition || "";
       this._cameraParam = params.get("camera");
       this.cameraHistory = [];
 
@@ -144,12 +151,19 @@
         partyDisclaimer: root.querySelector("[data-party-disclaimer]"),
         strokeOrderLayer: root.querySelector("[data-stroke-order-layer]"),
         grade1ConfettiLayer: root.querySelector("[data-grade1-confetti-layer]"),
+        g4Layer: root.querySelector("[data-g4-layer]"),
+        g4Camera: root.querySelector("[data-g4-camera]"),
+        g4Board: root.querySelector("[data-g4-board]"),
+        g4KanjiHero: root.querySelector("[data-g4-kanji-hero]"),
         strokeOrderKanji:
           root.querySelector('[data-stroke-order-kanji="a"]') ||
           root.querySelector("[data-stroke-order-kanji]"),
         strokeOrderSvg:
           root.querySelector('[data-stroke-order-svg="a"]') ||
           root.querySelector("[data-stroke-order-svg]"),
+        anchorCompoundsLayer: root.querySelector("[data-anchor-compounds-layer]"),
+        anchorCompoundsWord: root.querySelector("[data-anchor-compounds-word]"),
+        anchorCompoundsReading: root.querySelector("[data-anchor-compounds-reading]"),
       };
 
       this.soundtrackSlots = {
@@ -165,6 +179,18 @@
         },
       };
       this.activeSoundtrackSlot = "a";
+      this.g4SoundtrackSlots = {
+        a: {
+          slot: root.querySelector('[data-g4-slot="a"]'),
+          kanji: root.querySelector('[data-g4-kanji="a"]'),
+        },
+        b: {
+          slot: root.querySelector('[data-g4-slot="b"]'),
+          kanji: root.querySelector('[data-g4-kanji="b"]'),
+        },
+      };
+      this.activeG4Slot = "a";
+      this.grade4Visited = [];
       this._soundtrackCrossfadedTo = -1;
 
       this.partyPhases = {
@@ -208,13 +234,42 @@
       this.root.classList.toggle("is-assisted-reading", profile === "assistedReading");
       this.root.classList.toggle("is-vocabulary-exhibition", profile === "vocabularyExhibition");
       this.root.classList.toggle("is-compounds-exhibition", profile === "compoundsExhibition");
+      this.root.classList.toggle(
+        "is-anchor-compounds-exhibition",
+        profile === "anchorCompoundsExhibition"
+      );
+      this.root.classList.toggle(
+        "anchor-confirm-stacked",
+        profile === "anchorCompoundsExhibition" && this.confirmationMode === "stacked"
+      );
+      this.root.classList.toggle(
+        "anchor-confirm-replace",
+        profile === "anchorCompoundsExhibition" && this.confirmationMode === "replace"
+      );
+      this.root.classList.toggle(
+        "anchor-confirm-crossfade",
+        profile === "anchorCompoundsExhibition" && this.confirmationMode === "crossfade"
+      );
+      this.root.classList.toggle(
+        "is-school-compounds",
+        profile === "anchorCompoundsExhibition" &&
+          (this.edition === "school" || this.display.family === "schoolCompounds")
+      );
       this.root.classList.toggle("is-stroke-order", profile === "strokeOrder");
+      this.root.classList.toggle(
+        "is-grade1-stroke-order",
+        ExhibitionPlayer.isElementaryGradeStrokeOrderProfile(profile)
+      );
       this.root.classList.toggle(
         "is-kanji-soundtrack",
         family === "kanjiSoundtrack" || profile === "kanjiSoundtrack"
       );
       this.root.classList.toggle("is-grade1-kanji-soundtrack", family === "grade1KanjiSoundtrack");
       this.root.classList.toggle("is-grade2-kanji-soundtrack", family === "grade2KanjiSoundtrack");
+      this.root.classList.toggle("is-grade3-kanji-soundtrack", family === "grade3KanjiSoundtrack");
+      this.root.classList.toggle("is-grade4-kanji-soundtrack", family === "grade4KanjiSoundtrack");
+      this.root.classList.toggle("is-grade5-kanji-soundtrack", family === "grade5KanjiSoundtrack");
+      this.root.classList.toggle("is-grade6-kanji-soundtrack", family === "grade6KanjiSoundtrack");
       this.root.classList.toggle("is-party-kanji", profile === "partyKanji");
       this.root.classList.toggle(
         "is-gallery-crest-bookends",
@@ -286,17 +341,75 @@
       return this.display.exhibitProfile === "compoundsExhibition";
     }
 
+    get isAnchorCompoundsExhibitionProfile() {
+      return this.display.exhibitProfile === "anchorCompoundsExhibition";
+    }
+
     get isStrokeOrderProfile() {
-      return this.display.exhibitProfile === "strokeOrder";
+      const profile = this.display.exhibitProfile || "";
+      return (
+        profile === "strokeOrder" ||
+        ExhibitionPlayer.isElementaryGradeStrokeOrderProfile(profile)
+      );
+    }
+
+    get isGrade1StrokeOrderProfile() {
+      return this.display.exhibitProfile === "grade1StrokeOrder";
+    }
+
+    get isGrade2StrokeOrderProfile() {
+      return this.display.exhibitProfile === "grade2StrokeOrder";
+    }
+
+    get isElementaryStrokeOrderProfile() {
+      return ExhibitionPlayer.isElementaryGradeStrokeOrderProfile(
+        this.display.exhibitProfile
+      );
+    }
+
+    /** Denser forms get thinner paths so strokes stay separated. */
+    get usesAdaptiveStrokeOrderWidth() {
+      const profile = this.display.exhibitProfile || "";
+      if (profile === "strokeOrder") return true;
+      return (
+        profile !== "grade1StrokeOrder" &&
+        ExhibitionPlayer.isElementaryGradeStrokeOrderProfile(profile)
+      );
+    }
+
+    static isElementaryGradeStrokeOrderProfile(profile) {
+      return /^grade[1-6]StrokeOrder$/.test(profile || "");
+    }
+
+    strokeOrderColorsForScene(scene, timing = this.timing) {
+      const kanjiColor = scene?.meta?.kanjiColor;
+      if (this.isElementaryStrokeOrderProfile && kanjiColor) {
+        return { drawColor: kanjiColor, finalColor: kanjiColor };
+      }
+      return {
+        drawColor: timing.strokeOrderDrawColor,
+        finalColor: timing.strokeOrderFinalColor,
+      };
     }
 
     get isKanjiSoundtrackProfile() {
       return this.display.family === "kanjiSoundtrack";
     }
 
+    get isGrade4KanjiSoundtrackProfile() {
+      return this.display.family === "grade4KanjiSoundtrack";
+    }
+
     get isGrade1KanjiSoundtrackProfile() {
       const family = this.display.family;
-      return family === "grade1KanjiSoundtrack" || family === "grade2KanjiSoundtrack";
+      return (
+        family === "grade1KanjiSoundtrack" ||
+        family === "grade2KanjiSoundtrack" ||
+        family === "grade3KanjiSoundtrack" ||
+        family === "grade4KanjiSoundtrack" ||
+        family === "grade5KanjiSoundtrack" ||
+        family === "grade6KanjiSoundtrack"
+      );
     }
 
     get isPartyKanjiProfile() {
@@ -421,6 +534,9 @@
       if (this.isAssistedReadingProfile) return this.assistedReadingExhibitDurationMs(t);
       if (this.isVocabularyExhibitionProfile) return this.vocabularyExhibitionExhibitDurationMs(t);
       if (this.isCompoundsExhibitionProfile) return this.compoundsExhibitionExhibitDurationMs(t);
+      if (this.isAnchorCompoundsExhibitionProfile) {
+        return this.anchorCompoundsExhibitDurationMs(t);
+      }
       return this.exhibitDurationMs(t);
     }
 
@@ -531,6 +647,24 @@
         (t.compoundsKanjiReturnFadeMs ?? 1400) +
         (t.exhibitTransitionMs ?? 3500)
       );
+    }
+
+    anchorCompoundsCardDurationMs(t = this.timing) {
+      const fadeIn = t.anchorWordFadeInMs ?? 700;
+      const hold = t.anchorWordHoldMs ?? 2500;
+      const readingFadeIn = t.anchorReadingFadeInMs ?? 450;
+      const transition = t.anchorTransitionMs ?? 600;
+      const readingHold = t.anchorReadingHoldMs ?? 1400;
+      const exit = t.anchorCardFadeOutMs ?? 500;
+      const gap = t.anchorCardGapMs ?? 300;
+      if (this.confirmationMode === "replace" || this.confirmationMode === "crossfade") {
+        return fadeIn + hold + transition + transition + readingHold + exit + gap;
+      }
+      return fadeIn + hold + readingFadeIn + readingHold + exit + gap;
+    }
+
+    anchorCompoundsExhibitDurationMs(t = this.timing, cardCount = 1) {
+      return cardCount * this.anchorCompoundsCardDurationMs(t);
     }
 
     skipsToReflection(index = this.sceneIndex) {
@@ -721,6 +855,9 @@
           `${t.compoundsKanjiRevealMs ?? 1600}ms`
         );
         root.style.setProperty("--ken-burns-duration", `${t.kenBurnsDurationMs ?? 90000}ms`);
+      }
+      if (this.isAnchorCompoundsExhibitionProfile) {
+        this.setAnchorCompoundsFadeTiming(this.timing);
       }
       this.root.classList.toggle("is-fixed-kanji", this.fixedKanji);
       this.root.classList.toggle("is-sequential-verses", this.isSequentialVerses);
@@ -1051,6 +1188,8 @@
         this.display.family === "kanjiSoundtrack" ||
         this.display.family === "grade1KanjiSoundtrack" ||
         this.display.family === "grade2KanjiSoundtrack" ||
+        this.display.family === "grade3KanjiSoundtrack" ||
+        this.display.family === "grade4KanjiSoundtrack" ||
         Boolean(this.display.musicalTiming)
       );
     }
@@ -1073,6 +1212,7 @@
         this.isGalleryProfile ||
         this.isVocabularyExhibitionProfile ||
         this.isCompoundsExhibitionProfile ||
+        this.isAnchorCompoundsExhibitionProfile ||
         this.isStrokeOrderProfile ||
         this.isGrade1KanjiSoundtrackProfile
       ) {
@@ -1156,12 +1296,41 @@
       this.stopSoundtrack();
     }
 
+    async fadeOutSoundtrack(fadeMs) {
+      const audio = this.mainAudio;
+      if (!audio || audio.paused || audio.ended) return;
+      const startVolume = audio.volume;
+      const steps = Math.max(1, Math.round(fadeMs / 50));
+      const stepMs = fadeMs / steps;
+      for (let i = 1; i <= steps; i++) {
+        if (this.destroyed) return;
+        audio.volume = startVolume * (1 - i / steps);
+        await this.wait(stepMs);
+      }
+      audio.volume = startVolume;
+      this.stopSoundtrack();
+    }
+
+    async fadeBookendWithSoundtrack(fadeMs, hideFn) {
+      const audio = this.mainAudio;
+      const promises = [hideFn(fadeMs)];
+      if (audio && !audio.ended && !audio.paused) {
+        promises.push(this.fadeOutSoundtrack(fadeMs));
+      }
+      await Promise.all(promises);
+      this.stopSoundtrack();
+    }
+
     async fadeCrestWithSoundtrackEnd(crestFadeMs) {
       await this.fadeBookendWithSoundtrackEnd(crestFadeMs, (ms) => this.hideBookendCrest(ms));
     }
 
     async fadeClosingImageWithSoundtrackEnd(fadeMs) {
       await this.fadeBookendWithSoundtrackEnd(fadeMs, (ms) => this.hideBookendImage(ms));
+    }
+
+    async fadeClosingImageWithSoundtrack(fadeMs) {
+      await this.fadeBookendWithSoundtrack(fadeMs, (ms) => this.hideBookendImage(ms));
     }
 
     async ensureAudioUnlocked() {
@@ -1754,6 +1923,230 @@
       this.setClass(verseEn, "is-visible", false);
       this.resetBookendLayer();
       this.resetStrokeOrderLayer();
+      this.resetAnchorCompoundsLayer();
+    }
+
+    resetAnchorCompoundsLayer() {
+      const { anchorCompoundsLayer, anchorCompoundsWord, anchorCompoundsReading } = this.els;
+      anchorCompoundsLayer?.classList.add("exhibition-hidden");
+      this.clearAnchorCompoundsContent();
+      anchorCompoundsWord?.classList.remove("is-visible", "is-fading-out", "is-receding", "is-softened");
+      anchorCompoundsReading?.classList.remove("is-visible", "is-fading-out");
+      if (anchorCompoundsWord) {
+        anchorCompoundsWord.style.removeProperty("--ex-grade1-kanji-color");
+        anchorCompoundsWord.style.removeProperty("color");
+      }
+      if (anchorCompoundsReading) {
+        anchorCompoundsReading.style.removeProperty("color");
+      }
+      this._anchorCompoundsLayerVisible = false;
+    }
+
+    clearAnchorCompoundsContent() {
+      const { anchorCompoundsWord, anchorCompoundsReading } = this.els;
+      if (anchorCompoundsWord) {
+        anchorCompoundsWord.textContent = "";
+        anchorCompoundsWord.innerHTML = "";
+        this.clearAnchorWordScale(anchorCompoundsWord);
+      }
+      if (anchorCompoundsReading) {
+        anchorCompoundsReading.textContent = "";
+      }
+    }
+
+    setAnchorCompoundsFadeTiming(t = this.timing) {
+      document.documentElement.style.setProperty(
+        "--ex-anchor-fade-in",
+        `${t.anchorWordFadeInMs ?? 700}ms`
+      );
+      document.documentElement.style.setProperty(
+        "--ex-anchor-reading-fade-in",
+        `${t.anchorReadingFadeInMs ?? 450}ms`
+      );
+      document.documentElement.style.setProperty(
+        "--ex-anchor-transition",
+        `${t.anchorTransitionMs ?? 600}ms`
+      );
+      document.documentElement.style.setProperty(
+        "--ex-anchor-fade-out",
+        `${t.anchorCardFadeOutMs ?? 500}ms`
+      );
+      document.documentElement.style.setProperty(
+        "--kml-anchor-crossfade-ghost",
+        String(t.anchorCrossfadeGhostOpacity ?? 0.25)
+      );
+      document.documentElement.style.setProperty(
+        "--kml-anchor-stacked-soft-opacity",
+        String(t.anchorStackedWordSoftOpacity ?? 0.82)
+      );
+    }
+
+    applyAnchorCompoundsColors(scene) {
+      const color = scene?.meta?.kanjiColor || "#2c2824";
+      const wordEl = this.els.anchorCompoundsWord;
+      const readingEl = this.els.anchorCompoundsReading;
+      if (wordEl) {
+        wordEl.style.setProperty("--ex-grade1-kanji-color", color);
+        wordEl.style.color = color;
+      }
+      if (readingEl) {
+        readingEl.style.color = color;
+      }
+    }
+
+    setAnchorCompoundsContent(scene) {
+      const anchor = scene?.anchor || {};
+      const word = anchor.word || "";
+      const emphasize = anchor.visualWeightTarget || anchor.emphasize;
+      const wordEl = this.els.anchorCompoundsWord;
+      const readingEl = this.els.anchorCompoundsReading;
+
+      if (!wordEl || !readingEl) return;
+
+      wordEl.textContent = "";
+      wordEl.innerHTML = "";
+
+      if (emphasize && word.includes(emphasize)) {
+        let index = 0;
+        while (index < word.length) {
+          const hit = word.indexOf(emphasize, index);
+          if (hit === -1) {
+            wordEl.appendChild(document.createTextNode(word.slice(index)));
+            break;
+          }
+          if (hit > index) {
+            wordEl.appendChild(document.createTextNode(word.slice(index, hit)));
+          }
+          const span = document.createElement("span");
+          span.className = "kml-anchor-emphasis";
+          span.textContent = emphasize;
+          wordEl.appendChild(span);
+          index = hit + emphasize.length;
+        }
+      } else {
+        wordEl.textContent = word;
+      }
+
+      readingEl.textContent = anchor.reading || "";
+      this.applyAnchorCompoundsColors(scene);
+      this.applyAnchorWordScale(wordEl, word, anchor.wordScale);
+    }
+
+    applyAnchorWordScale(wordEl, word, presetScale) {
+      if (!wordEl || !word) return;
+      const layout = window.KmlAnchorCompoundsLayout;
+      if (layout) {
+        layout.applyCompoundWordScale(wordEl, word);
+        if (presetScale != null) {
+          wordEl.style.setProperty("--kml-compound-word-scale", String(presetScale));
+        }
+        return;
+      }
+      const n = [...word].length;
+      let scale = 1;
+      if (n === 3) scale = 0.74;
+      else if (n === 4) scale = 0.56;
+      else if (n >= 5) scale = 0.48;
+      if (presetScale != null) scale = presetScale;
+      wordEl.style.setProperty("--kml-compound-word-scale", String(scale));
+    }
+
+    clearAnchorWordScale(wordEl) {
+      window.KmlAnchorCompoundsLayout?.clearCompoundWordScale(wordEl);
+      wordEl?.style.removeProperty("--kml-compound-word-scale");
+    }
+
+    resetAnchorCompoundsCardVisuals() {
+      const { anchorCompoundsWord, anchorCompoundsReading } = this.els;
+      anchorCompoundsWord?.classList.remove("is-visible", "is-fading-out", "is-receding", "is-softened");
+      anchorCompoundsReading?.classList.remove("is-visible", "is-fading-out");
+    }
+
+    async playAnchorCompoundsStackedCard(stillRunning, wordEl, readingEl, t) {
+      const fadeIn = t.anchorWordFadeInMs ?? 700;
+      const hold = t.anchorWordHoldMs ?? 2500;
+      const readingFadeIn = t.anchorReadingFadeInMs ?? 450;
+      const readingHold = t.anchorReadingHoldMs ?? 1400;
+      const exit = t.anchorCardFadeOutMs ?? 500;
+
+      wordEl?.classList.add("is-visible");
+      await this.wait(fadeIn);
+      if (!stillRunning()) return;
+      await this.wait(hold);
+      if (!stillRunning()) return;
+
+      wordEl?.classList.add("is-softened");
+      readingEl?.classList.add("is-visible");
+      await this.wait(readingFadeIn);
+      if (!stillRunning()) return;
+      await this.wait(readingHold);
+      if (!stillRunning()) return;
+
+      wordEl?.classList.add("is-fading-out");
+      readingEl?.classList.add("is-fading-out");
+      wordEl?.classList.remove("is-visible", "is-softened");
+      readingEl?.classList.remove("is-visible");
+      await this.wait(exit);
+    }
+
+    async playAnchorCompoundsReplaceCard(stillRunning, wordEl, readingEl, t) {
+      const fadeIn = t.anchorWordFadeInMs ?? 700;
+      const hold = t.anchorWordHoldMs ?? 2200;
+      const transition = t.anchorTransitionMs ?? 600;
+      const readingHold = t.anchorReadingHoldMs ?? 1200;
+      const exit = t.anchorCardFadeOutMs ?? 500;
+
+      wordEl?.classList.add("is-visible");
+      await this.wait(fadeIn);
+      if (!stillRunning()) return;
+      await this.wait(hold);
+      if (!stillRunning()) return;
+
+      wordEl?.classList.add("is-fading-out");
+      wordEl?.classList.remove("is-visible");
+      await this.wait(transition);
+      if (!stillRunning()) return;
+      wordEl?.classList.remove("is-fading-out");
+
+      readingEl?.classList.add("is-visible");
+      await this.wait(transition);
+      if (!stillRunning()) return;
+      await this.wait(readingHold);
+      if (!stillRunning()) return;
+
+      readingEl?.classList.add("is-fading-out");
+      readingEl?.classList.remove("is-visible");
+      await this.wait(exit);
+    }
+
+    async playAnchorCompoundsCrossfadeCard(stillRunning, wordEl, readingEl, t) {
+      const fadeIn = t.anchorWordFadeInMs ?? 700;
+      const hold = t.anchorWordHoldMs ?? 2200;
+      const transition = t.anchorTransitionMs ?? 600;
+      const readingHold = t.anchorReadingHoldMs ?? 1200;
+      const exit = t.anchorCardFadeOutMs ?? 500;
+
+      wordEl?.classList.add("is-visible");
+      await this.wait(fadeIn);
+      if (!stillRunning()) return;
+      await this.wait(hold);
+      if (!stillRunning()) return;
+
+      wordEl?.classList.add("is-receding");
+      await this.wait(transition);
+      if (!stillRunning()) return;
+
+      readingEl?.classList.add("is-visible");
+      await this.wait(transition);
+      if (!stillRunning()) return;
+      await this.wait(readingHold);
+      if (!stillRunning()) return;
+
+      wordEl?.classList.add("is-fading-out");
+      readingEl?.classList.add("is-fading-out");
+      wordEl?.classList.remove("is-visible", "is-receding");
+      readingEl?.classList.remove("is-visible");
+      await this.wait(exit);
     }
 
     resetStrokeOrderLayer() {
@@ -1764,6 +2157,7 @@
       this.activeSoundtrackSlot = "a";
       this._soundtrackCrossfadedTo = -1;
       this.clearGrade1Confetti();
+      this.clearStrokeOrderComplexity();
     }
 
     resetSoundtrackSlot(key) {
@@ -1772,7 +2166,7 @@
       slot.slot?.classList.remove("is-active", "is-on-top", "is-handoff-out", "is-handoff");
       if (slot.kanji) {
         slot.kanji.textContent = "";
-        slot.kanji.classList.remove("is-visible");
+        slot.kanji.classList.remove("is-visible", "is-dissolving");
       }
     }
 
@@ -1935,6 +2329,234 @@
       }
     }
 
+    showGrade4Layer() {
+      this.els.g4Layer?.classList.remove("exhibition-hidden");
+      this.setClass(this.els.veil, "is-clear", true);
+    }
+
+    hideGrade4KanjiHero() {
+      this.els.g4KanjiHero?.classList.remove("is-kanji-visible");
+      this.g4SoundtrackSlots?.a?.kanji?.classList.remove("is-visible");
+      this.g4SoundtrackSlots?.b?.kanji?.classList.remove("is-visible");
+    }
+
+    grade4SectionCounts() {
+      const counts = {};
+      for (const scene of this.scenes) {
+        if (!scene.kanji) continue;
+        const key = scene.meta?.gojuonSection;
+        if (!key) continue;
+        counts[key] = (counts[key] || 0) + 1;
+      }
+      return counts;
+    }
+
+    grade4SceneDuration(scene) {
+      const meta = scene?.meta || {};
+      const t = this.timing;
+      if (meta.durationMs) return meta.durationMs;
+      const type = scene?.type || "";
+      if (type === "sectionBoard") {
+        return meta.first ? t.sectionBoardFirstMs ?? 4500 : t.sectionBoardMs ?? 2800;
+      }
+      if (type === "sectionPan") return t.sectionPanMs ?? 12000;
+      if (type === "sectionApproach") return t.sectionApproachMs ?? 9000;
+      if (type === "sectionReturn") return t.sectionReturnMs ?? 5000;
+      return 0;
+    }
+
+    inactiveG4SlotKey() {
+      return this.activeG4Slot === "a" ? "b" : "a";
+    }
+
+    setG4KanjiTiming(fadeInMs, fadeOutMs) {
+      const root = this.root;
+      if (!root) return;
+      root.style.setProperty("--kml-g4-kanji-fade-in", `${fadeInMs}ms`);
+      root.style.setProperty("--kml-g4-kanji-fade-out", `${fadeOutMs}ms`);
+    }
+
+    applyGrade4KanjiColor(kanjiEl, scene) {
+      const color = scene?.meta?.kanjiColor || "#c73e1d";
+      if (kanjiEl) {
+        kanjiEl.style.color = color;
+      }
+    }
+
+    async populateGrade4Slot(key, scene) {
+      const slot = this.g4SoundtrackSlots?.[key];
+      if (!slot?.kanji) return;
+      slot.kanji.textContent = scene.kanji || "";
+      this.applyGrade4KanjiColor(slot.kanji, scene);
+      slot.kanji.classList.remove("is-visible");
+    }
+
+    async grade4FadeInSlot(slotKey, scene, stillRunning) {
+      const slot = this.g4SoundtrackSlots[slotKey];
+      if (!slot?.kanji) return;
+      const m = this.grade1Musical(scene);
+      this.setG4KanjiTiming(m.kanjiFadeInMs, m.kanjiFadeOutMs);
+      this.els.g4KanjiHero?.classList.add("is-kanji-visible");
+      slot.slot?.classList.add("is-active", "is-on-top");
+      slot.kanji.classList.remove("is-visible");
+      void slot.kanji.offsetWidth;
+      slot.kanji.classList.add("is-visible");
+      await this.wait(m.kanjiFadeInMs);
+      if (!stillRunning()) return;
+      await this.wait(m.kanjiHoldMs);
+    }
+
+    async grade4CrossfadeSlots(outKey, inKey, scene, stillRunning) {
+      const outSlot = this.g4SoundtrackSlots[outKey];
+      const inSlot = this.g4SoundtrackSlots[inKey];
+      if (!outSlot?.kanji || !inSlot?.kanji) return;
+      const m = this.grade1Musical(scene);
+      const overlap = Math.min(m.crossfadeMs, m.kanjiFadeInMs, m.kanjiFadeOutMs);
+      const outSolo = Math.max(0, m.kanjiFadeOutMs - overlap);
+      const inTail = Math.max(0, m.kanjiFadeInMs - overlap);
+      this.setG4KanjiTiming(m.kanjiFadeInMs, m.kanjiFadeOutMs);
+      this.els.g4KanjiHero?.classList.add("is-kanji-visible");
+      inSlot.slot?.classList.add("is-active");
+      outSlot.slot?.classList.add("is-active", "is-on-top");
+      inSlot.kanji.classList.remove("is-visible");
+      outSlot.kanji.classList.remove("is-visible");
+      await this.wait(outSolo);
+      if (!stillRunning()) return;
+      inSlot.slot?.classList.add("is-on-top", "is-handoff");
+      outSlot.slot?.classList.add("is-handoff-out");
+      void inSlot.kanji.offsetWidth;
+      inSlot.kanji.classList.add("is-visible");
+      await this.wait(overlap);
+      if (!stillRunning()) return;
+      outSlot.slot?.classList.remove("is-active", "is-handoff-out", "is-on-top");
+      outSlot.kanji.classList.remove("is-visible");
+      outSlot.kanji.textContent = "";
+      if (inTail > 0) {
+        await this.wait(inTail);
+        if (!stillRunning()) return;
+      }
+      inSlot.slot?.classList.remove("is-handoff");
+      await this.wait(m.kanjiHoldMs);
+    }
+
+    async grade4FadeOutSlot(slotKey, scene, stillRunning) {
+      const slot = this.g4SoundtrackSlots[slotKey];
+      if (!slot?.kanji) return;
+      const m = this.grade1Musical(scene);
+      this.setG4KanjiTiming(m.kanjiFadeInMs, m.kanjiFadeOutMs);
+      slot.kanji.classList.remove("is-visible");
+      await this.wait(m.kanjiFadeOutMs);
+      if (!stillRunning()) return;
+      this.hideGrade4KanjiHero();
+    }
+
+    async playGrade4KanjiSoundtrackExhibit(index) {
+      if (this.destroyed || !this.scenes.length) return;
+
+      const count = this.scenes.length;
+      if (index >= count && !this.display.loop) return;
+
+      this.clearRun();
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+
+      this.sceneIndex = index;
+      const scene = this.scenes[index];
+      const type = scene.type || (scene.kanji ? "kanji" : "");
+      const board = window.KmlGrade4Board;
+      const isLast = index >= count - 1;
+
+      this.showGrade4Layer();
+
+      if (index === 0) {
+        this.grade4Visited = [];
+        this.hideGrade4KanjiHero();
+        if (!this.bookends?.opening) {
+          await this.waitInitialExhibitionBlack(stillRunning, 0);
+          if (!stillRunning()) return;
+          this.maybeStartSoundtrackForScene(0);
+        }
+      }
+
+      if (type === "sectionBoard") {
+        this.hideGrade4KanjiHero();
+        const meta = scene.meta || {};
+        board?.renderBoard(this.els.g4Board, {
+          sectionCounts: this.grade4SectionCounts(),
+          highlight: meta.highlight || "",
+          visited: this.grade4Visited,
+        });
+        board?.setCamera(this.els.g4Camera, "overview");
+        await this.wait(this.grade4SceneDuration(scene));
+      } else if (type === "sectionPan") {
+        this.hideGrade4KanjiHero();
+        board?.setCamera(this.els.g4Camera, "pan");
+        await this.wait(this.grade4SceneDuration(scene));
+      } else if (type === "sectionApproach") {
+        this.hideGrade4KanjiHero();
+        const kana = scene.meta?.section || "";
+        board?.setHighlight(this.els.g4Board, kana);
+        board?.setCamera(this.els.g4Camera, "approach", kana);
+        await this.wait(this.grade4SceneDuration(scene));
+      } else if (type === "sectionReturn") {
+        this.hideGrade4KanjiHero();
+        const kana = scene.meta?.section || "";
+        if (kana && !this.grade4Visited.includes(kana)) {
+          this.grade4Visited.push(kana);
+        }
+        board?.renderBoard(this.els.g4Board, {
+          sectionCounts: this.grade4SectionCounts(),
+          highlight: "",
+          visited: this.grade4Visited,
+        });
+        board?.setCamera(this.els.g4Camera, "overview");
+        await this.wait(this.grade4SceneDuration(scene));
+      } else if (type === "kanji" || scene.kanji) {
+        const prev = this.scenes[index - 1];
+        const prevIsKanji = prev && (prev.type === "kanji" || prev.kanji);
+        if (!prevIsKanji) {
+          this.activeG4Slot = "a";
+          await this.populateGrade4Slot("a", scene);
+          if (!stillRunning()) return;
+          await this.grade4FadeInSlot("a", scene, stillRunning);
+        } else {
+          const inKey = this.activeG4Slot;
+          const outKey = this.inactiveG4SlotKey();
+          await this.populateGrade4Slot(inKey, scene);
+          if (!stillRunning()) return;
+          await this.grade4CrossfadeSlots(outKey, inKey, scene, stillRunning);
+        }
+      }
+
+      if (!stillRunning()) return;
+
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
+      const next = index + 1;
+      if (next >= count) {
+        if (isLast && (scene.kanji || scene.type === "kanji")) {
+          await this.grade4FadeOutSlot(this.activeG4Slot, scene, stillRunning);
+        }
+        if (this.soundtrack?.main) {
+          await this.waitForSoundtrackEnd();
+        }
+        return;
+      }
+
+      if (scene.kanji || scene.type === "kanji") {
+        this.activeG4Slot = this.inactiveG4SlotKey();
+      }
+
+      await this.playGrade4KanjiSoundtrackExhibit(next);
+    }
+
     async populateGrade1Slot(key, scene) {
       const slot = this.soundtrackSlots?.[key];
       if (!slot?.kanji) return;
@@ -2088,7 +2710,7 @@
       }
       if (!stillRunning()) return;
 
-      if (isMilestone) {
+      if (isMilestone && !this.isGrade4KanjiSoundtrackProfile && this.display.family !== "grade5KanjiSoundtrack" && this.display.family !== "grade6KanjiSoundtrack") {
         await this.playGrade1Confetti(scene.meta?.kanjiColor);
         if (!stillRunning()) return;
       }
@@ -2110,11 +2732,19 @@
         this.resetStrokeOrderLayer();
         this.clearGrade1Confetti();
         if (this.bookends?.closing) {
-          this.root.classList.add(
-            this.display.family === "grade2KanjiSoundtrack"
-              ? "is-grade2-bookend-outro"
-              : "is-grade1-bookend-outro"
-          );
+          const outroClass =
+            this.display.family === "grade4KanjiSoundtrack"
+              ? "is-grade4-bookend-outro"
+              : this.display.family === "grade5KanjiSoundtrack"
+                ? "is-grade5-bookend-outro"
+                : this.display.family === "grade6KanjiSoundtrack"
+                  ? "is-grade6-bookend-outro"
+                  : this.display.family === "grade2KanjiSoundtrack"
+                ? "is-grade2-bookend-outro"
+                : this.display.family === "grade3KanjiSoundtrack"
+                  ? "is-grade3-bookend-outro"
+                  : "is-grade1-bookend-outro";
+          this.root.classList.add(outroClass);
           await this.playClosingBookend();
         } else if (this.soundtrack?.main) {
           await this.waitForSoundtrackEnd();
@@ -2142,10 +2772,15 @@
 
       if (this.els.strokeOrderKanji) {
         this.els.strokeOrderKanji.textContent = kanji;
+        this.els.strokeOrderKanji.classList.remove("is-dissolving");
+        if (this.isElementaryStrokeOrderProfile) {
+          this.applyGrade1KanjiColor(this.els.strokeOrderKanji, scene);
+        }
       }
       if (this.els.strokeOrderSvg) {
         this.els.strokeOrderSvg.innerHTML = svg;
       }
+      this.applyStrokeOrderComplexity(scene);
     }
 
     setStrokeOrderFadeTiming(fadeInMs, fadeOutMs) {
@@ -2157,6 +2792,50 @@
         "--ex-stroke-order-fade-out",
         `${fadeOutMs}ms`
       );
+    }
+
+    /** KanjiVG path width — thinner as stroke count rises. */
+    strokeOrderWidthForCount(strokeCount) {
+      const count = Math.max(1, strokeCount || 1);
+      if (count <= 5) return 8;
+      if (count <= 8) return 6.5;
+      if (count <= 11) return 5;
+      if (count <= 14) return 4;
+      return 3.5;
+    }
+
+    /** Slight size reduction so dense grade-2 forms do not crowd the frame. */
+    strokeOrderScaleForCount(strokeCount) {
+      const count = strokeCount || 1;
+      if (count >= 16) return 0.88;
+      if (count >= 11) return 0.93;
+      return 1;
+    }
+
+    applyStrokeOrderComplexity(scene) {
+      if (!this.usesAdaptiveStrokeOrderWidth) return null;
+      const strokeCount =
+        scene.strokeOrder?.strokeCount ?? scene.meta?.strokeCount ?? 1;
+      const strokeWidth = this.strokeOrderWidthForCount(strokeCount);
+      const scale = this.strokeOrderScaleForCount(strokeCount);
+      this.root.style.setProperty(
+        "--kml-stroke-order-stroke-width",
+        String(strokeWidth)
+      );
+      if (scale < 1) {
+        this.root.style.setProperty(
+          "--kml-stroke-order-kanji",
+          `calc(clamp(14rem, 42vmin, 30rem) * ${scale})`
+        );
+      } else {
+        this.root.style.removeProperty("--kml-stroke-order-kanji");
+      }
+      return strokeWidth;
+    }
+
+    clearStrokeOrderComplexity() {
+      this.root.style.removeProperty("--kml-stroke-order-stroke-width");
+      this.root.style.removeProperty("--kml-stroke-order-kanji");
     }
 
     applyImageFraming(img, scene) {
@@ -2738,6 +3417,8 @@
       const main = document.createElement("span");
       main.className = "kml-compound-jp";
       main.innerHTML = step.jpHtml || step.jp || "";
+      const jpText = step.jp || main.textContent || "";
+      this.applyAnchorWordScale(main, jpText);
       verseJp.appendChild(main);
 
       const reading = document.createElement("span");
@@ -2881,6 +3562,87 @@
       if (this.els.verseEn) {
         this.els.verseEn.textContent = "";
       }
+    }
+
+    async playAnchorCompoundsCard(stillRunning, scene, t) {
+      const cardGap = t.anchorCardGapMs ?? 300;
+      const wordEl = this.els.anchorCompoundsWord;
+      const readingEl = this.els.anchorCompoundsReading;
+
+      this.setAnchorCompoundsContent(scene);
+      this.resetAnchorCompoundsCardVisuals();
+      this.setAnchorCompoundsFadeTiming(t);
+
+      await this.waitForPaintFrame();
+      if (!stillRunning()) return;
+
+      if (this.confirmationMode === "replace") {
+        await this.playAnchorCompoundsReplaceCard(stillRunning, wordEl, readingEl, t);
+      } else if (this.confirmationMode === "crossfade") {
+        await this.playAnchorCompoundsCrossfadeCard(stillRunning, wordEl, readingEl, t);
+      } else {
+        await this.playAnchorCompoundsStackedCard(stillRunning, wordEl, readingEl, t);
+      }
+      if (!stillRunning()) return;
+
+      this.clearAnchorCompoundsContent();
+      this.resetAnchorCompoundsCardVisuals();
+      await this.wait(cardGap);
+    }
+
+    async playAnchorCompoundsExhibit(index) {
+      if (this.destroyed || !this.scenes.length) return;
+
+      const count = this.scenes.length;
+      if (index >= count && !this.display.loop) return;
+
+      this.clearRun();
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+
+      this.sceneIndex = ((index % count) + count) % count;
+      const scene = this.scenes[this.sceneIndex];
+      const t = this.timing;
+
+      if (index === 0 || !this._anchorCompoundsLayerVisible) {
+        this.resetLayers();
+        if (this.els.anchorCompoundsLayer) {
+          this.els.anchorCompoundsLayer.classList.remove("exhibition-hidden");
+        }
+        this._anchorCompoundsLayerVisible = true;
+        this.setClass(this.els.veil, "is-clear", true);
+
+        if (this.sceneIndex === 0) {
+          await this.waitInitialExhibitionBlack(stillRunning, 0);
+          if (!stillRunning()) return;
+        }
+      }
+
+      await this.playAnchorCompoundsCard(stillRunning, scene, t);
+      if (!stillRunning()) return;
+
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
+      const next = this.sceneIndex + 1;
+      if (next >= count) {
+        if (this.display.loop) {
+          this._anchorCompoundsLayerVisible = false;
+          await this.playAnchorCompoundsExhibit(0);
+        } else if (this.bookends?.closing) {
+          this.resetAnchorCompoundsLayer();
+          await this.playClosingBookend();
+        }
+        return;
+      }
+
+      await this.playAnchorCompoundsExhibit(next);
     }
 
     async playCompoundsExhibit(index) {
@@ -3032,11 +3794,25 @@
       const completionReveal = t.strokeOrderCompletionRevealMs ?? 1400;
       const completionHold = t.strokeOrderCompletionHoldMs ?? 3000;
       const exhibitFade = t.strokeOrderExhibitFadeMs ?? kanjiFadeOut;
+      const pageTurnTransition = t.exhibitTransitionMs ?? 0;
+      const pageTurnBlackHold = t.exhibitBlackHoldMs ?? 0;
 
       const kanjiEl = this.els.strokeOrderKanji;
       const svgWrap = this.els.strokeOrderSvg;
+      const { drawColor: strokeColor, finalColor } = this.strokeOrderColorsForScene(
+        scene,
+        t
+      );
 
       this.setStrokeOrderFadeTiming(recognitionReveal, kanjiFadeOut);
+      kanjiEl?.classList.remove("is-dissolving");
+      // Mount first, let layout settle, then fade in to avoid a first-frame jump.
+      kanjiEl?.classList.remove("is-visible");
+      if (kanjiEl) {
+        void kanjiEl.offsetWidth;
+      }
+      await this.waitForPaintFrame();
+      if (!stillRunning()) return;
       kanjiEl?.classList.add("is-visible");
       await this.wait(recognitionReveal);
       if (!stillRunning()) return;
@@ -3051,9 +3827,15 @@
       this.setStrokeOrderFadeTiming(strokeFade, strokeFade);
       svgWrap?.classList.add("is-visible");
       const svgEl = svgWrap?.querySelector("svg");
+      const strokeCount =
+        scene.strokeOrder?.strokeCount ?? scene.meta?.strokeCount ?? 1;
+      const strokeWidth = this.usesAdaptiveStrokeOrderWidth
+        ? this.strokeOrderWidthForCount(strokeCount)
+        : null;
       const strokes = player?.prepareStrokes(svgEl, {
-        drawColor: t.strokeOrderDrawColor,
-        finalColor: t.strokeOrderFinalColor,
+        drawColor: strokeColor,
+        finalColor,
+        ...(strokeWidth != null ? { strokeWidth } : {}),
       });
 
       await this.wait(preDraw);
@@ -3063,7 +3845,7 @@
         await player.animateStrokes(strokes, {
           drawMs,
           gapMs,
-          finalColor: t.strokeOrderFinalColor,
+          finalColor,
         });
       } else {
         const fallbackMs =
@@ -3090,10 +3872,24 @@
       await this.wait(completionHold);
       if (!stillRunning()) return;
 
+      // Elementary stroke-order cards use a gentle dissolve before the page-turn beat.
+      if (this.isElementaryStrokeOrderProfile) {
+        kanjiEl?.classList.add("is-dissolving");
+      }
       this.setStrokeOrderFadeTiming(exhibitFade, exhibitFade);
       kanjiEl?.classList.remove("is-visible");
       await this.wait(exhibitFade);
       if (!stillRunning()) return;
+      kanjiEl?.classList.remove("is-dissolving");
+
+      if (pageTurnTransition > 0) {
+        await this.wait(pageTurnTransition);
+        if (!stillRunning()) return;
+      }
+      if (pageTurnBlackHold > 0) {
+        await this.wait(pageTurnBlackHold);
+        if (!stillRunning()) return;
+      }
 
       if (this.singleExhibit) {
         document.dispatchEvent(
@@ -3820,6 +4616,17 @@
       });
     }
 
+    waitForPaintFrame() {
+      const runId = this.runId;
+      return new Promise((resolve) => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (!this.destroyed && runId === this.runId) resolve();
+          });
+        });
+      });
+    }
+
     clearRun() {
       this.runId += 1;
       this.wakeResolvers.forEach((fn) => fn());
@@ -4257,8 +5064,18 @@
         return;
       }
 
-      await this.wait(t.closingHoldMs);
+      await this.wait(t.closingHoldMs ?? 0);
       if (!stillRunning()) return;
+
+      if (closing.fadeWithSoundtrackEnd && this.soundtrack?.main) {
+        await this.fadeClosingImageWithSoundtrack(fadeMs);
+        if (!stillRunning()) return;
+        await this.wait(t.closingBlackAfterMs ?? 0);
+        this.stopAllAudio();
+        this.finishPresentation();
+        this.debugLog("exit playClosingImageBookend (timed fade with soundtrack)");
+        return;
+      }
 
       if (closing.audio) {
         await this.playAudioUntilEnd(closing.audio, { kind: "bookend" });
@@ -4393,6 +5210,9 @@
       }
       if (this.isCompoundsExhibitionProfile) {
         return this.playCompoundsExhibit(index);
+      }
+      if (this.isAnchorCompoundsExhibitionProfile) {
+        return this.playAnchorCompoundsExhibit(index);
       }
       if (this.isGrade1KanjiSoundtrackProfile) {
         return this.playGrade1KanjiSoundtrackExhibit(index);
@@ -4637,6 +5457,23 @@
     throw new Error(`Could not load collection "${name}" (${lastStatus}).`);
   }
 
+  async function ensureHandwrittenFontsReady(display) {
+    const family = display?.family || "";
+    const profile = display?.exhibitProfile || "";
+    const needsHandwritten =
+      family === "kanjiSoundtrack" ||
+      profile === "kanjiSoundtrack" ||
+      /KanjiSoundtrack$/.test(family);
+    if (!needsHandwritten || !document.fonts?.load) return;
+
+    const loads = [
+      document.fonts.load('400 48px "Yuji Syuku"'),
+      document.fonts.load('400 48px "Hachi Maru Pop"'),
+    ];
+    await Promise.all(loads.map((p) => p.catch(() => {})));
+    if (document.fonts.ready) await document.fonts.ready;
+  }
+
   function collectionFromQuery() {
     const params = new URLSearchParams(window.location.search);
     return params.get("collection") || "heart_v5";
@@ -4652,6 +5489,7 @@
 
     try {
       const collection = await loadCollection(name);
+      await ensureHandwrittenFontsReady(collection.display);
       if (new URLSearchParams(window.location.search).get("debug") === "1") {
         console.log("[KML Exhibition] boot", { engineVersion: ENGINE_VERSION, collection: name });
       }

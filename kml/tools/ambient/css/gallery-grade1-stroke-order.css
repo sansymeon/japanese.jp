@@ -1,0 +1,123 @@
+/**
+ * Grade 1 Stroke Order — warm parchment studio, KML elementary family.
+ * Enable: exhibitProfile grade1StrokeOrder
+ */
+
+.exhibition-root.is-grade1-stroke-order {
+  --kml-stroke-order-kanji: clamp(14rem, 42vmin, 30rem);
+  --kml-stroke-order-fade-in: var(--ex-stroke-order-fade-in, 0.4s);
+  --kml-stroke-order-fade-out: var(--ex-stroke-order-fade-out, 0.5s);
+  --kml-stroke-order-stroke-width: 9;
+  --kml-grade1-stroke-paper: #f6f1e8;
+  --kml-grade1-stroke-ink: rgba(44, 40, 36, 0.96);
+  background: var(--kml-grade1-stroke-paper);
+}
+
+.exhibition-root.is-grade1-stroke-order .exhibition-artwork,
+.exhibition-root.is-grade1-stroke-order .exhibition-title,
+.exhibition-root.is-grade1-stroke-order .exhibition-notes,
+.exhibition-root.is-grade1-stroke-order .exhibition-vignette,
+.exhibition-root.is-grade1-stroke-order .party-kanji-layer,
+.exhibition-root.is-grade1-stroke-order .grade1-confetti-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-grade1-stroke-order .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: var(--kml-grade1-stroke-paper);
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-layer.exhibition-hidden {
+  display: none;
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-stage {
+  position: relative;
+  width: min(96vw, 72rem);
+  height: min(88vh, 58rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-kanji {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Yuji Syuku", "Noto Serif JP", var(--kml-font-kanji-main);
+  font-size: var(--kml-stroke-order-kanji);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: var(--kml-kanji-letter-spacing);
+  color: var(--ex-grade1-kanji-color, var(--kml-grade1-stroke-ink));
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--kml-stroke-order-fade-out) ease-in-out,
+    visibility 0s linear var(--kml-stroke-order-fade-out);
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-kanji.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--kml-stroke-order-fade-in) ease-in-out,
+    visibility 0s linear 0s;
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-kanji.is-dissolving {
+  filter: blur(1.2px);
+  transform: translateZ(0);
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-svg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--kml-stroke-order-fade-out) ease-in-out,
+    visibility 0s linear var(--kml-stroke-order-fade-out);
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-svg.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--kml-stroke-order-fade-in) ease-in-out,
+    visibility 0s linear 0s;
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-svg svg {
+  width: var(--kml-stroke-order-kanji);
+  height: auto;
+  overflow: visible;
+  filter: none;
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-svg text {
+  display: none;
+}
+
+.exhibition-root.is-grade1-stroke-order .stroke-order-svg path {
+  fill: none;
+  stroke-width: var(--kml-stroke-order-stroke-width);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

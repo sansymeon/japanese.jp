@@ -1,0 +1,463 @@
+/**
+ * Grade 4 Kanji Soundtrack — refined collection aesthetic.
+ * Cream washi, museum display board, traditional pigment accents.
+ */
+
+:root {
+  --kml-g4-bg: #f4efe4;
+  --kml-g4-bg-deep: #ebe4d6;
+  --kml-g4-board-wood: #8b7355;
+  --kml-g4-board-wood-dark: #6b5742;
+  --kml-g4-frame-inner: #faf6ee;
+  --kml-g4-frame-border: #c4b49a;
+  --kml-g4-text-muted: #6b6358;
+  --kml-g4-seal: #b83a2a;
+
+  --kml-g4-font-kanji: "Yuji Syuku", "Hachi Maru Pop", "Noto Sans JP", serif;
+  --kml-g4-font-label: "Noto Serif JP", "Yu Mincho", serif;
+
+  /* Traditional pigment accents (gojūon sections) */
+  --kml-g4-あ: #ad3318;
+  --kml-g4-い: #264a6e;
+  --kml-g4-う: #3d5c3a;
+  --kml-g4-え: #b8860b;
+  --kml-g4-お: #2a6b6b;
+  --kml-g4-か: #6b3a5c;
+  --kml-g4-き: #4a6741;
+  --kml-g4-く: #5c4a6e;
+  --kml-g4-け: #8b6914;
+  --kml-g4-こ: #3d5a6b;
+  --kml-g4-さ: #9b4a3c;
+  --kml-g4-し: #2e5a6e;
+  --kml-g4-せ: #6b5344;
+  --kml-g4-そ: #4a5c3a;
+  --kml-g4-た: #7a4a3a;
+  --kml-g4-ち: #3a5c5c;
+  --kml-g4-つ: #5c4a5a;
+  --kml-g4-て: #6b5a2a;
+  --kml-g4-と: #3a4a6b;
+  --kml-g4-な: #5a4a6b;
+  --kml-g4-に: #4a6b5a;
+  --kml-g4-ぬ: #6b4a4a;
+  --kml-g4-ね: #5a5a3a;
+  --kml-g4-の: #4a5a4a;
+  --kml-g4-は: #8b3a2a;
+  --kml-g4-ひ: #2a4a6b;
+  --kml-g4-ふ: #3a5a4a;
+  --kml-g4-へ: #6b5a3a;
+  --kml-g4-ほ: #2a5a5a;
+  --kml-g4-ま: #5a3a4a;
+  --kml-g4-み: #3a4a5a;
+  --kml-g4-む: #4a3a5a;
+  --kml-g4-め: #6b4a2a;
+  --kml-g4-も: #3a5a3a;
+  --kml-g4-や: #6b3a3a;
+  --kml-g4-ゆ: #2a4a5a;
+  --kml-g4-よ: #5a4a3a;
+  --kml-g4-ら: #4a3a4a;
+  --kml-g4-り: #3a4a4a;
+  --kml-g4-る: #5a3a3a;
+  --kml-g4-れ: #4a4a3a;
+  --kml-g4-ろ: #3a3a4a;
+  --kml-g4-わ: #5a4a4a;
+  --kml-g4-を: #4a3a3a;
+  --kml-g4-ん: #3a3a3a;
+}
+
+.g4-prototype-root {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--kml-g4-bg);
+  color: #3a3530;
+  font-family: var(--kml-g4-font-label);
+  overflow: hidden;
+}
+
+.g4-washi-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 252, 245, 0.9), transparent 55%),
+    linear-gradient(180deg, var(--kml-g4-bg) 0%, var(--kml-g4-bg-deep) 100%);
+  pointer-events: none;
+}
+
+.g4-washi-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
+}
+
+.g4-stage {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.g4-board-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.g4-board-camera {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140rem;
+  height: 52rem;
+  margin-left: -70rem;
+  margin-top: -26rem;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  transition: transform 10s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.g4-board-camera.is-overview {
+  transform: scale(0.52) translateX(4%);
+}
+
+.g4-board-camera.is-panning {
+  transform: scale(0.52) translateX(-8%);
+  transition-duration: 14s;
+  transition-timing-function: cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.g4-board-camera.is-approach-あ {
+  transform: scale(2.35) translateX(36.5%) translateY(14%);
+  transition-duration: 11s;
+  transition-timing-function: cubic-bezier(0.22, 0.8, 0.26, 1);
+}
+
+.g4-board-camera.is-approach {
+  transform: scale(var(--g4-approach-scale, 2.35))
+    translateX(var(--g4-approach-tx, 36.5%))
+    translateY(var(--g4-approach-ty, 14%));
+  transition-duration: 11s;
+  transition-timing-function: cubic-bezier(0.22, 0.8, 0.26, 1);
+}
+
+/* ── Exhibition engine (grade_4_01 …) — mature linear edition ── */
+
+.exhibition-root.is-grade4-kanji-soundtrack {
+  --kml-font-kanji-handwritten: "Yuji Syuku", "Noto Serif JP", "Noto Sans JP", serif;
+  --kml-grade1-kanji-size: min(68vw, 480px, 72vh, 620px);
+  --kml-grade1-kanji-fade-in: var(--ex-grade1-kanji-fade-in, 3s);
+  --kml-grade1-kanji-fade-out: var(--ex-grade1-kanji-fade-out, 2.2s);
+  --ex-grade1-kanji-fade-in: 3s;
+  --ex-grade1-kanji-fade-out: 2.2s;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 252, 245, 0.85), transparent 55%),
+    linear-gradient(180deg, var(--kml-g4-bg) 0%, var(--kml-g4-bg-deep) 100%);
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .exhibition-artwork,
+.exhibition-root.is-grade4-kanji-soundtrack .exhibition-title,
+.exhibition-root.is-grade4-kanji-soundtrack .exhibition-notes,
+.exhibition-root.is-grade4-kanji-soundtrack .exhibition-vignette,
+.exhibition-root.is-grade4-kanji-soundtrack .party-kanji-layer,
+.exhibition-root.is-grade4-kanji-soundtrack .g4-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .exhibition-bookend {
+  background: #000;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack.is-grade4-bookend-outro {
+  background: #000;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .stroke-order-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .stroke-order-layer.exhibition-hidden {
+  display: none;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .stroke-order-stage {
+  position: relative;
+  width: min(98vw, 80rem);
+  height: min(92vh, 64rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .soundtrack-slot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .soundtrack-slot.is-active,
+.exhibition-root.is-grade4-kanji-soundtrack .soundtrack-slot.is-handoff-out {
+  visibility: visible;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .soundtrack-slot.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .stroke-order-svg {
+  display: none !important;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .stroke-order-kanji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--kml-font-kanji-handwritten);
+  font-size: var(--kml-grade1-kanji-size);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ex-grade1-kanji-color, var(--kml-g4-あ));
+  text-shadow: 0 0.04em 0.16em rgba(60, 40, 30, 0.12);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  transform: translateY(-0.03em);
+  opacity: 0;
+  transition: opacity var(--kml-grade1-kanji-fade-out) cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .stroke-order-kanji.is-visible {
+  opacity: 1;
+  transition: opacity var(--kml-grade1-kanji-fade-in) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .soundtrack-slot.is-handoff .stroke-order-kanji {
+  will-change: opacity;
+}
+
+.exhibition-root.is-grade4-kanji-soundtrack .grade1-confetti-layer {
+  display: none !important;
+}
+
+/* ── Prototype / board edition (grade4-prototype.html) ── */
+
+.g4-board {
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem 3rem;
+  box-sizing: border-box;
+  background: linear-gradient(165deg, #9a8068 0%, var(--kml-g4-board-wood) 40%, var(--kml-g4-board-wood-dark) 100%);
+  border-radius: 0.35rem;
+  box-shadow:
+    0 1.5rem 4rem rgba(40, 30, 20, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.g4-board-inner {
+  width: 100%;
+  height: 100%;
+  padding: 1.75rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #f0e8da 0%, #e8dfd0 100%);
+  border: 1px solid rgba(120, 100, 80, 0.35);
+  box-shadow: inset 0 2px 12px rgba(60, 45, 30, 0.08);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0.85rem 0.75rem;
+}
+
+.g4-frame {
+  --g4-accent: var(--kml-g4-text-muted);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  background: var(--kml-g4-frame-inner);
+  border: 2px solid var(--kml-g4-frame-border);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65),
+    0 2px 6px rgba(50, 40, 30, 0.1);
+  transition:
+    box-shadow 1.2s ease,
+    border-color 1.2s ease,
+    background 1.2s ease;
+}
+
+.g4-frame::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(180, 165, 140, 0.45);
+  pointer-events: none;
+}
+
+.g4-frame-label {
+  font-family: var(--kml-g4-font-label);
+  font-size: clamp(1.1rem, 1.8vw, 1.65rem);
+  font-weight: 500;
+  color: var(--g4-accent);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  opacity: 0.88;
+}
+
+.g4-frame-count {
+  margin-top: 0.35rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--kml-g4-text-muted);
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+
+.g4-frame.is-active {
+  border-color: color-mix(in srgb, var(--g4-accent) 55%, var(--kml-g4-frame-border));
+  background: color-mix(in srgb, var(--g4-accent) 6%, var(--kml-g4-frame-inner));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7),
+    0 0 0 1px color-mix(in srgb, var(--g4-accent) 25%, transparent),
+    0 0 28px color-mix(in srgb, var(--g4-accent) 18%, transparent);
+}
+
+.g4-frame.is-visited::after {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--kml-g4-seal);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+  opacity: 0.85;
+}
+
+.g4-kanji-hero {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.g4-kanji-hero.is-visible {
+  opacity: 1;
+}
+
+.g4-kanji-hero-char {
+  font-family: var(--kml-g4-font-kanji);
+  font-size: min(42vw, 22rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--kml-g4-あ);
+  text-shadow: 0 0.04em 0.2em rgba(60, 40, 30, 0.1);
+  transform: translateY(-0.03em);
+}
+
+.g4-prototype-chrome {
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.5rem 1.35rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(0deg, rgba(244, 239, 228, 0.92) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.g4-prototype-chrome > * {
+  pointer-events: auto;
+}
+
+.g4-prototype-title {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kml-g4-text-muted);
+}
+
+.g4-prototype-phase {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #4a433c;
+}
+
+.g4-prototype-replay {
+  appearance: none;
+  border: 1px solid rgba(100, 85, 65, 0.35);
+  background: rgba(250, 246, 238, 0.85);
+  color: #4a433c;
+  font-family: var(--kml-g4-font-label);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.g4-prototype-replay:hover {
+  background: #fffdf8;
+}
+
+.g4-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  box-shadow: inset 0 0 12vw rgba(50, 40, 30, 0.12);
+}

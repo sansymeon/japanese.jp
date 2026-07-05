@@ -5,6 +5,8 @@ __pycache__/
 
 # Virtual environments
 venv/
+.venv/
+.venv_*/
 .env/
 
 # System junk
@@ -25,20 +27,23 @@ build/
 # Temp
 *.tmp
 *.bak
-.venv/
-__pycache__/
-*.pyc
-.venv/
 
 # Ambient generated assets
 kml/tools/ambient/assets/
 
 # Ambient audio — keep locally (binary assets, not versioned)
 kml/tools/ambient/audio/*.mp3
+kml/tools/ambient/audio/*.aup3
+
+# Audacity project files (often very large)
+*.aup3
+*.aup3-shm
+*.aup3-wal
 
 # Video exports
 *.mp4
 *.mov
+*_original.mp4
 
 # Render folders
 captures/
@@ -46,9 +51,13 @@ exports/
 thumbnails/
 kml/tools/ambient/study_exhibitions/
 kml/tools/ambient/heart_exhibitions/
+kml/tools/ambient/archive_for_removal/
+kml/tools/ambient/extended_exhibitions/
+kml/tools/ambient/.playwright-browsers/
 kml/tools/ambient/gallery_guardian_samples/
 kml/tools/ambient/typography_samples/
 kml/tools/ambient/mobile_verse_samples/
 kml/tools/ambient/.venv/
-kml/tools/ambient/gallery_guardian_samples/
-kml/tools/ambient/.venv/
+
+# YouTube / export assets (local only)
+assets/youtube/

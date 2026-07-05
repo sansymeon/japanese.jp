@@ -73,6 +73,19 @@ def heart_opening_timeline_ms(collection: dict, root: Path) -> tuple[int, int]:
     return before, before + flute_ms + exhale + after
 
 
+def compounds_school_soundtrack_start_ms(collection: dict) -> int:
+    """When main soundtrack begins — aligned to opening bookend image + delay."""
+    t = collection.get("exhibition") or {}
+    opening = (collection.get("bookends") or {}).get("opening") or {}
+    lead = int(t.get("recordingLeadMs", 0))
+    before = int(t.get("openingBlackBeforeMs", 0))
+    delay = int(
+        opening.get("startSoundtrackAfterImageMs")
+        or t.get("openingSoundtrackDelayMs", 2500)
+    )
+    return lead + before + delay
+
+
 def reflections_audio_timeline_ms(collection: dict, root: Path) -> tuple[int, int, int]:
     """Return (intro_delay_ms, main_start_ms, outro_start_ms) for gallery-crest bookends."""
     t = collection.get("exhibition") or {}

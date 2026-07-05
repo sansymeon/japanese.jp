@@ -1,0 +1,174 @@
+/**
+ * Grade 5 Kanji Soundtrack — mature linear edition.
+ * White stage (KML identity), richer traditional pigments, deeper kanji presence.
+ * Evolves Grade 4 pigments without the washi/museum detour.
+ */
+
+:root {
+  --kml-g5-bg: #ffffff;
+  --kml-g5-text-muted: #5a534c;
+  --kml-g5-seal: #91311c;
+
+  --kml-g5-font-kanji: "Yuji Syuku", "Noto Serif JP", "Noto Sans JP", serif;
+  --kml-g5-kanji-shadow: 0 0.06em 0.22em rgba(0, 0, 0, 0.14);
+
+  /* Matured pigment accents (gojūon sections) — see grade5_gojuon.py */
+  --kml-g5-あ: #91311c;
+  --kml-g5-い: #24415d;
+  --kml-g5-う: #374f34;
+  --kml-g5-え: #997211;
+  --kml-g5-お: #285b5b;
+  --kml-g5-か: #5b3550;
+  --kml-g5-き: #42583b;
+  --kml-g5-く: #50425f;
+  --kml-g5-け: #745a17;
+  --kml-g5-こ: #374e5c;
+  --kml-g5-さ: #834439;
+  --kml-g5-し: #2b4e5d;
+  --kml-g5-せ: #5c493d;
+  --kml-g5-そ: #414f34;
+  --kml-g5-た: #684236;
+  --kml-g5-ち: #344f4f;
+  --kml-g5-つ: #50424e;
+  --kml-g5-て: #5b4d28;
+  --kml-g5-と: #35415b;
+  --kml-g5-な: #4f425c;
+  --kml-g5-に: #425c4f;
+  --kml-g5-ぬ: #5c4242;
+  --kml-g5-ね: #4d4d34;
+  --kml-g5-の: #414e41;
+  --kml-g5-は: #753629;
+  --kml-g5-ひ: #28415b;
+  --kml-g5-ふ: #344d41;
+  --kml-g5-へ: #5b4e35;
+  --kml-g5-ほ: #274d4d;
+  --kml-g5-ま: #4d3441;
+  --kml-g5-み: #34414d;
+  --kml-g5-む: #41344d;
+  --kml-g5-め: #5b4128;
+  --kml-g5-も: #344d34;
+  --kml-g5-や: #5b3535;
+  --kml-g5-ゆ: #27404d;
+  --kml-g5-よ: #4d4134;
+  --kml-g5-ら: #403340;
+  --kml-g5-り: #334040;
+  --kml-g5-る: #4d3434;
+  --kml-g5-れ: #404033;
+  --kml-g5-ろ: #333340;
+  --kml-g5-わ: #4e4141;
+  --kml-g5-を: #403333;
+  --kml-g5-ん: #333333;
+  --kml-g5-—: #5d564e;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack {
+  --kml-font-kanji-handwritten: var(--kml-g5-font-kanji);
+  --kml-grade1-kanji-size: min(68vw, 480px, 72vh, 620px);
+  --kml-grade1-kanji-fade-in: var(--ex-grade1-kanji-fade-in, 3s);
+  --kml-grade1-kanji-fade-out: var(--ex-grade1-kanji-fade-out, 2.2s);
+  --ex-grade1-kanji-fade-in: 3s;
+  --ex-grade1-kanji-fade-out: 2.2s;
+  background: var(--kml-g5-bg);
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .exhibition-artwork,
+.exhibition-root.is-grade5-kanji-soundtrack .exhibition-title,
+.exhibition-root.is-grade5-kanji-soundtrack .exhibition-notes,
+.exhibition-root.is-grade5-kanji-soundtrack .exhibition-vignette,
+.exhibition-root.is-grade5-kanji-soundtrack .party-kanji-layer,
+.exhibition-root.is-grade5-kanji-soundtrack .g4-layer,
+.exhibition-root.is-grade5-kanji-soundtrack .g5-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .exhibition-bookend {
+  background: #000;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack.is-grade5-bookend-outro {
+  background: #000;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .exhibition-veil {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .stroke-order-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .stroke-order-layer.exhibition-hidden {
+  display: none !important;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .stroke-order-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .soundtrack-slot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .soundtrack-slot.is-active,
+.exhibition-root.is-grade5-kanji-soundtrack .soundtrack-slot.is-handoff-out {
+  opacity: 1;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .soundtrack-slot.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .stroke-order-svg {
+  display: none !important;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .stroke-order-kanji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--kml-font-kanji-handwritten);
+  font-size: var(--kml-grade1-kanji-size);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ex-grade1-kanji-color, var(--kml-g5-あ));
+  text-shadow: var(--kml-g5-kanji-shadow);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  transform: translateY(-0.03em);
+  opacity: 0;
+  transition: opacity var(--kml-grade1-kanji-fade-out) cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .stroke-order-kanji.is-visible {
+  opacity: 1;
+  transition: opacity var(--kml-grade1-kanji-fade-in) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .soundtrack-slot.is-handoff .stroke-order-kanji {
+  will-change: opacity;
+}
+
+.exhibition-root.is-grade5-kanji-soundtrack .grade1-confetti-layer {
+  display: none !important;
+}

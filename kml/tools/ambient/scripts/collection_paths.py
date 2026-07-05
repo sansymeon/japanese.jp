@@ -25,6 +25,14 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return "grade_1"
     if collection_id.startswith("grade_2"):
         return "grade_2"
+    if collection_id.startswith("grade_3"):
+        return "grade_3"
+    if collection_id.startswith("grade_4"):
+        return "grade_4"
+    if collection_id.startswith("grade_5"):
+        return "grade_5"
+    if collection_id.startswith("grade_6"):
+        return "grade_6"
     m = re.match(r"lesson_(\d+)", collection_id)
     if not m:
         return None

@@ -4,12 +4,12 @@
  */
 
 .exhibition-root.is-compounds-exhibition {
-  /* Compound kanji — larger than verse baseline for artwork legibility */
-  --kml-compounds-jp: clamp(2.55rem, 8.8vmin, 5.15rem);
-  --kml-compounds-reading: clamp(1.75rem, 6.1vmin, 3.05rem);
-  --kml-compounds-en: var(--kml-size-verse-en-display);
-  --kml-compounds-hint: clamp(1.4rem, 4.9vmin, 2.35rem);
-  --kml-compounds-target: clamp(6rem, 19vmin, 12rem);
+  /* Match foundations / vocabulary legibility on gallery artwork */
+  --kml-compounds-jp: clamp(4.5rem, 15vmin, 9rem);
+  --kml-compounds-reading: var(--kml-foundations-exhibition-verse-jp);
+  --kml-compounds-en: var(--kml-foundations-exhibition-verse-en);
+  --kml-compounds-hint: clamp(2rem, 7vmin, 3.55rem);
+  --kml-compounds-target: clamp(7.5rem, 24vmin, 13.5rem);
   --kml-compounds-shadow-jp:
     0 1px 3px rgba(0, 0, 0, 0.78),
     0 3px 20px rgba(0, 0, 0, 0.62),
@@ -166,7 +166,8 @@ html.kml-typography-mobile-refine.kml-verse-sequential
 .exhibition-root.is-compounds-exhibition .kml-compound-jp {
   display: block;
   font-family: var(--kml-font-heart-verse-jp);
-  font-size: var(--kml-compounds-jp);
+  font-size: calc(var(--kml-compounds-jp) * var(--kml-compound-word-scale, 1));
+  white-space: nowrap;
   font-weight: 600;
   line-height: 1.15;
   color: rgba(255, 252, 245, 0.98);

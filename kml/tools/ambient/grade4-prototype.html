@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade 4 Kanji Soundtrack — Visual Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/gallery-grade4-kanji-soundtrack.css?v=1">
+</head>
+<body class="g4-prototype-root">
+
+<div class="g4-washi-bg" aria-hidden="true"></div>
+<div class="g4-vignette" aria-hidden="true"></div>
+
+<div class="g4-stage">
+  <div class="g4-board-viewport">
+    <div class="g4-board-camera is-overview" id="camera">
+      <div class="g4-board">
+        <div class="g4-board-inner" id="board"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="g4-kanji-hero" id="hero" aria-hidden="true">
+  <span class="g4-kanji-hero-char" id="heroKanji">愛</span>
+</div>
+
+<footer class="g4-prototype-chrome">
+  <div>
+    <p class="g4-prototype-title">Grade 4 · Visual prototype</p>
+    <p class="g4-prototype-phase" id="phase">Loading…</p>
+  </div>
+  <button type="button" class="g4-prototype-replay" id="replay">Replay</button>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const GOJUON = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
+  const SECTION_COUNTS = {
+    あ: 3, い: 5, う: 2, え: 4, お: 2, か: 13, き: 17, く: 1, け: 7, こ: 9,
+    さ: 11, し: 19, せ: 14, そ: 7, た: 5, ち: 4, つ: 3, て: 4, と: 5, な: 2,
+    ね: 3, の: 2, は: 5, ひ: 4, ふ: 7, へ: 3, ほ: 2, ま: 4, み: 2, む: 2,
+    め: 1, や: 2, ゆ: 2, よ: 3, り: 7, る: 1, れ: 4, ろ: 4, わ: 1,
+  };
+
+  const camera = document.getElementById("camera");
+  const board = document.getElementById("board");
+  const hero = document.getElementById("hero");
+  const heroKanji = document.getElementById("heroKanji");
+  const phaseEl = document.getElementById("phase");
+  const replayBtn = document.getElementById("replay");
+
+  let runId = 0;
+
+  function buildBoard() {
+    board.innerHTML = "";
+    const cells = [...GOJUON];
+    while (cells.length < 50) cells.push("");
+    cells.forEach((kana) => {
+      const frame = document.createElement("div");
+      frame.className = "g4-frame";
+      if (kana) {
+        frame.style.setProperty("--g4-accent", `var(--kml-g4-${kana})`);
+        frame.dataset.kana = kana;
+        const label = document.createElement("span");
+        label.className = "g4-frame-label";
+        label.textContent = kana;
+        const count = document.createElement("span");
+        count.className = "g4-frame-count";
+        const n = SECTION_COUNTS[kana];
+        count.textContent = n ? `${n} kanji` : "";
+        frame.append(label, count);
+      } else {
+        frame.style.visibility = "hidden";
+      }
+      board.appendChild(frame);
+    });
+  }
+
+  function setPhase(text) {
+    phaseEl.textContent = text;
+  }
+
+  function clearCameraClasses() {
+    camera.className = "g4-board-camera";
+  }
+
+  function frameFor(kana) {
+    return board.querySelector(`[data-kana="${kana}"]`);
+  }
+
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function playSequence() {
+    const id = ++runId;
+    const alive = () => id === runId;
+
+    clearCameraClasses();
+    hero.classList.remove("is-visible");
+    heroKanji.style.color = "var(--kml-g4-あ)";
+    board.querySelectorAll(".g4-frame").forEach((f) => {
+      f.classList.remove("is-active", "is-visited");
+    });
+
+    setPhase("Overview — the collection board");
+    camera.classList.add("is-overview");
+    await wait(2800);
+    if (!alive()) return;
+
+    setPhase("Camera glides right → left across the board");
+    camera.classList.add("is-panning");
+    await wait(14500);
+    if (!alive()) return;
+
+    setPhase("Approaching あ — vermilion section");
+    frameFor("あ")?.classList.add("is-active");
+    clearCameraClasses();
+    camera.classList.add("is-approach-あ");
+    await wait(11500);
+    if (!alive()) return;
+
+    setPhase("Kanji sequence — 愛 (sample)");
+    hero.classList.add("is-visible");
+    await wait(4500);
+    if (!alive()) return;
+
+    setPhase("Return to board — section marked visited");
+    hero.classList.remove("is-visible");
+    await wait(2200);
+    if (!alive()) return;
+
+    frameFor("あ")?.classList.remove("is-active");
+    frameFor("あ")?.classList.add("is-visited");
+    clearCameraClasses();
+    camera.classList.add("is-overview");
+    setPhase("Ready for い — prototype loop complete");
+  }
+
+  buildBoard();
+  replayBtn.addEventListener("click", () => playSequence());
+  playSequence();
+})();
+</script>
+</body>
+</html>

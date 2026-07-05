@@ -1,0 +1,914 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_02_compounds",
+  "title": "Lesson 2 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Curated from kml/contents/books/book_01/compounds/lesson_02.html. ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 2,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.3,
+    "totalCompounds": 87,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1291700,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_02.html"
+  },
+  "scenes": [
+    {
+      "id": "L02_prosperous",
+      "kanji": "昌",
+      "keyword": "prosperous",
+      "image": "studies/prosperous.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "昌盛",
+            "reading": "しょうせい",
+            "en": "Prosperity, flourishing"
+          },
+          {
+            "jp": "繁昌",
+            "reading": "はんじょう",
+            "en": "Thriving, bustling (alternate form using 昌)"
+          },
+          {
+            "jp": "昌平",
+            "reading": "しょうへい",
+            "en": "Peace and prosperity"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "prosperous",
+        "prototype": true
+      },
+      "imageRev": 1782104994
+    },
+    {
+      "id": "L02_chant",
+      "kanji": "唱",
+      "keyword": "chant",
+      "image": "studies/chant.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "唱歌",
+            "reading": "しょうか",
+            "en": "Singing a song"
+          },
+          {
+            "jp": "合唱",
+            "reading": "がっしょう",
+            "en": "Chorus, choir"
+          },
+          {
+            "jp": "提唱",
+            "reading": "ていしょう",
+            "en": "Advocacy, proposal"
+          },
+          {
+            "jp": "唱える",
+            "reading": "となえる",
+            "en": "To chant, to recite, to proclaim"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "chant",
+        "prototype": true
+      },
+      "imageRev": 1782105152
+    },
+    {
+      "id": "L02_sparkle",
+      "kanji": "晶",
+      "keyword": "sparkle",
+      "image": "studies/sparkle.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 42%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "結晶",
+            "reading": "けっしょう",
+            "en": "Crystal, crystallization"
+          },
+          {
+            "jp": "水晶",
+            "reading": "すいしょう",
+            "en": "Quartz crystal"
+          },
+          {
+            "jp": "明晶",
+            "reading": "めいしょう",
+            "en": "Brilliant crystal"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "sparkle",
+        "prototype": true
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1782105217
+    },
+    {
+      "id": "L02_goods",
+      "kanji": "品",
+      "keyword": "goods",
+      "image": "studies/goods.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "商品",
+            "reading": "しょうひん",
+            "en": "Product, goods"
+          },
+          {
+            "jp": "品物",
+            "reading": "しなもの",
+            "en": "Goods, items"
+          },
+          {
+            "jp": "上品",
+            "reading": "じょうひん",
+            "en": "Elegant, refined"
+          },
+          {
+            "jp": "名品",
+            "reading": "めいひん",
+            "en": "Famous item, masterpiece"
+          },
+          {
+            "jp": "品定め",
+            "reading": "しなさだめ",
+            "en": "Judging the quality"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "goods",
+        "prototype": true
+      },
+      "imageRev": 1782105567
+    },
+    {
+      "id": "L02_spine",
+      "kanji": "呂",
+      "keyword": "spine",
+      "image": "studies/spine.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "呂律",
+            "reading": "ろれつ",
+            "en": "Articulation, enunciation"
+          },
+          {
+            "jp": "背筋（脊呂）",
+            "reading": "せすじ",
+            "en": "Spinal column"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "spine",
+        "prototype": true
+      },
+      "imageRev": 1782105581
+    },
+    {
+      "id": "L02_early",
+      "kanji": "早",
+      "keyword": "early",
+      "image": "studies/early.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "早朝",
+            "reading": "そうちょう",
+            "en": "Early morning"
+          },
+          {
+            "jp": "早速",
+            "reading": "さっそく",
+            "en": "Immediately, without delay"
+          },
+          {
+            "jp": "早退",
+            "reading": "そうたい",
+            "en": "Leaving early (from work/school)"
+          },
+          {
+            "jp": "早起き",
+            "reading": "はやおき",
+            "en": "Getting up early"
+          },
+          {
+            "jp": "早口",
+            "reading": "はやくち",
+            "en": "Fast talking"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "early",
+        "prototype": true
+      },
+      "imageRev": 1782107193
+    },
+    {
+      "id": "L02_rising_sun",
+      "kanji": "旭",
+      "keyword": "rising sun",
+      "image": "studies/rising_sun.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 32%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "旭日",
+            "reading": "きょくじつ",
+            "en": "Rising sun"
+          },
+          {
+            "jp": "旭光",
+            "reading": "きょっこう",
+            "en": "Morning sunlight"
+          },
+          {
+            "jp": "旭川",
+            "reading": "あさひかわ",
+            "en": "Asahikawa (place name in Hokkaido)"
+          },
+          {
+            "jp": "旭日旗",
+            "reading": "きょくじつき",
+            "en": "Rising Sun Flag"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "rising_sun",
+        "prototype": true
+      },
+      "imageFocus": "50% 32%",
+      "imageRev": 1782107209
+    },
+    {
+      "id": "L02_generation",
+      "kanji": "世",
+      "keyword": "generation",
+      "image": "studies/generation.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "世界",
+            "reading": "せかい",
+            "en": "World"
+          },
+          {
+            "jp": "世代",
+            "reading": "せだい",
+            "en": "Generation"
+          },
+          {
+            "jp": "世話",
+            "reading": "せわ",
+            "en": "Care, help, assistance"
+          },
+          {
+            "jp": "世間",
+            "reading": "せけん",
+            "en": "The public, the world"
+          },
+          {
+            "jp": "世紀",
+            "reading": "せいき",
+            "en": "Century"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "generation",
+        "prototype": true
+      },
+      "imageRev": 1782107836
+    },
+    {
+      "id": "L02_stomach",
+      "kanji": "胃",
+      "keyword": "stomach",
+      "image": "studies/stomach.png",
+      "galleryCamera": {
+        "motion": "drift-x",
+        "focus": "50% 55%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "胃腸",
+            "reading": "いちょう",
+            "en": "Stomach and intestines"
+          },
+          {
+            "jp": "胃薬",
+            "reading": "いぐすり",
+            "en": "Stomach medicine"
+          },
+          {
+            "jp": "胃痛",
+            "reading": "いつう",
+            "en": "Stomachache"
+          },
+          {
+            "jp": "胃炎",
+            "reading": "いえん",
+            "en": "Gastritis"
+          },
+          {
+            "jp": "胃液",
+            "reading": "いえき",
+            "en": "Gastric juice"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "stomach",
+        "prototype": true
+      },
+      "imageFocus": "50% 55%",
+      "imageRev": 1782107855
+    },
+    {
+      "id": "L02_dawn",
+      "kanji": "旦",
+      "keyword": "dawn",
+      "image": "studies/dawn.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 35%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "元旦",
+            "reading": "がんたん",
+            "en": "New Year’s Day"
+          },
+          {
+            "jp": "一旦",
+            "reading": "いったん",
+            "en": "Once, for a short time"
+          },
+          {
+            "jp": "旦那",
+            "reading": "だんな",
+            "en": "Husband, master"
+          },
+          {
+            "jp": "旦暮",
+            "reading": "たんぼ",
+            "en": "From morning till night"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "dawn",
+        "prototype": true
+      },
+      "imageFocus": "50% 35%",
+      "imageRev": 1782108026
+    },
+    {
+      "id": "L02_gallbladder",
+      "kanji": "胆",
+      "keyword": "gallbladder",
+      "image": "studies/gallbladder.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "胆石",
+            "reading": "たんせき",
+            "en": "Gallstones"
+          },
+          {
+            "jp": "大胆",
+            "reading": "だいたん",
+            "en": "Bold, daring"
+          },
+          {
+            "jp": "胆力",
+            "reading": "たんりょく",
+            "en": "Courage, guts"
+          },
+          {
+            "jp": "胆のう",
+            "reading": "たんのう",
+            "en": "Gallbladder"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "gallbladder",
+        "prototype": true
+      },
+      "imageRev": 1782108650
+    },
+    {
+      "id": "L02_span",
+      "kanji": "亘",
+      "keyword": "span",
+      "image": "studies/span.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "亘る",
+            "reading": "わたる",
+            "en": "To span, to extend across"
+          },
+          {
+            "jp": "全国に亘る",
+            "reading": "ぜんこくにわたる",
+            "en": "Spanning the whole country"
+          },
+          {
+            "jp": "長年に亘り",
+            "reading": "ながねんにわたり",
+            "en": "Over many years"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "span",
+        "prototype": true
+      },
+      "imageRev": 1782110820
+    },
+    {
+      "id": "L02_concave",
+      "kanji": "凹",
+      "keyword": "concave",
+      "image": "studies/concave.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "凹凸",
+            "reading": "おうとつ",
+            "en": "Unevenness, bumpiness"
+          },
+          {
+            "jp": "凹レンズ",
+            "reading": "おうれんず",
+            "en": "Concave lens"
+          },
+          {
+            "jp": "凹面鏡",
+            "reading": "おうめんきょう",
+            "en": "Concave mirror"
+          },
+          {
+            "jp": "凹む",
+            "reading": "へこむ",
+            "en": "To dent, to sink in"
+          },
+          {
+            "jp": "凹み",
+            "reading": "へこみ",
+            "en": "Dent, depression"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "concave",
+        "prototype": true
+      },
+      "imageRev": 1782109354
+    },
+    {
+      "id": "L02_convex",
+      "kanji": "凸",
+      "keyword": "convex",
+      "image": "studies/convex.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 48%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "凸凹",
+            "reading": "でこぼこ",
+            "en": "Uneven, bumpy"
+          },
+          {
+            "jp": "凸レンズ",
+            "reading": "とつれんず",
+            "en": "Convex lens"
+          },
+          {
+            "jp": "凸面鏡",
+            "reading": "とつめんきょう",
+            "en": "Convex mirror"
+          },
+          {
+            "jp": "凸出",
+            "reading": "とつしゅつ",
+            "en": "Protrusion"
+          },
+          {
+            "jp": "凸型",
+            "reading": "とつがた",
+            "en": "Convex shape"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "convex",
+        "prototype": true
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1782112975
+    },
+    {
+      "id": "L02_olden_times",
+      "kanji": "旧",
+      "keyword": "olden times",
+      "image": "studies/olden_times.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "旧友",
+            "reading": "きゅうゆう",
+            "en": "Old friend"
+          },
+          {
+            "jp": "旧姓",
+            "reading": "きゅうせい",
+            "en": "Maiden name"
+          },
+          {
+            "jp": "旧式",
+            "reading": "きゅうしき",
+            "en": "Old-fashioned, outdated"
+          },
+          {
+            "jp": "旧市街",
+            "reading": "きゅうしがい",
+            "en": "Old town district"
+          },
+          {
+            "jp": "旧正月",
+            "reading": "きゅうしょうがつ",
+            "en": "Lunar New Year"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "olden_times",
+        "prototype": true
+      },
+      "imageRev": 1782112510
+    },
+    {
+      "id": "L02_oneself",
+      "kanji": "自",
+      "keyword": "oneself",
+      "image": "studies/oneself.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "自分",
+            "reading": "じぶん",
+            "en": "Oneself"
+          },
+          {
+            "jp": "自然",
+            "reading": "しぜん",
+            "en": "Nature, natural"
+          },
+          {
+            "jp": "自由",
+            "reading": "じゆう",
+            "en": "Freedom"
+          },
+          {
+            "jp": "自動車",
+            "reading": "じどうしゃ",
+            "en": "Automobile"
+          },
+          {
+            "jp": "自信",
+            "reading": "じしん",
+            "en": "Confidence"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "oneself",
+        "prototype": true
+      },
+      "imageRev": 1782111809
+    },
+    {
+      "id": "L02_white",
+      "kanji": "白",
+      "keyword": "white",
+      "image": "studies/white.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 40%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "白紙",
+            "reading": "はくし",
+            "en": "Blank paper"
+          },
+          {
+            "jp": "白夜",
+            "reading": "はくや",
+            "en": "White night"
+          },
+          {
+            "jp": "告白",
+            "reading": "こくはく",
+            "en": "Confession"
+          },
+          {
+            "jp": "白鳥",
+            "reading": "はくちょう",
+            "en": "Swan"
+          },
+          {
+            "jp": "白い",
+            "reading": "しろい",
+            "en": "White"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "white",
+        "prototype": true
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1782111954
+    },
+    {
+      "id": "L02_hundred",
+      "kanji": "百",
+      "keyword": "hundred",
+      "image": "studies/hundred.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "百円",
+            "reading": "ひゃくえん",
+            "en": "100 yen"
+          },
+          {
+            "jp": "百貨店",
+            "reading": "ひゃっかてん",
+            "en": "Department store"
+          },
+          {
+            "jp": "百科事典",
+            "reading": "ひゃっかじてん",
+            "en": "Encyclopedia"
+          },
+          {
+            "jp": "百人一首",
+            "reading": "ひゃくにんいっしゅ",
+            "en": "Classic poetry card game"
+          },
+          {
+            "jp": "百倍",
+            "reading": "ひゃくばい",
+            "en": "A hundredfold"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "hundred",
+        "prototype": true
+      },
+      "imageRev": 1782112460
+    },
+    {
+      "id": "L02_middle",
+      "kanji": "中",
+      "keyword": "middle",
+      "image": "studies/middle.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "中心",
+            "reading": "ちゅうしん",
+            "en": "Center, core"
+          },
+          {
+            "jp": "中国",
+            "reading": "ちゅうごく",
+            "en": "China"
+          },
+          {
+            "jp": "中学校",
+            "reading": "ちゅうがっこう",
+            "en": "Junior high school"
+          },
+          {
+            "jp": "水中",
+            "reading": "すいちゅう",
+            "en": "Underwater"
+          },
+          {
+            "jp": "真ん中",
+            "reading": "まんなか",
+            "en": "Dead center"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "middle",
+        "prototype": true
+      },
+      "imageRev": 1782112289
+    },
+    {
+      "id": "L02_thousand",
+      "kanji": "千",
+      "keyword": "thousand",
+      "image": "studies/thousand.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "千円",
+            "reading": "せんえん",
+            "en": "1,000 yen"
+          },
+          {
+            "jp": "千年",
+            "reading": "せんねん",
+            "en": "A thousand years"
+          },
+          {
+            "jp": "千人",
+            "reading": "せんにん",
+            "en": "One thousand people"
+          },
+          {
+            "jp": "千本桜",
+            "reading": "せんぼんざくら",
+            "en": "Thousand cherry trees"
+          },
+          {
+            "jp": "千差万別",
+            "reading": "せんさばんべつ",
+            "en": "Infinite variety, diverse"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 2,
+        "slug": "thousand",
+        "prototype": true
+      },
+      "imageRev": 1782112481
+    }
+  ]
+}

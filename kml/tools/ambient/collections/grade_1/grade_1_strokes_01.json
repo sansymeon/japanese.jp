@@ -1,0 +1,463 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "grade_1_strokes_01",
+  "title": "Grade 1 Stroke Order — Part 1",
+  "notes": "Grade 1 Stroke Order: recognition → stroke writing → recognition. Part 1 — 20 kanji in school order; card length follows stroke count (~1300ms draw + 900ms gap). Estimated runtime 5:45.",
+  "soundtrack": {
+    "main": "audio/grade_1_stroke_orders.mp3"
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 0,
+    "strokeOrderRecognitionRevealMs": 1200,
+    "strokeOrderRecognitionHoldMs": 2200,
+    "strokeOrderKanjiFadeOutMs": 600,
+    "strokeOrderStrokeFadeMs": 500,
+    "strokeOrderPreDrawPauseMs": 700,
+    "strokeOrderDrawMs": 1300,
+    "strokeOrderStrokeGapMs": 900,
+    "strokeOrderPostDrawPauseMs": 350,
+    "strokeOrderCompletionRevealMs": 2200,
+    "strokeOrderCompletionHoldMs": 600,
+    "strokeOrderExhibitFadeMs": 2400,
+    "strokeOrderDrawColor": "rgba(44, 40, 36, 0.9)",
+    "strokeOrderFinalColor": "rgba(44, 40, 36, 0.96)",
+    "exhibitTransitionMs": 800,
+    "exhibitBlackHoldMs": 350,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 400,
+    "openingRevealMs": 1200,
+    "openingHoldMs": 1400,
+    "openingExhaleMs": 700,
+    "openingBlackAfterMs": 0,
+    "openingSoundtrackDelayMs": 10000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "grade1StrokeOrder",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "grade1StrokeOrder"
+  },
+  "meta": {
+    "series": "grade_1",
+    "scope": "elementary_grade_1",
+    "part": 1,
+    "stage": "grade1StrokeOrder",
+    "sceneCount": 20,
+    "kanjiRange": [
+      "一",
+      "見"
+    ],
+    "joyoIndexRange": [
+      41,
+      516
+    ],
+    "avgStrokeCount": 5.5,
+    "soundtrackDurationMs": 350511,
+    "estimatedContentRuntimeMs": 345000,
+    "strokeDataRoot": "kml/tools/strokes",
+    "batching": {
+      "kanjiPerPart": 20,
+      "partCount": 4
+    }
+  },
+  "bookends": {
+    "opening": {
+      "image": "images/grade_one_stroke_orders_1.png",
+      "bookendSize": "large",
+      "startSoundtrackWithImage": true,
+      "startSoundtrackAfterImageMs": 10000
+    },
+    "closing": {
+      "image": "images/grade_one_stroke_orders_1.png",
+      "bookendSize": "large"
+    }
+  },
+  "scenes": [
+    {
+      "id": "G1S01_one",
+      "kanji": "一",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/one.html",
+        "strokeCount": 1,
+        "kanji": "一"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "one",
+        "joyoIndex": 41,
+        "heisigNumber": 1,
+        "strokeCount": 1,
+        "indexInPart": 0,
+        "kanjiColor": "#E53935",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_right",
+      "kanji": "右",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/right.html",
+        "strokeCount": 5,
+        "kanji": "右"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "right",
+        "joyoIndex": 58,
+        "heisigNumber": 82,
+        "strokeCount": 5,
+        "indexInPart": 1,
+        "kanjiColor": "#FB8C00",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_rain",
+      "kanji": "雨",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rain.html",
+        "strokeCount": 8,
+        "kanji": "雨"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "rain",
+        "joyoIndex": 61,
+        "heisigNumber": 451,
+        "strokeCount": 8,
+        "indexInPart": 2,
+        "kanjiColor": "#F9A825",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_circle",
+      "kanji": "円",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/circle.html",
+        "strokeCount": 4,
+        "kanji": "円"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "circle",
+        "joyoIndex": 87,
+        "heisigNumber": 1952,
+        "strokeCount": 4,
+        "indexInPart": 3,
+        "kanjiColor": "#43A047",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_king",
+      "kanji": "王",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/king.html",
+        "strokeCount": 4,
+        "kanji": "王"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "king",
+        "joyoIndex": 105,
+        "heisigNumber": 271,
+        "strokeCount": 4,
+        "indexInPart": 4,
+        "kanjiColor": "#29B6F6",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_sound",
+      "kanji": "音",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sound.html",
+        "strokeCount": 9,
+        "kanji": "音"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "sound",
+        "joyoIndex": 127,
+        "heisigNumber": 518,
+        "strokeCount": 9,
+        "indexInPart": 5,
+        "kanjiColor": "#1E88E5",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_below",
+      "kanji": "下",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/below.html",
+        "strokeCount": 3,
+        "kanji": "下"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "below",
+        "joyoIndex": 131,
+        "heisigNumber": 51,
+        "strokeCount": 3,
+        "indexInPart": 6,
+        "kanjiColor": "#8E24AA",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_fire",
+      "kanji": "火",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/fire.html",
+        "strokeCount": 4,
+        "kanji": "火"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "fire",
+        "joyoIndex": 133,
+        "heisigNumber": 173,
+        "strokeCount": 4,
+        "indexInPart": 7,
+        "kanjiColor": "#EC407A",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_flower",
+      "kanji": "花",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/flower.html",
+        "strokeCount": 7,
+        "kanji": "花"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "flower",
+        "joyoIndex": 138,
+        "heisigNumber": 1084,
+        "strokeCount": 7,
+        "indexInPart": 8,
+        "kanjiColor": "#E53935",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_shellfish",
+      "kanji": "貝",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/shellfish.html",
+        "strokeCount": 7,
+        "kanji": "貝"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "shellfish",
+        "joyoIndex": 196,
+        "heisigNumber": 56,
+        "strokeCount": 7,
+        "indexInPart": 9,
+        "kanjiColor": "#FB8C00",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_study",
+      "kanji": "学",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/study.html",
+        "strokeCount": 8,
+        "kanji": "学"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "study",
+        "joyoIndex": 226,
+        "heisigNumber": 346,
+        "strokeCount": 8,
+        "indexInPart": 10,
+        "kanjiColor": "#F9A825",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_spirit",
+      "kanji": "気",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/spirit.html",
+        "strokeCount": 6,
+        "kanji": "気"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "spirit",
+        "joyoIndex": 305,
+        "heisigNumber": 2030,
+        "strokeCount": 6,
+        "indexInPart": 11,
+        "kanjiColor": "#43A047",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_nine",
+      "kanji": "九",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/nine.html",
+        "strokeCount": 2,
+        "kanji": "九"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "nine",
+        "joyoIndex": 359,
+        "heisigNumber": 9,
+        "strokeCount": 2,
+        "indexInPart": 12,
+        "kanjiColor": "#29B6F6",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_rest",
+      "kanji": "休",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rest.html",
+        "strokeCount": 6,
+        "kanji": "休"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "rest",
+        "joyoIndex": 365,
+        "heisigNumber": 1038,
+        "strokeCount": 6,
+        "indexInPart": 13,
+        "kanjiColor": "#1E88E5",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_ball",
+      "kanji": "玉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/ball.html",
+        "strokeCount": 5,
+        "kanji": "玉"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "ball",
+        "joyoIndex": 427,
+        "heisigNumber": 272,
+        "strokeCount": 5,
+        "indexInPart": 14,
+        "kanjiColor": "#8E24AA",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_gold",
+      "kanji": "金",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/gold.html",
+        "strokeCount": 8,
+        "kanji": "金"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "gold",
+        "joyoIndex": 432,
+        "heisigNumber": 287,
+        "strokeCount": 8,
+        "indexInPart": 15,
+        "kanjiColor": "#EC407A",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_sky",
+      "kanji": "空",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sky.html",
+        "strokeCount": 8,
+        "kanji": "空"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "sky",
+        "joyoIndex": 452,
+        "heisigNumber": 1414,
+        "strokeCount": 8,
+        "indexInPart": 16,
+        "kanjiColor": "#E53935",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_moon",
+      "kanji": "月",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/moon.html",
+        "strokeCount": 4,
+        "kanji": "月"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "moon",
+        "joyoIndex": 513,
+        "heisigNumber": 13,
+        "strokeCount": 4,
+        "indexInPart": 17,
+        "kanjiColor": "#FB8C00",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_dog",
+      "kanji": "犬",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dog.html",
+        "strokeCount": 4,
+        "kanji": "犬"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "dog",
+        "joyoIndex": 514,
+        "heisigNumber": 253,
+        "strokeCount": 4,
+        "indexInPart": 18,
+        "kanjiColor": "#F9A825",
+        "grade": 1
+      }
+    },
+    {
+      "id": "G1S01_see",
+      "kanji": "見",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/see.html",
+        "strokeCount": 7,
+        "kanji": "見"
+      },
+      "meta": {
+        "part": 1,
+        "slug": "see",
+        "joyoIndex": 516,
+        "heisigNumber": 61,
+        "strokeCount": 7,
+        "indexInPart": 19,
+        "kanjiColor": "#43A047",
+        "grade": 1
+      }
+    }
+  ]
+}

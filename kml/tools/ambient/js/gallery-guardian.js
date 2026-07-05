@@ -9,7 +9,7 @@
 
   /** Match ken-burns baseline (1.02) so edges stay hidden during drift. */
   const IMMERSIVE_SCALE_MIN = 1.02;
-  const COVER_BOOST_MAX = 1.28;
+  const COVER_BOOST_MAX = 1.38;
 
   const EASE = {
     comprehension:
@@ -130,10 +130,10 @@
     let boost = 1;
 
     if (sideGap > 28) {
-      boost = Math.max(boost, 1 + Math.min(0.16, (sideGap - 28) * 0.0018));
+      boost = Math.max(boost, 1 + Math.min(0.28, (sideGap - 28) * 0.0035));
     }
     if (vertGap > 28) {
-      boost = Math.max(boost, 1 + Math.min(0.14, (vertGap - 28) * 0.0016));
+      boost = Math.max(boost, 1 + Math.min(0.24, (vertGap - 28) * 0.003));
     }
 
     return Math.min(COVER_BOOST_MAX, Math.round(boost * 1000) / 1000);

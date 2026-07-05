@@ -19,6 +19,10 @@
     if (/^post_elementary_\d+/.test(name)) return "post_elementary";
     if (/^grade_1/.test(name)) return "grade_1";
     if (/^grade_2/.test(name)) return "grade_2";
+    if (/^grade_3/.test(name)) return "grade_3";
+    if (/^grade_4/.test(name)) return "grade_4";
+    if (/^grade_5/.test(name)) return "grade_5";
+    if (/^grade_6/.test(name)) return "grade_6";
     const m = name.match(/^lesson_(\d+)/);
     if (!m) return null;
     const n = parseInt(m[1], 10);
@@ -39,6 +43,7 @@
     lesson_10_assisted_reading: "lesson_10_reading",
     lesson_01_stroke_order: "lesson_01_strokes",
     reading_lesson_01: "lesson_01_reading",
+    grade_1_anchor_compounds_prototype: "grade_1_compounds_school",
   };
 
   function resolveCollectionId(name) {

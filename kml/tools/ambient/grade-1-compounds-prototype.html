@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade 1 Compounds — School Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --ink: #2c2824;
+      --muted: rgba(44, 40, 36, 0.62);
+      --line: rgba(44, 40, 36, 0.12);
+      --accent: #29b6f6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Noto Serif JP", serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem;
+      letter-spacing: 0.04em;
+    }
+
+    .meta {
+      margin: 0 0 1.5rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .meta code {
+      font-size: 0.95em;
+    }
+
+    .lede {
+      margin: 0 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .primary-card {
+      border: 1px solid var(--line);
+      border-radius: 0.65rem;
+      padding: 1.15rem 1.2rem;
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .primary-card h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .primary-card p {
+      margin: 0 0 0.9rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .primary-card a {
+      display: inline-block;
+      margin-right: 0.65rem;
+      margin-bottom: 0.35rem;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(41, 182, 246, 0.45);
+      font-size: 0.92rem;
+    }
+
+    .primary-card a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--ink);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    details a {
+      color: var(--ink);
+    }
+
+    code {
+      font-size: 0.82em;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 0.1em 0.35em;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>小一 複合語 — 読み確認プロトタイプ</h1>
+    <p class="meta">
+      <code>contentType: compounds</code> ·
+      <code>edition: school</code> ·
+      <code>grade: 1</code>
+    </p>
+    <p class="lede">
+      学校向け・学年リンクの学習フォーマットです。アンビエント／ギャラリーではありません。
+      語を読んでから、下に読みが現れる <strong>stacked</strong> 確認が標準です。
+    </p>
+
+    <section class="primary-card">
+      <h2>stacked（標準）— 4パート</h2>
+      <p>書き順と同じ20字ずつ。語だけ → 内部で読む → 下に読みが現れる → 短く確認 → 次へ</p>
+      <a href="./exhibition.html?collection=grade_1_compounds_school_01">Part 1（一 → 見）</a>
+      <a href="./exhibition.html?collection=grade_1_compounds_school_02">Part 2（五 → 森）</a>
+      <a href="./exhibition.html?collection=grade_1_compounds_school_03">Part 3（人 → 虫）</a>
+      <a href="./exhibition.html?collection=grade_1_compounds_school_04">Part 4（町 → 六）</a>
+    </section>
+
+    <section class="primary-card">
+      <h2>QA・比較</h2>
+      <p>書き込みなし・高速・例外カード・全80枚一括</p>
+      <a href="./exhibition.html?collection=grade_1_compounds_school_01&amp;skipBookends=1&amp;timingScale=0.05">高速QA（Part 1）</a>
+      <a href="./exhibition.html?collection=grade_1_compounds_school_01&amp;exhibit=0&amp;singleExhibit=1">1枚（一）</a>
+      <a href="./exhibition.html?collection=grade_1_compounds_school_02&amp;skipBookends=1&amp;exhibit=12&amp;singleExhibit=1">例外（車）</a>
+      <a href="./exhibition.html?collection=grade_1_compounds_school&amp;skipBookends=1">全80枚（書き込みなし）</a>
+    </section>
+
+    <details>
+      <summary>その他の確認モード（比較用・非推奨）</summary>
+      <p>
+        <a href="./exhibition.html?collection=grade_1_compounds_school&amp;skipBookends=1&amp;confirmationMode=replace">replace</a>
+        ·
+        <a href="./exhibition.html?collection=grade_1_compounds_school&amp;skipBookends=1&amp;confirmationMode=crossfade">crossfade</a>
+      </p>
+      <p>読み前の待ち: コレクション JSON の <code>anchorWordHoldMs</code>（初期 2500）</p>
+    </details>
+  </main>
+</body>
+</html>

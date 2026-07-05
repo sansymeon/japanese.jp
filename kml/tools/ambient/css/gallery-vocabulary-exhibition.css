@@ -4,9 +4,11 @@
  */
 
 .exhibition-root.is-vocabulary-exhibition {
-  /* Match compounds / assisted-reading legibility on gallery artwork */
-  --kml-vocab-jp: clamp(2.55rem, 8.8vmin, 5.15rem);
-  --kml-vocab-en: var(--kml-size-verse-en-display);
+  /* Match foundations / assisted-reading legibility on gallery artwork */
+  --kml-vocab-jp: var(--kml-foundations-exhibition-verse-jp);
+  --kml-vocab-en: var(--kml-foundations-exhibition-verse-en);
+  /* Single-word / reading steps — between verse and foundations kanji */
+  --kml-vocab-word: clamp(4.5rem, 15vmin, 9rem);
   --kml-vocab-shadow-jp:
     0 1px 3px rgba(0, 0, 0, 0.78),
     0 3px 20px rgba(0, 0, 0, 0.62),
@@ -33,6 +35,8 @@
 }
 
 .exhibition-root.is-vocabulary-exhibition .exhibition-artwork {
+  /* Extra bleed — long holds must stay edge-to-edge during guardian drift */
+  inset: -14%;
   transition: opacity var(--ex-artwork-arrival, var(--ex-transition, 3.5s)) ease-in-out;
 }
 
@@ -51,7 +55,7 @@
   bottom: auto;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(92vw, 44rem);
+  width: min(96vw, 48rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,7 +253,21 @@ html.kml-typography-mobile-refine
   margin-right: 0.35em;
 }
 
-/* Override study-typography tier sizes — vocabulary uses its own fixed pair */
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-vocabulary-exhibition
+  .exhibition-verse-jp:not(.show-furigana):not(.is-vocab-verse-reveal):not(.has-vocab-readings) {
+  font-size: var(--kml-vocab-word);
+  line-height: 1.22;
+}
+
+html.kml-typography-mobile-refine
+  .exhibition-root.is-vocabulary-exhibition
+  .kml-vocab-jp-main {
+  font-size: var(--kml-vocab-word);
+  line-height: 1.15;
+}
+
+/* foundations typography — same JP / EN pair as reading exhibitions */
 html.kml-typography-mobile-refine
   .exhibition-root.is-vocabulary-exhibition.is-foundations-typography
   .exhibition-verse-jp,

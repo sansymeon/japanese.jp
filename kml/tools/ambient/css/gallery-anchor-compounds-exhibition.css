@@ -1,0 +1,190 @@
+/**
+ * Anchor Compounds Exhibition — Grade 1 reading-confirmation prototype.
+ * Enable: exhibitProfile anchorCompoundsExhibition
+ * Modes: anchor-confirm-stacked | anchor-confirm-replace | anchor-confirm-crossfade
+ *
+ * Layout tuning (all modes share these):
+ *   --kml-anchor-word-size      anchor compound size
+ *   --kml-anchor-reading-size   confirmation reading size
+ *   --kml-anchor-stack-gap      space between anchor and reading lines
+ *   --kml-anchor-card-offset-y  optional vertical nudge for the whole card
+ */
+
+.exhibition-root.is-anchor-compounds-exhibition {
+  /* Match grade 1 stroke-order recognition kanji size */
+  --kml-stroke-order-kanji: clamp(14rem, 42vmin, 30rem);
+  --kml-anchor-word-size: var(--kml-stroke-order-kanji);
+  --kml-anchor-reading-size: clamp(3.15rem, 10vmin, 5.25rem);
+  --kml-anchor-stack-gap: 0.52em;
+  --kml-anchor-card-offset-y: 0vh;
+  --kml-anchor-card-height: calc(
+    var(--kml-anchor-word-size) * 1.12 + var(--kml-anchor-stack-gap) +
+      var(--kml-anchor-reading-size) * 1.18
+  );
+  --kml-anchor-emphasis-scale: 1.06;
+  --kml-grade1-stroke-paper: #f6f1e8;
+  --kml-grade1-stroke-ink: rgba(44, 40, 36, 0.88);
+  --kml-anchor-crossfade-ghost: 0.25;
+  --kml-anchor-stacked-soft-opacity: 0.82;
+  --ex-anchor-fade-in: 0.7s;
+  --ex-anchor-reading-fade-in: 0.45s;
+  --ex-anchor-transition: 0.6s;
+  --ex-anchor-fade-out: 0.5s;
+  background: var(--kml-grade1-stroke-paper);
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .exhibition-artwork,
+.exhibition-root.is-anchor-compounds-exhibition .exhibition-title,
+.exhibition-root.is-anchor-compounds-exhibition .exhibition-notes,
+.exhibition-root.is-anchor-compounds-exhibition .exhibition-vignette,
+.exhibition-root.is-anchor-compounds-exhibition .party-kanji-layer,
+.exhibition-root.is-anchor-compounds-exhibition .stroke-order-layer,
+.exhibition-root.is-anchor-compounds-exhibition .g4-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .exhibition-keyword {
+  display: none !important;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition.is-initial-black .exhibition-veil {
+  opacity: 1 !important;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .exhibition-bookend {
+  background: #000;
+}
+
+/* ── Centered reading card (all modes) ── */
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: var(--kml-grade1-stroke-paper);
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-layer.exhibition-hidden {
+  display: none;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-stage {
+  width: min(96vw, 72rem);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: translateY(var(--kml-anchor-card-offset-y));
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-focus {
+  position: relative;
+  width: 100%;
+  min-height: var(--kml-anchor-card-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kml-anchor-stack-gap);
+}
+
+/* ── Shared text ── */
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-word {
+  flex: 0 0 auto;
+  min-height: calc(var(--kml-anchor-word-size) * var(--kml-compound-word-scale, 1) * 1.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Yuji Syuku", "Noto Serif JP", var(--kml-font-kanji-main);
+  font-size: calc(var(--kml-anchor-word-size) * var(--kml-compound-word-scale, 1));
+  white-space: nowrap;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: var(--kml-kanji-letter-spacing);
+  color: var(--ex-grade1-kanji-color, var(--kml-grade1-stroke-ink));
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--ex-anchor-fade-in) ease-out,
+    transform var(--ex-anchor-fade-in) ease-out,
+    color var(--ex-anchor-transition) ease;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-word.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-word.is-fading-out {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity var(--ex-anchor-transition) ease-in,
+    transform var(--ex-anchor-transition) ease-in;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-word .kml-anchor-emphasis {
+  display: inline-block;
+  transform: scale(var(--kml-anchor-emphasis-scale));
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-word.is-visible.is-softened {
+  opacity: var(--kml-anchor-stacked-soft-opacity);
+  transform: translateY(0);
+  transition: opacity var(--ex-anchor-reading-fade-in) ease;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-reading {
+  flex: 0 0 auto;
+  position: relative;
+  min-height: calc(var(--kml-anchor-reading-size) * 1.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Yuji Syuku", "Noto Serif JP", var(--kml-font-heart-verse-jp);
+  font-size: var(--kml-anchor-reading-size);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.07em;
+  color: var(--ex-grade1-kanji-color, var(--kml-grade1-stroke-ink));
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--ex-anchor-reading-fade-in) ease-out;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-reading.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition .anchor-compounds-reading.is-fading-out {
+  opacity: 0;
+  transition: opacity var(--ex-anchor-fade-out) ease-in;
+}
+
+/* ── crossfade: word dims in place, reading below ── */
+
+.exhibition-root.is-anchor-compounds-exhibition.anchor-confirm-crossfade .anchor-compounds-word.is-receding {
+  opacity: var(--kml-anchor-crossfade-ghost);
+  transform: scale(0.97);
+  transition:
+    opacity var(--ex-anchor-transition) ease,
+    transform var(--ex-anchor-transition) ease;
+}
+
+.exhibition-root.is-anchor-compounds-exhibition.anchor-confirm-crossfade .anchor-compounds-word.is-receding.is-fading-out {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity var(--ex-anchor-fade-out) ease-in;
+}
