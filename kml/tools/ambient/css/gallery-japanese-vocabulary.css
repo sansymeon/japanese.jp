@@ -1,0 +1,145 @@
+/**
+ * Japanese Vocabulary (post Grade 6 curriculum) —
+ * one atmospheric scene, ~20–25 compounds, Today's Beautiful Japanese Word.
+ * Enable: exhibitProfile japaneseVocabulary + typography mobile-refine
+ *
+ * Separate from elementary vocabularyExhibition / compoundsExhibition stages.
+ */
+
+/* Final word: no title label — only the Japanese (and English) on the scene. */
+.exhibition-root.is-compounds-exhibition.is-japanese-vocabulary.is-beautiful-word
+  .exhibition-keyword {
+  display: none !important;
+}
+
+.exhibition-root.is-japanese-vocabulary {
+  --kml-compounds-jp: clamp(4.2rem, 14vmin, 8.2rem);
+  /* Larger English than elementary compounds */
+  --kml-compounds-en: clamp(2.35rem, 6.3vmin, 3.75rem);
+}
+
+.exhibition-root.is-japanese-vocabulary .exhibition-kanji {
+  display: none !important;
+}
+
+/* Final verse — usual KML handwritten kanji (Yuji Syuku) */
+.exhibition-root.is-japanese-vocabulary.is-beautiful-word .kml-compound-jp,
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.is-beautiful-word-jp
+  .kml-compound-jp {
+  font-family: var(--kml-font-kanji-main);
+  font-size: calc(var(--kml-compounds-jp) * 0.98);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.exhibition-root.is-japanese-vocabulary.is-beautiful-word
+  .exhibition-verse-jp.show-furigana
+  ruby
+  rt,
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.is-beautiful-word-jp.show-furigana
+  ruby
+  rt {
+  font-family: var(--kml-font-kanji-main);
+  font-weight: 400;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary.is-beautiful-word
+  .exhibition-notes {
+  justify-content: center;
+  padding-top: 0;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary.is-beautiful-word
+  .exhibition-verse-en {
+  font-size: calc(var(--kml-compounds-en) * 1.08);
+}
+
+/* ── Tea-ceremony intro (calligraphy on vocabulary_intro.png) ── */
+
+.vocabulary-intro-overlay {
+  --vocab-intro-ivory: rgba(236, 228, 210, 0.94);
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.vocabulary-intro-jp-block {
+  position: absolute;
+  top: 38%;
+  left: 61%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vocabulary-intro-jp,
+.vocabulary-intro-en {
+  margin: 0;
+  opacity: 0;
+  transition: opacity var(--ex-vocab-intro-fade, 2.6s) ease-in-out;
+}
+
+.vocabulary-intro-jp.is-visible,
+.vocabulary-intro-en.is-visible {
+  opacity: 1;
+}
+
+/*
+ * True 縦書き: two vertical columns, right column first (Japanese reading order).
+ * Looks like a second hanging scroll balancing the tokonoma.
+ */
+.vocabulary-intro-jp {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.35em;
+  font-family: var(--kml-font-kanji-main);
+  font-size: clamp(3.2rem, 8.6vmin, 6.4rem);
+  font-weight: 400;
+  color: var(--vocab-intro-ivory);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 2px 12px rgba(0, 0, 0, 0.28);
+}
+
+.vocabulary-intro-jp-col {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  line-height: 1.28;
+  letter-spacing: 0.22em;
+}
+
+.vocabulary-intro-reading {
+  display: none !important;
+}
+
+/* English — same wall position as the Japanese calligraphy */
+.vocabulary-intro-en {
+  position: absolute;
+  top: 38%;
+  left: 61%;
+  transform: translate(-50%, -50%);
+  width: min(48vw, 26rem);
+  text-align: center;
+  font-family: var(--kml-font-heart-voice);
+  font-size: clamp(1.85rem, 4.6vmin, 3.05rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.62;
+  letter-spacing: 0.02em;
+  color: var(--vocab-intro-ivory);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 2px 12px rgba(0, 0, 0, 0.28);
+}
+
+.vocabulary-intro-en-line {
+  display: block;
+}

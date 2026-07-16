@@ -55,6 +55,13 @@
   min-height: 4rem;
 }
 
+/* Beat sequential 40rem notes width so authored lines can stay on two lines */
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-assisted-reading
+  .exhibition-notes {
+  width: min(96vw, 52rem);
+}
+
 html.kml-typography-mobile-refine.kml-verse-sequential
   .exhibition-root.is-assisted-reading
   .exhibition-verse-jp {
@@ -118,8 +125,9 @@ html.kml-typography-mobile-refine.kml-verse-authored
   .exhibition-verse-jp.has-authored-lines
   .kml-verse-line {
   display: block;
+  /* text-wrap:unset after nowrap resets wrap mode in Chromium (shorthand split) */
   white-space: nowrap;
-  text-wrap: unset;
+  text-wrap: nowrap;
 }
 
 html.kml-typography-mobile-refine.kml-verse-authored

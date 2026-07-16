@@ -1,0 +1,847 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_07_compounds",
+  "title": "Lesson 7 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_07.html. ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 7,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 3.8,
+    "totalCompounds": 76,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1166300,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_07.html"
+  },
+  "scenes": [
+    {
+      "id": "L07_nitrate",
+      "kanji": "硝",
+      "keyword": "nitrate",
+      "image": "studies/nitrate.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "硝子",
+            "reading": "がらす",
+            "en": "Glass"
+          },
+          {
+            "jp": "硝酸",
+            "reading": "しょうさん",
+            "en": "Nitric acid"
+          },
+          {
+            "jp": "硝煙",
+            "reading": "しょうえん",
+            "en": "Gun smoke"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "nitrate",
+        "prototype": true
+      },
+      "imageRev": 1781868985
+    },
+    {
+      "id": "L07_smash",
+      "kanji": "砕",
+      "keyword": "smash",
+      "image": "studies/smash.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "破砕",
+            "reading": "はさい",
+            "en": "Crushing, smashing"
+          },
+          {
+            "jp": "粉砕",
+            "reading": "ふんさい",
+            "en": "Pulverization, smashing"
+          },
+          {
+            "jp": "砕く",
+            "reading": "くだく",
+            "en": "To crush, to smash"
+          },
+          {
+            "jp": "砕ける",
+            "reading": "くだける",
+            "en": "To be broken, to break up"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "smash",
+        "prototype": true
+      },
+      "imageRev": 1781915405
+    },
+    {
+      "id": "L07_sand",
+      "kanji": "砂",
+      "keyword": "sand",
+      "image": "studies/sand.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "砂",
+            "reading": "すな",
+            "en": "Sand"
+          },
+          {
+            "jp": "砂漠",
+            "reading": "さばく",
+            "en": "Desert"
+          },
+          {
+            "jp": "砂糖",
+            "reading": "さとう",
+            "en": "Sugar"
+          },
+          {
+            "jp": "砂利",
+            "reading": "じゃり",
+            "en": "Gravel"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "sand",
+        "prototype": true
+      },
+      "imageRev": 1781918431
+    },
+    {
+      "id": "L07_jealousy",
+      "kanji": "妬",
+      "keyword": "jealousy",
+      "image": "studies/jealousy.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "嫉妬",
+            "reading": "しっと",
+            "en": "Jealousy"
+          },
+          {
+            "jp": "妬む",
+            "reading": "ねたむ",
+            "en": "To envy, to be jealous of"
+          },
+          {
+            "jp": "妬ましい",
+            "reading": "ねたましい",
+            "en": "Jealous, envious"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "jealousy",
+        "prototype": true
+      },
+      "imageRev": 1781915459
+    },
+    {
+      "id": "L07_plane",
+      "kanji": "削",
+      "keyword": "plane",
+      "image": "studies/plane.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "削除",
+            "reading": "さくじょ",
+            "en": "Deletion"
+          },
+          {
+            "jp": "削減",
+            "reading": "さくげん",
+            "en": "Reduction, cut"
+          },
+          {
+            "jp": "削る",
+            "reading": "けずる",
+            "en": "To shave, sharpen, whittle down"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "plane",
+        "prototype": true
+      },
+      "imageRev": 1781916191
+    },
+    {
+      "id": "L07_ray",
+      "kanji": "光",
+      "keyword": "ray",
+      "image": "studies/ray.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "光",
+            "reading": "ひかり",
+            "en": "Light"
+          },
+          {
+            "jp": "光線",
+            "reading": "こうせん",
+            "en": "Light beam, ray"
+          },
+          {
+            "jp": "日光",
+            "reading": "にっこう",
+            "en": "Sunlight"
+          },
+          {
+            "jp": "発光",
+            "reading": "はっこう",
+            "en": "Emission of light, luminescence"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "ray",
+        "prototype": true
+      },
+      "imageRev": 1781915504
+    },
+    {
+      "id": "L07_plump",
+      "kanji": "太",
+      "keyword": "plump",
+      "image": "studies/plump.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "太い",
+            "reading": "ふとい",
+            "en": "Thick, fat"
+          },
+          {
+            "jp": "太陽",
+            "reading": "たいよう",
+            "en": "The sun"
+          },
+          {
+            "jp": "太鼓",
+            "reading": "たいこ",
+            "en": "Drum"
+          },
+          {
+            "jp": "太平洋",
+            "reading": "たいへいよう",
+            "en": "Pacific Ocean"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "plump",
+        "prototype": true
+      },
+      "imageRev": 1781915521
+    },
+    {
+      "id": "L07_utensil",
+      "kanji": "器",
+      "keyword": "utensil",
+      "image": "studies/utensil.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "器",
+            "reading": "うつわ",
+            "en": "Vessel, container"
+          },
+          {
+            "jp": "楽器",
+            "reading": "がっき",
+            "en": "Musical instrument"
+          },
+          {
+            "jp": "食器",
+            "reading": "しょっき",
+            "en": "Tableware"
+          },
+          {
+            "jp": "器用",
+            "reading": "きよう",
+            "en": "Skillful, dexterous"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "utensil",
+        "prototype": true
+      },
+      "imageRev": 1781916217
+    },
+    {
+      "id": "L07_stinking",
+      "kanji": "臭",
+      "keyword": "stinking",
+      "image": "studies/stinking.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "臭い",
+            "reading": "くさい",
+            "en": "Smelly, stinky"
+          },
+          {
+            "jp": "悪臭",
+            "reading": "あくしゅう",
+            "en": "Foul odor"
+          },
+          {
+            "jp": "体臭",
+            "reading": "たいしゅう",
+            "en": "Body odor"
+          },
+          {
+            "jp": "口臭",
+            "reading": "こうしゅう",
+            "en": "Bad breath"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "stinking",
+        "prototype": true
+      },
+      "imageRev": 1781916237
+    },
+    {
+      "id": "L07_sniff",
+      "kanji": "嗅",
+      "keyword": "sniff",
+      "image": "studies/sniff.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "嗅ぐ",
+            "reading": "かぐ",
+            "en": "To sniff, to smell"
+          },
+          {
+            "jp": "嗅覚",
+            "reading": "きゅうかく",
+            "en": "Sense of smell"
+          },
+          {
+            "jp": "嗅ぎ分ける",
+            "reading": "かぎわける",
+            "en": "To distinguish by smell"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "sniff",
+        "prototype": true
+      },
+      "imageRev": 1781916259
+    },
+    {
+      "id": "L07_exquisite",
+      "kanji": "妙",
+      "keyword": "exquisite",
+      "image": "studies/exquisite.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "奇妙",
+            "reading": "きみょう",
+            "en": "Strange, odd"
+          },
+          {
+            "jp": "微妙",
+            "reading": "びみょう",
+            "en": "Subtle, delicate, hard to describe"
+          },
+          {
+            "jp": "妙案",
+            "reading": "みょうあん",
+            "en": "Clever idea"
+          },
+          {
+            "jp": "妙技",
+            "reading": "みょうぎ",
+            "en": "Exquisite technique"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "exquisite",
+        "prototype": true
+      },
+      "imageRev": 1781916286
+    },
+    {
+      "id": "L07_government_ministry",
+      "kanji": "省",
+      "keyword": "government ministry",
+      "image": "studies/government_ministry.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "省く",
+            "reading": "はぶく",
+            "en": "To omit, to eliminate"
+          },
+          {
+            "jp": "反省",
+            "reading": "はんせい",
+            "en": "Reflection, reconsideration"
+          },
+          {
+            "jp": "内省",
+            "reading": "ないせい",
+            "en": "Introspection"
+          },
+          {
+            "jp": "文部科学省",
+            "reading": "もんぶかがくしょう",
+            "en": "Ministry of Education, Culture, Sports, Science and Technology"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "government_ministry",
+        "prototype": true
+      },
+      "imageRev": 1781915555
+    },
+    {
+      "id": "L07_thick",
+      "kanji": "厚",
+      "keyword": "thick",
+      "image": "studies/thick.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "厚い",
+            "reading": "あつい",
+            "en": "Thick (object), warmhearted"
+          },
+          {
+            "jp": "厚意",
+            "reading": "こうい",
+            "en": "Kindness, favor"
+          },
+          {
+            "jp": "厚紙",
+            "reading": "あつがみ",
+            "en": "Cardstock, thick paper"
+          },
+          {
+            "jp": "厚生省",
+            "reading": "こうせいしょう",
+            "en": "Ministry of Health and Welfare"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "thick",
+        "prototype": true
+      },
+      "imageRev": 1781916452
+    },
+    {
+      "id": "L07_strange",
+      "kanji": "奇",
+      "keyword": "strange",
+      "image": "studies/strange.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "奇妙",
+            "reading": "きみょう",
+            "en": "Odd, peculiar"
+          },
+          {
+            "jp": "奇数",
+            "reading": "きすう",
+            "en": "Odd number"
+          },
+          {
+            "jp": "好奇心",
+            "reading": "こうきしん",
+            "en": "Curiosity"
+          },
+          {
+            "jp": "奇跡",
+            "reading": "きせき",
+            "en": "Miracle"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "strange",
+        "prototype": true
+      },
+      "imageRev": 1781915587
+    },
+    {
+      "id": "L07_river",
+      "kanji": "川",
+      "keyword": "river",
+      "image": "studies/river.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "川辺",
+            "reading": "かわべ",
+            "en": "riverside"
+          },
+          {
+            "jp": "川口",
+            "reading": "かわぐち",
+            "en": "river mouth"
+          },
+          {
+            "jp": "川上",
+            "reading": "かわかみ",
+            "en": "upstream"
+          },
+          {
+            "jp": "川下",
+            "reading": "かわしも",
+            "en": "downstream"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "river",
+        "prototype": true
+      },
+      "imageRev": 1781915610
+    },
+    {
+      "id": "L07_state",
+      "kanji": "州",
+      "keyword": "state",
+      "image": "studies/state.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "九州",
+            "reading": "きゅうしゅう",
+            "en": "Kyushu"
+          },
+          {
+            "jp": "本州",
+            "reading": "ほんしゅう",
+            "en": "Honshu"
+          },
+          {
+            "jp": "州立大学",
+            "reading": "しゅうりつだいがく",
+            "en": "State university"
+          },
+          {
+            "jp": "欧州",
+            "reading": "おうしゅう",
+            "en": "Europe"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "state",
+        "prototype": true
+      },
+      "imageRev": 1781915630
+    },
+    {
+      "id": "L07_follow",
+      "kanji": "順",
+      "keyword": "follow",
+      "image": "studies/follow.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "順番",
+            "reading": "じゅんばん",
+            "en": "Order, turn"
+          },
+          {
+            "jp": "順調",
+            "reading": "じゅんちょう",
+            "en": "Favorable, smooth"
+          },
+          {
+            "jp": "順序",
+            "reading": "じゅんじょ",
+            "en": "Sequence"
+          },
+          {
+            "jp": "服順",
+            "reading": "ふくじゅん",
+            "en": "Obedience"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "follow",
+        "prototype": true
+      },
+      "imageRev": 1781915650
+    },
+    {
+      "id": "L07_water",
+      "kanji": "水",
+      "keyword": "water",
+      "image": "studies/water.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "水曜日",
+            "reading": "すいようび",
+            "en": "Wednesday"
+          },
+          {
+            "jp": "水道",
+            "reading": "すいどう",
+            "en": "Water supply"
+          },
+          {
+            "jp": "水泳",
+            "reading": "すいえい",
+            "en": "Swimming"
+          },
+          {
+            "jp": "清水",
+            "reading": "しみず",
+            "en": "Spring water"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "water",
+        "prototype": true
+      },
+      "imageRev": 1781915687
+    },
+    {
+      "id": "L07_ice",
+      "kanji": "氷",
+      "keyword": "ice",
+      "image": "studies/ice.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "氷山",
+            "reading": "ひょうざん",
+            "en": "Iceberg"
+          },
+          {
+            "jp": "氷点下",
+            "reading": "ひょうてんか",
+            "en": "Below freezing"
+          },
+          {
+            "jp": "氷河",
+            "reading": "ひょうが",
+            "en": "Glacier"
+          },
+          {
+            "jp": "氷水",
+            "reading": "こおりみず",
+            "en": "Iced water"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "ice",
+        "prototype": true
+      },
+      "imageRev": 1781915707
+    },
+    {
+      "id": "L07_eternity",
+      "kanji": "永",
+      "keyword": "eternity",
+      "image": "studies/eternity.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "永遠",
+            "reading": "えいえん",
+            "en": "Eternity"
+          },
+          {
+            "jp": "永住",
+            "reading": "えいじゅう",
+            "en": "Permanent residence"
+          },
+          {
+            "jp": "永続",
+            "reading": "えいぞく",
+            "en": "Continuation"
+          },
+          {
+            "jp": "永久",
+            "reading": "えいきゅう",
+            "en": "Permanent"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 7,
+        "slug": "eternity",
+        "prototype": true
+      },
+      "imageRev": 1781915728
+    }
+  ]
+}

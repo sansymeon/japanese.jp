@@ -127,6 +127,11 @@
         bookendImg: root.querySelector("[data-exhibition-bookend-img]"),
         bookendStamp: root.querySelector("[data-exhibition-bookend-stamp]"),
         bookendTitle: root.querySelector("[data-exhibition-bookend-title]"),
+        vocabIntroOverlay: root.querySelector("[data-vocabulary-intro-overlay]"),
+        vocabIntroJpBlock: root.querySelector("[data-vocabulary-intro-jp-block]"),
+        vocabIntroJp: root.querySelector("[data-vocabulary-intro-jp]"),
+        vocabIntroReading: root.querySelector("[data-vocabulary-intro-reading]"),
+        vocabIntroEn: root.querySelector("[data-vocabulary-intro-en]"),
         kanji: root.querySelector("[data-exhibition-kanji]"),
         keyword: root.querySelector("[data-exhibition-keyword]"),
         verseJp: root.querySelector("[data-exhibition-verse-jp]"),
@@ -155,6 +160,8 @@
         g4Camera: root.querySelector("[data-g4-camera]"),
         g4Board: root.querySelector("[data-g4-board]"),
         g4KanjiHero: root.querySelector("[data-g4-kanji-hero]"),
+        hiraganaSongLayer: root.querySelector("[data-hiragana-song-layer]"),
+        hiraganaSongChart: root.querySelector("[data-hiragana-song-chart]"),
         strokeOrderKanji:
           root.querySelector('[data-stroke-order-kanji="a"]') ||
           root.querySelector("[data-stroke-order-kanji]"),
@@ -233,7 +240,11 @@
       this.root.classList.toggle("is-verse-reading", profile === "verseReading");
       this.root.classList.toggle("is-assisted-reading", profile === "assistedReading");
       this.root.classList.toggle("is-vocabulary-exhibition", profile === "vocabularyExhibition");
-      this.root.classList.toggle("is-compounds-exhibition", profile === "compoundsExhibition");
+      this.root.classList.toggle(
+        "is-compounds-exhibition",
+        profile === "compoundsExhibition" || profile === "japaneseVocabulary"
+      );
+      this.root.classList.toggle("is-japanese-vocabulary", profile === "japaneseVocabulary");
       this.root.classList.toggle(
         "is-anchor-compounds-exhibition",
         profile === "anchorCompoundsExhibition"
@@ -271,6 +282,7 @@
       this.root.classList.toggle("is-grade5-kanji-soundtrack", family === "grade5KanjiSoundtrack");
       this.root.classList.toggle("is-grade6-kanji-soundtrack", family === "grade6KanjiSoundtrack");
       this.root.classList.toggle("is-party-kanji", profile === "partyKanji");
+      this.root.classList.toggle("is-hiragana-song", profile === "hiraganaSong");
       this.root.classList.toggle(
         "is-gallery-crest-bookends",
         this.display.bookendStyle === "galleryCrest"
@@ -339,6 +351,10 @@
 
     get isCompoundsExhibitionProfile() {
       return this.display.exhibitProfile === "compoundsExhibition";
+    }
+
+    get isJapaneseVocabularyProfile() {
+      return this.display.exhibitProfile === "japaneseVocabulary";
     }
 
     get isAnchorCompoundsExhibitionProfile() {
@@ -414,6 +430,10 @@
 
     get isPartyKanjiProfile() {
       return this.display.exhibitProfile === "partyKanji";
+    }
+
+    get isHiraganaSongProfile() {
+      return this.display.exhibitProfile === "hiraganaSong";
     }
 
     get showEnglish() {
@@ -534,6 +554,7 @@
       if (this.isAssistedReadingProfile) return this.assistedReadingExhibitDurationMs(t);
       if (this.isVocabularyExhibitionProfile) return this.vocabularyExhibitionExhibitDurationMs(t);
       if (this.isCompoundsExhibitionProfile) return this.compoundsExhibitionExhibitDurationMs(t);
+      if (this.isJapaneseVocabularyProfile) return this.japaneseVocabularyExhibitDurationMs(t);
       if (this.isAnchorCompoundsExhibitionProfile) {
         return this.anchorCompoundsExhibitDurationMs(t);
       }
@@ -649,6 +670,74 @@
       );
     }
 
+    japaneseVocabularyStepMs(t = this.timing, step = {}) {
+      let ms = (t.compoundsStepRevealMs ?? 1400) + (t.compoundsStepFadeMs ?? 1400);
+      if (step.jpHtml) {
+        ms +=
+          (t.compoundsFuriganaEnterDelayMs ?? 900) +
+          (t.compoundsFuriganaEnterMs ?? 2200) +
+          (t.compoundsFuriganaHoldMs ?? 3000) +
+          (t.compoundsFuriganaFadeMs ?? 2200) +
+          (t.compoundsNativeHoldMs ?? 2200);
+      } else {
+        ms +=
+          (t.compoundsReadingRevealMs ?? 1200) +
+          (t.compoundsReadingHoldMs ?? 1800);
+      }
+      ms +=
+        (t.compoundsEnRevealMs ?? 1200) +
+        (t.compoundsEnHoldMs ?? 3500) +
+        (t.compoundsEnFadeMs ?? 1400);
+      return ms;
+    }
+
+    beautifulWordDurationMs(t = this.timing, word = {}) {
+      const hasLabel = Boolean(word.labelHtml || word.label);
+      let ms = 0;
+      if (hasLabel) {
+        ms +=
+          (t.beautifulWordLabelRevealMs ?? 1600) +
+          (t.beautifulWordLabelHoldMs ?? 2200);
+      }
+      ms +=
+        (t.beautifulWordRevealMs ?? 1600) +
+        (t.compoundsFuriganaEnterDelayMs ?? 900) +
+        (t.compoundsFuriganaEnterMs ?? 2200) +
+        (t.beautifulWordFuriganaHoldMs ?? 4500) +
+        (t.compoundsFuriganaFadeMs ?? 2200) +
+        (t.beautifulWordNativeHoldMs ?? 3500) +
+        (t.compoundsEnRevealMs ?? 1400) +
+        (t.beautifulWordEnHoldMs ?? 5000) +
+        (t.compoundsEnFadeMs ?? 1600);
+      // Final fade is skipped when lingering for soundtrack (standard Vocabulary ending).
+      if (!this.isJapaneseVocabularyProfile) {
+        ms += t.beautifulWordFadeMs ?? 1800;
+      }
+      if (!word.jpHtml && word.reading) {
+        ms +=
+          (t.compoundsReadingRevealMs ?? 1200) +
+          (t.compoundsReadingHoldMs ?? 2200);
+      }
+      return ms;
+    }
+
+    japaneseVocabularyExhibitDurationMs(t = this.timing) {
+      const scene = this.scenes[this.sceneIndex] || this.scenes[0] || {};
+      const steps = scene.compounds?.steps || [];
+      const word = scene.beautifulWord || this.collection.beautifulWord || {};
+      let ms =
+        (t.artworkAloneMs ?? 0) +
+        (t.compoundsPauseBeforeMs ?? 3200) +
+        (t.exhibitTransitionMs ?? 0);
+      for (const step of steps) {
+        ms += this.japaneseVocabularyStepMs(t, step);
+      }
+      if (word.jp || word.jpHtml) {
+        ms += this.beautifulWordDurationMs(t, word);
+      }
+      return ms;
+    }
+
     anchorCompoundsCardDurationMs(t = this.timing) {
       const fadeIn = t.anchorWordFadeInMs ?? 700;
       const hold = t.anchorWordHoldMs ?? 2500;
@@ -699,7 +788,8 @@
       if (
         this.isGalleryProfile ||
         this.isVocabularyExhibitionProfile ||
-        this.isCompoundsExhibitionProfile
+        this.isCompoundsExhibitionProfile ||
+        this.isJapaneseVocabularyProfile
       ) {
         return true;
       }
@@ -1180,9 +1270,12 @@
     }
 
     shouldStartSoundtrackDuringOpening(opening) {
-      if (!this.soundtrack?.main || !opening?.image) return false;
+      if (!this.soundtrack?.main || !opening) return false;
+      const hasVisual = Boolean(opening.image || opening.images?.length);
+      if (!hasVisual) return false;
       if (opening.startSoundtrackWithImage === false) return false;
       if (opening.startSoundtrackWithImage === true) return true;
+      if (opening.images?.length && this.isJapaneseVocabularyProfile) return true;
       if (this.timing.openingStartSoundtrackWithImage === true) return true;
       return (
         this.display.family === "kanjiSoundtrack" ||
@@ -1212,9 +1305,11 @@
         this.isGalleryProfile ||
         this.isVocabularyExhibitionProfile ||
         this.isCompoundsExhibitionProfile ||
+        this.isJapaneseVocabularyProfile ||
         this.isAnchorCompoundsExhibitionProfile ||
         this.isStrokeOrderProfile ||
-        this.isGrade1KanjiSoundtrackProfile
+        this.isGrade1KanjiSoundtrackProfile ||
+        this.isHiraganaSongProfile
       ) {
         return true;
       }
@@ -1280,6 +1375,7 @@
 
     maybeStartSoundtrackForScene(index) {
       if (index !== 0 || !this.shouldStartSoundtrackWithFirstScene()) return;
+      if (this.shouldDeferSoundtrackForOpening()) return;
       this.ensureSoundtrackStarted();
     }
 
@@ -1882,7 +1978,7 @@
       this.setClass(this.els.veil, "is-clear", true);
     }
 
-    async crossfadeArtworkLayers(nextScene, fadeMs) {
+    async crossfadeArtworkLayers(nextScene, fadeMs, options = {}) {
       const inactiveKey = this.activeArtworkKey === "a" ? "b" : "a";
       const activeKey = this.activeArtworkKey;
       const inactive = this.artworkLayers[inactiveKey];
@@ -1890,7 +1986,12 @@
       if (!inactive?.wrap || !active?.wrap) return;
 
       this.populateArtworkLayer(inactiveKey, nextScene);
-      await this.applySceneCameraToImage(inactive.img, nextScene);
+      if (options.still) {
+        inactive.img?.classList.remove("ken-burns", "gallery-guardian");
+        await this.waitForArtworkImage(inactive.img);
+      } else {
+        await this.applySceneCameraToImage(inactive.img, nextScene);
+      }
 
       document.documentElement.style.setProperty("--ex-transition", `${fadeMs}ms`);
       if (this.isImageVerseProfile || this.isGalleryProfile) {
@@ -1922,8 +2023,30 @@
       this.setClass(verseJp, "is-visible", false);
       this.setClass(verseEn, "is-visible", false);
       this.resetBookendLayer();
+      this.resetVocabularyIntroOverlay();
+      this.root?.classList.remove("is-opening-image-sequence");
       this.resetStrokeOrderLayer();
       this.resetAnchorCompoundsLayer();
+      this.resetHiraganaSongLayer();
+    }
+
+    resetHiraganaSongLayer() {
+      const layer = this.els.hiraganaSongLayer;
+      if (!layer) return;
+      layer.classList.add("exhibition-hidden");
+      layer.classList.remove(
+        "is-visible",
+        "is-exhaling",
+        "is-drifting",
+        "is-zooming-out",
+        "is-equal",
+        "is-romaji-mode"
+      );
+      layer.setAttribute("aria-hidden", "true");
+      document.documentElement.style.removeProperty("--hiragana-song-fade");
+      document.documentElement.style.removeProperty("--hiragana-song-drift");
+      document.documentElement.style.removeProperty("--hiragana-song-zoom");
+      window.KmlHiraganaSongChart?.clearFocus(this.els.hiraganaSongChart);
     }
 
     resetAnchorCompoundsLayer() {
@@ -2935,12 +3058,27 @@
         let framingScale = scene.imageScale ?? 1;
         let scaleMin;
         let motionScale = 1;
+        let cameraDurationMs = durationMs;
         if (isHeartExhibition) {
           // Horizontal study art: hold full composition, skip letterbox auto-crop.
           coverBoost = 1;
           framingScale = scene.imageScale ?? 0.86;
           scaleMin = 0.82;
           motionScale = 1.45;
+        } else if (this.isJapaneseVocabularyProfile) {
+          // Slight documentary drift across the full soundtrack (including coda hold).
+          coverBoost = window.GalleryGuardian.measureCoverBoost(img);
+          motionScale =
+            scene.galleryCamera?.motionScale ??
+            this.display.cameraMotionScale ??
+            1.25;
+          const soundtrackMs =
+            this.meta?.soundtrackDurationMs ||
+            this.collection.meta?.soundtrackDurationMs ||
+            0;
+          if (soundtrackMs > cameraDurationMs) {
+            cameraDurationMs = Math.round(soundtrackMs * this.timingScale);
+          }
         } else {
           coverBoost = window.GalleryGuardian.measureCoverBoost(img);
         }
@@ -2949,7 +3087,7 @@
           history: this.cameraHistory,
           aspectRatio,
           framingScale,
-          durationMs,
+          durationMs: cameraDurationMs,
           coverBoost,
           scaleMin,
           motionScale,
@@ -3564,6 +3702,350 @@
       }
     }
 
+    async playJapaneseVocabularyStep(stillRunning, step, t) {
+      const stepReveal = t.compoundsStepRevealMs ?? 1400;
+      const stepFade = t.compoundsStepFadeMs ?? 1400;
+      const readingReveal = t.compoundsReadingRevealMs ?? 1200;
+      const readingHold = t.compoundsReadingHoldMs ?? 1800;
+      const enReveal = t.compoundsEnRevealMs ?? 1200;
+      const enHold = t.compoundsEnHoldMs ?? 3500;
+      const enFade = t.compoundsEnFadeMs ?? 1400;
+      const usesFurigana = Boolean(step?.jpHtml);
+
+      this.setCompoundsStepContent(step);
+      const verseJp = this.els.verseJp;
+      const readingEl = verseJp?.querySelector(".kml-compound-reading");
+
+      document.documentElement.style.setProperty("--ex-verse-fade", `${stepReveal}ms`);
+      this.setClass(verseJp, "is-visible", true);
+      await this.wait(stepReveal);
+      if (!stillRunning()) return;
+
+      if (usesFurigana) {
+        await this.wait(t.compoundsFuriganaEnterDelayMs ?? 900);
+        if (!stillRunning()) return;
+        await this.playFuriganaFadeIn(
+          stillRunning,
+          t.compoundsFuriganaEnterMs ?? 2200
+        );
+        if (!stillRunning()) return;
+        await this.wait(t.compoundsFuriganaHoldMs ?? 3000);
+        if (!stillRunning()) return;
+        await this.playVocabularyFuriganaOut(
+          stillRunning,
+          t.compoundsFuriganaFadeMs ?? 2200
+        );
+        if (!stillRunning()) return;
+        // Clean typography hold — furigana was the pronunciation confirmation.
+        await this.wait(t.compoundsNativeHoldMs ?? 2200);
+        if (!stillRunning()) return;
+      } else {
+        document.documentElement.style.setProperty("--ex-verse-fade", `${readingReveal}ms`);
+        readingEl?.classList.add("is-visible");
+        await this.wait(readingReveal);
+        if (!stillRunning()) return;
+        await this.wait(readingHold);
+        if (!stillRunning()) return;
+      }
+
+      if (this.els.verseEn && step.en) {
+        document.documentElement.style.setProperty("--ex-compounds-en-fade", `${enReveal}ms`);
+        this.setClass(this.els.verseEn, "is-visible", true);
+        await this.wait(enReveal);
+        if (!stillRunning()) return;
+        await this.wait(enHold);
+        if (!stillRunning()) return;
+
+        document.documentElement.style.setProperty("--ex-compounds-en-fade", `${enFade}ms`);
+        this.setClass(this.els.verseEn, "is-visible", false);
+        await this.wait(enFade);
+        if (!stillRunning()) return;
+      }
+
+      document.documentElement.style.setProperty("--ex-verse-fade", `${stepFade}ms`);
+      this.setClass(verseJp, "is-visible", false);
+      readingEl?.classList.remove("is-visible");
+      await this.wait(stepFade);
+      if (!stillRunning()) return;
+
+      if (verseJp) {
+        verseJp.textContent = "";
+        verseJp.innerHTML = "";
+      }
+      if (this.els.verseEn) {
+        this.els.verseEn.textContent = "";
+      }
+    }
+
+    async playBeautifulJapaneseWord(stillRunning, word, t, options = {}) {
+      if (!word || !(word.jp || word.jpHtml)) return;
+
+      const lingerForSoundtrack = Boolean(options.lingerForSoundtrack);
+      const labelReveal = t.beautifulWordLabelRevealMs ?? 1600;
+      const labelHold = t.beautifulWordLabelHoldMs ?? 2200;
+      const wordReveal = t.beautifulWordRevealMs ?? 1600;
+      const furiganaHold = t.beautifulWordFuriganaHoldMs ?? 4500;
+      const nativeHold = t.beautifulWordNativeHoldMs ?? 3500;
+      const enReveal = t.compoundsEnRevealMs ?? 1400;
+      const enHold = t.beautifulWordEnHoldMs ?? 5000;
+      const enFade = t.compoundsEnFadeMs ?? 1600;
+      const wordFade = t.beautifulWordFadeMs ?? 1800;
+      const label =
+        word.labelHtml ||
+        word.label ||
+        "";
+
+      this.root.classList.add("is-beautiful-word");
+      if (label && this.els.keyword) {
+        this.els.keyword.innerHTML = label;
+        document.documentElement.style.setProperty("--ex-keyword-fade", `${labelReveal}ms`);
+        this.setClass(this.els.keyword, "is-visible", true);
+        await this.wait(labelReveal);
+        if (!stillRunning()) return;
+        await this.wait(labelHold);
+        if (!stillRunning()) return;
+      }
+
+      this.setCompoundsStepContent({
+        jp: word.jp,
+        jpHtml: word.jpHtml,
+        reading: word.reading,
+        en: word.en,
+      });
+      const verseJp = this.els.verseJp;
+      const readingEl = verseJp?.querySelector(".kml-compound-reading");
+      verseJp?.classList.add("is-beautiful-word-jp");
+
+      document.documentElement.style.setProperty("--ex-verse-fade", `${wordReveal}ms`);
+      this.setClass(verseJp, "is-visible", true);
+      await this.wait(wordReveal);
+      if (!stillRunning()) return;
+
+      if (word.jpHtml) {
+        await this.wait(t.compoundsFuriganaEnterDelayMs ?? 900);
+        if (!stillRunning()) return;
+        await this.playFuriganaFadeIn(
+          stillRunning,
+          t.compoundsFuriganaEnterMs ?? 2200
+        );
+        if (!stillRunning()) return;
+        await this.wait(furiganaHold);
+        if (!stillRunning()) return;
+        await this.playVocabularyFuriganaOut(
+          stillRunning,
+          t.compoundsFuriganaFadeMs ?? 2200
+        );
+        if (!stillRunning()) return;
+        await this.wait(nativeHold);
+        if (!stillRunning()) return;
+      } else if (word.reading) {
+        const readingReveal = t.compoundsReadingRevealMs ?? 1200;
+        const readingHold = t.compoundsReadingHoldMs ?? 2200;
+        document.documentElement.style.setProperty("--ex-verse-fade", `${readingReveal}ms`);
+        readingEl?.classList.add("is-visible");
+        await this.wait(readingReveal);
+        if (!stillRunning()) return;
+        await this.wait(readingHold);
+        if (!stillRunning()) return;
+      }
+
+      if (this.els.verseEn && word.en) {
+        document.documentElement.style.setProperty("--ex-compounds-en-fade", `${enReveal}ms`);
+        this.setClass(this.els.verseEn, "is-visible", true);
+        await this.wait(enReveal);
+        if (!stillRunning()) return;
+        await this.wait(enHold);
+        if (!stillRunning()) return;
+
+        document.documentElement.style.setProperty("--ex-compounds-en-fade", `${enFade}ms`);
+        this.setClass(this.els.verseEn, "is-visible", false);
+        await this.wait(enFade);
+        if (!stillRunning()) return;
+      }
+
+      // Vocabulary standard ending: leave the completed final word on the scene
+      // while the soundtrack continues to its natural end.
+      if (lingerForSoundtrack) return;
+
+      document.documentElement.style.setProperty("--ex-verse-fade", `${wordFade}ms`);
+      document.documentElement.style.setProperty("--ex-keyword-fade", `${wordFade}ms`);
+      this.setClass(verseJp, "is-visible", false);
+      this.setClass(this.els.keyword, "is-visible", false);
+      readingEl?.classList.remove("is-visible");
+      await this.wait(wordFade);
+      if (!stillRunning()) return;
+
+      if (verseJp) {
+        verseJp.classList.remove("is-beautiful-word-jp");
+        verseJp.textContent = "";
+        verseJp.innerHTML = "";
+      }
+      if (this.els.keyword) {
+        this.els.keyword.textContent = "";
+        this.els.keyword.innerHTML = "";
+      }
+      if (this.els.verseEn) {
+        this.els.verseEn.textContent = "";
+      }
+      this.root.classList.remove("is-beautiful-word");
+    }
+
+    async clearBeautifulJapaneseWord(stillRunning, t) {
+      const wordFade = t.beautifulWordFadeMs ?? 1800;
+      const verseJp = this.els.verseJp;
+      document.documentElement.style.setProperty("--ex-verse-fade", `${wordFade}ms`);
+      document.documentElement.style.setProperty("--ex-keyword-fade", `${wordFade}ms`);
+      this.setClass(verseJp, "is-visible", false);
+      this.setClass(this.els.keyword, "is-visible", false);
+      verseJp?.querySelector(".kml-compound-reading")?.classList.remove("is-visible");
+      await this.wait(wordFade);
+      if (!stillRunning()) return;
+
+      if (verseJp) {
+        verseJp.classList.remove("is-beautiful-word-jp");
+        verseJp.textContent = "";
+        verseJp.innerHTML = "";
+      }
+      if (this.els.keyword) {
+        this.els.keyword.textContent = "";
+        this.els.keyword.innerHTML = "";
+      }
+      if (this.els.verseEn) {
+        this.els.verseEn.textContent = "";
+      }
+      this.root.classList.remove("is-beautiful-word");
+    }
+
+    /**
+     * Standard KML Vocabulary ending:
+     * hold final scene until soundtrack ends → fade to black → silent crest → silence.
+     */
+    async playJapaneseVocabularyGalleryEnding(stillRunning, layer, t) {
+      // Remain in the completed scene while the ambient bed finishes naturally.
+      await this.waitForSoundtrackEnd();
+      if (!stillRunning()) return;
+
+      const exhaleMs = t.vocabArtworkExhaleMs ?? 3500;
+      const textFadeMs = Math.min(t.beautifulWordFadeMs ?? 1800, exhaleMs);
+      document.documentElement.style.setProperty("--ex-transition", `${exhaleMs}ms`);
+
+      const textFade = this.clearBeautifulJapaneseWord(stillRunning, {
+        ...t,
+        beautifulWordFadeMs: textFadeMs,
+      });
+      this.setClass(layer.wrap, "is-exhaling", true);
+      this.setClass(layer.wrap, "is-visible", false);
+      await Promise.all([textFade, this.wait(exhaleMs)]);
+      if (!stillRunning()) return;
+
+      if (this.bookends?.closing) {
+        await this.playClosingBookend();
+      } else {
+        this.finishPresentation();
+      }
+    }
+
+    async playJapaneseVocabularyExhibit(index) {
+      if (this.destroyed || !this.scenes.length) return;
+
+      const count = this.scenes.length;
+      if (index >= count && !this.display.loop) return;
+
+      this.clearRun();
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+
+      this.sceneIndex = ((index % count) + count) % count;
+      const scene = this.scenes[this.sceneIndex];
+      const t = this.timing;
+      const steps = scene.compounds?.steps || [];
+      const beautifulWord = scene.beautifulWord || this.collection.beautifulWord || null;
+
+      this.resetImageVerseForeground();
+      this.root.classList.remove("is-beautiful-word");
+
+      await this.waitInitialExhibitionBlack(stillRunning, this.sceneIndex);
+      if (!stillRunning()) return;
+
+      const layer = this.artworkLayers[this.activeArtworkKey];
+      if (this.sceneIndex === 0) {
+        document.documentElement.style.setProperty(
+          "--ex-artwork-arrival",
+          `${t.artworkArrivalFadeMs ?? 2800}ms`
+        );
+      }
+      this.populateArtworkLayer(this.activeArtworkKey, scene);
+      this.syncLegacyArtworkRefs();
+      await this.applySceneCameraToImage(layer.img, scene);
+      if (!stillRunning()) return;
+
+      this.setClass(this.els.veil, "is-corridor", false);
+      this.setClass(this.els.veil, "is-clear", true);
+      this.setClass(layer.wrap, "is-exhaling", false);
+      this.setClass(layer.wrap, "is-on-top", true);
+      this.setClass(layer.wrap, "is-visible", true);
+      const arrivalFadeMs =
+        this.sceneIndex === 0 ? (t.artworkArrivalFadeMs ?? 2800) : 0;
+      if (arrivalFadeMs > 0) {
+        await this.wait(arrivalFadeMs);
+        if (!stillRunning()) return;
+      }
+      if (this.sceneIndex === 0) {
+        this.maybeStartSoundtrackForScene(0);
+      }
+      await this.wait(t.artworkArrivalMs + (t.artworkAloneMs ?? 0));
+      if (!stillRunning()) return;
+
+      await this.wait(t.compoundsPauseBeforeMs ?? 3200);
+      if (!stillRunning()) return;
+
+      for (const step of steps) {
+        await this.playJapaneseVocabularyStep(stillRunning, step, t);
+        if (!stillRunning()) return;
+      }
+
+      if (beautifulWord) {
+        await this.playBeautifulJapaneseWord(stillRunning, beautifulWord, t, {
+          lingerForSoundtrack: !this.singleExhibit && !this.display.loop,
+        });
+        if (!stillRunning()) return;
+      }
+
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
+      const next = this.sceneIndex + 1;
+      if (next >= count) {
+        if (this.display.loop) {
+          if (this.bookends?.opening) {
+            this._soundtrackStarted = false;
+            this.stopSoundtrack();
+            await this.playOpeningBookend();
+            if (!stillRunning()) return;
+          }
+          this.activeArtworkKey = "a";
+          this.syncLegacyArtworkRefs();
+          await this.playJapaneseVocabularyExhibit(0);
+          return;
+        }
+
+        await this.playJapaneseVocabularyGalleryEnding(stillRunning, layer, t);
+        return;
+      }
+
+      const nextScene = this.scenes[next];
+      const transitionMs = t.exhibitTransitionMs ?? 3500;
+      await this.crossfadeArtworkLayers(nextScene, transitionMs);
+      if (!stillRunning()) return;
+      await this.playJapaneseVocabularyExhibit(next);
+    }
+
     async playAnchorCompoundsCard(stillRunning, scene, t) {
       const cardGap = t.anchorCardGapMs ?? 300;
       const wordEl = this.els.anchorCompoundsWord;
@@ -3907,6 +4389,11 @@
         } else if (this.bookends?.closing) {
           this.resetStrokeOrderLayer();
           await this.playClosingBookend();
+        } else if (this.soundtrack?.main) {
+          await this.waitForSoundtrackEnd();
+          this.finishPresentation();
+        } else {
+          this.finishPresentation();
         }
         return;
       }
@@ -4616,6 +5103,29 @@
       });
     }
 
+    /**
+     * Wait until ambient soundtrack currentTime reaches targetMs (wall-clock sync).
+     * Falls back to relative waits when audio is unavailable.
+     */
+    async waitUntilSoundtrackMs(targetMs, stillRunning) {
+      const audio = this.mainAudio;
+      if (!audio || !this._soundtrackStarted) {
+        await this.wait(Math.max(0, targetMs));
+        return;
+      }
+
+      const absoluteMs = Math.max(0, targetMs);
+      while (stillRunning()) {
+        if (audio.ended) return;
+        const nowMs = Math.max(0, (audio.currentTime || 0) * 1000);
+        if (nowMs >= absoluteMs) return;
+        const remaining = absoluteMs - nowMs;
+        // Compensate timingScale inside wait() so poll interval stays near real-time.
+        const pollMs = Math.min(Math.max(remaining, 16), 250);
+        await this.wait(this.timingScale ? pollMs / this.timingScale : pollMs);
+      }
+    }
+
     waitForPaintFrame() {
       const runId = this.runId;
       return new Promise((resolve) => {
@@ -4653,6 +5163,11 @@
       const opening = this.bookends?.opening;
       if (!opening) return;
 
+      if (opening.jp || opening.en || opening.images?.length) {
+        await this.playOpeningImageSequence(opening);
+        return;
+      }
+
       if (this.display.bookendStyle === "galleryCrest" && opening.image) {
         await this.playGalleryCrestOpeningBookend(opening);
         return;
@@ -4664,6 +5179,298 @@
       }
 
       await this.playOpeningKanjiBookend(opening);
+    }
+
+    resetVocabularyIntroOverlay() {
+      const overlay = this.els.vocabIntroOverlay;
+      const jp = this.els.vocabIntroJp;
+      const reading = this.els.vocabIntroReading;
+      const en = this.els.vocabIntroEn;
+      const block = this.els.vocabIntroJpBlock;
+      if (jp) {
+        jp.textContent = "";
+        jp.innerHTML = "";
+        jp.classList.remove("is-visible");
+      }
+      if (reading) {
+        reading.textContent = "";
+        reading.innerHTML = "";
+        reading.classList.remove("is-visible");
+      }
+      if (block) {
+        block.classList.remove("is-visible", "has-reading");
+      }
+      if (en) {
+        en.textContent = "";
+        en.innerHTML = "";
+        en.classList.remove("is-visible");
+      }
+      if (overlay) {
+        overlay.classList.add("exhibition-hidden");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+    }
+
+    showVocabularyIntroOverlay() {
+      const overlay = this.els.vocabIntroOverlay;
+      if (!overlay) return;
+      overlay.classList.remove("exhibition-hidden");
+      overlay.setAttribute("aria-hidden", "false");
+    }
+
+    setVocabularyIntroJapanese(opening) {
+      const jpEl = this.els.vocabIntroJp;
+      if (!jpEl) return;
+      const columns = opening.jpColumns?.length
+        ? opening.jpColumns
+        : opening.jp
+          ? [opening.jp]
+          : [];
+      jpEl.innerHTML = columns
+        .map((col) => `<span class="vocabulary-intro-jp-col">${col}</span>`)
+        .join("");
+    }
+
+    setVocabularyIntroReading(opening) {
+      const readingEl = this.els.vocabIntroReading;
+      if (!readingEl) return;
+      const lines = opening.readingLines?.length
+        ? opening.readingLines
+        : opening.reading
+          ? String(opening.reading).split(/\n/)
+          : [];
+      readingEl.innerHTML = lines
+        .map((line) => `<span class="vocabulary-intro-reading-line">${line}</span>`)
+        .join("");
+    }
+
+    async fadeVocabularyIntroEl(el, visible, durationMs, stillRunning) {
+      if (!el) return;
+      document.documentElement.style.setProperty("--ex-vocab-intro-fade", `${durationMs}ms`);
+      await this.waitForPaintFrame();
+      if (!stillRunning()) return;
+      el.classList.toggle("is-visible", visible);
+      await this.wait(durationMs);
+    }
+
+    /**
+     * Tea-ceremony entrance for Japanese Vocabulary:
+     * atmosphere → vertical calligraphy → reading guide → English quotation.
+     */
+    async playOpeningImageSequence(opening) {
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+      const t = this.timing;
+
+      if (opening.images?.length && !(opening.jp || opening.en || opening.jpColumns)) {
+        await this.playOpeningBakedImageSequence(opening);
+        return;
+      }
+
+      const imagePath = opening.image || opening.images?.[0]?.image;
+      if (!imagePath) return;
+
+      this.debugLog("enter playOpeningAtmosphereText", {
+        image: imagePath,
+        jp: opening.jp,
+        en: opening.en,
+      });
+      this.resetLayers();
+      this.clearBookendText();
+      this.hideBookendTitle(false);
+      this.resetVocabularyIntroOverlay();
+      this.root.classList.add("is-opening-image-sequence");
+
+      const blackBefore = opening.blackBeforeMs ?? t.openingBlackBeforeMs ?? 800;
+      if (blackBefore > 0) {
+        await this.wait(blackBefore);
+        if (!stillRunning()) return;
+      }
+
+      const revealMs = opening.revealMs ?? t.openingRevealMs ?? 2000;
+      const atmosphereHoldMs = opening.atmosphereHoldMs ?? 5000;
+      const layer = this.artworkLayers[this.activeArtworkKey];
+      const scene = { id: "opening_atmosphere", image: imagePath };
+
+      document.documentElement.style.setProperty("--ex-artwork-arrival", `${revealMs}ms`);
+      this.populateArtworkLayer(this.activeArtworkKey, scene);
+      await this.waitForArtworkImage(layer.img);
+      layer.img.classList.remove("ken-burns", "gallery-guardian");
+      this.setClass(this.els.veil, "is-corridor", false);
+      this.setClass(this.els.veil, "is-clear", true);
+      this.setClass(layer.wrap, "is-exhaling", false);
+      this.setClass(layer.wrap, "is-on-top", true);
+      this.setClass(layer.wrap, "is-visible", true);
+
+      if (this.shouldStartSoundtrackDuringOpening(opening)) {
+        this.scheduleSoundtrackAfterBookendImage(stillRunning, opening);
+      }
+
+      await this.wait(revealMs);
+      if (!stillRunning()) return;
+      await this.wait(atmosphereHoldMs);
+      if (!stillRunning()) return;
+
+      this.showVocabularyIntroOverlay();
+
+      const hasJp = Boolean(opening.jp || opening.jpColumns?.length);
+      if (hasJp && this.els.vocabIntroJp) {
+        const jpReveal = opening.jpRevealMs ?? 2600;
+        const jpHold = opening.jpHoldMs ?? 5500;
+        const jpFade = opening.jpFadeMs ?? 2200;
+        this.setVocabularyIntroJapanese(opening);
+        this.els.vocabIntroJp.classList.remove("is-visible");
+        this.els.vocabIntroJpBlock?.classList.remove("has-reading");
+        await this.fadeVocabularyIntroEl(
+          this.els.vocabIntroJp,
+          true,
+          jpReveal,
+          stillRunning
+        );
+        if (!stillRunning()) return;
+        await this.wait(jpHold);
+        if (!stillRunning()) return;
+        await this.fadeVocabularyIntroEl(
+          this.els.vocabIntroJp,
+          false,
+          jpFade,
+          stillRunning
+        );
+        if (!stillRunning()) return;
+      }
+
+      if (opening.en && this.els.vocabIntroEn) {
+        const enReveal = opening.enRevealMs ?? 2600;
+        const enHold = opening.enHoldMs ?? 6000;
+        const enFade = opening.enFadeMs ?? 2200;
+        const enText = String(opening.en);
+        this.els.vocabIntroEn.innerHTML = enText
+          .split(/\n/)
+          .map((line) => `<span class="vocabulary-intro-en-line">${line}</span>`)
+          .join("");
+        this.els.vocabIntroEn.classList.remove("is-visible");
+        await this.fadeVocabularyIntroEl(
+          this.els.vocabIntroEn,
+          true,
+          enReveal,
+          stillRunning
+        );
+        if (!stillRunning()) return;
+        await this.wait(enHold);
+        if (!stillRunning()) return;
+        await this.fadeVocabularyIntroEl(
+          this.els.vocabIntroEn,
+          false,
+          enFade,
+          stillRunning
+        );
+        if (!stillRunning()) return;
+      }
+
+      const exhaleMs = opening.exhaleMs ?? t.openingExhaleMs ?? 2200;
+      document.documentElement.style.setProperty("--ex-transition", `${exhaleMs}ms`);
+      this.setClass(layer.wrap, "is-exhaling", true);
+      this.setClass(layer.wrap, "is-visible", false);
+      await this.wait(exhaleMs);
+      if (!stillRunning()) return;
+
+      this.resetVocabularyIntroOverlay();
+      this.root.classList.remove("is-opening-image-sequence");
+      this.activeArtworkKey = "a";
+      this.syncLegacyArtworkRefs();
+      this.resetLayers();
+      this.setClass(this.els.veil, "is-corridor", false);
+      this.setClass(this.els.veil, "is-clear", false);
+
+      const blackAfter = opening.blackAfterMs ?? t.openingBlackAfterMs ?? 600;
+      if (blackAfter > 0) {
+        await this.wait(blackAfter);
+        if (!stillRunning()) return;
+      }
+
+      if (this.scenes[0]) {
+        await this.preloadSceneArtwork(this.scenes[0]);
+      }
+      this.debugLog("exit playOpeningAtmosphereText");
+    }
+
+    async playOpeningBakedImageSequence(opening) {
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+      const t = this.timing;
+      const frames = opening.images || [];
+      if (!frames.length) return;
+
+      this.resetLayers();
+      this.clearBookendText();
+      this.hideBookendTitle(false);
+      this.root.classList.add("is-opening-image-sequence");
+
+      const blackBefore = opening.blackBeforeMs ?? t.openingBlackBeforeMs ?? 1200;
+      if (blackBefore > 0) {
+        await this.wait(blackBefore);
+        if (!stillRunning()) return;
+      }
+
+      const startMusic = this.shouldStartSoundtrackDuringOpening(opening);
+
+      for (let i = 0; i < frames.length; i += 1) {
+        const frame = frames[i];
+        const scene = { id: `opening_sequence_${i}`, image: frame.image };
+        const fadeMs =
+          frame.fadeMs ??
+          frame.revealMs ??
+          opening.fadeMs ??
+          (i === 0 ? t.openingRevealMs ?? 2400 : 2000);
+        const holdMs = frame.holdMs ?? opening.holdMs ?? 3000;
+
+        if (i === 0) {
+          const layer = this.artworkLayers[this.activeArtworkKey];
+          document.documentElement.style.setProperty("--ex-artwork-arrival", `${fadeMs}ms`);
+          this.populateArtworkLayer(this.activeArtworkKey, scene);
+          await this.waitForArtworkImage(layer.img);
+          layer.img.classList.remove("ken-burns", "gallery-guardian");
+          this.setClass(this.els.veil, "is-corridor", false);
+          this.setClass(this.els.veil, "is-clear", true);
+          this.setClass(layer.wrap, "is-exhaling", false);
+          this.setClass(layer.wrap, "is-on-top", true);
+          this.setClass(layer.wrap, "is-visible", true);
+          if (startMusic) {
+            this.scheduleSoundtrackAfterBookendImage(stillRunning, opening);
+          }
+          await this.wait(fadeMs);
+        } else {
+          await this.crossfadeArtworkLayers(scene, fadeMs, { still: true });
+        }
+        if (!stillRunning()) return;
+        await this.wait(holdMs);
+        if (!stillRunning()) return;
+      }
+
+      const exhaleMs = opening.exhaleMs ?? t.openingExhaleMs ?? 2800;
+      const active = this.artworkLayers[this.activeArtworkKey];
+      document.documentElement.style.setProperty("--ex-transition", `${exhaleMs}ms`);
+      this.setClass(active?.wrap, "is-exhaling", true);
+      this.setClass(active?.wrap, "is-visible", false);
+      await this.wait(exhaleMs);
+      if (!stillRunning()) return;
+
+      this.root.classList.remove("is-opening-image-sequence");
+      this.activeArtworkKey = "a";
+      this.syncLegacyArtworkRefs();
+      this.resetLayers();
+      this.setClass(this.els.veil, "is-corridor", false);
+      this.setClass(this.els.veil, "is-clear", false);
+
+      const blackAfter = opening.blackAfterMs ?? t.openingBlackAfterMs ?? 800;
+      if (blackAfter > 0) {
+        await this.wait(blackAfter);
+        if (!stillRunning()) return;
+      }
+
+      if (this.scenes[0]) {
+        await this.preloadSceneArtwork(this.scenes[0]);
+      }
     }
 
     async preloadSceneArtwork(scene) {
@@ -4840,6 +5647,14 @@
       const stillRunning = () => !this.destroyed && runId === this.runId;
       const t = this.timing;
       const crestFadeMs = t.closingExhaleMs ?? t.closingFadeToBlackMs ?? 3500;
+      const soundtrackAlreadyEnded = this.getSoundtrackRemainingMs() <= 0;
+      // Vocabulary standard: music ended on the final scene; crest is pure silence.
+      const vocabularySilentCrest =
+        this.isJapaneseVocabularyProfile || closing.silentAfterSoundtrack === true;
+      // Lesson vocabulary (and similar): honor explicit short close — do not pad to bed end.
+      const holdUntilSoundtrackEnds = Boolean(
+        this.soundtrack?.main && closing.holdUntilSoundtrackEnds !== false
+      );
 
       this.resetLayers();
       this.clearBookendText();
@@ -4851,21 +5666,38 @@
       await this.showBookendImage(closing.image, t.closingRevealMs, closing, "closing");
       if (!stillRunning()) return;
 
-      const holdMs = t.closingHoldMs ?? 0;
+      const holdMs =
+        t.closingHoldMs ??
+        (soundtrackAlreadyEnded || vocabularySilentCrest || !holdUntilSoundtrackEnds
+          ? 2800
+          : 0);
       if (holdMs > 0) {
         await this.wait(holdMs);
         if (!stillRunning()) return;
       }
 
-      while (stillRunning()) {
-        const remaining = this.getSoundtrackRemainingMs();
-        if (remaining <= 0 || remaining <= crestFadeMs) break;
-        await this.wait(Math.min(remaining - crestFadeMs, 250));
+      if (!vocabularySilentCrest && holdUntilSoundtrackEnds) {
+        while (stillRunning()) {
+          const remaining = this.getSoundtrackRemainingMs();
+          if (remaining <= 0 || remaining <= crestFadeMs) break;
+          await this.wait(Math.min(remaining - crestFadeMs, 250));
+        }
+        if (!stillRunning()) return;
+        await this.fadeCrestWithSoundtrackEnd(crestFadeMs);
+      } else if (!vocabularySilentCrest && closing.fadeWithSoundtrackEnd) {
+        await this.fadeBookendWithSoundtrack(crestFadeMs, (ms) =>
+          this.hideBookendCrest(ms)
+        );
+      } else {
+        await this.hideBookendCrest(crestFadeMs);
       }
       if (!stillRunning()) return;
 
-      await this.fadeCrestWithSoundtrackEnd(crestFadeMs);
-      if (!stillRunning()) return;
+      const silenceMs = t.closingSilenceHoldMs ?? 0;
+      if (silenceMs > 0) {
+        await this.wait(silenceMs);
+        if (!stillRunning()) return;
+      }
 
       await this.wait(t.closingBlackAfterMs ?? 0);
       this.stopAllAudio();
@@ -5190,6 +6022,224 @@
       await this.playStaggeredVerses(stillRunning);
     }
 
+    showHiraganaSongLayer() {
+      const layer = this.els.hiraganaSongLayer;
+      if (!layer) return;
+      layer.classList.remove("exhibition-hidden", "is-exhaling");
+      layer.setAttribute("aria-hidden", "false");
+      this.setClass(this.els.veil, "is-clear", true);
+    }
+
+    async playHiraganaSongExhibit(index) {
+      if (this.destroyed || !this.scenes.length) return;
+
+      this.clearRun();
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+
+      this.sceneIndex = Math.min(Math.max(0, index), this.scenes.length - 1);
+      const scene = this.scenes[this.sceneIndex];
+      const t = this.timing;
+      const chartApi = window.KmlHiraganaSongChart;
+      const layer = this.els.hiraganaSongLayer;
+      const chartEl = this.els.hiraganaSongChart;
+      if (!layer || !chartEl || !chartApi) {
+        this.debugLog("hiragana song layer unavailable");
+        return;
+      }
+
+      const rowIds = Array.isArray(scene.rowIds)
+        ? scene.rowIds
+        : chartApi.ROWS.map((row) => row.id);
+      const rowOffsetsMs = Array.isArray(scene.rowOffsetsMs)
+        ? scene.rowOffsetsMs
+        : (scene.rows || []).map((row) => row.atMs ?? 0);
+      const verses =
+        Array.isArray(scene.verses) && scene.verses.length
+          ? scene.verses
+          : [{ id: "kana_1", mode: "kana", startMs: 0, rows: scene.rows || [] }];
+      const fujiAtMs = scene.fujiAtMs ?? 291000;
+      const fujiImage = scene.fujiImage || "images/mt_fuji.png";
+      const introEndMs =
+        scene.introEndMs ??
+        this.meta?.introMs ??
+        verses[0]?.startMs ??
+        20000;
+      const revealMs = t.chartRevealMs ?? 2800;
+      const fadeOutMs = t.chartFadeOutMs ?? 3500;
+      const rowFadeMs = t.rowFadeMs ?? 900;
+      const fujiFadeMs = t.fujiFadeMs ?? 4500;
+      const fujiExhaleMs = t.fujiExhaleMs ?? fadeOutMs;
+      const soundtrackMs = this.meta?.soundtrackDurationMs ?? 329300;
+      const fujiKenBurnsMs = Math.max(60000, soundtrackMs);
+
+      const fadeRowOut = async () => {
+        chartApi.setRowVisible(chartEl, false);
+        await this.wait(rowFadeMs);
+      };
+
+      const fadeRowIn = async () => {
+        await this.waitForPaintFrame();
+        chartApi.setRowVisible(chartEl, true);
+        await this.wait(rowFadeMs);
+      };
+
+      const showFocusRow = async (rowId) => {
+        const hadRow = Boolean(chartEl.dataset.activeRowId);
+        if (hadRow) {
+          await fadeRowOut();
+          if (!stillRunning()) return;
+        }
+        chartApi.setFocusRow(chartEl, rowId);
+        await fadeRowIn();
+      };
+
+      const prepareFujiArtwork = async () => {
+        const fujiScene = { id: "mt_fuji", image: fujiImage };
+        this.populateArtworkLayer(this.activeArtworkKey, fujiScene);
+        const artLayer = this.artworkLayers[this.activeArtworkKey];
+        this.syncLegacyArtworkRefs();
+        if (artLayer?.img) {
+          await this.waitForArtworkImage(artLayer.img);
+          if (!artLayer.img.naturalWidth) {
+            this.audioError("mt_fuji image failed to load", null, {
+              src: artLayer.img.currentSrc || artLayer.img.src,
+            });
+          }
+          artLayer.img.classList.remove("gallery-guardian");
+          artLayer.img.classList.add("ken-burns");
+        }
+        return artLayer;
+      };
+
+      const showFuji = (artLayer, fadeMs) => {
+        document.documentElement.style.setProperty("--ex-fade", `${fadeMs}ms`);
+        if (!artLayer?.wrap) return;
+        this.setClass(artLayer.wrap, "is-exhaling", false);
+        this.setClass(artLayer.wrap, "is-visible", true);
+      };
+
+      const hidePaperLayer = async (fadeMs) => {
+        document.documentElement.style.setProperty("--hiragana-song-fade", `${fadeMs}ms`);
+        layer.classList.add("is-exhaling");
+        layer.classList.remove("is-visible", "is-drifting");
+        await this.wait(fadeMs);
+        this.resetHiraganaSongLayer();
+      };
+
+      this.resetLayers();
+      chartApi.renderFocus(chartEl, "kana");
+      // Prepare the song layer (hidden) — Fuji intro plays first without paper.
+      layer.classList.remove("exhibition-hidden");
+      layer.setAttribute("aria-hidden", "false");
+      this.setClass(this.els.veil, "is-clear", true);
+
+      document.documentElement.style.setProperty("--hiragana-song-fade", `${revealMs}ms`);
+      document.documentElement.style.setProperty("--hiragana-song-row-fade", `${rowFadeMs}ms`);
+      document.documentElement.style.setProperty("--ken-burns-duration", `${fujiKenBurnsMs}ms`);
+
+      await this.waitInitialExhibitionBlack(stillRunning, 0);
+      if (!stillRunning()) return;
+
+      this.maybeStartSoundtrackForScene(0);
+      if (!this._soundtrackStarted) {
+        await this.startSoundtrack();
+      }
+      if (!stillRunning()) return;
+
+      const artLayer = await prepareFujiArtwork();
+      if (!stillRunning()) return;
+
+      // ── Intro: Mt. Fuji alone ──
+      showFuji(artLayer, fujiFadeMs);
+      await this.wait(fujiFadeMs);
+      if (!stillRunning()) return;
+
+      await this.waitUntilSoundtrackMs(introEndMs, stillRunning);
+      if (!stillRunning()) return;
+
+      // ── Verses: paper/rows fade in over Fuji ──
+      document.documentElement.style.setProperty("--hiragana-song-fade", `${revealMs}ms`);
+      layer.classList.remove("is-exhaling");
+      layer.classList.add("is-visible", "is-drifting");
+      await this.wait(revealMs);
+      if (!stillRunning()) return;
+
+      for (const verse of verses) {
+        if (!stillRunning()) return;
+        const startMs = verse.startMs ?? 0;
+        await this.waitUntilSoundtrackMs(startMs, stillRunning);
+        if (!stillRunning()) return;
+
+        const nextMode = verse.mode === "romaji" ? "romaji" : "kana";
+        const modeChanged = chartApi.getDisplayMode(chartEl) !== nextMode;
+        if (modeChanged || chartEl.dataset.activeRowId) {
+          await fadeRowOut();
+          if (!stillRunning()) return;
+          chartApi.clearFocus(chartEl);
+          chartApi.renderFocus(chartEl, nextMode);
+        }
+        layer.classList.toggle("is-romaji-mode", nextMode === "romaji");
+
+        const verseRows = Array.isArray(verse.rows)
+          ? verse.rows
+          : rowIds.map((id, i) => ({
+              id,
+              atMs: startMs + (rowOffsetsMs[i] ?? 0),
+            }));
+
+        for (const row of verseRows) {
+          if (!stillRunning()) return;
+          const atMs = Math.max(0, (row.atMs ?? 0) - Math.round(rowFadeMs * 0.35));
+          await this.waitUntilSoundtrackMs(atMs, stillRunning);
+          if (!stillRunning()) return;
+          await showFocusRow(row.id);
+          if (!stillRunning()) return;
+        }
+      }
+
+      // ── Closing: paper fades away; Fuji remains through bed end ──
+      await this.waitUntilSoundtrackMs(fujiAtMs, stillRunning);
+      if (!stillRunning()) return;
+
+      showFuji(artLayer, fujiFadeMs);
+      await hidePaperLayer(fujiFadeMs);
+      if (!stillRunning()) return;
+
+      await this.waitForSoundtrackEnd();
+      if (!stillRunning()) return;
+
+      document.documentElement.style.setProperty("--ex-exhale", `${fujiExhaleMs}ms`);
+      if (artLayer?.wrap) {
+        this.setClass(artLayer.wrap, "is-exhaling", true);
+      }
+      await this.wait(fujiExhaleMs);
+      if (!stillRunning()) return;
+      if (artLayer?.wrap) {
+        this.setClass(artLayer.wrap, "is-visible", false);
+        this.setClass(artLayer.wrap, "is-exhaling", false);
+      }
+      if (artLayer?.img) {
+        artLayer.img.classList.remove("ken-burns");
+      }
+
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
+      if (this.bookends?.closing) {
+        await this.playClosingBookend();
+        return;
+      }
+
+      this.finishPresentation();
+    }
+
     async playExhibit(index) {
       if (this.destroyed || !this.scenes.length) return;
 
@@ -5211,6 +6261,9 @@
       if (this.isCompoundsExhibitionProfile) {
         return this.playCompoundsExhibit(index);
       }
+      if (this.isJapaneseVocabularyProfile) {
+        return this.playJapaneseVocabularyExhibit(index);
+      }
       if (this.isAnchorCompoundsExhibitionProfile) {
         return this.playAnchorCompoundsExhibit(index);
       }
@@ -5225,6 +6278,9 @@
       }
       if (this.isPartyKanjiProfile) {
         return this.playPartyKanjiExhibit(index);
+      }
+      if (this.isHiraganaSongProfile) {
+        return this.playHiraganaSongExhibit(index);
       }
 
       const count = this.scenes.length;
@@ -5457,19 +6513,61 @@
     throw new Error(`Could not load collection "${name}" (${lastStatus}).`);
   }
 
-  async function ensureHandwrittenFontsReady(display) {
+  async function ensureExhibitionFontsReady(display) {
+    if (!document.fonts?.load) return;
+
     const family = display?.family || "";
     const profile = display?.exhibitProfile || "";
+    const typo = display?.typography || "";
     const needsHandwritten =
       family === "kanjiSoundtrack" ||
       profile === "kanjiSoundtrack" ||
-      /KanjiSoundtrack$/.test(family);
-    if (!needsHandwritten || !document.fonts?.load) return;
+      /KanjiSoundtrack$/.test(family) ||
+      profile === "strokeOrder" ||
+      profile === "japaneseVocabulary" ||
+      ExhibitionPlayer.isElementaryGradeStrokeOrderProfile(profile);
+    const needsSerifVerses =
+      typo === "mobile-refine" &&
+      (profile === "assistedReading" ||
+        profile === "verseReading" ||
+        profile === "vocabularyExhibition" ||
+        profile === "compoundsExhibition" ||
+        profile === "japaneseVocabulary" ||
+        profile === "anchorCompoundsExhibition" ||
+        profile === "imageVerse" ||
+        profile === "gallery");
+    const needsHiraganaSong =
+      profile === "hiraganaSong" || family === "hiraganaSong";
 
-    const loads = [
-      document.fonts.load('400 48px "Yuji Syuku"'),
-      document.fonts.load('400 48px "Hachi Maru Pop"'),
-    ];
+    const loads = [];
+
+    if (needsHiraganaSong) {
+      loads.push(document.fonts.load("500 48px \"Noto Serif JP\""));
+      loads.push(document.fonts.load("500 36px \"Cormorant Garamond\""));
+    }
+    if (needsHandwritten) {
+      const strokeOrderProfile =
+        profile === "strokeOrder" ||
+        ExhibitionPlayer.isElementaryGradeStrokeOrderProfile(profile);
+      const yujiSize = strokeOrderProfile ? "320px" : "48px";
+      loads.push(
+        document.fonts.load(`400 ${yujiSize} "Yuji Syuku"`),
+        document.fonts.load('400 48px "Hachi Maru Pop"')
+      );
+      if (strokeOrderProfile) {
+        loads.push(document.fonts.load(`400 ${yujiSize} "Noto Serif JP"`));
+      }
+    }
+
+    if (needsSerifVerses) {
+      loads.push(
+        document.fonts.load('600 5rem "Noto Serif JP"'),
+        document.fonts.load('500 3rem "Cormorant Garamond"'),
+        document.fonts.load('italic 500 3rem "Cormorant Garamond"')
+      );
+    }
+
+    if (!loads.length) return;
     await Promise.all(loads.map((p) => p.catch(() => {})));
     if (document.fonts.ready) await document.fonts.ready;
   }
@@ -5489,7 +6587,7 @@
 
     try {
       const collection = await loadCollection(name);
-      await ensureHandwrittenFontsReady(collection.display);
+      await ensureExhibitionFontsReady(collection.display);
       if (new URLSearchParams(window.location.search).get("debug") === "1") {
         console.log("[KML Exhibition] boot", { engineVersion: ENGINE_VERSION, collection: name });
       }

@@ -1,0 +1,221 @@
+/**
+ * Hiragana Song — soft paper; one oversized row at a time (fade), full chart at close.
+ */
+
+.exhibition-root.is-hiragana-song {
+  --hiragana-song-paper: #2a241c;
+  --hiragana-song-paper-deep: #1c1813;
+  --hiragana-song-kana: var(--kml-ivory, #efe6d8);
+  --hiragana-song-kana-dim: rgba(239, 230, 216, 0.28);
+  --hiragana-song-font-kana: "Noto Serif JP", "Yu Mincho", serif;
+  --hiragana-song-font-romaji: "Cormorant Garamond", "Palatino Linotype", serif;
+  --hiragana-song-row-fade: 900ms;
+  background: #100e0b;
+}
+
+/* Fuji sits under the paper plane; paper covers it during verses. */
+.exhibition-root.is-hiragana-song .exhibition-artwork {
+  z-index: 4;
+}
+
+.exhibition-root.is-hiragana-song .exhibition-artwork.is-visible {
+  opacity: 1;
+}
+
+.hiragana-song-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--hiragana-song-fade, 2800ms) ease;
+  pointer-events: none;
+}
+
+.hiragana-song-layer.is-visible {
+  opacity: 1;
+}
+
+.hiragana-song-layer.is-exhaling {
+  opacity: 0;
+}
+
+.hiragana-song-paper {
+  position: absolute;
+  inset: -8%;
+  background:
+    radial-gradient(ellipse 95% 75% at 50% 20%, rgba(72, 60, 44, 0.55), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 78% 82%, rgba(40, 32, 22, 0.45), transparent 55%),
+    linear-gradient(165deg, var(--hiragana-song-paper) 0%, var(--hiragana-song-paper-deep) 100%);
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.35);
+}
+
+.hiragana-song-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(210, 190, 150, 0.025) 2px,
+      rgba(210, 190, 150, 0.025) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(210, 190, 150, 0.02) 3px,
+      rgba(210, 190, 150, 0.02) 4px
+    );
+  pointer-events: none;
+}
+
+.hiragana-song-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 65% at 50% 48%, transparent 42%, rgba(8, 6, 4, 0.55) 100%);
+  pointer-events: none;
+}
+
+.hiragana-song-stage {
+  position: relative;
+  z-index: 1;
+  width: min(96vw, 1100px);
+  padding: clamp(1.5rem, 4vh, 3rem) clamp(1rem, 3vw, 2.5rem);
+  transform: scale(1.02) translate(0, 0);
+  transform-origin: 50% 45%;
+  will-change: transform;
+}
+
+.hiragana-song-layer.is-drifting .hiragana-song-stage {
+  animation: hiragana-song-kenburns var(--hiragana-song-drift, 90s) ease-in-out forwards;
+}
+
+.hiragana-song-layer.is-zooming-out .hiragana-song-stage {
+  animation: hiragana-song-zoom-out var(--hiragana-song-zoom, 24s) ease-out forwards;
+}
+
+@keyframes hiragana-song-kenburns {
+  from {
+    transform: scale(1.02) translate(0.2%, 0.1%);
+  }
+  to {
+    transform: scale(1.08) translate(-0.8%, -0.5%);
+  }
+}
+
+@keyframes hiragana-song-zoom-out {
+  from {
+    transform: scale(1.04) translate(0, 0);
+  }
+  to {
+    transform: scale(0.92) translate(0, 0);
+  }
+}
+
+/* ── Single-row focus ── */
+.hiragana-song-chart.is-focus {
+  display: grid;
+  place-items: center;
+  min-height: min(52vh, 420px);
+}
+
+.hiragana-song-chart.is-focus .hiragana-song-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.4rem, 2.5vw, 1.75rem);
+  opacity: 0;
+  transition: opacity var(--hiragana-song-row-fade, 900ms) ease;
+}
+
+.hiragana-song-chart.is-focus.is-row-visible .hiragana-song-row {
+  opacity: 1;
+}
+
+.hiragana-song-chart.is-focus .hiragana-song-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(4.5rem, 18vh, 11rem);
+}
+
+.hiragana-song-chart.is-focus .hiragana-song-cell.is-empty {
+  visibility: hidden;
+}
+
+.hiragana-song-chart.is-focus .hiragana-song-kana {
+  font-family: var(--hiragana-song-font-kana);
+  font-weight: 500;
+  font-size: clamp(3.25rem, 14vh, 9rem);
+  line-height: 1;
+  color: var(--hiragana-song-kana);
+  text-shadow: 0 0 36px rgba(239, 230, 216, 0.14);
+}
+
+.hiragana-song-layer.is-romaji-mode .hiragana-song-chart.is-focus .hiragana-song-kana {
+  font-family: var(--hiragana-song-font-romaji);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  font-size: clamp(2.4rem, 10vh, 6.5rem);
+}
+
+/* ── Full chart (closing) ── */
+.hiragana-song-chart.is-full {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.35rem, 1.4vh, 0.85rem);
+  opacity: 0;
+  transition: opacity var(--hiragana-song-row-fade, 900ms) ease;
+}
+
+.hiragana-song-chart.is-full.is-row-visible {
+  opacity: 1;
+}
+
+.hiragana-song-chart.is-full .hiragana-song-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.2rem, 1.2vw, 0.75rem);
+}
+
+.hiragana-song-chart.is-full .hiragana-song-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(2.4rem, 6vh, 4.2rem);
+}
+
+.hiragana-song-chart.is-full .hiragana-song-cell.is-empty {
+  visibility: hidden;
+}
+
+.hiragana-song-chart.is-full .hiragana-song-kana {
+  font-family: var(--hiragana-song-font-kana);
+  font-weight: 500;
+  font-size: clamp(1.55rem, 4.8vh, 3.2rem);
+  line-height: 1;
+  color: var(--hiragana-song-kana);
+  text-shadow: 0 0 24px rgba(239, 230, 216, 0.1);
+}
+
+@media (max-width: 720px) {
+  .hiragana-song-stage {
+    width: min(96vw, 560px);
+    padding: 1.25rem 0.5rem;
+  }
+
+  .hiragana-song-chart.is-focus .hiragana-song-kana {
+    font-size: clamp(2.4rem, 12vw, 4.8rem);
+  }
+
+  .hiragana-song-layer.is-romaji-mode .hiragana-song-chart.is-focus .hiragana-song-kana {
+    font-size: clamp(1.7rem, 9vw, 3.4rem);
+  }
+}

@@ -133,8 +133,9 @@ html.kml-typography-mobile-refine.kml-verse-authored
   .exhibition-verse-jp.is-vocab-verse-reveal.has-authored-lines
   .kml-verse-line {
   display: block;
+  /* text-wrap:unset after nowrap resets wrap mode in Chromium (shorthand split) */
   white-space: nowrap;
-  text-wrap: unset;
+  text-wrap: nowrap;
 }
 
 html.kml-typography-mobile-refine.kml-verse-authored

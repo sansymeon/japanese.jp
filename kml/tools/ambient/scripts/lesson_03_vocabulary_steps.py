@@ -137,8 +137,8 @@ VOCABULARY_BY_SLUG: dict[str, list[dict]] = {
     ],
     "specialty": [
         {"jp": "工", "reading": "こう", "en": "craft / artisan work"},
-        {"jp": "房", "reading": "ば", "en": "room / workshop"},
-        {"jp": "工房", "reading": "こうば", "en": "workshop", **_P},
+        {"jp": "房", "reading": "ぼう", "en": "room / workshop"},
+        {"jp": "工房", "reading": "こうぼう", "en": "workshop", **_P},
         {"jp": "床", "reading": "ゆか", "en": "floor"},
         {"jp": "工房の床", "en": "the workshop floor", **_P},
         {"jp": "工房の床に", "en": "upon the workshop floor", **_P},

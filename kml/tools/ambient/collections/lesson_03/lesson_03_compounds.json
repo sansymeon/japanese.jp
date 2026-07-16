@@ -1,0 +1,854 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_03_compounds",
+  "title": "Lesson 3 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Curated from kml/contents/books/book_01/compounds/lesson_03.html. ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 3,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 3.8,
+    "totalCompounds": 75,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1154900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_03.html"
+  },
+  "scenes": [
+    {
+      "id": "L03_tongue",
+      "kanji": "舌",
+      "keyword": "tongue",
+      "image": "studies/tongue.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "毒舌",
+            "reading": "どくぜつ",
+            "en": "Sharp tongue, sarcastic remark"
+          },
+          {
+            "jp": "舌打ち",
+            "reading": "したうち",
+            "en": "Clicking one's tongue"
+          },
+          {
+            "jp": "二枚舌",
+            "reading": "にまいじた",
+            "en": "Forked tongue; duplicity"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "tongue",
+        "prototype": true
+      },
+      "imageRev": 1782103301
+    },
+    {
+      "id": "L03_measuring_box",
+      "kanji": "升",
+      "keyword": "measuring box",
+      "image": "studies/measuring_box.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "一升",
+            "reading": "いっしょう",
+            "en": "1.8 liters"
+          },
+          {
+            "jp": "升酒",
+            "reading": "ますざけ",
+            "en": "Sake served in a wooden box"
+          },
+          {
+            "jp": "升目",
+            "reading": "ますめ",
+            "en": "Grid square"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "measuring_box",
+        "prototype": true
+      },
+      "imageRev": 1782103791
+    },
+    {
+      "id": "L03_rise",
+      "kanji": "昇",
+      "keyword": "rise",
+      "image": "studies/rise.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "昇進",
+            "reading": "しょうしん",
+            "en": "Promotion"
+          },
+          {
+            "jp": "昇格",
+            "reading": "しょうかく",
+            "en": "Upgrading, promotion"
+          },
+          {
+            "jp": "昇る",
+            "reading": "のぼる",
+            "en": "To rise"
+          },
+          {
+            "jp": "上昇",
+            "reading": "じょうしょう",
+            "en": "Rise, increase"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "rise",
+        "prototype": true
+      },
+      "imageRev": 1782104282
+    },
+    {
+      "id": "L03_round",
+      "kanji": "丸",
+      "keyword": "round",
+      "image": "studies/round.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 45%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "丸",
+            "reading": "まる",
+            "en": "Circle, round"
+          },
+          {
+            "jp": "丸ごと",
+            "reading": "まるごと",
+            "en": "Whole, entirely"
+          },
+          {
+            "jp": "日の丸",
+            "reading": "ひのまる",
+            "en": "Japan's national flag"
+          },
+          {
+            "jp": "弾丸",
+            "reading": "だんがん",
+            "en": "Bullet"
+          },
+          {
+            "jp": "丸太",
+            "reading": "まるた",
+            "en": "Log, timber"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "round",
+        "prototype": true
+      },
+      "imageFocus": "50% 45%",
+      "imageRev": 1782104332
+    },
+    {
+      "id": "L03_measurement",
+      "kanji": "寸",
+      "keyword": "measurement",
+      "image": "studies/measurement.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "寸法",
+            "reading": "すんぽう",
+            "en": "Measurement, dimensions"
+          },
+          {
+            "jp": "寸前",
+            "reading": "すんぜん",
+            "en": "Just before, on the verge of"
+          },
+          {
+            "jp": "一寸",
+            "reading": "ちょっと",
+            "en": "Just a little"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "measurement",
+        "prototype": true
+      },
+      "imageRev": 1782106004
+    },
+    {
+      "id": "L03_elbow",
+      "kanji": "肘",
+      "keyword": "elbow",
+      "image": "studies/elbow.png",
+      "galleryCamera": {
+        "motion": "drift-y",
+        "focus": "50% 52%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "肘",
+            "reading": "ひじ",
+            "en": "Elbow"
+          },
+          {
+            "jp": "肘掛け",
+            "reading": "ひじかけ",
+            "en": "Armrest"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "elbow",
+        "prototype": true
+      },
+      "imageFocus": "50% 52%",
+      "imageRev": 1782104746
+    },
+    {
+      "id": "L03_specialty",
+      "kanji": "専",
+      "keyword": "specialty",
+      "image": "studies/specialty.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "専門",
+            "reading": "せんもん",
+            "en": "Specialty, field of expertise"
+          },
+          {
+            "jp": "専用",
+            "reading": "せんよう",
+            "en": "Exclusive use"
+          },
+          {
+            "jp": "専攻",
+            "reading": "せんこう",
+            "en": "Major (academic), subject of study"
+          },
+          {
+            "jp": "専念",
+            "reading": "せんねん",
+            "en": "Devotion, dedication"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "specialty",
+        "prototype": true
+      },
+      "imageRev": 1781576072
+    },
+    {
+      "id": "L03_knowledgeable",
+      "kanji": "博",
+      "keyword": "knowledgeable",
+      "image": "studies/knowledgeable.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "博士",
+            "reading": "はかせ",
+            "en": "Doctor (PhD), learned person"
+          },
+          {
+            "jp": "博物館",
+            "reading": "はくぶつかん",
+            "en": "Museum"
+          },
+          {
+            "jp": "博識",
+            "reading": "はくしき",
+            "en": "Erudition, wide knowledge"
+          },
+          {
+            "jp": "博覧会",
+            "reading": "はくらんかい",
+            "en": "Expo, exhibition"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "knowledgeable",
+        "prototype": true
+      },
+      "imageRev": 1781576098
+    },
+    {
+      "id": "L03_signal",
+      "kanji": "卜",
+      "keyword": "signal",
+      "image": "studies/signal.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 42%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "占卜",
+            "reading": "せんぼく",
+            "en": "Divination, fortune-telling"
+          },
+          {
+            "jp": "卜占",
+            "reading": "ぼくせん",
+            "en": "Fortune-telling, augury"
+          },
+          {
+            "jp": "卜う",
+            "reading": "うらなう",
+            "en": "To divine, to tell fortunes"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "signal",
+        "prototype": true
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1782106932
+    },
+    {
+      "id": "L03_fortune_telling",
+      "kanji": "占",
+      "keyword": "fortune telling",
+      "image": "studies/fortune_telling.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "占う",
+            "reading": "うらなう",
+            "en": "To tell a fortune, predict"
+          },
+          {
+            "jp": "占い",
+            "reading": "うらない",
+            "en": "Fortune-telling"
+          },
+          {
+            "jp": "独占",
+            "reading": "どくせん",
+            "en": "Monopoly, exclusive possession"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "fortune_telling",
+        "prototype": true
+      },
+      "imageRev": 1782103490
+    },
+    {
+      "id": "L03_up",
+      "kanji": "上",
+      "keyword": "up",
+      "image": "studies/up.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 38%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "上",
+            "reading": "うえ",
+            "en": "Above, up"
+          },
+          {
+            "jp": "上がる",
+            "reading": "あがる",
+            "en": "To rise, go up"
+          },
+          {
+            "jp": "上げる",
+            "reading": "あげる",
+            "en": "To raise, lift up"
+          },
+          {
+            "jp": "向上",
+            "reading": "こうじょう",
+            "en": "Improvement, progress"
+          },
+          {
+            "jp": "上手",
+            "reading": "じょうず",
+            "en": "Skillful, good at"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "up",
+        "prototype": true
+      },
+      "imageFocus": "50% 38%",
+      "imageRev": 1781744770
+    },
+    {
+      "id": "L03_below",
+      "kanji": "下",
+      "keyword": "below",
+      "image": "studies/below.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "下",
+            "reading": "した",
+            "en": "Below, under"
+          },
+          {
+            "jp": "下がる",
+            "reading": "さがる",
+            "en": "To go down, drop"
+          },
+          {
+            "jp": "下げる",
+            "reading": "さげる",
+            "en": "To lower, reduce"
+          },
+          {
+            "jp": "地下",
+            "reading": "ちか",
+            "en": "Underground, basement"
+          },
+          {
+            "jp": "下手",
+            "reading": "へた",
+            "en": "Unskilled, poor at"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "below",
+        "prototype": true
+      },
+      "imageRev": 1782107772
+    },
+    {
+      "id": "L03_eminent",
+      "kanji": "卓",
+      "keyword": "eminent",
+      "image": "studies/eminent.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "卓球",
+            "reading": "たっきゅう",
+            "en": "Table tennis, ping-pong"
+          },
+          {
+            "jp": "卓上",
+            "reading": "たくじょう",
+            "en": "On the table, desktop"
+          },
+          {
+            "jp": "卓越",
+            "reading": "たくえつ",
+            "en": "Excellence, superiority"
+          },
+          {
+            "jp": "卓見",
+            "reading": "たっけん",
+            "en": "Insightful opinion, excellent view"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "eminent",
+        "prototype": true
+      },
+      "imageRev": 1782106372
+    },
+    {
+      "id": "L03_morning",
+      "kanji": "朝",
+      "keyword": "morning",
+      "image": "studies/morning.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 35%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "朝",
+            "reading": "あさ",
+            "en": "Morning"
+          },
+          {
+            "jp": "今朝",
+            "reading": "けさ",
+            "en": "This morning"
+          },
+          {
+            "jp": "毎朝",
+            "reading": "まいあさ",
+            "en": "Every morning"
+          },
+          {
+            "jp": "朝食",
+            "reading": "ちょうしょく",
+            "en": "Breakfast"
+          },
+          {
+            "jp": "朝日",
+            "reading": "あさひ",
+            "en": "Morning sun"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "morning",
+        "prototype": true
+      },
+      "imageFocus": "50% 35%",
+      "imageRev": 1781576240
+    },
+    {
+      "id": "L03_derision",
+      "kanji": "嘲",
+      "keyword": "derision",
+      "image": "studies/derision.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "嘲笑",
+            "reading": "ちょうしょう",
+            "en": "Derisive laughter, scornful laugh"
+          },
+          {
+            "jp": "嘲る",
+            "reading": "あざける",
+            "en": "To ridicule, mock, sneer at"
+          },
+          {
+            "jp": "冷嘲",
+            "reading": "れいちょう",
+            "en": "Sarcastic ridicule, cold sneer"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "derision",
+        "prototype": true
+      },
+      "imageRev": 1782104452
+    },
+    {
+      "id": "L03_only",
+      "kanji": "只",
+      "keyword": "only",
+      "image": "studies/only.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "只",
+            "reading": "ただ",
+            "en": "Only, just, merely"
+          },
+          {
+            "jp": "只今",
+            "reading": "ただいま",
+            "en": "Right now; I’m home!"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "only",
+        "prototype": true
+      },
+      "imageRev": 1782104768
+    },
+    {
+      "id": "L03_shellfish",
+      "kanji": "貝",
+      "keyword": "shellfish",
+      "image": "studies/shellfish.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "貝",
+            "reading": "かい",
+            "en": "Shellfish, shell"
+          },
+          {
+            "jp": "貝殻",
+            "reading": "かいがら",
+            "en": "Seashell"
+          },
+          {
+            "jp": "巻貝",
+            "reading": "まきがい",
+            "en": "Spiral shell"
+          },
+          {
+            "jp": "貝類",
+            "reading": "かいるい",
+            "en": "Shellfish"
+          },
+          {
+            "jp": "真珠貝",
+            "reading": "しんじゅがい",
+            "en": "Pearl oyster"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "shellfish",
+        "prototype": true
+      },
+      "imageRev": 1781576331
+    },
+    {
+      "id": "L03_pop_song",
+      "kanji": "唄",
+      "keyword": "pop song",
+      "image": "studies/pop_song.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 48%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "唄",
+            "reading": "うた",
+            "en": "Song, folk song"
+          },
+          {
+            "jp": "子守唄",
+            "reading": "こもりうた",
+            "en": "Lullaby"
+          },
+          {
+            "jp": "唄声",
+            "reading": "うたごえ",
+            "en": "Singing voice"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "pop_song",
+        "prototype": true
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781576287
+    },
+    {
+      "id": "L03_virtue",
+      "kanji": "貞",
+      "keyword": "virtue",
+      "image": "studies/virtue.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "貞節",
+            "reading": "ていせつ",
+            "en": "Fidelity, chastity"
+          },
+          {
+            "jp": "貞操",
+            "reading": "ていそう",
+            "en": "Virtue, moral integrity"
+          },
+          {
+            "jp": "不貞",
+            "reading": "ふてい",
+            "en": "Infidelity, unfaithfulness"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "virtue",
+        "prototype": true
+      },
+      "imageRev": 1782104662
+    },
+    {
+      "id": "L03_employee",
+      "kanji": "員",
+      "keyword": "employee",
+      "image": "studies/employee.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "社員",
+            "reading": "しゃいん",
+            "en": "Company employee"
+          },
+          {
+            "jp": "店員",
+            "reading": "てんいん",
+            "en": "Store clerk, shop staff"
+          },
+          {
+            "jp": "職員",
+            "reading": "しょくいん",
+            "en": "Staff member, personnel"
+          },
+          {
+            "jp": "全員",
+            "reading": "ぜんいん",
+            "en": "All members"
+          },
+          {
+            "jp": "会員",
+            "reading": "かいいん",
+            "en": "Member"
+          },
+          {
+            "jp": "議員",
+            "reading": "ぎいん",
+            "en": "Assembly member, legislator"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 3,
+        "slug": "employee",
+        "prototype": true
+      },
+      "imageRev": 1782104786
+    }
+  ]
+}

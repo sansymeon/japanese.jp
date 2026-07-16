@@ -1,0 +1,847 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_05_compounds",
+  "title": "Lesson 5 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Curated from kml/contents/books/book_01/compounds/lesson_05.html. ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 5,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 3.7,
+    "totalCompounds": 74,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1143500,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_05.html"
+  },
+  "scenes": [
+    {
+      "id": "L05_craft",
+      "kanji": "工",
+      "keyword": "craft",
+      "image": "studies/craft.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "工場",
+            "reading": "こうじょう",
+            "en": "Factory"
+          },
+          {
+            "jp": "工事",
+            "reading": "こうじ",
+            "en": "Construction work"
+          },
+          {
+            "jp": "工学",
+            "reading": "こうがく",
+            "en": "Engineering"
+          },
+          {
+            "jp": "大工",
+            "reading": "だいく",
+            "en": "Carpenter"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "craft",
+        "prototype": true
+      },
+      "imageRev": 1781696805
+    },
+    {
+      "id": "L05_left",
+      "kanji": "左",
+      "keyword": "left",
+      "image": "studies/left.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "左",
+            "reading": "ひだり",
+            "en": "Left"
+          },
+          {
+            "jp": "左右",
+            "reading": "さゆう",
+            "en": "Left and right; influence"
+          },
+          {
+            "jp": "左利き",
+            "reading": "ひだりきき",
+            "en": "Left-handed"
+          },
+          {
+            "jp": "左翼",
+            "reading": "さよく",
+            "en": "Left wing"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "left",
+        "prototype": true
+      },
+      "imageRev": 1782117203
+    },
+    {
+      "id": "L05_right",
+      "kanji": "右",
+      "keyword": "right",
+      "image": "studies/right.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "右",
+            "reading": "みぎ",
+            "en": "Right"
+          },
+          {
+            "jp": "左右",
+            "reading": "さゆう",
+            "en": "Left and right; control, influence"
+          },
+          {
+            "jp": "右手",
+            "reading": "みぎて",
+            "en": "Right hand"
+          },
+          {
+            "jp": "右折",
+            "reading": "うせつ",
+            "en": "Right turn"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "right",
+        "prototype": true
+      },
+      "imageRev": 1782117220
+    },
+    {
+      "id": "L05_possess",
+      "kanji": "有",
+      "keyword": "possess",
+      "image": "studies/possess.png",
+      "galleryCamera": {
+        "motion": "drift-y",
+        "focus": "50% 48%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "有名",
+            "reading": "ゆうめい",
+            "en": "Famous"
+          },
+          {
+            "jp": "有る",
+            "reading": "ある",
+            "en": "To exist (inanimate); to have"
+          },
+          {
+            "jp": "所有",
+            "reading": "しょゆう",
+            "en": "Ownership"
+          },
+          {
+            "jp": "有効",
+            "reading": "ゆうこう",
+            "en": "Valid, effective"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "possess",
+        "prototype": true
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781689004
+    },
+    {
+      "id": "L05_bribe",
+      "kanji": "賄",
+      "keyword": "bribe",
+      "image": "studies/bribe.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "賄う",
+            "reading": "まかなう",
+            "en": "To provide, to cover"
+          },
+          {
+            "jp": "賄賂",
+            "reading": "わいろ",
+            "en": "Bribe"
+          },
+          {
+            "jp": "賄費",
+            "reading": "まかないひ",
+            "en": "Living expenses, board"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "bribe",
+        "prototype": true
+      },
+      "imageRev": 1781689036
+    },
+    {
+      "id": "L05_tribute",
+      "kanji": "貢",
+      "keyword": "tribute",
+      "image": "studies/tribute.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "貢ぐ",
+            "reading": "みつぐ",
+            "en": "To support financially, to offer"
+          },
+          {
+            "jp": "貢献",
+            "reading": "こうけん",
+            "en": "Contribution, service"
+          },
+          {
+            "jp": "朝貢",
+            "reading": "ちょうこう",
+            "en": "Tributary offering"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "tribute",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_paragraph",
+      "kanji": "項",
+      "keyword": "paragraph",
+      "image": "studies/paragraph.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "事項",
+            "reading": "じこう",
+            "en": "Matter, item, fact"
+          },
+          {
+            "jp": "条項",
+            "reading": "じょうこう",
+            "en": "Article, clause"
+          },
+          {
+            "jp": "項目",
+            "reading": "こうもく",
+            "en": "Item, entry"
+          },
+          {
+            "jp": "各項",
+            "reading": "かくこう",
+            "en": "Each item/clause"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "paragraph",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_sword",
+      "kanji": "刀",
+      "keyword": "sword",
+      "image": "studies/sword.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 42%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "刀",
+            "reading": "かたな",
+            "en": "Sword"
+          },
+          {
+            "jp": "日本刀",
+            "reading": "にほんとう",
+            "en": "Japanese sword"
+          },
+          {
+            "jp": "短刀",
+            "reading": "たんとう",
+            "en": "Dagger, short sword"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "sword",
+        "prototype": true
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1781614218
+    },
+    {
+      "id": "L05_blade",
+      "kanji": "刃",
+      "keyword": "blade",
+      "image": "studies/blade.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "刃",
+            "reading": "は",
+            "en": "Blade, edge"
+          },
+          {
+            "jp": "刃物",
+            "reading": "はもの",
+            "en": "Sharp-edged tool, cutlery"
+          },
+          {
+            "jp": "刃先",
+            "reading": "はさき",
+            "en": "Tip of a blade"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "blade",
+        "prototype": true
+      },
+      "imageRev": 1781614270
+    },
+    {
+      "id": "L05_cut",
+      "kanji": "切",
+      "keyword": "cut",
+      "image": "studies/cut.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "切る",
+            "reading": "きる",
+            "en": "To cut"
+          },
+          {
+            "jp": "大切",
+            "reading": "たいせつ",
+            "en": "Important, valuable"
+          },
+          {
+            "jp": "親切",
+            "reading": "しんせつ",
+            "en": "Kindness, gentle"
+          },
+          {
+            "jp": "締切",
+            "reading": "しめきり",
+            "en": "Deadline"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "cut",
+        "prototype": true
+      },
+      "imageRev": 1782117492
+    },
+    {
+      "id": "L05_seduce",
+      "kanji": "召",
+      "keyword": "seduce",
+      "image": "studies/seduce.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "召す",
+            "reading": "めす",
+            "en": "To summon, wear, eat"
+          },
+          {
+            "jp": "召集",
+            "reading": "しょうしゅう",
+            "en": "Convene, assemble"
+          },
+          {
+            "jp": "召喚",
+            "reading": "しょうかん",
+            "en": "Summons (e.g., legal), calling"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "seduce",
+        "prototype": true
+      },
+      "imageRev": 1781765112
+    },
+    {
+      "id": "L05_shining",
+      "kanji": "昭",
+      "keyword": "shining",
+      "image": "studies/shining.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 38%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "昭和",
+            "reading": "しょうわ",
+            "en": "Shōwa era"
+          },
+          {
+            "jp": "昭明",
+            "reading": "しょうめい",
+            "en": "Brightness, illumination"
+          },
+          {
+            "jp": "昭然",
+            "reading": "しょうぜん",
+            "en": "Clear, obvious"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "shining",
+        "prototype": true
+      },
+      "imageFocus": "50% 38%",
+      "imageRev": 1781868894
+    },
+    {
+      "id": "L05_rule",
+      "kanji": "則",
+      "keyword": "rule",
+      "image": "studies/rule.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "原則",
+            "reading": "げんそく",
+            "en": "Principle, general rule"
+          },
+          {
+            "jp": "規則",
+            "reading": "きそく",
+            "en": "Rule, regulation"
+          },
+          {
+            "jp": "法則",
+            "reading": "ほうそく",
+            "en": "Law"
+          },
+          {
+            "jp": "反則",
+            "reading": "はんそく",
+            "en": "Foul, infraction"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "rule",
+        "prototype": true
+      },
+      "imageRev": 1781868219
+    },
+    {
+      "id": "L05_vice",
+      "kanji": "副",
+      "keyword": "vice",
+      "image": "studies/vice.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "副社長",
+            "reading": "ふくしゃちょう",
+            "en": "Vice president"
+          },
+          {
+            "jp": "副作用",
+            "reading": "ふくさよう",
+            "en": "Side effect"
+          },
+          {
+            "jp": "副詞",
+            "reading": "ふくし",
+            "en": "Adverb"
+          },
+          {
+            "jp": "副収入",
+            "reading": "ふくしゅうにゅう",
+            "en": "Secondary income"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "vice",
+        "prototype": true
+      },
+      "imageRev": 1781689154
+    },
+    {
+      "id": "L05_separate",
+      "kanji": "別",
+      "keyword": "separate",
+      "image": "studies/separate.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "別",
+            "reading": "べつ",
+            "en": "Difference, distinction"
+          },
+          {
+            "jp": "別れる",
+            "reading": "わかれる",
+            "en": "To separate, part"
+          },
+          {
+            "jp": "特別",
+            "reading": "とくべつ",
+            "en": "Special"
+          },
+          {
+            "jp": "区別",
+            "reading": "くべつ",
+            "en": "Distinction, classification"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "separate",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_street",
+      "kanji": "丁",
+      "keyword": "street",
+      "image": "studies/street.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "丁寧",
+            "reading": "ていねい",
+            "en": "Polite, careful"
+          },
+          {
+            "jp": "丁目",
+            "reading": "ちょうめ",
+            "en": "City district/block"
+          },
+          {
+            "jp": "丁度",
+            "reading": "ちょうど",
+            "en": "Just right, exactly"
+          },
+          {
+            "jp": "丁字路",
+            "reading": "ていじろ",
+            "en": "T-junction"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "street",
+        "prototype": true
+      },
+      "imageRev": 1781689138
+    },
+    {
+      "id": "L05_town",
+      "kanji": "町",
+      "keyword": "town",
+      "image": "studies/town.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 45%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "町",
+            "reading": "まち",
+            "en": "Town, neighborhood"
+          },
+          {
+            "jp": "町内",
+            "reading": "ちょうない",
+            "en": "Within the town/neighborhood"
+          },
+          {
+            "jp": "下町",
+            "reading": "したまち",
+            "en": "Downtown, traditional district"
+          },
+          {
+            "jp": "町民",
+            "reading": "ちょうみん",
+            "en": "Townspeople"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "town",
+        "prototype": true
+      },
+      "imageFocus": "50% 45%",
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L05_possible",
+      "kanji": "可",
+      "keyword": "possible",
+      "image": "studies/possible.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "可能",
+            "reading": "かのう",
+            "en": "Possible"
+          },
+          {
+            "jp": "不可",
+            "reading": "ふか",
+            "en": "Not allowed, impossible"
+          },
+          {
+            "jp": "可決",
+            "reading": "かけつ",
+            "en": "Approval"
+          },
+          {
+            "jp": "許可",
+            "reading": "きょか",
+            "en": "Permission, authorization"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "possible",
+        "prototype": true
+      },
+      "imageRev": 1781689119
+    },
+    {
+      "id": "L05_top",
+      "kanji": "頂",
+      "keyword": "top",
+      "image": "studies/top.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 40%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "頂く",
+            "reading": "いただく",
+            "en": "To receive"
+          },
+          {
+            "jp": "頂点",
+            "reading": "ちょうてん",
+            "en": "Summit, peak, apex"
+          },
+          {
+            "jp": "山頂",
+            "reading": "さんちょう",
+            "en": "Mountain summit"
+          },
+          {
+            "jp": "頂上",
+            "reading": "ちょうじょう",
+            "en": "Top, summit"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "top",
+        "prototype": true
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1781689064
+    },
+    {
+      "id": "L05_child",
+      "kanji": "子",
+      "keyword": "child",
+      "image": "studies/child.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "子供",
+            "reading": "こども",
+            "en": "Child"
+          },
+          {
+            "jp": "様子",
+            "reading": "ようす",
+            "en": "Appearance, state"
+          },
+          {
+            "jp": "電子",
+            "reading": "でんし",
+            "en": "Electron"
+          },
+          {
+            "jp": "王子",
+            "reading": "おうじ",
+            "en": "Prince"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 5,
+        "slug": "child",
+        "prototype": true
+      },
+      "imageRev": 1781689050
+    }
+  ]
+}

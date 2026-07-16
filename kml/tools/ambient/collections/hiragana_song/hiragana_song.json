@@ -1,0 +1,63 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "hiragana_song",
+  "title": "Hiragana Song",
+  "notes": "Fuji intro (~20s), then kana → romaji → kana with one large row at a time. Fuji returns at 4:51 through bed end; silent crest after. ~5:29.",
+  "soundtrack": {
+    "main": "audio/Peaceful_Hiragana_Journey_3verses.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2000,
+    "chartRevealMs": 2800,
+    "chartFadeOutMs": 3500,
+    "rowFadeMs": 900,
+    "fujiFadeMs": 4500,
+    "fujiExhaleMs": 3500,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2800,
+    "closingHoldMs": 4500,
+    "closingExhaleMs": 3500,
+    "closingBlackAfterMs": 800,
+    "closingSilenceHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "hiraganaSong",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "hiraganaSong",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "hiraganaSong",
+    "stage": "hiraganaSong",
+    "soundtrackDurationMs": 329300,
+    "introMs": 20000,
+    "verseOrder": ["kana", "romaji", "kana"]
+  },
+  "scenes": [
+    {
+      "id": "gojuon_chart",
+      "fujiImage": "../../assets/images/mt_fuji.png",
+      "introEndMs": 20000,
+      "fujiAtMs": 291000,
+      "rowOffsetsMs": [9800, 15000, 20200, 25400, 32000, 39000, 43500, 48600, 55800, 70000],
+      "rowIds": ["a", "ka", "sa", "ta", "na", "ha", "ma", "ya", "ra", "wa"],
+      "verses": [
+        { "id": "kana_1", "mode": "kana", "startMs": 20000 },
+        { "id": "romaji", "mode": "romaji", "startMs": 111000 },
+        { "id": "kana_2", "mode": "kana", "startMs": 202000 }
+      ]
+    }
+  ]
+}

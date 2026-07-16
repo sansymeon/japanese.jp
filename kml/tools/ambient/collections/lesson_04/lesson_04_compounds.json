@@ -1,0 +1,859 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_04_compounds",
+  "title": "Lesson 4 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Curated from kml/contents/books/book_01/compounds/lesson_04.html. ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 4,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 3.8,
+    "totalCompounds": 76,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1166300,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_04.html"
+  },
+  "scenes": [
+    {
+      "id": "L04_post_a_bill",
+      "kanji": "貼",
+      "keyword": "post a bill",
+      "image": "studies/post_a_bill.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "貼る",
+            "reading": "はる",
+            "en": "To stick, to paste, to post"
+          },
+          {
+            "jp": "貼り紙",
+            "reading": "はりがみ",
+            "en": "Posted notice, paper sign"
+          },
+          {
+            "jp": "貼付",
+            "reading": "ちょうふ",
+            "en": "Attachment (of documents), affixing"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "post_a_bill",
+        "prototype": true
+      },
+      "imageRev": 1782116442
+    },
+    {
+      "id": "L04_see",
+      "kanji": "見",
+      "keyword": "see",
+      "image": "studies/see.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "見る",
+            "reading": "みる",
+            "en": "To see, to look at"
+          },
+          {
+            "jp": "見える",
+            "reading": "みえる",
+            "en": "To be visible"
+          },
+          {
+            "jp": "見学",
+            "reading": "けんがく",
+            "en": "Observation, field trip"
+          },
+          {
+            "jp": "発見",
+            "reading": "はっけん",
+            "en": "Discovery"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "see",
+        "prototype": true
+      },
+      "imageRev": 1782116478
+    },
+    {
+      "id": "L04_newborn",
+      "kanji": "児",
+      "keyword": "newborn",
+      "image": "studies/newborn.png",
+      "galleryCamera": {
+        "motion": "drift-y",
+        "focus": "50% 48%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "新生児",
+            "reading": "しんせいじ",
+            "en": "Newborn baby"
+          },
+          {
+            "jp": "幼児",
+            "reading": "ようじ",
+            "en": "Infant, toddler"
+          },
+          {
+            "jp": "児童",
+            "reading": "じどう",
+            "en": "Child, juvenile"
+          },
+          {
+            "jp": "胎児",
+            "reading": "たいじ",
+            "en": "Fetus"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "newborn",
+        "prototype": true
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781757293
+    },
+    {
+      "id": "L04_beginning",
+      "kanji": "元",
+      "keyword": "beginning",
+      "image": "studies/beginning.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 38%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "元",
+            "reading": "もと",
+            "en": "Origin, base, former"
+          },
+          {
+            "jp": "元気",
+            "reading": "げんき",
+            "en": "Healthy, energetic"
+          },
+          {
+            "jp": "地元",
+            "reading": "じもと",
+            "en": "Local area, hometown"
+          },
+          {
+            "jp": "元日",
+            "reading": "がんじつ",
+            "en": "New Year’s Day"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "beginning",
+        "prototype": true
+      },
+      "imageFocus": "50% 38%",
+      "imageRev": 1781759391
+    },
+    {
+      "id": "L04_page",
+      "kanji": "頁",
+      "keyword": "page",
+      "image": "studies/page.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "頁",
+            "reading": "ページ",
+            "en": "Page"
+          },
+          {
+            "jp": "頁数",
+            "reading": "けっすう",
+            "en": "Number of pages"
+          },
+          {
+            "jp": "最終頁",
+            "reading": "さいしゅうけつ",
+            "en": "Last page"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "page",
+        "prototype": true
+      },
+      "imageRev": 1782116901
+    },
+    {
+      "id": "L04_stubborn",
+      "kanji": "頑",
+      "keyword": "stubborn",
+      "image": "studies/stubborn.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "頑張る",
+            "reading": "がんばる",
+            "en": "To do one’s best, to persist"
+          },
+          {
+            "jp": "頑固",
+            "reading": "がんこ",
+            "en": "Stubborn, obstinate"
+          },
+          {
+            "jp": "頑丈",
+            "reading": "がんじょう",
+            "en": "Solid, sturdy, robust"
+          },
+          {
+            "jp": "頑健",
+            "reading": "がんけん",
+            "en": "Healthy and strong"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "stubborn",
+        "prototype": true
+      },
+      "imageRev": 1781759265
+    },
+    {
+      "id": "L04_mediocre",
+      "kanji": "凡",
+      "keyword": "mediocre",
+      "image": "studies/mediocre.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "平凡",
+            "reading": "へいぼん",
+            "en": "Commonplace, mediocre"
+          },
+          {
+            "jp": "凡人",
+            "reading": "ぼんじん",
+            "en": "Ordinary person, mediocrity"
+          },
+          {
+            "jp": "非凡",
+            "reading": "ひぼん",
+            "en": "Extraordinary, uncommon"
+          },
+          {
+            "jp": "凡庸",
+            "reading": "ぼんよう",
+            "en": "Mediocrity, dullness"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "mediocre",
+        "prototype": true
+      },
+      "imageRev": 1782116556
+    },
+    {
+      "id": "L04_defeat",
+      "kanji": "負",
+      "keyword": "defeat",
+      "image": "studies/defeat.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "負ける",
+            "reading": "まける",
+            "en": "To lose (a match), to be defeated"
+          },
+          {
+            "jp": "勝負",
+            "reading": "しょうぶ",
+            "en": "Match, contest"
+          },
+          {
+            "jp": "負傷",
+            "reading": "ふしょう",
+            "en": "Injury, wound"
+          },
+          {
+            "jp": "背負う",
+            "reading": "せおう",
+            "en": "To carry on one's back, to take responsibility"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "defeat",
+        "prototype": true
+      },
+      "imageRev": 1782116601
+    },
+    {
+      "id": "L04_ten_thousand",
+      "kanji": "万",
+      "keyword": "ten thousand",
+      "image": "studies/ten_thousand.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 45%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "一万",
+            "reading": "いちまん",
+            "en": "Ten thousand"
+          },
+          {
+            "jp": "万一",
+            "reading": "まんいち",
+            "en": "Just in case, by some chance"
+          },
+          {
+            "jp": "万歳",
+            "reading": "ばんざい",
+            "en": "Hooray! Long live!"
+          },
+          {
+            "jp": "万人",
+            "reading": "ばんにん",
+            "en": "Everyone, all people"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "ten_thousand",
+        "prototype": true
+      },
+      "imageFocus": "50% 45%",
+      "imageRev": 1782116621
+    },
+    {
+      "id": "L04_phrase",
+      "kanji": "句",
+      "keyword": "phrase",
+      "image": "studies/phrase.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "句",
+            "reading": "く",
+            "en": "Phrase, clause"
+          },
+          {
+            "jp": "文句",
+            "reading": "もんく",
+            "en": "Complaint; phrase, expression"
+          },
+          {
+            "jp": "句読点",
+            "reading": "くとうてん",
+            "en": "Punctuation marks"
+          },
+          {
+            "jp": "警句",
+            "reading": "けいく",
+            "en": "Aphorism, maxim"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "phrase",
+        "prototype": true
+      },
+      "imageRev": 1782116881
+    },
+    {
+      "id": "L04_texture",
+      "kanji": "肌",
+      "keyword": "texture",
+      "image": "studies/texture.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "肌",
+            "reading": "はだ",
+            "en": "Skin, surface"
+          },
+          {
+            "jp": "肌触り",
+            "reading": "はだざわり",
+            "en": "Texture, how something feels to the touch"
+          },
+          {
+            "jp": "肌色",
+            "reading": "はだいろ",
+            "en": "Skin color"
+          },
+          {
+            "jp": "素肌",
+            "reading": "すはだ",
+            "en": "Bare skin, natural skin"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "texture",
+        "prototype": true
+      },
+      "imageRev": 1781688984
+    },
+    {
+      "id": "L04_ten_days",
+      "kanji": "旬",
+      "keyword": "ten days",
+      "image": "studies/ten_days.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "上旬",
+            "reading": "じょうじゅん",
+            "en": "First third of the month"
+          },
+          {
+            "jp": "中旬",
+            "reading": "ちゅうじゅん",
+            "en": "Middle third of the month"
+          },
+          {
+            "jp": "下旬",
+            "reading": "げじゅん",
+            "en": "Last third of the month"
+          },
+          {
+            "jp": "旬",
+            "reading": "しゅん",
+            "en": "In season"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "ten_days",
+        "prototype": true
+      },
+      "imageRev": 1782116686
+    },
+    {
+      "id": "L04_ladle",
+      "kanji": "勺",
+      "keyword": "ladle",
+      "image": "studies/ladle.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 42%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "勺",
+            "reading": "しゃく",
+            "en": "Traditional measure"
+          },
+          {
+            "jp": "一勺",
+            "reading": "いっしゃく",
+            "en": "One shaku"
+          },
+          {
+            "jp": "酒勺",
+            "reading": "さかずき",
+            "en": "Sake ladle or cup"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "ladle",
+        "prototype": true
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1782116703
+    },
+    {
+      "id": "L04_bulls_eye",
+      "kanji": "的",
+      "keyword": "bulls eye",
+      "image": "studies/bulls_eye.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 40%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "的",
+            "reading": "まと",
+            "en": "Target, mark, bull’s eye"
+          },
+          {
+            "jp": "目的",
+            "reading": "もくてき",
+            "en": "Purpose, goal"
+          },
+          {
+            "jp": "具体的",
+            "reading": "ぐたいてき",
+            "en": "Concrete, specific"
+          },
+          {
+            "jp": "標的",
+            "reading": "ひょうてき",
+            "en": "Target"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "bulls_eye",
+        "prototype": true
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1782116719
+    },
+    {
+      "id": "L04_neck",
+      "kanji": "首",
+      "keyword": "neck",
+      "image": "studies/neck.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "首",
+            "reading": "くび",
+            "en": "Neck (Kunyomi standalone); also used for “head” or “fired”"
+          },
+          {
+            "jp": "首都",
+            "reading": "しゅと",
+            "en": "Capital city"
+          },
+          {
+            "jp": "首相",
+            "reading": "しゅしょう",
+            "en": "Prime Minister"
+          },
+          {
+            "jp": "部首",
+            "reading": "ぶしゅ",
+            "en": "Radical"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "neck",
+        "prototype": true
+      },
+      "imageRev": 1782116744
+    },
+    {
+      "id": "L04_hook",
+      "kanji": "乙",
+      "keyword": "hook",
+      "image": "studies/hook.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "乙",
+            "reading": "おつ",
+            "en": "Stylish; second in ranking; quirky taste"
+          },
+          {
+            "jp": "乙女",
+            "reading": "おとめ",
+            "en": "Maiden, young lady"
+          },
+          {
+            "jp": "甲乙",
+            "reading": "こうおつ",
+            "en": "A and B; superior and inferior"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "hook",
+        "prototype": true
+      },
+      "imageRev": 1782116786
+    },
+    {
+      "id": "L04_riot",
+      "kanji": "乱",
+      "keyword": "riot",
+      "image": "studies/riot.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "混乱",
+            "reading": "こんらん",
+            "en": "Confusion, chaos"
+          },
+          {
+            "jp": "暴乱",
+            "reading": "ぼうらん",
+            "en": "Riot, insurrection"
+          },
+          {
+            "jp": "乱暴",
+            "reading": "らんぼう",
+            "en": "Violence, roughness"
+          },
+          {
+            "jp": "乱用",
+            "reading": "らんよう",
+            "en": "Abuse, misuse"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "riot",
+        "prototype": true
+      },
+      "imageRev": 1781696946
+    },
+    {
+      "id": "L04_straightaway",
+      "kanji": "直",
+      "keyword": "straightaway",
+      "image": "studies/straightaway.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "直す",
+            "reading": "なおす",
+            "en": "To fix, to correct"
+          },
+          {
+            "jp": "正直",
+            "reading": "しょうじき",
+            "en": "Honesty"
+          },
+          {
+            "jp": "直接",
+            "reading": "ちょくせつ",
+            "en": "Direct, immediate"
+          },
+          {
+            "jp": "直行",
+            "reading": "ちょっこう",
+            "en": "Going straight"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "straightaway",
+        "prototype": true
+      },
+      "imageRev": 1782116813
+    },
+    {
+      "id": "L04_tool",
+      "kanji": "具",
+      "keyword": "tool",
+      "image": "studies/tool.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "家具",
+            "reading": "かぐ",
+            "en": "Furniture"
+          },
+          {
+            "jp": "具合",
+            "reading": "ぐあい",
+            "en": "Condition, health"
+          },
+          {
+            "jp": "筆記具",
+            "reading": "ひっきぐ",
+            "en": "Writing instrument"
+          },
+          {
+            "jp": "具現化",
+            "reading": "ぐげんか",
+            "en": "Realization, materialization"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "tool",
+        "prototype": true
+      },
+      "imageRev": 1782116833
+    },
+    {
+      "id": "L04_true",
+      "kanji": "真",
+      "keyword": "true",
+      "image": "studies/true.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 45%"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "真実",
+            "reading": "しんじつ",
+            "en": "Truth, reality"
+          },
+          {
+            "jp": "写真",
+            "reading": "しゃしん",
+            "en": "Photograph"
+          },
+          {
+            "jp": "真剣",
+            "reading": "しんけん",
+            "en": "Seriousness, earnest"
+          },
+          {
+            "jp": "真夜中",
+            "reading": "まよなか",
+            "en": "Midnight"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 4,
+        "slug": "true",
+        "prototype": true
+      },
+      "imageFocus": "50% 45%",
+      "imageRev": 1782116851
+    }
+  ]
+}

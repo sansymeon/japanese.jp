@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -10,6 +11,30 @@ import time
 from pathlib import Path
 
 VIEWPORT = {"width": 1920, "height": 1080}
+
+_AMBIENT_ROOT = Path(__file__).resolve().parents[1]
+_PLAYWRIGHT_BROWSERS = _AMBIENT_ROOT / ".playwright-browsers"
+if _PLAYWRIGHT_BROWSERS.is_dir():
+    os.environ.setdefault("PLAYWRIGHT_BROWSERS_PATH", str(_PLAYWRIGHT_BROWSERS))
+
+
+def exhibition_record_url(
+    *,
+    port: int,
+    collection_id: str,
+    display: dict | None = None,
+) -> str:
+    """Build exhibition.html URL with typography / verseMode from collection display."""
+    display = display or {}
+    params = [f"collection={collection_id}"]
+    typo = display.get("typography")
+    if typo:
+        params.append(f"typography={typo}")
+    verse_mode = display.get("verseMode")
+    if verse_mode:
+        params.append(f"verseMode={verse_mode}")
+    query = "&".join(params)
+    return f"http://127.0.0.1:{port}/exhibition.html?{query}"
 
 
 def ensure_deps() -> None:
@@ -71,6 +96,48 @@ def heart_opening_timeline_ms(collection: dict, root: Path) -> tuple[int, int]:
     flute_path = root / (bookends.get("opening", {}).get("audio") or "audio/exhibition_flute_intro.mp3")
     flute_ms = int(probe_duration_seconds(flute_path) * 1000) if flute_path.is_file() else 0
     return before, before + flute_ms + exhale + after
+
+
+def stroke_order_soundtrack_start_ms(collection: dict) -> int:
+    """When main soundtrack begins — after initial exhibition black on scene 0."""
+    t = collection.get("exhibition") or {}
+    return int(t.get("exhibitionBlackBeforeMs", 0))
+
+
+def grade_stroke_order_soundtrack_start_ms(collection: dict) -> int:
+    """When main soundtrack begins for elementary grade stroke-order bookends.
+
+    Matches exhibition-engine.js: scheduleSoundtrackAfterBookendImage fires from
+    onImageReady (after openingBlackBeforeMs, before the reveal fade completes).
+    """
+    t = collection.get("exhibition") or {}
+    opening = (collection.get("bookends") or {}).get("opening") or {}
+    if opening.get("startSoundtrackWithImage"):
+        before = int(t.get("openingBlackBeforeMs", 0))
+        delay = int(
+            opening.get("startSoundtrackAfterImageMs")
+            or t.get("openingSoundtrackDelayMs", 0)
+        )
+        return before + delay
+    return stroke_order_soundtrack_start_ms(collection)
+
+
+def compounds_exhibition_soundtrack_start_ms(collection: dict) -> int:
+    """When main soundtrack begins — after initial black on first compounds exhibit."""
+    t = collection.get("exhibition") or {}
+    return int(t.get("exhibitionBlackBeforeMs", 0))
+
+
+def vocabulary_exhibition_soundtrack_start_ms(collection: dict) -> int:
+    """When main soundtrack begins — after intro black + artwork fade-in."""
+    t = collection.get("exhibition") or {}
+    return int(t.get("exhibitionBlackBeforeMs", 0)) + int(t.get("artworkArrivalFadeMs", 0))
+
+
+def reading_exhibition_soundtrack_start_ms(collection: dict) -> int:
+    """When main soundtrack begins — after initial black, with first artwork fade."""
+    t = collection.get("exhibition") or {}
+    return int(t.get("exhibitionBlackBeforeMs", 0))
 
 
 def compounds_school_soundtrack_start_ms(collection: dict) -> int:
@@ -172,12 +239,27 @@ def start_server(root: Path, port: int) -> subprocess.Popen:
     return proc
 
 
+def stop_server(proc: subprocess.Popen) -> None:
+    """Stop the local http.server; ignore sandbox PermissionError on terminate."""
+    if proc.poll() is not None:
+        return
+    try:
+        proc.terminate()
+        proc.wait(timeout=5)
+    except (PermissionError, ProcessLookupError, subprocess.TimeoutExpired):
+        try:
+            proc.kill()
+        except (PermissionError, ProcessLookupError):
+            pass
+
+
 def mux_video_with_audio(
     *,
     webm: Path,
     output_mp4: Path,
     filter_complex: str,
     audio_inputs: list[Path],
+    video_from_mp4: bool = False,
 ) -> None:
     cmd = ["ffmpeg", "-y", "-i", str(webm)]
     for audio in audio_inputs:
@@ -191,13 +273,22 @@ def mux_video_with_audio(
             "-map",
             "[a]",
             "-c:v",
-            "libx264",
-            "-preset",
-            "slow",
-            "-crf",
-            "18",
-            "-pix_fmt",
-            "yuv420p",
+            "copy" if video_from_mp4 else "libx264",
+        ]
+    )
+    if not video_from_mp4:
+        cmd.extend(
+            [
+                "-preset",
+                "slow",
+                "-crf",
+                "18",
+                "-pix_fmt",
+                "yuv420p",
+            ]
+        )
+    cmd.extend(
+        [
             "-c:a",
             "aac",
             "-b:a",
@@ -207,6 +298,55 @@ def mux_video_with_audio(
         ]
     )
     subprocess.run(cmd, check=True)
+
+
+def apply_mp4_end_fade(
+    path: Path,
+    *,
+    fade_start_s: int,
+    fade_duration_s: int = 10,
+    preset: str = "medium",
+) -> None:
+    """Fade video/audio out from fade_start_s and trim the file at fade end."""
+    cut_s = fade_start_s + fade_duration_s
+    tmp = path.with_name(f"{path.stem}.fade.tmp{path.suffix}")
+    if tmp.exists():
+        tmp.unlink()
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-y",
+            "-i",
+            str(path),
+            "-vf",
+            f"fade=t=out:st={fade_start_s}:d={fade_duration_s}",
+            "-af",
+            f"afade=t=out:st={fade_start_s}:d={fade_duration_s}",
+            "-t",
+            str(cut_s),
+            "-c:v",
+            "libx264",
+            "-preset",
+            preset,
+            "-crf",
+            "18",
+            "-pix_fmt",
+            "yuv420p",
+            "-c:a",
+            "aac",
+            "-b:a",
+            "192k",
+            str(tmp),
+        ],
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    tmp.replace(path)
+
+
+def format_mmss(total_s: int) -> str:
+    return f"{total_s // 60}:{total_s % 60:02d}"
 
 
 def capture_exhibition_webm(
@@ -238,6 +378,10 @@ def capture_exhibition_webm(
         page = context.new_page()
         page.goto(url, wait_until="load", timeout=120_000)
         page.wait_for_function("() => window.kmlExhibition", timeout=120_000)
+        page.wait_for_function(
+            "() => document.fonts && document.fonts.status === 'loaded'",
+            timeout=120_000,
+        )
 
         gate = page.locator("[data-exhibition-autoplay-gate]")
         try:

@@ -1,0 +1,867 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_08_compounds",
+  "title": "Lesson 8 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_08.html. ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 8,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_08.html"
+  },
+  "scenes": [
+    {
+      "id": "L08_spring",
+      "kanji": "泉",
+      "keyword": "spring",
+      "image": "studies/spring.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "温泉",
+            "reading": "おんせん",
+            "en": "Hot spring"
+          },
+          {
+            "jp": "泉水",
+            "reading": "せんすい",
+            "en": "Fountain, spring water"
+          },
+          {
+            "jp": "泉源",
+            "reading": "せんげん",
+            "en": "Water source"
+          },
+          {
+            "jp": "清泉",
+            "reading": "せいせん",
+            "en": "Pure spring"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "spring",
+        "prototype": true
+      },
+      "imageRev": 1781991869
+    },
+    {
+      "id": "L08_gland",
+      "kanji": "腺",
+      "keyword": "gland",
+      "image": "studies/gland.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "汗腺",
+            "reading": "かんせん",
+            "en": "Sweat gland"
+          },
+          {
+            "jp": "乳腺",
+            "reading": "にゅうせん",
+            "en": "Mammary gland"
+          },
+          {
+            "jp": "内分泌腺",
+            "reading": "ないぶんぴつせん",
+            "en": "Endocrine gland"
+          },
+          {
+            "jp": "腺腫",
+            "reading": "せんしゅ",
+            "en": "Adenoma"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "gland",
+        "prototype": true
+      },
+      "imageRev": 1784163514
+    },
+    {
+      "id": "L08_meadow",
+      "kanji": "原",
+      "keyword": "meadow",
+      "image": "studies/meadow.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "原っぱ",
+            "reading": "はらっぱ",
+            "en": "Open field"
+          },
+          {
+            "jp": "原始",
+            "reading": "げんし",
+            "en": "Primitive"
+          },
+          {
+            "jp": "原点",
+            "reading": "げんてん",
+            "en": "Starting point"
+          },
+          {
+            "jp": "原子",
+            "reading": "げんし",
+            "en": "Atom"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "meadow",
+        "prototype": true
+      },
+      "imageRev": 1781992152
+    },
+    {
+      "id": "L08_petition",
+      "kanji": "願",
+      "keyword": "petition",
+      "image": "studies/petition.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "願い事",
+            "reading": "ねがいごと",
+            "en": "Wish"
+          },
+          {
+            "jp": "願書",
+            "reading": "がんしょ",
+            "en": "Application"
+          },
+          {
+            "jp": "願望",
+            "reading": "がんぼう",
+            "en": "Aspiration"
+          },
+          {
+            "jp": "祈願",
+            "reading": "きがん",
+            "en": "Prayer"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "petition",
+        "prototype": true
+      },
+      "imageRev": 1781992364
+    },
+    {
+      "id": "L08_swim",
+      "kanji": "泳",
+      "keyword": "swim",
+      "image": "studies/swim.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "水泳",
+            "reading": "すいえい",
+            "en": "Swimming"
+          },
+          {
+            "jp": "遠泳",
+            "reading": "えんえい",
+            "en": "Long-distance swim"
+          },
+          {
+            "jp": "遊泳",
+            "reading": "ゆうえい",
+            "en": "Recreational swimming"
+          },
+          {
+            "jp": "競泳",
+            "reading": "きょうえい",
+            "en": "Competitive swimming"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "swim",
+        "prototype": true
+      },
+      "imageRev": 1781992445
+    },
+    {
+      "id": "L08_marsh",
+      "kanji": "沼",
+      "keyword": "marsh",
+      "image": "studies/marsh.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "沼地",
+            "reading": "ぬまち",
+            "en": "Marshland"
+          },
+          {
+            "jp": "沼沢",
+            "reading": "しょうたく",
+            "en": "Swamp"
+          },
+          {
+            "jp": "大沼",
+            "reading": "おおぬま",
+            "en": "Large marsh or lake"
+          },
+          {
+            "jp": "泥沼",
+            "reading": "どろぬま",
+            "en": "Muddy swamp; entanglement"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "marsh",
+        "prototype": true
+      },
+      "imageRev": 1781992511
+    },
+    {
+      "id": "L08_open_sea",
+      "kanji": "沖",
+      "keyword": "open sea",
+      "image": "studies/open_sea.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "沖縄",
+            "reading": "おきなわ",
+            "en": "Okinawa"
+          },
+          {
+            "jp": "沖合",
+            "reading": "おきあい",
+            "en": "Offshore"
+          },
+          {
+            "jp": "沖天",
+            "reading": "ちゅうてん",
+            "en": "Soaring skyward"
+          },
+          {
+            "jp": "沖釣り",
+            "reading": "おきづり",
+            "en": "Offshore fishing"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "open_sea",
+        "prototype": true
+      },
+      "imageRev": 1781992592
+    },
+    {
+      "id": "L08_general",
+      "kanji": "汎",
+      "keyword": "general",
+      "image": "studies/general.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "汎愛",
+            "reading": "はんあい",
+            "en": "Universal love"
+          },
+          {
+            "jp": "汎論",
+            "reading": "はんろん",
+            "en": "General discussion"
+          },
+          {
+            "jp": "汎神論",
+            "reading": "はんしんろん",
+            "en": "Pantheism"
+          },
+          {
+            "jp": "汎米",
+            "reading": "はんべい",
+            "en": "Pan-American"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "general",
+        "prototype": true
+      },
+      "imageRev": 1781992671
+    },
+    {
+      "id": "L08_creek",
+      "kanji": "江",
+      "keyword": "creek",
+      "image": "studies/creek.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "江戸",
+            "reading": "えど",
+            "en": "Edo"
+          },
+          {
+            "jp": "長江",
+            "reading": "ちょうこう",
+            "en": "Yangtze River"
+          },
+          {
+            "jp": "江南",
+            "reading": "こうなん",
+            "en": "Jiangnan"
+          },
+          {
+            "jp": "江東区",
+            "reading": "こうとうく",
+            "en": "Koto Ward"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "creek",
+        "prototype": true
+      },
+      "imageRev": 1781992745
+    },
+    {
+      "id": "L08_cleanse",
+      "kanji": "汰",
+      "keyword": "cleanse",
+      "image": "studies/cleanse.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "淘汰",
+            "reading": "とうた",
+            "en": "Natural selection"
+          },
+          {
+            "jp": "洗汰",
+            "reading": "せんた",
+            "en": "Washing away"
+          },
+          {
+            "jp": "過剰汰",
+            "reading": "かじょうた",
+            "en": "Over-removal"
+          },
+          {
+            "jp": "汰濯",
+            "reading": "たたく",
+            "en": "Cleansing"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "cleanse",
+        "prototype": true
+      },
+      "imageRev": 1781992855
+    },
+    {
+      "id": "L08_soup",
+      "kanji": "汁",
+      "keyword": "soup",
+      "image": "studies/soup.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "味噌汁",
+            "reading": "みそしる",
+            "en": "Miso soup"
+          },
+          {
+            "jp": "果汁",
+            "reading": "かじゅう",
+            "en": "Fruit juice"
+          },
+          {
+            "jp": "汁物",
+            "reading": "しるもの",
+            "en": "Soupy dish"
+          },
+          {
+            "jp": "出汁",
+            "reading": "だし",
+            "en": "Soup stock"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "soup",
+        "prototype": true
+      },
+      "imageRev": 1781992947
+    },
+    {
+      "id": "L08_grains_of_sand",
+      "kanji": "沙",
+      "keyword": "grains of sand",
+      "image": "studies/grains_of_sand.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "沙漠",
+            "reading": "さばく",
+            "en": "Desert"
+          },
+          {
+            "jp": "沙汰",
+            "reading": "さた",
+            "en": "Affair, news, instruction"
+          },
+          {
+            "jp": "沙門",
+            "reading": "しゃもん",
+            "en": "Buddhist monk"
+          },
+          {
+            "jp": "沙金",
+            "reading": "さきん",
+            "en": "Gold dust"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "grains_of_sand",
+        "prototype": true
+      },
+      "imageRev": 1781993025
+    },
+    {
+      "id": "L08_tide",
+      "kanji": "潮",
+      "keyword": "tide",
+      "image": "studies/tide.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "潮風",
+            "reading": "しおかぜ",
+            "en": "Sea breeze"
+          },
+          {
+            "jp": "干潮",
+            "reading": "かんちょう",
+            "en": "Low tide"
+          },
+          {
+            "jp": "高潮",
+            "reading": "たかしお",
+            "en": "High tide"
+          },
+          {
+            "jp": "満潮",
+            "reading": "まんちょう",
+            "en": "Full tide"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "tide",
+        "prototype": true
+      },
+      "imageRev": 1781993112
+    },
+    {
+      "id": "L08_source",
+      "kanji": "源",
+      "keyword": "source",
+      "image": "studies/source.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "資源",
+            "reading": "しげん",
+            "en": "Resources"
+          },
+          {
+            "jp": "電源",
+            "reading": "でんげん",
+            "en": "Power source"
+          },
+          {
+            "jp": "語源",
+            "reading": "ごげん",
+            "en": "Word origin"
+          },
+          {
+            "jp": "水源",
+            "reading": "すいげん",
+            "en": "Water source"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "source",
+        "prototype": true
+      },
+      "imageRev": 1781993192
+    },
+    {
+      "id": "L08_lively",
+      "kanji": "活",
+      "keyword": "lively",
+      "image": "studies/lively.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "生活",
+            "reading": "せいかつ",
+            "en": "Daily life"
+          },
+          {
+            "jp": "活動",
+            "reading": "かつどう",
+            "en": "Activity"
+          },
+          {
+            "jp": "活気",
+            "reading": "かっき",
+            "en": "Vigor"
+          },
+          {
+            "jp": "活用",
+            "reading": "かつよう",
+            "en": "Practical use / Verb conjugation"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "lively",
+        "prototype": true
+      },
+      "imageRev": 1781993274
+    },
+    {
+      "id": "L08_extinguish",
+      "kanji": "消",
+      "keyword": "extinguish",
+      "image": "studies/extinguish.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "消す",
+            "reading": "けす",
+            "en": "To erase, extinguish"
+          },
+          {
+            "jp": "消える",
+            "reading": "きえる",
+            "en": "To go out, disappear"
+          },
+          {
+            "jp": "消防士",
+            "reading": "しょうぼうし",
+            "en": "Firefighter"
+          },
+          {
+            "jp": "消化",
+            "reading": "しょうか",
+            "en": "Digestion"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "extinguish",
+        "prototype": true
+      },
+      "imageRev": 1781993348
+    },
+    {
+      "id": "L08_condition",
+      "kanji": "況",
+      "keyword": "condition",
+      "image": "studies/condition.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "状況",
+            "reading": "じょうきょう",
+            "en": "Situation, circumstances"
+          },
+          {
+            "jp": "近況",
+            "reading": "きんきょう",
+            "en": "Recent state, current status"
+          },
+          {
+            "jp": "悪況",
+            "reading": "あっきょう",
+            "en": "Bad condition"
+          },
+          {
+            "jp": "不況",
+            "reading": "ふきょう",
+            "en": "Recession"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "condition",
+        "prototype": true
+      },
+      "imageRev": 1781993440
+    },
+    {
+      "id": "L08_large_river",
+      "kanji": "河",
+      "keyword": "large river",
+      "image": "studies/large_river.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "河川",
+            "reading": "かせん",
+            "en": "Rivers"
+          },
+          {
+            "jp": "銀河",
+            "reading": "ぎんが",
+            "en": "Milky Way"
+          },
+          {
+            "jp": "運河",
+            "reading": "うんが",
+            "en": "Canal"
+          },
+          {
+            "jp": "大河",
+            "reading": "たいが",
+            "en": "Large river"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "large_river",
+        "prototype": true
+      },
+      "imageRev": 1781994187
+    },
+    {
+      "id": "L08_overnight",
+      "kanji": "泊",
+      "keyword": "overnight",
+      "image": "studies/overnight.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "泊まる",
+            "reading": "とまる",
+            "en": "To stay overnight"
+          },
+          {
+            "jp": "一泊",
+            "reading": "いっぱく",
+            "en": "One-night stay"
+          },
+          {
+            "jp": "宿泊",
+            "reading": "しゅくはく",
+            "en": "Lodging"
+          },
+          {
+            "jp": "停泊",
+            "reading": "ていはく",
+            "en": "Anchoring, mooring"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "overnight",
+        "prototype": true
+      },
+      "imageRev": 1781994436
+    },
+    {
+      "id": "L08_lake",
+      "kanji": "湖",
+      "keyword": "lake",
+      "image": "studies/lake.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "湖水",
+            "reading": "こすい",
+            "en": "Lake water"
+          },
+          {
+            "jp": "湖畔",
+            "reading": "こはん",
+            "en": "Lakeside"
+          },
+          {
+            "jp": "湖面",
+            "reading": "こめん",
+            "en": "Surface of a lake"
+          },
+          {
+            "jp": "五大湖",
+            "reading": "ごだいこ",
+            "en": "The Great Lakes"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 8,
+        "slug": "lake",
+        "prototype": true
+      },
+      "imageRev": 1781994536
+    }
+  ]
+}

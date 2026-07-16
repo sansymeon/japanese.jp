@@ -11,12 +11,13 @@
 
   <link rel="stylesheet" href="./css/gallery-typography.css?v=6">
   <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
-  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=18">
+  <link rel="stylesheet" href="./css/gallery-mobile-refine.css?v=19">
   <link rel="stylesheet" href="./css/gallery-exhibition-placard.css?v=12">
   <link rel="stylesheet" href="./css/gallery-verse-reading.css?v=3">
-  <link rel="stylesheet" href="./css/gallery-assisted-reading.css?v=7">
-  <link rel="stylesheet" href="./css/gallery-vocabulary-exhibition.css?v=8">
+  <link rel="stylesheet" href="./css/gallery-assisted-reading.css?v=8">
+  <link rel="stylesheet" href="./css/gallery-vocabulary-exhibition.css?v=9">
   <link rel="stylesheet" href="./css/gallery-compounds-exhibition.css?v=5">
+  <link rel="stylesheet" href="./css/gallery-japanese-vocabulary.css?v=7">
   <link rel="stylesheet" href="./css/gallery-anchor-compounds-exhibition.css?v=9">
   <link rel="stylesheet" href="./css/gallery-stroke-order.css?v=8">
   <link rel="stylesheet" href="./css/gallery-grade1-stroke-order.css?v=1">
@@ -26,6 +27,7 @@
   <link rel="stylesheet" href="./css/gallery-grade5-kanji-soundtrack.css?v=1">
   <link rel="stylesheet" href="./css/gallery-grade6-kanji-soundtrack.css?v=1">
   <link rel="stylesheet" href="./css/gallery-party-kanji.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-hiragana-song.css?v=5">
   <link rel="stylesheet" href="./css/gallery-lesson.css?v=2">
   <link rel="stylesheet" href="./css/exhibition.css">
 </head>
@@ -67,6 +69,15 @@
               ?collection=lesson_01_strokes&exhibit=0&singleExhibit=1
   Compounds L1 (一 → 一日):
               ?collection=lesson_01_compounds&exhibit=0&singleExhibit=1
+  Japanese Vocabulary Lesson 1 (fresh curriculum — everyday compounds):
+              ?collection=vocabulary_01
+  Japanese Vocabulary Lesson 2 (frequency group 2):
+              ?collection=vocabulary_02
+  Japanese Vocabulary Lesson 3 (frequency group 3):
+              ?collection=vocabulary_03
+  Japanese Vocabulary Lesson 4 (frequency group 4):
+              ?collection=vocabulary_04
+  Vocabulary QA: add &timingScale=0.05  (or &skipBookends=1&timingScale=0.05)
   Grade 1 Compounds school prototype (学 → 学校, stacked):
               ?collection=grade_1_compounds_school&skipBookends=1
   Prototype hub: grade-1-compounds-prototype.html
@@ -107,6 +118,14 @@
   </div>
 
   <div class="exhibition-vignette" aria-hidden="true"></div>
+
+  <div class="vocabulary-intro-overlay exhibition-hidden" data-vocabulary-intro-overlay aria-hidden="true">
+    <div class="vocabulary-intro-jp-block" data-vocabulary-intro-jp-block>
+      <p class="vocabulary-intro-jp" data-vocabulary-intro-jp lang="ja"></p>
+      <p class="vocabulary-intro-reading" data-vocabulary-intro-reading lang="ja"></p>
+    </div>
+    <p class="vocabulary-intro-en" data-vocabulary-intro-en lang="en"></p>
+  </div>
 
   <div class="exhibition-title kml-title-block">
     <div class="exhibition-kanji" data-exhibition-kanji></div>
@@ -167,6 +186,14 @@
     </div>
   </div>
 
+  <div class="hiragana-song-layer exhibition-hidden" data-hiragana-song-layer aria-hidden="true">
+    <div class="hiragana-song-paper" aria-hidden="true"></div>
+    <div class="hiragana-song-vignette" aria-hidden="true"></div>
+    <div class="hiragana-song-stage" data-hiragana-song-stage>
+      <div class="hiragana-song-chart" data-hiragana-song-chart lang="ja"></div>
+    </div>
+  </div>
+
   <div class="party-kanji-layer exhibition-hidden" data-party-kanji-layer aria-hidden="true">
     <div class="party-kanji-phase party-kanji-shock" data-party-phase="shock">
       <div class="party-kanji-giant party-kanji-giant--enter" data-party-shock-kanji></div>
@@ -219,13 +246,14 @@
 
 </div>
 
-<script src="./js/collection-paths.js?v=1"></script>
+<script src="./js/collection-paths.js?v=2"></script>
 <script src="./js/verse-display.js?v=1"></script>
 <script src="./js/gallery-guardian.js?v=6"></script>
 <script src="./strokes/js/stroke-page-loader.js?v=1"></script>
 <script src="./js/stroke-order-player.js?v=3"></script>
 <script src="./js/grade4-board.js?v=1"></script>
+<script src="./js/hiragana-song-chart.js?v=7"></script>
 <script src="./js/anchor-compounds-layout.js?v=1"></script>
-<script src="./js/exhibition-engine.js?v=104"></script>
+<script src="./js/exhibition-engine.js?v=113"></script>
 </body>
 </html>

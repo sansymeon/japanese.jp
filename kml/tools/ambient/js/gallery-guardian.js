@@ -144,6 +144,7 @@
   /** One-direction gallery drift (~3–5% over exhibit). Values are % translate / scale delta. */
   const GALLERY_MOTION = {
     "push-in": { scale: 0.044, x0: 0, y0: 0.4, x1: 0.15, y1: -0.25 },
+    "pull-out": { scale: -0.048, startBoost: 0.055, x0: 0.2, y0: 0.35, x1: -0.15, y1: -0.2 },
     "drift-x": { scale: 0.026, x0: -2.1, y0: 0, x1: 2.1, y1: 0.15 },
     "drift-y": { scale: 0.026, x0: 0.2, y0: 2.0, x1: -0.1, y1: -2.0 },
     "drift-diagonal": { scale: 0.032, x0: -1.8, y0: 1.6, x1: 1.9, y1: -1.7 },
@@ -165,8 +166,9 @@
     const seed = hashSeed(`${scene.id}:gallery:${motion}`);
     const jitter = (n, spread) => (seededUnit(seed + n) - 0.5) * spread;
 
+    const startBoost = (spec.startBoost || 0) * motionScale;
     const scaleFrom = immersiveScale(
-      minimumCoverScale() * coverBoost * framingScale,
+      minimumCoverScale() * coverBoost * framingScale + startBoost,
       scaleMin
     );
     const scaleTo =
