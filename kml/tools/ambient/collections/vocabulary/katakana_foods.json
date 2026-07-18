@@ -3,7 +3,7 @@
   "assetsBase": "../../assets",
   "id": "katakana_foods",
   "title": "Katakana Food Song",
-  "notes": "Katakana Food Song — katakana only. Each word appears as an opaque Calendar-style bubble (dark text on white), then the bubble fades to frosted glass while the same text remains. No English at any point: the goal is instant recognition of the Japanese word itself.",
+  "notes": "Katakana Food Song — katakana only. Words accumulate for the whole song: each appears as an opaque Calendar bubble, then that bubble slowly becomes frosted glass. Words never disappear individually. At the end, the full field fades out together. No English at any point.",
   "exhibition": {
     "artworkArrivalMs": 0,
     "artworkArrivalFadeMs": 2200,
@@ -14,7 +14,8 @@
     "bubbleOpaqueHoldMs": 1100,
     "bubbleToGlassMs": 3600,
     "bubbleGlassHoldMs": 2400,
-    "compoundsStepFadeMs": 1100,
+    "bubbleFieldHoldMs": 1800,
+    "bubbleFieldFadeMs": 2800,
     "vocabArtworkExhaleMs": 2800,
     "exhibitTransitionMs": 0,
     "kenBurnsDurationMs": 600000,
@@ -43,7 +44,7 @@
     "prototype": true,
     "sceneCount": 1,
     "wordCount": 20,
-    "note": "Katakana only. Calendar opaque → glass. Preview: ?collection=katakana_foods&skipBookends=1&timingScale=0.05"
+    "note": "Katakana only; words accumulate; collective fade at end. Preview: ?collection=katakana_foods&skipBookends=1&timingScale=0.05"
   },
   "scenes": [
     {

@@ -1,23 +1,24 @@
 /**
- * Katakana Foods — iPhone Calendar → glass word bubbles.
+ * Katakana Food Song — iPhone Calendar → glass word bubbles.
  *
- * Appear: opaque white rounded box, dark text (Calendar icon).
- * Settle: same text stays while the fill fades to frosted glass (folder / Health look).
+ * Words accumulate for the whole song. Each appears as an opaque Calendar
+ * bubble, then the bubble alone slowly becomes frosted glass. Words never
+ * leave individually — the full field fades out together at the end.
  *
  * Enable: exhibitProfile katakanaFoods  (or display.wordBubble = "calendarGlass")
  */
 
 .exhibition-root.is-katakana-foods {
-  --kml-katakana-bubble-radius: clamp(1.1rem, 3.2vmin, 1.75rem);
-  --kml-katakana-bubble-pad-y: clamp(0.42em, 1.4vmin, 0.62em);
-  --kml-katakana-bubble-pad-x: clamp(0.72em, 2.4vmin, 1.05em);
+  --kml-katakana-bubble-radius: clamp(0.85rem, 2.4vmin, 1.35rem);
+  --kml-katakana-bubble-pad-y: clamp(0.32em, 1.1vmin, 0.5em);
+  --kml-katakana-bubble-pad-x: clamp(0.55em, 1.8vmin, 0.85em);
   --kml-katakana-text: #111111;
   --kml-katakana-fill: #ffffff;
   --kml-katakana-glass-bg: rgba(255, 255, 255, 0.2);
   --kml-katakana-glass-border: rgba(255, 255, 255, 0.48);
   --kml-katakana-glass-blur: 22px;
-  --kml-compounds-jp: clamp(3.4rem, 11vmin, 6.8rem);
-  --kml-compounds-en: clamp(2rem, 5.4vmin, 3.2rem);
+  /* Sized for an accumulating field of ~20 loanwords */
+  --kml-compounds-jp: clamp(1.7rem, 4.8vmin, 2.85rem);
 }
 
 .exhibition-root.is-katakana-foods .exhibition-kanji,
@@ -34,7 +35,7 @@
   opacity: 1 !important;
 }
 
-/* Center the bubble stack like other vocabulary exhibitions */
+/* Full-viewport field where bubbles accumulate */
 html.kml-typography-mobile-refine.kml-verse-sequential
   .exhibition-root.is-katakana-foods
   .exhibition-notes {
@@ -44,13 +45,14 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: min(92vw, 44rem);
+  width: min(94vw, 56rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.85em;
+  gap: 0;
   min-height: 100%;
+  padding: clamp(1.25rem, 5vh, 3rem) 0;
   z-index: 9;
   pointer-events: none;
 }
@@ -67,27 +69,30 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   right: auto !important;
   bottom: auto !important;
   transform: none !important;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   margin: 0;
 }
 
+/* Persistent wrap field — stays visible while words accumulate */
 html.kml-typography-mobile-refine.kml-verse-sequential
   .exhibition-root.is-katakana-foods
-  .exhibition-verse-jp {
+  .exhibition-verse-jp.is-katakana-field {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 0.45em;
-  padding: 0;
+  align-content: center;
+  gap: clamp(0.45rem, 1.6vmin, 0.85rem) clamp(0.5rem, 1.8vmin, 0.95rem);
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
   text-align: center;
   opacity: 0;
-  transition: opacity var(--ex-verse-fade, 1.4s) ease-in-out;
+  transition: opacity var(--ex-verse-fade, 2.8s) ease-in-out;
 }
 
 html.kml-typography-mobile-refine.kml-verse-sequential
   .exhibition-root.is-katakana-foods
-  .exhibition-verse-jp.is-visible {
+  .exhibition-verse-jp.is-katakana-field.is-visible {
   opacity: 1;
 }
 
@@ -105,11 +110,19 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   align-items: center;
   justify-content: center;
   isolation: isolate;
+  flex: 0 0 auto;
   padding: var(--kml-katakana-bubble-pad-y) var(--kml-katakana-bubble-pad-x);
   border-radius: var(--kml-katakana-bubble-radius);
+  opacity: 0;
   /* Quiet lift — small change so the material shift stays peripheral */
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.16));
-  transition: filter var(--ex-bubble-glass, 3.6s) var(--kml-bubble-glass-ease);
+  transition:
+    opacity var(--ex-bubble-arrive, 0.9s) ease-out,
+    filter var(--ex-bubble-glass, 3.6s) var(--kml-bubble-glass-ease);
+}
+
+.exhibition-root.is-katakana-foods .kml-word-bubble.is-arrived {
+  opacity: 1;
 }
 
 .exhibition-root.is-katakana-foods .kml-word-bubble.is-glass {
@@ -176,7 +189,7 @@ html.kml-typography-mobile-refine.kml-verse-sequential
 
 @media (max-width: 640px) {
   .exhibition-root.is-katakana-foods {
-    --kml-katakana-bubble-radius: clamp(0.95rem, 4.5vw, 1.35rem);
-    --kml-compounds-jp: clamp(2.6rem, 12vw, 4.8rem);
+    --kml-katakana-bubble-radius: clamp(0.75rem, 3.5vw, 1.1rem);
+    --kml-compounds-jp: clamp(1.45rem, 5.8vw, 2.2rem);
   }
 }

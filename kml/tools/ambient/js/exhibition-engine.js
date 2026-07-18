@@ -691,14 +691,18 @@
     }
 
     japaneseVocabularyStepMs(t = this.timing, step = {}) {
-      let ms = (t.compoundsStepRevealMs ?? 1400) + (t.compoundsStepFadeMs ?? 1400);
-      if (this.usesCalendarGlassBubble) {
-        // Katakana-only: slow opaque → glass (ambient, not a “moment”), no English.
-        ms +=
+      if (this.isKatakanaFoodsProfile || this.usesCalendarGlassBubble) {
+        // Words accumulate — no per-word fade-out. Only bubble material changes.
+        return (
+          (t.compoundsStepRevealMs ?? 900) +
           (t.bubbleOpaqueHoldMs ?? 1100) +
           (t.bubbleToGlassMs ?? 3600) +
-          (t.bubbleGlassHoldMs ?? 2400);
-      } else if (step.jpHtml) {
+          (t.bubbleGlassHoldMs ?? 2400)
+        );
+      }
+
+      let ms = (t.compoundsStepRevealMs ?? 1400) + (t.compoundsStepFadeMs ?? 1400);
+      if (step.jpHtml) {
         ms +=
           (t.compoundsFuriganaEnterDelayMs ?? 900) +
           (t.compoundsFuriganaEnterMs ?? 2200) +
@@ -710,7 +714,7 @@
           (t.compoundsReadingRevealMs ?? 1200) +
           (t.compoundsReadingHoldMs ?? 1800);
       }
-      if (this.showEnglish && !this.isKatakanaFoodsProfile) {
+      if (this.showEnglish) {
         ms +=
           (t.compoundsEnRevealMs ?? 1200) +
           (t.compoundsEnHoldMs ?? 3500) +
@@ -760,7 +764,11 @@
       for (const step of steps) {
         ms += this.japaneseVocabularyStepMs(t, step);
       }
-      if (word.jp || word.jpHtml) {
+      if (this.isKatakanaFoodsProfile) {
+        // Final scene: every accumulated word fades out together.
+        ms +=
+          (t.bubbleFieldHoldMs ?? 1800) + (t.bubbleFieldFadeMs ?? 2800);
+      } else if (word.jp || word.jpHtml) {
         ms += this.beautifulWordDurationMs(t, word);
       }
       return ms;
@@ -3566,7 +3574,6 @@
       if (!this.els.verseJp || !step) return;
       const verseJp = this.els.verseJp;
       const verseEn = this.els.verseEn;
-      const useBubble = this.usesCalendarGlassBubble;
 
       verseJp.lang = "ja";
       verseJp.classList.remove(
@@ -3586,54 +3593,85 @@
       main.innerHTML = step.jpHtml || step.jp || "";
       const jpText = step.jp || main.textContent || "";
       this.applyAnchorWordScale(main, jpText);
+      verseJp.appendChild(main);
 
-      if (useBubble) {
-        const bubble = document.createElement("span");
-        bubble.className = "kml-word-bubble is-calendar";
-        const fill = document.createElement("span");
-        fill.className = "kml-word-bubble-fill";
-        fill.setAttribute("aria-hidden", "true");
-        const glass = document.createElement("span");
-        glass.className = "kml-word-bubble-glass";
-        glass.setAttribute("aria-hidden", "true");
-        bubble.appendChild(fill);
-        bubble.appendChild(glass);
-        bubble.appendChild(main);
-        verseJp.appendChild(bubble);
-      } else {
-        verseJp.appendChild(main);
+      const reading = document.createElement("span");
+      reading.className = "kml-compound-reading";
+      if (step.reading) {
+        reading.textContent = `「${step.reading}」`;
+      }
+      verseJp.appendChild(reading);
+
+      if (step.hint) {
+        const hint = document.createElement("span");
+        hint.className = "kml-compound-hint";
+        hint.textContent = step.hint;
+        verseJp.appendChild(hint);
       }
 
-      if (!useBubble) {
-        const reading = document.createElement("span");
-        reading.className = "kml-compound-reading";
-        if (step.reading) {
-          reading.textContent = `「${step.reading}」`;
-        }
-        verseJp.appendChild(reading);
-
-        if (step.hint) {
-          const hint = document.createElement("span");
-          hint.className = "kml-compound-hint";
-          hint.textContent = step.hint;
-          verseJp.appendChild(hint);
-        }
-
-        if (step.jpHtml) {
-          verseJp.classList.add("show-furigana", "is-furigana-hidden");
-        }
+      if (step.jpHtml) {
+        verseJp.classList.add("show-furigana", "is-furigana-hidden");
       }
 
       if (verseEn) {
-        // Katakana Food Song: recognition of the Japanese word only — never English.
         verseEn.textContent =
           this.isKatakanaFoodsProfile || !this.showEnglish ? "" : step.en || "";
         verseEn.classList.remove("is-vocab-verse-reveal", "is-reading-reflection");
       }
     }
 
-    async playCalendarGlassBubble(stillRunning, verseJp, t) {
-      const bubble = verseJp?.querySelector(".kml-word-bubble");
+    ensureKatakanaFoodField() {
+      const verseJp = this.els.verseJp;
+      if (!verseJp) return null;
+
+      if (!verseJp.classList.contains("is-katakana-field")) {
+        verseJp.lang = "ja";
+        verseJp.classList.remove(
+          "has-authored-lines",
+          "show-furigana",
+          "is-furigana-entering",
+          "is-furigana-fading",
+          "is-furigana-hidden",
+          "is-vocab-verse-reveal",
+          "has-vocab-readings"
+        );
+        verseJp.textContent = "";
+        verseJp.innerHTML = "";
+        verseJp.classList.add("is-katakana-field", "is-visible");
+      }
+
+      if (this.els.verseEn) {
+        this.els.verseEn.textContent = "";
+        this.setClass(this.els.verseEn, "is-visible", false);
+      }
+      return verseJp;
+    }
+
+    createKatakanaFoodBubble(step) {
+      const bubble = document.createElement("span");
+      bubble.className = "kml-word-bubble is-calendar";
+
+      const fill = document.createElement("span");
+      fill.className = "kml-word-bubble-fill";
+      fill.setAttribute("aria-hidden", "true");
+
+      const glass = document.createElement("span");
+      glass.className = "kml-word-bubble-glass";
+      glass.setAttribute("aria-hidden", "true");
+
+      const main = document.createElement("span");
+      main.className = "kml-compound-jp";
+      main.textContent = step.jp || "";
+      const jpText = step.jp || "";
+      this.applyAnchorWordScale(main, jpText);
+
+      bubble.appendChild(fill);
+      bubble.appendChild(glass);
+      bubble.appendChild(main);
+      return bubble;
+    }
+
+    async playCalendarGlassBubble(stillRunning, bubble, t) {
       if (!bubble) return;
 
       const opaqueHold = t.bubbleOpaqueHoldMs ?? 1100;
@@ -3650,6 +3688,45 @@
       if (!stillRunning()) return;
 
       await this.wait(glassHold);
+    }
+
+    async playKatakanaFoodsStep(stillRunning, step, t) {
+      const verseJp = this.ensureKatakanaFoodField();
+      if (!verseJp || !step) return;
+
+      const revealMs = t.compoundsStepRevealMs ?? 900;
+      const bubble = this.createKatakanaFoodBubble(step);
+      verseJp.appendChild(bubble);
+
+      document.documentElement.style.setProperty("--ex-bubble-arrive", `${revealMs}ms`);
+      // Force style so the arrive opacity transition runs.
+      void bubble.offsetHeight;
+      bubble.classList.add("is-arrived");
+      await this.wait(revealMs);
+      if (!stillRunning()) return;
+
+      // Bubble material only — the word itself stays for the rest of the song.
+      await this.playCalendarGlassBubble(stillRunning, bubble, t);
+    }
+
+    async fadeOutKatakanaFoodField(stillRunning, t) {
+      const verseJp = this.els.verseJp;
+      if (!verseJp?.classList.contains("is-katakana-field")) return;
+
+      const holdMs = t.bubbleFieldHoldMs ?? 1800;
+      const fadeMs = t.bubbleFieldFadeMs ?? 2800;
+
+      await this.wait(holdMs);
+      if (!stillRunning()) return;
+
+      document.documentElement.style.setProperty("--ex-verse-fade", `${fadeMs}ms`);
+      this.setClass(verseJp, "is-visible", false);
+      await this.wait(fadeMs);
+      if (!stillRunning()) return;
+
+      verseJp.textContent = "";
+      verseJp.innerHTML = "";
+      verseJp.classList.remove("is-katakana-field");
     }
 
     async showCompoundsTargetKanji(stillRunning, kanji, t, { isReturn = false } = {}) {
@@ -3772,6 +3849,11 @@
     }
 
     async playJapaneseVocabularyStep(stillRunning, step, t) {
+      if (this.isKatakanaFoodsProfile || this.usesCalendarGlassBubble) {
+        await this.playKatakanaFoodsStep(stillRunning, step, t);
+        return;
+      }
+
       const stepReveal = t.compoundsStepRevealMs ?? 1400;
       const stepFade = t.compoundsStepFadeMs ?? 1400;
       const readingReveal = t.compoundsReadingRevealMs ?? 1200;
@@ -3780,7 +3862,6 @@
       const enHold = t.compoundsEnHoldMs ?? 3500;
       const enFade = t.compoundsEnFadeMs ?? 1400;
       const usesFurigana = Boolean(step?.jpHtml);
-      const useBubble = this.usesCalendarGlassBubble;
 
       this.setCompoundsStepContent(step);
       const verseJp = this.els.verseJp;
@@ -3791,11 +3872,7 @@
       await this.wait(stepReveal);
       if (!stillRunning()) return;
 
-      if (useBubble) {
-        // Calendar (opaque) → glass: katakana stays; no English at any point.
-        await this.playCalendarGlassBubble(stillRunning, verseJp, t);
-        if (!stillRunning()) return;
-      } else if (usesFurigana) {
+      if (usesFurigana) {
         await this.wait(t.compoundsFuriganaEnterDelayMs ?? 900);
         if (!stillRunning()) return;
         await this.playFuriganaFadeIn(
@@ -3822,12 +3899,7 @@
         if (!stillRunning()) return;
       }
 
-      if (
-        this.showEnglish &&
-        !this.isKatakanaFoodsProfile &&
-        this.els.verseEn &&
-        step.en
-      ) {
+      if (this.showEnglish && this.els.verseEn && step.en) {
         document.documentElement.style.setProperty("--ex-compounds-en-fade", `${enReveal}ms`);
         this.setClass(this.els.verseEn, "is-visible", true);
         await this.wait(enReveal);
@@ -4083,7 +4155,11 @@
         if (!stillRunning()) return;
       }
 
-      if (beautifulWord) {
+      if (this.isKatakanaFoodsProfile) {
+        // Final scene: all accumulated words fade out together.
+        await this.fadeOutKatakanaFoodField(stillRunning, t);
+        if (!stillRunning()) return;
+      } else if (beautifulWord) {
         await this.playBeautifulJapaneseWord(stillRunning, beautifulWord, t, {
           lingerForSoundtrack: !this.singleExhibit && !this.display.loop,
         });
