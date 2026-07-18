@@ -242,9 +242,15 @@
       this.root.classList.toggle("is-vocabulary-exhibition", profile === "vocabularyExhibition");
       this.root.classList.toggle(
         "is-compounds-exhibition",
-        profile === "compoundsExhibition" || profile === "japaneseVocabulary"
+        profile === "compoundsExhibition" ||
+          profile === "japaneseVocabulary" ||
+          profile === "katakanaFoods"
       );
-      this.root.classList.toggle("is-japanese-vocabulary", profile === "japaneseVocabulary");
+      this.root.classList.toggle(
+        "is-japanese-vocabulary",
+        profile === "japaneseVocabulary" || profile === "katakanaFoods"
+      );
+      this.root.classList.toggle("is-katakana-foods", this.usesCalendarGlassBubble);
       this.root.classList.toggle(
         "is-anchor-compounds-exhibition",
         profile === "anchorCompoundsExhibition"
@@ -354,7 +360,21 @@
     }
 
     get isJapaneseVocabularyProfile() {
-      return this.display.exhibitProfile === "japaneseVocabulary";
+      return (
+        this.display.exhibitProfile === "japaneseVocabulary" ||
+        this.display.exhibitProfile === "katakanaFoods"
+      );
+    }
+
+    get isKatakanaFoodsProfile() {
+      return this.display.exhibitProfile === "katakanaFoods";
+    }
+
+    /** Opaque Calendar → frosted-glass bubble for each word. */
+    get usesCalendarGlassBubble() {
+      return (
+        this.isKatakanaFoodsProfile || this.display.wordBubble === "calendarGlass"
+      );
     }
 
     get isAnchorCompoundsExhibitionProfile() {
@@ -672,7 +692,12 @@
 
     japaneseVocabularyStepMs(t = this.timing, step = {}) {
       let ms = (t.compoundsStepRevealMs ?? 1400) + (t.compoundsStepFadeMs ?? 1400);
-      if (step.jpHtml) {
+      if (this.usesCalendarGlassBubble) {
+        ms +=
+          (t.bubbleOpaqueHoldMs ?? 900) +
+          (t.bubbleToGlassMs ?? 1100) +
+          (t.bubbleGlassHoldMs ?? 1400);
+      } else if (step.jpHtml) {
         ms +=
           (t.compoundsFuriganaEnterDelayMs ?? 900) +
           (t.compoundsFuriganaEnterMs ?? 2200) +
@@ -3538,6 +3563,7 @@
       if (!this.els.verseJp || !step) return;
       const verseJp = this.els.verseJp;
       const verseEn = this.els.verseEn;
+      const useBubble = this.usesCalendarGlassBubble;
 
       verseJp.lang = "ja";
       verseJp.classList.remove(
@@ -3557,30 +3583,68 @@
       main.innerHTML = step.jpHtml || step.jp || "";
       const jpText = step.jp || main.textContent || "";
       this.applyAnchorWordScale(main, jpText);
-      verseJp.appendChild(main);
 
-      const reading = document.createElement("span");
-      reading.className = "kml-compound-reading";
-      if (step.reading) {
-        reading.textContent = `「${step.reading}」`;
+      if (useBubble) {
+        const bubble = document.createElement("span");
+        bubble.className = "kml-word-bubble is-calendar";
+        const fill = document.createElement("span");
+        fill.className = "kml-word-bubble-fill";
+        fill.setAttribute("aria-hidden", "true");
+        const glass = document.createElement("span");
+        glass.className = "kml-word-bubble-glass";
+        glass.setAttribute("aria-hidden", "true");
+        bubble.appendChild(fill);
+        bubble.appendChild(glass);
+        bubble.appendChild(main);
+        verseJp.appendChild(bubble);
+      } else {
+        verseJp.appendChild(main);
       }
-      verseJp.appendChild(reading);
 
-      if (step.hint) {
-        const hint = document.createElement("span");
-        hint.className = "kml-compound-hint";
-        hint.textContent = step.hint;
-        verseJp.appendChild(hint);
-      }
+      if (!useBubble) {
+        const reading = document.createElement("span");
+        reading.className = "kml-compound-reading";
+        if (step.reading) {
+          reading.textContent = `「${step.reading}」`;
+        }
+        verseJp.appendChild(reading);
 
-      if (step.jpHtml) {
-        verseJp.classList.add("show-furigana", "is-furigana-hidden");
+        if (step.hint) {
+          const hint = document.createElement("span");
+          hint.className = "kml-compound-hint";
+          hint.textContent = step.hint;
+          verseJp.appendChild(hint);
+        }
+
+        if (step.jpHtml) {
+          verseJp.classList.add("show-furigana", "is-furigana-hidden");
+        }
       }
 
       if (verseEn) {
         verseEn.textContent = step.en || "";
         verseEn.classList.remove("is-vocab-verse-reveal", "is-reading-reflection");
       }
+    }
+
+    async playCalendarGlassBubble(stillRunning, verseJp, t) {
+      const bubble = verseJp?.querySelector(".kml-word-bubble");
+      if (!bubble) return;
+
+      const opaqueHold = t.bubbleOpaqueHoldMs ?? 900;
+      const toGlass = t.bubbleToGlassMs ?? 1100;
+      const glassHold = t.bubbleGlassHoldMs ?? 1400;
+
+      await this.wait(opaqueHold);
+      if (!stillRunning()) return;
+
+      document.documentElement.style.setProperty("--ex-bubble-glass", `${toGlass}ms`);
+      bubble.classList.add("is-glass");
+      bubble.classList.remove("is-calendar");
+      await this.wait(toGlass);
+      if (!stillRunning()) return;
+
+      await this.wait(glassHold);
     }
 
     async showCompoundsTargetKanji(stillRunning, kanji, t, { isReturn = false } = {}) {
@@ -3711,6 +3775,7 @@
       const enHold = t.compoundsEnHoldMs ?? 3500;
       const enFade = t.compoundsEnFadeMs ?? 1400;
       const usesFurigana = Boolean(step?.jpHtml);
+      const useBubble = this.usesCalendarGlassBubble;
 
       this.setCompoundsStepContent(step);
       const verseJp = this.els.verseJp;
@@ -3721,7 +3786,11 @@
       await this.wait(stepReveal);
       if (!stillRunning()) return;
 
-      if (usesFurigana) {
+      if (useBubble) {
+        // Calendar (opaque) → glass: text stays, only the bubble material changes.
+        await this.playCalendarGlassBubble(stillRunning, verseJp, t);
+        if (!stillRunning()) return;
+      } else if (usesFurigana) {
         await this.wait(t.compoundsFuriganaEnterDelayMs ?? 900);
         if (!stillRunning()) return;
         await this.playFuriganaFadeIn(
@@ -6533,17 +6602,23 @@
         profile === "vocabularyExhibition" ||
         profile === "compoundsExhibition" ||
         profile === "japaneseVocabulary" ||
+        profile === "katakanaFoods" ||
         profile === "anchorCompoundsExhibition" ||
         profile === "imageVerse" ||
         profile === "gallery");
     const needsHiraganaSong =
       profile === "hiraganaSong" || family === "hiraganaSong";
+    const needsKatakanaSans =
+      profile === "katakanaFoods" || display?.wordBubble === "calendarGlass";
 
     const loads = [];
 
     if (needsHiraganaSong) {
       loads.push(document.fonts.load("500 48px \"Noto Serif JP\""));
       loads.push(document.fonts.load("500 36px \"Cormorant Garamond\""));
+    }
+    if (needsKatakanaSans) {
+      loads.push(document.fonts.load('700 64px "Noto Sans JP"'));
     }
     if (needsHandwritten) {
       const strokeOrderProfile =

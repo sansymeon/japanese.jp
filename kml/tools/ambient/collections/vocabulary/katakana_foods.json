@@ -1,0 +1,91 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "katakana_foods",
+  "title": "Katakana Foods",
+  "notes": "Katakana food loanwords. Each word appears as an opaque Calendar-style bubble (dark text on white), then the bubble fades to frosted glass while the same text remains. English meaning follows under the glass bubble.",
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2200,
+    "artworkAloneMs": 1400,
+    "exhibitionBlackBeforeMs": 0,
+    "compoundsPauseBeforeMs": 1800,
+    "compoundsStepRevealMs": 900,
+    "bubbleOpaqueHoldMs": 900,
+    "bubbleToGlassMs": 1100,
+    "bubbleGlassHoldMs": 1400,
+    "compoundsEnRevealMs": 1000,
+    "compoundsEnHoldMs": 2800,
+    "compoundsEnFadeMs": 1100,
+    "compoundsStepFadeMs": 1100,
+    "vocabArtworkExhaleMs": 2800,
+    "exhibitTransitionMs": 0,
+    "kenBurnsDurationMs": 600000,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "katakanaFoods",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "katakanaFoods",
+    "wordBubble": "calendarGlass",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "cameraMotionScale": 1.1
+  },
+  "meta": {
+    "series": "katakana_foods",
+    "curriculum": "katakana_loanwords",
+    "scope": "food_drink",
+    "stage": "vocabulary",
+    "format": "katakanaBubbles",
+    "prototype": true,
+    "sceneCount": 1,
+    "wordCount": 20,
+    "note": "Word bubbles: Calendar opaque → glass. Preview: ?collection=katakana_foods&skipBookends=1&timingScale=0.05"
+  },
+  "scenes": [
+    {
+      "id": "KF_foods",
+      "image": "images/jr_high_image.png",
+      "galleryCamera": {
+        "motion": "pull-out",
+        "focus": "50% 52%",
+        "motionScale": 1.1
+      },
+      "compounds": {
+        "steps": [
+          { "jp": "パン", "en": "bread" },
+          { "jp": "チーズ", "en": "cheese" },
+          { "jp": "バター", "en": "butter" },
+          { "jp": "ミルク", "en": "milk" },
+          { "jp": "コーヒー", "en": "coffee" },
+          { "jp": "ジュース", "en": "juice" },
+          { "jp": "バナナ", "en": "banana" },
+          { "jp": "オレンジ", "en": "orange" },
+          { "jp": "トマト", "en": "tomato" },
+          { "jp": "レタス", "en": "lettuce" },
+          { "jp": "サラダ", "en": "salad" },
+          { "jp": "スープ", "en": "soup" },
+          { "jp": "カレー", "en": "curry" },
+          { "jp": "ラーメン", "en": "ramen" },
+          { "jp": "ピザ", "en": "pizza" },
+          { "jp": "ハンバーガー", "en": "hamburger" },
+          { "jp": "サンドイッチ", "en": "sandwich" },
+          { "jp": "ステーキ", "en": "steak" },
+          { "jp": "ケーキ", "en": "cake" },
+          { "jp": "アイスクリーム", "en": "ice cream" }
+        ]
+      },
+      "meta": {
+        "theme": "katakana_foods",
+        "atmosphere": "market_table",
+        "prototype": true
+      }
+    }
+  ]
+}

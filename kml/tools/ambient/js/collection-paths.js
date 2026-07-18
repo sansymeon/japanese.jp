@@ -18,6 +18,7 @@
     if (LESSON_FOLDER_OVERRIDES[name]) return LESSON_FOLDER_OVERRIDES[name];
     if (/^post_elementary_\d+/.test(name)) return "post_elementary";
     if (/^vocabulary_\d+/.test(name)) return "vocabulary";
+    if (/^katakana_foods/.test(name)) return "vocabulary";
     if (/^hiragana_song/.test(name)) return "hiragana_song";
     if (/^grade_1/.test(name)) return "grade_1";
     if (/^grade_2/.test(name)) return "grade_2";
