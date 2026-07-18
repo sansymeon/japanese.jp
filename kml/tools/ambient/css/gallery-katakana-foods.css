@@ -91,29 +91,9 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   opacity: 1;
 }
 
-html.kml-typography-mobile-refine.kml-verse-sequential
-  .exhibition-root.is-katakana-foods
-  .exhibition-verse-en {
-  padding: 0 clamp(0.75rem, 3vw, 1.5rem);
-  text-align: center;
-  font-family: var(--kml-font-heart-voice);
-  font-size: var(--kml-compounds-en);
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1.55;
-  letter-spacing: 0.02em;
-  color: rgba(255, 252, 245, 0.96);
-  text-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.72),
-    0 3px 16px rgba(0, 0, 0, 0.55);
-  opacity: 0;
-  transition: opacity var(--ex-compounds-en-fade, var(--ex-verse-fade, 1.4s)) ease-in-out;
-}
-
-html.kml-typography-mobile-refine.kml-verse-sequential
-  .exhibition-root.is-katakana-foods
-  .exhibition-verse-en.is-visible {
-  opacity: 1;
+/* Katakana Food Song: Japanese recognition only — never show English. */
+.exhibition-root.is-katakana-foods .exhibition-verse-en {
+  display: none !important;
 }
 
 /* ── Word bubble shell ── */

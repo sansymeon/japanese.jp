@@ -693,10 +693,11 @@
     japaneseVocabularyStepMs(t = this.timing, step = {}) {
       let ms = (t.compoundsStepRevealMs ?? 1400) + (t.compoundsStepFadeMs ?? 1400);
       if (this.usesCalendarGlassBubble) {
+        // Katakana-only: opaque → glass hold, no English beat.
         ms +=
           (t.bubbleOpaqueHoldMs ?? 900) +
           (t.bubbleToGlassMs ?? 1100) +
-          (t.bubbleGlassHoldMs ?? 1400);
+          (t.bubbleGlassHoldMs ?? 2800);
       } else if (step.jpHtml) {
         ms +=
           (t.compoundsFuriganaEnterDelayMs ?? 900) +
@@ -709,10 +710,12 @@
           (t.compoundsReadingRevealMs ?? 1200) +
           (t.compoundsReadingHoldMs ?? 1800);
       }
-      ms +=
-        (t.compoundsEnRevealMs ?? 1200) +
-        (t.compoundsEnHoldMs ?? 3500) +
-        (t.compoundsEnFadeMs ?? 1400);
+      if (this.showEnglish && !this.isKatakanaFoodsProfile) {
+        ms +=
+          (t.compoundsEnRevealMs ?? 1200) +
+          (t.compoundsEnHoldMs ?? 3500) +
+          (t.compoundsEnFadeMs ?? 1400);
+      }
       return ms;
     }
 
@@ -3622,7 +3625,9 @@
       }
 
       if (verseEn) {
-        verseEn.textContent = step.en || "";
+        // Katakana Food Song: recognition of the Japanese word only — never English.
+        verseEn.textContent =
+          this.isKatakanaFoodsProfile || !this.showEnglish ? "" : step.en || "";
         verseEn.classList.remove("is-vocab-verse-reveal", "is-reading-reflection");
       }
     }
@@ -3633,7 +3638,7 @@
 
       const opaqueHold = t.bubbleOpaqueHoldMs ?? 900;
       const toGlass = t.bubbleToGlassMs ?? 1100;
-      const glassHold = t.bubbleGlassHoldMs ?? 1400;
+      const glassHold = t.bubbleGlassHoldMs ?? 2800;
 
       await this.wait(opaqueHold);
       if (!stillRunning()) return;
@@ -3787,7 +3792,7 @@
       if (!stillRunning()) return;
 
       if (useBubble) {
-        // Calendar (opaque) → glass: text stays, only the bubble material changes.
+        // Calendar (opaque) → glass: katakana stays; no English at any point.
         await this.playCalendarGlassBubble(stillRunning, verseJp, t);
         if (!stillRunning()) return;
       } else if (usesFurigana) {
@@ -3817,7 +3822,12 @@
         if (!stillRunning()) return;
       }
 
-      if (this.els.verseEn && step.en) {
+      if (
+        this.showEnglish &&
+        !this.isKatakanaFoodsProfile &&
+        this.els.verseEn &&
+        step.en
+      ) {
         document.documentElement.style.setProperty("--ex-compounds-en-fade", `${enReveal}ms`);
         this.setClass(this.els.verseEn, "is-visible", true);
         await this.wait(enReveal);
