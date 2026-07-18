@@ -693,11 +693,11 @@
     japaneseVocabularyStepMs(t = this.timing, step = {}) {
       let ms = (t.compoundsStepRevealMs ?? 1400) + (t.compoundsStepFadeMs ?? 1400);
       if (this.usesCalendarGlassBubble) {
-        // Katakana-only: opaque → glass hold, no English beat.
+        // Katakana-only: slow opaque → glass (ambient, not a “moment”), no English.
         ms +=
-          (t.bubbleOpaqueHoldMs ?? 900) +
-          (t.bubbleToGlassMs ?? 1100) +
-          (t.bubbleGlassHoldMs ?? 2800);
+          (t.bubbleOpaqueHoldMs ?? 1100) +
+          (t.bubbleToGlassMs ?? 3600) +
+          (t.bubbleGlassHoldMs ?? 2400);
       } else if (step.jpHtml) {
         ms +=
           (t.compoundsFuriganaEnterDelayMs ?? 900) +
@@ -3636,9 +3636,9 @@
       const bubble = verseJp?.querySelector(".kml-word-bubble");
       if (!bubble) return;
 
-      const opaqueHold = t.bubbleOpaqueHoldMs ?? 900;
-      const toGlass = t.bubbleToGlassMs ?? 1100;
-      const glassHold = t.bubbleGlassHoldMs ?? 2800;
+      const opaqueHold = t.bubbleOpaqueHoldMs ?? 1100;
+      const toGlass = t.bubbleToGlassMs ?? 3600;
+      const glassHold = t.bubbleGlassHoldMs ?? 2400;
 
       await this.wait(opaqueHold);
       if (!stillRunning()) return;

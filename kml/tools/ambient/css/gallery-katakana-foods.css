@@ -99,6 +99,7 @@ html.kml-typography-mobile-refine.kml-verse-sequential
 /* ── Word bubble shell ── */
 
 .exhibition-root.is-katakana-foods .kml-word-bubble {
+  --kml-bubble-glass-ease: cubic-bezier(0.33, 0.05, 0.45, 1);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -106,13 +107,13 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   isolation: isolate;
   padding: var(--kml-katakana-bubble-pad-y) var(--kml-katakana-bubble-pad-x);
   border-radius: var(--kml-katakana-bubble-radius);
-  /* Soft lift while opaque — eases off as glass settles */
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.22));
-  transition: filter var(--ex-bubble-glass, 1.1s) ease-in-out;
+  /* Quiet lift — small change so the material shift stays peripheral */
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.16));
+  transition: filter var(--ex-bubble-glass, 3.6s) var(--kml-bubble-glass-ease);
 }
 
 .exhibition-root.is-katakana-foods .kml-word-bubble.is-glass {
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.14));
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.12));
 }
 
 .exhibition-root.is-katakana-foods .kml-word-bubble-fill,
@@ -128,7 +129,7 @@ html.kml-typography-mobile-refine.kml-verse-sequential
 .exhibition-root.is-katakana-foods .kml-word-bubble-fill {
   background: var(--kml-katakana-fill);
   opacity: 1;
-  transition: opacity var(--ex-bubble-glass, 1.1s) ease-in-out;
+  transition: opacity var(--ex-bubble-glass, 3.6s) var(--kml-bubble-glass-ease);
 }
 
 /* Glass look — frosted translucent layer (folder / Health widget feel) */
@@ -141,7 +142,7 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   -webkit-backdrop-filter: blur(var(--kml-katakana-glass-blur)) saturate(1.35);
   backdrop-filter: blur(var(--kml-katakana-glass-blur)) saturate(1.35);
   opacity: 0;
-  transition: opacity var(--ex-bubble-glass, 1.1s) ease-in-out;
+  transition: opacity var(--ex-bubble-glass, 3.6s) var(--kml-bubble-glass-ease);
 }
 
 .exhibition-root.is-katakana-foods .kml-word-bubble.is-glass .kml-word-bubble-fill {
