@@ -1,0 +1,89 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "katakana_foods",
+  "title": "Katakana Food Song",
+  "notes": "Katakana Food Song — katakana only. Words accumulate as Calendar→glass buttons. Long loanwords stay on one horizontal line. Words never disappear individually; the full field fades out together at the end. No English at any point.",
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2200,
+    "artworkAloneMs": 1400,
+    "exhibitionBlackBeforeMs": 0,
+    "compoundsPauseBeforeMs": 1800,
+    "compoundsStepRevealMs": 900,
+    "bubbleOpaqueHoldMs": 1100,
+    "bubbleToGlassMs": 3600,
+    "bubbleGlassHoldMs": 2400,
+    "bubbleFieldHoldMs": 1800,
+    "bubbleFieldFadeMs": 2800,
+    "vocabArtworkExhaleMs": 2800,
+    "exhibitTransitionMs": 0,
+    "kenBurnsDurationMs": 600000,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "katakanaFoods",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "katakanaFoods",
+    "wordBubble": "calendarGlass",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "cameraMotionScale": 1.1
+  },
+  "meta": {
+    "series": "katakana_food_song",
+    "curriculum": "katakana_loanwords",
+    "scope": "food_drink",
+    "stage": "vocabulary",
+    "format": "katakanaBubbles",
+    "prototype": true,
+    "sceneCount": 1,
+    "wordCount": 20,
+    "note": "Katakana only; words accumulate; collective fade at end. Preview: ?collection=katakana_foods&skipBookends=1&timingScale=0.05"
+  },
+  "scenes": [
+    {
+      "id": "KF_foods",
+      "image": "images/jr_high_image.png",
+      "galleryCamera": {
+        "motion": "pull-out",
+        "focus": "50% 52%",
+        "motionScale": 1.1
+      },
+      "compounds": {
+        "steps": [
+          { "jp": "パン" },
+          { "jp": "チーズ" },
+          { "jp": "バター" },
+          { "jp": "ミルク" },
+          { "jp": "コーヒー" },
+          { "jp": "ジュース" },
+          { "jp": "バナナ" },
+          { "jp": "オレンジ" },
+          { "jp": "トマト" },
+          { "jp": "レタス" },
+          { "jp": "サラダ" },
+          { "jp": "スープ" },
+          { "jp": "カレー" },
+          { "jp": "ラーメン" },
+          { "jp": "ピザ" },
+          { "jp": "ハンバーガー" },
+          { "jp": "サンドイッチ" },
+          { "jp": "ステーキ" },
+          { "jp": "ケーキ" },
+          { "jp": "アイスクリーム" }
+        ]
+      },
+      "meta": {
+        "theme": "katakana_food_song",
+        "atmosphere": "market_table",
+        "prototype": true
+      }
+    }
+  ]
+}
