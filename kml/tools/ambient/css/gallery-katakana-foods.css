@@ -111,8 +111,11 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   justify-content: center;
   isolation: isolate;
   flex: 0 0 auto;
+  flex-shrink: 0;
+  max-width: 100%;
   padding: var(--kml-katakana-bubble-pad-y) var(--kml-katakana-bubble-pad-x);
   border-radius: var(--kml-katakana-bubble-radius);
+  white-space: nowrap;
   opacity: 0;
   /* Quiet lift — small change so the material shift stays peripheral */
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.16));
@@ -166,7 +169,7 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   opacity: 1;
 }
 
-/* Dark text stays through both bubble states */
+/* Dark text stays through both bubble states — always one horizontal line */
 .exhibition-root.is-katakana-foods .kml-word-bubble .kml-compound-jp {
   position: relative;
   z-index: 1;
@@ -176,7 +179,9 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: 0.04em;
-  white-space: nowrap;
+  white-space: nowrap !important;
+  word-break: keep-all;
+  overflow-wrap: normal;
   color: var(--kml-katakana-text);
   text-shadow: none;
 }

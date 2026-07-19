@@ -1749,7 +1749,8 @@
           "is-furigana-fading",
           "is-furigana-hidden",
           "is-vocab-verse-reveal",
-          "has-vocab-readings"
+          "has-vocab-readings",
+          "is-katakana-field"
         );
         verseJp.textContent = "";
         verseJp.innerHTML = "";
@@ -3662,13 +3663,34 @@
       const main = document.createElement("span");
       main.className = "kml-compound-jp";
       main.textContent = step.jp || "";
-      const jpText = step.jp || "";
-      this.applyAnchorWordScale(main, jpText);
+      // Do not use anchor-compound scaling — those shrink 5+ chars to ~0.48.
+      // Katakana food buttons stay one horizontal line at near-full size.
+      main.style.setProperty("--kml-compound-word-scale", "1");
 
       bubble.appendChild(fill);
       bubble.appendChild(glass);
       bubble.appendChild(main);
       return bubble;
+    }
+
+    /**
+     * Keep each loanword on one horizontal button line.
+     * Only nudge scale if the pill would overflow the field width.
+     */
+    fitKatakanaFoodBubble(bubble) {
+      const field = this.els.verseJp;
+      const main = bubble?.querySelector(".kml-compound-jp");
+      if (!field || !bubble || !main) return;
+
+      main.style.setProperty("--kml-compound-word-scale", "1");
+      void bubble.offsetWidth;
+
+      const maxW = Math.max(160, field.clientWidth - 12);
+      const width = bubble.getBoundingClientRect().width;
+      if (width > maxW && width > 0) {
+        const scale = Math.max(0.72, (maxW / width) * 0.98);
+        main.style.setProperty("--kml-compound-word-scale", String(scale));
+      }
     }
 
     async playCalendarGlassBubble(stillRunning, bubble, t) {
@@ -3697,6 +3719,7 @@
       const revealMs = t.compoundsStepRevealMs ?? 900;
       const bubble = this.createKatakanaFoodBubble(step);
       verseJp.appendChild(bubble);
+      this.fitKatakanaFoodBubble(bubble);
 
       document.documentElement.style.setProperty("--ex-bubble-arrive", `${revealMs}ms`);
       // Force style so the arrive opacity transition runs.
