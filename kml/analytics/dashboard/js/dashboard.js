@@ -46,6 +46,7 @@
     grade_6_compounds: "Grade 6 Compounds",
     post_elementary_kanji: "Post-Elementary",
     post_elementary_compounds: "Post-Elementary Compounds",
+    post_elementary_compounds_v2: "Post-Elementary Compounds Vol. 2",
     foundations: "Foundations",
     channel_global: "Complete Channel",
   };

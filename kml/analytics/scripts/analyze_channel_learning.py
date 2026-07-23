@@ -234,6 +234,36 @@ def discover_post_elementary_compounds() -> list[dict]:
     return lessons
 
 
+def discover_post_elementary_compounds_v2() -> list[dict]:
+    """Jr High Compounds Volume 2 (companion path after Volume 1)."""
+    paths = sorted(
+        p for p in (COLLECTIONS / "post_elementary").glob("post_elementary_compounds_v2_*.json")
+        if re.fullmatch(r"post_elementary_compounds_v2_\d+", p.stem)
+    )
+    lessons = []
+    for path in paths:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        # Prefer meta.part — stem has both "v2" and the part number.
+        n = int(data.get("meta", {}).get("part") or _num_from_stem(path.stem, r"v2_(\d+)"))
+        words = []
+        for scene in data.get("scenes", []):
+            for step in scene.get("compounds", {}).get("steps", []):
+                words.append((step["jp"], step.get("reading", ""), step.get("en", ""), "compound"))
+        kanji = sorted({k for jp, *_ in words for k in KANJI_RE.findall(jp)})
+        lessons.append({
+            "order": n,
+            "id": data.get("id", path.stem),
+            "title": data.get("title", path.stem),
+            "label": f"Post-Elementary Compounds Vol. 2 Lesson {n}",
+            "file": str(path.relative_to(REPO_ROOT)),
+            "words": words,
+            "kanji": kanji,
+            "kind": "compounds",
+        })
+    lessons.sort(key=lambda x: x["order"])
+    return lessons
+
+
 def discover_foundations() -> list[dict]:
     """Foundations lessons from collections/ and exhibition/ (deduped by lesson #)."""
     candidates: list[Path] = []
@@ -312,6 +342,13 @@ def build_paths() -> dict[str, dict]:
             "role": "compounds",
             "lessons": pec,
         }
+    pec_v2 = discover_post_elementary_compounds_v2()
+    if pec_v2:
+        paths["post_elementary_compounds_v2"] = {
+            "name": "Post-Elementary Compounds Vol. 2",
+            "role": "compounds",
+            "lessons": pec_v2,
+        }
 
     foundations = discover_foundations()
     if foundations:
@@ -327,7 +364,7 @@ def build_paths() -> dict[str, dict]:
         [f"grade_{g}_kanji" for g in range(1, 7)]
         + ["post_elementary_kanji"]
         + [f"grade_{g}_compounds" for g in range(1, 7)]
-        + ["post_elementary_compounds"]
+        + ["post_elementary_compounds", "post_elementary_compounds_v2"]
         + ["japanese_vocabulary"]
         + ["foundations"]
     )
@@ -420,7 +457,11 @@ def load_kanji_jlpt() -> dict[str, str]:
 
 
 def load_master_vocabulary() -> dict[str, dict]:
+    """Optional enrichment lookup. Missing file → empty index (JLPT CSVs still apply)."""
     path = REPO_ROOT / CONFIG["sources"]["master_vocabulary"]
+    if not path.is_file():
+        print(f"  note: master vocabulary not found ({path}); continuing without it")
+        return {}
     data = json.loads(path.read_text(encoding="utf-8"))
     index = {}
     for e in data.get("entries", []):
@@ -1522,8 +1563,8 @@ def write_report(results: dict, path: Path) -> None:
     a("")
     a("- Each playlist is an independent cumulative path.")
     a("- The global path follows educational order: Grade 1–6 kanji → "
-      "post-elementary kanji → grade compounds → post-elementary compounds → "
-      "Japanese Vocabulary → Foundations.")
+      "post-elementary kanji → grade compounds → post-elementary compounds "
+      "(Vol. 1, then Vol. 2) → Japanese Vocabulary → Foundations.")
     a("- JLPT word coverage = unique curriculum words present in that level's "
       "word list ÷ list size.")
     a("- Spoken-frequency coverage uses OpenSubtitles 2018 Japanese lemmas "
