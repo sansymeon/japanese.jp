@@ -1,0 +1,62 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "katakana_song_typography",
+  "title": "Katakana Song — Typography Edition",
+  "notes": "KML typography gallery: katakana gojūon only, one kana at a time → settles into colored rows. Soft paper; last ~14s kana snowfall into a mound; treble-clef crest. Same ambient bed as hiragana typography (~3:35).",
+  "soundtrack": {
+    "main": "audio/hiragana_ambient_version.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/eml_crest.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 1200,
+    "typoRevealMs": 1800,
+    "typoFadeOutMs": 1600,
+    "typoAppearMs": 800,
+    "typoSettleMs": 550,
+    "typoDockMs": 1000,
+    "typoRowHoldMs": 2400,
+    "typoFinalRowHoldMs": 2600,
+    "typoSnowFinaleMs": 14000,
+    "typoSnowStaggerMs": 4500,
+    "typoSnowFallMs": 7000,
+    "closingBlackBeforeMs": 400,
+    "closingRevealMs": 1600,
+    "closingHoldMs": 2200,
+    "closingExhaleMs": 1600,
+    "closingBlackAfterMs": 400,
+    "closingSilenceHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "hiraganaSongTypography",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "hiraganaSongTypography",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "hiraganaSongTypography",
+    "stage": "katakanaSongTypography",
+    "script": "katakana",
+    "soundtrackDurationMs": 214518,
+    "introShare": 0.04,
+    "kanaCount": 46,
+    "scope": "gojuon"
+  },
+  "scenes": [
+    {
+      "id": "gojuon_typography_katakana",
+      "script": "katakana",
+      "rowIds": ["a", "ka", "sa", "ta", "na", "ha", "ma", "ya", "ra", "wa"]
+    }
+  ]
+}

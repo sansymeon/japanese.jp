@@ -1,0 +1,151 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "post_elementary_compounds_prototype",
+  "title": "Jr High Compounds — Prototype (10)",
+  "notes": "Pacing prototype: first 10 post-elementary (grade S) kanji in Heisig order, one anchor each. Anchor rule: the compound a Japanese speaker would first reach for to explain/embody this kanji — not necessarily highest frequency. Later volumes can cover other senses. Vocabulary typography on black (no scenic images). Ending: leave final compound ~22s → 4s fade to black (total ~3:45–4:00). Soundtrack fades with picture (jr_high_soundtrack.mp3).",
+  "soundtrack": {
+    "main": "audio/jr_high_soundtrack.mp3"
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 1200,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 800,
+    "compoundsPauseBeforeMs": 3200,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 2200,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3500,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsFinalReviewHoldMs": 22000,
+    "compoundsFinalFadeToBlackMs": 4000,
+    "vocabArtworkExhaleMs": 2800,
+    "exhibitTransitionMs": 0,
+    "kenBurnsDurationMs": 600000,
+    "closingBlackAfterMs": 600
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseVocabulary",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "japaneseVocabulary",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "cameraMotionScale": 1.0
+  },
+  "meta": {
+    "series": "post_elementary_compounds",
+    "curriculum": "post_elementary",
+    "scope": "post_elementary_through_joyo",
+    "stage": "compounds",
+    "format": "anchorCompoundsGrouped",
+    "prototype": true,
+    "sceneCount": 1,
+    "compoundCount": 10,
+    "kanjiRange": ["冒", "肘"],
+    "soundtrackDurationMs": 295627,
+    "estimatedContentRuntimeMs": 224400,
+    "timingNote": "~3:15 compounds + 22s final review + 4s fade ≈ 3:45–4:00 total. Soundtrack fades out with picture (does not wait for full track).",
+    "ending": "finalCompoundReview",
+    "anchorRule": "firstCompoundThatComesToMind",
+    "anchorRuleNote": "What compound would Japanese use to describe this kanji? Mental-prototype over frequency. Missed senses → Vol 2, 3, …",
+    "note": "Prototype only — not for recording. Review pacing before packaging."
+  },
+  "scenes": [
+    {
+      "id": "PE_compounds_proto_01",
+      "image": "images/black.png",
+      "galleryCamera": {
+        "motion": "still",
+        "focus": "50% 50%",
+        "motionScale": 1.0
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "冒険",
+            "reading": "ぼうけん",
+            "en": "adventure",
+            "jpHtml": "<ruby>冒<rt>ぼう</rt></ruby><ruby>険<rt>けん</rt></ruby>",
+            "meta": { "kanji": "冒", "heisigNumber": 18 }
+          },
+          {
+            "jp": "結晶",
+            "reading": "けっしょう",
+            "en": "crystal",
+            "jpHtml": "<ruby>結<rt>けっ</rt></ruby><ruby>晶<rt>しょう</rt></ruby>",
+            "meta": { "kanji": "晶", "heisigNumber": 22 }
+          },
+          {
+            "jp": "風呂",
+            "reading": "ふろ",
+            "en": "bath",
+            "jpHtml": "<ruby>風<rt>ふ</rt></ruby><ruby>呂<rt>ろ</rt></ruby>",
+            "meta": { "kanji": "呂", "heisigNumber": 24 }
+          },
+          {
+            "jp": "元旦",
+            "reading": "がんたん",
+            "en": "New Year's Day",
+            "jpHtml": "<ruby>元<rt>がん</rt></ruby><ruby>旦<rt>たん</rt></ruby>",
+            "meta": { "kanji": "旦", "heisigNumber": 30 }
+          },
+          {
+            "jp": "大胆",
+            "reading": "だいたん",
+            "en": "bold / daring",
+            "jpHtml": "<ruby>大<rt>だい</rt></ruby><ruby>胆<rt>たん</rt></ruby>",
+            "meta": { "kanji": "胆", "heisigNumber": 31 }
+          },
+          {
+            "jp": "凹凸",
+            "reading": "おうとつ",
+            "en": "unevenness",
+            "jpHtml": "<ruby>凹<rt>おう</rt></ruby><ruby>凸<rt>とつ</rt></ruby>",
+            "meta": { "kanji": "凹", "heisigNumber": 33 }
+          },
+          {
+            "jp": "凸凹",
+            "reading": "でこぼこ",
+            "en": "bumpy / uneven",
+            "jpHtml": "<ruby>凸凹<rt>でこぼこ</rt></ruby>",
+            "meta": { "kanji": "凸", "heisigNumber": 34 }
+          },
+          {
+            "jp": "一升瓶",
+            "reading": "いっしょうびん",
+            "en": "1.8-liter bottle",
+            "jpHtml": "<ruby>一<rt>いっ</rt></ruby><ruby>升<rt>しょう</rt></ruby><ruby>瓶<rt>びん</rt></ruby>",
+            "meta": { "kanji": "升", "heisigNumber": 42 }
+          },
+          {
+            "jp": "上昇",
+            "reading": "じょうしょう",
+            "en": "rise / ascent",
+            "jpHtml": "<ruby>上<rt>じょう</rt></ruby><ruby>昇<rt>しょう</rt></ruby>",
+            "meta": { "kanji": "昇", "heisigNumber": 43 }
+          },
+          {
+            "jp": "肘掛け",
+            "reading": "ひじかけ",
+            "en": "armrest",
+            "jpHtml": "<ruby>肘<rt>ひじ</rt></ruby><ruby>掛<rt>か</rt></ruby>け",
+            "meta": { "kanji": "肘", "heisigNumber": 46 }
+          }
+        ]
+      }
+    }
+  ]
+}

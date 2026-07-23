@@ -1,0 +1,307 @@
+/**
+ * Hiragana for Foreign Learners — prototype.
+ * Atmosphere borrowed from Japanese Vocabulary Lesson 1:
+ * ivory brush glyphs (Yuji Syuku), Cormorant serif support text,
+ * one warm background with an extremely slow push-in, soft vignette.
+ *
+ * Sizes/colors/durations are set as CSS variables from the collection JSON
+ * (see hiragana-lesson-engine.js applyConfigCss).
+ */
+
+:root {
+  --hl-kana-size: 42vmin;
+  --hl-kana-color: #efe6d8;
+  --hl-romaji-size: 4.6vmin;
+  --hl-romaji-color: rgba(236, 228, 210, 0.88);
+  --hl-romaji-tracking: 0.38em;
+  --hl-romaji-gap: 3.2vmin;
+  --hl-review-kana-size: 13vmin;
+  --hl-review-gap: 5.5vmin;
+  --hl-chart-kana-size: 7.6vmin;
+  --hl-chart-column-gap: 2.6vmin;
+  --hl-chart-row-gap: 1.4vmin;
+  --hl-title-size: 7.5vmin;
+  --hl-title-tracking: 0.42em;
+  --hl-title-sub-size: 2.5vmin;
+  --hl-title-sub-tracking: 0.3em;
+  --hl-overlay-opacity: 0.34;
+  --hl-push-from: 1.04;
+  --hl-push-to: 1.14;
+  --hl-push-duration: 600s;
+  --hl-chart-highlight-fade: 1200ms;
+
+  --hl-font-kana: "Yuji Syuku", "Noto Serif JP", serif;
+  --hl-font-serif: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+
+  /* Readability shadow — same warm, understated treatment as the KML verses */
+  --hl-shadow:
+    0 1px 3px rgba(6, 4, 2, 0.78),
+    0 3px 16px rgba(0, 0, 0, 0.62),
+    0 0 28px rgba(0, 0, 0, 0.4);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.hl-root {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  isolation: isolate;
+}
+
+/* ── Background — one image, extremely slow push-in ── */
+
+.hl-background {
+  position: absolute;
+  inset: -6%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hl-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.96) contrast(1.02);
+  transform: scale(var(--hl-push-from));
+  will-change: transform;
+}
+
+.hl-background.is-pushing img {
+  animation: hl-push-in var(--hl-push-duration) linear forwards;
+}
+
+@keyframes hl-push-in {
+  from {
+    transform: scale(var(--hl-push-from));
+  }
+  to {
+    transform: scale(var(--hl-push-to));
+  }
+}
+
+/* Soft darkening behind the kana for readability */
+.hl-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: rgba(0, 0, 0, var(--hl-overlay-opacity));
+}
+
+.hl-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 42%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+/* ── Fade primitives ── */
+
+.hl-fade {
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 800ms; /* engine overrides per phase */
+}
+
+.hl-fade.is-visible {
+  opacity: 1;
+}
+
+/* ── Opening title ── */
+
+.hl-title {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.4vmin;
+  pointer-events: none;
+}
+
+.hl-title-main {
+  margin: 0;
+  font-family: var(--hl-font-serif);
+  font-size: var(--hl-title-size);
+  font-weight: 500;
+  letter-spacing: var(--hl-title-tracking);
+  /* Recenter optically: tracking adds trailing space after the last letter */
+  padding-left: var(--hl-title-tracking);
+  color: var(--hl-kana-color);
+  text-shadow: var(--hl-shadow);
+}
+
+.hl-title-sub {
+  margin: 0;
+  font-family: var(--hl-font-serif);
+  font-size: var(--hl-title-sub-size);
+  font-weight: 600;
+  letter-spacing: var(--hl-title-sub-tracking);
+  padding-left: var(--hl-title-sub-tracking);
+  color: var(--hl-romaji-color);
+  text-shadow: var(--hl-shadow);
+}
+
+/* ── Single kana + romaji ── */
+
+.hl-kana-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hl-kana {
+  font-family: var(--hl-font-kana);
+  font-weight: 400;
+  font-size: var(--hl-kana-size);
+  line-height: 1;
+  color: var(--hl-kana-color);
+  text-shadow: var(--hl-shadow);
+}
+
+.hl-romaji {
+  margin-top: var(--hl-romaji-gap);
+  font-family: var(--hl-font-serif);
+  font-weight: 500;
+  font-size: var(--hl-romaji-size);
+  letter-spacing: var(--hl-romaji-tracking);
+  padding-left: var(--hl-romaji-tracking);
+  color: var(--hl-romaji-color);
+  text-shadow: var(--hl-shadow);
+}
+
+/* ── Row mini-review (kana only) ── */
+
+.hl-review {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hl-review-gap);
+  pointer-events: none;
+}
+
+.hl-review-kana {
+  font-family: var(--hl-font-kana);
+  font-weight: 400;
+  font-size: var(--hl-review-kana-size);
+  line-height: 1;
+  color: var(--hl-kana-color);
+  text-shadow: var(--hl-shadow);
+}
+
+/* ── Final gojūon chart (kana only, columns read right → left) ── */
+
+.hl-chart {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hl-chart-column-gap);
+  pointer-events: none;
+}
+
+.hl-chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--hl-chart-row-gap);
+  transition: opacity var(--hl-chart-highlight-fade) ease-in-out;
+}
+
+/* Gentle highlight: the active row keeps full presence, others recede */
+.hl-chart.is-highlighting .hl-chart-column {
+  opacity: 0.32;
+}
+
+.hl-chart.is-highlighting .hl-chart-column.is-highlight {
+  opacity: 1;
+}
+
+.hl-chart-cell {
+  font-family: var(--hl-font-kana);
+  font-weight: 400;
+  font-size: var(--hl-chart-kana-size);
+  line-height: 1.28;
+  color: var(--hl-kana-color);
+  text-shadow: var(--hl-shadow);
+}
+
+.hl-chart-cell.is-empty {
+  visibility: hidden;
+}
+
+/* ── Black veil (opening / closing) ── */
+
+.hl-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background: #000;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 2600ms ease-in-out;
+}
+
+.hl-veil.is-clear {
+  opacity: 0;
+}
+
+/* ── Closing 漢 crest (silent, on black — gallery crest convention) ── */
+
+.hl-crest {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hl-crest img {
+  max-width: min(40vw, 260px);
+  max-height: min(40vw, 260px);
+  object-fit: contain;
+  clip-path: circle(42% at 50% 50%);
+}
+
+/* ── Error surface (dev only) ── */
+
+.hl-error {
+  position: absolute;
+  z-index: 9;
+  left: 1rem;
+  bottom: 1rem;
+  font-family: monospace;
+  font-size: 14px;
+  color: #e08080;
+}

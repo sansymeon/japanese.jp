@@ -1,0 +1,94 @@
+{
+  "presentation": "hiraganaLesson",
+  "id": "hiragana_lesson",
+  "title": "Hiragana — 46 Basic Japanese Characters",
+  "notes": "Hiragana for Foreign Learners prototype. Reuses Japanese Vocabulary Lesson 1 atmosphere: vocabulary_1.png background with slow push-in, vocabulary_1.mp3 soundtrack, ivory brush typography. Kana fades in alone, romaji appears briefly beneath, then disappears; kana-only row reviews; ending gojūon chart with gentle row highlights. Scope 'test' renders opening + あ row + review + transition into か.",
+  "soundtrack": {
+    "main": "audio/vocabulary_1.mp3"
+  },
+  "background": {
+    "image": "assets/images/vocabulary_1.png",
+    "focus": "48% 58%",
+    "overlayOpacity": 0.34,
+    "pushIn": {
+      "scaleFrom": 1.04,
+      "scaleTo": 1.14,
+      "durationMs": 600000
+    }
+  },
+  "opening": {
+    "titleMain": "HIRAGANA",
+    "titleSub": "46 Basic Japanese Characters"
+  },
+  "crest": {
+    "image": "assets/images/gold_closing.png"
+  },
+  "timing": {
+    "recordingBlackBeforeMs": 3000,
+    "backgroundFadeInMs": 2800,
+    "soundtrackDelayAfterImageMs": 600,
+    "backgroundAloneMs": 4000,
+    "titleFadeInMs": 1600,
+    "titleHoldMs": 3600,
+    "titleFadeOutMs": 1600,
+    "titleAfterMs": 1400,
+    "kanaFadeInMs": 800,
+    "kanaAloneMs": 1200,
+    "romajiFadeInMs": 800,
+    "kanaRomajiHoldMs": 1500,
+    "romajiFadeOutMs": 800,
+    "kanaAloneAfterMs": 1000,
+    "kanaFadeOutMs": 900,
+    "kanaGapMs": 300,
+    "reviewBeforeMs": 500,
+    "reviewFadeInMs": 1000,
+    "reviewHoldMs": 3500,
+    "reviewFadeOutMs": 1000,
+    "reviewAfterMs": 700,
+    "chartBeforeMs": 800,
+    "chartFadeInMs": 2200,
+    "chartHoldMs": 24000,
+    "chartHighlightFadeMs": 1200,
+    "chartHighlightHoldMs": 2400,
+    "chartUnhighlightHoldMs": 6000,
+    "chartFadeOutMs": 2400,
+    "endBackgroundHoldMs": 3000,
+    "endFadeToBlackMs": 2600,
+    "crestBlackBeforeMs": 800,
+    "crestFadeInMs": 3200,
+    "crestHoldMs": 2800,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "typography": {
+    "kanaSize": "46vmin",
+    "kanaColor": "#efe6d8",
+    "romajiSize": "22vmin",
+    "romajiColor": "rgba(236, 228, 210, 0.92)",
+    "romajiTracking": "0.14em",
+    "romajiGap": "1.6vmin",
+    "reviewKanaSize": "13vmin",
+    "reviewGap": "5.5vmin",
+    "chartKanaSize": "7.6vmin",
+    "chartColumnGap": "2.6vmin",
+    "chartRowGap": "1.4vmin",
+    "titleSize": "7.5vmin",
+    "titleTracking": "0.42em",
+    "titleSubSize": "3.8vmin",
+    "titleSubTracking": "0.3em"
+  },
+  "display": {
+    "scope": "full",
+    "hideChrome": true
+  },
+  "meta": {
+    "family": "hiraganaLesson",
+    "series": "hiragana_for_foreign_learners",
+    "stage": "kana_recognition",
+    "kanaCount": 46,
+    "rowCount": 10,
+    "prototype": true,
+    "base": "vocabulary_01 (Japanese Vocabulary Lesson 1) — soundtrack, background, export pipeline",
+    "soundtrackDurationMs": 656562
+  }
+}

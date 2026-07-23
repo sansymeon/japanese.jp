@@ -1,0 +1,618 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "hiragana_origins",
+  "title": "Hiragana Origins — Gojūon",
+  "notes": "Full gojūon (46): intro study → classical → man'yōgana ↔ hiragana on warm washi; varied classical bridges between rows; short Gallery 漢 crest, fade & cut music. ~19 min content.",
+  "soundtrack": {
+    "main": "audio/ambient_kanji_exhibition_original.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "originsIntroImage": "collections/hiragana_origins/assets/images/intro_image.png",
+    "originsIntroAlt": "Classical Japanese study — calligraphy and brush",
+    "originsIntroFadeMs": 3200,
+    "originsIntroHoldMs": 9000,
+    "originsIntroExhaleMs": 2800,
+    "originsClassicalFadeMs": 2800,
+    "originsClassicalHoldMs": 14000,
+    "originsClassicalExhaleMs": 2800,
+    "originsKenBurnsDurationMs": 48000,
+    "originsKanjiRevealMs": 2200,
+    "originsKanjiHoldMs": 2800,
+    "originsMorphMs": 3200,
+    "originsHiraganaHoldMs": 2800,
+    "originsReturnHoldMs": 2400,
+    "originsExhibitFadeMs": 2400,
+    "originsCalligraphyHoldMs": 4200,
+    "originsLabelFadeMs": 1000,
+    "originsLabelDelayMs": 900,
+    "exhibitTransitionMs": 600,
+    "exhibitBlackHoldMs": 350,
+    "closingBlackBeforeMs": 400,
+    "closingRevealMs": 1600,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 2000,
+    "closingBlackAfterMs": 400,
+    "closingSilenceHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "hiraganaOrigins",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "hiraganaOrigins",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "hiraganaOrigins",
+    "stage": "hiraganaOrigins",
+    "scope": "gojuon",
+    "pairCount": 46,
+    "classicalBridgeCount": 10,
+    "estimatedContentRuntimeMs": 1137100,
+    "soundtrackDurationMs": 5884656
+  },
+  "scenes": [
+    {
+      "id": "classical_before_a",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_1.jpg",
+      "alt": "Classical Japanese calligraphy manuscript",
+      "meta": {
+        "beforeRow": "a"
+      }
+    },
+    {
+      "id": "origin_a",
+      "kanji": "安",
+      "hiragana": "あ",
+      "reading": "a",
+      "meta": {
+        "row": "a",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_i",
+      "kanji": "以",
+      "hiragana": "い",
+      "reading": "i",
+      "meta": {
+        "row": "a",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_u",
+      "kanji": "宇",
+      "hiragana": "う",
+      "reading": "u",
+      "meta": {
+        "row": "a",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_e",
+      "kanji": "衣",
+      "hiragana": "え",
+      "reading": "e",
+      "meta": {
+        "row": "a",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_o",
+      "kanji": "於",
+      "hiragana": "お",
+      "reading": "o",
+      "meta": {
+        "row": "a",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_a",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_3.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "a"
+      }
+    },
+    {
+      "id": "origin_ka",
+      "kanji": "加",
+      "hiragana": "か",
+      "reading": "ka",
+      "meta": {
+        "row": "ka",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_ki",
+      "kanji": "幾",
+      "hiragana": "き",
+      "reading": "ki",
+      "meta": {
+        "row": "ka",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_ku",
+      "kanji": "久",
+      "hiragana": "く",
+      "reading": "ku",
+      "meta": {
+        "row": "ka",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_ke",
+      "kanji": "計",
+      "hiragana": "け",
+      "reading": "ke",
+      "meta": {
+        "row": "ka",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_ko",
+      "kanji": "己",
+      "hiragana": "こ",
+      "reading": "ko",
+      "meta": {
+        "row": "ka",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_ka",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_5.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "ka"
+      }
+    },
+    {
+      "id": "origin_sa",
+      "kanji": "左",
+      "hiragana": "さ",
+      "reading": "sa",
+      "meta": {
+        "row": "sa",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_shi",
+      "kanji": "之",
+      "hiragana": "し",
+      "reading": "shi",
+      "meta": {
+        "row": "sa",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_su",
+      "kanji": "寸",
+      "hiragana": "す",
+      "reading": "su",
+      "meta": {
+        "row": "sa",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_se",
+      "kanji": "世",
+      "hiragana": "せ",
+      "reading": "se",
+      "meta": {
+        "row": "sa",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_so",
+      "kanji": "曽",
+      "hiragana": "そ",
+      "reading": "so",
+      "meta": {
+        "row": "sa",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_sa",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_7.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "sa"
+      }
+    },
+    {
+      "id": "origin_ta",
+      "kanji": "太",
+      "hiragana": "た",
+      "reading": "ta",
+      "meta": {
+        "row": "ta",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_chi",
+      "kanji": "知",
+      "hiragana": "ち",
+      "reading": "chi",
+      "meta": {
+        "row": "ta",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_tsu",
+      "kanji": "川",
+      "hiragana": "つ",
+      "reading": "tsu",
+      "meta": {
+        "row": "ta",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_te",
+      "kanji": "天",
+      "hiragana": "て",
+      "reading": "te",
+      "meta": {
+        "row": "ta",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_to",
+      "kanji": "止",
+      "hiragana": "と",
+      "reading": "to",
+      "meta": {
+        "row": "ta",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_ta",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_9.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "ta"
+      }
+    },
+    {
+      "id": "origin_na",
+      "kanji": "奈",
+      "hiragana": "な",
+      "reading": "na",
+      "meta": {
+        "row": "na",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_ni",
+      "kanji": "仁",
+      "hiragana": "に",
+      "reading": "ni",
+      "meta": {
+        "row": "na",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_nu",
+      "kanji": "奴",
+      "hiragana": "ぬ",
+      "reading": "nu",
+      "meta": {
+        "row": "na",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_ne",
+      "kanji": "祢",
+      "hiragana": "ね",
+      "reading": "ne",
+      "meta": {
+        "row": "na",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_no",
+      "kanji": "乃",
+      "hiragana": "の",
+      "reading": "no",
+      "meta": {
+        "row": "na",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_na",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_11.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "na"
+      }
+    },
+    {
+      "id": "origin_ha",
+      "kanji": "波",
+      "hiragana": "は",
+      "reading": "ha",
+      "meta": {
+        "row": "ha",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_hi",
+      "kanji": "比",
+      "hiragana": "ひ",
+      "reading": "hi",
+      "meta": {
+        "row": "ha",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_fu",
+      "kanji": "不",
+      "hiragana": "ふ",
+      "reading": "fu",
+      "meta": {
+        "row": "ha",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_he",
+      "kanji": "部",
+      "hiragana": "へ",
+      "reading": "he",
+      "meta": {
+        "row": "ha",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_ho",
+      "kanji": "保",
+      "hiragana": "ほ",
+      "reading": "ho",
+      "meta": {
+        "row": "ha",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_ha",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_13.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "ha"
+      }
+    },
+    {
+      "id": "origin_ma",
+      "kanji": "末",
+      "hiragana": "ま",
+      "reading": "ma",
+      "meta": {
+        "row": "ma",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_mi",
+      "kanji": "美",
+      "hiragana": "み",
+      "reading": "mi",
+      "meta": {
+        "row": "ma",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_mu",
+      "kanji": "武",
+      "hiragana": "む",
+      "reading": "mu",
+      "meta": {
+        "row": "ma",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_me",
+      "kanji": "女",
+      "hiragana": "め",
+      "reading": "me",
+      "meta": {
+        "row": "ma",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_mo",
+      "kanji": "毛",
+      "hiragana": "も",
+      "reading": "mo",
+      "meta": {
+        "row": "ma",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_ma",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_15.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "ma"
+      }
+    },
+    {
+      "id": "origin_ya",
+      "kanji": "也",
+      "hiragana": "や",
+      "reading": "ya",
+      "meta": {
+        "row": "ya",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_yu",
+      "kanji": "由",
+      "hiragana": "ゆ",
+      "reading": "yu",
+      "meta": {
+        "row": "ya",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_yo",
+      "kanji": "与",
+      "hiragana": "よ",
+      "reading": "yo",
+      "meta": {
+        "row": "ya",
+        "index": 2
+      }
+    },
+    {
+      "id": "classical_after_ya",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_2.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "ya"
+      }
+    },
+    {
+      "id": "origin_ra",
+      "kanji": "良",
+      "hiragana": "ら",
+      "reading": "ra",
+      "meta": {
+        "row": "ra",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_ri",
+      "kanji": "利",
+      "hiragana": "り",
+      "reading": "ri",
+      "meta": {
+        "row": "ra",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_ru",
+      "kanji": "留",
+      "hiragana": "る",
+      "reading": "ru",
+      "meta": {
+        "row": "ra",
+        "index": 2
+      }
+    },
+    {
+      "id": "origin_re",
+      "kanji": "礼",
+      "hiragana": "れ",
+      "reading": "re",
+      "meta": {
+        "row": "ra",
+        "index": 3
+      }
+    },
+    {
+      "id": "origin_ro",
+      "kanji": "呂",
+      "hiragana": "ろ",
+      "reading": "ro",
+      "meta": {
+        "row": "ra",
+        "index": 4
+      }
+    },
+    {
+      "id": "classical_after_ra",
+      "kind": "classicalAmbient",
+      "image": "collections/hiragana_origins/assets/images/classical_japanese_4.png",
+      "alt": "Classical Japanese calligraphy",
+      "meta": {
+        "afterRow": "ra"
+      }
+    },
+    {
+      "id": "origin_wa",
+      "kanji": "和",
+      "hiragana": "わ",
+      "reading": "wa",
+      "meta": {
+        "row": "wa",
+        "index": 0
+      }
+    },
+    {
+      "id": "origin_wo",
+      "kanji": "遠",
+      "hiragana": "を",
+      "reading": "wo",
+      "meta": {
+        "row": "wa",
+        "index": 1
+      }
+    },
+    {
+      "id": "origin_n",
+      "kanji": "无",
+      "hiragana": "ん",
+      "reading": "n",
+      "meta": {
+        "row": "wa",
+        "index": 2
+      }
+    }
+  ]
+}

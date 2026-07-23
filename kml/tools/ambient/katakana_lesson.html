@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katakana — 46 Basic Japanese Characters</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/hiragana-lesson.css?v=2">
+</head>
+<body>
+
+<!--
+  Katakana for Foreign Learners — same design as hiragana_lesson.html
+  Base: Japanese Vocabulary Lesson 1 (vocabulary_01) atmosphere & export pipeline.
+
+  Test (opening + ア row + review + transition into カ):
+      katakana_lesson.html?scope=test
+  Full 46-kana lesson + gojūon chart ending:
+      katakana_lesson.html?scope=full
+  QA: add &timingScale=0.05
+
+  Record: python3 scripts/record_hiragana_lesson.py --collection katakana_lesson --scope full
+-->
+
+<div class="hl-root" data-hl-collection="katakana_lesson">
+
+  <div class="hl-background" data-hl-background aria-hidden="true">
+    <img data-hl-background-img alt="">
+  </div>
+
+  <div class="hl-overlay" aria-hidden="true"></div>
+  <div class="hl-vignette" aria-hidden="true"></div>
+
+  <div class="hl-title hl-fade" data-hl-title aria-hidden="true">
+    <p class="hl-title-main" data-hl-title-main></p>
+    <p class="hl-title-sub" data-hl-title-sub></p>
+  </div>
+
+  <div class="hl-kana-stage hl-fade" data-hl-kana-stage>
+    <div class="hl-kana" data-hl-kana lang="ja"></div>
+    <div class="hl-romaji hl-fade" data-hl-romaji></div>
+  </div>
+
+  <div class="hl-review hl-fade" data-hl-review lang="ja"></div>
+
+  <div class="hl-chart hl-fade" data-hl-chart lang="ja"></div>
+
+  <div class="hl-veil" data-hl-veil aria-hidden="true"></div>
+
+  <div class="hl-crest hl-fade" data-hl-crest aria-hidden="true">
+    <img data-hl-crest-img alt="">
+  </div>
+
+  <div class="hl-error" data-hl-error></div>
+
+</div>
+
+<script src="./js/hiragana-lesson-data.js?v=1"></script>
+<script src="./js/katakana-lesson-data.js?v=1"></script>
+<script src="./js/hiragana-lesson-engine.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "hiragana_song_romaji",
+  "title": "Rainbow Hiragana + Romaji",
+  "notes": "Rainbow typography edition with gentle Hepburn romaji ruby above each kana. Self-paced (no docking): kana holds center, romaji breathes above, review rows fade in whole. Final gojūon chart + alphabet snowfall. Extended soundtrack (~5:43).",
+  "soundtrack": {
+    "main": "audio/hiragana_extended_version.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/eml_crest.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 1200,
+    "typoRevealMs": 1800,
+    "typoFadeOutMs": 1600,
+    "typoAppearMs": 600,
+    "typoSettleMs": 300,
+    "typoDockMs": 0,
+    "typoRowHoldMs": 3500,
+    "typoFinalRowHoldMs": 4000,
+    "typoRomajiFadeMs": 500,
+    "typoRomajiHoldMs": 1200,
+    "typoRomajiKanaHoldMs": 800,
+    "typoFinalReviewMs": 18000,
+    "typoChartFadeMs": 1400,
+    "typoSnowFinaleMs": 12000,
+    "typoSnowStaggerMs": 4000,
+    "typoSnowFallMs": 6500,
+    "closingBlackBeforeMs": 400,
+    "closingRevealMs": 1600,
+    "closingHoldMs": 2200,
+    "closingExhaleMs": 1600,
+    "closingBlackAfterMs": 400,
+    "closingSilenceHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "hiraganaSongTypography",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "hiraganaSongTypography",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "hiraganaSongTypography",
+    "stage": "hiraganaSongRomaji",
+    "script": "hiragana",
+    "romaji": true,
+    "soundtrackDurationMs": 342596,
+    "introMs": 8000,
+    "introShare": 0.03,
+    "kanaCount": 46,
+    "scope": "gojuon"
+  },
+  "scenes": [
+    {
+      "id": "gojuon_typography_romaji",
+      "script": "hiragana",
+      "romaji": true,
+      "rowIds": ["a", "ka", "sa", "ta", "na", "ha", "ma", "ya", "ra", "wa"]
+    }
+  ]
+}

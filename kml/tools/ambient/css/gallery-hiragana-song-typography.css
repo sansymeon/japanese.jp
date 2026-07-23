@@ -1,0 +1,443 @@
+/**
+ * Hiragana Song — Typography Edition
+ * Soft paper gallery; large rounded kana; gentle hero → row motion.
+ */
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/zen-maru-gothic/ZenMaruGothic-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/zen-maru-gothic/ZenMaruGothic-Bold.ttf") format("truetype");
+}
+
+.exhibition-root.is-hiragana-song-typography {
+  --typo-paper: #f6f1e8;
+  --typo-paper-deep: #efe6d8;
+  --typo-ink-soft: rgba(60, 48, 40, 0.06);
+  --typo-font: "Zen Maru Gothic", "Noto Sans JP", "Hiragino Sans", sans-serif;
+  /* Hero enters oversized, then settles slightly before docking. */
+  --typo-hero-size: min(68vw, 58vh, 560px);
+  --typo-hero-enter-scale: 1.12;
+  --typo-hero-settle-scale: 0.86;
+  /* Assembling row (bottom) — already larger than v1. */
+  --typo-row-size: min(18vw, 20vh, 168px);
+  /* Completed row fills more of the frame. */
+  --typo-row-hold-size: min(22vw, 26vh, 220px);
+  --typo-row-gap: clamp(1rem, 3.8vw, 2.75rem);
+  --typo-row-hold-gap: clamp(1.35rem, 4.8vw, 3.5rem);
+  --typo-row-color: #ff2d55;
+  --typo-fade: 1800ms;
+  --typo-appear: 800ms;
+  --typo-settle: 550ms;
+  --typo-dock: 1000ms;
+  /* Romaji edition: quiet Hepburn ruby — dark gray, medium weight, fade only. */
+  --typo-romaji-ink: rgba(72, 64, 57, 0.92);
+  --typo-romaji-fade: 450ms;
+  --typo-romaji-size: 0.34em;
+  --typo-hero-top: 44%;
+  --typo-chart-fade: 1400ms;
+  --typo-chart-kana-size: min(5.5vh, 7.5vw, 60px);
+  background: #1a1612;
+}
+
+.exhibition-root.is-hiragana-song-typography .exhibition-artwork,
+.exhibition-root.is-hiragana-song-typography .exhibition-title,
+.exhibition-root.is-hiragana-song-typography .exhibition-notes,
+.exhibition-root.is-hiragana-song-typography .exhibition-vignette,
+.exhibition-root.is-hiragana-song-typography .hiragana-song-layer,
+.exhibition-root.is-hiragana-song-typography .party-kanji-layer,
+.exhibition-root.is-hiragana-song-typography .stroke-order-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-hiragana-song-typography .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-hiragana-song-typography .exhibition-bookend {
+  background: #000;
+}
+
+.hiragana-typo-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--typo-fade, 1800ms) ease;
+  pointer-events: none;
+}
+
+.hiragana-typo-layer.is-visible {
+  opacity: 1;
+}
+
+.hiragana-typo-layer.is-exhaling {
+  opacity: 0;
+}
+
+.hiragana-typo-paper {
+  position: absolute;
+  inset: -6%;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 18%, rgba(255, 252, 245, 0.95), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 82% 78%, rgba(232, 214, 196, 0.55), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 12% 72%, rgba(236, 220, 200, 0.4), transparent 55%),
+    linear-gradient(168deg, var(--typo-paper) 0%, var(--typo-paper-deep) 100%);
+}
+
+.hiragana-typo-paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.35) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.22) 0 1px, transparent 2px);
+  background-size: 120px 120px, 180px 180px, 150px 150px;
+  pointer-events: none;
+}
+
+.hiragana-typo-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      var(--typo-ink-soft) 3px,
+      var(--typo-ink-soft) 4px
+    );
+  pointer-events: none;
+}
+
+.hiragana-typo-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 72% 68% at 50% 48%,
+    transparent 48%,
+    rgba(40, 32, 24, 0.12) 100%
+  );
+  pointer-events: none;
+}
+
+.hiragana-typo-stage {
+  position: relative;
+  z-index: 1;
+  width: min(98vw, 1280px);
+  height: min(92vh, 820px);
+  display: grid;
+  place-items: center;
+}
+
+.hiragana-typo-hero {
+  position: absolute;
+  left: 50%;
+  top: var(--typo-hero-top, 44%);
+  translate: -50% -50%;
+  font-family: var(--typo-font);
+  font-weight: 700;
+  font-size: var(--typo-hero-size);
+  line-height: 1;
+  color: var(--typo-row-color);
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: scale(var(--typo-hero-enter-scale));
+  transition:
+    opacity var(--typo-appear, 800ms) cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform var(--typo-appear, 800ms) cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform, opacity;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hiragana-typo-hero.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hiragana-typo-hero.is-settled {
+  transform: scale(var(--typo-hero-settle-scale));
+  transition:
+    opacity var(--typo-appear, 800ms) cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform var(--typo-settle, 550ms) cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+.hiragana-typo-hero.is-docking {
+  transition:
+    opacity var(--typo-dock, 1000ms) cubic-bezier(0.33, 0.1, 0.25, 1),
+    transform var(--typo-dock, 1000ms) cubic-bezier(0.33, 0.1, 0.25, 1);
+}
+
+/* Hero romaji — ruby position, directly above the kana. */
+.hiragana-typo-hero::before {
+  content: attr(data-romaji);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.04em);
+  transform: translateX(-50%);
+  font-family: var(--typo-font);
+  font-weight: 500;
+  font-size: var(--typo-romaji-size, 0.34em);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--typo-romaji-ink, rgba(72, 64, 57, 0.92));
+  opacity: 0;
+  transition: opacity var(--typo-romaji-fade, 450ms) ease;
+  pointer-events: none;
+}
+
+.hiragana-typo-hero.show-romaji::before {
+  opacity: 1;
+}
+
+.hiragana-typo-row {
+  position: absolute;
+  left: 50%;
+  top: 74%;
+  translate: -50% -50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--typo-row-gap);
+  min-height: var(--typo-row-size);
+  font-family: var(--typo-font);
+  font-weight: 700;
+  font-size: var(--typo-row-size);
+  line-height: 1;
+  color: var(--typo-row-color);
+  opacity: 0;
+  transition:
+    opacity 700ms ease,
+    top 1000ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    font-size 1000ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    gap 1000ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    min-height 1000ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  letter-spacing: 0.04em;
+}
+
+.hiragana-typo-row.is-visible {
+  opacity: 1;
+}
+
+.hiragana-typo-row.is-holding {
+  top: 50%;
+  font-size: var(--typo-row-hold-size);
+  gap: var(--typo-row-hold-gap);
+  min-height: var(--typo-row-hold-size);
+}
+
+.hiragana-typo-row.is-fading {
+  opacity: 0;
+  transition: opacity 700ms ease, top 700ms ease, font-size 700ms ease;
+}
+
+/* Romaji edition: review row appears in place — opacity only, no slide or resize. */
+.hiragana-typo-row.is-static {
+  transition: opacity 700ms ease;
+}
+
+/* Romaji edition: kana sits a touch lower so kana + ruby read as one centered unit. */
+.exhibition-root.is-hiragana-song-typography.is-romaji-edition {
+  --typo-hero-top: 48%;
+}
+
+.hiragana-typo-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0.85em;
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 480ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hiragana-typo-slot.is-filled {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Review rows — romaji ruby above every docked kana while the row holds. */
+.hiragana-typo-row.is-romaji .hiragana-typo-slot {
+  position: relative;
+}
+
+.hiragana-typo-row.is-romaji .hiragana-typo-slot::before {
+  content: attr(data-romaji);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.06em);
+  transform: translateX(-50%);
+  font-family: var(--typo-font);
+  font-weight: 500;
+  font-size: var(--typo-romaji-size, 0.34em);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--typo-romaji-ink, rgba(72, 64, 57, 0.92));
+  opacity: 0;
+  transition: opacity var(--typo-romaji-fade, 450ms) ease;
+  pointer-events: none;
+}
+
+.hiragana-typo-row.is-romaji.is-holding .hiragana-typo-slot.is-filled::before {
+  opacity: 1;
+}
+
+.hiragana-typo-row.is-romaji.is-fading .hiragana-typo-slot::before {
+  opacity: 0;
+}
+
+/* Final review chart — completed gojūon, romaji directly above each kana. */
+.hiragana-typo-chart {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.3rem, 1vh, 0.9rem);
+  padding: 2.5vh 3vw;
+  font-family: var(--typo-font);
+  opacity: 0;
+  transition: opacity var(--typo-chart-fade, 1400ms) ease;
+  pointer-events: none;
+}
+
+.hiragana-typo-chart.is-visible {
+  opacity: 1;
+}
+
+.hiragana-typo-chart.is-fading {
+  opacity: 0;
+}
+
+.hiragana-typo-chart-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.8rem, 3vw, 2.2rem);
+  font-size: var(--typo-chart-kana-size, 64px);
+}
+
+.hiragana-typo-chart-cell {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1em;
+}
+
+.hiragana-typo-chart-romaji {
+  font-weight: 500;
+  font-size: 0.36em;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: var(--typo-romaji-ink, rgba(72, 64, 57, 0.92));
+  margin-bottom: 0.14em;
+}
+
+.hiragana-typo-chart-kana {
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+.hiragana-typo-snow {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.hiragana-typo-snow.is-active {
+  opacity: 1;
+}
+
+.hiragana-typo-snow.is-fading {
+  opacity: 0;
+  transition: opacity 1400ms ease;
+}
+
+.hiragana-typo-flake {
+  position: absolute;
+  left: var(--flake-start-x, 50%);
+  top: -12%;
+  translate: -50% -50%;
+  font-family: var(--typo-font);
+  font-weight: 700;
+  font-size: var(--flake-size, 160px);
+  line-height: 1;
+  opacity: 0;
+  transform: rotate(var(--flake-rot, 0deg));
+  will-change: transform, top, left, opacity;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35));
+}
+
+.hiragana-typo-flake.is-falling {
+  animation-name: hiragana-typo-flake-fall;
+  animation-duration: var(--flake-duration, 7000ms);
+  animation-delay: var(--flake-delay, 0ms);
+  animation-timing-function: cubic-bezier(0.22, 0.2, 0.2, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes hiragana-typo-flake-fall {
+  0% {
+    opacity: 0;
+    top: -14%;
+    left: var(--flake-start-x, 50%);
+    transform: rotate(var(--flake-rot, 0deg)) scale(0.92);
+  }
+  10% {
+    opacity: 1;
+  }
+  55% {
+    left: var(--flake-mid-x, 50%);
+    transform: rotate(calc(var(--flake-rot, 0deg) * 0.35)) scale(1);
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: var(--flake-y, 72%);
+    left: var(--flake-x, 50%);
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@media (max-width: 720px) {
+  .exhibition-root.is-hiragana-song-typography {
+    --typo-hero-size: min(72vw, 48vh, 360px);
+    --typo-row-size: min(18vw, 14vh, 96px);
+    --typo-row-hold-size: min(20vw, 16vh, 112px);
+    --typo-row-gap: clamp(0.55rem, 2.8vw, 1.25rem);
+    --typo-row-hold-gap: clamp(0.75rem, 3.4vw, 1.6rem);
+  }
+
+  .hiragana-typo-row {
+    top: 76%;
+  }
+}

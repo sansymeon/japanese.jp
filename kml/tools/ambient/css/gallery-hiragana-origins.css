@@ -1,0 +1,322 @@
+/**
+ * Hiragana Origins — warm washi, dark brush ink, handwritten faces.
+ * Enable: exhibitProfile hiraganaOrigins
+ */
+
+.exhibition-root.is-hiragana-origins {
+  --origins-paper: #f3ead8;
+  --origins-paper-warm: #ebe0cc;
+  --origins-paper-shadow: rgba(120, 96, 64, 0.14);
+  --origins-ink: #2a2218;
+  --origins-ink-soft: rgba(42, 34, 24, 0.08);
+  --origins-kanji-font: "Yuji Syuku", "Noto Serif JP", serif;
+  --origins-hiragana-font: "Hachi Maru Pop", "Yuji Syuku", cursive;
+  --origins-kanji-size: min(52vw, 46vh, 420px);
+  --origins-hiragana-size: min(44vw, 40vh, 360px);
+  --origins-reveal: 2200ms;
+  --origins-morph: 3200ms;
+  --origins-fade: 2400ms;
+  --origins-ambient-fade: 3200ms;
+  --origins-ken-burns: 48000ms;
+  --origins-plaque-fade: 1000ms;
+  --origins-plaque-ink: rgba(58, 46, 34, 0.86);
+  --origins-plaque-font: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  background: #0f0d0b;
+}
+
+.exhibition-root.is-hiragana-origins .exhibition-artwork,
+.exhibition-root.is-hiragana-origins .exhibition-title,
+.exhibition-root.is-hiragana-origins .exhibition-notes,
+.exhibition-root.is-hiragana-origins .exhibition-vignette,
+.exhibition-root.is-hiragana-origins .hiragana-song-layer,
+.exhibition-root.is-hiragana-origins .hiragana-typo-layer,
+.exhibition-root.is-hiragana-origins .party-kanji-layer,
+.exhibition-root.is-hiragana-origins .stroke-order-layer {
+  display: none !important;
+}
+
+.exhibition-root.is-hiragana-origins .exhibition-veil {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.exhibition-root.is-hiragana-origins .exhibition-bookend {
+  background: #0f0d0b;
+}
+
+.hiragana-origins-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--origins-fade) ease;
+  pointer-events: none;
+}
+
+.hiragana-origins-layer.is-visible {
+  opacity: 1;
+}
+
+.hiragana-origins-layer.is-exhaling {
+  opacity: 0;
+}
+
+.hiragana-origins-layer.is-ambient-lead .hiragana-origins-paper,
+.hiragana-origins-layer.is-ambient-lead .hiragana-origins-vignette,
+.hiragana-origins-layer.is-ambient-lead .hiragana-origins-stage {
+  opacity: 0;
+}
+
+.hiragana-origins-paper,
+.hiragana-origins-vignette,
+.hiragana-origins-stage {
+  opacity: 1;
+  transition: opacity var(--origins-ambient-fade) ease;
+}
+
+.hiragana-origins-paper {
+  position: absolute;
+  inset: -8%;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 85% 65% at 48% 22%, rgba(255, 250, 238, 0.92), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 78% 82%, rgba(214, 192, 158, 0.45), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 14% 76%, rgba(220, 200, 168, 0.38), transparent 55%),
+    linear-gradient(165deg, var(--origins-paper) 0%, var(--origins-paper-warm) 100%);
+}
+
+.hiragana-origins-paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle at 18% 28%, rgba(255, 255, 255, 0.3) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 58%, rgba(255, 255, 255, 0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 44% 84%, rgba(255, 255, 255, 0.18) 0 1px, transparent 2px);
+  background-size: 110px 110px, 170px 170px, 140px 140px;
+  pointer-events: none;
+}
+
+.hiragana-origins-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    repeating-linear-gradient(
+      2deg,
+      transparent,
+      transparent 4px,
+      var(--origins-ink-soft) 4px,
+      var(--origins-ink-soft) 5px
+    );
+  pointer-events: none;
+}
+
+.hiragana-origins-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 72% 68% at 50% 48%, transparent 42%, var(--origins-paper-shadow) 100%);
+  pointer-events: none;
+}
+
+.hiragana-origins-stage {
+  position: relative;
+  z-index: 2;
+  width: min(96vw, 72rem);
+  height: min(88vh, 52rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiragana-origins-glyph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--origins-ink);
+  line-height: 1;
+  opacity: 0;
+  transition: opacity var(--origins-morph) ease;
+  text-shadow: 0 1px 0 rgba(255, 252, 244, 0.15);
+}
+
+.hiragana-origins-glyph.is-visible {
+  opacity: 1;
+}
+
+.hiragana-origins-kanji {
+  font-family: var(--origins-kanji-font);
+  font-size: var(--origins-kanji-size);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.hiragana-origins-hiragana {
+  font-family: var(--origins-hiragana-font);
+  font-size: var(--origins-hiragana-size);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.hiragana-origins-calligraphy {
+  position: absolute;
+  inset: 8% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--origins-morph) ease;
+}
+
+.hiragana-origins-calligraphy.is-visible {
+  opacity: 1;
+}
+
+.hiragana-origins-calligraphy img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: sepia(0.12) contrast(1.04);
+}
+
+/* Museum plaque — quiet context, never competes with the glyph. */
+.hiragana-origins-plaque {
+  position: absolute;
+  right: clamp(1.75rem, 5.5vw, 4.25rem);
+  bottom: clamp(1.5rem, 4.8vh, 3.5rem);
+  z-index: 3;
+  width: min(12vw, 9.5rem);
+  min-width: 5.5rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  text-align: left;
+  color: var(--origins-plaque-ink);
+  font-family: var(--origins-plaque-font);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity var(--origins-plaque-fade) ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hiragana-origins-plaque.is-visible {
+  opacity: 1;
+}
+
+.hiragana-origins-plaque-title,
+.hiragana-origins-plaque-char,
+.hiragana-origins-plaque-note {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.hiragana-origins-plaque-title {
+  font-size: clamp(0.55rem, 0.95vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+}
+
+.hiragana-origins-plaque-char {
+  margin-top: 0.35em;
+  font-size: clamp(0.95rem, 1.85vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+}
+
+.hiragana-origins-plaque-note {
+  margin-top: 0.55em;
+  font-size: clamp(0.48rem, 0.82vw, 0.62rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  opacity: 0.88;
+  white-space: pre-line;
+}
+
+.hiragana-origins-plaque-note.exhibition-hidden {
+  display: none;
+}
+
+.hiragana-origins-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  background: #0f0d0b;
+  opacity: 0;
+  transition: opacity var(--origins-ambient-fade) ease;
+  pointer-events: none;
+}
+
+.hiragana-origins-ambient.is-visible {
+  opacity: 1;
+}
+
+.hiragana-origins-ambient-frame {
+  position: absolute;
+  inset: -6%;
+  transform: scale(1.04) translate(0.4%, 0.2%);
+  transform-origin: 48% 42%;
+  will-change: transform;
+}
+
+.hiragana-origins-ambient.is-drifting .hiragana-origins-ambient-frame {
+  animation: hiragana-origins-kenburns var(--origins-ken-burns) ease-in-out forwards;
+}
+
+.hiragana-origins-ambient img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  filter: saturate(0.92) contrast(1.04) brightness(0.96);
+}
+
+.hiragana-origins-ambient-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 78% 72% at 50% 48%, transparent 38%, rgba(8, 6, 4, 0.42) 100%);
+  pointer-events: none;
+}
+
+@keyframes hiragana-origins-kenburns {
+  from {
+    transform: scale(1.04) translate(0.4%, 0.2%);
+  }
+  to {
+    transform: scale(1.12) translate(-1.2%, -0.7%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exhibition-root.is-hiragana-origins .hiragana-origins-glyph,
+  .exhibition-root.is-hiragana-origins .hiragana-origins-layer,
+  .exhibition-root.is-hiragana-origins .hiragana-origins-calligraphy,
+  .exhibition-root.is-hiragana-origins .hiragana-origins-plaque,
+  .exhibition-root.is-hiragana-origins .hiragana-origins-ambient {
+    transition-duration: 0.01ms !important;
+  }
+
+  .exhibition-root.is-hiragana-origins .hiragana-origins-ambient.is-drifting .hiragana-origins-ambient-frame {
+    animation: none;
+  }
+}
