@@ -45,7 +45,7 @@
       },
       kana: {
         playlistUrl: null, // PLACEHOLDER — Kana playlist
-        image: "kml/assets/youtube_thumbnails/kana.png",
+        image: "kml/assets/images/kana_song_image.png",
       },
       culture: {
         playlistUrl: null, // PLACEHOLDER — Culture playlist
