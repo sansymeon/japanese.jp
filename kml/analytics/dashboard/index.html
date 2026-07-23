@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KML Curriculum Dashboard</title>
+  <meta name="description" content="Read-only mission control for the KML YouTube curriculum analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-title">KML Curriculum Dashboard <span id="dashboardVersion"></span></div>
+      <div class="brand-meta">
+        <span id="generatedAt">—</span>
+        · <span id="schemaVersion">—</span>
+        · <span id="genMeta"></span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="filters" aria-label="Filters">
+        <label>Playlist
+          <select id="filterPlaylist"><option value="all">All playlists</option></select>
+        </label>
+        <label>JLPT
+          <select id="filterJlpt">
+            <option value="all">All</option>
+            <option value="N5">N5</option>
+            <option value="N4">N4</option>
+            <option value="N3">N3</option>
+            <option value="N2">N2</option>
+            <option value="N1">N1</option>
+          </select>
+        </label>
+        <label>Type
+          <select id="filterKind">
+            <option value="all">All types</option>
+            <option value="kanji">Kanji</option>
+            <option value="compounds">Compounds</option>
+            <option value="vocabulary">Vocabulary</option>
+          </select>
+        </label>
+        <label>Role
+          <select id="filterRole">
+            <option value="all">All roles</option>
+            <option value="introduction">Introduction</option>
+            <option value="balanced">Balanced</option>
+            <option value="consolidation">Consolidation</option>
+            <option value="light">Light touch</option>
+          </select>
+        </label>
+        <label>Lesson
+          <input id="filterLesson" type="search" placeholder="Filter lessons…" />
+        </label>
+      </div>
+      <button type="button" class="btn btn-ghost" id="themeToggle" title="Toggle theme">Theme</button>
+      <button type="button" class="btn" id="reloadBtn">Reload</button>
+      <div class="export-menu" id="exportMenu">
+        <button type="button" class="btn btn-primary" id="exportToggle">Export</button>
+        <div class="menu" role="menu">
+          <button type="button" id="exportJson">JSON</button>
+          <button type="button" id="exportCsv">CSV (learning value)</button>
+          <button type="button" id="exportMd">Markdown summary</button>
+          <button type="button" id="exportPng">PNG (Joyo chart)</button>
+          <button type="button" id="exportPdf">PDF (print)</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <div id="statusBanner" class="status-banner loading" hidden></div>
+
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#summary">Summary</a>
+      <a href="#growth">Growth</a>
+      <a href="#learning-value">Learning value</a>
+      <a href="#playlists">Playlists</a>
+      <a href="#exposure">Exposure</a>
+      <a href="#jlpt">JLPT</a>
+      <a href="#heatmaps">Heat maps</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#search">Search</a>
+    </nav>
+
+    <section class="section" id="summary">
+      <div class="section-head">
+        <h2>Summary</h2>
+        <p class="section-note">At-a-glance curriculum health from analytics JSON only.</p>
+      </div>
+      <div class="summary-grid" id="summaryCards"></div>
+    </section>
+
+    <section class="section" id="growth">
+      <div class="section-head">
+        <h2>Curriculum growth</h2>
+        <p class="section-note">Cumulative after every video on the global path. Hover for lesson detail.</p>
+      </div>
+      <div class="chart-grid">
+        <article class="card chart-card"><div class="card-body"><h3>Unique vocabulary</h3><div class="chart-wrap"><canvas id="chartVocabGrowth"></canvas></div></div></article>
+        <article class="card chart-card"><div class="card-body"><h3>Unique kanji</h3><div class="chart-wrap"><canvas id="chartKanjiGrowth"></canvas></div></div></article>
+        <article class="card chart-card"><div class="card-body"><h3>Joyo coverage</h3><div class="chart-wrap"><canvas id="chartJoyoGrowth"></canvas></div></div></article>
+        <article class="card chart-card"><div class="card-body"><h3>JLPT word coverage</h3><div class="chart-wrap"><canvas id="chartJlptWords"></canvas></div></div></article>
+        <article class="card chart-card"><div class="card-body"><h3>Spoken-frequency coverage</h3><div class="chart-wrap"><canvas id="chartSpoken"></canvas></div></div></article>
+        <article class="card chart-card"><div class="card-body"><h3>Review opportunities</h3><div class="chart-wrap"><canvas id="chartReview"></canvas></div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="learning-value">
+      <div class="section-head">
+        <h2>Learning value</h2>
+        <p class="section-note">Each point is a video. Colour = educational role. Not a competitive ranking.</p>
+      </div>
+      <article class="card chart-card">
+        <div class="card-body">
+          <div class="chart-wrap tall"><canvas id="chartLearningValue"></canvas></div>
+        </div>
+      </article>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Lesson</th><th>Playlist</th><th>New</th><th>Reinforced</th><th>Total</th>
+              <th>Stars</th><th>Role</th><th>JLPT gain</th><th>Spoken +1k</th>
+            </tr>
+          </thead>
+          <tbody id="learningValueTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="playlists">
+      <div class="section-head">
+        <h2>Playlist overview</h2>
+        <p class="section-note">Each independent learning path in isolation.</p>
+      </div>
+      <div class="playlist-grid" id="playlistCards"></div>
+    </section>
+
+    <section class="section" id="exposure">
+      <div class="section-head">
+        <h2>Exposure depth</h2>
+        <p class="section-note">How many distinct videos each item has appeared in.</p>
+      </div>
+      <article class="card"><div class="card-body" id="exposureStacks"></div></article>
+      <div class="chart-grid">
+        <article class="card chart-card"><div class="card-body"><h3>Vocabulary bands</h3><div class="chart-wrap"><canvas id="chartExposureVocab"></canvas></div></div></article>
+        <article class="card chart-card"><div class="card-body"><h3>Joyo bands</h3><div class="chart-wrap"><canvas id="chartExposureJoyo"></canvas></div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="jlpt">
+      <div class="section-head">
+        <h2>JLPT</h2>
+        <p class="section-note">Coverage of reference lists and average encounters.</p>
+      </div>
+      <div class="chart-grid">
+        <article class="card chart-card"><div class="card-body"><h3>Coverage %</h3><div class="chart-wrap"><canvas id="chartJlptCoverage"></canvas></div></div></article>
+        <article class="card chart-card"><div class="card-body"><h3>Average encounters</h3><div class="chart-wrap"><canvas id="chartJlptEncounters"></canvas></div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="heatmaps">
+      <div class="section-head">
+        <h2>Heat maps</h2>
+        <p class="section-note">Playlist × metric. Darker = higher value within each map.</p>
+      </div>
+      <div class="chart-grid">
+        <article class="card"><div class="card-body"><h3>Playlist × JLPT word %</h3><div id="heatJlpt"></div></div></article>
+        <article class="card"><div class="card-body"><h3>Playlist × spoken frequency %</h3><div id="heatFreq"></div></div></article>
+        <article class="card"><div class="card-body"><h3>Playlist × learning value</h3><div id="heatValue"></div></div></article>
+        <article class="card"><div class="card-body"><h3>Playlist × role counts</h3><div id="heatRoles"></div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="milestones">
+      <div class="section-head">
+        <h2>Milestones</h2>
+        <p class="section-note">Automatically detected coverage and inventory achievements.</p>
+      </div>
+      <div class="milestone-list" id="milestoneList"></div>
+    </section>
+
+    <section class="section" id="search">
+      <div class="section-head">
+        <h2>Search</h2>
+        <p class="section-note">Kanji, vocabulary, lesson, or playlist — from the analytics search index.</p>
+      </div>
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="e.g. 一 · 学校 · Grade 3 · N5" autocomplete="off" />
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Type</th><th>Item</th><th>Detail</th>
+              <th>First</th><th>Latest</th><th>Encounters</th><th>Stage</th>
+            </tr>
+          </thead>
+          <tbody id="searchResults">
+            <tr><td colspan="7">Type a kanji, word, reading, lesson, or playlist.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Read-only visualization · sources <code>./data/kml_channel_learning.json</code>
+      (symlink to <code>../output/</code>) · never reads production lesson files ·
+      regenerate analytics to refresh · polls every 30s while open
+    </p>
+  </main>
+</body>
+</html>

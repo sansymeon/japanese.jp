@@ -1,0 +1,59 @@
+{
+  "_purpose": "Configuration for the KML Curriculum Analytics project. All paths are relative to the repository root. Every input is READ ONLY; outputs are written only to kml/analytics/output/.",
+  "sources": {
+    "lesson_glob": "kml/tools/ambient/collections/vocabulary/vocabulary_*.json",
+    "master_vocabulary": "kml/data/vocabulary/kml_master_vocabulary.v1.json"
+  },
+  "reference": {
+    "jlpt_wordlists": {
+      "N5": "kml/analytics/reference/jlpt_n5.csv",
+      "N4": "kml/analytics/reference/jlpt_n4.csv",
+      "N3": "kml/analytics/reference/jlpt_n3.csv",
+      "N2": "kml/analytics/reference/jlpt_n2.csv",
+      "N1": "kml/analytics/reference/jlpt_n1.csv"
+    },
+    "spoken_frequency": "kml/analytics/reference/ja_spoken_frequency_lemmas.tsv",
+    "joyo_kanji": "kml/analytics/reference/joyo_kanji.csv"
+  },
+  "frequency_bands": [500, 1000, 2000, 5000],
+  "output_dir": "kml/analytics/output",
+  "outputs": {
+    "curriculum": "kml_curriculum_analysis.json",
+    "jlpt": "kml_jlpt_statistics.json",
+    "frequency": "kml_frequency_statistics.json",
+    "channel": "kml_channel_statistics.json",
+    "report": "CURRICULUM_REPORT.md"
+  },
+  "reinforcement": {
+    "review_gap_lessons": 3
+  },
+  "channel_learning": {
+    "_purpose": "Full-channel learning-path analytics (every playlist + global path).",
+    "frequency_bands": [500, 1000, 2000, 5000],
+    "coverage_thresholds": [10, 25, 50, 75, 90, 95, 100],
+    "review_gap_lessons": 3,
+    "output_json": "kml_channel_learning.json",
+    "output_report": "CHANNEL_LEARNING_REPORT.md",
+    "exposure_bands": [
+      {"id": "introduced", "min": 1, "max": 1, "label": "Introduced", "meaning": "Seen once"},
+      {"id": "reinforced", "min": 2, "max": 2, "label": "Reinforced", "meaning": "Seen twice"},
+      {"id": "familiar", "min": 3, "max": 5, "label": "Becoming familiar", "meaning": "Seen 3–5 times"},
+      {"id": "strong", "min": 6, "max": 9, "label": "Strong recognition", "meaning": "Seen 6–9 times"},
+      {"id": "core", "min": 10, "max": null, "label": "Core knowledge", "meaning": "Seen 10+ times"}
+    ],
+    "exposure_depth_thresholds": [1, 2, 3, 6, 10],
+    "learning_value": {
+      "_note": "Stars reflect magnitude of learning activity in a video, not competitive rank. Roles describe educational function.",
+      "star_thresholds": {
+        "5": 80,
+        "4": 50,
+        "3": 25,
+        "2": 12,
+        "1": 0
+      },
+      "introduction_max_reinforce_share": 0.25,
+      "consolidation_max_new_share": 0.25,
+      "light_max_total": 15
+    }
+  }
+}

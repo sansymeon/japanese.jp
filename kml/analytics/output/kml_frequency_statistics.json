@@ -1,0 +1,1908 @@
+{
+  "schema": "kml.analytics.frequency",
+  "schema_version": 1,
+  "generated_at": "2026-07-22T21:36:18+00:00",
+  "generator": "kml/analytics/scripts/analyze_curriculum.py",
+  "note": "Generated analytics file. Never edit by hand; never treat as a canonical vocabulary source. Regenerate by rerunning the script.",
+  "inputs": {
+    "lessons": [
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_01.json",
+        "sha256_12": "2880942bdb91"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_02.json",
+        "sha256_12": "3ec04ff3bfe2"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_03.json",
+        "sha256_12": "663a6c67ef68"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_04.json",
+        "sha256_12": "3c07de579aa7"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_05.json",
+        "sha256_12": "0623ff47805e"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_06.json",
+        "sha256_12": "8204b5476010"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_07.json",
+        "sha256_12": "f00054ac6fa6"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_08.json",
+        "sha256_12": "dc5c740ecee3"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_09.json",
+        "sha256_12": "66d801dbbaa7"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_10.json",
+        "sha256_12": "3e9cda963330"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_11.json",
+        "sha256_12": "4cf888b2fe0f"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_12.json",
+        "sha256_12": "ff4cfbd19ebc"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_13.json",
+        "sha256_12": "40e4a4b6f21c"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_14.json",
+        "sha256_12": "4ae4592af29a"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_15.json",
+        "sha256_12": "3681d3d7c377"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_16.json",
+        "sha256_12": "e0b605c98856"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_17.json",
+        "sha256_12": "cdf4403c0556"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_18.json",
+        "sha256_12": "6d1743cdc868"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_19.json",
+        "sha256_12": "bb49e0bac12f"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_20.json",
+        "sha256_12": "596a2e9734df"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_21.json",
+        "sha256_12": "ef4d51af6298"
+      },
+      {
+        "file": "kml/tools/ambient/collections/vocabulary/vocabulary_22.json",
+        "sha256_12": "638927c829a6"
+      }
+    ],
+    "master_vocabulary": {
+      "file": "kml/data/vocabulary/kml_master_vocabulary.v1.json",
+      "sha256_12": "b8f2450e76d0",
+      "access": "read_only"
+    }
+  },
+  "reference_corpus": "OpenSubtitles 2018 Japanese (hermitdave/FrequencyWords), lemmatized with UniDic via fugashi",
+  "unique_vocabulary": 543,
+  "bands": {
+    "top_500": {
+      "curriculum_words_in_band": 97,
+      "percent_of_curriculum": 17.9,
+      "percent_of_band_covered": 19.4
+    },
+    "top_1000": {
+      "curriculum_words_in_band": 161,
+      "percent_of_curriculum": 29.7,
+      "percent_of_band_covered": 16.1
+    },
+    "top_2000": {
+      "curriculum_words_in_band": 225,
+      "percent_of_curriculum": 41.4,
+      "percent_of_band_covered": 11.2
+    },
+    "top_5000": {
+      "curriculum_words_in_band": 277,
+      "percent_of_curriculum": 51.0,
+      "percent_of_band_covered": 5.5
+    }
+  },
+  "words_with_frequency_data": 339,
+  "median_rank": 1052,
+  "cumulative_by_lesson": [
+    {
+      "after_lesson": 1,
+      "top_500": {
+        "count": 18,
+        "percent_of_band": 3.6
+      },
+      "top_1000": {
+        "count": 21,
+        "percent_of_band": 2.1
+      },
+      "top_2000": {
+        "count": 24,
+        "percent_of_band": 1.2
+      },
+      "top_5000": {
+        "count": 24,
+        "percent_of_band": 0.5
+      }
+    },
+    {
+      "after_lesson": 2,
+      "top_500": {
+        "count": 33,
+        "percent_of_band": 6.6
+      },
+      "top_1000": {
+        "count": 41,
+        "percent_of_band": 4.1
+      },
+      "top_2000": {
+        "count": 46,
+        "percent_of_band": 2.3
+      },
+      "top_5000": {
+        "count": 46,
+        "percent_of_band": 0.9
+      }
+    },
+    {
+      "after_lesson": 3,
+      "top_500": {
+        "count": 40,
+        "percent_of_band": 8.0
+      },
+      "top_1000": {
+        "count": 55,
+        "percent_of_band": 5.5
+      },
+      "top_2000": {
+        "count": 66,
+        "percent_of_band": 3.3
+      },
+      "top_5000": {
+        "count": 67,
+        "percent_of_band": 1.3
+      }
+    },
+    {
+      "after_lesson": 4,
+      "top_500": {
+        "count": 55,
+        "percent_of_band": 11.0
+      },
+      "top_1000": {
+        "count": 74,
+        "percent_of_band": 7.4
+      },
+      "top_2000": {
+        "count": 87,
+        "percent_of_band": 4.3
+      },
+      "top_5000": {
+        "count": 89,
+        "percent_of_band": 1.8
+      }
+    },
+    {
+      "after_lesson": 5,
+      "top_500": {
+        "count": 63,
+        "percent_of_band": 12.6
+      },
+      "top_1000": {
+        "count": 92,
+        "percent_of_band": 9.2
+      },
+      "top_2000": {
+        "count": 106,
+        "percent_of_band": 5.3
+      },
+      "top_5000": {
+        "count": 108,
+        "percent_of_band": 2.2
+      }
+    },
+    {
+      "after_lesson": 6,
+      "top_500": {
+        "count": 67,
+        "percent_of_band": 13.4
+      },
+      "top_1000": {
+        "count": 101,
+        "percent_of_band": 10.1
+      },
+      "top_2000": {
+        "count": 121,
+        "percent_of_band": 6.0
+      },
+      "top_5000": {
+        "count": 128,
+        "percent_of_band": 2.6
+      }
+    },
+    {
+      "after_lesson": 7,
+      "top_500": {
+        "count": 70,
+        "percent_of_band": 14.0
+      },
+      "top_1000": {
+        "count": 112,
+        "percent_of_band": 11.2
+      },
+      "top_2000": {
+        "count": 136,
+        "percent_of_band": 6.8
+      },
+      "top_5000": {
+        "count": 146,
+        "percent_of_band": 2.9
+      }
+    },
+    {
+      "after_lesson": 8,
+      "top_500": {
+        "count": 76,
+        "percent_of_band": 15.2
+      },
+      "top_1000": {
+        "count": 122,
+        "percent_of_band": 12.2
+      },
+      "top_2000": {
+        "count": 152,
+        "percent_of_band": 7.6
+      },
+      "top_5000": {
+        "count": 166,
+        "percent_of_band": 3.3
+      }
+    },
+    {
+      "after_lesson": 9,
+      "top_500": {
+        "count": 77,
+        "percent_of_band": 15.4
+      },
+      "top_1000": {
+        "count": 128,
+        "percent_of_band": 12.8
+      },
+      "top_2000": {
+        "count": 166,
+        "percent_of_band": 8.3
+      },
+      "top_5000": {
+        "count": 187,
+        "percent_of_band": 3.7
+      }
+    },
+    {
+      "after_lesson": 10,
+      "top_500": {
+        "count": 80,
+        "percent_of_band": 16.0
+      },
+      "top_1000": {
+        "count": 134,
+        "percent_of_band": 13.4
+      },
+      "top_2000": {
+        "count": 178,
+        "percent_of_band": 8.9
+      },
+      "top_5000": {
+        "count": 201,
+        "percent_of_band": 4.0
+      }
+    },
+    {
+      "after_lesson": 11,
+      "top_500": {
+        "count": 84,
+        "percent_of_band": 16.8
+      },
+      "top_1000": {
+        "count": 143,
+        "percent_of_band": 14.3
+      },
+      "top_2000": {
+        "count": 191,
+        "percent_of_band": 9.6
+      },
+      "top_5000": {
+        "count": 221,
+        "percent_of_band": 4.4
+      }
+    },
+    {
+      "after_lesson": 12,
+      "top_500": {
+        "count": 87,
+        "percent_of_band": 17.4
+      },
+      "top_1000": {
+        "count": 148,
+        "percent_of_band": 14.8
+      },
+      "top_2000": {
+        "count": 202,
+        "percent_of_band": 10.1
+      },
+      "top_5000": {
+        "count": 238,
+        "percent_of_band": 4.8
+      }
+    },
+    {
+      "after_lesson": 13,
+      "top_500": {
+        "count": 88,
+        "percent_of_band": 17.6
+      },
+      "top_1000": {
+        "count": 149,
+        "percent_of_band": 14.9
+      },
+      "top_2000": {
+        "count": 205,
+        "percent_of_band": 10.2
+      },
+      "top_5000": {
+        "count": 244,
+        "percent_of_band": 4.9
+      }
+    },
+    {
+      "after_lesson": 14,
+      "top_500": {
+        "count": 90,
+        "percent_of_band": 18.0
+      },
+      "top_1000": {
+        "count": 151,
+        "percent_of_band": 15.1
+      },
+      "top_2000": {
+        "count": 207,
+        "percent_of_band": 10.3
+      },
+      "top_5000": {
+        "count": 250,
+        "percent_of_band": 5.0
+      }
+    },
+    {
+      "after_lesson": 15,
+      "top_500": {
+        "count": 93,
+        "percent_of_band": 18.6
+      },
+      "top_1000": {
+        "count": 155,
+        "percent_of_band": 15.5
+      },
+      "top_2000": {
+        "count": 213,
+        "percent_of_band": 10.7
+      },
+      "top_5000": {
+        "count": 259,
+        "percent_of_band": 5.2
+      }
+    },
+    {
+      "after_lesson": 16,
+      "top_500": {
+        "count": 93,
+        "percent_of_band": 18.6
+      },
+      "top_1000": {
+        "count": 155,
+        "percent_of_band": 15.5
+      },
+      "top_2000": {
+        "count": 215,
+        "percent_of_band": 10.8
+      },
+      "top_5000": {
+        "count": 262,
+        "percent_of_band": 5.2
+      }
+    },
+    {
+      "after_lesson": 17,
+      "top_500": {
+        "count": 93,
+        "percent_of_band": 18.6
+      },
+      "top_1000": {
+        "count": 155,
+        "percent_of_band": 15.5
+      },
+      "top_2000": {
+        "count": 216,
+        "percent_of_band": 10.8
+      },
+      "top_5000": {
+        "count": 264,
+        "percent_of_band": 5.3
+      }
+    },
+    {
+      "after_lesson": 18,
+      "top_500": {
+        "count": 93,
+        "percent_of_band": 18.6
+      },
+      "top_1000": {
+        "count": 156,
+        "percent_of_band": 15.6
+      },
+      "top_2000": {
+        "count": 218,
+        "percent_of_band": 10.9
+      },
+      "top_5000": {
+        "count": 266,
+        "percent_of_band": 5.3
+      }
+    },
+    {
+      "after_lesson": 19,
+      "top_500": {
+        "count": 93,
+        "percent_of_band": 18.6
+      },
+      "top_1000": {
+        "count": 157,
+        "percent_of_band": 15.7
+      },
+      "top_2000": {
+        "count": 219,
+        "percent_of_band": 10.9
+      },
+      "top_5000": {
+        "count": 269,
+        "percent_of_band": 5.4
+      }
+    },
+    {
+      "after_lesson": 20,
+      "top_500": {
+        "count": 95,
+        "percent_of_band": 19.0
+      },
+      "top_1000": {
+        "count": 159,
+        "percent_of_band": 15.9
+      },
+      "top_2000": {
+        "count": 222,
+        "percent_of_band": 11.1
+      },
+      "top_5000": {
+        "count": 272,
+        "percent_of_band": 5.4
+      }
+    },
+    {
+      "after_lesson": 21,
+      "top_500": {
+        "count": 96,
+        "percent_of_band": 19.2
+      },
+      "top_1000": {
+        "count": 160,
+        "percent_of_band": 16.0
+      },
+      "top_2000": {
+        "count": 223,
+        "percent_of_band": 11.2
+      },
+      "top_5000": {
+        "count": 274,
+        "percent_of_band": 5.5
+      }
+    },
+    {
+      "after_lesson": 22,
+      "top_500": {
+        "count": 97,
+        "percent_of_band": 19.4
+      },
+      "top_1000": {
+        "count": 161,
+        "percent_of_band": 16.1
+      },
+      "top_2000": {
+        "count": 225,
+        "percent_of_band": 11.2
+      },
+      "top_5000": {
+        "count": 277,
+        "percent_of_band": 5.5
+      }
+    }
+  ],
+  "word_ranks": [
+    {
+      "jp": "必要",
+      "rank": 24
+    },
+    {
+      "jp": "自分",
+      "rank": 27
+    },
+    {
+      "jp": "本当",
+      "rank": 29
+    },
+    {
+      "jp": "時間",
+      "rank": 30
+    },
+    {
+      "jp": "仕事",
+      "rank": 40
+    },
+    {
+      "jp": "電話",
+      "rank": 47
+    },
+    {
+      "jp": "車",
+      "rank": 50
+    },
+    {
+      "jp": "場所",
+      "rank": 56
+    },
+    {
+      "jp": "問題",
+      "rank": 57
+    },
+    {
+      "jp": "子供",
+      "rank": 58
+    },
+    {
+      "jp": "行く",
+      "rank": 61
+    },
+    {
+      "jp": "名前",
+      "rank": 63
+    },
+    {
+      "jp": "世界",
+      "rank": 71
+    },
+    {
+      "jp": "人間",
+      "rank": 75
+    },
+    {
+      "jp": "今日",
+      "rank": 76
+    },
+    {
+      "jp": "心配",
+      "rank": 85
+    },
+    {
+      "jp": "関係",
+      "rank": 92
+    },
+    {
+      "jp": "家族",
+      "rank": 93
+    },
+    {
+      "jp": "意味",
+      "rank": 97
+    },
+    {
+      "jp": "警察",
+      "rank": 98
+    },
+    {
+      "jp": "最後",
+      "rank": 99
+    },
+    {
+      "jp": "全部",
+      "rank": 105
+    },
+    {
+      "jp": "情報",
+      "rank": 109
+    },
+    {
+      "jp": "理由",
+      "rank": 110
+    },
+    {
+      "jp": "部屋",
+      "rank": 113
+    },
+    {
+      "jp": "以上",
+      "rank": 115
+    },
+    {
+      "jp": "食べる",
+      "rank": 118
+    },
+    {
+      "jp": "事件",
+      "rank": 124
+    },
+    {
+      "jp": "最初",
+      "rank": 126
+    },
+    {
+      "jp": "連絡",
+      "rank": 127
+    },
+    {
+      "jp": "安全",
+      "rank": 132
+    },
+    {
+      "jp": "友達",
+      "rank": 137
+    },
+    {
+      "jp": "約束",
+      "rank": 138
+    },
+    {
+      "jp": "結婚",
+      "rank": 140
+    },
+    {
+      "jp": "計画",
+      "rank": 148
+    },
+    {
+      "jp": "仲間",
+      "rank": 150
+    },
+    {
+      "jp": "明日",
+      "rank": 153
+    },
+    {
+      "jp": "確認",
+      "rank": 155
+    },
+    {
+      "jp": "理解",
+      "rank": 162
+    },
+    {
+      "jp": "先生",
+      "rank": 170
+    },
+    {
+      "jp": "質問",
+      "rank": 174
+    },
+    {
+      "jp": "感謝",
+      "rank": 184
+    },
+    {
+      "jp": "言葉",
+      "rank": 186
+    },
+    {
+      "jp": "写真",
+      "rank": 190
+    },
+    {
+      "jp": "説明",
+      "rank": 191
+    },
+    {
+      "jp": "一番",
+      "rank": 201
+    },
+    {
+      "jp": "状況",
+      "rank": 204
+    },
+    {
+      "jp": "水",
+      "rank": 205
+    },
+    {
+      "jp": "元気",
+      "rank": 206
+    },
+    {
+      "jp": "相手",
+      "rank": 217
+    },
+    {
+      "jp": "会社",
+      "rank": 225
+    },
+    {
+      "jp": "自由",
+      "rank": 229
+    },
+    {
+      "jp": "人々",
+      "rank": 237
+    },
+    {
+      "jp": "報告",
+      "rank": 238
+    },
+    {
+      "jp": "決める",
+      "rank": 247
+    },
+    {
+      "jp": "学校",
+      "rank": 248
+    },
+    {
+      "jp": "戦争",
+      "rank": 255
+    },
+    {
+      "jp": "気持ち",
+      "rank": 264
+    },
+    {
+      "jp": "病院",
+      "rank": 271
+    },
+    {
+      "jp": "普通",
+      "rank": 274
+    },
+    {
+      "jp": "協力",
+      "rank": 278
+    },
+    {
+      "jp": "地球",
+      "rank": 282
+    },
+    {
+      "jp": "生活",
+      "rank": 284
+    },
+    {
+      "jp": "気分",
+      "rank": 286
+    },
+    {
+      "jp": "解決",
+      "rank": 287
+    },
+    {
+      "jp": "結果",
+      "rank": 288
+    },
+    {
+      "jp": "研究",
+      "rank": 289
+    },
+    {
+      "jp": "大きい",
+      "rank": 292
+    },
+    {
+      "jp": "興味",
+      "rank": 301
+    },
+    {
+      "jp": "運転",
+      "rank": 302
+    },
+    {
+      "jp": "番号",
+      "rank": 303
+    },
+    {
+      "jp": "場合",
+      "rank": 306
+    },
+    {
+      "jp": "目的",
+      "rank": 319
+    },
+    {
+      "jp": "近く",
+      "rank": 321
+    },
+    {
+      "jp": "特別",
+      "rank": 327
+    },
+    {
+      "jp": "昨日",
+      "rank": 328
+    },
+    {
+      "jp": "映画",
+      "rank": 343
+    },
+    {
+      "jp": "最近",
+      "rank": 347
+    },
+    {
+      "jp": "事故",
+      "rank": 349
+    },
+    {
+      "jp": "記憶",
+      "rank": 367
+    },
+    {
+      "jp": "両親",
+      "rank": 378
+    },
+    {
+      "jp": "銀行",
+      "rank": 388
+    },
+    {
+      "jp": "大学",
+      "rank": 391
+    },
+    {
+      "jp": "経験",
+      "rank": 393
+    },
+    {
+      "jp": "未来",
+      "rank": 398
+    },
+    {
+      "jp": "病気",
+      "rank": 404
+    },
+    {
+      "jp": "予定",
+      "rank": 411
+    },
+    {
+      "jp": "日本",
+      "rank": 420
+    },
+    {
+      "jp": "成功",
+      "rank": 421
+    },
+    {
+      "jp": "科学",
+      "rank": 425
+    },
+    {
+      "jp": "地下",
+      "rank": 430
+    },
+    {
+      "jp": "別れ",
+      "rank": 439
+    },
+    {
+      "jp": "技術",
+      "rank": 451
+    },
+    {
+      "jp": "毎日",
+      "rank": 460
+    },
+    {
+      "jp": "食事",
+      "rank": 486
+    },
+    {
+      "jp": "原因",
+      "rank": 493
+    },
+    {
+      "jp": "到着",
+      "rank": 499
+    },
+    {
+      "jp": "大切",
+      "rank": 504
+    },
+    {
+      "jp": "感情",
+      "rank": 509
+    },
+    {
+      "jp": "夕食",
+      "rank": 510
+    },
+    {
+      "jp": "手紙",
+      "rank": 513
+    },
+    {
+      "jp": "影響",
+      "rank": 518
+    },
+    {
+      "jp": "半分",
+      "rank": 520
+    },
+    {
+      "jp": "機会",
+      "rank": 528
+    },
+    {
+      "jp": "料理",
+      "rank": 539
+    },
+    {
+      "jp": "音楽",
+      "rank": 544
+    },
+    {
+      "jp": "反対",
+      "rank": 550
+    },
+    {
+      "jp": "出発",
+      "rank": 559
+    },
+    {
+      "jp": "平和",
+      "rank": 570
+    },
+    {
+      "jp": "部分",
+      "rank": 582
+    },
+    {
+      "jp": "住所",
+      "rank": 590
+    },
+    {
+      "jp": "参加",
+      "rank": 597
+    },
+    {
+      "jp": "自然",
+      "rank": 598
+    },
+    {
+      "jp": "専門",
+      "rank": 609
+    },
+    {
+      "jp": "安心",
+      "rank": 610
+    },
+    {
+      "jp": "会議",
+      "rank": 611
+    },
+    {
+      "jp": "荷物",
+      "rank": 616
+    },
+    {
+      "jp": "全体",
+      "rank": 620
+    },
+    {
+      "jp": "会話",
+      "rank": 624
+    },
+    {
+      "jp": "色",
+      "rank": 632
+    },
+    {
+      "jp": "旅行",
+      "rank": 634
+    },
+    {
+      "jp": "社会",
+      "rank": 648
+    },
+    {
+      "jp": "案内",
+      "rank": 657
+    },
+    {
+      "jp": "機械",
+      "rank": 674
+    },
+    {
+      "jp": "大人",
+      "rank": 685
+    },
+    {
+      "jp": "知り合い",
+      "rank": 687
+    },
+    {
+      "jp": "努力",
+      "rank": 689
+    },
+    {
+      "jp": "新聞",
+      "rank": 694
+    },
+    {
+      "jp": "乗る",
+      "rank": 699
+    },
+    {
+      "jp": "練習",
+      "rank": 721
+    },
+    {
+      "jp": "記事",
+      "rank": 731
+    },
+    {
+      "jp": "具合",
+      "rank": 735
+    },
+    {
+      "jp": "交換",
+      "rank": 741
+    },
+    {
+      "jp": "勉強",
+      "rank": 751
+    },
+    {
+      "jp": "午後",
+      "rank": 762
+    },
+    {
+      "jp": "政治",
+      "rank": 763
+    },
+    {
+      "jp": "電気",
+      "rank": 773
+    },
+    {
+      "jp": "卒業",
+      "rank": 780
+    },
+    {
+      "jp": "地図",
+      "rank": 830
+    },
+    {
+      "jp": "出身",
+      "rank": 839
+    },
+    {
+      "jp": "予想",
+      "rank": 845
+    },
+    {
+      "jp": "同僚",
+      "rank": 849
+    },
+    {
+      "jp": "変化",
+      "rank": 850
+    },
+    {
+      "jp": "将来",
+      "rank": 855
+    },
+    {
+      "jp": "空港",
+      "rank": 861
+    },
+    {
+      "jp": "保険",
+      "rank": 872
+    },
+    {
+      "jp": "食べ物",
+      "rank": 896
+    },
+    {
+      "jp": "駅",
+      "rank": 899
+    },
+    {
+      "jp": "上司",
+      "rank": 904
+    },
+    {
+      "jp": "現金",
+      "rank": 917
+    },
+    {
+      "jp": "発表",
+      "rank": 918
+    },
+    {
+      "jp": "道路",
+      "rank": 932
+    },
+    {
+      "jp": "注文",
+      "rank": 935
+    },
+    {
+      "jp": "返事",
+      "rank": 946
+    },
+    {
+      "jp": "内容",
+      "rank": 955
+    },
+    {
+      "jp": "授業",
+      "rank": 956
+    },
+    {
+      "jp": "文字",
+      "rank": 961
+    },
+    {
+      "jp": "学生",
+      "rank": 962
+    },
+    {
+      "jp": "自信",
+      "rank": 987
+    },
+    {
+      "jp": "予約",
+      "rank": 990
+    },
+    {
+      "jp": "賛成",
+      "rank": 992
+    },
+    {
+      "jp": "先週",
+      "rank": 1014
+    },
+    {
+      "jp": "程度",
+      "rank": 1016
+    },
+    {
+      "jp": "休暇",
+      "rank": 1018
+    },
+    {
+      "jp": "出口",
+      "rank": 1024
+    },
+    {
+      "jp": "態度",
+      "rank": 1030
+    },
+    {
+      "jp": "記念",
+      "rank": 1031
+    },
+    {
+      "jp": "道具",
+      "rank": 1049
+    },
+    {
+      "jp": "朝食",
+      "rank": 1051
+    },
+    {
+      "jp": "環境",
+      "rank": 1052
+    },
+    {
+      "jp": "午前",
+      "rank": 1055
+    },
+    {
+      "jp": "休憩",
+      "rank": 1077
+    },
+    {
+      "jp": "番組",
+      "rank": 1088
+    },
+    {
+      "jp": "種類",
+      "rank": 1089
+    },
+    {
+      "jp": "資料",
+      "rank": 1133
+    },
+    {
+      "jp": "飲み物",
+      "rank": 1134
+    },
+    {
+      "jp": "放送",
+      "rank": 1144
+    },
+    {
+      "jp": "教育",
+      "rank": 1150
+    },
+    {
+      "jp": "趣味",
+      "rank": 1151
+    },
+    {
+      "jp": "近所",
+      "rank": 1166
+    },
+    {
+      "jp": "来週",
+      "rank": 1172
+    },
+    {
+      "jp": "今年",
+      "rank": 1175
+    },
+    {
+      "jp": "数字",
+      "rank": 1181
+    },
+    {
+      "jp": "運動",
+      "rank": 1212
+    },
+    {
+      "jp": "去年",
+      "rank": 1243
+    },
+    {
+      "jp": "財布",
+      "rank": 1244
+    },
+    {
+      "jp": "人気",
+      "rank": 1248
+    },
+    {
+      "jp": "選挙",
+      "rank": 1264
+    },
+    {
+      "jp": "国際",
+      "rank": 1275
+    },
+    {
+      "jp": "火事",
+      "rank": 1306
+    },
+    {
+      "jp": "挑戦",
+      "rank": 1318
+    },
+    {
+      "jp": "美味しい",
+      "rank": 1319
+    },
+    {
+      "jp": "配達",
+      "rank": 1324
+    },
+    {
+      "jp": "交通",
+      "rank": 1402
+    },
+    {
+      "jp": "支払い",
+      "rank": 1430
+    },
+    {
+      "jp": "年齢",
+      "rank": 1449
+    },
+    {
+      "jp": "印象",
+      "rank": 1460
+    },
+    {
+      "jp": "商品",
+      "rank": 1482
+    },
+    {
+      "jp": "毎晩",
+      "rank": 1483
+    },
+    {
+      "jp": "給料",
+      "rank": 1509
+    },
+    {
+      "jp": "見る",
+      "rank": 1510
+    },
+    {
+      "jp": "外国",
+      "rank": 1513
+    },
+    {
+      "jp": "恋愛",
+      "rank": 1519
+    },
+    {
+      "jp": "苦手",
+      "rank": 1532
+    },
+    {
+      "jp": "電車",
+      "rank": 1533
+    },
+    {
+      "jp": "比べる",
+      "rank": 1560
+    },
+    {
+      "jp": "職場",
+      "rank": 1564
+    },
+    {
+      "jp": "感動",
+      "rank": 1575
+    },
+    {
+      "jp": "買い物",
+      "rank": 1587
+    },
+    {
+      "jp": "天気",
+      "rank": 1590
+    },
+    {
+      "jp": "昼食",
+      "rank": 1591
+    },
+    {
+      "jp": "港",
+      "rank": 1595
+    },
+    {
+      "jp": "入り口",
+      "rank": 1612
+    },
+    {
+      "jp": "以下",
+      "rank": 1679
+    },
+    {
+      "jp": "友情",
+      "rank": 1699
+    },
+    {
+      "jp": "会計",
+      "rank": 1727
+    },
+    {
+      "jp": "出会い",
+      "rank": 1743
+    },
+    {
+      "jp": "経済",
+      "rank": 1750
+    },
+    {
+      "jp": "材料",
+      "rank": 1765
+    },
+    {
+      "jp": "無料",
+      "rank": 1781
+    },
+    {
+      "jp": "地震",
+      "rank": 1808
+    },
+    {
+      "jp": "海外",
+      "rank": 1829
+    },
+    {
+      "jp": "製品",
+      "rank": 1871
+    },
+    {
+      "jp": "文化",
+      "rank": 1911
+    },
+    {
+      "jp": "風邪",
+      "rank": 1949
+    },
+    {
+      "jp": "比較",
+      "rank": 2020
+    },
+    {
+      "jp": "教室",
+      "rank": 2044
+    },
+    {
+      "jp": "料金",
+      "rank": 2113
+    },
+    {
+      "jp": "人口",
+      "rank": 2141
+    },
+    {
+      "jp": "広告",
+      "rank": 2145
+    },
+    {
+      "jp": "食堂",
+      "rank": 2151
+    },
+    {
+      "jp": "花火",
+      "rank": 2159
+    },
+    {
+      "jp": "親戚",
+      "rank": 2186
+    },
+    {
+      "jp": "増加",
+      "rank": 2190
+    },
+    {
+      "jp": "野菜",
+      "rank": 2241
+    },
+    {
+      "jp": "アレルギー",
+      "rank": 2286
+    },
+    {
+      "jp": "画面",
+      "rank": 2293
+    },
+    {
+      "jp": "観光",
+      "rank": 2294
+    },
+    {
+      "jp": "あちら",
+      "rank": 2305
+    },
+    {
+      "jp": "入学",
+      "rank": 2366
+    },
+    {
+      "jp": "毎朝",
+      "rank": 2388
+    },
+    {
+      "jp": "入口",
+      "rank": 2428
+    },
+    {
+      "jp": "来年",
+      "rank": 2474
+    },
+    {
+      "jp": "帰国",
+      "rank": 2514
+    },
+    {
+      "jp": "店員",
+      "rank": 2515
+    },
+    {
+      "jp": "感想",
+      "rank": 2549
+    },
+    {
+      "jp": "便利",
+      "rank": 2571
+    },
+    {
+      "jp": "単語",
+      "rank": 2666
+    },
+    {
+      "jp": "閉店",
+      "rank": 2691
+    },
+    {
+      "jp": "平均",
+      "rank": 2703
+    },
+    {
+      "jp": "景色",
+      "rank": 2741
+    },
+    {
+      "jp": "先輩",
+      "rank": 2794
+    },
+    {
+      "jp": "文章",
+      "rank": 2966
+    },
+    {
+      "jp": "薬局",
+      "rank": 3045
+    },
+    {
+      "jp": "果物",
+      "rank": 3060
+    },
+    {
+      "jp": "出張",
+      "rank": 3073
+    },
+    {
+      "jp": "来月",
+      "rank": 3081
+    },
+    {
+      "jp": "受付",
+      "rank": 3163
+    },
+    {
+      "jp": "小銭",
+      "rank": 3186
+    },
+    {
+      "jp": "減少",
+      "rank": 3195
+    },
+    {
+      "jp": "発音",
+      "rank": 3235
+    },
+    {
+      "jp": "休日",
+      "rank": 3248
+    },
+    {
+      "jp": "手前",
+      "rank": 3253
+    },
+    {
+      "jp": "気温",
+      "rank": 3260
+    },
+    {
+      "jp": "今月",
+      "rank": 3268
+    },
+    {
+      "jp": "急行",
+      "rank": 3414
+    },
+    {
+      "jp": "在庫",
+      "rank": 3499
+    },
+    {
+      "jp": "品質",
+      "rank": 3679
+    },
+    {
+      "jp": "貯金",
+      "rank": 3720
+    },
+    {
+      "jp": "開店",
+      "rank": 3819
+    },
+    {
+      "jp": "乗り換え",
+      "rank": 3830
+    },
+    {
+      "jp": "残業",
+      "rank": 4085
+    },
+    {
+      "jp": "合計",
+      "rank": 4143
+    },
+    {
+      "jp": "気候",
+      "rank": 4196
+    },
+    {
+      "jp": "見本",
+      "rank": 4347
+    },
+    {
+      "jp": "留学",
+      "rank": 4546
+    },
+    {
+      "jp": "丈夫",
+      "rank": 4680
+    },
+    {
+      "jp": "発車",
+      "rank": 5031
+    },
+    {
+      "jp": "探す",
+      "rank": 5204
+    },
+    {
+      "jp": "買う",
+      "rank": 5224
+    },
+    {
+      "jp": "品物",
+      "rank": 5263
+    },
+    {
+      "jp": "服",
+      "rank": 5278
+    },
+    {
+      "jp": "入る",
+      "rank": 5330
+    },
+    {
+      "jp": "本屋",
+      "rank": 5365
+    },
+    {
+      "jp": "返品",
+      "rank": 5545
+    },
+    {
+      "jp": "個室",
+      "rank": 5652
+    },
+    {
+      "jp": "割引",
+      "rank": 5661
+    },
+    {
+      "jp": "半額",
+      "rank": 5933
+    },
+    {
+      "jp": "割合",
+      "rank": 6047
+    },
+    {
+      "jp": "持ち帰り",
+      "rank": 6687
+    },
+    {
+      "jp": "試食",
+      "rank": 6726
+    },
+    {
+      "jp": "通販",
+      "rank": 6733
+    },
+    {
+      "jp": "台風",
+      "rank": 6932
+    },
+    {
+      "jp": "辞書",
+      "rank": 7021
+    },
+    {
+      "jp": "選ぶ",
+      "rank": 7023
+    },
+    {
+      "jp": "着る",
+      "rank": 7172
+    },
+    {
+      "jp": "テイクアウト",
+      "rank": 7242
+    },
+    {
+      "jp": "特急",
+      "rank": 7354
+    },
+    {
+      "jp": "終点",
+      "rank": 7372
+    },
+    {
+      "jp": "売り場",
+      "rank": 7505
+    },
+    {
+      "jp": "居酒屋",
+      "rank": 7708
+    },
+    {
+      "jp": "特売",
+      "rank": 7762
+    },
+    {
+      "jp": "有料",
+      "rank": 8182
+    },
+    {
+      "jp": "神社",
+      "rank": 8215
+    },
+    {
+      "jp": "帰路",
+      "rank": 8643
+    },
+    {
+      "jp": "空席",
+      "rank": 8734
+    },
+    {
+      "jp": "週末",
+      "rank": 8789
+    },
+    {
+      "jp": "店内",
+      "rank": 8959
+    },
+    {
+      "jp": "定食",
+      "rank": 9269
+    },
+    {
+      "jp": "品切れ",
+      "rank": 9599
+    },
+    {
+      "jp": "後輩",
+      "rank": 9653
+    },
+    {
+      "jp": "旅路",
+      "rank": 9677
+    },
+    {
+      "jp": "飲む",
+      "rank": 9839
+    },
+    {
+      "jp": "名物",
+      "rank": 9989
+    },
+    {
+      "jp": "ドラッグストア",
+      "rank": 10347
+    },
+    {
+      "jp": "袋",
+      "rank": 10726
+    },
+    {
+      "jp": "意見",
+      "rank": 11081
+    },
+    {
+      "jp": "安い",
+      "rank": 11687
+    },
+    {
+      "jp": "船",
+      "rank": 11959
+    },
+    {
+      "jp": "バス",
+      "rank": 12186
+    },
+    {
+      "jp": "卵",
+      "rank": 12350
+    },
+    {
+      "jp": "奥",
+      "rank": 12434
+    },
+    {
+      "jp": "見つける",
+      "rank": 12800
+    },
+    {
+      "jp": "降りる",
+      "rank": 12886
+    },
+    {
+      "jp": "高い",
+      "rank": 12917
+    },
+    {
+      "jp": "靴",
+      "rank": 13931
+    },
+    {
+      "jp": "サイズ",
+      "rank": 14119
+    },
+    {
+      "jp": "レジ",
+      "rank": 14204
+    },
+    {
+      "jp": "兄弟",
+      "rank": 14304
+    },
+    {
+      "jp": "小さい",
+      "rank": 14549
+    },
+    {
+      "jp": "改札",
+      "rank": 14700
+    },
+    {
+      "jp": "肉",
+      "rank": 15009
+    },
+    {
+      "jp": "隣",
+      "rank": 17023
+    },
+    {
+      "jp": "木漏れ日",
+      "rank": 19039
+    },
+    {
+      "jp": "温める",
+      "rank": 19236
+    },
+    {
+      "jp": "送料",
+      "rank": 19954
+    },
+    {
+      "jp": "魚",
+      "rank": 20193
+    },
+    {
+      "jp": "夢",
+      "rank": 23461
+    },
+    {
+      "jp": "棚",
+      "rank": 24951
+    }
+  ]
+}

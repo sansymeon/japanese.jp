@@ -1,0 +1,80 @@
+# KML Curriculum Dashboard v1.0
+
+Self-contained, read-only visualization of KML curriculum analytics.
+
+**Mission control** for curriculum design, QA, and progress tracking.
+
+## Rules
+
+- Reads **only** generated analytics JSON (`../output/*.json`)
+- Never reads production lesson files
+- Never modifies analytics or production data
+- Updates automatically when analytics are regenerated (live fetch + 30s poll)
+
+## Run
+
+```bash
+cd kml/analytics/dashboard
+./serve.sh          # http://localhost:8787/
+# or: ./serve.sh 9000
+```
+
+Open [http://localhost:8787/](http://localhost:8787/).
+
+`./data` is a symlink to `../output`, so the UI always reads live analytics without copying.
+
+Regenerate data anytime:
+
+```bash
+./scripts/pre-deploy.sh
+# or: .venv/bin/python kml/analytics/scripts/analyze_channel_learning.py
+```
+
+Preferred release flow: create lesson → `git push` → pre-deploy regenerates JSON → deploy.
+See `kml/analytics/README.md` and `.github/workflows/pre-deploy-analytics.yml`.
+
+The dashboard reloads the new `generated_at` timestamp without a rebuild.
+
+## Data source
+
+Primary: `kml/analytics/output/kml_channel_learning.json` (schema v4+)
+
+The UI tolerates future fields; missing optional sections degrade gracefully.
+
+## Features
+
+- Summary cards
+- Curriculum growth charts (hover = lesson / playlist / new / reinforced)
+- Learning-value timeline (coloured by educational role)
+- Playlist overview cards
+- Exposure-depth stacks + donuts
+- JLPT coverage + average encounters
+- Spoken-frequency growth
+- Heat maps (playlist × JLPT / frequency / value / roles)
+- Milestones
+- Search (kanji / vocabulary / lesson / playlist)
+- Filters (playlist, JLPT, type, role, lesson)
+- Export: JSON, CSV, Markdown, PNG (chart), PDF (print)
+- Light / dark mode
+
+## Roadmap
+
+| Version | Focus |
+|---|---|
+| **1.0** | At-a-glance curriculum mission control (this) |
+| **2.0** | Historical snapshots · growth between releases |
+| **3.0** | Public demonstration dashboard |
+| **4.0** | Student personal learning tracker |
+
+## Architecture
+
+```
+kml/analytics/dashboard/
+  index.html
+  css/dashboard.css
+  js/dashboard.js
+  serve.sh
+  README.md
+```
+
+Pure static files. Chart.js is loaded from a CDN for charts only.
