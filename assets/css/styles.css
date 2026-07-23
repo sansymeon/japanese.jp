@@ -4,16 +4,20 @@
   --font-display: "Shippori Mincho", "Noto Serif JP", "Hiragino Mincho ProN", serif;
   --font-body: "Source Sans 3", "Hiragino Sans", "Noto Sans JP", sans-serif;
 
-  --bg: #101214;
-  --bg-elevated: #16191d;
-  --bg-muted: #0c0e11;
-  --ink: #e8e6e3;
-  --ink-secondary: #b8b6b2;
-  --ink-tertiary: #7a7874;
+  --bg: #0b0b0c;
+  --bg-elevated: #121214;
+  --bg-muted: #080809;
+  --ink: #f3f1eb;
+  --ink-secondary: #d8d4cb;
+  --ink-tertiary: #9a958c;
   --stroke: #2a2e34;
-  --accent: #c4a574;
+  --accent: #c9a458;
   --accent-soft: #2a2418;
-  --accent-hover: #d4b88a;
+  --accent-hover: #d8b66a;
+  --menu-ink: #f3f1eb;
+  --menu-gold: #c9a458;
+  --menu-divider: rgba(201, 164, 88, 0.25);
+  --menu-glow: rgba(201, 164, 88, 0.06);
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   --radius: 2px;
   --radius-sm: 2px;
@@ -331,8 +335,8 @@ button:focus-visible {
 .gallery-hall {
   display: flex;
   flex-direction: column;
-  gap: clamp(4.5rem, 10vw, 7.5rem);
-  padding-block: 0.5rem;
+  gap: clamp(5.5rem, 12vw, 9rem);
+  padding-block: clamp(1.5rem, 4vw, 3rem);
 }
 
 .gallery-entry {
@@ -398,6 +402,21 @@ button:focus-visible {
     0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+.gallery-frame.is-coming-soon {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.78;
+}
+
+.gallery-frame.is-coming-soon:hover,
+.gallery-frame.is-coming-soon:focus-visible {
+  transform: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.03) inset,
+    0 14px 36px rgba(0, 0, 0, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
 .gallery-plaque {
   margin: 1.15rem 0 0;
   padding: 0;
@@ -411,32 +430,132 @@ button:focus-visible {
 }
 
 .gallery-copy {
-  margin-top: 2rem;
-  max-width: 22rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  margin-inline: auto;
+  width: min(100%, 42rem);
+  max-width: 42rem;
+  text-align: left;
 }
 
 .gallery-copy h3 {
-  margin-bottom: 0.85rem;
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--ink-secondary);
-  letter-spacing: 0.04em;
+  margin: 0 0 1.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 2.4vw, 1.4rem);
+  font-weight: 500;
+  color: var(--menu-ink);
+  letter-spacing: 0.06em;
+  text-align: center;
 }
 
-.series-points {
+/* Exhibition directory rows (collection menus) */
+.gallery-copy .series-points {
+  margin: 0;
+  padding: 0.35rem 0 0.75rem;
+  list-style: none;
+}
+
+.gallery-copy .series-points li {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  margin: 0;
+  padding: 1.05rem 0.85rem;
+  font-size: clamp(1.15rem, 2.1vw, 1.28rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--menu-ink);
+  border-bottom: 1px solid var(--menu-divider);
+  border-radius: 2px;
+  background: transparent;
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    transform 250ms ease;
+}
+
+.gallery-copy .series-points li:last-child {
+  border-bottom: 1px solid var(--menu-divider);
+}
+
+.gallery-copy .series-icon {
+  flex: 0 0 auto;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--menu-gold);
+  opacity: 0.88;
+  transition: opacity 250ms ease, color 250ms ease, filter 250ms ease;
+}
+
+.gallery-copy .series-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gallery-copy .series-icon svg[data-fill="1"] {
+  fill: currentColor;
+  stroke: none;
+}
+
+.gallery-copy .series-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  letter-spacing: 0.02em;
+}
+
+.gallery-copy .series-chevron {
+  flex: 0 0 auto;
+  color: var(--menu-gold);
+  font-size: 1.15em;
+  line-height: 1;
+  opacity: 0.7;
+  transform: translateX(0);
+  transition:
+    opacity 250ms ease,
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.gallery-copy .series-points li:hover,
+.gallery-copy .series-points li:focus-within {
+  color: #ffffff;
+  background: var(--menu-glow);
+}
+
+.gallery-copy .series-points li:hover .series-icon,
+.gallery-copy .series-points li:focus-within .series-icon {
+  opacity: 1;
+  color: #e0c078;
+  filter: brightness(1.12);
+}
+
+.gallery-copy .series-points li:hover .series-chevron,
+.gallery-copy .series-points li:focus-within .series-chevron {
+  opacity: 1;
+  color: #e8d09a;
+  transform: translateX(0.22rem);
+}
+
+/* Audience lists keep a quieter treatment */
+.audience-card .series-points {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.series-points li {
+.audience-card .series-points li {
   padding: 0.35rem 0;
   font-size: 0.9rem;
   color: var(--ink-tertiary);
   border-bottom: 1px solid color-mix(in srgb, var(--stroke) 45%, transparent);
 }
 
-.series-points li:last-child {
+.audience-card .series-points li:last-child {
   border-bottom: none;
 }
 

@@ -30,29 +30,45 @@
 
     /**
      * Gallery entrance playlists.
-     * Set playlistUrl when known; null falls back to youtubeChannelUrl.
+     * Set playlistUrl when known; null falls back to youtubeChannelUrl
+     * unless comingSoon is true (no outbound link yet).
      * To swap artwork later, change only the <img src> in index.html
      * (or image fields below if you choose to drive src from JS).
      */
     galleryEntrances: {
       vocabulary: {
-        playlistUrl: null, // PLACEHOLDER — Vocabulary playlist
+        playlistUrl:
+          "https://www.youtube.com/playlist?list=PLJemcdjLRw4w",
         image: "kml/assets/youtube_thumbnails/vocabulary.png",
       },
-      kanji: {
-        playlistUrl: null, // PLACEHOLDER — Kanji playlist
+      postElementaryKanji: {
+        playlistUrl:
+          "https://www.youtube.com/playlist?list=PLI-ULFjSKz58",
+        image: "kml/assets/youtube_thumbnails/jr_high_image.png",
+      },
+      rememberingKanji: {
+        playlistUrl:
+          "https://www.youtube.com/playlist?list=PLBv0xLsm4RBo",
         image: "kml/assets/youtube_thumbnails/foundations.png",
       },
-      kana: {
-        playlistUrl: null, // PLACEHOLDER — Kana playlist
+      elementaryKanji: {
+        playlistUrl:
+          "https://www.youtube.com/playlist?list=PLZocopP--8p0",
+        image: "kml/assets/youtube_thumbnails/grade_1_.png",
+      },
+      kanaPreschool: {
+        playlistUrl:
+          "https://www.youtube.com/playlist?list=PLIX7jswPySk0",
         image: "kml/assets/images/kana_song_image.png",
       },
-      culture: {
-        playlistUrl: null, // PLACEHOLDER — Culture playlist
-        image: "kml/assets/youtube_thumbnails/gallery.png",
+      postJoyoKanji: {
+        playlistUrl: null,
+        comingSoon: true,
+        image: "kml/assets/images/post_joyo_coming_soon.png",
       },
       ambientJapan: {
-        playlistUrl: null, // PLACEHOLDER — Ambient Japan playlist
+        playlistUrl:
+          "https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU",
         image: "kml/assets/youtube_thumbnails/ambient_japan.png",
       },
     },
@@ -62,13 +78,18 @@
      * null = no verified playlist; button falls back to curriculumUrl.
      */
     playlistUrls: {
-      kana: null, // PLACEHOLDER
-      elementaryKanji: null, // PLACEHOLDER
+      kana: "https://www.youtube.com/playlist?list=PLIX7jswPySk0",
+      elementaryKanji:
+        "https://www.youtube.com/playlist?list=PLZocopP--8p0",
       elementaryCompounds: null, // PLACEHOLDER
-      postElementaryKanji: null, // PLACEHOLDER
+      postElementaryKanji:
+        "https://www.youtube.com/playlist?list=PLI-ULFjSKz58",
       postElementaryCompounds: null, // PLACEHOLDER
-      japaneseVocabulary: null, // PLACEHOLDER
+      japaneseVocabulary:
+        "https://www.youtube.com/playlist?list=PLJemcdjLRw4w",
       spokenJapanese: null, // PLACEHOLDER
+      ambientJapan:
+        "https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU",
     },
 
     /**
@@ -257,17 +278,35 @@
     });
 
     // Gallery entrance frames: playlist when set, otherwise channel
+    // (unless comingSoon — keep the frame as a quiet placeholder).
     document.querySelectorAll("[data-gallery]").forEach((el) => {
       const key = el.getAttribute("data-gallery");
       const entry = (c.galleryEntrances && c.galleryEntrances[key]) || null;
-      const href =
-        (entry && entry.playlistUrl) || c.youtubeChannelUrl || "#";
+      const comingSoon = !!(entry && entry.comingSoon);
+      const href = comingSoon
+        ? "#"
+        : (entry && entry.playlistUrl) || c.youtubeChannelUrl || "#";
+
       el.setAttribute("href", href);
+
+      if (comingSoon) {
+        el.removeAttribute("target");
+        el.removeAttribute("rel");
+        el.classList.add("is-placeholder", "is-coming-soon");
+        el.setAttribute("aria-disabled", "true");
+        el.setAttribute("title", "Coming soon");
+        return;
+      }
+
+      el.removeAttribute("aria-disabled");
+      el.classList.remove("is-coming-soon");
+
       if (href && href !== "#") {
         el.setAttribute("target", "_blank");
         el.setAttribute("rel", "noopener noreferrer");
         el.classList.remove("is-placeholder");
       }
+
       if (entry && entry.playlistUrl == null && c.youtubeChannelUrl) {
         el.setAttribute(
           "title",
@@ -275,6 +314,8 @@
             key +
             ".playlistUrl"
         );
+      } else {
+        el.removeAttribute("title");
       }
     });
   }
@@ -423,6 +464,8 @@
       return;
     }
 
+    // threshold 0: tall sections (e.g. gallery hall) must reveal as soon as
+    // any part enters view — a high % threshold left the mid-page blank.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -432,7 +475,7 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0, rootMargin: "0px 0px -6% 0px" }
     );
 
     nodes.forEach((el) => observer.observe(el));

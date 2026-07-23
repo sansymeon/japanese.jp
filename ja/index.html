@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KML Japan — 美しさ・音楽・意味で学ぶ日本語</title>
   <meta name="description" content="美しい映像と音楽とともに、漢字・かな・語彙・日本の文化を静かに味わう学習ギャラリー。小学生から大人・日本語教師まで、日本語を学び直したいすべての方へ。" />
-  <meta name="theme-color" content="#101214" />
+  <meta name="theme-color" content="#0B0B0C" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -151,23 +151,30 @@
       </div>
     </section>
 
-    <section class="section reveal" id="series" aria-labelledby="series-heading">
+    <section class="section" id="series" aria-labelledby="series-heading">
       <div class="container">
         <div class="section-head">
-          <h2 id="series-heading">コレクション</h2>
+          <h2 id="series-heading">KML Japan コレクション</h2>
           <p>各額装作品が、ひとつの展示室への入口です。</p>
         </div>
 
         <div class="gallery-hall">
+          <!--
+            Gallery entrances: swap only the <img src> to replace artwork later.
+            Playlist hrefs: SITE_CONFIG.galleryEntrances in homepage.js
+            Order: Vocabulary → 中学校漢字 → Remembering the Kanji →
+            小学校漢字 → 幼児向けかな → 常用漢字外の漢字 → アンビエント日本.
+          -->
+
           <article class="gallery-entry gallery-entry--shift-end reveal">
             <figure class="gallery-exhibit">
               <a
                 class="gallery-frame"
                 data-gallery="vocabulary"
-                href="https://www.youtube.com/@ambientkanji"
+                href="https://www.youtube.com/playlist?list=PLJemcdjLRw4w"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="語彙コレクションを YouTube で見る"
+                aria-label="日本語語彙コレクションを YouTube で見る"
               >
                 <span class="gallery-mat">
                   <img
@@ -179,15 +186,26 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">語彙コレクション</figcaption>
+              <figcaption class="gallery-plaque">日本語語彙</figcaption>
             </figure>
             <div class="gallery-copy">
-              <h3>語彙</h3>
+              <h3>日本語語彙</h3>
               <ul class="series-points">
-                <li>頻度に基づく話しことばの語彙</li>
-                <li>映像美とともに学ぶ</li>
-                <li>ゆったりとしたペース</li>
-                <li>日常の日本語</li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8c0-2.5 3.5-4.5 7-4.5S19 5.5 19 8c0 1.6-1.4 3-3.4 3.8L17 17l-4.2-2.6C12.5 14.5 12.2 14.5 12 14.5c-3.5 0-7-2-7-6.5z"/></svg></span>
+                  <span class="series-label">日常でいちばんよく使うことばを学ぶ</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.2"/><path d="M8 5.5V4.2M16 5.5V4.2M3.5 10h17"/></svg></span>
+                  <span class="series-label">頻度に基づく話しことばの語彙と美しい映像</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 8.2v4.1l2.6 1.6"/></svg></span>
+                  <span class="series-label">現状：20レッスン（拡充中）</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -196,11 +214,55 @@
             <figure class="gallery-exhibit">
               <a
                 class="gallery-frame"
-                data-gallery="kanji"
-                href="https://www.youtube.com/@ambientkanji"
+                data-gallery="postElementaryKanji"
+                href="https://www.youtube.com/playlist?list=PLI-ULFjSKz58"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="漢字コレクションを YouTube で見る"
+                aria-label="中学校漢字コレクションを YouTube で見る"
+              >
+                <span class="gallery-mat">
+                  <img
+                    src="../kml/assets/youtube_thumbnails/jr_high_image.png"
+                    alt=""
+                    width="640"
+                    height="360"
+                    loading="lazy"
+                  />
+                </span>
+              </a>
+              <figcaption class="gallery-plaque">中学校漢字</figcaption>
+            </figure>
+            <div class="gallery-copy">
+              <h3>中学校漢字</h3>
+              <ul class="series-points">
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"/><path d="M9 12h6M12 9v6"/></svg></span>
+                  <span class="series-label">小学校のあとに続く、実用的な漢字約1,000字</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="7" width="7.5" height="10" rx="1"/><rect x="13" y="7" width="7.5" height="10" rx="1"/><path d="M11 12h2"/></svg></span>
+                  <span class="series-label">大切な熟語とともに学ぶ</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 15.5h5.5l2-4 2 7 2.5-5.5H19.5"/></svg></span>
+                  <span class="series-label">現状：急速に拡充中</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="gallery-entry gallery-entry--shift-end reveal">
+            <figure class="gallery-exhibit">
+              <a
+                class="gallery-frame"
+                data-gallery="rememberingKanji"
+                href="https://www.youtube.com/playlist?list=PLBv0xLsm4RBo"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Remembering the Kanji コレクションを YouTube で見る"
               >
                 <span class="gallery-mat">
                   <img
@@ -212,16 +274,60 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">漢字コレクション</figcaption>
+              <figcaption class="gallery-plaque">Remembering the Kanji</figcaption>
             </figure>
             <div class="gallery-copy">
-              <h3>漢字</h3>
+              <h3>Remembering the Kanji</h3>
               <ul class="series-points">
-                <li>小学校・常用漢字</li>
-                <li>中学校以降の漢字</li>
-                <li>熟語・語彙</li>
-                <li>成り立ち</li>
-                <li>高校受験・大学受験への橋渡し</li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18c2-5 5-9 9-12"/><path d="M8.5 16.5c1.8-.4 3.4-1 4.8-2"/><path d="M15 5.5l2.5 1.2-1 2.4"/></svg></span>
+                  <span class="series-label">Heisig 方式のビジュアル記憶レッスン</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4.5v3.2"/><path d="M7 19.5c1.2-3.8 2.8-6.2 5-7.5 2.2 1.3 3.8 3.7 5 7.5"/><circle cx="12" cy="10" r="1.2"/></svg></span>
+                  <span class="series-label">レッスン1–10 公開中</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="gallery-entry gallery-entry--shift-start reveal">
+            <figure class="gallery-exhibit">
+              <a
+                class="gallery-frame"
+                data-gallery="elementaryKanji"
+                href="https://www.youtube.com/playlist?list=PLZocopP--8p0"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="小学校漢字コレクションを YouTube で見る"
+              >
+                <span class="gallery-mat">
+                  <img
+                    src="../kml/assets/youtube_thumbnails/grade_1_.png"
+                    alt=""
+                    width="640"
+                    height="360"
+                    loading="lazy"
+                  />
+                </span>
+              </a>
+              <figcaption class="gallery-plaque">小学校漢字</figcaption>
+            </figure>
+            <div class="gallery-copy">
+              <h3>小学校漢字</h3>
+              <ul class="series-points">
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18.5V9.2c0-.7.6-1.2 1.2-1.2h2.1c.4 0 .8.2 1 .5L12 12l2.7-3.5c.2-.3.6-.5 1-.5h2.1c.7 0 1.2.5 1.2 1.2v9.3"/><path d="M4 18.5h16"/></svg></span>
+                  <span class="series-label">小学校で学ぶ漢字カリキュラムをすべて</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"/><path d="M9 12h6M12 9v6"/></svg></span>
+                  <span class="series-label">小学1–6年</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -230,11 +336,11 @@
             <figure class="gallery-exhibit">
               <a
                 class="gallery-frame"
-                data-gallery="kana"
-                href="https://www.youtube.com/@ambientkanji"
+                data-gallery="kanaPreschool"
+                href="https://www.youtube.com/playlist?list=PLIX7jswPySk0"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="かなコレクションを YouTube で見る"
+                aria-label="幼児向けかなコレクションを YouTube で見る"
               >
                 <span class="gallery-mat">
                   <img
@@ -246,16 +352,21 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">かなコレクション</figcaption>
+              <figcaption class="gallery-plaque">幼児向けかな</figcaption>
             </figure>
             <div class="gallery-copy">
-              <h3>かな</h3>
+              <h3>幼児向けかな</h3>
               <ul class="series-points">
-                <li>ひらがな</li>
-                <li>カタカナ</li>
-                <li>うた</li>
-                <li>かなの成り立ち</li>
-                <li>学びなおしにも</li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 16c1.5-5 4-8.5 8.5-10.5"/><path d="M8.5 12.5c3.5-.4 6.2.6 8.2 2.8"/><circle cx="8.2" cy="16.2" r="1.1"/></svg></span>
+                  <span class="series-label">ひらがな・カタカナを彩るうた</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.5V7.2l8 4.65-8 4.65z"/><path d="M6 18.5c1.2-1.8 2.2-3.2 3-4.2"/></svg></span>
+                  <span class="series-label">小さなお子さまのために</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -263,16 +374,15 @@
           <article class="gallery-entry gallery-entry--shift-start reveal">
             <figure class="gallery-exhibit">
               <a
-                class="gallery-frame"
-                data-gallery="culture"
-                href="https://www.youtube.com/@ambientkanji"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="日本文化コレクションを YouTube で見る"
+                class="gallery-frame is-coming-soon"
+                data-gallery="postJoyoKanji"
+                href="#"
+                aria-label="常用漢字外の漢字コレクション — 近日公開"
+                aria-disabled="true"
               >
                 <span class="gallery-mat">
                   <img
-                    src="../kml/assets/youtube_thumbnails/gallery.png"
+                    src="../kml/assets/images/post_joyo_coming_soon.png"
                     alt=""
                     width="640"
                     height="360"
@@ -280,15 +390,21 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">日本文化コレクション</figcaption>
+              <figcaption class="gallery-plaque">常用漢字外の漢字</figcaption>
             </figure>
             <div class="gallery-copy">
-              <h3>日本文化</h3>
+              <h3>常用漢字外の漢字</h3>
               <ul class="series-points">
-                <li>美しい日本語表現</li>
-                <li>季節のことば</li>
-                <li>暮らしのなかの日本語</li>
-                <li>ことばと文化をいっしょに</li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5c-2.8 2.2-4.5 5-4.5 8.2A4.5 4.5 0 0 0 12 17.7a4.5 4.5 0 0 0 4.5-4.5C16.5 10 14.8 7.2 12 5z"/></svg></span>
+                  <span class="series-label">日本の常用漢字2,136字のその先へ</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 8.2v4.1l2.6 1.6"/></svg></span>
+                  <span class="series-label">近日公開</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -298,7 +414,7 @@
               <a
                 class="gallery-frame"
                 data-gallery="ambientJapan"
-                href="https://www.youtube.com/@ambientkanji"
+                href="https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="アンビエント日本コレクションを YouTube で見る"
@@ -313,16 +429,25 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">アンビエント日本コレクション</figcaption>
             </figure>
             <div class="gallery-copy">
               <h3>アンビエント日本</h3>
               <ul class="series-points">
-                <li>季節の風景</li>
-                <li>静かな街並み</li>
-                <li>自然・神社・寺院</li>
-                <li>シネマティックな風景と日常</li>
-                <li>日本語を学びながら、日本を味わう</li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17.5l5.2-6.2 3.1 3.4L16.5 9l3.5 8.5z"/><path d="M4 17.5h16"/></svg></span>
+                  <span class="series-label">季節の風景と静かな街並み</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 16.5h14"/><path d="M7.5 16.5V9.2"/><path d="M16.5 16.5V9.2"/><path d="M5.5 9.2h13"/><path d="M12 9.2V6.5"/><path d="M9.5 19v-2.5h5V19"/></svg></span>
+                  <span class="series-label">自然・神社・寺院、シネマティックな風景</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
+                <li>
+                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 15.5c1.8-1 3.2-2.6 4-4.6"/><path d="M9.2 15.5c1.8-1 3.2-2.6 4-4.6"/><path d="M13.4 15.5c1.8-1 3.2-2.6 4-4.6"/><circle cx="17.5" cy="9.2" r="1.3"/></svg></span>
+                  <span class="series-label">日本を静かに味わうアンビエント映像</span>
+                  <span class="series-chevron" aria-hidden="true">›</span>
+                </li>
               </ul>
             </div>
           </article>
