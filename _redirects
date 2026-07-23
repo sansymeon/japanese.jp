@@ -1,0 +1,3 @@
+# Netlify does not expose the git symlink kml/analytics/dashboard/data → ../output.
+# Rewrite so legacy /dashboard/data/* URLs resolve to the real analytics JSON.
+/kml/analytics/dashboard/data/*  /kml/analytics/output/:splat  200

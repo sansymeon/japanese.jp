@@ -24,7 +24,8 @@ Open [http://localhost:8787/dashboard/](http://localhost:8787/dashboard/).
 The UI fetches `../output/kml_channel_learning.json` (same path as production).
 `serve.sh` serves from `kml/analytics/` so that relative URL resolves locally.
 `./data` remains a symlink to `../output` for convenience only — deploy hosts
-often do not expose that symlink.
+often do not expose that symlink. Production also has a Netlify rewrite in
+`/_redirects` so `/kml/analytics/dashboard/data/*` maps to `/output/*`.
 
 Regenerate data anytime:
 
