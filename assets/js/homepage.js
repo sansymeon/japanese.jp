@@ -11,21 +11,51 @@
    * Do not invent YouTube links — leave null until verified.
    * ========================================================================= */
   const SITE_CONFIG = {
-    /** @type {string|null} Official KML / SanSymeon YouTube channel */
-    youtubeChannelUrl: null, // PLACEHOLDER: set when channel URL is confirmed
+    /** Official KML Japan YouTube channel */
+    youtubeChannelUrl: "https://www.youtube.com/@ambientkanji",
 
     /** Curriculum overview (book / learning paths on-site) */
-    curriculumUrl: "./kml/index.html",
+    curriculumUrl: "kml/index.html",
 
     /** Deployed analytics dashboard */
-    analyticsDashboardUrl: "./kml/analytics/dashboard/",
+    analyticsDashboardUrl: "kml/analytics/dashboard/",
 
     /**
      * Public analytics JSON (generated under output/; dashboard ./data symlinks here).
      * Homepage reads summary.* only; never modifies this file.
      * Prefer output/ over dashboard/data so deploy hosts need not resolve the symlink.
+     * Paths are relative to the site root; resolved with <html data-base> when needed.
      */
-    analyticsJsonUrl: "./kml/analytics/output/kml_channel_learning.json",
+    analyticsJsonUrl: "kml/analytics/output/kml_channel_learning.json",
+
+    /**
+     * Gallery entrance playlists.
+     * Set playlistUrl when known; null falls back to youtubeChannelUrl.
+     * To swap artwork later, change only the <img src> in index.html
+     * (or image fields below if you choose to drive src from JS).
+     */
+    galleryEntrances: {
+      vocabulary: {
+        playlistUrl: null, // PLACEHOLDER — Vocabulary playlist
+        image: "kml/assets/youtube_thumbnails/vocabulary.png",
+      },
+      kanji: {
+        playlistUrl: null, // PLACEHOLDER — Kanji playlist
+        image: "kml/assets/youtube_thumbnails/foundations.png",
+      },
+      kana: {
+        playlistUrl: null, // PLACEHOLDER — Kana playlist
+        image: "kml/assets/youtube_thumbnails/kana.png",
+      },
+      culture: {
+        playlistUrl: null, // PLACEHOLDER — Culture playlist
+        image: "kml/assets/youtube_thumbnails/gallery.png",
+      },
+      ambientJapan: {
+        playlistUrl: null, // PLACEHOLDER — Ambient Japan playlist
+        image: "kml/assets/youtube_thumbnails/ambient_japan.png",
+      },
+    },
 
     /**
      * Playlist URLs keyed by learning-path card id.
@@ -89,9 +119,28 @@
 
   /* ---------- helpers ---------- */
 
+  function assetBase() {
+    const raw = document.documentElement.getAttribute("data-base");
+    if (raw == null || raw === "" || raw === ".") return "";
+    return String(raw).replace(/\/$/, "");
+  }
+
+  function resolveAsset(path) {
+    if (!path) return path;
+    if (/^(https?:|mailto:|tel:|#|\/\/)/i.test(path)) return path;
+    const cleaned = String(path).replace(/^\.\//, "");
+    const base = assetBase();
+    return base ? base + "/" + cleaned : cleaned;
+  }
+
+  function pageLocale() {
+    const lang = (document.documentElement.lang || "en").toLowerCase();
+    return lang.startsWith("ja") ? "ja" : "en";
+  }
+
   function fmtInt(n) {
     if (n == null || Number.isNaN(Number(n))) return "—";
-    return Number(n).toLocaleString("en-US");
+    return Number(n).toLocaleString(pageLocale() === "ja" ? "ja-JP" : "en-US");
   }
 
   function fmtPercent(n, digits) {
@@ -104,7 +153,8 @@
     try {
       const d = new Date(iso);
       if (Number.isNaN(d.getTime())) return iso;
-      return d.toLocaleString(undefined, {
+      const locale = pageLocale() === "ja" ? "ja-JP" : undefined;
+      return d.toLocaleString(locale, {
         year: "numeric",
         month: "short",
         day: "numeric",
@@ -180,8 +230,8 @@
       placeholderTitle: ytTitle,
     });
 
-    wireHref("[data-link='curriculum']", c.curriculumUrl);
-    wireHref("[data-link='analytics']", c.analyticsDashboardUrl);
+    wireHref("[data-link='curriculum']", resolveAsset(c.curriculumUrl));
+    wireHref("[data-link='analytics']", resolveAsset(c.analyticsDashboardUrl));
 
     document.querySelectorAll("[data-playlist]").forEach((el) => {
       const key = el.getAttribute("data-playlist");
@@ -193,7 +243,7 @@
         el.textContent = el.getAttribute("data-label-playlist") || "Open Playlist";
         el.classList.remove("is-placeholder");
       } else {
-        el.setAttribute("href", c.curriculumUrl);
+        el.setAttribute("href", resolveAsset(c.curriculumUrl));
         el.removeAttribute("target");
         el.textContent =
           el.getAttribute("data-label-fallback") || "Explore Curriculum";
@@ -202,6 +252,28 @@
           "title",
           "Playlist URL pending — opens on-site curriculum. Set SITE_CONFIG.playlistUrls." +
             key
+        );
+      }
+    });
+
+    // Gallery entrance frames: playlist when set, otherwise channel
+    document.querySelectorAll("[data-gallery]").forEach((el) => {
+      const key = el.getAttribute("data-gallery");
+      const entry = (c.galleryEntrances && c.galleryEntrances[key]) || null;
+      const href =
+        (entry && entry.playlistUrl) || c.youtubeChannelUrl || "#";
+      el.setAttribute("href", href);
+      if (href && href !== "#") {
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+        el.classList.remove("is-placeholder");
+      }
+      if (entry && entry.playlistUrl == null && c.youtubeChannelUrl) {
+        el.setAttribute(
+          "title",
+          "Playlist URL pending — opens KML Japan channel. Set SITE_CONFIG.galleryEntrances." +
+            key +
+            ".playlistUrl"
         );
       }
     });
@@ -219,7 +291,7 @@
       article.className = "feature-card";
 
       const img = document.createElement("img");
-      img.src = lesson.thumbnail;
+      img.src = resolveAsset(lesson.thumbnail);
       img.alt = "";
       img.loading = "lazy";
       img.width = 640;
@@ -295,12 +367,18 @@
     const genEl = document.getElementById("statsGeneratedAt");
     if (genEl) {
       const label = formatGeneratedAt(generatedAt);
-      genEl.textContent = label ? "Analytics generated " + label : "";
+      if (!label) {
+        genEl.textContent = "";
+      } else if (pageLocale() === "ja") {
+        genEl.textContent = "分析生成日時 " + label;
+      } else {
+        genEl.textContent = "Analytics generated " + label;
+      }
     }
   }
 
   async function loadAnalytics() {
-    const url = SITE_CONFIG.analyticsJsonUrl;
+    const url = resolveAsset(SITE_CONFIG.analyticsJsonUrl);
     try {
       // Once per visit; no-cache so redeployed JSON is picked up without polling.
       const res = await fetch(url, { cache: "no-cache" });
@@ -314,7 +392,11 @@
       applySummary(data.summary, data.generated_at);
     } catch (err) {
       console.warn("[homepage] analytics load failed:", err);
-      showStatsError("Curriculum statistics temporarily unavailable.");
+      showStatsError(
+        pageLocale() === "ja"
+          ? "カリキュラム統計を一時的に表示できません。"
+          : "Curriculum statistics temporarily unavailable."
+      );
     }
   }
 
@@ -325,6 +407,37 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
+  /* ---------- museum section reveals ---------- */
+
+  function initReveals() {
+    const nodes = document.querySelectorAll(".reveal");
+    if (!nodes.length) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      nodes.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    nodes.forEach((el) => observer.observe(el));
+  }
+
   /* ---------- init ---------- */
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -332,6 +445,7 @@
     applyConfigLinks();
     renderFeatured();
     setCopyrightYear();
+    initReveals();
     loadAnalytics();
   });
 })();

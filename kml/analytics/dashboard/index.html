@@ -23,6 +23,37 @@
       </div>
     </div>
     <div class="header-actions">
+      <button type="button" class="btn btn-ghost" id="themeToggle" title="Toggle theme">Theme</button>
+      <button type="button" class="btn" id="reloadBtn">Reload</button>
+      <div class="export-menu" id="exportMenu">
+        <button type="button" class="btn btn-primary" id="exportToggle">Export</button>
+        <div class="menu" role="menu">
+          <button type="button" id="exportJson">JSON</button>
+          <button type="button" id="exportCsv">CSV (learning value)</button>
+          <button type="button" id="exportMd">Markdown summary</button>
+          <button type="button" id="exportPng">PNG (Joyo chart)</button>
+          <button type="button" id="exportPdf">PDF (print)</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filters: collapsed by default; not sticky — analytics stay in view while scrolling -->
+  <div class="filter-toolbar" id="filterToolbar">
+    <div class="filter-toolbar-bar">
+      <button
+        type="button"
+        class="btn btn-ghost filter-toggle"
+        id="filterToggle"
+        aria-expanded="false"
+        aria-controls="filterPanel"
+      >
+        <span class="filter-toggle-label">Filters</span>
+        <span class="filter-toggle-hint" id="filterSummary">All playlists · All filters</span>
+        <span class="filter-toggle-chevron" aria-hidden="true">▼</span>
+      </button>
+    </div>
+    <div class="filter-panel" id="filterPanel" hidden>
       <div class="filters" aria-label="Filters">
         <label>Playlist
           <select id="filterPlaylist"><option value="all">All playlists</option></select>
@@ -58,20 +89,8 @@
           <input id="filterLesson" type="search" placeholder="Filter lessons…" />
         </label>
       </div>
-      <button type="button" class="btn btn-ghost" id="themeToggle" title="Toggle theme">Theme</button>
-      <button type="button" class="btn" id="reloadBtn">Reload</button>
-      <div class="export-menu" id="exportMenu">
-        <button type="button" class="btn btn-primary" id="exportToggle">Export</button>
-        <div class="menu" role="menu">
-          <button type="button" id="exportJson">JSON</button>
-          <button type="button" id="exportCsv">CSV (learning value)</button>
-          <button type="button" id="exportMd">Markdown summary</button>
-          <button type="button" id="exportPng">PNG (Joyo chart)</button>
-          <button type="button" id="exportPdf">PDF (print)</button>
-        </div>
-      </div>
     </div>
-  </header>
+  </div>
 
   <main class="layout">
     <div id="statusBanner" class="status-banner loading" hidden></div>

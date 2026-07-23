@@ -887,25 +887,63 @@
         .join("");
   }
 
+  function filterSummaryText() {
+    const parts = [];
+    if (filters.playlist !== "all") parts.push(pathName(filters.playlist));
+    else parts.push("All playlists");
+    if (filters.jlpt !== "all") parts.push(filters.jlpt);
+    if (filters.kind !== "all") parts.push(filters.kind);
+    if (filters.role !== "all") parts.push(filters.role);
+    if (filters.lesson) parts.push(`“${filters.lesson}”`);
+    if (parts.length === 1) parts.push("All filters");
+    return parts.join(" · ");
+  }
+
+  function updateFilterSummary() {
+    const el = $("#filterSummary");
+    if (el) el.textContent = filterSummaryText();
+  }
+
+  function bindFilterToolbar() {
+    const toolbar = $("#filterToolbar");
+    const toggle = $("#filterToggle");
+    const panel = $("#filterPanel");
+    if (!toolbar || !toggle || !panel) return;
+
+    toggle.addEventListener("click", () => {
+      const open = toolbar.classList.toggle("is-open");
+      panel.hidden = !open;
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.querySelector(".filter-toggle-label").textContent = open
+        ? "Hide filters"
+        : "Filters";
+    });
+  }
+
   function bindFilters() {
     $("#filterPlaylist").addEventListener("change", (e) => {
       filters.playlist = e.target.value;
+      updateFilterSummary();
       renderFiltered();
     });
     $("#filterJlpt").addEventListener("change", (e) => {
       filters.jlpt = e.target.value;
+      updateFilterSummary();
       renderSearch($("#searchInput").value);
     });
     $("#filterKind").addEventListener("change", (e) => {
       filters.kind = e.target.value;
+      updateFilterSummary();
       renderFiltered();
     });
     $("#filterRole").addEventListener("change", (e) => {
       filters.role = e.target.value;
+      updateFilterSummary();
       renderFiltered();
     });
     $("#filterLesson").addEventListener("input", (e) => {
       filters.lesson = e.target.value;
+      updateFilterSummary();
       renderFiltered();
     });
     let searchTimer;
@@ -1069,6 +1107,7 @@
     chartDefaults();
     renderHeader();
     populateFilters();
+    updateFilterSummary();
     renderGrowthCharts();
     renderLearningValue();
     renderPlaylists();
@@ -1082,6 +1121,7 @@
   async function init() {
     $("#dashboardVersion").textContent = `v${DASHBOARD_VERSION}`;
     bindTheme();
+    bindFilterToolbar();
     bindFilters();
     bindExport();
     $("#reloadBtn").addEventListener("click", () => loadData());

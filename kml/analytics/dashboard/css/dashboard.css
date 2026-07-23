@@ -99,7 +99,7 @@ button, select, input {
   justify-content: space-between;
   gap: 1rem;
   min-height: var(--header-h);
-  padding: 0.75rem 1.5rem;
+  padding: 0.65rem 1.5rem;
   background: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--stroke);
@@ -300,11 +300,68 @@ button, select, input {
   color: var(--ink);
 }
 
+/* Collapsible filters — scroll with page; analytics stay primary */
+.filter-toolbar {
+  border-bottom: 1px solid var(--stroke);
+  background: var(--bg);
+}
+
+.filter-toolbar-bar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.35rem 1.5rem;
+}
+
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.filter-toggle-label {
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.filter-toggle-hint {
+  color: var(--ink-tertiary);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: min(52vw, 28rem);
+}
+
+.filter-toggle-chevron {
+  font-size: 0.65rem;
+  color: var(--ink-tertiary);
+  transition: transform var(--ease);
+}
+
+.filter-toolbar.is-open .filter-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.filter-toolbar.is-open .filter-toggle-label::after {
+  content: none;
+}
+
+.filter-panel {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.35rem 1.5rem 0.85rem;
+  border-top: 1px solid color-mix(in srgb, var(--stroke) 70%, transparent);
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .filters label {
@@ -322,7 +379,7 @@ button, select, input {
   padding: 0.4rem 0.65rem;
   border: 1px solid var(--stroke);
   border-radius: var(--radius-sm);
-  background: var(--bg);
+  background: var(--bg-elevated);
 }
 
 .search-box {
@@ -586,7 +643,7 @@ table.data tr:hover td {
 }
 
 @media print {
-  .app-header, .nav-pills, .filters, .header-actions, .export-menu {
+  .app-header, .nav-pills, .filter-toolbar, .header-actions, .export-menu {
     display: none !important;
   }
   .layout { max-width: none; padding: 0; }
