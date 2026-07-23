@@ -19,10 +19,22 @@ def lesson_folder(lesson: int) -> str:
 def collection_dir_for_id(collection_id: str) -> str | None:
     if collection_id in _LESSON_FOLDER_OVERRIDES:
         return _LESSON_FOLDER_OVERRIDES[collection_id]
-    if collection_id.startswith("post_elementary_"):
+    if collection_id.startswith("post_elementary"):
         return "post_elementary"
     if re.match(r"vocabulary_\d+", collection_id):
         return "vocabulary"
+    if collection_id.startswith("hiragana_song"):
+        return "hiragana_song"
+    if collection_id.startswith("hiragana_lesson"):
+        return "hiragana_lesson"
+    if collection_id.startswith("katakana_lesson"):
+        return "katakana_lesson"
+    if collection_id.startswith("hiragana_origins"):
+        return "hiragana_origins"
+    if collection_id.startswith("katakana_origins"):
+        return "katakana_origins"
+    if collection_id.startswith("katakana_song"):
+        return "katakana_song"
     if collection_id.startswith("grade_1"):
         return "grade_1"
     if collection_id.startswith("grade_2"):

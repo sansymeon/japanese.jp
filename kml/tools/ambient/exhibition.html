@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@400&family=Noto+Serif+JP:wght@400;500;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;500;600&family=Yuji+Syuku&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/gallery-typography.css?v=6">
   <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="./css/gallery-grade6-kanji-soundtrack.css?v=1">
   <link rel="stylesheet" href="./css/gallery-party-kanji.css?v=2">
   <link rel="stylesheet" href="./css/gallery-hiragana-song.css?v=5">
+  <link rel="stylesheet" href="./css/gallery-hiragana-song-typography.css?v=9">
+  <link rel="stylesheet" href="./css/gallery-hiragana-origins.css?v=3">
   <link rel="stylesheet" href="./css/gallery-lesson.css?v=2">
   <link rel="stylesheet" href="./css/exhibition.css">
 </head>
@@ -77,11 +79,51 @@
               ?collection=vocabulary_03
   Japanese Vocabulary Lesson 4 (frequency group 4):
               ?collection=vocabulary_04
+  Japanese Vocabulary Lesson 5 (frequency group 5):
+              ?collection=vocabulary_05
+  Japanese Vocabulary Lesson 6 (frequency group 6):
+              ?collection=vocabulary_06
+  Japanese Vocabulary Lesson 7 (frequency group 7):
+              ?collection=vocabulary_07
+  Japanese Vocabulary Lesson 8 (frequency group 8):
+              ?collection=vocabulary_08
+  Japanese Vocabulary Lesson 9 (frequency group 9):
+              ?collection=vocabulary_09
+  Japanese Vocabulary Lesson 10 (frequency group 10):
+              ?collection=vocabulary_10
+  Japanese Vocabulary Lesson 11 (frequency group 11):
+              ?collection=vocabulary_11
+  Japanese Vocabulary Lesson 12 (frequency group 12):
+              ?collection=vocabulary_12
+  Japanese Vocabulary Lesson 13 (Shopping I):
+              ?collection=vocabulary_13
+  Japanese Vocabulary Lesson 14 (Shopping II):
+              ?collection=vocabulary_14
+  Japanese Vocabulary Lesson 15 (Shopping III):
+              ?collection=vocabulary_15
+  Japanese Vocabulary Lesson 16 (Shopping IV):
+              ?collection=vocabulary_16
+  Japanese Vocabulary Lesson 17 (Shopping V):
+              ?collection=vocabulary_17
+  Japanese Vocabulary Lesson 18 (Shopping VI):
+              ?collection=vocabulary_18
+  Japanese Vocabulary Lesson 19 (Transportation I — public transport):
+              ?collection=vocabulary_19
+  Japanese Vocabulary Lesson 20 (Transportation II — longer travel):
+              ?collection=vocabulary_20
+  Japanese Vocabulary Lesson 21 (Restaurants I — going out to eat):
+              ?collection=vocabulary_21
+  Japanese Vocabulary Lesson 22 (Restaurants II — during & after the meal):
+              ?collection=vocabulary_22
   Vocabulary QA: add &timingScale=0.05  (or &skipBookends=1&timingScale=0.05)
   Grade 1 Compounds school prototype (学 → 学校, stacked):
               ?collection=grade_1_compounds_school&skipBookends=1
   Prototype hub: grade-1-compounds-prototype.html
   Stroke QA:  add &timingScale=0.05
+  Hiragana Origins (full gojūon — intro → classical bridges → 安↔あ … 无↔ん → Gallery 漢):
+              ?collection=hiragana_origins&skipBookends=1
+  Katakana Origins (full gojūon — 阿↔ア … 尓↔ン → Gallery 漢):
+              ?collection=katakana_origins&skipBookends=1
   Record:     python3 scripts/record_party_kanji.py
   Verse typography QA (skips title phases; still runs verse + essence + exit):
               ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&startPhase=reflection
@@ -194,6 +236,40 @@
     </div>
   </div>
 
+  <div class="hiragana-origins-layer exhibition-hidden" data-hiragana-origins-layer aria-hidden="true">
+    <div class="hiragana-origins-paper" aria-hidden="true"></div>
+    <div class="hiragana-origins-vignette" aria-hidden="true"></div>
+    <div class="hiragana-origins-stage" data-hiragana-origins-stage>
+      <div class="hiragana-origins-glyph hiragana-origins-kanji" data-hiragana-origins-kanji lang="ja"></div>
+      <div class="hiragana-origins-glyph hiragana-origins-hiragana" data-hiragana-origins-hiragana lang="ja"></div>
+      <div class="hiragana-origins-calligraphy exhibition-hidden" data-hiragana-origins-calligraphy aria-hidden="true">
+        <img data-hiragana-origins-calligraphy-img alt="">
+      </div>
+    </div>
+    <aside class="hiragana-origins-plaque" data-hiragana-origins-plaque aria-hidden="true">
+      <p class="hiragana-origins-plaque-title" data-hiragana-origins-plaque-title></p>
+      <p class="hiragana-origins-plaque-char" data-hiragana-origins-plaque-char lang="ja"></p>
+      <p class="hiragana-origins-plaque-note exhibition-hidden" data-hiragana-origins-plaque-note></p>
+    </aside>
+    <div class="hiragana-origins-ambient exhibition-hidden" data-hiragana-origins-ambient aria-hidden="true">
+      <div class="hiragana-origins-ambient-frame" data-hiragana-origins-ambient-frame>
+        <img data-hiragana-origins-ambient-img alt="">
+      </div>
+      <div class="hiragana-origins-ambient-veil" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="hiragana-typo-layer exhibition-hidden" data-hiragana-typo-layer aria-hidden="true">
+    <div class="hiragana-typo-paper" aria-hidden="true"></div>
+    <div class="hiragana-typo-vignette" aria-hidden="true"></div>
+    <div class="hiragana-typo-stage" data-hiragana-typo-stage>
+      <div class="hiragana-typo-hero" data-hiragana-typo-hero lang="ja"></div>
+      <div class="hiragana-typo-row" data-hiragana-typo-row lang="ja"></div>
+    </div>
+    <div class="hiragana-typo-chart" data-hiragana-typo-chart lang="ja" aria-hidden="true"></div>
+    <div class="hiragana-typo-snow" data-hiragana-typo-snow lang="ja" aria-hidden="true"></div>
+  </div>
+
   <div class="party-kanji-layer exhibition-hidden" data-party-kanji-layer aria-hidden="true">
     <div class="party-kanji-phase party-kanji-shock" data-party-phase="shock">
       <div class="party-kanji-giant party-kanji-giant--enter" data-party-shock-kanji></div>
@@ -246,14 +322,16 @@
 
 </div>
 
-<script src="./js/collection-paths.js?v=2"></script>
+<script src="./js/collection-paths.js?v=4"></script>
 <script src="./js/verse-display.js?v=1"></script>
 <script src="./js/gallery-guardian.js?v=6"></script>
 <script src="./strokes/js/stroke-page-loader.js?v=1"></script>
 <script src="./js/stroke-order-player.js?v=3"></script>
 <script src="./js/grade4-board.js?v=1"></script>
 <script src="./js/hiragana-song-chart.js?v=7"></script>
+<script src="./js/hiragana-song-typography.js?v=12"></script>
+<script src="./js/hiragana-origins.js?v=6"></script>
 <script src="./js/anchor-compounds-layout.js?v=1"></script>
-<script src="./js/exhibition-engine.js?v=113"></script>
+<script src="./js/exhibition-engine.js?v=127"></script>
 </body>
 </html>

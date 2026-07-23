@@ -1,54 +1,400 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome - SanSymeon</title>
+  <title>SanSymeon — KML Japanese Learning Curriculum</title>
+  <meta name="description" content="SanSymeon Productions presents KML: a Japanese learning curriculum of kanji, vocabulary, imagery, and music — with live curriculum analytics and books." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script src="./assets/js/homepage.js" defer></script>
 </head>
 <body>
-  <img src="./assets/images/logo_small.jpg" alt="SanSymeon Logo" class="logo" />
-  <h1>ようこそ・Welcome to SanSymeon</h1>
-    <div class="coming-soon">
-  </div>
-    <h2>Now Available:</h2>
-    <div class="book-list">
-      <div class="book-item">
-        <a href="https://sansymeon.com/my_life_with_ai/index.html" target="_blank" style="text-decoration: none;">
-          <img src="./assets/images/life_with_ai.png" alt="My Life with AI">
-          <p style="color: white; font-weight: bold;">AIと共に生きる日々</p>
-        </a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand" href="./index.html" aria-label="SanSymeon home">
+        <img class="brand-logo" src="./assets/images/logo_small.jpg" alt="" width="40" height="40" />
+        <span class="brand-text">
+          <span class="brand-name">SanSymeon</span>
+          <span class="brand-tag">SanSymeon Productions</span>
+        </span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-controls="siteNav"
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        Menu
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary">
+        <ul>
+          <li><a href="#kml">KML</a></li>
+          <li><a href="#paths">Curriculum</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. Hero: KML as primary project -->
+    <section class="hero" id="kml" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">Kanji Mnemonic Learning · KML</p>
+          <h1 id="hero-heading">Learn Japanese Through Kanji, Vocabulary, Imagery and Music</h1>
+          <p class="hero-lead">
+            KML is a growing Japanese learning curriculum combining kanji,
+            high-frequency vocabulary, natural spoken Japanese, beautiful imagery,
+            and peaceful music.
+          </p>
+          <p class="hero-support">
+            Learners can begin with elementary kanji, continue through compounds and
+            post-elementary study, and gradually build practical spoken vocabulary.
+          </p>
+          <div class="btn-row">
+            <!-- YouTube: wired from SITE_CONFIG.youtubeChannelUrl (null until set) -->
+            <a class="btn btn-primary" data-link="youtube" href="#">Watch on YouTube</a>
+            <a class="btn btn-secondary" data-link="curriculum" href="./kml/index.html">Explore the Curriculum</a>
+            <a class="btn btn-ghost" data-link="analytics" href="./kml/analytics/dashboard/">View Learning Analytics</a>
+          </div>
+        </div>
+        <figure class="hero-visual">
+          <img
+            src="./assets/images/kml_book_square.png"
+            alt="Kanji Mnemonic Learning book cover — Stories, Symbols and Sparks of Memory"
+            width="480"
+            height="480"
+          />
+          <figcaption class="hero-visual-caption">KML — the primary SanSymeon curriculum</figcaption>
+        </figure>
       </div>
-      <div class="book-item">
-        <a href="https://sansymeon.com/digital_nomad/index.html" target="_blank" style="text-decoration: none;">
-          <img src="./assets/images/digital_nomad.png" alt="Digital Nomad Book">
-          <p style="color: white; font-weight: bold;">旅するワークスタイルとAIの知恵</p>
-        </a>
+    </section>
+
+    <!-- 2. Live curriculum statistics (from analytics JSON) -->
+    <section class="section" id="stats" aria-labelledby="stats-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Live figures</p>
+          <h2 id="stats-heading">The KML Curriculum Today</h2>
+          <p>
+            Headline numbers from the latest curriculum analytics — a snapshot of
+            what the channel has already taught, not the full dashboard.
+          </p>
+        </div>
+
+        <div
+          id="statsStatus"
+          class="status-banner"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+
+        <div class="stats-grid" aria-label="Curriculum statistics">
+          <article class="stat-card">
+            <p class="stat-value" id="statVideos" data-stat>…</p>
+            <p class="stat-label">Videos</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" id="statPaths" data-stat>…</p>
+            <p class="stat-label">Learning Paths</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" id="statVocab" data-stat>…</p>
+            <p class="stat-label">Unique Vocabulary Items</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" id="statKanji" data-stat>…</p>
+            <p class="stat-label">Unique Kanji</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" id="statJoyo" data-stat>…</p>
+            <p class="stat-label">Joyo Coverage</p>
+          </article>
+        </div>
+        <p class="stats-meta" id="statsGeneratedAt"></p>
       </div>
-      <div class="book-item">
-        <a href="https://sansymeon.com/my_journey/index.html" target="_blank" style="text-decoration: none;">
-          <img src="./assets/images/hikari_wo.png" alt="光を運ぶ人 – シメオンの物語">
-          <p style="color: white; font-weight: bold;">光を運ぶ人 – シメオンの物語</p>
-        </a>
+    </section>
+
+    <!-- 3. Learning paths -->
+    <section class="section section-muted" id="paths" aria-labelledby="paths-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Start where you are</p>
+          <h2 id="paths-heading">Choose Your Learning Path</h2>
+          <p>
+            Each path is a complementary layer of one curriculum. Playlist links
+            open when configured; otherwise you can explore the on-site curriculum.
+          </p>
+        </div>
+
+        <div class="path-grid">
+          <article class="path-card">
+            <h3>Kana and Reading</h3>
+            <p>Build hiragana and katakana confidence before or alongside early kanji study.</p>
+            <p class="path-suit">Best for absolute beginners and reading foundations.</p>
+            <a
+              class="btn btn-secondary"
+              data-playlist="kana"
+              data-label-playlist="Open Playlist"
+              data-label-fallback="Explore Curriculum"
+              href="./kml/index.html"
+            >Explore Curriculum</a>
+          </article>
+
+          <article class="path-card">
+            <h3>Elementary Kanji</h3>
+            <p>Learn school-grade kanji through imagery, structure, and memorable stories.</p>
+            <p class="path-suit">Best for learners building a solid elementary character base.</p>
+            <a
+              class="btn btn-secondary"
+              data-playlist="elementaryKanji"
+              data-label-playlist="Open Playlist"
+              data-label-fallback="Explore Curriculum"
+              href="./kml/index.html"
+            >Explore Curriculum</a>
+          </article>
+
+          <article class="path-card">
+            <h3>Elementary Compounds</h3>
+            <p>See how elementary kanji combine into everyday school-grade vocabulary.</p>
+            <p class="path-suit">Best for learners ready to move from single characters to words.</p>
+            <a
+              class="btn btn-secondary"
+              data-playlist="elementaryCompounds"
+              data-label-playlist="Open Playlist"
+              data-label-fallback="Explore Curriculum"
+              href="./kml/index.html"
+            >Explore Curriculum</a>
+          </article>
+
+          <article class="path-card">
+            <h3>Post-Elementary Kanji</h3>
+            <p>Continue beyond the six elementary grades into broader Joyo territory.</p>
+            <p class="path-suit">Best for intermediate learners expanding kanji range.</p>
+            <a
+              class="btn btn-secondary"
+              data-playlist="postElementaryKanji"
+              data-label-playlist="Open Playlist"
+              data-label-fallback="Explore Curriculum"
+              href="./kml/index.html"
+            >Explore Curriculum</a>
+          </article>
+
+          <article class="path-card">
+            <h3>Post-Elementary Compounds</h3>
+            <p>Practice richer compounds that appear in real reading and conversation.</p>
+            <p class="path-suit">Best for learners consolidating intermediate vocabulary.</p>
+            <a
+              class="btn btn-secondary"
+              data-playlist="postElementaryCompounds"
+              data-label-playlist="Open Playlist"
+              data-label-fallback="Explore Curriculum"
+              href="./kml/index.html"
+            >Explore Curriculum</a>
+          </article>
+
+          <article class="path-card">
+            <h3>Japanese Vocabulary</h3>
+            <p>Study high-frequency words with readings, meaning, and visual context.</p>
+            <p class="path-suit">Best for learners wanting steady vocabulary growth.</p>
+            <a
+              class="btn btn-secondary"
+              data-playlist="japaneseVocabulary"
+              data-label-playlist="Open Playlist"
+              data-label-fallback="Explore Curriculum"
+              href="./kml/index.html"
+            >Explore Curriculum</a>
+          </article>
+
+          <article class="path-card">
+            <h3>Spoken Japanese</h3>
+            <p>Focus on natural spoken forms and practical phrases for real situations.</p>
+            <p class="path-suit">Best for learners prioritizing listening and conversation.</p>
+            <a
+              class="btn btn-secondary"
+              data-playlist="spokenJapanese"
+              data-label-playlist="Open Playlist"
+              data-label-fallback="Explore Curriculum"
+              href="./kml/index.html"
+            >Explore Curriculum</a>
+          </article>
+        </div>
       </div>
-    <div class="book-item">
-  <a href="./pronunciation_ebook/index.html" target="_blank" style="text-decoration: none;">
-    <img src="./assets/images/square_cover_chat_sensei.png" alt="Pronunciation According to Chat Sensei">
-    <p style="color: white; font-weight: bold;">Pronunciation According to Chat Sensei</p>
-  </a>
-</div>
-   <div class="book-item">
-  <a href="./kml/index.html" target="_blank" style="text-decoration: none;">
-    <img src="./assets/images/kml_book_square.png" alt="Kanji Mnemonic Learning">
-    <p style="color: white; font-weight: bold;">Kanji Mnemonic Learning: Stories, Symbols and Sparks of Memory</p>
-  </a>
-</div>
-  </div>
-  <footer>
-    © 2025 SanSymeon Productions.<br>
-    Materials may be shared with appropriate attribution.<br>
-    本サイトの内容は適切なクレジットを添えて共有可能です。
+    </section>
+
+    <!-- 4. Learning journey -->
+    <section class="section" id="journey" aria-labelledby="journey-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">One curriculum</p>
+          <h2 id="journey-heading">The KML Journey</h2>
+        </div>
+
+        <div class="journey" aria-label="Suggested learning progression">
+          <span class="journey-step">Kana</span>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <span class="journey-step">Elementary Kanji</span>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <span class="journey-step">Compounds</span>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <span class="journey-step">Post-Elementary Kanji</span>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <span class="journey-step">Advanced Compounds</span>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <span class="journey-step">Spoken Japanese</span>
+        </div>
+        <p class="journey-note">
+          These projects are complementary layers of one curriculum — not unrelated
+          video collections. Progress along the path that matches your level, or
+          move between layers as your reading and speaking grow together.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. Analytics feature (not the full dashboard) -->
+    <section class="section section-muted" id="analytics" aria-labelledby="analytics-heading">
+      <div class="container">
+        <div class="analytics-panel">
+          <div>
+            <p class="section-kicker">Measurable curriculum</p>
+            <h2 id="analytics-heading">A Curriculum You Can Measure</h2>
+            <p>
+              KML tracks not only how many lessons have been created, but what learners
+              actually encounter: vocabulary growth, kanji coverage, JLPT progression,
+              spoken-frequency coverage, reinforcement, and exposure depth.
+            </p>
+            <p>
+              The homepage shows a few live headlines. The analytics dashboard is the
+              deeper destination for charts, playlists, and search.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" data-link="analytics" href="./kml/analytics/dashboard/">
+                Explore the Analytics Dashboard
+              </a>
+            </div>
+          </div>
+
+          <ul class="fact-list" aria-label="Selected live analytics facts">
+            <li>
+              <strong id="factJoyo" data-stat>…</strong>
+              <span>Joyo kanji coverage across the curriculum</span>
+            </li>
+            <li>
+              <strong id="factMultiContext" data-stat>…</strong>
+              <span>Vocabulary items appearing in multiple contexts</span>
+            </li>
+            <li>
+              <strong id="factJoyo3" data-stat>…</strong>
+              <span>Joyo kanji encountered three or more times</span>
+            </li>
+            <li>
+              <strong id="factVocabTotal" data-stat>…</strong>
+              <span>Total unique vocabulary items</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Featured lessons (thumbnails + links; no bulk iframes) -->
+    <section class="section" id="featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">On YouTube</p>
+          <h2 id="featured-heading">Featured Lessons</h2>
+          <p>
+            Selected series from the curriculum. Watch links are configured in
+            <code>assets/js/homepage.js</code> when verified video URLs are available.
+          </p>
+        </div>
+        <div class="feature-grid" id="featuredLessons"></div>
+      </div>
+    </section>
+
+    <!-- 7. Publications (former homepage book grid) -->
+    <section class="section section-muted" id="publications" aria-labelledby="publications-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Also from SanSymeon</p>
+          <h2 id="publications-heading">Books and Publications</h2>
+          <p>Educational and reflective works available alongside the KML curriculum.</p>
+        </div>
+
+        <div class="book-list">
+          <div class="book-item">
+            <a href="https://sansymeon.com/my_life_with_ai/index.html" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/images/life_with_ai.png" alt="Cover of AIと共に生きる日々" width="280" height="280" loading="lazy" />
+              <p>AIと共に生きる日々</p>
+            </a>
+          </div>
+          <div class="book-item">
+            <a href="https://sansymeon.com/digital_nomad/index.html" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/images/digital_nomad.png" alt="Cover of 旅するワークスタイルとAIの知恵" width="280" height="280" loading="lazy" />
+              <p>旅するワークスタイルとAIの知恵</p>
+            </a>
+          </div>
+          <div class="book-item">
+            <a href="https://sansymeon.com/my_journey/index.html" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/images/hikari_wo.png" alt="Cover of 光を運ぶ人 – シメオンの物語" width="280" height="280" loading="lazy" />
+              <p>光を運ぶ人 – シメオンの物語</p>
+            </a>
+          </div>
+          <div class="book-item">
+            <a href="./pronunciation_ebook/index.html" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/images/square_cover_chat_sensei.png" alt="Cover of Pronunciation According to Chat Sensei" width="280" height="280" loading="lazy" />
+              <p>Pronunciation According to Chat Sensei</p>
+            </a>
+          </div>
+          <div class="book-item">
+            <a href="./kml/index.html">
+              <img src="./assets/images/kml_book_square.png" alt="Cover of Kanji Mnemonic Learning" width="280" height="280" loading="lazy" />
+              <p>Kanji Mnemonic Learning: Stories, Symbols and Sparks of Memory</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. About -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <p class="section-kicker">SanSymeon Productions</p>
+        <h2 id="about-heading">About</h2>
+        <p class="about-text">
+          SanSymeon Productions creates educational, artistic, and reflective
+          projects exploring language, culture, technology, and lifelong learning.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a data-link="youtube" href="#">YouTube</a>
+        <a href="#kml">KML</a>
+        <a data-link="analytics" href="./kml/analytics/dashboard/">Analytics</a>
+        <a href="#publications">Publications</a>
+      </nav>
+      <p class="footer-share">
+        Materials may be shared with appropriate attribution.<br />
+        本サイトの内容は適切なクレジットを添えて共有可能です。
+      </p>
+      <p class="footer-copy">© <span id="copyrightYear">2026</span> SanSymeon Productions.</p>
+    </div>
   </footer>
 </body>
 </html>

@@ -162,6 +162,25 @@
         g4KanjiHero: root.querySelector("[data-g4-kanji-hero]"),
         hiraganaSongLayer: root.querySelector("[data-hiragana-song-layer]"),
         hiraganaSongChart: root.querySelector("[data-hiragana-song-chart]"),
+        hiraganaTypoLayer: root.querySelector("[data-hiragana-typo-layer]"),
+        hiraganaTypoHero: root.querySelector("[data-hiragana-typo-hero]"),
+        hiraganaTypoRow: root.querySelector("[data-hiragana-typo-row]"),
+        hiraganaTypoChart: root.querySelector("[data-hiragana-typo-chart]"),
+        hiraganaTypoSnow: root.querySelector("[data-hiragana-typo-snow]"),
+        hiraganaOriginsLayer: root.querySelector("[data-hiragana-origins-layer]"),
+        hiraganaOriginsKanji: root.querySelector("[data-hiragana-origins-kanji]"),
+        hiraganaOriginsHiragana: root.querySelector("[data-hiragana-origins-hiragana]"),
+        hiraganaOriginsCalligraphy: root.querySelector("[data-hiragana-origins-calligraphy]"),
+        hiraganaOriginsCalligraphyImg: root.querySelector(
+          "[data-hiragana-origins-calligraphy-img]"
+        ),
+        hiraganaOriginsPlaque: root.querySelector("[data-hiragana-origins-plaque]"),
+        hiraganaOriginsPlaqueTitle: root.querySelector("[data-hiragana-origins-plaque-title]"),
+        hiraganaOriginsPlaqueChar: root.querySelector("[data-hiragana-origins-plaque-char]"),
+        hiraganaOriginsPlaqueNote: root.querySelector("[data-hiragana-origins-plaque-note]"),
+        hiraganaOriginsAmbient: root.querySelector("[data-hiragana-origins-ambient]"),
+        hiraganaOriginsAmbientFrame: root.querySelector("[data-hiragana-origins-ambient-frame]"),
+        hiraganaOriginsAmbientImg: root.querySelector("[data-hiragana-origins-ambient-img]"),
         strokeOrderKanji:
           root.querySelector('[data-stroke-order-kanji="a"]') ||
           root.querySelector("[data-stroke-order-kanji]"),
@@ -283,6 +302,14 @@
       this.root.classList.toggle("is-grade6-kanji-soundtrack", family === "grade6KanjiSoundtrack");
       this.root.classList.toggle("is-party-kanji", profile === "partyKanji");
       this.root.classList.toggle("is-hiragana-song", profile === "hiraganaSong");
+      this.root.classList.toggle(
+        "is-hiragana-song-typography",
+        profile === "hiraganaSongTypography"
+      );
+      this.root.classList.toggle(
+        "is-hiragana-origins",
+        profile === "hiraganaOrigins" || profile === "katakanaOrigins"
+      );
       this.root.classList.toggle(
         "is-gallery-crest-bookends",
         this.display.bookendStyle === "galleryCrest"
@@ -434,6 +461,15 @@
 
     get isHiraganaSongProfile() {
       return this.display.exhibitProfile === "hiraganaSong";
+    }
+
+    get isHiraganaSongTypographyProfile() {
+      return this.display.exhibitProfile === "hiraganaSongTypography";
+    }
+
+    get isHiraganaOriginsProfile() {
+      const profile = this.display.exhibitProfile;
+      return profile === "hiraganaOrigins" || profile === "katakanaOrigins";
     }
 
     get showEnglish() {
@@ -670,8 +706,10 @@
       );
     }
 
-    japaneseVocabularyStepMs(t = this.timing, step = {}) {
-      let ms = (t.compoundsStepRevealMs ?? 1400) + (t.compoundsStepFadeMs ?? 1400);
+    japaneseVocabularyStepMs(t = this.timing, step = {}, options = {}) {
+      const leaveVisible = Boolean(options.leaveVisible);
+      let ms = t.compoundsStepRevealMs ?? 1400;
+      if (!leaveVisible) ms += t.compoundsStepFadeMs ?? 1400;
       if (step.jpHtml) {
         ms +=
           (t.compoundsFuriganaEnterDelayMs ?? 900) +
@@ -689,6 +727,13 @@
         (t.compoundsEnHoldMs ?? 3500) +
         (t.compoundsEnFadeMs ?? 1400);
       return ms;
+    }
+
+    usesFinalCompoundReviewEnding(t = this.timing) {
+      return (
+        this.isJapaneseVocabularyProfile &&
+        (t.compoundsFinalReviewHoldMs ?? 0) > 0
+      );
     }
 
     beautifulWordDurationMs(t = this.timing, word = {}) {
@@ -725,15 +770,21 @@
       const scene = this.scenes[this.sceneIndex] || this.scenes[0] || {};
       const steps = scene.compounds?.steps || [];
       const word = scene.beautifulWord || this.collection.beautifulWord || {};
+      const finalReview = this.usesFinalCompoundReviewEnding(t);
       let ms =
         (t.artworkAloneMs ?? 0) +
         (t.compoundsPauseBeforeMs ?? 3200) +
         (t.exhibitTransitionMs ?? 0);
-      for (const step of steps) {
-        ms += this.japaneseVocabularyStepMs(t, step);
-      }
+      steps.forEach((step, i) => {
+        const leaveVisible = finalReview && i === steps.length - 1 && !word.jp && !word.jpHtml;
+        ms += this.japaneseVocabularyStepMs(t, step, { leaveVisible });
+      });
       if (word.jp || word.jpHtml) {
         ms += this.beautifulWordDurationMs(t, word);
+      } else if (finalReview) {
+        ms +=
+          (t.compoundsFinalReviewHoldMs ?? 0) +
+          (t.compoundsFinalFadeToBlackMs ?? 4000);
       }
       return ms;
     }
@@ -1309,7 +1360,9 @@
         this.isAnchorCompoundsExhibitionProfile ||
         this.isStrokeOrderProfile ||
         this.isGrade1KanjiSoundtrackProfile ||
-        this.isHiraganaSongProfile
+        this.isHiraganaSongProfile ||
+        this.isHiraganaSongTypographyProfile ||
+        this.isHiraganaOriginsProfile
       ) {
         return true;
       }
@@ -2028,6 +2081,8 @@
       this.resetStrokeOrderLayer();
       this.resetAnchorCompoundsLayer();
       this.resetHiraganaSongLayer();
+      this.resetHiraganaTypoLayer();
+      this.resetHiraganaOriginsLayer();
     }
 
     resetHiraganaSongLayer() {
@@ -2047,6 +2102,59 @@
       document.documentElement.style.removeProperty("--hiragana-song-drift");
       document.documentElement.style.removeProperty("--hiragana-song-zoom");
       window.KmlHiraganaSongChart?.clearFocus(this.els.hiraganaSongChart);
+    }
+
+    resetHiraganaTypoLayer() {
+      const layer = this.els.hiraganaTypoLayer;
+      const api = window.KmlHiraganaSongTypography;
+      if (!layer) return;
+      this.root.classList.remove("is-romaji-edition");
+      layer.classList.add("exhibition-hidden");
+      layer.classList.remove("is-visible", "is-exhaling");
+      layer.setAttribute("aria-hidden", "true");
+      layer.style.removeProperty("--typo-row-color");
+      document.documentElement.style.removeProperty("--typo-fade");
+      document.documentElement.style.removeProperty("--typo-appear");
+      document.documentElement.style.removeProperty("--typo-settle");
+      document.documentElement.style.removeProperty("--typo-dock");
+      document.documentElement.style.removeProperty("--typo-romaji-fade");
+      document.documentElement.style.removeProperty("--typo-chart-fade");
+      api?.clearHero(this.els.hiraganaTypoHero);
+      api?.clearRow(this.els.hiraganaTypoRow);
+      api?.clearChart(this.els.hiraganaTypoChart);
+      api?.clearSnow(this.els.hiraganaTypoSnow);
+    }
+
+    resetHiraganaOriginsLayer() {
+      const layer = this.els.hiraganaOriginsLayer;
+      const api = window.KmlHiraganaOrigins;
+      if (!layer) return;
+      layer.classList.add("exhibition-hidden");
+      layer.classList.remove("is-visible", "is-exhaling", "is-ambient-lead");
+      layer.setAttribute("aria-hidden", "true");
+      document.documentElement.style.removeProperty("--origins-reveal");
+      document.documentElement.style.removeProperty("--origins-morph");
+      document.documentElement.style.removeProperty("--origins-fade");
+      document.documentElement.style.removeProperty("--origins-ambient-fade");
+      document.documentElement.style.removeProperty("--origins-ken-burns");
+      document.documentElement.style.removeProperty("--origins-plaque-fade");
+      api?.clearGlyph(this.els.hiraganaOriginsKanji);
+      api?.clearGlyph(this.els.hiraganaOriginsHiragana);
+      api?.clearPlaque({
+        root: this.els.hiraganaOriginsPlaque,
+        title: this.els.hiraganaOriginsPlaqueTitle,
+        char: this.els.hiraganaOriginsPlaqueChar,
+        note: this.els.hiraganaOriginsPlaqueNote,
+      });
+      api?.clearCalligraphy(
+        this.els.hiraganaOriginsCalligraphy,
+        this.els.hiraganaOriginsCalligraphyImg
+      );
+      api?.clearAmbient(
+        this.els.hiraganaOriginsAmbient,
+        this.els.hiraganaOriginsAmbientFrame,
+        this.els.hiraganaOriginsAmbientImg
+      );
     }
 
     resetAnchorCompoundsLayer() {
@@ -3702,7 +3810,7 @@
       }
     }
 
-    async playJapaneseVocabularyStep(stillRunning, step, t) {
+    async playJapaneseVocabularyStep(stillRunning, step, t, options = {}) {
       const stepReveal = t.compoundsStepRevealMs ?? 1400;
       const stepFade = t.compoundsStepFadeMs ?? 1400;
       const readingReveal = t.compoundsReadingRevealMs ?? 1200;
@@ -3711,6 +3819,7 @@
       const enHold = t.compoundsEnHoldMs ?? 3500;
       const enFade = t.compoundsEnFadeMs ?? 1400;
       const usesFurigana = Boolean(step?.jpHtml);
+      const leaveVisible = Boolean(options.leaveVisible);
 
       this.setCompoundsStepContent(step);
       const verseJp = this.els.verseJp;
@@ -3761,6 +3870,9 @@
         await this.wait(enFade);
         if (!stillRunning()) return;
       }
+
+      // Final-compound review: leave the native word on screen for the coda hold.
+      if (leaveVisible) return;
 
       document.documentElement.style.setProperty("--ex-verse-fade", `${stepFade}ms`);
       this.setClass(verseJp, "is-visible", false);
@@ -3920,7 +4032,45 @@
      * Standard KML Vocabulary ending:
      * hold final scene until soundtrack ends → fade to black → silent crest → silence.
      */
+    async playJapaneseVocabularyFinalCompoundEnding(stillRunning, layer, t) {
+      const reviewMs = t.compoundsFinalReviewHoldMs ?? 20000;
+      const fadeMs = t.compoundsFinalFadeToBlackMs ?? 4000;
+
+      // Final compound is already on screen (leaveVisible). Quiet review beat.
+      await this.wait(reviewMs);
+      if (!stillRunning()) return;
+
+      document.documentElement.style.setProperty("--ex-verse-fade", `${fadeMs}ms`);
+      document.documentElement.style.setProperty("--ex-transition", `${fadeMs}ms`);
+      this.setClass(this.els.verseJp, "is-visible", false);
+      this.setClass(this.els.verseEn, "is-visible", false);
+      this.setClass(layer.wrap, "is-exhaling", true);
+      this.setClass(layer.wrap, "is-visible", false);
+      this.setClass(this.els.veil, "is-clear", false);
+
+      await Promise.all([this.wait(fadeMs), this.fadeOutSoundtrack(fadeMs)]);
+      if (!stillRunning()) return;
+
+      if (this.els.verseJp) {
+        this.els.verseJp.textContent = "";
+        this.els.verseJp.innerHTML = "";
+      }
+      if (this.els.verseEn) this.els.verseEn.textContent = "";
+
+      const blackAfter = t.closingBlackAfterMs ?? 0;
+      if (blackAfter > 0) {
+        await this.wait(blackAfter);
+        if (!stillRunning()) return;
+      }
+      this.finishPresentation();
+    }
+
     async playJapaneseVocabularyGalleryEnding(stillRunning, layer, t) {
+      if (this.usesFinalCompoundReviewEnding(t)) {
+        await this.playJapaneseVocabularyFinalCompoundEnding(stillRunning, layer, t);
+        return;
+      }
+
       // Remain in the completed scene while the ambient bed finishes naturally.
       await this.waitForSoundtrackEnd();
       if (!stillRunning()) return;
@@ -3999,8 +4149,13 @@
       await this.wait(t.compoundsPauseBeforeMs ?? 3200);
       if (!stillRunning()) return;
 
-      for (const step of steps) {
-        await this.playJapaneseVocabularyStep(stillRunning, step, t);
+      const finalReview =
+        this.usesFinalCompoundReviewEnding(t) && !beautifulWord;
+      for (let i = 0; i < steps.length; i++) {
+        const leaveVisible = finalReview && i === steps.length - 1;
+        await this.playJapaneseVocabularyStep(stillRunning, steps[i], t, {
+          leaveVisible,
+        });
         if (!stillRunning()) return;
       }
 
@@ -6240,6 +6395,663 @@
       this.finishPresentation();
     }
 
+    async playHiraganaSongTypographyExhibit(index) {
+      if (this.destroyed || !this.scenes.length) return;
+
+      this.clearRun();
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+
+      this.sceneIndex = Math.min(Math.max(0, index), this.scenes.length - 1);
+      const scene = this.scenes[this.sceneIndex];
+      const t = this.timing;
+      const api = window.KmlHiraganaSongTypography;
+      const layer = this.els.hiraganaTypoLayer;
+      const heroEl = this.els.hiraganaTypoHero;
+      const rowEl = this.els.hiraganaTypoRow;
+      if (!layer || !heroEl || !rowEl || !api) {
+        this.debugLog("hiragana typography layer unavailable");
+        return;
+      }
+
+      const revealMs = t.typoRevealMs ?? 1800;
+      const fadeOutMs = t.typoFadeOutMs ?? 1600;
+      const appearMs = t.typoAppearMs ?? 800;
+      const settleMs = t.typoSettleMs ?? 550;
+      const dockMs = t.typoDockMs ?? 1000;
+      const rowHoldMs = t.typoRowHoldMs ?? 2600;
+      const finalRowHoldMs = t.typoFinalRowHoldMs ?? 2800;
+      const snowFinaleMs = t.typoSnowFinaleMs ?? 14000;
+      const snowStaggerMs = t.typoSnowStaggerMs ?? 4500;
+      const snowFallMs = t.typoSnowFallMs ?? 7000;
+      const snowEl = this.els.hiraganaTypoSnow;
+      const chartEl = this.els.hiraganaTypoChart;
+      const script =
+        api.normalizeScript?.(this.meta?.script || scene.script || "hiragana") || "hiragana";
+      // Romaji edition: Hepburn ruby above each kana, review chart, alphabet snow.
+      const romaji = this.meta?.romaji === true || scene.romaji === true;
+      this.root.classList.toggle("is-romaji-edition", romaji);
+      const romajiFadeMs = t.typoRomajiFadeMs ?? 450;
+      const romajiHoldMs = t.typoRomajiHoldMs ?? 900;
+      const romajiKanaHoldMs = t.typoRomajiKanaHoldMs ?? 350;
+      const finalReviewMs = romaji ? t.typoFinalReviewMs ?? 14000 : 0;
+      const chartFadeMs = t.typoChartFadeMs ?? 1400;
+
+      const probeDurationMs = () => {
+        const audio = this.mainAudio;
+        const live = audio?.duration;
+        if (Number.isFinite(live) && live > 1) return Math.round(live * 1000);
+        return this.meta?.soundtrackDurationMs ?? 214648;
+      };
+
+      this.resetLayers();
+      api.clearHero(heroEl);
+      api.clearRow(rowEl);
+      api.clearChart?.(chartEl);
+      api.clearSnow(snowEl);
+      layer.classList.remove("exhibition-hidden", "is-exhaling");
+      layer.setAttribute("aria-hidden", "false");
+      this.setClass(this.els.veil, "is-clear", true);
+
+      document.documentElement.style.setProperty("--typo-fade", `${revealMs}ms`);
+      document.documentElement.style.setProperty("--typo-appear", `${appearMs}ms`);
+      document.documentElement.style.setProperty("--typo-settle", `${settleMs}ms`);
+      document.documentElement.style.setProperty("--typo-dock", `${dockMs}ms`);
+      document.documentElement.style.setProperty("--typo-romaji-fade", `${romajiFadeMs}ms`);
+      document.documentElement.style.setProperty("--typo-chart-fade", `${chartFadeMs}ms`);
+
+      await this.waitInitialExhibitionBlack(stillRunning, 0);
+      if (!stillRunning()) return;
+
+      this.maybeStartSoundtrackForScene(0);
+      if (!this._soundtrackStarted) {
+        await this.startSoundtrack();
+      }
+      if (!stillRunning()) return;
+
+      // Prefer live audio duration so timings stay proportional if the MP3 changes.
+      const soundtrackDurationMs = probeDurationMs();
+      const timeline = api.buildTimeline({
+        soundtrackDurationMs,
+        introShare: this.meta?.introShare ?? 0.04,
+        finaleMs: snowFinaleMs,
+        finalReviewMs,
+        rowIds: scene.rowIds,
+        rowHoldMs,
+        finalRowHoldMs,
+        script,
+      });
+
+      layer.classList.add("is-visible");
+      await this.wait(revealMs);
+      if (!stillRunning()) return;
+
+      const waitAppear = async () => {
+        await this.wait(appearMs);
+      };
+
+      const dockHeroToSlot = async (slotEl) => {
+        if (!slotEl || !heroEl) {
+          await this.wait(dockMs);
+          return;
+        }
+        const heroRect = heroEl.getBoundingClientRect();
+        const slotRect = slotEl.getBoundingClientRect();
+        if (!heroRect.width || !slotRect.width) {
+          await this.wait(dockMs);
+          return;
+        }
+        const heroCx = heroRect.left + heroRect.width / 2;
+        const heroCy = heroRect.top + heroRect.height / 2;
+        const slotCx = slotRect.left + slotRect.width / 2;
+        const slotCy = slotRect.top + slotRect.height / 2;
+        const dx = slotCx - heroCx;
+        const dy = slotCy - heroCy;
+        const scale = Math.max(0.22, slotRect.width / heroRect.width);
+
+        heroEl.classList.add("is-docking");
+        // Force style flush before transform so the transition runs.
+        void heroEl.offsetWidth;
+        heroEl.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`;
+        heroEl.style.opacity = "0";
+        await this.wait(dockMs);
+      };
+
+      const showKana = async (event) => {
+        if (event.isRowStart) {
+          api.prepareRow(rowEl, {
+            id: event.rowId,
+            cells: event.rowCells,
+            color: event.color,
+          });
+          api.setRowColor(layer, rowEl, event.color);
+        }
+
+        api.clearHero(heroEl);
+        heroEl.textContent = event.kana;
+        heroEl.style.color = event.color;
+        layer.style.setProperty("--typo-row-color", event.color);
+        await this.waitForPaintFrame();
+        heroEl.classList.add("is-visible");
+        await waitAppear();
+        if (!stillRunning()) return;
+
+        // Large → slightly smaller before docking into the assembling row.
+        heroEl.classList.add("is-settled");
+        await this.wait(settleMs);
+        if (!stillRunning()) return;
+
+        // Pre-create empty geometry for FLIP target, then fill after dock.
+        const slot = rowEl.children[event.kanaIndex];
+        if (slot && !slot.classList.contains("is-filled")) {
+          // Invisible filled glyph so slot has size for docking math.
+          slot.textContent = event.kana;
+          slot.style.opacity = "0";
+        }
+        await this.waitForPaintFrame();
+        await dockHeroToSlot(slot);
+        if (!stillRunning()) return;
+
+        api.clearHero(heroEl);
+        if (slot) {
+          slot.style.removeProperty("opacity");
+          slot.classList.add("is-filled");
+          slot.removeAttribute("aria-hidden");
+        } else {
+          api.fillSlot(rowEl, event.kanaIndex, event.kana);
+        }
+      };
+
+      const fadeRowAway = async () => {
+        rowEl.classList.add("is-fading");
+        await this.wait(700);
+        if (!stillRunning()) return;
+        api.clearRow(rowEl);
+        api.clearHero(heroEl);
+      };
+
+      if (romaji) {
+        // Romaji edition — fully self-paced, no docking or sliding.
+        // Kana stays centered; romaji breathes in and out above it; each
+        // completed row simply fades in as a review, then fades away.
+        const rowFadeMs = 700;
+        const heroFadeMs = appearMs;
+
+        // Wait out the musical intro, then run at the authored pace.
+        const introWaitMs = this.meta?.introMs ?? timeline.introMs;
+        await this.waitUntilSoundtrackMs(introWaitMs, stillRunning);
+        if (!stillRunning()) return;
+
+        const showKanaCentered = async (kana, color) => {
+          api.clearHero(heroEl);
+          heroEl.textContent = kana;
+          heroEl.style.color = color;
+          layer.style.setProperty("--typo-row-color", color);
+          await this.waitForPaintFrame();
+          heroEl.classList.add("is-visible");
+          await this.wait(appearMs);
+          if (!stillRunning()) return;
+
+          if (settleMs > 0) {
+            heroEl.classList.add("is-settled");
+            await this.wait(settleMs);
+            if (!stillRunning()) return;
+          }
+
+          // Kana alone → romaji fades in above (ruby) → together → romaji fades away.
+          await this.wait(romajiKanaHoldMs);
+          if (!stillRunning()) return;
+          heroEl.dataset.romaji = api.romajiFor?.(kana) || "";
+          heroEl.classList.add("show-romaji");
+          await this.wait(romajiFadeMs + romajiHoldMs);
+          if (!stillRunning()) return;
+          heroEl.classList.remove("show-romaji");
+          await this.wait(romajiFadeMs + romajiKanaHoldMs);
+          if (!stillRunning()) return;
+
+          heroEl.classList.remove("is-visible");
+          await this.wait(heroFadeMs);
+          if (!stillRunning()) return;
+          api.clearHero(heroEl);
+        };
+
+        const showReviewRow = async (row, holdMs) => {
+          api.prepareRow(rowEl, { ...row, romaji: true });
+          api.setRowColor(layer, rowEl, row.color);
+          row.cells.forEach((kana, i) => api.fillSlot(rowEl, i, kana));
+          // Static: already centered and full-size before it fades in.
+          rowEl.classList.add("is-static", "is-holding");
+          await this.waitForPaintFrame();
+          await this.wait(rowFadeMs + holdMs);
+          if (!stillRunning()) return;
+          rowEl.classList.add("is-fading");
+          await this.wait(rowFadeMs);
+          if (!stillRunning()) return;
+          api.clearRow(rowEl);
+        };
+
+        for (let rowIndex = 0; rowIndex < timeline.rows.length; rowIndex += 1) {
+          const row = timeline.rows[rowIndex];
+          const isFinal = rowIndex === timeline.rows.length - 1;
+          for (const kana of row.cells) {
+            if (!stillRunning()) return;
+            await showKanaCentered(kana, row.color);
+          }
+          if (!stillRunning()) return;
+          await showReviewRow(row, isFinal ? finalRowHoldMs : rowHoldMs);
+          if (!stillRunning()) return;
+        }
+
+        if (chartEl && finalReviewMs > 0) {
+          // Final review: the whole gojūon with romaji ruby, held for a slow scan.
+          api.buildChart?.(chartEl, { script, rowIds: scene.rowIds });
+          await this.waitForPaintFrame();
+          chartEl.classList.add("is-visible");
+          await this.wait(chartFadeMs + finalReviewMs);
+          if (!stillRunning()) return;
+          chartEl.classList.add("is-fading");
+          await this.wait(chartFadeMs);
+          if (!stillRunning()) return;
+          api.clearChart?.(chartEl);
+        }
+
+        const snowAnimMs = api.playSnowFinale(snowEl, {
+          staggerMs: snowStaggerMs,
+          fallMs: snowFallMs,
+          script,
+          flakeSet: "alphabet",
+        });
+        await this.wait(Math.max(snowAnimMs, snowFinaleMs - fadeOutMs));
+        if (!stillRunning()) return;
+      } else {
+        for (const event of timeline.events) {
+          if (!stillRunning()) return;
+          await this.waitUntilSoundtrackMs(event.atMs, stillRunning);
+          if (!stillRunning()) return;
+
+          if (event.type === "kana") {
+            await showKana(event);
+            continue;
+          }
+
+          if (event.type === "rowHold") {
+            rowEl.classList.add("is-holding");
+            const holdUntil = event.atMs + (event.holdMs || rowHoldMs);
+            await this.waitUntilSoundtrackMs(holdUntil, stillRunning);
+            if (!stillRunning()) return;
+            if (!event.isFinal) {
+              await fadeRowAway();
+            }
+          }
+        }
+
+        // Final row fades, then kana snow into a center mound for the last ~14s.
+        await fadeRowAway();
+        if (!stillRunning()) return;
+
+        const snowAnimMs = api.playSnowFinale(snowEl, {
+          staggerMs: snowStaggerMs,
+          fallMs: snowFallMs,
+          script,
+        });
+        const snowHoldUntil = Math.min(
+          soundtrackDurationMs - fadeOutMs,
+          (timeline.finaleStartMs || 0) + Math.max(snowAnimMs, snowFinaleMs - fadeOutMs)
+        );
+        await this.waitUntilSoundtrackMs(Math.max(0, snowHoldUntil), stillRunning);
+        if (!stillRunning()) return;
+      }
+
+      snowEl?.classList.add("is-fading");
+      document.documentElement.style.setProperty("--typo-fade", `${fadeOutMs}ms`);
+      layer.classList.add("is-exhaling");
+      layer.classList.remove("is-visible");
+      await this.wait(fadeOutMs);
+      if (!stillRunning()) return;
+      this.resetHiraganaTypoLayer();
+
+      await this.waitForSoundtrackEnd();
+      if (!stillRunning()) return;
+
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
+      if (this.bookends?.closing) {
+        await this.playClosingBookend();
+        return;
+      }
+
+      this.finishPresentation();
+    }
+
+    async playHiraganaOriginsAmbient(stillRunning, {
+      image,
+      alt = "",
+      fadeMs,
+      holdMs,
+      exhaleMs,
+      kenBurnsMs,
+    }) {
+      const api = window.KmlHiraganaOrigins;
+      const ambient = this.els.hiraganaOriginsAmbient;
+      const frame = this.els.hiraganaOriginsAmbientFrame;
+      const img = this.els.hiraganaOriginsAmbientImg;
+      if (!api || !ambient || !img || !image) return false;
+
+      document.documentElement.style.setProperty("--origins-ambient-fade", `${fadeMs}ms`);
+      document.documentElement.style.setProperty("--origins-ken-burns", `${kenBurnsMs}ms`);
+
+      const ready = api.setAmbient(ambient, frame, img, image, alt);
+      if (!ready) return false;
+
+      ambient.classList.remove("exhibition-hidden");
+      ambient.setAttribute("aria-hidden", "false");
+      await this.waitForPaintFrame();
+      if (!stillRunning()) return false;
+
+      ambient.classList.add("is-visible", "is-drifting");
+      await this.wait(fadeMs);
+      if (!stillRunning()) return false;
+      await this.wait(holdMs);
+      if (!stillRunning()) return false;
+
+      ambient.classList.remove("is-visible");
+      await this.wait(exhaleMs);
+      if (!stillRunning()) return false;
+
+      api.clearAmbient(ambient, frame, img);
+      return true;
+    }
+
+    async playHiraganaOriginsIntro(stillRunning) {
+      const t = this.timing;
+      const image = t.originsIntroImage;
+      if (!image) return;
+
+      await this.playHiraganaOriginsAmbient(stillRunning, {
+        image,
+        alt: t.originsIntroAlt || "",
+        fadeMs: t.originsIntroFadeMs ?? 3200,
+        holdMs: t.originsIntroHoldMs ?? 9000,
+        exhaleMs: t.originsIntroExhaleMs ?? 2800,
+        kenBurnsMs: t.originsKenBurnsDurationMs ?? 48000,
+      });
+    }
+
+    async playHiraganaOriginsClassicalAmbient(stillRunning, scene) {
+      const t = this.timing;
+      const image = scene?.image;
+      if (!image) return;
+
+      const kanjiEl = this.els.hiraganaOriginsKanji;
+      const hiraganaEl = this.els.hiraganaOriginsHiragana;
+      const api = window.KmlHiraganaOrigins;
+      api?.clearGlyph(kanjiEl);
+      api?.clearGlyph(hiraganaEl);
+      api?.hidePlaque({
+        root: this.els.hiraganaOriginsPlaque,
+        title: this.els.hiraganaOriginsPlaqueTitle,
+        char: this.els.hiraganaOriginsPlaqueChar,
+        note: this.els.hiraganaOriginsPlaqueNote,
+      });
+
+      await this.playHiraganaOriginsAmbient(stillRunning, {
+        image,
+        alt: scene.alt || "",
+        fadeMs: t.originsClassicalFadeMs ?? t.originsIntroFadeMs ?? 2800,
+        holdMs: t.originsClassicalHoldMs ?? 14000,
+        exhaleMs: t.originsClassicalExhaleMs ?? 2800,
+        kenBurnsMs: t.originsKenBurnsDurationMs ?? 48000,
+      });
+    }
+
+    async playHiraganaOriginsExhibit(index) {
+      if (this.destroyed || !this.scenes.length) return;
+
+      const count = this.scenes.length;
+      if (index >= count && !this.display.loop) return;
+
+      this.clearRun();
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+
+      this.sceneIndex = ((index % count) + count) % count;
+      const scene = this.scenes[this.sceneIndex];
+      const t = this.timing;
+      const api = window.KmlHiraganaOrigins;
+      const layer = this.els.hiraganaOriginsLayer;
+      const kanjiEl = this.els.hiraganaOriginsKanji;
+      const hiraganaEl = this.els.hiraganaOriginsHiragana;
+      const calligraphyWrap = this.els.hiraganaOriginsCalligraphy;
+      const calligraphyImg = this.els.hiraganaOriginsCalligraphyImg;
+      const plaque = {
+        root: this.els.hiraganaOriginsPlaque,
+        title: this.els.hiraganaOriginsPlaqueTitle,
+        char: this.els.hiraganaOriginsPlaqueChar,
+        note: this.els.hiraganaOriginsPlaqueNote,
+      };
+
+      if (!layer || !api) {
+        this.debugLog("hiragana origins layer unavailable");
+        return;
+      }
+
+      const revealMs = t.originsKanjiRevealMs ?? 2200;
+      const kanjiHold = t.originsKanjiHoldMs ?? 2800;
+      const morphMs = t.originsMorphMs ?? 3200;
+      const hiraganaHold = t.originsHiraganaHoldMs ?? 2800;
+      const returnHold = t.originsReturnHoldMs ?? 2400;
+      const exhibitFade = t.originsExhibitFadeMs ?? 2400;
+      const calligraphyHold = t.originsCalligraphyHoldMs ?? 4200;
+      const labelFadeMs = t.originsLabelFadeMs ?? 1000;
+      const labelDelayMs = t.originsLabelDelayMs ?? 900;
+      const pageTurnTransition = t.exhibitTransitionMs ?? 0;
+      const pageTurnBlackHold = t.exhibitBlackHoldMs ?? 0;
+
+      api.applyTimingCss(t);
+
+      if (this.sceneIndex === 0) {
+        this.resetLayers();
+      } else {
+        api.clearGlyph(kanjiEl);
+        api.clearGlyph(hiraganaEl);
+        api.hidePlaque(plaque);
+        api.clearCalligraphy(calligraphyWrap, calligraphyImg);
+        api.clearAmbient(
+          this.els.hiraganaOriginsAmbient,
+          this.els.hiraganaOriginsAmbientFrame,
+          this.els.hiraganaOriginsAmbientImg
+        );
+      }
+
+      layer.classList.remove("exhibition-hidden", "is-exhaling");
+      layer.setAttribute("aria-hidden", "false");
+      this.setClass(this.els.veil, "is-clear", true);
+
+      if (this.sceneIndex === 0) {
+        await this.waitInitialExhibitionBlack(stillRunning, 0);
+        if (!stillRunning()) return;
+        this.maybeStartSoundtrackForScene(0);
+        // Hide washi until glyph exhibits — intro (and opening classical) stay on black.
+        layer.classList.add("is-visible", "is-ambient-lead");
+        await this.waitForPaintFrame();
+        if (!stillRunning()) return;
+        await this.playHiraganaOriginsIntro(stillRunning);
+        if (!stillRunning()) return;
+      } else if (!layer.classList.contains("is-visible")) {
+        layer.classList.add("is-visible");
+        await this.waitForPaintFrame();
+        if (!stillRunning()) return;
+      }
+
+      if (api.isClassicalAmbientScene(scene)) {
+        // Keep washi hidden for the opening classical beat after intro.
+        if (this.sceneIndex === 0) {
+          layer.classList.add("is-ambient-lead");
+        }
+        await this.playHiraganaOriginsClassicalAmbient(stillRunning, scene);
+        if (!stillRunning()) return;
+
+        if (this.singleExhibit) {
+          document.dispatchEvent(
+            new CustomEvent("kml-exhibition-exhibit-end", {
+              detail: { index: this.sceneIndex, sceneId: scene.id },
+            })
+          );
+          return;
+        }
+
+        const nextClassical = this.sceneIndex + 1;
+        if (nextClassical >= count) {
+          if (this.display.loop) {
+            await this.playHiraganaOriginsExhibit(0);
+          } else if (this.bookends?.closing) {
+            this.resetHiraganaOriginsLayer();
+            await this.playClosingBookend();
+          } else if (this.soundtrack?.main) {
+            await this.waitForSoundtrackEnd();
+            this.finishPresentation();
+          } else {
+            this.finishPresentation();
+          }
+          return;
+        }
+
+        await this.playHiraganaOriginsExhibit(nextClassical);
+        return;
+      }
+
+      if (!kanjiEl || !hiraganaEl) {
+        this.debugLog("hiragana origins glyphs unavailable");
+        return;
+      }
+
+      // First glyph after ambient lead: reveal warm washi.
+      if (layer.classList.contains("is-ambient-lead")) {
+        layer.classList.remove("is-ambient-lead");
+        await this.waitForPaintFrame();
+        if (!stillRunning()) return;
+      }
+
+      api.setSceneGlyphs(kanjiEl, hiraganaEl, scene);
+      api.hidePlaque(plaque);
+      const hasCalligraphy = api.setCalligraphy(
+        calligraphyWrap,
+        calligraphyImg,
+        scene,
+        this.assetsBase
+      );
+
+      const softSwapPlaque = async (phase) => {
+        api.hidePlaque(plaque);
+        await this.wait(Math.min(labelFadeMs, 600));
+        if (!stillRunning()) return;
+        api.setPlaqueContent(plaque, phase, scene, this.display);
+        await this.waitForPaintFrame();
+        if (!stillRunning()) return;
+        api.showPlaque(plaque);
+        await this.wait(labelFadeMs);
+      };
+
+      kanjiEl.classList.add("is-visible");
+      await this.wait(revealMs);
+      if (!stillRunning()) return;
+
+      // Quiet museum plaque after the character has been seen.
+      await this.wait(labelDelayMs);
+      if (!stillRunning()) return;
+      api.setPlaqueContent(plaque, "parent", scene, this.display);
+      await this.waitForPaintFrame();
+      if (!stillRunning()) return;
+      api.showPlaque(plaque);
+      await this.wait(labelFadeMs);
+      if (!stillRunning()) return;
+
+      const remainingKanjiHold = Math.max(0, kanjiHold - labelDelayMs - labelFadeMs);
+      await this.wait(remainingKanjiHold);
+      if (!stillRunning()) return;
+
+      kanjiEl.classList.remove("is-visible");
+      hiraganaEl.classList.add("is-visible");
+      await Promise.all([softSwapPlaque("hiragana"), this.wait(morphMs)]);
+      if (!stillRunning()) return;
+      await this.wait(hiraganaHold);
+      if (!stillRunning()) return;
+
+      hiraganaEl.classList.remove("is-visible");
+      kanjiEl.classList.add("is-visible");
+      await Promise.all([softSwapPlaque("parent"), this.wait(morphMs)]);
+      if (!stillRunning()) return;
+      await this.wait(returnHold);
+      if (!stillRunning()) return;
+
+      if (hasCalligraphy && calligraphyWrap) {
+        api.hidePlaque(plaque);
+        kanjiEl.classList.remove("is-visible");
+        calligraphyWrap.classList.remove("exhibition-hidden");
+        calligraphyWrap.setAttribute("aria-hidden", "false");
+        await this.waitForPaintFrame();
+        if (!stillRunning()) return;
+        calligraphyWrap.classList.add("is-visible");
+        await this.wait(calligraphyHold);
+        if (!stillRunning()) return;
+        calligraphyWrap.classList.remove("is-visible");
+        await this.wait(morphMs);
+        if (!stillRunning()) return;
+        api.clearCalligraphy(calligraphyWrap, calligraphyImg);
+      }
+
+      api.hidePlaque(plaque);
+      kanjiEl.classList.remove("is-visible");
+      hiraganaEl.classList.remove("is-visible");
+      await this.wait(exhibitFade);
+      if (!stillRunning()) return;
+
+      if (pageTurnTransition > 0) {
+        await this.wait(pageTurnTransition);
+        if (!stillRunning()) return;
+      }
+      if (pageTurnBlackHold > 0) {
+        layer.classList.add("is-exhaling");
+        await this.wait(pageTurnBlackHold);
+        if (!stillRunning()) return;
+        layer.classList.remove("is-exhaling");
+      }
+
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
+      const next = this.sceneIndex + 1;
+      if (next >= count) {
+        if (this.display.loop) {
+          await this.playHiraganaOriginsExhibit(0);
+        } else if (this.bookends?.closing) {
+          this.resetHiraganaOriginsLayer();
+          await this.playClosingBookend();
+        } else if (this.soundtrack?.main) {
+          await this.waitForSoundtrackEnd();
+          this.finishPresentation();
+        } else {
+          this.finishPresentation();
+        }
+        return;
+      }
+
+      await this.playHiraganaOriginsExhibit(next);
+    }
+
     async playExhibit(index) {
       if (this.destroyed || !this.scenes.length) return;
 
@@ -6281,6 +7093,12 @@
       }
       if (this.isHiraganaSongProfile) {
         return this.playHiraganaSongExhibit(index);
+      }
+      if (this.isHiraganaSongTypographyProfile) {
+        return this.playHiraganaSongTypographyExhibit(index);
+      }
+      if (this.isHiraganaOriginsProfile) {
+        return this.playHiraganaOriginsExhibit(index);
       }
 
       const count = this.scenes.length;
@@ -6538,12 +7356,30 @@
         profile === "gallery");
     const needsHiraganaSong =
       profile === "hiraganaSong" || family === "hiraganaSong";
+    const needsHiraganaTypography =
+      profile === "hiraganaSongTypography" || family === "hiraganaSongTypography";
+    const needsHiraganaOrigins =
+      profile === "hiraganaOrigins" ||
+      profile === "katakanaOrigins" ||
+      family === "hiraganaOrigins" ||
+      family === "katakanaOrigins";
 
     const loads = [];
 
     if (needsHiraganaSong) {
       loads.push(document.fonts.load("500 48px \"Noto Serif JP\""));
       loads.push(document.fonts.load("500 36px \"Cormorant Garamond\""));
+    }
+    if (needsHiraganaTypography) {
+      loads.push(document.fonts.load('700 72px "Zen Maru Gothic"'));
+      loads.push(document.fonts.load('700 128px "Zen Maru Gothic"'));
+      loads.push(document.fonts.load('500 48px "Zen Maru Gothic"'));
+      loads.push(document.fonts.load('700 420px "Zen Maru Gothic"'));
+    }
+    if (needsHiraganaOrigins) {
+      loads.push(document.fonts.load('400 320px "Yuji Syuku"'));
+      loads.push(document.fonts.load('400 280px "Hachi Maru Pop"'));
+      loads.push(document.fonts.load('500 18px "Noto Serif JP"'));
     }
     if (needsHandwritten) {
       const strokeOrderProfile =
