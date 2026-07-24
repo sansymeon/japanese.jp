@@ -17,6 +17,12 @@
 
   <header class="site-header">
     <div class="container site-header-inner">
+      <nav class="lang-switch" aria-label="言語">
+        <a href="../index.html" hreflang="en" lang="en">English</a>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <a href="./index.html" hreflang="ja" lang="ja" aria-current="page">日本語</a>
+      </nav>
+
       <button
         type="button"
         class="nav-toggle"
@@ -41,11 +47,6 @@
               target="_blank"
               rel="noopener noreferrer"
             >YouTube</a>
-          </li>
-          <li class="lang-switch" aria-label="言語">
-            <a href="../index.html" hreflang="en" lang="en">English</a>
-            <span class="lang-sep" aria-hidden="true">|</span>
-            <a href="./index.html" hreflang="ja" lang="ja" aria-current="page">日本語</a>
           </li>
         </ul>
       </nav>
@@ -162,7 +163,7 @@
           <!--
             Gallery entrances: swap only the <img src> to replace artwork later.
             Playlist hrefs: SITE_CONFIG.galleryEntrances in homepage.js
-            Order: Vocabulary → 中学校漢字 → Remembering the Kanji →
+            Order: Vocabulary → 常用漢字 → Remembering the Kanji →
             小学校漢字 → 幼児向けかな → 常用漢字外の漢字 → アンビエント日本.
           -->
 
@@ -186,7 +187,6 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">日本語語彙</figcaption>
             </figure>
             <div class="gallery-copy">
               <h3>日本語語彙</h3>
@@ -218,11 +218,11 @@
                 href="https://www.youtube.com/playlist?list=PLI-ULFjSKz58"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="中学校漢字コレクションを YouTube で見る"
+                aria-label="常用漢字コレクションを YouTube で見る"
               >
                 <span class="gallery-mat">
                   <img
-                    src="../kml/assets/youtube_thumbnails/jr_high_image.png"
+                    src="../kml/assets/youtube_thumbnails/joyo_kanji_vol_1.png"
                     alt=""
                     width="640"
                     height="360"
@@ -230,24 +230,35 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">中学校漢字</figcaption>
             </figure>
             <div class="gallery-copy">
-              <h3>中学校漢字</h3>
+              <h3 class="gallery-title">
+                <span class="gallery-title-ja" lang="ja">常用漢字</span>
+                <span class="gallery-title-en">Essential Kanji for Daily Use</span>
+              </h3>
               <ul class="series-points">
                 <li>
                   <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"/><path d="M9 12h6M12 9v6"/></svg></span>
-                  <span class="series-label">小学校のあとに続く、実用的な漢字約1,000字</span>
+                  <span class="series-label">
+                    <span class="series-label-title">日本の常用漢字2,136字を完全収録</span>
+                    <span class="series-label-desc">Learn all 2,136 Essential Kanji</span>
+                  </span>
                   <span class="series-chevron" aria-hidden="true">›</span>
                 </li>
                 <li>
                   <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="7" width="7.5" height="10" rx="1"/><rect x="13" y="7" width="7.5" height="10" rx="1"/><path d="M11 12h2"/></svg></span>
-                  <span class="series-label">大切な熟語とともに学ぶ</span>
+                  <span class="series-label">
+                    <span class="series-label-title">美しい映像と音楽で、ゆったり学習</span>
+                    <span class="series-label-desc">Beautiful large-format presentation</span>
+                  </span>
                   <span class="series-chevron" aria-hidden="true">›</span>
                 </li>
                 <li>
                   <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 15.5h5.5l2-4 2 7 2.5-5.5H19.5"/></svg></span>
-                  <span class="series-label">現状：急速に拡充中</span>
+                  <span class="series-label">
+                    <span class="series-label-title">熟語・語彙・読解への土台づくり</span>
+                    <span class="series-label-desc">The foundation for everything that follows</span>
+                  </span>
                   <span class="series-chevron" aria-hidden="true">›</span>
                 </li>
               </ul>
@@ -274,7 +285,6 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">Remembering the Kanji</figcaption>
             </figure>
             <div class="gallery-copy">
               <h3>Remembering the Kanji</h3>
@@ -313,7 +323,6 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">小学校漢字</figcaption>
             </figure>
             <div class="gallery-copy">
               <h3>小学校漢字</h3>
@@ -352,7 +361,6 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">幼児向けかな</figcaption>
             </figure>
             <div class="gallery-copy">
               <h3>幼児向けかな</h3>
@@ -390,7 +398,6 @@
                   />
                 </span>
               </a>
-              <figcaption class="gallery-plaque">常用漢字外の漢字</figcaption>
             </figure>
             <div class="gallery-copy">
               <h3>常用漢字外の漢字</h3>

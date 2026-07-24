@@ -55,8 +55,8 @@ def soundtrack_paths_for_part(part: int) -> tuple[str, str, str]:
         return TRACK_A_PART2, TRACK_B_PART2, _SOUNDTRACK_BY_PART[part]
     soundtrack = _SOUNDTRACK_BY_PART.get(part, SOUNDTRACK_RENDERED)
     return TRACK_A, TRACK_B, soundtrack
-OPENING_IMAGE = "images/jr_high_image.png"
-CLOSING_IMAGE = "images/jr_high_image.png"
+OPENING_IMAGE = "images/joyo_kanji.png"
+CLOSING_IMAGE = "images/joyo_kanji.png"
 
 # Continuous music-video flow — no black or slideshow holds between kanji.
 DEFAULT_EXHIBITION: dict[str, int | str] = {

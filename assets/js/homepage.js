@@ -44,7 +44,7 @@
       postElementaryKanji: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLI-ULFjSKz58",
-        image: "kml/assets/youtube_thumbnails/jr_high_image.png",
+        image: "kml/assets/youtube_thumbnails/joyo_kanji_vol_1.png",
       },
       rememberingKanji: {
         playlistUrl:

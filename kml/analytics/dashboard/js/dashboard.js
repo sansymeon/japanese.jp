@@ -2,12 +2,15 @@
  * KML Curriculum Dashboard v1.0
  * Read-only visualization of ../output/kml_channel_learning.json
  * Never touches production lesson files.
+ *
+ * Prefer ../output/ over ./data/ — Netlify (and similar hosts) do not expose
+ * the dashboard/data → ../output symlink, so ./data/*.json 404s in production.
  */
 (() => {
   "use strict";
 
   const DASHBOARD_VERSION = "1.0";
-  const DATA_URL = new URL("./data/kml_channel_learning.json", window.location.href).href;
+  const DATA_URL = new URL("../output/kml_channel_learning.json", window.location.href).href;
   const POLL_MS = 30000;
 
   const ROLE_COLORS = {
@@ -43,6 +46,7 @@
     grade_6_compounds: "Grade 6 Compounds",
     post_elementary_kanji: "Post-Elementary",
     post_elementary_compounds: "Post-Elementary Compounds",
+    post_elementary_compounds_v2: "Post-Elementary Compounds Vol. 2",
     foundations: "Foundations",
     channel_global: "Complete Channel",
   };
@@ -177,8 +181,8 @@
         status.hidden = false;
         status.className = "status-banner error";
         status.textContent =
-          `Could not load analytics JSON. Serve from kml/analytics/dashboard/ ` +
-          `(./serve.sh) and regenerate with analyze_channel_learning.py. ${err.message}`;
+          `Could not load analytics JSON. Run ./serve.sh from kml/analytics/dashboard/ ` +
+          `(opens /dashboard/) and regenerate with analyze_channel_learning.py. ${err.message}`;
       }
       return false;
     }

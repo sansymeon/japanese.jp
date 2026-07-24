@@ -60,8 +60,9 @@ deploy (homepage + dashboard serve the fresh JSON)
 
 On pushes to `main` that touch curriculum inputs, GitHub Actions runs the same
 script (`.github/workflows/pre-deploy-analytics.yml`) and commits regenerated
-outputs when they change. The homepage loads
-`./kml/analytics/dashboard/data/kml_channel_learning.json` once per visit.
+outputs when they change. The homepage and dashboard both load
+`kml/analytics/output/kml_channel_learning.json` (not the local `dashboard/data`
+symlink, which deploy hosts often do not expose).
 
 Escape hatch: `SKIP_ANALYTICS=1 ./scripts/pre-deploy.sh`
 
@@ -102,7 +103,7 @@ Interactive mission control UI (read-only; fetches analytics JSON only):
 
 ```bash
 cd kml/analytics/dashboard && ./serve.sh
-# → http://localhost:8787/
+# → http://localhost:8787/dashboard/
 ```
 
 See `kml/analytics/dashboard/README.md`.
