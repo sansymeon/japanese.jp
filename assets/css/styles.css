@@ -374,6 +374,17 @@ button:focus-visible {
   transform: translateX(-3.125rem);
 }
 
+/* Keep gold titles centered under the (possibly shifted) frame */
+.gallery-entry--shift-end .gallery-copy > h3,
+.gallery-entry--shift-end .gallery-copy > .gallery-title {
+  transform: translateX(3.125rem);
+}
+
+.gallery-entry--shift-start .gallery-copy > h3,
+.gallery-entry--shift-start .gallery-copy > .gallery-title {
+  transform: translateX(-3.125rem);
+}
+
 .gallery-exhibit {
   margin: 0;
   width: min(100%, 26rem);
@@ -822,6 +833,16 @@ button:focus-visible {
     transform: translateX(-2rem);
   }
 
+  .gallery-entry--shift-end .gallery-copy > h3,
+  .gallery-entry--shift-end .gallery-copy > .gallery-title {
+    transform: translateX(2rem);
+  }
+
+  .gallery-entry--shift-start .gallery-copy > h3,
+  .gallery-entry--shift-start .gallery-copy > .gallery-title {
+    transform: translateX(-2rem);
+  }
+
   .gallery-exhibit {
     width: min(100%, 22rem);
   }
@@ -892,6 +913,13 @@ button:focus-visible {
 
   .gallery-entry--shift-end .gallery-exhibit,
   .gallery-entry--shift-start .gallery-exhibit {
+    transform: none;
+  }
+
+  .gallery-entry--shift-end .gallery-copy > h3,
+  .gallery-entry--shift-end .gallery-copy > .gallery-title,
+  .gallery-entry--shift-start .gallery-copy > h3,
+  .gallery-entry--shift-start .gallery-copy > .gallery-title {
     transform: none;
   }
 
