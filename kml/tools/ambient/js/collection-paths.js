@@ -17,6 +17,7 @@
   function collectionDirForId(name) {
     if (LESSON_FOLDER_OVERRIDES[name]) return LESSON_FOLDER_OVERRIDES[name];
     if (/^post_elementary/.test(name)) return "post_elementary";
+    if (/^beyond_joyo/.test(name)) return "beyond_joyo";
     if (/^vocabulary_\d+/.test(name)) return "vocabulary";
     if (/^hiragana_song/.test(name)) return "hiragana_song";
     if (/^hiragana_origins/.test(name)) return "hiragana_origins";

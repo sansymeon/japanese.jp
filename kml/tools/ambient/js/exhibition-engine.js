@@ -708,6 +708,8 @@
 
     japaneseVocabularyStepMs(t = this.timing, step = {}, options = {}) {
       const leaveVisible = Boolean(options.leaveVisible);
+      const celebration = step.celebration || step.meta?.celebration;
+      const isReward = Boolean(step.reward || step.meta?.reward);
       let ms = t.compoundsStepRevealMs ?? 1400;
       if (!leaveVisible) ms += t.compoundsStepFadeMs ?? 1400;
       if (step.jpHtml) {
@@ -722,10 +724,19 @@
           (t.compoundsReadingRevealMs ?? 1200) +
           (t.compoundsReadingHoldMs ?? 1800);
       }
+      const enHold =
+        celebration === "fireworks"
+          ? t.compoundsCelebrationEnHoldMs ?? 8000
+          : isReward
+            ? t.compoundsRewardEnHoldMs ?? 5000
+            : t.compoundsEnHoldMs ?? 3500;
       ms +=
         (t.compoundsEnRevealMs ?? 1200) +
-        (t.compoundsEnHoldMs ?? 3500) +
+        enHold +
         (t.compoundsEnFadeMs ?? 1400);
+      if (celebration === "fireworks") {
+        ms += t.compoundsCelebrationBurstMs ?? 1600;
+      }
       return ms;
     }
 
@@ -2803,7 +2814,7 @@
       layer.classList.add("exhibition-hidden");
     }
 
-    async playGrade1Confetti(accentColor) {
+    async playGrade1Confetti(accentColor, options = {}) {
       const layer = this.els.grade1ConfettiLayer;
       if (!layer) return;
       const palette = [
@@ -2819,29 +2830,36 @@
       if (accentColor && !palette.includes(accentColor)) {
         palette.unshift(accentColor);
       }
-      layer.textContent = "";
+      const bursts = Math.max(1, options.bursts ?? 1);
+      const count = options.count ?? 42;
       layer.classList.remove("exhibition-hidden");
-      const centerX = window.innerWidth * 0.5;
-      const centerY = window.innerHeight * 0.46;
-      const count = 42;
-      for (let i = 0; i < count; i += 1) {
-        const piece = document.createElement("span");
-        piece.className = "grade1-confetti-piece";
-        const color = palette[i % palette.length];
-        const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.35;
-        const dist = 70 + Math.random() * 130;
-        const dx = Math.cos(angle) * dist;
-        const dy = 40 + Math.sin(angle) * dist + Math.random() * 90;
-        piece.style.left = `${centerX}px`;
-        piece.style.top = `${centerY}px`;
-        piece.style.background = color;
-        piece.style.setProperty("--grade1-dx", `${dx.toFixed(1)}px`);
-        piece.style.setProperty("--grade1-dy", `${dy.toFixed(1)}px`);
-        piece.style.setProperty("--grade1-rot", `${(Math.random() * 280 - 140).toFixed(1)}deg`);
-        piece.style.setProperty("--grade1-confetti-duration", `${(1.1 + Math.random() * 0.5).toFixed(2)}s`);
-        layer.appendChild(piece);
+      for (let b = 0; b < bursts; b += 1) {
+        if (b === 0) layer.textContent = "";
+        const centerX = window.innerWidth * (0.42 + Math.random() * 0.16);
+        const centerY = window.innerHeight * (0.4 + Math.random() * 0.12);
+        for (let i = 0; i < count; i += 1) {
+          const piece = document.createElement("span");
+          piece.className = "grade1-confetti-piece";
+          const color = palette[i % palette.length];
+          const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.35;
+          const dist = 70 + Math.random() * 160;
+          const dx = Math.cos(angle) * dist;
+          const dy = 40 + Math.sin(angle) * dist + Math.random() * 100;
+          piece.style.left = `${centerX}px`;
+          piece.style.top = `${centerY}px`;
+          piece.style.background = color;
+          piece.style.setProperty("--grade1-dx", `${dx.toFixed(1)}px`);
+          piece.style.setProperty("--grade1-dy", `${dy.toFixed(1)}px`);
+          piece.style.setProperty("--grade1-rot", `${(Math.random() * 280 - 140).toFixed(1)}deg`);
+          piece.style.setProperty(
+            "--grade1-confetti-duration",
+            `${(1.1 + Math.random() * 0.6).toFixed(2)}s`
+          );
+          layer.appendChild(piece);
+        }
+        if (b < bursts - 1) await this.wait(options.burstGapMs ?? 450);
       }
-      await this.wait(1500);
+      await this.wait(options.holdMs ?? 1500);
       this.clearGrade1Confetti();
     }
 
@@ -3816,7 +3834,14 @@
       const readingReveal = t.compoundsReadingRevealMs ?? 1200;
       const readingHold = t.compoundsReadingHoldMs ?? 1800;
       const enReveal = t.compoundsEnRevealMs ?? 1200;
-      const enHold = t.compoundsEnHoldMs ?? 3500;
+      const celebration = step.celebration || step.meta?.celebration;
+      const isReward = Boolean(step.reward || step.meta?.reward);
+      const enHold =
+        celebration === "fireworks"
+          ? t.compoundsCelebrationEnHoldMs ?? 8000
+          : isReward
+            ? t.compoundsRewardEnHoldMs ?? 5000
+            : t.compoundsEnHoldMs ?? 3500;
       const enFade = t.compoundsEnFadeMs ?? 1400;
       const usesFurigana = Boolean(step?.jpHtml);
       const leaveVisible = Boolean(options.leaveVisible);
@@ -3824,6 +3849,14 @@
       this.setCompoundsStepContent(step);
       const verseJp = this.els.verseJp;
       const readingEl = verseJp?.querySelector(".kml-compound-reading");
+      const jpMain = verseJp?.querySelector(".kml-compound-jp");
+      if (isReward || celebration) {
+        this.root.classList.add("is-compound-reward");
+        jpMain?.classList.add("is-reward-glow");
+      }
+      if (celebration === "fireworks") {
+        this.root.classList.add("is-compound-celebration");
+      }
 
       document.documentElement.style.setProperty("--ex-verse-fade", `${stepReveal}ms`);
       this.setClass(verseJp, "is-visible", true);
@@ -3862,6 +3895,17 @@
         this.setClass(this.els.verseEn, "is-visible", true);
         await this.wait(enReveal);
         if (!stillRunning()) return;
+
+        if (celebration === "fireworks") {
+          // Fireworks for the series finale (biáng).
+          void this.playGrade1Confetti(null, {
+            bursts: 3,
+            count: 56,
+            burstGapMs: 420,
+            holdMs: t.compoundsCelebrationBurstMs ?? 1600,
+          });
+        }
+
         await this.wait(enHold);
         if (!stillRunning()) return;
 
@@ -3872,7 +3916,18 @@
       }
 
       // Final-compound review: leave the native word on screen for the coda hold.
-      if (leaveVisible) return;
+      if (leaveVisible) {
+        if (celebration === "fireworks") {
+          // One more burst while the final review holds.
+          void this.playGrade1Confetti(null, {
+            bursts: 2,
+            count: 48,
+            burstGapMs: 500,
+            holdMs: 1800,
+          });
+        }
+        return;
+      }
 
       document.documentElement.style.setProperty("--ex-verse-fade", `${stepFade}ms`);
       this.setClass(verseJp, "is-visible", false);
@@ -3880,6 +3935,7 @@
       await this.wait(stepFade);
       if (!stillRunning()) return;
 
+      this.root.classList.remove("is-compound-reward", "is-compound-celebration");
       if (verseJp) {
         verseJp.textContent = "";
         verseJp.innerHTML = "";

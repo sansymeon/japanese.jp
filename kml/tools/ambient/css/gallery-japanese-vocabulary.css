@@ -143,3 +143,81 @@ html.kml-typography-mobile-refine.kml-verse-sequential
 .vocabulary-intro-en-line {
   display: block;
 }
+
+/* ── Party-kanji rewards & biáng finale fireworks ── */
+
+.exhibition-root.is-japanese-vocabulary .grade1-confetti-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.exhibition-root.is-japanese-vocabulary .grade1-confetti-piece {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.9rem;
+  border-radius: 0.12rem;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  animation: grade1-confetti-fall var(--grade1-confetti-duration, 1.4s)
+    cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+@keyframes grade1-confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--grade1-dx, 0), var(--grade1-dy, 120px), 0)
+      rotate(var(--grade1-rot, 180deg));
+  }
+}
+
+.exhibition-root.is-japanese-vocabulary.is-compound-reward .kml-compound-jp.is-reward-glow {
+  text-shadow:
+    0 0 18px rgba(255, 214, 102, 0.45),
+    0 0 42px rgba(255, 180, 60, 0.28);
+  animation: bj-reward-glow 1.4s ease-out forwards;
+}
+
+.exhibition-root.is-japanese-vocabulary.is-compound-celebration .kml-compound-jp.is-reward-glow {
+  text-shadow:
+    0 0 22px rgba(255, 120, 160, 0.55),
+    0 0 48px rgba(120, 180, 255, 0.4),
+    0 0 72px rgba(255, 220, 100, 0.35);
+  animation: bj-finale-glow 2s ease-out forwards;
+}
+
+@keyframes bj-reward-glow {
+  0% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  40% {
+    filter: brightness(1.12);
+    transform: scale(1.04);
+  }
+  100% {
+    filter: brightness(1.04);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes bj-finale-glow {
+  0% {
+    filter: brightness(1) saturate(1);
+    transform: scale(1);
+  }
+  35% {
+    filter: brightness(1.18) saturate(1.15);
+    transform: scale(1.06);
+  }
+  100% {
+    filter: brightness(1.08) saturate(1.08);
+    transform: scale(1.03);
+  }
+}

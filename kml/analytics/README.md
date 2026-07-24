@@ -43,13 +43,11 @@ cd /home/sjnelson/japanese.jp
 ### Pre-deploy flow
 
 ```
-create lesson
+create lesson (local)
     ↓
-git push
+./scripts/pre-deploy.sh   # regenerate JSON anytime locally
     ↓
-pre-deploy runs analyze_channel_learning.py
-    ↓
-new JSON under kml/analytics/output/
+git push to main at most once per day
     ↓
 deploy (homepage + dashboard serve the fresh JSON)
 ```
@@ -58,9 +56,12 @@ deploy (homepage + dashboard serve the fresh JSON)
 ./scripts/pre-deploy.sh
 ```
 
-On pushes to `main` that touch curriculum inputs, GitHub Actions runs the same
-script (`.github/workflows/pre-deploy-analytics.yml`) and commits regenerated
-outputs when they change. The homepage and dashboard both load
+Regenerate JSON as often as you like locally. Publishing to Netlify is limited to
+**one `main` push per calendar day** (Asia/Tokyo) via `scripts/limit-push-once-daily.sh`
+— daily stats are enough; waiting a day does not affect YouTube projects.
+Override only when needed: `ALLOW_EXTRA_PUSH=1 git push`.
+
+The homepage and dashboard both load
 `kml/analytics/output/kml_channel_learning.json` (not the local `dashboard/data`
 symlink, which deploy hosts often do not expose).
 

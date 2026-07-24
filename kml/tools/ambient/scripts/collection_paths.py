@@ -21,6 +21,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return _LESSON_FOLDER_OVERRIDES[collection_id]
     if collection_id.startswith("post_elementary"):
         return "post_elementary"
+    if collection_id.startswith("beyond_joyo"):
+        return "beyond_joyo"
     if re.match(r"vocabulary_\d+", collection_id):
         return "vocabulary"
     if collection_id.startswith("hiragana_song"):
