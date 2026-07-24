@@ -43,24 +43,34 @@ cd /home/sjnelson/japanese.jp
 ### Pre-deploy flow
 
 ```
-create lesson
+create lesson (or any non-output change)
     ↓
-git push
+git push to main
     ↓
-pre-deploy runs analyze_channel_learning.py
+GitHub Action pre-deploy-analytics.yml runs analyze_channel_learning.py
     ↓
-new JSON under kml/analytics/output/
+new JSON under kml/analytics/output/ (committed back to main when changed)
     ↓
-deploy (homepage + dashboard serve the fresh JSON)
+Netlify deploy (homepage + dashboard serve the fresh JSON)
 ```
+
+Locally (same script the Action runs):
 
 ```bash
 ./scripts/pre-deploy.sh
 ```
 
-On pushes to `main` that touch curriculum inputs, GitHub Actions runs the same
-script (`.github/workflows/pre-deploy-analytics.yml`) and commits regenerated
-outputs when they change. The homepage and dashboard both load
+There is **no daily cron**, Netlify scheduled function, or build-time stats step.
+Stats refresh only when `analyze_channel_learning.py` runs (via
+`./scripts/pre-deploy.sh` or the GitHub Action) and the resulting JSON is on
+`main`.
+
+On **every push to `main`** that is not limited to `kml/analytics/output/**`,
+GitHub Actions runs `.github/workflows/pre-deploy-analytics.yml`, regenerates
+outputs, and commits them when they change (`[skip ci]` + `paths-ignore` avoid
+an Action loop). Manual runs: Actions → “Pre-deploy analytics” → Run workflow.
+
+The homepage and dashboard both load
 `kml/analytics/output/kml_channel_learning.json` (not the local `dashboard/data`
 symlink, which deploy hosts often do not expose).
 
