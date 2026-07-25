@@ -1,0 +1,329 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "proto_typography_lab",
+  "title": "Prototype — Typography Lab (Gallery 16:9 / Mobile 9:16)",
+  "titleJa": "試作 — 文字組み検証",
+  "notes": "EXPERIMENT ONLY. 18 high stroke-count compounds + 5 simple kanji for optical-weight comparison. Same engine, timing, soundtrack and transitions as Beyond Jōyō; only the presentation layout varies. Drive with ?edition=mobile and ?typeLab=a|b|c.",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 1200,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 800,
+    "compoundsPauseBeforeMs": 3200,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 2200,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3500,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsFinalReviewHoldMs": 22000,
+    "compoundsFinalFadeToBlackMs": 4000,
+    "vocabArtworkExhaleMs": 2800,
+    "exhibitTransitionMs": 0,
+    "kenBurnsDurationMs": 1200000,
+    "closingBlackAfterMs": 600
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseVocabulary",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "japaneseVocabulary",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "cameraMotionScale": 1.0
+  },
+  "meta": {
+    "series": "prototype_editions",
+    "prototype": true,
+    "stage": "compounds",
+    "sceneCount": 1,
+    "compoundCount": 23,
+    "denseCount": 18,
+    "simpleCount": 5,
+    "soundtrackDurationMs": 771288,
+    "estimatedContentRuntimeMs": 476600,
+    "ending": "finalCompoundReview"
+  },
+  "scenes": [
+    {
+      "id": "PROTO_typography_lab",
+      "image": "images/black.png",
+      "galleryCamera": {
+        "motion": "still",
+        "focus": "50% 50%",
+        "motionScale": 1.0
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "憂鬱",
+            "reading": "ゆううつ",
+            "en": "melancholy",
+            "jpHtml": "<ruby>憂<rt>ゆう</rt></ruby><ruby>鬱<rt>うつ</rt></ruby>",
+            "meta": {
+              "kanji": "憂",
+              "strokeGroup": "dense",
+              "displayOrder": 1
+            }
+          },
+          {
+            "jp": "驚愕",
+            "reading": "きょうがく",
+            "en": "astonishment",
+            "jpHtml": "<ruby>驚<rt>きょう</rt></ruby><ruby>愕<rt>がく</rt></ruby>",
+            "meta": {
+              "kanji": "驚",
+              "strokeGroup": "dense",
+              "displayOrder": 2
+            }
+          },
+          {
+            "jp": "籠城",
+            "reading": "ろうじょう",
+            "en": "holing up / standing siege",
+            "jpHtml": "<ruby>籠<rt>ろう</rt></ruby><ruby>城<rt>じょう</rt></ruby>",
+            "meta": {
+              "kanji": "籠",
+              "strokeGroup": "dense",
+              "displayOrder": 3
+            }
+          },
+          {
+            "jp": "擁護",
+            "reading": "ようご",
+            "en": "protection / advocacy",
+            "jpHtml": "<ruby>擁<rt>よう</rt></ruby><ruby>護<rt>ご</rt></ruby>",
+            "meta": {
+              "kanji": "擁",
+              "strokeGroup": "dense",
+              "displayOrder": 4
+            }
+          },
+          {
+            "jp": "議論",
+            "reading": "ぎろん",
+            "en": "discussion / debate",
+            "jpHtml": "<ruby>議<rt>ぎ</rt></ruby><ruby>論<rt>ろん</rt></ruby>",
+            "meta": {
+              "kanji": "議",
+              "strokeGroup": "dense",
+              "displayOrder": 5
+            }
+          },
+          {
+            "jp": "試験",
+            "reading": "しけん",
+            "en": "examination",
+            "jpHtml": "<ruby>試<rt>し</rt></ruby><ruby>験<rt>けん</rt></ruby>",
+            "meta": {
+              "kanji": "試",
+              "strokeGroup": "dense",
+              "displayOrder": 6
+            }
+          },
+          {
+            "jp": "鑑賞",
+            "reading": "かんしょう",
+            "en": "appreciation of art",
+            "jpHtml": "<ruby>鑑<rt>かん</rt></ruby><ruby>賞<rt>しょう</rt></ruby>",
+            "meta": {
+              "kanji": "鑑",
+              "strokeGroup": "dense",
+              "displayOrder": 7
+            }
+          },
+          {
+            "jp": "折鶴",
+            "reading": "おりづる",
+            "en": "folded paper crane",
+            "jpHtml": "<ruby>折<rt>おり</rt></ruby><ruby>鶴<rt>づる</rt></ruby>",
+            "meta": {
+              "kanji": "折",
+              "strokeGroup": "dense",
+              "displayOrder": 8
+            }
+          },
+          {
+            "jp": "華麗",
+            "reading": "かれい",
+            "en": "splendour",
+            "jpHtml": "<ruby>華<rt>か</rt></ruby><ruby>麗<rt>れい</rt></ruby>",
+            "meta": {
+              "kanji": "華",
+              "strokeGroup": "dense",
+              "displayOrder": 9
+            }
+          },
+          {
+            "jp": "競技",
+            "reading": "きょうぎ",
+            "en": "athletic contest",
+            "jpHtml": "<ruby>競<rt>きょう</rt></ruby><ruby>技<rt>ぎ</rt></ruby>",
+            "meta": {
+              "kanji": "競",
+              "strokeGroup": "dense",
+              "displayOrder": 10
+            }
+          },
+          {
+            "jp": "心臓",
+            "reading": "しんぞう",
+            "en": "the heart",
+            "jpHtml": "<ruby>心<rt>しん</rt></ruby><ruby>臓<rt>ぞう</rt></ruby>",
+            "meta": {
+              "kanji": "心",
+              "strokeGroup": "dense",
+              "displayOrder": 11
+            }
+          },
+          {
+            "jp": "懸念",
+            "reading": "けねん",
+            "en": "concern / misgiving",
+            "jpHtml": "<ruby>懸<rt>け</rt></ruby><ruby>念<rt>ねん</rt></ruby>",
+            "meta": {
+              "kanji": "懸",
+              "strokeGroup": "dense",
+              "displayOrder": 12
+            }
+          },
+          {
+            "jp": "顧客",
+            "reading": "こきゃく",
+            "en": "customer / client",
+            "jpHtml": "<ruby>顧<rt>こ</rt></ruby><ruby>客<rt>きゃく</rt></ruby>",
+            "meta": {
+              "kanji": "顧",
+              "strokeGroup": "dense",
+              "displayOrder": 13
+            }
+          },
+          {
+            "jp": "警鐘",
+            "reading": "けいしょう",
+            "en": "alarm bell / warning",
+            "jpHtml": "<ruby>警<rt>けい</rt></ruby><ruby>鐘<rt>しょう</rt></ruby>",
+            "meta": {
+              "kanji": "警",
+              "strokeGroup": "dense",
+              "displayOrder": 14
+            }
+          },
+          {
+            "jp": "謙譲",
+            "reading": "けんじょう",
+            "en": "modesty / deference",
+            "jpHtml": "<ruby>謙<rt>けん</rt></ruby><ruby>譲<rt>じょう</rt></ruby>",
+            "meta": {
+              "kanji": "謙",
+              "strokeGroup": "dense",
+              "displayOrder": 15
+            }
+          },
+          {
+            "jp": "沸騰",
+            "reading": "ふっとう",
+            "en": "boiling / seething",
+            "jpHtml": "<ruby>沸<rt>ふっ</rt></ruby><ruby>騰<rt>とう</rt></ruby>",
+            "meta": {
+              "kanji": "沸",
+              "strokeGroup": "dense",
+              "displayOrder": 16
+            }
+          },
+          {
+            "jp": "魔法",
+            "reading": "まほう",
+            "en": "magic",
+            "jpHtml": "<ruby>魔<rt>ま</rt></ruby><ruby>法<rt>ほう</rt></ruby>",
+            "meta": {
+              "kanji": "魔",
+              "strokeGroup": "dense",
+              "displayOrder": 17
+            }
+          },
+          {
+            "jp": "書籍",
+            "reading": "しょせき",
+            "en": "books / publications",
+            "jpHtml": "<ruby>書<rt>しょ</rt></ruby><ruby>籍<rt>せき</rt></ruby>",
+            "meta": {
+              "kanji": "書",
+              "strokeGroup": "dense",
+              "displayOrder": 18
+            }
+          },
+          {
+            "jp": "山",
+            "reading": "やま",
+            "en": "mountain",
+            "jpHtml": "<ruby>山<rt>やま</rt></ruby>",
+            "meta": {
+              "kanji": "山",
+              "strokeGroup": "simple",
+              "displayOrder": 19
+            }
+          },
+          {
+            "jp": "川",
+            "reading": "かわ",
+            "en": "river",
+            "jpHtml": "<ruby>川<rt>かわ</rt></ruby>",
+            "meta": {
+              "kanji": "川",
+              "strokeGroup": "simple",
+              "displayOrder": 20
+            }
+          },
+          {
+            "jp": "人",
+            "reading": "ひと",
+            "en": "person",
+            "jpHtml": "<ruby>人<rt>ひと</rt></ruby>",
+            "meta": {
+              "kanji": "人",
+              "strokeGroup": "simple",
+              "displayOrder": 21
+            }
+          },
+          {
+            "jp": "空",
+            "reading": "そら",
+            "en": "sky",
+            "jpHtml": "<ruby>空<rt>そら</rt></ruby>",
+            "meta": {
+              "kanji": "空",
+              "strokeGroup": "simple",
+              "displayOrder": 22
+            }
+          },
+          {
+            "jp": "木",
+            "reading": "き",
+            "en": "tree",
+            "jpHtml": "<ruby>木<rt>き</rt></ruby>",
+            "meta": {
+              "kanji": "木",
+              "strokeGroup": "simple",
+              "displayOrder": 23
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -264,6 +264,35 @@ def discover_post_elementary_compounds_v2() -> list[dict]:
     return lessons
 
 
+def discover_beyond_joyo_compounds() -> list[dict]:
+    """Beyond-Joyo compounds (常用外漢字熟語) — kanji outside the Joyo list."""
+    paths = sorted(
+        p for p in (COLLECTIONS / "beyond_joyo").glob("beyond_joyo_compounds_*.json")
+        if re.fullmatch(r"beyond_joyo_compounds_\d+", p.stem)
+    )
+    lessons = []
+    for path in paths:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        n = int(data.get("meta", {}).get("part") or _num_from_stem(path.stem, r"(\d+)"))
+        words = []
+        for scene in data.get("scenes", []):
+            for step in scene.get("compounds", {}).get("steps", []):
+                words.append((step["jp"], step.get("reading", ""), step.get("en", ""), "compound"))
+        kanji = sorted({k for jp, *_ in words for k in KANJI_RE.findall(jp)})
+        lessons.append({
+            "order": n,
+            "id": data.get("id", path.stem),
+            "title": data.get("title", path.stem),
+            "label": f"Beyond-Joyo Compounds Lesson {n}",
+            "file": str(path.relative_to(REPO_ROOT)),
+            "words": words,
+            "kanji": kanji,
+            "kind": "compounds",
+        })
+    lessons.sort(key=lambda x: x["order"])
+    return lessons
+
+
 def discover_foundations() -> list[dict]:
     """Foundations lessons from collections/ and exhibition/ (deduped by lesson #)."""
     candidates: list[Path] = []
@@ -350,6 +379,14 @@ def build_paths() -> dict[str, dict]:
             "lessons": pec_v2,
         }
 
+    bjc = discover_beyond_joyo_compounds()
+    if bjc:
+        paths["beyond_joyo_compounds"] = {
+            "name": "Beyond-Joyo Compounds (常用外)",
+            "role": "compounds",
+            "lessons": bjc,
+        }
+
     foundations = discover_foundations()
     if foundations:
         paths["foundations"] = {
@@ -365,6 +402,7 @@ def build_paths() -> dict[str, dict]:
         + ["post_elementary_kanji"]
         + [f"grade_{g}_compounds" for g in range(1, 7)]
         + ["post_elementary_compounds", "post_elementary_compounds_v2"]
+        + ["beyond_joyo_compounds"]
         + ["japanese_vocabulary"]
         + ["foundations"]
     )

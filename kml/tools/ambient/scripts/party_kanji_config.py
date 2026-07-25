@@ -2,40 +2,44 @@
 
 from __future__ import annotations
 
-# Target ~36s episode at timingScale=1 (proof hold stays generous for confidence).
+# Calm museum pacing — slower fades, generous holds (especially closing humour).
 PARTY_TIMING: dict[str, int] = {
     # Shock — giant → challenge → handoff
-    "partyShockKanjiRevealMs": 250,
-    "partyShockChallengeDelayMs": 3000,
-    "partyShockChallengeRevealMs": 350,
-    "partyShockHoldAfterChallengeMs": 1650,
-    "partyShockFadeMs": 400,
+    "partyShockKanjiRevealMs": 450,
+    "partyShockChallengeDelayMs": 3400,
+    "partyShockChallengeRevealMs": 1300,
+    "partyShockHoldAfterChallengeMs": 2200,
+    "partyShockFadeMs": 900,
     # Reveal — burst → staggered components → equation
-    "partyRevealFadeInMs": 350,
-    "partyRevealBurstMs": 400,
-    "partyComponentStaggerMs": 2000,
-    "partyComponentArriveMs": 450,
-    "partyEquationDelayMs": 3000,
-    "partyEquationRevealMs": 400,
-    "partyEquationHoldMs": 4000,
-    "partyRevealFadeMs": 400,
-    # Proof — stroke order (keep substantive)
-    "partyProofFadeInMs": 400,
-    "partyProofHoldMs": 8000,
-    "partyProofFadeMs": 400,
+    "partyRevealFadeInMs": 700,
+    "partyRevealBurstMs": 700,
+    "partyComponentStaggerMs": 2400,
+    "partyComponentArriveMs": 750,
+    "partyEquationDelayMs": 3600,
+    "partyEquationRevealMs": 800,
+    "partyEquationHoldMs": 5200,
+    "partyRevealFadeMs": 900,
     # Final — reward glow + component pulse
-    "partyFinalFadeInMs": 1200,
-    "partyFinalHoldMs": 1500,
-    "partyComponentPulseFadeInMs": 500,
-    "partyComponentPulseHoldMs": 2000,
-    "partyFinalFadeOutMs": 600,
-    # Closing line → end card
-    "partyClosingFadeInMs": 350,
-    "partyClosingHoldMs": 2500,
-    "partyClosingFadeMs": 350,
-    "partyEndCardFadeInMs": 350,
-    "partyEndCardHoldMs": 1500,
-    "partyEndCardFadeMs": 350,
+    "partyFinalFadeInMs": 1800,
+    "partyFinalHoldMs": 2800,
+    "partyComponentPulseFadeInMs": 800,
+    "partyComponentPulseHoldMs": 2800,
+    "partyFinalFadeOutMs": 1100,
+    # Closing humour → end card → (gold crest via bookends)
+    "partyClosingFadeInMs": 800,
+    "partyClosingHoldMs": 6500,
+    "partyClosingFadeMs": 900,
+    "partyEndCardFadeInMs": 800,
+    "partyEndCardHoldMs": 5500,
+    "partyEndCardFadeMs": 1000,
+    # Quiet crest coda (bookends.closing)
+    "closingBlackBeforeMs": 600,
+    "closingRevealMs": 3600,
+    "closingHoldMs": 3200,
+    "closingExhaleMs": 4200,
+    "closingSilenceHoldMs": 0,
+    "closingBlackAfterMs": 900,
+    "closingFadeToBlackMs": 4200,
     "exhibitTransitionMs": 0,
     "exhibitBlackHoldMs": 0,
     "blackHoldMs": 0,
@@ -43,9 +47,9 @@ PARTY_TIMING: dict[str, int] = {
 
 PARTY_VISUAL: dict[str, object] = {
     "componentReveal": "burst",  # burst | slide
-    "componentGlow": True,
+    "componentGlow": False,
     "componentBounce": True,
-    "finalGlow": True,
+    "finalGlow": False,
     "componentPulseOpacity": 0.18,
     "showReadingInReveal": False,
     "showTrivia": False,

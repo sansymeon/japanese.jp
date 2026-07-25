@@ -28,6 +28,8 @@ SILENT_CREST_BOOKENDS = {
     "closing": {
         "image": "images/gold_closing.png",
         "bookendSize": "small",
+        # End at content + short crest — do not pad to the reading bed.
+        "holdUntilSoundtrackEnds": False,
         "fadeWithSoundtrackEnd": True,
     },
 }
@@ -210,10 +212,17 @@ def write_collection(lesson: int, *, show_english: bool = True) -> tuple[Path, d
     return path, config
 
 
+SUPPORTED_LESSONS = list(range(1, 11)) + list(range(33, 38))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--lesson", type=int, choices=range(1, 11))
-    parser.add_argument("--all", action="store_true", help="Build lessons 1–10")
+    parser.add_argument("--lesson", type=int, choices=SUPPORTED_LESSONS)
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Build lessons 1–10 (use --lesson for 33–37)",
+    )
     parser.add_argument("--no-english", action="store_true")
     args = parser.parse_args()
 

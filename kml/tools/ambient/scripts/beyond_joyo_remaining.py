@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Generate Beyond Jōyō compounds for parts 5+ from remaining master-list kanji.
 
-Includes party-kanji rewards (one per part from 5 onward) and the 𰻞 (biáng)
-fireworks finale as the absolute last entry of the series.
+Party-kanji rewards are scattered through the full series (parts 2, 4, 6… plus a
+few early odds) by assemble_series_entries() in build_beyond_joyo_compounds.py.
+𰻞 (biáng) remains the absolute last entry (series finale).
 """
 
 from __future__ import annotations
@@ -15,7 +16,8 @@ from typing import Any
 REPO = Path(__file__).resolve().parents[3]
 MASTER_CSV = REPO / "data" / "kanji" / "kanji_master.csv"
 
-# Mid-series rewards (one per part from Part 5). 𰻞 is reserved for the finale.
+# Mid-series party rewards (order = presentation order across reward parts).
+# 𰻞 is reserved for the finale — not listed here.
 PARTY_REWARDS: list[dict[str, Any]] = [
     {
         "anchor": "轟音",
@@ -125,6 +127,149 @@ BIANG_FINALE: dict[str, Any] = {
     "celebration": "fireworks",
     "finale": True,
 }
+
+# Scatter rewards through the series: even parts 2…18, plus early odds 3/5/7
+# so all twelve party glyphs appear (not clustered only near the end).
+PARTY_REWARD_PARTS: list[int] = [2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18]
+
+PART_SIZE = 50
+
+
+def load_master_rows() -> list[dict]:
+    with MASTER_CSV.open(encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def build_remaining_entries(used_master: set[str]) -> list[dict[str, Any]]:
+    """Return remaining regular compounds only (no party rewards, no biáng)."""
+    rows = load_master_rows()
+    corpus: set[str] = set()
+    joyo: set[str] = set()
+    by: dict[str, dict] = {}
+    for r in rows:
+        by[r["kanji"]] = r
+        if r.get("category") == "joyo":
+            joyo.add(r["kanji"])
+        if (r.get("grade") == "H") or r.get("category") in {
+            "heisig_extra",
+            "party_kanji",
+        }:
+            corpus.add(r["kanji"])
+
+    party_ids = {m for e in PARTY_REWARDS for m in e["masterKanji"]}
+    party_ids.add("𰻞")
+
+    remain_rows: list[dict] = []
+    seen: set[str] = set()
+    for r in rows:
+        k = r["kanji"]
+        if k in seen or k in used_master or k in party_ids:
+            continue
+        if k not in corpus:
+            continue
+        if r.get("category") == "party_kanji":
+            continue
+        seen.add(k)
+        remain_rows.append(r)
+
+    # Familiarity-ish: frequency rank ascending
+    remain_rows.sort(key=lambda r: int(r.get("frequency_rank") or 99999))
+
+    regular: list[dict[str, Any]] = []
+    for r in remain_rows:
+        entry = _auto_entry(r)
+        # Skip curated that fail validation (e.g. missing partner kanji)
+        if not _validate_entry(entry, corpus | party_ids, joyo):
+            # Fallback to safe auto without curated
+            kanji = r["kanji"]
+            if kanji in CURATED:
+                kun = _parse_kun(r)
+                en = _keyword_en(r)
+                on = _first_on(r)
+                if kun:
+                    surface, reading = kun
+                    okuri = surface[len(kanji) :] if surface != kanji else ""
+                    stem = reading[: len(reading) - len(okuri)] if okuri else reading
+                    entry = {
+                        "anchor": surface,
+                        "reading": reading,
+                        "en": en,
+                        "ruby": [(kanji, stem)] + ([(okuri, "")] if okuri else []),
+                        "masterKanji": [kanji],
+                    }
+                else:
+                    entry = {
+                        "anchor": kanji,
+                        "reading": on or en,
+                        "en": en,
+                        "ruby": [(kanji, on)] if on else [(kanji, "")],
+                        "masterKanji": [kanji],
+                    }
+        if not _validate_entry(entry, corpus | party_ids, joyo):
+            raise SystemExit(f"Cannot build entry for {r['kanji']}")
+        regular.append(entry)
+
+    return regular
+
+
+def assemble_series_entries(
+    curated: list[dict[str, Any]],
+    remaining_regular: list[dict[str, Any]],
+    *,
+    reward_parts: list[int] | None = None,
+    rewards: list[dict[str, Any]] | None = None,
+    finale: dict[str, Any] | None = None,
+    part_size: int = PART_SIZE,
+) -> list[dict[str, Any]]:
+    """Merge curated + remaining, inject party rewards on chosen parts, append biáng."""
+    reward_parts = list(reward_parts or PARTY_REWARD_PARTS)
+    rewards = list(rewards if rewards is not None else PARTY_REWARDS)
+    finale = dict(finale if finale is not None else BIANG_FINALE)
+
+    if len(reward_parts) != len(rewards):
+        raise SystemExit(
+            f"reward_parts ({len(reward_parts)}) must match rewards ({len(rewards)})"
+        )
+
+    regular = list(curated) + list(remaining_regular)
+    reward_at = {part: rewards[i] for i, part in enumerate(reward_parts)}
+
+    out: list[dict[str, Any]] = []
+    ri = 0
+    part = 1
+    # Fill complete parts until regular is exhausted enough for finale padding.
+    # Final part is assembled after the loop with leftover regular + biáng.
+    while True:
+        remaining_regular_n = len(regular) - ri
+        # Stop when leftover regular fits in a short finale part (with biáng).
+        # Keep going while we still owe reward parts or have a full part of regulars.
+        needs_reward = part in reward_at
+        if not needs_reward and remaining_regular_n <= part_size - 1:
+            break
+        if needs_reward:
+            take = part_size - 1
+            chunk = regular[ri : ri + take]
+            if len(chunk) < take:
+                raise SystemExit(
+                    f"Part {part}: need {take} regulars for reward slot, have {len(chunk)}"
+                )
+            ri += take
+            out.extend(chunk)
+            out.append(dict(reward_at[part]))
+        else:
+            take = part_size
+            chunk = regular[ri : ri + take]
+            if len(chunk) < take:
+                break
+            ri += take
+            out.extend(chunk)
+        part += 1
+
+    leftover = regular[ri:]
+    out.extend(leftover)
+    out.append(finale)
+    return out
+
 
 # High-value remaining compounds (kanji → entry). Prefer these over auto fallback.
 CURATED: dict[str, dict[str, Any]] = {
@@ -287,118 +432,18 @@ def _validate_entry(entry: dict[str, Any], corpus: set[str], joyo: set[str]) -> 
     return True
 
 
-def load_master_rows() -> list[dict]:
-    with MASTER_CSV.open(encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-
-def build_remaining_entries(used_master: set[str]) -> list[dict[str, Any]]:
-    """Return remaining series entries (parts 5+), including rewards & biáng finale."""
-    rows = load_master_rows()
-    corpus: set[str] = set()
-    joyo: set[str] = set()
-    by: dict[str, dict] = {}
-    for r in rows:
-        by[r["kanji"]] = r
-        if r.get("category") == "joyo":
-            joyo.add(r["kanji"])
-        if (r.get("grade") == "H") or r.get("category") in {
-            "heisig_extra",
-            "party_kanji",
-        }:
-            corpus.add(r["kanji"])
-
-    party_ids = {m for e in PARTY_REWARDS for m in e["masterKanji"]}
-    party_ids.add("𰻞")
-
-    remain_rows: list[dict] = []
-    seen: set[str] = set()
-    for r in rows:
-        k = r["kanji"]
-        if k in seen or k in used_master or k in party_ids:
-            continue
-        if k not in corpus:
-            continue
-        if r.get("category") == "party_kanji":
-            continue
-        seen.add(k)
-        remain_rows.append(r)
-
-    # Familiarity-ish: frequency rank ascending
-    remain_rows.sort(key=lambda r: int(r.get("frequency_rank") or 99999))
-
-    regular: list[dict[str, Any]] = []
-    for r in remain_rows:
-        entry = _auto_entry(r)
-        # Skip curated that fail validation (e.g. missing partner kanji)
-        if not _validate_entry(entry, corpus | party_ids, joyo):
-            # Fallback to safe auto without curated
-            kanji = r["kanji"]
-            if kanji in CURATED:
-                kun = _parse_kun(r)
-                en = _keyword_en(r)
-                on = _first_on(r)
-                if kun:
-                    surface, reading = kun
-                    okuri = surface[len(kanji) :] if surface != kanji else ""
-                    stem = reading[: len(reading) - len(okuri)] if okuri else reading
-                    entry = {
-                        "anchor": surface,
-                        "reading": reading,
-                        "en": en,
-                        "ruby": [(kanji, stem)] + ([(okuri, "")] if okuri else []),
-                        "masterKanji": [kanji],
-                    }
-                else:
-                    entry = {
-                        "anchor": kanji,
-                        "reading": on or en,
-                        "en": en,
-                        "ruby": [(kanji, on)] if on else [(kanji, "")],
-                        "masterKanji": [kanji],
-                    }
-        if not _validate_entry(entry, corpus | party_ids, joyo):
-            raise SystemExit(f"Cannot build entry for {r['kanji']}")
-        regular.append(entry)
-
-    # Interleave: parts of 50 with reward at end for first len(PARTY_REWARDS) parts
-    part_size = 50
-    reward_parts = len(PARTY_REWARDS)  # 12
-    out: list[dict[str, Any]] = []
-    ri = 0
-    reward_i = 0
-
-    while ri < len(regular) or reward_i < reward_parts:
-        # How many regular slots this part?
-        if reward_i < reward_parts:
-            take = part_size - 1
-            chunk = regular[ri : ri + take]
-            ri += len(chunk)
-            out.extend(chunk)
-            out.append(dict(PARTY_REWARDS[reward_i]))
-            reward_i += 1
-            # Pad logic: if chunk short, still ok (last reward parts near end)
-        else:
-            take = part_size
-            chunk = regular[ri : ri + take]
-            if not chunk:
-                break
-            ri += len(chunk)
-            out.extend(chunk)
-
-    # Append any leftover regular (shouldn't happen if math right)
-    if ri < len(regular):
-        out.extend(regular[ri:])
-
-    out.append(dict(BIANG_FINALE))
-    return out
-
-
 if __name__ == "__main__":
-    # Quick smoke test
     used: set[str] = set()
-    entries = build_remaining_entries(used)
-    print(len(entries), "entries")
-    print("first", entries[0]["anchor"], "last", entries[-1]["anchor"])
-    print("rewards", sum(1 for e in entries if e.get("reward")))
-    print("finale", entries[-1].get("celebration"), entries[-1]["anchor"])
+    remaining = build_remaining_entries(used)
+    series = assemble_series_entries([], remaining)
+    print(len(series), "entries")
+    print(
+        "rewards",
+        sum(1 for e in series if e.get("reward") and not e.get("finale")),
+    )
+    print("finale", series[-1].get("celebration"), series[-1]["anchor"])
+    for i, e in enumerate(series):
+        if e.get("reward"):
+            part = i // PART_SIZE + 1
+            slot = i % PART_SIZE + 1
+            print(f"  part {part:02d} slot {slot:02d}: {e['anchor']}")

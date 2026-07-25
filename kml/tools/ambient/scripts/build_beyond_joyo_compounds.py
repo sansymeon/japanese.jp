@@ -21,7 +21,10 @@ sys.path.insert(0, str(SCRIPTS))
 
 from collection_paths import write_collection_path  # noqa: E402
 from compounds_ruby import ruby_compound, ruby_word  # noqa: E402
-from beyond_joyo_remaining import build_remaining_entries  # noqa: E402
+from beyond_joyo_remaining import (  # noqa: E402
+    assemble_series_entries,
+    build_remaining_entries,
+)
 
 COLLECTIONS = ROOT / "collections" / "beyond_joyo"
 JUKUGO = COLLECTIONS / "beyond_joyo_jukugo_list.json"
@@ -31,6 +34,7 @@ MASTER_CSV = REPO / "data" / "kanji" / "kanji_master.csv"
 PART_SIZE = 50
 SOUNDTRACK_CYCLE = 3
 SOUNDTRACK_FALLBACK = "audio/jr_high_compounds_soundtrack_1.mp3"
+SERIES_SOUNDTRACK = "audio/beyond_joyo_{part}.mp3"
 SERIES_ID = "beyond_joyo_compounds"
 SERIES_TITLE = "Beyond Jōyō Kanji Compounds"
 SERIES_TITLE_JA = "常用外漢字熟語"
@@ -1462,12 +1466,30 @@ def load_master() -> dict[str, dict]:
 
 
 def soundtrack_for_part(part: int) -> tuple[str, int]:
-    slot = ((part - 1) % SOUNDTRACK_CYCLE) + 1
-    rel = f"audio/jr_high_compounds_soundtrack_{slot}.mp3"
-    path = ROOT / rel
-    if not path.is_file():
-        rel = SOUNDTRACK_FALLBACK
-        path = ROOT / rel
+    """Prefer beyond_joyo_{part}.mp3; else cycle available beyond_joyo_*.mp3; else Jr High."""
+    series_rel = SERIES_SOUNDTRACK.format(part=part)
+    series_path = ROOT / series_rel
+    if series_path.is_file():
+        rel = series_rel
+        path = series_path
+    else:
+        available = sorted(
+            ROOT.glob("audio/beyond_joyo_*.mp3"),
+            key=lambda p: int(p.stem.rsplit("_", 1)[-1])
+            if p.stem.rsplit("_", 1)[-1].isdigit()
+            else 9999,
+        )
+        available = [p for p in available if p.stem.rsplit("_", 1)[-1].isdigit()]
+        if available:
+            path = available[(part - 1) % len(available)]
+            rel = f"audio/{path.name}"
+        else:
+            slot = ((part - 1) % SOUNDTRACK_CYCLE) + 1
+            rel = f"audio/jr_high_compounds_soundtrack_{slot}.mp3"
+            path = ROOT / rel
+            if not path.is_file():
+                rel = SOUNDTRACK_FALLBACK
+                path = ROOT / rel
     duration_ms = 1005035
     try:
         out = subprocess.check_output(
@@ -1498,7 +1520,7 @@ def content_runtime_ms(n: int) -> int:
     return OPEN + (n - 1) * STEP + LAST_BODY + REVIEW + FADE + BLACK
 
 
-def exhibition() -> dict:
+def exhibition(is_finale: bool = False) -> dict:
     return {
         "artworkArrivalMs": 0,
         "artworkArrivalFadeMs": 1200,
@@ -1519,10 +1541,39 @@ def exhibition() -> dict:
         "compoundsStepFadeMs": 1400,
         "compoundsFinalReviewHoldMs": 22000,
         "compoundsFinalFadeToBlackMs": 4000,
+        # Party-kanji rewards: one restrained wave of gold flakes as the meaning
+        # lands, drifting on through the hold. Identical for all twelve rewards.
+        "compoundsRewardFlakeCount": 30,
+        "compoundsRewardFlakeSpreadMs": 1600,
+        "compoundsRewardFlakeDriftMinMs": 10000,
+        "compoundsRewardFlakeDriftMaxMs": 16000,
+        # biáng finale: the reward wave, a breath, a second gentler wave — then a
+        # longer shower over the last of the kanji hold that keeps settling through
+        # the fade to black while the crest appears, and fades out over the crest.
+        "compoundsFinaleFlakeWaveCount": 40,
+        "compoundsFinaleFlakeSecondWaveCount": 26,
+        "compoundsFinaleFlakeWaveGapMs": 3200,
+        "compoundsFinaleFlakeSpreadMs": 2200,
+        "compoundsFinaleFlakeDriftMinMs": 9000,
+        "compoundsFinaleFlakeDriftMaxMs": 15000,
+        "compoundsFinaleConfettiLeadMs": 9000,
+        "compoundsFinaleConfettiCount": 96,
+        "compoundsFinaleConfettiSpreadMs": 5000,
+        "compoundsFinaleConfettiFallMinMs": 4500,
+        "compoundsFinaleConfettiFallMaxMs": 7500,
+        "compoundsFinaleConfettiRestHoldMs": 4500,
+        "compoundsFinaleConfettiFadeMs": 3500,
         "vocabArtworkExhaleMs": 2800,
         "exhibitTransitionMs": 0,
         "kenBurnsDurationMs": 1200000,
-        "closingBlackAfterMs": 600,
+        "closingBlackBeforeMs": 800,
+        "closingRevealMs": 4200 if is_finale else 3200,
+        # The series ends here — let the crest sit noticeably longer than a part close.
+        "closingHoldMs": 7000 if is_finale else 2800,
+        "closingExhaleMs": 5000 if is_finale else 3500,
+        "closingSilenceHoldMs": 0,
+        "closingBlackAfterMs": 800,
+        "closingFadeToBlackMs": 3500,
     }
 
 
@@ -1538,7 +1589,20 @@ def display() -> dict:
         "verseMode": "sequential",
         "typography": "mobile-refine",
         "typographyStyle": "foundations",
+        "bookendStyle": "galleryCrest",
         "cameraMotionScale": 1.0,
+    }
+
+
+def bookends() -> dict:
+    """Silent gold 漢 crest after the final compound review fades to black."""
+    return {
+        "mode": "silentCrest",
+        "closing": {
+            "image": "images/gold_closing.png",
+            "bookendSize": "small",
+            "silentAfterSoundtrack": True,
+        },
     }
 
 
@@ -1549,11 +1613,13 @@ def jp_html_for(ruby: list[tuple[str, str]]) -> str:
 
 
 def enrich_entries(master: dict[str, dict]) -> list[dict]:
-    # Parts 1–4 curated, then remaining auto + party rewards + biáng finale.
+    # Curated opener + remaining regulars; party rewards scattered (parts 2, 4…);
+    # 𰻞 (biáng) absolute finale.
     used_preview = {
         mk for raw in SERIES_ENTRIES for mk in raw["masterKanji"]
     }
-    all_raw = list(SERIES_ENTRIES) + build_remaining_entries(used_preview)
+    remaining = build_remaining_entries(used_preview)
+    all_raw = assemble_series_entries(list(SERIES_ENTRIES), remaining)
 
     entries: list[dict] = []
     seen_master: set[str] = set()
@@ -1615,8 +1681,8 @@ def write_jukugo_list(entries: list[dict]) -> None:
         "notes": [
             "Beyond Jōyō Kanji Compounds (常用外漢字熟語).",
             "Source corpus exclusively from kanji_master.csv non-Jōyō.",
-            "Parts 1–4: curated familiarity arc.",
-            "Parts 5+: remaining master-list kanji; one party-kanji reward near each early part end.",
+            "Parts 1–4: curated familiarity arc (rewards may land in parts 2+).",
+            "Party-kanji rewards scattered through the series (parts 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18).",
             "Series finale: 𰻞 (biáng biáng noodles) with fireworks celebration.",
         ],
         "entries": entries,
@@ -1666,12 +1732,18 @@ def build_part(part: int, batch: list[dict], part_count: int) -> dict:
     )
     if is_finale_part:
         notes += (
-            "SERIES FINALE: ends with 𰻞 (biáng biáng noodles) + fireworks celebration. "
+            "SERIES FINALE: ends with 𰻞 (biáng biáng noodles). Gold flakes in two "
+            "waves as the meaning lands, then a longer shower over the last kanji "
+            "hold that settles while the crest fades in and dims over it. Crest "
+            "holds longer than a normal part close. "
         )
     elif any(e.get("reward") for e in batch):
-        notes += "Includes one party-kanji reward near the end. "
+        notes += (
+            "Ends on a party-kanji reward: one restrained wave of gold flakes as the "
+            "meaning lands, drifting on through the hold. "
+        )
     notes += (
-        "Ending: final compound review ~22s → 4s fade to black. "
+        "Ending: final compound review ~22s → 4s fade to black → gold 漢 crest. "
         f"Soundtrack: {soundtrack} (~{soundtrack_ms // 1000}s)."
     )
     return {
@@ -1682,7 +1754,8 @@ def build_part(part: int, batch: list[dict], part_count: int) -> dict:
         "titleJa": f"{SERIES_TITLE_JA} — 第{part}部",
         "notes": notes,
         "soundtrack": {"main": soundtrack},
-        "exhibition": exhibition(),
+        "bookends": bookends(),
+        "exhibition": exhibition(is_finale=is_finale_part),
         "display": display(),
         "meta": {
             "series": SERIES_ID,
@@ -1707,7 +1780,7 @@ def build_part(part: int, batch: list[dict], part_count: int) -> dict:
                 f"({int(runtime // 60000)}:{int(runtime % 60000) // 1000:02d}) "
                 "including review+fade."
             ),
-            "ending": "finalCompoundReview",
+            "ending": "finalCompoundReviewThenGoldCrest",
             "anchorRule": "mostUsefulCompoundByFamiliarity",
             "jukugoList": "beyond_joyo_jukugo_list.json",
             "masterCsv": "kml/data/kanji/kanji_master.csv",

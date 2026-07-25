@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PORT = 8782
 BUILD_SCRIPT = "build_lesson_01_assisted_reading_experimental.py"
-LESSONS = list(range(1, 11))
+LESSONS = list(range(1, 11)) + list(range(33, 38))
 
 # Lesson 8: fade out soundtrack/video from 12:06, then cut (10s fade).
 READING_OUTPUT_FADES: dict[int, tuple[int, int]] = {
@@ -35,7 +35,7 @@ from exhibition_record_common import (  # noqa: E402
     exhibition_record_url,
     format_mmss,
     load_collection,
-    mux_video_with_audio,
+    mux_exhibition_soundtrack,
     presentation_timeout_ms,
     reading_exhibition_soundtrack_start_ms,
     start_server,
@@ -71,16 +71,12 @@ def record(*, lesson: int, port: int) -> Path:
 
     webm = capture_exhibition_webm(url=url, tmp_dir=tmp_dir, timeout_ms=timeout_ms)
 
-    filter_complex = (
-        f"[1:a]adelay={soundtrack_start_ms}|{soundtrack_start_ms}[m];"
-        f"[m]asetpts=PTS-STARTPTS[a]"
-    )
     tmp_mux = tmp_dir / "muxed.mp4"
-    mux_video_with_audio(
+    mux_exhibition_soundtrack(
         webm=webm,
         output_mp4=tmp_mux,
-        filter_complex=filter_complex,
-        audio_inputs=[soundtrack],
+        soundtrack=soundtrack,
+        soundtrack_start_ms=soundtrack_start_ms,
     )
     shutil.move(str(tmp_mux), str(out_path))
     for f in tmp_dir.iterdir():
@@ -96,7 +92,7 @@ def record(*, lesson: int, port: int) -> Path:
         cut_s = fade_start_s + fade_duration_s
         print(
             f"  → {out_path} "
-            f"(fade @ {format_mmss(fade_start_s)}, cut @ {format_mmss(cut_s)})"
+            f"(legacy fade @ {format_mmss(fade_start_s)}, cut @ {format_mmss(cut_s)})"
         )
     else:
         print(f"  → {out_path}")

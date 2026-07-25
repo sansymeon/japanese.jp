@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KML Japan — Learn Japanese Through Beauty • Music • Meaning</title>
-  <meta name="description" content="Peaceful educational videos exploring Japanese vocabulary, kanji, kana, and culture through beautiful imagery, carefully chosen music, and thoughtfully paced lessons." />
+  <title>KML Japan — Kanji Mnemonic Learning</title>
+  <meta name="description" content="Enter the world of KML — peaceful Japanese learning through beauty, music, and meaning. Over 200 videos exploring kanji, kana, vocabulary, and culture." />
   <meta name="theme-color" content="#0B0B0C" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,71 +36,209 @@
 
       <nav class="site-nav" id="siteNav" aria-label="Primary">
         <ul>
-          <li><a href="#series">Series</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#youtube">YouTube</a></li>
+          <li><a href="#series">Collections</a></li>
           <li><a href="#stats">Curriculum</a></li>
           <li><a href="#publications">Publications</a></li>
-          <li>
-            <a
-              data-link="youtube"
-              href="https://www.youtube.com/@ambientkanji"
-              target="_blank"
-              rel="noopener noreferrer"
-            >YouTube</a>
-          </li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="kml" aria-labelledby="hero-heading">
-      <div class="container hero-inner">
-        <a
-          class="crest-mount"
-          data-link="youtube"
-          href="https://www.youtube.com/@ambientkanji"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit KML Japan on YouTube"
-        >
-          <img
-            class="crest-image"
-            src="./assets/images/kml_japan_crest.png"
-            alt="Gold foil 漢 crest — KML Japan"
-            width="800"
-            height="800"
-          />
-        </a>
+    <!-- ========== Museum entrance ========== -->
+    <section class="hero hero--cinematic" id="kml" aria-labelledby="hero-heading">
+      <div class="hero-media" aria-hidden="true">
+        <img
+          class="hero-photo"
+          src="./kml/assets/studies/village.png"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+        <div class="hero-veil"></div>
+      </div>
 
-        <h1 id="hero-heading">Learn Japanese Through Beauty • Music • Meaning</h1>
+      <div class="container hero-inner">
+        <img
+          class="hero-crest"
+          src="./assets/images/kml_japan_crest.png"
+          alt="Gold foil 漢 crest — KML Japan"
+          width="800"
+          height="800"
+        />
+
+        <p class="hero-brand">Kanji Mnemonic Learning</p>
+        <h1 id="hero-heading">Enter a quieter way to learn Japanese</h1>
         <p class="hero-lead">
-          Peaceful educational videos exploring Japanese vocabulary, kanji, kana, and culture
-          through beautiful imagery, carefully chosen music, and thoughtfully paced lessons.
+          Beauty, music, and meaning — a museum of language you can walk through slowly.
         </p>
-        <a
-          class="btn btn-primary"
-          data-link="youtube"
-          href="https://www.youtube.com/@ambientkanji"
-          target="_blank"
-          rel="noopener noreferrer"
-        >▶ Visit YouTube</a>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" data-link="curriculum" href="./kml/index.html">Begin Learning</a>
+          <a
+            class="btn btn-ghost"
+            data-link="youtube"
+            href="https://www.youtube.com/@ambientkanji"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Watch on YouTube</a>
+        </div>
+      </div>
+
+      <a class="hero-scroll" href="#journey" aria-label="Continue into the gallery">
+        <span class="hero-scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ========== Invitation destinations ========== -->
+    <section class="section destinations" id="journey" aria-labelledby="journey-heading">
+      <div class="container">
+        <header class="section-head section-head--left reveal">
+          <p class="section-eyebrow">The Gallery</p>
+          <h2 id="journey-heading">Five doorways into KML</h2>
+          <p>Each room is an invitation — not a menu of buttons.</p>
+        </header>
+      </div>
+
+      <div class="destination-list">
+        <article class="destination reveal">
+          <figure class="destination-visual">
+            <img
+              src="./kml/assets/studies/forest.png"
+              alt="Sunlit path through a mossy Japanese forest"
+              width="1600"
+              height="1000"
+              loading="lazy"
+            />
+          </figure>
+          <div class="destination-copy">
+            <p class="destination-index" aria-hidden="true">01</p>
+            <h3>Philosophy</h3>
+            <p>The spirit behind learning kanji through memory, structure, and atmosphere.</p>
+            <a class="btn btn-quiet" href="./kml/lesson_00_philosophy/index.html">Enter Philosophy</a>
+          </div>
+        </article>
+
+        <article class="destination destination--flip reveal">
+          <figure class="destination-visual">
+            <img
+              src="./kml/assets/studies/shelf.png"
+              alt="Weathered wooden shelves holding books and quiet Japanese objects"
+              width="1600"
+              height="1000"
+              loading="lazy"
+            />
+          </figure>
+          <div class="destination-copy">
+            <p class="destination-index" aria-hidden="true">02</p>
+            <h3>Materials</h3>
+            <p>Set the desk, the tools, and the quiet space where memory can grow.</p>
+            <a class="btn btn-quiet" href="./kml/lesson_00_materials/index.html">View Materials</a>
+          </div>
+        </article>
+
+        <article class="destination reveal">
+          <figure class="destination-visual">
+            <img
+              src="./kml/assets/studies/foothold.png"
+              alt="A traveler’s foothold on a misty mountain ridge at dusk"
+              width="1600"
+              height="1000"
+              loading="lazy"
+            />
+          </figure>
+          <div class="destination-copy">
+            <p class="destination-index" aria-hidden="true">03</p>
+            <h3>How to Proceed</h3>
+            <p>A calm map for moving through lessons without hurry or noise.</p>
+            <a class="btn btn-quiet" href="./kml/lesson_00_proceed/index.html">Begin the Path</a>
+          </div>
+        </article>
+
+        <article class="destination destination--flip reveal">
+          <figure class="destination-visual">
+            <img
+              src="./kml/assets/studies/book.png"
+              alt="An open Japanese book on a sunlit wooden desk"
+              width="1600"
+              height="1000"
+              loading="lazy"
+            />
+          </figure>
+          <div class="destination-copy">
+            <p class="destination-index" aria-hidden="true">04</p>
+            <h3>Lessons</h3>
+            <p>Story, structure, and atmosphere — kanji remembered as living images.</p>
+            <a class="btn btn-quiet" href="./kml/contents/books/index.html">Open Lessons</a>
+          </div>
+        </article>
+
+        <article class="destination reveal">
+          <figure class="destination-visual">
+            <img
+              src="./kml/assets/studies/finger.png"
+              alt="A hand pointing toward light between misty mountain peaks"
+              width="1600"
+              height="1000"
+              loading="lazy"
+            />
+          </figure>
+          <div class="destination-copy">
+            <p class="destination-index" aria-hidden="true">05</p>
+            <h3>Stroke Practice</h3>
+            <p>Trace each character slowly — motion that teaches the eye and the hand.</p>
+            <a class="btn btn-quiet" href="./kml/tools/strokes/index.html">Start Strokes</a>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- ========== YouTube cinema ========== -->
+    <section class="cinema reveal" id="youtube" aria-labelledby="youtube-heading">
+      <div class="cinema-media" aria-hidden="true">
+        <img
+          src="./kml/assets/studies/evening.png"
+          alt=""
+          width="1920"
+          height="1080"
+          loading="lazy"
+        />
+        <div class="cinema-veil"></div>
+      </div>
+
+      <div class="container cinema-inner">
+        <p class="section-eyebrow section-eyebrow--light">Over 200 videos</p>
+        <h2 id="youtube-heading">Watch on YouTube</h2>
+        <p class="cinema-lead">
+          The living gallery — vocabulary, kanji, kana, and ambient Japan,
+          paced for beauty rather than speed.
+        </p>
+        <div class="cinema-actions">
+          <a
+            class="btn btn-primary"
+            data-link="youtube"
+            href="https://www.youtube.com/@ambientkanji"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Visit the Channel</a>
+          <a class="btn btn-ghost" href="#series">Browse Collections</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Collections / playlists ========== -->
     <section class="section" id="series" aria-labelledby="series-heading">
       <div class="container">
-        <div class="section-head">
-          <h2 id="series-heading">KML Japan Collections</h2>
-        </div>
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Collections</p>
+          <h2 id="series-heading">Rooms within the channel</h2>
+          <p>Each collection is a wing of the museum — enter wherever you feel drawn.</p>
+        </header>
 
         <div class="gallery-hall">
-          <!--
-            Gallery entrances: swap only the <img src> to replace artwork later.
-            Playlist hrefs: SITE_CONFIG.galleryEntrances in homepage.js
-            Order: Vocabulary → 常用漢字 → Remembering the Kanji →
-            Elementary School Kanji → Start Here (Kana) → Beyond Daily Use Kanji → Ambient Japan.
-          -->
-
           <article class="gallery-entry gallery-entry--shift-end reveal">
             <figure class="gallery-exhibit">
               <a
@@ -124,23 +262,14 @@
             </figure>
             <div class="gallery-copy">
               <h3>Japanese Vocabulary</h3>
-              <ul class="series-points">
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8c0-2.5 3.5-4.5 7-4.5S19 5.5 19 8c0 1.6-1.4 3-3.4 3.8L17 17l-4.2-2.6C12.5 14.5 12.2 14.5 12 14.5c-3.5 0-7-2-7-6.5z"/></svg></span>
-                  <span class="series-label">Learn the words used most often in everyday Japanese</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.2"/><path d="M8 5.5V4.2M16 5.5V4.2M3.5 10h17"/></svg></span>
-                  <span class="series-label">Frequency-based spoken vocabulary with beautiful imagery</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 8.2v4.1l2.6 1.6"/></svg></span>
-                  <span class="series-label">Status: 20 lessons (growing)</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-              </ul>
+              <p class="gallery-blurb">Frequency-based spoken vocabulary with beautiful imagery.</p>
+              <a
+                class="btn btn-quiet"
+                data-gallery="vocabulary"
+                href="https://www.youtube.com/playlist?list=PLJemcdjLRw4w"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enter Collection</a>
             </div>
           </article>
 
@@ -170,32 +299,14 @@
                 <span class="gallery-title-ja" lang="ja">常用漢字</span>
                 <span class="gallery-title-en">Essential Kanji for Daily Use</span>
               </h3>
-              <ul class="series-points">
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"/><path d="M9 12h6M12 9v6"/></svg></span>
-                  <span class="series-label">
-                    <span class="series-label-title">Learn all 2,136 Essential Kanji</span>
-                    <span class="series-label-desc">Complete collection of Japan's official standard kanji</span>
-                  </span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="7" width="7.5" height="10" rx="1"/><rect x="13" y="7" width="7.5" height="10" rx="1"/><path d="M11 12h2"/></svg></span>
-                  <span class="series-label">
-                    <span class="series-label-title">Beautiful large-format presentation</span>
-                    <span class="series-label-desc">Learn through calm visuals, music, and repetition</span>
-                  </span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 15.5h5.5l2-4 2 7 2.5-5.5H19.5"/></svg></span>
-                  <span class="series-label">
-                    <span class="series-label-title">The foundation for everything that follows</span>
-                    <span class="series-label-desc">Prepare for compounds, vocabulary, JLPT, and real reading</span>
-                  </span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-              </ul>
+              <p class="gallery-blurb">All 2,136 essential kanji — calm visuals, music, and repetition.</p>
+              <a
+                class="btn btn-quiet"
+                data-gallery="postElementaryKanji"
+                href="https://www.youtube.com/playlist?list=PLI-ULFjSKz58"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enter Collection</a>
             </div>
           </article>
 
@@ -222,18 +333,14 @@
             </figure>
             <div class="gallery-copy">
               <h3>Remembering the Kanji</h3>
-              <ul class="series-points">
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18c2-5 5-9 9-12"/><path d="M8.5 16.5c1.8-.4 3.4-1 4.8-2"/><path d="M15 5.5l2.5 1.2-1 2.4"/></svg></span>
-                  <span class="series-label">Visual mnemonic lessons following the Heisig method</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4.5v3.2"/><path d="M7 19.5c1.2-3.8 2.8-6.2 5-7.5 2.2 1.3 3.8 3.7 5 7.5"/><circle cx="12" cy="10" r="1.2"/></svg></span>
-                  <span class="series-label">Lessons 1–10 available</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-              </ul>
+              <p class="gallery-blurb">Visual mnemonic lessons following the Heisig method.</p>
+              <a
+                class="btn btn-quiet"
+                data-gallery="rememberingKanji"
+                href="https://www.youtube.com/playlist?list=PLBv0xLsm4RBo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enter Collection</a>
             </div>
           </article>
 
@@ -260,18 +367,14 @@
             </figure>
             <div class="gallery-copy">
               <h3>Elementary School Kanji</h3>
-              <ul class="series-points">
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18.5V9.2c0-.7.6-1.2 1.2-1.2h2.1c.4 0 .8.2 1 .5L12 12l2.7-3.5c.2-.3.6-.5 1-.5h2.1c.7 0 1.2.5 1.2 1.2v9.3"/><path d="M4 18.5h16"/></svg></span>
-                  <span class="series-label">The complete Japanese elementary school curriculum</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"/><path d="M9 12h6M12 9v6"/></svg></span>
-                  <span class="series-label">Grades 1–6</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-              </ul>
+              <p class="gallery-blurb">The complete Japanese elementary school curriculum, Grades 1–6.</p>
+              <a
+                class="btn btn-quiet"
+                data-gallery="elementaryKanji"
+                href="https://www.youtube.com/playlist?list=PLZocopP--8p0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enter Collection</a>
             </div>
           </article>
 
@@ -297,44 +400,31 @@
               </a>
             </figure>
             <div class="gallery-copy">
-              <h3>Start Here – Learn Hiragana &amp; Katakana</h3>
-              <ul class="series-points">
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 16c1.5-5 4-8.5 8.5-10.5"/><path d="M8.5 12.5c3.5-.4 6.2.6 8.2 2.8"/><circle cx="8.2" cy="16.2" r="1.1"/></svg></span>
-                  <span class="series-label">Hiragana (with romaji)</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 6.5h10"/><path d="M9 6.5v11"/><path d="M9 12h6.5"/><path d="M15.5 12v5.5"/></svg></span>
-                  <span class="series-label">Katakana (with romaji)</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.5V7.2l8 4.65-8 4.65z"/><path d="M6 18.5c1.2-1.8 2.2-3.2 3-4.2"/></svg></span>
-                  <span class="series-label">Hiragana Song</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.5V7.2l8 4.65-8 4.65z"/><path d="M7 6.5h10"/><path d="M9 6.5v5"/></svg></span>
-                  <span class="series-label">Katakana Song</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-              </ul>
+              <h3>Start Here – Hiragana &amp; Katakana</h3>
+              <p class="gallery-blurb">Songs and gentle lessons for the first doorway into Japanese.</p>
+              <a
+                class="btn btn-quiet"
+                data-gallery="kanaPreschool"
+                href="https://www.youtube.com/playlist?list=PLIX7jswPySk0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enter Collection</a>
             </div>
           </article>
 
           <article class="gallery-entry gallery-entry--shift-start reveal">
             <figure class="gallery-exhibit">
               <a
-                class="gallery-frame is-coming-soon"
-                data-gallery="postJoyoKanji"
-                href="#"
-                aria-label="Beyond Daily Use Kanji Collection — Coming Soon"
-                aria-disabled="true"
+                class="gallery-frame"
+                data-gallery="beyondJoyoKanji"
+                href="https://www.youtube.com/playlist?list=PLFcXrI1lQAqI"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Enter Beyond Joyo Kanji Collection on YouTube"
               >
                 <span class="gallery-mat">
                   <img
-                    src="./kml/assets/images/post_joyo_coming_soon.png"
+                    src="./kml/assets/images/beyond_joyo.png"
                     alt=""
                     width="640"
                     height="360"
@@ -344,19 +434,15 @@
               </a>
             </figure>
             <div class="gallery-copy">
-              <h3>Beyond Daily Use Kanji</h3>
-              <ul class="series-points">
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5c-2.8 2.2-4.5 5-4.5 8.2A4.5 4.5 0 0 0 12 17.7a4.5 4.5 0 0 0 4.5-4.5C16.5 10 14.8 7.2 12 5z"/></svg></span>
-                  <span class="series-label">Beyond Japan’s 2,136 standard everyday kanji</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 8.2v4.1l2.6 1.6"/></svg></span>
-                  <span class="series-label">Coming Soon</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-              </ul>
+              <h3>Beyond Joyo Kanji</h3>
+              <p class="gallery-blurb">Compound vocabulary that steps past Japan’s everyday kanji list.</p>
+              <a
+                class="btn btn-quiet"
+                data-gallery="beyondJoyoKanji"
+                href="https://www.youtube.com/playlist?list=PLFcXrI1lQAqI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enter Collection</a>
             </div>
           </article>
 
@@ -383,35 +469,28 @@
             </figure>
             <div class="gallery-copy">
               <h3>Ambient Japan</h3>
-              <ul class="series-points">
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17.5l5.2-6.2 3.1 3.4L16.5 9l3.5 8.5z"/><path d="M4 17.5h16"/></svg></span>
-                  <span class="series-label">Seasonal scenery and quiet Japanese streets</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 16.5h14"/><path d="M7.5 16.5V9.2"/><path d="M16.5 16.5V9.2"/><path d="M5.5 9.2h13"/><path d="M12 9.2V6.5"/><path d="M9.5 19v-2.5h5V19"/></svg></span>
-                  <span class="series-label">Nature, shrines, temples, and cinematic landscapes</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-                <li>
-                  <span class="series-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 15.5c1.8-1 3.2-2.6 4-4.6"/><path d="M9.2 15.5c1.8-1 3.2-2.6 4-4.6"/><path d="M13.4 15.5c1.8-1 3.2-2.6 4-4.6"/><circle cx="17.5" cy="9.2" r="1.3"/></svg></span>
-                  <span class="series-label">Relaxing ambient videos for simply enjoying Japan</span>
-                  <span class="series-chevron" aria-hidden="true">›</span>
-                </li>
-              </ul>
+              <p class="gallery-blurb">Seasonal scenery, shrines, and quiet streets — simply enjoy Japan.</p>
+              <a
+                class="btn btn-quiet"
+                data-gallery="ambientJapan"
+                href="https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enter Collection</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section reveal" id="stats" aria-labelledby="stats-heading">
+    <!-- ========== Curriculum measure ========== -->
+    <section class="section section--paper reveal" id="stats" aria-labelledby="stats-heading">
       <div class="container">
-        <div class="section-head">
-          <h2 id="stats-heading">Curriculum</h2>
-          <p>A quiet measure of what the channel already offers.</p>
-        </div>
+        <header class="section-head">
+          <p class="section-eyebrow section-eyebrow--dark">Curriculum</p>
+          <h2 id="stats-heading">A quiet measure of what awaits</h2>
+          <p>The channel already holds a living archive of Japanese learning.</p>
+        </header>
 
         <div
           id="statsStatus"
@@ -447,7 +526,6 @@
         <p class="stats-link">
           <a data-link="analytics" href="./kml/analytics/dashboard/">Analytics dashboard</a>
         </p>
-        <!-- Hidden live fact targets for homepage.js -->
         <span id="factJoyo" data-stat hidden></span>
         <span id="factMultiContext" data-stat hidden></span>
         <span id="factJoyo3" data-stat hidden></span>
@@ -455,15 +533,17 @@
       </div>
     </section>
 
+    <!-- ========== Publications ========== -->
     <section class="section reveal" id="publications" aria-labelledby="publications-heading">
       <div class="container">
-        <div class="section-head">
+        <header class="section-head">
+          <p class="section-eyebrow">Library</p>
           <h2 id="publications-heading">Publications</h2>
           <p>
             Reference works supporting the expanding KML Japan database —
             documentation of the same language collection that shapes the videos.
           </p>
-        </div>
+        </header>
 
         <div class="book-list">
           <div class="book-item">
@@ -519,7 +599,8 @@
 
       <nav class="footer-nav" aria-label="Footer">
         <a data-link="youtube" href="https://www.youtube.com/@ambientkanji" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="#series">Series</a>
+        <a href="#journey">Journey</a>
+        <a href="#series">Collections</a>
         <a data-link="analytics" href="./kml/analytics/dashboard/">Analytics</a>
         <a href="#publications">Publications</a>
         <a href="./ja/index.html" hreflang="ja" lang="ja">日本語</a>

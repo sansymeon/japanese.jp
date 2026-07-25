@@ -19,10 +19,14 @@ def lesson_folder(lesson: int) -> str:
 def collection_dir_for_id(collection_id: str) -> str | None:
     if collection_id in _LESSON_FOLDER_OVERRIDES:
         return _LESSON_FOLDER_OVERRIDES[collection_id]
+    if collection_id.startswith("proto_"):
+        return "prototypes"
     if collection_id.startswith("post_elementary"):
         return "post_elementary"
     if collection_id.startswith("beyond_joyo"):
         return "beyond_joyo"
+    if collection_id.startswith("ambient_gallery_film"):
+        return "ambient_gallery_film"
     if re.match(r"vocabulary_\d+", collection_id):
         return "vocabulary"
     if collection_id.startswith("hiragana_song"):
@@ -53,7 +57,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
     if not m:
         return None
     n = int(m.group(1))
-    if 1 <= n <= 10:
+    # Nest Heisig lesson collections (1–10 shipped; 33–37 galleries; others as added).
+    if 1 <= n <= 10 or 33 <= n <= 37:
         return lesson_folder(n)
     return None
 

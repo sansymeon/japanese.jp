@@ -22,7 +22,7 @@ from exhibition_record_common import (  # noqa: E402
     ensure_deps,
     exhibition_record_url,
     load_collection,
-    mux_video_with_audio,
+    mux_exhibition_soundtrack,
     presentation_timeout_ms,
     start_server,
     stop_server,
@@ -39,7 +39,15 @@ BUILDERS = {
     8: "build_lesson_08_gallery.py",
     9: "build_lesson_09_gallery.py",
     10: "build_lesson_10_gallery.py",
+    # Lessons 33–37 use the shared gallery builder (same profile as 1–10).
+    33: "build_lesson_gallery.py",
+    34: "build_lesson_gallery.py",
+    35: "build_lesson_gallery.py",
+    36: "build_lesson_gallery.py",
+    37: "build_lesson_gallery.py",
 }
+
+SHARED_GALLERY_BUILDER = "build_lesson_gallery.py"
 
 
 def collection_id(lesson: int) -> str:
@@ -74,16 +82,12 @@ def record(*, lesson: int, port: int) -> Path:
 
     webm = capture_exhibition_webm(url=url, tmp_dir=tmp_dir, timeout_ms=timeout_ms)
 
-    filter_complex = (
-        f"[1:a]adelay={soundtrack_start_ms}|{soundtrack_start_ms}[m];"
-        f"[m]asetpts=PTS-STARTPTS[a]"
-    )
     tmp_mux = tmp_dir / "muxed.mp4"
-    mux_video_with_audio(
+    mux_exhibition_soundtrack(
         webm=webm,
         output_mp4=tmp_mux,
-        filter_complex=filter_complex,
-        audio_inputs=[soundtrack],
+        soundtrack=soundtrack,
+        soundtrack_start_ms=soundtrack_start_ms,
     )
     shutil.move(str(tmp_mux), str(out_path))
     for f in tmp_dir.iterdir():
@@ -105,7 +109,10 @@ def main() -> int:
 
     if args.rebuild:
         script = BUILDERS[args.lesson]
-        subprocess.run([sys.executable, str(ROOT / "scripts" / script)], check=True, cwd=ROOT)
+        cmd = [sys.executable, str(ROOT / "scripts" / script)]
+        if script == SHARED_GALLERY_BUILDER:
+            cmd.extend(["--lesson", str(args.lesson)])
+        subprocess.run(cmd, check=True, cwd=ROOT)
 
     server = start_server(ROOT, args.port)
     try:

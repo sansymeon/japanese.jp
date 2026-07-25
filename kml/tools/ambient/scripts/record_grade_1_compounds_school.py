@@ -21,7 +21,7 @@ from exhibition_record_common import (  # noqa: E402
     compounds_school_soundtrack_start_ms,
     ensure_deps,
     load_collection,
-    mux_video_with_audio,
+    mux_exhibition_soundtrack,
     presentation_timeout_ms,
     start_server,
 )
@@ -49,16 +49,12 @@ def record(*, part: int, port: int) -> Path:
 
     webm = capture_exhibition_webm(url=url, tmp_dir=tmp_dir, timeout_ms=timeout_ms)
 
-    filter_complex = (
-        f"[1:a]adelay={soundtrack_start_ms}|{soundtrack_start_ms}[m];"
-        f"[m]asetpts=PTS-STARTPTS[a]"
-    )
     tmp_mux = tmp_dir / "muxed.mp4"
-    mux_video_with_audio(
+    mux_exhibition_soundtrack(
         webm=webm,
         output_mp4=tmp_mux,
-        filter_complex=filter_complex,
-        audio_inputs=[soundtrack],
+        soundtrack=soundtrack,
+        soundtrack_start_ms=soundtrack_start_ms,
     )
     shutil.move(str(tmp_mux), str(out_path))
     for f in tmp_dir.iterdir():

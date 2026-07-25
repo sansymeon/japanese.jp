@@ -152,6 +152,12 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   z-index: 20;
   pointer-events: none;
   overflow: hidden;
+  opacity: 1;
+  transition: opacity var(--kml-confetti-layer-fade, 3500ms) ease-in;
+}
+
+.exhibition-root.is-japanese-vocabulary .grade1-confetti-layer.is-confetti-fading {
+  opacity: 0;
 }
 
 .exhibition-root.is-japanese-vocabulary .grade1-confetti-piece {
@@ -177,47 +183,102 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   }
 }
 
-.exhibition-root.is-japanese-vocabulary.is-compound-reward .kml-compound-jp.is-reward-glow {
-  text-shadow:
-    0 0 18px rgba(255, 214, 102, 0.45),
-    0 0 42px rgba(255, 180, 60, 0.28);
-  animation: bj-reward-glow 1.4s ease-out forwards;
+/* Gold flakes — a museum spotlight catching flakes in the air, not a party popper.
+   Every party-kanji reward gets the same restrained drift; the biáng finale layers
+   two waves and then a longer shower that comes to rest, so the closing crest can
+   fade in underneath it. */
+.exhibition-root.is-japanese-vocabulary .kml-gold-flake {
+  position: absolute;
+  border-radius: 0.1rem;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  animation: kml-gold-flake-drift var(--flake-duration, 10s) linear
+    var(--flake-delay, 0ms) forwards;
 }
 
+.exhibition-root.is-japanese-vocabulary .kml-gold-flake.is-resting {
+  animation-name: kml-gold-flake-rest;
+  animation-timing-function: cubic-bezier(0.18, 0.58, 0.2, 1);
+}
+
+@keyframes kml-gold-flake-drift {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  14% {
+    opacity: var(--flake-peak, 0.7);
+  }
+  55% {
+    transform: translate3d(var(--flake-sway, 0px), calc(var(--flake-dy, 40vh) * 0.55), 0)
+      rotate(calc(var(--flake-rot, 160deg) * 0.55));
+  }
+  78% {
+    opacity: var(--flake-peak, 0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--flake-dx, 0px), var(--flake-dy, 40vh), 0)
+      rotate(var(--flake-rot, 160deg));
+  }
+}
+
+@keyframes kml-gold-flake-rest {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  8% {
+    opacity: var(--flake-peak, 0.85);
+  }
+  55% {
+    transform: translate3d(var(--flake-sway, 0px), calc(var(--flake-dy, 90vh) * 0.6), 0)
+      rotate(calc(var(--flake-rot, 220deg) * 0.6));
+  }
+  100% {
+    opacity: var(--flake-peak, 0.85);
+    transform: translate3d(var(--flake-dx, 0px), var(--flake-dy, 90vh), 0)
+      rotate(var(--flake-rot, 220deg));
+  }
+}
+
+/* Dense party glyphs (鑫, 龘, 𰻞, …): large but stroke-legible in the
+   1920×1080 recording pipeline. Weight 600 at ~70vmin fills counters. */
+.exhibition-root.is-japanese-vocabulary.is-compound-reward .kml-compound-jp {
+  --kml-party-reward-jp: clamp(9rem, 52vmin, 28rem);
+  font-size: var(--kml-party-reward-jp);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.exhibition-root.is-japanese-vocabulary.is-compound-celebration .kml-compound-jp {
+  /* biáng: still heroic, but thinner and slightly smaller than rewards */
+  --kml-party-reward-jp: clamp(8rem, 48vmin, 26rem);
+  font-size: var(--kml-party-reward-jp);
+  font-weight: 400;
+}
+
+.exhibition-root.is-japanese-vocabulary.is-compound-reward
+  .exhibition-verse-jp.show-furigana
+  ruby
+  rt,
+.exhibition-root.is-japanese-vocabulary.is-compound-celebration
+  .exhibition-verse-jp.show-furigana
+  ruby
+  rt {
+  font-size: clamp(1.1rem, 3.2vmin, 2rem);
+}
+
+/* Party rewards / biáng finale: no glow — dense glyphs must stay stroke-legible
+   in the 1920×1080 recording pipeline (soft text-shadow + brightness bloom into
+   a white mass). Gold flakes remain; the kanji itself is clean. */
+.exhibition-root.is-japanese-vocabulary.is-compound-reward .kml-compound-jp.is-reward-glow,
 .exhibition-root.is-japanese-vocabulary.is-compound-celebration .kml-compound-jp.is-reward-glow {
-  text-shadow:
-    0 0 22px rgba(255, 120, 160, 0.55),
-    0 0 48px rgba(120, 180, 255, 0.4),
-    0 0 72px rgba(255, 220, 100, 0.35);
-  animation: bj-finale-glow 2s ease-out forwards;
-}
-
-@keyframes bj-reward-glow {
-  0% {
-    filter: brightness(1);
-    transform: scale(1);
-  }
-  40% {
-    filter: brightness(1.12);
-    transform: scale(1.04);
-  }
-  100% {
-    filter: brightness(1.04);
-    transform: scale(1.02);
-  }
-}
-
-@keyframes bj-finale-glow {
-  0% {
-    filter: brightness(1) saturate(1);
-    transform: scale(1);
-  }
-  35% {
-    filter: brightness(1.18) saturate(1.15);
-    transform: scale(1.06);
-  }
-  100% {
-    filter: brightness(1.08) saturate(1.08);
-    transform: scale(1.03);
-  }
+  text-shadow: none;
+  filter: none;
+  animation: none;
+  transform: none;
 }

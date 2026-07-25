@@ -4,9 +4,17 @@
   "id": "beyond_joyo_compounds_16",
   "title": "Beyond Jōyō Kanji Compounds — Part 16",
   "titleJa": "常用外漢字熟語 — 第16部",
-  "notes": "Beyond Jōyō compounds Volume 1 Part 16/19: 50 compounds (銑→龘), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Includes one party-kanji reward near the end. Ending: final compound review ~22s → 4s fade to black. Soundtrack: audio/jr_high_compounds_soundtrack_1.mp3 (~1005s).",
+  "notes": "Beyond Jōyō compounds Volume 1 Part 16/19: 50 compounds (澱→猋), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Ends on a party-kanji reward: one restrained wave of gold flakes as the meaning lands, drifting on through the hold. Ending: final compound review ~22s → 4s fade to black → gold 漢 crest. Soundtrack: audio/beyond_joyo_6.mp3 (~2011s).",
   "soundtrack": {
-    "main": "audio/jr_high_compounds_soundtrack_1.mp3"
+    "main": "audio/beyond_joyo_6.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
   },
   "exhibition": {
     "artworkArrivalMs": 0,
@@ -28,10 +36,33 @@
     "compoundsStepFadeMs": 1400,
     "compoundsFinalReviewHoldMs": 22000,
     "compoundsFinalFadeToBlackMs": 4000,
+    "compoundsRewardFlakeCount": 30,
+    "compoundsRewardFlakeSpreadMs": 1600,
+    "compoundsRewardFlakeDriftMinMs": 10000,
+    "compoundsRewardFlakeDriftMaxMs": 16000,
+    "compoundsFinaleFlakeWaveCount": 40,
+    "compoundsFinaleFlakeSecondWaveCount": 26,
+    "compoundsFinaleFlakeWaveGapMs": 3200,
+    "compoundsFinaleFlakeSpreadMs": 2200,
+    "compoundsFinaleFlakeDriftMinMs": 9000,
+    "compoundsFinaleFlakeDriftMaxMs": 15000,
+    "compoundsFinaleConfettiLeadMs": 9000,
+    "compoundsFinaleConfettiCount": 96,
+    "compoundsFinaleConfettiSpreadMs": 5000,
+    "compoundsFinaleConfettiFallMinMs": 4500,
+    "compoundsFinaleConfettiFallMaxMs": 7500,
+    "compoundsFinaleConfettiRestHoldMs": 4500,
+    "compoundsFinaleConfettiFadeMs": 3500,
     "vocabArtworkExhaleMs": 2800,
     "exhibitTransitionMs": 0,
     "kenBurnsDurationMs": 1200000,
-    "closingBlackAfterMs": 600
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 3200,
+    "closingHoldMs": 2800,
+    "closingExhaleMs": 3500,
+    "closingSilenceHoldMs": 0,
+    "closingBlackAfterMs": 800,
+    "closingFadeToBlackMs": 3500
   },
   "display": {
     "loop": false,
@@ -44,6 +75,7 @@
     "verseMode": "sequential",
     "typography": "mobile-refine",
     "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest",
     "cameraMotionScale": 1.0
   },
   "meta": {
@@ -59,22 +91,22 @@
     "sceneCount": 1,
     "compoundCount": 50,
     "kanjiRange": [
-      "銑",
-      "龘"
+      "澱",
+      "猋"
     ],
     "anchorRange": [
-      "銑",
-      "龘"
+      "澱",
+      "猋"
     ],
     "heisigRange": [
-      288,
-      3083
+      2395,
+      3081
     ],
     "sourceOrder": "familiarity",
-    "soundtrackDurationMs": 1005035,
+    "soundtrackDurationMs": 2011689,
     "estimatedContentRuntimeMs": 1000400,
     "timingNote": "50 compounds ≈ 1000s (16:40) including review+fade.",
-    "ending": "finalCompoundReview",
+    "ending": "finalCompoundReviewThenGoldCrest",
     "anchorRule": "mostUsefulCompoundByFamiliarity",
     "jukugoList": "beyond_joyo_jukugo_list.json",
     "masterCsv": "kml/data/kanji/kanji_master.csv",
@@ -93,21 +125,6 @@
       "compounds": {
         "steps": [
           {
-            "jp": "銑",
-            "reading": "セン",
-            "en": "pig iron",
-            "jpHtml": "<ruby>銑<rt>セン</rt></ruby>",
-            "meta": {
-              "kanji": "銑",
-              "masterKanji": [
-                "銑"
-              ],
-              "heisigNumber": 288,
-              "slug": "pig_iron",
-              "displayOrder": 751
-            }
-          },
-          {
             "jp": "澱",
             "reading": "おり",
             "en": "sediment",
@@ -119,7 +136,7 @@
               ],
               "heisigNumber": 2395,
               "slug": "sediment",
-              "displayOrder": 752
+              "displayOrder": 751
             }
           },
           {
@@ -134,7 +151,7 @@
               ],
               "heisigNumber": 2518,
               "slug": "dry_weather",
-              "displayOrder": 753
+              "displayOrder": 752
             }
           },
           {
@@ -149,7 +166,7 @@
               ],
               "heisigNumber": 2604,
               "slug": "branding",
-              "displayOrder": 754
+              "displayOrder": 753
             }
           },
           {
@@ -164,7 +181,7 @@
               ],
               "heisigNumber": 2536,
               "slug": "armrest",
-              "displayOrder": 755
+              "displayOrder": 754
             }
           },
           {
@@ -179,7 +196,7 @@
               ],
               "heisigNumber": 2973,
               "slug": "formal_ten",
-              "displayOrder": 756
+              "displayOrder": 755
             }
           },
           {
@@ -194,7 +211,7 @@
               ],
               "heisigNumber": 2309,
               "slug": "handmaiden",
-              "displayOrder": 757
+              "displayOrder": 756
             }
           },
           {
@@ -209,7 +226,7 @@
               ],
               "heisigNumber": 2762,
               "slug": "spoke",
-              "displayOrder": 758
+              "displayOrder": 757
             }
           },
           {
@@ -224,7 +241,7 @@
               ],
               "heisigNumber": 2858,
               "slug": "small_craft",
-              "displayOrder": 759
+              "displayOrder": 758
             }
           },
           {
@@ -239,7 +256,7 @@
               ],
               "heisigNumber": 2621,
               "slug": "paddyfield",
-              "displayOrder": 760
+              "displayOrder": 759
             }
           },
           {
@@ -254,7 +271,7 @@
               ],
               "heisigNumber": 2520,
               "slug": "morrow",
-              "displayOrder": 761
+              "displayOrder": 760
             }
           },
           {
@@ -269,7 +286,7 @@
               ],
               "heisigNumber": 2466,
               "slug": "rush_mat",
-              "displayOrder": 762
+              "displayOrder": 761
             }
           },
           {
@@ -284,7 +301,7 @@
               ],
               "heisigNumber": 2484,
               "slug": "garlic",
-              "displayOrder": 763
+              "displayOrder": 762
             }
           },
           {
@@ -299,7 +316,7 @@
               ],
               "heisigNumber": 2823,
               "slug": "rebuttal",
-              "displayOrder": 764
+              "displayOrder": 763
             }
           },
           {
@@ -314,7 +331,7 @@
               ],
               "heisigNumber": 2267,
               "slug": "earlybird",
-              "displayOrder": 765
+              "displayOrder": 764
             }
           },
           {
@@ -329,7 +346,7 @@
               ],
               "heisigNumber": 2315,
               "slug": "mistress",
-              "displayOrder": 766
+              "displayOrder": 765
             }
           },
           {
@@ -344,7 +361,7 @@
               ],
               "heisigNumber": 2321,
               "slug": "assiduous",
-              "displayOrder": 767
+              "displayOrder": 766
             }
           },
           {
@@ -359,7 +376,7 @@
               ],
               "heisigNumber": 2981,
               "slug": "shop_variant",
-              "displayOrder": 768
+              "displayOrder": 767
             }
           },
           {
@@ -374,7 +391,7 @@
               ],
               "heisigNumber": 2668,
               "slug": "lapel",
-              "displayOrder": 769
+              "displayOrder": 768
             }
           },
           {
@@ -389,7 +406,7 @@
               ],
               "heisigNumber": 2754,
               "slug": "proverb",
-              "displayOrder": 770
+              "displayOrder": 769
             }
           },
           {
@@ -404,7 +421,7 @@
               ],
               "heisigNumber": 2824,
               "slug": "gallop",
-              "displayOrder": 771
+              "displayOrder": 770
             }
           },
           {
@@ -419,7 +436,7 @@
               ],
               "heisigNumber": 2231,
               "slug": "scurry",
-              "displayOrder": 772
+              "displayOrder": 771
             }
           },
           {
@@ -434,7 +451,7 @@
               ],
               "heisigNumber": 2606,
               "slug": "stew",
-              "displayOrder": 773
+              "displayOrder": 772
             }
           },
           {
@@ -449,7 +466,7 @@
               ],
               "heisigNumber": 2944,
               "slug": "stop_short",
-              "displayOrder": 774
+              "displayOrder": 773
             }
           },
           {
@@ -464,7 +481,7 @@
               ],
               "heisigNumber": 2958,
               "slug": "nautical_mile",
-              "displayOrder": 775
+              "displayOrder": 774
             }
           },
           {
@@ -479,7 +496,7 @@
               ],
               "heisigNumber": 2679,
               "slug": "wardrobe",
-              "displayOrder": 776
+              "displayOrder": 775
             }
           },
           {
@@ -494,7 +511,7 @@
               ],
               "heisigNumber": 2262,
               "slug": "wilt",
-              "displayOrder": 777
+              "displayOrder": 776
             }
           },
           {
@@ -509,7 +526,7 @@
               ],
               "heisigNumber": 2570,
               "slug": "wooden_ladle",
-              "displayOrder": 778
+              "displayOrder": 777
             }
           },
           {
@@ -524,7 +541,7 @@
               ],
               "heisigNumber": 3015,
               "slug": "prejudice",
-              "displayOrder": 779
+              "displayOrder": 778
             }
           },
           {
@@ -539,7 +556,7 @@
               ],
               "heisigNumber": 2551,
               "slug": "hemlock",
-              "displayOrder": 780
+              "displayOrder": 779
             }
           },
           {
@@ -554,7 +571,7 @@
               ],
               "heisigNumber": 2660,
               "slug": "tight",
-              "displayOrder": 781
+              "displayOrder": 780
             }
           },
           {
@@ -569,7 +586,7 @@
               ],
               "heisigNumber": 2393,
               "slug": "blaspheme",
-              "displayOrder": 782
+              "displayOrder": 781
             }
           },
           {
@@ -584,7 +601,7 @@
               ],
               "heisigNumber": 2246,
               "slug": "fed_up",
-              "displayOrder": 783
+              "displayOrder": 782
             }
           },
           {
@@ -599,7 +616,7 @@
               ],
               "heisigNumber": 2455,
               "slug": "butterbur",
-              "displayOrder": 784
+              "displayOrder": 783
             }
           },
           {
@@ -614,7 +631,7 @@
               ],
               "heisigNumber": 2247,
               "slug": "abrupt",
-              "displayOrder": 785
+              "displayOrder": 784
             }
           },
           {
@@ -629,7 +646,7 @@
               ],
               "heisigNumber": 2948,
               "slug": "pruning",
-              "displayOrder": 786
+              "displayOrder": 785
             }
           },
           {
@@ -644,7 +661,7 @@
               ],
               "heisigNumber": 2519,
               "slug": "clear_skies",
-              "displayOrder": 787
+              "displayOrder": 786
             }
           },
           {
@@ -659,7 +676,7 @@
               ],
               "heisigNumber": 2388,
               "slug": "seep",
-              "displayOrder": 788
+              "displayOrder": 787
             }
           },
           {
@@ -674,7 +691,7 @@
               ],
               "heisigNumber": 2936,
               "slug": "testicle",
-              "displayOrder": 789
+              "displayOrder": 788
             }
           },
           {
@@ -689,7 +706,7 @@
               ],
               "heisigNumber": 2329,
               "slug": "fart",
-              "displayOrder": 790
+              "displayOrder": 789
             }
           },
           {
@@ -704,7 +721,7 @@
               ],
               "heisigNumber": 2471,
               "slug": "onion",
-              "displayOrder": 791
+              "displayOrder": 790
             }
           },
           {
@@ -719,7 +736,7 @@
               ],
               "heisigNumber": 2465,
               "slug": "cocklebur",
-              "displayOrder": 792
+              "displayOrder": 791
             }
           },
           {
@@ -734,7 +751,7 @@
               ],
               "heisigNumber": 2398,
               "slug": "filter",
-              "displayOrder": 793
+              "displayOrder": 792
             }
           },
           {
@@ -749,7 +766,7 @@
               ],
               "heisigNumber": 2623,
               "slug": "phlegm",
-              "displayOrder": 794
+              "displayOrder": 793
             }
           },
           {
@@ -764,7 +781,7 @@
               ],
               "heisigNumber": 2373,
               "slug": "gouge_out",
-              "displayOrder": 795
+              "displayOrder": 794
             }
           },
           {
@@ -779,7 +796,7 @@
               ],
               "heisigNumber": 2949,
               "slug": "upbringing",
-              "displayOrder": 796
+              "displayOrder": 795
             }
           },
           {
@@ -794,7 +811,7 @@
               ],
               "heisigNumber": 2740,
               "slug": "incision",
-              "displayOrder": 797
+              "displayOrder": 796
             }
           },
           {
@@ -809,7 +826,7 @@
               ],
               "heisigNumber": 2620,
               "slug": "lastly",
-              "displayOrder": 798
+              "displayOrder": 797
             }
           },
           {
@@ -824,21 +841,36 @@
               ],
               "heisigNumber": 2777,
               "slug": "strong_sake",
+              "displayOrder": 798
+            }
+          },
+          {
+            "jp": "鋲",
+            "reading": "びょう",
+            "en": "",
+            "jpHtml": "<ruby>鋲<rt>びょう</rt></ruby>",
+            "meta": {
+              "kanji": "鋲",
+              "masterKanji": [
+                "鋲"
+              ],
+              "heisigNumber": 2785,
+              "slug": "rivet",
               "displayOrder": 799
             }
           },
           {
-            "jp": "龘",
-            "reading": "トウ",
-            "en": "three dragons — party kanji",
-            "jpHtml": "<ruby>龘<rt>トウ</rt></ruby>",
+            "jp": "猋",
+            "reading": "ヒョウ",
+            "en": "three dogs — party kanji",
+            "jpHtml": "<ruby>猋<rt>ヒョウ</rt></ruby>",
             "meta": {
-              "kanji": "龘",
+              "kanji": "猋",
               "masterKanji": [
-                "龘"
+                "猋"
               ],
-              "heisigNumber": 3083,
-              "slug": "three_dragons",
+              "heisigNumber": 3081,
+              "slug": "three_dogs",
               "displayOrder": 800,
               "reward": true
             },

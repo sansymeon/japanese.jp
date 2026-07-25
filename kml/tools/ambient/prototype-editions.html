@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KML Prototype Editions — Gallery 16:9 / Mobile 9:16</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #f0e8da;
+      --muted: rgba(240, 232, 218, 0.55);
+      --line: rgba(240, 232, 218, 0.14);
+      --accent: #e8c547;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0a0a0c;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, "Noto Serif JP", serif;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 54rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin: 0 0 0.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .lede {
+      margin: 0 0 2.5rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    section {
+      border-top: 1px solid var(--line);
+      padding: 1.75rem 0 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 0.35rem;
+    }
+
+    section > p {
+      margin: 0 0 1.1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .row { margin-bottom: 1.1rem; }
+
+    .row-label {
+      display: block;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    a.chip {
+      display: inline-block;
+      margin: 0 0.5rem 0.5rem 0;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+    }
+
+    a.chip:hover { border-color: var(--accent); color: var(--accent); }
+
+    a.chip small { color: var(--muted); font-size: 0.78em; letter-spacing: 0.08em; }
+
+    dl { margin: 0; display: grid; grid-template-columns: 5rem 1fr; gap: 0.4rem 1rem; }
+    dt { color: var(--accent); font-size: 0.95rem; }
+    dd { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.82em;
+      color: var(--muted);
+    }
+
+    /* ── Still viewer ── */
+
+    #viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: #000;
+      display: none;
+      place-items: center;
+    }
+
+    #viewer.is-open { display: grid; }
+
+    #viewer img {
+      max-width: 100vw;
+      max-height: 100vh;
+      display: block;
+      object-fit: contain;
+    }
+
+    #viewer-hud {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.9rem 1.25rem calc(0.9rem + env(safe-area-inset-bottom));
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: opacity 400ms ease;
+    }
+
+    #viewer.is-bare #viewer-hud { opacity: 0; pointer-events: none; }
+
+    #viewer-hud button {
+      appearance: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      color: var(--muted);
+      font: inherit;
+      padding: 0.3rem 0.75rem;
+      cursor: pointer;
+    }
+
+    #viewer-hud button.is-on { border-color: var(--accent); color: var(--accent); }
+
+    #viewer-hud .group { display: flex; gap: 0.4rem; align-items: center; }
+
+    #viewer-hud .caption { color: var(--ink); letter-spacing: 0.04em; text-transform: none; }
+  </style>
+</head>
+<body>
+
+<main>
+  <h1>Prototype Editions</h1>
+  <p class="lede">
+    Experimental presentation layouts for KML Japan. Same engine, same JSON, same timing,
+    same soundtrack, same transitions — only the layout changes. The shipping 16:9 system
+    is untouched: nothing here applies without the <code>edition</code> or
+    <code>typeLab</code> URL parameter.
+  </p>
+
+  <section>
+    <h2>Typography versions</h2>
+    <p>Applied on top of whichever edition is active.</p>
+    <dl>
+      <dt>A</dt><dd>Current weight (Noto Serif JP 600) · 150% size</dd>
+      <dt>B</dt><dd>One weight lighter (500) · 150% size</dd>
+      <dt>C</dt><dd>One weight lighter (500) · 160% size</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Prototype 1 — Gallery Edition, 16:9</h2>
+    <p>
+      Today's layout, unchanged. Kanji ~50% larger. 18 high stroke-count compounds
+      followed by 5 simple kanji for optical-weight comparison. ≈ 8 minutes.
+    </p>
+    <div class="row">
+      <span class="row-label">Live, full pacing</span>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&typeLab=a">Version A</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&typeLab=b">Version B</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&typeLab=c">Version C</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential">Control <small>(today)</small></a>
+    </div>
+    <div class="row">
+      <span class="row-label">Fast pass — 20× · ≈ 25 s</span>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&typeLab=a&timingScale=0.05">A</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&typeLab=b&timingScale=0.05">B</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&typeLab=c&timingScale=0.05">C</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Prototype 2 — Mobile Edition, 9:16</h2>
+    <p>
+      1080 × 1920. Designed for portrait rather than cropped from landscape: the word keeps
+      a fixed home at the optical centre through every phase, with the gloss hung below it
+      like a gallery label. Open on a phone in portrait, or resize a desktop window tall
+      and narrow.
+    </p>
+    <div class="row">
+      <span class="row-label">Live, full pacing</span>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&edition=mobile&typeLab=a">Version A</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&edition=mobile&typeLab=b">Version B</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&edition=mobile&typeLab=c">Version C</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&edition=mobile">Baseline <small>(no scale)</small></a>
+    </div>
+    <div class="row">
+      <span class="row-label">Fast pass — 20× · ≈ 25 s</span>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&edition=mobile&typeLab=a&timingScale=0.05">A</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&edition=mobile&typeLab=b&timingScale=0.05">B</a>
+      <a class="chip" href="./exhibition.html?collection=proto_typography_lab&typography=mobile-refine&verseMode=sequential&edition=mobile&typeLab=c&timingScale=0.05">C</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Party Kanji — spacing lab</h2>
+    <p>
+      龘 (three dragons) and 麤 (three deer) — the compositions most prone to fusing into one
+      white mass. Larger overall, but with far more air between components and less optical
+      weight. A and B keep Yuji Syuku; C swaps to Noto Serif JP 400, which has much more open
+      counters but loses the brush character.
+    </p>
+    <div class="row">
+      <span class="row-label">Gallery 16:9</span>
+      <a class="chip" href="./exhibition.html?collection=proto_party_kanji_lab&typography=party-kanji&skipBookends=1&typeLab=a">A</a>
+      <a class="chip" href="./exhibition.html?collection=proto_party_kanji_lab&typography=party-kanji&skipBookends=1&typeLab=b">B</a>
+      <a class="chip" href="./exhibition.html?collection=proto_party_kanji_lab&typography=party-kanji&skipBookends=1&typeLab=c">C</a>
+      <a class="chip" href="./exhibition.html?collection=proto_party_kanji_lab&typography=party-kanji&skipBookends=1">Control <small>(today)</small></a>
+    </div>
+    <div class="row">
+      <span class="row-label">Mobile 9:16</span>
+      <a class="chip" href="./exhibition.html?collection=proto_party_kanji_lab&typography=party-kanji&skipBookends=1&edition=mobile&typeLab=a">A</a>
+      <a class="chip" href="./exhibition.html?collection=proto_party_kanji_lab&typography=party-kanji&skipBookends=1&edition=mobile&typeLab=b">B</a>
+      <a class="chip" href="./exhibition.html?collection=proto_party_kanji_lab&typography=party-kanji&skipBookends=1&edition=mobile&typeLab=c">C</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Glow stress — densest kanji</h2>
+    <p>
+      The 18 densest glyphs in <code>kanji_master.csv</code> plus 靈 and 驫 (requested,
+      not in the master file). Each is shown four ways at the larger Gallery type size,
+      so the only variable is the black text-shadow that floods dense counters.
+    </p>
+    <dl>
+      <dt>1</dt><dd>Current glow — shipping compounds shadow</dd>
+      <dt>2</dt><dd>Reduced glow — tighter, lower-opacity shadow</dd>
+      <dt>3</dt><dd>No glow — pure glyph on black</dd>
+      <dt>4</dt><dd>Reduced glow · −4% size</dd>
+    </dl>
+    <div class="row">
+      <span class="row-label">2×2 board · best for monitor / TV / phone</span>
+      <a class="chip" href="./glow-stress.html">Open glow stress board</a>
+      <a class="chip" href="./glow-stress.html?kanji=鬱">Start on 鬱</a>
+      <a class="chip" href="./glow-stress.html?kanji=龘">Start on 龘</a>
+      <a class="chip" href="./glow-stress.html?kanji=靈">Start on 靈</a>
+    </div>
+    <div class="row">
+      <span class="row-label">Exhibition playback · Gallery 16:9 · typeLab A</span>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=current">Current</a>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=reduced">Reduced</a>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=none">None</a>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=tight">Reduced −4%</a>
+    </div>
+    <div class="row">
+      <span class="row-label">Fast pass — 20×</span>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=current&amp;timingScale=0.05">Current</a>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=reduced&amp;timingScale=0.05">Reduced</a>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=none&amp;timingScale=0.05">None</a>
+      <a class="chip" href="./exhibition.html?collection=proto_glow_stress&amp;typography=mobile-refine&amp;verseMode=sequential&amp;typeLab=a&amp;glowLab=tight&amp;timingScale=0.05">Reduced −4%</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Still comparison</h2>
+    <p>
+      Full-resolution frames, for judging optical weight on a real screen. Flip between
+      versions in place with <strong>1 / 2 / 3</strong> (or the buttons); change slide with
+      <strong>← →</strong>; change phase with <strong>↑ ↓</strong>; <strong>H</strong> hides
+      the controls; <strong>Esc</strong> closes. Cast this to the TV and park on one kanji.
+    </p>
+    <div class="row" id="viewer-launchers">
+      <span class="row-label">Loading…</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rebuild</h2>
+    <p><code>python3 scripts/build_prototype_editions.py</code> — regenerate typography / party collections</p>
+    <p><code>python3 scripts/build_prototype_glow_stress.py</code> — regenerate dense-kanji glow list</p>
+    <p><code>.venv/bin/python scripts/shoot_prototype_stills.py</code> — reshoot the stills</p>
+    <p><code>.venv/bin/python scripts/shoot_glow_stress.py</code> — shoot 2×2 glow boards</p>
+    <p><code>.venv/bin/python scripts/record_prototype_editions.py --edition mobile --type-lab all</code> — record MP4s</p>
+  </section>
+</main>
+
+<div id="viewer" tabindex="-1">
+  <img id="viewer-img" alt="">
+  <div id="viewer-hud">
+    <span class="caption" id="viewer-caption"></span>
+    <span class="group" id="viewer-labs"></span>
+    <span class="group" id="viewer-phases"></span>
+    <span class="group">
+      <button data-nav="-1">←</button>
+      <button data-nav="1">→</button>
+      <button data-close>Close</button>
+    </span>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const STILLS = "./collections/prototypes/stills/";
+  const LAB_NAMES = { x: "Control", a: "A", b: "B", c: "C" };
+
+  const viewer = document.getElementById("viewer");
+  const img = document.getElementById("viewer-img");
+  const caption = document.getElementById("viewer-caption");
+  const labsEl = document.getElementById("viewer-labs");
+  const phasesEl = document.getElementById("viewer-phases");
+  const launchers = document.getElementById("viewer-launchers");
+
+  let index = null;
+  let state = null;
+
+  function src() {
+    const frame = state.frames[state.frame];
+    const n = String(frame.index).padStart(2, "0");
+    return `${STILLS}${state.edition}_${state.lab}__${n}_${frame.slug}_${state.phase}.png`;
+  }
+
+  function chips(host, values, current, onPick, naming) {
+    host.textContent = "";
+    values.forEach((value) => {
+      const button = document.createElement("button");
+      button.textContent = naming ? naming(value) : value;
+      button.className = value === current ? "is-on" : "";
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        onPick(value);
+      });
+      host.appendChild(button);
+    });
+  }
+
+  function render() {
+    const frame = state.frames[state.frame];
+    img.src = src();
+    caption.textContent =
+      `${frame.label} · ${state.frame + 1}/${state.frames.length} · ` +
+      `${state.edition === "mobile" ? "9:16" : "16:9"}`;
+    chips(labsEl, state.labs, state.lab, (v) => { state.lab = v; render(); },
+      (v) => LAB_NAMES[v] || v.toUpperCase());
+    chips(phasesEl, state.phases, state.phase, (v) => { state.phase = v; render(); });
+  }
+
+  function open(collection, edition) {
+    const entry = index[collection];
+    state = {
+      edition,
+      lab: entry.labs[0],
+      phase: entry.phases[0],
+      labs: entry.labs,
+      phases: entry.phases,
+      frames: entry.frames,
+      frame: 0,
+    };
+    viewer.classList.add("is-open");
+    viewer.focus();
+    render();
+  }
+
+  function step(delta) {
+    state.frame = (state.frame + delta + state.frames.length) % state.frames.length;
+    render();
+  }
+
+  function cyclePhase(delta) {
+    const i = state.phases.indexOf(state.phase);
+    state.phase = state.phases[(i + delta + state.phases.length) % state.phases.length];
+    render();
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (!viewer.classList.contains("is-open")) return;
+    const keys = {
+      Escape: () => viewer.classList.remove("is-open"),
+      ArrowRight: () => step(1),
+      ArrowLeft: () => step(-1),
+      ArrowDown: () => cyclePhase(1),
+      ArrowUp: () => cyclePhase(-1),
+    };
+    if (keys[event.key]) { event.preventDefault(); keys[event.key](); return; }
+    if (event.key.toLowerCase() === "h") { viewer.classList.toggle("is-bare"); return; }
+    const slot = { 1: 0, 2: 1, 3: 2, 4: 3 }[event.key];
+    if (slot !== undefined && state.labs[slot]) { state.lab = state.labs[slot]; render(); }
+  });
+
+  viewer.addEventListener("click", (event) => {
+    if (event.target.closest("#viewer-hud")) return;
+    step(event.clientX > window.innerWidth / 2 ? 1 : -1);
+  });
+
+  document.querySelector("[data-close]").addEventListener("click", (event) => {
+    event.stopPropagation();
+    viewer.classList.remove("is-open");
+  });
+
+  document.querySelectorAll("[data-nav]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      step(Number(button.dataset.nav));
+    });
+  });
+
+  fetch(`${STILLS}index.json`)
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+    .then((data) => {
+      index = data;
+      launchers.textContent = "";
+      const label = document.createElement("span");
+      label.className = "row-label";
+      label.textContent = "Open viewer";
+      launchers.appendChild(label);
+      Object.keys(index).forEach((collection) => {
+        index[collection].editions.forEach((edition) => {
+          const link = document.createElement("a");
+          link.className = "chip";
+          link.href = "#";
+          link.innerHTML =
+            `${collection.replace(/^proto_/, "").replace(/_/g, " ")} ` +
+            `<small>${edition === "mobile" ? "9:16" : "16:9"}</small>`;
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            open(collection, edition);
+          });
+          launchers.appendChild(link);
+        });
+      });
+    })
+    .catch(() => {
+      launchers.innerHTML =
+        '<span class="row-label">No stills yet — run ' +
+        "<code>scripts/shoot_prototype_stills.py</code></span>";
+    });
+})();
+</script>
+
+</body>
+</html>

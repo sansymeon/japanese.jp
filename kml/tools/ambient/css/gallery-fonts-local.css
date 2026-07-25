@@ -1,0 +1,71 @@
+/**
+ * Local KML faces — hermetic for Ambient recording + offline play.
+ *
+ * Loaded BEFORE any Google Fonts stylesheet so capture never falls through
+ * when the CDN is slow or unavailable.
+ *
+ * Roles (do not conflate):
+ *   - "Yuji Syuku"     → target / hero kanji (protected visual identity)
+ *   - "Noto Serif JP"  → supporting JP body (verse, furigana, compounds)
+ *
+ * font-display: block avoids a fallback FOUT during Playwright capture.
+ */
+
+/* ── Hero kanji (protected) ─────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Yuji Syuku";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    local("Yuji Syuku"),
+    local("YujiSyuku-Regular"),
+    url("../fonts/yuji-syuku/YujiSyuku-Regular.ttf") format("truetype");
+}
+
+/* ── Supporting Mincho body ─────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Noto Serif JP";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    local("Noto Serif CJK JP"),
+    local("NotoSerifCJKjp-Regular"),
+    url("../fonts/noto-serif-jp/NotoSerifCJKjp-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Serif JP";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src:
+    local("Noto Serif CJK JP Medium"),
+    local("NotoSerifCJKjp-Medium"),
+    url("../fonts/noto-serif-jp/NotoSerifCJKjp-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Serif JP";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src:
+    local("Noto Serif CJK JP SemiBold"),
+    local("NotoSerifCJKjp-SemiBold"),
+    url("../fonts/noto-serif-jp/NotoSerifCJKjp-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Serif JP";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src:
+    local("Noto Serif CJK JP Bold"),
+    local("NotoSerifCJKjp-Bold"),
+    url("../fonts/noto-serif-jp/NotoSerifCJKjp-Bold.otf") format("opentype");
+}

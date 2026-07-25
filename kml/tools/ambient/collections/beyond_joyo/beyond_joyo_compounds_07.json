@@ -4,9 +4,17 @@
   "id": "beyond_joyo_compounds_07",
   "title": "Beyond Jōyō Kanji Compounds — Part 7",
   "titleJa": "常用外漢字熟語 — 第7部",
-  "notes": "Beyond Jōyō compounds Volume 1 Part 7/19: 50 compounds (諜ずる→焱), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Includes one party-kanji reward near the end. Ending: final compound review ~22s → 4s fade to black. Soundtrack: audio/jr_high_compounds_soundtrack_1.mp3 (~1005s).",
+  "notes": "Beyond Jōyō compounds Volume 1 Part 7/19: 50 compounds (斯→鱻), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Ends on a party-kanji reward: one restrained wave of gold flakes as the meaning lands, drifting on through the hold. Ending: final compound review ~22s → 4s fade to black → gold 漢 crest. Soundtrack: audio/beyond_joyo_7.mp3 (~1025s).",
   "soundtrack": {
-    "main": "audio/jr_high_compounds_soundtrack_1.mp3"
+    "main": "audio/beyond_joyo_7.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
   },
   "exhibition": {
     "artworkArrivalMs": 0,
@@ -28,10 +36,33 @@
     "compoundsStepFadeMs": 1400,
     "compoundsFinalReviewHoldMs": 22000,
     "compoundsFinalFadeToBlackMs": 4000,
+    "compoundsRewardFlakeCount": 30,
+    "compoundsRewardFlakeSpreadMs": 1600,
+    "compoundsRewardFlakeDriftMinMs": 10000,
+    "compoundsRewardFlakeDriftMaxMs": 16000,
+    "compoundsFinaleFlakeWaveCount": 40,
+    "compoundsFinaleFlakeSecondWaveCount": 26,
+    "compoundsFinaleFlakeWaveGapMs": 3200,
+    "compoundsFinaleFlakeSpreadMs": 2200,
+    "compoundsFinaleFlakeDriftMinMs": 9000,
+    "compoundsFinaleFlakeDriftMaxMs": 15000,
+    "compoundsFinaleConfettiLeadMs": 9000,
+    "compoundsFinaleConfettiCount": 96,
+    "compoundsFinaleConfettiSpreadMs": 5000,
+    "compoundsFinaleConfettiFallMinMs": 4500,
+    "compoundsFinaleConfettiFallMaxMs": 7500,
+    "compoundsFinaleConfettiRestHoldMs": 4500,
+    "compoundsFinaleConfettiFadeMs": 3500,
     "vocabArtworkExhaleMs": 2800,
     "exhibitTransitionMs": 0,
     "kenBurnsDurationMs": 1200000,
-    "closingBlackAfterMs": 600
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 3200,
+    "closingHoldMs": 2800,
+    "closingExhaleMs": 3500,
+    "closingSilenceHoldMs": 0,
+    "closingBlackAfterMs": 800,
+    "closingFadeToBlackMs": 3500
   },
   "display": {
     "loop": false,
@@ -44,6 +75,7 @@
     "verseMode": "sequential",
     "typography": "mobile-refine",
     "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest",
     "cameraMotionScale": 1.0
   },
   "meta": {
@@ -59,22 +91,22 @@
     "sceneCount": 1,
     "compoundCount": 50,
     "kanjiRange": [
-      "諜",
-      "焱"
+      "斯",
+      "鱻"
     ],
     "anchorRange": [
-      "諜ずる",
-      "焱"
+      "斯",
+      "鱻"
     ],
     "heisigRange": [
-      2757,
-      3077
+      2899,
+      3074
     ],
     "sourceOrder": "familiarity",
-    "soundtrackDurationMs": 1005035,
+    "soundtrackDurationMs": 1025227,
     "estimatedContentRuntimeMs": 1000400,
     "timingNote": "50 compounds ≈ 1000s (16:40) including review+fade.",
-    "ending": "finalCompoundReview",
+    "ending": "finalCompoundReviewThenGoldCrest",
     "anchorRule": "mostUsefulCompoundByFamiliarity",
     "jukugoList": "beyond_joyo_jukugo_list.json",
     "masterCsv": "kml/data/kanji/kanji_master.csv",
@@ -93,6 +125,51 @@
       "compounds": {
         "steps": [
           {
+            "jp": "斯",
+            "reading": "か",
+            "en": "",
+            "jpHtml": "<ruby>斯<rt>か</rt></ruby>",
+            "meta": {
+              "kanji": "斯",
+              "masterKanji": [
+                "斯"
+              ],
+              "heisigNumber": 2899,
+              "slug": "thus",
+              "displayOrder": 301
+            }
+          },
+          {
+            "jp": "葺",
+            "reading": "あし",
+            "en": "shingling",
+            "jpHtml": "<ruby>葺<rt>あし</rt></ruby>",
+            "meta": {
+              "kanji": "葺",
+              "masterKanji": [
+                "葺"
+              ],
+              "heisigNumber": 2473,
+              "slug": "shingling",
+              "displayOrder": 302
+            }
+          },
+          {
+            "jp": "聘する",
+            "reading": "へいする",
+            "en": "summons",
+            "jpHtml": "<ruby>聘<rt>へい</rt></ruby>する",
+            "meta": {
+              "kanji": "聘",
+              "masterKanji": [
+                "聘"
+              ],
+              "heisigNumber": 2718,
+              "slug": "summons",
+              "displayOrder": 303
+            }
+          },
+          {
             "jp": "諜ずる",
             "reading": "ちょうずる",
             "en": "",
@@ -104,7 +181,7 @@
               ],
               "heisigNumber": 2757,
               "slug": "spying",
-              "displayOrder": 301
+              "displayOrder": 304
             }
           },
           {
@@ -119,7 +196,7 @@
               ],
               "heisigNumber": 2861,
               "slug": "sitting",
-              "displayOrder": 302
+              "displayOrder": 305
             }
           },
           {
@@ -134,7 +211,7 @@
               ],
               "heisigNumber": 2448,
               "slug": "lotus_blossom",
-              "displayOrder": 303
+              "displayOrder": 306
             }
           },
           {
@@ -149,7 +226,7 @@
               ],
               "heisigNumber": 2459,
               "slug": "mustard",
-              "displayOrder": 304
+              "displayOrder": 307
             }
           },
           {
@@ -164,7 +241,7 @@
               ],
               "heisigNumber": 2894,
               "slug": "cyst",
-              "displayOrder": 305
+              "displayOrder": 308
             }
           },
           {
@@ -179,7 +256,7 @@
               ],
               "heisigNumber": 2252,
               "slug": "make_a_profit",
-              "displayOrder": 306
+              "displayOrder": 309
             }
           },
           {
@@ -194,7 +271,7 @@
               ],
               "heisigNumber": 2590,
               "slug": "bucket",
-              "displayOrder": 307
+              "displayOrder": 310
             }
           },
           {
@@ -209,7 +286,7 @@
               ],
               "heisigNumber": 2235,
               "slug": "rabbit",
-              "displayOrder": 308
+              "displayOrder": 311
             }
           },
           {
@@ -224,7 +301,7 @@
               ],
               "heisigNumber": 863,
               "slug": "robe",
-              "displayOrder": 309
+              "displayOrder": 312
             }
           },
           {
@@ -239,7 +316,7 @@
               ],
               "heisigNumber": 2436,
               "slug": "jasmine",
-              "displayOrder": 310
+              "displayOrder": 313
             }
           },
           {
@@ -254,7 +331,7 @@
               ],
               "heisigNumber": 2245,
               "slug": "chivalry",
-              "displayOrder": 311
+              "displayOrder": 314
             }
           },
           {
@@ -269,7 +346,7 @@
               ],
               "heisigNumber": 2656,
               "slug": "imperial_authority",
-              "displayOrder": 312
+              "displayOrder": 315
             }
           },
           {
@@ -284,7 +361,7 @@
               ],
               "heisigNumber": 2266,
               "slug": "lull",
-              "displayOrder": 313
+              "displayOrder": 316
             }
           },
           {
@@ -299,7 +376,7 @@
               ],
               "heisigNumber": 2885,
               "slug": "mahjong_tiles",
-              "displayOrder": 314
+              "displayOrder": 317
             }
           },
           {
@@ -314,7 +391,7 @@
               ],
               "heisigNumber": 2989,
               "slug": "point_old",
-              "displayOrder": 315
+              "displayOrder": 318
             }
           },
           {
@@ -329,7 +406,7 @@
               ],
               "heisigNumber": 2701,
               "slug": "scarlet",
-              "displayOrder": 316
+              "displayOrder": 319
             }
           },
           {
@@ -344,7 +421,7 @@
               ],
               "heisigNumber": 3007,
               "slug": "go_smoothly",
-              "displayOrder": 317
+              "displayOrder": 320
             }
           },
           {
@@ -359,7 +436,7 @@
               ],
               "heisigNumber": 2205,
               "slug": "beard",
-              "displayOrder": 318
+              "displayOrder": 321
             }
           },
           {
@@ -374,7 +451,7 @@
               ],
               "heisigNumber": 2627,
               "slug": "paralysis",
-              "displayOrder": 319
+              "displayOrder": 322
             }
           },
           {
@@ -389,7 +466,7 @@
               ],
               "heisigNumber": 2901,
               "slug": "set_straight",
-              "displayOrder": 320
+              "displayOrder": 323
             }
           },
           {
@@ -404,7 +481,7 @@
               ],
               "heisigNumber": 2368,
               "slug": "petting",
-              "displayOrder": 321
+              "displayOrder": 324
             }
           },
           {
@@ -419,7 +496,7 @@
               ],
               "heisigNumber": 2301,
               "slug": "dugout",
-              "displayOrder": 322
+              "displayOrder": 325
             }
           },
           {
@@ -434,7 +511,7 @@
               ],
               "heisigNumber": 3017,
               "slug": "lofty",
-              "displayOrder": 323
+              "displayOrder": 326
             }
           },
           {
@@ -449,7 +526,7 @@
               ],
               "heisigNumber": 2842,
               "slug": "fish_fin",
-              "displayOrder": 324
+              "displayOrder": 327
             }
           },
           {
@@ -464,7 +541,7 @@
               ],
               "heisigNumber": 2477,
               "slug": "parsley",
-              "displayOrder": 325
+              "displayOrder": 328
             }
           },
           {
@@ -479,7 +556,7 @@
               ],
               "heisigNumber": 2932,
               "slug": "pioneer",
-              "displayOrder": 326
+              "displayOrder": 329
             }
           },
           {
@@ -494,7 +571,7 @@
               ],
               "heisigNumber": 2526,
               "slug": "dusk",
-              "displayOrder": 327
+              "displayOrder": 330
             }
           },
           {
@@ -509,7 +586,7 @@
               ],
               "heisigNumber": 2972,
               "slug": "formal_five",
-              "displayOrder": 328
+              "displayOrder": 331
             }
           },
           {
@@ -524,7 +601,7 @@
               ],
               "heisigNumber": 2327,
               "slug": "venison",
-              "displayOrder": 329
+              "displayOrder": 332
             }
           },
           {
@@ -539,7 +616,7 @@
               ],
               "heisigNumber": 2585,
               "slug": "sandalwood",
-              "displayOrder": 330
+              "displayOrder": 333
             }
           },
           {
@@ -554,7 +631,7 @@
               ],
               "heisigNumber": 2591,
               "slug": "ellipse",
-              "displayOrder": 331
+              "displayOrder": 334
             }
           },
           {
@@ -569,7 +646,7 @@
               ],
               "heisigNumber": 2914,
               "slug": "sapience",
-              "displayOrder": 332
+              "displayOrder": 335
             }
           },
           {
@@ -584,7 +661,7 @@
               ],
               "heisigNumber": 2617,
               "slug": "jet",
-              "displayOrder": 333
+              "displayOrder": 336
             }
           },
           {
@@ -599,7 +676,7 @@
               ],
               "heisigNumber": 2234,
               "slug": "some",
-              "displayOrder": 334
+              "displayOrder": 337
             }
           },
           {
@@ -614,7 +691,7 @@
               ],
               "heisigNumber": 2022,
               "slug": "melon",
-              "displayOrder": 335
+              "displayOrder": 338
             }
           },
           {
@@ -629,7 +706,7 @@
               ],
               "heisigNumber": 2242,
               "slug": "shalt",
-              "displayOrder": 336
+              "displayOrder": 339
             }
           },
           {
@@ -644,7 +721,7 @@
               ],
               "heisigNumber": 2332,
               "slug": "corpse",
-              "displayOrder": 337
+              "displayOrder": 340
             }
           },
           {
@@ -659,7 +736,7 @@
               ],
               "heisigNumber": 2241,
               "slug": "quote",
-              "displayOrder": 338
+              "displayOrder": 341
             }
           },
           {
@@ -674,7 +751,7 @@
               ],
               "heisigNumber": 2969,
               "slug": "hinoki",
-              "displayOrder": 339
+              "displayOrder": 342
             }
           },
           {
@@ -689,7 +766,7 @@
               ],
               "heisigNumber": 2244,
               "slug": "yamato",
-              "displayOrder": 340
+              "displayOrder": 343
             }
           },
           {
@@ -704,7 +781,7 @@
               ],
               "heisigNumber": 2902,
               "slug": "founding",
-              "displayOrder": 341
+              "displayOrder": 344
             }
           },
           {
@@ -719,7 +796,7 @@
               ],
               "heisigNumber": 2703,
               "slug": "string",
-              "displayOrder": 342
+              "displayOrder": 345
             }
           },
           {
@@ -734,7 +811,7 @@
               ],
               "heisigNumber": 3018,
               "slug": "eldest",
-              "displayOrder": 343
+              "displayOrder": 346
             }
           },
           {
@@ -749,7 +826,7 @@
               ],
               "heisigNumber": 2375,
               "slug": "ponder",
-              "displayOrder": 344
+              "displayOrder": 347
             }
           },
           {
@@ -764,7 +841,7 @@
               ],
               "heisigNumber": 3020,
               "slug": "towering",
-              "displayOrder": 345
+              "displayOrder": 348
             }
           },
           {
@@ -779,66 +856,21 @@
               ],
               "heisigNumber": 2275,
               "slug": "kitchen",
-              "displayOrder": 346
-            }
-          },
-          {
-            "jp": "只",
-            "reading": "ただ",
-            "en": "only",
-            "jpHtml": "<ruby>只<rt>ただ</rt></ruby>",
-            "meta": {
-              "kanji": "只",
-              "masterKanji": [
-                "只"
-              ],
-              "heisigNumber": 55,
-              "slug": "only",
-              "displayOrder": 347
-            }
-          },
-          {
-            "jp": "舵",
-            "reading": "かじ",
-            "en": "rudder",
-            "jpHtml": "<ruby>舵<rt>かじ</rt></ruby>",
-            "meta": {
-              "kanji": "舵",
-              "masterKanji": [
-                "舵"
-              ],
-              "heisigNumber": 2715,
-              "slug": "rudder",
-              "displayOrder": 348
-            }
-          },
-          {
-            "jp": "嬉しい",
-            "reading": "うれしい",
-            "en": "overjoyed",
-            "jpHtml": "<ruby>嬉<rt>うれ</rt></ruby>しい",
-            "meta": {
-              "kanji": "嬉",
-              "masterKanji": [
-                "嬉"
-              ],
-              "heisigNumber": 2319,
-              "slug": "overjoyed",
               "displayOrder": 349
             }
           },
           {
-            "jp": "焱",
-            "reading": "エン",
-            "en": "three fires — party kanji",
-            "jpHtml": "<ruby>焱<rt>エン</rt></ruby>",
+            "jp": "鱻",
+            "reading": "セン",
+            "en": "three fish — party kanji",
+            "jpHtml": "<ruby>鱻<rt>セン</rt></ruby>",
             "meta": {
-              "kanji": "焱",
+              "kanji": "鱻",
               "masterKanji": [
-                "焱"
+                "鱻"
               ],
-              "heisigNumber": 3077,
-              "slug": "three_fire",
+              "heisigNumber": 3074,
+              "slug": "three_fish",
               "displayOrder": 350,
               "reward": true
             },

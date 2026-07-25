@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_33_reading",
+  "title": "Lesson 33 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 33,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v1",
+    "soundtrackTarget": "12:51",
+    "soundtrackDurationSec": 771.29,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L33_forget",
+      "kanji": "忘",
+      "keyword": "forget",
+      "image": "studies/forget.png",
+      "verse": {
+        "jpHtml": "<ruby>忘<rt>わす</rt></ruby>れられたのではなく<br><ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうへ　<ruby>溶<rt>と</rt></ruby>けていった",
+        "en": "Not lost from memory—\nsimply dissolved into the mist."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137665
+    },
+    {
+      "id": "L33_selfish",
+      "kanji": "恣",
+      "keyword": "selfish",
+      "image": "studies/selfish.png",
+      "verse": {
+        "jpHtml": "<ruby>港<rt>みなと</rt></ruby>を<ruby>離<rt>はな</rt></ruby>れた<ruby>舟<rt>ふね</rt></ruby>は<br>まだ<ruby>知<rt>し</rt></ruby>らぬ<ruby>空<rt>そら</rt></ruby>を<ruby>選<rt>えら</rt></ruby>んだ",
+        "en": "The boat left the harbor\nand chose an unknown sky."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137690
+    },
+    {
+      "id": "L33_endure_silently",
+      "kanji": "忍",
+      "keyword": "endure silently",
+      "image": "studies/endure_silently.png",
+      "verse": {
+        "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける<ruby>石灯籠<rt>いしどうろう</rt></ruby>は<br><ruby>何<rt>なに</rt></ruby>も<ruby>語<rt>かた</rt></ruby>らず　<ruby>冬<rt>ふゆ</rt></ruby>を<ruby>越<rt>こ</rt></ruby>える",
+        "en": "The stone lantern bears the snow\nand passes through winter without complaint."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137762
+    },
+    {
+      "id": "L33_acknowledge",
+      "kanji": "認",
+      "keyword": "acknowledge",
+      "image": "studies/acknowledge.png",
+      "verse": {
+        "jpHtml": "<ruby>山<rt>やま</rt></ruby>は<ruby>水<rt>みず</rt></ruby>に<ruby>映<rt>うつ</rt></ruby>り<br><ruby>静<rt>しず</rt></ruby>かに<ruby>自分<rt>じぶん</rt></ruby>を<ruby>知<rt>し</rt></ruby>っていた",
+        "en": "The mountain reflected in water\nquietly knew itself."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137805
+    },
+    {
+      "id": "L33_mourning",
+      "kanji": "忌",
+      "keyword": "mourning",
+      "image": "studies/mourning.png",
+      "verse": {
+        "jpHtml": "<ruby>空<rt>あ</rt></ruby>いた<ruby>椅子<rt>いす</rt></ruby>のそばで<br><ruby>夕暮<rt>ゆうぐ</rt></ruby>れだけが<ruby>残<rt>のこ</rt></ruby>っていた",
+        "en": "Beside the empty chair\nonly evening remained."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137829
+    },
+    {
+      "id": "L33_intention",
+      "kanji": "志",
+      "keyword": "intention",
+      "image": "studies/intention.png",
+      "verse": {
+        "jpHtml": "<ruby>雲<rt>くも</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>は<ruby>見<rt>み</rt></ruby>えなくても<br><ruby>足<rt>あし</rt></ruby>は<ruby>上<rt>のぼ</rt></ruby>る<ruby>方<rt>ほう</rt></ruby>を<ruby>知<rt>し</rt></ruby>っている",
+        "en": "Though the summit cannot be seen,\nthe feet know which way is upward."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137860
+    },
+    {
+      "id": "L33_document",
+      "kanji": "誌",
+      "keyword": "document",
+      "image": "studies/document.png",
+      "verse": {
+        "jpHtml": "<ruby>書<rt>か</rt></ruby>きかけの<ruby>頁<rt>ページ</rt></ruby>には<br><ruby>生<rt>い</rt></ruby>きた<ruby>日々<rt>ひび</rt></ruby>が<ruby>眠<rt>ねむ</rt></ruby>っていた",
+        "en": "Within unfinished pages\nrest the days that were lived."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137881
+    },
+    {
+      "id": "L33_core",
+      "kanji": "芯",
+      "keyword": "core",
+      "image": "studies/core.png",
+      "verse": {
+        "jpHtml": "<ruby>寒<rt>さむ</rt></ruby>さの<ruby>中<rt>なか</rt></ruby>で<ruby>咲<rt>さ</rt></ruby>く<ruby>梅<rt>うめ</rt></ruby>は<br><ruby>見<rt>み</rt></ruby>えない<ruby>強<rt>つよ</rt></ruby>さを<ruby>抱<rt>だ</rt></ruby>いている",
+        "en": "The winter plum blossom\nholds a strength unseen."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137907
+    },
+    {
+      "id": "L33_loyalty",
+      "kanji": "忠",
+      "keyword": "loyalty",
+      "image": "studies/loyalty.png",
+      "verse": {
+        "jpHtml": "<ruby>嵐<rt>あらし</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えた<ruby>鳥居<rt>とりい</rt></ruby>は<br><ruby>今<rt>いま</rt></ruby>もそこに<ruby>立<rt>た</rt></ruby>っている",
+        "en": "The shrine gate survived the storms\nand still stands where it always has."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137928
+    },
+    {
+      "id": "L33_skewer",
+      "kanji": "串",
+      "keyword": "skewer",
+      "image": "studies/skewer.png",
+      "verse": {
+        "jpHtml": "<ruby>一<rt>ひと</rt></ruby>つ<ruby>一<rt>ひと</rt></ruby>つの<ruby>珠<rt>たま</rt></ruby>が<br>ひと<ruby>筋<rt>すじ</rt></ruby>の<ruby>道<rt>みち</rt></ruby>を<ruby>作<rt>つく</rt></ruby>っていた",
+        "en": "One bead after another\nformed a single path."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782139693
+    },
+    {
+      "id": "L33_afflicted",
+      "kanji": "患",
+      "keyword": "afflicted",
+      "image": "studies/afflicted.png",
+      "verse": {
+        "jpHtml": "<ruby>雨粒<rt>あまつぶ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうで<br><ruby>街<rt>まち</rt></ruby>の<ruby>灯<rt>ひ</rt></ruby>が<ruby>滲<rt>にじ</rt></ruby>んでいた",
+        "en": "Beyond the rain-streaked glass\nthe city lights blurred softly."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782137955
+    },
+    {
+      "id": "L33_think",
+      "kanji": "思",
+      "keyword": "think",
+      "image": "studies/think.png",
+      "verse": {
+        "jpHtml": "<ruby>言葉<rt>ことば</rt></ruby>になる<ruby>前<rt>まえ</rt></ruby>に<br><ruby>海<rt>うみ</rt></ruby>はすでに<ruby>答<rt>こた</rt></ruby>えていた",
+        "en": "Before thought became words,\nthe sea had already answered."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138052
+    },
+    {
+      "id": "L33_grace",
+      "kanji": "恩",
+      "keyword": "grace",
+      "image": "studies/grace.png",
+      "verse": {
+        "jpHtml": "<ruby>森<rt>もり</rt></ruby>を<ruby>抜<rt>ぬ</rt></ruby>けた<ruby>光<rt>ひかり</rt></ruby>が<br><ruby>理由<rt>りゆう</rt></ruby>もなく<ruby>道<rt>みち</rt></ruby>を<ruby>照<rt>て</rt></ruby>らした",
+        "en": "Light passed through the forest\nand illuminated the path for no reason at all."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138073
+    },
+    {
+      "id": "L33_respond",
+      "kanji": "応",
+      "keyword": "respond",
+      "image": "studies/respond.png",
+      "verse": {
+        "jpHtml": "<ruby>鐘<rt>かね</rt></ruby>の<ruby>響<rt>ひび</rt></ruby>きは<ruby>消<rt>き</rt></ruby>えても<br><ruby>波紋<rt>はもん</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>がり<ruby>続<rt>つづ</rt></ruby>ける",
+        "en": "Though the bell's sound fades,\nthe ripples continue outward."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138096
+    },
+    {
+      "id": "L33_idea",
+      "kanji": "意",
+      "keyword": "idea",
+      "image": "studies/idea.png",
+      "verse": {
+        "jpHtml": "<ruby>白紙<rt>はくし</rt></ruby>の<ruby>静<rt>しず</rt></ruby>けさに<br><ruby>最初<rt>さいしょ</rt></ruby>の<ruby>一線<rt>いっせん</rt></ruby>が<ruby>生<rt>う</rt></ruby>まれた",
+        "en": "Upon the silence of blank paper\nthe first line was born."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138116
+    },
+    {
+      "id": "L33_cowardice",
+      "kanji": "臆",
+      "keyword": "cowardice",
+      "image": "studies/cowardice.png",
+      "verse": {
+        "jpHtml": "<ruby>橋<rt>はし</rt></ruby>の<ruby>先<rt>さき</rt></ruby>は<ruby>見<rt>み</rt></ruby>えないが<br><ruby>立<rt>た</rt></ruby>ち<ruby>止<rt>ど</rt></ruby>る<ruby>理由<rt>りゆう</rt></ruby>も<ruby>見<rt>み</rt></ruby>えない",
+        "en": "The far side of the bridge cannot be seen,\nyet neither can a reason to stop."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138138
+    },
+    {
+      "id": "L33_concept",
+      "kanji": "想",
+      "keyword": "concept",
+      "image": "studies/concept.png",
+      "verse": {
+        "jpHtml": "ひとつの<ruby>月<rt>つき</rt></ruby>なのに<br><ruby>水面<rt>みなも</rt></ruby>ごとに<ruby>姿<rt>すがた</rt></ruby>を<ruby>変<rt>か</rt></ruby>えていた",
+        "en": "Though there is only one moon,\nevery pool reflects it differently."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138157
+    },
+    {
+      "id": "L33_breath",
+      "kanji": "息",
+      "keyword": "breath",
+      "image": "studies/breath.png",
+      "verse": {
+        "jpHtml": "<ruby>松<rt>まつ</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>を<ruby>流<rt>なが</rt></ruby>れる<ruby>霧<rt>きり</rt></ruby>は<br><ruby>静<rt>しず</rt></ruby>かな<ruby>呼吸<rt>こきゅう</rt></ruby>のようだった",
+        "en": "The mist drifting through the pines\nfelt like a quiet breath."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138179
+    },
+    {
+      "id": "L33_recess",
+      "kanji": "憩",
+      "keyword": "recess",
+      "image": "studies/recess.png",
+      "verse": {
+        "jpHtml": "<ruby>座<rt>すわ</rt></ruby>る<ruby>人<rt>ひと</rt></ruby>がいなくても<br><ruby>木陰<rt>こかげ</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みを<ruby>知<rt>し</rt></ruby>っている",
+        "en": "Even with no one seated there,\nthe shade understands rest."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138234
+    },
+    {
+      "id": "L33_favor",
+      "kanji": "恵",
+      "keyword": "favor",
+      "image": "studies/favor.png",
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>降<rt>ふ</rt></ruby>り<br><ruby>庭<rt>にわ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>った",
+        "en": "The rain fell quietly,\nand the garden quietly received it."
+      },
+      "meta": {
+        "lesson": 33,
+        "experimental": true
+      },
+      "imageRev": 1782138253
+    }
+  ]
+}

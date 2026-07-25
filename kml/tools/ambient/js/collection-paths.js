@@ -1,5 +1,5 @@
 /**
- * Collection JSON paths — lesson_01 … lesson_10 subfolders for L1–10 builds.
+ * Collection JSON paths — lesson subfolders for L1–10 and L33–37 builds.
  */
 (function () {
   "use strict";
@@ -16,8 +16,10 @@
 
   function collectionDirForId(name) {
     if (LESSON_FOLDER_OVERRIDES[name]) return LESSON_FOLDER_OVERRIDES[name];
+    if (/^proto_/.test(name)) return "prototypes";
     if (/^post_elementary/.test(name)) return "post_elementary";
     if (/^beyond_joyo/.test(name)) return "beyond_joyo";
+    if (/^ambient_gallery_film/.test(name)) return "ambient_gallery_film";
     if (/^vocabulary_\d+/.test(name)) return "vocabulary";
     if (/^hiragana_song/.test(name)) return "hiragana_song";
     if (/^hiragana_origins/.test(name)) return "hiragana_origins";
@@ -32,7 +34,8 @@
     const m = name.match(/^lesson_(\d+)/);
     if (!m) return null;
     const n = parseInt(m[1], 10);
-    if (n >= 1 && n <= 10) return lessonFolder(n);
+    // Nest Heisig lesson collections (1–10 shipped; 33–37 galleries).
+    if ((n >= 1 && n <= 10) || (n >= 33 && n <= 37)) return lessonFolder(n);
     return null;
   }
 

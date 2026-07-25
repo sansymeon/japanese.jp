@@ -23,11 +23,6 @@ EXHIBIT_REPLACEMENTS = {
     "L39_suspicious": (42, "honey"),
 }
 
-# Guardian framingScale < 1 pulls back; love is portrait — extra zoom-out.
-SCENE_FRAMING: dict[str, dict[str, str | float]] = {
-    "L40_love": {"imageScale": 0.74, "imageFocus": "50% 48%"},
-}
-
 
 def _load_heart_collection():
     script = ROOT / "scripts" / "build_heart_collection.py"
@@ -73,9 +68,6 @@ def attach_image_rev(scenes: list[dict]) -> list[dict]:
             path = REPO_ASSETS / Path(image).name
             if path.exists():
                 scene["imageRev"] = int(path.stat().st_mtime)
-        sid = scene.get("id", "")
-        if sid in SCENE_FRAMING:
-            scene.update(SCENE_FRAMING[sid])
         out.append(scene)
     return out
 

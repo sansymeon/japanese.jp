@@ -1,0 +1,260 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "proto_monster_museum",
+  "title": "Prototype — Party Kanji Museum Reveal",
+  "notes": "EXPERIMENT. Calm museum intro: parts fade in one by one at authored positions, rest, fade away, then the completed kanji fades into the centre. Continues into the normal Party Kanji flow. Biáng ends the museum hold with fireworks.",
+  "exhibition": {
+    "partyMuseumPartFadeInMs": 1400,
+    "partyMuseumPartStaggerMs": 1600,
+    "partyMuseumAllHoldMs": 2200,
+    "partyMuseumPartsFadeOutMs": 1400,
+    "partyMuseumBlackPauseMs": 900,
+    "partyMuseumFinalFadeInMs": 1800,
+    "partyMuseumFinalHoldMs": 2800,
+    "partyMuseumMeaningFadeInMs": 1100,
+    "partyMuseumMeaningHoldMs": 2600,
+    "partyMuseumFadeOutMs": 1000,
+    "partyMuseumCelebrationBurstMs": 1600,
+    "partyShockKanjiRevealMs": 250,
+    "partyShockChallengeDelayMs": 3000,
+    "partyShockChallengeRevealMs": 350,
+    "partyShockHoldAfterChallengeMs": 1650,
+    "partyShockFadeMs": 400,
+    "partyRevealFadeInMs": 350,
+    "partyRevealBurstMs": 400,
+    "partyComponentStaggerMs": 2000,
+    "partyComponentArriveMs": 450,
+    "partyEquationDelayMs": 2500,
+    "partyEquationRevealMs": 400,
+    "partyEquationHoldMs": 3500,
+    "partyRevealFadeMs": 400,
+    "partyProofFadeInMs": 400,
+    "partyProofHoldMs": 6000,
+    "partyProofFadeMs": 400,
+    "partyFinalFadeInMs": 1200,
+    "partyFinalHoldMs": 1500,
+    "partyComponentPulseFadeInMs": 500,
+    "partyComponentPulseHoldMs": 2000,
+    "partyFinalFadeOutMs": 600,
+    "partyClosingFadeInMs": 350,
+    "partyClosingHoldMs": 2500,
+    "partyClosingFadeMs": 350,
+    "partyEndCardFadeInMs": 350,
+    "partyEndCardHoldMs": 1500,
+    "partyEndCardFadeMs": 350,
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 600,
+    "blackHoldMs": 600
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "partyKanji",
+    "exhibitProfile": "partyKanji",
+    "showKeyword": false,
+    "typography": "party-kanji"
+  },
+  "meta": {
+    "theme": "partyKanji",
+    "series": "PARTY KANJI",
+    "tagline": "Learn this before your next party.",
+    "closingMessage": "Big kanji are just little kanji having a party.",
+    "partyVisual": {
+      "componentReveal": "burst",
+      "componentGlow": false,
+      "componentBounce": true,
+      "finalGlow": false,
+      "componentPulseOpacity": 0.18,
+      "showReadingInReveal": false,
+      "showTrivia": false,
+      "showPlaylistSubtitle": true
+    },
+    "prototype": true,
+    "sceneCount": 3,
+    "playlists": [
+      "Party Kanji"
+    ]
+  },
+  "scenes": [
+    {
+      "id": "PROTO_museum_three_deer",
+      "kanji": "麤",
+      "keyword": "three deer",
+      "party": {
+        "final": "麤",
+        "meaning": "three deer",
+        "parts": [
+          {
+            "text": "鹿",
+            "x": 0.25,
+            "y": 0.3
+          },
+          {
+            "text": "鹿",
+            "x": 0.7,
+            "y": 0.45
+          },
+          {
+            "text": "鹿",
+            "x": 0.4,
+            "y": 0.72
+          }
+        ],
+        "challenge": "Three deer. One kanji.",
+        "playlist": "Party Kanji",
+        "components": [
+          {
+            "kanji": "鹿",
+            "label": "deer"
+          },
+          {
+            "kanji": "鹿",
+            "label": "deer"
+          },
+          {
+            "kanji": "鹿",
+            "label": "deer"
+          }
+        ],
+        "componentLayout": "gathering",
+        "operator": "+",
+        "reading": "ソ",
+        "disclaimer": "No deer were harmed in the production of this video.",
+        "closingMessage": ""
+      }
+    },
+    {
+      "id": "PROTO_museum_three_dragons",
+      "kanji": "龘",
+      "keyword": "three dragons",
+      "party": {
+        "final": "龘",
+        "meaning": "three dragons",
+        "parts": [
+          {
+            "text": "龍",
+            "x": 0.28,
+            "y": 0.28
+          },
+          {
+            "text": "龍",
+            "x": 0.68,
+            "y": 0.42
+          },
+          {
+            "text": "龍",
+            "x": 0.42,
+            "y": 0.74
+          }
+        ],
+        "challenge": "Can you write this?",
+        "playlist": "Party Kanji",
+        "components": [
+          {
+            "kanji": "龍",
+            "label": "dragon"
+          },
+          {
+            "kanji": "龍",
+            "label": "dragon"
+          },
+          {
+            "kanji": "龍",
+            "label": "dragon"
+          }
+        ],
+        "componentLayout": "gathering",
+        "operator": "+",
+        "reading": "トウ",
+        "disclaimer": "No dragons were harmed in the production of this video.",
+        "closingMessage": ""
+      }
+    },
+    {
+      "id": "PROTO_museum_biang",
+      "kanji": "𰻞",
+      "keyword": "biáng",
+      "celebration": "fireworks",
+      "party": {
+        "final": "𰻞",
+        "meaning": "biáng",
+        "celebration": "fireworks",
+        "parts": [
+          {
+            "text": "穴",
+            "x": 0.5,
+            "y": 0.18
+          },
+          {
+            "text": "言",
+            "x": 0.28,
+            "y": 0.34
+          },
+          {
+            "text": "馬",
+            "x": 0.72,
+            "y": 0.36
+          },
+          {
+            "text": "長",
+            "x": 0.22,
+            "y": 0.55
+          },
+          {
+            "text": "月",
+            "x": 0.78,
+            "y": 0.58
+          },
+          {
+            "text": "心",
+            "x": 0.5,
+            "y": 0.7
+          },
+          {
+            "text": "辶",
+            "x": 0.34,
+            "y": 0.82
+          }
+        ],
+        "challenge": "The longest noodle in the gallery.",
+        "playlist": "Party Kanji",
+        "components": [
+          {
+            "kanji": "穴",
+            "label": "cave"
+          },
+          {
+            "kanji": "言",
+            "label": "speak"
+          },
+          {
+            "kanji": "馬",
+            "label": "horse"
+          },
+          {
+            "kanji": "長",
+            "label": "long"
+          },
+          {
+            "kanji": "月",
+            "label": "moon"
+          },
+          {
+            "kanji": "心",
+            "label": "heart"
+          },
+          {
+            "kanji": "辶",
+            "label": "walk"
+          }
+        ],
+        "componentLayout": "horizontal",
+        "operator": "+",
+        "reading": "ビャン",
+        "disclaimer": "No noodles were harmed in the production of this video.",
+        "closingMessage": ""
+      }
+    }
+  ]
+}

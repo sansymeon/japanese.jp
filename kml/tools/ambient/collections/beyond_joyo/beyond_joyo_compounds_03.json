@@ -4,9 +4,17 @@
   "id": "beyond_joyo_compounds_03",
   "title": "Beyond Jōyō Kanji Compounds — Part 3",
   "titleJa": "常用外漢字熟語 — 第3部",
-  "notes": "Beyond Jōyō compounds Volume 1 Part 3/19: 50 compounds (嘘→於いて), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Ending: final compound review ~22s → 4s fade to black. Soundtrack: audio/jr_high_compounds_soundtrack_3.mp3 (~1005s).",
+  "notes": "Beyond Jōyō compounds Volume 1 Part 3/19: 50 compounds (曰く→鑫), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Ends on a party-kanji reward: one restrained wave of gold flakes as the meaning lands, drifting on through the hold. Ending: final compound review ~22s → 4s fade to black → gold 漢 crest. Soundtrack: audio/beyond_joyo_3.mp3 (~1018s).",
   "soundtrack": {
-    "main": "audio/jr_high_compounds_soundtrack_3.mp3"
+    "main": "audio/beyond_joyo_3.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
   },
   "exhibition": {
     "artworkArrivalMs": 0,
@@ -28,10 +36,33 @@
     "compoundsStepFadeMs": 1400,
     "compoundsFinalReviewHoldMs": 22000,
     "compoundsFinalFadeToBlackMs": 4000,
+    "compoundsRewardFlakeCount": 30,
+    "compoundsRewardFlakeSpreadMs": 1600,
+    "compoundsRewardFlakeDriftMinMs": 10000,
+    "compoundsRewardFlakeDriftMaxMs": 16000,
+    "compoundsFinaleFlakeWaveCount": 40,
+    "compoundsFinaleFlakeSecondWaveCount": 26,
+    "compoundsFinaleFlakeWaveGapMs": 3200,
+    "compoundsFinaleFlakeSpreadMs": 2200,
+    "compoundsFinaleFlakeDriftMinMs": 9000,
+    "compoundsFinaleFlakeDriftMaxMs": 15000,
+    "compoundsFinaleConfettiLeadMs": 9000,
+    "compoundsFinaleConfettiCount": 96,
+    "compoundsFinaleConfettiSpreadMs": 5000,
+    "compoundsFinaleConfettiFallMinMs": 4500,
+    "compoundsFinaleConfettiFallMaxMs": 7500,
+    "compoundsFinaleConfettiRestHoldMs": 4500,
+    "compoundsFinaleConfettiFadeMs": 3500,
     "vocabArtworkExhaleMs": 2800,
     "exhibitTransitionMs": 0,
     "kenBurnsDurationMs": 1200000,
-    "closingBlackAfterMs": 600
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 3200,
+    "closingHoldMs": 2800,
+    "closingExhaleMs": 3500,
+    "closingSilenceHoldMs": 0,
+    "closingBlackAfterMs": 800,
+    "closingFadeToBlackMs": 3500
   },
   "display": {
     "loop": false,
@@ -44,6 +75,7 @@
     "verseMode": "sequential",
     "typography": "mobile-refine",
     "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest",
     "cameraMotionScale": 1.0
   },
   "meta": {
@@ -59,26 +91,26 @@
     "sceneCount": 1,
     "compoundCount": 50,
     "kanjiRange": [
-      "嘘",
-      "於"
+      "曰",
+      "鑫"
     ],
     "anchorRange": [
-      "嘘",
-      "於いて"
+      "曰く",
+      "鑫"
     ],
     "heisigRange": [
-      2286,
-      2909
+      620,
+      3075
     ],
     "sourceOrder": "familiarity",
-    "soundtrackDurationMs": 1005113,
+    "soundtrackDurationMs": 1018984,
     "estimatedContentRuntimeMs": 1000400,
     "timingNote": "50 compounds ≈ 1000s (16:40) including review+fade.",
-    "ending": "finalCompoundReview",
+    "ending": "finalCompoundReviewThenGoldCrest",
     "anchorRule": "mostUsefulCompoundByFamiliarity",
     "jukugoList": "beyond_joyo_jukugo_list.json",
     "masterCsv": "kml/data/kanji/kanji_master.csv",
-    "hasReward": false,
+    "hasReward": true,
     "isFinale": false
   },
   "scenes": [
@@ -93,6 +125,21 @@
       "compounds": {
         "steps": [
           {
+            "jp": "曰く",
+            "reading": "いわく",
+            "en": "according to",
+            "jpHtml": "<ruby>曰<rt>いわ</rt></ruby>く",
+            "meta": {
+              "kanji": "曰",
+              "masterKanji": [
+                "曰"
+              ],
+              "heisigNumber": 620,
+              "slug": "sayeth",
+              "displayOrder": 101
+            }
+          },
+          {
             "jp": "嘘",
             "reading": "うそ",
             "en": "lie",
@@ -104,7 +151,7 @@
               ],
               "heisigNumber": 2286,
               "slug": "fib",
-              "displayOrder": 101
+              "displayOrder": 102
             }
           },
           {
@@ -119,7 +166,7 @@
               ],
               "heisigNumber": 2454,
               "slug": "buckwheat",
-              "displayOrder": 102
+              "displayOrder": 103
             }
           },
           {
@@ -135,7 +182,7 @@
               ],
               "heisigNumber": 2921,
               "slug": "biwa",
-              "displayOrder": 103
+              "displayOrder": 104
             }
           },
           {
@@ -150,7 +197,7 @@
               ],
               "heisigNumber": 2567,
               "slug": "barrel",
-              "displayOrder": 104
+              "displayOrder": 105
             }
           },
           {
@@ -165,7 +212,7 @@
               ],
               "heisigNumber": 2096,
               "slug": "pigeon",
-              "displayOrder": 105
+              "displayOrder": 106
             }
           },
           {
@@ -180,7 +227,7 @@
               ],
               "heisigNumber": 2882,
               "slug": "swallow",
-              "displayOrder": 106
+              "displayOrder": 107
             }
           },
           {
@@ -195,7 +242,7 @@
               ],
               "heisigNumber": 1691,
               "slug": "camellia_tree",
-              "displayOrder": 107
+              "displayOrder": 108
             }
           },
           {
@@ -210,7 +257,7 @@
               ],
               "heisigNumber": 2800,
               "slug": "haze",
-              "displayOrder": 108
+              "displayOrder": 109
             }
           },
           {
@@ -225,7 +272,7 @@
               ],
               "heisigNumber": 2402,
               "slug": "port",
-              "displayOrder": 109
+              "displayOrder": 110
             }
           },
           {
@@ -240,7 +287,7 @@
               ],
               "heisigNumber": 1009,
               "slug": "bamboo_hat",
-              "displayOrder": 110
+              "displayOrder": 111
             }
           },
           {
@@ -255,7 +302,7 @@
               ],
               "heisigNumber": 2571,
               "slug": "damson",
-              "displayOrder": 111
+              "displayOrder": 112
             }
           },
           {
@@ -270,7 +317,7 @@
               ],
               "heisigNumber": 210,
               "slug": "judas_tree",
-              "displayOrder": 112
+              "displayOrder": 113
             }
           },
           {
@@ -285,7 +332,7 @@
               ],
               "heisigNumber": 1635,
               "slug": "diamond",
-              "displayOrder": 113
+              "displayOrder": 114
             }
           },
           {
@@ -300,7 +347,7 @@
               ],
               "heisigNumber": 2940,
               "slug": "soar",
-              "displayOrder": 114
+              "displayOrder": 115
             }
           },
           {
@@ -315,7 +362,7 @@
               ],
               "heisigNumber": 2682,
               "slug": "slender_bamboo",
-              "displayOrder": 115
+              "displayOrder": 116
             }
           },
           {
@@ -330,7 +377,7 @@
               ],
               "heisigNumber": 2714,
               "slug": "silk_gauze",
-              "displayOrder": 116
+              "displayOrder": 117
             }
           },
           {
@@ -345,7 +392,7 @@
               ],
               "heisigNumber": 2472,
               "slug": "hollyhock",
-              "displayOrder": 117
+              "displayOrder": 118
             }
           },
           {
@@ -360,7 +407,7 @@
               ],
               "heisigNumber": 2420,
               "slug": "eddy",
-              "displayOrder": 118
+              "displayOrder": 119
             }
           },
           {
@@ -375,7 +422,7 @@
               ],
               "heisigNumber": 2291,
               "slug": "within_ability",
-              "displayOrder": 119
+              "displayOrder": 120
             }
           },
           {
@@ -390,7 +437,7 @@
               ],
               "heisigNumber": 2364,
               "slug": "devote",
-              "displayOrder": 120
+              "displayOrder": 121
             }
           },
           {
@@ -405,7 +452,7 @@
               ],
               "heisigNumber": 2607,
               "slug": "tug",
-              "displayOrder": 121
+              "displayOrder": 122
             }
           },
           {
@@ -420,7 +467,7 @@
               ],
               "heisigNumber": 2898,
               "slug": "stalwart",
-              "displayOrder": 122
+              "displayOrder": 123
             }
           },
           {
@@ -435,7 +482,7 @@
               ],
               "heisigNumber": 2277,
               "slug": "scout",
-              "displayOrder": 123
+              "displayOrder": 124
             }
           },
           {
@@ -450,7 +497,7 @@
               ],
               "heisigNumber": 2396,
               "slug": "old_kyoto",
-              "displayOrder": 124
+              "displayOrder": 125
             }
           },
           {
@@ -465,7 +512,7 @@
               ],
               "heisigNumber": 2204,
               "slug": "fort",
-              "displayOrder": 125
+              "displayOrder": 126
             }
           },
           {
@@ -480,7 +527,7 @@
               ],
               "heisigNumber": 2580,
               "slug": "downspout",
-              "displayOrder": 126
+              "displayOrder": 127
             }
           },
           {
@@ -495,7 +542,7 @@
               ],
               "heisigNumber": 2925,
               "slug": "dry_field",
-              "displayOrder": 127
+              "displayOrder": 128
             }
           },
           {
@@ -510,7 +557,7 @@
               ],
               "heisigNumber": 2562,
               "slug": "temple_grove",
-              "displayOrder": 128
+              "displayOrder": 129
             }
           },
           {
@@ -525,7 +572,7 @@
               ],
               "heisigNumber": 2539,
               "slug": "purple_willow",
-              "displayOrder": 129
+              "displayOrder": 130
             }
           },
           {
@@ -540,7 +587,7 @@
               ],
               "heisigNumber": 257,
               "slug": "reed",
-              "displayOrder": 130
+              "displayOrder": 131
             }
           },
           {
@@ -555,7 +602,7 @@
               ],
               "heisigNumber": 2468,
               "slug": "grassy_reed",
-              "displayOrder": 131
+              "displayOrder": 132
             }
           },
           {
@@ -570,7 +617,7 @@
               ],
               "heisigNumber": 1523,
               "slug": "park",
-              "displayOrder": 132
+              "displayOrder": 133
             }
           },
           {
@@ -585,7 +632,7 @@
               ],
               "heisigNumber": 2559,
               "slug": "roost",
-              "displayOrder": 133
+              "displayOrder": 134
             }
           },
           {
@@ -600,7 +647,7 @@
               ],
               "heisigNumber": 2896,
               "slug": "circling",
-              "displayOrder": 134
+              "displayOrder": 135
             }
           },
           {
@@ -615,7 +662,7 @@
               ],
               "heisigNumber": 2575,
               "slug": "birch",
-              "displayOrder": 135
+              "displayOrder": 136
             }
           },
           {
@@ -630,7 +677,7 @@
               ],
               "heisigNumber": 2696,
               "slug": "foxtail_millet",
-              "displayOrder": 136
+              "displayOrder": 137
             }
           },
           {
@@ -645,7 +692,7 @@
               ],
               "heisigNumber": 2237,
               "slug": "swirl",
-              "displayOrder": 137
+              "displayOrder": 138
             }
           },
           {
@@ -660,7 +707,7 @@
               ],
               "heisigNumber": 3040,
               "slug": "consult",
-              "displayOrder": 138
+              "displayOrder": 139
             }
           },
           {
@@ -675,7 +722,7 @@
               ],
               "heisigNumber": 2336,
               "slug": "mountain_top",
-              "displayOrder": 139
+              "displayOrder": 140
             }
           },
           {
@@ -690,7 +737,7 @@
               ],
               "heisigNumber": 2505,
               "slug": "nook",
-              "displayOrder": 140
+              "displayOrder": 141
             }
           },
           {
@@ -705,7 +752,7 @@
               ],
               "heisigNumber": 2361,
               "slug": "disseminate",
-              "displayOrder": 141
+              "displayOrder": 142
             }
           },
           {
@@ -720,7 +767,7 @@
               ],
               "heisigNumber": 1421,
               "slug": "hollow",
-              "displayOrder": 142
+              "displayOrder": 143
             }
           },
           {
@@ -735,7 +782,7 @@
               ],
               "heisigNumber": 2904,
               "slug": "conglomerate",
-              "displayOrder": 143
+              "displayOrder": 144
             }
           },
           {
@@ -750,7 +797,7 @@
               ],
               "heisigNumber": 2626,
               "slug": "cancer",
-              "displayOrder": 144
+              "displayOrder": 145
             }
           },
           {
@@ -765,7 +812,7 @@
               ],
               "heisigNumber": 2993,
               "slug": "enshrine",
-              "displayOrder": 145
+              "displayOrder": 146
             }
           },
           {
@@ -780,7 +827,7 @@
               ],
               "heisigNumber": 2648,
               "slug": "salarium",
-              "displayOrder": 146
+              "displayOrder": 147
             }
           },
           {
@@ -795,7 +842,7 @@
               ],
               "heisigNumber": 2907,
               "slug": "magistrate",
-              "displayOrder": 147
+              "displayOrder": 148
             }
           },
           {
@@ -810,38 +857,25 @@
               ],
               "heisigNumber": 2974,
               "slug": "ten_thousand_old",
-              "displayOrder": 148
-            }
-          },
-          {
-            "jp": "國",
-            "reading": "くに",
-            "en": "country (old form)",
-            "jpHtml": "<ruby>國<rt>くに</rt></ruby>",
-            "meta": {
-              "kanji": "國",
-              "masterKanji": [
-                "國"
-              ],
-              "heisigNumber": 2990,
-              "slug": "country_old",
               "displayOrder": 149
             }
           },
           {
-            "jp": "於いて",
-            "reading": "おいて",
-            "en": "at / in (literary)",
-            "jpHtml": "<ruby>於<rt>おい</rt></ruby>て",
+            "jp": "鑫",
+            "reading": "キン",
+            "en": "three golds — party kanji",
+            "jpHtml": "<ruby>鑫<rt>キン</rt></ruby>",
             "meta": {
-              "kanji": "於",
+              "kanji": "鑫",
               "masterKanji": [
-                "於"
+                "鑫"
               ],
-              "heisigNumber": 2909,
-              "slug": "within",
-              "displayOrder": 150
-            }
+              "heisigNumber": 3075,
+              "slug": "three_gold",
+              "displayOrder": 150,
+              "reward": true
+            },
+            "reward": true
           }
         ]
       }

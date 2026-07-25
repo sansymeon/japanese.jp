@@ -3,38 +3,50 @@
   "assetsBase": "../../assets",
   "id": "party_kanji_v1",
   "title": "PARTY KANJI — Episode 1 (龘)",
-  "notes": "PARTY KANJI: fast visual discovery — Shock → Reveal → Proof → Final → Closing → End Card. Timing and visuals are JSON-configured for reuse across collections.",
+  "notes": "PARTY KANJI: calm visual reward — Shock → Reveal → Final → Closing → End Card → gold crest. No stroke-order lesson (see Different Strokes). Timing/visuals are JSON-configured.",
   "exhibition": {
-    "partyShockKanjiRevealMs": 250,
-    "partyShockChallengeDelayMs": 3000,
-    "partyShockChallengeRevealMs": 350,
-    "partyShockHoldAfterChallengeMs": 1650,
-    "partyShockFadeMs": 400,
-    "partyRevealFadeInMs": 350,
-    "partyRevealBurstMs": 400,
-    "partyComponentStaggerMs": 2000,
-    "partyComponentArriveMs": 450,
-    "partyEquationDelayMs": 3000,
-    "partyEquationRevealMs": 400,
-    "partyEquationHoldMs": 4000,
-    "partyRevealFadeMs": 400,
-    "partyProofFadeInMs": 400,
-    "partyProofHoldMs": 8000,
-    "partyProofFadeMs": 400,
-    "partyFinalFadeInMs": 1200,
-    "partyFinalHoldMs": 1500,
-    "partyComponentPulseFadeInMs": 500,
-    "partyComponentPulseHoldMs": 2000,
-    "partyFinalFadeOutMs": 600,
-    "partyClosingFadeInMs": 350,
-    "partyClosingHoldMs": 2500,
-    "partyClosingFadeMs": 350,
-    "partyEndCardFadeInMs": 350,
-    "partyEndCardHoldMs": 1500,
-    "partyEndCardFadeMs": 350,
+    "partyShockKanjiRevealMs": 450,
+    "partyShockChallengeDelayMs": 3400,
+    "partyShockChallengeRevealMs": 1300,
+    "partyShockHoldAfterChallengeMs": 2200,
+    "partyShockFadeMs": 900,
+    "partyRevealFadeInMs": 700,
+    "partyRevealBurstMs": 700,
+    "partyComponentStaggerMs": 2400,
+    "partyComponentArriveMs": 750,
+    "partyEquationDelayMs": 3600,
+    "partyEquationRevealMs": 800,
+    "partyEquationHoldMs": 5200,
+    "partyRevealFadeMs": 900,
+    "partyFinalFadeInMs": 1800,
+    "partyFinalHoldMs": 2800,
+    "partyComponentPulseFadeInMs": 800,
+    "partyComponentPulseHoldMs": 2800,
+    "partyFinalFadeOutMs": 1100,
+    "partyClosingFadeInMs": 800,
+    "partyClosingHoldMs": 6500,
+    "partyClosingFadeMs": 900,
+    "partyEndCardFadeInMs": 800,
+    "partyEndCardHoldMs": 5500,
+    "partyEndCardFadeMs": 1000,
+    "closingBlackBeforeMs": 600,
+    "closingRevealMs": 3600,
+    "closingHoldMs": 3200,
+    "closingExhaleMs": 4200,
+    "closingSilenceHoldMs": 0,
+    "closingBlackAfterMs": 900,
+    "closingFadeToBlackMs": 4200,
     "exhibitTransitionMs": 0,
     "exhibitBlackHoldMs": 0,
     "blackHoldMs": 0
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
   },
   "display": {
     "loop": false,
@@ -42,7 +54,8 @@
     "family": "partyKanji",
     "exhibitProfile": "partyKanji",
     "showKeyword": false,
-    "typography": "party-kanji"
+    "typography": "party-kanji",
+    "bookendStyle": "galleryCrest"
   },
   "meta": {
     "theme": "partyKanji",
@@ -51,9 +64,9 @@
     "closingMessage": "Big kanji are just little kanji having a party.",
     "partyVisual": {
       "componentReveal": "burst",
-      "componentGlow": true,
+      "componentGlow": false,
       "componentBounce": true,
-      "finalGlow": true,
+      "finalGlow": false,
       "componentPulseOpacity": 0.18,
       "showReadingInReveal": false,
       "showTrivia": false,
@@ -89,8 +102,9 @@
     "sceneCount": 1,
     "prototype": true,
     "playlists": [
-      "Monster Kanji"
-    ]
+      "Party Kanji"
+    ],
+    "ending": "humourThenGoldCrest"
   },
   "scenes": [
     {
@@ -99,7 +113,7 @@
       "keyword": "three dragons",
       "party": {
         "challenge": "Can you write this?",
-        "playlist": "Monster Kanji",
+        "playlist": "Party Kanji",
         "components": [
           {
             "kanji": "龍",
@@ -114,13 +128,11 @@
             "label": "dragon"
           }
         ],
-        "componentLayout": "vertical",
+        "componentLayout": "gathering",
         "operator": "+",
         "reading": "トウ",
         "disclaimer": "No dragons were harmed in the production of this video.",
         "trivia": "",
-        "strokePage": "strokes/pages/dragon_old.html",
-        "strokeNote": "",
         "closingMessage": ""
       }
     }

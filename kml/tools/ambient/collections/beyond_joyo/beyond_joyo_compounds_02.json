@@ -4,9 +4,17 @@
   "id": "beyond_joyo_compounds_02",
   "title": "Beyond Jōyō Kanji Compounds — Part 2",
   "titleJa": "常用外漢字熟語 — 第2部",
-  "notes": "Beyond Jōyō compounds Volume 1 Part 2/19: 50 compounds (鞄→曰く), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Ending: final compound review ~22s → 4s fade to black. Soundtrack: audio/jr_high_compounds_soundtrack_2.mp3 (~1006s).",
+  "notes": "Beyond Jōyō compounds Volume 1 Part 2/19: 50 compounds (鞄→轟音), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Ends on a party-kanji reward: one restrained wave of gold flakes as the meaning lands, drifting on through the hold. Ending: final compound review ~22s → 4s fade to black → gold 漢 crest. Soundtrack: audio/beyond_joyo_2.mp3 (~1271s).",
   "soundtrack": {
-    "main": "audio/jr_high_compounds_soundtrack_2.mp3"
+    "main": "audio/beyond_joyo_2.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
   },
   "exhibition": {
     "artworkArrivalMs": 0,
@@ -28,10 +36,33 @@
     "compoundsStepFadeMs": 1400,
     "compoundsFinalReviewHoldMs": 22000,
     "compoundsFinalFadeToBlackMs": 4000,
+    "compoundsRewardFlakeCount": 30,
+    "compoundsRewardFlakeSpreadMs": 1600,
+    "compoundsRewardFlakeDriftMinMs": 10000,
+    "compoundsRewardFlakeDriftMaxMs": 16000,
+    "compoundsFinaleFlakeWaveCount": 40,
+    "compoundsFinaleFlakeSecondWaveCount": 26,
+    "compoundsFinaleFlakeWaveGapMs": 3200,
+    "compoundsFinaleFlakeSpreadMs": 2200,
+    "compoundsFinaleFlakeDriftMinMs": 9000,
+    "compoundsFinaleFlakeDriftMaxMs": 15000,
+    "compoundsFinaleConfettiLeadMs": 9000,
+    "compoundsFinaleConfettiCount": 96,
+    "compoundsFinaleConfettiSpreadMs": 5000,
+    "compoundsFinaleConfettiFallMinMs": 4500,
+    "compoundsFinaleConfettiFallMaxMs": 7500,
+    "compoundsFinaleConfettiRestHoldMs": 4500,
+    "compoundsFinaleConfettiFadeMs": 3500,
     "vocabArtworkExhaleMs": 2800,
     "exhibitTransitionMs": 0,
     "kenBurnsDurationMs": 1200000,
-    "closingBlackAfterMs": 600
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 3200,
+    "closingHoldMs": 2800,
+    "closingExhaleMs": 3500,
+    "closingSilenceHoldMs": 0,
+    "closingBlackAfterMs": 800,
+    "closingFadeToBlackMs": 3500
   },
   "display": {
     "loop": false,
@@ -44,6 +75,7 @@
     "verseMode": "sequential",
     "typography": "mobile-refine",
     "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest",
     "cameraMotionScale": 1.0
   },
   "meta": {
@@ -60,25 +92,25 @@
     "compoundCount": 50,
     "kanjiRange": [
       "鞄",
-      "曰"
+      "轟"
     ],
     "anchorRange": [
       "鞄",
-      "曰く"
+      "轟音"
     ],
     "heisigRange": [
       2806,
-      620
+      2760
     ],
     "sourceOrder": "familiarity",
-    "soundtrackDurationMs": 1006288,
+    "soundtrackDurationMs": 1271405,
     "estimatedContentRuntimeMs": 1000400,
     "timingNote": "50 compounds ≈ 1000s (16:40) including review+fade.",
-    "ending": "finalCompoundReview",
+    "ending": "finalCompoundReviewThenGoldCrest",
     "anchorRule": "mostUsefulCompoundByFamiliarity",
     "jukugoList": "beyond_joyo_jukugo_list.json",
     "masterCsv": "kml/data/kanji/kanji_master.csv",
-    "hasReward": false,
+    "hasReward": true,
     "isFinale": false
   },
   "scenes": [
@@ -831,19 +863,21 @@
             }
           },
           {
-            "jp": "曰く",
-            "reading": "いわく",
-            "en": "according to",
-            "jpHtml": "<ruby>曰<rt>いわ</rt></ruby>く",
+            "jp": "轟音",
+            "reading": "ごうおん",
+            "en": "rumble / roar",
+            "jpHtml": "<ruby>轟<rt>ごう</rt></ruby><ruby>音<rt>おん</rt></ruby>",
             "meta": {
-              "kanji": "曰",
+              "kanji": "轟",
               "masterKanji": [
-                "曰"
+                "轟"
               ],
-              "heisigNumber": 620,
-              "slug": "sayeth",
-              "displayOrder": 100
-            }
+              "heisigNumber": 2760,
+              "slug": "rumble",
+              "displayOrder": 100,
+              "reward": true
+            },
+            "reward": true
           }
         ]
       }

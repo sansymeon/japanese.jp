@@ -61,10 +61,10 @@
           "https://www.youtube.com/playlist?list=PLIX7jswPySk0",
         image: "kml/assets/images/kana_song_image.png",
       },
-      postJoyoKanji: {
-        playlistUrl: null,
-        comingSoon: true,
-        image: "kml/assets/images/post_joyo_coming_soon.png",
+      beyondJoyoKanji: {
+        playlistUrl:
+          "https://www.youtube.com/playlist?list=PLFcXrI1lQAqI",
+        image: "kml/assets/images/beyond_joyo.png",
       },
       ambientJapan: {
         playlistUrl:

@@ -94,6 +94,8 @@
       this.introPlayingFromGate = false;
       this.presentationEnded = false;
       this._soundtrackStarted = false;
+      this.finaleConfettiPending = false;
+      this.confettiCodaActive = false;
 
       this.presentationEnded = false;
       this.activeArtworkKey = "a";
@@ -137,6 +139,12 @@
         verseJp: root.querySelector("[data-exhibition-verse-jp]"),
         verseEn: root.querySelector("[data-exhibition-verse-en]"),
         partyLayer: root.querySelector("[data-party-kanji-layer]"),
+        partyMuseumLabel: root.querySelector("[data-party-museum-label]"),
+        partyMuseumStage: root.querySelector("[data-party-museum-stage]"),
+        partyMuseumFinal: root.querySelector("[data-party-museum-final]"),
+        partyMuseumNameplate: root.querySelector("[data-party-museum-nameplate]"),
+        partyMuseumReading: root.querySelector("[data-party-museum-reading]"),
+        partyMuseumMeaning: root.querySelector("[data-party-museum-meaning]"),
         partyShockKanji: root.querySelector("[data-party-shock-kanji]"),
         partyChallenge: root.querySelector("[data-party-challenge]"),
         partyPlaylist: root.querySelector("[data-party-playlist]"),
@@ -149,13 +157,17 @@
         partyComponentPulse: root.querySelector("[data-party-component-pulse]"),
         partyFinalKanji: root.querySelector("[data-party-final-kanji]"),
         partyFinalReading: root.querySelector("[data-party-final-reading]"),
+        partyFinalMeaning: root.querySelector("[data-party-final-meaning]"),
         partyClosingMessage: root.querySelector("[data-party-closing-message]"),
         partyBrand: root.querySelector("[data-party-brand]"),
         partyPlaylistEnd: root.querySelector("[data-party-playlist-end]"),
         partyTagline: root.querySelector("[data-party-tagline]"),
         partyDisclaimer: root.querySelector("[data-party-disclaimer]"),
         strokeOrderLayer: root.querySelector("[data-stroke-order-layer]"),
-        grade1ConfettiLayer: root.querySelector("[data-grade1-confetti-layer]"),
+        grade1ConfettiLayer:
+          root.querySelector("[data-party-confetti-layer]") ||
+          root.querySelector("[data-grade1-confetti-layer]"),
+        exhibitionConfettiLayer: root.querySelector("[data-exhibition-confetti-layer]"),
         g4Layer: root.querySelector("[data-g4-layer]"),
         g4Camera: root.querySelector("[data-g4-camera]"),
         g4Board: root.querySelector("[data-g4-board]"),
@@ -220,6 +232,7 @@
       this._soundtrackCrossfadedTo = -1;
 
       this.partyPhases = {
+        museum: root.querySelector('[data-party-phase="museum"]'),
         shock: root.querySelector('[data-party-phase="shock"]'),
         reveal: root.querySelector('[data-party-phase="reveal"]'),
         proof: root.querySelector('[data-party-phase="proof"]'),
@@ -382,6 +395,14 @@
 
     get isJapaneseVocabularyProfile() {
       return this.display.exhibitProfile === "japaneseVocabulary";
+    }
+
+    /** Party/stroke-order confetti lives inside layers that vocabulary keeps hidden. */
+    get confettiLayer() {
+      if (this.isJapaneseVocabularyProfile) {
+        return this.els.exhibitionConfettiLayer || this.els.grade1ConfettiLayer;
+      }
+      return this.els.grade1ConfettiLayer;
     }
 
     get isAnchorCompoundsExhibitionProfile() {
@@ -734,9 +755,6 @@
         (t.compoundsEnRevealMs ?? 1200) +
         enHold +
         (t.compoundsEnFadeMs ?? 1400);
-      if (celebration === "fireworks") {
-        ms += t.compoundsCelebrationBurstMs ?? 1600;
-      }
       return ms;
     }
 
@@ -2807,17 +2825,186 @@
       slot.kanji.classList.remove("is-visible");
     }
 
-    clearGrade1Confetti() {
-      const layer = this.els.grade1ConfettiLayer;
+    clearGrade1Confetti({ force = false } = {}) {
+      // The finale coda deliberately outlives the scene: the closing bookend resets
+      // layers while the confetti is still settling over it.
+      if (this.confettiCodaActive && !force) return;
+      const layer = this.confettiLayer;
       if (!layer) return;
       layer.textContent = "";
       layer.classList.add("exhibition-hidden");
+      layer.classList.remove("is-confetti-fading");
+    }
+
+    /**
+     * Tiny gold flakes caught in the air — the shared reward vocabulary for party
+     * kanji. `resting` flakes come to rest low in the frame instead of fading, so
+     * the closing crest can appear underneath them. Returns the ms until the last
+     * flake finishes its drift.
+     */
+    spawnGoldFlakes(options = {}) {
+      const layer = this.confettiLayer;
+      if (!layer) return 0;
+      const palette = Array.isArray(options.palette)
+        ? options.palette
+        : ["#F0DFA8", "#E8C547", "#D4AF37", "#F5D76E", "#C9A227", "#FFE7B0", "#B8860B"];
+      const count = options.count ?? 30;
+      const spreadMs = options.spreadMs ?? 1600;
+      const driftMinMs = options.driftMinMs ?? 8000;
+      const driftMaxMs = options.driftMaxMs ?? 13000;
+      const resting = options.resting === true;
+      const sizeMinPx = options.sizeMinPx ?? 3;
+      const sizeMaxPx = options.sizeMaxPx ?? 6.5;
+      const peakMin = options.peakMin ?? 0.45;
+      const peakMax = options.peakMax ?? 0.8;
+      const height = window.innerHeight;
+      const width = window.innerWidth;
+      // The giant glyph owns the middle of the frame; flakes stay out of its way.
+      const clearX = options.clearXFrac ?? 0.27;
+      const clearTop = options.clearTopFrac ?? 0.08;
+      const clearBottom = options.clearBottomFrac ?? 0.88;
+
+      layer.classList.remove("exhibition-hidden", "is-confetti-fading");
+      if (options.replace !== false) layer.textContent = "";
+
+      for (let i = 0; i < count; i += 1) {
+        const flake = document.createElement("span");
+        flake.className = resting ? "kml-gold-flake is-resting" : "kml-gold-flake";
+
+        let startX = width * Math.random();
+        let startY;
+        let travelY;
+        if (resting) {
+          startY = -height * (0.06 + Math.random() * 0.14);
+          travelY = height * (0.78 + Math.random() * 0.2) - startY;
+        } else {
+          // Keep the drift in the side columns so the glyph is never covered.
+          const side = Math.random() < 0.5 ? -1 : 1;
+          const inset = 0.02 + Math.random() * (0.5 - clearX - 0.02);
+          startX = side < 0 ? width * inset : width * (1 - inset);
+          startY = height * (clearTop + Math.random() * 0.42);
+          travelY = height * (0.18 + Math.random() * 0.3);
+          if (startY + travelY > height * clearBottom) {
+            travelY = height * clearBottom - startY;
+          }
+        }
+
+        const w = sizeMinPx + Math.random() * (sizeMaxPx - sizeMinPx);
+        flake.style.width = `${w.toFixed(1)}px`;
+        flake.style.height = `${(w * (1.2 + Math.random() * 0.9)).toFixed(1)}px`;
+        flake.style.left = `${startX.toFixed(1)}px`;
+        flake.style.top = `${startY.toFixed(1)}px`;
+        flake.style.background = palette[i % palette.length];
+        flake.style.setProperty("--flake-dy", `${travelY.toFixed(1)}px`);
+        flake.style.setProperty("--flake-dx", `${(Math.random() * 70 - 35).toFixed(1)}px`);
+        flake.style.setProperty("--flake-sway", `${(Math.random() * 90 - 45).toFixed(1)}px`);
+        flake.style.setProperty("--flake-rot", `${(Math.random() * 360 - 180).toFixed(1)}deg`);
+        flake.style.setProperty(
+          "--flake-peak",
+          (peakMin + Math.random() * (peakMax - peakMin)).toFixed(2)
+        );
+        flake.style.setProperty(
+          "--flake-duration",
+          `${(driftMinMs + Math.random() * (driftMaxMs - driftMinMs)).toFixed(0)}ms`
+        );
+        flake.style.setProperty("--flake-delay", `${(Math.random() * spreadMs).toFixed(0)}ms`);
+        layer.appendChild(flake);
+      }
+      return spreadMs + driftMaxMs;
+    }
+
+    /**
+     * Party-kanji reward: one restrained wave of flakes, identical for all twelve,
+     * triggered as the meaning lands and left to drift through the hold.
+     */
+    playRewardGoldFlakes(t = this.timing) {
+      this.spawnGoldFlakes({
+        count: t.compoundsRewardFlakeCount ?? 30,
+        spreadMs: t.compoundsRewardFlakeSpreadMs ?? 1600,
+        driftMinMs: t.compoundsRewardFlakeDriftMinMs ?? 10000,
+        driftMaxMs: t.compoundsRewardFlakeDriftMaxMs ?? 16000,
+      });
+    }
+
+    async fadeOutConfettiLayer(fadeMs = 3500) {
+      const layer = this.confettiLayer;
+      if (!layer) return;
+      document.documentElement.style.setProperty(
+        "--kml-confetti-layer-fade",
+        `${fadeMs}ms`
+      );
+      layer.classList.add("is-confetti-fading");
+      await this.wait(fadeMs);
+      this.confettiCodaActive = false;
+      this.clearGrade1Confetti({ force: true });
+      document.documentElement.style.removeProperty("--kml-confetti-layer-fade");
+    }
+
+    /**
+     * Finale (biáng) opening: the reward wave, a breath, then a second gentler wave,
+     * so the finale reads as different rather than merely bigger.
+     */
+    async playFinaleGoldFlakeWaves(stillRunning, t = this.timing) {
+      this.spawnGoldFlakes({
+        count: t.compoundsFinaleFlakeWaveCount ?? 40,
+        spreadMs: t.compoundsFinaleFlakeSpreadMs ?? 2200,
+        driftMinMs: t.compoundsFinaleFlakeDriftMinMs ?? 9000,
+        driftMaxMs: t.compoundsFinaleFlakeDriftMaxMs ?? 15000,
+      });
+      await this.wait(t.compoundsFinaleFlakeWaveGapMs ?? 3200);
+      if (!stillRunning()) return;
+      this.spawnGoldFlakes({
+        replace: false,
+        count: t.compoundsFinaleFlakeSecondWaveCount ?? 26,
+        spreadMs: t.compoundsFinaleFlakeSpreadMs ?? 2200,
+        driftMinMs: t.compoundsFinaleFlakeDriftMinMs ?? 9000,
+        driftMaxMs: t.compoundsFinaleFlakeDriftMaxMs ?? 15000,
+        peakMin: 0.35,
+        peakMax: 0.65,
+      });
+    }
+
+    /**
+     * Finale coda (biáng): a longer shower falls during the last kanji hold, keeps
+     * settling while the closing crest fades in, then fades out over the crest.
+     * Runs alongside the ending — do not await it inside the ending sequence.
+     */
+    async playFinaleSettlingConfetti(stillRunning, t = this.timing) {
+      this.confettiCodaActive = true;
+      const settleMs = this.spawnGoldFlakes({
+        resting: true,
+        count: t.compoundsFinaleConfettiCount ?? 96,
+        spreadMs: t.compoundsFinaleConfettiSpreadMs ?? 5000,
+        driftMinMs: t.compoundsFinaleConfettiFallMinMs ?? 4500,
+        driftMaxMs: t.compoundsFinaleConfettiFallMaxMs ?? 7500,
+        sizeMinPx: 3.5,
+        sizeMaxPx: 7.5,
+        peakMin: 0.6,
+        peakMax: 0.95,
+      });
+      await this.wait(settleMs + (t.compoundsFinaleConfettiRestHoldMs ?? 4500));
+      if (!stillRunning()) {
+        this.confettiCodaActive = false;
+        this.clearGrade1Confetti({ force: true });
+        return;
+      }
+      await this.fadeOutConfettiLayer(t.compoundsFinaleConfettiFadeMs ?? 3500);
     }
 
     async playGrade1Confetti(accentColor, options = {}) {
-      const layer = this.els.grade1ConfettiLayer;
+      const layer = this.confettiLayer;
       if (!layer) return;
-      const palette = [
+      const goldPalette = [
+        "#E8C547",
+        "#D4AF37",
+        "#F5D76E",
+        "#C9A227",
+        "#FFE08A",
+        "#B8860B",
+        "#F0E6C8",
+        "#A67C00",
+      ];
+      const rainbowPalette = [
         "#E53935",
         "#FB8C00",
         "#F9A825",
@@ -2827,6 +3014,11 @@
         "#8E24AA",
         "#EC407A",
       ];
+      const palette = Array.isArray(options.palette)
+        ? [...options.palette]
+        : options.gold === true || options.palette === "gold"
+          ? [...goldPalette]
+          : [...rainbowPalette];
       if (accentColor && !palette.includes(accentColor)) {
         palette.unshift(accentColor);
       }
@@ -3185,6 +3377,12 @@
         let scaleMin;
         let motionScale = 1;
         let cameraDurationMs = durationMs;
+        if (this.isGalleryProfile && scene.artworkAloneMs != null) {
+          const baseAlone = this.timing.artworkAloneMs ?? 0;
+          cameraDurationMs = Math.round(
+            (durationMs / this.timingScale + (scene.artworkAloneMs - baseAlone)) * this.timingScale
+          );
+        }
         if (isHeartExhibition) {
           // Horizontal study art: hold full composition, skip letterbox auto-crop.
           coverBoost = 1;
@@ -3205,6 +3403,16 @@
           if (soundtrackMs > cameraDurationMs) {
             cameraDurationMs = Math.round(soundtrackMs * this.timingScale);
           }
+        } else if (
+          this.display?.family === "ambientGalleryFilm" ||
+          this.display?.ambientMove === "v2"
+        ) {
+          // Ambient Move V2: stronger museum Ken Burns (collection or per-scene scale).
+          coverBoost = window.GalleryGuardian.measureCoverBoost(img);
+          motionScale =
+            scene.galleryCamera?.motionScale ??
+            this.display.cameraMotionScale ??
+            2.5;
         } else {
           coverBoost = window.GalleryGuardian.measureCoverBoost(img);
         }
@@ -3896,14 +4104,12 @@
         await this.wait(enReveal);
         if (!stillRunning()) return;
 
+        // Gold flakes = you have reached a party kanji. Same restrained wave every
+        // time; the finale adds a second wave so it feels different, not louder.
         if (celebration === "fireworks") {
-          // Fireworks for the series finale (biáng).
-          void this.playGrade1Confetti(null, {
-            bursts: 3,
-            count: 56,
-            burstGapMs: 420,
-            holdMs: t.compoundsCelebrationBurstMs ?? 1600,
-          });
+          void this.playFinaleGoldFlakeWaves(stillRunning, t);
+        } else if (isReward) {
+          this.playRewardGoldFlakes(t);
         }
 
         await this.wait(enHold);
@@ -3917,15 +4123,9 @@
 
       // Final-compound review: leave the native word on screen for the coda hold.
       if (leaveVisible) {
-        if (celebration === "fireworks") {
-          // One more burst while the final review holds.
-          void this.playGrade1Confetti(null, {
-            bursts: 2,
-            count: 48,
-            burstGapMs: 500,
-            holdMs: 1800,
-          });
-        }
+        // The settling confetti is choreographed against the closing crest, so the
+        // ending sequence starts it once the review hold is nearly over.
+        this.finaleConfettiPending = celebration === "fireworks";
         return;
       }
 
@@ -4091,10 +4291,22 @@
     async playJapaneseVocabularyFinalCompoundEnding(stillRunning, layer, t) {
       const reviewMs = t.compoundsFinalReviewHoldMs ?? 20000;
       const fadeMs = t.compoundsFinalFadeToBlackMs ?? 4000;
+      const confettiLead = this.finaleConfettiPending
+        ? Math.min(reviewMs, t.compoundsFinaleConfettiLeadMs ?? 9000)
+        : 0;
+      this.finaleConfettiPending = false;
 
       // Final compound is already on screen (leaveVisible). Quiet review beat.
-      await this.wait(reviewMs);
+      await this.wait(reviewMs - confettiLead);
       if (!stillRunning()) return;
+
+      if (confettiLead > 0) {
+        // Falls over the last of the kanji hold and keeps settling through the
+        // fade to black and into the crest, which fades in underneath it.
+        void this.playFinaleSettlingConfetti(stillRunning, t);
+        await this.wait(confettiLead);
+        if (!stillRunning()) return;
+      }
 
       document.documentElement.style.setProperty("--ex-verse-fade", `${fadeMs}ms`);
       document.documentElement.style.setProperty("--ex-transition", `${fadeMs}ms`);
@@ -4117,6 +4329,12 @@
       if (blackAfter > 0) {
         await this.wait(blackAfter);
         if (!stillRunning()) return;
+      }
+
+      // Gold 漢 crest coda when configured (Beyond Joyo, vocabulary series, etc.).
+      if (this.bookends?.closing) {
+        await this.playClosingBookend();
+        return;
       }
       this.finishPresentation();
     }
@@ -4736,6 +4954,154 @@
       if (this.els.partyComponentPulse) {
         this.els.partyComponentPulse.classList.remove("is-visible", "is-pulsing");
       }
+      if (this.els.partyMuseumStage) {
+        this.els.partyMuseumStage.innerHTML = "";
+      }
+      if (this.els.partyMuseumFinal) {
+        this.els.partyMuseumFinal.textContent = "";
+        this.els.partyMuseumFinal.classList.remove("is-visible");
+      }
+      if (this.els.partyMuseumMeaning) {
+        this.els.partyMuseumMeaning.textContent = "";
+        this.els.partyMuseumMeaning.classList.remove("is-visible");
+      }
+    }
+
+    partyMuseumParts(party) {
+      const raw = party?.parts;
+      if (!Array.isArray(raw) || !raw.length) return null;
+      return raw
+        .map((part, i) => {
+          const text = part.text || part.kanji || "";
+          const x = Number(part.x);
+          const y = Number(part.y);
+          return {
+            text,
+            x: Number.isFinite(x) ? Math.min(0.92, Math.max(0.08, x)) : 0.2 + (i % 3) * 0.3,
+            y: Number.isFinite(y)
+              ? Math.min(0.88, Math.max(0.12, y))
+              : 0.28 + Math.floor(i / 3) * 0.28,
+          };
+        })
+        .filter((p) => p.text);
+    }
+
+    populatePartyMuseumStage(parts) {
+      const stage = this.els.partyMuseumStage;
+      if (!stage) return;
+      stage.innerHTML = parts
+        .map(
+          (part, i) =>
+            `<span class="party-museum-part" data-museum-part="${i}" lang="ja" ` +
+            `style="left:${(part.x * 100).toFixed(2)}%;top:${(part.y * 100).toFixed(2)}%">` +
+            `${part.text}</span>`
+        )
+        .join("");
+    }
+
+    /**
+     * Museum exhibit intro — parts fade in one by one at authored positions,
+     * rest together, fade away, then the completed kanji fades into the centre.
+     * Used when party.parts is present; otherwise the legacy Shock path runs.
+     */
+    async playPartyKanjiMuseumReveal(stillRunning, t, scene, party) {
+      const phase = this.partyPhases.museum;
+      const parts = this.partyMuseumParts(party);
+      if (!phase || !parts?.length) return false;
+
+      const finalKanji = party.final || scene.kanji || "";
+      const meaning = party.meaning || scene.keyword || "";
+
+      this.hideAllPartyPhases();
+      this.populatePartyMuseumStage(parts);
+      if (this.els.partyMuseumFinal) {
+        this.els.partyMuseumFinal.textContent = finalKanji;
+        this.els.partyMuseumFinal.classList.remove("is-visible");
+      }
+      if (this.els.partyMuseumMeaning) {
+        this.els.partyMuseumMeaning.textContent = meaning;
+        this.els.partyMuseumMeaning.classList.remove("is-visible");
+      }
+
+      phase.classList.remove("is-fading");
+      phase.classList.add("is-visible");
+
+      const partFade = t.partyMuseumPartFadeInMs ?? 1400;
+      const partGap = t.partyMuseumPartStaggerMs ?? 1600;
+      const allHold = t.partyMuseumAllHoldMs ?? 2200;
+      const partsOut = t.partyMuseumPartsFadeOutMs ?? 1400;
+      const blackPause = t.partyMuseumBlackPauseMs ?? 900;
+      const finalIn = t.partyMuseumFinalFadeInMs ?? 1800;
+      const finalHold = t.partyMuseumFinalHoldMs ?? 2800;
+      const meaningIn = t.partyMuseumMeaningFadeInMs ?? 1100;
+      const meaningHold = t.partyMuseumMeaningHoldMs ?? 2600;
+      const phaseOut = t.partyMuseumFadeOutMs ?? 1000;
+
+      document.documentElement.style.setProperty("--pk-museum-part-fade", `${partFade}ms`);
+      document.documentElement.style.setProperty("--pk-museum-parts-out", `${partsOut}ms`);
+      document.documentElement.style.setProperty("--pk-museum-final-fade", `${finalIn}ms`);
+      document.documentElement.style.setProperty("--pk-museum-meaning-fade", `${meaningIn}ms`);
+
+      const nodes = [
+        ...(this.els.partyMuseumStage?.querySelectorAll(".party-museum-part") || []),
+      ];
+
+      for (let i = 0; i < nodes.length; i++) {
+        if (i > 0) {
+          await this.wait(partGap);
+          if (!stillRunning()) return true;
+        }
+        nodes[i].classList.add("is-visible");
+        await this.wait(partFade);
+        if (!stillRunning()) return true;
+      }
+
+      await this.wait(allHold);
+      if (!stillRunning()) return true;
+
+      nodes.forEach((node) => node.classList.add("is-leaving"));
+      await this.wait(partsOut);
+      if (!stillRunning()) return true;
+      nodes.forEach((node) => {
+        node.classList.remove("is-visible", "is-leaving");
+      });
+
+      await this.wait(blackPause);
+      if (!stillRunning()) return true;
+
+      this.els.partyMuseumFinal?.classList.add("is-visible");
+      await this.wait(finalIn);
+      if (!stillRunning()) return true;
+
+      const celebration = party.celebration || scene.celebration;
+      if (celebration === "fireworks" || celebration === "confetti") {
+        void this.playGrade1Confetti(null, {
+          gold: true,
+          bursts: 3,
+          count: 56,
+          burstGapMs: 420,
+          holdMs: t.partyMuseumCelebrationBurstMs ?? 1600,
+        });
+      }
+
+      await this.wait(finalHold);
+      if (!stillRunning()) return true;
+
+      if (meaning) {
+        this.els.partyMuseumMeaning?.classList.add("is-visible");
+        await this.wait(meaningIn);
+        if (!stillRunning()) return true;
+        await this.wait(meaningHold);
+        if (!stillRunning()) return true;
+      }
+
+      phase.classList.add("is-fading");
+      await this.wait(phaseOut);
+      if (!stillRunning()) return true;
+      phase.classList.remove("is-visible", "is-fading");
+      this.els.partyMuseumFinal?.classList.remove("is-visible");
+      this.els.partyMuseumMeaning?.classList.remove("is-visible");
+      return true;
     }
 
     partyVisualConfig(scene) {
@@ -4791,20 +5157,29 @@
         this.els.partyPlaylistEnd.style.display = playlist ? "" : "none";
       }
       if (this.els.partyComponents) {
-        const layout = party.componentLayout || "vertical";
+        const layout = party.componentLayout || "gathering";
         const revealMode = visual.componentReveal === "slide" ? "slide" : "burst";
         this.els.partyComponents.className = "party-kanji-components";
         this.els.partyComponents.classList.add(`party-kanji-components--${revealMode}`);
-        this.els.partyComponents.classList.add(
-          layout === "vertical" ? "is-vertical" : "is-horizontal"
-        );
+        if (layout === "gathering") {
+          this.els.partyComponents.classList.add("is-gathering");
+        } else {
+          this.els.partyComponents.classList.add(
+            layout === "vertical" ? "is-vertical" : "is-horizontal"
+          );
+        }
         this.els.partyComponents.innerHTML = this.buildPartyComponentCellsHtml(party);
       }
       if (this.els.partyComponentPulse) {
-        const layout = party.componentLayout || "vertical";
-        this.els.partyComponentPulse.className =
-          "party-kanji-component-pulse" +
-          (layout === "vertical" ? " is-vertical" : " is-horizontal");
+        const layout = party.componentLayout || "gathering";
+        this.els.partyComponentPulse.className = "party-kanji-component-pulse";
+        if (layout === "gathering") {
+          this.els.partyComponentPulse.classList.add("is-gathering");
+        } else {
+          this.els.partyComponentPulse.classList.add(
+            layout === "vertical" ? "is-vertical" : "is-horizontal"
+          );
+        }
         this.els.partyComponentPulse.style.setProperty(
           "--pk-pulse-opacity",
           String(visual.componentPulseOpacity ?? 0.18)
@@ -4832,9 +5207,14 @@
         this.els.partyFinalReading.textContent = party.reading || "";
         this.els.partyFinalReading.style.display = party.reading ? "" : "none";
       }
+      if (this.els.partyFinalMeaning) {
+        const meaning = scene.keyword || party.meaning || "";
+        this.els.partyFinalMeaning.textContent = meaning;
+        this.els.partyFinalMeaning.style.display = meaning ? "" : "none";
+      }
       if (this.els.partyStrokeNote) {
-        this.els.partyStrokeNote.textContent = party.strokeNote || "";
-        this.els.partyStrokeNote.style.display = party.strokeNote ? "" : "none";
+        this.els.partyStrokeNote.textContent = "";
+        this.els.partyStrokeNote.style.display = "none";
       }
       if (this.els.partyClosingMessage) {
         this.els.partyClosingMessage.textContent =
@@ -4885,7 +5265,7 @@
       if (!stillRunning()) return;
       this.els.partyChallenge?.classList.remove("party-kanji-challenge--hidden");
       this.els.partyChallenge?.classList.add("is-visible");
-      await this.wait(t.partyShockChallengeRevealMs ?? 350);
+      await this.wait(t.partyShockChallengeRevealMs ?? 1300);
       if (!stillRunning()) return;
 
       await this.wait(t.partyShockHoldAfterChallengeMs ?? 1650);
@@ -5003,46 +5383,45 @@
       }
       this.setClass(this.els.veil, "is-clear", true);
 
-      await this.playPartyKanjiShock(stillRunning, t);
+      const usedMuseum = await this.playPartyKanjiMuseumReveal(stillRunning, t, scene, party);
       if (!stillRunning()) return;
+      if (!usedMuseum) {
+        await this.playPartyKanjiShock(stillRunning, t);
+        if (!stillRunning()) return;
+      }
 
       await this.playPartyKanjiRevealStaged(stillRunning, t, party, visual);
       if (!stillRunning()) return;
 
-      if (this.els.partyStrokesFrame && party.strokePage) {
-        this.els.partyStrokesFrame.src = party.strokePage;
-      }
-      await this.playPartyKanjiPhase(
-        stillRunning,
-        "proof",
-        t.partyProofFadeInMs ?? 400,
-        t.partyProofHoldMs ?? 8000,
-        t.partyProofFadeMs ?? 400
-      );
-      if (!stillRunning()) return;
-
+      // Stroke order intentionally omitted — Different Strokes covers that lesson.
       await this.playPartyKanjiFinalWithPulse(stillRunning, t, visual);
       if (!stillRunning()) return;
 
       await this.playPartyKanjiPhase(
         stillRunning,
         "closing",
-        t.partyClosingFadeInMs ?? 400,
-        t.partyClosingHoldMs ?? 3000,
-        t.partyClosingFadeMs ?? 400
+        t.partyClosingFadeInMs ?? 800,
+        t.partyClosingHoldMs ?? 6500,
+        t.partyClosingFadeMs ?? 900
       );
       if (!stillRunning()) return;
 
       await this.playPartyKanjiPhase(
         stillRunning,
         "endcard",
-        t.partyEndCardFadeInMs ?? 400,
-        t.partyEndCardHoldMs ?? 2000,
-        t.partyEndCardFadeMs ?? 400
+        t.partyEndCardFadeInMs ?? 800,
+        t.partyEndCardHoldMs ?? 5500,
+        t.partyEndCardFadeMs ?? 1000
       );
       if (!stillRunning()) return;
 
       this.resetPartyKanjiLayers();
+
+      // Humour plaque → quiet gold crest → fade to black (museum exit).
+      if (this.bookends?.closing && !this.skipBookends) {
+        await this.playClosingBookend();
+        return;
+      }
 
       if (this.singleExhibit) {
         document.dispatchEvent(
@@ -5058,8 +5437,8 @@
       if (next >= count) {
         if (this.display.loop) {
           await this.playPartyKanjiExhibit(0);
-        } else if (this.bookends?.closing) {
-          await this.playClosingBookend();
+        } else {
+          this.finishPresentation();
         }
         return;
       }
@@ -5203,6 +5582,7 @@
       const scene = this.scenes[this.sceneIndex];
       const t = this.timing;
       const s = this.sequentialVerseTiming();
+      const artworkAloneMs = scene.artworkAloneMs ?? t.artworkAloneMs;
       const kanjiHoldMs = t.imageVerseKanjiHoldMs ?? 2000;
       const kanjiFadeMs = t.imageVerseKanjiFadeMs ?? t.titleFadeMs ?? 1600;
       const transitionMs = t.exhibitTransitionMs ?? 4000;
@@ -5241,10 +5621,10 @@
         if (this.sceneIndex === 0) {
           this.maybeStartSoundtrackForScene(0);
         }
-        await this.wait(t.artworkArrivalMs + t.artworkAloneMs);
+        await this.wait(t.artworkArrivalMs + artworkAloneMs);
         if (!stillRunning()) return;
       } else {
-        await this.wait(t.artworkAloneMs);
+        await this.wait(artworkAloneMs);
         if (!stillRunning()) return;
       }
 
@@ -5291,7 +5671,29 @@
           this.syncLegacyArtworkRefs();
           await this.playGalleryExhibit(0);
         } else if (this.bookends?.closing) {
+          const closing = this.bookends.closing;
+          // Keep final artwork on screen until the soundtrack ends, then crest.
+          if (closing.silentAfterSoundtrack && this.soundtrack?.main) {
+            await this.waitForSoundtrackEnd();
+            if (!stillRunning()) return;
+          }
           await this.playClosingBookend();
+        } else if (this.soundtrack?.main) {
+          // Ambient gallery film: keep final artwork until music ends, then soft fade.
+          await this.waitForSoundtrackEnd();
+          if (!stillRunning()) return;
+          const fadeMs = t.closingFadeToBlackMs ?? t.closingExhaleMs ?? 3000;
+          const layer = this.artworkLayers[this.activeArtworkKey];
+          document.documentElement.style.setProperty("--ex-transition", `${fadeMs}ms`);
+          document.documentElement.style.setProperty("--ex-exhale", `${fadeMs}ms`);
+          this.setClass(layer?.wrap, "is-exhaling", true);
+          this.setClass(layer?.wrap, "is-visible", false);
+          this.setClass(this.els.veil, "is-clear", false);
+          await this.wait(fadeMs);
+          if (!stillRunning()) return;
+          await this.wait(t.closingBlackAfterMs ?? 0);
+          this.stopAllAudio();
+          this.finishPresentation();
         }
         return;
       }
