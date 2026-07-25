@@ -5,8 +5,9 @@
 # This workflow is the automated regenerator: run analyze_channel_learning.py
 # via scripts/pre-deploy.sh, then commit fresh outputs when they change.
 #
-# Loop avoidance: paths-ignore skips re-runs when only output/ changes, and the
-# bot commit message includes [skip ci].
+# Loop avoidance: paths-ignore skips Action re-runs when only output/ changes.
+# Do NOT put [skip ci] on the bot commit — Netlify also honors that and will
+# skip deploying the regenerated JSON to the live site.
 
 name: Pre-deploy analytics
 
@@ -60,5 +61,8 @@ jobs:
             exit 0
           fi
 
-          git commit -m "chore(analytics): regenerate channel-learning stats [skip ci]"
+          # No [skip ci]: Netlify must deploy this commit so the homepage
+          # picks up the new generated_at. Action loops are prevented by
+          # paths-ignore on kml/analytics/output/** above.
+          git commit -m "chore(analytics): regenerate channel-learning stats"
           git push

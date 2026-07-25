@@ -67,8 +67,10 @@ Stats refresh only when `analyze_channel_learning.py` runs (via
 
 On **every push to `main`** that is not limited to `kml/analytics/output/**`,
 GitHub Actions runs `.github/workflows/pre-deploy-analytics.yml`, regenerates
-outputs, and commits them when they change (`[skip ci]` + `paths-ignore` avoid
-an Action loop). Manual runs: Actions → “Pre-deploy analytics” → Run workflow.
+outputs, and commits them when they change. `paths-ignore` on `output/**`
+avoids an Action loop; the bot commit is intentionally *not* marked
+`[skip ci]` so Netlify still deploys the fresh JSON. Manual runs: Actions →
+“Pre-deploy analytics” → Run workflow.
 
 The homepage and dashboard both load
 `kml/analytics/output/kml_channel_learning.json` (not the local `dashboard/data`
