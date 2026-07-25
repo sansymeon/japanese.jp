@@ -34,8 +34,10 @@ Regenerate data anytime:
 # or: .venv/bin/python kml/analytics/scripts/analyze_channel_learning.py
 ```
 
-Preferred release flow: create lesson → `git push` → pre-deploy regenerates JSON → deploy.
-See `kml/analytics/README.md` and `.github/workflows/pre-deploy-analytics.yml`.
+Preferred release flow: create lesson → push to `main` → GitHub Action
+`.github/workflows/pre-deploy-analytics.yml` regenerates JSON and commits it →
+Netlify deploy. There is no daily cron; stats update on each qualifying `main`
+push (or a manual workflow run). See `kml/analytics/README.md`.
 
 The dashboard reloads the new `generated_at` timestamp without a rebuild.
 

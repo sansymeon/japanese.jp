@@ -43,23 +43,39 @@ cd /home/sjnelson/japanese.jp
 ### Pre-deploy flow
 
 ```
-create lesson (local)
+create lesson (or any non-output change)
     ↓
-./scripts/pre-deploy.sh   # regenerate JSON anytime locally
+git push to main
     ↓
-git push to main at most once per day
+GitHub Action pre-deploy-analytics.yml runs analyze_channel_learning.py
     ↓
-deploy (homepage + dashboard serve the fresh JSON)
+new JSON under kml/analytics/output/ (committed back to main when changed)
+    ↓
+Netlify deploy (homepage + dashboard serve the fresh JSON)
 ```
+
+Locally (same script the Action runs):
 
 ```bash
 ./scripts/pre-deploy.sh
 ```
 
-Regenerate JSON as often as you like locally. Publishing to Netlify is limited to
-**one `main` push per calendar day** (Asia/Tokyo) via `scripts/limit-push-once-daily.sh`
-— daily stats are enough; waiting a day does not affect YouTube projects.
-Override only when needed: `ALLOW_EXTRA_PUSH=1 git push`.
+There is **no daily cron**, Netlify scheduled function, or build-time stats step.
+Stats refresh only when `analyze_channel_learning.py` runs (via
+`./scripts/pre-deploy.sh` or the GitHub Action) and the resulting JSON is on
+`main`.
+
+On **every push to `main`** that is not limited to `kml/analytics/output/**`,
+GitHub Actions runs `.github/workflows/pre-deploy-analytics.yml`, regenerates
+outputs, and commits them when they change. `paths-ignore` on `output/**`
+avoids an Action loop; the bot commit is intentionally *not* marked
+`[skip ci]` so Netlify still deploys the fresh JSON. Manual runs: Actions →
+“Pre-deploy analytics” → Run workflow.
+
+Optional local publish pace: regenerate JSON as often as you like with
+`./scripts/pre-deploy.sh`. If you want at most **one `main` push per calendar
+day** (Asia/Tokyo), use `scripts/limit-push-once-daily.sh` — daily stats are
+usually enough. Override when needed: `ALLOW_EXTRA_PUSH=1 git push`.
 
 The homepage and dashboard both load
 `kml/analytics/output/kml_channel_learning.json` (not the local `dashboard/data`

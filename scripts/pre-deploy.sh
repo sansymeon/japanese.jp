@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Pre-deploy: regenerate KML channel-learning analytics before the site goes live.
 #
-# Intended flow:
-#   create lesson → git push → pre-deploy (this script) → new JSON → deploy
+# Intended flow (automated on main):
+#   create lesson → git push to main → GitHub Action runs this script →
+#   commit fresh JSON under kml/analytics/output/ → Netlify deploy
 #
 # Reads lesson/collection inputs read-only.
 # Writes only under kml/analytics/output/ (dashboard ./data is a symlink to that).
@@ -10,6 +11,9 @@
 # Usage (from repo root):
 #   ./scripts/pre-deploy.sh
 #   SKIP_ANALYTICS=1 ./scripts/pre-deploy.sh   # no-op escape hatch
+#
+# Also invoked by .github/workflows/pre-deploy-analytics.yml on every push to
+# main (except output-only commits). Not a cron / Netlify scheduled function.
 
 set -euo pipefail
 
