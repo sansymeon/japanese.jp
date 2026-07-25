@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KML Glow Stress Test — Dense Kanji</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    /*
+     * Four treatments, one variable: the black text-shadow that bleeds into
+     * dense counters. Typography is locked to the larger Gallery lab size
+     * (≈150% of the shipping compound). Only panel D also trims size 4%.
+     */
+    :root {
+      --ink: #fffcf5;
+      --muted: rgba(240, 232, 218, 0.55);
+      --line: rgba(240, 232, 218, 0.14);
+      --accent: #e8c547;
+      --bg: #000;
+      /* Matches gallery typeLab A: 150% of japaneseVocabulary 8.2rem cap. */
+      --kanji-size: min(14rem, 22vmin);
+      --kanji-weight: 600;
+      --glow-current:
+        0 1px 3px rgba(0, 0, 0, 0.78),
+        0 3px 20px rgba(0, 0, 0, 0.62),
+        0 0 36px rgba(0, 0, 0, 0.45);
+      --glow-reduced:
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 2px 8px rgba(0, 0, 0, 0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, "Noto Serif JP", serif;
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100%;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 2;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    header .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    header .meta strong {
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      min-height: 0;
+    }
+
+    .panel {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      padding: 1.25rem;
+      min-height: 0;
+      position: relative;
+    }
+
+    .panel-label {
+      position: absolute;
+      top: 0.85rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .glyph {
+      font-family: "Noto Serif JP", serif;
+      font-size: var(--kanji-size);
+      font-weight: var(--kanji-weight);
+      line-height: 1;
+      color: rgba(255, 252, 245, 0.98);
+      margin: 0;
+    }
+
+    .panel[data-glow="current"] .glyph { text-shadow: var(--glow-current); }
+    .panel[data-glow="reduced"] .glyph { text-shadow: var(--glow-reduced); }
+    .panel[data-glow="none"] .glyph { text-shadow: none; }
+    .panel[data-glow="tight"] .glyph {
+      text-shadow: var(--glow-reduced);
+      font-size: calc(var(--kanji-size) * 0.96);
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .nav button {
+      appearance: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      color: var(--muted);
+      font: inherit;
+      padding: 0.25rem 0.65rem;
+      cursor: pointer;
+    }
+
+    .nav button:hover,
+    .nav button.is-on {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hint { font-style: italic; letter-spacing: 0.02em; }
+
+    /* Portrait phone: keep the 2×2, shrink the glyph so all four stay readable. */
+    @media (max-aspect-ratio: 3/4) {
+      :root { --kanji-size: min(11rem, 28vw); }
+      .panel { gap: 0.7rem; padding: 0.85rem 0.5rem; }
+      .panel-label { font-size: 0.62rem; top: 0.55rem; }
+    }
+
+    /* Full-bleed single-panel mode for casting one treatment to a TV. */
+    body.is-solo .board { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+    body.is-solo .panel { display: none; }
+    body.is-solo .panel.is-solo-active { display: flex; }
+    body.is-solo :root,
+    body.is-solo { --kanji-size: min(22rem, 48vmin); }
+    body.is-solo .panel[data-glow="tight"] .glyph {
+      font-size: calc(var(--kanji-size) * 0.96);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Glow stress · dense kanji</h1>
+  <div class="meta" id="caption">Loading…</div>
+</header>
+
+<main class="board" id="board" aria-live="polite">
+  <section class="panel is-solo-active" data-glow="current" data-index="0">
+    <div class="panel-label">Current glow</div>
+    <p class="glyph" lang="ja"></p>
+  </section>
+  <section class="panel" data-glow="reduced" data-index="1">
+    <div class="panel-label">Reduced glow</div>
+    <p class="glyph" lang="ja"></p>
+  </section>
+  <section class="panel" data-glow="none" data-index="2">
+    <div class="panel-label">No glow</div>
+    <p class="glyph" lang="ja"></p>
+  </section>
+  <section class="panel" data-glow="tight" data-index="3">
+    <div class="panel-label">Reduced · −4%</div>
+    <p class="glyph" lang="ja"></p>
+  </section>
+</main>
+
+<footer>
+  <div class="nav" id="kanji-nav"></div>
+  <div class="nav">
+    <button type="button" data-dir="-1">←</button>
+    <button type="button" data-dir="1">→</button>
+    <button type="button" id="solo-toggle">Solo</button>
+  </div>
+  <div class="hint">← → · 1–4 solo panel · Esc grid · click a panel to solo it</div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const FALLBACK = [
+    { kanji: "𰻞", strokes: 58, keyword: "biang noodles", on_reading: "" },
+    { kanji: "龘", strokes: 48, keyword: "three dragons", on_reading: "トウ" },
+    { kanji: "靐", strokes: 39, keyword: "three thunder", on_reading: "ビン" },
+    { kanji: "鱻", strokes: 33, keyword: "three fish", on_reading: "セン" },
+    { kanji: "麤", strokes: 33, keyword: "three deer", on_reading: "ソ" },
+    { kanji: "鬱", strokes: 29, keyword: "depression", on_reading: "ウツ" },
+    { kanji: "鸚", strokes: 28, keyword: "parakeet", on_reading: "イン" },
+    { kanji: "鑿", strokes: 28, keyword: "bore", on_reading: "サク" },
+    { kanji: "驢", strokes: 26, keyword: "donkey", on_reading: "ロ" },
+    { kanji: "鼈", strokes: 25, keyword: "snapping turtle", on_reading: "ベツ" },
+    { kanji: "麟", strokes: 24, keyword: "camelopard", on_reading: "リン" },
+    { kanji: "鱗", strokes: 24, keyword: "scaled", on_reading: "リン" },
+    { kanji: "鷹", strokes: 24, keyword: "hawk", on_reading: "ヨウ" },
+    { kanji: "鷺", strokes: 24, keyword: "heron", on_reading: "ロ" },
+    { kanji: "靄", strokes: 24, keyword: "mist", on_reading: "アイ" },
+    { kanji: "鑫", strokes: 24, keyword: "three gold", on_reading: "キン" },
+    { kanji: "鑑", strokes: 23, keyword: "specimen", on_reading: "カン" },
+    { kanji: "籤", strokes: 23, keyword: "lottery", on_reading: "セン" },
+    { kanji: "靈", strokes: 24, keyword: "spirit (kyūjitai)", on_reading: "レイ" },
+    { kanji: "驫", strokes: 30, keyword: "three horses", on_reading: "ヒョウ" },
+  ];
+
+  let list = FALLBACK;
+  let index = 0;
+  let solo = null; // null = 2×2 grid; 0–3 = solo panel
+
+  const caption = document.getElementById("caption");
+  const nav = document.getElementById("kanji-nav");
+  const panels = [...document.querySelectorAll(".panel")];
+  const glyphs = panels.map((p) => p.querySelector(".glyph"));
+
+  function paint() {
+    const item = list[index];
+    glyphs.forEach((el) => { el.textContent = item.kanji; });
+    const reading = item.on_reading ? ` · ${item.on_reading}` : "";
+    caption.innerHTML =
+      `<strong>${item.kanji}</strong> · ${item.strokes} strokes · ${item.keyword}${reading}` +
+      ` · ${index + 1}/${list.length}`;
+    [...nav.querySelectorAll("button")].forEach((b, i) => {
+      b.classList.toggle("is-on", i === index);
+    });
+    document.body.classList.toggle("is-solo", solo !== null);
+    panels.forEach((p, i) => p.classList.toggle("is-solo-active", solo === i));
+  }
+
+  function go(delta) {
+    index = (index + delta + list.length) % list.length;
+    paint();
+  }
+
+  function buildNav() {
+    nav.textContent = "";
+    list.forEach((item, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = item.kanji;
+      b.title = `${item.keyword} · ${item.strokes}`;
+      b.addEventListener("click", () => { index = i; paint(); });
+      nav.appendChild(b);
+    });
+  }
+
+  document.querySelectorAll("[data-dir]").forEach((b) => {
+    b.addEventListener("click", () => go(Number(b.dataset.dir)));
+  });
+
+  document.getElementById("solo-toggle").addEventListener("click", () => {
+    solo = solo === null ? 0 : null;
+    paint();
+  });
+
+  panels.forEach((p, i) => {
+    p.addEventListener("click", () => {
+      solo = solo === i ? null : i;
+      paint();
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") { go(1); return; }
+    if (event.key === "ArrowLeft") { go(-1); return; }
+    if (event.key === "Escape") { solo = null; paint(); return; }
+    const n = { 1: 0, 2: 1, 3: 2, 4: 3 }[event.key];
+    if (n !== undefined) { solo = n; paint(); }
+  });
+
+  const params = new URLSearchParams(location.search);
+  const start = params.get("kanji");
+  const weight = params.get("weight");
+  if (weight === "500" || weight === "600") {
+    document.documentElement.style.setProperty("--kanji-weight", weight);
+  }
+
+  fetch("./collections/prototypes/glow_stress_kanji.json")
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((data) => {
+      if (Array.isArray(data.kanji) && data.kanji.length) list = data.kanji;
+    })
+    .catch(() => {})
+    .finally(() => {
+      if (start) {
+        const hit = list.findIndex((k) => k.kanji === start);
+        if (hit >= 0) index = hit;
+      }
+      document.fonts.load(`${getComputedStyle(document.documentElement).getPropertyValue("--kanji-weight").trim() || 600} 14rem "Noto Serif JP"`)
+        .catch(() => {})
+        .finally(() => {
+          buildNav();
+          paint();
+          document.documentElement.classList.add("is-ready");
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

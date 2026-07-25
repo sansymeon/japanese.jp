@@ -1,0 +1,128 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "proto_party_kanji_lab",
+  "title": "Prototype — Party Kanji spacing lab (龘 / 麤)",
+  "notes": "EXPERIMENT ONLY. Same six-phase Party Kanji flow, used to compare component spacing and optical weight at a large overall composition. Drive with ?typeLab=a|b|c and optionally &edition=mobile.",
+  "exhibition": {
+    "partyShockKanjiRevealMs": 250,
+    "partyShockChallengeDelayMs": 3000,
+    "partyShockChallengeRevealMs": 350,
+    "partyShockHoldAfterChallengeMs": 1650,
+    "partyShockFadeMs": 400,
+    "partyRevealFadeInMs": 350,
+    "partyRevealBurstMs": 400,
+    "partyComponentStaggerMs": 2000,
+    "partyComponentArriveMs": 450,
+    "partyEquationDelayMs": 3000,
+    "partyEquationRevealMs": 400,
+    "partyEquationHoldMs": 4000,
+    "partyRevealFadeMs": 400,
+    "partyProofFadeInMs": 400,
+    "partyProofHoldMs": 8000,
+    "partyProofFadeMs": 400,
+    "partyFinalFadeInMs": 1200,
+    "partyFinalHoldMs": 1500,
+    "partyComponentPulseFadeInMs": 500,
+    "partyComponentPulseHoldMs": 2000,
+    "partyFinalFadeOutMs": 600,
+    "partyClosingFadeInMs": 350,
+    "partyClosingHoldMs": 2500,
+    "partyClosingFadeMs": 350,
+    "partyEndCardFadeInMs": 350,
+    "partyEndCardHoldMs": 1500,
+    "partyEndCardFadeMs": 350,
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "partyKanji",
+    "exhibitProfile": "partyKanji",
+    "showKeyword": false,
+    "typography": "party-kanji"
+  },
+  "meta": {
+    "theme": "partyKanji",
+    "series": "PARTY KANJI",
+    "prototype": true,
+    "tagline": "Learn this before your next party.",
+    "closingMessage": "Big kanji are just little kanji having a party.",
+    "partyVisual": {
+      "componentReveal": "burst",
+      "componentGlow": false,
+      "componentBounce": true,
+      "finalGlow": false,
+      "componentPulseOpacity": 0.18,
+      "showReadingInReveal": false,
+      "showTrivia": false,
+      "showPlaylistSubtitle": true
+    },
+    "sceneCount": 2,
+    "playlists": [
+      "Party Kanji"
+    ]
+  },
+  "scenes": [
+    {
+      "id": "PROTO_PK_three_dragons",
+      "kanji": "龘",
+      "keyword": "three dragons",
+      "party": {
+        "challenge": "Can you write this?",
+        "playlist": "Party Kanji",
+        "components": [
+          {
+            "kanji": "龍",
+            "label": "dragon"
+          },
+          {
+            "kanji": "龍",
+            "label": "dragon"
+          },
+          {
+            "kanji": "龍",
+            "label": "dragon"
+          }
+        ],
+        "componentLayout": "gathering",
+        "operator": "+",
+        "reading": "トウ",
+        "disclaimer": "No dragons were harmed in the production of this video.",
+        "trivia": "",
+        "closingMessage": ""
+      }
+    },
+    {
+      "id": "PROTO_PK_three_deer",
+      "kanji": "麤",
+      "keyword": "three deer",
+      "party": {
+        "challenge": "Three deer. One kanji.",
+        "playlist": "Party Kanji",
+        "components": [
+          {
+            "kanji": "鹿",
+            "label": "deer"
+          },
+          {
+            "kanji": "鹿",
+            "label": "deer"
+          },
+          {
+            "kanji": "鹿",
+            "label": "deer"
+          }
+        ],
+        "componentLayout": "gathering",
+        "operator": "+",
+        "reading": "ソ",
+        "disclaimer": "No deer were harmed in the production of this video.",
+        "trivia": "",
+        "closingMessage": ""
+      }
+    }
+  ]
+}

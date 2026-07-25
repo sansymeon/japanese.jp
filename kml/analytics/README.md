@@ -72,6 +72,11 @@ avoids an Action loop; the bot commit is intentionally *not* marked
 `[skip ci]` so Netlify still deploys the fresh JSON. Manual runs: Actions →
 “Pre-deploy analytics” → Run workflow.
 
+Optional local publish pace: regenerate JSON as often as you like with
+`./scripts/pre-deploy.sh`. If you want at most **one `main` push per calendar
+day** (Asia/Tokyo), use `scripts/limit-push-once-daily.sh` — daily stats are
+usually enough. Override when needed: `ALLOW_EXTRA_PUSH=1 git push`.
+
 The homepage and dashboard both load
 `kml/analytics/output/kml_channel_learning.json` (not the local `dashboard/data`
 symlink, which deploy hosts often do not expose).

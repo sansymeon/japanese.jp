@@ -141,7 +141,11 @@
 
   const GALLERY_EASE = "cubic-bezier(0.12, 0.0, 0.22, 1.0)";
 
-  /** One-direction gallery drift (~3–5% over exhibit). Values are % translate / scale delta. */
+  /**
+   * One-direction gallery drift. Base values are gentle (~3–5% scale / ±2% pan).
+   * Ambient Move V2 multiplies via motionScale (~2.5) for ~112–120% push-ins
+   * and clearly perceptible pan, still smooth over 35–60s holds.
+   */
   const GALLERY_MOTION = {
     "push-in": { scale: 0.044, x0: 0, y0: 0.4, x1: 0.15, y1: -0.25 },
     "pull-out": { scale: -0.048, startBoost: 0.055, x0: 0.2, y0: 0.35, x1: -0.15, y1: -0.2 },
@@ -163,17 +167,24 @@
       motionScale = 1,
     } = options;
 
+    // Per-scene override (e.g. subtler people shots) wins over collection default.
+    const effectiveScale =
+      typeof cam.motionScale === "number" && cam.motionScale > 0
+        ? cam.motionScale
+        : motionScale;
+
     const seed = hashSeed(`${scene.id}:gallery:${motion}`);
     const jitter = (n, spread) => (seededUnit(seed + n) - 0.5) * spread;
 
-    const startBoost = (spec.startBoost || 0) * motionScale;
+    const startBoost = (spec.startBoost || 0) * effectiveScale;
     const scaleFrom = immersiveScale(
       minimumCoverScale() * coverBoost * framingScale + startBoost,
       scaleMin
     );
     const scaleTo =
-      scaleFrom + (spec.scale + jitter(1, 0.006)) * motionScale;
+      scaleFrom + (spec.scale + jitter(1, 0.012 * effectiveScale)) * effectiveScale;
 
+    const panJitter = 0.35 * Math.min(2.2, effectiveScale);
     return {
       shot: motion,
       motionProfile: "gallery",
@@ -181,10 +192,10 @@
       coverBoost,
       scaleFrom,
       scaleTo,
-      xFrom: spec.x0 + jitter(2, 0.35),
-      yFrom: spec.y0 + jitter(3, 0.35),
-      xTo: spec.x1 + jitter(4, 0.35),
-      yTo: spec.y1 + jitter(5, 0.35),
+      xFrom: (spec.x0 + jitter(2, panJitter)) * effectiveScale,
+      yFrom: (spec.y0 + jitter(3, panJitter)) * effectiveScale,
+      xTo: (spec.x1 + jitter(4, panJitter)) * effectiveScale,
+      yTo: (spec.y1 + jitter(5, panJitter)) * effectiveScale,
       ease: GALLERY_EASE,
     };
   }

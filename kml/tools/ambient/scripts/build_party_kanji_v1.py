@@ -21,18 +21,16 @@ from party_kanji_episodes import (  # noqa: E402
 
 
 def scene_from_episode(ep: dict) -> dict:
-    playlist = ep.get("playlist") or ep.get("collection") or ""
+    playlist = ep.get("playlist") or ep.get("collection") or "Party Kanji"
     party = {
         "challenge": ep["challenge"],
         "playlist": playlist,
         "components": ep.get("components", []),
-        "componentLayout": ep.get("component_layout", "vertical"),
+        "componentLayout": ep.get("component_layout", "gathering"),
         "operator": ep.get("operator", "+"),
         "reading": ep.get("reading", ""),
         "disclaimer": ep.get("disclaimer", ""),
         "trivia": ep.get("trivia", ""),
-        "strokePage": ep.get("stroke_page", ""),
-        "strokeNote": ep.get("stroke_note", ""),
         "closingMessage": ep.get("closing_message", ""),
     }
     if ep.get("visual"):
@@ -55,10 +53,18 @@ def build() -> dict:
         "id": "party_kanji_v1",
         "title": f"{SERIES['title']} — Episode 1 (龘)",
         "notes": (
-            "PARTY KANJI: fast visual discovery — Shock → Reveal → Proof → Final → Closing → End Card. "
-            "Timing and visuals are JSON-configured for reuse across collections."
+            "PARTY KANJI: calm visual reward — Shock → Reveal → Final → Closing → End Card → gold crest. "
+            "No stroke-order lesson (see Different Strokes). Timing/visuals are JSON-configured."
         ),
         "exhibition": dict(PARTY_TIMING),
+        "bookends": {
+            "mode": "silentCrest",
+            "closing": {
+                "image": "images/gold_closing.png",
+                "bookendSize": "small",
+                "silentAfterSoundtrack": True,
+            },
+        },
         "display": {
             "loop": False,
             "hideChrome": True,
@@ -66,6 +72,7 @@ def build() -> dict:
             "exhibitProfile": "partyKanji",
             "showKeyword": False,
             "typography": "party-kanji",
+            "bookendStyle": "galleryCrest",
         },
         "meta": {
             "theme": "partyKanji",
@@ -78,6 +85,7 @@ def build() -> dict:
             "sceneCount": len(scenes),
             "prototype": True,
             "playlists": playlists,
+            "ending": "humourThenGoldCrest",
         },
         "scenes": scenes,
     }

@@ -23,12 +23,14 @@ from exhibition_record_common import (  # noqa: E402
     exhibition_record_url,
     format_mmss,
     load_collection,
-    mux_video_with_audio,
+    mux_exhibition_soundtrack,
     presentation_timeout_ms,
     start_server,
     stop_server,
     vocabulary_exhibition_soundtrack_start_ms,
 )
+
+SHARED_VOCABULARY_BUILDER = "build_lesson_vocabulary.py"
 
 BUILDERS = {
     1: "build_lesson_01_vocabulary_exhibition.py",
@@ -41,6 +43,11 @@ BUILDERS = {
     8: "build_lesson_08_vocabulary_exhibition.py",
     9: "build_lesson_09_vocabulary_exhibition.py",
     10: "build_lesson_10_vocabulary_exhibition.py",
+    33: SHARED_VOCABULARY_BUILDER,
+    34: SHARED_VOCABULARY_BUILDER,
+    35: SHARED_VOCABULARY_BUILDER,
+    36: SHARED_VOCABULARY_BUILDER,
+    37: SHARED_VOCABULARY_BUILDER,
 }
 
 # End fades (10s). All L6–10 vocabulary content is under 30 min (L10 under 25).
@@ -62,10 +69,6 @@ def record(*, lesson: int, port: int) -> Path:
     collection = load_collection(ROOT, cid)
     soundtrack_start_ms = vocabulary_exhibition_soundtrack_start_ms(collection)
     timeout_ms = presentation_timeout_ms(collection, ROOT)
-    # Vocabulary beds are long (~83 min); do not wait for bed end — content + buffer.
-    content_ms = (collection.get("meta") or {}).get("estimatedContentRuntimeMs")
-    if content_ms:
-        timeout_ms = min(timeout_ms, int(content_ms) + 300_000)
 
     soundtrack_rel = (collection.get("soundtrack") or {}).get("main") or ""
     soundtrack = ROOT / soundtrack_rel
@@ -89,16 +92,12 @@ def record(*, lesson: int, port: int) -> Path:
 
     webm = capture_exhibition_webm(url=url, tmp_dir=tmp_dir, timeout_ms=timeout_ms)
 
-    filter_complex = (
-        f"[1:a]adelay={soundtrack_start_ms}|{soundtrack_start_ms}[m];"
-        f"[m]asetpts=PTS-STARTPTS[a]"
-    )
     tmp_mux = tmp_dir / "muxed.mp4"
-    mux_video_with_audio(
+    mux_exhibition_soundtrack(
         webm=webm,
         output_mp4=tmp_mux,
-        filter_complex=filter_complex,
-        audio_inputs=[soundtrack],
+        soundtrack=soundtrack,
+        soundtrack_start_ms=soundtrack_start_ms,
     )
     shutil.move(str(tmp_mux), str(out_path))
     for f in tmp_dir.iterdir():
@@ -114,7 +113,7 @@ def record(*, lesson: int, port: int) -> Path:
         cut_s = fade_start_s + fade_duration_s
         print(
             f"  → {out_path} "
-            f"(fade @ {format_mmss(fade_start_s)}, cut @ {format_mmss(cut_s)})"
+            f"(legacy fade @ {format_mmss(fade_start_s)}, cut @ {format_mmss(cut_s)})"
         )
     else:
         print(f"  → {out_path}")
@@ -161,7 +160,10 @@ def main() -> int:
 
     if args.rebuild:
         script = BUILDERS[args.lesson]
-        subprocess.run([sys.executable, str(ROOT / "scripts" / script)], check=True, cwd=ROOT)
+        cmd = [sys.executable, str(ROOT / "scripts" / script)]
+        if script == SHARED_VOCABULARY_BUILDER:
+            cmd.extend(["--lesson", str(args.lesson)])
+        subprocess.run(cmd, check=True, cwd=ROOT)
 
     server = start_server(ROOT, args.port)
     try:

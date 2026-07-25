@@ -4,7 +4,8 @@ Reusable JSON-driven template for short-form kanji episodes.
 Not JLPT prep — surprise, curiosity, pattern recognition, confidence.
 
 Episode structure:
-  Shock → Reveal (staggered) → Proof → Final (+ pulse) → Closing → End Card
+  Shock → Reveal (gathering) → Final (+ pulse) → Closing → End Card → gold crest
+  (Stroke order lives in Different Strokes — not here.)
 """
 
 from __future__ import annotations
@@ -16,7 +17,7 @@ from party_kanji_config import (  # noqa: E402
     SERIES_TAGLINE,
 )
 
-STROKES_BASE = "strokes/pages"
+STROKES_BASE = "strokes/pages"  # Different Strokes series only — not used in Party Kanji episodes.
 
 
 class PartyComponent(TypedDict):
@@ -33,13 +34,11 @@ class PartyEpisode(TypedDict, total=False):
     playlist: str
     collection: str  # legacy alias for playlist
     components: list[PartyComponent]
-    component_layout: str  # vertical | horizontal
+    component_layout: str  # gathering | vertical | horizontal
     operator: str
     reading: str
     disclaimer: str
     trivia: str
-    stroke_page: str
-    stroke_note: str
     closing_message: str
     visual: dict[str, Any]
 
@@ -88,18 +87,16 @@ EPISODES: list[PartyEpisode] = [
         "keyword": "three dragons",
         "meaning": "three dragons",
         "challenge": "Can you write this?",
-        "playlist": "Monster Kanji",
+        "playlist": "Party Kanji",
         "components": [
             {"kanji": "龍", "label": "dragon"},
             {"kanji": "龍", "label": "dragon"},
             {"kanji": "龍", "label": "dragon"},
         ],
-        "component_layout": "vertical",
+        "component_layout": "gathering",
         "operator": "+",
         "reading": "トウ",
         "disclaimer": "No dragons were harmed in the production of this video.",
-        "stroke_page": f"{STROKES_BASE}/dragon_old.html",
-        "stroke_note": "",
     },
 ]
 
@@ -109,55 +106,51 @@ FUTURE_EPISODES: list[dict[str, Any]] = [
         "order": 2,
         "kanji": "森",
         "challenge": "Can you write FOREST?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
         "components": [
             {"kanji": "木", "label": "tree"},
             {"kanji": "木", "label": "tree"},
             {"kanji": "木", "label": "tree"},
         ],
-        "stroke_page": f"{STROKES_BASE}/forest.html",
     },
     {
         "order": 3,
         "kanji": "晶",
         "challenge": "Can you write SPARKLE?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
         "components": [
             {"kanji": "日", "label": "sun"},
             {"kanji": "日", "label": "sun"},
             {"kanji": "日", "label": "sun"},
         ],
-        "stroke_page": f"{STROKES_BASE}/sparkle.html",
     },
     {
         "order": 4,
         "kanji": "品",
         "challenge": "Can you write GOODS?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
         "components": [
             {"kanji": "口", "label": "mouth"},
             {"kanji": "口", "label": "mouth"},
             {"kanji": "口", "label": "mouth"},
         ],
-        "stroke_page": f"{STROKES_BASE}/goods.html",
     },
     {
         "order": 5,
         "kanji": "轟",
         "challenge": "Can you write RUMBLE?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
         "components": [
             {"kanji": "車", "label": "car"},
             {"kanji": "車", "label": "car"},
             {"kanji": "車", "label": "car"},
         ],
-        "stroke_page": f"{STROKES_BASE}/rumble.html",
     },
     {
         "order": 6,
         "kanji": "鑫",
         "challenge": "Can you write GOLD?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
         "components": [
             {"kanji": "金", "label": "gold"},
             {"kanji": "金", "label": "gold"},
@@ -168,7 +161,7 @@ FUTURE_EPISODES: list[dict[str, Any]] = [
         "order": 7,
         "kanji": "焱",
         "challenge": "Can you write FIRE?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
         "components": [
             {"kanji": "火", "label": "fire"},
             {"kanji": "火", "label": "fire"},
@@ -179,49 +172,49 @@ FUTURE_EPISODES: list[dict[str, Any]] = [
         "order": 8,
         "kanji": "淼",
         "challenge": "Can you write WATER?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 9,
         "kanji": "犇",
         "challenge": "Can you write OXEN?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 10,
         "kanji": "鱻",
         "challenge": "Can you write FISH?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 11,
         "kanji": "靐",
         "challenge": "Can you write THUNDER?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 12,
         "kanji": "麤",
         "challenge": "Can you write DEER?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 13,
         "kanji": "毳",
         "challenge": "Can you write FUR?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 14,
         "kanji": "垚",
         "challenge": "Can you write EARTH?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 15,
         "kanji": "猋",
         "challenge": "Can you write DOGS?",
-        "playlist": "Three of Something",
+        "playlist": "Party Kanji",
     },
     {
         "order": 16,

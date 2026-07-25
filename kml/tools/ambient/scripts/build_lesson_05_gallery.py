@@ -28,6 +28,8 @@ SILENT_CREST_BOOKENDS = {
     "closing": {
         "image": "images/gold_closing.png",
         "bookendSize": "small",
+        # End at content + short crest — do not pad to the soundtrack bed.
+        "holdUntilSoundtrackEnds": False,
         "fadeWithSoundtrackEnd": True,
     },
 }

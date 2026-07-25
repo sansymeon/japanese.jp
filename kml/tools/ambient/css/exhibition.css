@@ -27,6 +27,26 @@ body {
   font-family: "Noto Serif JP", "Yuji Mai", Georgia, serif;
 }
 
+/* Shown only when launched via preview_recording.py (recordPipeline=1). */
+html.kml-record-pipeline::before {
+  content: "RECORDING PIPELINE · 1920×1080 · DPR 1 — approve this rasterizer";
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  z-index: 10000;
+  transform: translateX(-50%);
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(232, 197, 71, 0.35);
+  background: rgba(10, 10, 12, 0.72);
+  color: rgba(232, 197, 71, 0.92);
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+}
+
 .exhibition-root {
   position: fixed;
   inset: 0;

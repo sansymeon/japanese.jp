@@ -1,0 +1,312 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "proto_glow_stress",
+  "title": "Prototype — Dense Kanji Glow Stress Test",
+  "titleJa": "試作 — 高画数漢字グロー検証",
+  "notes": "EXPERIMENT ONLY. The 18 densest master-CSV kanji plus 靈 / 驫. Drive with ?glowLab=current|reduced|none|tight and optionally &typeLab=a (150% size). Same engine; only the text-shadow and a 4% size trim change.",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 1200,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 800,
+    "compoundsPauseBeforeMs": 2000,
+    "compoundsStepRevealMs": 1000,
+    "compoundsFuriganaEnterDelayMs": 400,
+    "compoundsFuriganaEnterMs": 1200,
+    "compoundsFuriganaHoldMs": 1600,
+    "compoundsFuriganaFadeMs": 1000,
+    "compoundsNativeHoldMs": 2200,
+    "compoundsReadingRevealMs": 800,
+    "compoundsReadingHoldMs": 1000,
+    "compoundsEnRevealMs": 800,
+    "compoundsEnHoldMs": 2000,
+    "compoundsEnFadeMs": 800,
+    "compoundsStepFadeMs": 1000,
+    "compoundsFinalReviewHoldMs": 8000,
+    "compoundsFinalFadeToBlackMs": 3000,
+    "vocabArtworkExhaleMs": 2000,
+    "exhibitTransitionMs": 0,
+    "kenBurnsDurationMs": 600000,
+    "closingBlackAfterMs": 400
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseVocabulary",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "japaneseVocabulary",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "cameraMotionScale": 1.0
+  },
+  "meta": {
+    "series": "prototype_editions",
+    "prototype": true,
+    "stage": "glowStress",
+    "sceneCount": 1,
+    "compoundCount": 20,
+    "ending": "finalCompoundReview"
+  },
+  "scenes": [
+    {
+      "id": "PROTO_glow_stress",
+      "image": "images/black.png",
+      "galleryCamera": {
+        "motion": "still",
+        "focus": "50% 50%",
+        "motionScale": 1.0
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "𰻞",
+            "reading": "",
+            "en": "biáng · 58 strokes",
+            "jpHtml": "𰻞",
+            "meta": {
+              "kanji": "𰻞",
+              "strokes": 58,
+              "slug": "biang_noodles",
+              "displayOrder": 1
+            }
+          },
+          {
+            "jp": "龘",
+            "reading": "トウ",
+            "en": "Three dragons · 48 strokes",
+            "jpHtml": "<ruby>龘<rt>トウ</rt></ruby>",
+            "meta": {
+              "kanji": "龘",
+              "strokes": 48,
+              "slug": "three_dragons",
+              "displayOrder": 2
+            }
+          },
+          {
+            "jp": "靐",
+            "reading": "ビン",
+            "en": "Three thunder · 39 strokes",
+            "jpHtml": "<ruby>靐<rt>ビン</rt></ruby>",
+            "meta": {
+              "kanji": "靐",
+              "strokes": 39,
+              "slug": "three_thunder",
+              "displayOrder": 3
+            }
+          },
+          {
+            "jp": "鱻",
+            "reading": "セン",
+            "en": "Three fish · 33 strokes",
+            "jpHtml": "<ruby>鱻<rt>セン</rt></ruby>",
+            "meta": {
+              "kanji": "鱻",
+              "strokes": 33,
+              "slug": "three_fish",
+              "displayOrder": 4
+            }
+          },
+          {
+            "jp": "麤",
+            "reading": "ソ",
+            "en": "Three deer · 33 strokes",
+            "jpHtml": "<ruby>麤<rt>ソ</rt></ruby>",
+            "meta": {
+              "kanji": "麤",
+              "strokes": 33,
+              "slug": "three_deer",
+              "displayOrder": 5
+            }
+          },
+          {
+            "jp": "鬱",
+            "reading": "ウツ",
+            "en": "depression · 29 strokes",
+            "jpHtml": "<ruby>鬱<rt>ウツ</rt></ruby>",
+            "meta": {
+              "kanji": "鬱",
+              "strokes": 29,
+              "slug": "depression",
+              "displayOrder": 6
+            }
+          },
+          {
+            "jp": "鸚",
+            "reading": "イン",
+            "en": "parakeet · 28 strokes",
+            "jpHtml": "<ruby>鸚<rt>イン</rt></ruby>",
+            "meta": {
+              "kanji": "鸚",
+              "strokes": 28,
+              "slug": "parakeet",
+              "displayOrder": 7
+            }
+          },
+          {
+            "jp": "鑿",
+            "reading": "サク",
+            "en": "bore · 28 strokes",
+            "jpHtml": "<ruby>鑿<rt>サク</rt></ruby>",
+            "meta": {
+              "kanji": "鑿",
+              "strokes": 28,
+              "slug": "bore",
+              "displayOrder": 8
+            }
+          },
+          {
+            "jp": "驢",
+            "reading": "ロ",
+            "en": "donkey · 26 strokes",
+            "jpHtml": "<ruby>驢<rt>ロ</rt></ruby>",
+            "meta": {
+              "kanji": "驢",
+              "strokes": 26,
+              "slug": "donkey",
+              "displayOrder": 9
+            }
+          },
+          {
+            "jp": "鼈",
+            "reading": "ベツ",
+            "en": "snapping turtle · 25 strokes",
+            "jpHtml": "<ruby>鼈<rt>ベツ</rt></ruby>",
+            "meta": {
+              "kanji": "鼈",
+              "strokes": 25,
+              "slug": "snapping_turtle",
+              "displayOrder": 10
+            }
+          },
+          {
+            "jp": "麟",
+            "reading": "リン",
+            "en": "camelopard · 24 strokes",
+            "jpHtml": "<ruby>麟<rt>リン</rt></ruby>",
+            "meta": {
+              "kanji": "麟",
+              "strokes": 24,
+              "slug": "camelopard",
+              "displayOrder": 11
+            }
+          },
+          {
+            "jp": "鱗",
+            "reading": "リン",
+            "en": "scaled · 24 strokes",
+            "jpHtml": "<ruby>鱗<rt>リン</rt></ruby>",
+            "meta": {
+              "kanji": "鱗",
+              "strokes": 24,
+              "slug": "scaled",
+              "displayOrder": 12
+            }
+          },
+          {
+            "jp": "鷹",
+            "reading": "ヨウ",
+            "en": "hawk · 24 strokes",
+            "jpHtml": "<ruby>鷹<rt>ヨウ</rt></ruby>",
+            "meta": {
+              "kanji": "鷹",
+              "strokes": 24,
+              "slug": "hawk",
+              "displayOrder": 13
+            }
+          },
+          {
+            "jp": "鷺",
+            "reading": "ロ",
+            "en": "heron · 24 strokes",
+            "jpHtml": "<ruby>鷺<rt>ロ</rt></ruby>",
+            "meta": {
+              "kanji": "鷺",
+              "strokes": 24,
+              "slug": "heron",
+              "displayOrder": 14
+            }
+          },
+          {
+            "jp": "靄",
+            "reading": "アイ",
+            "en": "mist · 24 strokes",
+            "jpHtml": "<ruby>靄<rt>アイ</rt></ruby>",
+            "meta": {
+              "kanji": "靄",
+              "strokes": 24,
+              "slug": "mist",
+              "displayOrder": 15
+            }
+          },
+          {
+            "jp": "鑫",
+            "reading": "キン",
+            "en": "Three gold · 24 strokes",
+            "jpHtml": "<ruby>鑫<rt>キン</rt></ruby>",
+            "meta": {
+              "kanji": "鑫",
+              "strokes": 24,
+              "slug": "three_gold",
+              "displayOrder": 16
+            }
+          },
+          {
+            "jp": "鑑",
+            "reading": "カン",
+            "en": "specimen · 23 strokes",
+            "jpHtml": "<ruby>鑑<rt>カン</rt></ruby>",
+            "meta": {
+              "kanji": "鑑",
+              "strokes": 23,
+              "slug": "specimen",
+              "displayOrder": 17
+            }
+          },
+          {
+            "jp": "籤",
+            "reading": "セン",
+            "en": "lottery · 23 strokes",
+            "jpHtml": "<ruby>籤<rt>セン</rt></ruby>",
+            "meta": {
+              "kanji": "籤",
+              "strokes": 23,
+              "slug": "lottery",
+              "displayOrder": 18
+            }
+          },
+          {
+            "jp": "靈",
+            "reading": "レイ",
+            "en": "spirit (kyūjitai) · 24 strokes",
+            "jpHtml": "<ruby>靈<rt>レイ</rt></ruby>",
+            "meta": {
+              "kanji": "靈",
+              "strokes": 24,
+              "slug": "spirit_kyu",
+              "displayOrder": 19
+            }
+          },
+          {
+            "jp": "驫",
+            "reading": "ヒョウ",
+            "en": "three horses · 30 strokes",
+            "jpHtml": "<ruby>驫<rt>ヒョウ</rt></ruby>",
+            "meta": {
+              "kanji": "驫",
+              "strokes": 30,
+              "slug": "three_horses",
+              "displayOrder": 20
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

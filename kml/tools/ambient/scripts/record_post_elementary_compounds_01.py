@@ -23,7 +23,7 @@ from exhibition_record_common import (  # noqa: E402
     ensure_deps,
     exhibition_record_url,
     load_collection,
-    mux_video_with_audio,
+    mux_exhibition_soundtrack,
     presentation_timeout_ms,
     start_server,
     stop_server,
@@ -57,17 +57,12 @@ def record(*, port: int) -> Path:
 
     webm = capture_exhibition_webm(url=url, tmp_dir=tmp_dir, timeout_ms=timeout_ms)
 
-    # Track already fades at ~16:45; keep video through final black beat.
-    filter_complex = (
-        f"[1:a]adelay={soundtrack_start_ms}|{soundtrack_start_ms}[m];"
-        f"[m]asetpts=PTS-STARTPTS,apad[a]"
-    )
     tmp_mux = tmp_dir / "muxed.mp4"
-    mux_video_with_audio(
+    mux_exhibition_soundtrack(
         webm=webm,
         output_mp4=tmp_mux,
-        filter_complex=filter_complex,
-        audio_inputs=[soundtrack],
+        soundtrack=soundtrack,
+        soundtrack_start_ms=soundtrack_start_ms,
     )
     shutil.move(str(tmp_mux), str(out_path))
     for f in tmp_dir.iterdir():

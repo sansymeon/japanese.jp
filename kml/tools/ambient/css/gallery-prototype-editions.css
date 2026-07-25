@@ -1,0 +1,352 @@
+/**
+ * PROTOTYPE EDITIONS — experimental layouts. Loaded last, inert by default.
+ *
+ * Nothing here applies unless one of these <html> classes is present, which the
+ * exhibition.html bootstrap only adds when the matching URL param is given:
+ *
+ *   ?typeLab=a|b|c   → .kml-lab + .kml-typelab-a|b|c   (typography weight/size test)
+ *   ?edition=mobile  → .kml-edition-mobile             (9:16 portrait Mobile Edition)
+ *
+ * The two compose: Gallery Edition test = typeLab alone, Mobile Edition = both.
+ * The shipping 16:9 landscape system is untouched when neither is present.
+ */
+
+/* ──────────────────────────────────────────────────────────────
+   Typography lab — A / B / C
+   Noto Serif JP ships 400 / 500 / 600 here, so "one weight lighter"
+   than the current 600 is a real 500, not a synthesised light.
+   ────────────────────────────────────────────────────────────── */
+
+html.kml-lab,
+html.kml-edition-mobile {
+  --kml-lab-jp-scale: 1;
+  --kml-lab-jp-weight: 600;
+}
+
+/* A — current weight, 150% */
+html.kml-typelab-a {
+  --kml-lab-jp-scale: 1.5;
+  --kml-lab-jp-weight: 600;
+  /* Optical refine: more air between furigana and the word, and around the stack. */
+  --kml-lab-furigana-gap: 0.32em;
+  --kml-lab-stack-gap: 1.15em;
+  --kml-lab-notes-width: min(86vw, 42rem);
+}
+
+/* B — one weight lighter, 150% */
+html.kml-typelab-b {
+  --kml-lab-jp-scale: 1.5;
+  --kml-lab-jp-weight: 500;
+  --kml-lab-furigana-gap: 0.28em;
+  --kml-lab-stack-gap: 1.05em;
+  --kml-lab-notes-width: min(88vw, 44rem);
+}
+
+/* C — one weight lighter, 160% */
+html.kml-typelab-c {
+  --kml-lab-jp-scale: 1.6;
+  --kml-lab-jp-weight: 500;
+  --kml-lab-furigana-gap: 0.3em;
+  --kml-lab-stack-gap: 1.1em;
+  --kml-lab-notes-width: min(88vw, 44rem);
+}
+
+html.kml-lab .exhibition-root.is-compounds-exhibition .kml-compound-jp,
+html.kml-edition-mobile .exhibition-root.is-compounds-exhibition .kml-compound-jp,
+html.kml-glowlab .exhibition-root.is-compounds-exhibition .kml-compound-jp {
+  font-size: calc(
+    var(--kml-compounds-jp) * var(--kml-compound-word-scale, 1) * var(--kml-lab-jp-scale, 1)
+  );
+  font-weight: var(--kml-lab-jp-weight, 600);
+}
+
+html.kml-lab .exhibition-root.is-compounds-exhibition .exhibition-verse-jp.show-furigana ruby rt,
+html.kml-edition-mobile
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.show-furigana
+  ruby
+  rt {
+  font-weight: var(--kml-lab-jp-weight, 600);
+}
+
+/* Prefer A’s optical refine: lift furigana slightly and open the verse stack. */
+html.kml-lab
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.show-furigana
+  ruby
+  rt {
+  padding-bottom: var(--kml-lab-furigana-gap, 0.28em);
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential.kml-lab
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-notes {
+  gap: var(--kml-lab-stack-gap, 1.05em);
+  width: var(--kml-lab-notes-width, min(86vw, 42rem));
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential.kml-lab
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp {
+  gap: 0.55em;
+}
+
+/*
+ * The shipping shadow is a heavy black glow tuned for scenic artwork. On the
+ * pure-black Beyond Jōyō ground it only bleeds into the counters of dense
+ * kanji, which is a large part of the "mass of white" effect at size.
+ */
+html.kml-lab .exhibition-root.is-compounds-exhibition,
+html.kml-edition-mobile .exhibition-root.is-compounds-exhibition {
+  --kml-compounds-shadow-jp:
+    0 1px 3px rgba(0, 0, 0, 0.7),
+    0 3px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Glow stress lab — isolate the black text-shadow that floods
+   dense counters. Typography stays at the larger lab size
+   (150% by default); only `tight` also trims 4%.
+   Drive with ?glowLab=current|reduced|none|tight
+   ────────────────────────────────────────────────────────────── */
+
+/* Without a typeLab, still lock to the larger Gallery size. */
+html.kml-glowlab:not(.kml-lab) {
+  --kml-lab-jp-scale: 1.5;
+  --kml-lab-jp-weight: 600;
+}
+
+html.kml-glowlab-current .exhibition-root.is-compounds-exhibition {
+  /* Exact shipping compounds shadow — the control. */
+  --kml-compounds-shadow-jp:
+    0 1px 3px rgba(0, 0, 0, 0.78),
+    0 3px 20px rgba(0, 0, 0, 0.62),
+    0 0 36px rgba(0, 0, 0, 0.45);
+}
+
+html.kml-glowlab-reduced .exhibition-root.is-compounds-exhibition {
+  --kml-compounds-shadow-jp:
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+html.kml-glowlab-none .exhibition-root.is-compounds-exhibition {
+  --kml-compounds-shadow-jp: none;
+}
+
+html.kml-glowlab-tight .exhibition-root.is-compounds-exhibition {
+  --kml-compounds-shadow-jp:
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+html.kml-glowlab-tight .exhibition-root.is-compounds-exhibition .kml-compound-jp {
+  font-size: calc(
+    var(--kml-compounds-jp) * var(--kml-compound-word-scale, 1) *
+      var(--kml-lab-jp-scale, 1) * 0.96
+  );
+}
+
+html.kml-glowlab .exhibition-root.is-compounds-exhibition .kml-compound-jp,
+html.kml-glowlab
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.show-furigana
+  ruby
+  rt,
+html.kml-glowlab
+  .exhibition-root.is-compounds-exhibition
+  .kml-compound-reading {
+  text-shadow: var(--kml-compounds-shadow-jp);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   MOBILE EDITION — 1080 × 1920 (9:16)
+   Same JSON, same timing, same soundtrack, same transitions.
+   Only the presentation layout changes.
+   ────────────────────────────────────────────────────────────── */
+
+/*
+ * In portrait vmin tracks the *width*, so every clamp() in the shipping
+ * stylesheets resolves to landscape pixel sizes inside a frame that is only
+ * 1080 wide. Every size below is therefore restated in vw against 1080.
+ */
+html.kml-edition-mobile .exhibition-root.is-compounds-exhibition {
+  --kml-compounds-jp: clamp(6rem, 20vw, 15rem);
+  --kml-compounds-reading: clamp(3rem, 9vw, 6rem);
+  --kml-compounds-en: clamp(2.8rem, 7.6vw, 5.4rem);
+  --kml-compounds-hint: clamp(2rem, 5vw, 3.4rem);
+  --kml-compounds-target: clamp(10rem, 34vw, 22rem);
+  /* Word sits a hair above true centre so the *kanji* reads as centred once
+     the ruby's reserved space above it is accounted for. */
+  --kml-mobile-word-top: 47%;
+  --kml-mobile-gloss-top: 70%;
+}
+
+/*
+ * Landscape stacks the word and the gloss in one centred flex column, so the
+ * word rides upward to make room for the gloss whether or not it is visible.
+ * That is invisible at landscape sizes; in portrait, with this much air, the
+ * word would spend most of each step looking stranded near the top.
+ *
+ * Portrait instead gives the word a fixed home at the optical centre and hangs
+ * the gloss below it like a gallery label. Both selectors below have to reach
+ * past the landscape rule's own !important reset.
+ */
+html.kml-typography-mobile-refine.kml-verse-sequential.kml-edition-mobile
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-notes {
+  display: block;
+  width: 100vw;
+  left: 0;
+  transform: none;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential.kml-edition-mobile
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp {
+  position: absolute !important;
+  top: var(--kml-mobile-word-top) !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 94vw;
+  gap: 0.4em;
+  line-height: 1.18;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential.kml-edition-mobile
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-en {
+  position: absolute !important;
+  top: var(--kml-mobile-gloss-top) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 88vw;
+  padding: 0;
+  line-height: 1.45;
+}
+
+/*
+ * Portrait gives the furigana room it never had in landscape, so it can sit a
+ * little larger and a little further off the word without crowding anything.
+ */
+html.kml-edition-mobile
+  .exhibition-root.is-compounds-exhibition
+  .exhibition-verse-jp.show-furigana
+  ruby
+  rt {
+  font-size: 0.4em;
+  letter-spacing: 0.04em;
+}
+
+html.kml-edition-mobile .exhibition-root.is-compounds-exhibition .kml-compound-jp {
+  line-height: 1.1;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   PARTY KANJI — spacing / optical-weight lab
+   The problem is not size, it is that adjacent dense white glyphs fuse.
+   Levers, in order of effect: separation, optical weight, luminance.
+   ────────────────────────────────────────────────────────────── */
+
+html.kml-lab.kml-typography-party-kanji {
+  --pk-giant: clamp(8rem, 30vmin, 19rem);
+  --pk-component: clamp(4rem, 13vmin, 9rem);
+  --pk-component-gap: clamp(2rem, 6vmin, 4.5rem);
+  --pk-component-ink: rgba(244, 239, 228, 0.92);
+  --pk-component-thin: 0em;
+  --pk-component-face: "Yuji Syuku", "Noto Serif JP", serif;
+}
+
+/* A — house face at its natural weight, bigger, with real air between cells */
+html.kml-typelab-a.kml-typography-party-kanji {
+  --pk-component-gap: clamp(2rem, 6vmin, 4.5rem);
+  --pk-component-ink: rgba(244, 239, 228, 0.96);
+}
+
+/*
+ * B — same face optically thinned. Yuji Syuku is a single-weight face, so the
+ * only way to lighten it is to paint the background colour back over the
+ * outline; -webkit-text-stroke is centred, so 0.024em removes ~0.012em a side.
+ */
+html.kml-typelab-b.kml-typography-party-kanji {
+  --pk-component-gap: clamp(2.75rem, 8vmin, 6rem);
+  --pk-component-ink: rgba(244, 239, 228, 0.9);
+  --pk-component-thin: 0.024em;
+}
+
+/* C — genuinely lighter face (Noto Serif JP 400 has far more open counters) */
+html.kml-typelab-c.kml-typography-party-kanji {
+  --pk-component-gap: clamp(3.25rem, 9.5vmin, 7rem);
+  --pk-component-ink: rgba(244, 239, 228, 0.88);
+  --pk-component-face: "Noto Serif JP", serif;
+}
+
+html.kml-lab.kml-typography-party-kanji .party-kanji-phase {
+  gap: clamp(1.5rem, 4vh, 3rem);
+}
+
+html.kml-lab.kml-typography-party-kanji .party-kanji-components {
+  gap: var(--pk-component-gap);
+}
+
+/* The supporting type has to grow with the composition or the cells read as
+   floating above an unrelated caption. */
+html.kml-lab.kml-typography-party-kanji .party-component-label {
+  font-size: clamp(1rem, 2.4vmin, 1.4rem);
+}
+
+html.kml-lab.kml-typography-party-kanji .party-kanji-equation {
+  font-size: clamp(2.2rem, 6vmin, 3.8rem);
+}
+
+html.kml-lab.kml-typography-party-kanji .party-kanji-playlist {
+  font-size: clamp(0.9rem, 2.2vmin, 1.15rem);
+}
+
+html.kml-lab.kml-typography-party-kanji .party-kanji-component-pulse {
+  gap: var(--pk-component-gap);
+}
+
+html.kml-lab.kml-typography-party-kanji .party-component-kanji {
+  font-family: var(--pk-component-face);
+  font-weight: 400;
+  color: var(--pk-component-ink);
+  -webkit-text-stroke: var(--pk-component-thin) var(--pk-bg);
+}
+
+html.kml-lab.kml-typography-party-kanji .party-component-cell--pulse .party-component-kanji {
+  font-size: clamp(4.5rem, 15vmin, 10rem);
+}
+
+/* Portrait Party Kanji — the vertical stack finally has somewhere to go */
+html.kml-lab.kml-edition-mobile.kml-typography-party-kanji {
+  --pk-giant: clamp(10rem, 46vw, 30rem);
+  --pk-component: clamp(5rem, 21vw, 14rem);
+  --pk-component-gap: clamp(3rem, 10vw, 7rem);
+}
+
+html.kml-lab.kml-edition-mobile.kml-typography-party-kanji .party-kanji-challenge {
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  max-width: 18ch;
+}
+
+html.kml-lab.kml-edition-mobile.kml-typography-party-kanji .party-kanji-equation {
+  font-size: clamp(2.6rem, 9vw, 5rem);
+}
+
+html.kml-lab.kml-edition-mobile.kml-typography-party-kanji .party-component-label {
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+}
+
+html.kml-lab.kml-edition-mobile.kml-typography-party-kanji .party-kanji-playlist {
+  font-size: clamp(1rem, 2.6vw, 1.5rem);
+}
+
+html.kml-lab.kml-edition-mobile.kml-typography-party-kanji .party-kanji-closing-message {
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  max-width: 16ch;
+}
+
+html.kml-lab.kml-edition-mobile.kml-typography-party-kanji .party-kanji-brand {
+  font-size: clamp(2.2rem, 7vw, 4rem);
+}

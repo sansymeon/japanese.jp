@@ -1,0 +1,884 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "beyond_joyo_compounds_03",
+  "title": "Beyond Jōyō Kanji Compounds — Part 3",
+  "titleJa": "常用外漢字熟語 — 第3部",
+  "notes": "Beyond Jōyō compounds Volume 1 Part 3/19: 50 compounds (曰く→鑫), from kanji_master.csv non-Jōyō corpus. No individual kanji showcase, no scenic images. Vocabulary typography. Ends on a party-kanji reward: one restrained wave of gold flakes as the meaning lands, drifting on through the hold. Ending: final compound review ~22s → 4s fade to black → gold 漢 crest. Soundtrack: audio/beyond_joyo_3.mp3 (~1018s).",
+  "soundtrack": {
+    "main": "audio/beyond_joyo_3.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 1200,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 800,
+    "compoundsPauseBeforeMs": 3200,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 2200,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3500,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsFinalReviewHoldMs": 22000,
+    "compoundsFinalFadeToBlackMs": 4000,
+    "compoundsRewardFlakeCount": 30,
+    "compoundsRewardFlakeSpreadMs": 1600,
+    "compoundsRewardFlakeDriftMinMs": 10000,
+    "compoundsRewardFlakeDriftMaxMs": 16000,
+    "compoundsFinaleFlakeWaveCount": 40,
+    "compoundsFinaleFlakeSecondWaveCount": 26,
+    "compoundsFinaleFlakeWaveGapMs": 3200,
+    "compoundsFinaleFlakeSpreadMs": 2200,
+    "compoundsFinaleFlakeDriftMinMs": 9000,
+    "compoundsFinaleFlakeDriftMaxMs": 15000,
+    "compoundsFinaleConfettiLeadMs": 9000,
+    "compoundsFinaleConfettiCount": 96,
+    "compoundsFinaleConfettiSpreadMs": 5000,
+    "compoundsFinaleConfettiFallMinMs": 4500,
+    "compoundsFinaleConfettiFallMaxMs": 7500,
+    "compoundsFinaleConfettiRestHoldMs": 4500,
+    "compoundsFinaleConfettiFadeMs": 3500,
+    "vocabArtworkExhaleMs": 2800,
+    "exhibitTransitionMs": 0,
+    "kenBurnsDurationMs": 1200000,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 3200,
+    "closingHoldMs": 2800,
+    "closingExhaleMs": 3500,
+    "closingSilenceHoldMs": 0,
+    "closingBlackAfterMs": 800,
+    "closingFadeToBlackMs": 3500
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseVocabulary",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "japaneseVocabulary",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest",
+    "cameraMotionScale": 1.0
+  },
+  "meta": {
+    "series": "beyond_joyo_compounds",
+    "volume": 1,
+    "curriculum": "beyond_joyo",
+    "scope": "beyond_joyo",
+    "titleJa": "常用外漢字熟語",
+    "part": 3,
+    "partCount": 19,
+    "stage": "compounds",
+    "format": "anchorCompoundsGrouped",
+    "sceneCount": 1,
+    "compoundCount": 50,
+    "kanjiRange": [
+      "曰",
+      "鑫"
+    ],
+    "anchorRange": [
+      "曰く",
+      "鑫"
+    ],
+    "heisigRange": [
+      620,
+      3075
+    ],
+    "sourceOrder": "familiarity",
+    "soundtrackDurationMs": 1018984,
+    "estimatedContentRuntimeMs": 1000400,
+    "timingNote": "50 compounds ≈ 1000s (16:40) including review+fade.",
+    "ending": "finalCompoundReviewThenGoldCrest",
+    "anchorRule": "mostUsefulCompoundByFamiliarity",
+    "jukugoList": "beyond_joyo_jukugo_list.json",
+    "masterCsv": "kml/data/kanji/kanji_master.csv",
+    "hasReward": true,
+    "isFinale": false
+  },
+  "scenes": [
+    {
+      "id": "BJ_compounds_03",
+      "image": "images/black.png",
+      "galleryCamera": {
+        "motion": "still",
+        "focus": "50% 50%",
+        "motionScale": 1.0
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "曰く",
+            "reading": "いわく",
+            "en": "according to",
+            "jpHtml": "<ruby>曰<rt>いわ</rt></ruby>く",
+            "meta": {
+              "kanji": "曰",
+              "masterKanji": [
+                "曰"
+              ],
+              "heisigNumber": 620,
+              "slug": "sayeth",
+              "displayOrder": 101
+            }
+          },
+          {
+            "jp": "嘘",
+            "reading": "うそ",
+            "en": "lie",
+            "jpHtml": "<ruby>嘘<rt>うそ</rt></ruby>",
+            "meta": {
+              "kanji": "嘘",
+              "masterKanji": [
+                "嘘"
+              ],
+              "heisigNumber": 2286,
+              "slug": "fib",
+              "displayOrder": 102
+            }
+          },
+          {
+            "jp": "蕎麦",
+            "reading": "そば",
+            "en": "soba / buckwheat noodles",
+            "jpHtml": "<ruby>蕎麦<rt>そば</rt></ruby>",
+            "meta": {
+              "kanji": "蕎",
+              "masterKanji": [
+                "蕎"
+              ],
+              "heisigNumber": 2454,
+              "slug": "buckwheat",
+              "displayOrder": 103
+            }
+          },
+          {
+            "jp": "琵琶",
+            "reading": "びわ",
+            "en": "biwa",
+            "jpHtml": "<ruby>琵<rt>び</rt></ruby><ruby>琶<rt>わ</rt></ruby>",
+            "meta": {
+              "kanji": "琵琶",
+              "masterKanji": [
+                "琵",
+                "琶"
+              ],
+              "heisigNumber": 2921,
+              "slug": "biwa",
+              "displayOrder": 104
+            }
+          },
+          {
+            "jp": "樽",
+            "reading": "たる",
+            "en": "barrel",
+            "jpHtml": "<ruby>樽<rt>たる</rt></ruby>",
+            "meta": {
+              "kanji": "樽",
+              "masterKanji": [
+                "樽"
+              ],
+              "heisigNumber": 2567,
+              "slug": "barrel",
+              "displayOrder": 105
+            }
+          },
+          {
+            "jp": "鳩",
+            "reading": "はと",
+            "en": "pigeon",
+            "jpHtml": "<ruby>鳩<rt>はと</rt></ruby>",
+            "meta": {
+              "kanji": "鳩",
+              "masterKanji": [
+                "鳩"
+              ],
+              "heisigNumber": 2096,
+              "slug": "pigeon",
+              "displayOrder": 106
+            }
+          },
+          {
+            "jp": "燕",
+            "reading": "つばめ",
+            "en": "swallow",
+            "jpHtml": "<ruby>燕<rt>つばめ</rt></ruby>",
+            "meta": {
+              "kanji": "燕",
+              "masterKanji": [
+                "燕"
+              ],
+              "heisigNumber": 2882,
+              "slug": "swallow",
+              "displayOrder": 107
+            }
+          },
+          {
+            "jp": "椿",
+            "reading": "つばき",
+            "en": "camellia",
+            "jpHtml": "<ruby>椿<rt>つばき</rt></ruby>",
+            "meta": {
+              "kanji": "椿",
+              "masterKanji": [
+                "椿"
+              ],
+              "heisigNumber": 1691,
+              "slug": "camellia_tree",
+              "displayOrder": 108
+            }
+          },
+          {
+            "jp": "霞",
+            "reading": "かすみ",
+            "en": "haze / mist",
+            "jpHtml": "<ruby>霞<rt>かすみ</rt></ruby>",
+            "meta": {
+              "kanji": "霞",
+              "masterKanji": [
+                "霞"
+              ],
+              "heisigNumber": 2800,
+              "slug": "haze",
+              "displayOrder": 109
+            }
+          },
+          {
+            "jp": "湊",
+            "reading": "みなと",
+            "en": "port",
+            "jpHtml": "<ruby>湊<rt>みなと</rt></ruby>",
+            "meta": {
+              "kanji": "湊",
+              "masterKanji": [
+                "湊"
+              ],
+              "heisigNumber": 2402,
+              "slug": "port",
+              "displayOrder": 110
+            }
+          },
+          {
+            "jp": "笠",
+            "reading": "かさ",
+            "en": "bamboo hat",
+            "jpHtml": "<ruby>笠<rt>かさ</rt></ruby>",
+            "meta": {
+              "kanji": "笠",
+              "masterKanji": [
+                "笠"
+              ],
+              "heisigNumber": 1009,
+              "slug": "bamboo_hat",
+              "displayOrder": 111
+            }
+          },
+          {
+            "jp": "李",
+            "reading": "すもも",
+            "en": "Japanese plum",
+            "jpHtml": "<ruby>李<rt>すもも</rt></ruby>",
+            "meta": {
+              "kanji": "李",
+              "masterKanji": [
+                "李"
+              ],
+              "heisigNumber": 2571,
+              "slug": "damson",
+              "displayOrder": 112
+            }
+          },
+          {
+            "jp": "桂",
+            "reading": "かつら",
+            "en": "katsura tree",
+            "jpHtml": "<ruby>桂<rt>かつら</rt></ruby>",
+            "meta": {
+              "kanji": "桂",
+              "masterKanji": [
+                "桂"
+              ],
+              "heisigNumber": 210,
+              "slug": "judas_tree",
+              "displayOrder": 113
+            }
+          },
+          {
+            "jp": "菱",
+            "reading": "ひし",
+            "en": "water chestnut / diamond shape",
+            "jpHtml": "<ruby>菱<rt>ひし</rt></ruby>",
+            "meta": {
+              "kanji": "菱",
+              "masterKanji": [
+                "菱"
+              ],
+              "heisigNumber": 1635,
+              "slug": "diamond",
+              "displayOrder": 114
+            }
+          },
+          {
+            "jp": "翔る",
+            "reading": "かける",
+            "en": "to soar",
+            "jpHtml": "<ruby>翔<rt>かけ</rt></ruby>る",
+            "meta": {
+              "kanji": "翔",
+              "masterKanji": [
+                "翔"
+              ],
+              "heisigNumber": 2940,
+              "slug": "soar",
+              "displayOrder": 115
+            }
+          },
+          {
+            "jp": "篠",
+            "reading": "しの",
+            "en": "thin bamboo",
+            "jpHtml": "<ruby>篠<rt>しの</rt></ruby>",
+            "meta": {
+              "kanji": "篠",
+              "masterKanji": [
+                "篠"
+              ],
+              "heisigNumber": 2682,
+              "slug": "slender_bamboo",
+              "displayOrder": 116
+            }
+          },
+          {
+            "jp": "紗",
+            "reading": "しゃ",
+            "en": "gauze",
+            "jpHtml": "<ruby>紗<rt>しゃ</rt></ruby>",
+            "meta": {
+              "kanji": "紗",
+              "masterKanji": [
+                "紗"
+              ],
+              "heisigNumber": 2714,
+              "slug": "silk_gauze",
+              "displayOrder": 117
+            }
+          },
+          {
+            "jp": "向日葵",
+            "reading": "ひまわり",
+            "en": "sunflower",
+            "jpHtml": "<ruby>向日葵<rt>ひまわり</rt></ruby>",
+            "meta": {
+              "kanji": "葵",
+              "masterKanji": [
+                "葵"
+              ],
+              "heisigNumber": 2472,
+              "slug": "hollyhock",
+              "displayOrder": 118
+            }
+          },
+          {
+            "jp": "淀み",
+            "reading": "よどみ",
+            "en": "stagnation / eddy",
+            "jpHtml": "<ruby>淀<rt>よど</rt></ruby>み",
+            "meta": {
+              "kanji": "淀",
+              "masterKanji": [
+                "淀"
+              ],
+              "heisigNumber": 2420,
+              "slug": "eddy",
+              "displayOrder": 119
+            }
+          },
+          {
+            "jp": "叶える",
+            "reading": "かなえる",
+            "en": "to grant (a wish)",
+            "jpHtml": "<ruby>叶<rt>かな</rt></ruby>える",
+            "meta": {
+              "kanji": "叶",
+              "masterKanji": [
+                "叶"
+              ],
+              "heisigNumber": 2291,
+              "slug": "within_ability",
+              "displayOrder": 120
+            }
+          },
+          {
+            "jp": "捧げる",
+            "reading": "ささげる",
+            "en": "to devote / offer up",
+            "jpHtml": "<ruby>捧<rt>ささ</rt></ruby>げる",
+            "meta": {
+              "kanji": "捧",
+              "masterKanji": [
+                "捧"
+              ],
+              "heisigNumber": 2364,
+              "slug": "devote",
+              "displayOrder": 121
+            }
+          },
+          {
+            "jp": "牽引",
+            "reading": "けんいん",
+            "en": "traction / towing",
+            "jpHtml": "<ruby>牽<rt>けん</rt></ruby><ruby>引<rt>いん</rt></ruby>",
+            "meta": {
+              "kanji": "牽",
+              "masterKanji": [
+                "牽"
+              ],
+              "heisigNumber": 2607,
+              "slug": "tug",
+              "displayOrder": 122
+            }
+          },
+          {
+            "jp": "毅然",
+            "reading": "きぜん",
+            "en": "resolute",
+            "jpHtml": "<ruby>毅<rt>き</rt></ruby><ruby>然<rt>ぜん</rt></ruby>",
+            "meta": {
+              "kanji": "毅",
+              "masterKanji": [
+                "毅"
+              ],
+              "heisigNumber": 2898,
+              "slug": "stalwart",
+              "displayOrder": 123
+            }
+          },
+          {
+            "jp": "哨戒",
+            "reading": "しょうかい",
+            "en": "patrol",
+            "jpHtml": "<ruby>哨<rt>しょう</rt></ruby><ruby>戒<rt>かい</rt></ruby>",
+            "meta": {
+              "kanji": "哨",
+              "masterKanji": [
+                "哨"
+              ],
+              "heisigNumber": 2277,
+              "slug": "scout",
+              "displayOrder": 124
+            }
+          },
+          {
+            "jp": "洛中",
+            "reading": "らくちゅう",
+            "en": "central Kyoto",
+            "jpHtml": "<ruby>洛<rt>らく</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>",
+            "meta": {
+              "kanji": "洛",
+              "masterKanji": [
+                "洛"
+              ],
+              "heisigNumber": 2396,
+              "slug": "old_kyoto",
+              "displayOrder": 125
+            }
+          },
+          {
+            "jp": "砦",
+            "reading": "とりで",
+            "en": "fort",
+            "jpHtml": "<ruby>砦<rt>とりで</rt></ruby>",
+            "meta": {
+              "kanji": "砦",
+              "masterKanji": [
+                "砦"
+              ],
+              "heisigNumber": 2204,
+              "slug": "fort",
+              "displayOrder": 126
+            }
+          },
+          {
+            "jp": "樋",
+            "reading": "とい",
+            "en": "gutter / downspout",
+            "jpHtml": "<ruby>樋<rt>とい</rt></ruby>",
+            "meta": {
+              "kanji": "樋",
+              "masterKanji": [
+                "樋"
+              ],
+              "heisigNumber": 2580,
+              "slug": "downspout",
+              "displayOrder": 127
+            }
+          },
+          {
+            "jp": "畠",
+            "reading": "はたけ",
+            "en": "dry field",
+            "jpHtml": "<ruby>畠<rt>はたけ</rt></ruby>",
+            "meta": {
+              "kanji": "畠",
+              "masterKanji": [
+                "畠"
+              ],
+              "heisigNumber": 2925,
+              "slug": "dry_field",
+              "displayOrder": 128
+            }
+          },
+          {
+            "jp": "杜",
+            "reading": "もり",
+            "en": "grove / woods",
+            "jpHtml": "<ruby>杜<rt>もり</rt></ruby>",
+            "meta": {
+              "kanji": "杜",
+              "masterKanji": [
+                "杜"
+              ],
+              "heisigNumber": 2562,
+              "slug": "temple_grove",
+              "displayOrder": 129
+            }
+          },
+          {
+            "jp": "楊",
+            "reading": "やなぎ",
+            "en": "willow",
+            "jpHtml": "<ruby>楊<rt>やなぎ</rt></ruby>",
+            "meta": {
+              "kanji": "楊",
+              "masterKanji": [
+                "楊"
+              ],
+              "heisigNumber": 2539,
+              "slug": "purple_willow",
+              "displayOrder": 130
+            }
+          },
+          {
+            "jp": "荻",
+            "reading": "おぎ",
+            "en": "reed",
+            "jpHtml": "<ruby>荻<rt>おぎ</rt></ruby>",
+            "meta": {
+              "kanji": "荻",
+              "masterKanji": [
+                "荻"
+              ],
+              "heisigNumber": 257,
+              "slug": "reed",
+              "displayOrder": 131
+            }
+          },
+          {
+            "jp": "茅",
+            "reading": "かや",
+            "en": "miscanthus / thatch",
+            "jpHtml": "<ruby>茅<rt>かや</rt></ruby>",
+            "meta": {
+              "kanji": "茅",
+              "masterKanji": [
+                "茅"
+              ],
+              "heisigNumber": 2468,
+              "slug": "grassy_reed",
+              "displayOrder": 132
+            }
+          },
+          {
+            "jp": "苑",
+            "reading": "その",
+            "en": "garden / park",
+            "jpHtml": "<ruby>苑<rt>その</rt></ruby>",
+            "meta": {
+              "kanji": "苑",
+              "masterKanji": [
+                "苑"
+              ],
+              "heisigNumber": 1523,
+              "slug": "park",
+              "displayOrder": 133
+            }
+          },
+          {
+            "jp": "棲む",
+            "reading": "すむ",
+            "en": "to roost / dwell",
+            "jpHtml": "<ruby>棲<rt>す</rt></ruby>む",
+            "meta": {
+              "kanji": "棲",
+              "masterKanji": [
+                "棲"
+              ],
+              "heisigNumber": 2559,
+              "slug": "roost",
+              "displayOrder": 134
+            }
+          },
+          {
+            "jp": "廻る",
+            "reading": "まわる",
+            "en": "to go around",
+            "jpHtml": "<ruby>廻<rt>まわ</rt></ruby>る",
+            "meta": {
+              "kanji": "廻",
+              "masterKanji": [
+                "廻"
+              ],
+              "heisigNumber": 2896,
+              "slug": "circling",
+              "displayOrder": 135
+            }
+          },
+          {
+            "jp": "樺",
+            "reading": "かば",
+            "en": "birch",
+            "jpHtml": "<ruby>樺<rt>かば</rt></ruby>",
+            "meta": {
+              "kanji": "樺",
+              "masterKanji": [
+                "樺"
+              ],
+              "heisigNumber": 2575,
+              "slug": "birch",
+              "displayOrder": 136
+            }
+          },
+          {
+            "jp": "粟",
+            "reading": "あわ",
+            "en": "foxtail millet",
+            "jpHtml": "<ruby>粟<rt>あわ</rt></ruby>",
+            "meta": {
+              "kanji": "粟",
+              "masterKanji": [
+                "粟"
+              ],
+              "heisigNumber": 2696,
+              "slug": "foxtail_millet",
+              "displayOrder": 137
+            }
+          },
+          {
+            "jp": "巴",
+            "reading": "ともえ",
+            "en": "comma swirl / tomoe",
+            "jpHtml": "<ruby>巴<rt>ともえ</rt></ruby>",
+            "meta": {
+              "kanji": "巴",
+              "masterKanji": [
+                "巴"
+              ],
+              "heisigNumber": 2237,
+              "slug": "swirl",
+              "displayOrder": 138
+            }
+          },
+          {
+            "jp": "諏訪",
+            "reading": "すわ",
+            "en": "Suwa",
+            "jpHtml": "<ruby>諏訪<rt>すわ</rt></ruby>",
+            "meta": {
+              "kanji": "諏",
+              "masterKanji": [
+                "諏"
+              ],
+              "heisigNumber": 3040,
+              "slug": "consult",
+              "displayOrder": 139
+            }
+          },
+          {
+            "jp": "嶺",
+            "reading": "みね",
+            "en": "mountain peak",
+            "jpHtml": "<ruby>嶺<rt>みね</rt></ruby>",
+            "meta": {
+              "kanji": "嶺",
+              "masterKanji": [
+                "嶺"
+              ],
+              "heisigNumber": 2336,
+              "slug": "mountain_top",
+              "displayOrder": 140
+            }
+          },
+          {
+            "jp": "隈",
+            "reading": "くま",
+            "en": "nook / shaded recess",
+            "jpHtml": "<ruby>隈<rt>くま</rt></ruby>",
+            "meta": {
+              "kanji": "隈",
+              "masterKanji": [
+                "隈"
+              ],
+              "heisigNumber": 2505,
+              "slug": "nook",
+              "displayOrder": 141
+            }
+          },
+          {
+            "jp": "播種",
+            "reading": "はしゅ",
+            "en": "sowing",
+            "jpHtml": "<ruby>播<rt>は</rt></ruby><ruby>種<rt>しゅ</rt></ruby>",
+            "meta": {
+              "kanji": "播",
+              "masterKanji": [
+                "播"
+              ],
+              "heisigNumber": 2361,
+              "slug": "disseminate",
+              "displayOrder": 142
+            }
+          },
+          {
+            "jp": "窪地",
+            "reading": "くぼち",
+            "en": "hollow / depression",
+            "jpHtml": "<ruby>窪<rt>くぼ</rt></ruby><ruby>地<rt>ち</rt></ruby>",
+            "meta": {
+              "kanji": "窪",
+              "masterKanji": [
+                "窪"
+              ],
+              "heisigNumber": 1421,
+              "slug": "hollow",
+              "displayOrder": 143
+            }
+          },
+          {
+            "jp": "叢",
+            "reading": "くさむら",
+            "en": "thicket",
+            "jpHtml": "<ruby>叢<rt>くさむら</rt></ruby>",
+            "meta": {
+              "kanji": "叢",
+              "masterKanji": [
+                "叢"
+              ],
+              "heisigNumber": 2904,
+              "slug": "conglomerate",
+              "displayOrder": 144
+            }
+          },
+          {
+            "jp": "癌",
+            "reading": "がん",
+            "en": "cancer",
+            "jpHtml": "<ruby>癌<rt>がん</rt></ruby>",
+            "meta": {
+              "kanji": "癌",
+              "masterKanji": [
+                "癌"
+              ],
+              "heisigNumber": 2626,
+              "slug": "cancer",
+              "displayOrder": 145
+            }
+          },
+          {
+            "jp": "祭祀",
+            "reading": "さいし",
+            "en": "ritual worship",
+            "jpHtml": "<ruby>祭<rt>さい</rt></ruby><ruby>祀<rt>し</rt></ruby>",
+            "meta": {
+              "kanji": "祀",
+              "masterKanji": [
+                "祀"
+              ],
+              "heisigNumber": 2993,
+              "slug": "enshrine",
+              "displayOrder": 146
+            }
+          },
+          {
+            "jp": "家禄",
+            "reading": "かろく",
+            "en": "family stipend",
+            "jpHtml": "<ruby>家<rt>か</rt></ruby><ruby>禄<rt>ろく</rt></ruby>",
+            "meta": {
+              "kanji": "禄",
+              "masterKanji": [
+                "禄"
+              ],
+              "heisigNumber": 2648,
+              "slug": "salarium",
+              "displayOrder": 147
+            }
+          },
+          {
+            "jp": "公卿",
+            "reading": "くぎょう",
+            "en": "court nobles",
+            "jpHtml": "<ruby>公<rt>く</rt></ruby><ruby>卿<rt>ぎょう</rt></ruby>",
+            "meta": {
+              "kanji": "卿",
+              "masterKanji": [
+                "卿"
+              ],
+              "heisigNumber": 2907,
+              "slug": "magistrate",
+              "displayOrder": 148
+            }
+          },
+          {
+            "jp": "萬",
+            "reading": "まん",
+            "en": "ten thousand (old form)",
+            "jpHtml": "<ruby>萬<rt>まん</rt></ruby>",
+            "meta": {
+              "kanji": "萬",
+              "masterKanji": [
+                "萬"
+              ],
+              "heisigNumber": 2974,
+              "slug": "ten_thousand_old",
+              "displayOrder": 149
+            }
+          },
+          {
+            "jp": "鑫",
+            "reading": "キン",
+            "en": "three golds — party kanji",
+            "jpHtml": "<ruby>鑫<rt>キン</rt></ruby>",
+            "meta": {
+              "kanji": "鑫",
+              "masterKanji": [
+                "鑫"
+              ],
+              "heisigNumber": 3075,
+              "slug": "three_gold",
+              "displayOrder": 150,
+              "reward": true
+            },
+            "reward": true
+          }
+        ]
+      }
+    }
+  ]
+}

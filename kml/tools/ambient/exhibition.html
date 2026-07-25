@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KML Digital Art Exhibition</title>
 
+  <!-- Local Yuji Syuku (hero) + Noto Serif JP (body) first. Google Fonts for other faces. -->
+  <link rel="stylesheet" href="./css/gallery-fonts-local.css?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;500;600&family=Yuji+Syuku&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/gallery-typography.css?v=6">
   <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
@@ -17,7 +19,7 @@
   <link rel="stylesheet" href="./css/gallery-assisted-reading.css?v=8">
   <link rel="stylesheet" href="./css/gallery-vocabulary-exhibition.css?v=9">
   <link rel="stylesheet" href="./css/gallery-compounds-exhibition.css?v=5">
-  <link rel="stylesheet" href="./css/gallery-japanese-vocabulary.css?v=7">
+  <link rel="stylesheet" href="./css/gallery-japanese-vocabulary.css?v=13">
   <link rel="stylesheet" href="./css/gallery-anchor-compounds-exhibition.css?v=9">
   <link rel="stylesheet" href="./css/gallery-stroke-order.css?v=8">
   <link rel="stylesheet" href="./css/gallery-grade1-stroke-order.css?v=1">
@@ -26,12 +28,13 @@
   <link rel="stylesheet" href="./css/gallery-grade4-kanji-soundtrack.css?v=3">
   <link rel="stylesheet" href="./css/gallery-grade5-kanji-soundtrack.css?v=1">
   <link rel="stylesheet" href="./css/gallery-grade6-kanji-soundtrack.css?v=1">
-  <link rel="stylesheet" href="./css/gallery-party-kanji.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-party-kanji.css?v=6">
   <link rel="stylesheet" href="./css/gallery-hiragana-song.css?v=5">
   <link rel="stylesheet" href="./css/gallery-hiragana-song-typography.css?v=9">
   <link rel="stylesheet" href="./css/gallery-hiragana-origins.css?v=3">
   <link rel="stylesheet" href="./css/gallery-lesson.css?v=2">
-  <link rel="stylesheet" href="./css/exhibition.css">
+  <link rel="stylesheet" href="./css/exhibition.css?v=2">
+  <link rel="stylesheet" href="./css/gallery-prototype-editions.css?v=1">
 </head>
 <body>
 
@@ -47,6 +50,21 @@
     }
     if (p.get("verseMode") === "staggered") {
       document.documentElement.classList.add("kml-verse-staggered");
+    }
+    // Prototype editions — inert unless the params are present.
+    if (p.get("edition") === "mobile") {
+      document.documentElement.classList.add("kml-edition-mobile");
+    }
+    const lab = (p.get("typeLab") || "").trim().toLowerCase();
+    if (lab === "a" || lab === "b" || lab === "c") {
+      document.documentElement.classList.add("kml-lab", "kml-typelab-" + lab);
+    }
+    const glow = (p.get("glowLab") || "").trim().toLowerCase();
+    if (glow === "current" || glow === "reduced" || glow === "none" || glow === "tight") {
+      document.documentElement.classList.add("kml-glowlab", "kml-glowlab-" + glow);
+    }
+    if (p.get("recordPipeline") === "1") {
+      document.documentElement.classList.add("kml-record-pipeline");
     }
   })();
 </script>
@@ -125,6 +143,8 @@
   Katakana Origins (full gojūon — 阿↔ア … 尓↔ン → Gallery 漢):
               ?collection=katakana_origins&skipBookends=1
   Record:     python3 scripts/record_party_kanji.py
+  Recording-pipeline preview (same Chromium/viewport/DPR as MP4 — approve here):
+              .venv/bin/python scripts/preview_recording.py --collection beyond_joyo_biang_qa
   Verse typography QA (skips title phases; still runs verse + essence + exit):
               ?collection=heart_v5&skipBookends=1&exhibit=0&singleExhibit=1&startPhase=reflection
   Scene tests (add &timingScale=0.05 for speed):
@@ -132,6 +152,14 @@
               忘 forget     exhibit=1
               怒 angry      exhibit=41  (sunset)
               怪 suspicious exhibit=42  (noir / moonlight)
+  PROTOTYPE EDITIONS (experimental — hub: prototype-editions.html):
+              &edition=mobile  → 9:16 portrait Mobile Edition layout
+              &typeLab=a|b|c   → A current weight +50% · B one weight lighter +50% · C lighter +60%
+              &glowLab=current|reduced|none|tight  → dense-kanji glow stress (board: glow-stress.html)
+              ?collection=proto_typography_lab&typeLab=b            (Gallery 16:9)
+              ?collection=proto_typography_lab&edition=mobile&typeLab=b  (Mobile 9:16)
+              ?collection=proto_party_kanji_lab&skipBookends=1&typeLab=b
+              ?collection=proto_glow_stress&typeLab=a&glowLab=reduced
   Typography: mobile-refine (default in heart_v5); Cormorant keyword + EN verse
   Keyboard (hidden): Space pause · → next · ← previous
 
@@ -271,29 +299,34 @@
   </div>
 
   <div class="party-kanji-layer exhibition-hidden" data-party-kanji-layer aria-hidden="true">
+    <div class="grade1-confetti-layer exhibition-hidden" data-party-confetti-layer aria-hidden="true"></div>
+    <div class="party-kanji-phase party-kanji-museum" data-party-phase="museum">
+      <div class="party-museum-label" data-party-museum-label>Party Kanji</div>
+      <div class="party-museum-stage" data-party-museum-stage></div>
+      <div class="party-kanji-giant party-museum-final" data-party-museum-final lang="ja"></div>
+      <div class="party-museum-nameplate" data-party-museum-nameplate>
+        <div class="party-museum-reading" data-party-museum-reading lang="ja"></div>
+        <div class="party-museum-meaning" data-party-museum-meaning></div>
+      </div>
+    </div>
     <div class="party-kanji-phase party-kanji-shock" data-party-phase="shock">
       <div class="party-kanji-giant party-kanji-giant--enter" data-party-shock-kanji></div>
       <div class="party-kanji-challenge party-kanji-challenge--hidden" data-party-challenge></div>
     </div>
     <div class="party-kanji-phase party-kanji-reveal" data-party-phase="reveal">
       <div class="party-kanji-playlist" data-party-playlist></div>
-      <div class="party-kanji-components party-kanji-components--burst" data-party-components></div>
+      <div class="party-kanji-components party-kanji-components--burst is-gathering" data-party-components></div>
       <div class="party-kanji-equation party-kanji-equation--hidden" data-party-equation></div>
       <div class="party-kanji-reading" data-party-reading></div>
       <div class="party-kanji-trivia" data-party-trivia></div>
     </div>
-    <div class="party-kanji-phase party-kanji-proof" data-party-phase="proof">
-      <div class="party-kanji-strokes-wrap">
-        <iframe data-party-strokes-frame title="Stroke order" loading="lazy"></iframe>
-      </div>
-      <div class="party-kanji-stroke-note" data-party-stroke-note></div>
-    </div>
     <div class="party-kanji-phase party-kanji-final" data-party-phase="final">
       <div class="party-kanji-final-wrap">
-        <div class="party-kanji-component-pulse" data-party-component-pulse aria-hidden="true"></div>
+        <div class="party-kanji-component-pulse is-gathering" data-party-component-pulse aria-hidden="true"></div>
         <div class="party-kanji-giant party-kanji-giant--reward" data-party-final-kanji></div>
       </div>
       <div class="party-kanji-reading" data-party-final-reading></div>
+      <div class="party-kanji-meaning" data-party-final-meaning></div>
     </div>
     <div class="party-kanji-phase party-kanji-closing" data-party-phase="closing">
       <p class="party-kanji-closing-message" data-party-closing-message></p>
@@ -305,6 +338,14 @@
       <div class="party-kanji-disclaimer" data-party-disclaimer></div>
     </div>
   </div>
+
+  <!-- Top-level confetti: the profile layers above are hidden outside their own
+       exhibitions, so vocabulary rewards need a layer of their own. -->
+  <div
+    class="grade1-confetti-layer exhibition-hidden"
+    data-exhibition-confetti-layer
+    aria-hidden="true"
+  ></div>
 
   <button
     type="button"
@@ -332,6 +373,6 @@
 <script src="./js/hiragana-song-typography.js?v=12"></script>
 <script src="./js/hiragana-origins.js?v=6"></script>
 <script src="./js/anchor-compounds-layout.js?v=1"></script>
-<script src="./js/exhibition-engine.js?v=127"></script>
+<script src="./js/exhibition-engine.js?v=134"></script>
 </body>
 </html>
