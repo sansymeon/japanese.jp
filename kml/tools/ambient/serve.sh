@@ -58,6 +58,8 @@ done
 for n in $(seq -w 2 10); do
   echo "Reading L${n}:     http://localhost:${PORT}/exhibition.html?collection=lesson_${n}_reading"
 done
+echo "Strokes L14:   http://localhost:${PORT}/exhibition.html?collection=lesson_14_strokes"
+echo "Record L14:    .venv/bin/python -u scripts/record_lesson_strokes.py --lesson 14 --rebuild --port 8784"
 echo "YouTube L36:  http://localhost:${PORT}/index.html?collection=lesson_36_foundations"
 echo "YouTube L37:  http://localhost:${PORT}/index.html?collection=lesson_37_foundations"
 echo "YouTube L38:  http://localhost:${PORT}/index.html?collection=lesson_38_foundations"

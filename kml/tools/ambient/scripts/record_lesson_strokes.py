@@ -42,6 +42,7 @@ BUILDERS = {
     8: "build_lesson_08_stroke_order_exhibition.py",
     9: "build_lesson_09_stroke_order_exhibition.py",
     10: "build_lesson_10_stroke_order_exhibition.py",
+    14: SHARED_STROKES_BUILDER,
     33: SHARED_STROKES_BUILDER,
     34: SHARED_STROKES_BUILDER,
     35: SHARED_STROKES_BUILDER,

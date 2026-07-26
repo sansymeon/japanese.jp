@@ -57,8 +57,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
     if not m:
         return None
     n = int(m.group(1))
-    # Nest Heisig lesson collections (1–10 shipped; 33–37 galleries; others as added).
-    if 1 <= n <= 10 or 33 <= n <= 37:
+    # Nest Heisig lesson collections (1–10 shipped; 14 strokes; 33–37 galleries).
+    if 1 <= n <= 10 or n == 14 or 33 <= n <= 37:
         return lesson_folder(n)
     return None
 
