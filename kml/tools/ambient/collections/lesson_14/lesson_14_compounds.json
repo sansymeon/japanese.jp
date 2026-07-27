@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_14_compounds",
+  "title": "Lesson 14 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_14.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 14,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_14.html"
+  },
+  "scenes": [
+    {
+      "id": "L14_cow",
+      "kanji": "牛",
+      "keyword": "cow",
+      "image": "studies/cow.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "牛肉",
+            "reading": "ぎゅうにく",
+            "en": "Beef"
+          },
+          {
+            "jp": "牛乳",
+            "reading": "ぎゅうにゅう",
+            "en": "Milk"
+          },
+          {
+            "jp": "牛丼",
+            "reading": "ぎゅうどん",
+            "en": "Beef bowl"
+          },
+          {
+            "jp": "子牛",
+            "reading": "こうし",
+            "en": "Calf"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "cow",
+        "prototype": true
+      },
+      "imageRev": 1785068362
+    },
+    {
+      "id": "L14_special",
+      "kanji": "特",
+      "keyword": "special",
+      "image": "studies/special.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "特別",
+            "reading": "とくべつ",
+            "en": "Special"
+          },
+          {
+            "jp": "特徴",
+            "reading": "とくちょう",
+            "en": "Characteristic"
+          },
+          {
+            "jp": "特急",
+            "reading": "とっきゅう",
+            "en": "Limited express"
+          },
+          {
+            "jp": "特定",
+            "reading": "とくてい",
+            "en": "Specific"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "special",
+        "prototype": true
+      },
+      "imageRev": 1785068405
+    },
+    {
+      "id": "L14_revelation",
+      "kanji": "告",
+      "keyword": "revelation",
+      "image": "studies/revelation.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "広告",
+            "reading": "こうこく",
+            "en": "Advertisement"
+          },
+          {
+            "jp": "報告",
+            "reading": "ほうこく",
+            "en": "Report"
+          },
+          {
+            "jp": "告白",
+            "reading": "こくはく",
+            "en": "Confession"
+          },
+          {
+            "jp": "忠告",
+            "reading": "ちゅうこく",
+            "en": "Advice"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "revelation",
+        "prototype": true
+      },
+      "imageRev": 1785068495
+    },
+    {
+      "id": "L14_previous",
+      "kanji": "先",
+      "keyword": "previous",
+      "image": "studies/previous.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "先生",
+            "reading": "せんせい",
+            "en": "Teacher"
+          },
+          {
+            "jp": "先週",
+            "reading": "せんしゅう",
+            "en": "Last week"
+          },
+          {
+            "jp": "先月",
+            "reading": "せんげつ",
+            "en": "Last month"
+          },
+          {
+            "jp": "先輩",
+            "reading": "せんぱい",
+            "en": "Senior"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "previous",
+        "prototype": true
+      },
+      "imageRev": 1785068571
+    },
+    {
+      "id": "L14_wash",
+      "kanji": "洗",
+      "keyword": "wash",
+      "image": "studies/wash.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "洗濯",
+            "reading": "せんたく",
+            "en": "Laundry"
+          },
+          {
+            "jp": "洗面所",
+            "reading": "せんめんじょ",
+            "en": "Washroom"
+          },
+          {
+            "jp": "洗車",
+            "reading": "せんしゃ",
+            "en": "Car wash"
+          },
+          {
+            "jp": "手洗い",
+            "reading": "てあらい",
+            "en": "Hand washing"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "wash",
+        "prototype": true
+      },
+      "imageRev": 1785068672
+    },
+    {
+      "id": "L14_jammed_in",
+      "kanji": "介",
+      "keyword": "jammed in",
+      "image": "studies/jammed_in.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "紹介",
+            "reading": "しょうかい",
+            "en": "Introduction"
+          },
+          {
+            "jp": "介護",
+            "reading": "かいご",
+            "en": "Nursing care"
+          },
+          {
+            "jp": "仲介",
+            "reading": "ちゅうかい",
+            "en": "Mediation"
+          },
+          {
+            "jp": "介入",
+            "reading": "かいにゅう",
+            "en": "Intervention"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "jammed_in",
+        "prototype": true
+      },
+      "imageRev": 1785068760
+    },
+    {
+      "id": "L14_world",
+      "kanji": "界",
+      "keyword": "world",
+      "image": "studies/world.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "世界",
+            "reading": "せかい",
+            "en": "World"
+          },
+          {
+            "jp": "限界",
+            "reading": "げんかい",
+            "en": "Limit"
+          },
+          {
+            "jp": "業界",
+            "reading": "ぎょうかい",
+            "en": "Industry"
+          },
+          {
+            "jp": "境界",
+            "reading": "きょうかい",
+            "en": "Boundary"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "world",
+        "prototype": true
+      },
+      "imageRev": 1785068911
+    },
+    {
+      "id": "L14_tea",
+      "kanji": "茶",
+      "keyword": "tea",
+      "image": "studies/tea.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "お茶",
+            "reading": "おちゃ",
+            "en": "Tea"
+          },
+          {
+            "jp": "紅茶",
+            "reading": "こうちゃ",
+            "en": "Black tea"
+          },
+          {
+            "jp": "茶色",
+            "reading": "ちゃいろ",
+            "en": "Brown"
+          },
+          {
+            "jp": "緑茶",
+            "reading": "りょくちゃ",
+            "en": "Green tea"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "tea",
+        "prototype": true
+      },
+      "imageRev": 1785069027
+    },
+    {
+      "id": "L14_stature",
+      "kanji": "脊",
+      "keyword": "stature",
+      "image": "studies/stature.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "脊椎",
+            "reading": "せきつい",
+            "en": "Spine"
+          },
+          {
+            "jp": "脊髄",
+            "reading": "せきずい",
+            "en": "Spinal cord"
+          },
+          {
+            "jp": "脊柱",
+            "reading": "せきちゅう",
+            "en": "Spinal column"
+          },
+          {
+            "jp": "脊椎動物",
+            "reading": "せきついどうぶつ",
+            "en": "Vertebrate"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "stature",
+        "prototype": true
+      },
+      "imageRev": 1785069082
+    },
+    {
+      "id": "L14_fit",
+      "kanji": "合",
+      "keyword": "fit",
+      "image": "studies/fit.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "合格",
+            "reading": "ごうかく",
+            "en": "Pass an exam"
+          },
+          {
+            "jp": "場合",
+            "reading": "ばあい",
+            "en": "Case"
+          },
+          {
+            "jp": "合同",
+            "reading": "ごうどう",
+            "en": "Joint"
+          },
+          {
+            "jp": "合計",
+            "reading": "ごうけい",
+            "en": "Total"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "fit",
+        "prototype": true
+      },
+      "imageRev": 1785069182
+    },
+    {
+      "id": "L14_pagoda",
+      "kanji": "塔",
+      "keyword": "pagoda",
+      "image": "studies/pagoda.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "五重塔",
+            "reading": "ごじゅうのとう",
+            "en": "Five-story pagoda"
+          },
+          {
+            "jp": "塔",
+            "reading": "とう",
+            "en": "Tower"
+          },
+          {
+            "jp": "鉄塔",
+            "reading": "てっとう",
+            "en": "Steel tower"
+          },
+          {
+            "jp": "灯台塔",
+            "reading": "とうだいとう",
+            "en": "Lighthouse tower"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "pagoda",
+        "prototype": true
+      },
+      "imageRev": 1785069253
+    },
+    {
+      "id": "L14_king",
+      "kanji": "王",
+      "keyword": "king",
+      "image": "studies/king.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "王様",
+            "reading": "おうさま",
+            "en": "King"
+          },
+          {
+            "jp": "王国",
+            "reading": "おうこく",
+            "en": "Kingdom"
+          },
+          {
+            "jp": "王子",
+            "reading": "おうじ",
+            "en": "Prince"
+          },
+          {
+            "jp": "女王",
+            "reading": "じょおう",
+            "en": "Queen"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "king",
+        "prototype": true
+      },
+      "imageRev": 1785069314
+    },
+    {
+      "id": "L14_ball",
+      "kanji": "玉",
+      "keyword": "ball",
+      "image": "studies/ball.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "玉子",
+            "reading": "たまご",
+            "en": "Egg"
+          },
+          {
+            "jp": "宝玉",
+            "reading": "ほうぎょく",
+            "en": "Gem"
+          },
+          {
+            "jp": "玉石",
+            "reading": "ぎょくせき",
+            "en": "Jewels and stones"
+          },
+          {
+            "jp": "水玉",
+            "reading": "みずたま",
+            "en": "Water droplet"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "ball",
+        "prototype": true
+      },
+      "imageRev": 1785069384
+    },
+    {
+      "id": "L14_treasure",
+      "kanji": "宝",
+      "keyword": "treasure",
+      "image": "studies/treasure.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "宝石",
+            "reading": "ほうせき",
+            "en": "Gemstone"
+          },
+          {
+            "jp": "国宝",
+            "reading": "こくほう",
+            "en": "National treasure"
+          },
+          {
+            "jp": "財宝",
+            "reading": "ざいほう",
+            "en": "Treasure"
+          },
+          {
+            "jp": "宝物",
+            "reading": "たからもの",
+            "en": "Treasure"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "treasure",
+        "prototype": true
+      },
+      "imageRev": 1785069468
+    },
+    {
+      "id": "L14_pearl",
+      "kanji": "珠",
+      "keyword": "pearl",
+      "image": "studies/pearl.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "真珠",
+            "reading": "しんじゅ",
+            "en": "Pearl"
+          },
+          {
+            "jp": "珠玉",
+            "reading": "しゅぎょく",
+            "en": "Gem"
+          },
+          {
+            "jp": "念珠",
+            "reading": "ねんじゅ",
+            "en": "Prayer beads"
+          },
+          {
+            "jp": "珠算",
+            "reading": "しゅざん",
+            "en": "Abacus calculation"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "pearl",
+        "prototype": true
+      },
+      "imageRev": 1785069503
+    },
+    {
+      "id": "L14_present",
+      "kanji": "現",
+      "keyword": "present",
+      "image": "studies/present.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "現在",
+            "reading": "げんざい",
+            "en": "Present time"
+          },
+          {
+            "jp": "現実",
+            "reading": "げんじつ",
+            "en": "Reality"
+          },
+          {
+            "jp": "現代",
+            "reading": "げんだい",
+            "en": "Modern age"
+          },
+          {
+            "jp": "表現",
+            "reading": "ひょうげん",
+            "en": "Expression"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "present",
+        "prototype": true
+      },
+      "imageRev": 1785069576
+    },
+    {
+      "id": "L14_toy_with",
+      "kanji": "玩",
+      "keyword": "toy with",
+      "image": "studies/toy_with.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "玩具",
+            "reading": "がんぐ",
+            "en": "Toy"
+          },
+          {
+            "jp": "愛玩",
+            "reading": "あいがん",
+            "en": "Petting"
+          },
+          {
+            "jp": "愛玩動物",
+            "reading": "あいがんどうぶつ",
+            "en": "Pet animal"
+          },
+          {
+            "jp": "玩味",
+            "reading": "がんみ",
+            "en": "Appreciate deeply"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "toy_with",
+        "prototype": true
+      },
+      "imageRev": 1785069632
+    },
+    {
+      "id": "L14_lunatic",
+      "kanji": "狂",
+      "keyword": "lunatic",
+      "image": "studies/lunatic.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "狂言",
+            "reading": "きょうげん",
+            "en": "Traditional comic drama"
+          },
+          {
+            "jp": "熱狂",
+            "reading": "ねっきょう",
+            "en": "Enthusiasm"
+          },
+          {
+            "jp": "狂気",
+            "reading": "きょうき",
+            "en": "Madness"
+          },
+          {
+            "jp": "発狂",
+            "reading": "はっきょう",
+            "en": "Go insane"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "lunatic",
+        "prototype": true
+      },
+      "imageRev": 1785069690
+    },
+    {
+      "id": "L14_flourishing",
+      "kanji": "旺",
+      "keyword": "flourishing",
+      "image": "studies/flourishing.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "旺盛",
+            "reading": "おうせい",
+            "en": "Vigorous"
+          },
+          {
+            "jp": "食欲旺盛",
+            "reading": "しょくよくおうせい",
+            "en": "Having a hearty appetite"
+          },
+          {
+            "jp": "気力旺盛",
+            "reading": "きりょくおうせい",
+            "en": "Energetic"
+          },
+          {
+            "jp": "旺健",
+            "reading": "おうけん",
+            "en": "Robust health"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "flourishing",
+        "prototype": true
+      },
+      "imageRev": 1785069757
+    },
+    {
+      "id": "L14_emperor",
+      "kanji": "皇",
+      "keyword": "emperor",
+      "image": "studies/emperor.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "天皇",
+            "reading": "てんのう",
+            "en": "Emperor of Japan"
+          },
+          {
+            "jp": "皇室",
+            "reading": "こうしつ",
+            "en": "Imperial Household"
+          },
+          {
+            "jp": "皇后",
+            "reading": "こうごう",
+            "en": "Empress"
+          },
+          {
+            "jp": "皇太子",
+            "reading": "こうたいし",
+            "en": "Crown Prince"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 14,
+        "slug": "emperor",
+        "prototype": true
+      },
+      "imageRev": 1785069824
+    }
+  ]
+}

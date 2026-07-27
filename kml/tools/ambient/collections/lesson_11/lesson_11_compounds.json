@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_11_compounds",
+  "title": "Lesson 11 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_11.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 11,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_11.html"
+  },
+  "scenes": [
+    {
+      "id": "L11_proclaim",
+      "kanji": "宣",
+      "keyword": "proclaim",
+      "image": "studies/proclaim.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "宣言",
+            "reading": "せんげん",
+            "en": "Declaration, proclamation"
+          },
+          {
+            "jp": "宣伝",
+            "reading": "せんでん",
+            "en": "Advertisement, publicity"
+          },
+          {
+            "jp": "宣教師",
+            "reading": "せんきょうし",
+            "en": "Missionary"
+          },
+          {
+            "jp": "宣告",
+            "reading": "せんこく",
+            "en": "Pronouncement, sentence"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "proclaim",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_early_evening",
+      "kanji": "宵",
+      "keyword": "early evening",
+      "image": "studies/early_evening.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "宵",
+            "reading": "よい",
+            "en": "Early evening, dusk"
+          },
+          {
+            "jp": "今宵",
+            "reading": "こよい",
+            "en": "Tonight"
+          },
+          {
+            "jp": "宵祭り",
+            "reading": "よいまつり",
+            "en": "Eve of a festival"
+          },
+          {
+            "jp": "宵闇",
+            "reading": "よいやみ",
+            "en": "Twilight, dusk darkness"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "early_evening",
+        "prototype": true
+      },
+      "imageRev": 1783218942
+    },
+    {
+      "id": "L11_relax",
+      "kanji": "安",
+      "keyword": "relax",
+      "image": "studies/relax.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "安全",
+            "reading": "あんぜん",
+            "en": "Safety, security"
+          },
+          {
+            "jp": "安心",
+            "reading": "あんしん",
+            "en": "Peace of mind, relief"
+          },
+          {
+            "jp": "安い",
+            "reading": "やすい",
+            "en": "Cheap, inexpensive"
+          },
+          {
+            "jp": "安定",
+            "reading": "あんてい",
+            "en": "Stability, steadiness"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "relax",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_banquet",
+      "kanji": "宴",
+      "keyword": "banquet",
+      "image": "studies/banquet.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "宴会",
+            "reading": "えんかい",
+            "en": "Banquet, party"
+          },
+          {
+            "jp": "祝宴",
+            "reading": "しゅくえん",
+            "en": "Celebration feast, festive banquet"
+          },
+          {
+            "jp": "大宴会",
+            "reading": "だいえんかい",
+            "en": "Grand banquet, large-scale party"
+          },
+          {
+            "jp": "夜宴",
+            "reading": "やえん",
+            "en": "Night feast, evening party"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "banquet",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_draw_near",
+      "kanji": "寄",
+      "keyword": "draw near",
+      "image": "studies/draw_near.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "寄る",
+            "reading": "よる",
+            "en": "To stop by, to approach"
+          },
+          {
+            "jp": "寄付",
+            "reading": "きふ",
+            "en": "Donation, contribution"
+          },
+          {
+            "jp": "寄せる",
+            "reading": "よせる",
+            "en": "To bring near, to gather, to send"
+          },
+          {
+            "jp": "寄港",
+            "reading": "きこう",
+            "en": "Port call, stopping at a port"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "draw_near",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_wealth",
+      "kanji": "富",
+      "keyword": "wealth",
+      "image": "studies/wealth.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "富",
+            "reading": "とみ",
+            "en": "Wealth, riches"
+          },
+          {
+            "jp": "富士山",
+            "reading": "ふじさん",
+            "en": "Mount Fuji"
+          },
+          {
+            "jp": "富裕",
+            "reading": "ふゆう",
+            "en": "Affluence, prosperity"
+          },
+          {
+            "jp": "貧富",
+            "reading": "ひんぷ",
+            "en": "Rich and poor, wealth disparity"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "wealth",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_savings",
+      "kanji": "貯",
+      "keyword": "savings",
+      "image": "studies/savings.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "貯金",
+            "reading": "ちょきん",
+            "en": "Savings"
+          },
+          {
+            "jp": "貯蔵",
+            "reading": "ちょぞう",
+            "en": "Storage, preservation"
+          },
+          {
+            "jp": "貯水池",
+            "reading": "ちょすいち",
+            "en": "Reservoir, water storage pond"
+          },
+          {
+            "jp": "貯蓄",
+            "reading": "ちょちく",
+            "en": "Savings, hoarded wealth"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "savings",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_tree",
+      "kanji": "木",
+      "keyword": "tree",
+      "image": "studies/tree.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "木材",
+            "reading": "もくざい",
+            "en": "Lumber, timber"
+          },
+          {
+            "jp": "木陰",
+            "reading": "こかげ",
+            "en": "Shade of a tree"
+          },
+          {
+            "jp": "木曜",
+            "reading": "もくよう",
+            "en": "Thursday"
+          },
+          {
+            "jp": "木製",
+            "reading": "もくせい",
+            "en": "Wooden, made of wood"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "tree",
+        "prototype": true
+      },
+      "imageRev": 1784983958
+    },
+    {
+      "id": "L11_woods",
+      "kanji": "林",
+      "keyword": "woods",
+      "image": "studies/woods.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "森林",
+            "reading": "しんりん",
+            "en": "Forest"
+          },
+          {
+            "jp": "林道",
+            "reading": "りんどう",
+            "en": "Forest road"
+          },
+          {
+            "jp": "林学",
+            "reading": "りんがく",
+            "en": "Forestry"
+          },
+          {
+            "jp": "林業",
+            "reading": "りんぎょう",
+            "en": "Forestry industry"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "woods",
+        "prototype": true
+      },
+      "imageRev": 1784984046
+    },
+    {
+      "id": "L11_forest",
+      "kanji": "森",
+      "keyword": "forest",
+      "image": "studies/forest.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "森林",
+            "reading": "しんりん",
+            "en": "Forest"
+          },
+          {
+            "jp": "森の中",
+            "reading": "もりのなか",
+            "en": "Inside the forest"
+          },
+          {
+            "jp": "森林浴",
+            "reading": "しんりんよく",
+            "en": "Forest bathing"
+          },
+          {
+            "jp": "青森",
+            "reading": "あおもり",
+            "en": "Aomori"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "forest",
+        "prototype": true
+      },
+      "imageRev": 1784984079
+    },
+    {
+      "id": "L11_judas_tree",
+      "kanji": "桂",
+      "keyword": "judas tree",
+      "image": "studies/judas_tree.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "桂川",
+            "reading": "かつらがわ",
+            "en": "Katsuragawa"
+          },
+          {
+            "jp": "桂林",
+            "reading": "けいりん",
+            "en": "Forest of cassia trees"
+          },
+          {
+            "jp": "桂冠",
+            "reading": "けいかん",
+            "en": "Laurel"
+          },
+          {
+            "jp": "月桂樹",
+            "reading": "げっけいじゅ",
+            "en": "Laurel tree"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "judas_tree",
+        "prototype": true
+      },
+      "imageRev": 1784984097
+    },
+    {
+      "id": "L11_oak",
+      "kanji": "柏",
+      "keyword": "oak",
+      "image": "studies/oak.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "柏餅",
+            "reading": "かしわもち",
+            "en": "Kashiwa-mochi"
+          },
+          {
+            "jp": "柏手",
+            "reading": "かしわで",
+            "en": "Clapping hands in prayer"
+          },
+          {
+            "jp": "柏市",
+            "reading": "かしわし",
+            "en": "Kashiwa City"
+          },
+          {
+            "jp": "柏葉",
+            "reading": "かしわば",
+            "en": "Oak leaf"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "oak",
+        "prototype": true
+      },
+      "imageRev": 1784984117
+    },
+    {
+      "id": "L11_frame",
+      "kanji": "枠",
+      "keyword": "frame",
+      "image": "studies/frame.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "窓枠",
+            "reading": "まどわく",
+            "en": "Window frame"
+          },
+          {
+            "jp": "枠組み",
+            "reading": "わくぐみ",
+            "en": "Framework, structure"
+          },
+          {
+            "jp": "鉄枠",
+            "reading": "てつわく",
+            "en": "Iron frame"
+          },
+          {
+            "jp": "額枠",
+            "reading": "がくわく",
+            "en": "Picture frame"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "frame",
+        "prototype": true
+      },
+      "imageRev": 1784984259
+    },
+    {
+      "id": "L11_treetops",
+      "kanji": "梢",
+      "keyword": "treetops",
+      "image": "studies/treetops.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "梢",
+            "reading": "こずえ",
+            "en": "Treetop"
+          },
+          {
+            "jp": "梢頭",
+            "reading": "しょうとう",
+            "en": "Tree’s uppermost part"
+          },
+          {
+            "jp": "梢雲",
+            "reading": "しょううん",
+            "en": "Cloud touching the treetops"
+          },
+          {
+            "jp": "梢端",
+            "reading": "しょうたん",
+            "en": "Very tip of a branch"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "treetops",
+        "prototype": true
+      },
+      "imageRev": 1784984360
+    },
+    {
+      "id": "L11_shelf",
+      "kanji": "棚",
+      "keyword": "shelf",
+      "image": "studies/shelf.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "本棚",
+            "reading": "ほんだな",
+            "en": "Bookshelf"
+          },
+          {
+            "jp": "食器棚",
+            "reading": "しょっきだな",
+            "en": "Dish cupboard"
+          },
+          {
+            "jp": "戸棚",
+            "reading": "とだな",
+            "en": "Cabinet, cupboard"
+          },
+          {
+            "jp": "陳列棚",
+            "reading": "ちんれつだな",
+            "en": "Display shelf"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "shelf",
+        "prototype": true
+      },
+      "imageRev": 1784984462
+    },
+    {
+      "id": "L11_apricot",
+      "kanji": "杏",
+      "keyword": "apricot",
+      "image": "studies/apricot.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "杏子",
+            "reading": "あんず",
+            "en": "Apricot"
+          },
+          {
+            "jp": "杏仁",
+            "reading": "あんにん",
+            "en": "Apricot kernel"
+          },
+          {
+            "jp": "杏花",
+            "reading": "きょうか",
+            "en": "Apricot blossom"
+          },
+          {
+            "jp": "杏林",
+            "reading": "きょうりん",
+            "en": "Medical world"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "apricot",
+        "prototype": true
+      },
+      "imageRev": 1784984573
+    },
+    {
+      "id": "L11_paulownia_tree",
+      "kanji": "桐",
+      "keyword": "paulownia tree",
+      "image": "studies/paulownia_tree.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "桐箱",
+            "reading": "きりばこ",
+            "en": "Paulownia wood box"
+          },
+          {
+            "jp": "桐紋",
+            "reading": "きりもん",
+            "en": "Paulownia crest"
+          },
+          {
+            "jp": "桐生",
+            "reading": "きりゅう",
+            "en": "Kiryu"
+          },
+          {
+            "jp": "桐材",
+            "reading": "きりざい",
+            "en": "Paulownia wood material"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "paulownia_tree",
+        "prototype": true
+      },
+      "imageRev": 1784984710
+    },
+    {
+      "id": "L11_plant",
+      "kanji": "植",
+      "keyword": "plant",
+      "image": "studies/plant.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "植える",
+            "reading": "うえる",
+            "en": "To plant"
+          },
+          {
+            "jp": "植木",
+            "reading": "うえき",
+            "en": "Garden tree, potted plant"
+          },
+          {
+            "jp": "植物",
+            "reading": "しょくぶつ",
+            "en": "Plant"
+          },
+          {
+            "jp": "植林",
+            "reading": "しょくりん",
+            "en": "Reforestation, tree planting"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "plant",
+        "prototype": true
+      },
+      "imageRev": 1784984811
+    },
+    {
+      "id": "L11_chair",
+      "kanji": "椅",
+      "keyword": "chair",
+      "image": "studies/chair.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "椅子",
+            "reading": "いす",
+            "en": "Chair"
+          },
+          {
+            "jp": "車椅子",
+            "reading": "くるまいす",
+            "en": "Wheelchair"
+          },
+          {
+            "jp": "回転椅子",
+            "reading": "かいてんいす",
+            "en": "Swivel chair"
+          },
+          {
+            "jp": "折り畳み椅子",
+            "reading": "おりたたみいす",
+            "en": "Folding chair"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "chair",
+        "prototype": true
+      },
+      "imageRev": 1784984861
+    },
+    {
+      "id": "L11_wither",
+      "kanji": "枯",
+      "keyword": "wither",
+      "image": "studies/wither.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "枯れる",
+            "reading": "かれる",
+            "en": "To wither, dry up"
+          },
+          {
+            "jp": "枯葉",
+            "reading": "かれは",
+            "en": "Withered leaf"
+          },
+          {
+            "jp": "枯木",
+            "reading": "こぼく",
+            "en": "Dead tree, withered tree"
+          },
+          {
+            "jp": "枯死",
+            "reading": "こし",
+            "en": "Death by drying or withering"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "wither",
+        "prototype": true
+      },
+      "imageRev": 1784984944
+    }
+  ]
+}

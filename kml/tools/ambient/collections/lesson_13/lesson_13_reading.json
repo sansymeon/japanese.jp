@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_13_reading",
+  "title": "Lesson 13 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 13,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v1",
+    "soundtrackTarget": "12:51",
+    "soundtrackDurationSec": 771.29,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L13_bullying",
+      "kanji": "苛",
+      "keyword": "bullying",
+      "image": "studies/bullying.png",
+      "verse": {
+        "jpHtml": "<ruby>弱<rt>よわ</rt></ruby>い<ruby>声<rt>こえ</rt></ruby>を　<ruby>押<rt>お</rt></ruby>しつぶす<ruby>影<rt>かげ</rt></ruby><br><ruby>朝<rt>あさ</rt></ruby>の<ruby>草<rt>くさ</rt></ruby>だけが　<ruby>涙<rt>なみだ</rt></ruby>を<ruby>知<rt>し</rt></ruby>る",
+        "en": "A shadow crushes\nthe voice of the small—\nonly the morning grass remembers the tears."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067574
+    },
+    {
+      "id": "L13_tolerant",
+      "kanji": "寛",
+      "keyword": "tolerant",
+      "image": "studies/tolerant.png",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>窓<rt>まど</rt></ruby>から　やわらかな<ruby>光<rt>ひかり</rt></ruby><br><ruby>赦<rt>ゆる</rt></ruby>しは　<ruby>静<rt>しず</rt></ruby>かに<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>を<ruby>満<rt>み</rt></ruby>たす",
+        "en": "Soft light enters\nthrough the old window—\nforgiveness fills the room without sound."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067597
+    },
+    {
+      "id": "L13_dilute",
+      "kanji": "薄",
+      "keyword": "dilute",
+      "image": "studies/dilute.png",
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>野<rt>の</rt></ruby>に　<ruby>色<rt>いろ</rt></ruby>はほどけ<br><ruby>境<rt>きょう</rt></ruby><ruby>界<rt>かい</rt></ruby>だけが　<ruby>風<rt>かぜ</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る",
+        "en": "In the misted field\nthe colors dissolve—\nonly faint boundaries remain in the wind."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067748
+    },
+    {
+      "id": "L13_leaf",
+      "kanji": "葉",
+      "keyword": "leaf",
+      "image": "studies/leaf.png",
+      "verse": {
+        "jpHtml": "<ruby>若<rt>わか</rt></ruby><ruby>葉<rt>ば</rt></ruby>ゆれる　<ruby>淡<rt>あわ</rt></ruby>い<ruby>空<rt>そら</rt></ruby>の<ruby>下<rt>もと</rt></ruby><br><ruby>春<rt>はる</rt></ruby>は　<ruby>一<rt>いち</rt></ruby><ruby>枚<rt>まい</rt></ruby>ずつ<ruby>始<rt>はじ</rt></ruby>まる",
+        "en": "Young leaves tremble\nbeneath the pale sky—\nspring begins one leaf at a time."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067726
+    },
+    {
+      "id": "L13_imitation",
+      "kanji": "模",
+      "keyword": "imitation",
+      "image": "studies/imitation.png",
+      "verse": {
+        "jpHtml": "<ruby>木<rt>こ</rt></ruby><ruby>陰<rt>かげ</rt></ruby>の<ruby>絵<rt>え</rt></ruby>は　<ruby>本<rt>ほん</rt></ruby><ruby>物<rt>もの</rt></ruby>に<ruby>似<rt>に</rt></ruby>て<br>けれど<ruby>風<rt>かぜ</rt></ruby>までは　<ruby>描<rt>えが</rt></ruby>けない",
+        "en": "The painted tree\nresembles the real one—\nbut it cannot capture the wind."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067798
+    },
+    {
+      "id": "L13_vague",
+      "kanji": "漠",
+      "keyword": "vague",
+      "image": "studies/vague.png",
+      "verse": {
+        "jpHtml": "<ruby>遠<rt>とお</rt></ruby>い<ruby>光<rt>ひかり</rt></ruby>が　<ruby>水<rt>すい</rt></ruby><ruby>面<rt>めん</rt></ruby>ににじみ<br><ruby>答<rt>こた</rt></ruby>えは　まだ<ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こう",
+        "en": "A distant light\nblurs upon the water—\nthe answer still hides beyond the mist."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067992
+    },
+    {
+      "id": "L13_grave",
+      "kanji": "墓",
+      "keyword": "grave",
+      "image": "studies/grave.png",
+      "verse": {
+        "jpHtml": "<ruby>草<rt>くさ</rt></ruby>に<ruby>埋<rt>うず</rt></ruby>もれた　<ruby>小<rt>ちい</rt></ruby>さな<ruby>石<rt>いし</rt></ruby><br><ruby>名<rt>な</rt></ruby>もなく　<ruby>夕<rt>ゆう</rt></ruby><ruby>日<rt>ひ</rt></ruby>に<ruby>眠<rt>ねむ</rt></ruby>る",
+        "en": "A small stone\nburied among the grass—\nsleeping nameless in the evening light."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067509
+    },
+    {
+      "id": "L13_livelihood",
+      "kanji": "暮",
+      "keyword": "livelihood",
+      "image": "studies/livelihood.png",
+      "verse": {
+        "jpHtml": "<ruby>畑<rt>はたけ</rt></ruby>を<ruby>耕<rt>たがや</rt></ruby>す　<ruby>静<rt>しず</rt></ruby>かな<ruby>手<rt>て</rt></ruby><br><ruby>暮<rt>く</rt></ruby>らしは　<ruby>土<rt>つち</rt></ruby>の<ruby>匂<rt>にお</rt></ruby>いに<ruby>続<rt>つづ</rt></ruby>く",
+        "en": "Quiet hands till\nthe evening earth—\nlife continues in the scent of soil."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067492
+    },
+    {
+      "id": "L13_membrane",
+      "kanji": "膜",
+      "keyword": "membrane",
+      "image": "studies/membrane.png",
+      "verse": {
+        "jpHtml": "<ruby>光<rt>ひかり</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>す　<ruby>薄<rt>うす</rt></ruby>い<ruby>円<rt>えん</rt></ruby><br><ruby>触<rt>ふ</rt></ruby>れれば　<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>は<ruby>消<rt>き</rt></ruby>えてしまう",
+        "en": "A fragile circle\nreflects the light—\none touch and the world disappears."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067473
+    },
+    {
+      "id": "L13_seedling",
+      "kanji": "苗",
+      "keyword": "seedling",
+      "image": "studies/seedling.png",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>芽<rt>め</rt></ruby>が　<ruby>土<rt>つち</rt></ruby>を<ruby>押<rt>おし</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げ<br><ruby>未<rt>み</rt></ruby><ruby>来<rt>らい</rt></ruby>は　まだ<ruby>柔<rt>やわ</rt></ruby>らかい",
+        "en": "A tiny sprout\npushes through the soil—\nthe future is still soft."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067457
+    },
+    {
+      "id": "L13_portent",
+      "kanji": "兆",
+      "keyword": "portent",
+      "image": "studies/portent.png",
+      "verse": {
+        "jpHtml": "ひび<ruby>割<rt>ひびわ</rt></ruby>れた<ruby>甲<rt>こう</rt></ruby><ruby>羅<rt>ら</rt></ruby>に<br><ruby>見<rt>み</rt></ruby>えない<ruby>時<rt>じ</rt></ruby><ruby>代<rt>だい</rt></ruby>の　<ruby>足<rt>あし</rt></ruby><ruby>音<rt>おと</rt></ruby>が<ruby>響<rt>ひび</rt></ruby>く",
+        "en": "Within the cracked shell\nechoes the footstep\nof an unseen age."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067440
+    },
+    {
+      "id": "L13_peach_tree",
+      "kanji": "桃",
+      "keyword": "peach tree",
+      "image": "studies/peach_tree.png",
+      "verse": {
+        "jpHtml": "<ruby>桃<rt>もも</rt></ruby>の<ruby>花<rt>はな</rt></ruby><ruby>咲<rt>さ</rt></ruby>く　<ruby>春<rt>はる</rt></ruby>の<ruby>道<rt>とう</rt></ruby><br><ruby>風<rt>ふう</rt></ruby>まで　<ruby>淡<rt>あわ</rt></ruby>く<ruby>色<rt>いろ</rt></ruby>づいていた",
+        "en": "Along the spring road\npeach blossoms bloom—\neven the wind carries color."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067381
+    },
+    {
+      "id": "L13_stare",
+      "kanji": "眺",
+      "keyword": "stare",
+      "image": "studies/stare.png",
+      "verse": {
+        "jpHtml": "<ruby>馬<rt>うま</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>くを　<ruby>見<rt>み</rt></ruby>つめたまま<br><ruby>沈<rt>しず</rt></ruby>む<ruby>雲<rt>くも</rt></ruby>だけが　ゆっくり<ruby>流<rt>なが</rt></ruby>れる",
+        "en": "The horse keeps staring\ninto the distance—\nonly the clouds drift slowly by."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067363
+    },
+    {
+      "id": "L13_dog",
+      "kanji": "犬",
+      "keyword": "dog",
+      "image": "studies/dog.png",
+      "verse": {
+        "jpHtml": "<ruby>黒<rt>くろ</rt></ruby>い<ruby>犬<rt>いぬ</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>座<rt>すわ</rt></ruby>り<br><ruby>帰<rt>かえ</rt></ruby>る<ruby>足<rt>あし</rt></ruby><ruby>音<rt>おと</rt></ruby>を　<ruby>待<rt>ま</rt></ruby>っている",
+        "en": "The black dog sits\nwithout a sound—\nwaiting for familiar footsteps."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067344
+    },
+    {
+      "id": "L13_status_quo",
+      "kanji": "状",
+      "keyword": "status quo",
+      "image": "studies/status_quo.png",
+      "verse": {
+        "jpHtml": "<ruby>眠<rt>ねむ</rt></ruby>る<ruby>犬<rt>いぬ</rt></ruby>たちの　<ruby>変<rt>か</rt></ruby>わらぬ<ruby>輪<rt>わ</rt></ruby><br><ruby>時<rt>とき</rt></ruby>だけが　そっと<ruby>通<rt>とおり</rt></ruby>り<ruby>過<rt>す</rt></ruby>ぎる",
+        "en": "The circle of resting dogs\nnever seems to change—\nonly time passes quietly through."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067325
+    },
+    {
+      "id": "L13_silence",
+      "kanji": "黙",
+      "keyword": "silence",
+      "image": "studies/silence.png",
+      "verse": {
+        "jpHtml": "<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>を<ruby>閉<rt>と</rt></ruby>じた　<ruby>黒<rt>くろ</rt></ruby>い<ruby>犬<rt>いぬ</rt></ruby><br><ruby>沈<rt>ちん</rt></ruby><ruby>黙<rt>もく</rt></ruby>だけが　<ruby>隣<rt>となり</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>る",
+        "en": "The black dog\nwears its silence gently—\nspeech remains outside the room."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067309
+    },
+    {
+      "id": "L13_sort_of_thing",
+      "kanji": "然",
+      "keyword": "sort of thing",
+      "image": "studies/sort_of_thing.png",
+      "verse": {
+        "jpHtml": "<ruby>火<rt>ひ</rt></ruby>はただ　<ruby>静<rt>しず</rt></ruby>かに<ruby>燃<rt>も</rt></ruby>えて<br><ruby>理<rt>りゆう</rt></ruby><ruby>由<rt>りゆう</rt></ruby>もなく　<ruby>夜<rt>よる</rt></ruby>を<ruby>照<rt>て</rt></ruby>らした",
+        "en": "The fire burns\nwithout explanation—\nsimply illuminating the night."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067276
+    },
+    {
+      "id": "L13_reed",
+      "kanji": "荻",
+      "keyword": "reed",
+      "image": "studies/reed.png",
+      "verse": {
+        "jpHtml": "<ruby>風<rt>かぜ</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れる　<ruby>白<rt>しろ</rt></ruby>い<ruby>穂<rt>ほ</rt></ruby><ruby>先<rt>さき</rt></ruby><br><ruby>秋<rt>あき</rt></ruby>は　<ruby>声<rt>こえ</rt></ruby>より<ruby>先<rt>さき</rt></ruby>に<ruby>訪<rt>おとず</rt></ruby>れる",
+        "en": "White reeds sway\nbefore the autumn wind—\nthe season arrives before its voice."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067257
+    },
+    {
+      "id": "L13_hunt",
+      "kanji": "狩",
+      "keyword": "hunt",
+      "image": "studies/hunt.png",
+      "verse": {
+        "jpHtml": "<ruby>獣<rt>けもの</rt></ruby>を<ruby>追<rt>お</rt></ruby>う　<ruby>黒<rt>くろ</rt></ruby>い<ruby>影<rt>かげ</rt></ruby><br><ruby>森<rt>もり</rt></ruby>はまだ　<ruby>何<rt>なん</rt></ruby>も<ruby>語<rt>かた</rt></ruby>らない",
+        "en": "A dark hunter\nmoves through the forest—\nthe woods reveal nothing yet."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067238
+    },
+    {
+      "id": "L13_cat",
+      "kanji": "猫",
+      "keyword": "cat",
+      "image": "studies/cat.png",
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby><ruby>暮<rt>ぐ</rt></ruby>れの<ruby>猫<rt>ねこ</rt></ruby>は　まっすぐ<ruby>座<rt>すわ</rt></ruby>り<br><ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>を　<ruby>少<rt>すこ</rt></ruby>しだけ<ruby>見<rt>み</rt></ruby><ruby>下<rt>した</rt></ruby>ろしていた",
+        "en": "At dusk the cat sits\nperfectly still—\nlooking slightly down upon the world."
+      },
+      "meta": {
+        "lesson": 13,
+        "experimental": true
+      },
+      "imageRev": 1785067217
+    }
+  ]
+}
