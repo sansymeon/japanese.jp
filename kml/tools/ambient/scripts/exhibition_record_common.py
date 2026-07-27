@@ -249,6 +249,18 @@ def _closing_holds_for_soundtrack(collection: dict) -> bool:
     return closing.get("holdUntilSoundtrackEnds") is not False
 
 
+def _opted_out_of_soundtrack_hold(collection: dict) -> bool:
+    """True only when a closing bookend explicitly sets holdUntilSoundtrackEnds:false.
+
+    Missing bookends is NOT an opt-out: bookend-less presentations (stroke order,
+    for example) still run their full bed, so capture must wait for it. Treating
+    "no bookends" as "content-bounded" truncates the Playwright timeout and the
+    record dies before presentationEnded ever fires.
+    """
+    closing = ((collection.get("bookends") or {}).get("closing")) or {}
+    return closing.get("holdUntilSoundtrackEnds") is False
+
+
 def presentation_timeout_ms(collection: dict, root: Path, *, extra_ms: int = 120_000) -> int:
     """Upper bound for Playwright wait (video length + buffer).
 
@@ -317,11 +329,14 @@ def presentation_timeout_ms(collection: dict, root: Path, *, extra_ms: int = 120
         )
         return max(scene_total, soundtrack_bound) + extra_ms
 
-    if not hold_for_bed and estimated_content_ms:
+    if _opted_out_of_soundtrack_hold(collection) and estimated_content_ms:
         return int(estimated_content_ms) + max(extra_ms, 300_000)
 
     main_path = root / (soundtrack.get("main") or "audio/ambient_kanji_exhibition.mp3")
     main_ms = int(probe_duration_seconds(main_path) * 1000) if main_path.is_file() else 0
+    # Bookend-less presentations (stroke order) run the whole bed; never allow the
+    # bound to fall below it.
+    main_ms = max(main_ms, int((collection.get("meta") or {}).get("soundtrackDurationMs") or 0))
     _, ambient_start = heart_opening_timeline_ms(collection, root)
     tail_ms = int(
         (t.get("closingPostSoundtrackHoldMs") or 0)

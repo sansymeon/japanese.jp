@@ -212,7 +212,7 @@ def write_collection(lesson: int, *, show_english: bool = True) -> tuple[Path, d
     return path, config
 
 
-SUPPORTED_LESSONS = list(range(1, 11)) + list(range(33, 38))
+SUPPORTED_LESSONS = list(range(1, 15)) + list(range(33, 38))
 
 
 def main() -> int:

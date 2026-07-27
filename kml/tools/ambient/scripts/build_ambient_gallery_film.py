@@ -546,7 +546,7 @@ def build() -> dict:
         "presentation": "exhibition",
         "assetsBase": "../../assets",
         "id": COLLECTION_ID,
-        "title": "Ambient Gallery Film — KML Japan",
+        "title": "Ambient Gallery Film — Kanji・Music・Landscape",
         "notes": (
             "Ambient Move V2: scenic-curated textless journey through Heart + "
             "Lessons 1–10 artwork. Stronger Ken Burns, 35–45s holds (exceptional "

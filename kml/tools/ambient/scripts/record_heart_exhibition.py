@@ -25,21 +25,16 @@ DEFAULT_PORT = 8766
 VIEWPORT = {"width": 1920, "height": 1080}
 COLLECTION = "heart_v5"
 
-
-def ensure_deps() -> None:
-    if shutil.which("ffmpeg") is None:
-        print("ffmpeg is required on PATH.", file=sys.stderr)
-        sys.exit(1)
-    try:
-        import playwright  # noqa: F401
-    except ImportError:
-        print(
-            "Playwright required:\n"
-            "  python3 -m venv .venv && .venv/bin/pip install playwright\n"
-            "  .venv/bin/playwright install chromium",
-            file=sys.stderr,
-        )
-        sys.exit(1)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from exhibition_record_common import (  # noqa: E402
+    assert_local_noto_serif_files,
+    assert_local_yuji_syuku_files,
+    ensure_deps,
+    ensure_noto_serif_jp_ready,
+    ensure_yuji_syuku_ready,
+    launch_recording_browser,
+    new_recording_context,
+)
 
 
 def probe_duration_seconds(path: Path) -> float:
@@ -94,7 +89,10 @@ def record(*, port: int, output_dir: Path, log_path: Path | None) -> Path:
     collection = json.loads(collection_path.read_text(encoding="utf-8"))
     flute_delay_ms, ambient_start_ms = opening_timeline_ms(collection)
 
-    url = f"http://127.0.0.1:{port}/exhibition.html?collection={COLLECTION}&camera=guardian"
+    url = (
+        f"http://127.0.0.1:{port}/exhibition.html"
+        f"?collection={COLLECTION}&camera=guardian&typography=mobile-refine"
+    )
     out_path = output_dir / f"{COLLECTION}.mp4"
     tmp_dir = output_dir / f".tmp_{COLLECTION}"
     tmp_dir.mkdir(parents=True, exist_ok=True)
@@ -110,23 +108,25 @@ def record(*, port: int, output_dir: Path, log_path: Path | None) -> Path:
         log_file.write(f"URL: {url}\n")
         log_file.flush()
 
+    assert_local_noto_serif_files()
+    assert_local_yuji_syuku_files()
+
     with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=[
-                "--autoplay-policy=no-user-gesture-required",
-                "--disable-dev-shm-usage",
-            ],
-        )
-        context = browser.new_context(
+        browser = launch_recording_browser(p, headless=True)
+        context = new_recording_context(
+            browser,
             viewport=VIEWPORT,
-            record_video_dir=str(tmp_dir),
-            record_video_size=VIEWPORT,
-            color_scheme="dark",
+            record_video_dir=tmp_dir,
         )
         page = context.new_page()
         page.goto(url, wait_until="load", timeout=120_000)
         page.wait_for_function("() => window.kmlExhibition", timeout=120_000)
+        page.wait_for_function(
+            "() => document.fonts && document.fonts.status === 'loaded'",
+            timeout=120_000,
+        )
+        ensure_noto_serif_jp_ready(page)
+        ensure_yuji_syuku_ready(page)
 
         gate = page.locator("[data-exhibition-autoplay-gate]")
         try:

@@ -11,7 +11,7 @@
    * Do not invent YouTube links — leave null until verified.
    * ========================================================================= */
   const SITE_CONFIG = {
-    /** Official KML Japan YouTube channel */
+    /** Official Kanji・Music・Landscape YouTube channel */
     youtubeChannelUrl: "https://www.youtube.com/@ambientkanji",
 
     /** Curriculum overview (book / learning paths on-site) */
@@ -310,7 +310,7 @@
       if (entry && entry.playlistUrl == null && c.youtubeChannelUrl) {
         el.setAttribute(
           "title",
-          "Playlist URL pending — opens KML Japan channel. Set SITE_CONFIG.galleryEntrances." +
+          "Playlist URL pending — opens the Kanji・Music・Landscape channel. Set SITE_CONFIG.galleryEntrances." +
             key +
             ".playlistUrl"
         );
