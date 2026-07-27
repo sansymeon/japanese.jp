@@ -14,8 +14,11 @@ BLOCK_RE = re.compile(
 )
 # Strong-tag format used by most lesson compounds pages:
 #   <li><strong>河川</strong>【かせん】– rivers</li>
+# Also tolerates an optional <br> between the reading and the gloss dash
+# (the Lesson 12 "札" entry uses <strong>札</strong>【ふだ】<br>– Tag …).
 ITEM_STRONG_RE = re.compile(
-    r"<li><strong>([^<]+)</strong>【([^】]+)】[–-]\s*([^<]+?)(?:\s*\([^)]*\))?\s*</li>",
+    r"<li>\s*<strong>([^<]+)</strong>【([^】]+)】\s*(?:<br\s*/?>)?\s*[–-]\s*([^<]+?)(?:\s*\([^)]*\))?\s*</li>",
+    re.IGNORECASE,
 )
 # Plain + <br> format used by later Lesson 7 entries:
 #   <li>九州【きゅうしゅう】<br>– Kyushu (island of Japan)</li>

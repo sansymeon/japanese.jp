@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_12_compounds",
+  "title": "Lesson 12 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_12.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 12,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_12.html"
+  },
+  "scenes": [
+    {
+      "id": "L12_crude",
+      "kanji": "朴",
+      "keyword": "crude",
+      "image": "studies/crude.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "素朴",
+            "reading": "そぼく",
+            "en": "Simple, naive, unaffected"
+          },
+          {
+            "jp": "朴訥",
+            "reading": "ぼくとつ",
+            "en": "Simple and honest, unsophisticated"
+          },
+          {
+            "jp": "朴木",
+            "reading": "ほおのき",
+            "en": "Magnolia tree"
+          },
+          {
+            "jp": "朴直",
+            "reading": "ぼくちょく",
+            "en": "Simple and straightforward"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "crude",
+        "prototype": true
+      },
+      "imageRev": 1784985096
+    },
+    {
+      "id": "L12_village",
+      "kanji": "村",
+      "keyword": "village",
+      "image": "studies/village.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "村人",
+            "reading": "むらびと",
+            "en": "Villager"
+          },
+          {
+            "jp": "村長",
+            "reading": "そんちょう",
+            "en": "Village chief"
+          },
+          {
+            "jp": "農村",
+            "reading": "のうそん",
+            "en": "Farming village"
+          },
+          {
+            "jp": "山村",
+            "reading": "さんそん",
+            "en": "Mountain village"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "village",
+        "prototype": true
+      },
+      "imageRev": 1784985185
+    },
+    {
+      "id": "L12_mutual",
+      "kanji": "相",
+      "keyword": "mutual",
+      "image": "studies/mutual.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "相談",
+            "reading": "そうだん",
+            "en": "Consultation, discussion"
+          },
+          {
+            "jp": "相手",
+            "reading": "あいて",
+            "en": "Partner, companion, opponent"
+          },
+          {
+            "jp": "相続",
+            "reading": "そうぞく",
+            "en": "Inheritance"
+          },
+          {
+            "jp": "相性",
+            "reading": "あいしょう",
+            "en": "Compatibility"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "mutual",
+        "prototype": true
+      },
+      "imageRev": 1784985271
+    },
+    {
+      "id": "L12_desk",
+      "kanji": "机",
+      "keyword": "desk",
+      "image": "studies/desk.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "机",
+            "reading": "つくえ",
+            "en": "Desk"
+          },
+          {
+            "jp": "学習机",
+            "reading": "がくしゅうづくえ",
+            "en": "Study desk"
+          },
+          {
+            "jp": "机上",
+            "reading": "きじょう",
+            "en": "On the desk"
+          },
+          {
+            "jp": "文机",
+            "reading": "ふづくえ",
+            "en": "Writing desk"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "desk",
+        "prototype": true
+      },
+      "imageRev": 1785015945
+    },
+    {
+      "id": "L12_book",
+      "kanji": "本",
+      "keyword": "book",
+      "image": "studies/book.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "本",
+            "reading": "ほん",
+            "en": "Book"
+          },
+          {
+            "jp": "本当",
+            "reading": "ほんとう",
+            "en": "Truth, real"
+          },
+          {
+            "jp": "日本",
+            "reading": "にほん",
+            "en": "Japan"
+          },
+          {
+            "jp": "基本",
+            "reading": "きほん",
+            "en": "Basics, foundation"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "book",
+        "prototype": true
+      },
+      "imageRev": 1784985456
+    },
+    {
+      "id": "L12_tag",
+      "kanji": "札",
+      "keyword": "tag",
+      "image": "studies/tag.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "札",
+            "reading": "ふだ",
+            "en": "Tag, label, sign"
+          },
+          {
+            "jp": "名札",
+            "reading": "なふだ",
+            "en": "Name tag"
+          },
+          {
+            "jp": "値札",
+            "reading": "ねふだ",
+            "en": "Price tag"
+          },
+          {
+            "jp": "千円札",
+            "reading": "せんえんさつ",
+            "en": "1,000 yen bill"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "tag",
+        "prototype": true
+      },
+      "imageRev": 1784986309
+    },
+    {
+      "id": "L12_calendar",
+      "kanji": "暦",
+      "keyword": "calendar",
+      "image": "studies/calendar.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "暦",
+            "reading": "こよみ",
+            "en": "Calendar"
+          },
+          {
+            "jp": "西暦",
+            "reading": "せいれき",
+            "en": "Western calendar"
+          },
+          {
+            "jp": "旧暦",
+            "reading": "きゅうれき",
+            "en": "Lunar calendar"
+          },
+          {
+            "jp": "暦年",
+            "reading": "れきねん",
+            "en": "Calendar year"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "calendar",
+        "prototype": true
+      },
+      "imageRev": 1784985610
+    },
+    {
+      "id": "L12_plan",
+      "kanji": "案",
+      "keyword": "plan",
+      "image": "studies/plan.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "案内",
+            "reading": "あんない",
+            "en": "Guidance, information"
+          },
+          {
+            "jp": "提案",
+            "reading": "ていあん",
+            "en": "Proposal, suggestion"
+          },
+          {
+            "jp": "答案",
+            "reading": "とうあん",
+            "en": "Exam paper, answer sheet"
+          },
+          {
+            "jp": "原案",
+            "reading": "げんあん",
+            "en": "Original plan, draft"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "plan",
+        "prototype": true
+      },
+      "imageRev": 1785016013
+    },
+    {
+      "id": "L12_parch",
+      "kanji": "燥",
+      "keyword": "parch",
+      "image": "studies/parch.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "乾燥",
+            "reading": "かんそう",
+            "en": "Dryness, drying"
+          },
+          {
+            "jp": "燥ぐ",
+            "reading": "はしゃぐ",
+            "en": "(Alternate reading) to frolic, to be lively"
+          },
+          {
+            "jp": "燥性",
+            "reading": "そうせい",
+            "en": "Dry nature"
+          },
+          {
+            "jp": "燥湿",
+            "reading": "そうしつ",
+            "en": "Dry and damp"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "parch",
+        "prototype": true
+      },
+      "imageRev": 1785015388
+    },
+    {
+      "id": "L12_not_yet",
+      "kanji": "未",
+      "keyword": "not yet",
+      "image": "studies/not_yet.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "未来",
+            "reading": "みらい",
+            "en": "Future"
+          },
+          {
+            "jp": "未定",
+            "reading": "みてい",
+            "en": "Undecided"
+          },
+          {
+            "jp": "未完成",
+            "reading": "みかんせい",
+            "en": "Incomplete"
+          },
+          {
+            "jp": "未使用",
+            "reading": "みしよう",
+            "en": "Unused"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "not_yet",
+        "prototype": true
+      },
+      "imageRev": 1785015809
+    },
+    {
+      "id": "L12_extremity",
+      "kanji": "末",
+      "keyword": "extremity",
+      "image": "studies/extremity.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "週末",
+            "reading": "しゅうまつ",
+            "en": "Weekend"
+          },
+          {
+            "jp": "月末",
+            "reading": "げつまつ",
+            "en": "End of the month"
+          },
+          {
+            "jp": "年末",
+            "reading": "ねんまつ",
+            "en": "End of the year"
+          },
+          {
+            "jp": "末期",
+            "reading": "まっき",
+            "en": "Terminal stage, final stage"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "extremity",
+        "prototype": true
+      },
+      "imageRev": 1785015901
+    },
+    {
+      "id": "L12_obscure",
+      "kanji": "昧",
+      "keyword": "obscure",
+      "image": "studies/obscure.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "曖昧",
+            "reading": "あいまい",
+            "en": "Vague, ambiguous"
+          },
+          {
+            "jp": "昧昧",
+            "reading": "まいまい",
+            "en": "Dim, obscure"
+          },
+          {
+            "jp": "愚昧",
+            "reading": "ぐまい",
+            "en": "Foolishness, ignorance"
+          },
+          {
+            "jp": "昧心",
+            "reading": "まいしん",
+            "en": "Dark heart, lack of conscience"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "obscure",
+        "prototype": true
+      },
+      "imageRev": 1784986491
+    },
+    {
+      "id": "L12_splash",
+      "kanji": "沫",
+      "keyword": "splash",
+      "image": "studies/splash.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "泡沫",
+            "reading": "ほうまつ",
+            "en": "Bubble, transient thing, fleeting"
+          },
+          {
+            "jp": "沫雪",
+            "reading": "あわゆき",
+            "en": "Light, fluffy snow"
+          },
+          {
+            "jp": "沫沫",
+            "reading": "まつまつ",
+            "en": "Bubbling, foaming"
+          },
+          {
+            "jp": "沫酒",
+            "reading": "まつしゅ",
+            "en": "Foaming sake"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "splash",
+        "prototype": true
+      },
+      "imageRev": 1785023016
+    },
+    {
+      "id": "L12_flavor",
+      "kanji": "味",
+      "keyword": "flavor",
+      "image": "studies/flavor.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "味",
+            "reading": "あじ",
+            "en": "Flavor, taste"
+          },
+          {
+            "jp": "意味",
+            "reading": "いみ",
+            "en": "Meaning"
+          },
+          {
+            "jp": "味覚",
+            "reading": "みかく",
+            "en": "Sense of taste"
+          },
+          {
+            "jp": "趣味",
+            "reading": "しゅみ",
+            "en": "Hobby, taste"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "flavor",
+        "prototype": true
+      },
+      "imageRev": 1785023235
+    },
+    {
+      "id": "L12_younger_sister",
+      "kanji": "妹",
+      "keyword": "younger sister",
+      "image": "studies/younger_sister.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "妹",
+            "reading": "いもうと",
+            "en": "Younger sister"
+          },
+          {
+            "jp": "姉妹",
+            "reading": "しまい",
+            "en": "Sisters"
+          },
+          {
+            "jp": "義妹",
+            "reading": "ぎまい",
+            "en": "Sister-in-law"
+          },
+          {
+            "jp": "妹分",
+            "reading": "いもうとぶん",
+            "en": "Like a younger sister"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "younger_sister",
+        "prototype": true
+      },
+      "imageRev": 1785023315
+    },
+    {
+      "id": "L12_vermilion",
+      "kanji": "朱",
+      "keyword": "vermilion",
+      "image": "studies/vermilion.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "朱色",
+            "reading": "しゅいろ",
+            "en": "Vermilion color"
+          },
+          {
+            "jp": "朱印",
+            "reading": "しゅいん",
+            "en": "Red seal stamp"
+          },
+          {
+            "jp": "朱肉",
+            "reading": "しゅにく",
+            "en": "Ink pad for seal stamps"
+          },
+          {
+            "jp": "朱筆",
+            "reading": "しゅひつ",
+            "en": "Red pen"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "vermilion",
+        "prototype": true
+      },
+      "imageRev": 1785023395
+    },
+    {
+      "id": "L12_stocks",
+      "kanji": "株",
+      "keyword": "stocks",
+      "image": "studies/stocks.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "株",
+            "reading": "かぶ",
+            "en": "Stock, share"
+          },
+          {
+            "jp": "株式",
+            "reading": "かぶしき",
+            "en": "Stock"
+          },
+          {
+            "jp": "株価",
+            "reading": "かぶか",
+            "en": "Stock price"
+          },
+          {
+            "jp": "株主",
+            "reading": "かぶぬし",
+            "en": "Shareholder"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "stocks",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L12_young",
+      "kanji": "若",
+      "keyword": "young",
+      "image": "studies/young.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "若い",
+            "reading": "わかい",
+            "en": "Young"
+          },
+          {
+            "jp": "若者",
+            "reading": "わかもの",
+            "en": "Young person"
+          },
+          {
+            "jp": "若年",
+            "reading": "じゃくねん",
+            "en": "Youth, young age"
+          },
+          {
+            "jp": "若返る",
+            "reading": "わかがえる",
+            "en": "To rejuvenate, become young again"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "young",
+        "prototype": true
+      },
+      "imageRev": 1785025925
+    },
+    {
+      "id": "L12_grass",
+      "kanji": "草",
+      "keyword": "grass",
+      "image": "studies/grass.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "草",
+            "reading": "くさ",
+            "en": "Grass"
+          },
+          {
+            "jp": "草原",
+            "reading": "そうげん",
+            "en": "Grassland, prairie"
+          },
+          {
+            "jp": "草案",
+            "reading": "そうあん",
+            "en": "Draft, rough plan"
+          },
+          {
+            "jp": "草食",
+            "reading": "そうしょく",
+            "en": "Herbivorous diet"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "grass",
+        "prototype": true
+      },
+      "imageRev": 1785026052
+    },
+    {
+      "id": "L12_suffering",
+      "kanji": "苦",
+      "keyword": "suffering",
+      "image": "studies/suffering.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "苦い",
+            "reading": "にがい",
+            "en": "Bitter"
+          },
+          {
+            "jp": "苦しい",
+            "reading": "くるしい",
+            "en": "Painful, difficult"
+          },
+          {
+            "jp": "苦労",
+            "reading": "くろう",
+            "en": "Hardship, trouble"
+          },
+          {
+            "jp": "苦痛",
+            "reading": "くつう",
+            "en": "Pain, suffering"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 12,
+        "slug": "suffering",
+        "prototype": true
+      },
+      "imageRev": 1785026131
+    }
+  ]
+}

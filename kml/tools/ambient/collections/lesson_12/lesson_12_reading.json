@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_12_reading",
+  "title": "Lesson 12 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/reading_v2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 12,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v2",
+    "soundtrackTarget": "12:41",
+    "soundtrackDurationSec": 760.97,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L12_crude",
+      "kanji": "朴",
+      "keyword": "crude",
+      "image": "studies/crude.png",
+      "verse": {
+        "jpHtml": "<ruby>粗<rt>あら</rt></ruby>い<ruby>器<rt>うつわ</rt></ruby>に　<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby><br><ruby>飾<rt>かざ</rt></ruby>らぬものほど　<ruby>手<rt>て</rt></ruby>になじむ",
+        "en": "Morning light rests\nupon the rough bowl—\nthe plainest things fit the hand best."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1784985096
+    },
+    {
+      "id": "L12_village",
+      "kanji": "村",
+      "keyword": "village",
+      "image": "studies/village.png",
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby><ruby>暮<rt>ぐ</rt></ruby>れの<ruby>村<rt>むら</rt></ruby>に　<ruby>煙<rt>けむり</rt></ruby>が<ruby>昇<rt>のぼ</rt></ruby>り<br><ruby>小<rt>ちい</rt></ruby>さな<ruby>窓<rt>まど</rt></ruby>から　<ruby>灯<rt>あか</rt></ruby>りがこぼれる",
+        "en": "Smoke rises softly\nabove the evening village—\nwarm light spills from tiny windows."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1784985185
+    },
+    {
+      "id": "L12_mutual",
+      "kanji": "相",
+      "keyword": "mutual",
+      "image": "studies/mutual.png",
+      "verse": {
+        "jpHtml": "<ruby>向<rt>むかい</rt></ruby>かい<ruby>合<rt>あ</rt></ruby>う<ruby>手<rt>て</rt></ruby>に<br><ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>より<ruby>深<rt>ぶか</rt></ruby>い　<ruby>静<rt>しず</rt></ruby>けさがある",
+        "en": "Between joined hands\nrests a silence\ndeeper than words."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1784985271
+    },
+    {
+      "id": "L12_desk",
+      "kanji": "机",
+      "keyword": "desk",
+      "image": "studies/desk.png",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>机<rt>つくえ</rt></ruby>に　<ruby>紙<rt>かみ</rt></ruby>をひらけば<br><ruby>静<rt>しず</rt></ruby>かな<ruby>時<rt>とき</rt></ruby>が　また<ruby>動<rt>うご</rt></ruby>き<ruby>出<rt>だ</rt></ruby>す",
+        "en": "Opening papers\nupon the old desk—\nquiet time begins moving again."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785015945
+    },
+    {
+      "id": "L12_book",
+      "kanji": "本",
+      "keyword": "book",
+      "image": "studies/book.png",
+      "verse": {
+        "jpHtml": "<ruby>開<rt>ひら</rt></ruby>かれた<ruby>頁<rt>ぺじ</rt></ruby>に　<ruby>午<rt>ご</rt></ruby><ruby>後<rt>ご</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby><br><ruby>遠<rt>とお</rt></ruby>い<ruby>誰<rt>だれ</rt></ruby>かの<ruby>声<rt>こえ</rt></ruby>が　まだ<ruby>残<rt>のこ</rt></ruby>る",
+        "en": "Afternoon light\nfalls on the open pages—\na distant voice still lingers there."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1784985456
+    },
+    {
+      "id": "L12_tag",
+      "kanji": "札",
+      "keyword": "tag",
+      "image": "studies/tag.png",
+      "verse": {
+        "jpHtml": "<ruby>名<rt>な</rt></ruby>もない<ruby>服<rt>ふく</rt></ruby>に　<ruby>小<rt>ちい</rt></ruby>さな<ruby>札<rt>さつ</rt></ruby><br><ruby>誰<rt>だれ</rt></ruby>かの<ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby>だけが　<ruby>残<rt>のこ</rt></ruby>されている",
+        "en": "A small tag hangs\nfrom the nameless dress—\nonly memory remains attached."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1784986309
+    },
+    {
+      "id": "L12_calendar",
+      "kanji": "暦",
+      "keyword": "calendar",
+      "image": "studies/calendar.png",
+      "verse": {
+        "jpHtml": "<ruby>壁<rt>かべ</rt></ruby>の<ruby>暦<rt>こよみ</rt></ruby>は　<ruby>静<rt>しず</rt></ruby>かに<ruby>減<rt>へ</rt></ruby>り<br><ruby>机<rt>つくえ</rt></ruby>の<ruby>紙<rt>かみ</rt></ruby>だけが　<ruby>積<rt>つ</rt></ruby>もってゆく",
+        "en": "The wall calendar\nquietly loses days—\nonly the papers continue to gather."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1784985610
+    },
+    {
+      "id": "L12_plan",
+      "kanji": "案",
+      "keyword": "plan",
+      "image": "studies/plan.png",
+      "verse": {
+        "jpHtml": "まだ<ruby>来<rt>き</rt></ruby>ぬ<ruby>未<rt>み</rt></ruby><ruby>来<rt>らい</rt></ruby>へ<br><ruby>小<rt>ちい</rt></ruby>さな<ruby>約<rt>やく</rt></ruby><ruby>束<rt>そく</rt></ruby>が　<ruby>差<rt>さし</rt></ruby>し<ruby>出<rt>だ</rt></ruby>される",
+        "en": "Toward an unseen future\na small promise\nis gently offered."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785016013
+    },
+    {
+      "id": "L12_parch",
+      "kanji": "燥",
+      "keyword": "parch",
+      "image": "studies/parch.png",
+      "verse": {
+        "jpHtml": "<ruby>乾<rt>かわ</rt></ruby>いた<ruby>大<rt>だい</rt></ruby><ruby>地<rt>ち</rt></ruby>に　<ruby>風<rt>かぜ</rt></ruby>だけが<ruby>吹<rt>ふ</rt></ruby>き<br><ruby>遠<rt>とお</rt></ruby>い<ruby>雲<rt>くも</rt></ruby>さえ　<ruby>立<rt>た</rt></ruby>ち<ruby>止<rt>と</rt></ruby>まらない",
+        "en": "Across the parched earth\nonly the wind continues—\neven the clouds do not remain."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785015388
+    },
+    {
+      "id": "L12_not_yet",
+      "kanji": "未",
+      "keyword": "not yet",
+      "image": "studies/not_yet.png",
+      "verse": {
+        "jpHtml": "<ruby>細<rt>ほそ</rt></ruby>い<ruby>枝<rt>えだ</rt></ruby><ruby>先<rt>さき</rt></ruby>に　<ruby>春<rt>はる</rt></ruby>は<ruby>眠<rt>ねむ</rt></ruby>り<br>まだ<ruby>名<rt>な</rt></ruby>もない<ruby>日<rt>ひ</rt></ruby>を　<ruby>待<rt>ま</rt></ruby>っている",
+        "en": "Spring sleeps quietly\nwithin the thin branches—\nwaiting for unnamed days."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785015809
+    },
+    {
+      "id": "L12_extremity",
+      "kanji": "末",
+      "keyword": "extremity",
+      "image": "studies/extremity.png",
+      "verse": {
+        "jpHtml": "<ruby>空<rt>そら</rt></ruby>へ<ruby>伸<rt>の</rt></ruby>びる　<ruby>細<rt>ほそ</rt></ruby>い<ruby>梢<rt>こずえ</rt></ruby><br><ruby>終<rt>お</rt></ruby>わりの<ruby>先<rt>さき</rt></ruby>にも　<ruby>光<rt>ひかり</rt></ruby>は<ruby>続<rt>つづ</rt></ruby>く",
+        "en": "The narrow treetop\nreaches into the sky—\nlight continues beyond the end."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785015901
+    },
+    {
+      "id": "L12_obscure",
+      "kanji": "昧",
+      "keyword": "obscure",
+      "image": "studies/obscure.png",
+      "verse": {
+        "jpHtml": "<ruby>白<rt>しろ</rt></ruby>く<ruby>霞<rt>かす</rt></ruby>んだ　<ruby>木<rt>き</rt></ruby><ruby>々<rt>びと</rt></ruby>のあいだ<br><ruby>答<rt>こた</rt></ruby>えは　まだ<ruby>姿<rt>すがた</rt></ruby>を<ruby>見<rt>み</rt></ruby>せない",
+        "en": "Between pale trees\nblurred in the distance—\nthe answer still hides itself."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1784986491
+    },
+    {
+      "id": "L12_splash",
+      "kanji": "沫",
+      "keyword": "splash",
+      "image": "studies/splash.png",
+      "verse": {
+        "jpHtml": "<ruby>水<rt>みず</rt></ruby>しぶきだけが　<ruby>陽<rt>ひ</rt></ruby>を<ruby>砕<rt>くだ</rt></ruby>き<br><ruby>夏<rt>なつ</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>が　<ruby>一<rt>いっ</rt></ruby><ruby>瞬<rt>しゅん</rt></ruby>ひらく",
+        "en": "A burst of water\nshatters the sunlight—\nsummer opens for a moment."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785023016
+    },
+    {
+      "id": "L12_flavor",
+      "kanji": "味",
+      "keyword": "flavor",
+      "image": "studies/flavor.png",
+      "verse": {
+        "jpHtml": "<ruby>湯<rt>ゆ</rt></ruby><ruby>気<rt>き</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに　<ruby>静<rt>しず</rt></ruby>かな<ruby>食<rt>しょく</rt></ruby><ruby>卓<rt>たく</rt></ruby><br><ruby>懐<rt>なつ</rt></ruby>かしさだけが　<ruby>先<rt>さき</rt></ruby>に<ruby>届<rt>とど</rt></ruby>く",
+        "en": "Beyond the rising steam\nrests a quiet table—\nmemory arrives before taste."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785023235
+    },
+    {
+      "id": "L12_younger_sister",
+      "kanji": "妹",
+      "keyword": "younger sister",
+      "image": "studies/younger_sister.png",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>手<rt>て</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>く　<ruby>秋<rt>あき</rt></ruby>の<ruby>道<rt>みち</rt></ruby><br><ruby>背<rt>せ</rt></ruby><ruby>中<rt>なか</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>るのは　やさしい<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>",
+        "en": "Along the autumn road\na small hand is held—\ngentle time remains behind them."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785023315
+    },
+    {
+      "id": "L12_vermilion",
+      "kanji": "朱",
+      "keyword": "vermilion",
+      "image": "studies/vermilion.png",
+      "verse": {
+        "jpHtml": "<ruby>海<rt>うみ</rt></ruby>に<ruby>浮<rt>う</rt></ruby>かぶ　<ruby>朱<rt>しゅ</rt></ruby>の<ruby>鳥<rt>とり</rt></ruby><ruby>居<rt>い</rt></ruby><br><ruby>夕<rt>ゆう</rt></ruby><ruby>空<rt>そら</rt></ruby>までも　<ruby>静<rt>しず</rt></ruby>かに<ruby>染<rt>そ</rt></ruby>まる",
+        "en": "The vermilion gate\nstands upon the water—\neven the evening sky is dyed red."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785023395
+    },
+    {
+      "id": "L12_stocks",
+      "kanji": "株",
+      "keyword": "stocks",
+      "image": "studies/stocks.png",
+      "verse": {
+        "jpHtml": "<ruby>切<rt>きり</rt></ruby>り<ruby>株<rt>かぶ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に　<ruby>若<rt>わか</rt></ruby><ruby>芽<rt>め</rt></ruby>が<ruby>伸<rt>の</rt></ruby>びる<br><ruby>終<rt>お</rt></ruby>わりのあとにも　<ruby>命<rt>いのち</rt></ruby>は<ruby>残<rt>のこ</rt></ruby>る",
+        "en": "From the old stump\na green shoot rises—\nlife remains after endings."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L12_young",
+      "kanji": "若",
+      "keyword": "young",
+      "image": "studies/young.png",
+      "verse": {
+        "jpHtml": "やわらかな<ruby>芽<rt>め</rt></ruby>が　<ruby>風<rt>かぜ</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れて<br><ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>は　まだ<ruby>始<rt>はじ</rt></ruby>まったばかり",
+        "en": "The tender sprout\nsways within the wind—\nthe world has only just begun."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785025925
+    },
+    {
+      "id": "L12_grass",
+      "kanji": "草",
+      "keyword": "grass",
+      "image": "studies/grass.png",
+      "verse": {
+        "jpHtml": "<ruby>草<rt>そう</rt></ruby><ruby>原<rt>げん</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>る　<ruby>淡<rt>あわ</rt></ruby>い<ruby>風<rt>かぜ</rt></ruby><br><ruby>名<rt>な</rt></ruby>もない<ruby>命<rt>いのち</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>光<rt>ひか</rt></ruby>る",
+        "en": "A pale breeze crosses\nthe field of grass—\nnameless lives glow quietly."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785026052
+    },
+    {
+      "id": "L12_suffering",
+      "kanji": "苦",
+      "keyword": "suffering",
+      "image": "studies/suffering.png",
+      "verse": {
+        "jpHtml": "<ruby>強<rt>つよ</rt></ruby>い<ruby>風<rt>かぜ</rt></ruby>に　<ruby>草<rt>くさ</rt></ruby>は<ruby>伏<rt>ふ</rt></ruby>しても<br><ruby>根<rt>ね</rt></ruby>だけは　<ruby>土<rt>つち</rt></ruby>を<ruby>離<rt>はな</rt></ruby>れない",
+        "en": "Though the harsh wind\nbends the grass low—\nits roots never leave the earth."
+      },
+      "meta": {
+        "lesson": 12,
+        "experimental": true
+      },
+      "imageRev": 1785026131
+    }
+  ]
+}

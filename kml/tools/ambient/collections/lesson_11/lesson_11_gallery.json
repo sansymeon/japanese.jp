@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_11_gallery",
+  "title": "KML Gallery — Lesson 11 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (480s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9679,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3739,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3739,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 19958,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 11,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_2",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L11_proclaim",
+      "kanji": "宣",
+      "keyword": "proclaim",
+      "image": "studies/proclaim.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>夜<rt>よ</rt></ruby><ruby>明<rt>あ</rt></ruby>けの<ruby>丘<rt>おか</rt></ruby>で、<br>    <ruby>声<rt>こえ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>空<rt>そら</rt></ruby>へ<ruby>昇<rt>のぼ</rt></ruby>る。<br>    <ruby>真<rt>しん</rt></ruby><ruby>実<rt>じつ</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>くまで<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "On a hill before dawn,\na voice rises quietly into the sky.\nTruth travels far away."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "proclaim"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_early_evening",
+      "kanji": "宵",
+      "keyword": "early evening",
+      "image": "studies/early_evening.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>灯<rt>あかり</rt></ruby>がともるころ、<br>    <ruby>一<rt>いち</rt></ruby><ruby>日<rt>にち</rt></ruby>の<ruby>疲<rt>つか</rt></ruby>れがほどけてゆく。<br>    <ruby>静<rt>しず</rt></ruby>けさが<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>を<ruby>満<rt>み</rt></ruby>たす。",
+        "en": "As lamps begin to glow,\nthe weariness of the day loosens gently.\nQuietness fills the room."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "early_evening"
+      },
+      "imageRev": 1783218942
+    },
+    {
+      "id": "L11_relax",
+      "kanji": "安",
+      "keyword": "relax",
+      "image": "studies/relax.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>灯<rt>あかり</rt></ruby>のそばで、<br>    <ruby>心<rt>こころ</rt></ruby>はようやく<ruby>眠<rt>ねむ</rt></ruby>りを<ruby>許<rt>ゆる</rt></ruby>す。<br>    <ruby>夜<rt>よる</rt></ruby>はやさしく<ruby>包<rt>つつ</rt></ruby>みこむ。",
+        "en": "Beside a small lantern,\nthe heart finally allows itself to rest.\nNight wraps everything gently."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "relax"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_banquet",
+      "kanji": "宴",
+      "keyword": "banquet",
+      "image": "studies/banquet.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>笑<rt>え</rt></ruby>い<ruby>声<rt>こえ</rt></ruby>のあいだに、<br>    <ruby>人<rt>ひと</rt></ruby><ruby>々<rt>びと</rt></ruby>は<ruby>時<rt>とき</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れて<ruby>座<rt>すわ</rt></ruby>る。<br>    <ruby>温<rt>あたた</rt></ruby>かな<ruby>光<rt>ひかり</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>いてゆく。",
+        "en": "Between bursts of laughter,\npeople forget the passing of time.\nWarm light continues into the night."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "banquet"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_draw_near",
+      "kanji": "寄",
+      "keyword": "draw near",
+      "image": "studies/draw_near.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>より<ruby>先<rt>さき</rt></ruby>に、<br>    <ruby>人<rt>ひと</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>近<rt>ちか</rt></ruby>づいてくる。<br>    ぬくもりは<ruby>距<rt>きょ</rt></ruby><ruby>離<rt>り</rt></ruby>を<ruby>越<rt>こ</rt></ruby>える。",
+        "en": "Before words are spoken,\nsomeone quietly draws near.\nWarmth crosses every distance."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "draw_near"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_wealth",
+      "kanji": "富",
+      "keyword": "wealth",
+      "image": "studies/wealth.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>積<rt>つみ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねられたものより、<br>    <ruby>満<rt>み</rt></ruby>ち<ruby>足<rt>あし</rt></ruby>りた<ruby>心<rt>こころ</rt></ruby>が<ruby>尊<rt>とうと</rt></ruby>い。<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>豊<rt>ゆた</rt></ruby>かさが<ruby>残<rt>のこ</rt></ruby>る。",
+        "en": "More valuable than piled treasures\nis a heart already content.\nA quiet richness remains."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "wealth"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_savings",
+      "kanji": "貯",
+      "keyword": "savings",
+      "image": "studies/savings.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>蓄<rt>たくわ</rt></ruby>えたものが、<br>    <ruby>冬<rt>ふゆ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>えてくれる。<br>    <ruby>慎<rt>つつし</rt></ruby>みは<ruby>力<rt>ちから</rt></ruby>になる。",
+        "en": "What is saved little by little\nsupports the cold days of winter.\nRestraint becomes strength."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "savings"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L11_tree",
+      "kanji": "木",
+      "keyword": "tree",
+      "image": "studies/tree.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>風<rt>かぜ</rt></ruby>のなかでも、<br>    <ruby>一<rt>いち</rt></ruby><ruby>本<rt>ぽん</rt></ruby>の<ruby>木<rt>き</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>立<rt>た</rt></ruby>っている。<br>    <ruby>季<rt>き</rt></ruby><ruby>節<rt>せつ</rt></ruby>だけが<ruby>通<rt>とおり</rt></ruby>り<ruby>過<rt>す</rt></ruby>ぎる。",
+        "en": "Even in the wind,\na single tree stands quietly.\nOnly the seasons pass by."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "tree"
+      },
+      "imageRev": 1784983958
+    },
+    {
+      "id": "L11_woods",
+      "kanji": "林",
+      "keyword": "woods",
+      "image": "studies/woods.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>光<rt>ひかり</rt></ruby>のこぼれる<ruby>道<rt>みち</rt></ruby>を、<br>    <ruby>二<rt>に</rt></ruby><ruby>本<rt>ぽん</rt></ruby>の<ruby>木<rt>き</rt></ruby>が<ruby>並<rt>なら</rt></ruby>んで<ruby>守<rt>まも</rt></ruby>っている。<br>    <ruby>朝<rt>あさ</rt></ruby><ruby>露<rt>つゆ</rt></ruby>が<ruby>草<rt>くさ</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る。",
+        "en": "Along a light-filled path,\ntwo trees stand guarding together.\nMorning dew remains on the grass."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "woods"
+      },
+      "imageRev": 1784984046
+    },
+    {
+      "id": "L11_forest",
+      "kanji": "森",
+      "keyword": "forest",
+      "image": "studies/forest.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>深<rt>ふか</rt></ruby>い<ruby>緑<rt>みどり</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>では、<br>    <ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>がゆっくり<ruby>呼<rt>こ</rt></ruby><ruby>吸<rt>きゅう</rt></ruby>している。<br>    <ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>は<ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>ない。",
+        "en": "Deep within the green,\nthe world breathes slowly.\nNo words are necessary."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "forest"
+      },
+      "imageRev": 1784984079
+    },
+    {
+      "id": "L11_judas_tree",
+      "kanji": "桂",
+      "keyword": "judas tree",
+      "image": "studies/judas_tree.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>春<rt>はる</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>は、<br>    <ruby>突<rt>とつ</rt></ruby><ruby>然<rt>ぜん</rt></ruby><ruby>森<rt>もり</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>現<rt>あらわ</rt></ruby>れる。<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>驚<rt>おどろ</rt></ruby>きが<ruby>花<rt>はな</rt></ruby>になる。",
+        "en": "Spring color\nsuddenly appears within the forest.\nQuiet wonder becomes blossom."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "judas_tree"
+      },
+      "imageRev": 1784984097
+    },
+    {
+      "id": "L11_oak",
+      "kanji": "柏",
+      "keyword": "oak",
+      "image": "studies/oak.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>長<rt>なが</rt></ruby>い<ruby>年<rt>とし</rt></ruby><ruby>月<rt>つき</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて、<br>    <ruby>大<rt>おお</rt></ruby>きな<ruby>枝<rt>えだ</rt></ruby>は<ruby>空<rt>そら</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>える。<br>    <ruby>強<rt>つよ</rt></ruby>さは<ruby>沈<rt>ちん</rt></ruby><ruby>黙<rt>もく</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にある。",
+        "en": "Across many long years,\ngreat branches uphold the sky.\nStrength lives within silence."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "oak"
+      },
+      "imageRev": 1784984117
+    },
+    {
+      "id": "L11_frame",
+      "kanji": "枠",
+      "keyword": "frame",
+      "image": "studies/frame.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>通<rt>とおり</rt></ruby>り<ruby>道<rt>みち</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>が、<br>    <ruby>見<rt>み</rt></ruby>えない<ruby>境<rt>きょう</rt></ruby><ruby>界<rt>かい</rt></ruby>を<ruby>作<rt>つく</rt></ruby>っている。<br>    その<ruby>向<rt>む</rt></ruby>こうへ<ruby>人<rt>ひと</rt></ruby>は<ruby>進<rt>すす</rt></ruby>む。",
+        "en": "The shape of the pathway\ncreates an unseen boundary.\nBeyond it, people continue onward."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "frame"
+      },
+      "imageRev": 1784984259
+    },
+    {
+      "id": "L11_treetops",
+      "kanji": "梢",
+      "keyword": "treetops",
+      "image": "studies/treetops.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>見<rt>み</rt></ruby><ruby>上<rt>あ</rt></ruby>げた<ruby>空<rt>そら</rt></ruby>で、<br>    <ruby>葉<rt>は</rt></ruby>は<ruby>光<rt>ひかり</rt></ruby>と<ruby>風<rt>かぜ</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れている。<br>    <ruby>遠<rt>とお</rt></ruby>い<ruby>青<rt>あお</rt></ruby>さが<ruby>広<rt>ひろ</rt></ruby>がる。",
+        "en": "High above,\nthe leaves sway in light and wind.\nA distant blue spreads outward."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "treetops"
+      },
+      "imageRev": 1784984360
+    },
+    {
+      "id": "L11_shelf",
+      "kanji": "棚",
+      "keyword": "shelf",
+      "image": "studies/shelf.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>棚<rt>たな</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に、<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>並<rt>なら</rt></ruby>ぶ。<br>    <ruby>時<rt>とき</rt></ruby>は<ruby>埃<rt>ほこり</rt></ruby>のように<ruby>積<rt>つ</rt></ruby>もる。",
+        "en": "Upon an old shelf,\nsmall memories rest quietly in rows.\nTime gathers like dust."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "shelf"
+      },
+      "imageRev": 1784984462
+    },
+    {
+      "id": "L11_apricot",
+      "kanji": "杏",
+      "keyword": "apricot",
+      "image": "studies/apricot.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>熟<rt>う</rt></ruby>れた<ruby>実<rt>じつ</rt></ruby>の<ruby>香<rt>かお</rt></ruby>りが、<br>    <ruby>夏<rt>なつ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>を<ruby>思<rt>おもい</rt></ruby>い<ruby>出<rt>だ</rt></ruby>させる。<br>    <ruby>甘<rt>あま</rt></ruby>さは<ruby>短<rt>みじか</rt></ruby>く<ruby>過<rt>す</rt></ruby>ぎてゆく。",
+        "en": "The scent of ripe fruit\nrecalls the light of summer.\nSweetness passes quickly."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "apricot"
+      },
+      "imageRev": 1784984573
+    },
+    {
+      "id": "L11_paulownia_tree",
+      "kanji": "桐",
+      "keyword": "paulownia tree",
+      "image": "studies/paulownia_tree.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>薄<rt>うす</rt></ruby><ruby>紫<rt>むらさき</rt></ruby>の<ruby>花<rt>はな</rt></ruby>は、<br>    <ruby>風<rt>かぜ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>静<rt>しず</rt></ruby>かに<ruby>揺<rt>ゆ</rt></ruby>れている。<br>    <ruby>春<rt>はる</rt></ruby>は<ruby>声<rt>こえ</rt></ruby>なく<ruby>訪<rt>おとず</rt></ruby>れる。",
+        "en": "Pale violet blossoms\nsway quietly in the wind.\nSpring arrives without a sound."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "paulownia_tree"
+      },
+      "imageRev": 1784984710
+    },
+    {
+      "id": "L11_plant",
+      "kanji": "植",
+      "keyword": "plant",
+      "image": "studies/plant.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>芽<rt>め</rt></ruby>であっても、<br>    <ruby>光<rt>ひかり</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かう<ruby>力<rt>ちから</rt></ruby>を<ruby>持<rt>も</rt></ruby>っている。<br>    <ruby>成<rt>せい</rt></ruby><ruby>長<rt>ちょう</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かにはじまる。",
+        "en": "Even a small sprout\nholds the strength to seek the light.\nGrowth begins quietly."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "plant"
+      },
+      "imageRev": 1784984811
+    },
+    {
+      "id": "L11_chair",
+      "kanji": "椅",
+      "keyword": "chair",
+      "image": "studies/chair.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>誰<rt>だれ</rt></ruby>かが<ruby>去<rt>さ</rt></ruby>ったあとも、<br>    <ruby>椅<rt>いす</rt></ruby><ruby>子<rt>こ</rt></ruby>だけがそこに<ruby>残<rt>のこ</rt></ruby>る。<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>を<ruby>見<rt>み</rt></ruby><ruby>守<rt>まも</rt></ruby>っている。",
+        "en": "Even after someone leaves,\nthe chair remains behind.\nIt watches over silent time."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "chair"
+      },
+      "imageRev": 1784984861
+    },
+    {
+      "id": "L11_wither",
+      "kanji": "枯",
+      "keyword": "wither",
+      "image": "studies/wither.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>色<rt>いろ</rt></ruby>を<ruby>失<rt>うしな</rt></ruby>った<ruby>葉<rt>は</rt></ruby>にも、<br>    <ruby>過<rt>すぎ</rt></ruby>ぎ<ruby>去<rt>さ</rt></ruby>った<ruby>季<rt>き</rt></ruby><ruby>節<rt>せつ</rt></ruby>の<ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby>がある。<br>    <ruby>終<rt>お</rt></ruby>わりは<ruby>静<rt>しず</rt></ruby>かな<ruby>姿<rt>すがた</rt></ruby>をしている。",
+        "en": "Even faded leaves\ncarry memories of passing seasons.\nEndings wear a quiet form."
+      },
+      "meta": {
+        "lesson": 11,
+        "slug": "wither"
+      },
+      "imageRev": 1784984944
+    }
+  ]
+}
