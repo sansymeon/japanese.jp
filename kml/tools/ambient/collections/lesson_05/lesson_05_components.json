@@ -1,0 +1,397 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_05_components",
+  "title": "Lesson 5 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 5,
+    "sceneCount": 23,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L05_craft",
+      "kanji": "工",
+      "keyword": "craft",
+      "components": [
+        {
+          "glyph": "工",
+          "label": "craft"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L05_intro_curtain",
+      "glyph": "ナ",
+      "label": "curtain"
+    },
+    {
+      "type": "kanji",
+      "id": "L05_left",
+      "kanji": "左",
+      "keyword": "left",
+      "components": [
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "エ",
+          "label": "craft"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_right",
+      "kanji": "右",
+      "keyword": "right",
+      "components": [
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_possess",
+      "kanji": "有",
+      "keyword": "possess",
+      "components": [
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_bribe",
+      "kanji": "賄",
+      "keyword": "bribe",
+      "components": [
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "有",
+          "label": "possess"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_tribute",
+      "kanji": "貢",
+      "keyword": "tribute",
+      "components": [
+        {
+          "glyph": "エ",
+          "label": "craft"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_paragraph",
+      "kanji": "項",
+      "keyword": "paragraph",
+      "components": [
+        {
+          "glyph": "エ",
+          "label": "craft"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_sword",
+      "kanji": "刀",
+      "keyword": "sword",
+      "components": [
+        {
+          "glyph": "刀",
+          "label": "sword"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_blade",
+      "kanji": "刃",
+      "keyword": "blade",
+      "components": [
+        {
+          "glyph": "丶",
+          "label": "drop"
+        },
+        {
+          "glyph": "刀",
+          "label": "sword"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_cut",
+      "kanji": "切",
+      "keyword": "cut",
+      "components": [
+        {
+          "glyph": "七",
+          "label": "seven"
+        },
+        {
+          "glyph": "刀",
+          "label": "sword"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_seduce",
+      "kanji": "召",
+      "keyword": "seduce",
+      "components": [
+        {
+          "glyph": "刀",
+          "label": "sword"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_shining",
+      "kanji": "昭",
+      "keyword": "shining",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "召",
+          "label": "seduce"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L05_intro_saber",
+      "glyph": "刂",
+      "label": "saber"
+    },
+    {
+      "type": "kanji",
+      "id": "L05_rule",
+      "kanji": "則",
+      "keyword": "rule",
+      "components": [
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L05_intro_wealth",
+      "glyph": "畐",
+      "label": "wealth"
+    },
+    {
+      "type": "kanji",
+      "id": "L05_vice",
+      "kanji": "副",
+      "keyword": "vice",
+      "components": [
+        {
+          "glyph": "畐",
+          "label": "wealth"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_separate",
+      "kanji": "別",
+      "keyword": "separate",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "刀",
+          "label": "sword"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_street",
+      "kanji": "丁",
+      "keyword": "street",
+      "components": [
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_town",
+      "kanji": "町",
+      "keyword": "town",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_possible",
+      "kanji": "可",
+      "keyword": "possible",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_top",
+      "kanji": "頂",
+      "keyword": "top",
+      "components": [
+        {
+          "glyph": "丁",
+          "label": "street"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L05_child",
+      "kanji": "子",
+      "keyword": "child",
+      "components": [
+        {
+          "glyph": "子",
+          "label": "child"
+        }
+      ]
+    }
+  ]
+}

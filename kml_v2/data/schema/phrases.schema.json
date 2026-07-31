@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/phrases.schema.json",
+  "title": "KML Lesson Phrases",
+  "type": "object",
+  "required": ["lesson_id", "items"],
+  "properties": {
+    "lesson_id": { "type": "string", "pattern": "^lesson_[0-9]{3}$" },
+    "status": { "type": "string" },
+    "count": { "type": "integer" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "surface"],
+        "properties": {
+          "id": { "type": "string" },
+          "surface": { "type": "string" },
+          "reading": { "type": ["string", "null"] },
+          "meaning": { "type": ["string", "null"] },
+          "from_kanji_slug": { "type": ["string", "null"] },
+          "anchor_character": { "type": ["string", "null"] }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

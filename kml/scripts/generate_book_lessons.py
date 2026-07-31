@@ -1,6 +1,7 @@
 import csv
 import os
 import math
+import json
 from pathlib import Path
 
 # ===== BASE PATH =====
@@ -10,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CSV_PATH = BASE_DIR / "data/kanji/kanji_master_with_components.csv"
 TEMPLATE_PATH = BASE_DIR / "templates/lesson_template.html"
 OUTPUT_DIR = BASE_DIR / "contents/books/book_01/lessons/"
+GALLERY_URLS_PATH = BASE_DIR / "data/lesson_gallery_urls.json"
 
 START_KANJI = "昌"
 LESSON_SIZE = 20
@@ -18,6 +20,18 @@ START_LESSON_NUMBER = 2
 # ===== LOAD TEMPLATE =====
 with open(TEMPLATE_PATH, encoding="utf-8") as f:
     template = f.read()
+
+# ===== GALLERY URLS (optional Ambient Study doorway) =====
+GALLERY_URLS: dict[str, str] = {}
+if GALLERY_URLS_PATH.exists():
+    with open(GALLERY_URLS_PATH, encoding="utf-8") as f:
+        raw = json.load(f)
+    GALLERY_URLS = {
+        str(k): v.strip()
+        for k, v in raw.items()
+        if not str(k).startswith("_") and isinstance(v, str) and v.strip()
+    }
+
 
 # ===== LOAD CSV =====
 rows = []
@@ -40,6 +54,30 @@ current = start_index
 
 def pad(n):
     return str(n).zfill(2)
+
+
+def build_lesson_art(lesson_number: int) -> str:
+    pad_n = pad(lesson_number)
+    img = (
+        f'<img src="../../../../assets/covers/lesson_{pad_n}.png"\n'
+        f'       alt="Lesson {lesson_number} cover"\n'
+        f'       width="380" height="250"\n'
+        f'       fetchpriority="high">'
+    )
+    url = GALLERY_URLS.get(str(lesson_number))
+    if not url:
+        return img
+    return (
+        f'<a class="lesson-art-link"\n'
+        f'     href="{url}"\n'
+        f'     target="_blank"\n'
+        f'     rel="noopener noreferrer"\n'
+        f'     aria-label="Open Ambient Study Gallery for Lesson {lesson_number}">\n'
+        f'  {img}\n'
+        f'  <span class="lesson-art-gallery-label" aria-hidden="true">'
+        f'▶ Ambient Study Gallery</span>\n'
+        f'</a>'
+    )
 
 def clean_keyword(raw):
     if not raw:
@@ -329,6 +367,11 @@ while current < total_rows:
     html = html.replace(
         "{{NEXT_LINK}}",
         next_link
+    )
+
+    html = html.replace(
+        "{{LESSON_ART}}",
+        build_lesson_art(lesson_number)
     )
 
     output_file = os.path.join(

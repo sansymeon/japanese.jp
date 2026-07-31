@@ -240,8 +240,14 @@ def load_lessons() -> tuple[list[dict], list[Path]]:
 
 
 def load_master_vocabulary() -> dict[str, dict]:
-    """Read-only lookup: jp -> {pos, themes, jlpt}. Never modified, never written."""
+    """Read-only lookup: jp -> {pos, themes, jlpt}. Never modified, never written.
+
+    Missing file → empty index (JLPT CSVs / UniDic heuristics still apply).
+    """
     path = REPO_ROOT / CONFIG["sources"]["master_vocabulary"]
+    if not path.is_file():
+        print(f"  note: master vocabulary not found ({path}); continuing without it")
+        return {}
     data = json.loads(path.read_text(encoding="utf-8"))
     index = {}
     for e in data.get("entries", []):
@@ -556,6 +562,15 @@ def analyze(lessons, words: dict[str, Word], freq_ranks, joyo) -> dict:
 
 def provenance(lesson_paths: list[Path]) -> dict:
     master_path = REPO_ROOT / CONFIG["sources"]["master_vocabulary"]
+    master_meta = {
+        "file": str(master_path.relative_to(REPO_ROOT)),
+        "access": "read_only",
+    }
+    if master_path.is_file():
+        master_meta["sha256_12"] = sha256_short(master_path)
+    else:
+        master_meta["sha256_12"] = None
+        master_meta["present"] = False
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generator": "kml/analytics/scripts/analyze_curriculum.py",
@@ -564,11 +579,7 @@ def provenance(lesson_paths: list[Path]) -> dict:
         "inputs": {
             "lessons": [{"file": str(p.relative_to(REPO_ROOT)),
                          "sha256_12": sha256_short(p)} for p in lesson_paths],
-            "master_vocabulary": {
-                "file": str(master_path.relative_to(REPO_ROOT)),
-                "sha256_12": sha256_short(master_path),
-                "access": "read_only",
-            },
+            "master_vocabulary": master_meta,
         },
     }
 

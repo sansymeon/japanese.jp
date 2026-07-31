@@ -1,0 +1,441 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_22_components",
+  "title": "Lesson 22 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 22,
+    "sceneCount": 23,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L22_nativity",
+      "kanji": "誕",
+      "keyword": "nativity",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "延",
+          "label": "prolong"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_cornerstone",
+      "kanji": "礎",
+      "keyword": "cornerstone",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "楚",
+          "label": "thicket"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_bridegroom",
+      "kanji": "婿",
+      "keyword": "bridegroom",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "疋",
+          "label": "critters"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L22_intro_cloak",
+      "glyph": "𧘇",
+      "label": "cloak"
+    },
+    {
+      "type": "kanji",
+      "id": "L22_garment",
+      "kanji": "衣",
+      "keyword": "garment",
+      "components": [
+        {
+          "glyph": "⼇",
+          "label": "top hat"
+        },
+        {
+          "glyph": "𧘇",
+          "label": "cloak"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_judge",
+      "kanji": "裁",
+      "keyword": "judge",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_attire",
+      "kanji": "装",
+      "keyword": "attire",
+      "components": [
+        {
+          "glyph": "壮",
+          "label": "robust"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_reverse_side",
+      "kanji": "裏",
+      "keyword": "reverse side",
+      "components": [
+        {
+          "glyph": "⼇",
+          "label": "top hat"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_demolition",
+      "kanji": "壊",
+      "keyword": "demolition",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "⼇",
+          "label": "top hat"
+        },
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_pathetic",
+      "kanji": "哀",
+      "keyword": "pathetic",
+      "components": [
+        {
+          "glyph": "⼇",
+          "label": "top hat"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L22_intro_robe",
+      "glyph": "袁",
+      "label": "robe"
+    },
+    {
+      "type": "kanji",
+      "id": "L22_far",
+      "kanji": "遠",
+      "keyword": "far",
+      "components": [
+        {
+          "glyph": "廴",
+          "label": "stride"
+        },
+        {
+          "glyph": "袁",
+          "label": "robe"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_monkey",
+      "kanji": "猿",
+      "keyword": "monkey",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "袁",
+          "label": "robe"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L22_intro_cloth",
+      "glyph": "衤",
+      "label": "cloth"
+    },
+    {
+      "type": "kanji",
+      "id": "L22_first_time",
+      "kanji": "初",
+      "keyword": "first time",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "刀",
+          "label": "sword"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_towel",
+      "kanji": "巾",
+      "keyword": "towel",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_linen",
+      "kanji": "布",
+      "keyword": "linen",
+      "components": [
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_sail",
+      "kanji": "帆",
+      "keyword": "sail",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "凡",
+          "label": "mediocre"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_breadth",
+      "kanji": "幅",
+      "keyword": "breadth",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "畐",
+          "label": "wealth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_cap",
+      "kanji": "帽",
+      "keyword": "cap",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "冒",
+          "label": "risk"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_curtain",
+      "kanji": "幕",
+      "keyword": "curtain",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_canopy",
+      "kanji": "幌",
+      "keyword": "canopy",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "光",
+          "label": "ray"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L22_brocade",
+      "kanji": "錦",
+      "keyword": "brocade",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    }
+  ]
+}

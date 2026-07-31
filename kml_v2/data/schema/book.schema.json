@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/book.schema.json",
+  "title": "KML Book",
+  "type": "object",
+  "required": ["id", "number", "title", "lesson_start", "lesson_end", "status", "path"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^book_[0-9]{2,}$" },
+    "number": { "type": "integer", "minimum": 1 },
+    "title": { "type": "string" },
+    "subtitle": { "type": ["string", "null"] },
+    "description": { "type": ["string", "null"] },
+    "lesson_start": { "type": "integer" },
+    "lesson_end": { "type": "integer" },
+    "lesson_ids": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "draft", "ready", "published", "archived"]
+    },
+    "publication": { "type": "object" },
+    "cover": { "type": ["string", "null"] },
+    "path": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

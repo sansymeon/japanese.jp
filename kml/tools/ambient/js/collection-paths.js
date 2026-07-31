@@ -1,5 +1,5 @@
 /**
- * Collection JSON paths — lesson subfolders for L1–10 and L33–37 builds.
+ * Collection JSON paths — lesson subfolders for L1–20, L33–38, L41 builds.
  */
 (function () {
   "use strict";
@@ -8,6 +8,8 @@
     lessons_1_5_prototype: "lesson_01",
     "lesson_01-05_verses": "lesson_01",
     lessons_6_10_prototype: "lesson_06",
+    lessons_11_15_prototype: "lesson_11",
+    lessons_16_20_prototype: "lesson_16",
   };
 
   function lessonFolder(n) {
@@ -20,6 +22,7 @@
     if (/^post_elementary/.test(name)) return "post_elementary";
     if (/^beyond_joyo/.test(name)) return "beyond_joyo";
     if (/^ambient_gallery_film/.test(name)) return "ambient_gallery_film";
+    if (/^ambient_gallery_japan/.test(name)) return "ambient_gallery_japan_4_seasons";
     if (/^vocabulary_\d+/.test(name)) return "vocabulary";
     if (/^hiragana_song/.test(name)) return "hiragana_song";
     if (/^hiragana_origins/.test(name)) return "hiragana_origins";
@@ -34,8 +37,8 @@
     const m = name.match(/^lesson_(\d+)/);
     if (!m) return null;
     const n = parseInt(m[1], 10);
-    // Nest Heisig lesson collections (1–14 shipped; 33–37 galleries).
-    if ((n >= 1 && n <= 14) || (n >= 33 && n <= 37)) return lessonFolder(n);
+    // Nest Heisig lesson collections (1–20; 33–38; 41).
+    if ((n >= 1 && n <= 20) || (n >= 33 && n <= 38) || n === 41) return lessonFolder(n);
     return null;
   }
 

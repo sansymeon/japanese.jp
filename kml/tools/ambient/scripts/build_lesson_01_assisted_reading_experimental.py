@@ -212,7 +212,7 @@ def write_collection(lesson: int, *, show_english: bool = True) -> tuple[Path, d
     return path, config
 
 
-SUPPORTED_LESSONS = list(range(1, 15)) + list(range(33, 38))
+SUPPORTED_LESSONS = list(range(1, 21)) + list(range(33, 39)) + [41]
 
 
 def main() -> int:
@@ -221,7 +221,7 @@ def main() -> int:
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Build lessons 1–10 (use --lesson for 33–37)",
+        help="Build lessons 1–10 (use --lesson for 11–15, 33–38, 41)",
     )
     parser.add_argument("--no-english", action="store_true")
     args = parser.parse_args()

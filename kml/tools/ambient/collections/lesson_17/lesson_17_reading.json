@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_17_reading",
+  "title": "Lesson 17 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 17,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v1",
+    "soundtrackTarget": "12:51",
+    "soundtrackDurationSec": 771.29,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L17_fall",
+      "kanji": "落",
+      "keyword": "fall",
+      "image": "studies/fall.png",
+      "verse": {
+        "jpHtml": "<ruby>落<rt>おち</rt></ruby>ち<ruby>葉<rt>ば</rt></ruby>の<ruby>積<rt>つ</rt></ruby>もる<ruby>道<rt>みち</rt></ruby>を、　ひとり<ruby>静<rt>しず</rt></ruby>かに<ruby>歩<rt>ある</rt></ruby>いてゆく。<br><ruby>失<rt>うしな</rt></ruby>うことも<ruby>季<rt>き</rt></ruby><ruby>節<rt>せつ</rt></ruby>の<ruby>一<rt>いち</rt></ruby><ruby>部<rt>ぶ</rt></ruby>。",
+        "en": "Along the path of fallen leaves,\none walks quietly alone.\nLoss too belongs to the seasons."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785130838
+    },
+    {
+      "id": "L17_superfluous",
+      "kanji": "冗",
+      "keyword": "superfluous",
+      "image": "studies/superfluous.png",
+      "verse": {
+        "jpHtml": "<ruby>使<rt>つか</rt></ruby>われぬ<ruby>物<rt>もの</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えるほど、　<ruby>心<rt>こころ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>も<ruby>散<rt>ち</rt></ruby>らかってゆく。<br><ruby>余<rt>よ</rt></ruby><ruby>分<rt>ぶん</rt></ruby>を<ruby>捨<rt>す</rt></ruby>てると<ruby>静<rt>しず</rt></ruby>けさが<ruby>残<rt>のこ</rt></ruby>る。",
+        "en": "The more unused things gather,\nthe more cluttered the heart becomes.\nRemoving excess leaves behind stillness."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785130953
+    },
+    {
+      "id": "L17_hades",
+      "kanji": "冥",
+      "keyword": "hades",
+      "image": "studies/hades.png",
+      "verse": {
+        "jpHtml": "<ruby>暗<rt>くら</rt></ruby>き<ruby>坑<rt>こう</rt></ruby><ruby>道<rt>どう</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>には、　<ruby>誰<rt>だれ</rt></ruby>も<ruby>知<rt>し</rt></ruby>らぬ<ruby>静<rt>せい</rt></ruby><ruby>寂<rt>じゃく</rt></ruby>が<ruby>眠<rt>ねむ</rt></ruby>る。<br><ruby>冥<rt>めい</rt></ruby>き<ruby>道<rt>どう</rt></ruby>は<ruby>恐<rt>おそ</rt></ruby>れを<ruby>映<rt>うつ</rt></ruby>す。",
+        "en": "Deep within the dark tunnel\nrests an unknown silence.\nShadowed roads reflect fear."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785131142
+    },
+    {
+      "id": "L17_army",
+      "kanji": "軍",
+      "keyword": "army",
+      "image": "studies/army.png",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby><ruby>焼<rt>や</rt></ruby>けの<ruby>空<rt>そら</rt></ruby>の<ruby>下<rt>もと</rt></ruby>、　<ruby>人<rt>ひと</rt></ruby><ruby>々<rt>びと</rt></ruby>は<ruby>黙<rt>だま</rt></ruby>って<ruby>列<rt>れつ</rt></ruby>を<ruby>進<rt>すす</rt></ruby>む。<br><ruby>軍<rt>ぐんぜい</rt></ruby><ruby>勢<rt>ぐんぜい</rt></ruby>にもそれぞれの<ruby>想<rt>おも</rt></ruby>いがある。",
+        "en": "Beneath the morning sky,\nthe ranks advance in silence.\nEven armies carry human longing."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785131238
+    },
+    {
+      "id": "L17_radiance",
+      "kanji": "輝",
+      "keyword": "radiance",
+      "image": "studies/radiance.png",
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>野<rt>の</rt></ruby>に<ruby>差<rt>さし</rt></ruby>し<ruby>込<rt>こ</rt></ruby>む<ruby>光<rt>ひかり</rt></ruby>が、　<ruby>静<rt>しず</rt></ruby>かに<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>を<ruby>満<rt>み</rt></ruby>たしてゆく。<br><ruby>輝<rt>かがや</rt></ruby>きは<ruby>押<rt>お</rt></ruby>しつけない。",
+        "en": "Light pouring across the misted field\nquietly fills the world.\nRadiance does not force itself."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785131316
+    },
+    {
+      "id": "L17_carry",
+      "kanji": "運",
+      "keyword": "carry",
+      "image": "studies/carry.png",
+      "verse": {
+        "jpHtml": "<ruby>重<rt>おも</rt></ruby>き<ruby>荷<rt>に</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>きながらも、　<ruby>人<rt>ひと</rt></ruby>は<ruby>前<rt>まえ</rt></ruby>へ<ruby>歩<rt>ある</rt></ruby>き<ruby>続<rt>つづ</rt></ruby>ける。<br><ruby>運<rt>はこ</rt></ruby>ぶことは<ruby>生<rt>い</rt></ruby>きること。",
+        "en": "Even while pulling heavy burdens,\npeople continue onward.\nTo carry is part of living."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785131378
+    },
+    {
+      "id": "L17_crown",
+      "kanji": "冠",
+      "keyword": "crown",
+      "image": "studies/crown.png",
+      "verse": {
+        "jpHtml": "<ruby>高<rt>たか</rt></ruby>き<ruby>冠<rt>かんむり</rt></ruby>の<ruby>下<rt>した</rt></ruby>にも、　<ruby>孤<rt>こ</rt></ruby><ruby>独<rt>どく</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>隠<rt>かく</rt></ruby>れている。<br><ruby>栄<rt>えい</rt></ruby><ruby>光<rt>こう</rt></ruby>には<ruby>重<rt>おも</rt></ruby>みがある。",
+        "en": "Even beneath the lofty crown\nloneliness quietly remains.\nGlory carries weight."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785131765
+    },
+    {
+      "id": "L17_dream",
+      "kanji": "夢",
+      "keyword": "dream",
+      "image": "studies/dream.png",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby><ruby>霧<rt>ぎり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに<ruby>浮<rt>う</rt></ruby>かぶ<ruby>夢<rt>ゆめ</rt></ruby>は、　<ruby>掴<rt>つか</rt></ruby>めそうで<ruby>遠<rt>とお</rt></ruby>ざかってゆく。<br><ruby>夢<rt>ゆめ</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かし<ruby>続<rt>つづ</rt></ruby>ける。",
+        "en": "Dreams drifting beyond the morning mist\nseem close, yet move away.\nDreams keep the heart in motion."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785132052
+    },
+    {
+      "id": "L17_pit",
+      "kanji": "坑",
+      "keyword": "pit",
+      "image": "studies/pit.png",
+      "verse": {
+        "jpHtml": "<ruby>深<rt>ふか</rt></ruby>く<ruby>掘<rt>ほ</rt></ruby>られた<ruby>穴<rt>あな</rt></ruby>の<ruby>底<rt>そこ</rt></ruby>に、　<ruby>人<rt>ひと</rt></ruby>の<ruby>欲<rt>よく</rt></ruby><ruby>望<rt>ぼう</rt></ruby>と<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>が<ruby>眠<rt>ねむ</rt></ruby>る。<br><ruby>掘<rt>ほり</rt></ruby>り<ruby>進<rt>すす</rt></ruby>めるほど<ruby>空<rt>そら</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>い。",
+        "en": "At the bottom of the deep pit\nrest human desire and labor.\nThe deeper one digs, the farther the sky feels."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785132171
+    },
+    {
+      "id": "L17_tall",
+      "kanji": "高",
+      "keyword": "tall",
+      "image": "studies/tall.png",
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby><ruby>陽<rt>ひ</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける<ruby>高<rt>たか</rt></ruby>き<ruby>楼<rt>ろう</rt></ruby>は、　<ruby>静<rt>しず</rt></ruby>かに<ruby>空<rt>そら</rt></ruby>へ<ruby>近<rt>ちか</rt></ruby>づいている。<br><ruby>高<rt>たか</rt></ruby>みには<ruby>風<rt>かぜ</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まる。",
+        "en": "The tall pavilion in sunset light\nquietly approaches the sky.\nAt great heights, the winds gather."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785132282
+    },
+    {
+      "id": "L17_receive",
+      "kanji": "享",
+      "keyword": "receive",
+      "image": "studies/receive.png",
+      "verse": {
+        "jpHtml": "<ruby>差<rt>さし</rt></ruby>し<ruby>出<rt>だ</rt></ruby>された<ruby>贈<rt>おくり</rt></ruby>り<ruby>物<rt>もの</rt></ruby>には、　<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>にならぬ<ruby>思<rt>おも</rt></ruby>いが<ruby>宿<rt>やど</rt></ruby>る。<br><ruby>受<rt>うけ</rt></ruby>け<ruby>取<rt>と</rt></ruby>ることもまた<ruby>優<rt>やさ</rt></ruby>しさ。",
+        "en": "Within an offered gift\ndwells feeling beyond words.\nReceiving too is kindness."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785132357
+    },
+    {
+      "id": "L17_cram_school",
+      "kanji": "塾",
+      "keyword": "cram school",
+      "image": "studies/cram_school.png",
+      "verse": {
+        "jpHtml": "<ruby>夜<rt>よる</rt></ruby><ruby>遅<rt>おそ</rt></ruby>くまで<ruby>灯<rt>とも</rt></ruby>る<ruby>教<rt>きょう</rt></ruby><ruby>室<rt>しつ</rt></ruby>に、　<ruby>未<rt>み</rt></ruby><ruby>来<rt>らい</rt></ruby>を<ruby>願<rt>ねが</rt></ruby>う<ruby>静<rt>しず</rt></ruby>かな<ruby>熱<rt>ねつ</rt></ruby>がある。<br><ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>は<ruby>誰<rt>だれ</rt></ruby>にも<ruby>見<rt>み</rt></ruby>えない<ruby>場<rt>ば</rt></ruby><ruby>所<rt>しょ</rt></ruby>で<ruby>育<rt>そだ</rt></ruby>つ。",
+        "en": "Within the classroom lit late at night\nrests a quiet passion for the future.\nEffort grows where few can see it."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L17_ripe",
+      "kanji": "熟",
+      "keyword": "ripe",
+      "image": "studies/ripe.png",
+      "verse": {
+        "jpHtml": "<ruby>陽<rt>ひ</rt></ruby>を<ruby>浴<rt>あ</rt></ruby>びた<ruby>葡<rt>ぶ</rt></ruby><ruby>萄<rt>どう</rt></ruby>の<ruby>房<rt>ふさ</rt></ruby>は、　<ruby>静<rt>しず</rt></ruby>かに<ruby>甘<rt>あま</rt></ruby>さを<ruby>深<rt>ふか</rt></ruby>めてゆく。<br><ruby>熟<rt>う</rt></ruby>れるとは<ruby>時<rt>とき</rt></ruby>を<ruby>受<rt>うけ</rt></ruby>け<ruby>入<rt>い</rt></ruby>れること。",
+        "en": "The sunlit cluster of grapes\nquietly deepens in sweetness.\nTo ripen is to accept time."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785134349
+    },
+    {
+      "id": "L17_pavilion",
+      "kanji": "亭",
+      "keyword": "pavilion",
+      "image": "studies/pavilion.png",
+      "verse": {
+        "jpHtml": "<ruby>水<rt>すい</rt></ruby><ruby>面<rt>めん</rt></ruby>に<ruby>映<rt>うつ</rt></ruby>る<ruby>東<rt>あずま</rt></ruby><ruby>屋<rt>や</rt></ruby>には、　<ruby>時<rt>とき</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れる<ruby>静<rt>しず</rt></ruby>けさが<ruby>宿<rt>やど</rt></ruby>る。<br><ruby>風<rt>ふう</rt></ruby><ruby>景<rt>けい</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>を<ruby>休<rt>やす</rt></ruby>ませる。",
+        "en": "Within the pavilion reflected on the water\ndwells a silence beyond time.\nScenery allows the heart to rest."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785132533
+    },
+    {
+      "id": "L17_capital",
+      "kanji": "京",
+      "keyword": "capital",
+      "image": "studies/capital.png",
+      "verse": {
+        "jpHtml": "<ruby>遠<rt>とお</rt></ruby>く<ruby>広<rt>ひろ</rt></ruby>がる<ruby>都<rt>と</rt></ruby>の<ruby>灯<rt>あかり</rt></ruby>は、　<ruby>多<rt>おお</rt></ruby>くの<ruby>人<rt>ひと</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>を<ruby>照<rt>て</rt></ruby>らしている。<br><ruby>都<rt>と</rt></ruby>は<ruby>時<rt>じ</rt></ruby><ruby>代<rt>だい</rt></ruby>の<ruby>中<rt>ちゅう</rt></ruby><ruby>心<rt>しん</rt></ruby>となる。",
+        "en": "The lights of the distant capital\nshine upon countless dreams.\nA capital becomes the heart of an age."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L17_refreshing",
+      "kanji": "涼",
+      "keyword": "refreshing",
+      "image": "studies/refreshing.png",
+      "verse": {
+        "jpHtml": "<ruby>森<rt>もり</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>を<ruby>流<rt>なが</rt></ruby>れる<ruby>水<rt>みず</rt></ruby><ruby>音<rt>おと</rt></ruby>が、　<ruby>熱<rt>ねつ</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>洗<rt>あらい</rt></ruby>い<ruby>流<rt>なが</rt></ruby>してゆく。<br><ruby>涼<rt>すず</rt></ruby>しさは<ruby>心<rt>こころ</rt></ruby>にも<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "The sound of water deep in the forest\nquietly washes away the heat.\nCoolness reaches the heart as well."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785132590
+    },
+    {
+      "id": "L17_scenery",
+      "kanji": "景",
+      "keyword": "scenery",
+      "image": "studies/scenery.png",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby><ruby>日<rt>ひ</rt></ruby>に<ruby>染<rt>そ</rt></ruby>まる<ruby>丘<rt>おか</rt></ruby>の<ruby>景<rt>けしき</rt></ruby><ruby>色<rt>いろ</rt></ruby>は、　<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>より<ruby>深<rt>ふか</rt></ruby>く<ruby>胸<rt>むね</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る。<br><ruby>景<rt>けしき</rt></ruby><ruby>色<rt>いろ</rt></ruby>は<ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby>を<ruby>抱<rt>だ</rt></ruby>きしめる。",
+        "en": "The sunrise-colored hills\nremain deeper than words.\nScenery embraces memory."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L17_whale",
+      "kanji": "鯨",
+      "keyword": "whale",
+      "image": "studies/whale.png",
+      "verse": {
+        "jpHtml": "<ruby>燃<rt>も</rt></ruby>える<ruby>夕<rt>ゆう</rt></ruby><ruby>空<rt>そら</rt></ruby>の<ruby>海<rt>うみ</rt></ruby>を、　<ruby>巨<rt>きょ</rt></ruby><ruby>大<rt>だい</rt></ruby>な<ruby>影<rt>かげ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>越<rt>こ</rt></ruby>えてゆく。<br><ruby>鯨<rt>くじら</rt></ruby>は<ruby>海<rt>うみ</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>のよう。",
+        "en": "Across the burning sunset sea\na giant shadow passes quietly.\nThe whale resembles a dream of the ocean."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L17_cottage",
+      "kanji": "舎",
+      "keyword": "cottage",
+      "image": "studies/cottage.png",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>家<rt>いえ</rt></ruby>の<ruby>窓<rt>まど</rt></ruby><ruby>明<rt>あ</rt></ruby>かりに、　<ruby>帰<rt>かえ</rt></ruby>る<ruby>場<rt>ば</rt></ruby><ruby>所<rt>しょ</rt></ruby>の<ruby>安<rt>あん</rt></ruby><ruby>心<rt>しん</rt></ruby>が<ruby>宿<rt>やど</rt></ruby>る。<br><ruby>安<rt>やす</rt></ruby>らぎは<ruby>豪<rt>ごう</rt></ruby><ruby>華<rt>か</rt></ruby>さを<ruby>求<rt>もと</rt></ruby>めない。",
+        "en": "Within the cottage window light\nrests the comfort of return.\nPeace does not seek grandeur."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L17_circumference",
+      "kanji": "周",
+      "keyword": "circumference",
+      "image": "studies/circumference.png",
+      "verse": {
+        "jpHtml": "<ruby>巡<rt>めぐ</rt></ruby>り<ruby>続<rt>つづ</rt></ruby>ける<ruby>道<rt>みち</rt></ruby>のように、　<ruby>人<rt>ひと</rt></ruby>の<ruby>営<rt>いとな</rt></ruby>みも<ruby>終<rt>お</rt></ruby>わりなく<ruby>続<rt>つづ</rt></ruby>く。<br><ruby>円<rt>えん</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>永<rt>えい</rt></ruby><ruby>遠<rt>えん</rt></ruby>を<ruby>語<rt>かた</rt></ruby>る。",
+        "en": "Like the endlessly circling road,\nhuman life continues without end.\nThe circle speaks of quiet eternity."
+      },
+      "meta": {
+        "lesson": 17,
+        "experimental": true
+      },
+      "imageRev": 1785134291
+    }
+  ]
+}

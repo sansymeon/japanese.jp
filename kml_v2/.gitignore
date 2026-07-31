@@ -1,0 +1,25 @@
+# KML V2 — local / generated ignores
+
+# Local validation / tooling venv
+.venv/
+
+# Large media (referenced by data/* JSON, not stored in Git)
+/media/**
+!/media/README.md
+
+# Common binaries that must never land in source control here
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.aup3
+*.psd
+*.ae
+*.prproj
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.log
+*.tmp

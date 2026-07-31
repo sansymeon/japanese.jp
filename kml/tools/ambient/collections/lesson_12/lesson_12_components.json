@@ -1,0 +1,401 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_12_components",
+  "title": "Lesson 12 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 12,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L12_crude",
+      "kanji": "朴",
+      "keyword": "crude",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "卜",
+          "label": "signal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_village",
+      "kanji": "村",
+      "keyword": "village",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_mutual",
+      "kanji": "相",
+      "keyword": "mutual",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "目",
+          "label": "eye"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_desk",
+      "kanji": "机",
+      "keyword": "desk",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_book",
+      "kanji": "本",
+      "keyword": "book",
+      "components": [
+        {
+          "glyph": "本",
+          "label": "book"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_tag",
+      "kanji": "札",
+      "keyword": "tag",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "乚",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_calendar",
+      "kanji": "暦",
+      "keyword": "calendar",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_plan",
+      "kanji": "案",
+      "keyword": "plan",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_parch",
+      "kanji": "燥",
+      "keyword": "parch",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "品",
+          "label": "goods"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_not_yet",
+      "kanji": "未",
+      "keyword": "not yet",
+      "components": [
+        {
+          "glyph": "未",
+          "label": "not yet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_extremity",
+      "kanji": "末",
+      "keyword": "extremity",
+      "components": [
+        {
+          "glyph": "末",
+          "label": "extremity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_obscure",
+      "kanji": "昧",
+      "keyword": "obscure",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "未",
+          "label": "not yet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_splash",
+      "kanji": "沫",
+      "keyword": "splash",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "末",
+          "label": "extremity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_flavor",
+      "kanji": "味",
+      "keyword": "flavor",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "未",
+          "label": "not yet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_younger_sister",
+      "kanji": "妹",
+      "keyword": "younger sister",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "未",
+          "label": "not yet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_vermilion",
+      "kanji": "朱",
+      "keyword": "vermilion",
+      "components": [
+        {
+          "glyph": "´",
+          "label": "drop"
+        },
+        {
+          "glyph": "未",
+          "label": "not yet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_stocks",
+      "kanji": "株",
+      "keyword": "stocks",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "朱",
+          "label": "vermilion"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L12_intro_grass",
+      "glyph": "艹",
+      "label": "grass"
+    },
+    {
+      "type": "kanji",
+      "id": "L12_young",
+      "kanji": "若",
+      "keyword": "young",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "右",
+          "label": "right"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_grass",
+      "kanji": "草",
+      "keyword": "grass",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "早",
+          "label": "early"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L12_suffering",
+      "kanji": "苦",
+      "keyword": "suffering",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "古",
+          "label": "old"
+        }
+      ]
+    }
+  ]
+}

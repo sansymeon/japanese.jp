@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/playlist.schema.json",
+  "title": "KML Playlist",
+  "type": "object",
+  "required": ["id", "title", "kind", "status", "items"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "kind": {
+      "type": "string",
+      "enum": ["curriculum", "ambient", "gallery", "other"]
+    },
+    "description": { "type": ["string", "null"] },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "draft", "ready", "published", "archived"]
+    },
+    "youtube_playlist_id": { "type": ["string", "null"] },
+    "cover": { "type": ["string", "null"] },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lesson_id": { "type": "string" },
+          "media_path": { "type": "string" },
+          "youtube_id": { "type": "string" },
+          "ord": { "type": "integer" },
+          "title": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

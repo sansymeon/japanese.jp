@@ -235,7 +235,12 @@ def reflections_audio_timeline_ms(collection: dict, root: Path) -> tuple[int, in
     closing_black = int(t.get("closingBlackBeforeMs", t.get("blackHoldMs", 0)))
     closing_reveal = int(t.get("closingRevealMs", 0))
     crest_fade = int(t.get("closingExhaleMs", t.get("closingFadeToBlackMs", 3000)))
-    outro_start = main_start + main_ms + closing_black + closing_reveal + crest_fade
+    # Outro under crest (holdUntilAudioEnds): start when crest is visible.
+    # Outro after crest (Reflections): start after crest fade.
+    if closing.get("audio") and closing.get("holdUntilAudioEnds"):
+        outro_start = main_start + main_ms + closing_black + closing_reveal
+    else:
+        outro_start = main_start + main_ms + closing_black + closing_reveal + crest_fade
 
     return intro_delay, main_start, outro_start
 

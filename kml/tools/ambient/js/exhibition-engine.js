@@ -6217,12 +6217,29 @@
       await this.showBookendImage(closing.image, t.closingRevealMs, closing, "closing");
       if (!stillRunning()) return;
 
+      const holdUntilAudioEnds = Boolean(
+        closing.audio && closing.holdUntilAudioEnds
+      );
+
       if (holdUntilSoundtrackEnds) {
         await this.waitForSoundtrackEnd();
         if (!stillRunning()) return;
-      } else {
+      } else if (!holdUntilAudioEnds) {
         await this.wait(t.closingHoldMs);
         if (!stillRunning()) return;
+      }
+
+      // Heart-style: flute outro plays under the crest, then crest fades.
+      if (holdUntilAudioEnds) {
+        await this.playAudioUntilEnd(closing.audio, { kind: "bookend" });
+        if (!stillRunning()) return;
+        await this.hideBookendCrest(crestFadeMs);
+        if (!stillRunning()) return;
+        await this.wait(t.closingBlackAfterMs ?? 0);
+        this.stopAllAudio();
+        this.finishPresentation();
+        this.debugLog("exit playGalleryCrestClosingBookend (outro under crest)");
+        return;
       }
 
       await this.hideBookendCrest(crestFadeMs);

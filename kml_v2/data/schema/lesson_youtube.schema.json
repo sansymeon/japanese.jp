@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/lesson_youtube.schema.json",
+  "title": "KML Lesson YouTube",
+  "type": "object",
+  "required": ["lesson_id"],
+  "properties": {
+    "lesson_id": { "type": "string", "pattern": "^lesson_[0-9]{3}$" },
+    "id": { "type": ["string", "null"] },
+    "title": { "type": ["string", "null"] },
+    "description": { "type": ["string", "null"] },
+    "published_at": { "type": ["string", "null"] },
+    "playlist_ids": { "type": "array", "items": { "type": "string" } },
+    "chapters": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": true
+}

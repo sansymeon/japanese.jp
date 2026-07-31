@@ -7,13 +7,18 @@
   --content-max: 800px;
   --card-max: 600px;
   --card-radius: 12px;
-  --card-bg: rgba(248, 246, 240, 0.85);
-  --card-border: rgba(0, 0, 0, 0.08);
-  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04),
-                 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* Gallery wall + paper cards */
+  --gallery-wall: #171512;
+  --card-bg: #efe9dc;
+  --card-border: rgba(42, 38, 31, 0.08);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.12),
+                 0 8px 28px rgba(0, 0, 0, 0.28);
   --header-offset: 70px;
   --label-font: 1rem;
   --text-muted: #333;
+  --nav-ink: #d8d4cb;
+  --nav-gold: #c9a458;
+  --page-ink: #f3f1eb;
 }
 
 /* ===== Base ===== */
@@ -23,10 +28,16 @@ html {
 
 body {
   padding: 1rem;
-  background: url("../../../../assets/site/backgrounds/washi_messy.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  color: var(--page-ink);
+  background:
+    radial-gradient(
+      ellipse 90% 45% at 50% 0%,
+      rgba(31, 58, 46, 0.16),
+      transparent 70%
+    ),
+    var(--gallery-wall);
   background-attachment: fixed;
+  min-height: 100vh;
 }
 /* ===== Lesson art (top image) ===== */
 .lesson-art {
@@ -42,6 +53,67 @@ body {
   display: block;
 
   border-radius: 8px;
+  box-shadow:
+    0 0 0 1px rgba(201, 164, 88, 0.18),
+    0 12px 36px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(201, 164, 88, 0.1);
+  transition: filter 0.3s ease;
+}
+
+/* Ambient Study Gallery doorway (when gallery_url is set) */
+.lesson-art-link {
+  position: relative;
+  display: inline-block;
+  max-width: 280px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lesson-art-link img {
+  width: 100%;
+  max-width: none;
+}
+
+.lesson-art-link:hover img,
+.lesson-art-link:focus-visible img {
+  filter: brightness(1.08);
+}
+
+.lesson-art-link:focus-visible {
+  outline: 2px solid rgba(201, 164, 88, 0.7);
+  outline-offset: 3px;
+}
+
+.lesson-art-gallery-label {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  padding: 0.28rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(20, 16, 12, 0.62);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.28s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lesson-art-gallery-label {
+    opacity: 0;
+  }
+
+  .lesson-art-link:hover .lesson-art-gallery-label,
+  .lesson-art-link:focus-visible .lesson-art-gallery-label {
+    opacity: 1;
+  }
 }
 
 /* ===== Top nav ===== */
@@ -55,18 +127,23 @@ body {
 }
 
 .navbar a {
-  color: #2f2a1f;
+  color: var(--nav-ink);
   text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .navbar a:hover {
-  background: rgba(0,0,0,0.06);
-  border-radius: 4px;
+  color: var(--nav-gold);
+  background: rgba(201, 164, 88, 0.08);
 }
 
 /* ===== Heading ===== */
 h1 {
   text-align: center;
+  color: var(--page-ink);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 /* ===== Kanji Header ===== */
@@ -125,7 +202,7 @@ h1 {
 .stroke-hint {
   font-size: 0.8rem;
   font-style: italic;
-  color: #666;
+  color: #9a958c;
   margin-top: -8px;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -142,11 +219,12 @@ h1 {
   justify-content: center;
   gap: 0.4rem;
 
-  background: rgba(255,255,255,0.6);
+  background: color-mix(in srgb, var(--card-bg) 92%, white);
   padding: 0.35rem 0.5rem;
   border-radius: 8px;
+  border: 1px solid rgba(201, 164, 88, 0.16);
 
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
   margin-bottom: 1.4rem;
 }
 
@@ -167,21 +245,26 @@ h1 {
   font-weight: 600;
 }
 
-/* ===== Cards ===== */
+/* ===== Cards — paper on the gallery wall ===== */
 .kanji-entry {
   max-width: var(--card-max);
   margin: 1.25rem auto 2rem;
   text-align: center;
+  color: #2a261f;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
   padding: 1.2rem 1.4rem 1.3rem;
   box-shadow: var(--card-shadow);
   scroll-margin-top: var(--header-offset);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .kanji-entry:hover {
   transform: translateY(-2px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.14),
+    0 14px 36px rgba(0, 0, 0, 0.32);
 }
 
 /* ===== Readings ===== */
@@ -576,11 +659,13 @@ h1 {
 
 /* ===== CTA ===== */
 .btn-compounds {
-  background: rgba(0,0,0,0.06);
+  background: color-mix(in srgb, var(--card-bg) 88%, white);
   color: #2f2a1f;
   border-radius: 8px;
   padding: 0.45em 1.1em;
   text-decoration: none;
+  border: 1px solid rgba(201, 164, 88, 0.28);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
 }
 .cta {
   display: flex;
@@ -588,7 +673,8 @@ h1 {
   margin-top: 16px; /* optional */
 }
 .btn-compounds:hover {
-  background: rgba(0,0,0,0.10);
+  background: var(--card-bg);
+  border-color: rgba(201, 164, 88, 0.5);
 }
 
 /* ===== Misc ===== */
@@ -597,6 +683,30 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
+
+/* Compounds pages share the gallery wall; keep paper cards readable */
+.compound-block {
+  color: #2a261f;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: 1.1rem 1.2rem 1.2rem;
+  box-shadow: var(--card-shadow);
+}
+
+.kanji-label {
+  margin: 0.4rem 0 0.75rem;
+  font-weight: 600;
+  color: #2a261f;
+}
+
+.compound-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  text-align: left;
+  color: #3a342c;
+}
+
 .stamps {
   display: flex;
   justify-content: center;

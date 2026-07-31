@@ -1,0 +1,18 @@
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    {% if hero_brand %}
+    <p class="hero-brand">{{ hero_brand }}</p>
+    {% endif %}
+    <h1 id="hero-heading">{{ hero_title }}</h1>
+    {% if hero_lead %}
+    <p class="hero-lead">{{ hero_lead }}</p>
+    {% endif %}
+    {% if hero_actions %}
+    <div class="hero-actions">
+      {% for action in hero_actions %}
+      <a class="btn {{ action.class or 'btn-ghost' }}" href="{{ action.href }}">{{ action.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>

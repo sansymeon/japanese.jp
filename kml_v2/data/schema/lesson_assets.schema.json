@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/lesson_assets.schema.json",
+  "title": "KML Lesson Asset Paths",
+  "type": "object",
+  "required": ["lesson_id", "paths"],
+  "properties": {
+    "lesson_id": { "type": "string", "pattern": "^lesson_[0-9]{3}$" },
+    "paths": {
+      "type": "object",
+      "description": "Logical media paths under media/lessons/lesson_NNN/ — never commit binaries.",
+      "properties": {
+        "hero": { "type": ["string", "null"] },
+        "thumbnail": { "type": ["string", "null"] },
+        "study_image": { "type": ["string", "null"] },
+        "audio": { "type": ["string", "null"] },
+        "video": { "type": ["string", "null"] }
+      }
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": true
+}

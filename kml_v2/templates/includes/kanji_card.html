@@ -1,0 +1,16 @@
+<li>
+  <article class="card card--frame" style="margin:0">
+    <header class="lesson-header" style="border:0;padding:0;margin:0 0 0.75rem">
+      <span class="kanji-display" lang="ja" style="font-size:clamp(2.5rem,6vw,3.5rem)">{{ k.character }}</span>
+      <span class="lesson-keyword">{{ k.keyword }}</span>
+    </header>
+    <p class="card-meta">
+      {% if k.heisig_number %}H{{ k.heisig_number }} · {% endif %}
+      {{ k.on_display }}
+      {% if k.strokes %} · {{ k.strokes }} strokes{% endif %}
+    </p>
+    {% if k.verse.en %}
+    <p class="card-meta" style="margin-top:0.75rem">{{ k.verse.en }}</p>
+    {% endif %}
+  </article>
+</li>

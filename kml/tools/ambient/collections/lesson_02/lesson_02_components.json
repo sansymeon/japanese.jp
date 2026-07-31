@@ -1,0 +1,389 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_02_components",
+  "title": "Lesson 2 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 2,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L02_prosperous",
+      "kanji": "昌",
+      "keyword": "prosperous",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_chant",
+      "kanji": "唱",
+      "keyword": "chant",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "昌",
+          "label": "prosperous"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_sparkle",
+      "kanji": "晶",
+      "keyword": "sparkle",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_goods",
+      "kanji": "品",
+      "keyword": "goods",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_spine",
+      "kanji": "呂",
+      "keyword": "spine",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "´",
+          "label": "drop"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_early",
+      "kanji": "早",
+      "keyword": "early",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_rising_sun",
+      "kanji": "旭",
+      "keyword": "rising sun",
+      "components": [
+        {
+          "glyph": "九",
+          "label": "nine"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_generation",
+      "kanji": "世",
+      "keyword": "generation",
+      "components": [
+        {
+          "glyph": "世",
+          "label": "generation"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_stomach",
+      "kanji": "胃",
+      "keyword": "stomach",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_dawn",
+      "kanji": "旦",
+      "keyword": "dawn",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_gallbladder",
+      "kanji": "胆",
+      "keyword": "gallbladder",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "旦",
+          "label": "dawn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_span",
+      "kanji": "亘",
+      "keyword": "span",
+      "components": [
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "旦",
+          "label": "dawn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_concave",
+      "kanji": "凹",
+      "keyword": "concave",
+      "components": [
+        {
+          "glyph": "凹",
+          "label": "concave"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_convex",
+      "kanji": "凸",
+      "keyword": "convex",
+      "components": [
+        {
+          "glyph": "凸",
+          "label": "convex"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_olden_times",
+      "kanji": "旧",
+      "keyword": "olden times",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L02_intro_drop",
+      "glyph": "丶",
+      "label": "drop"
+    },
+    {
+      "type": "kanji",
+      "id": "L02_oneself",
+      "kanji": "自",
+      "keyword": "oneself",
+      "components": [
+        {
+          "glyph": "´",
+          "label": "drop"
+        },
+        {
+          "glyph": "目",
+          "label": "eye"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_white",
+      "kanji": "白",
+      "keyword": "white",
+      "components": [
+        {
+          "glyph": "´",
+          "label": "drop"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_hundred",
+      "kanji": "百",
+      "keyword": "hundred",
+      "components": [
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_middle",
+      "kanji": "中",
+      "keyword": "middle",
+      "components": [
+        {
+          "glyph": "中",
+          "label": "middle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L02_thousand",
+      "kanji": "千",
+      "keyword": "thousand",
+      "components": [
+        {
+          "glyph": "´",
+          "label": "drop"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    }
+  ]
+}

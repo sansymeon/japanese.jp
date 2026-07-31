@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_16_reading",
+  "title": "Lesson 16 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/reading_v2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 16,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v2",
+    "soundtrackTarget": "12:41",
+    "soundtrackDurationSec": 760.97,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L16_urge",
+      "kanji": "迫",
+      "keyword": "urge",
+      "image": "studies/urge.png",
+      "verse": {
+        "jpHtml": "<ruby>追<rt>おい</rt></ruby>い<ruby>迫<rt>せま</rt></ruby>る<ruby>影<rt>かげ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で、　<ruby>人<rt>ひと</rt></ruby>は<ruby>決<rt>けつ</rt></ruby><ruby>断<rt>だん</rt></ruby>を<ruby>迫<rt>せま</rt></ruby>られてゆく。<br><ruby>急<rt>いそ</rt></ruby>ぐ<ruby>心<rt>こころ</rt></ruby>は<ruby>夜<rt>よる</rt></ruby>を<ruby>深<rt>ふか</rt></ruby>くする。",
+        "en": "Within pursuing shadows,\none is pressed toward decision.\nA hurried heart deepens the night."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785304109
+    },
+    {
+      "id": "L16_escape",
+      "kanji": "逃",
+      "keyword": "escape",
+      "image": "studies/escape.png",
+      "verse": {
+        "jpHtml": "<ruby>逃<rt>に</rt></ruby>げる<ruby>足<rt>あし</rt></ruby><ruby>音<rt>おと</rt></ruby>の<ruby>先<rt>さき</rt></ruby>にも、　なお<ruby>月<rt>つき</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>照<rt>て</rt></ruby>らしている。<br><ruby>恐<rt>おそ</rt></ruby>れは<ruby>長<rt>なが</rt></ruby>く<ruby>追<rt>お</rt></ruby>いかけてくる。",
+        "en": "Even beyond fleeing footsteps,\nthe moon continues shining quietly.\nFear pursues for a long time."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785304203
+    },
+    {
+      "id": "L16_environs",
+      "kanji": "辺",
+      "keyword": "environs",
+      "image": "studies/environs.png",
+      "verse": {
+        "jpHtml": "<ruby>町<rt>まち</rt></ruby><ruby>外<rt>まちはずれ</rt></ruby>れの<ruby>静<rt>しず</rt></ruby>かな<ruby>道<rt>みち</rt></ruby>に、　<ruby>人<rt>ひと</rt></ruby>の<ruby>暮<rt>く</rt></ruby>らしの<ruby>気<rt>け</rt></ruby><ruby>配<rt>はい</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>る。<br><ruby>辺<rt>へん</rt></ruby><ruby>境<rt>きょう</rt></ruby>にも<ruby>物<rt>もの</rt></ruby><ruby>語<rt>かた</rt></ruby>がある。",
+        "en": "Along the quiet edge of town\nlingers the trace of daily life.\nEven the outskirts hold stories."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785304303
+    },
+    {
+      "id": "L16_patrol",
+      "kanji": "巡",
+      "keyword": "patrol",
+      "image": "studies/patrol.png",
+      "verse": {
+        "jpHtml": "<ruby>眠<rt>ねむ</rt></ruby>らぬ<ruby>街<rt>まち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>きながら、　<ruby>誰<rt>だれ</rt></ruby>かが<ruby>静<rt>しず</rt></ruby>かに<ruby>秩<rt>ちつ</rt></ruby><ruby>序<rt>じょ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る。<br><ruby>巡<rt>めぐ</rt></ruby>る<ruby>足<rt>あし</rt></ruby><ruby>音<rt>おと</rt></ruby>は<ruby>夜<rt>よる</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>える。",
+        "en": "Walking through the sleepless town,\nsomeone quietly guards the order.\nPatrolling footsteps uphold the night."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785304413
+    },
+    {
+      "id": "L16_car",
+      "kanji": "車",
+      "keyword": "car",
+      "image": "studies/car.png",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>びた<ruby>車<rt>しゃ</rt></ruby><ruby>輪<rt>りん</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに、　まだ<ruby>見<rt>み</rt></ruby>ぬ<ruby>景<rt>けしき</rt></ruby><ruby>色<rt>いろ</rt></ruby>が<ruby>待<rt>ま</rt></ruby>っている。<br><ruby>旅<rt>たび</rt></ruby>は<ruby>回<rt>かい</rt></ruby><ruby>転<rt>てん</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる。",
+        "en": "Beyond the aging wheels\nawait landscapes yet unseen.\nA journey begins with turning."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785304529
+    },
+    {
+      "id": "L16_take_along",
+      "kanji": "連",
+      "keyword": "take along",
+      "image": "studies/take_along.png",
+      "verse": {
+        "jpHtml": "ひとりで<ruby>進<rt>すす</rt></ruby>むよりも、　<ruby>誰<rt>だれ</rt></ruby>かを<ruby>連<rt>つ</rt></ruby>れて<ruby>歩<rt>ある</rt></ruby>く<ruby>方<rt>ほう</rt></ruby>が<ruby>温<rt>あたた</rt></ruby>かい。<br><ruby>共<rt>とも</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<ruby>道<rt>みち</rt></ruby>は<ruby>長<rt>なが</rt></ruby>く<ruby>続<rt>つづ</rt></ruby>く。",
+        "en": "Warmer than walking alone\nis carrying someone beside you.\nShared roads continue farther."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785226325
+    },
+    {
+      "id": "L16_rut",
+      "kanji": "軌",
+      "keyword": "rut",
+      "image": "studies/rut.png",
+      "verse": {
+        "jpHtml": "<ruby>同<rt>おな</rt></ruby>じ<ruby>轍<rt>てつ</rt></ruby>を<ruby>繰<rt>くり</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>しても、　<ruby>心<rt>こころ</rt></ruby>だけは<ruby>迷<rt>まよ</rt></ruby>い<ruby>続<rt>つづ</rt></ruby>ける。<br><ruby>軌<rt>き</rt></ruby><ruby>跡<rt>せき</rt></ruby>は<ruby>過<rt>す</rt></ruby><ruby>去<rt>かこ</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>している。",
+        "en": "Even along repeated tracks,\nthe heart continues wandering.\nRuts reflect the past."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785306537
+    },
+    {
+      "id": "L16_transport",
+      "kanji": "輸",
+      "keyword": "transport",
+      "image": "studies/transport.png",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>車<rt>くるま</rt></ruby>の<ruby>灯<rt>あか</rt></ruby>りが、　<ruby>人<rt>ひと</rt></ruby>と<ruby>人<rt>ひと</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>結<rt>むす</rt></ruby>んでゆく。<br><ruby>運<rt>はこ</rt></ruby>ばれるのは<ruby>荷<rt>に</rt></ruby>だけではない。",
+        "en": "The small vehicle's lights\nquietly connect one life to another.\nMore than cargo is carried."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785307013
+    },
+    {
+      "id": "L16_metaphor",
+      "kanji": "喩",
+      "keyword": "metaphor",
+      "image": "studies/metaphor.png",
+      "verse": {
+        "jpHtml": "<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>にならぬ<ruby>想<rt>おも</rt></ruby>いほど、　たとえ<ruby>話<rt>たとえばなし</rt></ruby>に<ruby>姿<rt>すがた</rt></ruby>を<ruby>変<rt>か</rt></ruby>える。<br><ruby>比<rt>ひ</rt></ruby><ruby>喩<rt>ゆ</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>の<ruby>橋<rt>はし</rt></ruby>である。",
+        "en": "Feelings beyond plain speech\ntransform themselves into metaphor.\nComparison becomes a bridge of the heart."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785128366
+    },
+    {
+      "id": "L16_in_front",
+      "kanji": "前",
+      "keyword": "in front",
+      "image": "studies/in_front.png",
+      "verse": {
+        "jpHtml": "<ruby>前<rt>まえ</rt></ruby>へ<ruby>進<rt>すす</rt></ruby>むその<ruby>一<rt>いち</rt></ruby><ruby>歩<rt>ほ</rt></ruby>に、　まだ<ruby>見<rt>み</rt></ruby>えぬ<ruby>未<rt>み</rt></ruby><ruby>来<rt>らい</rt></ruby>が<ruby>眠<rt>ねむ</rt></ruby>っている。<br><ruby>振<rt>ふり</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>るだけでは<ruby>届<rt>とど</rt></ruby>かない。",
+        "en": "Within the step forward\nsleeps an unseen future.\nOne cannot arrive by only looking back."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785307239
+    },
+    {
+      "id": "L16_roast",
+      "kanji": "煎",
+      "keyword": "roast",
+      "image": "studies/roast.png",
+      "verse": {
+        "jpHtml": "<ruby>火<rt>ひ</rt></ruby>を<ruby>囲<rt>かこ</rt></ruby>む<ruby>静<rt>しず</rt></ruby>かな<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>に、　<ruby>人<rt>ひと</rt></ruby>の<ruby>距<rt>きょ</rt></ruby><ruby>離<rt>り</rt></ruby>は<ruby>少<rt>すこ</rt></ruby>し<ruby>近<rt>ちか</rt></ruby>づく。<br><ruby>温<rt>ぬく</rt></ruby>もりは<ruby>炎<rt>ほのお</rt></ruby>から<ruby>広<rt>ひろ</rt></ruby>がる。",
+        "en": "Within the quiet time around fire,\npeople draw a little closer.\nWarmth spreads from flame."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785308120
+    },
+    {
+      "id": "L16_each",
+      "kanji": "各",
+      "keyword": "each",
+      "image": "studies/each.png",
+      "verse": {
+        "jpHtml": "<ruby>同<rt>おな</rt></ruby>じ<ruby>空<rt>そら</rt></ruby>の<ruby>下<rt>した</rt></ruby>であっても、　<ruby>人<rt>ひと</rt></ruby>はそれぞれ<ruby>違<rt>ちが</rt></ruby>う<ruby>夢<rt>ゆめ</rt></ruby>を<ruby>見<rt>み</rt></ruby>る。<br><ruby>各<rt>おのおの</rt></ruby><ruby>々<rt>びと</rt></ruby>の<ruby>道<rt>みち</rt></ruby>がある。",
+        "en": "Even beneath the same sky,\neach person dreams differently.\nEveryone walks a separate road."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785308237
+    },
+    {
+      "id": "L16_status",
+      "kanji": "格",
+      "keyword": "status",
+      "image": "studies/status.png",
+      "verse": {
+        "jpHtml": "<ruby>身<rt>み</rt></ruby><ruby>分<rt>ぶん</rt></ruby>や<ruby>肩<rt>かた</rt></ruby><ruby>書<rt>しょ</rt></ruby>きよりも、　<ruby>人<rt>ひと</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>すのは<ruby>振<rt>ふる</rt></ruby>る<ruby>舞<rt>ま</rt></ruby>い。<br><ruby>格<rt>かく</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>所<rt>しょ</rt></ruby><ruby>作<rt>しょさ</rt></ruby>に<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "More than title or rank,\nconduct reveals the person.\nTrue status lives in quiet bearing."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785308460
+    },
+    {
+      "id": "L16_graft",
+      "kanji": "賂",
+      "keyword": "graft",
+      "image": "studies/graft.png",
+      "verse": {
+        "jpHtml": "<ruby>差<rt>さし</rt></ruby>し<ruby>出<rt>だ</rt></ruby>された<ruby>小<rt>ちい</rt></ruby>さな<ruby>袋<rt>ふくろ</rt></ruby>が、　<ruby>正<rt>まさ</rt></ruby>しき<ruby>道<rt>みち</rt></ruby>を<ruby>曇<rt>くも</rt></ruby>らせてゆく。<br><ruby>欲<rt>よく</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>腐<rt>ふ</rt></ruby><ruby>敗<rt>はい</rt></ruby>を<ruby>招<rt>まね</rt></ruby>く。",
+        "en": "The small offered pouch\nslowly clouds the rightful way.\nDesire quietly invites corruption."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785308618
+    },
+    {
+      "id": "L16_abbreviation",
+      "kanji": "略",
+      "keyword": "abbreviation",
+      "image": "studies/abbreviation.png",
+      "verse": {
+        "jpHtml": "<ruby>長<rt>なが</rt></ruby>き<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>を<ruby>縮<rt>ちぢ</rt></ruby>めても、　<ruby>本<rt>ほん</rt></ruby><ruby>質<rt>しつ</rt></ruby>だけは<ruby>残<rt>のこ</rt></ruby>り<ruby>続<rt>つづ</rt></ruby>ける。<br><ruby>省<rt>しょう</rt></ruby><ruby>略<rt>りゃく</rt></ruby>にも<ruby>知<rt>し</rt></ruby><ruby>恵<rt>ちえ</rt></ruby>がある。",
+        "en": "Even shortened words\nretain their essential meaning.\nThere is wisdom in abbreviation."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785308731
+    },
+    {
+      "id": "L16_guest",
+      "kanji": "客",
+      "keyword": "guest",
+      "image": "studies/guest.png",
+      "verse": {
+        "jpHtml": "<ruby>遠<rt>とお</rt></ruby>き<ruby>旅<rt>たび</rt></ruby>の<ruby>疲<rt>つか</rt></ruby>れを、　<ruby>静<rt>しず</rt></ruby>かな<ruby>灯<rt>あか</rt></ruby>りが<ruby>迎<rt>むかえ</rt></ruby>え<ruby>入<rt>い</rt></ruby>れる。<br><ruby>客<rt>きゃく</rt></ruby><ruby>人<rt>じん</rt></ruby>には<ruby>席<rt>せき</rt></ruby>が<ruby>用<rt>よう</rt></ruby><ruby>意<rt>い</rt></ruby>される。",
+        "en": "The weariness of distant travel\nis welcomed by gentle light.\nA place is prepared for the guest."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785308831
+    },
+    {
+      "id": "L16_amount",
+      "kanji": "額",
+      "keyword": "amount",
+      "image": "studies/amount.png",
+      "verse": {
+        "jpHtml": "<ruby>積<rt>つみ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねられた<ruby>金<rt>きん</rt></ruby><ruby>貨<rt>か</rt></ruby>にも、　<ruby>人<rt>ひと</rt></ruby>の<ruby>願<rt>ねが</rt></ruby>いや<ruby>労<rt>ろう</rt></ruby><ruby>苦<rt>く</rt></ruby>が<ruby>映<rt>うつ</rt></ruby>る。<br><ruby>数<rt>すう</rt></ruby><ruby>字<rt>じ</rt></ruby>は<ruby>人<rt>じん</rt></ruby><ruby>生<rt>せい</rt></ruby>を<ruby>語<rt>かた</rt></ruby>ることがある。",
+        "en": "Even within gathered coins\nare reflected toil and longing.\nNumbers can speak of lives."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785308954
+    },
+    {
+      "id": "L16_summer",
+      "kanji": "夏",
+      "keyword": "summer",
+      "image": "studies/summer.png",
+      "verse": {
+        "jpHtml": "まぶしい<ruby>陽<rt>ひ</rt></ruby>の<ruby>下<rt>もと</rt></ruby>では、　<ruby>眠<rt>ねむ</rt></ruby><ruby>気<rt>き</rt></ruby>さえ<ruby>夢<rt>ゆめ</rt></ruby>のように<ruby>漂<rt>ただよ</rt></ruby>う。<br><ruby>夏<rt>なつ</rt></ruby>は<ruby>時<rt>とき</rt></ruby>をゆるやかにする。",
+        "en": "Beneath the brilliant sun,\neven drowsiness drifts like a dream.\nSummer slows the passage of time."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785309053
+    },
+    {
+      "id": "L16_dispose",
+      "kanji": "処",
+      "keyword": "dispose",
+      "image": "studies/dispose.png",
+      "verse": {
+        "jpHtml": "<ruby>手<rt>て</rt></ruby><ruby>放<rt>はな</rt></ruby>すことによって、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>場<rt>ば</rt></ruby><ruby>所<rt>しょ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>生<rt>う</rt></ruby>まれる。<br><ruby>処<rt>しょ</rt></ruby><ruby>分<rt>ぶん</rt></ruby>もまた<ruby>選<rt>せん</rt></ruby><ruby>択<rt>たく</rt></ruby>のひとつ。",
+        "en": "By letting go,\nnew space quietly appears.\nDisposal too is a choice."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785309166
+    },
+    {
+      "id": "L16_clause",
+      "kanji": "条",
+      "keyword": "clause",
+      "image": "studies/clause.png",
+      "verse": {
+        "jpHtml": "<ruby>細<rt>こま</rt></ruby>かく<ruby>記<rt>しる</rt></ruby>された<ruby>一<rt>いち</rt></ruby><ruby>条<rt>じょう</rt></ruby>にも、　<ruby>人<rt>ひと</rt></ruby>の<ruby>約<rt>やく</rt></ruby><ruby>束<rt>そく</rt></ruby>が<ruby>込<rt>こ</rt></ruby>められている。<br><ruby>契<rt>けい</rt></ruby><ruby>約<rt>やく</rt></ruby>は<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>で<ruby>築<rt>きず</rt></ruby>かれる。",
+        "en": "Even within a single clause\nrests the weight of agreement.\nContracts are built from words."
+      },
+      "meta": {
+        "lesson": 16,
+        "experimental": true
+      },
+      "imageRev": 1785309291
+    }
+  ]
+}

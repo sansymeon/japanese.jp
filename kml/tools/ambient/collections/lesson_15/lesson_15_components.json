@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_15_components",
+  "title": "Lesson 15 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 15,
+    "sceneCount": 22,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L15_display",
+      "kanji": "呈",
+      "keyword": "display",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_whole",
+      "kanji": "全",
+      "keyword": "whole",
+      "components": [
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_plug",
+      "kanji": "栓",
+      "keyword": "plug",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "全",
+          "label": "whole"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_logic",
+      "kanji": "理",
+      "keyword": "logic",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_master",
+      "kanji": "主",
+      "keyword": "master",
+      "components": [
+        {
+          "glyph": "丶",
+          "label": "drop"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_pour",
+      "kanji": "注",
+      "keyword": "pour",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "主",
+          "label": "master"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_pillar",
+      "kanji": "柱",
+      "keyword": "pillar",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "主",
+          "label": "master"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_gold",
+      "kanji": "金",
+      "keyword": "gold",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_pig_iron",
+      "kanji": "銑",
+      "keyword": "pig iron",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "先",
+          "label": "previous"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_bowl",
+      "kanji": "鉢",
+      "keyword": "bowl",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "本",
+          "label": "book"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_copper",
+      "kanji": "銅",
+      "keyword": "copper",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "同",
+          "label": "same"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_angling",
+      "kanji": "釣",
+      "keyword": "angling",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "勺",
+          "label": "ladle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_needle",
+      "kanji": "針",
+      "keyword": "needle",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_inscription",
+      "kanji": "銘",
+      "keyword": "inscription",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "名",
+          "label": "name"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_tranquilize",
+      "kanji": "鎮",
+      "keyword": "tranquilize",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "真",
+          "label": "true"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L15_intro_road",
+      "glyph": "辶",
+      "label": "road"
+    },
+    {
+      "type": "kanji",
+      "id": "L15_road",
+      "kanji": "道",
+      "keyword": "road",
+      "components": [
+        {
+          "glyph": "辶",
+          "label": "road"
+        },
+        {
+          "glyph": "首",
+          "label": "neck"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_guidance",
+      "kanji": "導",
+      "keyword": "guidance",
+      "components": [
+        {
+          "glyph": "道",
+          "label": "road"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_crossing",
+      "kanji": "辻",
+      "keyword": "crossing",
+      "components": [
+        {
+          "glyph": "辶",
+          "label": "road"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L15_intro_swift",
+      "glyph": "卂",
+      "label": "swift"
+    },
+    {
+      "type": "kanji",
+      "id": "L15_swift",
+      "kanji": "迅",
+      "keyword": "swift",
+      "components": [
+        {
+          "glyph": "辶",
+          "label": "road"
+        },
+        {
+          "glyph": "卂",
+          "label": "swift"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L15_create",
+      "kanji": "造",
+      "keyword": "create",
+      "components": [
+        {
+          "glyph": "辶",
+          "label": "road"
+        },
+        {
+          "glyph": "告",
+          "label": "revelation"
+        }
+      ]
+    }
+  ]
+}

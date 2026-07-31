@@ -1,0 +1,403 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_11_components",
+  "title": "Lesson 11 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 11,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L11_proclaim",
+      "kanji": "宣",
+      "keyword": "proclaim",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "亘",
+          "label": "span"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_early_evening",
+      "kanji": "宵",
+      "keyword": "early evening",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "肖",
+          "label": "resemblance"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_relax",
+      "kanji": "安",
+      "keyword": "relax",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_banquet",
+      "kanji": "宴",
+      "keyword": "banquet",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_draw_near",
+      "kanji": "寄",
+      "keyword": "draw near",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "奇",
+          "label": "strange"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_wealth",
+      "kanji": "富",
+      "keyword": "wealth",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "畐",
+          "label": "wealth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_savings",
+      "kanji": "貯",
+      "keyword": "savings",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_tree",
+      "kanji": "木",
+      "keyword": "tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_woods",
+      "kanji": "林",
+      "keyword": "woods",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_forest",
+      "kanji": "森",
+      "keyword": "forest",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_judas_tree",
+      "kanji": "桂",
+      "keyword": "judas tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "圭",
+          "label": "jade"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_oak",
+      "kanji": "柏",
+      "keyword": "oak",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_frame",
+      "kanji": "枠",
+      "keyword": "frame",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "九",
+          "label": "nine"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_treetops",
+      "kanji": "梢",
+      "keyword": "treetops",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "肖",
+          "label": "resemblance"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_shelf",
+      "kanji": "棚",
+      "keyword": "shelf",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "朋",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_apricot",
+      "kanji": "杏",
+      "keyword": "apricot",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_paulownia_tree",
+      "kanji": "桐",
+      "keyword": "paulownia tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "同",
+          "label": "same"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_plant",
+      "kanji": "植",
+      "keyword": "plant",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "直",
+          "label": "straightaway"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_chair",
+      "kanji": "椅",
+      "keyword": "chair",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "奇",
+          "label": "strange"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L11_wither",
+      "kanji": "枯",
+      "keyword": "wither",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "古",
+          "label": "old"
+        }
+      ]
+    }
+  ]
+}

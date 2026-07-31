@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_18_compounds",
+  "title": "Lesson 18 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_18.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 18,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_18.html"
+  },
+  "scenes": [
+    {
+      "id": "L18_week",
+      "kanji": "週",
+      "keyword": "week",
+      "image": "studies/week.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "今週",
+            "reading": "こんしゅう",
+            "en": "This week"
+          },
+          {
+            "jp": "来週",
+            "reading": "らいしゅう",
+            "en": "Next week"
+          },
+          {
+            "jp": "毎週",
+            "reading": "まいしゅう",
+            "en": "Every week"
+          },
+          {
+            "jp": "先週",
+            "reading": "せんしゅう",
+            "en": "Last week"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "week",
+        "prototype": true
+      },
+      "imageRev": 1785134639
+    },
+    {
+      "id": "L18_gentleman",
+      "kanji": "士",
+      "keyword": "gentleman",
+      "image": "studies/gentleman.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "博士",
+            "reading": "はかせ",
+            "en": "Doctor; PhD"
+          },
+          {
+            "jp": "紳士",
+            "reading": "しんし",
+            "en": "Gentleman"
+          },
+          {
+            "jp": "兵士",
+            "reading": "へいし",
+            "en": "Soldier"
+          },
+          {
+            "jp": "弁護士",
+            "reading": "べんごし",
+            "en": "Lawyer"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "gentleman",
+        "prototype": true
+      },
+      "imageRev": 1785134701
+    },
+    {
+      "id": "L18_good_luck",
+      "kanji": "吉",
+      "keyword": "good luck",
+      "image": "studies/good_luck.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "吉日",
+            "reading": "きちじつ",
+            "en": "Lucky day"
+          },
+          {
+            "jp": "大吉",
+            "reading": "だいきち",
+            "en": "Great blessing"
+          },
+          {
+            "jp": "吉報",
+            "reading": "きっぽう",
+            "en": "Good news"
+          },
+          {
+            "jp": "不吉",
+            "reading": "ふきつ",
+            "en": "Ominous"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "good_luck",
+        "prototype": true
+      },
+      "imageRev": 1785134768
+    },
+    {
+      "id": "L18_robust",
+      "kanji": "壮",
+      "keyword": "robust",
+      "image": "studies/robust.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "壮大",
+            "reading": "そうだい",
+            "en": "Magnificent"
+          },
+          {
+            "jp": "壮年",
+            "reading": "そうねん",
+            "en": "Middle age"
+          },
+          {
+            "jp": "壮観",
+            "reading": "そうかん",
+            "en": "Spectacle"
+          },
+          {
+            "jp": "健壮",
+            "reading": "けんそう",
+            "en": "Healthy and strong"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "robust",
+        "prototype": true
+      },
+      "imageRev": 1785134862
+    },
+    {
+      "id": "L18_villa",
+      "kanji": "荘",
+      "keyword": "villa",
+      "image": "studies/villa.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "別荘",
+            "reading": "べっそう",
+            "en": "Vacation home"
+          },
+          {
+            "jp": "山荘",
+            "reading": "さんそう",
+            "en": "Mountain lodge"
+          },
+          {
+            "jp": "荘厳",
+            "reading": "そうごん",
+            "en": "Solemn; majestic"
+          },
+          {
+            "jp": "荘園",
+            "reading": "しょうえん",
+            "en": "Manor"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "villa",
+        "prototype": true
+      },
+      "imageRev": 1785134936
+    },
+    {
+      "id": "L18_sell",
+      "kanji": "売",
+      "keyword": "sell",
+      "image": "studies/sell.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "売店",
+            "reading": "ばいてん",
+            "en": "Shop"
+          },
+          {
+            "jp": "売買",
+            "reading": "ばいばい",
+            "en": "Buying and selling"
+          },
+          {
+            "jp": "発売",
+            "reading": "はつばい",
+            "en": "Release for sale"
+          },
+          {
+            "jp": "売上",
+            "reading": "うりあげ",
+            "en": "Sales"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "sell",
+        "prototype": true
+      },
+      "imageRev": 1785135023
+    },
+    {
+      "id": "L18_study",
+      "kanji": "学",
+      "keyword": "study",
+      "image": "studies/study.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "学校",
+            "reading": "がっこう",
+            "en": "School"
+          },
+          {
+            "jp": "大学",
+            "reading": "だいがく",
+            "en": "University"
+          },
+          {
+            "jp": "学生",
+            "reading": "がくせい",
+            "en": "Student"
+          },
+          {
+            "jp": "文学",
+            "reading": "ぶんがく",
+            "en": "Literature"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "study",
+        "prototype": true
+      },
+      "imageRev": 1785135088
+    },
+    {
+      "id": "L18_memorize",
+      "kanji": "覚",
+      "keyword": "memorize",
+      "image": "studies/memorize.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "覚える",
+            "reading": "おぼえる",
+            "en": "Memorize"
+          },
+          {
+            "jp": "感覚",
+            "reading": "かんかく",
+            "en": "Sense"
+          },
+          {
+            "jp": "自覚",
+            "reading": "じかく",
+            "en": "Self-awareness"
+          },
+          {
+            "jp": "錯覚",
+            "reading": "さっかく",
+            "en": "Illusion"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "memorize",
+        "prototype": true
+      },
+      "imageRev": 1785135356
+    },
+    {
+      "id": "L18_flourish",
+      "kanji": "栄",
+      "keyword": "flourish",
+      "image": "studies/flourish.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "栄養",
+            "reading": "えいよう",
+            "en": "Nutrition"
+          },
+          {
+            "jp": "栄光",
+            "reading": "えいこう",
+            "en": "Glory"
+          },
+          {
+            "jp": "繁栄",
+            "reading": "はんえい",
+            "en": "Prosperity"
+          },
+          {
+            "jp": "栄える",
+            "reading": "さかえる",
+            "en": "Prosper"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "flourish",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L18_write",
+      "kanji": "書",
+      "keyword": "write",
+      "image": "studies/write.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "図書館",
+            "reading": "としょかん",
+            "en": "Library"
+          },
+          {
+            "jp": "辞書",
+            "reading": "じしょ",
+            "en": "Dictionary"
+          },
+          {
+            "jp": "読書",
+            "reading": "どくしょ",
+            "en": "Reading"
+          },
+          {
+            "jp": "書店",
+            "reading": "しょてん",
+            "en": "Bookstore"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "write",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L18_haven",
+      "kanji": "津",
+      "keyword": "haven",
+      "image": "studies/haven.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "津波",
+            "reading": "つなみ",
+            "en": "Tsunami"
+          },
+          {
+            "jp": "天津",
+            "reading": "てんしん",
+            "en": "Tianjin"
+          },
+          {
+            "jp": "渡津",
+            "reading": "としん",
+            "en": "Crossing a harbor"
+          },
+          {
+            "jp": "津々浦々",
+            "reading": "つつうらうら",
+            "en": "Every corner of the land"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "haven",
+        "prototype": true
+      },
+      "imageRev": 1785135551
+    },
+    {
+      "id": "L18_breed",
+      "kanji": "牧",
+      "keyword": "breed",
+      "image": "studies/breed.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "牧場",
+            "reading": "ぼくじょう",
+            "en": "Ranch"
+          },
+          {
+            "jp": "牧師",
+            "reading": "ぼくし",
+            "en": "Pastor"
+          },
+          {
+            "jp": "遊牧",
+            "reading": "ゆうぼく",
+            "en": "Nomadism"
+          },
+          {
+            "jp": "牧草",
+            "reading": "ぼくそう",
+            "en": "Pasture grass"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "breed",
+        "prototype": true
+      },
+      "imageRev": 1785135457
+    },
+    {
+      "id": "L18_aggression",
+      "kanji": "攻",
+      "keyword": "aggression",
+      "image": "studies/aggression.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "攻撃",
+            "reading": "こうげき",
+            "en": "Attack"
+          },
+          {
+            "jp": "専攻",
+            "reading": "せんこう",
+            "en": "Major field of study"
+          },
+          {
+            "jp": "攻略",
+            "reading": "こうりゃく",
+            "en": "Capture; strategy"
+          },
+          {
+            "jp": "攻防",
+            "reading": "こうぼう",
+            "en": "Offense and defense"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "aggression",
+        "prototype": true
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "L18_failure",
+      "kanji": "敗",
+      "keyword": "failure",
+      "image": "studies/failure.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "失敗",
+            "reading": "しっぱい",
+            "en": "Failure"
+          },
+          {
+            "jp": "敗北",
+            "reading": "はいぼく",
+            "en": "Defeat"
+          },
+          {
+            "jp": "勝敗",
+            "reading": "しょうはい",
+            "en": "Win or loss"
+          },
+          {
+            "jp": "連敗",
+            "reading": "れんぱい",
+            "en": "Losing streak"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "failure",
+        "prototype": true
+      },
+      "imageRev": 1785135756
+    },
+    {
+      "id": "L18_sheet_of",
+      "kanji": "枚",
+      "keyword": "sheet of",
+      "image": "studies/sheet_of.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "一枚",
+            "reading": "いちまい",
+            "en": "One sheet"
+          },
+          {
+            "jp": "名刺一枚",
+            "reading": "めいしいちまい",
+            "en": "One business card"
+          },
+          {
+            "jp": "枚数",
+            "reading": "まいすう",
+            "en": "Number of sheets"
+          },
+          {
+            "jp": "数枚",
+            "reading": "すうまい",
+            "en": "Several sheets"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "sheet_of",
+        "prototype": true
+      },
+      "imageRev": 1785135813
+    },
+    {
+      "id": "L18_happenstance",
+      "kanji": "故",
+      "keyword": "happenstance",
+      "image": "studies/happenstance.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "故郷",
+            "reading": "こきょう",
+            "en": "Hometown"
+          },
+          {
+            "jp": "事故",
+            "reading": "じこ",
+            "en": "Accident"
+          },
+          {
+            "jp": "故人",
+            "reading": "こじん",
+            "en": "Deceased person"
+          },
+          {
+            "jp": "故意",
+            "reading": "こい",
+            "en": "Intentional"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "happenstance",
+        "prototype": true
+      },
+      "imageRev": 1785135951
+    },
+    {
+      "id": "L18_awe",
+      "kanji": "敬",
+      "keyword": "awe",
+      "image": "studies/awe.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "尊敬",
+            "reading": "そんけい",
+            "en": "Respect"
+          },
+          {
+            "jp": "敬語",
+            "reading": "けいご",
+            "en": "Honorific language"
+          },
+          {
+            "jp": "敬意",
+            "reading": "けいい",
+            "en": "Respect"
+          },
+          {
+            "jp": "敬礼",
+            "reading": "けいれい",
+            "en": "Salute"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "awe",
+        "prototype": true
+      },
+      "imageRev": 1785136072
+    },
+    {
+      "id": "L18_say",
+      "kanji": "言",
+      "keyword": "say",
+      "image": "studies/say.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "言語",
+            "reading": "げんご",
+            "en": "Language"
+          },
+          {
+            "jp": "発言",
+            "reading": "はつげん",
+            "en": "Remark"
+          },
+          {
+            "jp": "名言",
+            "reading": "めいげん",
+            "en": "Famous saying"
+          },
+          {
+            "jp": "言葉",
+            "reading": "ことば",
+            "en": "Word"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "say",
+        "prototype": true
+      },
+      "imageRev": 1785136169
+    },
+    {
+      "id": "L18_admonish",
+      "kanji": "警",
+      "keyword": "admonish",
+      "image": "studies/admonish.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "警察",
+            "reading": "けいさつ",
+            "en": "Police"
+          },
+          {
+            "jp": "警告",
+            "reading": "けいこく",
+            "en": "Warning"
+          },
+          {
+            "jp": "警備",
+            "reading": "けいび",
+            "en": "Security"
+          },
+          {
+            "jp": "警報",
+            "reading": "けいほう",
+            "en": "Alarm"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "admonish",
+        "prototype": true
+      },
+      "imageRev": 1785136234
+    },
+    {
+      "id": "L18_plot",
+      "kanji": "計",
+      "keyword": "plot",
+      "image": "studies/plot.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "計画",
+            "reading": "けいかく",
+            "en": "Plan"
+          },
+          {
+            "jp": "時計",
+            "reading": "とけい",
+            "en": "Clock"
+          },
+          {
+            "jp": "会計",
+            "reading": "かいけい",
+            "en": "Accounting"
+          },
+          {
+            "jp": "合計",
+            "reading": "ごうけい",
+            "en": "Total"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 18,
+        "slug": "plot",
+        "prototype": true
+      },
+      "imageRev": 1785136348
+    }
+  ]
+}

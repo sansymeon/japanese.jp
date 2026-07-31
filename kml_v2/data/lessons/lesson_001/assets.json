@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/lesson_assets.schema.json",
+  "lesson_id": "lesson_001",
+  "paths": {
+    "hero": "media/lessons/lesson_001/cover.png",
+    "thumbnail": "media/lessons/lesson_001/thumb.jpg",
+    "study_image": null,
+    "audio": null,
+    "video": null
+  },
+  "logical_layout": {
+    "cover": "media/lessons/lesson_001/cover.png",
+    "studies_dir": "media/lessons/lesson_001/studies/",
+    "strokes_dir": "media/lessons/lesson_001/strokes/",
+    "ambient_audio_dir": "media/lessons/lesson_001/audio/"
+  },
+  "source_refs": {
+    "cover": "kml/assets/covers/lesson_01.png",
+    "studies_glob": "kml/assets/studies/{slug}.png",
+    "strokes_glob": "kml/tools/strokes/pages/{slug}.html",
+    "note": "source_refs document where binaries currently live in the old tree. V2 consumers use paths.* / logical_layout only. Do not commit media into Git."
+  },
+  "per_kanji": "See kanji.json → items[].assets for study_image and stroke_page paths.",
+  "notes": "Media is referenced, not stored. Copy or sync binaries into media/ when building presentations."
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KML Studio</title>
+  <link rel="stylesheet" href="/static/studio.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="brand">KML Studio <span>local authoring control center</span></div>
+      <div class="actions">
+        <a class="btn btn-small" href="/?validate=1">Revalidate all</a>
+        <a class="btn btn-small" href="http://127.0.0.1:8765/" target="_blank" rel="noopener">Open site preview*</a>
+      </div>
+    </header>
+
+    {% if flash %}
+    <div class="flash">{{ flash }}</div>
+    {% endif %}
+
+    <p class="flow">
+      Workflow:
+      <strong>Create</strong> → Author → Assets → Validate → Preview → Generate →
+      <strong>Publish</strong>
+      <span class="muted">(mapped from existing lesson.status)</span>
+    </p>
+
+    <section class="grid" aria-label="Project summary">
+      <div class="stat"><div class="n">{{ dash.summary.lesson_count }}</div><div class="l">Lessons</div></div>
+      <div class="stat"><div class="n">{{ dash.summary.by_status.get('draft', 0) }}</div><div class="l">Draft</div></div>
+      <div class="stat"><div class="n">{{ dash.summary.generated }}</div><div class="l">Generated HTML</div></div>
+      <div class="stat"><div class="n">{{ dash.summary.warning_lessons }}</div><div class="l">With warnings</div></div>
+      <div class="stat"><div class="n">{{ dash.summary.published }}</div><div class="l">Published</div></div>
+      {% if validate %}
+      <div class="stat"><div class="n">{{ dash.summary.validation_failures }}</div><div class="l">Validation failures</div></div>
+      {% endif %}
+    </section>
+
+    <div class="two">
+      <section class="panel">
+        <h2>Quick actions</h2>
+        <form class="actions" method="post" action="/actions/create" style="margin-bottom:0.75rem">
+          <input type="text" name="lesson_id" value="{{ next_id }}" aria-label="New lesson id" />
+          <button class="btn btn-primary" type="submit">New Lesson</button>
+        </form>
+        <div class="actions">
+          <form method="post" action="/actions/build-site"><button class="btn" type="submit">Build Site</button></form>
+          <form method="post" action="/actions/build-book"><input type="hidden" name="book_id" value="book_01" /><button class="btn" type="submit">Build Book 1</button></form>
+          <form method="post" action="/actions/build-all"><button class="btn" type="submit">Build All</button></form>
+        </div>
+        <p class="muted" style="margin-top:0.85rem">* Site preview requires a static server in <span class="mono">kml_v2/</span> (e.g. port 8765).</p>
+      </section>
+
+      <section class="panel">
+        <h2>Attention queue</h2>
+        {% if dash.attention %}
+        <ul class="plain">
+          {% for row in dash.attention %}
+          <li>
+            <a href="/lessons/{{ row.id }}">{{ row.id }}</a>
+            <span class="badge">{{ row.stage }}</span>
+            <span class="muted">{{ row.status }}</span>
+            {% if row.warnings %}
+            <ul class="warn-list">
+              {% for w in row.warnings %}<li>{{ w }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="muted">Nothing urgent.</p>
+        {% endif %}
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Books</h2>
+      <table>
+        <thead>
+          <tr><th>Book</th><th>Status</th><th>Packs</th><th>Output</th><th></th></tr>
+        </thead>
+        <tbody>
+          {% for b in dash.books %}
+          <tr>
+            <td>
+              {% if b.error %}{{ b.id }} <span class="badge badge-bad">error</span>
+              {% else %}
+              <strong>{{ b.title }}</strong> <span class="mono">{{ b.id }}</span>
+              {% endif %}
+            </td>
+            <td>{% if not b.error %}<span class="badge">{{ b.status }}</span>{% endif %}</td>
+            <td>{% if not b.error %}{{ b.packs_present }} / {{ b.lesson_ids }}{% endif %}</td>
+            <td>
+              {% if b.output_exists %}<span class="badge badge-ok">built</span>
+              {% elif not b.error %}<span class="badge">pending</span>{% endif %}
+            </td>
+            <td>
+              {% if not b.error %}
+              <form method="post" action="/actions/build-book" style="display:inline">
+                <input type="hidden" name="book_id" value="{{ b.id }}" />
+                <button class="btn btn-small" type="submit">Build</button>
+              </form>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Lessons</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Lesson</th><th>Stage</th><th>Status</th><th>Warnings</th><th>HTML</th>
+            {% if validate %}<th>Valid</th>{% endif %}
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in dash.lessons %}
+          <tr>
+            <td>
+              <a href="/lessons/{{ row.id }}">{{ row.title }}</a>
+              <div class="mono muted">{{ row.id }}</div>
+            </td>
+            <td><span class="badge">{{ row.stage }}</span></td>
+            <td>{{ row.status }}</td>
+            <td>
+              {% if row.warnings %}
+              <ul class="warn-list">{% for w in row.warnings %}<li>{{ w }}</li>{% endfor %}</ul>
+              {% else %}—{% endif %}
+            </td>
+            <td>
+              {% if row.output_exists %}<span class="badge badge-ok">yes</span>
+              {% else %}<span class="badge">no</span>{% endif %}
+            </td>
+            {% if validate %}
+            <td>
+              {% if row.valid %}<span class="badge badge-ok">ok</span>
+              {% else %}<span class="badge badge-bad">fail</span>{% endif %}
+            </td>
+            {% endif %}
+            <td class="actions">
+              <form method="post" action="/actions/validate">
+                <input type="hidden" name="lesson_id" value="{{ row.id }}" />
+                <button class="btn btn-small" type="submit">Validate</button>
+              </form>
+              <form method="post" action="/actions/build-lesson">
+                <input type="hidden" name="lesson_id" value="{{ row.id }}" />
+                <button class="btn btn-small" type="submit">Build</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <div class="two">
+      <section class="panel">
+        <h2>Publishing signals</h2>
+        <h3>Missing YouTube IDs</h3>
+        <p class="mono muted">{{ dash.missing_youtube|join(', ') or '—' }}</p>
+        <h3>Hero issues</h3>
+        <p class="mono muted">{{ dash.missing_heroes|join(', ') or '—' }}</p>
+        <h3>Gallery pack gaps</h3>
+        <p class="mono muted">{{ dash.missing_gallery|join(', ') or '—' }}</p>
+        <h3>Not published</h3>
+        <p class="mono muted">{{ dash.unpublished|join(', ') or '—' }}</p>
+      </section>
+
+      <section class="panel">
+        <h2>Recent activity</h2>
+        {% if dash.activity %}
+        <ul class="plain">
+          {% for a in dash.activity %}
+          <li>
+            <span class="badge {% if a.ok %}badge-ok{% else %}badge-bad{% endif %}">{{ a.action }}</span>
+            <span class="muted">{{ a.time }}</span>
+            <div class="mono">{{ a.detail }}</div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="muted">No actions yet this session.</p>
+        {% endif %}
+        <p class="muted" style="margin-top:0.75rem">Generated {{ dash.generated_at }}</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

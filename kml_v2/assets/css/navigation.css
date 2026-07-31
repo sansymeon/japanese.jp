@@ -1,0 +1,121 @@
+/* KML V2 — navigation (header nav, breadcrumbs, lesson prev/next) */
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  color: var(--gold);
+}
+
+.nav-toggle {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid rgba(216, 212, 203, 0.28);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--ink-quiet);
+  margin: 0 0 1.5rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: rgba(154, 149, 140, 0.55);
+}
+
+.breadcrumbs a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: var(--gold);
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--page-ink);
+}
+
+.lesson-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--gold-line);
+}
+
+.lesson-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  transition: color var(--ease);
+}
+
+.lesson-nav a:hover,
+.lesson-nav a:focus-visible {
+  color: var(--gold);
+}
+
+.lesson-nav [aria-disabled="true"] {
+  opacity: 0.4;
+  pointer-events: none;
+}

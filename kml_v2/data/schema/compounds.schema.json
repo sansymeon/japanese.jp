@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/compounds.schema.json",
+  "title": "KML Lesson Compounds",
+  "type": "object",
+  "required": ["lesson_id", "items"],
+  "properties": {
+    "lesson_id": { "type": "string", "pattern": "^lesson_[0-9]{3}$" },
+    "status": { "type": "string" },
+    "count": { "type": "integer" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "surface"],
+        "properties": {
+          "id": { "type": "string" },
+          "kanji_slug": { "type": "string" },
+          "anchor_character": { "type": "string" },
+          "surface": { "type": "string" },
+          "reading": { "type": ["string", "null"] },
+          "meaning": { "type": ["string", "null"] }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

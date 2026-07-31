@@ -1,0 +1,56 @@
+{
+  "$schema": "../../schema/lesson_gallery.schema.json",
+  "lesson_id": "lesson_001",
+  "status": "draft",
+  "collections": [
+    {
+      "id": "lesson_1_foundations",
+      "kind": "foundations",
+      "title": "Lesson 1 — Foundations",
+      "role": "Primary ambient exhibition: kanji → keyword → verse on study art",
+      "source_ref": "kml/tools/ambient/exhibition/lesson_1_foundations.json"
+    },
+    {
+      "id": "lesson_01_gallery",
+      "kind": "gallery",
+      "title": "Lesson 1 — Gallery",
+      "role": "Capstone memory gallery (study art, minimal on-screen text)",
+      "source_ref": "kml/tools/ambient/collections/lesson_01/lesson_01_gallery.json"
+    },
+    {
+      "id": "lesson_01_reading",
+      "kind": "reading",
+      "title": "Lesson 1 — Reading",
+      "role": "Assisted reading over gallery art",
+      "source_ref": "kml/tools/ambient/collections/lesson_01/lesson_01_reading.json",
+      "experimental": true
+    },
+    {
+      "id": "lesson_01_vocabulary",
+      "kind": "vocabulary_exhibition",
+      "title": "Lesson 1 — Vocabulary Exhibition",
+      "role": "Vocabulary steps drawn from verses",
+      "source_ref": "kml/tools/ambient/collections/lesson_01/lesson_01_vocabulary.json",
+      "prototype": true
+    },
+    {
+      "id": "lesson_01_compounds",
+      "kind": "compounds_exhibition",
+      "title": "Lesson 1 — Compounds Exhibition",
+      "role": "Compound vocabulary on gallery art",
+      "source_ref": "kml/tools/ambient/collections/lesson_01/lesson_01_compounds.json",
+      "prototype": true
+    },
+    {
+      "id": "lesson_01_strokes",
+      "kind": "strokes",
+      "title": "Lesson 1 — Stroke Order",
+      "role": "Stroke-order studio exhibition",
+      "source_ref": "kml/tools/ambient/collections/lesson_01/lesson_01_strokes.json",
+      "prototype": true
+    }
+  ],
+  "related_gallery_ids": ["gallery_hearts"],
+  "pieces": [],
+  "notes": "Collections are relationships to ambient/gallery surfaces. Exhibition timing/camera details stay in those source files until an ambient schema is formalized in V2."
+}

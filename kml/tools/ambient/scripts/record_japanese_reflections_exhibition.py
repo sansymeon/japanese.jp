@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Record Japanese Reflections prototype exhibitions (Lessons 1–5 or 6–10).
+Record Japanese Reflections prototype exhibitions (Lessons 1–5, 6–10, 11–15, or 16–20).
 
 Uses exhibition.html?collection=lessons_*_prototype with intro + main + outro mux.
 
@@ -28,11 +28,14 @@ from exhibition_record_common import (  # noqa: E402
     presentation_timeout_ms,
     reflections_audio_timeline_ms,
     start_server,
+    stop_server,
 )
 
 BUILDERS = {
     "lessons_1_5_prototype": "build_lessons_1_5_prototype.py",
     "lessons_6_10_prototype": "build_lessons_6_10_prototype.py",
+    "lessons_11_15_prototype": "build_lessons_11_15_prototype.py",
+    "lessons_16_20_prototype": "build_lessons_16_20_prototype.py",
 }
 
 
@@ -114,8 +117,7 @@ def main() -> int:
     try:
         record(collection_id=args.collection, port=args.port, output_dir=args.output_dir)
     finally:
-        server.terminate()
-        server.wait(timeout=5)
+        stop_server(server)
 
     return 0
 

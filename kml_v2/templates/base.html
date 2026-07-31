@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-site-root="{{ site_root }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page_title }}</title>
+  {% if meta_description %}
+  <meta name="description" content="{{ meta_description }}" />
+  {% endif %}
+  <meta name="theme-color" content="#171512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Yuji+Syuku&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="{{ site_root }}/assets/css/main.css" />
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <div class="page">
+    {% include "includes/header.html" %}
+    <main id="main" class="page-main">
+      {% block content %}{% endblock %}
+    </main>
+    {% include "includes/footer.html" %}
+  </div>
+  <script src="{{ site_root }}/assets/js/includes.js"></script>
+  <script src="{{ site_root }}/assets/js/ui.js"></script>
+  <script src="{{ site_root }}/assets/js/navigation.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

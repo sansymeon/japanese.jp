@@ -1,0 +1,423 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_26_components",
+  "title": "Lesson 26 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 26,
+    "sceneCount": 24,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L26_sea",
+      "kanji": "海",
+      "keyword": "sea",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_beg",
+      "kanji": "乞",
+      "keyword": "beg",
+      "components": [
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "乙",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L26_intro_mist",
+      "glyph": "𠦝",
+      "label": "mist"
+    },
+    {
+      "type": "kanji",
+      "id": "L26_drought",
+      "kanji": "乾",
+      "keyword": "drought",
+      "components": [
+        {
+          "glyph": "𠦝",
+          "label": "mist"
+        },
+        {
+          "glyph": "乞",
+          "label": "beg"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L26_intro_double_back",
+      "glyph": "复",
+      "label": "double back"
+    },
+    {
+      "type": "kanji",
+      "id": "L26_abdomen",
+      "kanji": "腹",
+      "keyword": "abdomen",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_duplicate",
+      "kanji": "複",
+      "keyword": "duplicate",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "复",
+          "label": "double back"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_lack",
+      "kanji": "欠",
+      "keyword": "lack",
+      "components": [
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_blow",
+      "kanji": "吹",
+      "keyword": "blow",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_cook",
+      "kanji": "炊",
+      "keyword": "cook",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_song",
+      "kanji": "歌",
+      "keyword": "song",
+      "components": [
+        {
+          "glyph": "可",
+          "label": "possible"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_soft",
+      "kanji": "軟",
+      "keyword": "soft",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L26_intro_ice",
+      "glyph": "冫",
+      "label": "ice"
+    },
+    {
+      "type": "kanji",
+      "id": "L26_next",
+      "kanji": "次",
+      "keyword": "next",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_briar",
+      "kanji": "茨",
+      "keyword": "briar",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "次",
+          "label": "next"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_assets",
+      "kanji": "資",
+      "keyword": "assets",
+      "components": [
+        {
+          "glyph": "次",
+          "label": "next"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_figure",
+      "kanji": "姿",
+      "keyword": "figure",
+      "components": [
+        {
+          "glyph": "次",
+          "label": "next"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_consult_with",
+      "kanji": "諮",
+      "keyword": "consult with",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "次",
+          "label": "next"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L26_intro_muzzle",
+      "glyph": "咅",
+      "label": "muzzle"
+    },
+    {
+      "type": "kanji",
+      "id": "L26_compensation",
+      "kanji": "賠",
+      "keyword": "compensation",
+      "components": [
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_cultivate",
+      "kanji": "培",
+      "keyword": "cultivate",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "咅",
+          "label": "muzzle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_divide",
+      "kanji": "剖",
+      "keyword": "divide",
+      "components": [
+        {
+          "glyph": "咅",
+          "label": "muzzle"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_sound",
+      "kanji": "音",
+      "keyword": "sound",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L26_darkness",
+      "kanji": "暗",
+      "keyword": "darkness",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "音",
+          "label": "sound"
+        }
+      ]
+    }
+  ]
+}

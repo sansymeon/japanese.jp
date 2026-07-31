@@ -1,0 +1,382 @@
+/**
+ * Kanji Components — quiet museum exhibit.
+ * Hero: aged gold. Components: soft ivory. Keywords: quiet name tags.
+ */
+
+html.kml-typography-kanji-components {
+  --kc-bg: #0c0b09;
+  --kc-hero: #c4a052;
+  --kc-component: #efe6d8;
+  --kc-keyword: rgba(239, 230, 216, 0.78);
+  --kc-muted: rgba(239, 230, 216, 0.38);
+
+  /* TV-distance scale — hero largest; components ~70% */
+  --kc-hero-size: clamp(6.5rem, 22vmin, 13rem);
+  --kc-component-size: clamp(4.5rem, 15.4vmin, 9.1rem);
+  --kc-keyword-size: clamp(1.5rem, 3.8vmin, 2.4rem);
+
+  --kc-enter-distance: clamp(3.5rem, 12vw, 9rem);
+  --kc-stage-gap: clamp(2.2rem, 7vh, 4.8rem);
+  --kc-row-gap: clamp(2.25rem, 5.5vw, 4.5rem);
+  --kc-keyword-gap: clamp(0.55rem, 1.4vh, 0.95rem);
+
+  --kc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --kc-fade-ease: ease-in-out;
+}
+
+.kc-root {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--kc-bg, #0c0b09);
+  color: var(--kc-component, #efe6d8);
+  font-family: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.kml-typography-kanji-components,
+html.kml-typography-kanji-components body {
+  margin: 0;
+  padding: 0;
+  background: #0c0b09;
+  overflow: hidden;
+  height: 100%;
+}
+
+.kc-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:
+    clamp(2rem, 6vh, 4.5rem)
+    clamp(1.5rem, 5vw, 4rem)
+    clamp(2.5rem, 7vh, 5rem);
+  gap: var(--kc-stage-gap, 4rem);
+  opacity: 1;
+  transition: opacity var(--kc-crossfade-ms, 1600ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-stage.is-leaving {
+  opacity: 0;
+}
+
+.kc-stage.is-entering {
+  opacity: 0;
+}
+
+.kc-stage.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* ── New Component / New Family (instructional pause) ── */
+
+.kc-intro {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.1rem, 3.2vh, 2rem);
+  padding: clamp(2rem, 6vh, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--kc-intro-out-ms, 1800ms) var(--kc-fade-ease, ease-in-out),
+    visibility var(--kc-intro-out-ms, 1800ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-intro.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.kc-intro.is-entering {
+  opacity: 0;
+}
+
+.kc-intro.is-leaving {
+  opacity: 0;
+  visibility: visible;
+}
+
+.kc-intro-heading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.05rem, 2.6vmin, 1.55rem);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--kc-muted);
+  opacity: 0;
+  transition: opacity var(--kc-intro-heading-ms, 1400ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-intro-heading.is-visible {
+  opacity: 1;
+}
+
+.kc-intro[data-intro-kind="family"] .kc-intro-heading {
+  color: rgba(196, 160, 82, 0.72);
+}
+
+.kc-intro-glyph {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: var(--kc-hero-size);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--kc-component);
+  opacity: 0;
+  transition: opacity var(--kc-intro-glyph-ms, 2000ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-intro[data-intro-kind="family"] .kc-intro-glyph {
+  color: var(--kc-hero);
+}
+
+.kc-intro-glyph.is-visible {
+  opacity: 1;
+}
+
+.kc-intro-label {
+  font-family: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+  font-size: var(--kc-keyword-size);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  color: var(--kc-keyword);
+  opacity: 0;
+  transition: opacity var(--kc-intro-label-ms, 1600ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-intro-label.is-visible {
+  opacity: 1;
+}
+
+.kc-hero {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--kc-hero-size) * 1.05);
+  margin-top: clamp(-2vh, -1vh, 0);
+}
+
+.kc-hero-kanji {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: var(--kc-hero-size);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--kc-hero);
+  opacity: 0;
+  transition: opacity var(--kc-hero-fade-ms, 1800ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-hero-kanji.is-visible {
+  opacity: 1;
+}
+
+.kc-components {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--kc-row-gap);
+  min-height: calc(var(--kc-component-size) + var(--kc-keyword-size) + var(--kc-keyword-gap) + 0.5rem);
+  width: 100%;
+  max-width: min(92vw, 64rem);
+}
+
+.kc-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--kc-keyword-gap);
+  flex: 0 0 auto;
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    opacity var(--kc-arrive-ms, 1400ms) var(--kc-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform var(--kc-arrive-ms, 1400ms) var(--kc-ease, cubic-bezier(0.22, 1, 0.36, 1));
+  will-change: opacity, transform;
+}
+
+.kc-component.from-left {
+  transform: translateX(calc(-1 * var(--kc-enter-distance)));
+}
+
+.kc-component.from-right {
+  transform: translateX(var(--kc-enter-distance));
+}
+
+.kc-component.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.kc-component.is-leaving {
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    opacity var(--kc-leave-ms, 1600ms) var(--kc-fade-ease, ease-in-out),
+    transform var(--kc-leave-ms, 1600ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-component-kanji {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: var(--kc-component-size);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--kc-component);
+}
+
+.kc-component-keyword {
+  font-family: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+  font-size: var(--kc-keyword-size);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  color: var(--kc-keyword);
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--kc-keyword-fade-ms, 1400ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-component-keyword.is-visible {
+  opacity: 1;
+}
+
+.kc-veil {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+  transition: opacity var(--kc-crossfade-ms, 1600ms) var(--kc-fade-ease, ease-in-out);
+}
+
+.kc-veil.is-dark {
+  opacity: 1;
+}
+
+.kc-crest {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--kc-crest-fade-ms, 2800ms) ease-in-out,
+    visibility var(--kc-crest-fade-ms, 2800ms) ease-in-out;
+}
+
+.kc-crest.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.kc-crest img {
+  max-width: min(40vw, 260px);
+  max-height: min(40vw, 260px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  clip-path: circle(42% at 50% 50%);
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.55));
+}
+
+.kc-chrome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(0.85rem, 2.2vh, 1.5rem);
+  display: flex;
+  justify-content: center;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.kc-chrome-label {
+  font-size: clamp(0.7rem, 1.5vmin, 0.9rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kc-muted);
+  opacity: 0.7;
+}
+
+.kc-root.is-hide-chrome .kc-chrome {
+  display: none;
+}
+
+.kc-autoplay-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(8, 7, 5, 0.72);
+  color: var(--kc-hero, #c4a052);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 700ms ease-in-out, visibility 700ms ease-in-out;
+}
+
+.kc-autoplay-gate.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.kc-autoplay-gate[hidden] {
+  display: none;
+}
+
+.kc-autoplay-gate-label {
+  font-size: clamp(1.35rem, 3.2vmin, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Faster QA: ?timingScale=0.1 */
+html.kml-timing-fast .kc-hero-kanji,
+html.kml-timing-fast .kc-component,
+html.kml-timing-fast .kc-component-keyword,
+html.kml-timing-fast .kc-stage,
+html.kml-timing-fast .kc-veil {
+  /* durations still driven by CSS vars set from JS */
+}
+
+@media (max-aspect-ratio: 3/4) {
+  html.kml-typography-kanji-components {
+    --kc-hero-size: clamp(5.5rem, 20vmin, 10rem);
+    --kc-component-size: clamp(3.8rem, 14vmin, 7rem);
+    --kc-keyword-size: clamp(1.35rem, 4.2vmin, 2.05rem);
+    --kc-stage-gap: clamp(1.75rem, 5.25vh, 3.05rem);
+    --kc-row-gap: clamp(1.5rem, 4.5vw, 3rem);
+  }
+}

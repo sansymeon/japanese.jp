@@ -1,0 +1,401 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_19_components",
+  "title": "Lesson 19 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 19,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L19_elucidate",
+      "kanji": "詮",
+      "keyword": "elucidate",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "全",
+          "label": "whole"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_prison",
+      "kanji": "獄",
+      "keyword": "prison",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "犬",
+          "label": "dog"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_revise",
+      "kanji": "訂",
+      "keyword": "revise",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_obituary",
+      "kanji": "訃",
+      "keyword": "obituary",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "卜",
+          "label": "signal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_chastise",
+      "kanji": "討",
+      "keyword": "chastise",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_instruction",
+      "kanji": "訓",
+      "keyword": "instruction",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "川",
+          "label": "river"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_imperial_edict",
+      "kanji": "詔",
+      "keyword": "imperial edict",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "召",
+          "label": "seduce"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_packed",
+      "kanji": "詰",
+      "keyword": "packed",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "吉",
+          "label": "good luck"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_talk",
+      "kanji": "話",
+      "keyword": "talk",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "舌",
+          "label": "tongue"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_recitation",
+      "kanji": "詠",
+      "keyword": "recitation",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "永",
+          "label": "eternity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_poem",
+      "kanji": "詩",
+      "keyword": "poem",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "寺",
+          "label": "temple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_language",
+      "kanji": "語",
+      "keyword": "language",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "吾",
+          "label": "I"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_read",
+      "kanji": "読",
+      "keyword": "read",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "売",
+          "label": "sell"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_tune",
+      "kanji": "調",
+      "keyword": "tune",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "周",
+          "label": "circumference"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_discuss",
+      "kanji": "談",
+      "keyword": "discuss",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "炎",
+          "label": "inflammation"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_consent",
+      "kanji": "諾",
+      "keyword": "consent",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "若",
+          "label": "young"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_rebuke",
+      "kanji": "諭",
+      "keyword": "rebuke",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "俞",
+          "label": "cargo"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L19_intro_spear",
+      "glyph": "戈",
+      "label": "spear"
+    },
+    {
+      "type": "kanji",
+      "id": "L19_style",
+      "kanji": "式",
+      "keyword": "style",
+      "components": [
+        {
+          "glyph": "エ",
+          "label": "craft"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_test",
+      "kanji": "試",
+      "keyword": "test",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "式",
+          "label": "style"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L19_formal_two",
+      "kanji": "弐",
+      "keyword": "formal two",
+      "components": [
+        {
+          "glyph": "ニ",
+          "label": "two"
+        },
+        {
+          "glyph": "式",
+          "label": "style"
+        }
+      ]
+    }
+  ]
+}

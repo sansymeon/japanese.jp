@@ -1,0 +1,415 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_18_components",
+  "title": "Lesson 18 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 18,
+    "sceneCount": 22,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L18_week",
+      "kanji": "週",
+      "keyword": "week",
+      "components": [
+        {
+          "glyph": "辶",
+          "label": "road"
+        },
+        {
+          "glyph": "周",
+          "label": "circumference"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_gentleman",
+      "kanji": "士",
+      "keyword": "gentleman",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_good_luck",
+      "kanji": "吉",
+      "keyword": "good luck",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_robust",
+      "kanji": "壮",
+      "keyword": "robust",
+      "components": [
+        {
+          "glyph": "丬",
+          "label": "bed"
+        },
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_villa",
+      "kanji": "荘",
+      "keyword": "villa",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "壮",
+          "label": "robust"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_sell",
+      "kanji": "売",
+      "keyword": "sell",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        },
+        {
+          "glyph": "冗",
+          "label": "superfluous"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L18_intro_school",
+      "glyph": "⺍",
+      "label": "school"
+    },
+    {
+      "type": "kanji",
+      "id": "L18_study",
+      "kanji": "学",
+      "keyword": "study",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "子",
+          "label": "child"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_memorize",
+      "kanji": "覚",
+      "keyword": "memorize",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "見",
+          "label": "see"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_flourish",
+      "kanji": "栄",
+      "keyword": "flourish",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L18_intro_brush",
+      "glyph": "聿",
+      "label": "brush"
+    },
+    {
+      "type": "kanji",
+      "id": "L18_write",
+      "kanji": "書",
+      "keyword": "write",
+      "components": [
+        {
+          "glyph": "聿",
+          "label": "brush"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_haven",
+      "kanji": "津",
+      "keyword": "haven",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "聿",
+          "label": "brush"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_breed",
+      "kanji": "牧",
+      "keyword": "breed",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_aggression",
+      "kanji": "攻",
+      "keyword": "aggression",
+      "components": [
+        {
+          "glyph": "エ",
+          "label": "craft"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_failure",
+      "kanji": "敗",
+      "keyword": "failure",
+      "components": [
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_sheet_of",
+      "kanji": "枚",
+      "keyword": "sheet of",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_happenstance",
+      "kanji": "故",
+      "keyword": "happenstance",
+      "components": [
+        {
+          "glyph": "古",
+          "label": "old"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_awe",
+      "kanji": "敬",
+      "keyword": "awe",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "句",
+          "label": "phrase"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_say",
+      "kanji": "言",
+      "keyword": "say",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_admonish",
+      "kanji": "警",
+      "keyword": "admonish",
+      "components": [
+        {
+          "glyph": "苟",
+          "label": "苟"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L18_plot",
+      "kanji": "計",
+      "keyword": "plot",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    }
+  ]
+}

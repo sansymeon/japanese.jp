@@ -1,0 +1,403 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_29_components",
+  "title": "Lesson 29 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 29,
+    "sceneCount": 22,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L29_butterfly",
+      "kanji": "蝶",
+      "keyword": "butterfly",
+      "components": [
+        {
+          "glyph": "虫",
+          "label": "insect"
+        },
+        {
+          "glyph": "世",
+          "label": "generation"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_alone",
+      "kanji": "独",
+      "keyword": "alone",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_silkworm",
+      "kanji": "蚕",
+      "keyword": "silkworm",
+      "components": [
+        {
+          "glyph": "天",
+          "label": "heaven"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_wind",
+      "kanji": "風",
+      "keyword": "wind",
+      "components": [
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_self",
+      "kanji": "己",
+      "keyword": "self",
+      "components": [
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_wake_up",
+      "kanji": "起",
+      "keyword": "wake up",
+      "components": [
+        {
+          "glyph": "走",
+          "label": "run"
+        },
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_queen",
+      "kanji": "妃",
+      "keyword": "queen",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_reformation",
+      "kanji": "改",
+      "keyword": "reformation",
+      "components": [
+        {
+          "glyph": "己",
+          "label": "self"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_scribe",
+      "kanji": "記",
+      "keyword": "scribe",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_wrap",
+      "kanji": "包",
+      "keyword": "wrap",
+      "components": [
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_placenta",
+      "kanji": "胞",
+      "keyword": "placenta",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "包",
+          "label": "wrap"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_cannon",
+      "kanji": "砲",
+      "keyword": "cannon",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "包",
+          "label": "wrap"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_bubbles",
+      "kanji": "泡",
+      "keyword": "bubbles",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "包",
+          "label": "wrap"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_turtle",
+      "kanji": "亀",
+      "keyword": "turtle",
+      "components": [
+        {
+          "glyph": "亀",
+          "label": "turtle"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L29_intro_eel",
+      "glyph": "电",
+      "label": "eel"
+    },
+    {
+      "type": "kanji",
+      "id": "L29_electricity",
+      "kanji": "電",
+      "keyword": "electricity",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "亀",
+          "label": "turtle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_dragon",
+      "kanji": "竜",
+      "keyword": "dragon",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "亀",
+          "label": "turtle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_waterfall",
+      "kanji": "滝",
+      "keyword": "waterfall",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "竜",
+          "label": "dragon"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L29_intro_pig",
+      "glyph": "豕",
+      "label": "pig"
+    },
+    {
+      "type": "kanji",
+      "id": "L29_pork",
+      "kanji": "豚",
+      "keyword": "pork",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_pursue",
+      "kanji": "逐",
+      "keyword": "pursue",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L29_consummate",
+      "kanji": "遂",
+      "keyword": "consummate",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        }
+      ]
+    }
+  ]
+}

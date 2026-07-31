@@ -1,0 +1,145 @@
+/* KML V2 — lesson page structure (placeholder-ready) */
+
+.lesson-page .content-wrapper {
+  padding-top: 1.75rem;
+}
+
+.lesson-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.lesson-art {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem auto 0;
+}
+
+.lesson-art img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: var(--frame-glow);
+  transition: filter 0.3s ease;
+}
+
+.lesson-art-frame {
+  width: min(100%, 280px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(145deg, rgba(201, 164, 88, 0.12), transparent 55%),
+    var(--gallery-elevated);
+  border: 1px solid var(--gold-line);
+  box-shadow: var(--frame-glow);
+  display: grid;
+  place-items: center;
+  color: var(--ink-quiet);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+/* Ambient Study Gallery doorway (metadata: gallery_url) */
+.lesson-art-link {
+  position: relative;
+  display: inline-block;
+  max-width: 280px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.lesson-art-link img,
+.lesson-art-link .lesson-art-frame {
+  width: 100%;
+  max-width: none;
+}
+
+.lesson-art-link:hover img,
+.lesson-art-link:focus-visible img {
+  filter: brightness(1.08);
+}
+
+.lesson-art-link:focus-visible {
+  outline: 2px solid rgba(201, 164, 88, 0.7);
+  outline-offset: 3px;
+}
+
+.lesson-art-gallery-label {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  padding: 0.28rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(20, 16, 12, 0.62);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.28s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lesson-art-gallery-label {
+    opacity: 0;
+  }
+
+  .lesson-art-link:hover .lesson-art-gallery-label,
+  .lesson-art-link:focus-visible .lesson-art-gallery-label {
+    opacity: 1;
+  }
+}
+
+.lesson-header {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.lesson-header .kanji-display {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.lesson-keyword {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: var(--ink-card-muted);
+  letter-spacing: 0.02em;
+}
+
+.lesson-body {
+  text-align: left;
+}
+
+.lesson-body p {
+  color: var(--ink-card);
+}
+
+.lesson-placeholder-note {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid rgba(201, 164, 88, 0.55);
+  background: rgba(201, 164, 88, 0.08);
+  color: var(--ink-card-muted);
+  font-size: 0.92rem;
+}
+
+.stroke-hint {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-quiet);
+  text-align: center;
+  margin: -0.25rem 0 0.5rem;
+}

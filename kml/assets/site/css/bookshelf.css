@@ -1,0 +1,765 @@
+/* Kanji・Music・Landscape — Lessons bookshelf & book rooms
+   Museum architecture: Bookshelf → Exhibition room → Lesson */
+
+.bookshelf-page {
+  --gallery-wall: #171512;
+  --gallery-elevated: #1c1915;
+  --ivory: #efe9dc;
+  --gold: #c9a458;
+  --gold-soft: rgba(201, 164, 88, 0.14);
+  --ink-soft: #d8d4cb;
+  --ink-quiet: #9a958c;
+  --ease-museum: 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  --ease: 220ms ease;
+  color-scheme: dark;
+}
+
+.bookshelf-page body,
+body.bookshelf-page {
+  margin: 0;
+  font-family: "Source Sans 3", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #f3f1eb;
+  background: var(--gallery-wall, #171512);
+  -webkit-font-smoothing: antialiased;
+}
+
+.bookshelf-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bookshelf-page a {
+  color: inherit;
+}
+
+.bookshelf-page .skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.85rem;
+  background: var(--gold);
+  color: #171512;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: top var(--ease);
+}
+
+.bookshelf-page .skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- Shared header ---------- */
+
+.books-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 9, 0.72) 0%,
+    transparent 100%
+  );
+}
+
+.books-header--solid {
+  position: sticky;
+  background: color-mix(in srgb, var(--gallery-wall) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 164, 88, 0.12);
+}
+
+.books-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100% - 2.5rem, 64rem);
+  margin: 0 auto;
+  min-height: 3.25rem;
+  padding: 0.35rem 0;
+}
+
+.books-brand {
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--ease);
+}
+
+.books-brand:hover,
+.books-brand:focus-visible {
+  color: var(--gold);
+}
+
+.books-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.books-nav a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.books-nav a:hover,
+.books-nav a:focus-visible {
+  color: var(--gold);
+}
+
+/* ---------- Bookshelf hero ---------- */
+
+.shelf-hero {
+  position: relative;
+  min-height: min(100svh, 54rem);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: #0b0b0c;
+}
+
+.shelf-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.shelf-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  transform: scale(1.03);
+  animation: shelf-drift 32s ease-in-out infinite alternate;
+}
+
+.shelf-hero-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(8, 8, 9, 0.9) 0%,
+      rgba(8, 8, 9, 0.62) 36%,
+      rgba(8, 8, 9, 0.32) 60%,
+      rgba(8, 8, 9, 0.58) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 9, 0.4) 0%,
+      transparent 30%,
+      rgba(8, 8, 9, 0.75) 76%,
+      rgba(8, 8, 9, 0.97) 100%
+    ),
+    radial-gradient(
+      ellipse 55% 50% at 22% 70%,
+      rgba(31, 58, 46, 0.28),
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+.shelf-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2.5rem, 40rem);
+  margin: 0 auto 0 clamp(1.25rem, 8vw, 7rem);
+  padding: clamp(7rem, 16vw, 11rem) 0 clamp(4.5rem, 10vw, 6.5rem);
+  text-align: left;
+}
+
+.shelf-hero-brand {
+  margin: 0 0 1.35rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  animation: shelf-rise 1.15s var(--ease-museum) 0.08s both;
+}
+
+.shelf-hero-inner h1 {
+  max-width: 12ch;
+  margin: 0 0 1.2rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(2.1rem, 5.2vw, 3.35rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.18;
+  color: #f3f1eb;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
+  animation: shelf-rise 1.15s var(--ease-museum) 0.22s both;
+}
+
+.shelf-hero-lead {
+  max-width: 28rem;
+  margin: 0;
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--ink-soft) 94%, white);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+  animation: shelf-rise 1.15s var(--ease-museum) 0.36s both;
+}
+
+.shelf-hero-scroll {
+  position: absolute;
+  left: clamp(1.25rem, 8vw, 7rem);
+  bottom: 1.35rem;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  width: 2rem;
+  height: 3rem;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity var(--ease);
+}
+
+.shelf-hero-scroll:hover {
+  opacity: 1;
+}
+
+.shelf-hero-scroll-line {
+  display: block;
+  width: 1px;
+  height: 2.4rem;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--gold) 80%, white)
+  );
+  animation: shelf-scroll 2.4s ease-in-out infinite;
+}
+
+@keyframes shelf-drift {
+  from {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.07) translate3d(1.2%, -1%, 0);
+  }
+}
+
+@keyframes shelf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.9rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shelf-scroll {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+    transform-origin: top;
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+/* ---------- Catalogue / bookshelf list ---------- */
+
+.shelf-catalogue {
+  padding: clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 6vw, 4.5rem);
+  background:
+    radial-gradient(
+      ellipse 80% 35% at 50% 0%,
+      rgba(31, 58, 46, 0.18),
+      transparent 70%
+    ),
+    var(--gallery-wall);
+}
+
+.shelf-container {
+  width: min(100% - 2.5rem, 36rem);
+  margin: 0 auto;
+}
+
+.shelf-eyebrow {
+  margin: 0 0 0.85rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 78%, transparent);
+}
+
+.shelf-catalogue-head {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.shelf-catalogue-head h2 {
+  margin: 0 0 0.75rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #f3f1eb;
+}
+
+.shelf-catalogue-head p {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--ink-quiet);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.shelf-continue {
+  margin: 0 0 2.25rem;
+  padding: 0;
+}
+
+.shelf-continue:empty {
+  display: none;
+}
+
+.shelf-continue a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.shelf-continue a:hover,
+.shelf-continue a:focus-visible {
+  color: #d8b66a;
+  border-bottom-color: var(--gold);
+}
+
+.book-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-entry {
+  border-top: 1px solid rgba(201, 164, 88, 0.14);
+}
+
+.book-entry:last-child {
+  border-bottom: 1px solid rgba(201, 164, 88, 0.14);
+}
+
+.book-entry-link {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 1.25rem 1.75rem;
+  align-items: baseline;
+  padding: 1.55rem 0.15rem;
+  text-decoration: none;
+  color: inherit;
+  /* Gallery lighting — calm, not button-like */
+  transition:
+    background 240ms ease-out,
+    transform 240ms ease-out;
+}
+
+.book-entry-link:hover,
+.book-entry-link:focus-visible {
+  transform: translateY(-2px);
+  /* Warm gold on dark paper — keep the shelf dark */
+  background: rgba(201, 164, 88, 0.055);
+  outline: none;
+}
+
+.book-entry-num {
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  color: color-mix(in srgb, var(--gold) 80%, transparent);
+  transition:
+    color 240ms ease-out,
+    letter-spacing 240ms ease-out;
+}
+
+.book-entry-link:hover .book-entry-num,
+.book-entry-link:focus-visible .book-entry-num {
+  color: color-mix(in srgb, var(--gold) 92%, white);
+  letter-spacing: 0.26em;
+}
+
+.book-entry-title {
+  margin: 0 0 0.35rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #f3f1eb;
+  transition: color 240ms ease-out;
+}
+
+.book-entry-link:hover .book-entry-title,
+.book-entry-link:focus-visible .book-entry-title {
+  color: #faf7f0;
+}
+
+.book-entry-meta {
+  margin: 0;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-quiet);
+}
+
+.book-entry--soon .book-entry-link,
+.book-entry--soon .book-entry-shell {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 1.25rem 1.75rem;
+  align-items: baseline;
+  padding: 1.35rem 0.15rem;
+  opacity: 0.38;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+
+.book-entry--soon .book-entry-title {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--ink-quiet);
+}
+
+.book-entry--soon .book-entry-num {
+  color: var(--ink-quiet);
+}
+
+/* ---------- Coming soon ---------- */
+
+.shelf-soon {
+  padding: clamp(3rem, 7vw, 5rem) 0 clamp(5rem, 11vw, 8rem);
+  background: color-mix(in srgb, var(--gallery-wall) 88%, #0b0b0c);
+  border-top: 1px solid rgba(201, 164, 88, 0.08);
+}
+
+.shelf-soon .shelf-eyebrow {
+  color: var(--ink-quiet);
+  letter-spacing: 0.22em;
+}
+
+.shelf-soon-head {
+  margin-bottom: 1.75rem;
+}
+
+.shelf-soon-head h2 {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--ink-quiet);
+}
+
+/* ---------- Book exhibition room ---------- */
+
+.book-room {
+  min-height: 100svh;
+  padding-bottom: clamp(4rem, 9vw, 7rem);
+  background:
+    radial-gradient(
+      ellipse 70% 40% at 50% 0%,
+      rgba(31, 58, 46, 0.14),
+      transparent 65%
+    ),
+    var(--gallery-wall);
+}
+
+.book-room-intro {
+  width: min(100% - 2.5rem, 36rem);
+  margin: 0 auto;
+  padding: clamp(5.5rem, 12vw, 7.5rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.book-room-crumb {
+  margin: 0 0 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-quiet);
+}
+
+.book-room-crumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.book-room-crumb a:hover,
+.book-room-crumb a:focus-visible {
+  color: var(--gold);
+  border-bottom-color: color-mix(in srgb, var(--gold) 45%, transparent);
+}
+
+.book-room-eyebrow {
+  margin: 0 0 0.75rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 78%, transparent);
+}
+
+.book-room-intro h1 {
+  margin: 0 0 0.85rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #f3f1eb;
+}
+
+.book-room-lead {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--ink-quiet);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.lesson-exhibit {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: min(100% - 2.5rem, 28rem);
+  display: flex;
+  flex-direction: column;
+  /* ~35% tighter than first pass — collection still readable as a whole */
+  gap: clamp(1.75rem, 3.75vw, 2.6rem);
+}
+
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 0.75rem 1.05rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition:
+    transform 240ms ease-out,
+    box-shadow 240ms ease-out,
+    border-color 240ms ease-out;
+}
+
+.lesson-card:hover,
+.lesson-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(201, 164, 88, 0.16);
+  box-shadow: 0 0 28px rgba(201, 164, 88, 0.14);
+  outline: none;
+}
+
+.lesson-card-art {
+  width: min(100%, 17.5rem);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #0e0c0a;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 240ms ease-out;
+}
+
+.lesson-card:hover .lesson-card-art,
+.lesson-card:focus-visible .lesson-card-art {
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.38),
+    0 0 22px rgba(201, 164, 88, 0.18);
+}
+
+.lesson-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lesson-card-art--empty {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(201, 164, 88, 0.12), transparent 65%),
+    #12100e;
+  border: 1px solid rgba(201, 164, 88, 0.18);
+}
+
+.lesson-card-art--empty span {
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--gold) 70%, transparent);
+}
+
+.lesson-card-label {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: #f3f1eb;
+  text-align: center;
+}
+
+.lesson-card-rule {
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  margin: 0.15rem auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--gold) 55%, transparent),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+.book-room-footer-nav {
+  width: min(100% - 2.5rem, 28rem);
+  margin: clamp(3.5rem, 8vw, 5.5rem) auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
+
+.book-room-footer-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.book-room-footer-nav a:hover,
+.book-room-footer-nav a:focus-visible {
+  color: var(--gold);
+  border-bottom-color: color-mix(in srgb, var(--gold) 40%, transparent);
+}
+
+.book-room-footer-nav a[aria-disabled="true"] {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ---------- Footer ---------- */
+
+.books-footer {
+  border-top: 1px solid rgba(201, 164, 88, 0.1);
+  padding: 2.25rem 0 2.5rem;
+  background: #0e0c0a;
+}
+
+.books-footer-inner {
+  width: min(100% - 2.5rem, 64rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.books-footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-quiet);
+}
+
+.books-footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.books-footer a:hover {
+  color: var(--gold);
+}
+
+/* ---------- Reveal ---------- */
+
+.bookshelf-page .reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.9s var(--ease-museum),
+    transform 0.9s var(--ease-museum);
+}
+
+.bookshelf-page .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shelf-hero-media img,
+  .shelf-hero-brand,
+  .shelf-hero-inner h1,
+  .shelf-hero-lead,
+  .shelf-hero-scroll-line,
+  .lesson-card,
+  .book-entry-link,
+  .book-entry-num,
+  .book-entry-title {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .shelf-hero-media img {
+    transform: none;
+  }
+
+  .bookshelf-page .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .lesson-card:hover,
+  .lesson-card:focus-visible,
+  .book-entry-link:hover,
+  .book-entry-link:focus-visible {
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .book-entry-link,
+  .book-entry--soon .book-entry-shell {
+    grid-template-columns: 3.4rem minmax(0, 1fr);
+    gap: 0.85rem 1rem;
+  }
+
+  .books-nav {
+    gap: 0.35rem 0.85rem;
+  }
+}

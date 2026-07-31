@@ -1,7 +1,20 @@
 import csv
+import json
+from pathlib import Path
 
-TEMPLATE = open("lesson_template.html", encoding="utf-8").read()
-KANJI_TEMPLATE = open("kanji_block.html", encoding="utf-8").read()
+BASE = Path(__file__).resolve().parent.parent
+TEMPLATE = open(BASE / "lesson_template.html", encoding="utf-8").read()
+KANJI_TEMPLATE = open(BASE / "kanji_block.html", encoding="utf-8").read()
+
+GALLERY_URLS_PATH = BASE / "data/lesson_gallery_urls.json"
+GALLERY_URLS: dict[str, str] = {}
+if GALLERY_URLS_PATH.exists():
+    raw = json.loads(GALLERY_URLS_PATH.read_text(encoding="utf-8"))
+    GALLERY_URLS = {
+        str(k): v.strip()
+        for k, v in raw.items()
+        if not str(k).startswith("_") and isinstance(v, str) and v.strip()
+    }
 
 
 # ===== HELPERS =====
@@ -77,6 +90,30 @@ def build_nav_links(lesson):
     return prev_link, next_link
 
 
+def build_lesson_art(lesson_number):
+    pad = str(lesson_number).zfill(2)
+    img = (
+        f'<img src="../../../../assets/covers/lesson_{pad}.png"\n'
+        f'       alt="Lesson {lesson_number} cover"\n'
+        f'       width="380" height="250"\n'
+        f'       fetchpriority="high">'
+    )
+    url = GALLERY_URLS.get(str(lesson_number))
+    if not url:
+        return img
+    return (
+        f'<a class="lesson-art-link"\n'
+        f'     href="{url}"\n'
+        f'     target="_blank"\n'
+        f'     rel="noopener noreferrer"\n'
+        f'     aria-label="Open Ambient Study Gallery for Lesson {lesson_number}">\n'
+        f'  {img}\n'
+        f'  <span class="lesson-art-gallery-label" aria-hidden="true">'
+        f'▶ Ambient Study Gallery</span>\n'
+        f'</a>'
+    )
+
+
 # ===== CORE =====
 
 def generate_lesson(lesson_number, kanji_list):
@@ -91,6 +128,7 @@ def generate_lesson(lesson_number, kanji_list):
     html = html.replace("{{NEXT_LINK}}", next_link)
     html = html.replace("{{ANCHOR_LIST}}", build_anchor_list(kanji_list))
     html = html.replace("{{KANJI_BLOCKS}}", build_kanji_blocks(kanji_list))
+    html = html.replace("{{LESSON_ART}}", build_lesson_art(lesson_number))
 
     with open(f"lesson_{lesson_number:02}.html", "w", encoding="utf-8") as f:
         f.write(html)

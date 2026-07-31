@@ -1,0 +1,802 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "heart_2",
+  "title": "Heart 2 — Ambient Gallery (no kanji)",
+  "notes": "Heart 2: textless Heart lineup, no inter-scene black, ambient_kanji_exhibition (+level). Flute intro; closing crest with exhibition_flute_outro_+3 during crest. Replaced: afflicted, busy, disconcerted, hate.",
+  "soundtrack": {
+    "main": "audio/ambient_kanji_exhibition.mp3"
+  },
+  "bookends": {
+    "opening": {
+      "image": "bookends/lesson_32.png",
+      "audio": "audio/exhibition_flute_intro.mp3",
+      "holdUntilAudioEnds": true
+    },
+    "closing": {
+      "image": "bookends/lesson_32.png",
+      "bookendSize": "small",
+      "audio": "audio/exhibition_flute_outro_+3.mp3",
+      "holdUntilAudioEnds": true,
+      "silentAfterSoundtrack": true,
+      "holdUntilSoundtrackEnds": false
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2500,
+    "exhibitionBlackBeforeMs": 0,
+    "artworkAloneMs": 133742,
+    "kanjiRevealMs": 0,
+    "imageVerseKanjiHoldMs": 0,
+    "imageVerseKanjiFadeMs": 0,
+    "titleFadeMs": 0,
+    "verseJpRevealMs": 0,
+    "verseJpHoldMs": 0,
+    "verseJpFadeMs": 0,
+    "verseEnRevealMs": 0,
+    "verseEnHoldMs": 0,
+    "verseEnFadeMs": 0,
+    "exhibitTransitionMs": 2500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 136242,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 6000,
+    "openingHoldMs": 4000,
+    "openingExhaleMs": 6000,
+    "openingFluteMs": 16000,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 0,
+    "closingRevealMs": 5000,
+    "closingHoldMs": 7000,
+    "closingExhaleMs": 12000,
+    "closingFadeToBlackMs": 12000,
+    "closingBlackAfterMs": 2000,
+    "closingSilenceHoldMs": 0,
+    "blackHoldMs": 0,
+    "seamlessExhibitHandoff": true
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "heartAmbient",
+    "theme": "heart",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "bookendStyle": "galleryCrest",
+    "cameraMotionScale": 1.45
+  },
+  "meta": {
+    "theme": "heart",
+    "edition": "Heart 2 draft",
+    "sourceCollection": "heart_v5",
+    "sceneCount": 44,
+    "soundtrackDurationMs": 5884656,
+    "avgHoldMs": 133742,
+    "holdMinMs": 133742,
+    "holdMaxMs": 133742,
+    "transitionMs": 2500,
+    "status": "recording",
+    "timingNote": "With 44 images, each hold is ~134s to fill the 98-min soundtrack. To keep ~45–60s holds, add ~74–87 more images.",
+    "replacedStudies": [
+      "afflicted",
+      "busy",
+      "disconcerted",
+      "hate"
+    ],
+    "audio": {
+      "main": "audio/ambient_kanji_exhibition.mp3",
+      "intro": "audio/exhibition_flute_intro.mp3",
+      "outro": "audio/exhibition_flute_outro_+3.mp3"
+    }
+  },
+  "scenes": [
+    {
+      "id": "heart2_love",
+      "kanji": "",
+      "keyword": "love",
+      "image": "studies/love.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L40_love",
+        "lesson": 40,
+        "heartPart": "心",
+        "slug": "love",
+        "exhibitIndex": 1
+      },
+      "imageRev": 1784977568
+    },
+    {
+      "id": "heart2_forget",
+      "kanji": "",
+      "keyword": "forget",
+      "image": "studies/forget.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_forget",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "forget",
+        "exhibitIndex": 2
+      },
+      "imageRev": 1782137665
+    },
+    {
+      "id": "heart2_selfish",
+      "kanji": "",
+      "keyword": "selfish",
+      "image": "studies/selfish.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_selfish",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "selfish",
+        "exhibitIndex": 3
+      },
+      "imageRev": 1782137690
+    },
+    {
+      "id": "heart2_endure_silently",
+      "kanji": "",
+      "keyword": "endure silently",
+      "image": "studies/endure_silently.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_endure_silently",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "endure_silently",
+        "exhibitIndex": 4
+      },
+      "imageRev": 1782137762
+    },
+    {
+      "id": "heart2_mourning",
+      "kanji": "",
+      "keyword": "mourning",
+      "image": "studies/mourning.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_mourning",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "mourning",
+        "exhibitIndex": 5
+      },
+      "imageRev": 1782137829
+    },
+    {
+      "id": "heart2_intention",
+      "kanji": "",
+      "keyword": "intention",
+      "image": "studies/intention.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_intention",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "intention",
+        "exhibitIndex": 6
+      },
+      "imageRev": 1782137860
+    },
+    {
+      "id": "heart2_core",
+      "kanji": "",
+      "keyword": "core",
+      "image": "studies/core.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_core",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "core",
+        "exhibitIndex": 7
+      },
+      "imageRev": 1782137907
+    },
+    {
+      "id": "heart2_loyalty",
+      "kanji": "",
+      "keyword": "loyalty",
+      "image": "studies/loyalty.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_loyalty",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "loyalty",
+        "exhibitIndex": 8
+      },
+      "imageRev": 1782137928
+    },
+    {
+      "id": "heart2_afflicted",
+      "kanji": "",
+      "keyword": "afflicted",
+      "image": "studies/afflicted.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_afflicted",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "afflicted",
+        "exhibitIndex": 9
+      },
+      "imageRev": 1785248366
+    },
+    {
+      "id": "heart2_think",
+      "kanji": "",
+      "keyword": "think",
+      "image": "studies/think.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_think",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "think",
+        "exhibitIndex": 10
+      },
+      "imageRev": 1782138052
+    },
+    {
+      "id": "heart2_grace",
+      "kanji": "",
+      "keyword": "grace",
+      "image": "studies/grace.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_grace",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "grace",
+        "exhibitIndex": 11
+      },
+      "imageRev": 1782138073
+    },
+    {
+      "id": "heart2_respond",
+      "kanji": "",
+      "keyword": "respond",
+      "image": "studies/respond.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_respond",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "respond",
+        "exhibitIndex": 12
+      },
+      "imageRev": 1782138096
+    },
+    {
+      "id": "heart2_idea",
+      "kanji": "",
+      "keyword": "idea",
+      "image": "studies/idea.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_idea",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "idea",
+        "exhibitIndex": 13
+      },
+      "imageRev": 1782138116
+    },
+    {
+      "id": "heart2_concept",
+      "kanji": "",
+      "keyword": "concept",
+      "image": "studies/concept.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_concept",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "concept",
+        "exhibitIndex": 14
+      },
+      "imageRev": 1782138157
+    },
+    {
+      "id": "heart2_breath",
+      "kanji": "",
+      "keyword": "breath",
+      "image": "studies/breath.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_breath",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "breath",
+        "exhibitIndex": 15
+      },
+      "imageRev": 1782138179
+    },
+    {
+      "id": "heart2_recess",
+      "kanji": "",
+      "keyword": "recess",
+      "image": "studies/recess.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_recess",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "recess",
+        "exhibitIndex": 16
+      },
+      "imageRev": 1782138234
+    },
+    {
+      "id": "heart2_favor",
+      "kanji": "",
+      "keyword": "favor",
+      "image": "studies/favor.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L33_favor",
+        "lesson": 33,
+        "heartPart": "心",
+        "slug": "favor",
+        "exhibitIndex": 17
+      },
+      "imageRev": 1782138253
+    },
+    {
+      "id": "heart2_fear",
+      "kanji": "",
+      "keyword": "fear",
+      "image": "studies/fear.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_fear",
+        "lesson": 34,
+        "heartPart": "心",
+        "slug": "fear",
+        "exhibitIndex": 18
+      },
+      "imageRev": 1782138286
+    },
+    {
+      "id": "heart2_beguile",
+      "kanji": "",
+      "keyword": "beguile",
+      "image": "studies/beguile.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_beguile",
+        "lesson": 34,
+        "heartPart": "心",
+        "slug": "beguile",
+        "exhibitIndex": 19
+      },
+      "imageRev": 1782138305
+    },
+    {
+      "id": "heart2_feeling",
+      "kanji": "",
+      "keyword": "feeling",
+      "image": "studies/feeling.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_feeling",
+        "lesson": 34,
+        "heartPart": "心",
+        "slug": "feeling",
+        "exhibitIndex": 20
+      },
+      "imageRev": 1782138326
+    },
+    {
+      "id": "heart2_melancholy",
+      "kanji": "",
+      "keyword": "melancholy",
+      "image": "studies/melancholy.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_melancholy",
+        "lesson": 34,
+        "heartPart": "心",
+        "slug": "melancholy",
+        "exhibitIndex": 21
+      },
+      "imageRev": 1782138351
+    },
+    {
+      "id": "heart2_busy",
+      "kanji": "",
+      "keyword": "busy",
+      "image": "studies/busy.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_busy",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "busy",
+        "exhibitIndex": 22
+      },
+      "imageRev": 1785247644
+    },
+    {
+      "id": "heart2_ecstasy",
+      "kanji": "",
+      "keyword": "ecstasy",
+      "image": "studies/ecstasy.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_ecstasy",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "ecstasy",
+        "exhibitIndex": 23
+      },
+      "imageRev": 1782138430
+    },
+    {
+      "id": "heart2_constancy",
+      "kanji": "",
+      "keyword": "constancy",
+      "image": "studies/constancy.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_constancy",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "constancy",
+        "exhibitIndex": 24
+      },
+      "imageRev": 1782138462
+    },
+    {
+      "id": "heart2_lament",
+      "kanji": "",
+      "keyword": "lament",
+      "image": "studies/lament.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_lament",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "lament",
+        "exhibitIndex": 25
+      },
+      "imageRev": 1782138482
+    },
+    {
+      "id": "heart2_enlightenment",
+      "kanji": "",
+      "keyword": "enlightenment",
+      "image": "studies/enlightenment.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_enlightenment",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "enlightenment",
+        "exhibitIndex": 26
+      },
+      "imageRev": 1782138499
+    },
+    {
+      "id": "heart2_dreadful",
+      "kanji": "",
+      "keyword": "dreadful",
+      "image": "studies/dreadful.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_dreadful",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "dreadful",
+        "exhibitIndex": 27
+      },
+      "imageRev": 1782138523
+    },
+    {
+      "id": "heart2_disconcerted",
+      "kanji": "",
+      "keyword": "disconcerted",
+      "image": "studies/disconcerted.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_disconcerted",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "disconcerted",
+        "exhibitIndex": 28
+      },
+      "imageRev": 1785247839
+    },
+    {
+      "id": "heart2_repent",
+      "kanji": "",
+      "keyword": "repent",
+      "image": "studies/repent.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_repent",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "repent",
+        "exhibitIndex": 29
+      },
+      "imageRev": 1782138558
+    },
+    {
+      "id": "heart2_hate",
+      "kanji": "",
+      "keyword": "hate",
+      "image": "studies/hate.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_hate",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "hate",
+        "exhibitIndex": 30
+      },
+      "imageRev": 1785248013
+    },
+    {
+      "id": "heart2_accustomed",
+      "kanji": "",
+      "keyword": "accustomed",
+      "image": "studies/accustomed.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_accustomed",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "accustomed",
+        "exhibitIndex": 31
+      },
+      "imageRev": 1782138601
+    },
+    {
+      "id": "heart2_pleasure",
+      "kanji": "",
+      "keyword": "pleasure",
+      "image": "studies/pleasure.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_pleasure",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "pleasure",
+        "exhibitIndex": 32
+      },
+      "imageRev": 1782138637
+    },
+    {
+      "id": "heart2_lazy",
+      "kanji": "",
+      "keyword": "lazy",
+      "image": "studies/lazy.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_lazy",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "lazy",
+        "exhibitIndex": 33
+      },
+      "imageRev": 1782138658
+    },
+    {
+      "id": "heart2_humility",
+      "kanji": "",
+      "keyword": "humility",
+      "image": "studies/humility.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_humility",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "humility",
+        "exhibitIndex": 34
+      },
+      "imageRev": 1782138679
+    },
+    {
+      "id": "heart2_remorse",
+      "kanji": "",
+      "keyword": "remorse",
+      "image": "studies/remorse.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_remorse",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "remorse",
+        "exhibitIndex": 35
+      },
+      "imageRev": 1782138699
+    },
+    {
+      "id": "heart2_recollection",
+      "kanji": "",
+      "keyword": "recollection",
+      "image": "studies/recollection.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L34_recollection",
+        "lesson": 34,
+        "heartPart": "忄",
+        "slug": "recollection",
+        "exhibitIndex": 36
+      },
+      "imageRev": 1782138718
+    },
+    {
+      "id": "heart2_disquieting",
+      "kanji": "",
+      "keyword": "disquieting",
+      "image": "studies/disquieting.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L35_disquieting",
+        "lesson": 35,
+        "heartPart": "忄",
+        "slug": "disquieting",
+        "exhibitIndex": 37
+      },
+      "imageRev": 1782138750
+    },
+    {
+      "id": "heart2_desire",
+      "kanji": "",
+      "keyword": "desire",
+      "image": "studies/desire.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L35_desire",
+        "lesson": 35,
+        "heartPart": "忄",
+        "slug": "desire",
+        "exhibitIndex": 38
+      },
+      "imageRev": 1782139831
+    },
+    {
+      "id": "heart2_long_for",
+      "kanji": "",
+      "keyword": "long for",
+      "image": "studies/long_for.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L35_long_for",
+        "lesson": 35,
+        "heartPart": "忄",
+        "slug": "long_for",
+        "exhibitIndex": 39
+      },
+      "imageRev": 1782138776
+    },
+    {
+      "id": "heart2_pining",
+      "kanji": "",
+      "keyword": "pining",
+      "image": "studies/pining.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L35_pining",
+        "lesson": 35,
+        "heartPart": "㣺",
+        "slug": "pining",
+        "exhibitIndex": 40
+      },
+      "imageRev": 1782138798
+    },
+    {
+      "id": "heart2_annexed",
+      "kanji": "",
+      "keyword": "annexed",
+      "image": "studies/annexed.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L35_annexed",
+        "lesson": 35,
+        "heartPart": "㣺",
+        "slug": "annexed",
+        "exhibitIndex": 41
+      },
+      "imageRev": 1782138823
+    },
+    {
+      "id": "heart2_invariably",
+      "kanji": "",
+      "keyword": "invariably",
+      "image": "studies/invariably.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L35_invariably",
+        "lesson": 35,
+        "heartPart": "必",
+        "slug": "invariably",
+        "exhibitIndex": 42
+      },
+      "imageRev": 1782138843
+    },
+    {
+      "id": "heart2_honey",
+      "kanji": "",
+      "keyword": "honey",
+      "image": "studies/honey.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L42_honey",
+        "lesson": 42,
+        "heartPart": "蜜",
+        "slug": "honey",
+        "exhibitIndex": 43
+      },
+      "imageRev": 1781493023
+    },
+    {
+      "id": "heart2_heart",
+      "kanji": "",
+      "keyword": "heart",
+      "image": "studies/heart.png",
+      "artworkAloneMs": 133742,
+      "meta": {
+        "source": "heart_v5",
+        "sourceId": "L32_heart",
+        "lesson": 32,
+        "heartPart": "心",
+        "slug": "heart",
+        "exhibitIndex": 44
+      },
+      "imageRev": 1782137627
+    }
+  ]
+}

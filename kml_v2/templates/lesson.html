@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% set meta_description = lesson.summary or (lesson.title ~ ' — Kanji・Music・Landscape') %}
+{% set breadcrumbs = [
+  {"label": "Home", "href": site_root ~ "/index.html"},
+  {"label": "Bookshelf", "href": site_root ~ "/books/index.html"},
+  {"label": lesson.book_title, "href": lesson.book_href},
+  {"label": lesson.title, "current": true}
+] %}
+
+{% block body_class %}lesson-page{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="container container--narrow">
+    {% include "includes/breadcrumbs.html" %}
+
+    <div class="lesson-shell">
+      {% set hero_src = (site_root ~ '/' ~ lesson.assets.hero) if lesson.assets and lesson.assets.hero else none %}
+      <div class="lesson-art{% if lesson.gallery_url %} lesson-art--gallery{% endif %}">
+        {% if lesson.gallery_url %}
+        <a class="lesson-art-link"
+           href="{{ lesson.gallery_url }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open Ambient Study Gallery for Lesson {{ lesson.number }}">
+          {% if hero_src %}
+          <img src="{{ hero_src }}"
+               alt="{{ lesson.title }} cover"
+               width="380"
+               height="380"
+               fetchpriority="high">
+          {% else %}
+          <div class="lesson-art-frame">Cover via assets.json</div>
+          {% endif %}
+          <span class="lesson-art-gallery-label" aria-hidden="true">▶ Ambient Study Gallery</span>
+        </a>
+        {% elif hero_src %}
+        <img src="{{ hero_src }}"
+             alt="{{ lesson.title }} cover"
+             width="380"
+             height="380"
+             fetchpriority="high">
+        {% else %}
+        <div class="lesson-art-frame" aria-hidden="true">Cover via assets.json</div>
+        {% endif %}
+      </div>
+
+      <article class="card card--frame">
+        <header class="lesson-header">
+          <span class="kanji-display" lang="ja">{{ lesson.opening_character }}</span>
+          <span class="lesson-keyword">{{ lesson.opening_keyword }}</span>
+        </header>
+        <h1 class="u-center u-mb-1" style="color:inherit;font-size:1.35rem">{{ lesson.title }}</h1>
+        {% if lesson.subtitle %}
+        <p class="u-center text-quiet">{{ lesson.subtitle }}</p>
+        {% endif %}
+        <div class="lesson-body">
+          {% if lesson.summary %}
+          <p>{{ lesson.summary }}</p>
+          {% endif %}
+          <div class="lesson-placeholder-note">{{ lesson.status_line }}</div>
+        </div>
+      </article>
+
+      {% include "includes/lesson_sections.html" %}
+
+      <nav class="lesson-nav" aria-label="Lesson">
+        {% if lesson.navigation.prev_href %}
+        <a href="{{ lesson.navigation.prev_href }}">← {{ lesson.navigation.prev_label }}</a>
+        {% else %}
+        <span aria-disabled="true">← {{ lesson.navigation.prev_label }}</span>
+        {% endif %}
+        {% if lesson.navigation.next_href %}
+        <a href="{{ lesson.navigation.next_href }}">{{ lesson.navigation.next_label }} →</a>
+        {% else %}
+        <span aria-disabled="true">{{ lesson.navigation.next_label }} →</span>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+</div>
+{% endblock %}

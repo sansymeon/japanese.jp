@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_14_components",
+  "title": "Lesson 14 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 14,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L14_cow",
+      "kanji": "牛",
+      "keyword": "cow",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_special",
+      "kanji": "特",
+      "keyword": "special",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        },
+        {
+          "glyph": "寺",
+          "label": "temple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_revelation",
+      "kanji": "告",
+      "keyword": "revelation",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_previous",
+      "kanji": "先",
+      "keyword": "previous",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_wash",
+      "kanji": "洗",
+      "keyword": "wash",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "先",
+          "label": "previous"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_jammed_in",
+      "kanji": "介",
+      "keyword": "jammed in",
+      "components": [
+        {
+          "glyph": "介",
+          "label": "jammed in"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_world",
+      "kanji": "界",
+      "keyword": "world",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "介",
+          "label": "jammed in"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_tea",
+      "kanji": "茶",
+      "keyword": "tea",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_stature",
+      "kanji": "脊",
+      "keyword": "stature",
+      "components": [
+        {
+          "glyph": "ニ",
+          "label": "two"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_fit",
+      "kanji": "合",
+      "keyword": "fit",
+      "components": [
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_pagoda",
+      "kanji": "塔",
+      "keyword": "pagoda",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "合",
+          "label": "fit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_king",
+      "kanji": "王",
+      "keyword": "king",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_ball",
+      "kanji": "玉",
+      "keyword": "ball",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "丶",
+          "label": "drop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_treasure",
+      "kanji": "宝",
+      "keyword": "treasure",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "玉",
+          "label": "ball"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_pearl",
+      "kanji": "珠",
+      "keyword": "pearl",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "朱",
+          "label": "vermilion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_present",
+      "kanji": "現",
+      "keyword": "present",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "見",
+          "label": "see"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_toy_with",
+      "kanji": "玩",
+      "keyword": "toy with",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "元",
+          "label": "beginning"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_lunatic",
+      "kanji": "狂",
+      "keyword": "lunatic",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_flourishing",
+      "kanji": "旺",
+      "keyword": "flourishing",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L14_emperor",
+      "kanji": "皇",
+      "keyword": "emperor",
+      "components": [
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_04_components",
+  "title": "Lesson 4 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 4,
+    "sceneCount": 25,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L04_post_a_bill",
+      "kanji": "貼",
+      "keyword": "post a bill",
+      "components": [
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "占",
+          "label": "fortune telling"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_see",
+      "kanji": "見",
+      "keyword": "see",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_newborn",
+      "kanji": "児",
+      "keyword": "newborn",
+      "components": [
+        {
+          "glyph": "旧",
+          "label": "olden times"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_beginning",
+      "kanji": "元",
+      "keyword": "beginning",
+      "components": [
+        {
+          "glyph": "二",
+          "label": "two"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_page",
+      "kanji": "頁",
+      "keyword": "page",
+      "components": [
+        {
+          "glyph": "百",
+          "label": "hundred"
+        },
+        {
+          "glyph": "ㇵ",
+          "label": "eight"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_stubborn",
+      "kanji": "頑",
+      "keyword": "stubborn",
+      "components": [
+        {
+          "glyph": "元",
+          "label": "beginning"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L04_intro_wind",
+      "glyph": "几",
+      "label": "wind"
+    },
+    {
+      "type": "kanji",
+      "id": "L04_mediocre",
+      "kanji": "凡",
+      "keyword": "mediocre",
+      "components": [
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "丶",
+          "label": "drop"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L04_intro_bound_up",
+      "glyph": "𠂊",
+      "label": "bound up"
+    },
+    {
+      "type": "kanji",
+      "id": "L04_defeat",
+      "kanji": "負",
+      "keyword": "defeat",
+      "components": [
+        {
+          "glyph": "𠂊",
+          "label": "bound up"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_ten_thousand",
+      "kanji": "万",
+      "keyword": "ten thousand",
+      "components": [
+        {
+          "glyph": "万",
+          "label": "ten thousand"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L04_intro_wrap",
+      "glyph": "勹",
+      "label": "wrap"
+    },
+    {
+      "type": "kanji",
+      "id": "L04_phrase",
+      "kanji": "句",
+      "keyword": "phrase",
+      "components": [
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_texture",
+      "kanji": "肌",
+      "keyword": "texture",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_ten_days",
+      "kanji": "旬",
+      "keyword": "ten days",
+      "components": [
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_ladle",
+      "kanji": "勺",
+      "keyword": "ladle",
+      "components": [
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "丶",
+          "label": "drop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_bulls_eye",
+      "kanji": "的",
+      "keyword": "bulls eye",
+      "components": [
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "勺",
+          "label": "ladle"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L04_intro_horns",
+      "glyph": "丷",
+      "label": "horns"
+    },
+    {
+      "type": "kanji",
+      "id": "L04_neck",
+      "kanji": "首",
+      "keyword": "neck",
+      "components": [
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "自",
+          "label": "oneself"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_hook",
+      "kanji": "乙",
+      "keyword": "hook",
+      "components": [
+        {
+          "glyph": "乙",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_riot",
+      "kanji": "乱",
+      "keyword": "riot",
+      "components": [
+        {
+          "glyph": "舌",
+          "label": "tongue"
+        },
+        {
+          "glyph": "乚",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L04_intro_l",
+      "glyph": "𠃊",
+      "label": "L"
+    },
+    {
+      "type": "kanji",
+      "id": "L04_straightaway",
+      "kanji": "直",
+      "keyword": "straightaway",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "𠃊",
+          "label": "L"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_tool",
+      "kanji": "具",
+      "keyword": "tool",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "ㇵ",
+          "label": "eight"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L04_true",
+      "kanji": "真",
+      "keyword": "true",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "具",
+          "label": "tool"
+        }
+      ]
+    }
+  ]
+}

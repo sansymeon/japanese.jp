@@ -1,0 +1,417 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_10_components",
+  "title": "Lesson 10 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 10,
+    "sceneCount": 23,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L10_ashes",
+      "kanji": "灰",
+      "keyword": "ashes",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "火",
+          "label": "fire"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L10_intro_cooking_fire",
+      "glyph": "灬",
+      "label": "cooking fire"
+    },
+    {
+      "type": "kanji",
+      "id": "L10_point",
+      "kanji": "点",
+      "keyword": "point",
+      "components": [
+        {
+          "glyph": "占",
+          "label": "fortune telling"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_illuminate",
+      "kanji": "照",
+      "keyword": "illuminate",
+      "components": [
+        {
+          "glyph": "昭",
+          "label": "shining"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_fish",
+      "kanji": "魚",
+      "keyword": "fish",
+      "components": [
+        {
+          "glyph": "𠂊",
+          "label": "bound up"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_fishing",
+      "kanji": "漁",
+      "keyword": "fishing",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "魚",
+          "label": "fish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_home_village",
+      "kanji": "里",
+      "keyword": "home village",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_black",
+      "kanji": "黒",
+      "keyword": "black",
+      "components": [
+        {
+          "glyph": "里",
+          "label": "home village"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_black_ink",
+      "kanji": "墨",
+      "keyword": "black ink",
+      "components": [
+        {
+          "glyph": "黒",
+          "label": "black"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_carp",
+      "kanji": "鯉",
+      "keyword": "carp",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_quantity",
+      "kanji": "量",
+      "keyword": "quantity",
+      "components": [
+        {
+          "glyph": "旦",
+          "label": "dawn"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_thousandth",
+      "kanji": "厘",
+      "keyword": "thousandth",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_bury",
+      "kanji": "埋",
+      "keyword": "bury",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L10_intro_hood",
+      "glyph": "冂",
+      "label": "hood"
+    },
+    {
+      "type": "kanji",
+      "id": "L10_same",
+      "kanji": "同",
+      "keyword": "same",
+      "components": [
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_den",
+      "kanji": "洞",
+      "keyword": "den",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "同",
+          "label": "same"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_trunk",
+      "kanji": "胴",
+      "keyword": "trunk",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "同",
+          "label": "same"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_yonder",
+      "kanji": "向",
+      "keyword": "yonder",
+      "components": [
+        {
+          "glyph": "´",
+          "label": "drop"
+        },
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_esteem",
+      "kanji": "尚",
+      "keyword": "esteem",
+      "components": [
+        {
+          "glyph": "尚",
+          "label": "esteem"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L10_intro_house",
+      "glyph": "宀",
+      "label": "house"
+    },
+    {
+      "type": "kanji",
+      "id": "L10_letter",
+      "kanji": "字",
+      "keyword": "letter",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "子",
+          "label": "child"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_guard",
+      "kanji": "守",
+      "keyword": "guard",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L10_complete",
+      "kanji": "完",
+      "keyword": "complete",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "元",
+          "label": "beginning"
+        }
+      ]
+    }
+  ]
+}

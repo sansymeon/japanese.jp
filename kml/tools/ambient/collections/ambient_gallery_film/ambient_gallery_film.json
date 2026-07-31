@@ -2,8 +2,8 @@
   "presentation": "exhibition",
   "assetsBase": "../../assets",
   "id": "ambient_gallery_film",
-  "title": "Ambient Gallery Film — KML Japan",
-  "notes": "Ambient Move V2: scenic-curated textless journey through Heart + Lessons 1–10 artwork. Stronger Ken Burns, 35–45s holds (exceptional up to 60s). Silent gold crest after soundtrack (reveal 5s · hold 7s · fade 12s). 184 images · avg hold 42.3s · soundtrack 137.3 min.",
+  "title": "Ambient Movie — Lessons 1–20 (Ambient Revised)",
+  "notes": "Ambient Revised: playlist-curated textless journey through timeless Japan (Lessons 1–20 gallery art + signature landmarks). Category-interleaved Ken Burns, 35–45s holds (exceptional up to 60s), tranquil closing arc, silent gold crest after soundtrack (reveal 5s · hold 7s · fade 12s). 184 images · avg hold 42.3s · soundtrack 137.3 min.",
   "soundtrack": {
     "main": "audio/137_minute_ambient.mp3"
   },
@@ -54,724 +54,252 @@
     "typography": "mobile-refine",
     "bookendStyle": "galleryCrest",
     "cameraMotionScale": 2.5,
-    "ambientMove": "v2"
+    "ambientMove": "revised"
   },
   "meta": {
     "family": "ambientGalleryFilm",
-    "ambientMove": "v2",
+    "ambientMove": "revised",
+    "edition": "Lessons 1–20 (Ambient Revised)",
     "sceneCount": 184,
     "soundtrackDurationMs": 8236956,
-    "sources": [
-      "heart_v5",
-      "lesson_01_gallery…lesson_10_gallery"
-    ],
-    "scenicExcludePath": "collections/ambient_gallery_film/scenic_exclude.json",
-    "scenicExcludedCount": 60,
-    "seed": 20260725,
+    "playlist": "collections/ambient_gallery_film/ambient_movie_revised.txt",
+    "seed": 20260727,
     "avgHoldMs": 42279,
-    "holdMinMs": 35802,
-    "holdMaxMs": 58920,
-    "cameraMotionScale": 2.5
+    "holdMinMs": 35000,
+    "holdMaxMs": 57655,
+    "cameraMotionScale": 2.5,
+    "maxSameCategoryRun": 2,
+    "maxSameCategory": "streets",
+    "categoryCounts": {
+      "autumn": 1,
+      "blossoms": 10,
+      "castles": 1,
+      "evening": 8,
+      "forests": 14,
+      "mountains": 16,
+      "people": 19,
+      "still_life": 55,
+      "streets": 15,
+      "temples": 13,
+      "villages": 8,
+      "water": 24
+    },
+    "endingSlugs": [
+      "early_evening",
+      "lake",
+      "temple",
+      "horizon",
+      "evening",
+      "water",
+      "pagoda",
+      "scenery",
+      "eventide",
+      "moon"
+    ]
   },
   "scenes": [
     {
-      "id": "L05_left",
-      "kanji": "左",
-      "keyword": "left",
-      "image": "studies/left.png",
+      "id": "ambient_castle_2",
+      "kanji": "",
+      "keyword": "castle 2",
+      "image": "studies/castle_2.png",
       "galleryCamera": {
         "motion": "drift-x"
       },
-      "artworkAloneMs": 40705,
+      "artworkAloneMs": 46855,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "castles",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785156926
+    },
+    {
+      "id": "ambient_seduce",
+      "kanji": "召",
+      "keyword": "seduce",
+      "image": "studies/seduce.png",
+      "galleryCamera": {
+        "motion": "drift-y",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 40448,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_05",
+        "category": "people",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782117203
+      "imageRev": 1781765112
     },
     {
-      "id": "L09_hedge",
-      "kanji": "垣",
-      "keyword": "hedge",
-      "image": "studies/hedge.png",
+      "id": "ambient_apricot",
+      "kanji": "杏",
+      "keyword": "apricot",
+      "image": "studies/apricot.png",
       "galleryCamera": {
         "motion": "push-in"
       },
-      "artworkAloneMs": 39278,
+      "artworkAloneMs": 48014,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "lesson_09",
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782017255
+      "imageRev": 1784984573
     },
     {
-      "id": "L10_black",
-      "kanji": "黒",
-      "keyword": "black",
-      "image": "studies/black.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 54765,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1780383556
-    },
-    {
-      "id": "L08_general",
-      "kanji": "汎",
-      "keyword": "general",
-      "image": "studies/general.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 53461,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781992671
-    },
-    {
-      "id": "L04_tool",
+      "id": "ambient_tool",
       "kanji": "具",
       "keyword": "tool",
       "image": "studies/tool.png",
       "galleryCamera": {
         "motion": "drift-diagonal"
       },
-      "artworkAloneMs": 41413,
+      "artworkAloneMs": 40192,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
       "imageRev": 1782116833
     },
     {
-      "id": "L07_thick",
-      "kanji": "厚",
-      "keyword": "thick",
-      "image": "studies/thick.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781916452
-    },
-    {
-      "id": "L01_I",
-      "kanji": "吾",
-      "keyword": "I",
-      "image": "studies/I.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781526680
-    },
-    {
-      "id": "L03_elbow",
-      "kanji": "肘",
-      "keyword": "elbow",
-      "image": "studies/elbow.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "focus": "50% 52%",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 43348,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 52%",
-      "imageRev": 1782104746
-    },
-    {
-      "id": "L34_feeling",
-      "kanji": "感",
-      "keyword": "feeling",
-      "image": "studies/feeling.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 51728,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138326
-    },
-    {
-      "id": "L02_generation",
-      "kanji": "世",
-      "keyword": "generation",
-      "image": "studies/generation.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 39528,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782107836
-    },
-    {
-      "id": "L06_small",
-      "kanji": "小",
-      "keyword": "small",
-      "image": "studies/small.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763784
-    },
-    {
-      "id": "L05_possible",
-      "kanji": "可",
-      "keyword": "possible",
-      "image": "studies/possible.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 37715,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781689119
-    },
-    {
-      "id": "L09_horizon",
-      "kanji": "涯",
-      "keyword": "horizon",
-      "image": "studies/horizon.png",
+      "id": "ambient_plane",
+      "kanji": "削",
+      "keyword": "plane",
+      "image": "studies/plane.png",
       "galleryCamera": {
         "motion": "pull-out"
       },
-      "artworkAloneMs": 42570,
+      "artworkAloneMs": 47927,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "lesson_09",
+        "source": "lesson_07",
+        "category": "mountains",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782017668
+      "imageRev": 1781916191
     },
     {
-      "id": "L10_illuminate",
-      "kanji": "照",
-      "keyword": "illuminate",
-      "image": "studies/illuminate.png",
+      "id": "ambient_younger_sister",
+      "kanji": "妹",
+      "keyword": "younger sister",
+      "image": "studies/younger_sister.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 37447,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785023315
+    },
+    {
+      "id": "ambient_fishing",
+      "kanji": "漁",
+      "keyword": "fishing",
+      "image": "studies/fishing.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 54889,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_10",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782030245
+    },
+    {
+      "id": "ambient_hook",
+      "kanji": "乙",
+      "keyword": "hook",
+      "image": "studies/hook.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 35962,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782116786
+    },
+    {
+      "id": "ambient_rise",
+      "kanji": "昇",
+      "keyword": "rise",
+      "image": "studies/rise.png",
       "galleryCamera": {
         "motion": "rise"
       },
-      "artworkAloneMs": 40176,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782030392
-    },
-    {
-      "id": "L08_condition",
-      "kanji": "況",
-      "keyword": "condition",
-      "image": "studies/condition.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 41931,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781993440
-    },
-    {
-      "id": "L04_phrase",
-      "kanji": "句",
-      "keyword": "phrase",
-      "image": "studies/phrase.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 38848,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116881
-    },
-    {
-      "id": "L07_eternity",
-      "kanji": "永",
-      "keyword": "eternity",
-      "image": "studies/eternity.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 43595,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915728
-    },
-    {
-      "id": "L01_bright",
-      "kanji": "明",
-      "keyword": "bright",
-      "image": "studies/bright.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 40%"
-      },
-      "artworkAloneMs": 44217,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 40%",
-      "imageRev": 1781528950
-    },
-    {
-      "id": "L03_measurement",
-      "kanji": "寸",
-      "keyword": "measurement",
-      "image": "studies/measurement.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 43922,
+      "artworkAloneMs": 39823,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_03",
+        "category": "mountains",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782106004
+      "imageRev": 1782104282
     },
     {
-      "id": "L33_grace",
-      "kanji": "恩",
-      "keyword": "grace",
-      "image": "studies/grace.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 43514,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138073
-    },
-    {
-      "id": "L02_middle",
-      "kanji": "中",
-      "keyword": "middle",
-      "image": "studies/middle.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 39856,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782112289
-    },
-    {
-      "id": "L06_cavity",
-      "kanji": "孔",
-      "keyword": "cavity",
-      "image": "studies/cavity.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 42184,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763265
-    },
-    {
-      "id": "L05_vice",
-      "kanji": "副",
-      "keyword": "vice",
-      "image": "studies/vice.png",
-      "galleryCamera": {
-        "motion": "drift-x",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 37254,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781689154
-    },
-    {
-      "id": "L09_temple",
-      "kanji": "寺",
-      "keyword": "temple",
-      "image": "studies/temple.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 42282,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_09",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782017685
-    },
-    {
-      "id": "L10_same",
-      "kanji": "同",
-      "keyword": "same",
-      "image": "studies/same.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 41663,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1780383556
-    },
-    {
-      "id": "L08_cleanse",
-      "kanji": "汰",
-      "keyword": "cleanse",
-      "image": "studies/cleanse.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781992855
-    },
-    {
-      "id": "L04_ten_thousand",
-      "kanji": "万",
-      "keyword": "ten thousand",
-      "image": "studies/ten_thousand.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "focus": "50% 45%"
-      },
-      "artworkAloneMs": 42867,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 45%",
-      "imageRev": 1782116621
-    },
-    {
-      "id": "L07_nitrate",
-      "kanji": "硝",
-      "keyword": "nitrate",
-      "image": "studies/nitrate.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 37488,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781868985
-    },
-    {
-      "id": "L01_risk",
-      "kanji": "冒",
-      "keyword": "risk",
-      "image": "studies/risk.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 42107,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781527059
-    },
-    {
-      "id": "L03_up",
-      "kanji": "上",
-      "keyword": "up",
-      "image": "studies/up.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 38%"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 38%",
-      "imageRev": 1781744770
-    },
-    {
-      "id": "L40_love",
-      "kanji": "愛",
-      "keyword": "love",
-      "image": "studies/love.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 48493,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1784977568
-    },
-    {
-      "id": "L02_rising_sun",
-      "kanji": "旭",
-      "keyword": "rising sun",
-      "image": "studies/rising_sun.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 32%"
-      },
-      "artworkAloneMs": 53440,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 32%",
-      "imageRev": 1782107209
-    },
-    {
-      "id": "L06_woman",
-      "kanji": "女",
-      "keyword": "woman",
-      "image": "studies/woman.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 58579,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763317
-    },
-    {
-      "id": "L06_older_brother",
-      "kanji": "兄",
-      "keyword": "older brother",
-      "image": "studies/older_brother.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 36242,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763886
-    },
-    {
-      "id": "L05_child",
+      "id": "ambient_child",
       "kanji": "子",
       "keyword": "child",
       "image": "studies/child.png",
@@ -779,2483 +307,111 @@
         "motion": "push-in",
         "motionScale": 1.15
       },
-      "artworkAloneMs": 44000,
+      "artworkAloneMs": 42904,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_05",
+        "category": "people",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
       "imageRev": 1781689050
     },
     {
-      "id": "L09_inlay",
-      "kanji": "填",
-      "keyword": "inlay",
-      "image": "studies/inlay.png",
+      "id": "ambient_forest",
+      "kanji": "森",
+      "keyword": "forest",
+      "image": "studies/forest.png",
       "galleryCamera": {
         "motion": "drift-diagonal"
       },
-      "artworkAloneMs": 44220,
+      "artworkAloneMs": 47676,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "lesson_09",
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782017902
+      "imageRev": 1784984079
     },
     {
-      "id": "L10_complete",
-      "kanji": "完",
-      "keyword": "complete",
-      "image": "studies/complete.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 39874,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782029894
-    },
-    {
-      "id": "L08_swim",
-      "kanji": "泳",
-      "keyword": "swim",
-      "image": "studies/swim.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 41198,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781992445
-    },
-    {
-      "id": "L04_hook",
-      "kanji": "乙",
-      "keyword": "hook",
-      "image": "studies/hook.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 42281,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116786
-    },
-    {
-      "id": "L07_jealousy",
-      "kanji": "妬",
-      "keyword": "jealousy",
-      "image": "studies/jealousy.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 36076,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915459
-    },
-    {
-      "id": "L01_field",
-      "kanji": "田",
-      "keyword": "field",
-      "image": "studies/field.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 52705,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781525742
-    },
-    {
-      "id": "L03_signal",
-      "kanji": "卜",
-      "keyword": "signal",
-      "image": "studies/signal.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "focus": "50% 42%"
-      },
-      "artworkAloneMs": 44115,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 42%",
-      "imageRev": 1782106932
-    },
-    {
-      "id": "L34_ecstasy",
-      "kanji": "悦",
-      "keyword": "ecstasy",
-      "image": "studies/ecstasy.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 43800,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138430
-    },
-    {
-      "id": "L02_prosperous",
-      "kanji": "昌",
-      "keyword": "prosperous",
-      "image": "studies/prosperous.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 43119,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782104994
-    },
-    {
-      "id": "L06_eventide",
-      "kanji": "汐",
-      "keyword": "eventide",
-      "image": "studies/eventide.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 41962,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763623
-    },
-    {
-      "id": "L05_town",
-      "kanji": "町",
-      "keyword": "town",
-      "image": "studies/town.png",
-      "galleryCamera": {
-        "motion": "drift-x",
-        "focus": "50% 45%"
-      },
-      "artworkAloneMs": 43661,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 45%",
-      "imageRev": 1780383556
-    },
-    {
-      "id": "L09_lamp",
-      "kanji": "灯",
-      "keyword": "lamp",
-      "image": "studies/lamp.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 53763,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_09",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782017790
-    },
-    {
-      "id": "L10_fishing",
-      "kanji": "漁",
-      "keyword": "fishing",
-      "image": "studies/fishing.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 54247,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782030245
-    },
-    {
-      "id": "L08_tide",
-      "kanji": "潮",
-      "keyword": "tide",
-      "image": "studies/tide.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 44542,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781993112
-    },
-    {
-      "id": "L04_bulls_eye",
-      "kanji": "的",
-      "keyword": "bulls eye",
-      "image": "studies/bulls_eye.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "focus": "50% 40%"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 40%",
-      "imageRev": 1782116719
-    },
-    {
-      "id": "L07_utensil",
-      "kanji": "器",
-      "keyword": "utensil",
-      "image": "studies/utensil.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 37101,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781916217
-    },
-    {
-      "id": "L01_sun",
-      "kanji": "日",
-      "keyword": "sun",
-      "image": "studies/sun.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 32%"
-      },
-      "artworkAloneMs": 40215,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 32%",
-      "imageRev": 1781525623
-    },
-    {
-      "id": "L03_round",
-      "kanji": "丸",
-      "keyword": "round",
-      "image": "studies/round.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "focus": "50% 45%"
-      },
-      "artworkAloneMs": 41414,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 45%",
-      "imageRev": 1782104332
-    },
-    {
-      "id": "L33_favor",
-      "kanji": "恵",
-      "keyword": "favor",
-      "image": "studies/favor.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 43146,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138253
-    },
-    {
-      "id": "L02_stomach",
-      "kanji": "胃",
-      "keyword": "stomach",
-      "image": "studies/stomach.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "focus": "50% 55%"
-      },
-      "artworkAloneMs": 54499,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 55%",
-      "imageRev": 1782107855
-    },
-    {
-      "id": "L06_likeness",
-      "kanji": "如",
-      "keyword": "likeness",
-      "image": "studies/likeness.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 40248,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781868312
-    },
-    {
-      "id": "L05_sword",
-      "kanji": "刀",
-      "keyword": "sword",
-      "image": "studies/sword.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "focus": "50% 42%"
-      },
-      "artworkAloneMs": 39724,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 42%",
-      "imageRev": 1781614218
-    },
-    {
-      "id": "L09_farm",
-      "kanji": "畑",
-      "keyword": "farm",
-      "image": "studies/farm.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 58829,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_09",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782029775
-    },
-    {
-      "id": "L10_fish",
-      "kanji": "魚",
-      "keyword": "fish",
-      "image": "studies/fish.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 35928,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782030317
-    },
-    {
-      "id": "L08_lake",
-      "kanji": "湖",
-      "keyword": "lake",
-      "image": "studies/lake.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 58920,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781994536
-    },
-    {
-      "id": "L04_see",
-      "kanji": "見",
-      "keyword": "see",
-      "image": "studies/see.png",
-      "galleryCamera": {
-        "motion": "drift-x",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 39275,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116478
-    },
-    {
-      "id": "L07_ice",
-      "kanji": "氷",
-      "keyword": "ice",
-      "image": "studies/ice.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 42575,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915707
-    },
-    {
-      "id": "L01_seven",
-      "kanji": "七",
-      "keyword": "seven",
-      "image": "studies/seven.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 39813,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781510731
-    },
-    {
-      "id": "L03_virtue",
-      "kanji": "貞",
-      "keyword": "virtue",
-      "image": "studies/virtue.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 40104,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782104662
-    },
-    {
-      "id": "L34_humility",
-      "kanji": "慎",
-      "keyword": "humility",
-      "image": "studies/humility.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 40202,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138679
-    },
-    {
-      "id": "L06_pierce",
-      "kanji": "貫",
-      "keyword": "pierce",
-      "image": "studies/pierce.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 43256,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763990
-    },
-    {
-      "id": "L05_street",
-      "kanji": "丁",
-      "keyword": "street",
-      "image": "studies/street.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 49998,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781689138
-    },
-    {
-      "id": "L09_cape",
-      "kanji": "埼",
-      "keyword": "cape",
-      "image": "studies/cape.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 40619,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_09",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782017240
-    },
-    {
-      "id": "L10_quantity",
-      "kanji": "量",
-      "keyword": "quantity",
-      "image": "studies/quantity.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 41726,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1780383556
-    },
-    {
-      "id": "L08_lively",
-      "kanji": "活",
-      "keyword": "lively",
-      "image": "studies/lively.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 38562,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781993274
-    },
-    {
-      "id": "L04_neck",
-      "kanji": "首",
-      "keyword": "neck",
-      "image": "studies/neck.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 41264,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116744
-    },
-    {
-      "id": "L07_strange",
-      "kanji": "奇",
-      "keyword": "strange",
-      "image": "studies/strange.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915587
-    },
-    {
-      "id": "L01_five",
-      "kanji": "五",
-      "keyword": "five",
-      "image": "studies/five.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 43051,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781529238
-    },
-    {
-      "id": "L03_measuring_box",
-      "kanji": "升",
-      "keyword": "measuring box",
-      "image": "studies/measuring_box.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 42789,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782103791
-    },
-    {
-      "id": "L35_desire",
-      "kanji": "憧",
-      "keyword": "desire",
-      "image": "studies/desire.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 36854,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782139831
-    },
-    {
-      "id": "L06_many",
-      "kanji": "多",
-      "keyword": "many",
-      "image": "studies/many.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 37983,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763714
-    },
-    {
-      "id": "L05_possess",
-      "kanji": "有",
-      "keyword": "possess",
-      "image": "studies/possess.png",
-      "galleryCamera": {
-        "motion": "drift-y",
-        "focus": "50% 48%"
-      },
-      "artworkAloneMs": 41811,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 48%",
-      "imageRev": 1781689004
-    },
-    {
-      "id": "L09_time",
-      "kanji": "時",
-      "keyword": "time",
-      "image": "studies/time.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 41966,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_09",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782017700
-    },
-    {
-      "id": "L10_carp",
-      "kanji": "鯉",
-      "keyword": "carp",
-      "image": "studies/carp.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 40484,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782030052
-    },
-    {
-      "id": "L08_petition",
-      "kanji": "願",
-      "keyword": "petition",
-      "image": "studies/petition.png",
-      "galleryCamera": {
-        "motion": "push-in",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 43816,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781992364
-    },
-    {
-      "id": "L04_newborn",
-      "kanji": "児",
-      "keyword": "newborn",
-      "image": "studies/newborn.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "focus": "50% 48%",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 42353,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 48%",
-      "imageRev": 1781757293
-    },
-    {
-      "id": "L07_plump",
-      "kanji": "太",
-      "keyword": "plump",
-      "image": "studies/plump.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 44542,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915521
-    },
-    {
-      "id": "L01_four",
-      "kanji": "四",
-      "keyword": "four",
-      "image": "studies/four.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 39588,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781524101
-    },
-    {
-      "id": "L03_specialty",
-      "kanji": "専",
-      "keyword": "specialty",
-      "image": "studies/specialty.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781576072
-    },
-    {
-      "id": "L35_invariably",
-      "kanji": "必",
-      "keyword": "invariably",
-      "image": "studies/invariably.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 43943,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138843
-    },
-    {
-      "id": "L02_dawn",
-      "kanji": "旦",
-      "keyword": "dawn",
-      "image": "studies/dawn.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 35%"
-      },
-      "artworkAloneMs": 43900,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 35%",
-      "imageRev": 1782108026
-    },
-    {
-      "id": "L06_few",
-      "kanji": "少",
-      "keyword": "few",
-      "image": "studies/few.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 35995,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763751
-    },
-    {
-      "id": "L05_shining",
-      "kanji": "昭",
-      "keyword": "shining",
-      "image": "studies/shining.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 38%"
-      },
-      "artworkAloneMs": 41710,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 38%",
-      "imageRev": 1781868894
-    },
-    {
-      "id": "L10_home_village",
-      "kanji": "里",
-      "keyword": "home village",
-      "image": "studies/home_village.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 44507,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_10",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1780383556
-    },
-    {
-      "id": "L08_spring",
-      "kanji": "泉",
-      "keyword": "spring",
-      "image": "studies/spring.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 58046,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781991869
-    },
-    {
-      "id": "L04_ten_days",
-      "kanji": "旬",
-      "keyword": "ten days",
-      "image": "studies/ten_days.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116686
-    },
-    {
-      "id": "L07_follow",
+      "id": "ambient_follow",
       "kanji": "順",
       "keyword": "follow",
       "image": "studies/follow.png",
       "galleryCamera": {
         "motion": "push-in"
       },
-      "artworkAloneMs": 38859,
+      "artworkAloneMs": 35092,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_07",
+        "category": "still_life",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
       "imageRev": 1781915650
     },
     {
-      "id": "L01_old",
-      "kanji": "古",
-      "keyword": "old",
-      "image": "studies/old.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 42007,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782000070
-    },
-    {
-      "id": "L03_eminent",
-      "kanji": "卓",
-      "keyword": "eminent",
-      "image": "studies/eminent.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782106372
-    },
-    {
-      "id": "L33_core",
-      "kanji": "芯",
-      "keyword": "core",
-      "image": "studies/core.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 40302,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782137907
-    },
-    {
-      "id": "L02_olden_times",
-      "kanji": "旧",
-      "keyword": "olden times",
-      "image": "studies/olden_times.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 41732,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782112510
-    },
-    {
-      "id": "L06_outside",
+      "id": "ambient_outside",
       "kanji": "外",
       "keyword": "outside",
       "image": "studies/outside.png",
       "galleryCamera": {
         "motion": "pull-out"
       },
-      "artworkAloneMs": 46002,
+      "artworkAloneMs": 55970,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_06",
+        "category": "mountains",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
       "imageRev": 1781763595
     },
     {
-      "id": "L05_top",
-      "kanji": "頂",
-      "keyword": "top",
-      "image": "studies/top.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 40%"
-      },
-      "artworkAloneMs": 41715,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 40%",
-      "imageRev": 1781689064
-    },
-    {
-      "id": "L08_overnight",
-      "kanji": "泊",
-      "keyword": "overnight",
-      "image": "studies/overnight.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781994436
-    },
-    {
-      "id": "L04_mediocre",
-      "kanji": "凡",
-      "keyword": "mediocre",
-      "image": "studies/mediocre.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 44320,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116556
-    },
-    {
-      "id": "L07_river",
-      "kanji": "川",
-      "keyword": "river",
-      "image": "studies/river.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 51776,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915610
-    },
-    {
-      "id": "L01_companion",
-      "kanji": "朋",
-      "keyword": "companion",
-      "image": "studies/companion.png",
-      "galleryCamera": {
-        "motion": "drift-x",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 40375,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781527220
-    },
-    {
-      "id": "L03_knowledgeable",
-      "kanji": "博",
-      "keyword": "knowledgeable",
-      "image": "studies/knowledgeable.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 39886,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781576098
-    },
-    {
-      "id": "L33_intention",
-      "kanji": "志",
-      "keyword": "intention",
-      "image": "studies/intention.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 39010,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782137860
-    },
-    {
-      "id": "L02_chant",
-      "kanji": "唱",
-      "keyword": "chant",
-      "image": "studies/chant.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782105152
-    },
-    {
-      "id": "L06_overcome",
-      "kanji": "克",
-      "keyword": "overcome",
-      "image": "studies/overcome.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 48137,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763839
-    },
-    {
-      "id": "L05_seduce",
-      "kanji": "召",
-      "keyword": "seduce",
-      "image": "studies/seduce.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 43496,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781765112
-    },
-    {
-      "id": "L08_source",
-      "kanji": "源",
-      "keyword": "source",
-      "image": "studies/source.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 39400,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781993192
-    },
-    {
-      "id": "L04_page",
-      "kanji": "頁",
-      "keyword": "page",
-      "image": "studies/page.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 44351,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116901
-    },
-    {
-      "id": "L07_state",
-      "kanji": "州",
-      "keyword": "state",
-      "image": "studies/state.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 38282,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915630
-    },
-    {
-      "id": "L01_six",
-      "kanji": "六",
-      "keyword": "six",
-      "image": "studies/six.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 41995,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781524307
-    },
-    {
-      "id": "L03_employee",
-      "kanji": "員",
-      "keyword": "employee",
-      "image": "studies/employee.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 40575,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782104786
-    },
-    {
-      "id": "L33_forget",
-      "kanji": "忘",
-      "keyword": "forget",
-      "image": "studies/forget.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 42704,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782137665
-    },
-    {
-      "id": "L02_early",
-      "kanji": "早",
-      "keyword": "early",
-      "image": "studies/early.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 43897,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782107193
-    },
-    {
-      "id": "L06_large",
-      "kanji": "大",
-      "keyword": "large",
-      "image": "studies/large.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 36167,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763677
-    },
-    {
-      "id": "L05_right",
-      "kanji": "右",
-      "keyword": "right",
-      "image": "studies/right.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 38934,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782117220
-    },
-    {
-      "id": "L08_creek",
-      "kanji": "江",
-      "keyword": "creek",
-      "image": "studies/creek.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 42147,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781992745
-    },
-    {
-      "id": "L04_defeat",
-      "kanji": "負",
-      "keyword": "defeat",
-      "image": "studies/defeat.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 37021,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116601
-    },
-    {
-      "id": "L07_exquisite",
-      "kanji": "妙",
-      "keyword": "exquisite",
-      "image": "studies/exquisite.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 37864,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781916286
-    },
-    {
-      "id": "L01_two",
-      "kanji": "二",
-      "keyword": "two",
-      "image": "studies/two.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "focus": "50% 42%"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 42%",
-      "imageRev": 1781525287
-    },
-    {
-      "id": "L03_rise",
-      "kanji": "昇",
-      "keyword": "rise",
-      "image": "studies/rise.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 40105,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782104282
-    },
-    {
-      "id": "L33_respond",
-      "kanji": "応",
-      "keyword": "respond",
-      "image": "studies/respond.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 44267,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138096
-    },
-    {
-      "id": "L02_white",
-      "kanji": "白",
-      "keyword": "white",
-      "image": "studies/white.png",
+      "id": "ambient_fond_of",
+      "kanji": "好",
+      "keyword": "fond of",
+      "image": "studies/fond_of.png",
       "galleryCamera": {
         "motion": "push-in",
-        "focus": "50% 40%"
-      },
-      "artworkAloneMs": 42285,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 40%",
-      "imageRev": 1782111954
-    },
-    {
-      "id": "L06_mother",
-      "kanji": "母",
-      "keyword": "mother",
-      "image": "studies/mother.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
         "motionScale": 1.15
       },
-      "artworkAloneMs": 42600,
+      "artworkAloneMs": 39767,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_06",
+        "category": "people",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1781764006
+      "imageRev": 1781764052
     },
     {
-      "id": "L05_bribe",
-      "kanji": "賄",
-      "keyword": "bribe",
-      "image": "studies/bribe.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 38612,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781689036
-    },
-    {
-      "id": "L08_meadow",
-      "kanji": "原",
-      "keyword": "meadow",
-      "image": "studies/meadow.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 41464,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781992152
-    },
-    {
-      "id": "L04_straightaway",
-      "kanji": "直",
-      "keyword": "straightaway",
-      "image": "studies/straightaway.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 35927,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782116813
-    },
-    {
-      "id": "L07_plane",
-      "kanji": "削",
-      "keyword": "plane",
-      "image": "studies/plane.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 53339,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781916191
-    },
-    {
-      "id": "L01_moon",
-      "kanji": "月",
-      "keyword": "moon",
-      "image": "studies/moon.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 35%"
-      },
-      "artworkAloneMs": 40496,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 35%",
-      "imageRev": 1781511558
-    },
-    {
-      "id": "L03_only",
-      "kanji": "只",
-      "keyword": "only",
-      "image": "studies/only.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 37863,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782104768
-    },
-    {
-      "id": "L34_pleasure",
-      "kanji": "愉",
-      "keyword": "pleasure",
-      "image": "studies/pleasure.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 37292,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138637
-    },
-    {
-      "id": "L02_thousand",
-      "kanji": "千",
-      "keyword": "thousand",
-      "image": "studies/thousand.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 45467,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782112481
-    },
-    {
-      "id": "L06_name",
-      "kanji": "名",
-      "keyword": "name",
-      "image": "studies/name.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 41767,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763569
-    },
-    {
-      "id": "L05_craft",
-      "kanji": "工",
-      "keyword": "craft",
-      "image": "studies/craft.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_05",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781696805
-    },
-    {
-      "id": "L08_large_river",
-      "kanji": "河",
-      "keyword": "large river",
-      "image": "studies/large_river.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 55647,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781994187
-    },
-    {
-      "id": "L04_stubborn",
-      "kanji": "頑",
-      "keyword": "stubborn",
-      "image": "studies/stubborn.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 43339,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781759265
-    },
-    {
-      "id": "L07_ray",
-      "kanji": "光",
-      "keyword": "ray",
-      "image": "studies/ray.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 35835,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915504
-    },
-    {
-      "id": "L01_eye",
-      "kanji": "目",
-      "keyword": "eye",
-      "image": "studies/eye.png",
-      "galleryCamera": {
-        "motion": "pull-out",
-        "focus": "50% 48%",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 57920,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 48%",
-      "imageRev": 1781526247
-    },
-    {
-      "id": "L03_fortune_telling",
-      "kanji": "占",
-      "keyword": "fortune telling",
-      "image": "studies/fortune_telling.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 42168,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782103490
-    },
-    {
-      "id": "L34_enlightenment",
-      "kanji": "悟",
-      "keyword": "enlightenment",
-      "image": "studies/enlightenment.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 38916,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138499
-    },
-    {
-      "id": "L02_hundred",
-      "kanji": "百",
-      "keyword": "hundred",
-      "image": "studies/hundred.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 41670,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782112460
-    },
-    {
-      "id": "L06_evening",
-      "kanji": "夕",
-      "keyword": "evening",
-      "image": "studies/evening.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 40699,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763649
-    },
-    {
-      "id": "L08_open_sea",
-      "kanji": "沖",
-      "keyword": "open sea",
-      "image": "studies/open_sea.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 53126,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781992592
-    },
-    {
-      "id": "L04_texture",
-      "kanji": "肌",
-      "keyword": "texture",
-      "image": "studies/texture.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 38875,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781688984
-    },
-    {
-      "id": "L07_water",
-      "kanji": "水",
-      "keyword": "water",
-      "image": "studies/water.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 54119,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_07",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781915687
-    },
-    {
-      "id": "L01_ten",
-      "kanji": "十",
-      "keyword": "ten",
-      "image": "studies/ten.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 56909,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781525131
-    },
-    {
-      "id": "L03_tongue",
-      "kanji": "舌",
-      "keyword": "tongue",
-      "image": "studies/tongue.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 44519,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782103301
-    },
-    {
-      "id": "L34_melancholy",
-      "kanji": "憂",
-      "keyword": "melancholy",
-      "image": "studies/melancholy.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 41021,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138351
-    },
-    {
-      "id": "L02_span",
-      "kanji": "亘",
-      "keyword": "span",
-      "image": "studies/span.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 40249,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782110820
-    },
-    {
-      "id": "L06_finish",
-      "kanji": "了",
-      "keyword": "finish",
-      "image": "studies/finish.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 40615,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763292
-    },
-    {
-      "id": "L08_gland",
-      "kanji": "腺",
-      "keyword": "gland",
-      "image": "studies/gland.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 40865,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_08",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1784769268
-    },
-    {
-      "id": "L04_ladle",
-      "kanji": "勺",
-      "keyword": "ladle",
-      "image": "studies/ladle.png",
-      "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 42%"
-      },
-      "artworkAloneMs": 44272,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_04",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageFocus": "50% 42%",
-      "imageRev": 1782116703
-    },
-    {
-      "id": "L01_nine",
-      "kanji": "九",
-      "keyword": "nine",
-      "image": "studies/nine.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 38884,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_01",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781524631
-    },
-    {
-      "id": "L03_below",
-      "kanji": "下",
-      "keyword": "below",
-      "image": "studies/below.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 44230,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782107772
-    },
-    {
-      "id": "L33_loyalty",
-      "kanji": "忠",
-      "keyword": "loyalty",
-      "image": "studies/loyalty.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 40945,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782137928
-    },
-    {
-      "id": "L06_stone",
-      "kanji": "石",
-      "keyword": "stone",
-      "image": "studies/stone.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal"
-      },
-      "artworkAloneMs": 36101,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_06",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781763534
-    },
-    {
-      "id": "L04_beginning",
+      "id": "ambient_beginning",
       "kanji": "元",
       "keyword": "beginning",
       "image": "studies/beginning.png",
@@ -3263,206 +419,1612 @@
         "motion": "rise",
         "focus": "50% 38%"
       },
-      "artworkAloneMs": 40979,
+      "artworkAloneMs": 35412,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_04",
+        "category": "temples",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
       "imageFocus": "50% 38%",
       "imageRev": 1781759391
     },
     {
-      "id": "L01_eight",
-      "kanji": "八",
-      "keyword": "eight",
-      "image": "studies/eight.png",
+      "id": "ambient_four",
+      "kanji": "四",
+      "keyword": "four",
+      "image": "studies/four.png",
       "galleryCamera": {
-        "motion": "drift-diagonal"
+        "motion": "push-in"
       },
-      "artworkAloneMs": 42926,
+      "artworkAloneMs": 41961,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_01",
+        "category": "still_life",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1781524482
+      "imageRev": 1781524101
     },
     {
-      "id": "L03_shellfish",
-      "kanji": "貝",
-      "keyword": "shellfish",
-      "image": "studies/shellfish.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 43714,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_03",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1781576331
-    },
-    {
-      "id": "L35_pining",
-      "kanji": "慕",
-      "keyword": "pining",
-      "image": "studies/pining.png",
+      "id": "ambient_judas_tree",
+      "kanji": "桂",
+      "keyword": "judas tree",
+      "image": "studies/judas_tree.png",
       "galleryCamera": {
         "motion": "drift-diagonal"
       },
-      "artworkAloneMs": 41518,
+      "artworkAloneMs": 41602,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782138798
+      "imageRev": 1784984097
     },
     {
-      "id": "L02_sparkle",
-      "kanji": "晶",
-      "keyword": "sparkle",
-      "image": "studies/sparkle.png",
+      "id": "ambient_cat",
+      "kanji": "猫",
+      "keyword": "cat",
+      "image": "studies/cat.png",
       "galleryCamera": {
-        "motion": "rise",
-        "focus": "50% 42%"
+        "motion": "drift-y"
       },
-      "artworkAloneMs": 35802,
+      "artworkAloneMs": 35000,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067217
+    },
+    {
+      "id": "ambient_olden_times",
+      "kanji": "旧",
+      "keyword": "olden times",
+      "image": "studies/olden_times.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 42237,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_02",
+        "category": "temples",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageFocus": "50% 42%",
-      "imageRev": 1782105217
+      "imageRev": 1782112510
     },
     {
-      "id": "L06_fond_of",
-      "kanji": "好",
-      "keyword": "fond of",
-      "image": "studies/fond_of.png",
+      "id": "ambient_one",
+      "kanji": "一",
+      "keyword": "one",
+      "image": "studies/one.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 40886,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781510593
+    },
+    {
+      "id": "ambient_thatched_roof_winter",
+      "kanji": "",
+      "keyword": "thatched roof winter",
+      "image": "studies/thatched_roof_winter.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39176,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "villages",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785157775
+    },
+    {
+      "id": "ambient_mother",
+      "kanji": "母",
+      "keyword": "mother",
+      "image": "studies/mother.png",
       "galleryCamera": {
         "motion": "drift-diagonal",
         "motionScale": 1.15
       },
-      "artworkAloneMs": 35802,
+      "artworkAloneMs": 41286,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_06",
+        "category": "people",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1781764052
+      "imageRev": 1781764006
     },
     {
-      "id": "L03_derision",
-      "kanji": "嘲",
-      "keyword": "derision",
-      "image": "studies/derision.png",
+      "id": "ambient_good_luck",
+      "kanji": "吉",
+      "keyword": "good luck",
+      "image": "studies/good_luck.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 37464,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_18",
+        "category": "temples",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785134768
+    },
+    {
+      "id": "ambient_cavity",
+      "kanji": "孔",
+      "keyword": "cavity",
+      "image": "studies/cavity.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39758,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763265
+    },
+    {
+      "id": "ambient_meadow",
+      "kanji": "原",
+      "keyword": "meadow",
+      "image": "studies/meadow.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 56024,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "villages",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781992152
+    },
+    {
+      "id": "ambient_eye",
+      "kanji": "目",
+      "keyword": "eye",
+      "image": "studies/eye.png",
+      "galleryCamera": {
+        "motion": "drift-x",
+        "focus": "50% 48%",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 50111,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781526247
+    },
+    {
+      "id": "ambient_leaf",
+      "kanji": "葉",
+      "keyword": "leaf",
+      "image": "studies/leaf.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 40987,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067726
+    },
+    {
+      "id": "ambient_five",
+      "kanji": "五",
+      "keyword": "five",
+      "image": "studies/five.png",
       "galleryCamera": {
         "motion": "drift-x"
       },
-      "artworkAloneMs": 44178,
+      "artworkAloneMs": 41398,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781529238
+    },
+    {
+      "id": "ambient_up",
+      "kanji": "上",
+      "keyword": "up",
+      "image": "studies/up.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 38%"
+      },
+      "artworkAloneMs": 41794,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_03",
+        "category": "mountains",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782104452
+      "imageFocus": "50% 38%",
+      "imageRev": 1781744770
     },
     {
-      "id": "L34_beguile",
-      "kanji": "惑",
-      "keyword": "beguile",
-      "image": "studies/beguile.png",
+      "id": "ambient_vice",
+      "kanji": "副",
+      "keyword": "vice",
+      "image": "studies/vice.png",
       "galleryCamera": {
-        "motion": "drift-diagonal"
+        "motion": "drift-x",
+        "motionScale": 1.15
       },
-      "artworkAloneMs": 40650,
+      "artworkAloneMs": 39973,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_05",
+        "category": "people",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782138305
+      "imageRev": 1781689154
     },
     {
-      "id": "L02_oneself",
-      "kanji": "自",
-      "keyword": "oneself",
-      "image": "studies/oneself.png",
+      "id": "ambient_oak",
+      "kanji": "柏",
+      "keyword": "oak",
+      "image": "studies/oak.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 37341,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784984117
+    },
+    {
+      "id": "ambient_strange",
+      "kanji": "奇",
+      "keyword": "strange",
+      "image": "studies/strange.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 37746,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781915587
+    },
+    {
+      "id": "ambient_farm",
+      "kanji": "畑",
+      "keyword": "farm",
+      "image": "studies/farm.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 52932,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_09",
+        "category": "villages",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782029775
+    },
+    {
+      "id": "ambient_older_brother",
+      "kanji": "兄",
+      "keyword": "older brother",
+      "image": "studies/older_brother.png",
       "galleryCamera": {
         "motion": "push-in",
         "motionScale": 1.15
       },
-      "artworkAloneMs": 38482,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "lesson_02",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782111809
-    },
-    {
-      "id": "L06_resemblance",
-      "kanji": "肖",
-      "keyword": "resemblance",
-      "image": "studies/resemblance.png",
-      "galleryCamera": {
-        "motion": "drift-diagonal",
-        "motionScale": 1.15
-      },
-      "artworkAloneMs": 44008,
+      "artworkAloneMs": 42007,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_06",
+        "category": "people",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763886
+    },
+    {
+      "id": "ambient_cleanse",
+      "kanji": "汰",
+      "keyword": "cleanse",
+      "image": "studies/cleanse.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 39578,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781992855
+    },
+    {
+      "id": "ambient_small",
+      "kanji": "小",
+      "keyword": "small",
+      "image": "studies/small.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 42963,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763784
+    },
+    {
+      "id": "ambient_crude",
+      "kanji": "朴",
+      "keyword": "crude",
+      "image": "studies/crude.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 49745,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784985096
+    },
+    {
+      "id": "ambient_see",
+      "kanji": "見",
+      "keyword": "see",
+      "image": "studies/see.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 48044,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782116478
+    },
+    {
+      "id": "ambient_span",
+      "kanji": "亘",
+      "keyword": "span",
+      "image": "studies/span.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 39120,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_02",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782110820
+    },
+    {
+      "id": "ambient_lamp",
+      "kanji": "灯",
+      "keyword": "lamp",
+      "image": "studies/lamp.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 53981,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_09",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782017790
+    },
+    {
+      "id": "ambient_woods",
+      "kanji": "林",
+      "keyword": "woods",
+      "image": "studies/woods.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 36147,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784984046
+    },
+    {
+      "id": "ambient_woman",
+      "kanji": "女",
+      "keyword": "woman",
+      "image": "studies/woman.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 42782,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763317
+    },
+    {
+      "id": "ambient_virtue",
+      "kanji": "貞",
+      "keyword": "virtue",
+      "image": "studies/virtue.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 37364,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "temples",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782104662
+    },
+    {
+      "id": "ambient_utensil",
+      "kanji": "器",
+      "keyword": "utensil",
+      "image": "studies/utensil.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 40840,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781916217
+    },
+    {
+      "id": "ambient_home_village",
+      "kanji": "里",
+      "keyword": "home village",
+      "image": "studies/home_village.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 48456,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_10",
+        "category": "villages",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "ambient_derision",
+      "kanji": "嘲",
+      "keyword": "derision",
+      "image": "studies/derision.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 54545,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782104452
+    },
+    {
+      "id": "ambient_many",
+      "kanji": "多",
+      "keyword": "many",
+      "image": "studies/many.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 36092,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763714
+    },
+    {
+      "id": "ambient_ladle",
+      "kanji": "勺",
+      "keyword": "ladle",
+      "image": "studies/ladle.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 42%"
+      },
+      "artworkAloneMs": 40253,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1782116703
+    },
+    {
+      "id": "ambient_field",
+      "kanji": "田",
+      "keyword": "field",
+      "image": "studies/field.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 46945,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "villages",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781525742
+    },
+    {
+      "id": "ambient_dog",
+      "kanji": "犬",
+      "keyword": "dog",
+      "image": "studies/dog.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 38791,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067344
+    },
+    {
+      "id": "ambient_haven",
+      "kanji": "津",
+      "keyword": "haven",
+      "image": "studies/haven.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 42820,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_18",
+        "category": "temples",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785135551
+    },
+    {
+      "id": "ambient_seven",
+      "kanji": "七",
+      "keyword": "seven",
+      "image": "studies/seven.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 42258,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781510731
+    },
+    {
+      "id": "ambient_paulownia_tree",
+      "kanji": "桐",
+      "keyword": "paulownia tree",
+      "image": "studies/paulownia_tree.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39151,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784984710
+    },
+    {
+      "id": "ambient_stare",
+      "kanji": "眺",
+      "keyword": "stare",
+      "image": "studies/stare.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 39975,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067363
+    },
+    {
+      "id": "ambient_chant",
+      "kanji": "唱",
+      "keyword": "chant",
+      "image": "studies/chant.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 35821,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_02",
+        "category": "temples",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782105152
+    },
+    {
+      "id": "ambient_specialty",
+      "kanji": "専",
+      "keyword": "specialty",
+      "image": "studies/specialty.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39675,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781576072
+    },
+    {
+      "id": "ambient_wither",
+      "kanji": "枯",
+      "keyword": "wither",
+      "image": "studies/wither.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 42317,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784984944
+    },
+    {
+      "id": "ambient_elbow",
+      "kanji": "肘",
+      "keyword": "elbow",
+      "image": "studies/elbow.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 52%",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 43163,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 52%",
+      "imageRev": 1782104746
+    },
+    {
+      "id": "ambient_study",
+      "kanji": "学",
+      "keyword": "study",
+      "image": "studies/study.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 35500,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_18",
+        "category": "temples",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785135088
+    },
+    {
+      "id": "ambient_inlay",
+      "kanji": "填",
+      "keyword": "inlay",
+      "image": "studies/inlay.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 38963,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_09",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782017902
+    },
+    {
+      "id": "ambient_tree",
+      "kanji": "木",
+      "keyword": "tree",
+      "image": "studies/tree.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 39608,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784983958
+    },
+    {
+      "id": "ambient_newborn",
+      "kanji": "児",
+      "keyword": "newborn",
+      "image": "studies/newborn.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 48%",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 35077,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781757293
+    },
+    {
+      "id": "ambient_rising_sun",
+      "kanji": "旭",
+      "keyword": "rising sun",
+      "image": "studies/rising_sun.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 32%"
+      },
+      "artworkAloneMs": 43179,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_02",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 32%",
+      "imageRev": 1782107209
+    },
+    {
+      "id": "ambient_stone",
+      "kanji": "石",
+      "keyword": "stone",
+      "image": "studies/stone.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 36658,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763534
+    },
+    {
+      "id": "ambient_obscure",
+      "kanji": "昧",
+      "keyword": "obscure",
+      "image": "studies/obscure.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 35000,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784986491
+    },
+    {
+      "id": "ambient_resemblance",
+      "kanji": "肖",
+      "keyword": "resemblance",
+      "image": "studies/resemblance.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 41743,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
       },
       "imageRev": 1781763506
     },
     {
-      "id": "L03_morning",
+      "id": "ambient_kyoto_pagoda",
+      "kanji": "",
+      "keyword": "kyoto pagoda",
+      "image": "studies/kyoto_pagoda.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 49507,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "temples",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785158045
+    },
+    {
+      "id": "ambient_bulls_eye",
+      "kanji": "的",
+      "keyword": "bulls eye",
+      "image": "studies/bulls_eye.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 40%"
+      },
+      "artworkAloneMs": 54230,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1782116719
+    },
+    {
+      "id": "ambient_peach_tree",
+      "kanji": "桃",
+      "keyword": "peach tree",
+      "image": "studies/peach_tree.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 36148,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067381
+    },
+    {
+      "id": "ambient_likeness",
+      "kanji": "如",
+      "keyword": "likeness",
+      "image": "studies/likeness.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 35735,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781868312
+    },
+    {
+      "id": "ambient_pavilion",
+      "kanji": "亭",
+      "keyword": "pavilion",
+      "image": "studies/pavilion.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 37907,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "temples",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785132533
+    },
+    {
+      "id": "ambient_mutual",
+      "kanji": "相",
+      "keyword": "mutual",
+      "image": "studies/mutual.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 37654,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784985271
+    },
+    {
+      "id": "ambient_take_along",
+      "kanji": "連",
+      "keyword": "take along",
+      "image": "studies/take_along.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 43229,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_16",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785127943
+    },
+    {
+      "id": "ambient_tongue",
+      "kanji": "舌",
+      "keyword": "tongue",
+      "image": "studies/tongue.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 52831,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "people",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782103301
+    },
+    {
+      "id": "ambient_vague",
+      "kanji": "漠",
+      "keyword": "vague",
+      "image": "studies/vague.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 37184,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067992
+    },
+    {
+      "id": "ambient_metaphor",
+      "kanji": "喩",
+      "keyword": "metaphor",
+      "image": "studies/metaphor.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 39088,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_16",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785128366
+    },
+    {
+      "id": "ambient_cape",
+      "kanji": "埼",
+      "keyword": "cape",
+      "image": "studies/cape.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 54673,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_09",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782017240
+    },
+    {
+      "id": "ambient_spring",
+      "kanji": "泉",
+      "keyword": "spring",
+      "image": "studies/spring.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 54603,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781991869
+    },
+    {
+      "id": "ambient_reed",
+      "kanji": "荻",
+      "keyword": "reed",
+      "image": "studies/reed.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 42153,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "forests",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067257
+    },
+    {
+      "id": "ambient_extremity",
+      "kanji": "末",
+      "keyword": "extremity",
+      "image": "studies/extremity.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 38035,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785015901
+    },
+    {
+      "id": "ambient_state",
+      "kanji": "州",
+      "keyword": "state",
+      "image": "studies/state.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 46233,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781915630
+    },
+    {
+      "id": "ambient_lively",
+      "kanji": "活",
+      "keyword": "lively",
+      "image": "studies/lively.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 42407,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781993274
+    },
+    {
+      "id": "ambient_overnight",
+      "kanji": "泊",
+      "keyword": "overnight",
+      "image": "studies/overnight.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 37957,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "evening",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781994436
+    },
+    {
+      "id": "ambient_nine",
+      "kanji": "九",
+      "keyword": "nine",
+      "image": "studies/nine.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 40544,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781524631
+    },
+    {
+      "id": "ambient_tall",
+      "kanji": "高",
+      "keyword": "tall",
+      "image": "studies/tall.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 35020,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785132282
+    },
+    {
+      "id": "ambient_wash",
+      "kanji": "洗",
+      "keyword": "wash",
+      "image": "studies/wash.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 38341,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785068672
+    },
+    {
+      "id": "ambient_morning",
       "kanji": "朝",
       "keyword": "morning",
       "image": "studies/morning.png",
@@ -3470,358 +2032,2177 @@
         "motion": "rise",
         "focus": "50% 35%"
       },
-      "artworkAloneMs": 52006,
+      "artworkAloneMs": 42283,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
         "source": "lesson_03",
+        "category": "evening",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
       "imageFocus": "50% 35%",
       "imageRev": 1781576240
     },
     {
-      "id": "L33_think",
-      "kanji": "思",
-      "keyword": "think",
-      "image": "studies/think.png",
+      "id": "ambient_petition",
+      "kanji": "願",
+      "keyword": "petition",
+      "image": "studies/petition.png",
       "galleryCamera": {
-        "motion": "push-in"
+        "motion": "push-in",
+        "motionScale": 1.15
       },
-      "artworkAloneMs": 41945,
+      "artworkAloneMs": 41402,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_08",
+        "category": "still_life",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782138052
+      "imageRev": 1781992364
     },
     {
-      "id": "L33_breath",
-      "kanji": "息",
-      "keyword": "breath",
-      "image": "studies/breath.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 35802,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138179
-    },
-    {
-      "id": "L34_repent",
-      "kanji": "悔",
-      "keyword": "repent",
-      "image": "studies/repent.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 42646,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138558
-    },
-    {
-      "id": "L33_concept",
-      "kanji": "想",
-      "keyword": "concept",
-      "image": "studies/concept.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 39524,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138157
-    },
-    {
-      "id": "L34_lazy",
-      "kanji": "惰",
-      "keyword": "lazy",
-      "image": "studies/lazy.png",
-      "galleryCamera": {
-        "motion": "push-in"
-      },
-      "artworkAloneMs": 42626,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138658
-    },
-    {
-      "id": "L34_accustomed",
-      "kanji": "慣",
-      "keyword": "accustomed",
-      "image": "studies/accustomed.png",
-      "galleryCamera": {
-        "motion": "rise"
-      },
-      "artworkAloneMs": 44021,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138601
-    },
-    {
-      "id": "L33_idea",
-      "kanji": "意",
-      "keyword": "idea",
-      "image": "studies/idea.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 39514,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138116
-    },
-    {
-      "id": "L34_lament",
-      "kanji": "悼",
-      "keyword": "lament",
-      "image": "studies/lament.png",
-      "galleryCamera": {
-        "motion": "drift-x"
-      },
-      "artworkAloneMs": 42580,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138482
-    },
-    {
-      "id": "L34_constancy",
-      "kanji": "恒",
-      "keyword": "constancy",
-      "image": "studies/constancy.png",
-      "galleryCamera": {
-        "motion": "drift-y"
-      },
-      "artworkAloneMs": 39690,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138462
-    },
-    {
-      "id": "L34_recollection",
-      "kanji": "憶",
-      "keyword": "recollection",
-      "image": "studies/recollection.png",
+      "id": "ambient_thatched_roof",
+      "kanji": "",
+      "keyword": "thatched roof",
+      "image": "studies/thatched_roof.png",
       "galleryCamera": {
         "motion": "drift-diagonal"
       },
-      "artworkAloneMs": 44114,
+      "artworkAloneMs": 49706,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "playlist",
+        "category": "villages",
+        "signature": true,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782138718
+      "imageRev": 1785157874
     },
     {
-      "id": "L34_remorse",
-      "kanji": "憾",
-      "keyword": "remorse",
-      "image": "studies/remorse.png",
+      "id": "ambient_in_front",
+      "kanji": "前",
+      "keyword": "in front",
+      "image": "studies/in_front.png",
       "galleryCamera": {
-        "motion": "rise"
+        "motion": "push-in"
       },
-      "artworkAloneMs": 43271,
+      "artworkAloneMs": 38343,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_16",
+        "category": "streets",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782138699
+      "imageRev": 1785128515
     },
     {
-      "id": "L35_annexed",
-      "kanji": "添",
-      "keyword": "annexed",
-      "image": "studies/annexed.png",
-      "galleryCamera": {
-        "motion": "pull-out"
-      },
-      "artworkAloneMs": 40606,
-      "verse": {
-        "jpHtml": "",
-        "en": ""
-      },
-      "meta": {
-        "source": "heart",
-        "ambientGalleryFilm": true,
-        "ambientMove": "v2"
-      },
-      "imageRev": 1782138823
-    },
-    {
-      "id": "L33_endure_silently",
-      "kanji": "忍",
-      "keyword": "endure silently",
-      "image": "studies/endure_silently.png",
+      "id": "ambient_eminent",
+      "kanji": "卓",
+      "keyword": "eminent",
+      "image": "studies/eminent.png",
       "galleryCamera": {
         "motion": "drift-diagonal"
       },
-      "artworkAloneMs": 44534,
+      "artworkAloneMs": 39202,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_03",
+        "category": "mountains",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782137762
+      "imageRev": 1782106372
     },
     {
-      "id": "L35_long_for",
-      "kanji": "憬",
-      "keyword": "long for",
-      "image": "studies/long_for.png",
+      "id": "ambient_ball",
+      "kanji": "玉",
+      "keyword": "ball",
+      "image": "studies/ball.png",
       "galleryCamera": {
-        "motion": "pull-out"
+        "motion": "push-in"
       },
-      "artworkAloneMs": 39788,
+      "artworkAloneMs": 43005,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_14",
+        "category": "still_life",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782138776
+      "imageRev": 1785069384
     },
     {
-      "id": "L33_recess",
-      "kanji": "憩",
-      "keyword": "recess",
-      "image": "studies/recess.png",
+      "id": "ambient_den",
+      "kanji": "洞",
+      "keyword": "den",
+      "image": "studies/den.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 40173,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_10",
+        "category": "villages",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "ambient_car",
+      "kanji": "車",
+      "keyword": "car",
+      "image": "studies/car.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 37712,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_16",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785127852
+    },
+    {
+      "id": "ambient_ice",
+      "kanji": "氷",
+      "keyword": "ice",
+      "image": "studies/ice.png",
       "galleryCamera": {
         "motion": "drift-x"
       },
-      "artworkAloneMs": 43009,
+      "artworkAloneMs": 41606,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_07",
+        "category": "water",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782138234
+      "imageRev": 1781915707
     },
     {
-      "id": "L32_heart",
-      "kanji": "心",
-      "keyword": "heart",
-      "image": "studies/heart.png",
+      "id": "ambient_letter",
+      "kanji": "字",
+      "keyword": "letter",
+      "image": "studies/letter.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 51741,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_10",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782029938
+    },
+    {
+      "id": "ambient_village",
+      "kanji": "村",
+      "keyword": "village",
+      "image": "studies/village.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 38550,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "villages",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784985185
+    },
+    {
+      "id": "ambient_dispose",
+      "kanji": "処",
+      "keyword": "dispose",
+      "image": "studies/dispose.png",
       "galleryCamera": {
         "motion": "drift-y"
       },
-      "artworkAloneMs": 35899,
+      "artworkAloneMs": 41986,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_16",
+        "category": "streets",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782137627
+      "imageRev": 1785130524
     },
     {
-      "id": "L33_selfish",
-      "kanji": "恣",
-      "keyword": "selfish",
-      "image": "studies/selfish.png",
+      "id": "ambient_sand",
+      "kanji": "砂",
+      "keyword": "sand",
+      "image": "studies/sand.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 37847,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781918431
+    },
+    {
+      "id": "ambient_pearl",
+      "kanji": "珠",
+      "keyword": "pearl",
+      "image": "studies/pearl.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 43177,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785069503
+    },
+    {
+      "id": "ambient_emperor",
+      "kanji": "皇",
+      "keyword": "emperor",
+      "image": "studies/emperor.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 38557,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "evening",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785069824
+    },
+    {
+      "id": "ambient_vermilion",
+      "kanji": "朱",
+      "keyword": "vermilion",
+      "image": "studies/vermilion.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 41193,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785023395
+    },
+    {
+      "id": "ambient_name",
+      "kanji": "名",
+      "keyword": "name",
+      "image": "studies/name.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39990,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763569
+    },
+    {
+      "id": "ambient_grains_of_sand",
+      "kanji": "沙",
+      "keyword": "grains of sand",
+      "image": "studies/grains_of_sand.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 41001,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781993025
+    },
+    {
+      "id": "ambient_sun",
+      "kanji": "日",
+      "keyword": "sun",
+      "image": "studies/sun.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 32%"
+      },
+      "artworkAloneMs": 52885,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "evening",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 32%",
+      "imageRev": 1781525623
+    },
+    {
+      "id": "ambient_mediocre",
+      "kanji": "凡",
+      "keyword": "mediocre",
+      "image": "studies/mediocre.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 41580,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782116556
+    },
+    {
+      "id": "ambient_general",
+      "kanji": "汎",
+      "keyword": "general",
+      "image": "studies/general.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39570,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781992671
+    },
+    {
+      "id": "ambient_creek",
+      "kanji": "江",
+      "keyword": "creek",
+      "image": "studies/creek.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 38876,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781992745
+    },
+    {
+      "id": "ambient_exquisite",
+      "kanji": "妙",
+      "keyword": "exquisite",
+      "image": "studies/exquisite.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 38152,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781916286
+    },
+    {
+      "id": "ambient_sparkle",
+      "kanji": "晶",
+      "keyword": "sparkle",
+      "image": "studies/sparkle.png",
+      "galleryCamera": {
+        "motion": "pull-out",
+        "focus": "50% 42%"
+      },
+      "artworkAloneMs": 38229,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_02",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1782105217
+    },
+    {
+      "id": "ambient_chair",
+      "kanji": "椅",
+      "keyword": "chair",
+      "image": "studies/chair.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 37904,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784984861
+    },
+    {
+      "id": "ambient_mt_fuji_2",
+      "kanji": "",
+      "keyword": "mt fuji 2",
+      "image": "studies/mt_fuji_2.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 42189,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "mountains",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785157053
+    },
+    {
+      "id": "ambient_shellfish",
+      "kanji": "貝",
+      "keyword": "shellfish",
+      "image": "studies/shellfish.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 43088,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781576331
+    },
+    {
+      "id": "ambient_tea",
+      "kanji": "茶",
+      "keyword": "tea",
+      "image": "studies/tea.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 42620,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785069027
+    },
+    {
+      "id": "ambient_shining",
+      "kanji": "昭",
+      "keyword": "shining",
+      "image": "studies/shining.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 38%"
+      },
+      "artworkAloneMs": 35000,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_05",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 38%",
+      "imageRev": 1781868894
+    },
+    {
+      "id": "ambient_stubborn",
+      "kanji": "頑",
+      "keyword": "stubborn",
+      "image": "studies/stubborn.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 41094,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781759265
+    },
+    {
+      "id": "ambient_top",
+      "kanji": "頂",
+      "keyword": "top",
+      "image": "studies/top.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 40%"
+      },
+      "artworkAloneMs": 41656,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_05",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1781689064
+    },
+    {
+      "id": "ambient_plump",
+      "kanji": "太",
+      "keyword": "plump",
+      "image": "studies/plump.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39607,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781915521
+    },
+    {
+      "id": "ambient_tide",
+      "kanji": "潮",
+      "keyword": "tide",
+      "image": "studies/tide.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 39822,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781993112
+    },
+    {
+      "id": "ambient_radiance",
+      "kanji": "輝",
+      "keyword": "radiance",
+      "image": "studies/radiance.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 37730,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785131316
+    },
+    {
+      "id": "ambient_texture",
+      "kanji": "肌",
+      "keyword": "texture",
+      "image": "studies/texture.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 41341,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781688984
+    },
+    {
+      "id": "ambient_open_sea",
+      "kanji": "沖",
+      "keyword": "open sea",
+      "image": "studies/open_sea.png",
       "galleryCamera": {
         "motion": "pull-out"
       },
-      "artworkAloneMs": 41744,
+      "artworkAloneMs": 52372,
       "verse": {
         "jpHtml": "",
         "en": ""
       },
       "meta": {
-        "source": "heart",
+        "source": "lesson_08",
+        "category": "mountains",
+        "signature": false,
         "ambientGalleryFilm": true,
-        "ambientMove": "v2"
+        "ambientMove": "revised"
       },
-      "imageRev": 1782137690
+      "imageRev": 1781992592
+    },
+    {
+      "id": "ambient_shelf",
+      "kanji": "棚",
+      "keyword": "shelf",
+      "image": "studies/shelf.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 38882,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784984462
+    },
+    {
+      "id": "ambient_condition",
+      "kanji": "況",
+      "keyword": "condition",
+      "image": "studies/condition.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 56080,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781993440
+    },
+    {
+      "id": "ambient_refreshing",
+      "kanji": "涼",
+      "keyword": "refreshing",
+      "image": "studies/refreshing.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39083,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785132590
+    },
+    {
+      "id": "ambient_present",
+      "kanji": "現",
+      "keyword": "present",
+      "image": "studies/present.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 53080,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785069576
+    },
+    {
+      "id": "ambient_gland",
+      "kanji": "腺",
+      "keyword": "gland",
+      "image": "studies/gland.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 51257,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1784769268
+    },
+    {
+      "id": "ambient_special",
+      "kanji": "特",
+      "keyword": "special",
+      "image": "studies/special.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 38906,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785068405
+    },
+    {
+      "id": "ambient_ripe",
+      "kanji": "熟",
+      "keyword": "ripe",
+      "image": "studies/ripe.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 37947,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785134349
+    },
+    {
+      "id": "ambient_imitation",
+      "kanji": "模",
+      "keyword": "imitation",
+      "image": "studies/imitation.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 35893,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_13",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785067798
+    },
+    {
+      "id": "ambient_source",
+      "kanji": "源",
+      "keyword": "source",
+      "image": "studies/source.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 38053,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781993192
+    },
+    {
+      "id": "ambient_senso_ji_temple",
+      "kanji": "",
+      "keyword": "senso ji temple",
+      "image": "studies/senso_ji_temple.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 42167,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "temples",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785157188
+    },
+    {
+      "id": "ambient_fire",
+      "kanji": "火",
+      "keyword": "fire",
+      "image": "studies/fire.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 35369,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_09",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782017731
+    },
+    {
+      "id": "ambient_flourishing",
+      "kanji": "旺",
+      "keyword": "flourishing",
+      "image": "studies/flourishing.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 36944,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785069757
+    },
+    {
+      "id": "ambient_round",
+      "kanji": "丸",
+      "keyword": "round",
+      "image": "studies/round.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 45%"
+      },
+      "artworkAloneMs": 38848,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 45%",
+      "imageRev": 1782104332
+    },
+    {
+      "id": "ambient_carp",
+      "kanji": "鯉",
+      "keyword": "carp",
+      "image": "studies/carp.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 42674,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_10",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782030052
+    },
+    {
+      "id": "ambient_overcome",
+      "kanji": "克",
+      "keyword": "overcome",
+      "image": "studies/overcome.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 42436,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763839
+    },
+    {
+      "id": "ambient_old",
+      "kanji": "古",
+      "keyword": "old",
+      "image": "studies/old.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 38452,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "temples",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782000070
+    },
+    {
+      "id": "ambient_illuminate",
+      "kanji": "照",
+      "keyword": "illuminate",
+      "image": "studies/illuminate.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 40952,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_10",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782030392
+    },
+    {
+      "id": "ambient_pop_song",
+      "kanji": "唄",
+      "keyword": "pop song",
+      "image": "studies/pop_song.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 48%"
+      },
+      "artworkAloneMs": 49281,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 48%",
+      "imageRev": 1781576287
+    },
+    {
+      "id": "ambient_eternity",
+      "kanji": "永",
+      "keyword": "eternity",
+      "image": "studies/eternity.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 42523,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781915728
+    },
+    {
+      "id": "ambient_measuring_box",
+      "kanji": "升",
+      "keyword": "measuring box",
+      "image": "studies/measuring_box.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 41630,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782103791
+    },
+    {
+      "id": "ambient_dream",
+      "kanji": "夢",
+      "keyword": "dream",
+      "image": "studies/dream.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 41798,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785132052
+    },
+    {
+      "id": "ambient_large_river",
+      "kanji": "河",
+      "keyword": "large river",
+      "image": "studies/large_river.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 56170,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781994187
+    },
+    {
+      "id": "ambient_six",
+      "kanji": "六",
+      "keyword": "six",
+      "image": "studies/six.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39238,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781524307
+    },
+    {
+      "id": "ambient_ray",
+      "kanji": "光",
+      "keyword": "ray",
+      "image": "studies/ray.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 39702,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "blossoms",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781915504
+    },
+    {
+      "id": "ambient_hundred",
+      "kanji": "百",
+      "keyword": "hundred",
+      "image": "studies/hundred.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 38837,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_02",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782112460
+    },
+    {
+      "id": "ambient_fish",
+      "kanji": "魚",
+      "keyword": "fish",
+      "image": "studies/fish.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 42657,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_10",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782030317
+    },
+    {
+      "id": "ambient_sword",
+      "kanji": "刀",
+      "keyword": "sword",
+      "image": "studies/sword.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal",
+        "focus": "50% 42%"
+      },
+      "artworkAloneMs": 54091,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_05",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 42%",
+      "imageRev": 1781614218
+    },
+    {
+      "id": "ambient_kyoto",
+      "kanji": "",
+      "keyword": "kyoto",
+      "image": "studies/kyoto.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 55080,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "streets",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785158215
+    },
+    {
+      "id": "ambient_whale",
+      "kanji": "鯨",
+      "keyword": "whale",
+      "image": "studies/whale.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39578,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "ambient_thick",
+      "kanji": "厚",
+      "keyword": "thick",
+      "image": "studies/thick.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 40818,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781916452
+    },
+    {
+      "id": "ambient_finish",
+      "kanji": "了",
+      "keyword": "finish",
+      "image": "studies/finish.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 42782,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763292
+    },
+    {
+      "id": "ambient_ten_thousand",
+      "kanji": "万",
+      "keyword": "ten thousand",
+      "image": "studies/ten_thousand.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 45%"
+      },
+      "artworkAloneMs": 41883,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 45%",
+      "imageRev": 1782116621
+    },
+    {
+      "id": "ambient_nitrate",
+      "kanji": "硝",
+      "keyword": "nitrate",
+      "image": "studies/nitrate.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 41453,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781868985
+    },
+    {
+      "id": "ambient_crown",
+      "kanji": "冠",
+      "keyword": "crown",
+      "image": "studies/crown.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 45285,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785131765
+    },
+    {
+      "id": "ambient_possible",
+      "kanji": "可",
+      "keyword": "possible",
+      "image": "studies/possible.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 38403,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_05",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781689119
+    },
+    {
+      "id": "ambient_river",
+      "kanji": "川",
+      "keyword": "river",
+      "image": "studies/river.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 41029,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781915610
+    },
+    {
+      "id": "ambient_not_yet",
+      "kanji": "未",
+      "keyword": "not yet",
+      "image": "studies/not_yet.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 39792,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785015809
+    },
+    {
+      "id": "ambient_below",
+      "kanji": "下",
+      "keyword": "below",
+      "image": "studies/below.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 40827,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782107772
+    },
+    {
+      "id": "ambient_white",
+      "kanji": "白",
+      "keyword": "white",
+      "image": "studies/white.png",
+      "galleryCamera": {
+        "motion": "push-in",
+        "focus": "50% 40%"
+      },
+      "artworkAloneMs": 38196,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_02",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 40%",
+      "imageRev": 1782111954
+    },
+    {
+      "id": "ambient_splash",
+      "kanji": "沫",
+      "keyword": "splash",
+      "image": "studies/splash.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 40721,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785023016
+    },
+    {
+      "id": "ambient_town",
+      "kanji": "町",
+      "keyword": "town",
+      "image": "studies/town.png",
+      "galleryCamera": {
+        "motion": "drift-x",
+        "focus": "50% 45%"
+      },
+      "artworkAloneMs": 48873,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_05",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 45%",
+      "imageRev": 1780383556
+    },
+    {
+      "id": "ambient_ten_days",
+      "kanji": "旬",
+      "keyword": "ten days",
+      "image": "studies/ten_days.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 40065,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_04",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782116686
+    },
+    {
+      "id": "ambient_nikko_fall_colors",
+      "kanji": "",
+      "keyword": "nikko fall colors",
+      "image": "studies/nikko_fall_colors.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 41188,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "autumn",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785157526
+    },
+    {
+      "id": "ambient_fortune_telling",
+      "kanji": "占",
+      "keyword": "fortune telling",
+      "image": "studies/fortune_telling.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 43051,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_03",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782103490
+    },
+    {
+      "id": "ambient_street",
+      "kanji": "丁",
+      "keyword": "street",
+      "image": "studies/street.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 41874,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_05",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781689138
+    },
+    {
+      "id": "ambient_flavor",
+      "kanji": "味",
+      "keyword": "flavor",
+      "image": "studies/flavor.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 37631,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_12",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785023235
+    },
+    {
+      "id": "ambient_previous",
+      "kanji": "先",
+      "keyword": "previous",
+      "image": "studies/previous.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 37498,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785068571
+    },
+    {
+      "id": "ambient_thousand",
+      "kanji": "千",
+      "keyword": "thousand",
+      "image": "studies/thousand.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 40293,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_02",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782112481
+    },
+    {
+      "id": "ambient_right",
+      "kanji": "右",
+      "keyword": "right",
+      "image": "studies/right.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 39917,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_05",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782117220
+    },
+    {
+      "id": "ambient_eight",
+      "kanji": "八",
+      "keyword": "eight",
+      "image": "studies/eight.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 38244,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "still_life",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781524482
+    },
+    {
+      "id": "ambient_sapporo_clock",
+      "kanji": "",
+      "keyword": "sapporo clock",
+      "image": "studies/sapporo_clock.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 57655,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "playlist",
+        "category": "streets",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785157386
+    },
+    {
+      "id": "ambient_capital",
+      "kanji": "京",
+      "keyword": "capital",
+      "image": "studies/capital.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 38969,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "streets",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "ambient_early_evening",
+      "kanji": "宵",
+      "keyword": "early evening",
+      "image": "studies/early_evening.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 49437,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_11",
+        "category": "evening",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1783218942
+    },
+    {
+      "id": "ambient_lake",
+      "kanji": "湖",
+      "keyword": "lake",
+      "image": "studies/lake.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 41488,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_08",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781994536
+    },
+    {
+      "id": "ambient_temple",
+      "kanji": "寺",
+      "keyword": "temple",
+      "image": "studies/temple.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 40564,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_09",
+        "category": "temples",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782017685
+    },
+    {
+      "id": "ambient_horizon",
+      "kanji": "涯",
+      "keyword": "horizon",
+      "image": "studies/horizon.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 53421,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_09",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1782017668
+    },
+    {
+      "id": "ambient_evening",
+      "kanji": "夕",
+      "keyword": "evening",
+      "image": "studies/evening.png",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 38861,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "evening",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763649
+    },
+    {
+      "id": "ambient_water",
+      "kanji": "水",
+      "keyword": "water",
+      "image": "studies/water.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 39650,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_07",
+        "category": "water",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781915687
+    },
+    {
+      "id": "ambient_pagoda",
+      "kanji": "塔",
+      "keyword": "pagoda",
+      "image": "studies/pagoda.png",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 46792,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_14",
+        "category": "temples",
+        "signature": true,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1785069253
+    },
+    {
+      "id": "ambient_scenery",
+      "kanji": "景",
+      "keyword": "scenery",
+      "image": "studies/scenery.png",
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 54555,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_17",
+        "category": "mountains",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1780383556
+    },
+    {
+      "id": "ambient_eventide",
+      "kanji": "汐",
+      "keyword": "eventide",
+      "image": "studies/eventide.png",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 36350,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_06",
+        "category": "evening",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageRev": 1781763623
+    },
+    {
+      "id": "ambient_moon",
+      "kanji": "月",
+      "keyword": "moon",
+      "image": "studies/moon.png",
+      "galleryCamera": {
+        "motion": "rise",
+        "focus": "50% 35%"
+      },
+      "artworkAloneMs": 55000,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "lesson_01",
+        "category": "evening",
+        "signature": false,
+        "ambientGalleryFilm": true,
+        "ambientMove": "revised"
+      },
+      "imageFocus": "50% 35%",
+      "imageRev": 1781511558
     }
   ]
 }

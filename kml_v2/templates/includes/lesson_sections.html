@@ -1,0 +1,73 @@
+<section aria-labelledby="kanji-roster-heading" class="u-mb-2">
+  <h2 id="kanji-roster-heading" class="eyebrow">Kanji</h2>
+  <ol class="lesson-list" style="display:grid;gap:1rem">
+    {% for k in lesson.kanji %}
+      {% include "includes/kanji_card.html" %}
+    {% endfor %}
+  </ol>
+</section>
+
+{% if lesson.compounds %}
+<section aria-labelledby="compounds-heading" class="u-mb-2">
+  <h2 id="compounds-heading" class="eyebrow">Compounds</h2>
+  <ul class="lesson-list">
+    {% for c in lesson.compounds[:24] %}
+    <li class="lesson-card" style="cursor:default">
+      <span class="lesson-card-label" lang="ja">{{ c.surface }}</span>
+      <span class="lesson-card-meta">{{ c.reading or '—' }} · {{ c.meaning or '' }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if lesson.compound_count > 24 %}
+  <p class="text-quiet">Showing 24 of {{ lesson.compound_count }} compounds.</p>
+  {% endif %}
+</section>
+{% endif %}
+
+{% if lesson.vocabulary %}
+<section aria-labelledby="vocab-heading" class="u-mb-2">
+  <h2 id="vocab-heading" class="eyebrow">Vocabulary</h2>
+  <ul class="lesson-list">
+    {% for v in lesson.vocabulary[:24] %}
+    <li class="lesson-card" style="cursor:default">
+      <span class="lesson-card-label" lang="ja">{{ v.surface }}</span>
+      <span class="lesson-card-meta">{{ v.reading or '—' }} · {{ v.meaning or '' }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if lesson.vocabulary_count > 24 %}
+  <p class="text-quiet">Showing 24 of {{ lesson.vocabulary_count }} vocabulary atoms.</p>
+  {% endif %}
+</section>
+{% endif %}
+
+{% if lesson.phrases %}
+<section aria-labelledby="phrases-heading" class="u-mb-2">
+  <h2 id="phrases-heading" class="eyebrow">Phrases</h2>
+  <ul class="lesson-list">
+    {% for p in lesson.phrases[:16] %}
+    <li class="lesson-card" style="cursor:default">
+      <span class="lesson-card-label" lang="ja">{{ p.surface }}</span>
+      <span class="lesson-card-meta">{{ p.meaning or '' }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if lesson.phrase_count > 16 %}
+  <p class="text-quiet">Showing 16 of {{ lesson.phrase_count }} phrases.</p>
+  {% endif %}
+</section>
+{% endif %}
+
+{% if lesson.gallery and lesson.gallery.collections %}
+<section aria-labelledby="gallery-heading" class="u-mb-2">
+  <h2 id="gallery-heading" class="eyebrow">Gallery &amp; Ambient</h2>
+  <ul class="lesson-list">
+    {% for col in lesson.gallery.collections %}
+    <li class="lesson-card" style="cursor:default">
+      <span class="lesson-card-label">{{ col.title }}</span>
+      <span class="lesson-card-meta">{{ col.kind }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

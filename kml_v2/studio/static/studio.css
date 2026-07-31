@@ -1,0 +1,147 @@
+:root {
+  --bg: #12110f;
+  --panel: #1a1815;
+  --line: rgba(201, 164, 88, 0.18);
+  --ink: #f3f1eb;
+  --quiet: #9a958c;
+  --gold: #c9a458;
+  --ok: #7d9b6e;
+  --warn: #c9a458;
+  --bad: #c06b5c;
+  --font: "Source Sans 3", "Segoe UI", sans-serif;
+  --serif: "Shippori Mincho", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(31,58,46,0.2), transparent 70%),
+    var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.shell { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1.5rem 3rem; }
+
+.top {
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem; margin-bottom: 1.5rem;
+}
+.brand {
+  font-family: var(--serif);
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+}
+.brand span { color: var(--quiet); font-size: 0.8rem; margin-left: 0.75rem; letter-spacing: 0.04em; }
+
+.flash {
+  background: rgba(201,164,88,0.12);
+  border: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  margin-bottom: 1.5rem;
+}
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+.stat .n { font-family: var(--serif); font-size: 1.75rem; color: var(--gold); }
+.stat .l { color: var(--quiet); font-size: 0.85rem; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem 1.15rem 1.2rem;
+  margin-bottom: 1.25rem;
+}
+.panel h2 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 0.85rem;
+}
+.panel h3 {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.65rem;
+  font-weight: 500;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.btn {
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--gold); color: var(--gold); }
+.btn-primary { background: var(--gold); color: #171512; border-color: var(--gold); }
+.btn-primary:hover { filter: brightness(1.05); color: #171512; }
+.btn-small { padding: 0.25rem 0.55rem; font-size: 0.8rem; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.55rem 0.4rem; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; }
+th { color: var(--quiet); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  border: 1px solid var(--line);
+  color: var(--quiet);
+}
+.badge-ok { color: var(--ok); border-color: rgba(125,155,110,0.4); }
+.badge-warn { color: var(--warn); }
+.badge-bad { color: var(--bad); border-color: rgba(192,107,92,0.45); }
+
+.warn-list { margin: 0; padding-left: 1.1rem; color: var(--quiet); font-size: 0.85rem; }
+.flow {
+  display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center;
+  color: var(--quiet); font-size: 0.85rem; margin-bottom: 1rem;
+}
+.flow strong { color: var(--ink); font-weight: 500; }
+
+.two {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1.4fr 1fr;
+}
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+
+input[type=text] {
+  background: #0e0d0c;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 0.45rem 0.65rem;
+  border-radius: 4px;
+  font: inherit;
+}
+.muted { color: var(--quiet); font-size: 0.88rem; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem; }
+ul.plain { list-style: none; margin: 0; padding: 0; }
+ul.plain li { padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }

@@ -1,0 +1,67 @@
+{
+  "$schema": "../../schema/lesson.schema.json",
+  "id": "lesson_002",
+  "number": 2,
+  "book_id": "book_01",
+  "book_number": 1,
+  "title": "Lesson 2",
+  "subtitle": "Foundations — Heisig frames 21–40",
+  "slug": "lesson_002",
+  "summary": "Twenty characters from 唱 to 千 (Heisig 21–40), continuing Book 1 foundations with Japanese Reflection verses and study imagery.",
+  "gallery_url": "https://youtu.be/3yMM_ZzFq-o",
+  "focus": {
+    "heisig_start": 21,
+    "heisig_end": 40,
+    "kanji_count": 20,
+    "opening_character": "唱",
+    "closing_character": "千",
+    "primary_keyword": null
+  },
+  "status": "draft",
+  "publication": {
+    "website": true,
+    "youtube": false,
+    "recorded": false,
+    "edited": false,
+    "ambient_exhibitions": true
+  },
+  "pack": {
+    "kanji": "kanji.json",
+    "vocabulary": "vocabulary.json",
+    "phrases": "phrases.json",
+    "compounds": "compounds.json",
+    "gallery": "gallery.json",
+    "youtube": "youtube.json",
+    "assets": "assets.json"
+  },
+  "relationships": {
+    "ambient_ids": [
+      "lesson_2_foundations",
+      "lesson_02_gallery",
+      "lesson_02_reading",
+      "lesson_02_vocabulary",
+      "lesson_02_compounds",
+      "lesson_02_strokes"
+    ],
+    "playlist_ids": [
+      "book_01_lessons"
+    ],
+    "beyond_joyo_ids": [],
+    "vocabulary_section_ids": []
+  },
+  "navigation": {
+    "prev_id": "lesson_001",
+    "next_id": "lesson_003",
+    "prev_href": "./lesson_01.html",
+    "next_href": "./lesson_03.html",
+    "prev_label": "Lesson 1",
+    "next_label": "Lesson 3"
+  },
+  "path": "books/book_01/lessons/lesson_02.html",
+  "tags": [
+    "foundations",
+    "book_01",
+    "heisig_21_40"
+  ],
+  "notes": "Authored to prove Lesson 001 schema is not a special case. No architecture changes."
+}

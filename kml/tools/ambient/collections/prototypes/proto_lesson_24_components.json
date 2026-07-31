@@ -1,0 +1,413 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_24_components",
+  "title": "Lesson 24 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 24,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L24_bridge",
+      "kanji": "橋",
+      "keyword": "bridge",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "呑",
+          "label": "quaff"
+        },
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_attractive",
+      "kanji": "嬌",
+      "keyword": "attractive",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "喬",
+          "label": "喬"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_stand_up",
+      "kanji": "立",
+      "keyword": "stand up",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_cry",
+      "kanji": "泣",
+      "keyword": "cry",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "立",
+          "label": "stand up"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_chapter",
+      "kanji": "章",
+      "keyword": "chapter",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "早",
+          "label": "early"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_compete",
+      "kanji": "競",
+      "keyword": "compete",
+      "components": [
+        {
+          "glyph": "竟",
+          "label": "fin"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_sovereign",
+      "kanji": "帝",
+      "keyword": "sovereign",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_renunciation",
+      "kanji": "諦",
+      "keyword": "renunciation",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "帝",
+          "label": "sovereign"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_juvenile",
+      "kanji": "童",
+      "keyword": "juvenile",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_pupil",
+      "kanji": "瞳",
+      "keyword": "pupil",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "童",
+          "label": "juvenile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_bell",
+      "kanji": "鐘",
+      "keyword": "bell",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "童",
+          "label": "juvenile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_deal",
+      "kanji": "商",
+      "keyword": "deal",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L24_intro_merchant",
+      "glyph": "啇",
+      "label": "merchant"
+    },
+    {
+      "type": "kanji",
+      "id": "L24_legitimate_wife",
+      "kanji": "嫡",
+      "keyword": "legitimate wife",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "古",
+          "label": "old"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_suitable",
+      "kanji": "適",
+      "keyword": "suitable",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "啇",
+          "label": "merchant"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_drip",
+      "kanji": "滴",
+      "keyword": "drip",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "啇",
+          "label": "merchant"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_enemy",
+      "kanji": "敵",
+      "keyword": "enemy",
+      "components": [
+        {
+          "glyph": "啇",
+          "label": "merchant"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_spoon",
+      "kanji": "匕",
+      "keyword": "spoon",
+      "components": [
+        {
+          "glyph": "匕",
+          "label": "spoon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_scold",
+      "kanji": "叱",
+      "keyword": "scold",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "匕",
+          "label": "spoon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_scent",
+      "kanji": "匂",
+      "keyword": "scent",
+      "components": [
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "匕",
+          "label": "spoon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L24_about_that_time",
+      "kanji": "頃",
+      "keyword": "about that time",
+      "components": [
+        {
+          "glyph": "匕",
+          "label": "spoon"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    }
+  ]
+}
