@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% set meta_description = "Kanji・Music・Landscape — characters, music, and landscape, paced for memory." %}
+{% set hero_brand = "Kanji・Music・Landscape" %}
+{% set hero_title = "A complete curriculum for learning Japanese" %}
+{% set hero_lead = "Characters, music, and landscape — one path of memory, walked slowly." %}
+{% set hero_actions = [
+  {"label": "Enter the Bookshelf", "href": "./books/index.html", "class": "btn-primary"},
+  {"label": "Open Lesson 1", "href": "./books/book_01/lessons/lesson_01.html", "class": "btn-ghost"}
+] %}
+
+{% block content %}
+{% include "includes/hero.html" %}
+
+<section class="section" aria-labelledby="books-heading">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">Curriculum</p>
+      <h2 id="books-heading">Books</h2>
+      <p class="lead">Generated from metadata — titles live once in data/books.</p>
+    </header>
+
+    <ol class="book-grid">
+      {% for book in books %}
+      <li>
+        <a class="book-card" href="./{{ book.path }}">
+          <span class="book-card-num">Book {{ book.number }}</span>
+          <h3 class="book-card-title">{{ book.title }}</h3>
+          <p class="book-card-meta">{{ book.lesson_range_label or book.status }}</p>
+        </a>
+      </li>
+      {% else %}
+      <li>
+        <a class="book-card" href="./books/index.html">
+          <span class="book-card-num">Bookshelf</span>
+          <h3 class="book-card-title">Open the bookshelf</h3>
+          <p class="book-card-meta">Add books under data/books/</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}

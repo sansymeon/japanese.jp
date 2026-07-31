@@ -1,0 +1,391 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_06_components",
+  "title": "Lesson 6 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 6,
+    "sceneCount": 24,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L06_cavity",
+      "kanji": "孔",
+      "keyword": "cavity",
+      "components": [
+        {
+          "glyph": "子",
+          "label": "child"
+        },
+        {
+          "glyph": "乚",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_finish",
+      "kanji": "了",
+      "keyword": "finish",
+      "components": [
+        {
+          "glyph": "了",
+          "label": "finish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_woman",
+      "kanji": "女",
+      "keyword": "woman",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_fond_of",
+      "kanji": "好",
+      "keyword": "fond of",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "子",
+          "label": "child"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_likeness",
+      "kanji": "如",
+      "keyword": "likeness",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_mother",
+      "kanji": "母",
+      "keyword": "mother",
+      "components": [
+        {
+          "glyph": "母",
+          "label": "mother"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_pierce",
+      "kanji": "貫",
+      "keyword": "pierce",
+      "components": [
+        {
+          "glyph": "母",
+          "label": "mother"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_older_brother",
+      "kanji": "兄",
+      "keyword": "older brother",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_curse",
+      "kanji": "呪",
+      "keyword": "curse",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "兄",
+          "label": "older brother"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_overcome",
+      "kanji": "克",
+      "keyword": "overcome",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "兄",
+          "label": "older brother"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_small",
+      "kanji": "小",
+      "keyword": "small",
+      "components": [
+        {
+          "glyph": "小",
+          "label": "small"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L06_intro_slash",
+      "glyph": "ノ",
+      "label": "slash"
+    },
+    {
+      "type": "kanji",
+      "id": "L06_few",
+      "kanji": "少",
+      "keyword": "few",
+      "components": [
+        {
+          "glyph": "小",
+          "label": "small"
+        },
+        {
+          "glyph": "ノ",
+          "label": "slash"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_large",
+      "kanji": "大",
+      "keyword": "large",
+      "components": [
+        {
+          "glyph": "大",
+          "label": "large"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_evening",
+      "kanji": "夕",
+      "keyword": "evening",
+      "components": [
+        {
+          "glyph": "夕",
+          "label": "evening"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_many",
+      "kanji": "多",
+      "keyword": "many",
+      "components": [
+        {
+          "glyph": "夕",
+          "label": "evening"
+        },
+        {
+          "glyph": "夕",
+          "label": "evening"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L06_intro_water",
+      "glyph": "氵",
+      "label": "water"
+    },
+    {
+      "type": "kanji",
+      "id": "L06_eventide",
+      "kanji": "汐",
+      "keyword": "eventide",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "夕",
+          "label": "evening"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_outside",
+      "kanji": "外",
+      "keyword": "outside",
+      "components": [
+        {
+          "glyph": "夕",
+          "label": "evening"
+        },
+        {
+          "glyph": "卜",
+          "label": "signal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L06_name",
+      "kanji": "名",
+      "keyword": "name",
+      "components": [
+        {
+          "glyph": "夕",
+          "label": "evening"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L06_intro_cliff",
+      "glyph": "厂",
+      "label": "cliff"
+    },
+    {
+      "type": "kanji",
+      "id": "L06_stone",
+      "kanji": "石",
+      "keyword": "stone",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L06_intro_little",
+      "glyph": "⺌",
+      "label": "little"
+    },
+    {
+      "type": "kanji",
+      "id": "L06_resemblance",
+      "kanji": "肖",
+      "keyword": "resemblance",
+      "components": [
+        {
+          "glyph": "⺌",
+          "label": "little"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    }
+  ]
+}

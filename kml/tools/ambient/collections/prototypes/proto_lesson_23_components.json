@@ -1,0 +1,405 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_23_components",
+  "title": "Lesson 23 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 23,
+    "sceneCount": 23,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L23_market",
+      "kanji": "市",
+      "keyword": "market",
+      "components": [
+        {
+          "glyph": "市",
+          "label": "market"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_persimmon",
+      "kanji": "柿",
+      "keyword": "persimmon",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "市",
+          "label": "market"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_older_sister",
+      "kanji": "姉",
+      "keyword": "older sister",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "市",
+          "label": "market"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_lungs",
+      "kanji": "肺",
+      "keyword": "lungs",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "市",
+          "label": "market"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L23_intro_thirty",
+      "glyph": "丗",
+      "label": "thirty"
+    },
+    {
+      "type": "kanji",
+      "id": "L23_sash",
+      "kanji": "帯",
+      "keyword": "sash",
+      "components": [
+        {
+          "glyph": "丗",
+          "label": "thirty"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_stagnate",
+      "kanji": "滞",
+      "keyword": "stagnate",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "帯",
+          "label": "sash"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L23_intro_barb",
+      "glyph": "朿",
+      "label": "barb"
+    },
+    {
+      "type": "kanji",
+      "id": "L23_thorn",
+      "kanji": "刺",
+      "keyword": "thorn",
+      "components": [
+        {
+          "glyph": "朿",
+          "label": "barb"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_control",
+      "kanji": "制",
+      "keyword": "control",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_made_in",
+      "kanji": "製",
+      "keyword": "made in",
+      "components": [
+        {
+          "glyph": "制",
+          "label": "control"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L23_intro_quote",
+      "glyph": "云",
+      "label": "quote"
+    },
+    {
+      "type": "kanji",
+      "id": "L23_revolve",
+      "kanji": "転",
+      "keyword": "revolve",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "云",
+          "label": "quote"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_art",
+      "kanji": "芸",
+      "keyword": "art",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "云",
+          "label": "quote"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_rain",
+      "kanji": "雨",
+      "keyword": "rain",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_cloud",
+      "kanji": "雲",
+      "keyword": "cloud",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "云",
+          "label": "quote"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_cloudy_weather",
+      "kanji": "曇",
+      "keyword": "cloudy weather",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "雲",
+          "label": "cloud"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_thunder",
+      "kanji": "雷",
+      "keyword": "thunder",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_frost",
+      "kanji": "霜",
+      "keyword": "frost",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "相",
+          "label": "mutual"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_winter",
+      "kanji": "冬",
+      "keyword": "winter",
+      "components": [
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "ニ",
+          "label": "two"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_heaven",
+      "kanji": "天",
+      "keyword": "heaven",
+      "components": [
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_bewitched",
+      "kanji": "妖",
+      "keyword": "bewitched",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L23_fertile",
+      "kanji": "沃",
+      "keyword": "fertile",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    }
+  ]
+}

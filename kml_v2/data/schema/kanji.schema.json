@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/kanji.schema.json",
+  "title": "KML Lesson Kanji Roster",
+  "type": "object",
+  "required": ["lesson_id", "items"],
+  "properties": {
+    "lesson_id": { "type": "string", "pattern": "^lesson_[0-9]{3}$" },
+    "heisig_range": { "type": "object" },
+    "count": { "type": "integer" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "ord", "character", "slug", "keyword"],
+        "properties": {
+          "id": { "type": "string" },
+          "ord": { "type": "integer" },
+          "character": { "type": "string", "minLength": 1 },
+          "slug": { "type": "string" },
+          "keyword": { "type": "string" },
+          "heisig_number": { "type": ["integer", "null"] },
+          "strokes": { "type": ["integer", "null"] },
+          "grade": { "type": ["string", "null"] },
+          "category": { "type": ["string", "null"] },
+          "unicode": { "type": ["string", "null"] },
+          "readings": { "type": "object" },
+          "primitives": { "type": "array", "items": { "type": "string" } },
+          "verse": {
+            "type": "object",
+            "properties": {
+              "jp": { "type": "string" },
+              "en": { "type": "string" }
+            }
+          },
+          "assets": { "type": "object" },
+          "status": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

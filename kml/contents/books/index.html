@@ -1,255 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bookshelf-page">
 <head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>KML Lessons</title>
-
-<link rel="stylesheet" href="../../assets/site/css/kml_style.css">
-
-<style>
-/* ===== PAGE ===== */
-body {
-  font-family: 'Noto Serif JP', serif;
-  text-align: center;
-  padding: 30px;
-}
-
-/* ===== GRID ===== */
-.lesson-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  gap: 12px;
-  max-width: 900px;
-  margin: 30px auto;
-}
-
-/* ===== BUTTON ===== */
-.lesson-btn {
-  display: block;
-  padding: 10px 6px;
-  background: rgba(0,0,0,0.06);
-  border-radius: 8px;
-  text-decoration: none;
-  color: #2f2a1f;
-  font-size: 0.9rem;
-  transition: all 0.15s ease;
-}
-
-.lesson-btn:hover {
-  background: rgba(0,0,0,0.12);
-  transform: translateY(-2px);
-}
-.current-lesson {
-  background: rgba(255, 200, 80, 0.35);
-  border: 2px solid rgba(200,150,50,0.6);
-  font-weight: bold;
-  box-shadow: 0 0 8px rgba(255, 200, 80, 0.4);
-}
-#continue {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lessons — Kanji・Music・Landscape</title>
+  <meta
+    name="description"
+    content="A curated library of Japanese lessons — books of kanji, music, and landscape. Enter the bookshelf."
+  />
+  <meta name="theme-color" content="#171512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../assets/site/css/bookshelf.css" />
 </head>
+<body class="bookshelf-page">
+  <a class="skip-link" href="#catalogue">Skip to books</a>
 
-<body>
+  <header class="books-header">
+    <div class="books-header-inner">
+      <a class="books-brand" href="../../index.html">Kanji・Music・Landscape</a>
+      <nav aria-label="Primary">
+        <ul class="books-nav">
+          <li><a href="#catalogue">Books</a></li>
+          <li><a href="../../index.html">Curriculum</a></li>
+          <li><a href="../../../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<h1>KML Lessons</h1>
-<div id="continue"></div>
+  <main>
+    <section class="shelf-hero" aria-labelledby="shelf-heading">
+      <div class="shelf-hero-media" aria-hidden="true">
+        <img
+          src="../../assets/studies/forest.png"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+        <div class="shelf-hero-veil"></div>
+      </div>
 
-<script>
-(function() {
-  const last = localStorage.getItem("kml_last_lesson");
-  if (!last) return;
+      <div class="shelf-hero-inner">
+        <p class="shelf-hero-brand">Kanji・Music・Landscape</p>
+        <h1 id="shelf-heading">The Bookshelf</h1>
+        <p class="shelf-hero-lead">
+          Fifteen volumes of memory — entered one room at a time.
+        </p>
+      </div>
 
-  const num = last.padStart(2,'0');
+      <a class="shelf-hero-scroll" href="#catalogue" aria-label="Continue to the books">
+        <span class="shelf-hero-scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
 
-  document.getElementById("continue").innerHTML =
-    `<a class="lesson-btn" href="book_01/lessons/lesson_${num}.html">
-      ▶ Continue Lesson ${num}
-     </a>`;
-})();
-</script>
+    <section class="shelf-catalogue" id="catalogue" aria-labelledby="catalogue-heading">
+      <div class="shelf-container">
+        <header class="shelf-catalogue-head reveal">
+          <p class="shelf-eyebrow">Open now</p>
+          <h2 id="catalogue-heading">Published books</h2>
+          <p>Each book is a quiet gallery of ten lessons.</p>
+        </header>
 
-<div class="lesson-grid">
-<!-- LESSON LINKS -->
-<a class="lesson-btn" href="book_01/lessons/lesson_01.html">Lesson 01</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_02.html">Lesson 02</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_03.html">Lesson 03</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_04.html">Lesson 04</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_05.html">Lesson 05</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_06.html">Lesson 06</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_07.html">Lesson 07</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_08.html">Lesson 08</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_09.html">Lesson 09</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_10.html">Lesson 10</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_11.html">Lesson 11</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_12.html">Lesson 12</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_13.html">Lesson 13</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_14.html">Lesson 14</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_15.html">Lesson 15</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_16.html">Lesson 16</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_17.html">Lesson 17</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_18.html">Lesson 18</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_19.html">Lesson 19</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_20.html">Lesson 20</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_21.html">Lesson 21</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_22.html">Lesson 22</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_23.html">Lesson 23</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_24.html">Lesson 24</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_25.html">Lesson 25</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_26.html">Lesson 26</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_27.html">Lesson 27</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_28.html">Lesson 28</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_29.html">Lesson 29</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_30.html">Lesson 30</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_31.html">Lesson 31</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_32.html">Lesson 32</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_33.html">Lesson 33</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_34.html">Lesson 34</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_35.html">Lesson 35</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_36.html">Lesson 36</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_37.html">Lesson 37</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_38.html">Lesson 38</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_39.html">Lesson 39</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_40.html">Lesson 40</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_41.html">Lesson 41</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_42.html">Lesson 42</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_43.html">Lesson 43</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_44.html">Lesson 44</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_45.html">Lesson 45</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_46.html">Lesson 46</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_47.html">Lesson 47</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_48.html">Lesson 48</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_49.html">Lesson 49</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_50.html">Lesson 50</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_51.html">Lesson 51</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_52.html">Lesson 52</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_53.html">Lesson 53</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_54.html">Lesson 54</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_55.html">Lesson 55</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_56.html">Lesson 56</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_57.html">Lesson 57</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_58.html">Lesson 58</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_59.html">Lesson 59</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_60.html">Lesson 60</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_61.html">Lesson 61</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_62.html">Lesson 62</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_63.html">Lesson 63</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_64.html">Lesson 64</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_65.html">Lesson 65</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_66.html">Lesson 66</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_67.html">Lesson 67</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_68.html">Lesson 68</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_69.html">Lesson 69</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_70.html">Lesson 70</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_71.html">Lesson 71</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_72.html">Lesson 72</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_73.html">Lesson 73</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_74.html">Lesson 74</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_75.html">Lesson 75</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_76.html">Lesson 76</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_77.html">Lesson 77</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_78.html">Lesson 78</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_79.html">Lesson 79</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_80.html">Lesson 80</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_81.html">Lesson 81</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_82.html">Lesson 82</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_83.html">Lesson 83</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_84.html">Lesson 84</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_85.html">Lesson 85</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_86.html">Lesson 86</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_87.html">Lesson 87</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_88.html">Lesson 88</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_89.html">Lesson 89</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_90.html">Lesson 90</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_91.html">Lesson 91</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_92.html">Lesson 92</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_93.html">Lesson 93</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_94.html">Lesson 94</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_95.html">Lesson 95</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_96.html">Lesson 96</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_97.html">Lesson 97</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_98.html">Lesson 98</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_99.html">Lesson 99</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_100.html">Lesson 100</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_101.html">Lesson 101</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_102.html">Lesson 102</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_103.html">Lesson 103</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_104.html">Lesson 104</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_105.html">Lesson 105</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_106.html">Lesson 106</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_107.html">Lesson 107</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_108.html">Lesson 108</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_109.html">Lesson 109</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_110.html">Lesson 110</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_111.html">Lesson 111</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_112.html">Lesson 112</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_113.html">Lesson 113</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_114.html">Lesson 114</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_115.html">Lesson 115</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_116.html">Lesson 116</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_117.html">Lesson 117</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_118.html">Lesson 118</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_119.html">Lesson 119</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_120.html">Lesson 120</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_121.html">Lesson 121</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_122.html">Lesson 122</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_123.html">Lesson 123</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_124.html">Lesson 124</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_125.html">Lesson 125</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_126.html">Lesson 126</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_127.html">Lesson 127</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_128.html">Lesson 128</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_129.html">Lesson 129</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_130.html">Lesson 130</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_131.html">Lesson 131</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_132.html">Lesson 132</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_133.html">Lesson 133</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_134.html">Lesson 134</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_135.html">Lesson 135</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_136.html">Lesson 136</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_137.html">Lesson 137</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_138.html">Lesson 138</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_139.html">Lesson 139</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_140.html">Lesson 140</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_141.html">Lesson 141</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_142.html">Lesson 142</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_143.html">Lesson 143</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_144.html">Lesson 144</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_145.html">Lesson 145</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_146.html">Lesson 146</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_147.html">Lesson 147</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_148.html">Lesson 148</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_149.html">Lesson 149</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_150.html">Lesson 150</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_151.html">Lesson 151</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_152.html">Lesson 152</a>
-<a class="lesson-btn" href="book_01/lessons/lesson_153.html">Lesson 153</a>
-</div>
-<script>
-(function() {
-  const last = localStorage.getItem("kml_last_lesson");
-  if (!last) return;
+        <div id="continue" class="shelf-continue reveal" aria-live="polite"></div>
 
-  const num = last.padStart(2, '0');
-  const selector = `a[href="book_01/lessons/lesson_${num}.html"]`;
-  const el = document.querySelector(selector);
+        <ol class="book-list">
+          <li class="book-entry reveal">
+            <a class="book-entry-link" href="./1/">
+              <span class="book-entry-num">Book 1</span>
+              <span>
+                <h3 class="book-entry-title">Foundations</h3>
+                <p class="book-entry-meta">Lessons 01–10</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry reveal">
+            <a class="book-entry-link" href="./2/">
+              <span class="book-entry-num">Book 2</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 11–20</h3>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry reveal">
+            <a class="book-entry-link" href="./3/">
+              <span class="book-entry-num">Book 3</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 21–30</h3>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry reveal">
+            <a class="book-entry-link" href="./4/">
+              <span class="book-entry-num">Book 4</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 31–40</h3>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry reveal">
+            <a class="book-entry-link" href="./5/">
+              <span class="book-entry-num">Book 5</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 41–50</h3>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-  if (!el) return;
+    <section class="shelf-soon" id="coming-soon" aria-labelledby="soon-heading">
+      <div class="shelf-container">
+        <header class="shelf-soon-head reveal">
+          <p class="shelf-eyebrow">Coming soon</p>
+          <h2 id="soon-heading">Volumes still closed</h2>
+        </header>
 
-  el.classList.add("current-lesson");
+        <ol class="book-list" start="6">
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 6</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 51–60</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 7</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 61–70</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 8</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 71–80</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 9</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 81–90</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 10</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 91–100</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 11</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 101–110</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 12</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 111–120</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 13</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 121–130</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 14</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 131–140</h3>
+              </span>
+            </div>
+          </li>
+          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
+            <div class="book-entry-shell">
+              <span class="book-entry-num">Book 15</span>
+              <span>
+                <h3 class="book-entry-title">Lessons 141–150</h3>
+              </span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
 
-  // Only scroll if Continue button is NOT shown
-  const continueBox = document.getElementById("continue");
-  if (!continueBox || !continueBox.innerHTML.trim()) {
-    el.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
-})();
-</script>
+  <footer class="books-footer">
+    <div class="books-footer-inner">
+      <p>
+        <a href="../../index.html">Curriculum</a>
+        ·
+        <a href="../../../index.html">Museum entrance</a>
+      </p>
+      <p style="margin-top: 0.65rem">© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var year = document.getElementById("copyrightYear");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    var last = localStorage.getItem("kml_last_lesson");
+    if (last) {
+      var num = String(parseInt(last, 10)).padStart(2, "0");
+      var n = parseInt(last, 10);
+      var book = n >= 1 && n <= 150 ? Math.ceil(n / 10) : null;
+      var box = document.getElementById("continue");
+      if (box && book && book <= 5) {
+        box.innerHTML =
+          '<a href="./' + book + '/#lesson-' + num + '">Continue Lesson ' + num + "</a>";
+      } else if (box && n >= 1) {
+        box.innerHTML =
+          '<a href="./book_01/lessons/lesson_' + num + '.html">Continue Lesson ' + num + "</a>";
+      }
+    }
+
+    var nodes = document.querySelectorAll(".reveal");
+    if (!nodes.length) return;
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" }
+    );
+    nodes.forEach(function (el) { observer.observe(el); });
+  })();
+  </script>
 </body>
 </html>

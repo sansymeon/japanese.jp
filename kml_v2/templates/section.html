@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-site-root="..">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><!-- SECTION TITLE --> — Kanji・Music・Landscape</title>
+  <meta name="theme-color" content="#171512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body>
+  <!--
+    TEMPLATE: section.html
+    Generic top-level section (Ambient, Vocabulary, Beyond Joyo, …).
+  -->
+  <div class="page">
+    <div data-include="components/header/header.html"></div>
+
+    <main id="main" class="page-main">
+      <div class="content-wrapper">
+        <div class="container">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html">Home</a></li>
+              <li><span aria-current="page"><!-- SECTION --></span></li>
+            </ol>
+          </nav>
+
+          <header class="section-head">
+            <p class="eyebrow"><!-- EYEBROW --></p>
+            <h1><!-- SECTION TITLE --></h1>
+            <p class="lead"><!-- SECTION LEAD --></p>
+          </header>
+
+          <div class="u-stack-lg">
+            <!-- SECTION BODY -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div data-include="components/footer/footer.html"></div>
+  </div>
+
+  <script src="../assets/js/includes.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+</body>
+</html>

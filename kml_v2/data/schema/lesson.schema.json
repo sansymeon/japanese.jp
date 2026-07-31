@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/lesson.schema.json",
+  "title": "KML Lesson (core pack file)",
+  "type": "object",
+  "required": ["id", "number", "book_id", "book_number", "title", "status", "path"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^lesson_[0-9]{3}$" },
+    "number": { "type": "integer", "minimum": 1 },
+    "book_id": { "type": "string", "pattern": "^book_[0-9]{2,}$" },
+    "book_number": { "type": "integer", "minimum": 1 },
+    "title": { "type": "string" },
+    "subtitle": { "type": ["string", "null"] },
+    "keyword": { "type": ["string", "null"] },
+    "kanji": { "type": ["string", "null"] },
+    "summary": { "type": ["string", "null"] },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "draft", "ready", "published", "archived"]
+    },
+    "publication": { "type": "object" },
+    "relationships": { "type": "object" },
+    "navigation": { "type": "object" },
+    "path": {
+      "type": "string",
+      "description": "Generated HTML path relative to kml_v2/ (presentation layer)."
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" },
+    "gallery_url": {
+      "type": ["string", "null"],
+      "description": "Optional Ambient Study Gallery URL. When set, the lesson hero image becomes a link to this exhibition."
+    }
+  },
+  "additionalProperties": true
+}

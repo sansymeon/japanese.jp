@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kanji Components — KML Prototype</title>
+
+  <link rel="stylesheet" href="./css/gallery-fonts-local.css?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/gallery-typography.css?v=6">
+  <link rel="stylesheet" href="./css/gallery-kanji-components.css?v=7">
+</head>
+<body>
+
+<!--
+  Kanji Components — Lessons 1–5
+
+  Default:  ?collection=lesson_01_components
+  Lessons:  lesson_01_components … lesson_05_components
+  Single:   &exhibit=N&singleExhibit=1
+  Faster:   &timingScale=0.1
+  Keys:     ← / → or Space to skip · R to replay
+
+  Scene types: kanji | newComponent | newFamily
+  New Component / New Family use slower introTiming.
+  Soundtrack: audio/kanji_components.mp3 (loops)
+  Ending:     gold crest → 8s music fade → crest fade
+  Skip crest: &skipBookends=1
+  Rebuild:    python3 scripts/build_kanji_components.py
+-->
+
+<script>
+  (function () {
+    const p = new URLSearchParams(location.search);
+    if ((p.get("typography") || "kanji-components") === "kanji-components") {
+      document.documentElement.classList.add("kml-typography-kanji-components");
+    }
+  })();
+</script>
+
+<div class="kc-root" data-kc-root>
+  <div class="kc-stage" data-kc-stage>
+    <div class="kc-hero">
+      <span class="kc-hero-kanji" data-kc-hero lang="ja"></span>
+    </div>
+    <div class="kc-components" data-kc-components aria-hidden="true"></div>
+  </div>
+
+  <div class="kc-intro" data-kc-intro aria-hidden="true">
+    <div class="kc-intro-heading" data-kc-intro-heading></div>
+    <div class="kc-intro-glyph" data-kc-intro-glyph lang="ja"></div>
+    <div class="kc-intro-label" data-kc-intro-label></div>
+  </div>
+
+  <div class="kc-veil" data-kc-veil></div>
+  <div class="kc-crest" data-kc-crest aria-hidden="true">
+    <img data-kc-crest-img alt="">
+  </div>
+  <div class="kc-chrome">
+    <span class="kc-chrome-label" data-kc-chrome-label>Kanji Components</span>
+  </div>
+  <div class="kc-audio" hidden>
+    <audio data-kc-audio preload="auto"></audio>
+  </div>
+  <button
+    type="button"
+    class="kc-autoplay-gate"
+    data-kc-autoplay-gate
+    aria-label="Begin"
+    hidden
+  >
+    <span class="kc-autoplay-gate-label">Begin</span>
+  </button>
+</div>
+
+<script src="./js/collection-paths.js"></script>
+<script src="./js/kanji-components-engine.js"></script>
+</body>
+</html>

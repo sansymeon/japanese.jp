@@ -270,6 +270,59 @@ def group_rubies(rubies: list[dict], tokens: list[dict]) -> list[list[dict]]:
     return groups
 
 
+def align_kanji_readings(
+    surface: str,
+    reading: str,
+    kanji_spans: list[tuple[int, int]],
+) -> list[str] | None:
+    """Align a reading to kanji spans inside surface, skipping okurigana kana.
+
+    Example: surface 受け取, reading うけと, spans for 受 and 取 → [う, と]
+    """
+    if not kanji_spans:
+        return []
+
+    # Require at least one intervening kana somewhere, or a single trailing/leading
+    # kana run after a kanji — otherwise split_reading is more appropriate.
+    has_kana = any(not KANJI_RE.match(ch) for ch in surface)
+    if not has_kana and len(kanji_spans) > 1:
+        return None
+
+    ri = 0
+    out: list[str] = []
+    for idx, (start, end) in enumerate(kanji_spans):
+        remaining_kanji = len(kanji_spans) - idx - 1
+        oku_end = end
+        while oku_end < len(surface) and not KANJI_RE.match(surface[oku_end]):
+            oku_end += 1
+        oku = surface[end:oku_end]
+        max_take = len(reading) - ri - remaining_kanji
+        if max_take < 1:
+            return None
+
+        assigned = None
+        if oku:
+            for n in range(1, max_take + 1):
+                if reading[ri + n :].startswith(oku):
+                    assigned = reading[ri : ri + n]
+                    ri = ri + n + len(oku)
+                    break
+            if assigned is None:
+                return None
+        elif remaining_kanji == 0:
+            assigned = reading[ri:]
+            ri = len(reading)
+        else:
+            # Adjacent kanji with no kana between — let split_reading handle it.
+            return None
+
+        if not assigned:
+            return None
+        out.append(assigned)
+
+    return out if len(out) == len(kanji_spans) else None
+
+
 def readings_for_group(
     group: list[dict],
     tokens: list[dict],
@@ -287,25 +340,55 @@ def readings_for_group(
     token_start = token["start"]
     token_surface = token["surface"]
     token_reading = token["reading"]
+    rel_start = group[0]["start"] - token_start
     rel_end = group[-1]["end"] - token_start
     okurigana = token_surface[rel_end:]
     kanji_reading = strip_okurigana(tagger, token_reading, okurigana)
+    surface_slice = token_surface[rel_start:rel_end]
 
     if len(group) == 1:
         ruby = group[0]
-        rel_start = ruby["start"] - token_start
         if ruby["kanji"] == token_surface:
             return {(ruby["start"], ruby["end"]): token_reading}
+        # Prefer aligning against the surface slice so mid-word okurigana is stripped
+        # e.g. 繰 in 繰り返し → surface 繰り, reading くり → く
+        spans = [(0, len(ruby["kanji"]))]
+        if surface_slice.startswith(ruby["kanji"]):
+            aligned = align_kanji_readings(surface_slice, kanji_reading, spans)
+            if aligned and aligned[0]:
+                return {(ruby["start"], ruby["end"]): aligned[0]}
         if rel_start == 0 and token_surface.startswith(ruby["kanji"]):
             return {(ruby["start"], ruby["end"]): kanji_reading}
         if ruby["kanji"] in exact_lookup and len(ruby["kanji"]) > 1:
             return {(ruby["start"], ruby["end"]): exact_lookup[ruby["kanji"]]}
         return {(ruby["start"], ruby["end"]): kanji_reading}
 
+    # Build spans of each kanji inside surface_slice (accounting for inter-kanji kana)
+    spans: list[tuple[int, int]] = []
+    cursor = 0
+    for ruby in group:
+        idx = surface_slice.find(ruby["kanji"], cursor)
+        if idx < 0:
+            spans = []
+            break
+        spans.append((idx, idx + len(ruby["kanji"])))
+        cursor = idx + len(ruby["kanji"])
+
+    if spans:
+        aligned = align_kanji_readings(surface_slice, kanji_reading, spans)
+        if aligned and len(aligned) == len(group) and all(aligned):
+            return {
+                (group[i]["start"], group[i]["end"]): aligned[i]
+                for i in range(len(group))
+            }
+
     parts = [ruby["kanji"] for ruby in group]
     split = split_reading(parts, kanji_reading, kanji_readings, exact_lookup)
     if split is None:
-        split = [kanji_reading if len(parts) == 1 else exact_lookup.get(part, part) for part in parts]
+        split = [
+            kanji_reading if len(parts) == 1 else exact_lookup.get(part, part)
+            for part in parts
+        ]
 
     return {
         (group[i]["start"], group[i]["end"]): split[i] for i in range(len(group))

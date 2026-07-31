@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ detail.lesson.title }} — KML Studio</title>
+  <link rel="stylesheet" href="/static/studio.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="brand">
+        <a href="/">← Studio</a>
+        <span>{{ detail.lesson.id }}</span>
+      </div>
+    </header>
+
+    {% if flash %}
+    <div class="flash">{{ flash }}</div>
+    {% endif %}
+
+    <section class="panel">
+      <h2>{{ detail.lesson.title }}</h2>
+      {% if detail.lesson.subtitle %}<p class="muted">{{ detail.lesson.subtitle }}</p>{% endif %}
+      <p class="flow">
+        Status <strong>{{ detail.lesson.status }}</strong>
+        {% if detail.row %}· Stage <strong>{{ detail.row.stage }}</strong>{% endif %}
+        · Pack <span class="mono">{{ detail.pack_rel }}</span>
+      </p>
+      {% if detail.lesson.summary %}<p>{{ detail.lesson.summary }}</p>{% endif %}
+
+      <div class="actions" style="margin-top:1rem">
+        <form method="post" action="/actions/validate">
+          <input type="hidden" name="lesson_id" value="{{ detail.lesson.id }}" />
+          <button class="btn" type="submit">Validate</button>
+        </form>
+        <form method="post" action="/actions/build-lesson">
+          <input type="hidden" name="lesson_id" value="{{ detail.lesson.id }}" />
+          <button class="btn btn-primary" type="submit">Build / Generate</button>
+        </form>
+        {% if detail.output_exists %}
+        <a class="btn" href="http://127.0.0.1:8765/{{ detail.output_path }}" target="_blank" rel="noopener">Preview HTML</a>
+        {% endif %}
+      </div>
+    </section>
+
+    <div class="two">
+      <section class="panel">
+        <h2>Workspace</h2>
+        <h3>Pack files</h3>
+        <ul class="plain">
+          {% for f in detail.files %}
+          <li class="mono">{{ f }}{% if f[:-5] in detail.counts %} — {{ detail.counts[f[:-5]] }} items{% endif %}</li>
+          {% endfor %}
+        </ul>
+        <h3>Counts</h3>
+        <p class="mono muted">
+          {% for k,v in detail.counts.items() %}{{ k }}={{ v }}{% if not loop.last %}, {% endif %}{% endfor %}
+        </p>
+        <h3>Output</h3>
+        <p class="mono">{{ detail.output_path or '—' }}
+          {% if detail.output_exists %}<span class="badge badge-ok">exists</span>
+          {% else %}<span class="badge">not built</span>{% endif %}
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Validation</h2>
+        {% if detail.valid %}
+        <p><span class="badge badge-ok">All checks passed</span></p>
+        {% else %}
+        <p><span class="badge badge-bad">Issues</span></p>
+        <ul class="warn-list">
+          {% for e in detail.validation_errors %}<li>{{ e }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if detail.row and detail.row.warnings %}
+        <h3>Readiness warnings</h3>
+        <ul class="warn-list">
+          {% for w in detail.row.warnings %}<li>{{ w }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        <h3>Lifecycle</h3>
+        <p class="muted">
+          Create → Author → Assets → Validate → Preview → Generate → Publish
+        </p>
+        <p class="muted">Edit JSON under the pack path; do not hand-edit generated HTML.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

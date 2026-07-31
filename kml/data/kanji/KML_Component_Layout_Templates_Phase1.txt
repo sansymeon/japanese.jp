@@ -1,0 +1,152 @@
+KML Component Layout Templates (Phase 1)
+
+Goal: Only horizontal and vertical layouts. More complex structures are
+built by nesting these primitives.
+
+==================================================== 1. Horizontal —
+Single | Triple Stack | Single
+====================================================
+
+    <div class="component-box">
+      <div class="component-layout kanji-composite">
+
+        <div class="kanji-left">
+          <span class="kanji-part">{{LEFT}}</span>
+        </div>
+
+        <div class="kanji-center stack-vertical">
+          <span class="kanji-part">{{TOP}}</span>
+          <span class="kanji-part">{{MIDDLE}}</span>
+          <span class="kanji-part">{{BOTTOM}}</span>
+        </div>
+
+        <div class="kanji-right">
+          <span class="kanji-part">{{RIGHT}}</span>
+        </div>
+
+      </div>
+    </div>
+
+==================================================== 2. Horizontal —
+Double Stack | Triple Stack | Double Stack
+====================================================
+
+    <div class="component-box">
+      <div class="component-layout kanji-composite">
+
+        <div class="kanji-left stack-vertical">
+          <span class="kanji-part">{{L1}}</span>
+          <span class="kanji-part">{{L2}}</span>
+        </div>
+
+        <div class="kanji-center stack-vertical">
+          <span class="kanji-part">{{C1}}</span>
+          <span class="kanji-part">{{C2}}</span>
+          <span class="kanji-part">{{C3}}</span>
+        </div>
+
+        <div class="kanji-right stack-vertical">
+          <span class="kanji-part">{{R1}}</span>
+          <span class="kanji-part">{{R2}}</span>
+        </div>
+
+      </div>
+    </div>
+====================================================  Horizontal —double
+single | single
+====================================================
+<div class="component-box">
+  <div class="component-layout stack-horizontal">
+    <span class="kanji-part">丬</span>
+<span class="kanji-part">犬</span>
+  </div>
+</div>
+
+
+============================ 3. Vertical — Single =====================
+
+    <div class="component-box">
+      <div class="component-layout stack-vertical">
+        <span class="kanji-part">{{TOP}}</span>
+      </div>
+    </div>
+
+============================ 3. Vertical — Double =====================
+
+<div class="component-box">
+  <div class="component-layout stack-vertical">
+    <span class="kanji-part">{{TOP}}</span>
+    <span class="kanji-part">{{BOTTOM}}</span>
+  </div>
+</div>
+
+==================================================== 4. Vertical
+Sandwich — Single / Triple Horizontal / Single
+====================================================
+
+    <div class="component-box">
+      <div class="component-layout stack-vertical">
+
+        <span class="kanji-part">{{TOP}}</span>
+
+        <div class="component-layout stack-horizontal">
+          <span class="kanji-part">{{LEFT}}</span>
+          <span class="kanji-part">{{CENTER}}</span>
+          <span class="kanji-part">{{RIGHT}}</span>
+        </div>
+
+        <span class="kanji-part">{{BOTTOM}}</span>
+
+      </div>
+    </div>
+
+==================================================== 5. Vertical
+Sandwich — Double Horizontal / Triple Horizontal / Double Horizontal
+====================================================
+
+    <div class="component-box">
+      <div class="component-layout stack-vertical">
+
+        <div class="component-layout stack-horizontal">
+          <span class="kanji-part">{{T1}}</span>
+          <span class="kanji-part">{{T2}}</span>
+        </div>
+
+        <div class="component-layout stack-horizontal">
+          <span class="kanji-part">{{M1}}</span>
+          <span class="kanji-part">{{M2}}</span>
+          <span class="kanji-part">{{M3}}</span>
+        </div>
+
+        <div class="component-layout stack-horizontal">
+          <span class="kanji-part">{{B1}}</span>
+          <span class="kanji-part">{{B2}}</span>
+        </div>
+
+      </div>
+    </div>
+
+
+============= 3. Vertical — Single  with double vertical on right=====================
+  
+  <div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">氵</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">几</span>
+      <span class="kanji-part">𠃊</span>
+    </div>
+
+  </div>
+</div>
+
+Notes
+
+-   Build everything from horizontal and vertical nesting.
+-   Avoid enclosure-specific layouts.
+-   Keep the renderer simple.
+-   Lessons 1–40 will define the editorial style.

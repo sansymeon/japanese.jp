@@ -23,16 +23,23 @@
 <!-- NAVBAR -->
 <div class="navbar">
   
-  <a href="../../index.html">⬅️ Back to Home</a>
+  <a href="../../1/">← Book 1</a>
   <a href="lesson_02.html">➡️ Lesson 2</a>
 </div>
 
 <!-- LESSON ART -->
 <div class="lesson-art">
-  <img src="../../../../assets/covers/lesson_01.png"
-       alt="Lesson 1 cover"
-       width="380" height="250"
-       fetchpriority="high">
+  <a class="lesson-art-link"
+     href="https://youtu.be/hCBwOaGI7fo"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Open Ambient Study Gallery for Lesson 1">
+    <img src="../../../../assets/covers/lesson_01.png"
+         alt="Lesson 1 cover"
+         width="380" height="250"
+         fetchpriority="high">
+    <span class="lesson-art-gallery-label" aria-hidden="true">▶ Ambient Study Gallery</span>
+  </a>
 </div>
 
 <h1>KML - Lesson 1</h1>
@@ -288,11 +295,11 @@
   </div>
 
 <div class="component-box">
-  <div class="component-layout enclosure-layout">
-
-    <div class="outer-kanji">口</div>
-
-    <div class="inner-kanji">儿</div>
+  <div class="component-layout stack-vertical">
+    <span class="kanji-part">口</span>
+    <span class="kanji-part">儿</span>
+  </div>
+</div>
 
 </section>
 

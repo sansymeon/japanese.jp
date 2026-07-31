@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml_v2/schema/lesson_gallery.schema.json",
+  "title": "KML Lesson Gallery Links",
+  "type": "object",
+  "required": ["lesson_id"],
+  "properties": {
+    "lesson_id": { "type": "string", "pattern": "^lesson_[0-9]{3}$" },
+    "related_gallery_ids": { "type": "array", "items": { "type": "string" } },
+    "pieces": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": true
+}

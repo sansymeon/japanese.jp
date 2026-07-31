@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_19_compounds",
+  "title": "Lesson 19 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_19.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 19,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_19.html"
+  },
+  "scenes": [
+    {
+      "id": "L19_elucidate",
+      "kanji": "詮",
+      "keyword": "elucidate",
+      "image": "studies/elucidate.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "所詮",
+            "reading": "しょせん",
+            "en": "After all"
+          },
+          {
+            "jp": "詮索",
+            "reading": "せんさく",
+            "en": "Inquiry"
+          },
+          {
+            "jp": "詮議",
+            "reading": "せんぎ",
+            "en": "Investigation"
+          },
+          {
+            "jp": "詮方",
+            "reading": "せんかた",
+            "en": "Means; way"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "elucidate",
+        "prototype": true
+      },
+      "imageRev": 1785192908
+    },
+    {
+      "id": "L19_prison",
+      "kanji": "獄",
+      "keyword": "prison",
+      "image": "studies/prison.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "地獄",
+            "reading": "じごく",
+            "en": "Hell"
+          },
+          {
+            "jp": "監獄",
+            "reading": "かんごく",
+            "en": "Prison"
+          },
+          {
+            "jp": "獄中",
+            "reading": "ごくちゅう",
+            "en": "In prison"
+          },
+          {
+            "jp": "投獄",
+            "reading": "とうごく",
+            "en": "Imprisonment"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "prison",
+        "prototype": true
+      },
+      "imageRev": 1785193137
+    },
+    {
+      "id": "L19_revise",
+      "kanji": "訂",
+      "keyword": "revise",
+      "image": "studies/revise.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "訂正",
+            "reading": "ていせい",
+            "en": "Correction"
+          },
+          {
+            "jp": "改訂",
+            "reading": "かいてい",
+            "en": "Revision"
+          },
+          {
+            "jp": "訂正版",
+            "reading": "ていせいばん",
+            "en": "Revised edition"
+          },
+          {
+            "jp": "訂補",
+            "reading": "ていほ",
+            "en": "Correction and supplement"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "revise",
+        "prototype": true
+      },
+      "imageRev": 1785193710
+    },
+    {
+      "id": "L19_obituary",
+      "kanji": "訃",
+      "keyword": "obituary",
+      "image": "studies/obituary.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "訃報",
+            "reading": "ふほう",
+            "en": "Obituary notice"
+          },
+          {
+            "jp": "訃音",
+            "reading": "ふいん",
+            "en": "News of a death"
+          },
+          {
+            "jp": "訃告",
+            "reading": "ふこく",
+            "en": "Death notice"
+          },
+          {
+            "jp": "訃聞",
+            "reading": "ふぶん",
+            "en": "News of a death"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "obituary",
+        "prototype": true
+      },
+      "imageRev": 1785194006
+    },
+    {
+      "id": "L19_chastise",
+      "kanji": "討",
+      "keyword": "chastise",
+      "image": "studies/chastise.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "検討",
+            "reading": "けんとう",
+            "en": "Consideration"
+          },
+          {
+            "jp": "討論",
+            "reading": "とうろん",
+            "en": "Debate"
+          },
+          {
+            "jp": "討伐",
+            "reading": "とうばつ",
+            "en": "Subjugation"
+          },
+          {
+            "jp": "追討",
+            "reading": "ついとう",
+            "en": "Pursuit and attack"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "chastise",
+        "prototype": true
+      },
+      "imageRev": 1785194343
+    },
+    {
+      "id": "L19_instruction",
+      "kanji": "訓",
+      "keyword": "instruction",
+      "image": "studies/instruction.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "訓練",
+            "reading": "くんれん",
+            "en": "Training"
+          },
+          {
+            "jp": "教訓",
+            "reading": "きょうくん",
+            "en": "Lesson"
+          },
+          {
+            "jp": "訓読",
+            "reading": "くんどく",
+            "en": "Japanese reading of kanji"
+          },
+          {
+            "jp": "家訓",
+            "reading": "かくん",
+            "en": "Family precepts"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "instruction",
+        "prototype": true
+      },
+      "imageRev": 1785194852
+    },
+    {
+      "id": "L19_imperial_edict",
+      "kanji": "詔",
+      "keyword": "imperial edict",
+      "image": "studies/imperial_edict.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "詔書",
+            "reading": "しょうしょ",
+            "en": "Imperial rescript"
+          },
+          {
+            "jp": "詔勅",
+            "reading": "しょうちょく",
+            "en": "Imperial decree"
+          },
+          {
+            "jp": "大詔",
+            "reading": "たいしょう",
+            "en": "Great imperial edict"
+          },
+          {
+            "jp": "詔命",
+            "reading": "しょうめい",
+            "en": "Imperial command"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "imperial_edict",
+        "prototype": true
+      },
+      "imageRev": 1785195005
+    },
+    {
+      "id": "L19_packed",
+      "kanji": "詰",
+      "keyword": "packed",
+      "image": "studies/packed.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "缶詰",
+            "reading": "かんづめ",
+            "en": "Canned food"
+          },
+          {
+            "jp": "詰将棋",
+            "reading": "つめしょうぎ",
+            "en": "Shogi puzzle"
+          },
+          {
+            "jp": "箱詰め",
+            "reading": "はこづめ",
+            "en": "Packing in boxes"
+          },
+          {
+            "jp": "詰所",
+            "reading": "つめしょ",
+            "en": "Guard station"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "packed",
+        "prototype": true
+      },
+      "imageRev": 1785195895
+    },
+    {
+      "id": "L19_talk",
+      "kanji": "話",
+      "keyword": "talk",
+      "image": "studies/talk.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "電話",
+            "reading": "でんわ",
+            "en": "Telephone"
+          },
+          {
+            "jp": "会話",
+            "reading": "かいわ",
+            "en": "Conversation"
+          },
+          {
+            "jp": "神話",
+            "reading": "しんわ",
+            "en": "Myth"
+          },
+          {
+            "jp": "昔話",
+            "reading": "むかしばなし",
+            "en": "Folk tale"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "talk",
+        "prototype": true
+      },
+      "imageRev": 1785196237
+    },
+    {
+      "id": "L19_recitation",
+      "kanji": "詠",
+      "keyword": "recitation",
+      "image": "studies/recitation.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "詠歌",
+            "reading": "えいか",
+            "en": "Poem recitation"
+          },
+          {
+            "jp": "朗詠",
+            "reading": "ろうえい",
+            "en": "Chanting"
+          },
+          {
+            "jp": "和歌を詠む",
+            "reading": "わかをよむ",
+            "en": "Compose a waka poem"
+          },
+          {
+            "jp": "詠唱",
+            "reading": "えいしょう",
+            "en": "Chant"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "recitation",
+        "prototype": true
+      },
+      "imageRev": 1785197168
+    },
+    {
+      "id": "L19_poem",
+      "kanji": "詩",
+      "keyword": "poem",
+      "image": "studies/poem.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "詩人",
+            "reading": "しじん",
+            "en": "Poet"
+          },
+          {
+            "jp": "詩集",
+            "reading": "ししゅう",
+            "en": "Poetry collection"
+          },
+          {
+            "jp": "詩歌",
+            "reading": "しいか",
+            "en": "Poetry and song"
+          },
+          {
+            "jp": "叙情詩",
+            "reading": "じょじょうし",
+            "en": "Lyric poem"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "poem",
+        "prototype": true
+      },
+      "imageRev": 1785197354
+    },
+    {
+      "id": "L19_language",
+      "kanji": "語",
+      "keyword": "language",
+      "image": "studies/language.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "日本語",
+            "reading": "にほんご",
+            "en": "Japanese language"
+          },
+          {
+            "jp": "英語",
+            "reading": "えいご",
+            "en": "English language"
+          },
+          {
+            "jp": "物語",
+            "reading": "ものがたり",
+            "en": "Story"
+          },
+          {
+            "jp": "単語",
+            "reading": "たんご",
+            "en": "Vocabulary word"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "language",
+        "prototype": true
+      },
+      "imageRev": 1785198060
+    },
+    {
+      "id": "L19_read",
+      "kanji": "読",
+      "keyword": "read",
+      "image": "studies/read.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "読書",
+            "reading": "どくしょ",
+            "en": "Reading"
+          },
+          {
+            "jp": "愛読",
+            "reading": "あいどく",
+            "en": "Favorite reading"
+          },
+          {
+            "jp": "音読",
+            "reading": "おんどく",
+            "en": "Reading aloud"
+          },
+          {
+            "jp": "購読",
+            "reading": "こうどく",
+            "en": "Subscription"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "read",
+        "prototype": true
+      },
+      "imageRev": 1785198551
+    },
+    {
+      "id": "L19_tune",
+      "kanji": "調",
+      "keyword": "tune",
+      "image": "studies/tune.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "調査",
+            "reading": "ちょうさ",
+            "en": "Investigation"
+          },
+          {
+            "jp": "強調",
+            "reading": "きょうちょう",
+            "en": "Emphasis"
+          },
+          {
+            "jp": "順調",
+            "reading": "じゅんちょう",
+            "en": "Smooth progress"
+          },
+          {
+            "jp": "体調",
+            "reading": "たいちょう",
+            "en": "Physical condition"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "tune",
+        "prototype": true
+      },
+      "imageRev": 1785199138
+    },
+    {
+      "id": "L19_discuss",
+      "kanji": "談",
+      "keyword": "discuss",
+      "image": "studies/discuss.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "相談",
+            "reading": "そうだん",
+            "en": "Consultation"
+          },
+          {
+            "jp": "談話",
+            "reading": "だんわ",
+            "en": "Conversation"
+          },
+          {
+            "jp": "雑談",
+            "reading": "ざつだん",
+            "en": "Chat"
+          },
+          {
+            "jp": "対談",
+            "reading": "たいだん",
+            "en": "Dialogue"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "discuss",
+        "prototype": true
+      },
+      "imageRev": 1785199417
+    },
+    {
+      "id": "L19_consent",
+      "kanji": "諾",
+      "keyword": "consent",
+      "image": "studies/consent.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "承諾",
+            "reading": "しょうだく",
+            "en": "Consent"
+          },
+          {
+            "jp": "快諾",
+            "reading": "かいだく",
+            "en": "Ready consent"
+          },
+          {
+            "jp": "受諾",
+            "reading": "じゅだく",
+            "en": "Acceptance"
+          },
+          {
+            "jp": "諾否",
+            "reading": "だくひ",
+            "en": "Consent or refusal"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "consent",
+        "prototype": true
+      },
+      "imageRev": 1785199802
+    },
+    {
+      "id": "L19_rebuke",
+      "kanji": "諭",
+      "keyword": "rebuke",
+      "image": "studies/rebuke.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "諭旨",
+            "reading": "ゆし",
+            "en": "Instruction"
+          },
+          {
+            "jp": "諭告",
+            "reading": "ゆこく",
+            "en": "Admonition"
+          },
+          {
+            "jp": "教諭",
+            "reading": "きょうゆ",
+            "en": "Teacher"
+          },
+          {
+            "jp": "説諭",
+            "reading": "せつゆ",
+            "en": "Persuasion"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "rebuke",
+        "prototype": true
+      },
+      "imageRev": 1785200307
+    },
+    {
+      "id": "L19_style",
+      "kanji": "式",
+      "keyword": "style",
+      "image": "studies/style.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "方式",
+            "reading": "ほうしき",
+            "en": "Method"
+          },
+          {
+            "jp": "結婚式",
+            "reading": "けっこんしき",
+            "en": "Wedding ceremony"
+          },
+          {
+            "jp": "正式",
+            "reading": "せいしき",
+            "en": "Official"
+          },
+          {
+            "jp": "入学式",
+            "reading": "にゅうがくしき",
+            "en": "Entrance ceremony"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "style",
+        "prototype": true
+      },
+      "imageRev": 1785200771
+    },
+    {
+      "id": "L19_test",
+      "kanji": "試",
+      "keyword": "test",
+      "image": "studies/test.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "試験",
+            "reading": "しけん",
+            "en": "Examination"
+          },
+          {
+            "jp": "入試",
+            "reading": "にゅうし",
+            "en": "Entrance exam"
+          },
+          {
+            "jp": "試合",
+            "reading": "しあい",
+            "en": "Match"
+          },
+          {
+            "jp": "試作品",
+            "reading": "しさくひん",
+            "en": "Prototype"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "test",
+        "prototype": true
+      },
+      "imageRev": 1785201007
+    },
+    {
+      "id": "L19_formal_two",
+      "kanji": "弐",
+      "keyword": "formal two",
+      "image": "studies/formal_two.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "弐千円",
+            "reading": "にせんえん",
+            "en": "Two thousand yen"
+          },
+          {
+            "jp": "弐号",
+            "reading": "にごう",
+            "en": "Number two"
+          },
+          {
+            "jp": "弐番",
+            "reading": "にばん",
+            "en": "Number two"
+          },
+          {
+            "jp": "弐心",
+            "reading": "にしん",
+            "en": "Double-mindedness"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 19,
+        "slug": "formal_two",
+        "prototype": true
+      },
+      "imageRev": 1785201534
+    }
+  ]
+}

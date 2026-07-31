@@ -1,0 +1,78 @@
+
+:root {
+  --bg: #f7f4ef;
+  --ink: #1c1917;
+  --muted: #78716c;
+  --ok: #166534;
+  --needs: #9a3412;
+  --card: #fffdf9;
+  --line: #e7e5e4;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.45;
+}
+.top {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; gap: 1rem; align-items: center;
+  padding: 0.65rem 1.25rem;
+  background: rgba(247,244,239,0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+.top a { color: var(--ink); }
+.summary.ok { color: var(--ok); }
+.summary.needs { color: var(--needs); }
+.page-head { padding: 1.5rem 1.25rem 0.5rem; max-width: 1100px; margin: 0 auto; }
+.page-head h1 { margin: 0 0 0.4rem; font-weight: 600; }
+.page-head p { color: var(--muted); margin: 0.35rem 0; }
+.page-head pre {
+  background: #fff; border: 1px solid var(--line); padding: 0.6rem 0.8rem;
+  border-radius: 6px; overflow: auto;
+}
+.lesson-list { max-width: 700px; margin: 1rem auto 3rem; padding: 0 1.25rem; }
+.lesson-list li { margin: 0.35rem 0; }
+.lesson-list .done a { color: var(--ok); }
+.grid {
+  max-width: 1100px; margin: 0 auto 3rem; padding: 0.5rem 1rem 2rem;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.85rem 1rem 1rem;
+}
+.card.status-needs_edit { border-color: #fdba74; background: #fff7ed; }
+.card header { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.6rem; }
+.hero {
+  font-family: "Noto Serif JP", "Yuji Syuku", serif;
+  font-size: 2.4rem; line-height: 1;
+}
+.kw { color: var(--muted); font-size: 0.95rem; }
+.badge {
+  margin-left: auto; font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.04em; padding: 0.15rem 0.45rem; border-radius: 999px;
+  background: #dcfce7; color: var(--ok);
+}
+.status-needs_edit .badge { background: #ffedd5; color: var(--needs); }
+.body { display: grid; grid-template-columns: 120px 1fr; gap: 0.75rem; align-items: start; }
+.render {
+  min-height: 120px; display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 1px dashed var(--line); border-radius: 8px;
+}
+.outline {
+  margin: 0 0 0.4rem; font-family: ui-monospace, monospace; font-size: 0.78rem;
+  white-space: pre; color: #44403c;
+}
+.parts { margin: 0; font-size: 0.85rem; color: var(--muted); }
+.plabel { color: #a8a29e; font-size: 0.8em; }
+.issues { margin: 0.4rem 0 0; padding-left: 1.1rem; color: var(--needs); font-size: 0.8rem; }
+@media (max-width: 640px) {
+  .body { grid-template-columns: 1fr; }
+}

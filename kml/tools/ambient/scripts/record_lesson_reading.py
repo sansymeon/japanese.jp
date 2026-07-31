@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PORT = 8782
 BUILD_SCRIPT = "build_lesson_01_assisted_reading_experimental.py"
-LESSONS = list(range(1, 15)) + list(range(33, 38))
+LESSONS = list(range(1, 21)) + list(range(33, 39)) + [41]
 
 # Lesson 8: fade out soundtrack/video from 12:06, then cut (10s fade).
 READING_OUTPUT_FADES: dict[int, tuple[int, int]] = {

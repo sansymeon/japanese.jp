@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% set meta_description = book.description or (book.title ~ ' — Kanji・Music・Landscape') %}
+{% set breadcrumbs = [
+  {"label": "Home", "href": site_root ~ "/index.html"},
+  {"label": "Bookshelf", "href": site_root ~ "/books/index.html"},
+  {"label": book.title, "current": true}
+] %}
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="container">
+    {% include "includes/breadcrumbs.html" %}
+
+    <header class="section-head">
+      <p class="eyebrow">Book {{ book.number }}</p>
+      <h1>{{ book.title }}</h1>
+      {% if book.subtitle %}<p class="lead">{{ book.subtitle }}</p>{% endif %}
+      {% if book.description %}<p class="lead">{{ book.description }}</p>{% endif %}
+      {% if book.lesson_range_label %}
+      <p class="text-quiet">{{ book.lesson_range_label }}</p>
+      {% endif %}
+    </header>
+
+    <ol class="lesson-list">
+      {% for item in book.lessons %}
+      <li>
+        {% if item.href %}
+        <a class="lesson-card" href="{{ item.href }}">
+          <span class="lesson-card-label">
+            {% if item.opening_character %}<span lang="ja">{{ item.opening_character }}</span> · {% endif %}
+            {{ item.title }}
+          </span>
+          <span class="lesson-card-meta">
+            {{ item.status }}{% if item.kanji_count %} · {{ item.kanji_count }} kanji{% endif %}
+          </span>
+        </a>
+        {% else %}
+        <span class="lesson-card" style="opacity:0.55">
+          <span class="lesson-card-label">{{ item.title }}</span>
+          <span class="lesson-card-meta">{{ item.status }} · pack pending</span>
+        </span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+{% endblock %}

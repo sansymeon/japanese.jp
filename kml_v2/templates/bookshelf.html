@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% set meta_description = "The Bookshelf — Kanji・Music・Landscape" %}
+{% set hero_brand = "Kanji・Music・Landscape" %}
+{% set hero_title = "The Bookshelf" %}
+{% set hero_lead = "Volumes of memory — entered one room at a time." %}
+{% set hero_actions = [
+  {"label": "Browse books", "href": "#catalogue", "class": "btn-primary"}
+] %}
+{% set breadcrumbs = [
+  {"label": "Home", "href": site_root ~ "/index.html"},
+  {"label": "Bookshelf", "current": true}
+] %}
+
+{% block content %}
+{% include "includes/hero.html" %}
+<section class="section" id="catalogue" aria-labelledby="catalogue-heading">
+  <div class="container">
+    {% include "includes/breadcrumbs.html" %}
+    <header class="section-head">
+      <p class="eyebrow">Open now</p>
+      <h2 id="catalogue-heading">Published books</h2>
+      <p class="lead">Generated from data/books — each card derived from metadata.</p>
+    </header>
+    <ol class="book-grid">
+      {% for book in books %}
+      <li>
+        <a class="book-card" href="{{ site_root }}/{{ book.path }}">
+          <span class="book-card-num">Book {{ book.number }}</span>
+          <h3 class="book-card-title">{{ book.title }}</h3>
+          <p class="book-card-meta">{{ book.lesson_range_label or book.status }}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}

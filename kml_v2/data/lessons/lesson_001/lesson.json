@@ -1,0 +1,67 @@
+{
+  "$schema": "../../schema/lesson.schema.json",
+  "id": "lesson_001",
+  "number": 1,
+  "book_id": "book_01",
+  "book_number": 1,
+  "title": "Lesson 1",
+  "subtitle": "Foundations — Heisig frames 1–20",
+  "slug": "lesson_001",
+  "summary": "Twenty foundational characters from 一 to 明: numbers, sun and moon, field and eye, then early compounds of meaning (old, I, risk, companion, bright). Each character carries a Japanese Reflection verse and study image.",
+  "gallery_url": "https://youtu.be/hCBwOaGI7fo",
+  "focus": {
+    "heisig_start": 1,
+    "heisig_end": 20,
+    "kanji_count": 20,
+    "opening_character": "一",
+    "closing_character": "明",
+    "primary_keyword": null
+  },
+  "status": "draft",
+  "publication": {
+    "website": true,
+    "youtube": false,
+    "recorded": false,
+    "edited": false,
+    "ambient_exhibitions": true
+  },
+  "pack": {
+    "kanji": "kanji.json",
+    "vocabulary": "vocabulary.json",
+    "phrases": "phrases.json",
+    "compounds": "compounds.json",
+    "gallery": "gallery.json",
+    "youtube": "youtube.json",
+    "assets": "assets.json"
+  },
+  "relationships": {
+    "ambient_ids": [
+      "lesson_1_foundations",
+      "lesson_01_gallery",
+      "lesson_01_reading",
+      "lesson_01_vocabulary",
+      "lesson_01_compounds",
+      "lesson_01_strokes"
+    ],
+    "playlist_ids": ["book_01_lessons"],
+    "beyond_joyo_ids": [],
+    "vocabulary_section_ids": []
+  },
+  "navigation": {
+    "prev_id": null,
+    "next_id": "lesson_002",
+    "prev_href": null,
+    "next_href": "./lesson_02.html",
+    "prev_label": "Previous",
+    "next_label": "Lesson 2"
+  },
+  "path": "books/book_01/lessons/lesson_01.html",
+  "tags": [
+    "foundations",
+    "book_01",
+    "heisig_1_20",
+    "numbers",
+    "nature"
+  ],
+  "notes": "Reference pack for the KML ecosystem. Characters and verses are the curriculum core; vocabulary and compounds are derived/teaching layers. Presentation HTML is disposable."
+}

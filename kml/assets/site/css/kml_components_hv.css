@@ -1,0 +1,61 @@
+/* KML Phase-1 components: Horizontal / Vertical only.
+   Recognition aid — no enclosure or surround layouts. */
+
+.component-box {
+  width: 120px;
+  min-height: 120px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kml-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kml-group.horizontal {
+  flex-direction: row;
+  gap: var(--kanji-gap-horizontal, 0.12em);
+}
+
+.kml-group.vertical {
+  flex-direction: column;
+  gap: var(--kanji-gap-vertical, 0.08em);
+}
+
+.kml-part {
+  font-family: "Noto Serif JP", "Yuji Syuku", serif;
+  font-size: var(--kanji-primitive-size, 1.85rem);
+  line-height: 1;
+  color: var(--kanji-color, #1a1a1a);
+}
+
+/* Lesson HTML may keep stack-* class names during Phase-1 editing.
+   Map them to the same flex behavior. */
+.component-layout.stack-horizontal,
+.stack-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kanji-gap-horizontal, 0.12em);
+}
+
+.component-layout.stack-vertical,
+.stack-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kanji-gap-vertical, 0.08em);
+}
+
+.kanji-part {
+  font-family: "Noto Serif JP", "Yuji Syuku", serif;
+  font-size: var(--kanji-primitive-size, 1.85rem);
+  line-height: 1;
+  color: var(--kanji-color, #1a1a1a);
+}

@@ -1,7 +1,7 @@
 {
   "schema": "kml.analytics.curriculum",
   "schema_version": 1,
-  "generated_at": "2026-07-22T21:36:18+00:00",
+  "generated_at": "2026-07-28T03:48:51+00:00",
   "generator": "kml/analytics/scripts/analyze_curriculum.py",
   "note": "Generated analytics file. Never edit by hand; never treat as a canonical vocabulary source. Regenerate by rerunning the script.",
   "inputs": {
@@ -88,17 +88,18 @@
       },
       {
         "file": "kml/tools/ambient/collections/vocabulary/vocabulary_21.json",
-        "sha256_12": "ef4d51af6298"
+        "sha256_12": "c24a069c8086"
       },
       {
         "file": "kml/tools/ambient/collections/vocabulary/vocabulary_22.json",
-        "sha256_12": "638927c829a6"
+        "sha256_12": "6d9dce0fd0f4"
       }
     ],
     "master_vocabulary": {
       "file": "kml/data/vocabulary/kml_master_vocabulary.v1.json",
-      "sha256_12": "b8f2450e76d0",
-      "access": "read_only"
+      "access": "read_only",
+      "sha256_12": null,
+      "present": false
     }
   },
   "analysis": {
@@ -917,32 +918,32 @@
     },
     "parts_of_speech": {
       "noun": {
-        "count": 459,
-        "percent": 84.5
+        "count": 461,
+        "percent": 84.9
       },
       "verb": {
-        "count": 22,
-        "percent": 4.1
+        "count": 42,
+        "percent": 7.7
       },
       "i_adjective": {
-        "count": 12,
-        "percent": 2.2
+        "count": 13,
+        "percent": 2.4
       },
       "na_adjective": {
-        "count": 7,
-        "percent": 1.3
-      },
-      "expression": {
-        "count": 32,
-        "percent": 5.9
-      },
-      "adverb": {
         "count": 6,
         "percent": 1.1
       },
+      "expression": {
+        "count": 14,
+        "percent": 2.6
+      },
+      "adverb": {
+        "count": 3,
+        "percent": 0.6
+      },
       "counter": {
-        "count": 1,
-        "percent": 0.2
+        "count": 0,
+        "percent": 0.0
       },
       "pronoun": {
         "count": 4,
@@ -963,60 +964,52 @@
     },
     "themes": {
       "general": {
-        "count": 201,
-        "percent": 37.0
+        "count": 337,
+        "percent": 62.1
       },
-      "shopping": {
-        "count": 151,
-        "percent": 27.8
+      "food": {
+        "count": 36,
+        "percent": 6.6
       },
       "transportation": {
-        "count": 56,
-        "percent": 10.3
+        "count": 35,
+        "percent": 6.4
       },
-      "restaurants": {
-        "count": 41,
-        "percent": 7.6
-      },
-      "daily_life": {
-        "count": 28,
-        "percent": 5.2
+      "shopping": {
+        "count": 35,
+        "percent": 6.4
       },
       "nature": {
-        "count": 18,
-        "percent": 3.3
+        "count": 33,
+        "percent": 6.1
+      },
+      "daily_life": {
+        "count": 32,
+        "percent": 5.9
       },
       "work": {
-        "count": 14,
-        "percent": 2.6
+        "count": 17,
+        "percent": 3.1
+      },
+      "home": {
+        "count": 16,
+        "percent": 2.9
       },
       "school": {
         "count": 12,
         "percent": 2.2
       },
       "family": {
-        "count": 10,
-        "percent": 1.8
-      },
-      "beautiful_japanese": {
-        "count": 10,
-        "percent": 1.8
-      },
-      "food": {
-        "count": 8,
-        "percent": 1.5
-      },
-      "home": {
-        "count": 5,
-        "percent": 0.9
-      },
-      "travel": {
-        "count": 5,
-        "percent": 0.9
+        "count": 11,
+        "percent": 2.0
       },
       "greetings": {
-        "count": 1,
-        "percent": 0.2
+        "count": 10,
+        "percent": 1.8
+      },
+      "travel": {
+        "count": 9,
+        "percent": 1.7
       }
     },
     "kanji": {
@@ -4768,11 +4761,12 @@
         "theme_balance": {
           "general": 38.5,
           "daily_life": 26.9,
-          "nature": 15.4,
+          "nature": 19.2,
           "family": 7.7,
           "food": 7.7,
-          "transportation": 7.7,
-          "work": 3.8
+          "work": 3.8,
+          "transportation": 3.8,
+          "travel": 3.8
         }
       },
       {
@@ -4826,12 +4820,13 @@
         "theme_balance": {
           "general": 51.9,
           "daily_life": 17.3,
-          "nature": 9.6,
+          "nature": 11.5,
           "school": 7.7,
           "family": 5.8,
           "food": 5.8,
           "work": 3.8,
-          "transportation": 3.8,
+          "transportation": 1.9,
+          "travel": 1.9,
           "shopping": 1.9
         }
       },
@@ -4884,15 +4879,16 @@
         },
         "unique_kanji": 131,
         "theme_balance": {
-          "general": 52.6,
+          "general": 55.1,
           "daily_life": 12.8,
-          "transportation": 10.3,
-          "nature": 7.7,
+          "nature": 9.0,
+          "transportation": 7.7,
           "family": 5.1,
+          "food": 5.1,
           "school": 5.1,
-          "shopping": 5.1,
-          "food": 3.8,
+          "shopping": 3.8,
           "work": 2.6,
+          "travel": 1.3,
           "home": 1.3
         }
       },
@@ -4945,17 +4941,17 @@
         },
         "unique_kanji": 167,
         "theme_balance": {
-          "general": 59.6,
+          "general": 61.5,
           "daily_life": 9.6,
-          "transportation": 7.7,
-          "nature": 6.7,
-          "food": 4.8,
-          "shopping": 4.8,
+          "nature": 7.7,
+          "food": 7.7,
+          "transportation": 5.8,
           "family": 3.8,
           "school": 3.8,
+          "shopping": 2.9,
           "work": 1.9,
-          "home": 1.0,
-          "restaurants": 1.0
+          "travel": 1.0,
+          "home": 1.0
         }
       },
       {
@@ -5007,18 +5003,17 @@
         },
         "unique_kanji": 204,
         "theme_balance": {
-          "general": 61.5,
+          "general": 63.8,
           "daily_life": 8.5,
-          "transportation": 7.7,
-          "nature": 6.2,
+          "nature": 6.9,
+          "food": 6.2,
+          "transportation": 5.4,
           "school": 5.4,
           "family": 3.8,
-          "food": 3.8,
-          "shopping": 3.8,
           "work": 3.1,
-          "home": 1.5,
-          "restaurants": 0.8,
-          "travel": 0.8
+          "shopping": 2.3,
+          "travel": 1.5,
+          "home": 1.5
         }
       },
       {
@@ -5070,18 +5065,17 @@
         },
         "unique_kanji": 226,
         "theme_balance": {
-          "general": 57.1,
+          "general": 61.5,
           "daily_life": 14.1,
-          "transportation": 7.7,
-          "nature": 5.8,
+          "nature": 6.4,
+          "food": 5.1,
+          "transportation": 4.5,
           "school": 4.5,
-          "shopping": 3.8,
           "family": 3.2,
-          "food": 3.2,
           "work": 2.6,
+          "shopping": 1.9,
+          "travel": 1.3,
           "home": 1.3,
-          "restaurants": 1.3,
-          "travel": 0.6,
           "greetings": 0.6
         }
       },
@@ -5134,18 +5128,17 @@
         },
         "unique_kanji": 261,
         "theme_balance": {
-          "general": 55.5,
+          "general": 59.3,
           "daily_life": 14.3,
-          "transportation": 7.1,
+          "nature": 6.0,
+          "food": 6.0,
           "work": 5.5,
-          "nature": 5.5,
-          "food": 4.4,
+          "transportation": 4.4,
           "school": 3.8,
           "family": 3.3,
-          "shopping": 3.3,
+          "travel": 1.6,
+          "shopping": 1.6,
           "home": 1.1,
-          "restaurants": 1.1,
-          "travel": 1.1,
           "greetings": 0.5
         }
       },
@@ -5198,18 +5191,17 @@
         },
         "unique_kanji": 292,
         "theme_balance": {
-          "general": 60.6,
+          "general": 63.9,
           "daily_life": 12.5,
-          "transportation": 6.2,
-          "nature": 5.3,
+          "nature": 5.8,
+          "food": 5.3,
           "work": 4.8,
-          "food": 3.8,
+          "transportation": 3.8,
           "school": 3.4,
           "family": 2.9,
-          "shopping": 2.9,
+          "travel": 1.4,
+          "shopping": 1.4,
           "home": 1.0,
-          "restaurants": 1.0,
-          "travel": 1.0,
           "greetings": 0.5
         }
       },
@@ -5262,18 +5254,17 @@
         },
         "unique_kanji": 320,
         "theme_balance": {
-          "general": 62.8,
+          "general": 66.7,
           "daily_life": 11.1,
-          "transportation": 5.6,
-          "nature": 5.1,
+          "nature": 5.6,
+          "food": 4.7,
           "work": 4.3,
-          "shopping": 3.8,
-          "food": 3.4,
+          "transportation": 3.4,
           "family": 3.0,
           "school": 3.0,
+          "shopping": 1.7,
+          "travel": 1.3,
           "home": 0.9,
-          "restaurants": 0.9,
-          "travel": 0.9,
           "greetings": 0.4
         }
       },
@@ -5326,18 +5317,17 @@
         },
         "unique_kanji": 354,
         "theme_balance": {
-          "general": 63.8,
+          "general": 67.3,
           "daily_life": 10.4,
-          "transportation": 5.4,
-          "nature": 5.0,
+          "nature": 5.4,
           "work": 4.6,
+          "food": 4.2,
           "family": 3.8,
-          "shopping": 3.5,
-          "food": 3.1,
+          "transportation": 3.5,
           "school": 2.7,
+          "shopping": 1.5,
+          "travel": 1.2,
           "home": 0.8,
-          "restaurants": 0.8,
-          "travel": 0.8,
           "greetings": 0.4
         }
       },
@@ -5390,18 +5380,17 @@
         },
         "unique_kanji": 382,
         "theme_balance": {
-          "general": 64.7,
+          "general": 67.8,
           "daily_life": 9.8,
-          "nature": 5.2,
-          "transportation": 5.2,
+          "nature": 5.6,
           "work": 4.2,
+          "food": 3.8,
           "school": 3.8,
           "family": 3.5,
-          "shopping": 3.1,
-          "food": 2.8,
+          "transportation": 3.5,
+          "shopping": 1.4,
+          "travel": 1.0,
           "home": 1.0,
-          "restaurants": 0.7,
-          "travel": 0.7,
           "greetings": 0.3
         }
       },
@@ -5454,18 +5443,17 @@
         },
         "unique_kanji": 401,
         "theme_balance": {
-          "general": 64.4,
+          "general": 67.3,
           "daily_life": 9.0,
-          "nature": 5.8,
-          "transportation": 5.1,
+          "nature": 6.1,
           "work": 4.5,
           "school": 3.8,
+          "food": 3.5,
+          "transportation": 3.5,
           "family": 3.2,
-          "shopping": 2.9,
-          "food": 2.6,
+          "travel": 1.9,
           "home": 1.6,
-          "travel": 1.6,
-          "restaurants": 0.6,
+          "shopping": 1.3,
           "greetings": 0.3
         }
       },
@@ -5518,20 +5506,18 @@
         },
         "unique_kanji": 414,
         "theme_balance": {
-          "general": 59.6,
-          "shopping": 9.8,
-          "daily_life": 8.3,
-          "nature": 5.3,
-          "transportation": 4.7,
-          "work": 4.2,
+          "general": 64.4,
+          "daily_life": 8.9,
+          "nature": 5.9,
+          "shopping": 5.0,
+          "work": 4.7,
+          "transportation": 3.9,
           "school": 3.6,
+          "food": 3.3,
           "family": 3.0,
-          "food": 2.4,
+          "travel": 1.8,
           "home": 1.5,
-          "travel": 1.5,
-          "restaurants": 0.6,
-          "greetings": 0.3,
-          "beautiful_japanese": 0.3
+          "greetings": 0.9
         }
       },
       {
@@ -5583,20 +5569,18 @@
         },
         "unique_kanji": 424,
         "theme_balance": {
-          "general": 55.5,
-          "shopping": 15.7,
-          "daily_life": 7.7,
-          "nature": 5.0,
-          "transportation": 4.4,
-          "work": 3.9,
+          "general": 65.2,
+          "daily_life": 8.3,
+          "nature": 5.8,
+          "shopping": 5.0,
+          "work": 4.4,
+          "transportation": 3.6,
           "school": 3.3,
+          "food": 3.0,
           "family": 2.8,
-          "food": 2.2,
-          "home": 1.4,
-          "travel": 1.4,
-          "restaurants": 0.6,
-          "beautiful_japanese": 0.6,
-          "greetings": 0.3
+          "home": 2.5,
+          "travel": 1.7,
+          "greetings": 0.8
         }
       },
       {
@@ -5648,20 +5632,18 @@
         },
         "unique_kanji": 431,
         "theme_balance": {
-          "general": 51.8,
-          "shopping": 21.1,
-          "daily_life": 7.2,
-          "nature": 4.6,
-          "transportation": 4.1,
-          "work": 3.6,
+          "general": 67.0,
+          "daily_life": 7.7,
+          "nature": 5.7,
+          "shopping": 4.9,
+          "work": 4.1,
+          "transportation": 3.4,
           "school": 3.1,
+          "food": 2.8,
           "family": 2.6,
-          "food": 2.1,
-          "home": 1.3,
-          "travel": 1.3,
-          "beautiful_japanese": 0.8,
-          "restaurants": 0.5,
-          "greetings": 0.3
+          "home": 2.3,
+          "travel": 1.5,
+          "greetings": 0.8
         }
       },
       {
@@ -5713,20 +5695,18 @@
         },
         "unique_kanji": 447,
         "theme_balance": {
-          "general": 49.0,
-          "shopping": 25.1,
-          "daily_life": 6.8,
-          "nature": 4.4,
+          "general": 65.1,
+          "shopping": 7.6,
+          "daily_life": 7.3,
+          "nature": 5.6,
+          "work": 3.9,
           "transportation": 3.9,
-          "work": 3.4,
+          "food": 2.9,
           "school": 2.9,
           "family": 2.4,
-          "food": 2.0,
-          "home": 1.2,
-          "travel": 1.2,
-          "beautiful_japanese": 1.0,
-          "restaurants": 0.5,
-          "greetings": 0.2
+          "home": 2.4,
+          "travel": 1.5,
+          "greetings": 0.7
         }
       },
       {
@@ -5778,20 +5758,18 @@
         },
         "unique_kanji": 462,
         "theme_balance": {
-          "general": 46.2,
-          "shopping": 29.2,
-          "daily_life": 6.4,
-          "nature": 4.1,
+          "general": 63.7,
+          "shopping": 7.6,
+          "daily_life": 6.9,
+          "nature": 5.5,
+          "food": 5.3,
+          "work": 3.7,
           "transportation": 3.7,
-          "work": 3.2,
           "school": 2.8,
           "family": 2.3,
-          "food": 1.8,
-          "home": 1.1,
-          "travel": 1.1,
-          "beautiful_japanese": 1.1,
-          "restaurants": 0.5,
-          "greetings": 0.2
+          "home": 2.3,
+          "travel": 1.4,
+          "greetings": 0.9
         }
       },
       {
@@ -5843,20 +5821,18 @@
         },
         "unique_kanji": 476,
         "theme_balance": {
-          "general": 43.7,
-          "shopping": 32.8,
-          "daily_life": 6.1,
-          "nature": 3.9,
-          "transportation": 3.5,
-          "work": 3.0,
+          "general": 63.5,
+          "shopping": 7.6,
+          "daily_life": 6.5,
+          "nature": 5.4,
+          "food": 5.2,
+          "transportation": 4.1,
+          "work": 3.7,
           "school": 2.6,
+          "home": 2.4,
           "family": 2.2,
-          "food": 1.7,
-          "beautiful_japanese": 1.3,
-          "home": 1.1,
-          "travel": 1.1,
-          "restaurants": 0.4,
-          "greetings": 0.2
+          "greetings": 1.7,
+          "travel": 1.3
         }
       },
       {
@@ -5908,20 +5884,18 @@
         },
         "unique_kanji": 486,
         "theme_balance": {
-          "general": 42.0,
-          "shopping": 31.5,
-          "transportation": 7.1,
-          "daily_life": 5.8,
-          "nature": 3.8,
-          "work": 2.9,
+          "general": 62.6,
+          "shopping": 7.3,
+          "daily_life": 6.3,
+          "transportation": 6.1,
+          "nature": 5.8,
+          "food": 5.0,
+          "work": 3.5,
           "school": 2.5,
+          "home": 2.5,
           "family": 2.1,
-          "food": 1.7,
-          "beautiful_japanese": 1.5,
-          "home": 1.0,
-          "travel": 1.0,
-          "restaurants": 0.4,
-          "greetings": 0.2
+          "greetings": 1.7,
+          "travel": 1.5
         }
       },
       {
@@ -5973,20 +5947,18 @@
         },
         "unique_kanji": 500,
         "theme_balance": {
-          "general": 40.0,
-          "shopping": 30.1,
-          "transportation": 11.2,
-          "daily_life": 5.6,
-          "nature": 3.6,
-          "work": 2.8,
+          "general": 62.5,
+          "shopping": 7.0,
+          "transportation": 6.8,
+          "daily_life": 6.2,
+          "nature": 5.8,
+          "food": 4.8,
+          "work": 3.4,
+          "home": 2.6,
           "school": 2.4,
           "family": 2.0,
-          "food": 1.6,
-          "beautiful_japanese": 1.6,
-          "home": 1.0,
-          "travel": 1.0,
-          "restaurants": 0.4,
-          "greetings": 0.2
+          "travel": 1.8,
+          "greetings": 1.6
         }
       },
       {
@@ -6038,20 +6010,18 @@
         },
         "unique_kanji": 510,
         "theme_balance": {
-          "general": 38.4,
-          "shopping": 28.9,
-          "transportation": 10.7,
-          "daily_life": 5.4,
-          "restaurants": 4.2,
-          "nature": 3.4,
-          "work": 2.7,
+          "general": 62.1,
+          "transportation": 6.7,
+          "shopping": 6.7,
+          "daily_life": 6.1,
+          "nature": 6.1,
+          "food": 5.9,
+          "work": 3.3,
+          "home": 2.7,
           "school": 2.3,
           "family": 1.9,
-          "beautiful_japanese": 1.7,
-          "food": 1.5,
-          "home": 1.0,
-          "travel": 1.0,
-          "greetings": 0.2
+          "travel": 1.7,
+          "greetings": 1.5
         }
       },
       {
@@ -6103,20 +6073,18 @@
         },
         "unique_kanji": 522,
         "theme_balance": {
-          "general": 37.0,
-          "shopping": 27.8,
-          "transportation": 10.3,
-          "restaurants": 7.6,
-          "daily_life": 5.2,
-          "nature": 3.3,
-          "work": 2.6,
+          "general": 62.1,
+          "food": 6.6,
+          "transportation": 6.4,
+          "shopping": 6.4,
+          "nature": 6.1,
+          "daily_life": 5.9,
+          "work": 3.1,
+          "home": 2.9,
           "school": 2.2,
-          "family": 1.8,
-          "beautiful_japanese": 1.8,
-          "food": 1.5,
-          "home": 0.9,
-          "travel": 0.9,
-          "greetings": 0.2
+          "family": 2.0,
+          "greetings": 1.8,
+          "travel": 1.7
         }
       }
     ]
@@ -6449,7 +6417,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "travel"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 634,
@@ -6459,7 +6427,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "明日",
@@ -6715,7 +6683,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "transportation",
+        "nature"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 1533,
@@ -6725,7 +6694,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "食事",
@@ -7328,7 +7297,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "連絡",
@@ -7416,7 +7385,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "shopping",
+        "food"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": null,
@@ -7426,7 +7396,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "入口",
@@ -7489,7 +7459,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 1024,
@@ -7499,7 +7469,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "図書館",
@@ -7731,7 +7701,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 1781,
@@ -7741,7 +7711,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "現金",
@@ -7766,7 +7736,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "理由",
@@ -7815,7 +7785,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "結果",
@@ -8007,7 +7977,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "全部",
@@ -8166,7 +8136,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 539,
@@ -8176,7 +8146,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "普通",
@@ -8576,7 +8546,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 2241,
@@ -8586,7 +8556,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "食べ物",
@@ -8707,7 +8677,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "努力",
@@ -8770,7 +8740,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 830,
@@ -8780,7 +8750,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "夢",
@@ -9279,7 +9249,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 990,
@@ -9289,7 +9259,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "今年",
@@ -9472,7 +9442,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 559,
@@ -9482,7 +9452,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "到着",
@@ -9497,7 +9467,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 499,
@@ -9507,7 +9477,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "去年",
@@ -9789,7 +9759,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 935,
@@ -9799,7 +9769,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "誕生日",
@@ -11212,7 +11182,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 1727,
@@ -11222,7 +11192,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "全体",
@@ -11319,7 +11289,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "半分",
@@ -11406,7 +11376,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 1482,
@@ -11416,7 +11386,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "増加",
@@ -13663,16 +13633,17 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "shopping",
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お客様",
@@ -13696,7 +13667,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お店",
@@ -13719,7 +13690,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "すみません",
@@ -13731,16 +13702,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "また来ます",
@@ -13752,9 +13723,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -13763,7 +13734,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "コンビニ",
@@ -13784,7 +13755,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "スーパー",
@@ -13805,7 +13776,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "デパート",
@@ -13826,7 +13797,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ドラッグストア",
@@ -13847,7 +13818,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "一期一会",
@@ -13861,7 +13832,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "work",
+        "daily_life"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -13872,7 +13844,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "何時までですか？",
@@ -13886,7 +13858,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "daily_life"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -13896,7 +13868,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "入り口",
@@ -13911,7 +13883,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 1612,
@@ -13921,7 +13893,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "入る",
@@ -13935,7 +13907,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 5330,
@@ -13944,7 +13916,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "商店街",
@@ -13958,7 +13930,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "shopping",
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -13969,7 +13942,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "営業中",
@@ -13983,7 +13956,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "transportation",
+        "work"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -13994,7 +13968,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "定休日",
@@ -14008,7 +13982,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": null,
@@ -14019,7 +13993,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "店員",
@@ -14044,7 +14018,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "本屋",
@@ -14068,7 +14042,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "行く",
@@ -14082,7 +14056,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 61,
@@ -14091,7 +14065,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "見ているだけです",
@@ -14103,9 +14077,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14114,7 +14088,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "見る",
@@ -14128,7 +14102,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 1510,
@@ -14137,7 +14111,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "買う",
@@ -14160,7 +14134,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "賑やか",
@@ -14174,7 +14148,7 @@
       ],
       "pos": "na_adjective",
       "themes": [
-        "shopping"
+        "transportation"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14183,7 +14157,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "閉店",
@@ -14207,7 +14181,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "開店",
@@ -14231,7 +14205,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "〜はありますか？",
@@ -14245,14 +14219,14 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "〜を探しています",
@@ -14264,9 +14238,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14275,7 +14249,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "あちら",
@@ -14289,14 +14263,14 @@
       ],
       "pos": "pronoun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 2305,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ありました",
@@ -14308,16 +14282,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "こちら",
@@ -14331,14 +14305,14 @@
       ],
       "pos": "pronoun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ございます",
@@ -14352,14 +14326,14 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "どこ",
@@ -14373,14 +14347,14 @@
       ],
       "pos": "pronoun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "トイレはどこですか？",
@@ -14394,14 +14368,14 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "home"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "一階",
@@ -14415,7 +14389,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "home"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14425,7 +14399,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "品切れ",
@@ -14439,7 +14413,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 9599,
@@ -14449,7 +14423,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "在庫",
@@ -14463,7 +14437,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N1",
       "spoken_frequency_rank": 3499,
@@ -14473,7 +14447,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "地下",
@@ -14487,7 +14461,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 430,
@@ -14497,7 +14471,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "売り場",
@@ -14511,7 +14485,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "home"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 7505,
@@ -14521,7 +14495,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "奥",
@@ -14535,7 +14509,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 12434,
@@ -14544,7 +14518,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "店内",
@@ -14568,7 +14542,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "手前",
@@ -14582,7 +14556,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": 3253,
@@ -14592,7 +14566,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "探す",
@@ -14606,7 +14580,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "nature"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 5204,
@@ -14615,7 +14589,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "新発売",
@@ -14629,7 +14603,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14640,7 +14614,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "棚",
@@ -14654,7 +14628,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 24951,
@@ -14663,7 +14637,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "玉響",
@@ -14677,7 +14651,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14687,7 +14661,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "見つける",
@@ -14701,7 +14675,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 12800,
@@ -14710,7 +14684,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "見本",
@@ -14724,7 +14698,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": 4347,
@@ -14734,7 +14708,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "近く",
@@ -14748,7 +14722,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 321,
@@ -14757,7 +14731,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "限定品",
@@ -14771,7 +14745,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14782,7 +14756,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "隣",
@@ -14796,7 +14770,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "home"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 17023,
@@ -14805,7 +14779,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "おすすめ",
@@ -14818,16 +14792,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "noun",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "これにします",
@@ -14839,16 +14813,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ちょっと",
@@ -14862,14 +14836,14 @@
       ],
       "pos": "adverb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ちょっと考えます",
@@ -14881,7 +14855,7 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
         "shopping"
       ],
@@ -14892,7 +14866,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "どちら",
@@ -14906,14 +14880,14 @@
       ],
       "pos": "pronoun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ほかの色はありますか？",
@@ -14927,7 +14901,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -14936,7 +14910,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "もっと",
@@ -14950,14 +14924,14 @@
       ],
       "pos": "adverb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "サイズ",
@@ -14971,14 +14945,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N1",
       "spoken_frequency_rank": 14119,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "デザイン",
@@ -14992,14 +14966,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "一番",
@@ -15013,7 +14987,7 @@
       ],
       "pos": "adverb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 201,
@@ -15023,7 +14997,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "丈夫",
@@ -15037,7 +15011,7 @@
       ],
       "pos": "na_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 4680,
@@ -15047,7 +15021,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "人気",
@@ -15061,7 +15035,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 1248,
@@ -15071,7 +15045,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "便利",
@@ -15083,9 +15057,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "na_adjective",
+      "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 2571,
@@ -15095,7 +15069,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "品質",
@@ -15109,7 +15083,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N1",
       "spoken_frequency_rank": 3679,
@@ -15119,7 +15093,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "大きい",
@@ -15133,7 +15107,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 292,
@@ -15142,7 +15116,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "安い",
@@ -15156,7 +15130,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 11687,
@@ -15165,7 +15139,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "小さい",
@@ -15179,7 +15153,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 14549,
@@ -15188,7 +15162,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "新しい",
@@ -15202,7 +15176,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -15211,7 +15185,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "東雲",
@@ -15225,7 +15199,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15235,7 +15209,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "比べる",
@@ -15249,7 +15223,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 1560,
@@ -15258,7 +15232,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "決める",
@@ -15272,7 +15246,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 247,
@@ -15281,7 +15255,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "色",
@@ -15295,7 +15269,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 632,
@@ -15304,7 +15278,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "軽い",
@@ -15318,7 +15292,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -15327,7 +15301,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "迷う",
@@ -15341,7 +15315,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
@@ -15350,7 +15324,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "選ぶ",
@@ -15364,7 +15338,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 7023,
@@ -15373,7 +15347,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "高い",
@@ -15387,7 +15361,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 12917,
@@ -15396,7 +15370,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お買い得",
@@ -15420,7 +15394,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お金",
@@ -15443,7 +15417,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お釣り",
@@ -15466,7 +15440,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "これ、いくらですか？",
@@ -15480,14 +15454,14 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ちょうどお預かりします",
@@ -15499,9 +15473,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15510,7 +15484,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "カードで払えますか？",
@@ -15524,7 +15498,8 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "shopping",
+        "transportation"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15533,7 +15508,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "クレジットカード",
@@ -15547,14 +15522,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "transportation"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "セール",
@@ -15568,14 +15543,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N1",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ポイントカードはお持ちですか？",
@@ -15589,7 +15564,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "transportation"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15598,7 +15573,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "レシート",
@@ -15620,7 +15595,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "レジ",
@@ -15641,7 +15616,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "円",
@@ -15653,9 +15628,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "counter",
+      "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
@@ -15664,7 +15639,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "半額",
@@ -15678,7 +15653,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "shopping",
+        "food"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 5933,
@@ -15688,7 +15664,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "宵闇",
@@ -15702,7 +15678,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15712,7 +15688,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "小銭",
@@ -15726,7 +15702,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 3186,
@@ -15736,7 +15712,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "払う",
@@ -15759,7 +15735,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "支払い",
@@ -15783,7 +15759,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "税込",
@@ -15797,7 +15773,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15807,7 +15783,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "袋",
@@ -15830,7 +15806,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "袋はご利用ですか？",
@@ -15844,7 +15820,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15855,7 +15831,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "財布",
@@ -15869,7 +15845,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "shopping",
+        "home"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 1244,
@@ -15879,7 +15856,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "電子マネー",
@@ -15903,7 +15880,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "おにぎり",
@@ -15917,14 +15894,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お弁当",
@@ -15938,7 +15915,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -15948,7 +15925,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お箸",
@@ -15962,7 +15939,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -15971,7 +15948,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お菓子",
@@ -15985,7 +15962,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -15995,7 +15972,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "かご",
@@ -16016,7 +15993,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "これをください",
@@ -16028,16 +16005,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "パン",
@@ -16051,14 +16028,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "冷たい",
@@ -16073,7 +16050,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -16082,7 +16059,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "卵",
@@ -16096,7 +16073,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 12350,
@@ -16105,7 +16082,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "新鮮",
@@ -16119,7 +16096,7 @@
       ],
       "pos": "na_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
@@ -16129,7 +16106,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "有料",
@@ -16153,7 +16130,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "果物",
@@ -16167,7 +16144,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 3060,
@@ -16177,7 +16154,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "温かい",
@@ -16191,7 +16168,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
@@ -16200,7 +16177,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "温めますか？",
@@ -16214,7 +16191,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16223,7 +16200,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "温める",
@@ -16237,7 +16214,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 19236,
@@ -16246,7 +16223,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "無人レジ",
@@ -16260,7 +16237,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16270,7 +16247,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "牛乳",
@@ -16284,7 +16261,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -16294,7 +16271,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "特売",
@@ -16308,7 +16285,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": 7762,
@@ -16318,7 +16295,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "甘い",
@@ -16333,7 +16310,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -16342,7 +16319,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "美味しい",
@@ -16357,7 +16334,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 1319,
@@ -16367,7 +16344,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "肉",
@@ -16381,7 +16358,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 15009,
@@ -16390,7 +16367,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "試食",
@@ -16404,7 +16381,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "food"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 6726,
@@ -16414,7 +16391,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "賞味期限",
@@ -16428,7 +16405,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16440,7 +16417,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "風薫る",
@@ -16452,9 +16429,9 @@
       "roles": [
         "beautiful_word"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "beautiful_japanese"
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16464,7 +16441,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "魚",
@@ -16478,7 +16455,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 20193,
@@ -16487,7 +16464,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ありがとうございました",
@@ -16499,16 +16476,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お待たせいたしました",
@@ -16520,9 +16497,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16531,7 +16508,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ぴったり",
@@ -16543,16 +16520,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "adverb",
+      "pos": "na_adjective",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "またお越しくださいませ",
@@ -16564,9 +16541,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16575,7 +16552,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "プレゼント",
@@ -16589,14 +16566,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "交換",
@@ -16610,7 +16587,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 741,
@@ -16620,7 +16597,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "似合う",
@@ -16634,7 +16611,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
@@ -16644,7 +16621,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "包む",
@@ -16658,7 +16635,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": null,
@@ -16667,7 +16644,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "大きすぎます",
@@ -16679,9 +16656,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16690,7 +16667,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "天泣",
@@ -16704,7 +16681,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "food",
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16714,7 +16692,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "少々お待ちください",
@@ -16726,9 +16704,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16739,7 +16717,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "届く",
@@ -16753,7 +16731,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
@@ -16762,7 +16740,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "払い戻し",
@@ -16776,7 +16754,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16786,7 +16764,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "服",
@@ -16800,7 +16778,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 5278,
@@ -16809,7 +16787,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "着る",
@@ -16823,7 +16801,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 7172,
@@ -16832,7 +16810,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "試着してもいいですか？",
@@ -16846,7 +16824,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16856,7 +16834,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "試着室",
@@ -16870,7 +16848,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "home"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16881,7 +16859,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "返品",
@@ -16895,7 +16873,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 5545,
@@ -16905,7 +16883,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "返品不可",
@@ -16919,7 +16897,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16931,7 +16909,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "送料",
@@ -16945,7 +16923,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "transportation"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": 19954,
@@ -16955,7 +16933,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "送料無料",
@@ -16969,7 +16947,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "transportation"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -16980,7 +16958,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "通販",
@@ -17004,7 +16982,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "配達",
@@ -17018,7 +16996,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 1324,
@@ -17028,7 +17006,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "靴",
@@ -17042,7 +17020,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "shopping"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 13931,
@@ -17051,7 +17029,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "領収書をください",
@@ -17063,9 +17041,11 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "shopping"
+        "shopping",
+        "transportation",
+        "work"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17076,7 +17056,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "エスカレーター",
@@ -17090,14 +17070,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "エレベーター",
@@ -17111,14 +17091,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "タクシー",
@@ -17139,7 +17119,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "バス",
@@ -17160,7 +17140,7 @@
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "バス停",
@@ -17183,7 +17163,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ホーム",
@@ -17197,14 +17177,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "乗り換え",
@@ -17218,7 +17198,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "transportation",
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 3830,
@@ -17228,7 +17209,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "乗る",
@@ -17251,7 +17232,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "待合室",
@@ -17265,7 +17246,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "home"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": null,
@@ -17276,7 +17257,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "徒歩",
@@ -17290,7 +17271,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N1",
       "spoken_frequency_rank": null,
@@ -17300,7 +17281,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "急行",
@@ -17314,7 +17295,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "transportation",
+        "nature"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 3414,
@@ -17324,7 +17306,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "改札",
@@ -17348,7 +17330,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "新幹線",
@@ -17362,7 +17344,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "transportation",
+        "nature"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": null,
@@ -17373,7 +17356,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "旅路",
@@ -17387,7 +17370,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "travel",
+        "transportation"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 9677,
@@ -17397,7 +17381,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "特急",
@@ -17411,7 +17395,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 7354,
@@ -17421,7 +17405,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "発車",
@@ -17435,7 +17419,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 5031,
@@ -17445,7 +17429,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "自転車",
@@ -17470,7 +17454,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "降りる",
@@ -17484,7 +17468,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 12886,
@@ -17493,7 +17477,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "階段",
@@ -17507,7 +17491,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -17517,7 +17501,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "〜行き",
@@ -17529,9 +17513,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "transportation"
+        "travel"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17540,7 +17524,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "まもなく",
@@ -17552,16 +17536,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "adverb",
+      "pos": "i_adjective",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ガソリン",
@@ -17575,14 +17559,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "フェリー",
@@ -17596,14 +17580,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "一方通行",
@@ -17615,9 +17599,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "noun",
+      "pos": "expression",
       "themes": [
-        "transportation"
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17629,7 +17613,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "制限速度",
@@ -17643,7 +17627,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17655,7 +17639,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "右折",
@@ -17669,7 +17653,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17679,7 +17663,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "左折",
@@ -17693,7 +17677,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17703,7 +17687,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "帰路",
@@ -17717,7 +17701,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "transportation",
+        "home"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 8643,
@@ -17727,7 +17712,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "手荷物",
@@ -17741,7 +17726,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "travel"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17752,7 +17737,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "搭乗口",
@@ -17766,7 +17751,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17777,7 +17762,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "時刻表",
@@ -17791,7 +17776,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "daily_life"
       ],
       "jlpt": "N1",
       "spoken_frequency_rank": null,
@@ -17802,7 +17787,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "渋滞",
@@ -17826,7 +17811,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "港",
@@ -17840,7 +17825,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 1595,
@@ -17849,7 +17834,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "終点",
@@ -17863,7 +17848,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": 7372,
@@ -17873,7 +17858,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "船",
@@ -17896,7 +17881,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "路線図",
@@ -17910,7 +17895,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17921,7 +17906,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "車",
@@ -17944,7 +17929,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "遅延",
@@ -17958,7 +17943,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -17968,7 +17953,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "運転",
@@ -17982,7 +17967,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": 302,
@@ -17992,7 +17977,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "飛行機",
@@ -18017,7 +18002,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "駐車場",
@@ -18031,7 +18016,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": null,
@@ -18042,7 +18027,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "高速道路",
@@ -18056,7 +18041,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "transportation"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18068,7 +18053,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "おかわり",
@@ -18082,14 +18067,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "お茶",
@@ -18103,7 +18088,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -18112,7 +18097,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "スプーン",
@@ -18126,14 +18111,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "セット",
@@ -18147,14 +18132,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ナイフ",
@@ -18168,14 +18153,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "フォーク",
@@ -18189,14 +18174,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "メニュー",
@@ -18210,14 +18195,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "レストラン",
@@ -18231,14 +18216,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "個室",
@@ -18252,7 +18237,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "home"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 5652,
@@ -18262,7 +18247,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "単品",
@@ -18276,7 +18261,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "transportation"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18286,7 +18271,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "定食",
@@ -18300,7 +18285,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "food"
       ],
       "jlpt": "N1",
       "spoken_frequency_rank": 9269,
@@ -18310,7 +18295,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "居酒屋",
@@ -18324,7 +18309,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 7708,
@@ -18335,7 +18320,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "席",
@@ -18349,7 +18334,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "food",
+        "nature"
       ],
       "jlpt": "N4",
       "spoken_frequency_rank": null,
@@ -18358,7 +18344,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "本日の",
@@ -18372,7 +18358,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "restaurants"
+        "daily_life"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18382,7 +18368,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "水",
@@ -18396,7 +18382,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 205,
@@ -18405,7 +18391,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "満席",
@@ -18419,7 +18405,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "food",
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18429,7 +18416,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "空席",
@@ -18443,7 +18430,8 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "food",
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 8734,
@@ -18453,7 +18441,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "箸",
@@ -18467,7 +18455,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -18476,7 +18464,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "舌鼓",
@@ -18490,7 +18478,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "food"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18500,7 +18488,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "頼む",
@@ -18514,7 +18502,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -18523,7 +18511,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "食堂",
@@ -18537,7 +18525,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 2151,
@@ -18547,7 +18535,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "いただきます",
@@ -18559,16 +18547,16 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "verb",
       "themes": [
-        "restaurants"
+        "food"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "こしょう",
@@ -18582,14 +18570,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "ごちそうさま",
@@ -18601,16 +18589,17 @@
       "roles": [
         "compound"
       ],
-      "pos": "expression",
+      "pos": "noun",
       "themes": [
-        "restaurants"
+        "food",
+        "greetings"
       ],
       "jlpt": "N2",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "もう結構です",
@@ -18624,7 +18613,7 @@
       ],
       "pos": "expression",
       "themes": [
-        "restaurants"
+        "greetings"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18634,7 +18623,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "アレルギー",
@@ -18648,14 +18637,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 2286,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "サービス",
@@ -18669,14 +18658,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "home"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "テイクアウト",
@@ -18690,14 +18679,14 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 7242,
       "kanji": [],
       "kana_only": true,
       "katakana": true,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "別々に",
@@ -18709,9 +18698,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "adverb",
+      "pos": "expression",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18721,7 +18710,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "割り勘",
@@ -18735,7 +18724,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18745,7 +18734,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "塩",
@@ -18759,7 +18748,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -18768,7 +18757,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "持ち帰り",
@@ -18782,7 +18771,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "home"
       ],
       "jlpt": null,
       "spoken_frequency_rank": 6687,
@@ -18792,7 +18781,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "旬",
@@ -18806,7 +18795,9 @@
       ],
       "pos": "noun",
       "themes": [
-        "beautiful_japanese"
+        "food",
+        "family",
+        "nature"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18815,7 +18806,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "満腹",
@@ -18829,7 +18820,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": null,
       "spoken_frequency_rank": null,
@@ -18839,7 +18830,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "熱い",
@@ -18853,7 +18844,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -18862,7 +18853,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "禁煙",
@@ -18876,7 +18867,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": null,
@@ -18886,7 +18877,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "苦手",
@@ -18898,9 +18889,9 @@
       "roles": [
         "compound"
       ],
-      "pos": "na_adjective",
+      "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N3",
       "spoken_frequency_rank": 1532,
@@ -18910,7 +18901,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "辛い",
@@ -18924,7 +18915,7 @@
       ],
       "pos": "i_adjective",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -18933,7 +18924,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "醤油",
@@ -18947,7 +18938,7 @@
       ],
       "pos": "noun",
       "themes": [
-        "restaurants"
+        "general"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": null,
@@ -18957,7 +18948,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "食べる",
@@ -18971,7 +18962,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "restaurants"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 118,
@@ -18980,7 +18971,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     },
     {
       "jp": "飲む",
@@ -18994,7 +18985,7 @@
       ],
       "pos": "verb",
       "themes": [
-        "restaurants"
+        "food"
       ],
       "jlpt": "N5",
       "spoken_frequency_rank": 9839,
@@ -19003,7 +18994,7 @@
       ],
       "kana_only": false,
       "katakana": false,
-      "in_master_db": true
+      "in_master_db": false
     }
   ]
 }

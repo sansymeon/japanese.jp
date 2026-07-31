@@ -1,0 +1,99 @@
+/* KML V2 — bookshelf & book landings */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 11rem;
+  padding: 1.25rem 1.3rem;
+  text-decoration: none;
+  color: var(--page-ink);
+  background: var(--gallery-elevated);
+  border: 1px solid var(--gold-line);
+  border-radius: var(--card-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  transition:
+    border-color var(--ease),
+    transform var(--ease),
+    background var(--ease);
+}
+
+.book-card:hover,
+.book-card:focus-visible {
+  border-color: rgba(201, 164, 88, 0.4);
+  background: color-mix(in srgb, var(--gallery-elevated) 88%, var(--gold));
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.book-card-num {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.book-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--page-ink);
+}
+
+.book-card-meta {
+  margin-top: auto;
+  font-size: 0.88rem;
+  color: var(--ink-quiet);
+}
+
+.lesson-list {
+  display: grid;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lesson-card {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.1rem;
+  text-decoration: none;
+  color: var(--page-ink);
+  background: color-mix(in srgb, var(--gallery-elevated) 92%, transparent);
+  border: 1px solid rgba(201, 164, 88, 0.12);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--ease),
+    background var(--ease);
+}
+
+.lesson-card:hover,
+.lesson-card:focus-visible {
+  border-color: rgba(201, 164, 88, 0.38);
+  background: var(--gold-soft);
+  outline: none;
+}
+
+.lesson-card-label {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+}
+
+.lesson-card-meta {
+  font-size: 0.82rem;
+  color: var(--ink-quiet);
+  letter-spacing: 0.04em;
+}

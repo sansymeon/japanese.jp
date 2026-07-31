@@ -1,0 +1,417 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_21_components",
+  "title": "Lesson 21 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 21,
+    "sceneCount": 23,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L21_agreement",
+      "kanji": "肯",
+      "keyword": "agreement",
+      "components": [
+        {
+          "glyph": "止",
+          "label": "stop"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_undertake",
+      "kanji": "企",
+      "keyword": "undertake",
+      "components": [
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_curriculum",
+      "kanji": "歴",
+      "keyword": "curriculum",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_warrior",
+      "kanji": "武",
+      "keyword": "warrior",
+      "components": [
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_levy",
+      "kanji": "賦",
+      "keyword": "levy",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "武",
+          "label": "warrior"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_correct",
+      "kanji": "正",
+      "keyword": "correct",
+      "components": [
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_evidence",
+      "kanji": "証",
+      "keyword": "evidence",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_politics",
+      "kanji": "政",
+      "keyword": "politics",
+      "components": [
+        {
+          "glyph": "正",
+          "label": "correct"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L21_intro_critters",
+      "glyph": "疋",
+      "label": "critters"
+    },
+    {
+      "type": "kanji",
+      "id": "L21_determine",
+      "kanji": "定",
+      "keyword": "determine",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "疋",
+          "label": "critters"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_lock",
+      "kanji": "錠",
+      "keyword": "lock",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "定",
+          "label": "determine"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_run",
+      "kanji": "走",
+      "keyword": "run",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "疋",
+          "label": "critters"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_transcend",
+      "kanji": "超",
+      "keyword": "transcend",
+      "components": [
+        {
+          "glyph": "走",
+          "label": "run"
+        },
+        {
+          "glyph": "召",
+          "label": "seduce"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_proceed",
+      "kanji": "赴",
+      "keyword": "proceed",
+      "components": [
+        {
+          "glyph": "走",
+          "label": "run"
+        },
+        {
+          "glyph": "卜",
+          "label": "signal"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L21_intro_parade",
+      "glyph": "戉",
+      "label": "parade"
+    },
+    {
+      "type": "kanji",
+      "id": "L21_surpass",
+      "kanji": "越",
+      "keyword": "surpass",
+      "components": [
+        {
+          "glyph": "走",
+          "label": "run"
+        },
+        {
+          "glyph": "戉",
+          "label": "parade"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_just_so",
+      "kanji": "是",
+      "keyword": "just so",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "疋",
+          "label": "critters"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_topic",
+      "kanji": "題",
+      "keyword": "topic",
+      "components": [
+        {
+          "glyph": "是",
+          "label": "just so"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_dike",
+      "kanji": "堤",
+      "keyword": "dike",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "是",
+          "label": "just so"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L21_intro_stride",
+      "glyph": "廴",
+      "label": "stride"
+    },
+    {
+      "type": "kanji",
+      "id": "L21_build",
+      "kanji": "建",
+      "keyword": "build",
+      "components": [
+        {
+          "glyph": "廴",
+          "label": "stride"
+        },
+        {
+          "glyph": "聿",
+          "label": "brush"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_key",
+      "kanji": "鍵",
+      "keyword": "key",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "建",
+          "label": "build"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L21_prolong",
+      "kanji": "延",
+      "keyword": "prolong",
+      "components": [
+        {
+          "glyph": "廴",
+          "label": "stride"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_07_components",
+  "title": "Lesson 7 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 7,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L07_nitrate",
+      "kanji": "硝",
+      "keyword": "nitrate",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "肖",
+          "label": "resemblance"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_smash",
+      "kanji": "砕",
+      "keyword": "smash",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "九",
+          "label": "nine"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_sand",
+      "kanji": "砂",
+      "keyword": "sand",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "少",
+          "label": "few"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_jealousy",
+      "kanji": "妬",
+      "keyword": "jealousy",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "石",
+          "label": "stone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_plane",
+      "kanji": "削",
+      "keyword": "plane",
+      "components": [
+        {
+          "glyph": "肖",
+          "label": "resemblance"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_ray",
+      "kanji": "光",
+      "keyword": "ray",
+      "components": [
+        {
+          "glyph": "⺌",
+          "label": "little"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_plump",
+      "kanji": "太",
+      "keyword": "plump",
+      "components": [
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "丶",
+          "label": "drop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_utensil",
+      "kanji": "器",
+      "keyword": "utensil",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_stinking",
+      "kanji": "臭",
+      "keyword": "stinking",
+      "components": [
+        {
+          "glyph": "自",
+          "label": "oneself"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_sniff",
+      "kanji": "嗅",
+      "keyword": "sniff",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "臭",
+          "label": "stinking"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_exquisite",
+      "kanji": "妙",
+      "keyword": "exquisite",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "少",
+          "label": "few"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_government_ministry",
+      "kanji": "省",
+      "keyword": "government ministry",
+      "components": [
+        {
+          "glyph": "少",
+          "label": "few"
+        },
+        {
+          "glyph": "目",
+          "label": "eye"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_thick",
+      "kanji": "厚",
+      "keyword": "thick",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "子",
+          "label": "child"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_strange",
+      "kanji": "奇",
+      "keyword": "strange",
+      "components": [
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "可",
+          "label": "possible"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_river",
+      "kanji": "川",
+      "keyword": "river",
+      "components": [
+        {
+          "glyph": "川",
+          "label": "river"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_state",
+      "kanji": "州",
+      "keyword": "state",
+      "components": [
+        {
+          "glyph": "川",
+          "label": "river"
+        },
+        {
+          "glyph": "丶",
+          "label": "drop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_follow",
+      "kanji": "順",
+      "keyword": "follow",
+      "components": [
+        {
+          "glyph": "川",
+          "label": "river"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_water",
+      "kanji": "水",
+      "keyword": "water",
+      "components": [
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_ice",
+      "kanji": "氷",
+      "keyword": "ice",
+      "components": [
+        {
+          "glyph": "丶",
+          "label": "drop"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L07_eternity",
+      "kanji": "永",
+      "keyword": "eternity",
+      "components": [
+        {
+          "glyph": "丶",
+          "label": "drop"
+        },
+        {
+          "glyph": "氷",
+          "label": "ice"
+        }
+      ]
+    }
+  ]
+}

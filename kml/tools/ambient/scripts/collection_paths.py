@@ -1,4 +1,4 @@
-"""Resolve collection JSON paths (lesson subfolders for L1–10)."""
+"""Resolve collection JSON paths (lesson subfolders for L1–15)."""
 
 from __future__ import annotations
 
@@ -9,6 +9,8 @@ _LESSON_FOLDER_OVERRIDES: dict[str, str] = {
     "lessons_1_5_prototype": "lesson_01",
     "lesson_01-05_verses": "lesson_01",
     "lessons_6_10_prototype": "lesson_06",
+    "lessons_11_15_prototype": "lesson_11",
+    "lessons_16_20_prototype": "lesson_16",
 }
 
 
@@ -27,6 +29,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return "beyond_joyo"
     if collection_id.startswith("ambient_gallery_film"):
         return "ambient_gallery_film"
+    if collection_id.startswith("ambient_gallery_japan"):
+        return "ambient_gallery_japan_4_seasons"
     if re.match(r"vocabulary_\d+", collection_id):
         return "vocabulary"
     if collection_id.startswith("hiragana_song"):
@@ -57,8 +61,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
     if not m:
         return None
     n = int(m.group(1))
-    # Nest Heisig lesson collections (1–14 shipped; 33–37 galleries; others as added).
-    if 1 <= n <= 14 or 33 <= n <= 37:
+    # Nest Heisig lesson collections (1–20; 33–38; 41; others as added).
+    if 1 <= n <= 20 or 33 <= n <= 38 or n == 41:
         return lesson_folder(n)
     return None
 
