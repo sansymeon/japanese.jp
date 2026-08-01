@@ -14,8 +14,8 @@
     /** Official Kanji・Music・Landscape YouTube channel */
     youtubeChannelUrl: "https://www.youtube.com/@ambientkanji",
 
-    /** Curriculum overview (book / learning paths on-site) */
-    curriculumUrl: "kml/index.html",
+    /** Kanji Studies — The Bookshelf */
+    curriculumUrl: "kml/contents/books/",
 
     /** Deployed analytics dashboard */
     analyticsDashboardUrl: "kml/analytics/dashboard/",
@@ -489,6 +489,8 @@
     renderFeatured();
     setCopyrightYear();
     initReveals();
-    loadAnalytics();
+    if (document.getElementById("stats") || document.getElementById("statVideos")) {
+      loadAnalytics();
+    }
   });
 })();

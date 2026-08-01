@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="bookshelf-page">
+<html lang="en" class="bookshelf-page museum-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lessons — Kanji・Music・Landscape</title>
+  <title>The Bookshelf — Kanji Studies — Kanji・Music・Landscape</title>
   <meta
     name="description"
-    content="A curated library of Japanese lessons — books of kanji, music, and landscape. Enter the bookshelf."
+    content="Kanji Studies — a curated library of Japanese lessons. Fifteen volumes of kanji, music, and landscape."
   />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,18 +15,21 @@
     href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="../../../assets/css/museum-room.css" />
   <link rel="stylesheet" href="../../assets/site/css/bookshelf.css" />
 </head>
-<body class="bookshelf-page">
+<body class="bookshelf-page museum-page">
   <a class="skip-link" href="#catalogue">Skip to books</a>
 
-  <header class="books-header">
-    <div class="books-header-inner">
-      <a class="books-brand" href="../../index.html">Kanji・Music・Landscape</a>
+  <header class="books-header museum-header">
+    <div class="books-header-inner museum-header-inner">
+      <a class="books-brand museum-brand" href="../../../index.html">Kanji・Music・Landscape</a>
       <nav aria-label="Primary">
-        <ul class="books-nav">
-          <li><a href="#catalogue">Books</a></li>
-          <li><a href="../../index.html">Curriculum</a></li>
+        <ul class="books-nav museum-nav">
+          <li><a href="../../../journey/">Journey</a></li>
+          <li><a href="./" aria-current="page">Kanji Studies</a></li>
+          <li><a href="../../../collections/">YouTube Collections</a></li>
+          <li><a href="../../../publications/">Publications</a></li>
           <li><a href="../../../index.html">Home</a></li>
         </ul>
       </nav>
@@ -50,7 +53,7 @@
         <p class="shelf-hero-brand">Kanji・Music・Landscape</p>
         <h1 id="shelf-heading">The Bookshelf</h1>
         <p class="shelf-hero-lead">
-          Fifteen volumes of memory — entered one room at a time.
+          A living library — enter what is ready, return as it grows.
         </p>
       </div>
 
@@ -61,13 +64,14 @@
 
     <section class="shelf-catalogue" id="catalogue" aria-labelledby="catalogue-heading">
       <div class="shelf-container">
-        <header class="shelf-catalogue-head reveal">
-          <p class="shelf-eyebrow">Open now</p>
-          <h2 id="catalogue-heading">Published books</h2>
-          <p>Each book is a quiet gallery of ten lessons.</p>
-        </header>
+        <h2 id="catalogue-heading" class="visually-hidden">Books on the shelf</h2>
 
         <div id="continue" class="shelf-continue reveal" aria-live="polite"></div>
+
+        <p class="shelf-library-note reveal">
+          Lessons 1–20 are complete. Verses already reach much further,
+          and the later volumes continue to grow.
+        </p>
 
         <ol class="book-list">
           <li class="book-entry reveal">
@@ -75,7 +79,9 @@
               <span class="book-entry-num">Book 1</span>
               <span>
                 <h3 class="book-entry-title">Foundations</h3>
+                <p class="book-entry-range">Heisig 1–400</p>
                 <p class="book-entry-meta">Lessons 01–10</p>
+                <p class="book-entry-status book-entry-status--complete">Complete</p>
               </span>
             </a>
           </li>
@@ -83,31 +89,140 @@
             <a class="book-entry-link" href="./2/">
               <span class="book-entry-num">Book 2</span>
               <span>
-                <h3 class="book-entry-title">Lessons 11–20</h3>
+                <h3 class="book-entry-title">Expansion</h3>
+                <p class="book-entry-range">Heisig 401–800</p>
+                <p class="book-entry-meta">Lessons 11–20</p>
+                <p class="book-entry-status book-entry-status--complete">Complete</p>
               </span>
             </a>
           </li>
-          <li class="book-entry reveal">
+          <li class="book-entry book-entry--growing reveal">
             <a class="book-entry-link" href="./3/">
               <span class="book-entry-num">Book 3</span>
               <span>
-                <h3 class="book-entry-title">Lessons 21–30</h3>
+                <h3 class="book-entry-title">Heisig 801–1200</h3>
+                <p class="book-entry-meta">Lessons 21–30</p>
+                <p class="book-entry-status book-entry-status--growing">In active development</p>
               </span>
             </a>
           </li>
-          <li class="book-entry reveal">
+          <li class="book-entry book-entry--growing reveal">
             <a class="book-entry-link" href="./4/">
               <span class="book-entry-num">Book 4</span>
               <span>
-                <h3 class="book-entry-title">Lessons 31–40</h3>
+                <h3 class="book-entry-title">Heisig 1201–1600</h3>
+                <p class="book-entry-meta">Lessons 31–40</p>
+                <p class="book-entry-status book-entry-status--growing">In active development</p>
               </span>
             </a>
           </li>
-          <li class="book-entry reveal">
+          <li class="book-entry book-entry--growing reveal">
             <a class="book-entry-link" href="./5/">
               <span class="book-entry-num">Book 5</span>
               <span>
-                <h3 class="book-entry-title">Lessons 41–50</h3>
+                <h3 class="book-entry-title">Heisig 1601–2000</h3>
+                <p class="book-entry-meta">Lessons 41–50</p>
+                <p class="book-entry-status book-entry-status--growing">In active development</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./6/">
+              <span class="book-entry-num">Book 6</span>
+              <span>
+                <h3 class="book-entry-title">Heisig 2001–2200</h3>
+                <p class="book-entry-meta">Lessons 51–60</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./7/">
+              <span class="book-entry-num">Book 7</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 7, lessons 61–70</h3>
+                <p class="book-entry-range">Lessons 61–70</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./8/">
+              <span class="book-entry-num">Book 8</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 8, lessons 71–80</h3>
+                <p class="book-entry-range">Lessons 71–80</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./9/">
+              <span class="book-entry-num">Book 9</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 9, lessons 81–90</h3>
+                <p class="book-entry-range">Lessons 81–90</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./10/">
+              <span class="book-entry-num">Book 10</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 10, lessons 91–100</h3>
+                <p class="book-entry-range">Lessons 91–100</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./11/">
+              <span class="book-entry-num">Book 11</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 11, lessons 101–110</h3>
+                <p class="book-entry-range">Lessons 101–110</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./12/">
+              <span class="book-entry-num">Book 12</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 12, lessons 111–120</h3>
+                <p class="book-entry-range">Lessons 111–120</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./13/">
+              <span class="book-entry-num">Book 13</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 13, lessons 121–130</h3>
+                <p class="book-entry-range">Lessons 121–130</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./14/">
+              <span class="book-entry-num">Book 14</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 14, lessons 131–140</h3>
+                <p class="book-entry-range">Lessons 131–140</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
+              </span>
+            </a>
+          </li>
+          <li class="book-entry book-entry--growing reveal">
+            <a class="book-entry-link" href="./15/">
+              <span class="book-entry-num">Book 15</span>
+              <span>
+                <h3 class="book-entry-title visually-hidden">Book 15, lessons 141–150</h3>
+                <p class="book-entry-range">Lessons 141–150</p>
+                <p class="book-entry-status book-entry-status--growing">Growing collection</p>
               </span>
             </a>
           </li>
@@ -115,107 +230,65 @@
       </div>
     </section>
 
-    <section class="shelf-soon" id="coming-soon" aria-labelledby="soon-heading">
-      <div class="shelf-container">
-        <header class="shelf-soon-head reveal">
-          <p class="shelf-eyebrow">Coming soon</p>
-          <h2 id="soon-heading">Volumes still closed</h2>
+    <section class="room-section room-section--muted" id="guidance" aria-labelledby="guidance-heading">
+      <div class="room-container">
+        <header class="room-section-head reveal">
+          <p class="room-eyebrow">Optional guidance</p>
+          <h2 id="guidance-heading">When you choose to go deeper</h2>
+          <p>These rooms wait quietly. Enter only if you want support beside the books.</p>
         </header>
 
-        <ol class="book-list" start="6">
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 6</span>
+        <ul class="guidance-list">
+          <li class="guidance-item reveal">
+            <a class="guidance-link" href="../../lesson_00_proceed/">
+              <span class="guidance-label">Guide</span>
               <span>
-                <h3 class="book-entry-title">Lessons 51–60</h3>
+                <h3 class="guidance-title">How to Study with KML</h3>
+                <p class="guidance-meta">A quiet map for watching, feeling, and tracing each lesson.</p>
               </span>
-            </div>
+            </a>
           </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 7</span>
+          <li class="guidance-item reveal">
+            <a class="guidance-link" href="../../lesson_00_philosophy/">
+              <span class="guidance-label">Method</span>
               <span>
-                <h3 class="book-entry-title">Lessons 61–70</h3>
+                <h3 class="guidance-title">Philosophy Behind KML</h3>
+                <p class="guidance-meta">How memory grows through story, stroke, and atmosphere.</p>
               </span>
-            </div>
+            </a>
           </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 8</span>
+          <li class="guidance-item reveal">
+            <a class="guidance-link" href="../../lesson_00_materials/">
+              <span class="guidance-label">Companions</span>
               <span>
-                <h3 class="book-entry-title">Lessons 71–80</h3>
+                <h3 class="guidance-title">Learning Companions</h3>
+                <p class="guidance-meta">Tools and references that walk beside the Bookshelf.</p>
               </span>
-            </div>
+            </a>
           </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 9</span>
+          <li class="guidance-item reveal">
+            <a class="guidance-link" href="../../tools/strokes/">
+              <span class="guidance-label">Practice</span>
               <span>
-                <h3 class="book-entry-title">Lessons 81–90</h3>
+                <h3 class="guidance-title">Stroke Practice</h3>
+                <p class="guidance-meta">Build recognition and rhythm through structured motion.</p>
               </span>
-            </div>
+            </a>
           </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 10</span>
-              <span>
-                <h3 class="book-entry-title">Lessons 91–100</h3>
-              </span>
-            </div>
-          </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 11</span>
-              <span>
-                <h3 class="book-entry-title">Lessons 101–110</h3>
-              </span>
-            </div>
-          </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 12</span>
-              <span>
-                <h3 class="book-entry-title">Lessons 111–120</h3>
-              </span>
-            </div>
-          </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 13</span>
-              <span>
-                <h3 class="book-entry-title">Lessons 121–130</h3>
-              </span>
-            </div>
-          </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 14</span>
-              <span>
-                <h3 class="book-entry-title">Lessons 131–140</h3>
-              </span>
-            </div>
-          </li>
-          <li class="book-entry book-entry--soon reveal" aria-disabled="true">
-            <div class="book-entry-shell">
-              <span class="book-entry-num">Book 15</span>
-              <span>
-                <h3 class="book-entry-title">Lessons 141–150</h3>
-              </span>
-            </div>
-          </li>
-        </ol>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="books-footer">
-    <div class="books-footer-inner">
-      <p>
-        <a href="../../index.html">Curriculum</a>
-        ·
-        <a href="../../../index.html">Museum entrance</a>
-      </p>
-      <p style="margin-top: 0.65rem">© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
+  <footer class="books-footer museum-footer">
+    <div class="books-footer-inner museum-footer-inner">
+      <nav aria-label="Footer">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../journey/">Journey</a>
+        <a href="../../../collections/">YouTube Collections</a>
+        <a href="../../../publications/">Publications</a>
+      </nav>
+      <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>
   </footer>
 
@@ -232,7 +305,7 @@
       var n = parseInt(last, 10);
       var book = n >= 1 && n <= 150 ? Math.ceil(n / 10) : null;
       var box = document.getElementById("continue");
-      if (box && book && book <= 5) {
+      if (box && book && book <= 15) {
         box.innerHTML =
           '<a href="./' + book + '/#lesson-' + num + '">Continue Lesson ' + num + "</a>";
       } else if (box && n >= 1) {

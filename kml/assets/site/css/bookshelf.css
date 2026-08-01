@@ -52,6 +52,18 @@ body.bookshelf-page {
   top: 1rem;
 }
 
+.bookshelf-page .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ---------- Shared header ---------- */
 
 .books-header {
@@ -119,7 +131,8 @@ body.bookshelf-page {
 }
 
 .books-nav a:hover,
-.books-nav a:focus-visible {
+.books-nav a:focus-visible,
+.books-nav a[aria-current="page"] {
   color: var(--gold);
 }
 
@@ -284,7 +297,7 @@ body.bookshelf-page {
 /* ---------- Catalogue / bookshelf list ---------- */
 
 .shelf-catalogue {
-  padding: clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 6vw, 4.5rem);
+  padding: clamp(4.5rem, 10vw, 7rem) 0 clamp(4rem, 8vw, 6rem);
   background:
     radial-gradient(
       ellipse 80% 35% at 50% 0%,
@@ -428,59 +441,47 @@ body.bookshelf-page {
   color: #faf7f0;
 }
 
+.book-entry-range {
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--ink-soft) 92%, white);
+}
+
 .book-entry-meta {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   letter-spacing: 0.04em;
   color: var(--ink-quiet);
+  opacity: 0.85;
 }
 
-.book-entry--soon .book-entry-link,
-.book-entry--soon .book-entry-shell {
-  display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr);
-  gap: 1.25rem 1.75rem;
-  align-items: baseline;
-  padding: 1.35rem 0.15rem;
-  opacity: 0.38;
-  cursor: default;
-  pointer-events: none;
-  user-select: none;
-}
-
-.book-entry--soon .book-entry-title {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  color: var(--ink-quiet);
-}
-
-.book-entry--soon .book-entry-num {
-  color: var(--ink-quiet);
-}
-
-/* ---------- Coming soon ---------- */
-
-.shelf-soon {
-  padding: clamp(3rem, 7vw, 5rem) 0 clamp(5rem, 11vw, 8rem);
-  background: color-mix(in srgb, var(--gallery-wall) 88%, #0b0b0c);
-  border-top: 1px solid rgba(201, 164, 88, 0.08);
-}
-
-.shelf-soon .shelf-eyebrow {
-  color: var(--ink-quiet);
-  letter-spacing: 0.22em;
-}
-
-.shelf-soon-head {
-  margin-bottom: 1.75rem;
-}
-
-.shelf-soon-head h2 {
-  margin: 0;
+.book-entry-status {
+  margin: 0.55rem 0 0;
   font-family: "Shippori Mincho", "Noto Serif JP", serif;
-  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.book-entry-status--complete {
+  color: color-mix(in srgb, var(--gold) 88%, white);
+}
+
+.book-entry-status--growing {
+  color: color-mix(in srgb, #8fbc8f 55%, var(--ink-quiet));
+}
+
+.shelf-library-note {
+  margin: 0 0 2.25rem;
+  max-width: 32rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
   color: var(--ink-quiet);
+}
+
+.book-entry--growing .book-entry-title {
+  color: color-mix(in srgb, #f3f1eb 88%, var(--ink-quiet));
 }
 
 /* ---------- Book exhibition room ---------- */
