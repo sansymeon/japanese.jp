@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kanji・Music・Landscape — 静けさのなかで学ぶ日本語</title>
-  <meta name="description" content="Kanji・Music・Landscape の世界へ——美しさ・音楽・意味で学ぶ日本語。200本を超える映像で、漢字・かな・語彙・文化を静かに味わう美術館。" />
+  <meta name="description" content="Kanji・Music・Landscape の世界へ——美しさ・音楽・意味で学ぶ日本語。ゆっくり歩ける、ことばの美術館です。" />
   <meta name="theme-color" content="#0B0B0C" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,12 +36,11 @@
 
       <nav class="site-nav" id="siteNav" aria-label="メインナビ">
         <ul>
-          <li><a href="#journey">学びの道</a></li>
-          <li><a href="#visitors">対象</a></li>
-          <li><a href="#youtube">YouTube</a></li>
-          <li><a href="#series">コレクション</a></li>
-          <li><a href="#stats">カリキュラム</a></li>
-          <li><a href="#publications">出版物</a></li>
+          <li><a href="./journey/">学びの道</a></li>
+          <li><a href="../kml/contents/books/">漢字の学び</a></li>
+          <li><a href="./collections/">YouTube コレクション</a></li>
+          <li><a href="./publications/">出版物</a></li>
+          <li><a href="./index.html" aria-current="page">ホーム</a></li>
         </ul>
       </nav>
     </div>
@@ -77,28 +76,22 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" data-link="curriculum" href="../kml/index.html">学びをはじめる</a>
-          <a
-            class="btn btn-ghost"
-            data-link="youtube"
-            href="https://www.youtube.com/@ambientkanji"
-            target="_blank"
-            rel="noopener noreferrer"
-          >YouTube を見る</a>
+          <a class="btn btn-primary" data-link="curriculum" href="../kml/contents/books/">本棚へ入る</a>
+          <a class="btn btn-ghost" href="./journey/">学びの道を読む</a>
         </div>
       </div>
 
-      <a class="hero-scroll" href="#journey" aria-label="ギャラリーへ進む">
+      <a class="hero-scroll" href="#rooms" aria-label="ギャラリーへ進む">
         <span class="hero-scroll-line" aria-hidden="true"></span>
       </a>
     </section>
 
-    <section class="section destinations" id="journey" aria-labelledby="journey-heading">
+    <section class="section destinations" id="rooms" aria-labelledby="rooms-heading">
       <div class="container">
         <header class="section-head section-head--left reveal">
           <p class="section-eyebrow">ギャラリー</p>
-          <h2 id="journey-heading">Kanji・Music・Landscape への五つの入口</h2>
-          <p>ボタンの列ではなく、それぞれがひとつの招待状です。</p>
+          <h2 id="rooms-heading">美術館の四つの部屋</h2>
+          <p>どの扉も前へ——心が向くところから入れます。</p>
         </header>
       </div>
 
@@ -106,8 +99,8 @@
         <article class="destination reveal">
           <figure class="destination-visual">
             <img
-              src="../kml/assets/studies/forest.png"
-              alt="苔むした森の小道に差し込む光"
+              src="../kml/assets/studies/mountain_pass.png"
+              alt="日本の山道の静かな景色"
               width="1600"
               height="1000"
               loading="lazy"
@@ -115,17 +108,17 @@
           </figure>
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">01</p>
-            <h3>哲学</h3>
-            <p>記憶・構造・雰囲気を通して漢字を学ぶ、Kanji・Music・Landscape の精神。</p>
-            <a class="btn btn-quiet" href="../kml/lesson_00_philosophy/index.html">哲学をひらく</a>
+            <h3>学びの道</h3>
+            <p>この美術館が生まれた理由——静かに日本語を見るための物語。</p>
+            <a class="btn btn-quiet" href="./journey/">学びの道へ</a>
           </div>
         </article>
 
         <article class="destination destination--flip reveal">
           <figure class="destination-visual">
             <img
-              src="../kml/assets/studies/shelf.png"
-              alt="古びた木の棚に並ぶ本と静かな品々"
+              src="../kml/assets/studies/forest.png"
+              alt="苔むした森の小道"
               width="1600"
               height="1000"
               loading="lazy"
@@ -133,17 +126,17 @@
           </figure>
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">02</p>
-            <h3>教材</h3>
-            <p>机と道具を整え、記憶が育つ静かな場をつくる。</p>
-            <a class="btn btn-quiet" href="../kml/lesson_00_materials/index.html">教材を見る</a>
+            <h3>漢字の学び</h3>
+            <p>十五冊の本棚——一室ずつ、ゆっくりと。</p>
+            <a class="btn btn-quiet" href="../kml/contents/books/">本棚へ入る</a>
           </div>
         </article>
 
         <article class="destination reveal">
           <figure class="destination-visual">
             <img
-              src="../kml/assets/studies/foothold.png"
-              alt="霧の山稜に立つ旅人の足場"
+              src="../kml/assets/studies/evening.png"
+              alt="夕暮れの静かな風景"
               width="1600"
               height="1000"
               loading="lazy"
@@ -151,17 +144,17 @@
           </figure>
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">03</p>
-            <h3>学びの進め方</h3>
-            <p>急がず、騒がず、レッスンを歩むための静かな地図。</p>
-            <a class="btn btn-quiet" href="../kml/lesson_00_proceed/index.html">道をはじめる</a>
+            <h3>YouTube コレクション</h3>
+            <p>静かな映像の翼——Ambient Japan・漢字・語彙・読む最初の一歩。</p>
+            <a class="btn btn-quiet" href="./collections/">コレクションを見る</a>
           </div>
         </article>
 
         <article class="destination destination--flip reveal">
           <figure class="destination-visual">
             <img
-              src="../kml/assets/studies/book.png"
-              alt="陽の当たる机の上の開かれた日本語の本"
+              src="../kml/assets/studies/shelf.png"
+              alt="柔らかな光の本棚"
               width="1600"
               height="1000"
               loading="lazy"
@@ -169,471 +162,11 @@
           </figure>
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">04</p>
-            <h3>レッスン</h3>
-            <p>物語・構造・雰囲気——生きたイメージとして漢字を覚える。</p>
-            <a class="btn btn-quiet" href="../kml/contents/books/index.html">レッスンを開く</a>
+            <h3>出版物</h3>
+            <p>ページで歩きたい方のための、書籍と伴走資料。</p>
+            <a class="btn btn-quiet" href="./publications/">出版物へ</a>
           </div>
         </article>
-
-        <article class="destination reveal">
-          <figure class="destination-visual">
-            <img
-              src="../kml/assets/studies/finger.png"
-              alt="霧の山々のあいだの光を指さす手"
-              width="1600"
-              height="1000"
-              loading="lazy"
-            />
-          </figure>
-          <div class="destination-copy">
-            <p class="destination-index" aria-hidden="true">05</p>
-            <h3>筆順練習</h3>
-            <p>ゆっくりなぞる——目と手がともに学ぶ動き。</p>
-            <a class="btn btn-quiet" href="../kml/tools/strokes/index.html">筆順をはじめる</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="visitors" aria-labelledby="visitors-heading">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-eyebrow">来館者</p>
-          <h2 id="visitors-heading">どなたのための美術館か</h2>
-          <p>同じカリキュラムを、それぞれの学びの段階に合わせて案内します。</p>
-        </header>
-
-        <div class="audience-grid">
-          <article class="audience-card reveal">
-            <h3>小学生</h3>
-            <ul class="series-points">
-              <li>常用漢字を自然に親しむ</li>
-              <li>かな・うた・美しい映像</li>
-              <li>日常の語彙</li>
-            </ul>
-          </article>
-          <article class="audience-card reveal">
-            <h3>中学生</h3>
-            <ul class="series-points">
-              <li>高校受験に向けた語彙・読解</li>
-              <li>熟語・よく使う表現</li>
-              <li>着実な積み上げ</li>
-            </ul>
-          </article>
-          <article class="audience-card reveal">
-            <h3>高校生</h3>
-            <ul class="series-points">
-              <li>大学受験に向けた発展語彙</li>
-              <li>読解の練習</li>
-              <li>美しい日本語表現</li>
-            </ul>
-          </article>
-          <article class="audience-card reveal">
-            <h3>学び直したい方</h3>
-            <ul class="series-points">
-              <li>今の実力を確かめる</li>
-              <li>忘れた漢字を見直す</li>
-              <li>語彙を広げる</li>
-              <li>日本語の美しさを味わう</li>
-            </ul>
-          </article>
-          <article class="audience-card audience-card--wide reveal">
-            <h3>日本語教師</h3>
-            <ul class="series-points">
-              <li>教材・プレイリスト・カリキュラム</li>
-              <li>学習分析（ラーニング・アナリティクス）</li>
-              <li>参考書籍</li>
-            </ul>
-          </article>
-          <article class="audience-card audience-card--wide reveal">
-            <h3>日本文化が好きな方</h3>
-            <ul class="series-points">
-              <li>季節のことば</li>
-              <li>美しい日本語表現</li>
-              <li>Ambient Japan</li>
-              <li>日本の風景と音楽</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cinema reveal" id="youtube" aria-labelledby="youtube-heading">
-      <div class="cinema-media" aria-hidden="true">
-        <img
-          src="../kml/assets/studies/evening.png"
-          alt=""
-          width="1920"
-          height="1080"
-          loading="lazy"
-        />
-        <div class="cinema-veil"></div>
-      </div>
-
-      <div class="container cinema-inner">
-        <p class="section-eyebrow section-eyebrow--light">200本を超える映像</p>
-        <h2 id="youtube-heading">YouTube で観る</h2>
-        <p class="cinema-lead">
-          生きているギャラリー——語彙・漢字・かな・アンビエント日本を、
-          速さではなく美しさのリズムで。
-        </p>
-        <div class="cinema-actions">
-          <a
-            class="btn btn-primary"
-            data-link="youtube"
-            href="https://www.youtube.com/@ambientkanji"
-            target="_blank"
-            rel="noopener noreferrer"
-          >チャンネルへ</a>
-          <a class="btn btn-ghost" href="#series">コレクションを見る</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="series" aria-labelledby="series-heading">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="section-eyebrow">コレクション</p>
-          <h2 id="series-heading">チャンネルのなかの展示室</h2>
-          <p>惹かれた入口から、どうぞ。</p>
-        </header>
-
-        <div class="gallery-hall">
-          <article class="gallery-entry gallery-entry--shift-end reveal">
-            <figure class="gallery-exhibit">
-              <a
-                class="gallery-frame"
-                data-gallery="vocabulary"
-                href="https://www.youtube.com/playlist?list=PLJemcdjLRw4w"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="日本語語彙コレクションを YouTube で見る"
-              >
-                <span class="gallery-mat">
-                  <img
-                    src="../kml/assets/youtube_thumbnails/vocabulary.png"
-                    alt=""
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                  />
-                </span>
-              </a>
-            </figure>
-            <div class="gallery-copy">
-              <h3>日本語語彙</h3>
-              <p class="gallery-blurb">頻度に基づく話しことばの語彙と、美しい映像。</p>
-              <a
-                class="btn btn-quiet"
-                data-gallery="vocabulary"
-                href="https://www.youtube.com/playlist?list=PLJemcdjLRw4w"
-                target="_blank"
-                rel="noopener noreferrer"
-              >展示室へ</a>
-            </div>
-          </article>
-
-          <article class="gallery-entry gallery-entry--shift-start reveal">
-            <figure class="gallery-exhibit">
-              <a
-                class="gallery-frame"
-                data-gallery="postElementaryKanji"
-                href="https://www.youtube.com/playlist?list=PLI-ULFjSKz58"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="常用漢字コレクションを YouTube で見る"
-              >
-                <span class="gallery-mat">
-                  <img
-                    src="../kml/assets/youtube_thumbnails/joyo_kanji_vol_1.png"
-                    alt=""
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                  />
-                </span>
-              </a>
-            </figure>
-            <div class="gallery-copy">
-              <h3 class="gallery-title">
-                <span class="gallery-title-ja" lang="ja">常用漢字</span>
-                <span class="gallery-title-en">Essential Kanji for Daily Use</span>
-              </h3>
-              <p class="gallery-blurb">常用漢字2,136字——静かな映像と音楽、くりかえしの学び。</p>
-              <a
-                class="btn btn-quiet"
-                data-gallery="postElementaryKanji"
-                href="https://www.youtube.com/playlist?list=PLI-ULFjSKz58"
-                target="_blank"
-                rel="noopener noreferrer"
-              >展示室へ</a>
-            </div>
-          </article>
-
-          <article class="gallery-entry gallery-entry--shift-end reveal">
-            <figure class="gallery-exhibit">
-              <a
-                class="gallery-frame"
-                data-gallery="rememberingKanji"
-                href="https://www.youtube.com/playlist?list=PLBv0xLsm4RBo"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Remembering the Kanji コレクションを YouTube で見る"
-              >
-                <span class="gallery-mat">
-                  <img
-                    src="../kml/assets/youtube_thumbnails/foundations.png"
-                    alt=""
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                  />
-                </span>
-              </a>
-            </figure>
-            <div class="gallery-copy">
-              <h3>Remembering the Kanji</h3>
-              <p class="gallery-blurb">Heisig 方式に沿った、視覚的な記憶のレッスン。</p>
-              <a
-                class="btn btn-quiet"
-                data-gallery="rememberingKanji"
-                href="https://www.youtube.com/playlist?list=PLBv0xLsm4RBo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >展示室へ</a>
-            </div>
-          </article>
-
-          <article class="gallery-entry gallery-entry--shift-start reveal">
-            <figure class="gallery-exhibit">
-              <a
-                class="gallery-frame"
-                data-gallery="elementaryKanji"
-                href="https://www.youtube.com/playlist?list=PLZocopP--8p0"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="小学校漢字コレクションを YouTube で見る"
-              >
-                <span class="gallery-mat">
-                  <img
-                    src="../kml/assets/youtube_thumbnails/grade_1_.png"
-                    alt=""
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                  />
-                </span>
-              </a>
-            </figure>
-            <div class="gallery-copy">
-              <h3>小学校漢字</h3>
-              <p class="gallery-blurb">日本の小学校カリキュラム、1〜6年生。</p>
-              <a
-                class="btn btn-quiet"
-                data-gallery="elementaryKanji"
-                href="https://www.youtube.com/playlist?list=PLZocopP--8p0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >展示室へ</a>
-            </div>
-          </article>
-
-          <article class="gallery-entry gallery-entry--shift-end reveal">
-            <figure class="gallery-exhibit">
-              <a
-                class="gallery-frame"
-                data-gallery="kanaPreschool"
-                href="https://www.youtube.com/playlist?list=PLIX7jswPySk0"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="ひらがな・カタカナ入門コレクションを YouTube で見る"
-              >
-                <span class="gallery-mat">
-                  <img
-                    src="../kml/assets/images/kana_song_image.png"
-                    alt=""
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                  />
-                </span>
-              </a>
-            </figure>
-            <div class="gallery-copy">
-              <h3>はじめに — ひらがな・カタカナ</h3>
-              <p class="gallery-blurb">うたとやさしいレッスンで、日本語の最初の入口へ。</p>
-              <a
-                class="btn btn-quiet"
-                data-gallery="kanaPreschool"
-                href="https://www.youtube.com/playlist?list=PLIX7jswPySk0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >展示室へ</a>
-            </div>
-          </article>
-
-          <article class="gallery-entry gallery-entry--shift-start reveal">
-            <figure class="gallery-exhibit">
-              <a
-                class="gallery-frame"
-                data-gallery="beyondJoyoKanji"
-                href="https://www.youtube.com/playlist?list=PLFcXrI1lQAqI"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="常用外漢字コレクションを YouTube で見る"
-              >
-                <span class="gallery-mat">
-                  <img
-                    src="../kml/assets/images/beyond_joyo.png"
-                    alt=""
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                  />
-                </span>
-              </a>
-            </figure>
-            <div class="gallery-copy">
-              <h3>常用外漢字</h3>
-              <p class="gallery-blurb">日常漢字の先へ——常用外漢字を含む熟語の語彙。</p>
-              <a
-                class="btn btn-quiet"
-                data-gallery="beyondJoyoKanji"
-                href="https://www.youtube.com/playlist?list=PLFcXrI1lQAqI"
-                target="_blank"
-                rel="noopener noreferrer"
-              >展示室へ</a>
-            </div>
-          </article>
-
-          <article class="gallery-entry gallery-entry--shift-end reveal">
-            <figure class="gallery-exhibit">
-              <a
-                class="gallery-frame"
-                data-gallery="ambientJapan"
-                href="https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ambient Japan コレクションを YouTube で見る"
-              >
-                <span class="gallery-mat">
-                  <img
-                    src="../kml/assets/youtube_thumbnails/ambient_japan.png"
-                    alt=""
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                  />
-                </span>
-              </a>
-            </figure>
-            <div class="gallery-copy">
-              <h3>Ambient Japan</h3>
-              <p class="gallery-blurb">季節の風景、神社、静かな街——日本を味わう映像。</p>
-              <a
-                class="btn btn-quiet"
-                data-gallery="ambientJapan"
-                href="https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU"
-                target="_blank"
-                rel="noopener noreferrer"
-              >展示室へ</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--paper reveal" id="stats" aria-labelledby="stats-heading">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-eyebrow section-eyebrow--dark">カリキュラム</p>
-          <h2 id="stats-heading">静かに測る、いまの広がり</h2>
-          <p>チャンネルはすでに、生きた日本語学習のアーカイブです。</p>
-        </header>
-
-        <div
-          id="statsStatus"
-          class="status-banner"
-          role="status"
-          aria-live="polite"
-          hidden
-        ></div>
-
-        <div class="stats-grid" aria-label="カリキュラム統計">
-          <article class="stat-card">
-            <p class="stat-value" id="statVideos" data-stat>…</p>
-            <p class="stat-label">動画数</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value" id="statPaths" data-stat>…</p>
-            <p class="stat-label">学習パス</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value" id="statVocab" data-stat>…</p>
-            <p class="stat-label">語彙（ユニーク）</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value" id="statKanji" data-stat>…</p>
-            <p class="stat-label">漢字（ユニーク）</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value" id="statJoyo" data-stat>…</p>
-            <p class="stat-label">常用漢字達成率</p>
-          </article>
-        </div>
-        <p class="stats-meta" id="statsGeneratedAt"></p>
-        <p class="stats-link">
-          <a data-link="analytics" href="../kml/analytics/dashboard/">学習分析ダッシュボード</a>
-        </p>
-        <span id="factJoyo" data-stat hidden></span>
-        <span id="factMultiContext" data-stat hidden></span>
-        <span id="factJoyo3" data-stat hidden></span>
-        <span id="factVocabTotal" data-stat hidden></span>
-      </div>
-    </section>
-
-    <section class="section reveal" id="publications" aria-labelledby="publications-heading">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-eyebrow">書庫</p>
-          <h2 id="publications-heading">出版物</h2>
-          <p>
-            動画と同じ、広がる日本語データベースを支える参考資料です。
-          </p>
-        </header>
-
-        <div class="book-list">
-          <div class="book-item">
-            <a href="../kml/index.html">
-              <img src="../assets/images/kml_book_square.png" alt="Kanji・Music・Landscape の表紙" width="280" height="280" loading="lazy" />
-              <p>Kanji・Music・Landscape</p>
-            </a>
-          </div>
-          <div class="book-item">
-            <a href="../pronunciation_ebook/index.html" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/images/square_cover_chat_sensei.png" alt="Pronunciation According to Chat Sensei の表紙" width="280" height="280" loading="lazy" />
-              <p>Pronunciation According to Chat Sensei</p>
-            </a>
-          </div>
-          <div class="book-item">
-            <a href="https://sansymeon.com/my_life_with_ai/index.html" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/images/life_with_ai.png" alt="AIと共に生きる日々 の表紙" width="280" height="280" loading="lazy" />
-              <p>AIと共に生きる日々</p>
-            </a>
-          </div>
-          <div class="book-item">
-            <a href="https://sansymeon.com/digital_nomad/index.html" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/images/digital_nomad.png" alt="旅するワークスタイルとAIの知恵 の表紙" width="280" height="280" loading="lazy" />
-              <p>旅するワークスタイルとAIの知恵</p>
-            </a>
-          </div>
-          <div class="book-item">
-            <a href="https://sansymeon.com/my_journey/index.html" target="_blank" rel="noopener noreferrer">
-              <img src="../assets/images/hikari_wo.png" alt="光を運ぶ人 – シメオンの物語 の表紙" width="280" height="280" loading="lazy" />
-              <p>光を運ぶ人 – シメオンの物語</p>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -644,22 +177,22 @@
         <img
           class="publisher-logo"
           src="../assets/images/logo_small.jpg"
-          alt="SanSymeon ロゴ"
+          alt="SanSymeon のロゴ"
           width="48"
           height="48"
         />
         <div class="publisher-text">
           <p class="publisher-name">SanSymeon Productions</p>
-          <p class="publisher-line">Kanji・Music・Landscape の発行元</p>
+          <p class="publisher-line">Kanji・Music・Landscape の出版社</p>
         </div>
       </div>
 
       <nav class="footer-nav" aria-label="フッター">
-        <a data-link="youtube" href="https://www.youtube.com/@ambientkanji" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="#journey">学びの道</a>
-        <a href="#series">コレクション</a>
-        <a data-link="analytics" href="../kml/analytics/dashboard/">学習分析</a>
-        <a href="#publications">出版物</a>
+        <a href="./journey/">学びの道</a>
+        <a href="../kml/contents/books/">漢字の学び</a>
+        <a href="./collections/">YouTube コレクション</a>
+        <a href="./publications/">出版物</a>
+        <a data-link="analytics" href="../kml/analytics/dashboard/">分析</a>
         <a href="../index.html" hreflang="en" lang="en">English</a>
       </nav>
 

@@ -1,3 +1,7 @@
 # Netlify does not expose the git symlink kml/analytics/dashboard/data → ../output.
 # Rewrite so legacy /dashboard/data/* URLs resolve to the real analytics JSON.
 /kml/analytics/dashboard/data/*  /kml/analytics/output/:splat  200
+
+# Museum phase: curriculum landing retired — Kanji Studies opens at the Bookshelf.
+/kml/index.html  /kml/contents/books/  301
+/kml/  /kml/contents/books/  301

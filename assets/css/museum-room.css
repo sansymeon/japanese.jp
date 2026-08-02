@@ -1,0 +1,826 @@
+/* Kanji・Music・Landscape — shared museum room language
+   Used by Journey, Collections, Publications, guidance rooms, and Bookshelf chrome. */
+
+.museum-page {
+  --gallery-wall: #171512;
+  --gallery-elevated: #1c1915;
+  --gallery-deep: #0e0c0a;
+  --ivory: #efe9dc;
+  --gold: #c9a458;
+  --gold-soft: rgba(201, 164, 88, 0.14);
+  --ink: #f3f1eb;
+  --ink-soft: #d8d4cb;
+  --ink-quiet: #9a958c;
+  --ease-museum: 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  --ease: 220ms ease;
+  --font-display: "Shippori Mincho", "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  --font-body: "Source Sans 3", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  color-scheme: dark;
+}
+
+.museum-page,
+body.museum-page {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--gallery-wall);
+  -webkit-font-smoothing: antialiased;
+}
+
+.museum-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.museum-page a {
+  color: inherit;
+}
+
+.museum-page .skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.85rem;
+  background: var(--gold);
+  color: #171512;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: top var(--ease);
+}
+
+.museum-page .skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- Header / nav ---------- */
+
+.museum-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 9, 0.72) 0%,
+    transparent 100%
+  );
+}
+
+.museum-header--solid {
+  position: sticky;
+  background: color-mix(in srgb, var(--gallery-wall) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 164, 88, 0.12);
+}
+
+.museum-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100% - 2.5rem, 64rem);
+  margin: 0 auto;
+  min-height: 3.25rem;
+  padding: 0.35rem 0;
+}
+
+.museum-brand {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--ease);
+}
+
+.museum-brand:hover,
+.museum-brand:focus-visible {
+  color: var(--gold);
+}
+
+.museum-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem 1.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.museum-nav a {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.museum-nav a:hover,
+.museum-nav a:focus-visible {
+  color: var(--gold);
+}
+
+.museum-nav a[aria-current="page"] {
+  color: var(--gold);
+}
+
+/* ---------- Room hero ---------- */
+
+.room-hero {
+  position: relative;
+  min-height: min(100svh, 54rem);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: #0b0b0c;
+}
+
+.room-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.room-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  transform: scale(1.03);
+  animation: room-drift 32s ease-in-out infinite alternate;
+}
+
+.room-hero-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(8, 8, 9, 0.9) 0%,
+      rgba(8, 8, 9, 0.62) 36%,
+      rgba(8, 8, 9, 0.32) 60%,
+      rgba(8, 8, 9, 0.58) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 9, 0.4) 0%,
+      transparent 30%,
+      rgba(8, 8, 9, 0.75) 76%,
+      rgba(8, 8, 9, 0.97) 100%
+    ),
+    radial-gradient(
+      ellipse 55% 50% at 22% 70%,
+      rgba(31, 58, 46, 0.28),
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+.room-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2.5rem, 40rem);
+  margin: 0 auto 0 clamp(1.25rem, 8vw, 7rem);
+  padding: clamp(7rem, 16vw, 11rem) 0 clamp(4.5rem, 10vw, 6.5rem);
+  text-align: left;
+}
+
+.room-hero-brand {
+  margin: 0 0 1.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  animation: room-rise 1.15s var(--ease-museum) 0.08s both;
+}
+
+.room-hero-inner h1 {
+  max-width: 14ch;
+  margin: 0 0 1.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 5.2vw, 3.35rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.18;
+  color: var(--ink);
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
+  animation: room-rise 1.15s var(--ease-museum) 0.22s both;
+}
+
+.room-hero-lead {
+  max-width: 28rem;
+  margin: 0;
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--ink-soft) 94%, white);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+  animation: room-rise 1.15s var(--ease-museum) 0.36s both;
+}
+
+.room-hero-scroll {
+  position: absolute;
+  left: clamp(1.25rem, 8vw, 7rem);
+  bottom: 1.35rem;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  width: 2rem;
+  height: 3rem;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity var(--ease);
+}
+
+.room-hero-scroll:hover {
+  opacity: 1;
+}
+
+.room-hero-scroll-line {
+  display: block;
+  width: 1px;
+  height: 2.4rem;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--gold) 80%, white)
+  );
+  animation: room-scroll 2.4s ease-in-out infinite;
+}
+
+@keyframes room-drift {
+  from {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.07) translate3d(1.2%, -1%, 0);
+  }
+}
+
+@keyframes room-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.9rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes room-scroll {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+    transform-origin: top;
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+/* ---------- Content sections ---------- */
+
+.room-section {
+  padding: clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 6vw, 4.5rem);
+  background:
+    radial-gradient(
+      ellipse 80% 35% at 50% 0%,
+      rgba(31, 58, 46, 0.18),
+      transparent 70%
+    ),
+    var(--gallery-wall);
+}
+
+.room-section--muted {
+  background: color-mix(in srgb, var(--gallery-wall) 88%, #0b0b0c);
+  border-top: 1px solid rgba(201, 164, 88, 0.08);
+  padding-bottom: clamp(5rem, 11vw, 8rem);
+}
+
+.room-container {
+  width: min(100% - 2.5rem, 40rem);
+  margin: 0 auto;
+}
+
+.room-container--wide {
+  width: min(100% - 2.5rem, 56rem);
+}
+
+.room-eyebrow {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 78%, transparent);
+}
+
+.room-section-head {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.room-section-head h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+.room-section-head p {
+  margin: 0;
+  max-width: 32rem;
+  color: var(--ink-quiet);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* Prose body for Journey / guidance */
+
+.room-prose {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.room-prose > *:first-child {
+  margin-top: 0;
+}
+
+.room-prose h2 {
+  margin: 2.5rem 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.room-prose h2:first-child {
+  margin-top: 0;
+}
+
+.room-prose p {
+  margin: 0 0 1.15rem;
+}
+
+.room-prose ul {
+  margin: 0 0 1.35rem;
+  padding-left: 1.2rem;
+}
+
+.room-prose li {
+  margin-bottom: 0.55rem;
+}
+
+.room-prose a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.room-prose a:hover,
+.room-prose a:focus-visible {
+  color: #d8b66a;
+  border-bottom-color: var(--gold);
+}
+
+.room-motto {
+  margin: 2.5rem 0;
+  padding: 1.35rem 1.5rem;
+  border-left: 2px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  background: rgba(201, 164, 88, 0.06);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+/* Forward CTA */
+
+.room-forward {
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201, 164, 88, 0.14);
+}
+
+.room-forward p {
+  margin: 0 0 1.25rem;
+  color: var(--ink-quiet);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 28rem;
+}
+
+.room-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+}
+
+.museum-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.35rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition:
+    background var(--ease),
+    color var(--ease),
+    border-color var(--ease);
+}
+
+.museum-btn--primary {
+  background: var(--gold);
+  color: #171512;
+  border: 1px solid var(--gold);
+}
+
+.museum-btn--primary:hover,
+.museum-btn--primary:focus-visible {
+  background: #d8b66a;
+  border-color: #d8b66a;
+}
+
+.museum-btn--ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid rgba(201, 164, 88, 0.35);
+}
+
+.museum-btn--ghost:hover,
+.museum-btn--ghost:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.museum-btn--quiet {
+  padding: 0.35rem 0;
+  background: transparent;
+  color: var(--gold);
+  border: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+  border-radius: 0;
+}
+
+.museum-btn--quiet:hover,
+.museum-btn--quiet:focus-visible {
+  color: #d8b66a;
+  border-bottom-color: var(--gold);
+}
+
+/* Guidance list (Bookshelf optional support) */
+
+.guidance-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.guidance-item {
+  border-top: 1px solid rgba(201, 164, 88, 0.14);
+}
+
+.guidance-item:last-child {
+  border-bottom: 1px solid rgba(201, 164, 88, 0.14);
+}
+
+.guidance-link {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 1rem 1.5rem;
+  align-items: baseline;
+  padding: 1.45rem 0.15rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 240ms ease-out, transform 240ms ease-out;
+}
+
+.guidance-link:hover,
+.guidance-link:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(201, 164, 88, 0.055);
+  outline: none;
+}
+
+.guidance-label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: color-mix(in srgb, var(--gold) 80%, transparent);
+}
+
+.guidance-title {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.guidance-meta {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-quiet);
+  line-height: 1.55;
+}
+
+/* Collection entries */
+
+.collection-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+.collection-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  align-items: center;
+}
+
+.collection-entry:nth-child(even) {
+  direction: rtl;
+}
+
+.collection-entry:nth-child(even) > * {
+  direction: ltr;
+}
+
+.collection-frame {
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #0e0c0a;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+.collection-frame img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-museum);
+}
+
+.collection-entry:hover .collection-frame img,
+.collection-entry:focus-within .collection-frame img {
+  transform: scale(1.03);
+}
+
+.collection-copy h3 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+.collection-copy .gallery-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0 0 0.65rem;
+}
+
+.collection-copy .gallery-title-ja {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-weight: 400;
+}
+
+.collection-copy .gallery-title-en {
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-quiet);
+}
+
+.collection-blurb {
+  margin: 0 0 1.1rem;
+  color: var(--ink-quiet);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 28rem;
+}
+
+/* Publications grid */
+
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.pub-item a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pub-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 240ms ease-out, box-shadow 240ms ease-out;
+}
+
+.pub-item a:hover img,
+.pub-item a:focus-visible img {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.42);
+}
+
+.pub-item p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Stroke practice set list */
+
+.stroke-set-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.85rem;
+}
+
+.stroke-set-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.15rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(201, 164, 88, 0.16);
+  border-radius: 2px;
+  background: rgba(201, 164, 88, 0.03);
+  transition:
+    background 240ms ease-out,
+    border-color 240ms ease-out,
+    transform 240ms ease-out;
+}
+
+.stroke-set-link:hover,
+.stroke-set-link:focus-visible {
+  background: rgba(201, 164, 88, 0.08);
+  border-color: rgba(201, 164, 88, 0.35);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.stroke-set-link strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.stroke-set-link span {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+/* Footer */
+
+.museum-footer {
+  border-top: 1px solid rgba(201, 164, 88, 0.1);
+  padding: 2.25rem 0 2.5rem;
+  background: var(--gallery-deep);
+}
+
+.museum-footer-inner {
+  width: min(100% - 2.5rem, 64rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.museum-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.15rem;
+  margin-bottom: 1.15rem;
+}
+
+.museum-footer a {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.museum-footer a:hover {
+  color: var(--gold);
+}
+
+.museum-footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-quiet);
+}
+
+.museum-footer p + p {
+  margin-top: 0.65rem;
+}
+
+/* Reveal */
+
+.museum-page .reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.9s var(--ease-museum),
+    transform 0.9s var(--ease-museum);
+}
+
+.museum-page .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-hero-media img,
+  .room-hero-brand,
+  .room-hero-inner h1,
+  .room-hero-lead,
+  .room-hero-scroll-line,
+  .guidance-link,
+  .stroke-set-link,
+  .collection-frame img {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .room-hero-media img {
+    transform: none;
+  }
+
+  .museum-page .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .guidance-link:hover,
+  .guidance-link:focus-visible,
+  .stroke-set-link:hover,
+  .stroke-set-link:focus-visible {
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .collection-entry,
+  .collection-entry:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .museum-nav {
+    gap: 0.3rem 0.75rem;
+  }
+
+  .museum-nav a {
+    font-size: 0.72rem;
+  }
+
+  .guidance-link {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
