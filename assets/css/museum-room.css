@@ -158,6 +158,11 @@ body.museum-page {
   animation: room-drift 32s ease-in-out infinite alternate;
 }
 
+/* Lift photo only — veil unchanged, so hero text stays readable */
+.room-hero--lift .room-hero-media img {
+  filter: brightness(1.18) contrast(1.04);
+}
+
 .room-hero-veil {
   position: absolute;
   inset: 0;
