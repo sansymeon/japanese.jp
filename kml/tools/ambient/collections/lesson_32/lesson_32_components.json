@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_32_components",
+  "title": "Lesson 32 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 32,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L32_sayeth",
+      "kanji": "曰",
+      "keyword": "sayeth",
+      "components": [
+        {
+          "glyph": "曰",
+          "label": "sayeth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_quandary",
+      "kanji": "困",
+      "keyword": "quandary",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_hard",
+      "kanji": "固",
+      "keyword": "hard",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "古",
+          "label": "old"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_weld",
+      "kanji": "錮",
+      "keyword": "weld",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "固",
+          "label": "hard"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_country",
+      "kanji": "国",
+      "keyword": "country",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "玉",
+          "label": "ball"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_group",
+      "kanji": "団",
+      "keyword": "group",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_reason",
+      "kanji": "因",
+      "keyword": "reason",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_matrimony",
+      "kanji": "姻",
+      "keyword": "matrimony",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "因",
+          "label": "reason"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_gullet",
+      "kanji": "咽",
+      "keyword": "gullet",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "因",
+          "label": "reason"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_garden",
+      "kanji": "園",
+      "keyword": "garden",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "袁",
+          "label": "robe"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_occurrences",
+      "kanji": "回",
+      "keyword": "occurrences",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_podium",
+      "kanji": "壇",
+      "keyword": "podium",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "⼇",
+          "label": "top hat"
+        },
+        {
+          "glyph": "回",
+          "label": "occurrences"
+        },
+        {
+          "glyph": "旦",
+          "label": "dawn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_store",
+      "kanji": "店",
+      "keyword": "store",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "占",
+          "label": "fortune telling"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_storage",
+      "kanji": "庫",
+      "keyword": "storage",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "車",
+          "label": "car"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_courtyard",
+      "kanji": "庭",
+      "keyword": "courtyard",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "延",
+          "label": "prolong"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_government_office",
+      "kanji": "庁",
+      "keyword": "government office",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_bed",
+      "kanji": "床",
+      "keyword": "bed",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_hemp",
+      "kanji": "麻",
+      "keyword": "hemp",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "林",
+          "label": "woods"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_grind",
+      "kanji": "磨",
+      "keyword": "grind",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "林",
+          "label": "woods"
+        },
+        {
+          "glyph": "石",
+          "label": "stone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L32_heart",
+      "kanji": "心",
+      "keyword": "heart",
+      "components": [
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    }
+  ]
+}
