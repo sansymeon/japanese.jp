@@ -2,7 +2,7 @@
   "meta": {
     "title": "KML Component Database",
     "policy": "Reviewed lesson HTML is the canonical source for approved KML decompositions. Original component data (including v4c) was placeholder content for scaffolding lessons and is not editorial intent. Self-reference parts are placeholder remnants. v4c is legacy: comparison/recovery only when HTML is missing. See data/kanji/KML_COMPONENT_SOURCE_POLICY.md.",
-    "generatedAt": "2026-07-30T23:17:16.029732+00:00",
+    "generatedAt": "2026-08-02T13:39:17.179410+00:00",
     "lessonsDir": "contents/books/book_01/lessons",
     "maxLesson": null,
     "stats": {
@@ -16,7 +16,7 @@
     },
     "kanjiCount": 3051,
     "componentCount": 333,
-    "inconsistencyCount": 4492
+    "inconsistencyCount": 4500
   },
   "kanji": {
     "一": {
@@ -22087,8 +22087,8 @@
       "lesson": 31,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2l",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "九",
@@ -22097,7 +22097,7 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
             "type": "layout",
@@ -22111,23 +22111,17 @@
                 "type": "part",
                 "glyph": "木"
               }
-            ],
-            "role": "left"
+            ]
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "隹"
-              }
-            ],
-            "role": "right"
+            "type": "part",
+            "glyph": "隹"
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "九",
         "木",
@@ -22170,7 +22164,7 @@
     },
     "準": {
       "kanji": "準",
-      "keyword": "con",
+      "keyword": "conform",
       "slug": "conform",
       "lesson": 31,
       "source": "html",
@@ -22303,8 +22297,8 @@
       "lesson": 31,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2r",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "石",
@@ -22313,18 +22307,11 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "石"
-              }
-            ],
-            "role": "left"
+            "type": "part",
+            "glyph": "石"
           },
           {
             "type": "layout",
@@ -22338,12 +22325,13 @@
                 "type": "part",
                 "glyph": "隹"
               }
-            ],
-            "role": "right"
+            ]
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "石",
         "宀",
@@ -22419,8 +22407,8 @@
       "lesson": 31,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2l",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "𠂉",
@@ -22430,7 +22418,7 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
             "type": "layout",
@@ -22448,23 +22436,17 @@
                 "type": "part",
                 "glyph": "隹"
               }
-            ],
-            "role": "left"
+            ]
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "欠"
-              }
-            ],
-            "role": "right"
+            "type": "part",
+            "glyph": "欠"
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "𠂉",
         "𠂇",
@@ -22479,8 +22461,8 @@
       "lesson": 31,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2r",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "木",
@@ -22490,18 +22472,11 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "木"
-              }
-            ],
-            "role": "left"
+            "type": "part",
+            "glyph": "木"
           },
           {
             "type": "layout",
@@ -22519,12 +22494,13 @@
                 "type": "part",
                 "glyph": "隹"
               }
-            ],
-            "role": "right"
+            ]
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "木",
         "𠂉",
@@ -22539,8 +22515,8 @@
       "lesson": 31,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2l",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "𠂉",
@@ -22550,7 +22526,7 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
             "type": "layout",
@@ -22568,23 +22544,17 @@
                 "type": "part",
                 "glyph": "隹"
               }
-            ],
-            "role": "left"
+            ]
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "見"
-              }
-            ],
-            "role": "right"
+            "type": "part",
+            "glyph": "見"
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "𠂉",
         "𠂇",
@@ -22695,8 +22665,8 @@
       "lesson": 31,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2r",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "日",
@@ -22705,18 +22675,11 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "日"
-              }
-            ],
-            "role": "left"
+            "type": "part",
+            "glyph": "日"
           },
           {
             "type": "layout",
@@ -22730,12 +22693,13 @@
                 "type": "part",
                 "glyph": "隹"
               }
-            ],
-            "role": "right"
+            ]
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "日",
         "羽",
@@ -22749,8 +22713,8 @@
       "lesson": 31,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2r",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "氵",
@@ -22759,18 +22723,11 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "氵"
-              }
-            ],
-            "role": "left"
+            "type": "part",
+            "glyph": "氵"
           },
           {
             "type": "layout",
@@ -22784,12 +22741,13 @@
                 "type": "part",
                 "glyph": "隹"
               }
-            ],
-            "role": "right"
+            ]
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "氵",
         "羽",
@@ -22831,8 +22789,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "囗",
@@ -22840,30 +22798,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "囗",
-                "role": "enclosure"
-              }
-            ],
-            "role": "enclosure"
+            "type": "part",
+            "glyph": "囗"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "木"
-              }
-            ],
-            "role": "inner"
+            "type": "part",
+            "glyph": "木"
           }
         ]
       },
@@ -22880,8 +22823,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "囗",
@@ -22889,30 +22832,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "囗",
-                "role": "enclosure"
-              }
-            ],
-            "role": "enclosure"
+            "type": "part",
+            "glyph": "囗"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "古"
-              }
-            ],
-            "role": "inner"
+            "type": "part",
+            "glyph": "古"
           }
         ]
       },
@@ -22963,8 +22891,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "囗",
@@ -22972,30 +22900,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "囗",
-                "role": "enclosure"
-              }
-            ],
-            "role": "enclosure"
+            "type": "part",
+            "glyph": "囗"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "玉"
-              }
-            ],
-            "role": "inner"
+            "type": "part",
+            "glyph": "玉"
           }
         ]
       },
@@ -23012,8 +22925,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "囗",
@@ -23021,30 +22934,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "囗",
-                "role": "enclosure"
-              }
-            ],
-            "role": "enclosure"
+            "type": "part",
+            "glyph": "囗"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "寸"
-              }
-            ],
-            "role": "inner"
+            "type": "part",
+            "glyph": "寸"
           }
         ]
       },
@@ -23061,8 +22959,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "囗",
@@ -23070,30 +22968,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "囗",
-                "role": "enclosure"
-              }
-            ],
-            "role": "enclosure"
+            "type": "part",
+            "glyph": "囗"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "大"
-              }
-            ],
-            "role": "inner"
+            "type": "part",
+            "glyph": "大"
           }
         ]
       },
@@ -23178,8 +23061,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "囗",
@@ -23187,30 +23070,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "囗",
-                "role": "enclosure"
-              }
-            ],
-            "role": "enclosure"
+            "type": "part",
+            "glyph": "囗"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "袁"
-              }
-            ],
-            "role": "inner"
+            "type": "part",
+            "glyph": "袁"
           }
         ]
       },
@@ -23227,8 +23095,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "囗",
@@ -23236,30 +23104,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "囗",
-                "role": "enclosure"
-              }
-            ],
-            "role": "enclosure"
+            "type": "part",
+            "glyph": "囗"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "口"
-              }
-            ],
-            "role": "inner"
+            "type": "part",
+            "glyph": "口"
           }
         ]
       },
@@ -23276,8 +23129,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2r",
+      "layoutType": "stack-horizontal",
+      "layoutCode": "h",
       "renderLayout": null,
       "partsFlat": [
         "土",
@@ -23287,18 +23140,11 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-horizontal",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "土"
-              }
-            ],
-            "role": "left"
+            "type": "part",
+            "glyph": "土"
           },
           {
             "type": "layout",
@@ -23316,12 +23162,13 @@
                 "type": "part",
                 "glyph": "旦"
               }
-            ],
-            "role": "right"
+            ]
           }
         ]
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
         "土",
         "⼇",
@@ -23336,8 +23183,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "广",
@@ -23345,27 +23192,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "广"
-              }
-            ]
+            "type": "part",
+            "glyph": "广"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "占"
-              }
-            ]
+            "type": "part",
+            "glyph": "占"
           }
         ]
       },
@@ -23382,8 +23217,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "广",
@@ -23391,27 +23226,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "广"
-              }
-            ]
+            "type": "part",
+            "glyph": "广"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "車"
-              }
-            ]
+            "type": "part",
+            "glyph": "車"
           }
         ]
       },
@@ -23428,8 +23251,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "广",
@@ -23437,27 +23260,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "广"
-              }
-            ]
+            "type": "part",
+            "glyph": "广"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "延"
-              }
-            ]
+            "type": "part",
+            "glyph": "延"
           }
         ]
       },
@@ -23474,8 +23285,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "广",
@@ -23483,27 +23294,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "广"
-              }
-            ]
+            "type": "part",
+            "glyph": "广"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "丁"
-              }
-            ]
+            "type": "part",
+            "glyph": "丁"
           }
         ]
       },
@@ -23520,8 +23319,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "广",
@@ -23529,27 +23328,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "广"
-              }
-            ]
+            "type": "part",
+            "glyph": "广"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "木"
-              }
-            ]
+            "type": "part",
+            "glyph": "木"
           }
         ]
       },
@@ -23566,8 +23353,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "enclosure-layout",
-      "layoutCode": "e",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "广",
@@ -23575,27 +23362,15 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "enclosure-layout",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "广"
-              }
-            ]
+            "type": "part",
+            "glyph": "广"
           },
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "林"
-              }
-            ]
+            "type": "part",
+            "glyph": "林"
           }
         ]
       },
@@ -23612,8 +23387,8 @@
       "lesson": 32,
       "source": "html",
       "hasBox": true,
-      "layoutType": "kanji-composite",
-      "layoutCode": "2r",
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
       "renderLayout": null,
       "partsFlat": [
         "广",
@@ -23622,33 +23397,19 @@
       ],
       "tree": {
         "type": "layout",
-        "layout": "kanji-composite",
+        "layout": "stack-vertical",
         "children": [
           {
-            "type": "layout",
-            "layout": "region",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "广"
-              }
-            ],
-            "role": "left"
+            "type": "part",
+            "glyph": "广"
           },
           {
-            "type": "layout",
-            "layout": "stack-vertical",
-            "children": [
-              {
-                "type": "part",
-                "glyph": "林"
-              },
-              {
-                "type": "part",
-                "glyph": "石"
-              }
-            ],
-            "role": "right"
+            "type": "part",
+            "glyph": "林"
+          },
+          {
+            "type": "part",
+            "glyph": "石"
           }
         ]
       },
@@ -113946,7 +113707,7 @@
         {
           "kanji": "準",
           "lesson": 31,
-          "keyword": "con"
+          "keyword": "conform"
         },
         {
           "kanji": "恵",
@@ -121630,7 +121391,7 @@
         {
           "kanji": "準",
           "lesson": 31,
-          "keyword": "con"
+          "keyword": "conform"
         },
         {
           "kanji": "濯",
@@ -125137,7 +124898,7 @@
         {
           "kanji": "準",
           "lesson": 31,
-          "keyword": "con"
+          "keyword": "conform"
         },
         {
           "kanji": "奮",
@@ -126619,6 +126380,23 @@
     },
     {
       "type": "nested_component_layout",
+      "kanji": "雑",
+      "lesson": 31,
+      "partsRaw": [
+        "九",
+        "木",
+        "隹"
+      ],
+      "partsUsable": [
+        "九",
+        "木",
+        "隹"
+      ],
+      "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
       "kanji": "準",
       "lesson": 31,
       "partsRaw": [
@@ -126632,6 +126410,133 @@
         "十"
       ],
       "layoutType": "stack-vertical",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "確",
+      "lesson": 31,
+      "partsRaw": [
+        "石",
+        "宀",
+        "隹"
+      ],
+      "partsUsable": [
+        "石",
+        "宀",
+        "隹"
+      ],
+      "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "歓",
+      "lesson": 31,
+      "partsRaw": [
+        "𠂉",
+        "𠂇",
+        "隹",
+        "欠"
+      ],
+      "partsUsable": [
+        "𠂉",
+        "𠂇",
+        "隹",
+        "欠"
+      ],
+      "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "権",
+      "lesson": 31,
+      "partsRaw": [
+        "木",
+        "𠂉",
+        "𠂇",
+        "隹"
+      ],
+      "partsUsable": [
+        "木",
+        "𠂉",
+        "𠂇",
+        "隹"
+      ],
+      "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "観",
+      "lesson": 31,
+      "partsRaw": [
+        "𠂉",
+        "𠂇",
+        "隹",
+        "見"
+      ],
+      "partsUsable": [
+        "𠂉",
+        "𠂇",
+        "隹",
+        "見"
+      ],
+      "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "曜",
+      "lesson": 31,
+      "partsRaw": [
+        "日",
+        "羽",
+        "隹"
+      ],
+      "partsUsable": [
+        "日",
+        "羽",
+        "隹"
+      ],
+      "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "濯",
+      "lesson": 31,
+      "partsRaw": [
+        "氵",
+        "羽",
+        "隹"
+      ],
+      "partsUsable": [
+        "氵",
+        "羽",
+        "隹"
+      ],
+      "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "壇",
+      "lesson": 32,
+      "partsRaw": [
+        "土",
+        "⼇",
+        "回",
+        "旦"
+      ],
+      "partsUsable": [
+        "土",
+        "⼇",
+        "回",
+        "旦"
+      ],
+      "layoutType": "stack-horizontal",
       "editorial": null
     },
     {

@@ -1,6 +1,6 @@
 # KML Component Database Report
 
-Generated: `2026-07-30T23:17:16.029732+00:00`
+Generated: `2026-08-02T13:39:17.179410+00:00`
 
 ## Policy
 
@@ -16,7 +16,7 @@ Reviewed lesson HTML is the canonical source for approved KML decompositions. Or
 - Filled from v4c fallback: **3**
 - Still absent: **83**
 - Placeholder remnants (self-ref, not editorial): **2128**
-- Inconsistency records: **4492**
+- Inconsistency records: **4500**
 
 Placeholder self-references are **not** approved decompositions — they are leftover scaffolding from the original placeholder dataset.
 
@@ -170,7 +170,7 @@ Placeholder self-references are **not** approved decompositions — they are lef
 - L28 贈 html=['貝', '曽'] v4c=['月', '曽']
 - L28 賓 html=['宀', '一', '少', '貝'] v4c=['宀']
 
-### `nested_component_layout` (13)
+### `nested_component_layout` (21)
 
 - L9 涯
 - L9 均
@@ -180,7 +180,15 @@ Placeholder self-references are **not** approved decompositions — they are lef
 - L24 嫡
 - L25 渇
 - L28 染
+- L31 雑
 - L31 準
+- L31 確
+- L31 歓
+- L31 権
+- L31 観
+- L31 曜
+- L31 濯
+- L32 壇
 - L33 憩
 - L34 恐
 - L34 惑

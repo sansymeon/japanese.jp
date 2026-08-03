@@ -1,0 +1,435 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_31_components",
+  "title": "Lesson 31 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 31,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L31_reef",
+      "kanji": "礁",
+      "keyword": "reef",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "焦",
+          "label": "char"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_gather",
+      "kanji": "集",
+      "keyword": "gather",
+      "components": [
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_quasi",
+      "kanji": "准",
+      "keyword": "quasi",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_advance",
+      "kanji": "進",
+      "keyword": "advance",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_miscellaneous",
+      "kanji": "雑",
+      "keyword": "miscellaneous",
+      "components": [
+        {
+          "glyph": "九",
+          "label": "nine"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_female",
+      "kanji": "雌",
+      "keyword": "female",
+      "components": [
+        {
+          "glyph": "此",
+          "label": "此"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_conform",
+      "kanji": "準",
+      "keyword": "conform",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_stirred_up",
+      "kanji": "奮",
+      "keyword": "stirred up",
+      "components": [
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_rob",
+      "kanji": "奪",
+      "keyword": "rob",
+      "components": [
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_assurance",
+      "kanji": "確",
+      "keyword": "assurance",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_noon",
+      "kanji": "午",
+      "keyword": "noon",
+      "components": [
+        {
+          "glyph": "午",
+          "label": "noon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_permit",
+      "kanji": "許",
+      "keyword": "permit",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "午",
+          "label": "noon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_delight",
+      "kanji": "歓",
+      "keyword": "delight",
+      "components": [
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_rights",
+      "kanji": "権",
+      "keyword": "rights",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_observe",
+      "kanji": "観",
+      "keyword": "observe",
+      "components": [
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "見",
+          "label": "see"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_feathers",
+      "kanji": "羽",
+      "keyword": "feathers",
+      "components": [
+        {
+          "glyph": "羽",
+          "label": "feathers"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_learn",
+      "kanji": "習",
+      "keyword": "learn",
+      "components": [
+        {
+          "glyph": "羽",
+          "label": "feathers"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_following_day",
+      "kanji": "翌",
+      "keyword": "following day",
+      "components": [
+        {
+          "glyph": "羽",
+          "label": "feathers"
+        },
+        {
+          "glyph": "立",
+          "label": "stand up"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_weekday",
+      "kanji": "曜",
+      "keyword": "weekday",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "羽",
+          "label": "feathers"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L31_laundry",
+      "kanji": "濯",
+      "keyword": "laundry",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "羽",
+          "label": "feathers"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    }
+  ]
+}
