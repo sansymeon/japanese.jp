@@ -1,5 +1,5 @@
 /**
- * Collection JSON paths — lesson subfolders for L1–20, L33–38, L41 builds.
+ * Collection JSON paths — lesson subfolders for L1–30, L33–38, L41 builds.
  */
 (function () {
   "use strict";
@@ -37,8 +37,8 @@
     const m = name.match(/^lesson_(\d+)/);
     if (!m) return null;
     const n = parseInt(m[1], 10);
-    // Nest Heisig lesson collections (1–20; 33–38; 41).
-    if ((n >= 1 && n <= 20) || (n >= 33 && n <= 38) || n === 41) return lessonFolder(n);
+    // Nest Heisig lesson collections (1–30; 33–38; 41).
+    if ((n >= 1 && n <= 30) || (n >= 33 && n <= 38) || n === 41) return lessonFolder(n);
     return null;
   }
 

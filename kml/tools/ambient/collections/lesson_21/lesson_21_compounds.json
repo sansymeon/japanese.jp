@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_21_compounds",
+  "title": "Lesson 21 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_21.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 21,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_21.html"
+  },
+  "scenes": [
+    {
+      "id": "L21_agreement",
+      "kanji": "肯",
+      "keyword": "agreement",
+      "image": "studies/agreement.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "肯定",
+            "reading": "こうてい",
+            "en": "Affirmation"
+          },
+          {
+            "jp": "不肯定",
+            "reading": "ふこうてい",
+            "en": "Non-affirmation"
+          },
+          {
+            "jp": "首肯",
+            "reading": "しゅこう",
+            "en": "Assent"
+          },
+          {
+            "jp": "肯認",
+            "reading": "こうにん",
+            "en": "Acknowledgment"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "agreement",
+        "prototype": true
+      },
+      "imageRev": 1785716299
+    },
+    {
+      "id": "L21_undertake",
+      "kanji": "企",
+      "keyword": "undertake",
+      "image": "studies/undertake.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "企業",
+            "reading": "きぎょう",
+            "en": "Company"
+          },
+          {
+            "jp": "企画",
+            "reading": "きかく",
+            "en": "Plan"
+          },
+          {
+            "jp": "企図",
+            "reading": "きと",
+            "en": "Attempt"
+          },
+          {
+            "jp": "企画書",
+            "reading": "きかくしょ",
+            "en": "Proposal"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "undertake",
+        "prototype": true
+      },
+      "imageRev": 1785716384
+    },
+    {
+      "id": "L21_curriculum",
+      "kanji": "歴",
+      "keyword": "curriculum",
+      "image": "studies/curriculum.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "歴史",
+            "reading": "れきし",
+            "en": "History"
+          },
+          {
+            "jp": "経歴",
+            "reading": "けいれき",
+            "en": "Career history"
+          },
+          {
+            "jp": "履歴書",
+            "reading": "りれきしょ",
+            "en": "Résumé"
+          },
+          {
+            "jp": "学歴",
+            "reading": "がくれき",
+            "en": "Educational background"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "curriculum",
+        "prototype": true
+      },
+      "imageRev": 1785716404
+    },
+    {
+      "id": "L21_warrior",
+      "kanji": "武",
+      "keyword": "warrior",
+      "image": "studies/warrior.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "武士",
+            "reading": "ぶし",
+            "en": "Samurai"
+          },
+          {
+            "jp": "武道",
+            "reading": "ぶどう",
+            "en": "Martial arts"
+          },
+          {
+            "jp": "武器",
+            "reading": "ぶき",
+            "en": "Weapon"
+          },
+          {
+            "jp": "武勇伝",
+            "reading": "ぶゆうでん",
+            "en": "Heroic tale"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "warrior",
+        "prototype": true
+      },
+      "imageRev": 1785716418
+    },
+    {
+      "id": "L21_levy",
+      "kanji": "賦",
+      "keyword": "levy",
+      "image": "studies/levy.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "賦課",
+            "reading": "ふか",
+            "en": "Imposition of tax"
+          },
+          {
+            "jp": "天賦",
+            "reading": "てんぷ",
+            "en": "Natural gift"
+          },
+          {
+            "jp": "月賦",
+            "reading": "げっぷ",
+            "en": "Installment payment"
+          },
+          {
+            "jp": "賦与",
+            "reading": "ふよ",
+            "en": "Granting"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "levy",
+        "prototype": true
+      },
+      "imageRev": 1785716465
+    },
+    {
+      "id": "L21_correct",
+      "kanji": "正",
+      "keyword": "correct",
+      "image": "studies/correct.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "正月",
+            "reading": "しょうがつ",
+            "en": "New Year"
+          },
+          {
+            "jp": "正しい",
+            "reading": "ただしい",
+            "en": "Correct"
+          },
+          {
+            "jp": "正解",
+            "reading": "せいかい",
+            "en": "Correct answer"
+          },
+          {
+            "jp": "正面",
+            "reading": "しょうめん",
+            "en": "Front"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "correct",
+        "prototype": true
+      },
+      "imageRev": 1785716504
+    },
+    {
+      "id": "L21_evidence",
+      "kanji": "証",
+      "keyword": "evidence",
+      "image": "studies/evidence.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "証明",
+            "reading": "しょうめい",
+            "en": "Proof"
+          },
+          {
+            "jp": "保証",
+            "reading": "ほしょう",
+            "en": "Guarantee"
+          },
+          {
+            "jp": "免許証",
+            "reading": "めんきょしょう",
+            "en": "License"
+          },
+          {
+            "jp": "証券",
+            "reading": "しょうけん",
+            "en": "Security"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "evidence",
+        "prototype": true
+      },
+      "imageRev": 1785716522
+    },
+    {
+      "id": "L21_politics",
+      "kanji": "政",
+      "keyword": "politics",
+      "image": "studies/politics.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "政治",
+            "reading": "せいじ",
+            "en": "Politics"
+          },
+          {
+            "jp": "政府",
+            "reading": "せいふ",
+            "en": "Government"
+          },
+          {
+            "jp": "行政",
+            "reading": "ぎょうせい",
+            "en": "Administration"
+          },
+          {
+            "jp": "財政",
+            "reading": "ざいせい",
+            "en": "Public finance"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "politics",
+        "prototype": true
+      },
+      "imageRev": 1785716554
+    },
+    {
+      "id": "L21_determine",
+      "kanji": "定",
+      "keyword": "determine",
+      "image": "studies/determine.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "予定",
+            "reading": "よてい",
+            "en": "Schedule"
+          },
+          {
+            "jp": "決定",
+            "reading": "けってい",
+            "en": "Decision"
+          },
+          {
+            "jp": "安定",
+            "reading": "あんてい",
+            "en": "Stability"
+          },
+          {
+            "jp": "定期",
+            "reading": "ていき",
+            "en": "Regular period"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "determine",
+        "prototype": true
+      },
+      "imageRev": 1785716571
+    },
+    {
+      "id": "L21_lock",
+      "kanji": "錠",
+      "keyword": "lock",
+      "image": "studies/lock.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "錠前",
+            "reading": "じょうまえ",
+            "en": "Lock"
+          },
+          {
+            "jp": "南京錠",
+            "reading": "なんきんじょう",
+            "en": "Padlock"
+          },
+          {
+            "jp": "解錠",
+            "reading": "かいじょう",
+            "en": "Unlocking"
+          },
+          {
+            "jp": "施錠",
+            "reading": "せじょう",
+            "en": "Locking"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "lock",
+        "prototype": true
+      },
+      "imageRev": 1785716591
+    },
+    {
+      "id": "L21_run",
+      "kanji": "走",
+      "keyword": "run",
+      "image": "studies/run.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "走る",
+            "reading": "はしる",
+            "en": "Run"
+          },
+          {
+            "jp": "競走",
+            "reading": "きょうそう",
+            "en": "Race"
+          },
+          {
+            "jp": "暴走",
+            "reading": "ぼうそう",
+            "en": "Runaway"
+          },
+          {
+            "jp": "逃走",
+            "reading": "とうそう",
+            "en": "Flight"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "run",
+        "prototype": true
+      },
+      "imageRev": 1785716607
+    },
+    {
+      "id": "L21_transcend",
+      "kanji": "超",
+      "keyword": "transcend",
+      "image": "studies/transcend.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "超える",
+            "reading": "こえる",
+            "en": "Exceed"
+          },
+          {
+            "jp": "超音速",
+            "reading": "ちょうおんそく",
+            "en": "Supersonic"
+          },
+          {
+            "jp": "超能力",
+            "reading": "ちょうのうりょく",
+            "en": "Superpower"
+          },
+          {
+            "jp": "超過",
+            "reading": "ちょうか",
+            "en": "Excess"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "transcend",
+        "prototype": true
+      },
+      "imageRev": 1785716633
+    },
+    {
+      "id": "L21_proceed",
+      "kanji": "赴",
+      "keyword": "proceed",
+      "image": "studies/proceed.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "赴任",
+            "reading": "ふにん",
+            "en": "Take up a post"
+          },
+          {
+            "jp": "赴く",
+            "reading": "おもむく",
+            "en": "Proceed to"
+          },
+          {
+            "jp": "単身赴任",
+            "reading": "たんしんふにん",
+            "en": "Job transfer away from family"
+          },
+          {
+            "jp": "急赴",
+            "reading": "きゅうふ",
+            "en": "Hurry to"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "proceed",
+        "prototype": true
+      },
+      "imageRev": 1785723452
+    },
+    {
+      "id": "L21_surpass",
+      "kanji": "越",
+      "keyword": "surpass",
+      "image": "studies/surpass.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "越える",
+            "reading": "こえる",
+            "en": "Cross over"
+          },
+          {
+            "jp": "引越し",
+            "reading": "ひっこし",
+            "en": "Moving house"
+          },
+          {
+            "jp": "年越し",
+            "reading": "としこし",
+            "en": "Year-end crossing"
+          },
+          {
+            "jp": "卓越",
+            "reading": "たくえつ",
+            "en": "Excellence"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "surpass",
+        "prototype": true
+      },
+      "imageRev": 1785716802
+    },
+    {
+      "id": "L21_just_so",
+      "kanji": "是",
+      "keyword": "just so",
+      "image": "studies/just_so.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "是非",
+            "reading": "ぜひ",
+            "en": "Certainly"
+          },
+          {
+            "jp": "是正",
+            "reading": "ぜせい",
+            "en": "Correction"
+          },
+          {
+            "jp": "是認",
+            "reading": "ぜにん",
+            "en": "Approval"
+          },
+          {
+            "jp": "国是",
+            "reading": "こくぜ",
+            "en": "National policy"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "just_so",
+        "prototype": true
+      },
+      "imageRev": 1785716780
+    },
+    {
+      "id": "L21_topic",
+      "kanji": "題",
+      "keyword": "topic",
+      "image": "studies/topic.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "問題",
+            "reading": "もんだい",
+            "en": "Problem"
+          },
+          {
+            "jp": "話題",
+            "reading": "わだい",
+            "en": "Topic"
+          },
+          {
+            "jp": "宿題",
+            "reading": "しゅくだい",
+            "en": "Homework"
+          },
+          {
+            "jp": "課題",
+            "reading": "かだい",
+            "en": "Assignment"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "topic",
+        "prototype": true
+      },
+      "imageRev": 1785716751
+    },
+    {
+      "id": "L21_dike",
+      "kanji": "堤",
+      "keyword": "dike",
+      "image": "studies/dike.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "堤防",
+            "reading": "ていぼう",
+            "en": "Embankment"
+          },
+          {
+            "jp": "河川堤防",
+            "reading": "かせんていぼう",
+            "en": "River levee"
+          },
+          {
+            "jp": "堤",
+            "reading": "つつみ",
+            "en": "Bank; embankment"
+          },
+          {
+            "jp": "堤岸",
+            "reading": "ていがん",
+            "en": "Riverbank"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "dike",
+        "prototype": true
+      },
+      "imageRev": 1785716725
+    },
+    {
+      "id": "L21_build",
+      "kanji": "建",
+      "keyword": "build",
+      "image": "studies/build.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "建物",
+            "reading": "たてもの",
+            "en": "Building"
+          },
+          {
+            "jp": "建設",
+            "reading": "けんせつ",
+            "en": "Construction"
+          },
+          {
+            "jp": "再建",
+            "reading": "さいけん",
+            "en": "Rebuilding"
+          },
+          {
+            "jp": "建築",
+            "reading": "けんちく",
+            "en": "Architecture"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "build",
+        "prototype": true
+      },
+      "imageRev": 1785723533
+    },
+    {
+      "id": "L21_key",
+      "kanji": "鍵",
+      "keyword": "key",
+      "image": "studies/key.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "鍵",
+            "reading": "かぎ",
+            "en": "Key"
+          },
+          {
+            "jp": "合鍵",
+            "reading": "あいかぎ",
+            "en": "Duplicate key"
+          },
+          {
+            "jp": "鍵盤",
+            "reading": "けんばん",
+            "en": "Keyboard"
+          },
+          {
+            "jp": "鍵穴",
+            "reading": "かぎあな",
+            "en": "Keyhole"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "key",
+        "prototype": true
+      },
+      "imageRev": 1785723551
+    },
+    {
+      "id": "L21_prolong",
+      "kanji": "延",
+      "keyword": "prolong",
+      "image": "studies/prolong.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "延期",
+            "reading": "えんき",
+            "en": "Postponement"
+          },
+          {
+            "jp": "延長",
+            "reading": "えんちょう",
+            "en": "Extension"
+          },
+          {
+            "jp": "遅延",
+            "reading": "ちえん",
+            "en": "Delay"
+          },
+          {
+            "jp": "延命",
+            "reading": "えんめい",
+            "en": "Life extension"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 21,
+        "slug": "prolong",
+        "prototype": true
+      },
+      "imageRev": 1785723575
+    }
+  ]
+}

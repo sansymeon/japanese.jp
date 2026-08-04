@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_22_gallery",
+  "title": "KML Gallery — Lesson 22 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (488s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_1_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9870,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3840,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3840,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 20351,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 22,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_1",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L22_nativity",
+      "kanji": "誕",
+      "keyword": "nativity",
+      "image": "studies/nativity.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>柔<rt>やわ</rt></ruby>らかな<ruby>布<rt>ぬの</rt></ruby>に<ruby>包<rt>つつ</rt></ruby>まれ、<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>命<rt>いのち</rt></ruby>が<ruby>夜<rt>よる</rt></ruby>へ<ruby>現<rt>あらわ</rt></ruby>れる。",
+        "en": "Wrapped in quiet cloth,\na small life enters the night."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "nativity"
+      },
+      "imageRev": 1785723615
+    },
+    {
+      "id": "L22_cornerstone",
+      "kanji": "礎",
+      "keyword": "cornerstone",
+      "image": "studies/cornerstone.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>深<rt>ふか</rt></ruby>く<ruby>埋<rt>う</rt></ruby>められた<ruby>石<rt>いし</rt></ruby>は、<br>    <ruby>見<rt>み</rt></ruby>えずとも<ruby>支<rt>ささ</rt></ruby>え<ruby>続<rt>つづ</rt></ruby>ける。",
+        "en": "The buried stone below\nsupports what others will become."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "cornerstone"
+      },
+      "imageRev": 1785724264
+    },
+    {
+      "id": "L22_bridegroom",
+      "kanji": "婿",
+      "keyword": "bridegroom",
+      "image": "studies/bridegroom.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>祝<rt>いわ</rt></ruby>いの<ruby>衣<rt>ころも</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>に、<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>責<rt>せき</rt></ruby><ruby>任<rt>にん</rt></ruby>が<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "Behind ceremonial robes\nrests the silence of responsibility."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "bridegroom"
+      },
+      "imageRev": 1785723916
+    },
+    {
+      "id": "L22_garment",
+      "kanji": "衣",
+      "keyword": "garment",
+      "image": "studies/garment.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>風<rt>ふう</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>布<rt>ぬの</rt></ruby>は、<br>    <ruby>人<rt>ひと</rt></ruby>の<ruby>暮<rt>く</rt></ruby>らしを<ruby>語<rt>かた</rt></ruby>っている。",
+        "en": "Cloth moving in the wind\nspeaks quietly of human life."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "garment"
+      },
+      "imageRev": 1785724498
+    },
+    {
+      "id": "L22_judge",
+      "kanji": "裁",
+      "keyword": "judge",
+      "image": "studies/judge.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>切<rt>きり</rt></ruby>り<ruby>分<rt>わ</rt></ruby>ける<ruby>手<rt>て</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に、<br>    <ruby>形<rt>かたち</rt></ruby>と<ruby>決<rt>けつ</rt></ruby><ruby>断<rt>だん</rt></ruby>が<ruby>生<rt>う</rt></ruby>まれる。",
+        "en": "Within the cutting hand\nform and judgment appear together."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "judge"
+      },
+      "imageRev": 1785724488
+    },
+    {
+      "id": "L22_attire",
+      "kanji": "装",
+      "keyword": "attire",
+      "image": "studies/attire.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>は<ruby>衣<rt>ころも</rt></ruby>をまとうことで、<br>    <ruby>別<rt>べつ</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>を<ruby>世<rt>よ</rt></ruby>に<ruby>見<rt>み</rt></ruby>せる。",
+        "en": "By putting on garments,\npeople reveal another face to the world."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "attire"
+      },
+      "imageRev": 1785724601
+    },
+    {
+      "id": "L22_reverse_side",
+      "kanji": "裏",
+      "keyword": "reverse side",
+      "image": "studies/reverse_side.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>表<rt>ひょう</rt></ruby>には<ruby>見<rt>み</rt></ruby>えぬ<ruby>糸<rt>いと</rt></ruby>が、<br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>全<rt>すべ</rt></ruby>てを<ruby>支<rt>ささ</rt></ruby>えている。",
+        "en": "Hidden threads beneath the surface\nquietly hold everything together."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "reverse_side"
+      },
+      "imageRev": 1785724616
+    },
+    {
+      "id": "L22_demolition",
+      "kanji": "壊",
+      "keyword": "demolition",
+      "image": "studies/demolition.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>崩<rt>くず</rt></ruby>れた<ruby>壁<rt>かべ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうにも、<br>    まだ<ruby>風<rt>かぜ</rt></ruby>は<ruby>流<rt>なが</rt></ruby>れていた。",
+        "en": "Even beyond broken walls,\nthe wind continued to move."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "demolition"
+      },
+      "imageRev": 1785735992
+    },
+    {
+      "id": "L22_pathetic",
+      "kanji": "哀",
+      "keyword": "pathetic",
+      "image": "studies/pathetic.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>袖<rt>そで</rt></ruby>を<ruby>握<rt>にぎ</rt></ruby>りしめ、<br>    <ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>のない<ruby>夜<rt>よる</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>く。",
+        "en": "Holding a rain-soaked sleeve,\none walks through a wordless night."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "pathetic"
+      },
+      "imageRev": 1785724733
+    },
+    {
+      "id": "L22_far",
+      "kanji": "遠",
+      "keyword": "far",
+      "image": "studies/far.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>旗<rt>はた</rt></ruby>は<ruby>霞<rt>かすみ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうへ<ruby>消<rt>き</rt></ruby>え、<br>    <ruby>道<rt>みち</rt></ruby>だけが<ruby>空<rt>そら</rt></ruby>へ<ruby>続<rt>つづ</rt></ruby>いていた。",
+        "en": "The banners vanished into mist,\nwhile the road continued toward the sky."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "far"
+      },
+      "imageRev": 1785724829
+    },
+    {
+      "id": "L22_monkey",
+      "kanji": "猿",
+      "keyword": "monkey",
+      "image": "studies/monkey.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>の<ruby>祭<rt>まつ</rt></ruby>りを<ruby>真<rt>ま</rt></ruby><ruby>似<rt>に</rt></ruby>しながら、<br>    <ruby>猿<rt>さる</rt></ruby>は<ruby>笑<rt>わら</rt></ruby>いを<ruby>集<rt>あつ</rt></ruby>めていた。",
+        "en": "Imitating human festivals,\nthe monkey gathered laughter."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "monkey"
+      },
+      "imageRev": 1785724845
+    },
+    {
+      "id": "L22_first_time",
+      "kanji": "初",
+      "keyword": "first time",
+      "image": "studies/first_time.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>初<rt>はじ</rt></ruby>めての<ruby>風<rt>かぜ</rt></ruby>は<ruby>冷<rt>つめ</rt></ruby>たく、<br>    それでも<ruby>心<rt>こころ</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>いていた。",
+        "en": "The first wind felt cold,\nyet the heart still opened toward it."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "first_time"
+      },
+      "imageRev": 1785724865
+    },
+    {
+      "id": "L22_towel",
+      "kanji": "巾",
+      "keyword": "towel",
+      "image": "studies/towel.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>折<rt>おり</rt></ruby>り<ruby>重<rt>かさ</rt></ruby>なる<ruby>布<rt>ぬの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に、<br>    <ruby>手<rt>て</rt></ruby>の<ruby>温<rt>ぬく</rt></ruby>もりが<ruby>残<rt>のこ</rt></ruby>っている。",
+        "en": "Within folded cloth\nthe warmth of hands still remains."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "towel"
+      },
+      "imageRev": 1785724879
+    },
+    {
+      "id": "L22_linen",
+      "kanji": "布",
+      "keyword": "linen",
+      "image": "studies/linen.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>粗<rt>あら</rt></ruby>い<ruby>織<rt>おり</rt></ruby>り<ruby>目<rt>め</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに、<br>    <ruby>昔<rt>むかし</rt></ruby>の<ruby>暮<rt>く</rt></ruby>らしが<ruby>眠<rt>ねむ</rt></ruby>っている。",
+        "en": "Beyond the rough woven threads\nold lives remain asleep."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "linen"
+      },
+      "imageRev": 1785724899
+    },
+    {
+      "id": "L22_sail",
+      "kanji": "帆",
+      "keyword": "sail",
+      "image": "studies/sail.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>帆<rt>ほ</rt></ruby>は<ruby>風<rt>かぜ</rt></ruby>を<ruby>待<rt>ま</rt></ruby>ち、<br>    <ruby>海<rt>うみ</rt></ruby>はまだ<ruby>朝<rt>あさ</rt></ruby>を<ruby>抱<rt>いだ</rt></ruby>いていた。",
+        "en": "The silent sail waited for wind,\nwhile the sea still held the morning."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "sail"
+      },
+      "imageRev": 1785724913
+    },
+    {
+      "id": "L22_breadth",
+      "kanji": "幅",
+      "keyword": "breadth",
+      "image": "studies/breadth.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>広<rt>ひろ</rt></ruby>げられた<ruby>布<rt>ぬの</rt></ruby>のように、<br>    <ruby>景<rt>けしき</rt></ruby><ruby>色<rt>いろ</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>くまで<ruby>続<rt>つづ</rt></ruby>いていた。",
+        "en": "Like cloth stretched open,\nthe landscape extended into distance."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "breadth"
+      },
+      "imageRev": 1785724925
+    },
+    {
+      "id": "L22_cap",
+      "kanji": "帽",
+      "keyword": "cap",
+      "image": "studies/cap.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>旅<rt>たびびと</rt></ruby><ruby>人<rt>ひと</rt></ruby>の<ruby>帽<rt>ぼう</rt></ruby><ruby>子<rt>し</rt></ruby>には、<br>    <ruby>長<rt>なが</rt></ruby>い<ruby>道<rt>みち</rt></ruby>の<ruby>埃<rt>ほこり</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>る。",
+        "en": "Dust from long roads\nremains upon the traveler's hat."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "cap"
+      },
+      "imageRev": 1785724941
+    },
+    {
+      "id": "L22_curtain",
+      "kanji": "幕",
+      "keyword": "curtain",
+      "image": "studies/curtain.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>幕<rt>まく</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>揺<rt>ゆ</rt></ruby>れるたび、<br>    <ruby>別<rt>べつ</rt></ruby>の<ruby>物<rt>もの</rt></ruby><ruby>語<rt>かた</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まっていく。",
+        "en": "Whenever the curtain trembled softly,\nanother story began."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "curtain"
+      },
+      "imageRev": 1785724956
+    },
+    {
+      "id": "L22_canopy",
+      "kanji": "幌",
+      "keyword": "canopy",
+      "image": "studies/canopy.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>幌<rt>ほろ</rt></ruby>の<ruby>下<rt>もと</rt></ruby>で、<br>    <ruby>旅<rt>たびびと</rt></ruby><ruby>人<rt>ひと</rt></ruby>たちは<ruby>夜<rt>よる</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えた。",
+        "en": "Beneath the moving canopy,\ntravelers passed through the night."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "canopy"
+      },
+      "imageRev": 1785724977
+    },
+    {
+      "id": "L22_brocade",
+      "kanji": "錦",
+      "keyword": "brocade",
+      "image": "studies/brocade.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>金<rt>きん</rt></ruby><ruby>糸<rt>し</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で、<br>    <ruby>文<rt>ぶん</rt></ruby><ruby>明<rt>めい</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>輝<rt>かがや</rt></ruby>いていた。",
+        "en": "Within the glow of golden thread,\ncivilization shimmered quietly."
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "brocade"
+      },
+      "imageRev": 1785724990
+    }
+  ]
+}
