@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_22_compounds",
+  "title": "Lesson 22 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_22.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 22,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_22.html"
+  },
+  "scenes": [
+    {
+      "id": "L22_nativity",
+      "kanji": "誕",
+      "keyword": "nativity",
+      "image": "studies/nativity.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "誕生日",
+            "reading": "たんじょうび",
+            "en": "Birthday"
+          },
+          {
+            "jp": "生誕",
+            "reading": "せいたん",
+            "en": "Birth"
+          },
+          {
+            "jp": "誕生",
+            "reading": "たんじょう",
+            "en": "Birth"
+          },
+          {
+            "jp": "降誕",
+            "reading": "こうたん",
+            "en": "Nativity"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "nativity",
+        "prototype": true
+      },
+      "imageRev": 1785723615
+    },
+    {
+      "id": "L22_cornerstone",
+      "kanji": "礎",
+      "keyword": "cornerstone",
+      "image": "studies/cornerstone.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "基礎",
+            "reading": "きそ",
+            "en": "Foundation"
+          },
+          {
+            "jp": "礎石",
+            "reading": "そせき",
+            "en": "Foundation stone"
+          },
+          {
+            "jp": "基礎学力",
+            "reading": "きそがくりょく",
+            "en": "Basic academic ability"
+          },
+          {
+            "jp": "礎",
+            "reading": "いしずえ",
+            "en": "Cornerstone"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "cornerstone",
+        "prototype": true
+      },
+      "imageRev": 1785724264
+    },
+    {
+      "id": "L22_bridegroom",
+      "kanji": "婿",
+      "keyword": "bridegroom",
+      "image": "studies/bridegroom.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "花婿",
+            "reading": "はなむこ",
+            "en": "Bridegroom"
+          },
+          {
+            "jp": "婿養子",
+            "reading": "むこようし",
+            "en": "Adopted son-in-law"
+          },
+          {
+            "jp": "婿",
+            "reading": "むこ",
+            "en": "Son-in-law"
+          },
+          {
+            "jp": "良婿",
+            "reading": "りょうせい",
+            "en": "Good son-in-law"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "bridegroom",
+        "prototype": true
+      },
+      "imageRev": 1785723916
+    },
+    {
+      "id": "L22_garment",
+      "kanji": "衣",
+      "keyword": "garment",
+      "image": "studies/garment.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "衣服",
+            "reading": "いふく",
+            "en": "Clothing"
+          },
+          {
+            "jp": "浴衣",
+            "reading": "ゆかた",
+            "en": "Summer kimono"
+          },
+          {
+            "jp": "羽衣",
+            "reading": "はごろも",
+            "en": "Feather robe"
+          },
+          {
+            "jp": "衣装",
+            "reading": "いしょう",
+            "en": "Costume"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "garment",
+        "prototype": true
+      },
+      "imageRev": 1785724498
+    },
+    {
+      "id": "L22_judge",
+      "kanji": "裁",
+      "keyword": "judge",
+      "image": "studies/judge.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "裁判",
+            "reading": "さいばん",
+            "en": "Trial"
+          },
+          {
+            "jp": "裁縫",
+            "reading": "さいほう",
+            "en": "Sewing"
+          },
+          {
+            "jp": "裁量",
+            "reading": "さいりょう",
+            "en": "Discretion"
+          },
+          {
+            "jp": "裁決",
+            "reading": "さいけつ",
+            "en": "Judgment"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "judge",
+        "prototype": true
+      },
+      "imageRev": 1785724488
+    },
+    {
+      "id": "L22_attire",
+      "kanji": "装",
+      "keyword": "attire",
+      "image": "studies/attire.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "服装",
+            "reading": "ふくそう",
+            "en": "Clothing"
+          },
+          {
+            "jp": "包装",
+            "reading": "ほうそう",
+            "en": "Packaging"
+          },
+          {
+            "jp": "武装",
+            "reading": "ぶそう",
+            "en": "Arming"
+          },
+          {
+            "jp": "装置",
+            "reading": "そうち",
+            "en": "Device"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "attire",
+        "prototype": true
+      },
+      "imageRev": 1785724601
+    },
+    {
+      "id": "L22_reverse_side",
+      "kanji": "裏",
+      "keyword": "reverse side",
+      "image": "studies/reverse_side.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "裏側",
+            "reading": "うらがわ",
+            "en": "Back side"
+          },
+          {
+            "jp": "裏口",
+            "reading": "うらぐち",
+            "en": "Back door"
+          },
+          {
+            "jp": "裏表",
+            "reading": "うらおもて",
+            "en": "Front and back"
+          },
+          {
+            "jp": "裏庭",
+            "reading": "うらにわ",
+            "en": "Backyard"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "reverse_side",
+        "prototype": true
+      },
+      "imageRev": 1785724616
+    },
+    {
+      "id": "L22_demolition",
+      "kanji": "壊",
+      "keyword": "demolition",
+      "image": "studies/demolition.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "破壊",
+            "reading": "はかい",
+            "en": "Destruction"
+          },
+          {
+            "jp": "崩壊",
+            "reading": "ほうかい",
+            "en": "Collapse"
+          },
+          {
+            "jp": "倒壊",
+            "reading": "とうかい",
+            "en": "Collapse of a structure"
+          },
+          {
+            "jp": "壊れる",
+            "reading": "こわれる",
+            "en": "Break"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "demolition",
+        "prototype": true
+      },
+      "imageRev": 1785735992
+    },
+    {
+      "id": "L22_pathetic",
+      "kanji": "哀",
+      "keyword": "pathetic",
+      "image": "studies/pathetic.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "哀愁",
+            "reading": "あいしゅう",
+            "en": "Melancholy"
+          },
+          {
+            "jp": "哀悼",
+            "reading": "あいとう",
+            "en": "Mourning"
+          },
+          {
+            "jp": "悲哀",
+            "reading": "ひあい",
+            "en": "Sorrow"
+          },
+          {
+            "jp": "哀歌",
+            "reading": "あいか",
+            "en": "Elegy"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "pathetic",
+        "prototype": true
+      },
+      "imageRev": 1785724733
+    },
+    {
+      "id": "L22_far",
+      "kanji": "遠",
+      "keyword": "far",
+      "image": "studies/far.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "遠足",
+            "reading": "えんそく",
+            "en": "School excursion"
+          },
+          {
+            "jp": "遠方",
+            "reading": "えんぽう",
+            "en": "Far away"
+          },
+          {
+            "jp": "永遠",
+            "reading": "えいえん",
+            "en": "Eternity"
+          },
+          {
+            "jp": "遠慮",
+            "reading": "えんりょ",
+            "en": "Restraint"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "far",
+        "prototype": true
+      },
+      "imageRev": 1785724829
+    },
+    {
+      "id": "L22_monkey",
+      "kanji": "猿",
+      "keyword": "monkey",
+      "image": "studies/monkey.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "猿",
+            "reading": "さる",
+            "en": "Monkey"
+          },
+          {
+            "jp": "類人猿",
+            "reading": "るいじんえん",
+            "en": "Ape"
+          },
+          {
+            "jp": "猿山",
+            "reading": "さるやま",
+            "en": "Monkey mountain"
+          },
+          {
+            "jp": "野猿",
+            "reading": "やえん",
+            "en": "Wild monkey"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "monkey",
+        "prototype": true
+      },
+      "imageRev": 1785724845
+    },
+    {
+      "id": "L22_first_time",
+      "kanji": "初",
+      "keyword": "first time",
+      "image": "studies/first_time.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "最初",
+            "reading": "さいしょ",
+            "en": "First"
+          },
+          {
+            "jp": "初めて",
+            "reading": "はじめて",
+            "en": "For the first time"
+          },
+          {
+            "jp": "初級",
+            "reading": "しょきゅう",
+            "en": "Beginner level"
+          },
+          {
+            "jp": "初詣",
+            "reading": "はつもうで",
+            "en": "First shrine visit of the year"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "first_time",
+        "prototype": true
+      },
+      "imageRev": 1785724865
+    },
+    {
+      "id": "L22_towel",
+      "kanji": "巾",
+      "keyword": "towel",
+      "image": "studies/towel.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "雑巾",
+            "reading": "ぞうきん",
+            "en": "Cleaning cloth"
+          },
+          {
+            "jp": "頭巾",
+            "reading": "ずきん",
+            "en": "Hood"
+          },
+          {
+            "jp": "巾着",
+            "reading": "きんちゃく",
+            "en": "Drawstring pouch"
+          },
+          {
+            "jp": "手巾",
+            "reading": "しゅきん",
+            "en": "Handkerchief"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "towel",
+        "prototype": true
+      },
+      "imageRev": 1785724879
+    },
+    {
+      "id": "L22_linen",
+      "kanji": "布",
+      "keyword": "linen",
+      "image": "studies/linen.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "布団",
+            "reading": "ふとん",
+            "en": "Futon"
+          },
+          {
+            "jp": "布地",
+            "reading": "ぬのじ",
+            "en": "Cloth"
+          },
+          {
+            "jp": "毛布",
+            "reading": "もうふ",
+            "en": "Blanket"
+          },
+          {
+            "jp": "分布",
+            "reading": "ぶんぷ",
+            "en": "Distribution"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "linen",
+        "prototype": true
+      },
+      "imageRev": 1785724899
+    },
+    {
+      "id": "L22_sail",
+      "kanji": "帆",
+      "keyword": "sail",
+      "image": "studies/sail.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "帆船",
+            "reading": "はんせん",
+            "en": "Sailing ship"
+          },
+          {
+            "jp": "帆布",
+            "reading": "はんぷ",
+            "en": "Canvas"
+          },
+          {
+            "jp": "帆影",
+            "reading": "ほえい",
+            "en": "Sail on the horizon"
+          },
+          {
+            "jp": "白帆",
+            "reading": "しらほ",
+            "en": "White sail"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "sail",
+        "prototype": true
+      },
+      "imageRev": 1785724913
+    },
+    {
+      "id": "L22_breadth",
+      "kanji": "幅",
+      "keyword": "breadth",
+      "image": "studies/breadth.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "幅広い",
+            "reading": "はばひろい",
+            "en": "Wide-ranging"
+          },
+          {
+            "jp": "横幅",
+            "reading": "よこはば",
+            "en": "Width"
+          },
+          {
+            "jp": "値幅",
+            "reading": "ねはば",
+            "en": "Price range"
+          },
+          {
+            "jp": "振幅",
+            "reading": "しんぷく",
+            "en": "Amplitude"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "breadth",
+        "prototype": true
+      },
+      "imageRev": 1785724925
+    },
+    {
+      "id": "L22_cap",
+      "kanji": "帽",
+      "keyword": "cap",
+      "image": "studies/cap.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "帽子",
+            "reading": "ぼうし",
+            "en": "Hat"
+          },
+          {
+            "jp": "制帽",
+            "reading": "せいぼう",
+            "en": "Uniform cap"
+          },
+          {
+            "jp": "脱帽",
+            "reading": "だつぼう",
+            "en": "Take off one's hat"
+          },
+          {
+            "jp": "麦わら帽子",
+            "reading": "むぎわらぼうし",
+            "en": "Straw hat"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "cap",
+        "prototype": true
+      },
+      "imageRev": 1785724941
+    },
+    {
+      "id": "L22_curtain",
+      "kanji": "幕",
+      "keyword": "curtain",
+      "image": "studies/curtain.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "開幕",
+            "reading": "かいまく",
+            "en": "Opening of an event"
+          },
+          {
+            "jp": "閉幕",
+            "reading": "へいまく",
+            "en": "Closing of an event"
+          },
+          {
+            "jp": "幕府",
+            "reading": "ばくふ",
+            "en": "Shogunate"
+          },
+          {
+            "jp": "字幕",
+            "reading": "じまく",
+            "en": "Subtitles"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "curtain",
+        "prototype": true
+      },
+      "imageRev": 1785724956
+    },
+    {
+      "id": "L22_canopy",
+      "kanji": "幌",
+      "keyword": "canopy",
+      "image": "studies/canopy.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "幌馬車",
+            "reading": "ほろばしゃ",
+            "en": "Covered wagon"
+          },
+          {
+            "jp": "幌",
+            "reading": "ほろ",
+            "en": "Canopy"
+          },
+          {
+            "jp": "幌布",
+            "reading": "ほろぬの",
+            "en": "Awning cloth"
+          },
+          {
+            "jp": "札幌",
+            "reading": "さっぽろ",
+            "en": "Sapporo"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "canopy",
+        "prototype": true
+      },
+      "imageRev": 1785724977
+    },
+    {
+      "id": "L22_brocade",
+      "kanji": "錦",
+      "keyword": "brocade",
+      "image": "studies/brocade.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "錦織",
+            "reading": "にしきおり",
+            "en": "Brocade weaving"
+          },
+          {
+            "jp": "錦絵",
+            "reading": "にしきえ",
+            "en": "Color woodblock print"
+          },
+          {
+            "jp": "錦秋",
+            "reading": "きんしゅう",
+            "en": "Autumn colors"
+          },
+          {
+            "jp": "錦市場",
+            "reading": "にしきいちば",
+            "en": "Nishiki Market"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 22,
+        "slug": "brocade",
+        "prototype": true
+      },
+      "imageRev": 1785724990
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "title": "KML Ambient Foundations — Lesson 22 (Exhibition)",
   "presentation": "foundations",
   "assetsBase": "../../assets",
-  "notes": "Minimal foundations for Kanji Components build (order + keywords from lesson HTML). Full exhibition verses/images not required for components prototypes.",
+  "notes": "Exhibition / presentation build (Lesson 5 standard). Original lesson order; brocade closes with Gallery Seal Ending. Soundtrack: Study Version 1.",
   "ending": {
     "type": "gallerySeal",
     "sealImage": "images/gold_closing.png"
@@ -15,14 +15,33 @@
     "durationMs": 9000
   },
   "soundtrack": {
-    "main": "audio/study_version_2_minus3db.mp3"
+    "main": "audio/study_version_1_minus3db.mp3"
   },
   "timing": {
     "fadeMs": 1800,
     "kanjiLeadMs": 2000,
     "keywordLeadMs": 5000,
     "verseJpLeadMs": 8500,
-    "sceneDurationMs": 22000
+    "sceneDurationMs": 22000,
+    "foundationsExitFadeMs": 1800,
+    "foundationsEmptyBeatMs": 500,
+    "foundationsKanjiGapMs": 350,
+    "introExitFadeMs": 1200,
+    "foundationsLoopConcertFadeMs": 2500,
+    "foundationsLoopFadeMs": 2500,
+    "crossfadeMs": 2500,
+    "kenBurnsDurationMs": 60000,
+    "gallerySealVerseFadeMs": 2200,
+    "gallerySealKanjiFadeMs": 2200,
+    "gallerySealImageHoldMs": 9000,
+    "gallerySealHoldDarkenMs": 5000,
+    "gallerySealHoldDarkenDelayMs": 2000,
+    "gallerySealFadeToBlackMs": 6500,
+    "gallerySealFadeInMs": 2500,
+    "gallerySealCrestFadeLeadMs": 3000,
+    "gallerySealMinCrestHoldMs": 2000,
+    "gallerySealBlackHoldMs": 1500,
+    "gallerySealHoldMs": 3500
   },
   "background": {
     "mode": "image",
@@ -45,9 +64,10 @@
       "image": "studies/nativity.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>柔<rt>やわ</rt></ruby>らかな<ruby>布<rt>ぬの</rt></ruby>に<ruby>包<rt>つつ</rt></ruby>まれ、<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>命<rt>いのち</rt></ruby>が<ruby>夜<rt>よる</rt></ruby>へ<ruby>現<rt>あらわ</rt></ruby>れる。",
+        "en": "Wrapped in quiet cloth,\na small life enters the night."
+      },
+      "imageRev": 1785723615
     },
     {
       "id": "cornerstone",
@@ -56,9 +76,10 @@
       "image": "studies/cornerstone.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>深<rt>ふか</rt></ruby>く<ruby>埋<rt>う</rt></ruby>められた<ruby>石<rt>いし</rt></ruby>は、<br>    <ruby>見<rt>み</rt></ruby>えずとも<ruby>支<rt>ささ</rt></ruby>え<ruby>続<rt>つづ</rt></ruby>ける。",
+        "en": "The buried stone below\nsupports what others will become."
+      },
+      "imageRev": 1785724264
     },
     {
       "id": "bridegroom",
@@ -67,9 +88,10 @@
       "image": "studies/bridegroom.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>祝<rt>いわ</rt></ruby>いの<ruby>衣<rt>ころも</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>に、<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>責<rt>せき</rt></ruby><ruby>任<rt>にん</rt></ruby>が<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "Behind ceremonial robes\nrests the silence of responsibility."
+      },
+      "imageRev": 1785723916
     },
     {
       "id": "garment",
@@ -78,9 +100,10 @@
       "image": "studies/garment.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>風<rt>ふう</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>布<rt>ぬの</rt></ruby>は、<br>    <ruby>人<rt>ひと</rt></ruby>の<ruby>暮<rt>く</rt></ruby>らしを<ruby>語<rt>かた</rt></ruby>っている。",
+        "en": "Cloth moving in the wind\nspeaks quietly of human life."
+      },
+      "imageRev": 1785724498
     },
     {
       "id": "judge",
@@ -89,9 +112,10 @@
       "image": "studies/judge.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>切<rt>きり</rt></ruby>り<ruby>分<rt>わ</rt></ruby>ける<ruby>手<rt>て</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に、<br>    <ruby>形<rt>かたち</rt></ruby>と<ruby>決<rt>けつ</rt></ruby><ruby>断<rt>だん</rt></ruby>が<ruby>生<rt>う</rt></ruby>まれる。",
+        "en": "Within the cutting hand\nform and judgment appear together."
+      },
+      "imageRev": 1785724488
     },
     {
       "id": "attire",
@@ -100,9 +124,10 @@
       "image": "studies/attire.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>は<ruby>衣<rt>ころも</rt></ruby>をまとうことで、<br>    <ruby>別<rt>べつ</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>を<ruby>世<rt>よ</rt></ruby>に<ruby>見<rt>み</rt></ruby>せる。",
+        "en": "By putting on garments,\npeople reveal another face to the world."
+      },
+      "imageRev": 1785724601
     },
     {
       "id": "reverse_side",
@@ -111,9 +136,10 @@
       "image": "studies/reverse_side.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>表<rt>ひょう</rt></ruby>には<ruby>見<rt>み</rt></ruby>えぬ<ruby>糸<rt>いと</rt></ruby>が、<br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>全<rt>すべ</rt></ruby>てを<ruby>支<rt>ささ</rt></ruby>えている。",
+        "en": "Hidden threads beneath the surface\nquietly hold everything together."
+      },
+      "imageRev": 1785724616
     },
     {
       "id": "demolition",
@@ -122,9 +148,10 @@
       "image": "studies/demolition.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>崩<rt>くず</rt></ruby>れた<ruby>壁<rt>かべ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうにも、<br>    まだ<ruby>風<rt>かぜ</rt></ruby>は<ruby>流<rt>なが</rt></ruby>れていた。",
+        "en": "Even beyond broken walls,\nthe wind continued to move."
+      },
+      "imageRev": 1785735992
     },
     {
       "id": "pathetic",
@@ -133,9 +160,10 @@
       "image": "studies/pathetic.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>袖<rt>そで</rt></ruby>を<ruby>握<rt>にぎ</rt></ruby>りしめ、<br>    <ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>のない<ruby>夜<rt>よる</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>く。",
+        "en": "Holding a rain-soaked sleeve,\none walks through a wordless night."
+      },
+      "imageRev": 1785724733
     },
     {
       "id": "far",
@@ -144,9 +172,10 @@
       "image": "studies/far.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>旗<rt>はた</rt></ruby>は<ruby>霞<rt>かすみ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうへ<ruby>消<rt>き</rt></ruby>え、<br>    <ruby>道<rt>みち</rt></ruby>だけが<ruby>空<rt>そら</rt></ruby>へ<ruby>続<rt>つづ</rt></ruby>いていた。",
+        "en": "The banners vanished into mist,\nwhile the road continued toward the sky."
+      },
+      "imageRev": 1785724829
     },
     {
       "id": "monkey",
@@ -155,9 +184,10 @@
       "image": "studies/monkey.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>の<ruby>祭<rt>まつ</rt></ruby>りを<ruby>真<rt>ま</rt></ruby><ruby>似<rt>に</rt></ruby>しながら、<br>    <ruby>猿<rt>さる</rt></ruby>は<ruby>笑<rt>わら</rt></ruby>いを<ruby>集<rt>あつ</rt></ruby>めていた。",
+        "en": "Imitating human festivals,\nthe monkey gathered laughter."
+      },
+      "imageRev": 1785724845
     },
     {
       "id": "first_time",
@@ -166,9 +196,10 @@
       "image": "studies/first_time.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>初<rt>はじ</rt></ruby>めての<ruby>風<rt>かぜ</rt></ruby>は<ruby>冷<rt>つめ</rt></ruby>たく、<br>    それでも<ruby>心<rt>こころ</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>いていた。",
+        "en": "The first wind felt cold,\nyet the heart still opened toward it."
+      },
+      "imageRev": 1785724865
     },
     {
       "id": "towel",
@@ -177,9 +208,10 @@
       "image": "studies/towel.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>折<rt>おり</rt></ruby>り<ruby>重<rt>かさ</rt></ruby>なる<ruby>布<rt>ぬの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に、<br>    <ruby>手<rt>て</rt></ruby>の<ruby>温<rt>ぬく</rt></ruby>もりが<ruby>残<rt>のこ</rt></ruby>っている。",
+        "en": "Within folded cloth\nthe warmth of hands still remains."
+      },
+      "imageRev": 1785724879
     },
     {
       "id": "linen",
@@ -188,9 +220,10 @@
       "image": "studies/linen.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>粗<rt>あら</rt></ruby>い<ruby>織<rt>おり</rt></ruby>り<ruby>目<rt>め</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに、<br>    <ruby>昔<rt>むかし</rt></ruby>の<ruby>暮<rt>く</rt></ruby>らしが<ruby>眠<rt>ねむ</rt></ruby>っている。",
+        "en": "Beyond the rough woven threads\nold lives remain asleep."
+      },
+      "imageRev": 1785724899
     },
     {
       "id": "sail",
@@ -199,9 +232,10 @@
       "image": "studies/sail.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>帆<rt>ほ</rt></ruby>は<ruby>風<rt>かぜ</rt></ruby>を<ruby>待<rt>ま</rt></ruby>ち、<br>    <ruby>海<rt>うみ</rt></ruby>はまだ<ruby>朝<rt>あさ</rt></ruby>を<ruby>抱<rt>いだ</rt></ruby>いていた。",
+        "en": "The silent sail waited for wind,\nwhile the sea still held the morning."
+      },
+      "imageRev": 1785724913
     },
     {
       "id": "breadth",
@@ -210,9 +244,10 @@
       "image": "studies/breadth.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>広<rt>ひろ</rt></ruby>げられた<ruby>布<rt>ぬの</rt></ruby>のように、<br>    <ruby>景<rt>けしき</rt></ruby><ruby>色<rt>いろ</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>くまで<ruby>続<rt>つづ</rt></ruby>いていた。",
+        "en": "Like cloth stretched open,\nthe landscape extended into distance."
+      },
+      "imageRev": 1785724925
     },
     {
       "id": "cap",
@@ -221,9 +256,10 @@
       "image": "studies/cap.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>旅<rt>たびびと</rt></ruby><ruby>人<rt>ひと</rt></ruby>の<ruby>帽<rt>ぼう</rt></ruby><ruby>子<rt>し</rt></ruby>には、<br>    <ruby>長<rt>なが</rt></ruby>い<ruby>道<rt>みち</rt></ruby>の<ruby>埃<rt>ほこり</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>る。",
+        "en": "Dust from long roads\nremains upon the traveler's hat."
+      },
+      "imageRev": 1785724941
     },
     {
       "id": "curtain",
@@ -232,9 +268,10 @@
       "image": "studies/curtain.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>幕<rt>まく</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>揺<rt>ゆ</rt></ruby>れるたび、<br>    <ruby>別<rt>べつ</rt></ruby>の<ruby>物<rt>もの</rt></ruby><ruby>語<rt>かた</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まっていく。",
+        "en": "Whenever the curtain trembled softly,\nanother story began."
+      },
+      "imageRev": 1785724956
     },
     {
       "id": "canopy",
@@ -243,9 +280,10 @@
       "image": "studies/canopy.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>幌<rt>ほろ</rt></ruby>の<ruby>下<rt>もと</rt></ruby>で、<br>    <ruby>旅<rt>たびびと</rt></ruby><ruby>人<rt>ひと</rt></ruby>たちは<ruby>夜<rt>よる</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えた。",
+        "en": "Beneath the moving canopy,\ntravelers passed through the night."
+      },
+      "imageRev": 1785724977
     },
     {
       "id": "brocade",
@@ -254,9 +292,10 @@
       "image": "studies/brocade.png",
       "video": null,
       "verse": {
-        "jpHtml": "",
-        "en": ""
-      }
+        "jpHtml": "<ruby>金<rt>きん</rt></ruby><ruby>糸<rt>し</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で、<br>    <ruby>文<rt>ぶん</rt></ruby><ruby>明<rt>めい</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>輝<rt>かがや</rt></ruby>いていた。",
+        "en": "Within the glow of golden thread,\ncivilization shimmered quietly."
+      },
+      "imageRev": 1785724990
     }
   ]
 }
