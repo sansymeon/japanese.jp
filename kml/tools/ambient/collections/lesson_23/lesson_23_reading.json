@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_23_reading",
+  "title": "Lesson 23 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 23,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v1",
+    "soundtrackTarget": "12:51",
+    "soundtrackDurationSec": 771.29,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L23_market",
+      "kanji": "市",
+      "keyword": "market",
+      "image": "studies/market.png",
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby><ruby>雨<rt>う</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>灯<rt>あか</rt></ruby>りが<ruby>揺<rt>ゆ</rt></ruby>れていた。<br><ruby>道<rt>みち</rt></ruby>が<ruby>光<rt>ひかり</rt></ruby>へ<ruby>変<rt>か</rt></ruby>わる<ruby>場<rt>ば</rt></ruby><ruby>所<rt>しょ</rt></ruby>に<ruby>声<rt>こえ</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まった。",
+        "en": "Lanterns swayed beneath the evening rain.\nVoices gathered where roads became light."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725064
+    },
+    {
+      "id": "L23_persimmon",
+      "kanji": "柿",
+      "keyword": "persimmon",
+      "image": "studies/persimmon.png",
+      "verse": {
+        "jpHtml": "<ruby>秋<rt>あき</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>枝<rt>えだ</rt></ruby>へ<ruby>実<rt>みの</rt></ruby>っていた。<br><ruby>寒<rt>さむ</rt></ruby>さの<ruby>中<rt>なか</rt></ruby>にも<ruby>甘<rt>あま</rt></ruby>さが<ruby>残<rt>のこ</rt></ruby>っていた。",
+        "en": "Autumn rested quietly on the branch.\nEven the cold carried sweetness."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725108
+    },
+    {
+      "id": "L23_older_sister",
+      "kanji": "姉",
+      "keyword": "older sister",
+      "image": "studies/older_sister.png",
+      "verse": {
+        "jpHtml": "<ruby>姉<rt>あね</rt></ruby>は<ruby>褒<rt>ほ</rt></ruby>められずとも<ruby>前<rt>まえ</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>いた。<br><ruby>幼<rt>おさな</rt></ruby>い<ruby>者<rt>もの</rt></ruby>たちはその<ruby>影<rt>かげ</rt></ruby>を<ruby>追<rt>お</rt></ruby>って<ruby>帰<rt>かえ</rt></ruby>った。",
+        "en": "She walked ahead without needing praise.\nThe younger ones followed her shadow home."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725130
+    },
+    {
+      "id": "L23_lungs",
+      "kanji": "肺",
+      "keyword": "lungs",
+      "image": "studies/lungs.png",
+      "verse": {
+        "jpHtml": "<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>空<rt>くう</rt></ruby><ruby>気<rt>き</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>硝<rt>がらす</rt></ruby><ruby>子<rt>こ</rt></ruby>のように<ruby>入<rt>はい</rt></ruby>ってきた。<br><ruby>吐<rt>は</rt></ruby>く<ruby>息<rt>いき</rt></ruby>だけが<ruby>空<rt>そら</rt></ruby>に<ruby>姿<rt>すがた</rt></ruby>を<ruby>見<rt>み</rt></ruby>せた。",
+        "en": "Winter air entered like silent glass.\nBreath became visible beneath the sky."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725146
+    },
+    {
+      "id": "L23_sash",
+      "kanji": "帯",
+      "keyword": "sash",
+      "image": "studies/sash.png",
+      "verse": {
+        "jpHtml": "その<ruby>帯<rt>おび</rt></ruby>は<ruby>布<rt>ぬの</rt></ruby>だけを<ruby>結<rt>むす</rt></ruby>んでいたのではない。<br><ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby>までも<ruby>腰<rt>こし</rt></ruby>に<ruby>巻<rt>ま</rt></ruby>かれていた。",
+        "en": "The cloth held more than fabric together.\nMemory was wrapped around the waist."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725160
+    },
+    {
+      "id": "L23_stagnate",
+      "kanji": "滞",
+      "keyword": "stagnate",
+      "image": "studies/stagnate.png",
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あま</rt></ruby><ruby>水<rt>みず</rt></ruby>は<ruby>壊<rt>こわ</rt></ruby>れた<ruby>石<rt>せき</rt></ruby><ruby>道<rt>どう</rt></ruby>に<ruby>留<rt>と</rt></ruby>まっていた。<br><ruby>動<rt>うご</rt></ruby>きは<ruby>行<rt>いき</rt></ruby>き<ruby>先<rt>さき</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れてしまった。",
+        "en": "Rainwater lingered in broken stone paths.\nMovement forgot where it once belonged."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725173
+    },
+    {
+      "id": "L23_thorn",
+      "kanji": "刺",
+      "keyword": "thorn",
+      "image": "studies/thorn.png",
+      "verse": {
+        "jpHtml": "<ruby>枝<rt>えだ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>自<rt>みずか</rt></ruby>らを<ruby>守<rt>まも</rt></ruby>っていた。<br><ruby>美<rt>うつく</rt></ruby>しさと<ruby>痛<rt>いた</rt></ruby>みは<ruby>同<rt>おな</rt></ruby>じ<ruby>茎<rt>くき</rt></ruby>に<ruby>宿<rt>やど</rt></ruby>っていた。",
+        "en": "The branch protected itself in silence.\nBeauty and pain shared the same stem."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725188
+    },
+    {
+      "id": "L23_control",
+      "kanji": "制",
+      "keyword": "control",
+      "image": "studies/control.png",
+      "verse": {
+        "jpHtml": "<ruby>職<rt>しょく</rt></ruby><ruby>人<rt>ひと</rt></ruby>は<ruby>切<rt>き</rt></ruby>る<ruby>前<rt>まえ</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>測<rt>はか</rt></ruby>った。<br><ruby>秩<rt>ちつ</rt></ruby><ruby>序<rt>じょ</rt></ruby>が<ruby>意<rt>い</rt></ruby><ruby>志<rt>し</rt></ruby>に<ruby>形<rt>かたち</rt></ruby>を<ruby>与<rt>あた</rt></ruby>えた。",
+        "en": "The craftsman measured before he cut.\nOrder gave shape to intention."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725205
+    },
+    {
+      "id": "L23_made_in",
+      "kanji": "製",
+      "keyword": "made in",
+      "image": "studies/made_in.png",
+      "verse": {
+        "jpHtml": "<ruby>工<rt>こう</rt></ruby><ruby>房<rt>ぼう</rt></ruby>の<ruby>灯<rt>あか</rt></ruby>りの<ruby>下<rt>もと</rt></ruby>で<ruby>手<rt>て</rt></ruby>が<ruby>働<rt>はたら</rt></ruby>いていた。<br><ruby>作<rt>つく</rt></ruby>られた<ruby>物<rt>もの</rt></ruby>には<ruby>忍<rt>にん</rt></ruby><ruby>耐<rt>たい</rt></ruby>の<ruby>跡<rt>あと</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>っていた。",
+        "en": "Hands worked beneath warm workshop lanterns.\nCreation carried the fingerprints of patience."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725222
+    },
+    {
+      "id": "L23_revolve",
+      "kanji": "転",
+      "keyword": "revolve",
+      "image": "studies/revolve.png",
+      "verse": {
+        "jpHtml": "<ruby>車<rt>しゃ</rt></ruby><ruby>輪<rt>りん</rt></ruby>は<ruby>泥<rt>どろ</rt></ruby>と<ruby>季<rt>き</rt></ruby><ruby>節<rt>せつ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>を<ruby>回<rt>まわ</rt></ruby>り<ruby>続<rt>つづ</rt></ruby>けた。<br><ruby>進<rt>すす</rt></ruby>むものはまた<ruby>戻<rt>もど</rt></ruby>ってくる。",
+        "en": "The wheel turned through mud and season.\nWhat moved forward also returned."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725238
+    },
+    {
+      "id": "L23_art",
+      "kanji": "芸",
+      "keyword": "art",
+      "image": "studies/art.png",
+      "verse": {
+        "jpHtml": "<ruby>墨<rt>すみ</rt></ruby>は<ruby>古<rt>ふる</rt></ruby>い<ruby>紙<rt>かみ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>にゆっくり<ruby>広<rt>ひろ</rt></ruby>がった。<br><ruby>小<rt>ちい</rt></ruby>さな<ruby>動<rt>うご</rt></ruby>きの<ruby>中<rt>なか</rt></ruby>に<ruby>心<rt>こころ</rt></ruby>が<ruby>現<rt>あらわ</rt></ruby>れた。",
+        "en": "Ink spread slowly across worn paper.\nThe heart revealed itself through small gestures."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725032
+    },
+    {
+      "id": "L23_rain",
+      "kanji": "雨",
+      "keyword": "rain",
+      "image": "studies/rain.png",
+      "verse": {
+        "jpHtml": "<ruby>屋<rt>や</rt></ruby><ruby>根<rt>ね</rt></ruby>は<ruby>銀<rt>ぎん</rt></ruby><ruby>色<rt>いろ</rt></ruby>の<ruby>霧<rt>きり</rt></ruby>に<ruby>消<rt>き</rt></ruby>えていった。<br><ruby>大<rt>だい</rt></ruby><ruby>地<rt>ち</rt></ruby>は<ruby>黙<rt>だま</rt></ruby>って<ruby>雨<rt>あめ</rt></ruby>を<ruby>受<rt>う</rt></ruby>けていた。",
+        "en": "The rooftops disappeared into silver mist.\nEarth listened without complaint."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725261
+    },
+    {
+      "id": "L23_cloud",
+      "kanji": "雲",
+      "keyword": "cloud",
+      "image": "studies/cloud.png",
+      "verse": {
+        "jpHtml": "<ruby>山<rt>やま</rt></ruby><ruby>々<rt>びと</rt></ruby>は<ruby>流<rt>なが</rt></ruby>れる<ruby>白<rt>しろ</rt></ruby>い<ruby>息<rt>いき</rt></ruby>に<ruby>隠<rt>かく</rt></ruby>れていった。<br><ruby>空<rt>そら</rt></ruby>は<ruby>漂<rt>ただよ</rt></ruby>うことを<ruby>覚<rt>おぼ</rt></ruby>えた。",
+        "en": "Mountains vanished behind drifting white breath.\nThe sky learned to wander."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725276
+    },
+    {
+      "id": "L23_cloudy_weather",
+      "kanji": "曇",
+      "keyword": "cloudy weather",
+      "image": "studies/cloudy_weather.png",
+      "verse": {
+        "jpHtml": "<ruby>日<rt>ひ</rt></ruby>は<ruby>暗<rt>くら</rt></ruby>くなっても<ruby>闇<rt>やみ</rt></ruby>にはならなかった。<br><ruby>静<rt>しず</rt></ruby>けさが<ruby>村<rt>むら</rt></ruby>を<ruby>均<rt>きん</rt></ruby><ruby>等<rt>とう</rt></ruby>に<ruby>覆<rt>おお</rt></ruby>っていた。",
+        "en": "The day dimmed without becoming dark.\nSilence covered the village evenly."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725293
+    },
+    {
+      "id": "L23_thunder",
+      "kanji": "雷",
+      "keyword": "thunder",
+      "image": "studies/thunder.png",
+      "verse": {
+        "jpHtml": "<ruby>光<rt>ひかり</rt></ruby>は<ruby>突<rt>とつ</rt></ruby><ruby>然<rt>ぜん</rt></ruby><ruby>地<rt>ち</rt></ruby><ruby>平<rt>へい</rt></ruby>を<ruby>裂<rt>さ</rt></ruby>いた。<br><ruby>山<rt>やま</rt></ruby><ruby>々<rt>びと</rt></ruby>さえその<ruby>声<rt>こえ</rt></ruby>に<ruby>応<rt>こた</rt></ruby>えた。",
+        "en": "Light split the horizon without warning.\nEven the mountains answered back."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725321
+    },
+    {
+      "id": "L23_frost",
+      "kanji": "霜",
+      "keyword": "frost",
+      "image": "studies/frost.png",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>は<ruby>白<rt>しろ</rt></ruby>い<ruby>模<rt>も</rt></ruby><ruby>様<rt>よう</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>残<rt>のこ</rt></ruby>していた。<br><ruby>冬<rt>ふゆ</rt></ruby>が<ruby>畑<rt>はたけ</rt></ruby>にその<ruby>名<rt>な</rt></ruby>を<ruby>書<rt>か</rt></ruby>いた。",
+        "en": "Morning settled in fragile white patterns.\nWinter signed its name upon the field."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725338
+    },
+    {
+      "id": "L23_winter",
+      "kanji": "冬",
+      "keyword": "winter",
+      "image": "studies/winter.png",
+      "verse": {
+        "jpHtml": "<ruby>木<rt>き</rt></ruby><ruby>々<rt>びと</rt></ruby>は<ruby>空<rt>そら</rt></ruby>の<ruby>手<rt>て</rt></ruby>を<ruby>掲<rt>かか</rt></ruby>げて<ruby>立<rt>た</rt></ruby>っていた。<br><ruby>静<rt>しず</rt></ruby>けさそのものが<ruby>力<rt>ちから</rt></ruby>になっていた。",
+        "en": "The trees stood with empty hands.\nStillness became its own kind of strength."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725355
+    },
+    {
+      "id": "L23_heaven",
+      "kanji": "天",
+      "keyword": "heaven",
+      "image": "studies/heaven.png",
+      "verse": {
+        "jpHtml": "<ruby>嵐<rt>あらし</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>では<ruby>光<rt>ひかり</rt></ruby>がなお<ruby>開<rt>ひら</rt></ruby>かれていた。<br><ruby>空<rt>そら</rt></ruby>は<ruby>何<rt>なん</rt></ruby><ruby>一<rt>ひと</rt></ruby>つ<ruby>求<rt>もと</rt></ruby>めなかった。",
+        "en": "Above the storm, the light remained open.\nThe sky asked for nothing in return."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725371
+    },
+    {
+      "id": "L23_bewitched",
+      "kanji": "妖",
+      "keyword": "bewitched",
+      "image": "studies/bewitched.png",
+      "verse": {
+        "jpHtml": "<ruby>遠<rt>とお</rt></ruby>い<ruby>歌<rt>うた</rt></ruby><ruby>声<rt>こえ</rt></ruby>が<ruby>霧<rt>きり</rt></ruby>の<ruby>森<rt>もり</rt></ruby>を<ruby>漂<rt>ただよ</rt></ruby>っていた。<br><ruby>人<rt>ひと</rt></ruby>は<ruby>知<rt>し</rt></ruby>らぬ<ruby>間<rt>ま</rt></ruby>に<ruby>道<rt>みち</rt></ruby>へ<ruby>引<rt>ひき</rt></ruby>き<ruby>込<rt>こ</rt></ruby>まれる。",
+        "en": "A distant song drifted through the forest mist.\nSome paths are entered without permission."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725390
+    },
+    {
+      "id": "L23_fertile",
+      "kanji": "沃",
+      "keyword": "fertile",
+      "image": "studies/fertile.png",
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>は<ruby>黒<rt>くろ</rt></ruby>い<ruby>土<rt>つち</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>へ<ruby>染<rt>しみ</rt></ruby>み<ruby>込<rt>こ</rt></ruby>んでいった。<br><ruby>春<rt>はる</rt></ruby>になると<ruby>大<rt>だい</rt></ruby><ruby>地<rt>ち</rt></ruby>はすべてを<ruby>思<rt>おもい</rt></ruby>い<ruby>出<rt>だ</rt></ruby>した。",
+        "en": "Rain disappeared into the dark soil below.\nBy spring, the earth remembered everything."
+      },
+      "meta": {
+        "lesson": 23,
+        "experimental": true
+      },
+      "imageRev": 1785725406
+    }
+  ]
+}

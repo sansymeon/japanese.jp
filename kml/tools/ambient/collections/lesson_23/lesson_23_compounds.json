@@ -1,0 +1,868 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_23_compounds",
+  "title": "Lesson 23 — Compounds",
+  "notes": "Gallery artwork per kanji: target kanji → familiar compounds with furigana. Auto-curated from kml/contents/books/book_01/compounds/lesson_23.html (Lesson 5 exhibition timing + mobile-refine). ~4 compounds per exhibit. Soundtrack 21:55; crest syncs to bed end.",
+  "soundtrack": {
+    "main": "audio/compounds_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 3000,
+    "compoundsPauseBeforeMs": 2400,
+    "compoundsKanjiRevealMs": 1600,
+    "compoundsKanjiHoldMs": 2800,
+    "compoundsKanjiFadeMs": 1400,
+    "compoundsStepRevealMs": 1400,
+    "compoundsFuriganaEnterDelayMs": 900,
+    "compoundsFuriganaEnterMs": 2200,
+    "compoundsFuriganaHoldMs": 3000,
+    "compoundsFuriganaFadeMs": 2200,
+    "compoundsNativeHoldMs": 1600,
+    "compoundsReadingRevealMs": 1200,
+    "compoundsReadingHoldMs": 1800,
+    "compoundsHintRevealMs": 1000,
+    "compoundsEnRevealMs": 1200,
+    "compoundsEnHoldMs": 3000,
+    "compoundsEnFadeMs": 1400,
+    "compoundsStepFadeMs": 1400,
+    "compoundsKanjiReturnRevealMs": 1400,
+    "compoundsKanjiReturnHoldMs": 2200,
+    "compoundsKanjiReturnFadeMs": 1400,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 90000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsExhibition",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 23,
+    "stage": "compounds",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgCompoundCount": 4.0,
+    "totalCompounds": 80,
+    "soundtrackDurationMs": 1315918,
+    "estimatedContentRuntimeMs": 1211900,
+    "compoundSource": "kml/contents/books/book_01/compounds/lesson_23.html"
+  },
+  "scenes": [
+    {
+      "id": "L23_market",
+      "kanji": "市",
+      "keyword": "market",
+      "image": "studies/market.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "市場",
+            "reading": "いちば",
+            "en": "Market"
+          },
+          {
+            "jp": "市民",
+            "reading": "しみん",
+            "en": "Citizen"
+          },
+          {
+            "jp": "市役所",
+            "reading": "しやくしょ",
+            "en": "City hall"
+          },
+          {
+            "jp": "都市",
+            "reading": "とし",
+            "en": "City"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "market",
+        "prototype": true
+      },
+      "imageRev": 1785725064
+    },
+    {
+      "id": "L23_persimmon",
+      "kanji": "柿",
+      "keyword": "persimmon",
+      "image": "studies/persimmon.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "柿",
+            "reading": "かき",
+            "en": "Persimmon"
+          },
+          {
+            "jp": "柿の木",
+            "reading": "かきのき",
+            "en": "Persimmon tree"
+          },
+          {
+            "jp": "干し柿",
+            "reading": "ほしがき",
+            "en": "Dried persimmon"
+          },
+          {
+            "jp": "柿色",
+            "reading": "かきいろ",
+            "en": "Persimmon color"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "persimmon",
+        "prototype": true
+      },
+      "imageRev": 1785725108
+    },
+    {
+      "id": "L23_older_sister",
+      "kanji": "姉",
+      "keyword": "older sister",
+      "image": "studies/older_sister.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "姉",
+            "reading": "あね",
+            "en": "Elder sister"
+          },
+          {
+            "jp": "姉妹",
+            "reading": "しまい",
+            "en": "Sisters"
+          },
+          {
+            "jp": "義姉",
+            "reading": "ぎし",
+            "en": "Older sister-in-law"
+          },
+          {
+            "jp": "実姉",
+            "reading": "じっし",
+            "en": "One's actual elder sister"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "older_sister",
+        "prototype": true
+      },
+      "imageRev": 1785725130
+    },
+    {
+      "id": "L23_lungs",
+      "kanji": "肺",
+      "keyword": "lungs",
+      "image": "studies/lungs.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "肺",
+            "reading": "はい",
+            "en": "Lung"
+          },
+          {
+            "jp": "肺炎",
+            "reading": "はいえん",
+            "en": "Pneumonia"
+          },
+          {
+            "jp": "肺活量",
+            "reading": "はいかつりょう",
+            "en": "Lung capacity"
+          },
+          {
+            "jp": "肺がん",
+            "reading": "はいがん",
+            "en": "Lung cancer"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "lungs",
+        "prototype": true
+      },
+      "imageRev": 1785725146
+    },
+    {
+      "id": "L23_sash",
+      "kanji": "帯",
+      "keyword": "sash",
+      "image": "studies/sash.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "携帯電話",
+            "reading": "けいたいでんわ",
+            "en": "Mobile phone"
+          },
+          {
+            "jp": "地帯",
+            "reading": "ちたい",
+            "en": "Zone"
+          },
+          {
+            "jp": "熱帯",
+            "reading": "ねったい",
+            "en": "Tropics"
+          },
+          {
+            "jp": "帯",
+            "reading": "おび",
+            "en": "Belt; sash"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "sash",
+        "prototype": true
+      },
+      "imageRev": 1785725160
+    },
+    {
+      "id": "L23_stagnate",
+      "kanji": "滞",
+      "keyword": "stagnate",
+      "image": "studies/stagnate.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "滞在",
+            "reading": "たいざい",
+            "en": "Stay"
+          },
+          {
+            "jp": "渋滞",
+            "reading": "じゅうたい",
+            "en": "Traffic jam"
+          },
+          {
+            "jp": "停滞",
+            "reading": "ていたい",
+            "en": "Stagnation"
+          },
+          {
+            "jp": "滞納",
+            "reading": "たいのう",
+            "en": "Nonpayment"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "stagnate",
+        "prototype": true
+      },
+      "imageRev": 1785725173
+    },
+    {
+      "id": "L23_thorn",
+      "kanji": "刺",
+      "keyword": "thorn",
+      "image": "studies/thorn.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "刺身",
+            "reading": "さしみ",
+            "en": "Sashimi"
+          },
+          {
+            "jp": "名刺",
+            "reading": "めいし",
+            "en": "Business card"
+          },
+          {
+            "jp": "風刺",
+            "reading": "ふうし",
+            "en": "Satire"
+          },
+          {
+            "jp": "刺す",
+            "reading": "さす",
+            "en": "Stab"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "thorn",
+        "prototype": true
+      },
+      "imageRev": 1785725188
+    },
+    {
+      "id": "L23_control",
+      "kanji": "制",
+      "keyword": "control",
+      "image": "studies/control.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "制度",
+            "reading": "せいど",
+            "en": "System"
+          },
+          {
+            "jp": "制限",
+            "reading": "せいげん",
+            "en": "Restriction"
+          },
+          {
+            "jp": "強制",
+            "reading": "きょうせい",
+            "en": "Compulsion"
+          },
+          {
+            "jp": "体制",
+            "reading": "たいせい",
+            "en": "Structure"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "control",
+        "prototype": true
+      },
+      "imageRev": 1785725205
+    },
+    {
+      "id": "L23_made_in",
+      "kanji": "製",
+      "keyword": "made in",
+      "image": "studies/made_in.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "製品",
+            "reading": "せいひん",
+            "en": "Product"
+          },
+          {
+            "jp": "製作",
+            "reading": "せいさく",
+            "en": "Production"
+          },
+          {
+            "jp": "日本製",
+            "reading": "にほんせい",
+            "en": "Made in Japan"
+          },
+          {
+            "jp": "製造",
+            "reading": "せいぞう",
+            "en": "Manufacture"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "made_in",
+        "prototype": true
+      },
+      "imageRev": 1785725222
+    },
+    {
+      "id": "L23_revolve",
+      "kanji": "転",
+      "keyword": "revolve",
+      "image": "studies/revolve.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "運転",
+            "reading": "うんてん",
+            "en": "Driving"
+          },
+          {
+            "jp": "転校",
+            "reading": "てんこう",
+            "en": "Transfer schools"
+          },
+          {
+            "jp": "転職",
+            "reading": "てんしょく",
+            "en": "Change jobs"
+          },
+          {
+            "jp": "回転",
+            "reading": "かいてん",
+            "en": "Rotation"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "revolve",
+        "prototype": true
+      },
+      "imageRev": 1785725238
+    },
+    {
+      "id": "L23_art",
+      "kanji": "芸",
+      "keyword": "art",
+      "image": "studies/art.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "芸術",
+            "reading": "げいじゅつ",
+            "en": "Art"
+          },
+          {
+            "jp": "工芸",
+            "reading": "こうげい",
+            "en": "Craft"
+          },
+          {
+            "jp": "芸人",
+            "reading": "げいにん",
+            "en": "Performer"
+          },
+          {
+            "jp": "園芸",
+            "reading": "えんげい",
+            "en": "Gardening"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "art",
+        "prototype": true
+      },
+      "imageRev": 1785725032
+    },
+    {
+      "id": "L23_rain",
+      "kanji": "雨",
+      "keyword": "rain",
+      "image": "studies/rain.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "雨",
+            "reading": "あめ",
+            "en": "Rain"
+          },
+          {
+            "jp": "大雨",
+            "reading": "おおあめ",
+            "en": "Heavy rain"
+          },
+          {
+            "jp": "雨天",
+            "reading": "うてん",
+            "en": "Rainy weather"
+          },
+          {
+            "jp": "梅雨",
+            "reading": "つゆ",
+            "en": "Rainy season"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "rain",
+        "prototype": true
+      },
+      "imageRev": 1785725261
+    },
+    {
+      "id": "L23_cloud",
+      "kanji": "雲",
+      "keyword": "cloud",
+      "image": "studies/cloud.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "雲",
+            "reading": "くも",
+            "en": "Cloud"
+          },
+          {
+            "jp": "入道雲",
+            "reading": "にゅうどうぐも",
+            "en": "Cumulonimbus cloud"
+          },
+          {
+            "jp": "雲海",
+            "reading": "うんかい",
+            "en": "Sea of clouds"
+          },
+          {
+            "jp": "積乱雲",
+            "reading": "せきらんうん",
+            "en": "Thundercloud"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "cloud",
+        "prototype": true
+      },
+      "imageRev": 1785725276
+    },
+    {
+      "id": "L23_cloudy_weather",
+      "kanji": "曇",
+      "keyword": "cloudy weather",
+      "image": "studies/cloudy_weather.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "曇り",
+            "reading": "くもり",
+            "en": "Cloudy weather"
+          },
+          {
+            "jp": "曇天",
+            "reading": "どんてん",
+            "en": "Overcast sky"
+          },
+          {
+            "jp": "曇る",
+            "reading": "くもる",
+            "en": "Become cloudy"
+          },
+          {
+            "jp": "薄曇り",
+            "reading": "うすぐもり",
+            "en": "Partly cloudy"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "cloudy_weather",
+        "prototype": true
+      },
+      "imageRev": 1785725293
+    },
+    {
+      "id": "L23_thunder",
+      "kanji": "雷",
+      "keyword": "thunder",
+      "image": "studies/thunder.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "雷",
+            "reading": "かみなり",
+            "en": "Thunder"
+          },
+          {
+            "jp": "雷雨",
+            "reading": "らいう",
+            "en": "Thunderstorm"
+          },
+          {
+            "jp": "落雷",
+            "reading": "らくらい",
+            "en": "Lightning strike"
+          },
+          {
+            "jp": "魚雷",
+            "reading": "ぎょらい",
+            "en": "Torpedo"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "thunder",
+        "prototype": true
+      },
+      "imageRev": 1785725321
+    },
+    {
+      "id": "L23_frost",
+      "kanji": "霜",
+      "keyword": "frost",
+      "image": "studies/frost.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "霜",
+            "reading": "しも",
+            "en": "Frost"
+          },
+          {
+            "jp": "霜柱",
+            "reading": "しもばしら",
+            "en": "Frost column"
+          },
+          {
+            "jp": "降霜",
+            "reading": "こうそう",
+            "en": "Frostfall"
+          },
+          {
+            "jp": "霜害",
+            "reading": "そうがい",
+            "en": "Frost damage"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "frost",
+        "prototype": true
+      },
+      "imageRev": 1785725338
+    },
+    {
+      "id": "L23_winter",
+      "kanji": "冬",
+      "keyword": "winter",
+      "image": "studies/winter.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "冬",
+            "reading": "ふゆ",
+            "en": "Winter"
+          },
+          {
+            "jp": "冬休み",
+            "reading": "ふゆやすみ",
+            "en": "Winter vacation"
+          },
+          {
+            "jp": "冬眠",
+            "reading": "とうみん",
+            "en": "Hibernation"
+          },
+          {
+            "jp": "真冬",
+            "reading": "まふゆ",
+            "en": "Midwinter"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "winter",
+        "prototype": true
+      },
+      "imageRev": 1785725355
+    },
+    {
+      "id": "L23_heaven",
+      "kanji": "天",
+      "keyword": "heaven",
+      "image": "studies/heaven.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "天気",
+            "reading": "てんき",
+            "en": "Weather"
+          },
+          {
+            "jp": "天国",
+            "reading": "てんごく",
+            "en": "Heaven"
+          },
+          {
+            "jp": "天然",
+            "reading": "てんねん",
+            "en": "Natural"
+          },
+          {
+            "jp": "天才",
+            "reading": "てんさい",
+            "en": "Genius"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "heaven",
+        "prototype": true
+      },
+      "imageRev": 1785725371
+    },
+    {
+      "id": "L23_bewitched",
+      "kanji": "妖",
+      "keyword": "bewitched",
+      "image": "studies/bewitched.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "妖怪",
+            "reading": "ようかい",
+            "en": "Supernatural creature"
+          },
+          {
+            "jp": "妖精",
+            "reading": "ようせい",
+            "en": "Fairy"
+          },
+          {
+            "jp": "妖艶",
+            "reading": "ようえん",
+            "en": "Bewitching beauty"
+          },
+          {
+            "jp": "妖術",
+            "reading": "ようじゅつ",
+            "en": "Magic"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "bewitched",
+        "prototype": true
+      },
+      "imageRev": 1785725390
+    },
+    {
+      "id": "L23_fertile",
+      "kanji": "沃",
+      "keyword": "fertile",
+      "image": "studies/fertile.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "compounds": {
+        "steps": [
+          {
+            "jp": "肥沃",
+            "reading": "ひよく",
+            "en": "Fertile"
+          },
+          {
+            "jp": "沃野",
+            "reading": "よくや",
+            "en": "Fertile plain"
+          },
+          {
+            "jp": "沃土",
+            "reading": "よくど",
+            "en": "Fertile soil"
+          },
+          {
+            "jp": "沃地",
+            "reading": "よくち",
+            "en": "Fertile land"
+          }
+        ]
+      },
+      "meta": {
+        "lesson": 23,
+        "slug": "fertile",
+        "prototype": true
+      },
+      "imageRev": 1785725406
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_48_components",
+  "title": "Lesson 48 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 48,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L48_restore",
+      "kanji": "復",
+      "keyword": "restore",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "复",
+          "label": "double back"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_acquire",
+      "kanji": "得",
+      "keyword": "acquire",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "旦",
+          "label": "dawn"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_obey",
+      "kanji": "従",
+      "keyword": "obey",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "疋",
+          "label": "critters"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_junior",
+      "kanji": "徒",
+      "keyword": "junior",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "走",
+          "label": "run"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_wait",
+      "kanji": "待",
+      "keyword": "wait",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "寺",
+          "label": "temple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_journey",
+      "kanji": "往",
+      "keyword": "journey",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "主",
+          "label": "master"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_subjugate",
+      "kanji": "征",
+      "keyword": "subjugate",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_diameter",
+      "kanji": "径",
+      "keyword": "diameter",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_he",
+      "kanji": "彼",
+      "keyword": "he",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "皮",
+          "label": "pelt"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_role",
+      "kanji": "役",
+      "keyword": "role",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_benevolence",
+      "kanji": "徳",
+      "keyword": "benevolence",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_penetrate",
+      "kanji": "徹",
+      "keyword": "penetrate",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "育",
+          "label": "nurture"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_indications",
+      "kanji": "徴",
+      "keyword": "indications",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_penal",
+      "kanji": "懲",
+      "keyword": "penal",
+      "components": [
+        {
+          "glyph": "徴",
+          "label": "indications"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_delicate",
+      "kanji": "微",
+      "keyword": "delicate",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "兀",
+          "label": "one-legged"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_boulevard",
+      "kanji": "街",
+      "keyword": "boulevard",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "圭",
+          "label": "jade"
+        },
+        {
+          "glyph": "亍",
+          "label": "going"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_beam",
+      "kanji": "桁",
+      "keyword": "beam",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "行",
+          "label": "going"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_equilibrium",
+      "kanji": "衡",
+      "keyword": "equilibrium",
+      "components": [
+        {
+          "glyph": "行",
+          "label": "going"
+        },
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L48_intro_wheat",
+      "glyph": "禾",
+      "label": "wheat"
+    },
+    {
+      "type": "kanji",
+      "id": "L48_draft",
+      "kanji": "稿",
+      "keyword": "draft",
+      "components": [
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "高",
+          "label": "tall"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L48_earnings",
+      "kanji": "稼",
+      "keyword": "earnings",
+      "components": [
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "家",
+          "label": "house"
+        }
+      ]
+    }
+  ]
+}

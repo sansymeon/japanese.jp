@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PORT = 8790
 VIEWPORT = {"width": 1920, "height": 1080}
-SUPPORTED = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] + list(range(33, 39)) + [41]
+SUPPORTED = [6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24] + list(range(33, 39)) + [41]
 BUILD_SCRIPT = "build_lesson_foundations_exhibition.py"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))

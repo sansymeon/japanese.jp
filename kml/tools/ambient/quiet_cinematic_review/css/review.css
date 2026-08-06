@@ -1,0 +1,365 @@
+:root {
+  --bg-0: #12141a;
+  --bg-1: #1a1e28;
+  --bg-2: #242a38;
+  --ink: #e8e4dc;
+  --ink-muted: #9a958a;
+  --accent: #c4a574;
+  --accent-soft: rgba(196, 165, 116, 0.18);
+  --danger: #b86a5a;
+  --danger-soft: rgba(184, 106, 90, 0.2);
+  --card-radius: 6px;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -10%, #2a3348 0%, transparent 55%),
+    linear-gradient(165deg, var(--bg-0), var(--bg-1) 45%, #151820);
+}
+
+.page {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 1.5rem 1.1rem 3.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.header h1 {
+  margin: 0 0 0.35rem;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 500;
+  font-size: clamp(1.55rem, 3.5vw, 2.15rem);
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: 0 0 0.55rem;
+  color: var(--ink-muted);
+  font-size: 1rem;
+}
+
+.meta {
+  margin: 0 auto 1rem;
+  max-width: 42rem;
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.block-nav {
+  display: inline-flex;
+  gap: 0.45rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.block-link {
+  text-decoration: none;
+  color: var(--ink-muted);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.block-link:hover {
+  color: var(--ink);
+}
+
+.block-link.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin-bottom: 0.65rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.count-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.target-label {
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+}
+
+.toolbar-actions {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tool-btn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--bg-2);
+  color: var(--ink);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.tool-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.tool-btn--danger:hover {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: #f0cfc7;
+}
+
+.hint {
+  margin: 0 0 1.1rem;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.82rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(20, 23, 30, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: grab;
+  transition: transform 0.15s, border-color 0.15s, opacity 0.15s;
+  user-select: none;
+}
+
+.card:hover {
+  border-color: rgba(196, 165, 116, 0.45);
+  transform: translateY(-2px);
+}
+
+.card.dragging {
+  opacity: 0.45;
+  cursor: grabbing;
+}
+
+.card.drag-over {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.card-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0a0c10;
+  overflow: hidden;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+.card-order {
+  position: absolute;
+  top: 0.45rem;
+  left: 0.45rem;
+  min-width: 1.6rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+}
+
+.card-remove {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #f0d0c8;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.card:hover .card-remove,
+.card:focus-within .card-remove {
+  opacity: 1;
+}
+
+.card-remove:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.card-body {
+  padding: 0.65rem 0.75rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card-title {
+  margin: 0;
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.card-kanji {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
+.card-meta {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  word-break: break-all;
+}
+
+.card-lesson {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ink-muted);
+}
+
+.footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: zoom-out;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(96vw, 1400px);
+  max-height: calc(100vh - 6rem);
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.lightbox-caption {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .card-remove {
+    opacity: 1;
+  }
+}

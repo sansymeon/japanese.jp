@@ -1,0 +1,288 @@
+/* Statistics page — museum aesthetic, permanent library + published progress */
+
+body.stats-page {
+  background-color: var(--gallery-deep);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(11, 10, 9, 0.55) 0%,
+      rgba(11, 10, 9, 0.77) 38%,
+      rgba(11, 10, 9, 0.88) 100%
+    ),
+    url("../../kml/assets/site/backgrounds/statistics_classroom.png");
+  background-repeat: no-repeat;
+  background-position: center top, center 30%;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+}
+
+.stats-page .museum-header--solid {
+  position: sticky;
+  background: rgba(15, 14, 12, 0.82);
+}
+
+.stats-hero {
+  padding: 5.5rem 1.25rem 3.5rem;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201, 164, 88, 0.14), transparent 55%),
+    linear-gradient(180deg, rgba(12, 11, 10, 0.3) 0%, rgba(16, 14, 12, 0.67) 100%);
+  border-bottom: 1px solid rgba(201, 164, 88, 0.1);
+}
+
+.stats-hero-inner {
+  width: min(100% - 1.5rem, 72rem);
+  margin: 0 auto;
+}
+
+.stats-hero-head {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.stats-hero-head h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.85rem, 4vw, 2.6rem);
+  letter-spacing: 0.02em;
+  margin: 0.35rem 0 0.85rem;
+  color: var(--ivory);
+}
+
+.stats-hero-lead {
+  margin: 0 auto;
+  max-width: 36rem;
+  color: var(--ink-quiet);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.hero-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.hero-stat-card {
+  position: relative;
+  padding: 1.65rem 1.35rem 1.45rem;
+  background: rgba(24, 21, 17, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(201, 164, 88, 0.16);
+  border-radius: 4px;
+  transition: border-color var(--ease), transform var(--ease), background var(--ease);
+  min-height: 9.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-stat-card:hover {
+  border-color: rgba(201, 164, 88, 0.35);
+  transform: translateY(-2px);
+  background: rgba(34, 29, 23, 0.85);
+}
+
+.hero-stat-value {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.85rem, 3.5vw, 2.55rem);
+  line-height: 1.1;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+
+.hero-stat-value--text {
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.25;
+}
+
+.hero-stat-label {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hero-stat-detail {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink-quiet);
+  line-height: 1.35;
+}
+
+.hero-stat-note {
+  margin: 0.55rem 0 0;
+  font-size: 0.75rem;
+  color: rgba(201, 164, 88, 0.65);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Detail sections */
+
+.stats-section {
+  padding-top: 3.25rem;
+  padding-bottom: 3.5rem;
+  background: rgba(14, 12, 10, 0.65);
+  backdrop-filter: blur(3px);
+}
+
+.stats-section--alt {
+  background: rgba(20, 17, 14, 0.73);
+  border-top: 1px solid rgba(201, 164, 88, 0.08);
+  border-bottom: 1px solid rgba(201, 164, 88, 0.08);
+}
+
+.stats-section .room-section-head {
+  margin-bottom: 2rem;
+}
+
+.detail-block {
+  margin-bottom: 2.75rem;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid rgba(201, 164, 88, 0.1);
+}
+
+.detail-block:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.detail-block-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--ivory);
+  margin: 0 0 0.85rem;
+}
+
+.detail-block-note {
+  margin: 0 0 1.35rem;
+  color: var(--ink-quiet);
+  max-width: 40rem;
+  font-size: 0.95rem;
+}
+
+.detail-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.85rem;
+}
+
+.detail-stat-grid--featured {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+}
+
+.detail-stat-card {
+  padding: 1.15rem 0.9rem;
+  text-align: center;
+  background: rgba(28, 24, 20, 0.6);
+  border: 1px solid rgba(201, 164, 88, 0.1);
+  border-radius: 3px;
+  transition: border-color var(--ease), background var(--ease);
+}
+
+.detail-stat-card:hover {
+  border-color: rgba(201, 164, 88, 0.28);
+  background: rgba(46, 38, 27, 0.7);
+}
+
+.detail-stat-value {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  color: var(--gold);
+}
+
+.detail-stat-label {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  line-height: 1.35;
+}
+
+.detail-stat-detail {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: rgba(201, 164, 88, 0.55);
+  line-height: 1.3;
+}
+
+.stats-status {
+  margin: 1.5rem auto;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(201, 164, 88, 0.2);
+  border-radius: 3px;
+  color: var(--ink-quiet);
+  font-size: 0.9rem;
+  max-width: 72rem;
+}
+
+.stats-status[hidden] {
+  display: none;
+}
+
+.stats-meta {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-quiet);
+}
+
+.stats-page .museum-footer {
+  background: rgba(9, 8, 7, 0.88);
+}
+
+.museum-footer-brand {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+
+.museum-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.museum-footer-copy {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--ink-quiet);
+}
+
+@media (max-width: 900px) {
+  .hero-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  /* iOS treats fixed attachment unpredictably — anchor the backdrop instead */
+  body.stats-page {
+    background-attachment: scroll, scroll;
+    background-position: center top, center top;
+  }
+
+  .stats-hero {
+    padding-top: 4.5rem;
+  }
+
+  .hero-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stat-card {
+    min-height: 0;
+  }
+}

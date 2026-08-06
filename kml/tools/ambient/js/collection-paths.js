@@ -10,6 +10,8 @@
     lessons_6_10_prototype: "lesson_06",
     lessons_11_15_prototype: "lesson_11",
     lessons_16_20_prototype: "lesson_16",
+    lessons_21_25_quiet_cinematic: "lesson_21",
+    lessons_26_30_quiet_cinematic: "lesson_26",
   };
 
   function lessonFolder(n) {

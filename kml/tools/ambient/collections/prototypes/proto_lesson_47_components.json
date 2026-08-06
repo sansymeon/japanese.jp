@@ -1,0 +1,429 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_47_components",
+  "title": "Lesson 47 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 47,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L47_gigantic",
+      "kanji": "巨",
+      "keyword": "gigantic",
+      "components": [
+        {
+          "glyph": "巨",
+          "label": "gigantic"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_repel",
+      "kanji": "拒",
+      "keyword": "repel",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "巨",
+          "label": "gigantic"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_power",
+      "kanji": "力",
+      "keyword": "power",
+      "components": [
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_man",
+      "kanji": "男",
+      "keyword": "man",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_labor",
+      "kanji": "労",
+      "keyword": "labor",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_recruit",
+      "kanji": "募",
+      "keyword": "recruit",
+      "components": [
+        {
+          "glyph": "莫",
+          "label": "莫"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_inferiority",
+      "kanji": "劣",
+      "keyword": "inferiority",
+      "components": [
+        {
+          "glyph": "少",
+          "label": "few"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_achievement",
+      "kanji": "功",
+      "keyword": "achievement",
+      "components": [
+        {
+          "glyph": "工",
+          "label": "craft"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_persuade",
+      "kanji": "勧",
+      "keyword": "persuade",
+      "components": [
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_toil",
+      "kanji": "努",
+      "keyword": "toil",
+      "components": [
+        {
+          "glyph": "奴",
+          "label": "guy"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_uprising",
+      "kanji": "勃",
+      "keyword": "uprising",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "子",
+          "label": "child"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_encourage",
+      "kanji": "励",
+      "keyword": "encourage",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "万",
+          "label": "ten thousand"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_add",
+      "kanji": "加",
+      "keyword": "add",
+      "components": [
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_congratulations",
+      "kanji": "賀",
+      "keyword": "congratulations",
+      "components": [
+        {
+          "glyph": "加",
+          "label": "add"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_rack",
+      "kanji": "架",
+      "keyword": "rack",
+      "components": [
+        {
+          "glyph": "加",
+          "label": "add"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_armpit",
+      "kanji": "脇",
+      "keyword": "armpit",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_threaten",
+      "kanji": "脅",
+      "keyword": "threaten",
+      "components": [
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_cooperation",
+      "kanji": "協",
+      "keyword": "cooperation",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L47_going",
+      "kanji": "行",
+      "keyword": "going",
+      "components": [
+        {
+          "glyph": "行",
+          "label": "going"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L47_intro_going",
+      "glyph": "彳",
+      "label": "going"
+    },
+    {
+      "type": "kanji",
+      "id": "L47_law",
+      "kanji": "律",
+      "keyword": "law",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "聿",
+          "label": "brush"
+        }
+      ]
+    }
+  ]
+}
