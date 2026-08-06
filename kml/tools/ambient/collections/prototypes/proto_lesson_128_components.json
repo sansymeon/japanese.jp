@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_128_components",
+  "title": "Lesson 128 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 128,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L128_hazel",
+      "kanji": "榛",
+      "keyword": "hazel",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "𡗗",
+          "label": "bonsai"
+        },
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_comb",
+      "kanji": "櫛",
+      "keyword": "comb",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "節",
+          "label": "node"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_sledgehammer",
+      "kanji": "槌",
+      "keyword": "sledgehammer",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "追",
+          "label": "chase"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_mallet",
+      "kanji": "樵",
+      "keyword": "mallet",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "焦",
+          "label": "char"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_ladder",
+      "kanji": "梯",
+      "keyword": "ladder",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "弟",
+          "label": "younger brother"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_citrus_tree",
+      "kanji": "柑",
+      "keyword": "citrus tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "甘",
+          "label": "sweet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_picket",
+      "kanji": "杭",
+      "keyword": "picket",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "亢",
+          "label": "high spirits"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_holly",
+      "kanji": "柊",
+      "keyword": "holly",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "冬",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_citron",
+      "kanji": "柚",
+      "keyword": "citron",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_wooden_bowl",
+      "kanji": "椀",
+      "keyword": "wooden bowl",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "宛",
+          "label": "addressed to"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_hemlock",
+      "kanji": "栂",
+      "keyword": "hemlock",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "母",
+          "label": "mother"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_spindle_tree",
+      "kanji": "柾",
+      "keyword": "spindle tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_sacred_tree",
+      "kanji": "榊",
+      "keyword": "sacred tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "神",
+          "label": "gods"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_evergreen_oak",
+      "kanji": "樫",
+      "keyword": "evergreen oak",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "堅",
+          "label": "strict"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_black_pine",
+      "kanji": "槙",
+      "keyword": "black pine",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "真",
+          "label": "true"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_japanese_oak",
+      "kanji": "楢",
+      "keyword": "japanese oak",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_tangerine",
+      "kanji": "橘",
+      "keyword": "tangerine",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "矛",
+          "label": "halberd"
+        },
+        {
+          "glyph": "冏",
+          "label": "light rays"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_hinoki",
+      "kanji": "桧",
+      "keyword": "hinoki",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "会",
+          "label": "meeting"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_roost",
+      "kanji": "棲",
+      "keyword": "roost",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "妻",
+          "label": "wife"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L128_nestle",
+      "kanji": "栖",
+      "keyword": "nestle",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "西",
+          "label": "west"
+        }
+      ]
+    }
+  ]
+}

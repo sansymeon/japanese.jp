@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_76_components",
+  "title": "Lesson 76 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 76,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L76_honorable",
+      "kanji": "御",
+      "keyword": "honorable",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "卸",
+          "label": "wholesale"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_clothing",
+      "kanji": "服",
+      "keyword": "clothing",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "卩",
+          "label": "stamp"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_fate",
+      "kanji": "命",
+      "keyword": "fate",
+      "components": [
+        {
+          "glyph": "𠆢",
+          "label": "meeting"
+        },
+        {
+          "glyph": "卩",
+          "label": "stamp"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_orders",
+      "kanji": "令",
+      "keyword": "orders",
+      "components": [
+        {
+          "glyph": "𠆢",
+          "label": "meeting"
+        },
+        {
+          "glyph": "卩",
+          "label": "stamp"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_zero",
+      "kanji": "零",
+      "keyword": "zero",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "令",
+          "label": "orders"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_age",
+      "kanji": "齢",
+      "keyword": "age",
+      "components": [
+        {
+          "glyph": "歯",
+          "label": "tooth"
+        },
+        {
+          "glyph": "令",
+          "label": "orders"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_cool",
+      "kanji": "冷",
+      "keyword": "cool",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "令",
+          "label": "orders"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_territory",
+      "kanji": "領",
+      "keyword": "territory",
+      "components": [
+        {
+          "glyph": "令",
+          "label": "orders"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_small_bell",
+      "kanji": "鈴",
+      "keyword": "small bell",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "令",
+          "label": "orders"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_courage",
+      "kanji": "勇",
+      "keyword": "courage",
+      "components": [
+        {
+          "glyph": "甬",
+          "label": "chop-seal"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_gush",
+      "kanji": "湧",
+      "keyword": "gush",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "勇",
+          "label": "courage"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_pass_through",
+      "kanji": "通",
+      "keyword": "pass through",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "甬",
+          "label": "chop-seal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_jump",
+      "kanji": "踊",
+      "keyword": "jump",
+      "components": [
+        {
+          "glyph": "足",
+          "label": "leg"
+        },
+        {
+          "glyph": "甬",
+          "label": "chop-seal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_doubt",
+      "kanji": "疑",
+      "keyword": "doubt",
+      "components": [
+        {
+          "glyph": "疑",
+          "label": "doubt"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_mimic",
+      "kanji": "擬",
+      "keyword": "mimic",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "疑",
+          "label": "doubt"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_congeal",
+      "kanji": "凝",
+      "keyword": "congeal",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "疑",
+          "label": "doubt"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_pattern",
+      "kanji": "範",
+      "keyword": "pattern",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_crime",
+      "kanji": "犯",
+      "keyword": "crime",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_to_overflow",
+      "kanji": "氾",
+      "keyword": "to overflow",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L76_unlucky",
+      "kanji": "厄",
+      "keyword": "unlucky",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        }
+      ]
+    }
+  ]
+}

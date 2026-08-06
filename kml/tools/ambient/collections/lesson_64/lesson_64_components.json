@@ -1,0 +1,403 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_64_components",
+  "title": "Lesson 64 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 64,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L64_vat",
+      "kanji": "槽",
+      "keyword": "vat",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "曹",
+          "label": "cadet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_big_dipper",
+      "kanji": "斗",
+      "keyword": "big dipper",
+      "components": [
+        {
+          "glyph": "斗",
+          "label": "big dipper"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_fee",
+      "kanji": "料",
+      "keyword": "fee",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "斗",
+          "label": "Big Dipper"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_subject",
+      "kanji": "科",
+      "keyword": "subject",
+      "components": [
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "斗",
+          "label": "Big Dipper"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_map",
+      "kanji": "図",
+      "keyword": "map",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "乂",
+          "label": "mowed"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_utilize",
+      "kanji": "用",
+      "keyword": "utilize",
+      "components": [
+        {
+          "glyph": "用",
+          "label": "utilize"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_commonplace",
+      "kanji": "庸",
+      "keyword": "commonplace",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "ヨ",
+          "label": "broom"
+        },
+        {
+          "glyph": "用",
+          "label": "utilize"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_equip",
+      "kanji": "備",
+      "keyword": "equip",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "用",
+          "label": "utilize"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_long_ago",
+      "kanji": "昔",
+      "keyword": "long ago",
+      "components": [
+        {
+          "glyph": "龷",
+          "label": "salad"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_confused",
+      "kanji": "錯",
+      "keyword": "confused",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "昔",
+          "label": "once upon a time"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_borrow",
+      "kanji": "借",
+      "keyword": "borrow",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "昔",
+          "label": "once upon a time"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_pity",
+      "kanji": "惜",
+      "keyword": "pity",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "昔",
+          "label": "once upon a time"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_set_aside",
+      "kanji": "措",
+      "keyword": "set aside",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "昔",
+          "label": "once upon a time"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_scatter",
+      "kanji": "散",
+      "keyword": "scatter",
+      "components": [
+        {
+          "glyph": "龷",
+          "label": "salad"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_twenty",
+      "kanji": "廿",
+      "keyword": "twenty",
+      "components": [
+        {
+          "glyph": "廿",
+          "label": "twenty"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_commoner",
+      "kanji": "庶",
+      "keyword": "commoner",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "廿",
+          "label": "twenty"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_intercept",
+      "kanji": "遮",
+      "keyword": "intercept",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "庶",
+          "label": "commoner"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_seat",
+      "kanji": "席",
+      "keyword": "seat",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "廿",
+          "label": "twenty"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_degrees",
+      "kanji": "度",
+      "keyword": "degrees",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "廿",
+          "label": "twenty"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L64_transit",
+      "kanji": "渡",
+      "keyword": "transit",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "度",
+          "label": "degrees"
+        }
+      ]
+    }
+  ]
+}

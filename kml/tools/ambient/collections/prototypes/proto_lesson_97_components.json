@@ -1,0 +1,411 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_97_components",
+  "title": "Lesson 97 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 97,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L97_investigate",
+      "kanji": "査",
+      "keyword": "investigate",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_help",
+      "kanji": "助",
+      "keyword": "help",
+      "components": [
+        {
+          "glyph": "且",
+          "label": "alongside"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_best_regards",
+      "kanji": "宜",
+      "keyword": "best regards",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_tatami_mat",
+      "kanji": "畳",
+      "keyword": "tatami mat",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_row",
+      "kanji": "並",
+      "keyword": "row",
+      "components": [
+        {
+          "glyph": "並",
+          "label": "row"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_universal",
+      "kanji": "普",
+      "keyword": "universal",
+      "components": [
+        {
+          "glyph": "並",
+          "label": "row"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_musical_score",
+      "kanji": "譜",
+      "keyword": "musical score",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "普",
+          "label": "universal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_damp",
+      "kanji": "湿",
+      "keyword": "damp",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "业",
+          "label": "business"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_appear",
+      "kanji": "顕",
+      "keyword": "appear",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "业",
+          "label": "business"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_slender",
+      "kanji": "繊",
+      "keyword": "slender",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "业",
+          "label": "business"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_spirits",
+      "kanji": "霊",
+      "keyword": "spirits",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "二",
+          "label": "two"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_business",
+      "kanji": "業",
+      "keyword": "business",
+      "components": [
+        {
+          "glyph": "業",
+          "label": "business"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_slap",
+      "kanji": "撲",
+      "keyword": "slap",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "菐",
+          "label": "bushes under"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_me_male",
+      "kanji": "僕",
+      "keyword": "me male",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "菐",
+          "label": "bushes under"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_together",
+      "kanji": "共",
+      "keyword": "together",
+      "components": [
+        {
+          "glyph": "共",
+          "label": "together"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_offer",
+      "kanji": "供",
+      "keyword": "offer",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "共",
+          "label": "together"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_uncommon",
+      "kanji": "異",
+      "keyword": "uncommon",
+      "components": [
+        {
+          "glyph": "異",
+          "label": "uncommon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_wing",
+      "kanji": "翼",
+      "keyword": "wing",
+      "components": [
+        {
+          "glyph": "羽",
+          "label": "feather"
+        },
+        {
+          "glyph": "異",
+          "label": "uncommon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_accept_humbly",
+      "kanji": "戴",
+      "keyword": "accept humbly",
+      "components": [
+        {
+          "glyph": "異",
+          "label": "uncommon"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L97_flood",
+      "kanji": "洪",
+      "keyword": "flood",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "共",
+          "label": "together"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_141_components",
+  "title": "Lesson 141 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 141,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L141_quill",
+      "kanji": "翰",
+      "keyword": "quill",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "早",
+          "label": "early"
+        },
+        {
+          "glyph": "羽",
+          "label": "feather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_auspices",
+      "kanji": "斡",
+      "keyword": "auspices",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "早",
+          "label": "early"
+        },
+        {
+          "glyph": "斗",
+          "label": "Big Dipper"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_saddle",
+      "kanji": "鞍",
+      "keyword": "saddle",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "安",
+          "label": "relax"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_whip",
+      "kanji": "鞭",
+      "keyword": "whip",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "便",
+          "label": "convenience"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_saddle_straps",
+      "kanji": "鞘",
+      "keyword": "saddle straps",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "肖",
+          "label": "resemble"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_briefcase",
+      "kanji": "鞄",
+      "keyword": "briefcase",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "包",
+          "label": "wrap"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_pliable",
+      "kanji": "靭",
+      "keyword": "pliable",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "刃",
+          "label": "blade"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_terminate",
+      "kanji": "鞠",
+      "keyword": "terminate",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_overturn",
+      "kanji": "顛",
+      "keyword": "overturn",
+      "components": [
+        {
+          "glyph": "真",
+          "label": "true"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_brush_tip",
+      "kanji": "穎",
+      "keyword": "brush tip",
+      "components": [
+        {
+          "glyph": "匕",
+          "label": "spoon"
+        },
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_exceedingly",
+      "kanji": "頗",
+      "keyword": "exceedingly",
+      "components": [
+        {
+          "glyph": "皮",
+          "label": "skin"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_accolade",
+      "kanji": "頌",
+      "keyword": "accolade",
+      "components": [
+        {
+          "glyph": "公",
+          "label": "public"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_cervical",
+      "kanji": "頚",
+      "keyword": "cervical",
+      "components": [
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_repast",
+      "kanji": "餐",
+      "keyword": "repast",
+      "components": [
+        {
+          "glyph": "夕",
+          "label": "evening"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "食",
+          "label": "eat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_feast",
+      "kanji": "饗",
+      "keyword": "feast",
+      "components": [
+        {
+          "glyph": "郷",
+          "label": "hometown"
+        },
+        {
+          "glyph": "食",
+          "label": "eat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_eclipse",
+      "kanji": "蝕",
+      "keyword": "eclipse",
+      "components": [
+        {
+          "glyph": "食",
+          "label": "eat"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_sweets",
+      "kanji": "飴",
+      "keyword": "sweets",
+      "components": [
+        {
+          "glyph": "食",
+          "label": "eat"
+        },
+        {
+          "glyph": "台",
+          "label": "pedestal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_stretcher",
+      "kanji": "駕",
+      "keyword": "stretcher",
+      "components": [
+        {
+          "glyph": "加",
+          "label": "add"
+        },
+        {
+          "glyph": "馬",
+          "label": "horse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_dappled_horse",
+      "kanji": "騨",
+      "keyword": "dappled horse",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "単",
+          "label": "simple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L141_rush",
+      "kanji": "馳",
+      "keyword": "rush",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "也",
+          "label": "scorpion"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_101_components",
+  "title": "Lesson 101 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 101,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L101_vein",
+      "kanji": "脈",
+      "keyword": "vein",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "永",
+          "label": "eternity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_masses",
+      "kanji": "衆",
+      "keyword": "masses",
+      "components": [
+        {
+          "glyph": "血",
+          "label": "blood"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_relay",
+      "kanji": "逓",
+      "keyword": "relay",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "䒑",
+          "label": "䒑"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_grade",
+      "kanji": "段",
+      "keyword": "grade",
+      "components": [
+        {
+          "glyph": "丨",
+          "label": "stick"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "殳",
+          "label": "missile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_forge",
+      "kanji": "鍛",
+      "keyword": "forge",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "段",
+          "label": "grade"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_empress",
+      "kanji": "后",
+      "keyword": "empress",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_phantasm",
+      "kanji": "幻",
+      "keyword": "phantasm",
+      "components": [
+        {
+          "glyph": "幺",
+          "label": "short thread"
+        },
+        {
+          "glyph": "𠃌",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_director",
+      "kanji": "司",
+      "keyword": "director",
+      "components": [
+        {
+          "glyph": "𠃌",
+          "label": "hook"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_pay_respects",
+      "kanji": "伺",
+      "keyword": "pay respects",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "司",
+          "label": "director"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_parts_of_speech",
+      "kanji": "詞",
+      "keyword": "parts of speech",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "司",
+          "label": "director"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_domesticate",
+      "kanji": "飼",
+      "keyword": "domesticate",
+      "components": [
+        {
+          "glyph": "食",
+          "label": "eat"
+        },
+        {
+          "glyph": "司",
+          "label": "director"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_heir",
+      "kanji": "嗣",
+      "keyword": "heir",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "冊",
+          "label": "tome"
+        },
+        {
+          "glyph": "司",
+          "label": "director"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_boat",
+      "kanji": "舟",
+      "keyword": "boat",
+      "components": [
+        {
+          "glyph": "舟",
+          "label": "boat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_liner",
+      "kanji": "舶",
+      "keyword": "liner",
+      "components": [
+        {
+          "glyph": "舟",
+          "label": "boat"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_navigate",
+      "kanji": "航",
+      "keyword": "navigate",
+      "components": [
+        {
+          "glyph": "舟",
+          "label": "boat"
+        },
+        {
+          "glyph": "亢",
+          "label": "high spirits"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_gunwale",
+      "kanji": "舷",
+      "keyword": "gunwale",
+      "components": [
+        {
+          "glyph": "舟",
+          "label": "boat"
+        },
+        {
+          "glyph": "玄",
+          "label": "mysterious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_carrier",
+      "kanji": "般",
+      "keyword": "carrier",
+      "components": [
+        {
+          "glyph": "舟",
+          "label": "boat"
+        },
+        {
+          "glyph": "殳",
+          "label": "missile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_tray",
+      "kanji": "盤",
+      "keyword": "tray",
+      "components": [
+        {
+          "glyph": "般",
+          "label": "carrier"
+        },
+        {
+          "glyph": "皿",
+          "label": "dish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_conveyor",
+      "kanji": "搬",
+      "keyword": "conveyor",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "般",
+          "label": "carrier"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L101_ship",
+      "kanji": "船",
+      "keyword": "ship",
+      "components": [
+        {
+          "glyph": "舟",
+          "label": "boat"
+        },
+        {
+          "glyph": "八",
+          "label": "eight"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    }
+  ]
+}

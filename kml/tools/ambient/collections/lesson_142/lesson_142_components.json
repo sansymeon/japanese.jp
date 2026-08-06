@@ -1,0 +1,403 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_142_components",
+  "title": "Lesson 142 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 142,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L142_cheat",
+      "kanji": "騙",
+      "keyword": "cheat",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "扁",
+          "label": "door-flat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_tame",
+      "kanji": "馴",
+      "keyword": "tame",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "川",
+          "label": "river"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_rebuttal",
+      "kanji": "駁",
+      "keyword": "rebuttal",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "爻",
+          "label": "爻"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_gallop",
+      "kanji": "駈",
+      "keyword": "gallop",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "丘",
+          "label": "hill"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_donkey",
+      "kanji": "驢",
+      "keyword": "donkey",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_eel",
+      "kanji": "鰻",
+      "keyword": "eel",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "曼",
+          "label": "mandala"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_sea_bream",
+      "kanji": "鯛",
+      "keyword": "sea bream",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "周",
+          "label": "circumference"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_sardine",
+      "kanji": "鰯",
+      "keyword": "sardine",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "弱",
+          "label": "weak"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_trout",
+      "kanji": "鱒",
+      "keyword": "trout",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "尊",
+          "label": "revered"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_salmon",
+      "kanji": "鮭",
+      "keyword": "salmon",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "圭",
+          "label": "squared jewel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_tuna",
+      "kanji": "鮪",
+      "keyword": "tuna",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "有",
+          "label": "possess"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_smelt",
+      "kanji": "鮎",
+      "keyword": "smelt",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "占",
+          "label": "fortune-telling"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_horse_mackeral",
+      "kanji": "鯵",
+      "keyword": "horse mackeral",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "参",
+          "label": "participate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_cod",
+      "kanji": "鱈",
+      "keyword": "cod",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "雪",
+          "label": "snow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_mackerel",
+      "kanji": "鯖",
+      "keyword": "mackerel",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "青",
+          "label": "blue"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_shark",
+      "kanji": "鮫",
+      "keyword": "shark",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "交",
+          "label": "mingle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_bonito",
+      "kanji": "鰹",
+      "keyword": "bonito",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "堅",
+          "label": "strict"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_bullhead",
+      "kanji": "鰍",
+      "keyword": "bullhead",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "秋",
+          "label": "autumn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_alligator",
+      "kanji": "鰐",
+      "keyword": "alligator",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "亏",
+          "label": "deficiency"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L142_crucian",
+      "kanji": "鮒",
+      "keyword": "crucian",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "付",
+          "label": "adhere"
+        }
+      ]
+    }
+  ]
+}

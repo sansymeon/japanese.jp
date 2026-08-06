@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_127_components",
+  "title": "Lesson 127 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 127,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L127_bleaching",
+      "kanji": "晒",
+      "keyword": "bleaching",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "西",
+          "label": "west"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_limpid",
+      "kanji": "晃",
+      "keyword": "limpid",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "光",
+          "label": "ray"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_expose",
+      "kanji": "曝",
+      "keyword": "expose",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "暴",
+          "label": "outburst"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_daybreak",
+      "kanji": "曙",
+      "keyword": "daybreak",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "署",
+          "label": "government bureau"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_elevate",
+      "kanji": "昂",
+      "keyword": "elevate",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "卬",
+          "label": "exalted"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_dusk",
+      "kanji": "昏",
+      "keyword": "dusk",
+      "components": [
+        {
+          "glyph": "氏",
+          "label": "family name"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_dark",
+      "kanji": "晦",
+      "keyword": "dark",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "毎",
+          "label": "every"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_pus",
+      "kanji": "膿",
+      "keyword": "pus",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "農",
+          "label": "agriculture"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_viscera",
+      "kanji": "腑",
+      "keyword": "viscera",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "府",
+          "label": "municipality"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_bladder",
+      "kanji": "胱",
+      "keyword": "bladder",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "光",
+          "label": "ray"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_embryo",
+      "kanji": "胚",
+      "keyword": "embryo",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "不",
+          "label": "negative"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_anus",
+      "kanji": "肛",
+      "keyword": "anus",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "工",
+          "label": "craft"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_fragile",
+      "kanji": "脆",
+      "keyword": "fragile",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "危",
+          "label": "dangerous"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_rib",
+      "kanji": "肋",
+      "keyword": "rib",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_body_cavity",
+      "kanji": "腔",
+      "keyword": "body cavity",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "空",
+          "label": "sky"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_armrest",
+      "kanji": "肱",
+      "keyword": "armrest",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "厶",
+          "label": "厶"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_waning_moon",
+      "kanji": "胡",
+      "keyword": "waning moon",
+      "components": [
+        {
+          "glyph": "古",
+          "label": "old"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_maple",
+      "kanji": "楓",
+      "keyword": "maple",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "風",
+          "label": "wind"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_purple_willow",
+      "kanji": "楊",
+      "keyword": "purple willow",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "昜",
+          "label": "lucky pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L127_elm",
+      "kanji": "椋",
+      "keyword": "elm",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "京",
+          "label": "capital"
+        }
+      ]
+    }
+  ]
+}

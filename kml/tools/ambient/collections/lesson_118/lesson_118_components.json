@@ -1,0 +1,427 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_118_components",
+  "title": "Lesson 118 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 118,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L118_pennant",
+      "kanji": "幟",
+      "keyword": "pennant",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "音",
+          "label": "sound"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_cleaver",
+      "kanji": "庖",
+      "keyword": "cleaver",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "包",
+          "label": "wrap"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_licensed_quarters",
+      "kanji": "廓",
+      "keyword": "licensed quarters",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "郭",
+          "label": "enclosure"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_overhang",
+      "kanji": "庇",
+      "keyword": "overhang",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "比",
+          "label": "compare"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_hawk",
+      "kanji": "鷹",
+      "keyword": "hawk",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_shire",
+      "kanji": "庄",
+      "keyword": "shire",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_tomb_sanctuary",
+      "kanji": "廟",
+      "keyword": "tomb sanctuary",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "朝",
+          "label": "morning"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_strengthen",
+      "kanji": "彊",
+      "keyword": "strengthen",
+      "components": [
+        {
+          "glyph": "弓",
+          "label": "bow"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_loosen",
+      "kanji": "弛",
+      "keyword": "loosen",
+      "components": [
+        {
+          "glyph": "弓",
+          "label": "bow"
+        },
+        {
+          "glyph": "也",
+          "label": "scorpion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_rice_gruel",
+      "kanji": "粥",
+      "keyword": "rice gruel",
+      "components": [
+        {
+          "glyph": "弓",
+          "label": "bow"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "弓",
+          "label": "bow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_lathe",
+      "kanji": "挽",
+      "keyword": "lathe",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "免",
+          "label": "excuse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_bump_into",
+      "kanji": "撞",
+      "keyword": "bump into",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "童",
+          "label": "juvenile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_disguise",
+      "kanji": "扮",
+      "keyword": "disguise",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "分",
+          "label": "part"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_fabrication",
+      "kanji": "捏",
+      "keyword": "fabrication",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_clutch",
+      "kanji": "掴",
+      "keyword": "clutch",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "国",
+          "label": "country"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_impress",
+      "kanji": "捺",
+      "keyword": "impress",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "奈",
+          "label": "Nara"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_scratch",
+      "kanji": "掻",
+      "keyword": "scratch",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_assortment",
+      "kanji": "撰",
+      "keyword": "assortment",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "巽",
+          "label": "obedience"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_muster",
+      "kanji": "揃",
+      "keyword": "muster",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "前",
+          "label": "in front"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L118_deal_with",
+      "kanji": "捌",
+      "keyword": "deal with",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "別",
+          "label": "separate"
+        }
+      ]
+    }
+  ]
+}

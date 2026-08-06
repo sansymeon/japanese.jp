@@ -1,0 +1,397 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_89_components",
+  "title": "Lesson 89 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 89,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L89_non",
+      "kanji": "非",
+      "keyword": "non",
+      "components": [
+        {
+          "glyph": "非",
+          "label": "non"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_haiku",
+      "kanji": "俳",
+      "keyword": "haiku",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "非",
+          "label": "un-"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_repudiate",
+      "kanji": "排",
+      "keyword": "repudiate",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "非",
+          "label": "un-"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_sad",
+      "kanji": "悲",
+      "keyword": "sad",
+      "components": [
+        {
+          "glyph": "非",
+          "label": "un-"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_guilt",
+      "kanji": "罪",
+      "keyword": "guilt",
+      "components": [
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "非",
+          "label": "un-"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_comrade",
+      "kanji": "輩",
+      "keyword": "comrade",
+      "components": [
+        {
+          "glyph": "非",
+          "label": "un-"
+        },
+        {
+          "glyph": "車",
+          "label": "car"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_front_door",
+      "kanji": "扉",
+      "keyword": "front door",
+      "components": [
+        {
+          "glyph": "戸",
+          "label": "door"
+        },
+        {
+          "glyph": "非",
+          "label": "un-"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_marquis",
+      "kanji": "侯",
+      "keyword": "marquis",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "矢",
+          "label": "dart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_throat",
+      "kanji": "喉",
+      "keyword": "throat",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "侯",
+          "label": "marquis"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_climate",
+      "kanji": "候",
+      "keyword": "climate",
+      "components": [
+        {
+          "glyph": "侯",
+          "label": "marquis"
+        },
+        {
+          "glyph": "丨",
+          "label": "stick"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_decide",
+      "kanji": "決",
+      "keyword": "decide",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "夬",
+          "label": "guillotine"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_cheerful",
+      "kanji": "快",
+      "keyword": "cheerful",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "夬",
+          "label": "guillotine"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L89_intro_tanned_leather",
+      "glyph": "韋",
+      "label": "tanned leather"
+    },
+    {
+      "type": "kanji",
+      "id": "L89_admirable",
+      "kanji": "偉",
+      "keyword": "admirable",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "韋",
+          "label": "tanned leather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_differ",
+      "kanji": "違",
+      "keyword": "differ",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "韋",
+          "label": "tanned leather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_horizontal",
+      "kanji": "緯",
+      "keyword": "horizontal",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "韋",
+          "label": "tanned leather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_defense",
+      "kanji": "衛",
+      "keyword": "defense",
+      "components": [
+        {
+          "glyph": "行",
+          "label": "going"
+        },
+        {
+          "glyph": "韋",
+          "label": "tanned leather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_korea",
+      "kanji": "韓",
+      "keyword": "korea",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "早",
+          "label": "early"
+        },
+        {
+          "glyph": "韋",
+          "label": "tanned leather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_dry",
+      "kanji": "干",
+      "keyword": "dry",
+      "components": [
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_liver",
+      "kanji": "肝",
+      "keyword": "liver",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L89_publish",
+      "kanji": "刊",
+      "keyword": "publish",
+      "components": [
+        {
+          "glyph": "干",
+          "label": "dry"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    }
+  ]
+}

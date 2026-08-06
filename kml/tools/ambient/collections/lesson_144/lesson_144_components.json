@@ -1,0 +1,407 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_144_components",
+  "title": "Lesson 144 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 144,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L144_sitting",
+      "kanji": "坐",
+      "keyword": "sitting",
+      "components": [
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_first_day",
+      "kanji": "朔",
+      "keyword": "first day",
+      "components": [
+        {
+          "glyph": "屰",
+          "label": "upside down"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_tow",
+      "kanji": "曳",
+      "keyword": "tow",
+      "components": [
+        {
+          "glyph": "曳",
+          "label": "tow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_dribble_out",
+      "kanji": "洩",
+      "keyword": "dribble out",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "曳",
+          "label": "pull"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_comet",
+      "kanji": "彗",
+      "keyword": "comet",
+      "components": [
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        },
+        {
+          "glyph": "ヨ",
+          "label": "broom"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_astute",
+      "kanji": "慧",
+      "keyword": "astute",
+      "components": [
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        },
+        {
+          "glyph": "ヨ",
+          "label": "broom"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_thou",
+      "kanji": "爾",
+      "keyword": "thou",
+      "components": [
+        {
+          "glyph": "爾",
+          "label": "thou"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_applaud",
+      "kanji": "嘉",
+      "keyword": "applaud",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "豆",
+          "label": "beans"
+        },
+        {
+          "glyph": "加",
+          "label": "add"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_evil",
+      "kanji": "兇",
+      "keyword": "evil",
+      "components": [
+        {
+          "glyph": "凶",
+          "label": "villain"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_helmet",
+      "kanji": "兜",
+      "keyword": "helmet",
+      "components": [
+        {
+          "glyph": "兜",
+          "label": "helmet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_mist",
+      "kanji": "靄",
+      "keyword": "mist",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "曷",
+          "label": "siesta"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_kalpa",
+      "kanji": "劫",
+      "keyword": "kalpa",
+      "components": [
+        {
+          "glyph": "去",
+          "label": "leave"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_bemoan",
+      "kanji": "歎",
+      "keyword": "bemoan",
+      "components": [
+        {
+          "glyph": "堇",
+          "label": "celery"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_palanquin",
+      "kanji": "輿",
+      "keyword": "palanquin",
+      "components": [
+        {
+          "glyph": "臼",
+          "label": "mortar"
+        },
+        {
+          "glyph": "同",
+          "label": "same"
+        },
+        {
+          "glyph": "車",
+          "label": "car"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_warped",
+      "kanji": "歪",
+      "keyword": "warped",
+      "components": [
+        {
+          "glyph": "不",
+          "label": "negative"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_jade_green",
+      "kanji": "翠",
+      "keyword": "jade green",
+      "components": [
+        {
+          "glyph": "羽",
+          "label": "feather"
+        },
+        {
+          "glyph": "卒",
+          "label": "graduate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_blue_black",
+      "kanji": "黛",
+      "keyword": "blue black",
+      "components": [
+        {
+          "glyph": "代",
+          "label": "substitute"
+        },
+        {
+          "glyph": "黒",
+          "label": "black"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_tripod",
+      "kanji": "鼎",
+      "keyword": "tripod",
+      "components": [
+        {
+          "glyph": "鼎",
+          "label": "tripod"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_rocksalt",
+      "kanji": "鹵",
+      "keyword": "rocksalt",
+      "components": [
+        {
+          "glyph": "鹵",
+          "label": "rocksalt"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L144_lye",
+      "kanji": "鹸",
+      "keyword": "lye",
+      "components": [
+        {
+          "glyph": "鹵",
+          "label": "salt"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_149_components",
+  "title": "Lesson 149 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 149,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L149_brahman",
+      "kanji": "梵",
+      "keyword": "brahman",
+      "components": [
+        {
+          "glyph": "林",
+          "label": "grove"
+        },
+        {
+          "glyph": "凡",
+          "label": "mediocre"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_bodhisattva",
+      "kanji": "薩",
+      "keyword": "bodhisattva",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "産",
+          "label": "products"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_bo_tree",
+      "kanji": "菩",
+      "keyword": "bo tree",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "咅",
+          "label": "muzzle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_babble",
+      "kanji": "唖",
+      "keyword": "babble",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "亜",
+          "label": "Asia"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_low",
+      "kanji": "牟",
+      "keyword": "low",
+      "components": [
+        {
+          "glyph": "牟",
+          "label": "low"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_sanskrit_ka",
+      "kanji": "迦",
+      "keyword": "sanskrit ka",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "加",
+          "label": "add"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_jeweled_hairpin",
+      "kanji": "珈",
+      "keyword": "jeweled hairpin",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "加",
+          "label": "add"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_beaded_hairpin",
+      "kanji": "琲",
+      "keyword": "beaded hairpin",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "非",
+          "label": "un-"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_hinoki",
+      "kanji": "檜",
+      "keyword": "hinoki",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "会",
+          "label": "meeting"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_tinkling_bell",
+      "kanji": "轡",
+      "keyword": "tinkling bell",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "爫",
+          "label": "vulture"
+        },
+        {
+          "glyph": "臼",
+          "label": "mortar"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_abyss",
+      "kanji": "淵",
+      "keyword": "abyss",
+      "components": [
+        {
+          "glyph": "淵",
+          "label": "abyss"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_al_five",
+      "kanji": "伍",
+      "keyword": "al five",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "五",
+          "label": "five"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_al_ten",
+      "kanji": "什",
+      "keyword": "al ten",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_ten_thousand_old",
+      "kanji": "萬",
+      "keyword": "ten thousand old",
+      "components": [
+        {
+          "glyph": "萬",
+          "label": "ten thousand old"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_push_forward",
+      "kanji": "邁",
+      "keyword": "push forward",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "萬",
+          "label": "ten thousand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_candlelight",
+      "kanji": "燭",
+      "keyword": "candlelight",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "蜀",
+          "label": "green caterpillar"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_tough",
+      "kanji": "逞",
+      "keyword": "tough",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "呈",
+          "label": "display"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_lamp_old",
+      "kanji": "燈",
+      "keyword": "lamp old",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "登",
+          "label": "ascend"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_back_old",
+      "kanji": "裡",
+      "keyword": "back old",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L149_garden_name",
+      "kanji": "薗",
+      "keyword": "garden name",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "園",
+          "label": "park"
+        }
+      ]
+    }
+  ]
+}

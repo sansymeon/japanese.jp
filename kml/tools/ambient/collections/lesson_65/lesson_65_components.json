@@ -1,0 +1,455 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_65_components",
+  "title": "Lesson 65 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 65,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L65_bustle",
+      "kanji": "奔",
+      "keyword": "bustle",
+      "components": [
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "廾",
+          "label": "two hands"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_erupt",
+      "kanji": "噴",
+      "keyword": "erupt",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "廾",
+          "label": "two hands"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_tomb",
+      "kanji": "墳",
+      "keyword": "tomb",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "廾",
+          "label": "two hands"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_aroused",
+      "kanji": "憤",
+      "keyword": "aroused",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "廾",
+          "label": "two hands"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_bake",
+      "kanji": "焼",
+      "keyword": "bake",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "卄",
+          "label": "twenty"
+        },
+        {
+          "glyph": "兀",
+          "label": "one-legged"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_sunrise",
+      "kanji": "暁",
+      "keyword": "sunrise",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "卄",
+          "label": "twenty"
+        },
+        {
+          "glyph": "兀",
+          "label": "one-legged"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_half",
+      "kanji": "半",
+      "keyword": "half",
+      "components": [
+        {
+          "glyph": "半",
+          "label": "half"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_consort",
+      "kanji": "伴",
+      "keyword": "consort",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "半",
+          "label": "half"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_paddy_ridge",
+      "kanji": "畔",
+      "keyword": "paddy ridge",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "半",
+          "label": "half"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_judgment",
+      "kanji": "判",
+      "keyword": "judgment",
+      "components": [
+        {
+          "glyph": "半",
+          "label": "half"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_fist",
+      "kanji": "拳",
+      "keyword": "fist",
+      "components": [
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        },
+        {
+          "glyph": "手",
+          "label": "hand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_ticket",
+      "kanji": "券",
+      "keyword": "ticket",
+      "components": [
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        },
+        {
+          "glyph": "刀",
+          "label": "sword"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_scroll",
+      "kanji": "巻",
+      "keyword": "scroll",
+      "components": [
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        },
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_sphere_of_influence",
+      "kanji": "圏",
+      "keyword": "sphere of influence",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "巻",
+          "label": "scroll"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_victory",
+      "kanji": "勝",
+      "keyword": "victory",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_wisteria",
+      "kanji": "藤",
+      "keyword": "wisteria",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_mimeograph",
+      "kanji": "謄",
+      "keyword": "mimeograph",
+      "components": [
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_one_sided",
+      "kanji": "片",
+      "keyword": "one sided",
+      "components": [
+        {
+          "glyph": "片",
+          "label": "one sided"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_printing_block",
+      "kanji": "版",
+      "keyword": "printing block",
+      "components": [
+        {
+          "glyph": "片",
+          "label": "one-sided"
+        },
+        {
+          "glyph": "反",
+          "label": "anti"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L65_of",
+      "kanji": "之",
+      "keyword": "of",
+      "components": [
+        {
+          "glyph": "之",
+          "label": "of"
+        }
+      ]
+    }
+  ]
+}

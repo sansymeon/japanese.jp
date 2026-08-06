@@ -1,0 +1,411 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_134_components",
+  "title": "Lesson 134 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 134,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L134_drill",
+      "kanji": "穿",
+      "keyword": "drill",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        },
+        {
+          "glyph": "牙",
+          "label": "tusk"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_kitchen_stove",
+      "kanji": "竃",
+      "keyword": "kitchen stove",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "亀",
+          "label": "turtle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_longness",
+      "kanji": "竪",
+      "keyword": "longness",
+      "components": [
+        {
+          "glyph": "臣",
+          "label": "retainer"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "立",
+          "label": "stand up"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_rustling",
+      "kanji": "颯",
+      "keyword": "rustling",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "風",
+          "label": "wind"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_outpost",
+      "kanji": "站",
+      "keyword": "outpost",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "占",
+          "label": "fortune-telling"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_repose",
+      "kanji": "靖",
+      "keyword": "repose",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "青",
+          "label": "blue"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_concubine",
+      "kanji": "妾",
+      "keyword": "concubine",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_lapel",
+      "kanji": "衿",
+      "keyword": "lapel",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "今",
+          "label": "now"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_lined_kimono",
+      "kanji": "袷",
+      "keyword": "lined kimono",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "合",
+          "label": "fit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_pleated_skirt",
+      "kanji": "袴",
+      "keyword": "pleated skirt",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "丂",
+          "label": "aesop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_sliding_door",
+      "kanji": "襖",
+      "keyword": "sliding door",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "奥",
+          "label": "core"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_panpipe",
+      "kanji": "笙",
+      "keyword": "panpipe",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "生",
+          "label": "life"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_raft",
+      "kanji": "筏",
+      "keyword": "raft",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "伐",
+          "label": "fell"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_bamboo_blinds",
+      "kanji": "簾",
+      "keyword": "bamboo blinds",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "廉",
+          "label": "bargain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_rattan_box",
+      "kanji": "箪",
+      "keyword": "rattan box",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "単",
+          "label": "simple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_pole",
+      "kanji": "竿",
+      "keyword": "pole",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_spatula",
+      "kanji": "箆",
+      "keyword": "spatula",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "比",
+          "label": "compare"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_foil",
+      "kanji": "箔",
+      "keyword": "foil",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_wardrobe",
+      "kanji": "笥",
+      "keyword": "wardrobe",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "司",
+          "label": "director"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L134_arrow_shaft",
+      "kanji": "箭",
+      "keyword": "arrow shaft",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "前",
+          "label": "in front"
+        }
+      ]
+    }
+  ]
+}

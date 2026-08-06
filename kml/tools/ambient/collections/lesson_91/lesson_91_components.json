@@ -1,0 +1,453 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_91_components",
+  "title": "Lesson 91 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 91,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L91_organize",
+      "kanji": "整",
+      "keyword": "organize",
+      "components": [
+        {
+          "glyph": "束",
+          "label": "bundle"
+        },
+        {
+          "glyph": "攵",
+          "label": "攵"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_sabre",
+      "kanji": "剣",
+      "keyword": "sabre",
+      "components": [
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_precipitous",
+      "kanji": "険",
+      "keyword": "precipitous",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_examination",
+      "kanji": "検",
+      "keyword": "examination",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_frugal",
+      "kanji": "倹",
+      "keyword": "frugal",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_heavy",
+      "kanji": "重",
+      "keyword": "heavy",
+      "components": [
+        {
+          "glyph": "重",
+          "label": "heavy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_move",
+      "kanji": "動",
+      "keyword": "move",
+      "components": [
+        {
+          "glyph": "重",
+          "label": "heavy"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_tumor",
+      "kanji": "腫",
+      "keyword": "tumor",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "重",
+          "label": "heavy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_meritorious_deed",
+      "kanji": "勲",
+      "keyword": "meritorious deed",
+      "components": [
+        {
+          "glyph": "動",
+          "label": "move"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_work",
+      "kanji": "働",
+      "keyword": "work",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "動",
+          "label": "move"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_species",
+      "kanji": "種",
+      "keyword": "species",
+      "components": [
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "重",
+          "label": "heavy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_collide",
+      "kanji": "衝",
+      "keyword": "collide",
+      "components": [
+        {
+          "glyph": "行",
+          "label": "going"
+        },
+        {
+          "glyph": "重",
+          "label": "heavy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_fragrant",
+      "kanji": "薫",
+      "keyword": "fragrant",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "重",
+          "label": "heavy"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L91_intro_sickness",
+      "glyph": "疒",
+      "label": "sickness"
+    },
+    {
+      "type": "kanji",
+      "id": "L91_ill",
+      "kanji": "病",
+      "keyword": "ill",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "丙",
+          "label": "third"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_stupid",
+      "kanji": "痴",
+      "keyword": "stupid",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "知",
+          "label": "know"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_pox",
+      "kanji": "痘",
+      "keyword": "pox",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "豆",
+          "label": "beans"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_symptoms",
+      "kanji": "症",
+      "keyword": "symptoms",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_carbuncle",
+      "kanji": "瘍",
+      "keyword": "carbuncle",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "昜",
+          "label": "lucky pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_lose_weight",
+      "kanji": "痩",
+      "keyword": "lose weight",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L91_rapidly",
+      "kanji": "疾",
+      "keyword": "rapidly",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "矢",
+          "label": "dart"
+        }
+      ]
+    }
+  ]
+}

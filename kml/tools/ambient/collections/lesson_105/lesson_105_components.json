@@ -1,0 +1,407 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_105_components",
+  "title": "Lesson 105 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 105,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L105_zen",
+      "kanji": "禅",
+      "keyword": "zen",
+      "components": [
+        {
+          "glyph": "礻",
+          "label": "altar"
+        },
+        {
+          "glyph": "単",
+          "label": "simple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_bullet",
+      "kanji": "弾",
+      "keyword": "bullet",
+      "components": [
+        {
+          "glyph": "弓",
+          "label": "bow"
+        },
+        {
+          "glyph": "単",
+          "label": "simple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_cherry_blossom",
+      "kanji": "桜",
+      "keyword": "cherry blossom",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_animal",
+      "kanji": "獣",
+      "keyword": "animal",
+      "components": [
+        {
+          "glyph": "単",
+          "label": "simple"
+        },
+        {
+          "glyph": "犬",
+          "label": "dog"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_brain",
+      "kanji": "脳",
+      "keyword": "brain",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "囟",
+          "label": "brains"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_trouble",
+      "kanji": "悩",
+      "keyword": "trouble",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "囟",
+          "label": "brains"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_stern",
+      "kanji": "厳",
+      "keyword": "stern",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "敢",
+          "label": "daring"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_chain",
+      "kanji": "鎖",
+      "keyword": "chain",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "⺌",
+          "label": "little"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_raise",
+      "kanji": "挙",
+      "keyword": "raise",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "手",
+          "label": "hand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_reputation",
+      "kanji": "誉",
+      "keyword": "reputation",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_game_hunting",
+      "kanji": "猟",
+      "keyword": "game hunting",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "用",
+          "label": "utilize"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_bird",
+      "kanji": "鳥",
+      "keyword": "bird",
+      "components": [
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_chirp",
+      "kanji": "鳴",
+      "keyword": "chirp",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_crane",
+      "kanji": "鶴",
+      "keyword": "crane",
+      "components": [
+        {
+          "glyph": "寉",
+          "label": "crane nest"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_crow",
+      "kanji": "烏",
+      "keyword": "crow",
+      "components": [
+        {
+          "glyph": "烏",
+          "label": "crow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_vine",
+      "kanji": "蔦",
+      "keyword": "vine",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_pigeon",
+      "kanji": "鳩",
+      "keyword": "pigeon",
+      "components": [
+        {
+          "glyph": "九",
+          "label": "nine"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_chicken",
+      "kanji": "鶏",
+      "keyword": "chicken",
+      "components": [
+        {
+          "glyph": "奚",
+          "label": "servant"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_island",
+      "kanji": "島",
+      "keyword": "island",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L105_warmth",
+      "kanji": "暖",
+      "keyword": "warmth",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "爰",
+          "label": "monkey"
+        }
+      ]
+    }
+  ]
+}

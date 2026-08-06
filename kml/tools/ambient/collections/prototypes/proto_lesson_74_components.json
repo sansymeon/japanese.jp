@@ -1,0 +1,449 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_74_components",
+  "title": "Lesson 74 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 74,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L74_manage",
+      "kanji": "経",
+      "keyword": "manage",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_sire",
+      "kanji": "紳",
+      "keyword": "sire",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "申",
+          "label": "declare"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_promise",
+      "kanji": "約",
+      "keyword": "promise",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "勺",
+          "label": "ladle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_thin",
+      "kanji": "細",
+      "keyword": "thin",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_pile_up",
+      "kanji": "累",
+      "keyword": "pile up",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "糸",
+          "label": "thread"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_cord",
+      "kanji": "索",
+      "keyword": "cord",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "糸",
+          "label": "thread"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_total",
+      "kanji": "総",
+      "keyword": "total",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "公",
+          "label": "public"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_cotton",
+      "kanji": "綿",
+      "keyword": "cotton",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_silk",
+      "kanji": "絹",
+      "keyword": "silk",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_winding",
+      "kanji": "繰",
+      "keyword": "winding",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "品",
+          "label": "goods"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_inherit",
+      "kanji": "継",
+      "keyword": "inherit",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "乚",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_green",
+      "kanji": "緑",
+      "keyword": "green",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "ヨ",
+          "label": "broom"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_affinity",
+      "kanji": "縁",
+      "keyword": "affinity",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "ヨ",
+          "label": "broom"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_netting",
+      "kanji": "網",
+      "keyword": "netting",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "亡",
+          "label": "deceased"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_tense",
+      "kanji": "緊",
+      "keyword": "tense",
+      "components": [
+        {
+          "glyph": "臣",
+          "label": "retainer"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "糸",
+          "label": "thread"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_purple",
+      "kanji": "紫",
+      "keyword": "purple",
+      "components": [
+        {
+          "glyph": "此",
+          "label": "this"
+        },
+        {
+          "glyph": "糸",
+          "label": "thread"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_truss",
+      "kanji": "縛",
+      "keyword": "truss",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "甫",
+          "label": "dog tag"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_straw_rope",
+      "kanji": "縄",
+      "keyword": "straw rope",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "亀",
+          "label": "turtle"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L74_intro_short_thread",
+      "glyph": "幺",
+      "label": "short thread"
+    },
+    {
+      "type": "kanji",
+      "id": "L74_infancy",
+      "kanji": "幼",
+      "keyword": "infancy",
+      "components": [
+        {
+          "glyph": "幺",
+          "label": "short thread"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L74_behind",
+      "kanji": "後",
+      "keyword": "behind",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "幺",
+          "label": "short thread"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    }
+  ]
+}

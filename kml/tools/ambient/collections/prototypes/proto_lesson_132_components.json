@@ -1,0 +1,403 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_132_components",
+  "title": "Lesson 132 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 132,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L132_paddyfield",
+      "kanji": "畦",
+      "keyword": "paddyfield",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "圭",
+          "label": "squared jewel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_itch",
+      "kanji": "痒",
+      "keyword": "itch",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "羊",
+          "label": "sheep"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_phlegm",
+      "kanji": "痰",
+      "keyword": "phlegm",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "炎",
+          "label": "inflammation"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_measles",
+      "kanji": "疹",
+      "keyword": "measles",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_hemorrhoids",
+      "kanji": "痔",
+      "keyword": "hemorrhoids",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "寺",
+          "label": "temple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_cancer",
+      "kanji": "癌",
+      "keyword": "cancer",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "品",
+          "label": "goods"
+        },
+        {
+          "glyph": "山",
+          "label": "mountain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_paralysis",
+      "kanji": "痺",
+      "keyword": "paralysis",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "卑",
+          "label": "lowly"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_eye_pupil",
+      "kanji": "眸",
+      "keyword": "eye pupil",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "牟",
+          "label": "moo"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_dizzy",
+      "kanji": "眩",
+      "keyword": "dizzy",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "玄",
+          "label": "mysterious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_pheasant",
+      "kanji": "雉",
+      "keyword": "pheasant",
+      "components": [
+        {
+          "glyph": "矢",
+          "label": "dart"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_carpenters_square",
+      "kanji": "矩",
+      "keyword": "carpenters square",
+      "components": [
+        {
+          "glyph": "矢",
+          "label": "dart"
+        },
+        {
+          "glyph": "巨",
+          "label": "gigantic"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_bedrock",
+      "kanji": "磐",
+      "keyword": "bedrock",
+      "components": [
+        {
+          "glyph": "般",
+          "label": "carrier"
+        },
+        {
+          "glyph": "石",
+          "label": "stone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_grapnel",
+      "kanji": "碇",
+      "keyword": "grapnel",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "定",
+          "label": "determine"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_blue_green",
+      "kanji": "碧",
+      "keyword": "blue green",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "石",
+          "label": "stone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_inkstone",
+      "kanji": "硯",
+      "keyword": "inkstone",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "見",
+          "label": "see"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_grindstone",
+      "kanji": "砥",
+      "keyword": "grindstone",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "氏",
+          "label": "family name"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_teacup",
+      "kanji": "碗",
+      "keyword": "teacup",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "宛",
+          "label": "addressed to"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_obstacle",
+      "kanji": "碍",
+      "keyword": "obstacle",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "疑",
+          "label": "doubt"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_illustrious",
+      "kanji": "碩",
+      "keyword": "illustrious",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L132_rocky_beach",
+      "kanji": "磯",
+      "keyword": "rocky beach",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "幾",
+          "label": "how many"
+        }
+      ]
+    }
+  ]
+}

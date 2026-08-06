@@ -1,0 +1,431 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_71_components",
+  "title": "Lesson 71 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 71,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L71_affixed",
+      "kanji": "附",
+      "keyword": "affixed",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "付",
+          "label": "adhere"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_institution",
+      "kanji": "院",
+      "keyword": "institution",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "完",
+          "label": "complete"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_camp",
+      "kanji": "陣",
+      "keyword": "camp",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "車",
+          "label": "car"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_regiment",
+      "kanji": "隊",
+      "keyword": "regiment",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_crash",
+      "kanji": "墜",
+      "keyword": "crash",
+      "components": [
+        {
+          "glyph": "隊",
+          "label": "regiment"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_descend",
+      "kanji": "降",
+      "keyword": "descend",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "ヰ",
+          "label": "toothbrush"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_floor",
+      "kanji": "階",
+      "keyword": "floor",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "皆",
+          "label": "everyone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_highness",
+      "kanji": "陛",
+      "keyword": "highness",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "比",
+          "label": "compare"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_neighboring",
+      "kanji": "隣",
+      "keyword": "neighboring",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "舛",
+          "label": "dancing legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_isolate",
+      "kanji": "隔",
+      "keyword": "isolate",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "冂",
+          "label": "hood"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_conceal",
+      "kanji": "隠",
+      "keyword": "conceal",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "ヨ",
+          "label": "broom"
+        },
+        {
+          "glyph": "工",
+          "label": "craft"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_degenerate",
+      "kanji": "堕",
+      "keyword": "degenerate",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "有",
+          "label": "possess"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_collapse",
+      "kanji": "陥",
+      "keyword": "collapse",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "旧",
+          "label": "olden times"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_hole",
+      "kanji": "穴",
+      "keyword": "hole",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_sky",
+      "kanji": "空",
+      "keyword": "sky",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        },
+        {
+          "glyph": "工",
+          "label": "craft"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_withdraw",
+      "kanji": "控",
+      "keyword": "withdraw",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "空",
+          "label": "sky"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_stab",
+      "kanji": "突",
+      "keyword": "stab",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        },
+        {
+          "glyph": "犬",
+          "label": "dog"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_research",
+      "kanji": "究",
+      "keyword": "research",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        },
+        {
+          "glyph": "九",
+          "label": "nine"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_plug_up",
+      "kanji": "窒",
+      "keyword": "plug up",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        },
+        {
+          "glyph": "至",
+          "label": "climax"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L71_stealth",
+      "kanji": "窃",
+      "keyword": "stealth",
+      "components": [
+        {
+          "glyph": "穴",
+          "label": "hole"
+        },
+        {
+          "glyph": "切",
+          "label": "cut"
+        }
+      ]
+    }
+  ]
+}

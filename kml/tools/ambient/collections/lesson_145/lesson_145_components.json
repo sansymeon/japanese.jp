@@ -1,0 +1,387 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_145_components",
+  "title": "Lesson 145 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 145,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L145_reserved",
+      "kanji": "虔",
+      "keyword": "reserved",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "文",
+          "label": "sentence"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_swallow",
+      "kanji": "燕",
+      "keyword": "swallow",
+      "components": [
+        {
+          "glyph": "燕",
+          "label": "swallow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_lick",
+      "kanji": "嘗",
+      "keyword": "lick",
+      "components": [
+        {
+          "glyph": "尚",
+          "label": "furthermore"
+        },
+        {
+          "glyph": "旨",
+          "label": "delicious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_almost",
+      "kanji": "殆",
+      "keyword": "almost",
+      "components": [
+        {
+          "glyph": "歹",
+          "label": "bones"
+        },
+        {
+          "glyph": "台",
+          "label": "pedestal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_mahjong_tiles",
+      "kanji": "牌",
+      "keyword": "mahjong tiles",
+      "components": [
+        {
+          "glyph": "片",
+          "label": "one-sided"
+        },
+        {
+          "glyph": "卑",
+          "label": "lowly"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_peek",
+      "kanji": "覗",
+      "keyword": "peek",
+      "components": [
+        {
+          "glyph": "司",
+          "label": "director"
+        },
+        {
+          "glyph": "見",
+          "label": "see"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_disagree",
+      "kanji": "齟",
+      "keyword": "disagree",
+      "components": [
+        {
+          "glyph": "齒",
+          "label": "tooth"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_discord",
+      "kanji": "齬",
+      "keyword": "discord",
+      "components": [
+        {
+          "glyph": "齒",
+          "label": "tooth"
+        },
+        {
+          "glyph": "吾",
+          "label": "I"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_manchu_dynasty",
+      "kanji": "秦",
+      "keyword": "manchu dynasty",
+      "components": [
+        {
+          "glyph": "𡗗",
+          "label": "bonsai"
+        },
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_sparrow",
+      "kanji": "雀",
+      "keyword": "sparrow",
+      "components": [
+        {
+          "glyph": "小",
+          "label": "small"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_peregrine_falcon",
+      "kanji": "隼",
+      "keyword": "peregrine falcon",
+      "components": [
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_shimmering",
+      "kanji": "耀",
+      "keyword": "shimmering",
+      "components": [
+        {
+          "glyph": "光",
+          "label": "ray"
+        },
+        {
+          "glyph": "羽",
+          "label": "feather"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_ebisu",
+      "kanji": "夷",
+      "keyword": "ebisu",
+      "components": [
+        {
+          "glyph": "夷",
+          "label": "ebisu"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_cyst",
+      "kanji": "嚢",
+      "keyword": "cyst",
+      "components": [
+        {
+          "glyph": "嚢",
+          "label": "cyst"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_carefree",
+      "kanji": "暢",
+      "keyword": "carefree",
+      "components": [
+        {
+          "glyph": "申",
+          "label": "declare"
+        },
+        {
+          "glyph": "昜",
+          "label": "lucky pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_circling",
+      "kanji": "廻",
+      "keyword": "circling",
+      "components": [
+        {
+          "glyph": "廴",
+          "label": "stride"
+        },
+        {
+          "glyph": "回",
+          "label": "yonder"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_elation",
+      "kanji": "欣",
+      "keyword": "elation",
+      "components": [
+        {
+          "glyph": "斤",
+          "label": "axe"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_stalwart",
+      "kanji": "毅",
+      "keyword": "stalwart",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        },
+        {
+          "glyph": "殳",
+          "label": "missile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_thus",
+      "kanji": "斯",
+      "keyword": "thus",
+      "components": [
+        {
+          "glyph": "其",
+          "label": "that"
+        },
+        {
+          "glyph": "斤",
+          "label": "axe"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L145_wooden_spoon",
+      "kanji": "匙",
+      "keyword": "wooden spoon",
+      "components": [
+        {
+          "glyph": "是",
+          "label": "just so"
+        },
+        {
+          "glyph": "匕",
+          "label": "spoon"
+        }
+      ]
+    }
+  ]
+}

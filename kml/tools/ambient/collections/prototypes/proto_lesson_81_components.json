@@ -1,0 +1,415 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_81_components",
+  "title": "Lesson 81 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 81,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L81_reap",
+      "kanji": "刈",
+      "keyword": "reap",
+      "components": [
+        {
+          "glyph": "乂",
+          "label": "mowed"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_buddhist_temple",
+      "kanji": "刹",
+      "keyword": "buddhist temple",
+      "components": [
+        {
+          "glyph": "㐅",
+          "label": "mowed"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_hope",
+      "kanji": "希",
+      "keyword": "hope",
+      "components": [
+        {
+          "glyph": "㐅",
+          "label": "mowed"
+        },
+        {
+          "glyph": "布",
+          "label": "linen"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_villain",
+      "kanji": "凶",
+      "keyword": "villain",
+      "components": [
+        {
+          "glyph": "㐅",
+          "label": "mowed"
+        },
+        {
+          "glyph": "凵",
+          "label": "凵"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_bosom",
+      "kanji": "胸",
+      "keyword": "bosom",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "凶",
+          "label": "villain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_detach",
+      "kanji": "離",
+      "keyword": "detach",
+      "components": [
+        {
+          "glyph": "离",
+          "label": "birdhouse"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_glassy",
+      "kanji": "璃",
+      "keyword": "glassy",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "离",
+          "label": "birdhouse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_kill",
+      "kanji": "殺",
+      "keyword": "kill",
+      "components": [
+        {
+          "glyph": "㐅",
+          "label": "mowed"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "殳",
+          "label": "missile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_bracing",
+      "kanji": "爽",
+      "keyword": "bracing",
+      "components": [
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "㐅",
+          "label": "mowed"
+        },
+        {
+          "glyph": "㐅",
+          "label": "mowed"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_genuine",
+      "kanji": "純",
+      "keyword": "genuine",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "屯",
+          "label": "barracks"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_immediate",
+      "kanji": "頓",
+      "keyword": "immediate",
+      "components": [
+        {
+          "glyph": "屯",
+          "label": "barracks"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_dull",
+      "kanji": "鈍",
+      "keyword": "dull",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "屯",
+          "label": "barracks"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_spicy",
+      "kanji": "辛",
+      "keyword": "spicy",
+      "components": [
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_resign",
+      "kanji": "辞",
+      "keyword": "resign",
+      "components": [
+        {
+          "glyph": "舌",
+          "label": "tongue"
+        },
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_catalpa_tree",
+      "kanji": "梓",
+      "keyword": "catalpa tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_superintend",
+      "kanji": "宰",
+      "keyword": "superintend",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_wall",
+      "kanji": "壁",
+      "keyword": "wall",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_gem",
+      "kanji": "璧",
+      "keyword": "gem",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        },
+        {
+          "glyph": "玉",
+          "label": "ball"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_evade",
+      "kanji": "避",
+      "keyword": "evade",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L81_new",
+      "kanji": "新",
+      "keyword": "new",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "斤",
+          "label": "axe"
+        }
+      ]
+    }
+  ]
+}

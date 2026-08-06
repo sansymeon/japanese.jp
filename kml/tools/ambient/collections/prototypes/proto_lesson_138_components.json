@@ -1,0 +1,431 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_138_components",
+  "title": "Lesson 138 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 138,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L138_alas",
+      "kanji": "哉",
+      "keyword": "alas",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_counsel",
+      "kanji": "詢",
+      "keyword": "counsel",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "旬",
+          "label": "decameron"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_polite",
+      "kanji": "諄",
+      "keyword": "polite",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "享",
+          "label": "receive"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_vendetta",
+      "kanji": "讐",
+      "keyword": "vendetta",
+      "components": [
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_remonstrate",
+      "kanji": "諌",
+      "keyword": "remonstrate",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "東",
+          "label": "east"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_verify",
+      "kanji": "諒",
+      "keyword": "verify",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "京",
+          "label": "capital"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_compliment",
+      "kanji": "讃",
+      "keyword": "compliment",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "先",
+          "label": "before"
+        },
+        {
+          "glyph": "先",
+          "label": "before"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_query",
+      "kanji": "訊",
+      "keyword": "query",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "乚",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_split_up",
+      "kanji": "訣",
+      "keyword": "split up",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "夬",
+          "label": "guillotine"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_apologize",
+      "kanji": "詫",
+      "keyword": "apologize",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "宅",
+          "label": "home"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_familiarity",
+      "kanji": "誼",
+      "keyword": "familiarity",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "宜",
+          "label": "best regards"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_fallible",
+      "kanji": "謬",
+      "keyword": "fallible",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "羽",
+          "label": "feather"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_wary",
+      "kanji": "訝",
+      "keyword": "wary",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "牙",
+          "label": "tusk"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_proverb",
+      "kanji": "諺",
+      "keyword": "proverb",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "彦",
+          "label": "lad"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_slander",
+      "kanji": "誹",
+      "keyword": "slander",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "非",
+          "label": "un-"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_so_called",
+      "kanji": "謂",
+      "keyword": "so called",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "胃",
+          "label": "stomach"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_spying",
+      "kanji": "諜",
+      "keyword": "spying",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "世",
+          "label": "generation"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_footnote",
+      "kanji": "註",
+      "keyword": "footnote",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "主",
+          "label": "lord"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_parable",
+      "kanji": "譬",
+      "keyword": "parable",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L138_rumble",
+      "kanji": "轟",
+      "keyword": "rumble",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "車",
+          "label": "car"
+        }
+      ]
+    }
+  ]
+}

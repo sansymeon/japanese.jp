@@ -1,0 +1,407 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_126_components",
+  "title": "Lesson 126 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 126,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L126_until",
+      "kanji": "迄",
+      "keyword": "until",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "乞",
+          "label": "beg"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_standstill",
+      "kanji": "逗",
+      "keyword": "standstill",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "豆",
+          "label": "beans"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_courtesy",
+      "kanji": "鄭",
+      "keyword": "courtesy",
+      "components": [
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_falling",
+      "kanji": "隕",
+      "keyword": "falling",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "員",
+          "label": "employee"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_nook",
+      "kanji": "隈",
+      "keyword": "nook",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "畏",
+          "label": "apprehensive"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_possessed",
+      "kanji": "憑",
+      "keyword": "possessed",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_attract",
+      "kanji": "惹",
+      "keyword": "attract",
+      "components": [
+        {
+          "glyph": "若",
+          "label": "young"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_all",
+      "kanji": "悉",
+      "keyword": "all",
+      "components": [
+        {
+          "glyph": "釆",
+          "label": "釆"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_instantaneously",
+      "kanji": "忽",
+      "keyword": "instantaneously",
+      "components": [
+        {
+          "glyph": "勿",
+          "label": "not"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_firstborn_son",
+      "kanji": "惣",
+      "keyword": "firstborn son",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        },
+        {
+          "glyph": "勿",
+          "label": "not"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_all_the_more",
+      "kanji": "愈",
+      "keyword": "all the more",
+      "components": [
+        {
+          "glyph": "俞",
+          "label": "cargo"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_sensitive",
+      "kanji": "恕",
+      "keyword": "sensitive",
+      "components": [
+        {
+          "glyph": "如",
+          "label": "likeness"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_over_arching",
+      "kanji": "昴",
+      "keyword": "over arching",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "卯",
+          "label": "signs of the hare"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_progress",
+      "kanji": "晋",
+      "keyword": "progress",
+      "components": [
+        {
+          "glyph": "亜",
+          "label": "Asia"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_aglow",
+      "kanji": "晟",
+      "keyword": "aglow",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "成",
+          "label": "become"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_halo",
+      "kanji": "暈",
+      "keyword": "halo",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "軍",
+          "label": "army"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_glitter",
+      "kanji": "暉",
+      "keyword": "glitter",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "軍",
+          "label": "army"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_dry_weather",
+      "kanji": "旱",
+      "keyword": "dry weather",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_clear_skies",
+      "kanji": "晏",
+      "keyword": "clear skies",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "安",
+          "label": "relax"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L126_morrow",
+      "kanji": "晨",
+      "keyword": "morrow",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "辰",
+          "label": "sign of the dragon"
+        }
+      ]
+    }
+  ]
+}

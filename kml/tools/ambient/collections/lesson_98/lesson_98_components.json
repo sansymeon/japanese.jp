@@ -1,0 +1,387 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_98_components",
+  "title": "Lesson 98 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 98,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L98_harbor",
+      "kanji": "港",
+      "keyword": "harbor",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "共",
+          "label": "together"
+        },
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_outburst",
+      "kanji": "暴",
+      "keyword": "outburst",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "共",
+          "label": "together"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_explode",
+      "kanji": "爆",
+      "keyword": "explode",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "暴",
+          "label": "outburst"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_respect",
+      "kanji": "恭",
+      "keyword": "respect",
+      "components": [
+        {
+          "glyph": "共",
+          "label": "together"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_elect",
+      "kanji": "選",
+      "keyword": "elect",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "巽",
+          "label": "obedience"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_mister",
+      "kanji": "殿",
+      "keyword": "mister",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "共",
+          "label": "together"
+        },
+        {
+          "glyph": "殳",
+          "label": "missile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_well",
+      "kanji": "井",
+      "keyword": "well",
+      "components": [
+        {
+          "glyph": "井",
+          "label": "well"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_donburi",
+      "kanji": "丼",
+      "keyword": "donburi",
+      "components": [
+        {
+          "glyph": "井",
+          "label": "well"
+        },
+        {
+          "glyph": "丶",
+          "label": "drop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_surround",
+      "kanji": "囲",
+      "keyword": "surround",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "井",
+          "label": "well"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_till",
+      "kanji": "耕",
+      "keyword": "till",
+      "components": [
+        {
+          "glyph": "耒",
+          "label": "plow"
+        },
+        {
+          "glyph": "井",
+          "label": "well"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_asia",
+      "kanji": "亜",
+      "keyword": "asia",
+      "components": [
+        {
+          "glyph": "亜",
+          "label": "asia"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_bad",
+      "kanji": "悪",
+      "keyword": "bad",
+      "components": [
+        {
+          "glyph": "亜",
+          "label": "Asia"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_circle",
+      "kanji": "円",
+      "keyword": "circle",
+      "components": [
+        {
+          "glyph": "円",
+          "label": "circle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_angle",
+      "kanji": "角",
+      "keyword": "angle",
+      "components": [
+        {
+          "glyph": "角",
+          "label": "angle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_contact",
+      "kanji": "触",
+      "keyword": "contact",
+      "components": [
+        {
+          "glyph": "角",
+          "label": "angle"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_solution",
+      "kanji": "解",
+      "keyword": "solution",
+      "components": [
+        {
+          "glyph": "角",
+          "label": "angle"
+        },
+        {
+          "glyph": "刀",
+          "label": "sword"
+        },
+        {
+          "glyph": "牛",
+          "label": "cow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_again",
+      "kanji": "再",
+      "keyword": "again",
+      "components": [
+        {
+          "glyph": "再",
+          "label": "again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_lecture",
+      "kanji": "講",
+      "keyword": "lecture",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "冓",
+          "label": "funnel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_subscription",
+      "kanji": "購",
+      "keyword": "subscription",
+      "components": [
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "冓",
+          "label": "funnel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L98_construct",
+      "kanji": "構",
+      "keyword": "construct",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "冓",
+          "label": "funnel"
+        }
+      ]
+    }
+  ]
+}

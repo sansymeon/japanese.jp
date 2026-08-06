@@ -1,0 +1,419 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_51_components",
+  "title": "Lesson 51 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 51,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L51_sort",
+      "kanji": "類",
+      "keyword": "sort",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_lacquer",
+      "kanji": "漆",
+      "keyword": "lacquer",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_knee",
+      "kanji": "膝",
+      "keyword": "knee",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_al_title",
+      "kanji": "様",
+      "keyword": "al title",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "羊",
+          "label": "sheep"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_request",
+      "kanji": "求",
+      "keyword": "request",
+      "components": [
+        {
+          "glyph": "求",
+          "label": "request"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_sphere",
+      "kanji": "球",
+      "keyword": "sphere",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "求",
+          "label": "request"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_salvation",
+      "kanji": "救",
+      "keyword": "salvation",
+      "components": [
+        {
+          "glyph": "求",
+          "label": "request"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_bamboo",
+      "kanji": "竹",
+      "keyword": "bamboo",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_laugh",
+      "kanji": "笑",
+      "keyword": "laugh",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_bamboo_hat",
+      "kanji": "笠",
+      "keyword": "bamboo hat",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "立",
+          "label": "stand up"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_bamboo_grass",
+      "kanji": "笹",
+      "keyword": "bamboo grass",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "世",
+          "label": "generation"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_stationery",
+      "kanji": "箋",
+      "keyword": "stationery",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_muscle",
+      "kanji": "筋",
+      "keyword": "muscle",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_box",
+      "kanji": "箱",
+      "keyword": "box",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "相",
+          "label": "mutual"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_writing_brush",
+      "kanji": "筆",
+      "keyword": "writing brush",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "聿",
+          "label": "brush"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_cylinder",
+      "kanji": "筒",
+      "keyword": "cylinder",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "同",
+          "label": "same"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_etc",
+      "kanji": "等",
+      "keyword": "etc",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "寺",
+          "label": "temple"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_calculate",
+      "kanji": "算",
+      "keyword": "calculate",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "廾",
+          "label": "two hands"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_answer",
+      "kanji": "答",
+      "keyword": "answer",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "合",
+          "label": "fit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L51_scheme",
+      "kanji": "策",
+      "keyword": "scheme",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "束",
+          "label": "bundle"
+        }
+      ]
+    }
+  ]
+}

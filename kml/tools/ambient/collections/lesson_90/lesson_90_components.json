@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_90_components",
+  "title": "Lesson 90 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 90,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L90_sweat",
+      "kanji": "汗",
+      "keyword": "sweat",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_flats",
+      "kanji": "軒",
+      "keyword": "flats",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_beach",
+      "kanji": "岸",
+      "keyword": "beach",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_tree_trunk",
+      "kanji": "幹",
+      "keyword": "tree trunk",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "早",
+          "label": "early"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_potato",
+      "kanji": "芋",
+      "keyword": "potato",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "于",
+          "label": "potato"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_eaves",
+      "kanji": "宇",
+      "keyword": "eaves",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "于",
+          "label": "potato"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_too_much",
+      "kanji": "余",
+      "keyword": "too much",
+      "components": [
+        {
+          "glyph": "余",
+          "label": "too much"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_exclude",
+      "kanji": "除",
+      "keyword": "exclude",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "余",
+          "label": "too much"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_gradually",
+      "kanji": "徐",
+      "keyword": "gradually",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "余",
+          "label": "too much"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_confer",
+      "kanji": "叙",
+      "keyword": "confer",
+      "components": [
+        {
+          "glyph": "余",
+          "label": "too much"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_route",
+      "kanji": "途",
+      "keyword": "route",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "余",
+          "label": "too much"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_diagonal",
+      "kanji": "斜",
+      "keyword": "diagonal",
+      "components": [
+        {
+          "glyph": "余",
+          "label": "too much"
+        },
+        {
+          "glyph": "斗",
+          "label": "Big Dipper"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_paint",
+      "kanji": "塗",
+      "keyword": "paint",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "余",
+          "label": "too much"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_bundle",
+      "kanji": "束",
+      "keyword": "bundle",
+      "components": [
+        {
+          "glyph": "束",
+          "label": "bundle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_trust",
+      "kanji": "頼",
+      "keyword": "trust",
+      "components": [
+        {
+          "glyph": "束",
+          "label": "bundle"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_rapids",
+      "kanji": "瀬",
+      "keyword": "rapids",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "頼",
+          "label": "trust"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_imperial_order",
+      "kanji": "勅",
+      "keyword": "imperial order",
+      "components": [
+        {
+          "glyph": "束",
+          "label": "bundle"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_alienate",
+      "kanji": "疎",
+      "keyword": "alienate",
+      "components": [
+        {
+          "glyph": "疋",
+          "label": "critters"
+        },
+        {
+          "glyph": "束",
+          "label": "bundle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_bitter",
+      "kanji": "辣",
+      "keyword": "bitter",
+      "components": [
+        {
+          "glyph": "辛",
+          "label": "spicy"
+        },
+        {
+          "glyph": "束",
+          "label": "bundle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L90_quick",
+      "kanji": "速",
+      "keyword": "quick",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "束",
+          "label": "bundle"
+        }
+      ]
+    }
+  ]
+}

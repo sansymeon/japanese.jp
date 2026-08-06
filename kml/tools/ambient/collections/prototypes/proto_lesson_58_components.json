@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_58_components",
+  "title": "Lesson 58 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 58,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L58_yield",
+      "kanji": "屈",
+      "keyword": "yield",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "出",
+          "label": "exit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_dig",
+      "kanji": "掘",
+      "keyword": "dig",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "屈",
+          "label": "yield"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_ditch",
+      "kanji": "堀",
+      "keyword": "ditch",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "屈",
+          "label": "yield"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_reside",
+      "kanji": "居",
+      "keyword": "reside",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "古",
+          "label": "old"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_set",
+      "kanji": "据",
+      "keyword": "set",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "居",
+          "label": "reside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_hem",
+      "kanji": "裾",
+      "keyword": "hem",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "居",
+          "label": "reside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_stratum",
+      "kanji": "層",
+      "keyword": "stratum",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "曽",
+          "label": "formerly"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_bureau",
+      "kanji": "局",
+      "keyword": "bureau",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "句",
+          "label": "phrase"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_slow",
+      "kanji": "遅",
+      "keyword": "slow",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "羊",
+          "label": "sheep"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_leak",
+      "kanji": "漏",
+      "keyword": "leak",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "雨",
+          "label": "rain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_printing",
+      "kanji": "刷",
+      "keyword": "printing",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_shaku",
+      "kanji": "尺",
+      "keyword": "shaku",
+      "components": [
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_exhaust",
+      "kanji": "尽",
+      "keyword": "exhaust",
+      "components": [
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        },
+        {
+          "glyph": "冫",
+          "label": "ice"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_swamp",
+      "kanji": "沢",
+      "keyword": "swamp",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_translate",
+      "kanji": "訳",
+      "keyword": "translate",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_choose",
+      "kanji": "択",
+      "keyword": "choose",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_daytime",
+      "kanji": "昼",
+      "keyword": "daytime",
+      "components": [
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        },
+        {
+          "glyph": "旦",
+          "label": "nightbreak"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_door",
+      "kanji": "戸",
+      "keyword": "door",
+      "components": [
+        {
+          "glyph": "戸",
+          "label": "door"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_shoulder",
+      "kanji": "肩",
+      "keyword": "shoulder",
+      "components": [
+        {
+          "glyph": "戸",
+          "label": "door"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L58_tassel",
+      "kanji": "房",
+      "keyword": "tassel",
+      "components": [
+        {
+          "glyph": "戸",
+          "label": "door"
+        },
+        {
+          "glyph": "方",
+          "label": "direction"
+        }
+      ]
+    }
+  ]
+}

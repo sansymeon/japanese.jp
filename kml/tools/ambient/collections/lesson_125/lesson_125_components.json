@@ -1,0 +1,415 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_125_components",
+  "title": "Lesson 125 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 125,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L125_turnip",
+      "kanji": "蕪",
+      "keyword": "turnip",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "無",
+          "label": "nothing"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_sweet_potato",
+      "kanji": "藷",
+      "keyword": "sweet potato",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "諸",
+          "label": "various"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_quack",
+      "kanji": "薮",
+      "keyword": "quack",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "数",
+          "label": "number"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_garlic",
+      "kanji": "蒜",
+      "keyword": "garlic",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "示",
+          "label": "indicate"
+        },
+        {
+          "glyph": "示",
+          "label": "indicate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_bracken",
+      "kanji": "蕨",
+      "keyword": "bracken",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "欮",
+          "label": "gasp"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_grow_plentiful",
+      "kanji": "蔚",
+      "keyword": "grow plentiful",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "尉",
+          "label": "military officer"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_madder_red",
+      "kanji": "茜",
+      "keyword": "madder red",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "西",
+          "label": "west"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_candle_rush",
+      "kanji": "莞",
+      "keyword": "candle rush",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "完",
+          "label": "complete"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_collector",
+      "kanji": "蒐",
+      "keyword": "collector",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "鬼",
+          "label": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_sedge",
+      "kanji": "菅",
+      "keyword": "sedge",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "官",
+          "label": "bureaucrat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_ditch_reed",
+      "kanji": "葦",
+      "keyword": "ditch reed",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "韋",
+          "label": "tanned leather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_way",
+      "kanji": "迪",
+      "keyword": "way",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_track_down",
+      "kanji": "辿",
+      "keyword": "track down",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "才",
+          "label": "genius"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_crawl",
+      "kanji": "這",
+      "keyword": "crawl",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_detour",
+      "kanji": "迂",
+      "keyword": "detour",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "于",
+          "label": "potato"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_shirk",
+      "kanji": "遁",
+      "keyword": "shirk",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "盾",
+          "label": "shield"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_tryst",
+      "kanji": "逢",
+      "keyword": "tryst",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_far_off",
+      "kanji": "遥",
+      "keyword": "far off",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "爪",
+          "label": "claw"
+        },
+        {
+          "glyph": "缶",
+          "label": "can"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_faraway",
+      "kanji": "遼",
+      "keyword": "faraway",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "尞",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L125_pressing",
+      "kanji": "逼",
+      "keyword": "pressing",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    }
+  ]
+}

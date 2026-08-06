@@ -1,0 +1,419 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_82_components",
+  "title": "Lesson 82 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 82,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L82_firewood",
+      "kanji": "薪",
+      "keyword": "firewood",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "新",
+          "label": "new"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_parent",
+      "kanji": "親",
+      "keyword": "parent",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "見",
+          "label": "see"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_happiness",
+      "kanji": "幸",
+      "keyword": "happiness",
+      "components": [
+        {
+          "glyph": "幸",
+          "label": "happiness"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_tenacious",
+      "kanji": "執",
+      "keyword": "tenacious",
+      "components": [
+        {
+          "glyph": "幸",
+          "label": "happiness"
+        },
+        {
+          "glyph": "丸",
+          "label": "round"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_clasp",
+      "kanji": "摯",
+      "keyword": "clasp",
+      "components": [
+        {
+          "glyph": "執",
+          "label": "tenacious"
+        },
+        {
+          "glyph": "手",
+          "label": "hand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_report",
+      "kanji": "報",
+      "keyword": "report",
+      "components": [
+        {
+          "glyph": "幸",
+          "label": "happiness"
+        },
+        {
+          "glyph": "卩",
+          "label": "stamp"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_shout",
+      "kanji": "叫",
+      "keyword": "shout",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "丩",
+          "label": "banana"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_twist",
+      "kanji": "糾",
+      "keyword": "twist",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "丩",
+          "label": "banana"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_income",
+      "kanji": "収",
+      "keyword": "income",
+      "components": [
+        {
+          "glyph": "丩",
+          "label": "banana"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_lowly",
+      "kanji": "卑",
+      "keyword": "lowly",
+      "components": [
+        {
+          "glyph": "卑",
+          "label": "lowly"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_tombstone",
+      "kanji": "碑",
+      "keyword": "tombstone",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "卑",
+          "label": "lowly"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_land",
+      "kanji": "陸",
+      "keyword": "land",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_intimate",
+      "kanji": "睦",
+      "keyword": "intimate",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_forces",
+      "kanji": "勢",
+      "keyword": "forces",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        },
+        {
+          "glyph": "丸",
+          "label": "round"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_heat",
+      "kanji": "熱",
+      "keyword": "heat",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        },
+        {
+          "glyph": "丸",
+          "label": "round"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_diamond",
+      "kanji": "菱",
+      "keyword": "diamond",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_mausoleum",
+      "kanji": "陵",
+      "keyword": "mausoleum",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_boar",
+      "kanji": "亥",
+      "keyword": "boar",
+      "components": [
+        {
+          "glyph": "亥",
+          "label": "boar"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_nucleus",
+      "kanji": "核",
+      "keyword": "nucleus",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "亥",
+          "label": "sign of the hog"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L82_engrave",
+      "kanji": "刻",
+      "keyword": "engrave",
+      "components": [
+        {
+          "glyph": "亥",
+          "label": "sign of the hog"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    }
+  ]
+}
