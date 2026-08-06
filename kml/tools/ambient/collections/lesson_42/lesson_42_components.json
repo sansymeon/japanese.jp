@@ -1,0 +1,402 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_42_components",
+  "title": "Lesson 42 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 42,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "absent",
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L42_mountain",
+      "kanji": "山",
+      "keyword": "mountain",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L42_intro_infant",
+      "glyph": "𠫓",
+      "label": "infant"
+    },
+    {
+      "type": "kanji",
+      "id": "L42_abandon",
+      "kanji": "棄",
+      "keyword": "abandon",
+      "components": [
+        {
+          "glyph": "𠫓",
+          "label": "infant"
+        },
+        {
+          "glyph": "世",
+          "label": "generation"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_nurture",
+      "kanji": "育",
+      "keyword": "nurture",
+      "components": [
+        {
+          "glyph": "𠫓",
+          "label": "infant"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_remove",
+      "kanji": "撤",
+      "keyword": "remove",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "育",
+          "label": "nurture"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_allot",
+      "kanji": "充",
+      "keyword": "allot",
+      "components": [
+        {
+          "glyph": "𠫓",
+          "label": "infant"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_gun",
+      "kanji": "銃",
+      "keyword": "gun",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "充",
+          "label": "allot"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_sulfur",
+      "kanji": "硫",
+      "keyword": "sulfur",
+      "components": [
+        {
+          "glyph": "石",
+          "label": "stone"
+        },
+        {
+          "glyph": "㐬",
+          "label": "stream"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_current",
+      "kanji": "流",
+      "keyword": "current",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "㐬",
+          "label": "stream"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_makoto",
+      "kanji": "允",
+      "keyword": "makoto",
+      "components": [
+        {
+          "glyph": "ム",
+          "label": "elbow"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_tempt",
+      "kanji": "唆",
+      "keyword": "tempt",
+      "components": [
+        {
+          "glyph": "唆",
+          "label": "tempt"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_bungling",
+      "kanji": "拙",
+      "keyword": "bungling",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "出",
+          "label": "exit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_boulder",
+      "kanji": "岩",
+      "keyword": "boulder",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "石",
+          "label": "stone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_charcoal",
+      "kanji": "炭",
+      "keyword": "charcoal",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "灰",
+          "label": "ashes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_branch_off",
+      "kanji": "岐",
+      "keyword": "branch off",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "支",
+          "label": "branch"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_mountain_pass",
+      "kanji": "峠",
+      "keyword": "mountain pass",
+      "components": [
+        {
+          "glyph": "峠",
+          "label": "mountain pass"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_crumble",
+      "kanji": "崩",
+      "keyword": "crumble",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "朋",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_secrecy",
+      "kanji": "密",
+      "keyword": "secrecy",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "必",
+          "label": "invariably"
+        },
+        {
+          "glyph": "山",
+          "label": "mountain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_honey",
+      "kanji": "蜜",
+      "keyword": "honey",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "必",
+          "label": "invariably"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_storm",
+      "kanji": "嵐",
+      "keyword": "storm",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "風",
+          "label": "wind"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L42_exit",
+      "kanji": "出",
+      "keyword": "exit",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "山",
+          "label": "mountain"
+        }
+      ]
+    }
+  ]
+}

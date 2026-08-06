@@ -1,0 +1,443 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_39_components",
+  "title": "Lesson 39 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 39,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L39_friend",
+      "kanji": "友",
+      "keyword": "friend",
+      "components": [
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_slip_out",
+      "kanji": "抜",
+      "keyword": "slip out",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "扌"
+        },
+        {
+          "glyph": "友",
+          "label": "friend"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_throw",
+      "kanji": "投",
+      "keyword": "throw",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "扌"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_drown",
+      "kanji": "没",
+      "keyword": "drown",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_crotch",
+      "kanji": "股",
+      "keyword": "crotch",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_establish",
+      "kanji": "設",
+      "keyword": "establish",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_beat",
+      "kanji": "撃",
+      "keyword": "beat",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "手",
+          "label": "hand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_husk",
+      "kanji": "殻",
+      "keyword": "husk",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_branch",
+      "kanji": "支",
+      "keyword": "branch",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_skill",
+      "kanji": "技",
+      "keyword": "skill",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "扌"
+        },
+        {
+          "glyph": "支",
+          "label": "branch"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_bough",
+      "kanji": "枝",
+      "keyword": "bough",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "支",
+          "label": "branch"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_limb",
+      "kanji": "肢",
+      "keyword": "limb",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "支",
+          "label": "branch"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_stalk",
+      "kanji": "茎",
+      "keyword": "stalk",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_suspicious",
+      "kanji": "怪",
+      "keyword": "suspicious",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "忄"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_light_weight",
+      "kanji": "軽",
+      "keyword": "light weight",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_coach",
+      "kanji": "督",
+      "keyword": "coach",
+      "components": [
+        {
+          "glyph": "叔",
+          "label": "uncle"
+        },
+        {
+          "glyph": "目",
+          "label": "eye"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_loneliness",
+      "kanji": "寂",
+      "keyword": "loneliness",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "叔",
+          "label": "uncle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_graceful",
+      "kanji": "淑",
+      "keyword": "graceful",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "叔",
+          "label": "uncle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_anti",
+      "kanji": "反",
+      "keyword": "anti",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L39_uncle",
+      "kanji": "叔",
+      "keyword": "uncle",
+      "components": [
+        {
+          "glyph": "上",
+          "label": "up"
+        },
+        {
+          "glyph": "小",
+          "label": "small"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    }
+  ]
+}

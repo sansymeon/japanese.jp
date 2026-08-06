@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_24_gallery",
+  "title": "KML Gallery — Lesson 24 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (490s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_3_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9926,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3871,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3871,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 20468,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 24,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_3",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L24_bridge",
+      "kanji": "橋",
+      "keyword": "bridge",
+      "image": "studies/bridge.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>橋<rt>はし</rt></ruby><br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>渡<rt>わた</rt></ruby>る<br>    <ruby>朝<rt>あさ</rt></ruby>の<ruby>道<rt>みち</rt></ruby>",
+        "en": "A bridge in mist\ncrossed without hurry\ninto the morning"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "bridge"
+      },
+      "imageRev": 1785725428
+    },
+    {
+      "id": "L24_attractive",
+      "kanji": "嬌",
+      "keyword": "attractive",
+      "image": "studies/attractive.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雅<rt>みやび</rt></ruby>の<ruby>袖<rt>そで</rt></ruby><br>    <ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>より<ruby>先<rt>さき</rt></ruby>に<br>    <ruby>風<rt>かぜ</rt></ruby>が<ruby>舞<rt>ま</rt></ruby>う",
+        "en": "Elegant sleeves\nbefore words are spoken\nthe wind already speaks"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "attractive"
+      },
+      "imageRev": 1785725466
+    },
+    {
+      "id": "L24_stand_up",
+      "kanji": "立",
+      "keyword": "stand up",
+      "image": "studies/stand_up.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>空<rt>そら</rt></ruby>の<ruby>下<rt>もと</rt></ruby><br>    ただ<ruby>立<rt>た</rt></ruby>つだけで<br>    <ruby>道<rt>みち</rt></ruby>となる",
+        "en": "Beneath the sky\nsimply standing still\nbecomes a path"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "stand_up"
+      },
+      "imageRev": 1785737090
+    },
+    {
+      "id": "L24_cry",
+      "kanji": "泣",
+      "keyword": "cry",
+      "image": "studies/cry.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>灯<rt>あかり</rt></ruby><br>    <ruby>声<rt>こえ</rt></ruby>にならない<br>    <ruby>夜<rt>よる</rt></ruby>が<ruby>落<rt>お</rt></ruby>ちる",
+        "en": "Rain and lanterns\na voice that cannot form\nfalls into night"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "cry"
+      },
+      "imageRev": 1785737189
+    },
+    {
+      "id": "L24_chapter",
+      "kanji": "章",
+      "keyword": "chapter",
+      "image": "studies/chapter.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>紙<rt>かみ</rt></ruby><ruby>重<rt>かさ</rt></ruby>ね<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>時<rt>とき</rt></ruby>を<br>    <ruby>綴<rt>と</rt></ruby>じてゆく",
+        "en": "Layered papers\nbinding together\nquiet moments of time"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "chapter"
+      },
+      "imageRev": 1785737203
+    },
+    {
+      "id": "L24_compete",
+      "kanji": "競",
+      "keyword": "compete",
+      "image": "studies/compete.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>旗<rt>はた</rt></ruby><ruby>揺<rt>ゆ</rt></ruby>れて<br>    <ruby>争<rt>あらそ</rt></ruby>わぬまま<br>    <ruby>風<rt>かぜ</rt></ruby><ruby>競<rt>きそ</rt></ruby>う",
+        "en": "Banners trembling\nwithout open conflict\nthe winds compete"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "compete"
+      },
+      "imageRev": 1785737250
+    },
+    {
+      "id": "L24_sovereign",
+      "kanji": "帝",
+      "keyword": "sovereign",
+      "image": "studies/sovereign.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>空<rt>そら</rt></ruby><ruby>高<rt>たか</rt></ruby>く<br>    <ruby>誰<rt>だれ</rt></ruby>も<ruby>触<rt>ふ</rt></ruby>れえぬ<br>    <ruby>古<rt>ふる</rt></ruby>き<ruby>座<rt>ざ</rt></ruby>",
+        "en": "High beneath heaven\nan ancient throne\nnone may reach"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "sovereign"
+      },
+      "imageRev": 1785737260
+    },
+    {
+      "id": "L24_renunciation",
+      "kanji": "諦",
+      "keyword": "renunciation",
+      "image": "studies/renunciation.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>香<rt>こう</rt></ruby>の<ruby>煙<rt>けむり</rt></ruby><br>    <ruby>執<rt>しゅう</rt></ruby><ruby>着<rt>ちゃく</rt></ruby>だけが<br>    <ruby>遠<rt>とお</rt></ruby>ざかる",
+        "en": "Incense drifting\nonly attachment\nmoves farther away"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "renunciation"
+      },
+      "imageRev": 1785737282
+    },
+    {
+      "id": "L24_juvenile",
+      "kanji": "童",
+      "keyword": "juvenile",
+      "image": "studies/juvenile.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>泥<rt>どろ</rt></ruby>の<ruby>道<rt>みち</rt></ruby><br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>歌<rt>うた</rt></ruby>を<br>    <ruby>口<rt>くち</rt></ruby>ずさむ",
+        "en": "Along muddy roads\na small child quietly\nhums to himself"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "juvenile"
+      },
+      "imageRev": 1785737461
+    },
+    {
+      "id": "L24_pupil",
+      "kanji": "瞳",
+      "keyword": "pupil",
+      "image": "studies/pupil.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>空<rt>そら</rt></ruby><ruby>映<rt>うつ</rt></ruby>す<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>瞳<rt>ひとみ</rt></ruby>に<br>    <ruby>雲<rt>くも</rt></ruby><ruby>流<rt>なが</rt></ruby>る",
+        "en": "The sky reflected\ninside a quiet pupil\nclouds continue on"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "pupil"
+      },
+      "imageRev": 1785737474
+    },
+    {
+      "id": "L24_bell",
+      "kanji": "鐘",
+      "keyword": "bell",
+      "image": "studies/bell.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>夕<rt>ゆう</rt></ruby>の<ruby>鐘<rt>かね</rt></ruby><br>    <ruby>山<rt>やま</rt></ruby>の<ruby>霧<rt>きり</rt></ruby>へと<br>    <ruby>響<rt>ひび</rt></ruby>き<ruby>消<rt>しょう</rt></ruby>ゆ",
+        "en": "An evening bell\nechoing outward\ninto mountain mist"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "bell"
+      },
+      "imageRev": 1785737696
+    },
+    {
+      "id": "L24_deal",
+      "kanji": "商",
+      "keyword": "deal",
+      "image": "studies/deal.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>灯<rt>あかり</rt></ruby>の<ruby>市<rt>いちびと</rt></ruby><br>    <ruby>人<rt>ひと</rt></ruby>と<ruby>人<rt>ひと</rt></ruby>とを<br>    <ruby>結<rt>むす</rt></ruby>びゆく",
+        "en": "Lantern market\nbinding person to person\nthrough exchange"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "deal"
+      },
+      "imageRev": 1785737924
+    },
+    {
+      "id": "L24_legitimate_wife",
+      "kanji": "嫡",
+      "keyword": "legitimate wife",
+      "image": "studies/legitimate_wife.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>深<rt>ふか</rt></ruby>き<ruby>袖<rt>そで</rt></ruby><br>    <ruby>家<rt>か</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<br>    <ruby>受<rt>うけ</rt></ruby>け<ruby>継<rt>つ</rt></ruby>ぎぬ",
+        "en": "Within layered robes\nthe house is quietly\ncarried onward"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "legitimate_wife"
+      },
+      "imageRev": 1785738111
+    },
+    {
+      "id": "L24_suitable",
+      "kanji": "適",
+      "keyword": "suitable",
+      "image": "studies/suitable.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>石<rt>いし</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby><br>    <ruby>乱<rt>みだ</rt></ruby>れぬ<ruby>道<rt>みち</rt></ruby>に<br>    <ruby>風<rt>かぜ</rt></ruby>も<ruby>合<rt>あ</rt></ruby>う",
+        "en": "Stone garden paths\neven the passing wind\nmoves in harmony"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "suitable"
+      },
+      "imageRev": 1785738244
+    },
+    {
+      "id": "L24_drip",
+      "kanji": "滴",
+      "keyword": "drip",
+      "image": "studies/drip.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>しずく<br>    <ruby>古<rt>ふる</rt></ruby>き<ruby>屋<rt>や</rt></ruby><ruby>根<rt>ね</rt></ruby>より<br>    <ruby>時<rt>とき</rt></ruby><ruby>落<rt>お</rt></ruby>ちる",
+        "en": "Raindrops falling\nfrom the ancient temple roof\ntime itself descends"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "drip"
+      },
+      "imageRev": 1785738356
+    },
+    {
+      "id": "L24_enemy",
+      "kanji": "敵",
+      "keyword": "enemy",
+      "image": "studies/enemy.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>見<rt>み</rt></ruby>えぬ<ruby>影<rt>かげ</rt></ruby><br>    <ruby>遠<rt>とお</rt></ruby>き<ruby>静<rt>しず</rt></ruby>けさ<br>    <ruby>刃<rt>じん</rt></ruby>は<ruby>抜<rt>ぬ</rt></ruby>かず",
+        "en": "An unseen shadow\nwithin distant stillness\nno blade is drawn"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "enemy"
+      },
+      "imageRev": 1785738422
+    },
+    {
+      "id": "L24_spoon",
+      "kanji": "匕",
+      "keyword": "spoon",
+      "image": "studies/spoon.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>茶<rt>ちゃ</rt></ruby>の<ruby>湯<rt>ゆ</rt></ruby><ruby>気<rt>き</rt></ruby>に<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>木<rt>き</rt></ruby><ruby>匙<rt>さじ</rt></ruby><br>    <ruby>夜<rt>よる</rt></ruby>ぬくむ",
+        "en": "In rising tea steam\na quiet wooden spoon\nwarms the evening"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "spoon"
+      },
+      "imageRev": 1785738489
+    },
+    {
+      "id": "L24_scold",
+      "kanji": "叱",
+      "keyword": "scold",
+      "image": "studies/scold.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>厳<rt>きび</rt></ruby>しさも<br>    <ruby>愛<rt>あい</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>と<br>    <ruby>子<rt>こ</rt></ruby>は<ruby>知<rt>し</rt></ruby>らず",
+        "en": "Even stern words\nare sometimes the shape\nof love unseen"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "scold"
+      },
+      "imageRev": 1785738631
+    },
+    {
+      "id": "L24_scent",
+      "kanji": "匂",
+      "keyword": "scent",
+      "image": "studies/scent.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>花<rt>はな</rt></ruby>ひらき<br>    <ruby>名<rt>な</rt></ruby>もなき<ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby><br>    <ruby>風<rt>ふう</rt></ruby>に<ruby>立<rt>た</rt></ruby>つ",
+        "en": "Flowers opening\nnameless memories rise\nupon the wind"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "scent"
+      },
+      "imageRev": 1785738896
+    },
+    {
+      "id": "L24_about_that_time",
+      "kanji": "頃",
+      "keyword": "about that time",
+      "image": "studies/about_that_time.png",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>日<rt>ひ</rt></ruby>が<ruby>傾<rt>かたむ</rt></ruby>き<br>    <ruby>語<rt>かた</rt></ruby>らぬものが<br>    <ruby>空<rt>そら</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る",
+        "en": "As daylight fades\nthe unspoken things remain\nwithin the sky"
+      },
+      "meta": {
+        "lesson": 24,
+        "slug": "about_that_time"
+      },
+      "imageRev": 1785738955
+    }
+  ]
+}

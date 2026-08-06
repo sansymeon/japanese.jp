@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_33_components",
+  "title": "Lesson 33 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 33,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L33_forget",
+      "kanji": "忘",
+      "keyword": "forget",
+      "components": [
+        {
+          "glyph": "亡",
+          "label": "deceased"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_selfish",
+      "kanji": "恣",
+      "keyword": "selfish",
+      "components": [
+        {
+          "glyph": "次",
+          "label": "next"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_endure_silently",
+      "kanji": "忍",
+      "keyword": "endure silently",
+      "components": [
+        {
+          "glyph": "刃",
+          "label": "blade"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_acknowledge",
+      "kanji": "認",
+      "keyword": "acknowledge",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "忍",
+          "label": "endure silently"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_mourning",
+      "kanji": "忌",
+      "keyword": "mourning",
+      "components": [
+        {
+          "glyph": "己",
+          "label": "self"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_intention",
+      "kanji": "志",
+      "keyword": "intention",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_document",
+      "kanji": "誌",
+      "keyword": "document",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "志",
+          "label": "intention"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_core",
+      "kanji": "芯",
+      "keyword": "core",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_loyalty",
+      "kanji": "忠",
+      "keyword": "loyalty",
+      "components": [
+        {
+          "glyph": "中",
+          "label": "middle"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_skewer",
+      "kanji": "串",
+      "keyword": "skewer",
+      "components": [
+        {
+          "glyph": "串",
+          "label": "skewer"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_afflicted",
+      "kanji": "患",
+      "keyword": "afflicted",
+      "components": [
+        {
+          "glyph": "串",
+          "label": "skewer"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_think",
+      "kanji": "思",
+      "keyword": "think",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_grace",
+      "kanji": "恩",
+      "keyword": "grace",
+      "components": [
+        {
+          "glyph": "因",
+          "label": "reason"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_respond",
+      "kanji": "応",
+      "keyword": "respond",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "广"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_idea",
+      "kanji": "意",
+      "keyword": "idea",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_cowardice",
+      "kanji": "臆",
+      "keyword": "cowardice",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "意",
+          "label": "idea"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_concept",
+      "kanji": "想",
+      "keyword": "concept",
+      "components": [
+        {
+          "glyph": "相",
+          "label": "mutual"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_breath",
+      "kanji": "息",
+      "keyword": "breath",
+      "components": [
+        {
+          "glyph": "自",
+          "label": "oneself"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_recess",
+      "kanji": "憩",
+      "keyword": "recess",
+      "components": [
+        {
+          "glyph": "舌",
+          "label": "tongue"
+        },
+        {
+          "glyph": "自",
+          "label": "oneself"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L33_favor",
+      "kanji": "恵",
+      "keyword": "favor",
+      "components": [
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    }
+  ]
+}

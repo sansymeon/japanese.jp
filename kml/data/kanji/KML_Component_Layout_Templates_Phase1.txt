@@ -52,9 +52,7 @@ Double Stack | Triple Stack | Double Stack
 
       </div>
     </div>
-====================================================  Horizontal —double
-single | single
-====================================================
+=================  Horizontal single　====================
 <div class="component-box">
   <div class="component-layout stack-horizontal">
     <span class="kanji-part">丬</span>
@@ -150,3 +148,29 @@ Notes
 -   Avoid enclosure-specific layouts.
 -   Keep the renderer simple.
 -   Lessons 1–40 will define the editorial style.
+
+
+single on left, triple stack on right
+
+
+<div class="component-box">
+  <div class="component-layout kanji-composite">
+
+    <div class="kanji-left">
+      <span class="kanji-part">{{L1}}</span>
+    </div>
+
+    <div class="kanji-right stack-vertical">
+      <span class="kanji-part">{{R1}}</span>
+      <span class="kanji-part">{{R2}}</span>
+      <span class="kanji-part">{{R3}}</span>
+    </div>
+
+  </div>
+</div>
+
+============= Anchor======
+<div class="component-box">
+  <span class="kanji-part">東</span>
+</div>  
+  

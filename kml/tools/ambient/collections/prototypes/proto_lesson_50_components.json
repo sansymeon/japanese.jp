@@ -1,0 +1,423 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_50_components",
+  "title": "Lesson 50 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 50,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L50_excel",
+      "kanji": "秀",
+      "keyword": "excel",
+      "components": [
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "乃",
+          "label": "from"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_transparent",
+      "kanji": "透",
+      "keyword": "transparent",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "秀",
+          "label": "excel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_entice",
+      "kanji": "誘",
+      "keyword": "entice",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "秀",
+          "label": "excel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_examine",
+      "kanji": "稽",
+      "keyword": "examine",
+      "components": [
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "尤",
+          "label": "尤"
+        },
+        {
+          "glyph": "旨",
+          "label": "delicious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_cereals",
+      "kanji": "穀",
+      "keyword": "cereals",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_germ",
+      "kanji": "菌",
+      "keyword": "germ",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_numb",
+      "kanji": "萎",
+      "keyword": "numb",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "委",
+          "label": "committee"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_rice",
+      "kanji": "米",
+      "keyword": "rice",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_flour",
+      "kanji": "粉",
+      "keyword": "flour",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "分",
+          "label": "part"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_sticky",
+      "kanji": "粘",
+      "keyword": "sticky",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "占",
+          "label": "fortune telling"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_grains",
+      "kanji": "粒",
+      "keyword": "grains",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "立",
+          "label": "stand up"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_cosmetics",
+      "kanji": "粧",
+      "keyword": "cosmetics",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_astray",
+      "kanji": "迷",
+      "keyword": "astray",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_chic",
+      "kanji": "粋",
+      "keyword": "chic",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "九",
+          "label": "nine"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_riddle",
+      "kanji": "謎",
+      "keyword": "riddle",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "迷",
+          "label": "astray"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_provisions",
+      "kanji": "糧",
+      "keyword": "provisions",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "量",
+          "label": "quantity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_chrysanthemum",
+      "kanji": "菊",
+      "keyword": "chrysanthemum",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_inner",
+      "kanji": "奥",
+      "keyword": "inner",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_number",
+      "kanji": "数",
+      "keyword": "number",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L50_watchtower",
+      "kanji": "楼",
+      "keyword": "watchtower",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    }
+  ]
+}

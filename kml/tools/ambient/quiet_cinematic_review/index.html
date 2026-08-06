@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiet Cinematic Japan — Exhibition Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/review.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <p class="eyebrow">Temporary review · not public</p>
+      <h1 id="page-title">Quiet Cinematic Japan</h1>
+      <p class="subtitle" id="page-subtitle">Draft exhibition candidates</p>
+      <p class="meta" id="page-notes"></p>
+
+      <nav class="block-nav" aria-label="Exhibition blocks">
+        <a class="block-link" href="?block=21-25" data-block="21-25">Lessons 21–25</a>
+        <a class="block-link" href="?block=26-30" data-block="26-30">Lessons 26–30</a>
+      </nav>
+    </header>
+
+    <div class="toolbar" role="toolbar" aria-label="Review controls">
+      <span class="count-label" id="count-label">Loading…</span>
+      <span class="target-label" id="target-label"></span>
+      <div class="toolbar-actions">
+        <button type="button" class="tool-btn" id="btn-export" title="Copy current order as JSON">Export order</button>
+        <button type="button" class="tool-btn" id="btn-download" title="Download current draft JSON">Download JSON</button>
+        <button type="button" class="tool-btn tool-btn--danger" id="btn-reset" title="Restore original draft order">Reset draft</button>
+      </div>
+    </div>
+
+    <p class="hint">
+      Drag cards to reorder · Remove weak scenes · Target ~30 for the finished exhibition ·
+      Changes stay in this browser until you export
+    </p>
+
+    <main class="grid" id="grid" aria-live="polite"></main>
+
+    <footer class="footer">
+      <p>
+        Quiet Cinematic Japan · landscape and atmosphere first ·
+        solitary figures only when they serve the mood
+      </p>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Full size image">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+    <img src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <script src="js/review.js"></script>
+</body>
+</html>

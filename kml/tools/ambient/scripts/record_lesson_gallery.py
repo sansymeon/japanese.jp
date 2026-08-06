@@ -39,7 +39,7 @@ BUILDERS = {
     8: "build_lesson_08_gallery.py",
     9: "build_lesson_09_gallery.py",
     10: "build_lesson_10_gallery.py",
-    # Lessons 11–22, 33–38, 41 use the shared gallery builder (same profile as 1–10).
+    # Lessons 11–24, 33–38, 41 use the shared gallery builder (same profile as 1–10).
     11: "build_lesson_gallery.py",
     12: "build_lesson_gallery.py",
     13: "build_lesson_gallery.py",
@@ -52,6 +52,8 @@ BUILDERS = {
     20: "build_lesson_gallery.py",
     21: "build_lesson_gallery.py",
     22: "build_lesson_gallery.py",
+    23: "build_lesson_gallery.py",
+    24: "build_lesson_gallery.py",
     33: "build_lesson_gallery.py",
     34: "build_lesson_gallery.py",
     35: "build_lesson_gallery.py",

@@ -1,0 +1,455 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_45_components",
+  "title": "Lesson 45 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 45,
+    "sceneCount": 22,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L45_wink",
+      "kanji": "瞬",
+      "keyword": "wink",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "爫",
+          "label": "vulture"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "舛",
+          "label": "dancing legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_ear",
+      "kanji": "耳",
+      "keyword": "ear",
+      "components": [
+        {
+          "glyph": "耳",
+          "label": "ear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_take",
+      "kanji": "取",
+      "keyword": "take",
+      "components": [
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_gist",
+      "kanji": "趣",
+      "keyword": "gist",
+      "components": [
+        {
+          "glyph": "走",
+          "label": "run"
+        },
+        {
+          "glyph": "取",
+          "label": "take"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_utmost",
+      "kanji": "最",
+      "keyword": "utmost",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "取",
+          "label": "take"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_snapshot",
+      "kanji": "撮",
+      "keyword": "snapshot",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "最",
+          "label": "utmost"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_shame",
+      "kanji": "恥",
+      "keyword": "shame",
+      "components": [
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_employment",
+      "kanji": "職",
+      "keyword": "employment",
+      "components": [
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "音",
+          "label": "sound"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_holy",
+      "kanji": "聖",
+      "keyword": "holy",
+      "components": [
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_daring",
+      "kanji": "敢",
+      "keyword": "daring",
+      "components": [
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_listen",
+      "kanji": "聴",
+      "keyword": "listen",
+      "components": [
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_pocket",
+      "kanji": "懐",
+      "keyword": "pocket",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "衣",
+          "label": "garment"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L45_intro_mandala",
+      "glyph": "曼",
+      "label": "mandala"
+    },
+    {
+      "type": "kanji",
+      "id": "L45_ridicule",
+      "kanji": "慢",
+      "keyword": "ridicule",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "曼",
+          "label": "mandala"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_cartoon",
+      "kanji": "漫",
+      "keyword": "cartoon",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "曼",
+          "label": "mandala"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_buy",
+      "kanji": "買",
+      "keyword": "buy",
+      "components": [
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_placement",
+      "kanji": "置",
+      "keyword": "placement",
+      "components": [
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "直",
+          "label": "straightaway"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_penalty",
+      "kanji": "罰",
+      "keyword": "penalty",
+      "components": [
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_rather",
+      "kanji": "寧",
+      "keyword": "rather",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        },
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L45_voiced",
+      "kanji": "濁",
+      "keyword": "voiced",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L45_intro_scepter",
+      "glyph": "睘",
+      "label": "scepter"
+    },
+    {
+      "type": "kanji",
+      "id": "L45_ring",
+      "kanji": "環",
+      "keyword": "ring",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "睘",
+          "label": "scepter"
+        }
+      ]
+    }
+  ]
+}
