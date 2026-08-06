@@ -1,0 +1,389 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_100_components",
+  "title": "Lesson 100 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 100,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L100_bay",
+      "kanji": "浦",
+      "keyword": "bay",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "甫",
+          "label": "dog tag"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_cattail",
+      "kanji": "蒲",
+      "keyword": "cattail",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "浦",
+          "label": "bay"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_shop",
+      "kanji": "舗",
+      "keyword": "shop",
+      "components": [
+        {
+          "glyph": "舎",
+          "label": "cottage"
+        },
+        {
+          "glyph": "甫",
+          "label": "dog tag"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_supplement",
+      "kanji": "補",
+      "keyword": "supplement",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "甫",
+          "label": "dog tag"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L100_intro_city_walls",
+      "glyph": "⻏",
+      "label": "city walls"
+    },
+    {
+      "type": "kanji",
+      "id": "L100_residence",
+      "kanji": "邸",
+      "keyword": "residence",
+      "components": [
+        {
+          "glyph": "氐",
+          "label": "foundation"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_enclosure",
+      "kanji": "郭",
+      "keyword": "enclosure",
+      "components": [
+        {
+          "glyph": "享",
+          "label": "receive"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_county",
+      "kanji": "郡",
+      "keyword": "county",
+      "components": [
+        {
+          "glyph": "君",
+          "label": "lord"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_outskirts",
+      "kanji": "郊",
+      "keyword": "outskirts",
+      "components": [
+        {
+          "glyph": "交",
+          "label": "mingle"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_department",
+      "kanji": "部",
+      "keyword": "department",
+      "components": [
+        {
+          "glyph": "咅",
+          "label": "muzzle"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_metropolis",
+      "kanji": "都",
+      "keyword": "metropolis",
+      "components": [
+        {
+          "glyph": "者",
+          "label": "someone"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_mail",
+      "kanji": "郵",
+      "keyword": "mail",
+      "components": [
+        {
+          "glyph": "垂",
+          "label": "droop"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_home_country",
+      "kanji": "邦",
+      "keyword": "home country",
+      "components": [
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_that",
+      "kanji": "那",
+      "keyword": "that",
+      "components": [
+        {
+          "glyph": "二",
+          "label": "two"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_hometown",
+      "kanji": "郷",
+      "keyword": "hometown",
+      "components": [
+        {
+          "glyph": "郷",
+          "label": "hometown"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_echo",
+      "kanji": "響",
+      "keyword": "echo",
+      "components": [
+        {
+          "glyph": "郷",
+          "label": "hometown"
+        },
+        {
+          "glyph": "音",
+          "label": "sound"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_son",
+      "kanji": "郎",
+      "keyword": "son",
+      "components": [
+        {
+          "glyph": "良",
+          "label": "good"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_corridor",
+      "kanji": "廊",
+      "keyword": "corridor",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "郎",
+          "label": "son"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_shield",
+      "kanji": "盾",
+      "keyword": "shield",
+      "components": [
+        {
+          "glyph": "盾",
+          "label": "shield"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_sequential",
+      "kanji": "循",
+      "keyword": "sequential",
+      "components": [
+        {
+          "glyph": "彳",
+          "label": "going"
+        },
+        {
+          "glyph": "盾",
+          "label": "shield"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L100_faction",
+      "kanji": "派",
+      "keyword": "faction",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "𠂢",
+          "label": "water's edge"
+        }
+      ]
+    }
+  ]
+}

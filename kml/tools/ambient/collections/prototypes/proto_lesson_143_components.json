@@ -1,0 +1,407 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_143_components",
+  "title": "Lesson 143 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 143,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L143_sushi",
+      "kanji": "鮨",
+      "keyword": "sushi",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "旨",
+          "label": "delicious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_fish_fin",
+      "kanji": "鰭",
+      "keyword": "fish fin",
+      "components": [
+        {
+          "glyph": "魚",
+          "label": "fish"
+        },
+        {
+          "glyph": "老",
+          "label": "old man"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_seagull",
+      "kanji": "鴎",
+      "keyword": "seagull",
+      "components": [
+        {
+          "glyph": "区",
+          "label": "ward"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_roc",
+      "kanji": "鵬",
+      "keyword": "roc",
+      "components": [
+        {
+          "glyph": "朋",
+          "label": "companion"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_parakeet",
+      "kanji": "鸚",
+      "keyword": "parakeet",
+      "components": [
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_parrot",
+      "kanji": "鵡",
+      "keyword": "parrot",
+      "components": [
+        {
+          "glyph": "武",
+          "label": "warrior"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_cormorant",
+      "kanji": "鵜",
+      "keyword": "cormorant",
+      "components": [
+        {
+          "glyph": "弟",
+          "label": "younger brother"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_heron",
+      "kanji": "鷺",
+      "keyword": "heron",
+      "components": [
+        {
+          "glyph": "路",
+          "label": "path"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_eagle",
+      "kanji": "鷲",
+      "keyword": "eagle",
+      "components": [
+        {
+          "glyph": "就",
+          "label": "concerning"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_wild_duck",
+      "kanji": "鴨",
+      "keyword": "wild duck",
+      "components": [
+        {
+          "glyph": "甲",
+          "label": "armor"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_black_kite",
+      "kanji": "鳶",
+      "keyword": "black kite",
+      "components": [
+        {
+          "glyph": "弋",
+          "label": "arrow"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_owl",
+      "kanji": "梟",
+      "keyword": "owl",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_dust",
+      "kanji": "塵",
+      "keyword": "dust",
+      "components": [
+        {
+          "glyph": "鹿",
+          "label": "deer"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_giraffe",
+      "kanji": "麒",
+      "keyword": "giraffe",
+      "components": [
+        {
+          "glyph": "鹿",
+          "label": "deer"
+        },
+        {
+          "glyph": "其",
+          "label": "that"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_fatherinlaw",
+      "kanji": "舅",
+      "keyword": "fatherinlaw",
+      "components": [
+        {
+          "glyph": "臼",
+          "label": "mortar"
+        },
+        {
+          "glyph": "男",
+          "label": "man"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_mouse",
+      "kanji": "鼠",
+      "keyword": "mouse",
+      "components": [
+        {
+          "glyph": "鼠",
+          "label": "mouse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_bore",
+      "kanji": "鑿",
+      "keyword": "bore",
+      "components": [
+        {
+          "glyph": "业",
+          "label": "business"
+        },
+        {
+          "glyph": "羊",
+          "label": "sheep"
+        },
+        {
+          "glyph": "殳",
+          "label": "missile"
+        },
+        {
+          "glyph": "金",
+          "label": "gold"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_small_craft",
+      "kanji": "艘",
+      "keyword": "small craft",
+      "components": [
+        {
+          "glyph": "舟",
+          "label": "boat"
+        },
+        {
+          "glyph": "臼",
+          "label": "mortar"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_close_eyes",
+      "kanji": "瞑",
+      "keyword": "close eyes",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "冥",
+          "label": "dark"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L143_murky",
+      "kanji": "暝",
+      "keyword": "murky",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "冥",
+          "label": "dark"
+        }
+      ]
+    }
+  ]
+}

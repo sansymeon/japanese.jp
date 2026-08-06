@@ -1,0 +1,407 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_122_components",
+  "title": "Lesson 122 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 122,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L122_black_soil",
+      "kanji": "涅",
+      "keyword": "black soil",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_hatchet",
+      "kanji": "斧",
+      "keyword": "hatchet",
+      "components": [
+        {
+          "glyph": "父",
+          "label": "father"
+        },
+        {
+          "glyph": "斤",
+          "label": "axe"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_grandpa",
+      "kanji": "爺",
+      "keyword": "grandpa",
+      "components": [
+        {
+          "glyph": "父",
+          "label": "father"
+        },
+        {
+          "glyph": "耶",
+          "label": "question"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_sly",
+      "kanji": "猾",
+      "keyword": "sly",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "骨",
+          "label": "skeleton"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_indecent",
+      "kanji": "猥",
+      "keyword": "indecent",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "畏",
+          "label": "apprehensive"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_cunning",
+      "kanji": "狡",
+      "keyword": "cunning",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "交",
+          "label": "mingle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_racoon_dog",
+      "kanji": "狸",
+      "keyword": "racoon dog",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "里",
+          "label": "home village"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_wolf",
+      "kanji": "狼",
+      "keyword": "wolf",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "良",
+          "label": "good"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_flustered",
+      "kanji": "狽",
+      "keyword": "flustered",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_pup",
+      "kanji": "狗",
+      "keyword": "pup",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "句",
+          "label": "phrase"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_fox",
+      "kanji": "狐",
+      "keyword": "fox",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "瓜",
+          "label": "melon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_komainu",
+      "kanji": "狛",
+      "keyword": "komainu",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_lion",
+      "kanji": "獅",
+      "keyword": "lion",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "師",
+          "label": "expert"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_baboon",
+      "kanji": "狒",
+      "keyword": "baboon",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "弗",
+          "label": "dollar"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_tobacco",
+      "kanji": "莨",
+      "keyword": "tobacco",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "良",
+          "label": "good"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_jasmine",
+      "kanji": "茉",
+      "keyword": "jasmine",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "末",
+          "label": "extremity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_hawthorn",
+      "kanji": "莉",
+      "keyword": "hawthorn",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "利",
+          "label": "profit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_strawberry",
+      "kanji": "苺",
+      "keyword": "strawberry",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "母",
+          "label": "mother"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_bush_clover",
+      "kanji": "萩",
+      "keyword": "bush clover",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "秋",
+          "label": "autumn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L122_technique_old",
+      "kanji": "藝",
+      "keyword": "technique old",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        },
+        {
+          "glyph": "丸",
+          "label": "round"
+        },
+        {
+          "glyph": "云",
+          "label": "quote"
+        }
+      ]
+    }
+  ]
+}

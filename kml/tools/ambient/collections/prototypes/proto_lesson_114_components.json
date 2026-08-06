@@ -1,0 +1,439 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_114_components",
+  "title": "Lesson 114 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 114,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L114_make_do",
+      "kanji": "做",
+      "keyword": "make do",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "故",
+          "label": "happenstance"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_sharp",
+      "kanji": "冴",
+      "keyword": "sharp",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "牙",
+          "label": "tusk"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_wilt",
+      "kanji": "凋",
+      "keyword": "wilt",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "周",
+          "label": "circumference"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_pull_through",
+      "kanji": "凌",
+      "keyword": "pull through",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_stately",
+      "kanji": "凛",
+      "keyword": "stately",
+      "components": [
+        {
+          "glyph": "冫",
+          "label": "ice"
+        },
+        {
+          "glyph": "亠",
+          "label": "top hat"
+        },
+        {
+          "glyph": "回",
+          "label": "yonder"
+        },
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_kite",
+      "kanji": "凧",
+      "keyword": "kite",
+      "components": [
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_lull",
+      "kanji": "凪",
+      "keyword": "lull",
+      "components": [
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_earlybird",
+      "kanji": "夙",
+      "keyword": "earlybird",
+      "components": [
+        {
+          "glyph": "夕",
+          "label": "evening"
+        },
+        {
+          "glyph": "凡",
+          "label": "mediocre"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_phoenix",
+      "kanji": "鳳",
+      "keyword": "phoenix",
+      "components": [
+        {
+          "glyph": "几",
+          "label": "wind"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_menace",
+      "kanji": "剽",
+      "keyword": "menace",
+      "components": [
+        {
+          "glyph": "票",
+          "label": "ballot"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_slaughter",
+      "kanji": "劉",
+      "keyword": "slaughter",
+      "components": [
+        {
+          "glyph": "卯",
+          "label": "signs of the hare"
+        },
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_shave",
+      "kanji": "剃",
+      "keyword": "shave",
+      "components": [
+        {
+          "glyph": "弟",
+          "label": "younger brother"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_despondent",
+      "kanji": "厭",
+      "keyword": "despondent",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "犬",
+          "label": "dog"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_wild_goose",
+      "kanji": "雁",
+      "keyword": "wild goose",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_counterfeit",
+      "kanji": "贋",
+      "keyword": "counterfeit",
+      "components": [
+        {
+          "glyph": "雁",
+          "label": "wild goose"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_kitchen",
+      "kanji": "厨",
+      "keyword": "kitchen",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "豆",
+          "label": "beans"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_insinuate",
+      "kanji": "仄",
+      "keyword": "insinuate",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_scout",
+      "kanji": "哨",
+      "keyword": "scout",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "肖",
+          "label": "resemble"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_reprehend",
+      "kanji": "咎",
+      "keyword": "reprehend",
+      "components": [
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L114_whisper",
+      "kanji": "囁",
+      "keyword": "whisper",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "耳",
+          "label": "ear"
+        }
+      ]
+    }
+  ]
+}

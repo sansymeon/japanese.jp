@@ -1,0 +1,383 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_77_components",
+  "title": "Lesson 77 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 77,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L77_dangerous",
+      "kanji": "危",
+      "keyword": "dangerous",
+      "components": [
+        {
+          "glyph": "⺈",
+          "label": "bound up"
+        },
+        {
+          "glyph": "厄",
+          "label": "unlucky"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_addressed_to",
+      "kanji": "宛",
+      "keyword": "addressed to",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "夕",
+          "label": "evening"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_arm",
+      "kanji": "腕",
+      "keyword": "arm",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "宛",
+          "label": "addressed to"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_park",
+      "kanji": "苑",
+      "keyword": "park",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "宛",
+          "label": "addressed to"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_grudge",
+      "kanji": "怨",
+      "keyword": "grudge",
+      "components": [
+        {
+          "glyph": "夕",
+          "label": "evening"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_willow",
+      "kanji": "柳",
+      "keyword": "willow",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "卯",
+          "label": "signs of the hare"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_egg",
+      "kanji": "卵",
+      "keyword": "egg",
+      "components": [
+        {
+          "glyph": "卵",
+          "label": "egg"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_detain",
+      "kanji": "留",
+      "keyword": "detain",
+      "components": [
+        {
+          "glyph": "卯",
+          "label": "signs of the hare"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_marine_blue",
+      "kanji": "瑠",
+      "keyword": "marine blue",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "留",
+          "label": "detain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_trade",
+      "kanji": "貿",
+      "keyword": "trade",
+      "components": [
+        {
+          "glyph": "卯",
+          "label": "signs of the hare"
+        },
+        {
+          "glyph": "貝",
+          "label": "shellfish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_stamp",
+      "kanji": "印",
+      "keyword": "stamp",
+      "components": [
+        {
+          "glyph": "印",
+          "label": "stamp"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_mortar",
+      "kanji": "臼",
+      "keyword": "mortar",
+      "components": [
+        {
+          "glyph": "臼",
+          "label": "mortar"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_break",
+      "kanji": "毀",
+      "keyword": "break",
+      "components": [
+        {
+          "glyph": "臼",
+          "label": "mortar"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "殳",
+          "label": "missile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_entertain",
+      "kanji": "興",
+      "keyword": "entertain",
+      "components": [
+        {
+          "glyph": "興",
+          "label": "entertain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_sake_flask",
+      "kanji": "酉",
+      "keyword": "sake flask",
+      "components": [
+        {
+          "glyph": "酉",
+          "label": "sake flask"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_sake",
+      "kanji": "酒",
+      "keyword": "sake",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_bartending",
+      "kanji": "酌",
+      "keyword": "bartending",
+      "components": [
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        },
+        {
+          "glyph": "勺",
+          "label": "ladle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_alcohol",
+      "kanji": "酎",
+      "keyword": "alcohol",
+      "components": [
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_fermentation",
+      "kanji": "酵",
+      "keyword": "fermentation",
+      "components": [
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        },
+        {
+          "glyph": "孝",
+          "label": "filial piety"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L77_cruel",
+      "kanji": "酷",
+      "keyword": "cruel",
+      "components": [
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        },
+        {
+          "glyph": "告",
+          "label": "revelation"
+        }
+      ]
+    }
+  ]
+}

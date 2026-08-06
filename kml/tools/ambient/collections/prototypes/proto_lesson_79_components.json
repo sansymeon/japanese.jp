@@ -1,0 +1,413 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_79_components",
+  "title": "Lesson 79 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 79,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L79_warm",
+      "kanji": "温",
+      "keyword": "warm",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "皿",
+          "label": "dish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_lid",
+      "kanji": "蓋",
+      "keyword": "lid",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "去",
+          "label": "leave"
+        },
+        {
+          "glyph": "皿",
+          "label": "dish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_oversee",
+      "kanji": "監",
+      "keyword": "oversee",
+      "components": [
+        {
+          "glyph": "臣",
+          "label": "retainer"
+        },
+        {
+          "glyph": "丿",
+          "label": "丿"
+        },
+        {
+          "glyph": "皿",
+          "label": "dish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_excessive",
+      "kanji": "濫",
+      "keyword": "excessive",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "監",
+          "label": "oversee"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_specimen",
+      "kanji": "鑑",
+      "keyword": "specimen",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "監",
+          "label": "oversee"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_indigo",
+      "kanji": "藍",
+      "keyword": "indigo",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "監",
+          "label": "oversee"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_fierce",
+      "kanji": "猛",
+      "keyword": "fierce",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "子",
+          "label": "child"
+        },
+        {
+          "glyph": "皿",
+          "label": "dish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_boom",
+      "kanji": "盛",
+      "keyword": "boom",
+      "components": [
+        {
+          "glyph": "成",
+          "label": "become"
+        },
+        {
+          "glyph": "皿",
+          "label": "dish"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_salt",
+      "kanji": "塩",
+      "keyword": "salt",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "皿",
+          "label": "dish"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L79_intro_stopping",
+      "glyph": "艮",
+      "label": "stopping"
+    },
+    {
+      "type": "kanji",
+      "id": "L79_silver",
+      "kanji": "銀",
+      "keyword": "silver",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_resentment",
+      "kanji": "恨",
+      "keyword": "resentment",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_root",
+      "kanji": "根",
+      "keyword": "root",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_instant",
+      "kanji": "即",
+      "keyword": "instant",
+      "components": [
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        },
+        {
+          "glyph": "卩",
+          "label": "stamp"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_baron",
+      "kanji": "爵",
+      "keyword": "baron",
+      "components": [
+        {
+          "glyph": "爵",
+          "label": "baron"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_node",
+      "kanji": "節",
+      "keyword": "node",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "即",
+          "label": "instant"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_retreat",
+      "kanji": "退",
+      "keyword": "retreat",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_limit",
+      "kanji": "限",
+      "keyword": "limit",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_eyeball",
+      "kanji": "眼",
+      "keyword": "eyeball",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_good",
+      "kanji": "良",
+      "keyword": "good",
+      "components": [
+        {
+          "glyph": "良",
+          "label": "good"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L79_melodious",
+      "kanji": "朗",
+      "keyword": "melodious",
+      "components": [
+        {
+          "glyph": "良",
+          "label": "good"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    }
+  ]
+}

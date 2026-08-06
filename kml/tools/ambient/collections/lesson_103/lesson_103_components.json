@@ -1,0 +1,387 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_103_components",
+  "title": "Lesson 103 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 103,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L103_noodles",
+      "kanji": "麺",
+      "keyword": "noodles",
+      "components": [
+        {
+          "glyph": "麦",
+          "label": "wheat"
+        },
+        {
+          "glyph": "面",
+          "label": "mask"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_leather",
+      "kanji": "革",
+      "keyword": "leather",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_shoes",
+      "kanji": "靴",
+      "keyword": "shoes",
+      "components": [
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "化",
+          "label": "change"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_hegemony",
+      "kanji": "覇",
+      "keyword": "hegemony",
+      "components": [
+        {
+          "glyph": "西",
+          "label": "west"
+        },
+        {
+          "glyph": "革",
+          "label": "leather"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_voice",
+      "kanji": "声",
+      "keyword": "voice",
+      "components": [
+        {
+          "glyph": "士",
+          "label": "gentleman"
+        },
+        {
+          "glyph": "尸",
+          "label": "flag"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_eyebrow",
+      "kanji": "眉",
+      "keyword": "eyebrow",
+      "components": [
+        {
+          "glyph": "𠃜",
+          "label": "eyebrow top"
+        },
+        {
+          "glyph": "目",
+          "label": "eye"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_give",
+      "kanji": "呉",
+      "keyword": "give",
+      "components": [
+        {
+          "glyph": "呉",
+          "label": "give"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_recreation",
+      "kanji": "娯",
+      "keyword": "recreation",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "呉",
+          "label": "give"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_mistake",
+      "kanji": "誤",
+      "keyword": "mistake",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "呉",
+          "label": "give"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_steam",
+      "kanji": "蒸",
+      "keyword": "steam",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "丞",
+          "label": "helping hand"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_acquiesce",
+      "kanji": "承",
+      "keyword": "acquiesce",
+      "components": [
+        {
+          "glyph": "承",
+          "label": "acquiesce"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_bin",
+      "kanji": "函",
+      "keyword": "bin",
+      "components": [
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        },
+        {
+          "glyph": "凵",
+          "label": "凵"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_poles",
+      "kanji": "極",
+      "keyword": "poles",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "亟",
+          "label": "urgency"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_tusk",
+      "kanji": "牙",
+      "keyword": "tusk",
+      "components": [
+        {
+          "glyph": "牙",
+          "label": "tusk"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_bud",
+      "kanji": "芽",
+      "keyword": "bud",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "牙",
+          "label": "tusk"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_wicked",
+      "kanji": "邪",
+      "keyword": "wicked",
+      "components": [
+        {
+          "glyph": "牙",
+          "label": "tusk"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_gracious",
+      "kanji": "雅",
+      "keyword": "gracious",
+      "components": [
+        {
+          "glyph": "牙",
+          "label": "tusk"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_interpretation",
+      "kanji": "釈",
+      "keyword": "interpretation",
+      "components": [
+        {
+          "glyph": "釆",
+          "label": "釆"
+        },
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_ones_turn",
+      "kanji": "番",
+      "keyword": "ones turn",
+      "components": [
+        {
+          "glyph": "釆",
+          "label": "釆"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L103_hearing",
+      "kanji": "審",
+      "keyword": "hearing",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "番",
+          "label": "turn"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_130_components",
+  "title": "Lesson 130 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 130,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L130_sled",
+      "kanji": "橇",
+      "keyword": "sled",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "毛",
+          "label": "fur"
+        },
+        {
+          "glyph": "毛",
+          "label": "fur"
+        },
+        {
+          "glyph": "毛",
+          "label": "fur"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_enjoyment",
+      "kanji": "槃",
+      "keyword": "enjoyment",
+      "components": [
+        {
+          "glyph": "般",
+          "label": "carrier"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_bookmark",
+      "kanji": "栞",
+      "keyword": "bookmark",
+      "components": [
+        {
+          "glyph": "干",
+          "label": "dry"
+        },
+        {
+          "glyph": "干",
+          "label": "dry"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_coconut",
+      "kanji": "椰",
+      "keyword": "coconut",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "⻏",
+          "label": "city walls"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_sandalwood",
+      "kanji": "檀",
+      "keyword": "sandalwood",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "亠",
+          "label": "top hat"
+        },
+        {
+          "glyph": "回",
+          "label": "yonder"
+        },
+        {
+          "glyph": "旦",
+          "label": "nightbreak"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_sumac",
+      "kanji": "樗",
+      "keyword": "sumac",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "者",
+          "label": "someone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_zelkova",
+      "kanji": "槻",
+      "keyword": "zelkova",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "規",
+          "label": "standard"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_cryptomeria",
+      "kanji": "椙",
+      "keyword": "cryptomeria",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "昌",
+          "label": "prosperous"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_copious",
+      "kanji": "彬",
+      "keyword": "copious",
+      "components": [
+        {
+          "glyph": "林",
+          "label": "grove"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_bucket",
+      "kanji": "桶",
+      "keyword": "bucket",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "甬",
+          "label": "chop-seal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_ellipse",
+      "kanji": "楕",
+      "keyword": "ellipse",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "左",
+          "label": "left"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_staranise",
+      "kanji": "樒",
+      "keyword": "staranise",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "密",
+          "label": "secrecy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_furball",
+      "kanji": "毬",
+      "keyword": "furball",
+      "components": [
+        {
+          "glyph": "毛",
+          "label": "fur"
+        },
+        {
+          "glyph": "求",
+          "label": "request"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_twinkle",
+      "kanji": "燿",
+      "keyword": "twinkle",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "羽",
+          "label": "feather"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_watchfire",
+      "kanji": "燎",
+      "keyword": "watchfire",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "尞",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_torch",
+      "kanji": "炬",
+      "keyword": "torch",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "巨",
+          "label": "gigantic"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_kindle",
+      "kanji": "焚",
+      "keyword": "kindle",
+      "components": [
+        {
+          "glyph": "林",
+          "label": "grove"
+        },
+        {
+          "glyph": "火",
+          "label": "fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_moxa",
+      "kanji": "灸",
+      "keyword": "moxa",
+      "components": [
+        {
+          "glyph": "久",
+          "label": "long time"
+        },
+        {
+          "glyph": "火",
+          "label": "fire"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_fanning",
+      "kanji": "煽",
+      "keyword": "fanning",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "扇",
+          "label": "fan"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L130_soot",
+      "kanji": "煤",
+      "keyword": "soot",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "某",
+          "label": "so-and-so"
+        }
+      ]
+    }
+  ]
+}

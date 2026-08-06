@@ -1,0 +1,435 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_85_components",
+  "title": "Lesson 85 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 85,
+    "sceneCount": 22,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L85_animal_sacrifice",
+      "kanji": "牲",
+      "keyword": "animal sacrifice",
+      "components": [
+        {
+          "glyph": "牛",
+          "label": "cow"
+        },
+        {
+          "glyph": "生",
+          "label": "life"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_produce",
+      "kanji": "産",
+      "keyword": "produce",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "生",
+          "label": "life"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_hump",
+      "kanji": "隆",
+      "keyword": "hump",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "生",
+          "label": "life"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_summit",
+      "kanji": "峰",
+      "keyword": "summit",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_bee",
+      "kanji": "蜂",
+      "keyword": "bee",
+      "components": [
+        {
+          "glyph": "虫",
+          "label": "insect"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_sew",
+      "kanji": "縫",
+      "keyword": "sew",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_worship",
+      "kanji": "拝",
+      "keyword": "worship",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_longevity",
+      "kanji": "寿",
+      "keyword": "longevity",
+      "components": [
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_casting",
+      "kanji": "鋳",
+      "keyword": "casting",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "寿",
+          "label": "longevity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_enroll",
+      "kanji": "籍",
+      "keyword": "enroll",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "耒",
+          "label": "plow"
+        },
+        {
+          "glyph": "昔",
+          "label": "once upon a time"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L85_intro_bonsai",
+      "glyph": "𡗗",
+      "label": "bonsai"
+    },
+    {
+      "type": "kanji",
+      "id": "L85_springtime",
+      "kanji": "春",
+      "keyword": "springtime",
+      "components": [
+        {
+          "glyph": "𡗗",
+          "label": "bonsai"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_camellia_tree",
+      "kanji": "椿",
+      "keyword": "camellia tree",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "春",
+          "label": "springtime"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_peaceful",
+      "kanji": "泰",
+      "keyword": "peaceful",
+      "components": [
+        {
+          "glyph": "𡗗",
+          "label": "bonsai"
+        },
+        {
+          "glyph": "水",
+          "label": "water"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_play_music",
+      "kanji": "奏",
+      "keyword": "play music",
+      "components": [
+        {
+          "glyph": "𡗗",
+          "label": "bonsai"
+        },
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_reality",
+      "kanji": "実",
+      "keyword": "reality",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "𡗗",
+          "label": "bonsai"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_dedicate",
+      "kanji": "奉",
+      "keyword": "dedicate",
+      "components": [
+        {
+          "glyph": "𡗗",
+          "label": "bonsai"
+        },
+        {
+          "glyph": "手",
+          "label": "hand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_stipend",
+      "kanji": "俸",
+      "keyword": "stipend",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "奉",
+          "label": "dedicate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_rod",
+      "kanji": "棒",
+      "keyword": "rod",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "奉",
+          "label": "dedicate"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L85_intro_celery",
+      "glyph": "堇",
+      "label": "celery"
+    },
+    {
+      "type": "kanji",
+      "id": "L85_discreet",
+      "kanji": "謹",
+      "keyword": "discreet",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "堇",
+          "label": "celery"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L85_trifle",
+      "kanji": "僅",
+      "keyword": "trifle",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "堇",
+          "label": "celery"
+        }
+      ]
+    }
+  ]
+}

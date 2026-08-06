@@ -1,0 +1,387 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_109_components",
+  "title": "Lesson 109 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 109,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L109_ability",
+      "kanji": "能",
+      "keyword": "ability",
+      "components": [
+        {
+          "glyph": "能",
+          "label": "ability"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_attitude",
+      "kanji": "態",
+      "keyword": "attitude",
+      "components": [
+        {
+          "glyph": "能",
+          "label": "ability"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_tiger_zodiac",
+      "kanji": "寅",
+      "keyword": "tiger zodiac",
+      "components": [
+        {
+          "glyph": "寅",
+          "label": "tiger zodiac"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_perance",
+      "kanji": "演",
+      "keyword": "perance",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "寅",
+          "label": "sign of the tiger"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_dragon_zodiac",
+      "kanji": "辰",
+      "keyword": "dragon zodiac",
+      "components": [
+        {
+          "glyph": "辰",
+          "label": "dragon zodiac"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_embarrass",
+      "kanji": "辱",
+      "keyword": "embarrass",
+      "components": [
+        {
+          "glyph": "辰",
+          "label": "sign of the dragon"
+        },
+        {
+          "glyph": "寸",
+          "label": "measurement"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_quake",
+      "kanji": "震",
+      "keyword": "quake",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "辰",
+          "label": "sign of the dragon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_shake",
+      "kanji": "振",
+      "keyword": "shake",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "辰",
+          "label": "sign of the dragon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_with_child",
+      "kanji": "娠",
+      "keyword": "with child",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "辰",
+          "label": "sign of the dragon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_lips",
+      "kanji": "唇",
+      "keyword": "lips",
+      "components": [
+        {
+          "glyph": "辰",
+          "label": "sign of the dragon"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_agriculture",
+      "kanji": "農",
+      "keyword": "agriculture",
+      "components": [
+        {
+          "glyph": "曲",
+          "label": "musical composition"
+        },
+        {
+          "glyph": "辰",
+          "label": "sign of the dragon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_concentrated",
+      "kanji": "濃",
+      "keyword": "concentrated",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "農",
+          "label": "agriculture"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_send_off",
+      "kanji": "送",
+      "keyword": "send off",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_connection",
+      "kanji": "関",
+      "keyword": "connection",
+      "components": [
+        {
+          "glyph": "門",
+          "label": "gates"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_blossom",
+      "kanji": "咲",
+      "keyword": "blossom",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "天",
+          "label": "heaven"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_ghost",
+      "kanji": "鬼",
+      "keyword": "ghost",
+      "components": [
+        {
+          "glyph": "鬼",
+          "label": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_ugly",
+      "kanji": "醜",
+      "keyword": "ugly",
+      "components": [
+        {
+          "glyph": "酉",
+          "label": "sign of the bird"
+        },
+        {
+          "glyph": "鬼",
+          "label": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_soul",
+      "kanji": "魂",
+      "keyword": "soul",
+      "components": [
+        {
+          "glyph": "云",
+          "label": "quote"
+        },
+        {
+          "glyph": "鬼",
+          "label": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_witch",
+      "kanji": "魔",
+      "keyword": "witch",
+      "components": [
+        {
+          "glyph": "麻",
+          "label": "hemp"
+        },
+        {
+          "glyph": "鬼",
+          "label": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L109_fascination",
+      "kanji": "魅",
+      "keyword": "fascination",
+      "components": [
+        {
+          "glyph": "鬼",
+          "label": "ghost"
+        },
+        {
+          "glyph": "未",
+          "label": "not yet"
+        }
+      ]
+    }
+  ]
+}

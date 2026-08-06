@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_87_components",
+  "title": "Lesson 87 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 87,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L87_preface",
+      "kanji": "序",
+      "keyword": "preface",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "予",
+          "label": "beforehand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_deposit",
+      "kanji": "預",
+      "keyword": "deposit",
+      "components": [
+        {
+          "glyph": "予",
+          "label": "beforehand"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_plains",
+      "kanji": "野",
+      "keyword": "plains",
+      "components": [
+        {
+          "glyph": "里",
+          "label": "home village"
+        },
+        {
+          "glyph": "予",
+          "label": "beforehand"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_concurrently",
+      "kanji": "兼",
+      "keyword": "concurrently",
+      "components": [
+        {
+          "glyph": "兼",
+          "label": "concurrently"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_dislike",
+      "kanji": "嫌",
+      "keyword": "dislike",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "兼",
+          "label": "concurrently"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_sickle",
+      "kanji": "鎌",
+      "keyword": "sickle",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "兼",
+          "label": "concurrently"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_self_effacing",
+      "kanji": "謙",
+      "keyword": "self effacing",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "兼",
+          "label": "concurrently"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_bargain",
+      "kanji": "廉",
+      "keyword": "bargain",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "兼",
+          "label": "concurrently"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_west",
+      "kanji": "西",
+      "keyword": "west",
+      "components": [
+        {
+          "glyph": "西",
+          "label": "west"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_cost",
+      "kanji": "価",
+      "keyword": "cost",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "西",
+          "label": "west"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_need",
+      "kanji": "要",
+      "keyword": "need",
+      "components": [
+        {
+          "glyph": "西",
+          "label": "west"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_loins",
+      "kanji": "腰",
+      "keyword": "loins",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "要",
+          "label": "need"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_ballot",
+      "kanji": "票",
+      "keyword": "ballot",
+      "components": [
+        {
+          "glyph": "西",
+          "label": "west"
+        },
+        {
+          "glyph": "示",
+          "label": "indicate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_drift",
+      "kanji": "漂",
+      "keyword": "drift",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "票",
+          "label": "ballot"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_signpost",
+      "kanji": "標",
+      "keyword": "signpost",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "票",
+          "label": "ballot"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_chestnut",
+      "kanji": "栗",
+      "keyword": "chestnut",
+      "components": [
+        {
+          "glyph": "西",
+          "label": "west"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_shudder",
+      "kanji": "慄",
+      "keyword": "shudder",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "栗",
+          "label": "chestnut"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_transition",
+      "kanji": "遷",
+      "keyword": "transition",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "西",
+          "label": "west"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "巳",
+          "label": "sign of the snake"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_capsize",
+      "kanji": "覆",
+      "keyword": "capsize",
+      "components": [
+        {
+          "glyph": "西",
+          "label": "west"
+        },
+        {
+          "glyph": "復",
+          "label": "restore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L87_smoke",
+      "kanji": "煙",
+      "keyword": "smoke",
+      "components": [
+        {
+          "glyph": "火",
+          "label": "fire"
+        },
+        {
+          "glyph": "西",
+          "label": "west"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    }
+  ]
+}

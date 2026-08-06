@@ -1,0 +1,453 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_56_components",
+  "title": "Lesson 56 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 56,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L56_sit",
+      "kanji": "座",
+      "keyword": "sit",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_sprain",
+      "kanji": "挫",
+      "keyword": "sprain",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_graduate",
+      "kanji": "卒",
+      "keyword": "graduate",
+      "components": [
+        {
+          "glyph": "亠",
+          "label": "top hat"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_umbrella",
+      "kanji": "傘",
+      "keyword": "umbrella",
+      "components": [
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_monme",
+      "kanji": "匁",
+      "keyword": "monme",
+      "components": [
+        {
+          "glyph": "匁",
+          "label": "monme"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_by_means_of",
+      "kanji": "以",
+      "keyword": "by means of",
+      "components": [
+        {
+          "glyph": "以",
+          "label": "by means of"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_resemble",
+      "kanji": "似",
+      "keyword": "resemble",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "以",
+          "label": "by means of"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_join",
+      "kanji": "併",
+      "keyword": "join",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "开",
+          "label": "open"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_tile",
+      "kanji": "瓦",
+      "keyword": "tile",
+      "components": [
+        {
+          "glyph": "瓦",
+          "label": "tile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_flower_pot",
+      "kanji": "瓶",
+      "keyword": "flower pot",
+      "components": [
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "开",
+          "label": "open"
+        },
+        {
+          "glyph": "瓦",
+          "label": "tile"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_shinto_shrine",
+      "kanji": "宮",
+      "keyword": "shinto shrine",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_occupation",
+      "kanji": "営",
+      "keyword": "occupation",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_virtuous",
+      "kanji": "善",
+      "keyword": "virtuous",
+      "components": [
+        {
+          "glyph": "羊",
+          "label": "sheep"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_dining_tray",
+      "kanji": "膳",
+      "keyword": "dining tray",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "善",
+          "label": "virtuous"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_year",
+      "kanji": "年",
+      "keyword": "year",
+      "components": [
+        {
+          "glyph": "年",
+          "label": "year"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_night",
+      "kanji": "夜",
+      "keyword": "night",
+      "components": [
+        {
+          "glyph": "亠",
+          "label": "top hat"
+        },
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "夕",
+          "label": "evening"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_fluid",
+      "kanji": "液",
+      "keyword": "fluid",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "夜",
+          "label": "night"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_hillock",
+      "kanji": "塚",
+      "keyword": "hillock",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L56_intro_shredder",
+      "glyph": "敝",
+      "label": "shredder"
+    },
+    {
+      "type": "kanji",
+      "id": "L56_cash",
+      "kanji": "幣",
+      "keyword": "cash",
+      "components": [
+        {
+          "glyph": "敝",
+          "label": "shredder"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L56_cover_over",
+      "kanji": "蔽",
+      "keyword": "cover over",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "敝",
+          "label": "shredder"
+        }
+      ]
+    }
+  ]
+}

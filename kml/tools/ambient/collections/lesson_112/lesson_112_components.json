@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_112_components",
+  "title": "Lesson 112 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 112,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L112_lunar_month",
+      "kanji": "皐",
+      "keyword": "lunar month",
+      "components": [
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_rice_field_footpath",
+      "kanji": "畷",
+      "keyword": "rice field footpath",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_mend",
+      "kanji": "綴",
+      "keyword": "mend",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_suit_of_armor",
+      "kanji": "鎧",
+      "keyword": "suit of armor",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "豈",
+          "label": "tasty"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_triumph",
+      "kanji": "凱",
+      "keyword": "triumph",
+      "components": [
+        {
+          "glyph": "豈",
+          "label": "tasty"
+        },
+        {
+          "glyph": "几",
+          "label": "wind"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_quaff",
+      "kanji": "呑",
+      "keyword": "quaff",
+      "components": [
+        {
+          "glyph": "天",
+          "label": "heaven"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_leek",
+      "kanji": "韮",
+      "keyword": "leek",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "韭",
+          "label": "leek"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_lottery",
+      "kanji": "籤",
+      "keyword": "lottery",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "韱",
+          "label": "wild onion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_penitential",
+      "kanji": "懺",
+      "keyword": "penitential",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "韱",
+          "label": "wild onion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_hay",
+      "kanji": "芻",
+      "keyword": "hay",
+      "components": [
+        {
+          "glyph": "芻",
+          "label": "hay"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_chick",
+      "kanji": "雛",
+      "keyword": "chick",
+      "components": [
+        {
+          "glyph": "芻",
+          "label": "hay"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_scurry",
+      "kanji": "趨",
+      "keyword": "scurry",
+      "components": [
+        {
+          "glyph": "走",
+          "label": "run"
+        },
+        {
+          "glyph": "芻",
+          "label": "hay"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_understandably",
+      "kanji": "尤",
+      "keyword": "understandably",
+      "components": [
+        {
+          "glyph": "尤",
+          "label": "understandably"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_immense",
+      "kanji": "厖",
+      "keyword": "immense",
+      "components": [
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "尤",
+          "label": "furthermore"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_some",
+      "kanji": "或",
+      "keyword": "some",
+      "components": [
+        {
+          "glyph": "戈",
+          "label": "spear"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_rabbit",
+      "kanji": "兎",
+      "keyword": "rabbit",
+      "components": [
+        {
+          "glyph": "兎",
+          "label": "rabbit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_also",
+      "kanji": "也",
+      "keyword": "also",
+      "components": [
+        {
+          "glyph": "也",
+          "label": "also"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_swirl",
+      "kanji": "巴",
+      "keyword": "swirl",
+      "components": [
+        {
+          "glyph": "巴",
+          "label": "swirl"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_critters",
+      "kanji": "疋",
+      "keyword": "critters",
+      "components": [
+        {
+          "glyph": "疋",
+          "label": "critters"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L112_violet",
+      "kanji": "菫",
+      "keyword": "violet",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "堇",
+          "label": "celery"
+        }
+      ]
+    }
+  ]
+}

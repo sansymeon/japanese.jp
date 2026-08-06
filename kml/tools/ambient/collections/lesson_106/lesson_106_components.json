@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_106_components",
+  "title": "Lesson 106 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 106,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L106_maiden",
+      "kanji": "媛",
+      "keyword": "maiden",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "爰",
+          "label": "monkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_abet",
+      "kanji": "援",
+      "keyword": "abet",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "爰",
+          "label": "monkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_slacken",
+      "kanji": "緩",
+      "keyword": "slacken",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "爰",
+          "label": "monkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_belong",
+      "kanji": "属",
+      "keyword": "belong",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "禹",
+          "label": "serpent"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_entrust",
+      "kanji": "嘱",
+      "keyword": "entrust",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "属",
+          "label": "belong"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_accidentally",
+      "kanji": "偶",
+      "keyword": "accidentally",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "禺",
+          "label": "long-tailed monkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_interview",
+      "kanji": "遇",
+      "keyword": "interview",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "禺",
+          "label": "long-tailed monkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_foolish",
+      "kanji": "愚",
+      "keyword": "foolish",
+      "components": [
+        {
+          "glyph": "禺",
+          "label": "long-tailed monkey"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_corner",
+      "kanji": "隅",
+      "keyword": "corner",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "禺",
+          "label": "long-tailed monkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_inverted",
+      "kanji": "逆",
+      "keyword": "inverted",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "屰",
+          "label": "upside down"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_model",
+      "kanji": "塑",
+      "keyword": "model",
+      "components": [
+        {
+          "glyph": "朔",
+          "label": "first day of month"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_go_upstream",
+      "kanji": "遡",
+      "keyword": "go upstream",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "朔",
+          "label": "first day of month"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_hills",
+      "kanji": "岡",
+      "keyword": "hills",
+      "components": [
+        {
+          "glyph": "岡",
+          "label": "hills"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_steel",
+      "kanji": "鋼",
+      "keyword": "steel",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "岡",
+          "label": "hill"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_hawser",
+      "kanji": "綱",
+      "keyword": "hawser",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "岡",
+          "label": "hill"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_sturdy",
+      "kanji": "剛",
+      "keyword": "sturdy",
+      "components": [
+        {
+          "glyph": "岡",
+          "label": "hill"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_tin_can",
+      "kanji": "缶",
+      "keyword": "tin can",
+      "components": [
+        {
+          "glyph": "缶",
+          "label": "tin can"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_pottery",
+      "kanji": "陶",
+      "keyword": "pottery",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "勹",
+          "label": "wrap"
+        },
+        {
+          "glyph": "缶",
+          "label": "can"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_swing",
+      "kanji": "揺",
+      "keyword": "swing",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "爪",
+          "label": "claw"
+        },
+        {
+          "glyph": "缶",
+          "label": "can"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L106_noh_chanting",
+      "kanji": "謡",
+      "keyword": "noh chanting",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "爪",
+          "label": "claw"
+        },
+        {
+          "glyph": "缶",
+          "label": "can"
+        }
+      ]
+    }
+  ]
+}

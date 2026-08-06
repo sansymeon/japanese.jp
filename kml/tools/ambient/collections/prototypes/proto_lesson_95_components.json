@@ -1,0 +1,385 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_95_components",
+  "title": "Lesson 95 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 95,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L95_red",
+      "kanji": "赤",
+      "keyword": "red",
+      "components": [
+        {
+          "glyph": "赤",
+          "label": "red"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_pardon",
+      "kanji": "赦",
+      "keyword": "pardon",
+      "components": [
+        {
+          "glyph": "赤",
+          "label": "red"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L95_intro_dancing_legs",
+      "glyph": "亦",
+      "label": "dancing legs"
+    },
+    {
+      "type": "kanji",
+      "id": "L95_unusual",
+      "kanji": "変",
+      "keyword": "unusual",
+      "components": [
+        {
+          "glyph": "亦",
+          "label": "dancing legs"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_tracks",
+      "kanji": "跡",
+      "keyword": "tracks",
+      "components": [
+        {
+          "glyph": "足",
+          "label": "leg"
+        },
+        {
+          "glyph": "亦",
+          "label": "dancing legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_barbarian",
+      "kanji": "蛮",
+      "keyword": "barbarian",
+      "components": [
+        {
+          "glyph": "亦",
+          "label": "dancing legs"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_romance",
+      "kanji": "恋",
+      "keyword": "romance",
+      "components": [
+        {
+          "glyph": "亦",
+          "label": "dancing legs"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_gulf",
+      "kanji": "湾",
+      "keyword": "gulf",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "亦",
+          "label": "dancing legs"
+        },
+        {
+          "glyph": "弓",
+          "label": "bow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_yellow",
+      "kanji": "黄",
+      "keyword": "yellow",
+      "components": [
+        {
+          "glyph": "黄",
+          "label": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_sideways",
+      "kanji": "横",
+      "keyword": "sideways",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "黄",
+          "label": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_grasp",
+      "kanji": "把",
+      "keyword": "grasp",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "巴",
+          "label": "comma-shaped"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_color",
+      "kanji": "色",
+      "keyword": "color",
+      "components": [
+        {
+          "glyph": "色",
+          "label": "color"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_discontinue",
+      "kanji": "絶",
+      "keyword": "discontinue",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "色",
+          "label": "color"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_glossy",
+      "kanji": "艶",
+      "keyword": "glossy",
+      "components": [
+        {
+          "glyph": "豊",
+          "label": "bountiful"
+        },
+        {
+          "glyph": "色",
+          "label": "color"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_fertilizer",
+      "kanji": "肥",
+      "keyword": "fertilizer",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "巴",
+          "label": "comma-shaped"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_sweet",
+      "kanji": "甘",
+      "keyword": "sweet",
+      "components": [
+        {
+          "glyph": "甘",
+          "label": "sweet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_navy_blue",
+      "kanji": "紺",
+      "keyword": "navy blue",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "甘",
+          "label": "sweet"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_so_and_so",
+      "kanji": "某",
+      "keyword": "so and so",
+      "components": [
+        {
+          "glyph": "甘",
+          "label": "sweet"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_conspire",
+      "kanji": "謀",
+      "keyword": "conspire",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "某",
+          "label": "so-and-so"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_mediator",
+      "kanji": "媒",
+      "keyword": "mediator",
+      "components": [
+        {
+          "glyph": "女",
+          "label": "woman"
+        },
+        {
+          "glyph": "某",
+          "label": "so-and-so"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L95_deceit",
+      "kanji": "欺",
+      "keyword": "deceit",
+      "components": [
+        {
+          "glyph": "其",
+          "label": "that"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    }
+  ]
+}

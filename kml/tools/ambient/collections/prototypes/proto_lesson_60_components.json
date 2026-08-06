@@ -1,0 +1,387 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_60_components",
+  "title": "Lesson 60 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 60,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L60_collar",
+      "kanji": "襟",
+      "keyword": "collar",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "禁",
+          "label": "prohibition"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_religion",
+      "kanji": "宗",
+      "keyword": "religion",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "示",
+          "label": "indicate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_adore",
+      "kanji": "崇",
+      "keyword": "adore",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "宗",
+          "label": "religion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_festival",
+      "kanji": "祭",
+      "keyword": "festival",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "示",
+          "label": "indicate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_guess",
+      "kanji": "察",
+      "keyword": "guess",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "祭",
+          "label": "festival"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_grate",
+      "kanji": "擦",
+      "keyword": "grate",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "察",
+          "label": "guess"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_wherefore",
+      "kanji": "由",
+      "keyword": "wherefore",
+      "components": [
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_pluck",
+      "kanji": "抽",
+      "keyword": "pluck",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_oil",
+      "kanji": "油",
+      "keyword": "oil",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_sleeve",
+      "kanji": "袖",
+      "keyword": "sleeve",
+      "components": [
+        {
+          "glyph": "衤",
+          "label": "cloth"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_midair",
+      "kanji": "宙",
+      "keyword": "midair",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_deliver",
+      "kanji": "届",
+      "keyword": "deliver",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_flute",
+      "kanji": "笛",
+      "keyword": "flute",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_axis",
+      "kanji": "軸",
+      "keyword": "axis",
+      "components": [
+        {
+          "glyph": "車",
+          "label": "car"
+        },
+        {
+          "glyph": "由",
+          "label": "wherefore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_armor",
+      "kanji": "甲",
+      "keyword": "armor",
+      "components": [
+        {
+          "glyph": "甲",
+          "label": "armor"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_push",
+      "kanji": "押",
+      "keyword": "push",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "甲",
+          "label": "armor"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_headland",
+      "kanji": "岬",
+      "keyword": "headland",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "甲",
+          "label": "armor"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_insert",
+      "kanji": "挿",
+      "keyword": "insert",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "千",
+          "label": "thousand"
+        },
+        {
+          "glyph": "甲",
+          "label": "armor"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_declare",
+      "kanji": "申",
+      "keyword": "declare",
+      "components": [
+        {
+          "glyph": "申",
+          "label": "declare"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L60_expand",
+      "kanji": "伸",
+      "keyword": "expand",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "申",
+          "label": "declare"
+        }
+      ]
+    }
+  ]
+}

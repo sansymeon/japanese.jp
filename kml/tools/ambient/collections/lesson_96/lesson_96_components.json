@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_96_components",
+  "title": "Lesson 96 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 96,
+    "sceneCount": 22,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "newComponent",
+      "id": "L96_intro_that",
+      "glyph": "其",
+      "label": "that"
+    },
+    {
+      "type": "kanji",
+      "id": "L96_chess_piece",
+      "kanji": "棋",
+      "keyword": "chess piece",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "其",
+          "label": "that"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_national_flag",
+      "kanji": "旗",
+      "keyword": "national flag",
+      "components": [
+        {
+          "glyph": "方",
+          "label": "direction"
+        },
+        {
+          "glyph": "其",
+          "label": "that"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_period_of_time",
+      "kanji": "期",
+      "keyword": "period of time",
+      "components": [
+        {
+          "glyph": "其",
+          "label": "that"
+        },
+        {
+          "glyph": "月",
+          "label": "moon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_go_game",
+      "kanji": "碁",
+      "keyword": "go game",
+      "components": [
+        {
+          "glyph": "其",
+          "label": "that"
+        },
+        {
+          "glyph": "石",
+          "label": "stone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_foundation",
+      "kanji": "基",
+      "keyword": "foundation",
+      "components": [
+        {
+          "glyph": "其",
+          "label": "that"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_tremendously",
+      "kanji": "甚",
+      "keyword": "tremendously",
+      "components": [
+        {
+          "glyph": "其",
+          "label": "that"
+        },
+        {
+          "glyph": "匹",
+          "label": "equal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_intuition",
+      "kanji": "勘",
+      "keyword": "intuition",
+      "components": [
+        {
+          "glyph": "甚",
+          "label": "tremendously"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_withstand",
+      "kanji": "堪",
+      "keyword": "withstand",
+      "components": [
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "甚",
+          "label": "tremendously"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_precious",
+      "kanji": "貴",
+      "keyword": "precious",
+      "components": [
+        {
+          "glyph": "貴",
+          "label": "precious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_bequeath",
+      "kanji": "遺",
+      "keyword": "bequeath",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "貴",
+          "label": "precious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_dispatch",
+      "kanji": "遣",
+      "keyword": "dispatch",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "中",
+          "label": "middle"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "㔾",
+          "label": "fingerprint"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_defile",
+      "kanji": "潰",
+      "keyword": "defile",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "貴",
+          "label": "precious"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_dance",
+      "kanji": "舞",
+      "keyword": "dance",
+      "components": [
+        {
+          "glyph": "舞",
+          "label": "dance"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_nothingness",
+      "kanji": "無",
+      "keyword": "nothingness",
+      "components": [
+        {
+          "glyph": "無",
+          "label": "nothingness"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L96_intro_alongside",
+      "glyph": "且",
+      "label": "alongside"
+    },
+    {
+      "type": "kanji",
+      "id": "L96_association",
+      "kanji": "組",
+      "keyword": "association",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_coarse",
+      "kanji": "粗",
+      "keyword": "coarse",
+      "components": [
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_tariff",
+      "kanji": "租",
+      "keyword": "tariff",
+      "components": [
+        {
+          "glyph": "禾",
+          "label": "wheat"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_aim_at",
+      "kanji": "狙",
+      "keyword": "aim at",
+      "components": [
+        {
+          "glyph": "犭",
+          "label": "animal"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_ancestor",
+      "kanji": "祖",
+      "keyword": "ancestor",
+      "components": [
+        {
+          "glyph": "礻",
+          "label": "altar"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L96_thwart",
+      "kanji": "阻",
+      "keyword": "thwart",
+      "components": [
+        {
+          "glyph": "阝",
+          "label": "pinnacle"
+        },
+        {
+          "glyph": "且",
+          "label": "alongside"
+        }
+      ]
+    }
+  ]
+}

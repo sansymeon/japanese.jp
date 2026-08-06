@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_94_components",
+  "title": "Lesson 94 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 94,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L94_checkup",
+      "kanji": "診",
+      "keyword": "checkup",
+      "components": [
+        {
+          "glyph": "言",
+          "label": "say"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_sentence",
+      "kanji": "文",
+      "keyword": "sentence",
+      "components": [
+        {
+          "glyph": "文",
+          "label": "sentence"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_opposite",
+      "kanji": "対",
+      "keyword": "opposite",
+      "components": [
+        {
+          "glyph": "対",
+          "label": "opposite"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_family_crest",
+      "kanji": "紋",
+      "keyword": "family crest",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "文",
+          "label": "sentence"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_mosquito",
+      "kanji": "蚊",
+      "keyword": "mosquito",
+      "components": [
+        {
+          "glyph": "虫",
+          "label": "insect"
+        },
+        {
+          "glyph": "文",
+          "label": "sentence"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_blemish",
+      "kanji": "斑",
+      "keyword": "blemish",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "文",
+          "label": "sentence"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_adjusted",
+      "kanji": "斉",
+      "keyword": "adjusted",
+      "components": [
+        {
+          "glyph": "斉",
+          "label": "adjusted"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_dose",
+      "kanji": "剤",
+      "keyword": "dose",
+      "components": [
+        {
+          "glyph": "斉",
+          "label": "adjusted"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_settle",
+      "kanji": "済",
+      "keyword": "settle",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "斉",
+          "label": "adjusted"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_purification",
+      "kanji": "斎",
+      "keyword": "purification",
+      "components": [
+        {
+          "glyph": "斉",
+          "label": "adjusted"
+        },
+        {
+          "glyph": "小",
+          "label": "small"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_solemn",
+      "kanji": "粛",
+      "keyword": "solemn",
+      "components": [
+        {
+          "glyph": "粛",
+          "label": "solemn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_bases",
+      "kanji": "塁",
+      "keyword": "bases",
+      "components": [
+        {
+          "glyph": "田",
+          "label": "field"
+        },
+        {
+          "glyph": "八",
+          "label": "eight"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_music",
+      "kanji": "楽",
+      "keyword": "music",
+      "components": [
+        {
+          "glyph": "⺍",
+          "label": "school"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_medicine",
+      "kanji": "薬",
+      "keyword": "medicine",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "楽",
+          "label": "music"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_rate",
+      "kanji": "率",
+      "keyword": "rate",
+      "components": [
+        {
+          "glyph": "率",
+          "label": "rate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_astringent",
+      "kanji": "渋",
+      "keyword": "astringent",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_vicarious",
+      "kanji": "摂",
+      "keyword": "vicarious",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "耳",
+          "label": "ear"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_center",
+      "kanji": "央",
+      "keyword": "center",
+      "components": [
+        {
+          "glyph": "央",
+          "label": "center"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_england",
+      "kanji": "英",
+      "keyword": "england",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "央",
+          "label": "center"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L94_reflect",
+      "kanji": "映",
+      "keyword": "reflect",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "央",
+          "label": "center"
+        }
+      ]
+    }
+  ]
+}

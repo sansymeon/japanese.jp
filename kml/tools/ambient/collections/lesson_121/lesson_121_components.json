@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_121_components",
+  "title": "Lesson 121 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 121,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L121_moat",
+      "kanji": "濠",
+      "keyword": "moat",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "豪",
+          "label": "overpowering"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_spray",
+      "kanji": "溌",
+      "keyword": "spray",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "発",
+          "label": "departure"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_port",
+      "kanji": "湊",
+      "keyword": "port",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "奏",
+          "label": "play music"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_solitude",
+      "kanji": "淋",
+      "keyword": "solitude",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "林",
+          "label": "grove"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_abounding",
+      "kanji": "浩",
+      "keyword": "abounding",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "告",
+          "label": "revelation"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_waters_edge",
+      "kanji": "汀",
+      "keyword": "waters edge",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_large_goose",
+      "kanji": "鴻",
+      "keyword": "large goose",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "工",
+          "label": "craft"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_souse",
+      "kanji": "潅",
+      "keyword": "souse",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_brimming",
+      "kanji": "溢",
+      "keyword": "brimming",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "益",
+          "label": "benefit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_inundate",
+      "kanji": "湛",
+      "keyword": "inundate",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "甚",
+          "label": "tremendously"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_immaculate",
+      "kanji": "淳",
+      "keyword": "immaculate",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "享",
+          "label": "receive"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_moisten",
+      "kanji": "渥",
+      "keyword": "moisten",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "屋",
+          "label": "roof"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_rough_seas",
+      "kanji": "灘",
+      "keyword": "rough seas",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "難",
+          "label": "difficult"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_draw_water",
+      "kanji": "汲",
+      "keyword": "draw water",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "及",
+          "label": "reach"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_cumulation",
+      "kanji": "溜",
+      "keyword": "cumulation",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "留",
+          "label": "detain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_abyss",
+      "kanji": "渕",
+      "keyword": "abyss",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "淵",
+          "label": "abyss"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_chaos",
+      "kanji": "沌",
+      "keyword": "chaos",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "屯",
+          "label": "barracks"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_strainer",
+      "kanji": "濾",
+      "keyword": "strainer",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "慮",
+          "label": "prudence"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_drench",
+      "kanji": "濡",
+      "keyword": "drench",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "需",
+          "label": "need"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L121_eddy",
+      "kanji": "淀",
+      "keyword": "eddy",
+      "components": [
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "延",
+          "label": "prolong"
+        }
+      ]
+    }
+  ]
+}

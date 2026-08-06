@@ -1,0 +1,395 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_150_components",
+  "title": "Lesson 150 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 150,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L150_shop",
+      "kanji": "鋪",
+      "keyword": "shop",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "甫",
+          "label": "dog tag"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_island",
+      "kanji": "嶋",
+      "keyword": "island",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "鳥",
+          "label": "bird"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_summit",
+      "kanji": "峯",
+      "keyword": "summit",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_plains",
+      "kanji": "埜",
+      "keyword": "plains",
+      "components": [
+        {
+          "glyph": "林",
+          "label": "grove"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_dragon_old",
+      "kanji": "龍",
+      "keyword": "dragon old",
+      "components": [
+        {
+          "glyph": "龍",
+          "label": "dragon old"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_patronage",
+      "kanji": "寵",
+      "keyword": "patronage",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "龍",
+          "label": "dragon"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_deafness",
+      "kanji": "聾",
+      "keyword": "deafness",
+      "components": [
+        {
+          "glyph": "龍",
+          "label": "dragon"
+        },
+        {
+          "glyph": "耳",
+          "label": "ear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_longing_old",
+      "kanji": "慾",
+      "keyword": "longing old",
+      "components": [
+        {
+          "glyph": "欲",
+          "label": "longing"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_point_old",
+      "kanji": "嶽",
+      "keyword": "point old",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "獄",
+          "label": "prison"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_country_old",
+      "kanji": "國",
+      "keyword": "country old",
+      "components": [
+        {
+          "glyph": "囗",
+          "label": "囗"
+        },
+        {
+          "glyph": "或",
+          "label": "or"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_shin",
+      "kanji": "脛",
+      "keyword": "shin",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_idable",
+      "kanji": "勁",
+      "keyword": "idable",
+      "components": [
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_enshrine",
+      "kanji": "祀",
+      "keyword": "enshrine",
+      "components": [
+        {
+          "glyph": "礻",
+          "label": "altar"
+        },
+        {
+          "glyph": "巳",
+          "label": "sign of the snake"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_exorcism",
+      "kanji": "祓",
+      "keyword": "exorcism",
+      "components": [
+        {
+          "glyph": "礻",
+          "label": "altar"
+        },
+        {
+          "glyph": "犮",
+          "label": "dog's leg"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_dither",
+      "kanji": "躇",
+      "keyword": "dither",
+      "components": [
+        {
+          "glyph": "足",
+          "label": "leg"
+        },
+        {
+          "glyph": "著",
+          "label": "renowned"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_longevity_old",
+      "kanji": "壽",
+      "keyword": "longevity old",
+      "components": [
+        {
+          "glyph": "壽",
+          "label": "longevity old"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_hesitate",
+      "kanji": "躊",
+      "keyword": "hesitate",
+      "components": [
+        {
+          "glyph": "足",
+          "label": "leg"
+        },
+        {
+          "glyph": "壽",
+          "label": "longevity"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_bean_jam",
+      "kanji": "饅",
+      "keyword": "bean jam",
+      "components": [
+        {
+          "glyph": "食",
+          "label": "eat"
+        },
+        {
+          "glyph": "曼",
+          "label": "mandala"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_retch",
+      "kanji": "嘔",
+      "keyword": "retch",
+      "components": [
+        {
+          "glyph": "口",
+          "label": "mouth"
+        },
+        {
+          "glyph": "区",
+          "label": "ward"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L150_snapping_turtle",
+      "kanji": "鼈",
+      "keyword": "snapping turtle",
+      "components": [
+        {
+          "glyph": "敝",
+          "label": "shredder"
+        },
+        {
+          "glyph": "黽",
+          "label": "toad"
+        }
+      ]
+    }
+  ]
+}

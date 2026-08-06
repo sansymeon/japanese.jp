@@ -1,0 +1,407 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_140_components",
+  "title": "Lesson 140 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 140,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L140_plow",
+      "kanji": "鋤",
+      "keyword": "plow",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "助",
+          "label": "help"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_hand_saw",
+      "kanji": "鋸",
+      "keyword": "hand saw",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "居",
+          "label": "reside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_awl",
+      "kanji": "錐",
+      "keyword": "awl",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_hoe",
+      "kanji": "鍬",
+      "keyword": "hoe",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "秋",
+          "label": "autumn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_rivet",
+      "kanji": "鋲",
+      "keyword": "rivet",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "兵",
+          "label": "soldier"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_tin",
+      "kanji": "錫",
+      "keyword": "tin",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "易",
+          "label": "easy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_anchor",
+      "kanji": "錨",
+      "keyword": "anchor",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "田",
+          "label": "field"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_nail",
+      "kanji": "釘",
+      "keyword": "nail",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "丁",
+          "label": "street"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_javelin",
+      "kanji": "鑓",
+      "keyword": "javelin",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "遣",
+          "label": "dispatch"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_swords_point",
+      "kanji": "鋒",
+      "keyword": "swords point",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_iron_hammer",
+      "kanji": "鎚",
+      "keyword": "iron hammer",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "追",
+          "label": "chase"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_carillion",
+      "kanji": "鉦",
+      "keyword": "carillion",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "正",
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_rust",
+      "kanji": "錆",
+      "keyword": "rust",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "青",
+          "label": "blue"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_cluster",
+      "kanji": "鍾",
+      "keyword": "cluster",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "重",
+          "label": "heavy"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_scissors",
+      "kanji": "鋏",
+      "keyword": "scissors",
+      "components": [
+        {
+          "glyph": "金",
+          "label": "gold"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_flash",
+      "kanji": "閃",
+      "keyword": "flash",
+      "components": [
+        {
+          "glyph": "門",
+          "label": "gates"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_agony",
+      "kanji": "悶",
+      "keyword": "agony",
+      "components": [
+        {
+          "glyph": "門",
+          "label": "gates"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_side_gate",
+      "kanji": "閤",
+      "keyword": "side gate",
+      "components": [
+        {
+          "glyph": "門",
+          "label": "gates"
+        },
+        {
+          "glyph": "合",
+          "label": "fit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_trickle",
+      "kanji": "雫",
+      "keyword": "trickle",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "下",
+          "label": "below"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L140_haze",
+      "kanji": "霞",
+      "keyword": "haze",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "叚",
+          "label": "borrow"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_117_components",
+  "title": "Lesson 117 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 117,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L117_expecting",
+      "kanji": "孕",
+      "keyword": "expecting",
+      "components": [
+        {
+          "glyph": "乃",
+          "label": "from"
+        },
+        {
+          "glyph": "子",
+          "label": "child"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_assiduous",
+      "kanji": "孜",
+      "keyword": "assiduous",
+      "components": [
+        {
+          "glyph": "子",
+          "label": "child"
+        },
+        {
+          "glyph": "攵",
+          "label": "攵"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_soothe",
+      "kanji": "宥",
+      "keyword": "soothe",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "有",
+          "label": "possess"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_imply",
+      "kanji": "寓",
+      "keyword": "imply",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "禺",
+          "label": "long-tailed monkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_extensive",
+      "kanji": "宏",
+      "keyword": "extensive",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "𠂇",
+          "label": "curtain"
+        },
+        {
+          "glyph": "厶",
+          "label": "厶"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_jail",
+      "kanji": "牢",
+      "keyword": "jail",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "牛",
+          "label": "cow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_sung_dynasty",
+      "kanji": "宋",
+      "keyword": "sung dynasty",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_venison",
+      "kanji": "宍",
+      "keyword": "venison",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "肉",
+          "label": "meat"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_butchering",
+      "kanji": "屠",
+      "keyword": "butchering",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "者",
+          "label": "someone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_fart",
+      "kanji": "屁",
+      "keyword": "fart",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "比",
+          "label": "compare"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_rubbish",
+      "kanji": "屑",
+      "keyword": "rubbish",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "肖",
+          "label": "resemble"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_frequently",
+      "kanji": "屡",
+      "keyword": "frequently",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "米",
+          "label": "rice"
+        },
+        {
+          "glyph": "女",
+          "label": "woman"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_corpse",
+      "kanji": "屍",
+      "keyword": "corpse",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "死",
+          "label": "death"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_folding_screen",
+      "kanji": "屏",
+      "keyword": "folding screen",
+      "components": [
+        {
+          "glyph": "尸",
+          "label": "flag"
+        },
+        {
+          "glyph": "丷",
+          "label": "horns"
+        },
+        {
+          "glyph": "开",
+          "label": "open"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_high_reaching",
+      "kanji": "嵩",
+      "keyword": "high reaching",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "高",
+          "label": "tall"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_rugged_mountains",
+      "kanji": "崚",
+      "keyword": "rugged mountains",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_mountain_top",
+      "kanji": "嶺",
+      "keyword": "mountain top",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "領",
+          "label": "jurisdiction"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_fit_into",
+      "kanji": "嵌",
+      "keyword": "fit into",
+      "components": [
+        {
+          "glyph": "山",
+          "label": "mountain"
+        },
+        {
+          "glyph": "甘",
+          "label": "sweet"
+        },
+        {
+          "glyph": "欠",
+          "label": "lack"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_quire",
+      "kanji": "帖",
+      "keyword": "quire",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "占",
+          "label": "fortune-telling"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L117_banner",
+      "kanji": "幡",
+      "keyword": "banner",
+      "components": [
+        {
+          "glyph": "巾",
+          "label": "towel"
+        },
+        {
+          "glyph": "番",
+          "label": "turn"
+        }
+      ]
+    }
+  ]
+}

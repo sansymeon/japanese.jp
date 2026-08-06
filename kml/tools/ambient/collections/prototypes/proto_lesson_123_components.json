@@ -1,0 +1,415 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_123_components",
+  "title": "Lesson 123 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 123,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L123_trim",
+      "kanji": "薙",
+      "keyword": "trim",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "矢",
+          "label": "dart"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_straw_raincoat",
+      "kanji": "蓑",
+      "keyword": "straw raincoat",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "衰",
+          "label": "decline"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_moss",
+      "kanji": "苔",
+      "keyword": "moss",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "台",
+          "label": "pedestal"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_prodigal",
+      "kanji": "蕩",
+      "keyword": "prodigal",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "氵",
+          "label": "water"
+        },
+        {
+          "glyph": "昜",
+          "label": "lucky pig"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_tendril",
+      "kanji": "蔓",
+      "keyword": "tendril",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "曼",
+          "label": "mandala"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_lotus",
+      "kanji": "蓮",
+      "keyword": "lotus",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "連",
+          "label": "take along"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_lotus_flower",
+      "kanji": "芙",
+      "keyword": "lotus flower",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "夫",
+          "label": "husband"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_lotus_blossom",
+      "kanji": "蓉",
+      "keyword": "lotus blossom",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "容",
+          "label": "contain"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_orchid",
+      "kanji": "蘭",
+      "keyword": "orchid",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "門",
+          "label": "gates"
+        },
+        {
+          "glyph": "東",
+          "label": "east"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_hollow_reed",
+      "kanji": "芦",
+      "keyword": "hollow reed",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "戸",
+          "label": "door"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_yam",
+      "kanji": "薯",
+      "keyword": "yam",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "署",
+          "label": "government bureau"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_iris",
+      "kanji": "菖",
+      "keyword": "iris",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "昌",
+          "label": "prosperous"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_banana",
+      "kanji": "蕉",
+      "keyword": "banana",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "焦",
+          "label": "char"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_buckwheat",
+      "kanji": "蕎",
+      "keyword": "buckwheat",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "夭",
+          "label": "sapling"
+        },
+        {
+          "glyph": "高",
+          "label": "tall"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_butterbur",
+      "kanji": "蕗",
+      "keyword": "butterbur",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "路",
+          "label": "path"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_eggplant",
+      "kanji": "茄",
+      "keyword": "eggplant",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "加",
+          "label": "add"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_behind_the_scenes",
+      "kanji": "蔭",
+      "keyword": "behind the scenes",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "陰",
+          "label": "shade"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_wormwood",
+      "kanji": "蓬",
+      "keyword": "wormwood",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "丰",
+          "label": "bushes"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_mustard",
+      "kanji": "芥",
+      "keyword": "mustard",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "介",
+          "label": "jammed in"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L123_germinate",
+      "kanji": "萌",
+      "keyword": "germinate",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "明",
+          "label": "bright"
+        }
+      ]
+    }
+  ]
+}

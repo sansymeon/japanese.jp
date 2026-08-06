@@ -1,0 +1,391 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_73_components",
+  "title": "Lesson 73 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 73,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L73_tighten",
+      "kanji": "締",
+      "keyword": "tighten",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "帝",
+          "label": "sovereign"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_fiber",
+      "kanji": "維",
+      "keyword": "fiber",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "隹",
+          "label": "turkey"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_gauze",
+      "kanji": "羅",
+      "keyword": "gauze",
+      "components": [
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "維",
+          "label": "fiber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_practice",
+      "kanji": "練",
+      "keyword": "practice",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "東",
+          "label": "east"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_thong",
+      "kanji": "緒",
+      "keyword": "thong",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "者",
+          "label": "someone"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_continue",
+      "kanji": "続",
+      "keyword": "continue",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "売",
+          "label": "sell"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_picture",
+      "kanji": "絵",
+      "keyword": "picture",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "会",
+          "label": "meeting"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_unite",
+      "kanji": "統",
+      "keyword": "unite",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "充",
+          "label": "allot"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_strangle",
+      "kanji": "絞",
+      "keyword": "strangle",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "交",
+          "label": "mingle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_salary",
+      "kanji": "給",
+      "keyword": "salary",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "合",
+          "label": "fit"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_entwine",
+      "kanji": "絡",
+      "keyword": "entwine",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "各",
+          "label": "each"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_tie",
+      "kanji": "結",
+      "keyword": "tie",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "吉",
+          "label": "good luck"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_end",
+      "kanji": "終",
+      "keyword": "end",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "冬",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_class",
+      "kanji": "級",
+      "keyword": "class",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "及",
+          "label": "reach"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_chronicle",
+      "kanji": "紀",
+      "keyword": "chronicle",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "己",
+          "label": "self"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_crimson",
+      "kanji": "紅",
+      "keyword": "crimson",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "工",
+          "label": "craft"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_settlement",
+      "kanji": "納",
+      "keyword": "settlement",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "内",
+          "label": "inside"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_spinning",
+      "kanji": "紡",
+      "keyword": "spinning",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "方",
+          "label": "direction"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_distract",
+      "kanji": "紛",
+      "keyword": "distract",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "分",
+          "label": "part"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L73_introduce",
+      "kanji": "紹",
+      "keyword": "introduce",
+      "components": [
+        {
+          "glyph": "糸",
+          "label": "thread"
+        },
+        {
+          "glyph": "召",
+          "label": "seduce"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_93_components",
+  "title": "Lesson 93 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 93,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L93_departure",
+      "kanji": "発",
+      "keyword": "departure",
+      "components": [
+        {
+          "glyph": "癶",
+          "label": "tent"
+        },
+        {
+          "glyph": "二",
+          "label": "two"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_abolish",
+      "kanji": "廃",
+      "keyword": "abolish",
+      "components": [
+        {
+          "glyph": "广",
+          "label": "cave"
+        },
+        {
+          "glyph": "発",
+          "label": "departure"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_colleague",
+      "kanji": "僚",
+      "keyword": "colleague",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "尞",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_obvious",
+      "kanji": "瞭",
+      "keyword": "obvious",
+      "components": [
+        {
+          "glyph": "目",
+          "label": "eye"
+        },
+        {
+          "glyph": "尞",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_dormitory",
+      "kanji": "寮",
+      "keyword": "dormitory",
+      "components": [
+        {
+          "glyph": "宀",
+          "label": "house"
+        },
+        {
+          "glyph": "尞",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_heal",
+      "kanji": "療",
+      "keyword": "heal",
+      "components": [
+        {
+          "glyph": "疒",
+          "label": "sickness"
+        },
+        {
+          "glyph": "尞",
+          "label": "companion"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L93_intro_bristle",
+      "glyph": "彡",
+      "label": "bristle"
+    },
+    {
+      "type": "kanji",
+      "id": "L93_carve",
+      "kanji": "彫",
+      "keyword": "carve",
+      "components": [
+        {
+          "glyph": "周",
+          "label": "circumference"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_shape",
+      "kanji": "形",
+      "keyword": "shape",
+      "components": [
+        {
+          "glyph": "开",
+          "label": "open"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_shadow",
+      "kanji": "影",
+      "keyword": "shadow",
+      "components": [
+        {
+          "glyph": "景",
+          "label": "scenery"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_sugi",
+      "kanji": "杉",
+      "keyword": "sugi",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_coloring",
+      "kanji": "彩",
+      "keyword": "coloring",
+      "components": [
+        {
+          "glyph": "采",
+          "label": "dice"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_patent",
+      "kanji": "彰",
+      "keyword": "patent",
+      "components": [
+        {
+          "glyph": "章",
+          "label": "chapter"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_handsome_man",
+      "kanji": "彦",
+      "keyword": "handsome man",
+      "components": [
+        {
+          "glyph": "立",
+          "label": "stand up"
+        },
+        {
+          "glyph": "厂",
+          "label": "cliff"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_face",
+      "kanji": "顔",
+      "keyword": "face",
+      "components": [
+        {
+          "glyph": "彦",
+          "label": "lad"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_must",
+      "kanji": "須",
+      "keyword": "must",
+      "components": [
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        },
+        {
+          "glyph": "頁",
+          "label": "page"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_swell",
+      "kanji": "膨",
+      "keyword": "swell",
+      "components": [
+        {
+          "glyph": "月",
+          "label": "moon"
+        },
+        {
+          "glyph": "十",
+          "label": "ten"
+        },
+        {
+          "glyph": "豆",
+          "label": "beans"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_participate",
+      "kanji": "参",
+      "keyword": "participate",
+      "components": [
+        {
+          "glyph": "ム",
+          "label": "elbow"
+        },
+        {
+          "glyph": "大",
+          "label": "large"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_wretched",
+      "kanji": "惨",
+      "keyword": "wretched",
+      "components": [
+        {
+          "glyph": "忄",
+          "label": "state of mind"
+        },
+        {
+          "glyph": "参",
+          "label": "participate"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_discipline",
+      "kanji": "修",
+      "keyword": "discipline",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "丨",
+          "label": "stick"
+        },
+        {
+          "glyph": "攵",
+          "label": "攵"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L93_rare",
+      "kanji": "珍",
+      "keyword": "rare",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "彡",
+          "label": "bristle"
+        }
+      ]
+    }
+  ]
+}

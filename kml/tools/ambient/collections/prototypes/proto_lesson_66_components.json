@@ -1,0 +1,399 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_66_components",
+  "title": "Lesson 66 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 66,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L66_scarce",
+      "kanji": "乏",
+      "keyword": "scarce",
+      "components": [
+        {
+          "glyph": "乏",
+          "label": "scarce"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_turf",
+      "kanji": "芝",
+      "keyword": "turf",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "之",
+          "label": "of"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_not",
+      "kanji": "不",
+      "keyword": "not",
+      "components": [
+        {
+          "glyph": "不",
+          "label": "not"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_negate",
+      "kanji": "否",
+      "keyword": "negate",
+      "components": [
+        {
+          "glyph": "不",
+          "label": "negative"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_cupfuls",
+      "kanji": "杯",
+      "keyword": "cupfuls",
+      "components": [
+        {
+          "glyph": "木",
+          "label": "tree"
+        },
+        {
+          "glyph": "不",
+          "label": "negative"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_arrow",
+      "kanji": "矢",
+      "keyword": "arrow",
+      "components": [
+        {
+          "glyph": "矢",
+          "label": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_rectify",
+      "kanji": "矯",
+      "keyword": "rectify",
+      "components": [
+        {
+          "glyph": "矢",
+          "label": "dart"
+        },
+        {
+          "glyph": "夭",
+          "label": "sapling"
+        },
+        {
+          "glyph": "高",
+          "label": "tall"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_tribe",
+      "kanji": "族",
+      "keyword": "tribe",
+      "components": [
+        {
+          "glyph": "方",
+          "label": "direction"
+        },
+        {
+          "glyph": "𠂉",
+          "label": "reclining"
+        },
+        {
+          "glyph": "矢",
+          "label": "dart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_know",
+      "kanji": "知",
+      "keyword": "know",
+      "components": [
+        {
+          "glyph": "矢",
+          "label": "dart"
+        },
+        {
+          "glyph": "口",
+          "label": "mouth"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_wisdom",
+      "kanji": "智",
+      "keyword": "wisdom",
+      "components": [
+        {
+          "glyph": "知",
+          "label": "know"
+        },
+        {
+          "glyph": "日",
+          "label": "sun"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_push_open",
+      "kanji": "挨",
+      "keyword": "push open",
+      "components": [
+        {
+          "glyph": "扌",
+          "label": "fingers"
+        },
+        {
+          "glyph": "ム",
+          "label": "elbow"
+        },
+        {
+          "glyph": "矢",
+          "label": "dart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_halberd",
+      "kanji": "矛",
+      "keyword": "halberd",
+      "components": [
+        {
+          "glyph": "矛",
+          "label": "halberd"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_tender",
+      "kanji": "柔",
+      "keyword": "tender",
+      "components": [
+        {
+          "glyph": "矛",
+          "label": "halberd"
+        },
+        {
+          "glyph": "木",
+          "label": "tree"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_duty",
+      "kanji": "務",
+      "keyword": "duty",
+      "components": [
+        {
+          "glyph": "矛",
+          "label": "halberd"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_fog",
+      "kanji": "霧",
+      "keyword": "fog",
+      "components": [
+        {
+          "glyph": "雨",
+          "label": "rain"
+        },
+        {
+          "glyph": "務",
+          "label": "duty"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_squad",
+      "kanji": "班",
+      "keyword": "squad",
+      "components": [
+        {
+          "glyph": "王",
+          "label": "king"
+        },
+        {
+          "glyph": "刀",
+          "label": "sword"
+        },
+        {
+          "glyph": "王",
+          "label": "king"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_homecoming",
+      "kanji": "帰",
+      "keyword": "homecoming",
+      "components": [
+        {
+          "glyph": "丿",
+          "label": "丿"
+        },
+        {
+          "glyph": "止",
+          "label": "stop"
+        },
+        {
+          "glyph": "ヨ",
+          "label": "broom"
+        },
+        {
+          "glyph": "巾",
+          "label": "towel"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_archery_bow",
+      "kanji": "弓",
+      "keyword": "archery bow",
+      "components": [
+        {
+          "glyph": "弓",
+          "label": "archery bow"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_pull",
+      "kanji": "引",
+      "keyword": "pull",
+      "components": [
+        {
+          "glyph": "弓",
+          "label": "bow"
+        },
+        {
+          "glyph": "丨",
+          "label": "stick"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L66_condolences",
+      "kanji": "弔",
+      "keyword": "condolences",
+      "components": [
+        {
+          "glyph": "弓",
+          "label": "bow"
+        },
+        {
+          "glyph": "丨",
+          "label": "stick"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "lesson_108_components",
+  "title": "Lesson 108 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 108,
+    "sceneCount": 21,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L108_burdensome",
+      "kanji": "駄",
+      "keyword": "burdensome",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "太",
+          "label": "plump"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_wonder",
+      "kanji": "驚",
+      "keyword": "wonder",
+      "components": [
+        {
+          "glyph": "敬",
+          "label": "awe"
+        },
+        {
+          "glyph": "馬",
+          "label": "horse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_fervent",
+      "kanji": "篤",
+      "keyword": "fervent",
+      "components": [
+        {
+          "glyph": "竹",
+          "label": "bamboo"
+        },
+        {
+          "glyph": "馬",
+          "label": "horse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_insult",
+      "kanji": "罵",
+      "keyword": "insult",
+      "components": [
+        {
+          "glyph": "罒",
+          "label": "net"
+        },
+        {
+          "glyph": "馬",
+          "label": "horse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_inflation",
+      "kanji": "騰",
+      "keyword": "inflation",
+      "components": [
+        {
+          "glyph": "朕",
+          "label": "I (emperor)"
+        },
+        {
+          "glyph": "馬",
+          "label": "horse"
+        }
+      ]
+    },
+    {
+      "type": "newComponent",
+      "id": "L108_intro_tiger_stripes",
+      "glyph": "虍",
+      "label": "tiger stripes"
+    },
+    {
+      "type": "kanji",
+      "id": "L108_tiger",
+      "kanji": "虎",
+      "keyword": "tiger",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_captive",
+      "kanji": "虜",
+      "keyword": "captive",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "男",
+          "label": "man"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_skin",
+      "kanji": "膚",
+      "keyword": "skin",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "胃",
+          "label": "stomach"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_void",
+      "kanji": "虚",
+      "keyword": "void",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "业",
+          "label": "business"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_frolic",
+      "kanji": "戯",
+      "keyword": "frolic",
+      "components": [
+        {
+          "glyph": "虚",
+          "label": "void"
+        },
+        {
+          "glyph": "戈",
+          "label": "spear"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_uneasiness",
+      "kanji": "虞",
+      "keyword": "uneasiness",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "呉",
+          "label": "give"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_prudence",
+      "kanji": "慮",
+      "keyword": "prudence",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "思",
+          "label": "think"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_drama",
+      "kanji": "劇",
+      "keyword": "drama",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "豕",
+          "label": "pig"
+        },
+        {
+          "glyph": "刂",
+          "label": "saber"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_tyrannize",
+      "kanji": "虐",
+      "keyword": "tyrannize",
+      "components": [
+        {
+          "glyph": "虍",
+          "label": "tiger stripes"
+        },
+        {
+          "glyph": "乚",
+          "label": "hook"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_deer",
+      "kanji": "鹿",
+      "keyword": "deer",
+      "components": [
+        {
+          "glyph": "鹿",
+          "label": "deer"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_foot_of_mountain",
+      "kanji": "麓",
+      "keyword": "foot of mountain",
+      "components": [
+        {
+          "glyph": "林",
+          "label": "grove"
+        },
+        {
+          "glyph": "鹿",
+          "label": "deer"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_recommend",
+      "kanji": "薦",
+      "keyword": "recommend",
+      "components": [
+        {
+          "glyph": "艹",
+          "label": "grass"
+        },
+        {
+          "glyph": "廌",
+          "label": "unicorn"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_jubilation",
+      "kanji": "慶",
+      "keyword": "jubilation",
+      "components": [
+        {
+          "glyph": "慶",
+          "label": "jubilation"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_lovely",
+      "kanji": "麗",
+      "keyword": "lovely",
+      "components": [
+        {
+          "glyph": "丽",
+          "label": "lovely"
+        },
+        {
+          "glyph": "鹿",
+          "label": "deer"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L108_bear",
+      "kanji": "熊",
+      "keyword": "bear",
+      "components": [
+        {
+          "glyph": "能",
+          "label": "ability"
+        },
+        {
+          "glyph": "灬",
+          "label": "cooking fire"
+        }
+      ]
+    }
+  ]
+}

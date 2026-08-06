@@ -1,0 +1,403 @@
+{
+  "presentation": "kanjiComponents",
+  "id": "proto_lesson_107_components",
+  "title": "Lesson 107 — Kanji Components",
+  "notes": "Kanji + Component visual literacy (Family support ready, deferred). Decompositions from lesson HTML (canonical). Catalog: data/kanji_components_catalog.json. Rebuild: python3 scripts/build_kanji_components.py",
+  "soundtrack": {
+    "main": "audio/kanji_components.mp3",
+    "loop": true
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "assets/images/gold_closing.png",
+      "bookendSize": "small"
+    }
+  },
+  "families": {},
+  "timing": {
+    "heroFadeInMs": 1800,
+    "afterHeroPauseMs": 900,
+    "componentArriveMs": 1400,
+    "componentStaggerMs": 1700,
+    "afterComponentsPauseMs": 1400,
+    "keywordFadeInMs": 1400,
+    "keywordHoldMs": 3200,
+    "keywordFadeOutMs": 1100,
+    "afterKeywordsPauseMs": 900,
+    "componentsFadeOutMs": 1600,
+    "heroAloneMs": 2400,
+    "crossfadeMs": 1600,
+    "blackBetweenMs": 700,
+    "crestBlackBeforeMs": 900,
+    "crestRevealMs": 2800,
+    "crestHoldMs": 1400,
+    "soundtrackFadeMs": 8000,
+    "crestFadeOutMs": 3500,
+    "crestBlackAfterMs": 800
+  },
+  "introTiming": {
+    "headingFadeInMs": 1400,
+    "glyphFadeInMs": 2000,
+    "glyphAloneHoldMs": 2800,
+    "labelFadeInMs": 1600,
+    "completeHoldMs": 4500,
+    "fadeOutMs": 1800,
+    "blackAfterMs": 900
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "kanjiComponents",
+    "typography": "kanji-components"
+  },
+  "meta": {
+    "prototype": true,
+    "theme": "kanjiComponents",
+    "stage": "components",
+    "lesson": 107,
+    "sceneCount": 20,
+    "source": "lesson_html",
+    "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
+    "htmlDatabase": "data/kanji/kml_component_database.json",
+    "catalog": "data/kanji_components_catalog.json",
+    "partSourcesUsed": [
+      "html"
+    ],
+    "schema": "kanji|newComponent|newFamily"
+  },
+  "scenes": [
+    {
+      "type": "kanji",
+      "id": "L107_depression",
+      "kanji": "鬱",
+      "keyword": "depression",
+      "components": [
+        {
+          "glyph": "鬱",
+          "label": "depression"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_concerning",
+      "kanji": "就",
+      "keyword": "concerning",
+      "components": [
+        {
+          "glyph": "京",
+          "label": "capital"
+        },
+        {
+          "glyph": "尤",
+          "label": "furthermore"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_kick",
+      "kanji": "蹴",
+      "keyword": "kick",
+      "components": [
+        {
+          "glyph": "足",
+          "label": "leg"
+        },
+        {
+          "glyph": "就",
+          "label": "concerning"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_sociable",
+      "kanji": "懇",
+      "keyword": "sociable",
+      "components": [
+        {
+          "glyph": "豸",
+          "label": "snake / badger"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_groundbreaking",
+      "kanji": "墾",
+      "keyword": "groundbreaking",
+      "components": [
+        {
+          "glyph": "豸",
+          "label": "snake / badger"
+        },
+        {
+          "glyph": "艮",
+          "label": "stopping"
+        },
+        {
+          "glyph": "土",
+          "label": "soil"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_countenance",
+      "kanji": "貌",
+      "keyword": "countenance",
+      "components": [
+        {
+          "glyph": "豸",
+          "label": "snake / badger"
+        },
+        {
+          "glyph": "白",
+          "label": "white"
+        },
+        {
+          "glyph": "儿",
+          "label": "legs"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_excuse",
+      "kanji": "免",
+      "keyword": "excuse",
+      "components": [
+        {
+          "glyph": "免",
+          "label": "excuse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_elude",
+      "kanji": "逸",
+      "keyword": "elude",
+      "components": [
+        {
+          "glyph": "⻌",
+          "label": "road"
+        },
+        {
+          "glyph": "免",
+          "label": "excuse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_nightfall",
+      "kanji": "晩",
+      "keyword": "nightfall",
+      "components": [
+        {
+          "glyph": "日",
+          "label": "sun"
+        },
+        {
+          "glyph": "免",
+          "label": "excuse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_exertion",
+      "kanji": "勉",
+      "keyword": "exertion",
+      "components": [
+        {
+          "glyph": "免",
+          "label": "excuse"
+        },
+        {
+          "glyph": "力",
+          "label": "power"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_elephant",
+      "kanji": "象",
+      "keyword": "elephant",
+      "components": [
+        {
+          "glyph": "象",
+          "label": "elephant"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_statue",
+      "kanji": "像",
+      "keyword": "statue",
+      "components": [
+        {
+          "glyph": "亻",
+          "label": "person"
+        },
+        {
+          "glyph": "象",
+          "label": "elephant"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_horse",
+      "kanji": "馬",
+      "keyword": "horse",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_pony",
+      "kanji": "駒",
+      "keyword": "pony",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "句",
+          "label": "phrase"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_verification",
+      "kanji": "験",
+      "keyword": "verification",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        },
+        {
+          "glyph": "一",
+          "label": "one"
+        },
+        {
+          "glyph": "人",
+          "label": "person"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_equestrian",
+      "kanji": "騎",
+      "keyword": "equestrian",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "奇",
+          "label": "strange"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_parking",
+      "kanji": "駐",
+      "keyword": "parking",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "主",
+          "label": "lord"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_drive",
+      "kanji": "駆",
+      "keyword": "drive",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "区",
+          "label": "ward"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_station",
+      "kanji": "駅",
+      "keyword": "station",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "尺",
+          "label": "shaku"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
+      "id": "L107_boisterous",
+      "kanji": "騒",
+      "keyword": "boisterous",
+      "components": [
+        {
+          "glyph": "馬",
+          "label": "horse"
+        },
+        {
+          "glyph": "又",
+          "label": "or again"
+        },
+        {
+          "glyph": "虫",
+          "label": "insect"
+        }
+      ]
+    }
+  ]
+}
