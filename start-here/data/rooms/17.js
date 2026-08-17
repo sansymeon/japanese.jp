@@ -1,0 +1,67 @@
+(function (w) {
+  "use strict";
+  var script = document.currentScript;
+  w.KmlBeginnerRoomBase = script ? new URL(".", script.src).href : "";
+  w.KmlBeginnerRoomData = {
+  "id": "17",
+  "displayName": "濡れた橋",
+  "roomLabel": "Room 17",
+  "mode": "guided-song",
+  "romajiDefault": "off",
+  "audio": "../../audio/雨の橋の灯.mp3",
+  "loop": false,
+  "imageCrossfade": 8.3,
+  "presentation": "listen",
+  "timing": {
+    "status": "listened",
+    "audioDuration": 225.8,
+    "note": "Master visual sequence. Paintings are independent of the sung verse and of any later text view. start is when the incoming painting begins to appear. Rain at 144.7 is a visual pacing choice (mist was holding too long); 8.6s dissolve is already underway before the swell around 2:31, and rain is settled well before 2:59. Do not land dissolves on vocal entries (0:24 / 1:17 / 2:59) or on つづく (0:34 / 1:27 / 3:08)."
+  },
+  "vocals": [
+    { "start": 24, "text": "ぬれた" },
+    { "start": 28, "text": "はしに" },
+    { "start": 31, "text": "あかりが" },
+    { "start": 34, "text": "つづく" },
+    { "start": 77, "text": "ぬれた" },
+    { "start": 81, "text": "はしに" },
+    { "start": 84, "text": "あかりが" },
+    { "start": 87, "text": "つづく" },
+    { "start": 179, "text": "ぬれた" },
+    { "start": 182, "text": "はしに" },
+    { "start": 185, "text": "あかりが" },
+    { "start": 188, "text": "つづく" }
+  ],
+  "opening": {
+    "image": "../../assets/images/room_17/nine_lantern.png",
+    "title": "濡れた橋",
+    "lead": "Listen.",
+    "cta": "Listen"
+  },
+  "film": [
+    {
+      "id": "lantern",
+      "start": 0,
+      "image": "../../assets/images/room_17/nine_lantern.png"
+    },
+    {
+      "id": "mist",
+      "start": 64.8,
+      "image": "../../assets/images/room_17/nine_mist.png",
+      "crossfade": 8.3
+    },
+    {
+      "id": "rain",
+      "start": 144.7,
+      "image": "../../assets/images/room_17/nine_rain.png",
+      "crossfade": 8.6
+    },
+    {
+      "id": "outro",
+      "start": 202.4,
+      "image": "../../assets/images/room_17/nine_outro.png",
+      "crossfade": 8.9
+    }
+  ],
+  "lyrics": []
+};
+})(window);

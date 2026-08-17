@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+  Room 3 — What’s your name? URL remains /start-here/lesson-3/.
+  Guided-song: JSON in ../data/rooms/3.json.
+  Puzzle: no new boxes. な ま ん wait for Room 4.
+-->
+<html lang="en" class="museum-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room 3 — What’s your name? — Kanji・Music・Landscape</title>
+  <meta
+    name="description"
+    content="おなまえは なんですか — a name exchange built on ですか and です you already know."
+  />
+  <meta name="theme-color" content="#171512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../assets/css/museum-room.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <script src="../../assets/js/museum-room.js" defer></script>
+  <script src="../js/beginner-course.js" defer></script>
+  <script src="../data/rooms/3.js" defer></script>
+  <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-guided-song.js" defer></script>
+</head>
+<body class="museum-page beginner-guided-page" data-beginner-lesson="3">
+  <a class="skip-link" href="#listen">Skip to Listen & Follow</a>
+
+  <header class="museum-header">
+    <div class="museum-header-inner">
+      <a class="museum-brand" href="../../index.html">Kanji・Music・Landscape</a>
+      <nav aria-label="Primary">
+        <ul class="museum-nav">
+          <li><a href="../">Start Here</a></li>
+          <li><a href="../../journey/">Journey</a></li>
+          <li><a href="../../kml/contents/books/">Kanji Studies</a></li>
+          <li><a href="../../collections/">Video Collections</a></li>
+          <li><a href="../../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="guided-stage" data-guided-song aria-label="What’s your name?">
+      <div class="guided-stage-frame">
+        <div class="guided-stage-layers">
+          <img
+            class="guided-layer is-active"
+            src="../assets/images/room_3/intro.png"
+            alt=""
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+          />
+          <img
+            class="guided-layer"
+            src="../assets/images/room_3/intro.png"
+            alt=""
+            width="1920"
+            height="1080"
+          />
+        </div>
+        <div class="guided-stage-shade" aria-hidden="true"></div>
+
+        <div class="guided-chrome">
+          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
+        </div>
+
+        <div class="guided-welcome" data-guided-welcome>
+          <h1 id="listen" data-guided-title>What’s your name?</h1>
+          <p class="guided-welcome-lead" data-guided-lead>
+            A vast hall. A name.
+          </p>
+          <p class="guided-welcome-hint" data-guided-hint>
+            Names may stay as they are. です and ですか you already know.
+          </p>
+          <button type="button" class="guided-start" data-guided-start>
+            <span class="guided-start-icon" aria-hidden="true">▶</span>
+            Listen & Follow
+          </button>
+        </div>
+
+        <div
+          class="guided-lyric"
+          data-guided-lyric
+          hidden
+          aria-live="polite"
+        >
+          <p class="jp-kana" lang="ja" data-guided-ja></p>
+          <p class="jp-romaji" data-guided-romaji></p>
+        </div>
+
+        <div class="guided-transport" data-guided-transport hidden>
+          <button type="button" data-guided-pause aria-pressed="false">Play</button>
+          <input
+            class="guided-seek"
+            data-guided-seek
+            type="range"
+            min="0"
+            max="1000"
+            value="0"
+            step="1"
+            aria-label="Song position"
+          />
+          <span class="guided-time" data-guided-time></span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="room-section beginner-after"
+      id="after"
+      data-guided-after
+      aria-labelledby="puzzle-heading"
+    >
+      <div class="room-container">
+        <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
+          <a class="pathway-nav-back" data-room-nav="prev" href="../lesson-2/">← Room 2</a>
+          <span class="pathway-nav-status" data-room-nav="current">Room 3</span>
+          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-4/">Continue to Room 4 →</a>
+        </nav>
+
+        <figure class="jp-block jp-block--solo reveal">
+          <p class="jp-kana" lang="ja">＿＿＿です。</p>
+          <p class="jp-romaji">_____ desu.</p>
+          <p class="jp-en">Your name here — the rest you already know.</p>
+        </figure>
+
+        <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
+          <h2 id="puzzle-heading">Your Hiragana</h2>
+          <p class="kana-puzzle-note">
+            No new boxes. Names may stay as they are. Reading おなまえ comes next.
+          </p>
+          <p class="kana-puzzle-count" data-kana-puzzle-count></p>
+          <div class="kana-puzzle" data-kana-puzzle lang="ja"></div>
+        </section>
+
+        <div class="room-forward reveal">
+          <p>Next: look at おなまえ, one hiragana at a time.</p>
+          <div class="room-actions">
+            <a class="museum-btn museum-btn--primary" href="../lesson-4/">Continue to Room 4</a>
+            <button type="button" class="museum-btn museum-btn--ghost" data-guided-replay>
+              Listen again
+            </button>
+            <a class="museum-btn museum-btn--ghost" href="../lesson-2/">Previous: Room 2</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="museum-footer">
+    <div class="museum-footer-inner">
+      <nav aria-label="Footer">
+        <a href="../../index.html">Home</a>
+        <a href="../">Start Here</a>
+        <a href="../lesson-2/">Room 2</a>
+        <a href="../lesson-4/">Room 4</a>
+      </nav>
+      <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
+    </div>
+  </footer>
+</body>
+</html>

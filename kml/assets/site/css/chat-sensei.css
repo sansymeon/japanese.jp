@@ -1,0 +1,132 @@
+/* Ask Chat-Sensei — ornamental flourish between kanji entries.
+   Muted gold divider by default; soft glow on hover/focus. No motion. */
+
+.chat-sensei {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.2rem 0 -1.55rem;
+  z-index: 2;
+}
+
+.chat-sensei-flourish {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0.65rem 1.15rem;
+  color: var(--kanji-color, #8a6b2e);
+  opacity: 1;
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 2px;
+  transition: opacity 180ms ease, filter 180ms ease, color 180ms ease;
+}
+
+.chat-sensei-flourish svg {
+  display: block;
+  width: 76px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.chat-sensei-flourish:hover,
+.chat-sensei-flourish:focus-visible,
+.chat-sensei.is-open .chat-sensei-flourish {
+  color: #a68538;
+  filter: drop-shadow(0 0 6px rgba(138, 107, 46, 0.45));
+  outline: none;
+}
+
+.chat-sensei-flourish:focus-visible {
+  box-shadow: 0 0 0 1px rgba(201, 164, 88, 0.35);
+}
+
+.chat-sensei-panel {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 0.15rem);
+  transform: translateX(-50%);
+  width: min(19rem, calc(100vw - 2.5rem));
+  padding: 0.7rem 0.45rem 0.55rem;
+  text-align: left;
+  background: #f3eee3;
+  border: 1px solid rgba(201, 164, 88, 0.28);
+  border-radius: 8px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 10px 28px rgba(0, 0, 0, 0.22);
+  color: #2a261f;
+  z-index: 6;
+}
+
+.chat-sensei.is-open .chat-sensei-panel {
+  display: block;
+}
+
+.chat-sensei-kicker {
+  margin: 0 0.55rem 0.45rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a7340;
+}
+
+.chat-sensei-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-sensei-menu button {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.42rem 0.65rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-sensei-menu button:hover,
+.chat-sensei-menu button:focus-visible {
+  background: rgba(201, 164, 88, 0.14);
+  outline: none;
+}
+
+.chat-sensei-pending {
+  display: none;
+  margin: 0.15rem 0.55rem 0.2rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(201, 164, 88, 0.18);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #5c564c;
+}
+
+.chat-sensei.is-pending .chat-sensei-menu {
+  display: none;
+}
+
+.chat-sensei.is-pending .chat-sensei-pending {
+  display: block;
+}
+
+.chat-sensei-pending strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+  color: #2a261f;
+}
+
+.chat-sensei--bridge {
+  margin: 1.35rem 0 0;
+}
