@@ -764,6 +764,424 @@ body.museum-page {
   margin-top: 0.65rem;
 }
 
+/* Beginner pathway */
+
+.pathway-cta {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.pathway-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.75rem 1rem;
+  align-items: center;
+  margin: 0 0 clamp(2rem, 4vw, 2.75rem);
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(201, 164, 88, 0.14);
+  font-size: 0.9rem;
+}
+
+.pathway-nav-back {
+  justify-self: start;
+  color: var(--ink-quiet);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.pathway-nav-back:hover,
+.pathway-nav-back:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.pathway-nav-status {
+  justify-self: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 72%, transparent);
+  white-space: nowrap;
+}
+
+.pathway-nav-next {
+  justify-self: end;
+  text-align: right;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.pathway-nav-next:hover,
+.pathway-nav-next:focus-visible {
+  color: #d8b66a;
+  border-bottom-color: var(--gold);
+  outline: none;
+}
+
+.room-prose + .pathway-outline {
+  margin-top: 2.25rem;
+}
+
+.pathway-outline {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.pathway-outline li {
+  position: relative;
+  margin: 0;
+  padding: 0.85rem 0 0.85rem 1.15rem;
+  border-top: 1px solid rgba(201, 164, 88, 0.12);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.pathway-outline li:last-child {
+  border-bottom: 1px solid rgba(201, 164, 88, 0.12);
+}
+
+.pathway-outline li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--gold) 70%, transparent);
+}
+
+.pathway-outline strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.pathway-outline a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.pathway-outline a:hover,
+.pathway-outline a:focus-visible {
+  color: var(--gold);
+  border-bottom-color: color-mix(in srgb, var(--gold) 40%, transparent);
+  outline: none;
+}
+
+.pathway-kana {
+  display: inline-block;
+  margin: 0.15rem 0.15rem 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.2em;
+  color: var(--ivory);
+}
+
+/* Beginner lesson: Japanese line + Romaji toggle + Your Hiragana */
+
+.beginner-assist {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 1.75rem;
+}
+
+.beginner-assist [data-romaji-toggle] {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  background: transparent;
+  border: 1px solid rgba(201, 164, 88, 0.28);
+  border-radius: 2px;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+  transition:
+    color var(--ease),
+    border-color var(--ease),
+    background var(--ease);
+}
+
+.beginner-assist [data-romaji-toggle]:hover,
+.beginner-assist [data-romaji-toggle]:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+  outline: none;
+}
+
+.beginner-assist [data-romaji-toggle][aria-pressed="true"] {
+  color: var(--gold);
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  background: rgba(201, 164, 88, 0.08);
+}
+
+.jp-block {
+  margin: 0 0 1.75rem;
+}
+
+.jp-block--solo {
+  margin: 1.25rem 0 2rem;
+  text-align: center;
+}
+
+.jp-kana {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.6vw, 2.05rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.7;
+  color: var(--ivory);
+}
+
+.jp-unpack .jp-kana {
+  letter-spacing: 0.42em;
+}
+
+.jp-romaji {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-quiet);
+}
+
+html.is-romaji-off .jp-romaji {
+  display: none;
+}
+
+.jp-en {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink-quiet);
+}
+
+.beginner-song {
+  margin: 1.5rem 0 2.25rem;
+  padding: 1.35rem 1.4rem 0.4rem;
+  border: 1px solid rgba(201, 164, 88, 0.14);
+  background: rgba(14, 12, 10, 0.35);
+}
+
+.beginner-song-label {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 70%, transparent);
+}
+
+.beginner-exhibit {
+  margin: 0 0 2.5rem;
+}
+
+.beginner-exhibit img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 1.1rem;
+  border-radius: 2px;
+}
+
+.beginner-exhibit--pause .jp-block--answer {
+  margin-top: 5.5rem;
+}
+
+.beginner-vowel-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.beginner-vowel {
+  flex: 1 1 3.5rem;
+  text-align: center;
+}
+
+.beginner-vowel .jp-kana {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.beginner-listen {
+  margin: 0 0 2.75rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.beginner-audio {
+  display: block;
+  width: 100%;
+  margin: 0 0 2.75rem;
+  height: 2.4rem;
+  accent-color: var(--gold);
+}
+
+.beginner-reaction {
+  margin: 0 0 clamp(3.25rem, 8vw, 4.5rem);
+}
+
+.beginner-reaction img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0 0 1.35rem;
+  border-radius: 2px;
+}
+
+.beginner-like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(14rem, 38vw, 22rem);
+  margin: 0 0 1.35rem;
+  border: 1px solid rgba(201, 164, 88, 0.12);
+  background:
+    radial-gradient(ellipse 55% 50% at 50% 45%, rgba(201, 164, 88, 0.1), transparent 70%),
+    #12100e;
+}
+
+.beginner-like-mark {
+  font-size: clamp(5rem, 16vw, 8rem);
+  line-height: 1;
+  filter: grayscale(0.2) saturate(0.85);
+  opacity: 0.9;
+}
+
+.beginner-chorus {
+  margin: clamp(3rem, 8vw, 5rem) 0;
+  padding: clamp(2rem, 5vw, 3.25rem) 0.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(201, 164, 88, 0.12);
+  border-bottom: 1px solid rgba(201, 164, 88, 0.12);
+}
+
+.beginner-chorus .jp-kana {
+  font-size: clamp(1.85rem, 4.6vw, 2.65rem);
+  letter-spacing: 0.28em;
+}
+
+.beginner-chorus .jp-block {
+  margin: 0 0 1.75rem;
+}
+
+.beginner-chorus .jp-block:last-child {
+  margin-bottom: 0;
+}
+
+.kana-puzzle-section,
+.kana-reference-section {
+  margin: 2.75rem 0 1.5rem;
+}
+
+.kana-puzzle-section h2,
+.kana-reference-section h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.kana-puzzle-note,
+.kana-puzzle-count {
+  margin: 0 0 0.85rem;
+  color: var(--ink-quiet);
+  font-size: 0.95rem;
+}
+
+.kana-puzzle-count {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 72%, transparent);
+}
+
+.kana-puzzle {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 0.35rem;
+  margin: 1rem 0 0;
+  max-width: 40rem;
+}
+
+.kana-puzzle-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 0;
+}
+
+.kana-puzzle-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2.4vw, 1.35rem);
+  color: var(--ivory);
+  border: 1px solid rgba(201, 164, 88, 0.16);
+  background: rgba(201, 164, 88, 0.04);
+}
+
+.kana-puzzle-cell.is-empty {
+  background: transparent;
+  border-color: rgba(201, 164, 88, 0.1);
+}
+
+.kana-puzzle-cell.is-void {
+  border-color: transparent;
+  background: transparent;
+}
+
+.kana-puzzle-cell.is-new {
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  color: var(--gold);
+}
+
+.kana-puzzle--reference .kana-puzzle-cell {
+  color: var(--ink-soft);
+  border-color: rgba(201, 164, 88, 0.12);
+  background: transparent;
+}
+
+.kana-puzzle--reference {
+  opacity: 0.92;
+}
+
+@media (max-width: 720px) {
+  .kana-puzzle {
+    gap: 0.22rem;
+  }
+
+  .kana-puzzle-col {
+    gap: 0.22rem;
+  }
+
+  .beginner-song {
+    padding: 1.1rem 1rem 0.2rem;
+  }
+}
+
 /* Reveal */
 
 .museum-page .reveal {
@@ -827,5 +1245,22 @@ body.museum-page {
   .guidance-link {
     grid-template-columns: 1fr;
     gap: 0.35rem;
+  }
+
+  .pathway-nav {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    text-align: left;
+  }
+
+  .pathway-nav-back,
+  .pathway-nav-status,
+  .pathway-nav-next {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .pathway-nav-status {
+    order: -1;
   }
 }

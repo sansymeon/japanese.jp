@@ -1,0 +1,296 @@
+(function (w) {
+  "use strict";
+  var script = document.currentScript;
+  w.KmlBeginnerRoomBase = script ? new URL(".", script.src).href : "";
+  w.KmlBeginnerRoomData = {
+  "id": "5",
+  "displayName": "Japanese food is good",
+  "roomLabel": "Room 5",
+  "mode": "guided-song",
+  "romajiDefault": "on",
+  "audio": "../../audio/lesson-5.mp3",
+  "loop": false,
+  "imageCrossfade": 2.8,
+  "timing": {
+    "status": "listened",
+    "audioDuration": 191.4,
+    "note": "Food-line images land ~1.2s before the sung name so the dish is established with the lyric. はい keeps that same dish. Instrumentals use 2.8s dissolves and empty ja. washoku_spread.png arrives well before にほんの たべものは and holds through both closing lines. Hero is room-5.png (sushi restaurant) at open; the song ends on wagashi.png."
+  },
+  "opening": {
+    "image": "../../assets/images/room-5.png",
+    "title": "Japanese food is good",
+    "lead": "The same question — now about taste.",
+    "cta": "Listen & Follow",
+    "hint": "おいしい and すし you can already read. The other foods can stay as scenery."
+  },
+  "scenes": [
+    {
+      "id": "intro-restaurant",
+      "start": 0,
+      "image": "../../assets/images/room-5.png",
+      "ja": "",
+      "romaji": "",
+      "transition": "crossfade"
+    },
+    {
+      "id": "pre-sukiyaki-1",
+      "start": 8.2,
+      "image": "../../assets/images/room_5/sukiyaki.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    },
+    {
+      "id": "sukiyaki-q-1",
+      "start": 11,
+      "image": "../../assets/images/room_5/sukiyaki.png",
+      "ja": "すきやきは おいしいですか？",
+      "romaji": "Sukiyaki wa oishii desu ka?"
+    },
+    {
+      "id": "sukiyaki-a-1",
+      "start": 17,
+      "image": "../../assets/images/room_5/sukiyaki.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "pre-udon-1",
+      "start": 23.8,
+      "image": "../../assets/images/room_5/udon.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu.",
+      "crossfade": 1.2
+    },
+    {
+      "id": "udon-q-1",
+      "start": 25,
+      "image": "../../assets/images/room_5/udon.png",
+      "ja": "うどんは おいしいですか？",
+      "romaji": "Udon wa oishii desu ka?"
+    },
+    {
+      "id": "udon-a-1",
+      "start": 31,
+      "image": "../../assets/images/room_5/udon.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "pre-onigiri-1",
+      "start": 37.8,
+      "image": "../../assets/images/room_5/onigiri.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu.",
+      "crossfade": 1.2
+    },
+    {
+      "id": "onigiri-q-1",
+      "start": 40,
+      "image": "../../assets/images/room_5/onigiri.png",
+      "ja": "おにぎりは おいしいですか？",
+      "romaji": "Onigiri wa oishii desu ka?"
+    },
+    {
+      "id": "onigiri-a-1",
+      "start": 45,
+      "image": "../../assets/images/room_5/onigiri.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "pre-tamago-1",
+      "start": 51.8,
+      "image": "../../assets/images/room_5/tamago.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu.",
+      "crossfade": 1.2
+    },
+    {
+      "id": "tamago-q-1",
+      "start": 54,
+      "image": "../../assets/images/room_5/tamago.png",
+      "ja": "たまごは おいしいですか？",
+      "romaji": "Tamago wa oishii desu ka?"
+    },
+    {
+      "id": "tamago-a-1",
+      "start": 61,
+      "image": "../../assets/images/room_5/tamago.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "gallery-sushi",
+      "start": 64,
+      "image": "../../assets/images/room_5/sushi.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    },
+    {
+      "id": "gallery-teppanyaki",
+      "start": 71.5,
+      "image": "../../assets/images/room_5/teppanyaki.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    },
+    {
+      "id": "gallery-yakitori",
+      "start": 79,
+      "image": "../../assets/images/room_5/yakitori.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    },
+    {
+      "id": "gallery-sashimi",
+      "start": 86.5,
+      "image": "../../assets/images/room_5/sashimi.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    },
+    {
+      "id": "pre-sukiyaki-2",
+      "start": 94.2,
+      "image": "../../assets/images/room_5/sukiyaki.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    },
+    {
+      "id": "sukiyaki-q-2",
+      "start": 97,
+      "image": "../../assets/images/room_5/sukiyaki.png",
+      "ja": "すきやきは おいしいですか？",
+      "romaji": "Sukiyaki wa oishii desu ka?"
+    },
+    {
+      "id": "sukiyaki-a-2",
+      "start": 102,
+      "image": "../../assets/images/room_5/sukiyaki.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "pre-udon-2",
+      "start": 109.8,
+      "image": "../../assets/images/room_5/udon.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu.",
+      "crossfade": 1.2
+    },
+    {
+      "id": "udon-q-2",
+      "start": 111,
+      "image": "../../assets/images/room_5/udon.png",
+      "ja": "うどんは おいしいですか？",
+      "romaji": "Udon wa oishii desu ka?"
+    },
+    {
+      "id": "udon-a-2",
+      "start": 117,
+      "image": "../../assets/images/room_5/udon.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "pre-onigiri-2",
+      "start": 124.8,
+      "image": "../../assets/images/room_5/onigiri.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu.",
+      "crossfade": 1.2
+    },
+    {
+      "id": "onigiri-q-2",
+      "start": 126,
+      "image": "../../assets/images/room_5/onigiri.png",
+      "ja": "おにぎりは おいしいですか？",
+      "romaji": "Onigiri wa oishii desu ka?"
+    },
+    {
+      "id": "onigiri-a-2",
+      "start": 131,
+      "image": "../../assets/images/room_5/onigiri.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "pre-tamago-2",
+      "start": 135.8,
+      "image": "../../assets/images/room_5/tamago.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu.",
+      "crossfade": 1.2
+    },
+    {
+      "id": "tamago-q-2",
+      "start": 137,
+      "image": "../../assets/images/room_5/tamago.png",
+      "ja": "たまごは おいしいですか？",
+      "romaji": "Tamago wa oishii desu ka?"
+    },
+    {
+      "id": "tamago-a-2",
+      "start": 143,
+      "image": "../../assets/images/room_5/tamago.png",
+      "ja": "はい、おいしいです。",
+      "romaji": "Hai, oishii desu."
+    },
+    {
+      "id": "pre-washoku",
+      "start": 146,
+      "image": "../../assets/images/room_5/washoku_spread.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    },
+    {
+      "id": "nihon-1a",
+      "start": 155,
+      "image": "../../assets/images/room_5/washoku_spread.png",
+      "ja": "にほんの たべものは",
+      "romaji": "Nihon no tabemono wa"
+    },
+    {
+      "id": "nihon-1b",
+      "start": 159,
+      "image": "../../assets/images/room_5/washoku_spread.png",
+      "ja": "おいしいです！",
+      "romaji": "oishii desu!"
+    },
+    {
+      "id": "nihon-2a",
+      "start": 162,
+      "image": "../../assets/images/room_5/washoku_spread.png",
+      "ja": "にほんの たべものは",
+      "romaji": "Nihon no tabemono wa"
+    },
+    {
+      "id": "nihon-2b",
+      "start": 165,
+      "image": "../../assets/images/room_5/washoku_spread.png",
+      "ja": "おいしいです！",
+      "romaji": "oishii desu!"
+    },
+    {
+      "id": "outro-washoku",
+      "start": 168,
+      "image": "../../assets/images/room_5/washoku_spread.png",
+      "ja": "",
+      "romaji": ""
+    },
+    {
+      "id": "outro-wagashi",
+      "start": 176,
+      "image": "../../assets/images/room_5/wagashi.png",
+      "ja": "",
+      "romaji": "",
+      "crossfade": 2.8
+    }
+  ]
+};
+})(window);

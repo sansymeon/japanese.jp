@@ -632,6 +632,64 @@ button:focus-visible {
   border-radius: 0;
 }
 
+/* ---------- Beginner entrance ---------- */
+
+.beginner-invite {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.75rem, 6vw, 4rem) 0;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
+  background:
+    radial-gradient(
+      ellipse 70% 80% at 50% 50%,
+      color-mix(in srgb, var(--green) 14%, transparent),
+      transparent 72%
+    ),
+    var(--bg-elevated);
+  text-align: center;
+}
+
+.beginner-invite-inner {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.beginner-invite-title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--paper-warm);
+}
+
+.beginner-invite-lead {
+  margin: 0 0 1.35rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+}
+
+.beginner-invite-link {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  padding-bottom: 0.15rem;
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.beginner-invite-link:hover,
+.beginner-invite-link:focus-visible {
+  color: color-mix(in srgb, var(--accent) 78%, white);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+
 /* ---------- Destination invitations ---------- */
 
 .destinations {
