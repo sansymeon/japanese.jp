@@ -140,9 +140,75 @@
     }
   }
 
+  function hiraganaFromLyrics(lyrics) {
+    var present = {};
+    (lyrics || []).forEach(function (item) {
+      String((item && item.ja) || "").split("").forEach(function (ch) {
+        if (ch === "っ") return;
+        if (ch >= "ぁ" && ch <= "ゖ") present[ch] = true;
+      });
+    });
+    return present;
+  }
+
+  function gojuonBoxes() {
+    var boxes = {};
+    course.gojuonColumns.forEach(function (column) {
+      column.cells.forEach(function (kana) {
+        if (kana) boxes[kana] = true;
+      });
+    });
+    return boxes;
+  }
+
+  function renderVoicedExtras(afterEl, extras) {
+    var parent = afterEl.parentNode;
+    var existing = parent.querySelector("[data-kana-chart-voiced]");
+    if (existing) existing.remove();
+    if (!extras.length) return;
+
+    var order =
+      "がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょ";
+    var present = {};
+    extras.forEach(function (kana) {
+      present[kana] = true;
+    });
+    var row = document.createElement("div");
+    row.className = "kana-puzzle-voiced";
+    row.setAttribute("data-kana-chart-voiced", "");
+    row.lang = "ja";
+    order.split("").forEach(function (kana) {
+      if (!present[kana]) return;
+      row.appendChild(cellEl(kana, present, false, false));
+      present[kana] = false;
+    });
+    extras.forEach(function (kana) {
+      if (present[kana]) row.appendChild(cellEl(kana, present, false, false));
+    });
+    afterEl.insertAdjacentElement("afterend", row);
+  }
+
+  function renderLyricKana(container, lyrics) {
+    var present = hiraganaFromLyrics(lyrics);
+    var boxes = gojuonBoxes();
+    var basic = [];
+    var extras = [];
+    Object.keys(present).forEach(function (kana) {
+      if (boxes[kana]) basic.push(kana);
+      else extras.push(kana);
+    });
+    renderGrid(container, basic, [], "learner");
+    renderVoicedExtras(container, extras);
+  }
+
   function renderReference() {
     var mount = document.querySelector("[data-kana-chart-full]");
     if (!mount || !lesson.showReferenceChart) return;
+    var data = window.KmlBeginnerRoomData;
+    if (data && data.lyrics && data.lyrics.length) {
+      renderLyricKana(mount, data.lyrics);
+      return;
+    }
     renderGrid(mount, null, null, "reference");
   }
 

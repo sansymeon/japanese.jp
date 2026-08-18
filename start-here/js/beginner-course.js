@@ -31,37 +31,11 @@
  * After Room 25: no more teaching songs before 46/46. Ordinary rooms only.
  * Do not change the approved 31/46 → 46/46 vocabulary path to make a finale.
  *
- * FUTURE FINALE — concept only. Not built. Do not design, commission, or
- * produce it until the learner actually owns 46/46. Evaluate from the
- * completed course, not from a guess made mid-pathway.
+ * Room 40 is the hiragana reading epilogue after 46/46. Not a teaching
+ * lesson, not an appendix, not a mashup. Hiragana-only song; no new kana.
+ * Timed lyrics preserve sung Japanese exactly (みちても). No Room 41.
  *
- * Prefer a mashup / medley of songs the learner already met in Start Here
- * over an entirely new commission. The music itself is a memory journey.
- * Possible sources (include only what genuinely belonged to their path):
- *   げんきですか (Room 1)
- *   name / greeting material with John and Maria (Rooms 3–4)
- *   food-song material (Rooms 5, 18)
- *   竹の音 / 山の声 (Room 24)
- *   山の川が 石を越え (Room 25)
- *   雨の橋の灯 (Room 17)
- *   any other musical moment that actually became part of the journey
- *
- * Beautiful first. Do not force all 46 hiragana into the lyrics.
- * After the best medley exists, count how many of the 46 appear naturally.
- * Around 30 is acceptable. More is welcome. Coverage is measured afterward.
- *
- * Visuals: revisit familiar Start Here worlds in roughly chronological
- * order — festival / matsuri, John and Maria, food, early rooms and
- * interiors, river, window, bamboo, later landscapes, other images that
- * have become familiar by the end. Recognition and return, not spectacle.
- * A Shiba-kun cameo is welcome if it fits; do not add him to raise
- * kana coverage or at the expense of musical or visual quality.
- *
- * Emotional arc: songs they once could hear but not fully read, heard
- * again after owning all 46. Possible quiet payoff: 46 / 46, then a
- * doorway onward into the larger KML world.
- *
- * Slice: Rooms 0–39. Opening song order:
+ * Slice: Rooms 0–40. Opening song order:
  *   0 conversational あいうえお jazz (guided-song)
  *   1 日本語が楽しい
  *   3–4 What’s your name?
@@ -133,8 +107,12 @@
  *       Do not show 宜しく. Do not explain the meaning. No verse.
  *       No doorway. No song.
  *   39 listen — curtain call after 46/46. YouTube Hiragana/Romaji film
- *       is the content. Quiet completion. Outward doors to Kanji Studies
- *       and Ambient Kanji Gallery. 0 new kana. No puzzle. No Room 40.
+ *       is the content. Continues to Room 40. 0 new kana. No puzzle.
+ *   40 ことばが さく — hiragana reading epilogue. Guided-song, hiragana
+ *       only. 0 new kana. After listen: hiragana from the sung lyrics.
+ *       Terminus.
+ *       Outward doors to Start Here, Room Index, Kanji Studies, and
+ *       Ambient Kanji Gallery. No Room 41.
  *
  * Reading: you don't have to understand everything to understand something.
  * Help learners notice known pieces and signals. Unknown material can wait.
@@ -195,6 +173,7 @@
   var L37 = L36;
   var L38 = L37.concat(["よ", "ろ"]);
   var L39 = L38;
+  var L40 = L39;
 
   var ATMOSPHERE_6_11 = [
     "../audio/lesson-6.mp3",
@@ -763,6 +742,20 @@
       encounteredKana: L39,
       newKana: [],
       prev: "38",
+      next: "40",
+    },
+    "40": {
+      id: "40",
+      roomLabel: "Room 40",
+      displayName: "ことばが さく",
+      mode: "guided-song",
+      dataSrc: "../data/rooms/40.json",
+      romajiDefault: "off",
+      showPuzzle: false,
+      showReferenceChart: true,
+      encounteredKana: L40,
+      newKana: [],
+      prev: "39",
       next: null,
     },
   };

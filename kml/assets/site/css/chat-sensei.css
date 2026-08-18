@@ -1,4 +1,4 @@
-/* Ask Chat-Sensei — ornamental flourish between kanji entries.
+/* Ask ChatGPT Sensei — ornamental flourish between kanji entries.
    Muted gold divider by default; soft glow on hover/focus. No motion. */
 
 .chat-sensei {
@@ -125,6 +125,57 @@
   margin-bottom: 0.2rem;
   font-weight: 600;
   color: #2a261f;
+}
+
+.chat-sensei-handoff-note {
+  margin: 0 0 0.65rem;
+}
+
+.chat-sensei-prompt {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 0.65rem;
+  padding: 0.45rem 0.5rem;
+  font: inherit;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #2a261f;
+  background: #fffdf8;
+  border: 1px solid rgba(201, 164, 88, 0.28);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.chat-sensei-handoff-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chat-sensei-open,
+.chat-sensei-copy {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: #2a261f;
+  background: transparent;
+  border: 1px solid rgba(201, 164, 88, 0.45);
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.chat-sensei-open:hover,
+.chat-sensei-open:focus-visible,
+.chat-sensei-copy:hover,
+.chat-sensei-copy:focus-visible {
+  background: rgba(201, 164, 88, 0.14);
+  outline: none;
 }
 
 .chat-sensei--bridge {

@@ -84,6 +84,7 @@ body.museum-page {
   justify-content: space-between;
   gap: 1rem;
   width: min(100% - 2.5rem, 64rem);
+  max-width: 100%;
   margin: 0 auto;
   min-height: 3.25rem;
   padding: 0.35rem 0;
@@ -97,6 +98,7 @@ body.museum-page {
   color: var(--ink-soft);
   text-decoration: none;
   white-space: nowrap;
+  min-width: 0;
   transition: color var(--ease);
 }
 
@@ -130,6 +132,27 @@ body.museum-page {
 
 .museum-nav a[aria-current="page"] {
   color: var(--gold);
+}
+
+.museum-nav-toggle {
+  display: none;
+  flex-shrink: 0;
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent);
+  color: var(--ink-soft);
+  padding: 0.35rem 0.7rem;
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.museum-nav-toggle:hover,
+.museum-nav-toggle:focus-visible {
+  color: var(--gold);
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  outline: none;
 }
 
 /* ---------- Room hero ---------- */
@@ -825,55 +848,22 @@ body.museum-page {
   outline: none;
 }
 
-.room-prose + .pathway-outline {
-  margin-top: 2.25rem;
+.pathway-index-cta {
+  margin: 1.5rem 0 2.25rem;
 }
 
-.pathway-outline {
-  list-style: none;
-  margin: 0 0 1.5rem;
-  padding: 0;
-}
-
-.pathway-outline li {
-  position: relative;
-  margin: 0;
-  padding: 0.85rem 0 0.85rem 1.15rem;
-  border-top: 1px solid rgba(201, 164, 88, 0.12);
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-
-.pathway-outline li:last-child {
-  border-bottom: 1px solid rgba(201, 164, 88, 0.12);
-}
-
-.pathway-outline li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.2rem;
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--gold) 70%, transparent);
-}
-
-.pathway-outline strong {
-  font-weight: 500;
-  color: var(--ink);
-}
-
-.pathway-outline a {
-  color: inherit;
+.pathway-index-cta a {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: color var(--ease), border-color var(--ease);
+  transition: border-color var(--ease);
 }
 
-.pathway-outline a:hover,
-.pathway-outline a:focus-visible {
-  color: var(--gold);
+.pathway-index-cta a:hover,
+.pathway-index-cta a:focus-visible {
   border-bottom-color: color-mix(in srgb, var(--gold) 40%, transparent);
   outline: none;
 }
@@ -1228,18 +1218,88 @@ html.is-romaji-off .jp-romaji {
 }
 
 @media (max-width: 720px) {
+  html.museum-page,
+  body.museum-page,
+  html.bookshelf-page,
+  body.bookshelf-page {
+    overflow-x: clip;
+  }
+
+  .museum-header-inner,
+  .books-header-inner {
+    width: min(100% - 1.5rem, 64rem);
+    gap: 0.75rem;
+  }
+
+  .museum-brand,
+  .books-brand {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .museum-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .museum-header nav,
+  .books-header nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 0;
+    background: color-mix(in srgb, var(--gallery-wall) 94%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 164, 88, 0.12);
+  }
+
+  .museum-header:not(.is-nav-open) nav,
+  .books-header:not(.is-nav-open) nav {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* Hide the visible link list — same pattern as homepage .site-nav */
+  .museum-header ul.museum-nav,
+  .museum-header ul.books-nav,
+  .books-header ul.books-nav,
+  .books-header ul.museum-nav {
+    display: none;
+  }
+
+  .museum-header.is-nav-open ul.museum-nav,
+  .museum-header.is-nav-open ul.books-nav,
+  .books-header.is-nav-open ul.books-nav,
+  .books-header.is-nav-open ul.museum-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.35rem 0.75rem 0.85rem;
+  }
+
+  .museum-header.is-nav-open nav,
+  .books-header.is-nav-open nav {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .museum-nav a,
+  .books-nav a {
+    display: block;
+    font-size: 0.78rem;
+    padding: 0.7rem 0.15rem;
+    border-bottom: 1px solid rgba(201, 164, 88, 0.1);
+  }
+
   .collection-entry,
   .collection-entry:nth-child(even) {
     grid-template-columns: 1fr;
     direction: ltr;
-  }
-
-  .museum-nav {
-    gap: 0.3rem 0.75rem;
-  }
-
-  .museum-nav a {
-    font-size: 0.72rem;
   }
 
   .guidance-link {

@@ -1,11 +1,95 @@
 /**
- * Shared museum-room UI: copyright year + reveal-on-scroll.
+ * Shared museum-room UI: copyright year, mobile nav, Start Here link, reveal-on-scroll.
  */
 (function () {
   "use strict";
 
   var year = document.getElementById("copyrightYear");
   if (year) year.textContent = String(new Date().getFullYear());
+
+  var START_HERE_HREF = "/start-here/";
+
+  function isStartHereHref(href) {
+    if (!href) return false;
+    var path = href.split("?")[0].split("#")[0].replace(/\/+$/, "");
+    return /(^|\/)start-here(\/index\.html)?$/i.test(path);
+  }
+
+  function ensureStartHereLink(list) {
+    if (!list) return;
+    var anchors = list.querySelectorAll("a");
+    var i;
+    for (i = 0; i < anchors.length; i++) {
+      if (isStartHereHref(anchors[i].getAttribute("href"))) return;
+      if ((anchors[i].textContent || "").trim() === "Start Here") return;
+    }
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.href = START_HERE_HREF;
+    a.textContent = "Start Here";
+    if (/(^|\/)start-here(\/|$)/i.test(window.location.pathname)) {
+      a.setAttribute("aria-current", "page");
+    }
+    li.appendChild(a);
+    list.insertBefore(li, list.firstChild);
+  }
+
+  function ensureStartHereFooter(nav) {
+    if (!nav) return;
+    var anchors = nav.querySelectorAll("a");
+    var i;
+    for (i = 0; i < anchors.length; i++) {
+      if (isStartHereHref(anchors[i].getAttribute("href"))) return;
+      if ((anchors[i].textContent || "").trim() === "Start Here") return;
+    }
+    var a = document.createElement("a");
+    a.href = START_HERE_HREF;
+    a.textContent = "Start Here";
+    nav.insertBefore(a, nav.firstChild);
+  }
+
+  var header = document.querySelector(".museum-header, .books-header");
+  var inner = header && header.querySelector(".museum-header-inner, .books-header-inner");
+  var panel = header && header.querySelector("nav");
+  var links =
+    (panel && panel.querySelector(".museum-nav, .books-nav")) ||
+    (header && header.querySelector(".museum-nav, .books-nav"));
+
+  if (inner && links) {
+    ensureStartHereLink(links);
+
+    if (panel && !header.querySelector(".museum-nav-toggle")) {
+      if (!panel.id) panel.id = "museumNav";
+      var toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "museum-nav-toggle";
+      toggle.setAttribute("aria-controls", panel.id);
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+      toggle.textContent = "Menu";
+      inner.insertBefore(toggle, panel);
+
+      function setOpen(open) {
+        if (open) header.classList.add("is-nav-open");
+        else header.classList.remove("is-nav-open");
+        if (panel) {
+          if (open) panel.classList.add("is-open");
+          else panel.classList.remove("is-open");
+        }
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      }
+
+      toggle.addEventListener("click", function () {
+        setOpen(!header.classList.contains("is-nav-open"));
+      });
+      links.addEventListener("click", function (event) {
+        if (event.target.closest("a")) setOpen(false);
+      });
+    }
+  }
+
+  document.querySelectorAll(".museum-footer nav").forEach(ensureStartHereFooter);
 
   var nodes = document.querySelectorAll(".reveal");
   if (!nodes.length) return;

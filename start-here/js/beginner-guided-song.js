@@ -8,12 +8,15 @@
  *   id, displayName, roomLabel, mode: "guided-song",
  *   imageCrossfade?: seconds (image dissolve; lyrics are not delayed)
  *   opening { image, title, lead, cta, hint? },
- *   film[] { id?, start, image, transition?, crossfade? }
+ *   film[] { id?, start, image, transition?, crossfade?, crop? }
  *     Optional. When present, paintings are a master visual sequence
- *     independent of any lyric overlay. Later text layers reuse the
- *     same film.
+ *     independent of any lyric overlay. crop is an object-position
+ *     (e.g. "62% 40%") applied to the incoming layer.
  *   lyrics[] { id?, start, ja, romaji, overlay?, align? }
  *     Optional. Timed independently of film. Empty = listen only.
+ *     When both film and lyrics are present, the clock applies both.
+ *     guided-stage--interlude is listen-only (empty lyrics), not a
+ *     singing room that happens to use film.
  *   Film rooms may also offer whole-piece text views via
  *   [data-guided-view] / [data-verse-panel]. Those are not timed
  *   karaoke and must not change the film.
@@ -25,6 +28,9 @@
  *
  * State is derived from audio.currentTime. Seek and pause stay in sync
  * because the view only follows the soundtrack clock.
+ *
+ * [data-guided-skip] ("Skip listening") stops audio and calls revealAfter()
+ * so the learner stays in this room. It does not navigate away.
  */
 (function () {
   "use strict";
@@ -59,6 +65,7 @@
   var completed = false;
   var ready = false;
   var pendingStart = false;
+  var playGeneration = 0;
   var currentView = "none";
   var heardOnce = false;
 
@@ -116,10 +123,13 @@
     if (layer.getAttribute("src") !== src) layer.setAttribute("src", src);
   }
 
-  function showImage(src, transition, duration) {
+  function showImage(src, transition, duration, crop) {
     if (!layers.length) return;
     var current = layers[activeLayer];
-    if (current && current.getAttribute("src") === src) return;
+    if (current && current.getAttribute("src") === src) {
+      if (crop) current.style.objectPosition = crop;
+      return;
+    }
 
     if (typeof duration === "number" && duration >= 0) {
       mount.style.setProperty("--guided-crossfade", duration + "s");
@@ -128,6 +138,8 @@
     var nextIndex = layers.length > 1 ? 1 - activeLayer : 0;
     var next = layers[nextIndex];
     setLayerSrc(next, src);
+    if (crop) next.style.objectPosition = crop;
+    else next.style.objectPosition = "";
     next.removeAttribute("hidden");
 
     if (layers.length < 2 || reduceMotion || transition === "cut" || duration === 0) {
@@ -169,7 +181,8 @@
     showImage(
       scene.image,
       scene.transition || "crossfade",
-      scene.crossfade
+      scene.crossfade,
+      scene.crop
     );
     setLyric(scene);
   }
@@ -179,10 +192,12 @@
     var id = item.id || String(item.start);
     if (!force && id === currentFilmId) return;
     currentFilmId = id;
+    mount.dataset.guidedFilm = id;
     showImage(
       item.image,
       cut ? "cut" : item.transition || "crossfade",
-      cut ? 0 : item.crossfade
+      cut ? 0 : item.crossfade,
+      item.crop
     );
   }
 
@@ -234,6 +249,7 @@
   function syncTo(time) {
     if (filmMode) {
       applyFilm(itemAt(film, time), false, seeking);
+      if (lyrics.length) applyLyric(itemAt(lyrics, time), false);
     } else {
       applyScene(sceneAt(time), false);
     }
@@ -263,7 +279,7 @@
       after.querySelectorAll(".reveal").forEach(function (el) {
         el.classList.add("is-visible");
       });
-      if (!filmMode || heardOnce) {
+      if (!filmMode || lyrics.length || heardOnce) {
         window.requestAnimationFrame(function () {
           after.scrollIntoView({
             behavior: reduceMotion ? "auto" : "smooth",
@@ -275,6 +291,18 @@
     if (filmMode) heardOnce = true;
   }
 
+  function stopAudio() {
+    pendingStart = false;
+    playGeneration += 1;
+    window.cancelAnimationFrame(raf);
+    audio.pause();
+  }
+
+  function skipListening() {
+    stopAudio();
+    revealAfter();
+  }
+
   function enterPlayingChrome() {
     started = true;
     mount.classList.add("is-playing");
@@ -283,19 +311,28 @@
   }
 
   function playFrom(time) {
+    var gen = ++playGeneration;
     enterPlayingChrome();
     if (typeof time === "number") audio.currentTime = time;
     else if (audio.ended) audio.currentTime = 0;
     if (filmMode) {
       currentFilmId = null;
       applyFilm(itemAt(film, audio.currentTime || 0), true, true);
+      if (lyrics.length) {
+        currentLyricId = null;
+        applyLyric(itemAt(lyrics, audio.currentTime || 0), true);
+      }
       applyView();
     }
     var playPromise = audio.play();
-    if (playPromise && playPromise.catch) {
-      playPromise.catch(function () {
-        /* click-to-play blocked — stay paused */
-      });
+    if (playPromise && playPromise.then) {
+      playPromise
+        .then(function () {
+          if (gen !== playGeneration) audio.pause();
+        })
+        .catch(function () {
+          /* click-to-play blocked — stay paused */
+        });
     }
   }
 
@@ -399,6 +436,10 @@
         playView(btn.getAttribute("data-guided-view") || "none");
       });
     });
+
+    document.querySelectorAll("[data-guided-skip]").forEach(function (btn) {
+      btn.addEventListener("click", skipListening);
+    });
   }
 
   function applyOpening(opening) {
@@ -443,6 +484,7 @@
           transition: item.transition || "crossfade",
           crossfade:
             item.crossfade != null ? Number(item.crossfade) : undefined,
+          crop: item.crop || "",
         };
       })
       .sort(function (a, b) {
@@ -465,7 +507,7 @@
       });
 
     filmMode = film.length > 0;
-    if (filmMode) mount.classList.add("guided-stage--interlude");
+    if (filmMode && !lyrics.length) mount.classList.add("guided-stage--interlude");
 
     scenes = (config.scenes || [])
       .map(function (scene) {
@@ -478,6 +520,7 @@
           transition: scene.transition || "crossfade",
           overlay: scene.overlay || "default",
           align: scene.align || "center",
+          crop: scene.crop || "",
           crossfade:
             scene.crossfade != null ? Number(scene.crossfade) : undefined,
         };
@@ -498,6 +541,7 @@
     bind();
     if (filmMode) {
       applyFilm(itemAt(film, 0), true, true);
+      if (lyrics.length) applyLyric(itemAt(lyrics, 0), true);
       applyView();
     } else {
       applyScene(sceneAt(0), true);
