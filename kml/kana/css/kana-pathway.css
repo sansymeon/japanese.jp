@@ -98,13 +98,28 @@
   color: var(--ink-soft);
 }
 
-.kana-pathway-next {
+.kana-pathway-rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem 2.4rem;
   margin: clamp(3.5rem, 8vw, 5rem) auto 0;
-  max-width: 28rem;
+  max-width: 36rem;
   text-align: center;
+}
+
+.kana-pathway-next {
+  margin: 0;
   font-size: 0.88rem;
   letter-spacing: 0.12em;
   color: color-mix(in srgb, var(--ink-quiet) 72%, transparent);
+  text-decoration: none;
+}
+
+a.kana-pathway-next:hover,
+a.kana-pathway-next:focus-visible {
+  color: var(--gold);
+  outline: none;
 }
 
 .kana-stroke-layer {
@@ -238,6 +253,12 @@
   .kana-exhibit {
     min-width: 7.5rem;
     flex: 0 0 calc(50% - 1.25rem);
+  }
+
+  .kana-exhibits[data-kana-count="1"] .kana-exhibit,
+  .kana-exhibits[data-kana-count="2"] .kana-exhibit,
+  .kana-exhibits[data-kana-count="3"] .kana-exhibit {
+    flex: 0 0 auto;
   }
 
   .kana-glyph {

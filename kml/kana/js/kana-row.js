@@ -1,9 +1,86 @@
 /**
- * Kana row prototype: click a kana to replay KanjiVG stroke order
- * using the existing KmlStrokeOrderPlayer.
+ * Kana row: render the current gojūon row, then replay KanjiVG stroke order
+ * with KmlStrokeOrderPlayer. Timing is kana-only (drawMs 1700, gapMs 950).
  */
 (function () {
   "use strict";
+
+  var rows = window.KmlKatakanaRows || window.KmlHiraganaRows || [];
+  var scriptName = window.KmlKatakanaRows ? "Katakana" : "Hiragana";
+  var slug = document.body.getAttribute("data-kana-row") || "";
+  var rowIndex = -1;
+  var rowData = null;
+  for (var i = 0; i < rows.length; i++) {
+    if (rows[i].slug === slug) {
+      rowIndex = i;
+      rowData = rows[i];
+      break;
+    }
+  }
+
+  function renderExhibits() {
+    var list = document.querySelector("[data-kana-exhibits]");
+    if (!list || !rowData) return;
+    list.replaceChildren();
+    list.setAttribute("data-kana-count", String(rowData.kana.length));
+    rowData.kana.forEach(function (item) {
+      var li = document.createElement("li");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "kana-exhibit";
+      btn.setAttribute("data-kana", item.kana);
+
+      var glyph = document.createElement("span");
+      glyph.className = "kana-glyph";
+      glyph.lang = "ja";
+      glyph.textContent = item.kana;
+
+      var romaji = document.createElement("span");
+      romaji.className = "kana-romaji";
+      romaji.textContent = item.romaji;
+
+      btn.appendChild(glyph);
+      btn.appendChild(romaji);
+      li.appendChild(btn);
+      list.appendChild(li);
+    });
+  }
+
+  function renderRowTitle() {
+    var titleEl = document.querySelector("[data-kana-row-title]");
+    if (titleEl && rowData && !titleEl.textContent.trim()) {
+      titleEl.lang = "ja";
+      titleEl.textContent = rowData.title;
+    }
+  }
+
+  function renderRowNav() {
+    var nav = document.querySelector("[data-kana-row-nav]");
+    if (!nav || rowIndex < 0) return;
+    nav.replaceChildren();
+    nav.setAttribute("aria-label", scriptName + " rows");
+
+    var prev = rows[rowIndex - 1];
+    var next = rows[rowIndex + 1];
+    if (prev) {
+      var prevLink = document.createElement("a");
+      prevLink.className = "kana-pathway-next";
+      prevLink.href = "../" + prev.slug + "/";
+      prevLink.textContent = "Previous row — " + prev.title;
+      nav.appendChild(prevLink);
+    }
+    if (next) {
+      var nextLink = document.createElement("a");
+      nextLink.className = "kana-pathway-next";
+      nextLink.href = "../" + next.slug + "/";
+      nextLink.textContent = "Next row — " + next.title;
+      nav.appendChild(nextLink);
+    }
+  }
+
+  renderRowTitle();
+  renderExhibits();
+  renderRowNav();
 
   var layer = document.querySelector("[data-kana-stroke]");
   var stage = document.querySelector("[data-kana-stroke-svg]");
