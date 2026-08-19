@@ -27,11 +27,13 @@
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
   <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../data/rooms/24.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
   <script src="../js/beginner-guided-song.js" defer></script>
+  <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page beginner-guided-page" data-beginner-lesson="24">
   <a class="skip-link" href="#listen">Skip to Listen & Follow</a>
@@ -75,7 +77,7 @@
 
         <div class="guided-chrome">
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
-          <a class="guided-chrome-next" href="../lesson-25/">Room 25 →</a>
+          <button type="button" class="guided-chrome-next" data-guided-skip>Skip listening</button>
         </div>
 
         <div class="guided-welcome" data-guided-welcome>
@@ -85,7 +87,7 @@
             <span class="guided-start-icon" aria-hidden="true">▶</span>
             Listen & Follow
           </button>
-          <a class="guided-welcome-next" href="../lesson-25/">Continue to Room 25</a>
+          <button type="button" class="guided-welcome-next" data-guided-skip>Skip listening</button>
         </div>
 
         <div
@@ -156,6 +158,13 @@
           </p>
         </figure>
 
+          <div
+            data-chat-sensei
+            data-prompt-set="already-read"
+            data-pathway-room="24"
+            data-source="start-here"
+          ></div>
+
         <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
           <h2 id="puzzle-heading">Your Hiragana</h2>
           <p class="kana-puzzle-note">
@@ -174,6 +183,7 @@
             </button>
             <a class="museum-btn museum-btn--ghost" href="../lesson-23/">Previous: Room 23</a>
             <a class="museum-btn museum-btn--ghost" href="../">Back to Start Here</a>
+            <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
           </div>
         </div>
       </div>

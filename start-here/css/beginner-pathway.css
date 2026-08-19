@@ -54,9 +54,9 @@
       180deg,
       rgba(8, 8, 9, 0.28) 0%,
       transparent 28%,
-      transparent 52%,
-      rgba(8, 8, 9, 0.55) 78%,
-      rgba(8, 8, 9, 0.82) 100%
+      transparent 50%,
+      rgba(8, 8, 9, 0.58) 76%,
+      rgba(8, 8, 9, 0.86) 100%
     );
   pointer-events: none;
 }
@@ -69,6 +69,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  pointer-events: auto;
 }
 
 .guided-chrome [data-romaji-toggle] {
@@ -128,7 +129,10 @@
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-style: italic;
-  color: var(--ink-quiet);
+  color: color-mix(in srgb, var(--ink-soft) 94%, white);
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.65),
+    0 1px 14px rgba(0, 0, 0, 0.5);
 }
 
 .guided-start {
@@ -173,13 +177,26 @@
   letter-spacing: 0.08em;
   color: color-mix(in srgb, var(--ink-soft) 88%, white);
   text-decoration: none;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.65),
+    0 1px 14px rgba(0, 0, 0, 0.5);
 }
 
 .guided-welcome-next:hover,
 .guided-welcome-next:focus-visible {
   color: var(--gold);
   outline: none;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.65),
+    0 1px 14px rgba(0, 0, 0, 0.5);
+}
+
+button.guided-welcome-next {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
 }
 
 .guided-chrome-next {
@@ -201,6 +218,15 @@
   color: var(--gold);
   border-color: var(--gold);
   outline: none;
+}
+
+button.guided-chrome-next {
+  cursor: pointer;
+  appearance: none;
+}
+
+.beginner-guided-page.is-guided-complete [data-guided-skip] {
+  display: none;
 }
 
 .guided-lyric {
@@ -291,6 +317,10 @@
   color: var(--ink-quiet);
   text-align: right;
   font-variant-numeric: tabular-nums;
+}
+
+.guided-transport[hidden] {
+  display: none;
 }
 
 .beginner-after[hidden] {
@@ -384,8 +414,21 @@ button.museum-btn {
       180deg,
       rgba(8, 8, 9, 0.16) 0%,
       transparent 20%,
-      transparent 78%,
-      rgba(8, 8, 9, 0.38) 100%
+      transparent 72%,
+      rgba(8, 8, 9, 0.32) 88%,
+      rgba(8, 8, 9, 0.5) 100%
+    );
+}
+
+[data-beginner-lesson="25"] .guided-stage-shade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 9, 0.16) 0%,
+      transparent 20%,
+      transparent 58%,
+      rgba(8, 8, 9, 0.38) 78%,
+      rgba(8, 8, 9, 0.7) 100%
     );
 }
 
@@ -818,5 +861,248 @@ button.museum-btn {
 
 .pathway-close-back {
   margin: 1.85rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+}
+
+/* Start Here room index — scannable map, not a lesson. */
+.room-index-page .room-section {
+  padding-top: clamp(5.5rem, 12vw, 7.5rem);
+}
+
+.room-index-page .room-section-head h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+.room-index-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.room-index-list > li {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(201, 164, 88, 0.12);
+}
+
+.room-index-list > li:last-child {
+  border-bottom: 1px solid rgba(201, 164, 88, 0.12);
+}
+
+.room-index-list a {
+  display: grid;
+  grid-template-columns: 5.6rem minmax(0, 1fr);
+  gap: 0.35rem 1.1rem;
+  align-items: start;
+  padding: 0.95rem 0.15rem 0.95rem 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.room-index-list a:hover,
+.room-index-list a:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.room-index-num {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-quiet);
+  white-space: nowrap;
+}
+
+.room-index-list a:hover .room-index-num,
+.room-index-list a:focus-visible .room-index-num {
+  color: var(--gold);
+}
+
+.room-index-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  min-width: 0;
+}
+
+.room-index-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.room-index-list a:hover .room-index-title,
+.room-index-list a:focus-visible .room-index-title {
+  color: var(--gold);
+}
+
+.room-index-kana {
+  display: block;
+  margin-top: 0.12rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  color: var(--ivory);
+}
+
+.room-index-kana-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-quiet);
+}
+
+/* Room 40 — hiragana reading epilogue. Contemporary images; lyrics stay
+   readable; returning paintings use crop rather than new assets. */
+[data-beginner-lesson="40"] .guided-stage-shade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 9, 0.3) 0%,
+      transparent 24%,
+      transparent 48%,
+      rgba(8, 8, 9, 0.62) 74%,
+      rgba(8, 8, 9, 0.9) 100%
+    );
+}
+
+[data-beginner-lesson="40"] .guided-lyric .jp-kana {
+  color: var(--ivory);
+  font-size: clamp(1.4rem, 4.2vw, 2.45rem);
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.72),
+    0 2px 24px rgba(0, 0, 0, 0.55);
+}
+
+[data-beginner-lesson="40"] .guided-layer.is-active {
+  animation: room40-drift 36s ease-in-out infinite alternate;
+}
+
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle-voiced {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  margin: 0.85rem 0 0;
+  max-width: 44rem;
+}
+
+@keyframes room40-drift {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+[data-beginner-lesson="40"] .guided-stage[data-guided-film="bloom-grand"] .guided-layer.is-active {
+  animation-duration: 48s;
+}
+
+[data-beginner-lesson="40"] .kana-complete {
+  margin: 1.25rem 0 2.75rem;
+}
+
+[data-beginner-lesson="40"] .kana-complete h2 {
+  margin: 0 0 1.15rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.3vw, 1.45rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle {
+  margin: 1.35rem 0 0;
+  max-width: 44rem;
+}
+
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle-cell:not(.is-empty):not(.is-void) {
+  color: var(--ivory);
+  border-color: rgba(201, 164, 88, 0.22);
+  background: rgba(201, 164, 88, 0.05);
+}
+
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle-voiced .kana-puzzle-cell {
+  width: clamp(1.85rem, 5.6vw, 2.55rem);
+  flex: 0 0 auto;
+}
+
+[data-beginner-lesson="40"] .kana-complete-note {
+  margin: 1.75rem 0 0;
+  max-width: 36rem;
+  color: var(--ink-quiet);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+[data-beginner-lesson="40"] .room40-song-verse {
+  margin: 2.75rem 0 1.5rem;
+  text-align: left;
+}
+
+[data-beginner-lesson="40"] .room40-song-verse .jp-verse {
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 2.05;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 720px) {
+  [data-beginner-lesson="40"] .guided-lyric {
+    bottom: 3.55rem;
+    padding: 3.2rem 0.85rem 0.4rem;
+  }
+
+  [data-beginner-lesson="40"] .guided-lyric .jp-kana {
+    font-size: clamp(1.22rem, 6.2vw, 1.7rem);
+    letter-spacing: 0.08em;
+  }
+
+  [data-beginner-lesson="40"] .kana-complete .kana-puzzle {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-beginner-lesson="40"] .guided-layer.is-active {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .room-index-list a {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding: 1rem 0;
+  }
+
+  .room-index-num {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .room-index-title {
+    font-size: 1.18rem;
+  }
+
+  .room-index-kana {
+    font-size: 1.12rem;
+  }
 }
 

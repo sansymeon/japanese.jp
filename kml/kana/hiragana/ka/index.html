@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+  Basic hiragana pathway. Dark KML museum field.
+  Do not link from the production KML entrance yet.
+-->
+<html lang="en" class="museum-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiragana — かきくけこ — Kanji・Music・Landscape</title>
+  <meta
+    name="description"
+    content="Hiragana かきくけこ. Click a kana to see stroke order."
+  />
+  <meta name="theme-color" content="#171512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&family=Yuji+Syuku&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../../assets/css/museum-room.css" />
+  <link rel="stylesheet" href="../../css/kana-pathway.css" />
+  <script src="../../../../assets/js/museum-room.js" defer></script>
+  <script src="/kml/tools/ambient/js/stroke-order-player.js" defer></script>
+  <script src="/kml/kana/js/hiragana-rows.js" defer></script>
+  <script src="/kml/kana/js/kana-row.js" defer></script>
+</head>
+<body class="museum-page kana-pathway" data-kana-row="ka">
+  <a class="skip-link" href="#kana">Skip to hiragana</a>
+
+  <header class="museum-header museum-header--solid">
+    <div class="museum-header-inner">
+      <a class="museum-brand" href="../../../../index.html">Kanji・Music・Landscape</a>
+      <nav aria-label="Primary">
+        <ul class="museum-nav">
+          <li><a href="../../../../start-here/">Start Here</a></li>
+          <li><a href="../../../../journey/">Journey</a></li>
+          <li><a href="../../../contents/books/">Kanji Studies</a></li>
+          <li><a href="../../../../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="room-section" id="kana">
+      <div class="room-container room-container--wide">
+        <header class="kana-pathway-head">
+          <h1>Hiragana</h1>
+          <p class="kana-pathway-row-title" lang="ja" data-kana-row-title>かきくけこ</p>
+        </header>
+
+        <ul class="kana-exhibits" data-kana-exhibits></ul>
+
+        <nav class="kana-pathway-rows" data-kana-row-nav></nav>
+      </div>
+    </section>
+  </main>
+
+  <div
+    class="kana-stroke-layer"
+    data-kana-stroke
+    hidden
+    aria-hidden="true"
+    role="dialog"
+    aria-label="Stroke order"
+  >
+    <button type="button" class="kana-stroke-close" data-kana-stroke-close>
+      Close
+    </button>
+    <div class="kana-stroke-stage">
+      <div class="kana-stroke-svg" data-kana-stroke-svg></div>
+    </div>
+    <div class="kana-stroke-nav" role="group" aria-label="Kana in this row">
+      <button type="button" class="kana-stroke-step" data-kana-stroke-prev>
+        Previous
+      </button>
+      <button type="button" class="kana-stroke-step" data-kana-stroke-next>
+        Next
+      </button>
+    </div>
+    <p class="kana-stroke-note">Stroke order from KanjiVG</p>
+  </div>
+
+  <footer class="museum-footer">
+    <div class="museum-footer-inner">
+      <nav aria-label="Footer">
+        <a href="../../../../index.html">Home</a>
+        <a href="../../../contents/books/">Kanji Studies</a>
+      </nav>
+      <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
+    </div>
+  </footer>
+</body>
+</html>

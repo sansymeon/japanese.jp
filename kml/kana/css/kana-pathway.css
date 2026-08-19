@@ -1,0 +1,359 @@
+/* Simplified KML kana pathway — dark museum field, kana as exhibits. */
+
+.kana-pathway {
+  min-height: 100svh;
+}
+
+.kana-pathway .room-container--wide {
+  width: min(100% - 2.5rem, 72rem);
+}
+
+.kana-pathway-head {
+  text-align: center;
+  margin-bottom: clamp(3.25rem, 8vw, 5.25rem);
+}
+
+.kana-pathway-head h1 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 78%, transparent);
+}
+
+.kana-pathway-row-title {
+  margin: 0 0 1.15rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.45rem);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+}
+
+.kana-pathway-lead,
+.kana-pathway-hint {
+  margin: 0 auto;
+  max-width: 28rem;
+  color: var(--ink-quiet);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.kana-pathway-hint {
+  margin-top: 0.85rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.kana-exhibits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(1.25rem, 3.2vw, 3.25rem) clamp(1.1rem, 3.8vw, 3.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kana-exhibit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0.35rem 0.6rem 0.55rem;
+  min-width: 6.5rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.kana-exhibit:hover,
+.kana-exhibit:focus-visible {
+  border-color: rgba(201, 164, 88, 0.28);
+  outline: none;
+}
+
+.kana-exhibit:focus-visible {
+  border-color: var(--gold);
+}
+
+.kana-glyph {
+  font-family: "Yuji Syuku", "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(4.6rem, 9vw, 7.2rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ivory);
+}
+
+.kana-romaji {
+  font-family: var(--font-body);
+  font-size: clamp(1.28rem, 2.6vw, 1.58rem);
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
+.kana-pathway-rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem 2.4rem;
+  margin: clamp(3.5rem, 8vw, 5rem) auto 0;
+  max-width: 36rem;
+  text-align: center;
+}
+
+.kana-pathway-next {
+  margin: 0;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, var(--ink-quiet) 72%, transparent);
+  text-decoration: none;
+}
+
+a.kana-pathway-next:hover,
+a.kana-pathway-next:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.kana-pathway-index {
+  margin: 1.05rem auto 0;
+  text-align: center;
+}
+
+.kana-pathway-index-link {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  color: color-mix(in srgb, var(--ink-quiet) 64%, transparent);
+  text-decoration: none;
+}
+
+.kana-pathway-index-link:hover,
+.kana-pathway-index-link:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.kana-index-head .kana-pathway-lead {
+  margin-top: 0.35rem;
+}
+
+.kana-index-rows {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 28rem);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(201, 164, 88, 0.16);
+}
+
+.kana-index-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.7rem;
+  min-height: 4.15rem;
+  padding: 0.95rem 0.35rem 1.05rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(201, 164, 88, 0.16);
+}
+
+.kana-index-row:hover,
+.kana-index-row:focus-visible {
+  background: rgba(201, 164, 88, 0.055);
+  outline: none;
+}
+
+.kana-index-row:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+.kana-index-ja {
+  grid-column: 2;
+  font-family: "Yuji Syuku", "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.7rem, 6.4vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+  color: var(--ivory);
+}
+
+.kana-index-cue {
+  grid-column: 3;
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 58%, transparent);
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .kana-index-row--start {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 0.2rem;
+    padding-top: 1.05rem;
+    padding-bottom: 1.15rem;
+  }
+
+  .kana-index-row--start .kana-index-ja,
+  .kana-index-row--start .kana-index-cue {
+    grid-column: 1;
+  }
+}
+
+.kana-stroke-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(14, 12, 10, 0.97);
+  backdrop-filter: blur(10px);
+}
+
+.kana-stroke-layer[hidden] {
+  display: none;
+}
+
+.kana-stroke-stage {
+  position: relative;
+  width: min(100%, 28rem);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kana-stroke-svg {
+  width: min(78vw, 22rem);
+  height: min(78vw, 22rem);
+}
+
+.kana-stroke-svg svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.kana-stroke-svg [id^="kvg:StrokeNumbers"] {
+  display: none;
+}
+
+.kana-stroke-close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid rgba(201, 164, 88, 0.32);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.kana-stroke-close:hover,
+.kana-stroke-close:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+  outline: none;
+}
+
+.kana-stroke-note {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.35rem;
+  margin: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-quiet);
+}
+
+.kana-stroke-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3.35rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.kana-stroke-step {
+  min-width: 8.5rem;
+  min-height: 3.1rem;
+  padding: 0.7rem 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: rgba(14, 12, 10, 0.55);
+  border: 1px solid rgba(201, 164, 88, 0.38);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.kana-stroke-step:hover,
+.kana-stroke-step:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+  outline: none;
+}
+
+.kana-stroke-step:disabled {
+  color: color-mix(in srgb, var(--ink-quiet) 55%, transparent);
+  border-color: rgba(201, 164, 88, 0.14);
+  background: transparent;
+  cursor: default;
+}
+
+.kana-stroke-step:disabled:hover,
+.kana-stroke-step:disabled:focus-visible {
+  color: color-mix(in srgb, var(--ink-quiet) 55%, transparent);
+  border-color: rgba(201, 164, 88, 0.14);
+}
+
+@media (min-width: 900px) {
+  .kana-exhibits {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 720px) {
+  .kana-exhibit {
+    min-width: 7.5rem;
+    flex: 0 0 calc(50% - 1.25rem);
+  }
+
+  .kana-exhibits[data-kana-count="1"] .kana-exhibit,
+  .kana-exhibits[data-kana-count="2"] .kana-exhibit,
+  .kana-exhibits[data-kana-count="3"] .kana-exhibit {
+    flex: 0 0 auto;
+  }
+
+  .kana-glyph {
+    font-size: clamp(5.4rem, 28vw, 7.2rem);
+  }
+}

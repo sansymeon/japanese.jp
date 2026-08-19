@@ -1,0 +1,148 @@
+/* KML study entrance — three equal doors. Museum field, not a wizard. */
+
+.kml-need {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(5.5rem, 12vw, 8rem) 0 clamp(4rem, 10vw, 7rem);
+}
+
+.kml-need .room-container--wide {
+  width: min(100% - 2.5rem, 68rem);
+}
+
+.kml-need-head {
+  text-align: center;
+  margin-bottom: clamp(2.75rem, 7vw, 4.25rem);
+}
+
+.kml-need-head h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 2.6vw, 1.55rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+.kml-need-choices {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(201, 164, 88, 0.16);
+}
+
+.kml-need-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 8.5rem;
+  padding: 2.1rem 1.35rem 2.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(201, 164, 88, 0.16);
+  transition:
+    background 240ms ease-out,
+    border-color 240ms ease-out;
+}
+
+.kml-need-choice:hover,
+.kml-need-choice:focus-visible {
+  background: rgba(201, 164, 88, 0.055);
+  outline: none;
+}
+
+.kml-need-choice:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+.kml-need-ja {
+  font-family: "Yuji Syuku", "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(2.35rem, 7vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ivory);
+}
+
+.kml-need-en {
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 82%, transparent);
+}
+
+.kml-need-note {
+  margin: 0.35rem 0 0;
+  max-width: 16rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink-soft) 72%, var(--ink-quiet));
+}
+
+@media (min-width: 900px) {
+  .kml-need-choices {
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .kml-need-choice {
+    min-height: 14rem;
+    padding: 2.75rem 1.5rem 2.9rem;
+    border-bottom: none;
+    border-left: 1px solid rgba(201, 164, 88, 0.16);
+  }
+
+  .kml-need-choice:first-child {
+    border-left: none;
+  }
+
+  .kml-need-ja {
+    font-size: clamp(2.5rem, 3.6vw, 3.2rem);
+  }
+}
+
+.kml-need-reassure {
+  padding: clamp(3.25rem, 9vw, 6rem) 0 clamp(5rem, 12vw, 7.5rem);
+}
+
+.kml-need-reassure-inner {
+  width: min(100% - 2.5rem, 34rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kml-need-reassure h2 {
+  margin: 0 0 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 48%, var(--ink-quiet));
+}
+
+.kml-need-reassure p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--ink-soft) 58%, var(--ink-quiet));
+}
+
+.kml-need-reassure p + p {
+  margin-top: 1.05rem;
+}
+
+.kml-need-sensei {
+  font-family: var(--font-display);
+  font-size: 0.95em;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
