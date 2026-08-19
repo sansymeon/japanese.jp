@@ -122,6 +122,98 @@ a.kana-pathway-next:focus-visible {
   outline: none;
 }
 
+.kana-pathway-index {
+  margin: 1.05rem auto 0;
+  text-align: center;
+}
+
+.kana-pathway-index-link {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  color: color-mix(in srgb, var(--ink-quiet) 64%, transparent);
+  text-decoration: none;
+}
+
+.kana-pathway-index-link:hover,
+.kana-pathway-index-link:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.kana-index-head .kana-pathway-lead {
+  margin-top: 0.35rem;
+}
+
+.kana-index-rows {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 28rem);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(201, 164, 88, 0.16);
+}
+
+.kana-index-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.7rem;
+  min-height: 4.15rem;
+  padding: 0.95rem 0.35rem 1.05rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(201, 164, 88, 0.16);
+}
+
+.kana-index-row:hover,
+.kana-index-row:focus-visible {
+  background: rgba(201, 164, 88, 0.055);
+  outline: none;
+}
+
+.kana-index-row:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+.kana-index-ja {
+  grid-column: 2;
+  font-family: "Yuji Syuku", "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.7rem, 6.4vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+  color: var(--ivory);
+}
+
+.kana-index-cue {
+  grid-column: 3;
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 58%, transparent);
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .kana-index-row--start {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 0.2rem;
+    padding-top: 1.05rem;
+    padding-bottom: 1.15rem;
+  }
+
+  .kana-index-row--start .kana-index-ja,
+  .kana-index-row--start .kana-index-cue {
+    grid-column: 1;
+  }
+}
+
 .kana-stroke-layer {
   position: fixed;
   inset: 0;

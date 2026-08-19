@@ -78,9 +78,24 @@
     }
   }
 
+  function renderIndexLink() {
+    var nav = document.querySelector("[data-kana-row-nav]");
+    if (!nav) return;
+    var indexNav = document.createElement("nav");
+    indexNav.className = "kana-pathway-index";
+    indexNav.setAttribute("aria-label", scriptName + " index");
+    var link = document.createElement("a");
+    link.className = "kana-pathway-index-link";
+    link.href = "../";
+    link.textContent = "All " + scriptName + " rows";
+    indexNav.appendChild(link);
+    nav.insertAdjacentElement("afterend", indexNav);
+  }
+
   renderRowTitle();
   renderExhibits();
   renderRowNav();
+  renderIndexLink();
 
   var layer = document.querySelector("[data-kana-stroke]");
   var stage = document.querySelector("[data-kana-stroke-svg]");
