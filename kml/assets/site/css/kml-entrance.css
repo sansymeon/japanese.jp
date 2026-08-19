@@ -108,3 +108,41 @@
     font-size: clamp(2.5rem, 3.6vw, 3.2rem);
   }
 }
+
+.kml-need-reassure {
+  padding: clamp(3.25rem, 9vw, 6rem) 0 clamp(5rem, 12vw, 7.5rem);
+}
+
+.kml-need-reassure-inner {
+  width: min(100% - 2.5rem, 34rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kml-need-reassure h2 {
+  margin: 0 0 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 48%, var(--ink-quiet));
+}
+
+.kml-need-reassure p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--ink-soft) 58%, var(--ink-quiet));
+}
+
+.kml-need-reassure p + p {
+  margin-top: 1.05rem;
+}
+
+.kml-need-sensei {
+  font-family: var(--font-display);
+  font-size: 0.95em;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
