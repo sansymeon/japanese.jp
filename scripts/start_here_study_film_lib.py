@@ -181,8 +181,9 @@ PACE = {
 INK = "0xF3F1EB"
 INK_SOFT = "0xD8D4CB"
 INK_QUIET = "0x9A958C"
-SHADOW = "0x171512@0.42"
+SHADOW = "0x171512@0.65"
 GOLD = "0xC9A458"
+TEXT_BOX = "0x171512@0.78"
 
 
 def run(cmd: list[str]) -> None:
@@ -331,6 +332,20 @@ def wrap_instruction_text(text: str, fontsize: int = 64, max_width: float = 1500
     if estimate_text_width(text, fontsize) <= max_width:
         return [text]
 
+    # Prefer a sentence boundary when it yields two balanced lines.
+    for sep in (". ", " — ", " - "):
+        if sep in text:
+            left, right = text.split(sep, 1)
+            first = (left + sep.rstrip()).strip()
+            second = right.strip()
+            if (
+                first
+                and second
+                and estimate_text_width(first, fontsize) <= max_width + 80
+                and estimate_text_width(second, fontsize) <= max_width
+            ):
+                return [first, second]
+
     words = text.split(" ")
     if len(words) == 1:
         return [text]
@@ -365,17 +380,30 @@ def beat_lines(beat: dict) -> list[dict]:
         kana = beat.get("kana") or ""
         if kana:
             fs = 156 if len(kana) <= 4 else 128 if len(kana) <= 8 else 96
-            lines.append({"text": kana, "fontsize": fs, "y": "h*0.36", "color": INK})
+            lines.append({"text": kana, "fontsize": fs, "y": "h*0.32", "color": INK})
         romaji = beat.get("romaji")
         if romaji:
             lines.append(
-                {"text": romaji, "fontsize": 64, "y": "h*0.52", "color": INK_SOFT, "borderw": 2}
+                {"text": romaji, "fontsize": 64, "y": "h*0.46", "color": INK_SOFT, "borderw": 2}
             )
         en = beat.get("en")
         if en:
-            lines.append(
-                {"text": en, "fontsize": 54, "y": "h*0.86", "color": INK_SOFT, "borderw": 3}
-            )
+            fs = 54
+            wrapped = wrap_instruction_text(en, fontsize=fs, max_width=1180)
+            if max(estimate_text_width(part, fs) for part in wrapped) > 1180:
+                fs = 50
+                wrapped = wrap_instruction_text(en, fontsize=fs, max_width=1180)
+            if len(wrapped) == 1:
+                lines.append(
+                    {"text": wrapped[0], "fontsize": fs, "y": "h*0.78", "color": INK_SOFT, "borderw": 3}
+                )
+            else:
+                lines.append(
+                    {"text": wrapped[0], "fontsize": fs, "y": "h*0.72", "color": INK_SOFT, "borderw": 3}
+                )
+                lines.append(
+                    {"text": wrapped[1], "fontsize": fs, "y": "h*0.80", "color": INK_SOFT, "borderw": 3}
+                )
     elif kind == "unpack":
         kana = beat.get("kana") or ""
         if kana:
@@ -466,12 +494,16 @@ def drawtext_filter(
     y: str = "h*0.48",
     color: str = INK,
     borderw: int = 3,
+    box: bool = True,
 ) -> str:
     t = escape_drawtext(text)
+    box_part = (
+        f":box=1:boxcolor={TEXT_BOX}:boxborderw=18" if box else ""
+    )
     return (
         f"drawtext=fontfile={FONT}:text='{t}':fontsize={fontsize}:"
         f"fontcolor={color}:borderw={borderw}:bordercolor={SHADOW}:"
-        f"x=(w-text_w)/2:y={y}:"
+        f"x=(w-text_w)/2:y={y}{box_part}:"
         f"enable='between(t,{start:.2f},{end:.2f})'"
     )
 
@@ -497,9 +529,9 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
     draw.rounded_rectangle(
         (0, 0, width - 1, height - 1),
         radius=16,
-        fill=(14, 11, 9, 255),
-        outline=(52, 44, 36, 255),
-        width=2,
+        fill=(12, 10, 8, 255),
+        outline=(58, 48, 38, 255),
+        width=3,
     )
 
     gold = (240, 205, 120, 255)
