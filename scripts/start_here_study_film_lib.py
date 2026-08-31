@@ -289,7 +289,7 @@ def estimate_text_width(text: str, fontsize: int) -> float:
     return width
 
 
-def wrap_instruction_text(text: str, fontsize: int = 64, max_width: float = 1580.0) -> list[str]:
+def wrap_instruction_text(text: str, fontsize: int = 64, max_width: float = 1500.0) -> list[str]:
     """Split long instructional copy onto at most two centered lines."""
     text = " ".join(text.split())
     if estimate_text_width(text, fontsize) <= max_width:
@@ -351,10 +351,34 @@ def beat_lines(beat: dict) -> list[dict]:
             )
     elif kind == "kana_return":
         kana = beat.get("kana") or ""
-        if kana:
-            fs = 188 if len(kana) <= 4 else 156
-            lines.append({"text": kana, "fontsize": fs, "y": "h*0.40", "color": INK})
         romaji = beat.get("romaji")
+        if kana:
+            # Scale long returns down; prefer a two-line break on spaces.
+            if len(kana) <= 4:
+                fs = 188
+            elif len(kana) <= 8:
+                fs = 156
+            else:
+                fs = 128
+            while fs > 72 and estimate_text_width(kana, fs) > 1500:
+                fs -= 12
+            if " " in kana and estimate_text_width(kana, fs) > 1200:
+                parts = wrap_instruction_text(kana, fontsize=fs, max_width=1200)
+                if len(parts) > 1:
+                    lines.append({"text": parts[0], "fontsize": fs, "y": "h*0.34", "color": INK})
+                    lines.append({"text": parts[1], "fontsize": fs, "y": "h*0.48", "color": INK})
+                    if romaji:
+                        lines.append(
+                            {
+                                "text": romaji,
+                                "fontsize": 58,
+                                "y": "h*0.62",
+                                "color": INK_SOFT,
+                                "borderw": 2,
+                            }
+                        )
+                    return lines
+            lines.append({"text": kana, "fontsize": fs, "y": "h*0.40", "color": INK})
         if romaji:
             lines.append(
                 {"text": romaji, "fontsize": 64, "y": "h*0.56", "color": INK_SOFT, "borderw": 2}
@@ -371,10 +395,10 @@ def beat_lines(beat: dict) -> list[dict]:
             # Choose a font size that keeps two wrapped lines inside the safe width.
             fs = 72
             wrapped = wrap_instruction_text(text, fontsize=fs)
-            if len(wrapped) > 1 or estimate_text_width(text, fs) > 1580:
+            if len(wrapped) > 1 or estimate_text_width(text, fs) > 1500:
                 fs = 64
                 wrapped = wrap_instruction_text(text, fontsize=fs)
-            if max(estimate_text_width(part, fs) for part in wrapped) > 1580:
+            if max(estimate_text_width(part, fs) for part in wrapped) > 1500:
                 fs = 56
                 wrapped = wrap_instruction_text(text, fontsize=fs)
             if len(wrapped) == 1:
