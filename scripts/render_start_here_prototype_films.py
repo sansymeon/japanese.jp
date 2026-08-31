@@ -329,24 +329,6 @@ def room28_timeline(content_seconds: float) -> list[dict]:
 
     beats = [
         {
-            "weight": 1.1,
-            "lines": [
-                {"text": "Look into the picture.", "fontsize": 72, "y": "h*0.48", "color": ink},
-            ],
-        },
-        {
-            "weight": 0.75,
-            "lines": [
-                {"text": "Look", "fontsize": 58, "y": "h*0.44", "color": quiet, "borderw": 2},
-            ],
-        },
-        {
-            "weight": 1.0,
-            "lines": [
-                {"text": "Look into the scene.", "fontsize": 72, "y": "h*0.48", "color": ink},
-            ],
-        },
-        {
             "weight": 1.45,
             "lines": [
                 {"text": "へや", "fontsize": 188, "y": "h*0.36", "color": ink},
