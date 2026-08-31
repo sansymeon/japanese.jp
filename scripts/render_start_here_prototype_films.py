@@ -5,7 +5,8 @@ Outputs (gitignored / artifacts — not for Netlify deploy):
   exports/start-here-prototypes/room-17-nureta-hashi.mp4
   exports/start-here-prototypes/room-28-heya.mp4
 
-Room 17: listen-only master film from data/rooms/17.json timings.
+Room 17: listen-only master film from data/rooms/17.json timings,
+  with hiragana-only captions synced to vocals[].
 Room 28: calm “page performs itself” still + timed text + BGM.
 """
 
@@ -43,6 +44,42 @@ def duration(path: Path) -> float:
         text=True,
     ).strip()
     return float(out)
+
+
+def escape_drawtext(text: str) -> str:
+    return (
+        text.replace("\\", "\\\\")
+        .replace(":", "\\:")
+        .replace("'", "\\'")
+        .replace("%", "%%")
+    )
+
+
+def room17_hiragana_captions(vocals: list, total: float) -> list[str]:
+    """Timed hiragana-only captions from 17.json vocals[]."""
+    ink = "0xF3F1EB"
+    shadow = "0x171512@0.42"
+    hold_after_line = 6.0
+    max_gap = 12.0
+    filters: list[str] = []
+
+    for i, item in enumerate(vocals):
+        start = float(item["start"])
+        text = escape_drawtext(str(item.get("text") or ""))
+        if not text:
+            continue
+        if i + 1 < len(vocals):
+            nxt = float(vocals[i + 1]["start"])
+            end = nxt if (nxt - start) <= max_gap else start + hold_after_line
+        else:
+            end = min(total, start + hold_after_line)
+        filters.append(
+            f"drawtext=fontfile={FONT}:text='{text}':fontsize=96:"
+            f"fontcolor={ink}:borderw=3:bordercolor={shadow}:"
+            f"x=(w-text_w)/2:y=h*0.48:"
+            f"enable='between(t,{start:.2f},{end:.2f})'"
+        )
+    return filters
 
 
 def render_room_17(out: Path) -> None:
@@ -181,6 +218,32 @@ def render_room_17(out: Path) -> None:
                 acc_dur = duration(current)
             video_only = current
 
+        captions = room17_hiragana_captions(data.get("vocals") or [], total)
+        if captions:
+            captioned = tmp_path / "captioned.mp4"
+            vf = ",".join(captions + ["format=yuv420p"])
+            run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-i",
+                    str(video_only),
+                    "-vf",
+                    vf,
+                    "-an",
+                    "-c:v",
+                    "libx264",
+                    "-pix_fmt",
+                    "yuv420p",
+                    "-preset",
+                    "medium",
+                    "-crf",
+                    "18",
+                    str(captioned),
+                ]
+            )
+            video_only = captioned
+
         out.parent.mkdir(parents=True, exist_ok=True)
         aud_dur = duration(audio)
         run(
@@ -212,15 +275,6 @@ def render_room_17(out: Path) -> None:
                 str(out),
             ]
         )
-
-
-def escape_drawtext(text: str) -> str:
-    return (
-        text.replace("\\", "\\\\")
-        .replace(":", "\\:")
-        .replace("'", "\\'")
-        .replace("%", "%%")
-    )
 
 
 def render_room_28(out: Path) -> None:
