@@ -379,11 +379,16 @@ def beat_lines(beat: dict) -> list[dict]:
     elif kind == "unpack":
         kana = beat.get("kana") or ""
         if kana:
-            lines.append({"text": kana, "fontsize": 156, "y": "h*0.40", "color": INK})
+            lines.append({"text": kana, "fontsize": 156, "y": "h*0.36", "color": INK})
         romaji = beat.get("romaji")
         if romaji:
             lines.append(
-                {"text": romaji, "fontsize": 58, "y": "h*0.54", "color": INK_SOFT, "borderw": 2}
+                {"text": romaji, "fontsize": 58, "y": "h*0.52", "color": INK_SOFT, "borderw": 2}
+            )
+        en = beat.get("en")
+        if en:
+            lines.append(
+                {"text": en, "fontsize": 54, "y": "h*0.62", "color": INK_SOFT, "borderw": 3}
             )
     elif kind == "kana_return":
         kana = beat.get("kana") or ""

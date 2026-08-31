@@ -139,11 +139,18 @@ def parse_lesson(room_id: int) -> dict:
             continue
 
         if el.name == "figure" and "jp-unpack" in cls:
+            en = _text(el.select_one(".jp-en"))
+            # Prefer the gloss after an em dash: "これ — this" → "this"
+            if "—" in en:
+                en = en.split("—", 1)[-1].strip()
+            elif "-" in en and any("\u3040" <= ch <= "\u309f" for ch in en):
+                en = en.split("-", 1)[-1].strip()
             add_beat(
                 {
                     "kind": "unpack",
                     "kana": _text(el.select_one(".jp-kana")),
                     "romaji": _text(el.select_one(".jp-romaji")),
+                    "en": en,
                 }
             )
             continue
