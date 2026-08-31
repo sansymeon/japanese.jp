@@ -35,6 +35,13 @@
  * lesson, not an appendix, not a mashup. Hiragana-only song; no new kana.
  * Timed lyrics preserve sung Japanese exactly (みちても). No Room 41.
  *
+ * YouTube media layer (prototypes Rooms 17 + 28):
+ *   watchYoutubeId — unlisted embed id; empty keeps local delivery
+ *   watchModes     — study-room dual UI: ["read","watch"]
+ *   watchDefault   — "read" | "watch"
+ * See start-here/js/beginner-watch.js. Do not delete local AV until dual
+ * delivery is verified on production.
+ *
  * Slice: Rooms 0–40. Opening song order:
  *   0 conversational あいうえお jazz (guided-song)
  *   1 日本語が楽しい
@@ -436,6 +443,8 @@
       newKana: [],
       prev: "16",
       next: "18",
+      /* Unlisted YouTube id after upload of exports/start-here-prototypes/room-17-nureta-hashi.mp4 */
+      watchYoutubeId: "",
     },
     "18": {
       id: "18",
@@ -590,6 +599,11 @@
       newKana: ["へ"],
       prev: "27",
       next: "29",
+      /* Prototype: Read page / Watch & Listen film (unlisted YouTube). */
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube id after upload of exports/start-here-prototypes/room-28-heya.mp4 */
+      watchYoutubeId: "",
     },
     "29": {
       id: "29",
@@ -763,6 +777,7 @@
   window.KmlBeginnerCourse = {
     romajiStorageKey: "kml-beginner-romaji",
     musicStorageKey: "kml-beginner-study-music",
+    watchStorageKey: "kml-beginner-watch-mode",
     gojuonColumns: GOJUON_COLUMNS,
     boxCount: 46,
     lessons: lessons,
