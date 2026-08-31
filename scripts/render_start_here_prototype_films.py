@@ -320,16 +320,28 @@ def room28_typography() -> dict[str, str]:
     }
 
 
+# Room 28 beat pacing (relative weights → share of content_seconds):
+#   English-only → brisk | kana present → linger | new kana → longer | grid → longest
+ROOM28_PACE = {
+    "grid": 3.0,
+    "kana": 1.65,
+    "new_kana": 1.2,
+    "kana_note": 1.0,
+    "english": 0.4,
+}
+
+
 def room28_timeline(content_seconds: float) -> list[dict]:
     """Pedagogical beats from start-here/lesson-28/index.html (no nav/chrome)."""
     colors = room28_typography()
     ink = colors["ink"]
     soft = colors["ink_soft"]
     quiet = colors["ink_quiet"]
+    p = ROOM28_PACE
 
     beats = [
         {
-            "weight": 1.45,
+            "weight": p["kana"],
             "lines": [
                 {"text": "へや", "fontsize": 188, "y": "h*0.36", "color": ink},
                 {"text": "heya", "fontsize": 64, "y": "h*0.52", "color": soft, "borderw": 2},
@@ -337,39 +349,39 @@ def room28_timeline(content_seconds: float) -> list[dict]:
             ],
         },
         {
-            "weight": 1.25,
+            "weight": p["kana"],
             "lines": [
                 {"text": "へ　や", "fontsize": 156, "y": "h*0.40", "color": ink},
                 {"text": "he　ya", "fontsize": 58, "y": "h*0.54", "color": soft, "borderw": 2},
             ],
         },
         {
-            "weight": 1.05,
+            "weight": p["kana_note"],
             "lines": [
                 {"text": "や you already have.", "fontsize": 72, "y": "h*0.48", "color": ink},
             ],
         },
         {
-            "weight": 1.05,
+            "weight": p["new_kana"],
             "lines": [
                 {"text": "へ is new.", "fontsize": 72, "y": "h*0.48", "color": ink},
             ],
         },
         {
-            "weight": 1.25,
+            "weight": p["kana"],
             "lines": [
                 {"text": "へや", "fontsize": 188, "y": "h*0.40", "color": ink},
                 {"text": "heya", "fontsize": 64, "y": "h*0.56", "color": soft, "borderw": 2},
             ],
         },
         {
-            "weight": 0.95,
+            "weight": p["english"],
             "lines": [
                 {"text": "Your Hiragana", "fontsize": 72, "y": "h*0.48", "color": ink},
             ],
         },
         {
-            "weight": 1.15,
+            "weight": p["kana_note"],
             "lines": [
                 {
                     "text": "へ joins because へや needed it.",
@@ -380,7 +392,7 @@ def room28_timeline(content_seconds: float) -> list[dict]:
             ],
         },
         {
-            "weight": 1.15,
+            "weight": p["english"],
             "lines": [
                 {
                     "text": "34 of 46 is not unfinished work.",
@@ -391,7 +403,7 @@ def room28_timeline(content_seconds: float) -> list[dict]:
             ],
         },
         {
-            "weight": 0.85,
+            "weight": p["english"] * 0.85,
             "lines": [
                 {
                     "text": "Hiragana: 34 / 46",
@@ -402,7 +414,7 @@ def room28_timeline(content_seconds: float) -> list[dict]:
                 },
             ],
         },
-        {"weight": 2.35, "grid": True},
+        {"weight": p["grid"], "grid": True},
     ]
 
     weight_sum = sum(float(b["weight"]) for b in beats)
