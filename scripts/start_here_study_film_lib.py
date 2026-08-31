@@ -159,7 +159,7 @@ AUDIO_OVERRIDES: dict[int, int] = {
 }
 ATMOSPHERE_AUDIO_ROOMS = {2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 37}
 
-HOLD_AFTER_CONTENT = 8.0
+HOLD_AFTER_CONTENT = 3.0
 FADE_OUT = 4.0
 PAUSE_WEIGHT = 0.55
 GRID_DURATION = 25.0
@@ -651,9 +651,8 @@ def render_study_room_film(
     # Lesson beats keep generous kana pacing; chart is brief and not soundtrack-fill.
     scheduled = schedule_beats(beats, new_kana)
     content_end = scheduled[-1]["end"] if scheduled else 90.0
-    # After the chart: clean background + music. Ride out remaining track when longer.
-    fade_start = max(content_end + HOLD_AFTER_CONTENT, audio_len - FADE_OUT)
-    fade_start = max(fade_start, content_end + HOLD_AFTER_CONTENT)
+    # Short clean hold after the chart, then fade image + music — no need to finish the track.
+    fade_start = content_end + HOLD_AFTER_CONTENT
     film_total = fade_start + FADE_OUT
 
     if audio_len < film_total:
