@@ -195,9 +195,20 @@ KORE_WA_NOUN_EN: dict[str, str] = {
     "すし": "sushi",
 }
 
+# Short answers: はなです。 → It's a flower.
+DESU_REPLY_EN: dict[str, str] = {
+    "はな": "flower",
+    "いす": "chair",
+    "かさ": "umbrella",
+    "さかな": "fish",
+    "ほし": "star",
+}
+
 
 def kore_wa_english(kana: str) -> str | None:
     cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    if re.search(r"これは\s*なん\s*ですか", cleaned):
+        return "What is this?"
     m = re.search(r"これは\s*(.+?)\s*ですか", cleaned)
     if m:
         noun = KORE_WA_NOUN_EN.get(m.group(1).strip())
@@ -207,6 +218,22 @@ def kore_wa_english(kana: str) -> str | None:
         noun = KORE_WA_NOUN_EN.get(m.group(1).strip())
         return f"This is a {noun}." if noun else None
     return None
+
+
+def reply_desu_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").strip()
+    m = re.match(r"^(.+?)です$", cleaned)
+    if not m:
+        return None
+    noun = DESU_REPLY_EN.get(m.group(1).strip())
+    return f"It's a {noun}." if noun else None
+
+
+def puzzle_note_for_film(text: str) -> str:
+    """Drop progress counts from puzzle notes — the chart is enough."""
+    cleaned = re.sub(r"\d+ of 46 is not unfinished work —\s*", "", text or "").strip()
+    cleaned = re.sub(r"(?<=\. )([a-z])", lambda m: m.group(1).upper(), cleaned)
+    return cleaned
 
 
 def reply_yes_no(kana: str) -> tuple[str, str] | None:
@@ -275,6 +302,15 @@ def text_mentions_new_kana(text: str, new_kana: set[str]) -> bool:
 
 def pace_weight(beat: dict, new_kana: set[str]) -> float:
     kind = beat.get("kind")
+    kana = beat.get("kana") or ""
+    if kind == "exhibit" and "なんですか" in kana.replace(" ", "").replace("　", ""):
+        return 0.55
+    if kind == "reply" and reply_desu_english(kana):
+        return 0.75
+    if kind == "kana_return" and kana.strip() == "なん":
+        return 0.38
+    if kind == "unpack" and len(kana.replace(" ", "").replace("　", "")) <= 3:
+        return 0.42
     if kind == "grid":
         return PACE["grid"]
     if kind == "pause":
@@ -316,8 +352,15 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
 
     lesson_weights = [pace_weight(b, new_kana) for b in lesson]
     total_w = sum(lesson_weights) or 1.0
+    nan_q_count = sum(
+        1
+        for b in lesson
+        if b.get("kind") == "exhibit"
+        and "なんですか" in (b.get("kana") or "").replace(" ", "").replace("　", "")
+    )
     if content_seconds is None:
-        content_seconds = total_w * LESSON_SECONDS_PER_WEIGHT
+        sec_per_weight = 14.0 if nan_q_count >= 3 else LESSON_SECONDS_PER_WEIGHT
+        content_seconds = total_w * sec_per_weight
         content_seconds = max(45.0, min(content_seconds, 220.0))
 
     out: list[dict] = []
@@ -512,19 +555,52 @@ def beat_lines(beat: dict) -> list[dict]:
                 }
             )
         else:
-            if kana:
-                lines.append({"text": kana, "fontsize": 128, "y": "h*0.36", "color": INK})
-            romaji = beat.get("romaji")
-            if romaji:
+            desu_en = reply_desu_english(kana)
+            if desu_en:
+                display = kana.replace("。", "")
                 lines.append(
                     {
-                        "text": romaji,
-                        "fontsize": 58,
-                        "y": "h*0.52",
-                        "color": INK_SOFT,
-                        "borderw": 2,
+                        "text": display,
+                        "fontsize": 128,
+                        "y": "h*0.34",
+                        "color": INK,
+                        "fade": True,
                     }
                 )
+                romaji = beat.get("romaji")
+                if romaji:
+                    lines.append(
+                        {
+                            "text": romaji,
+                            "fontsize": 58,
+                            "y": "h*0.50",
+                            "color": INK_SOFT,
+                            "borderw": 2,
+                        }
+                    )
+                lines.append(
+                    {
+                        "text": desu_en,
+                        "fontsize": 72,
+                        "y": "h*0.64",
+                        "color": INK,
+                        "borderw": 3,
+                        "fade": True,
+                    }
+                )
+            elif kana:
+                lines.append({"text": kana, "fontsize": 128, "y": "h*0.36", "color": INK})
+                romaji = beat.get("romaji")
+                if romaji:
+                    lines.append(
+                        {
+                            "text": romaji,
+                            "fontsize": 58,
+                            "y": "h*0.52",
+                            "color": INK_SOFT,
+                            "borderw": 2,
+                        }
+                    )
     elif kind == "unpack":
         kana = beat.get("kana") or ""
         if kana:
@@ -606,6 +682,8 @@ def beat_lines(beat: dict) -> list[dict]:
         lines.append({"text": text.replace("\n", " "), "fontsize": fs, "y": y, "color": INK})
     elif kind in {"prose", "puzzle_heading", "puzzle_note"}:
         text = beat.get("text") or ""
+        if kind == "puzzle_note":
+            text = puzzle_note_for_film(text)
         if text:
             # Choose a font size that keeps wrapped lines inside the safe width.
             fs = 72
