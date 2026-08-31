@@ -436,68 +436,97 @@ def room28_drawtext(
     )
 
 
+def room28_cell_kind(kana: str | None) -> str:
+    if kana is None:
+        return "void"
+    if kana in ROOM28_NEW:
+        return "new"
+    if kana in ROOM28_ENCOUNTERED:
+        return "learned"
+    return "pending"
+
+
+def _room28_draw_centered_kana(
+    draw: "ImageDraw.ImageDraw",
+    kana: str,
+    box: tuple[int, int, int, int],
+    font: "ImageFont.FreeTypeFont",
+    fill: tuple[int, int, int, int],
+) -> None:
+    x0, y0, x1, y1 = box
+    bbox = draw.textbbox((0, 0), kana, font=font)
+    tw = bbox[2] - bbox[0]
+    th = bbox[3] - bbox[1]
+    draw.text(
+        (x0 + (x1 - x0 - tw) / 2, y0 + (y1 - y0 - th) / 2 - 2),
+        kana,
+        font=font,
+        fill=fill,
+    )
+
+
 def room28_kana_grid_png(path: Path) -> None:
-    """Full 46-box gojūon: learned, pending, void, and new (へ) states."""
+    """10×5 gojūon chart: a cell at every box, including unlearned and voids.
+
+    46 hiragana positions always draw a cell. Unlearned kana keep a subdued
+    border plus an 8–12% ghost of the character. Structurally absent slots
+    (や/ゆ/よ, わ/を/ん gaps) are dark-filled with no ghost.
+    """
     if Image is None:
         raise SystemExit("Pillow is required for Room 28 kana grid rendering.")
 
-    cell = 72
-    gap = 6
+    cell = 108
+    gap = 10
     cols = list(reversed(ROOM28_GOJUON))  # row-reverse on the site
     rows = 5
     width = len(cols) * cell + (len(cols) - 1) * gap
     height = rows * cell + (rows - 1) * gap
     img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype(FONT, 42)
+    font = ImageFont.truetype(FONT, 58)
 
     gold = (201, 164, 88, 255)
     ivory = (243, 241, 235, 255)
-    learned_border = (201, 164, 88, 42)
-    learned_bg = (201, 164, 88, 10)
-    pending_border = (201, 164, 88, 18)
-    void_fill = (23, 21, 18, 168)
-    void_border = (23, 21, 18, 210)
-    new_border = (201, 164, 88, 140)
+    # ~10% ivory ghost — almost imperceptible, discoverable on inspection.
+    ghost = (243, 241, 235, 28)
+    learned_border = (201, 164, 88, 90)
+    learned_bg = (201, 164, 88, 22)
+    pending_border = (214, 202, 178, 130)
+    pending_bg = (16, 14, 12, 72)
+    void_fill = (22, 19, 16, 236)
+    void_border = (52, 46, 40, 255)
+    new_border = (201, 164, 88, 220)
+    new_bg = (201, 164, 88, 32)
 
+    counts = {"learned": 0, "new": 0, "pending": 0, "void": 0}
     for cx, column in enumerate(cols):
         for ry in range(rows):
             kana = column[ry] if ry < len(column) else None
+            kind = room28_cell_kind(kana)
+            counts[kind] += 1
             x0 = cx * (cell + gap)
             y0 = ry * (cell + gap)
             x1 = x0 + cell
             y1 = y0 + cell
+            box = (x0, y0, x1, y1)
 
-            if kana is None:
-                # Structurally absent slot — not “still to come”.
-                draw.rectangle([x0, y0, x1, y1], fill=void_fill, outline=void_border, width=1)
+            if kind == "void":
+                draw.rounded_rectangle(box, radius=3, fill=void_fill, outline=void_border, width=2)
                 continue
-
-            if kana in ROOM28_NEW:
-                draw.rectangle(
-                    [x0, y0, x1, y1], fill=learned_bg, outline=new_border, width=1
-                )
-                text_color = gold
-            elif kana in ROOM28_ENCOUNTERED:
-                draw.rectangle(
-                    [x0, y0, x1, y1], fill=learned_bg, outline=learned_border, width=1
-                )
-                text_color = ivory
-            else:
-                # Valid box, not yet learned — empty, subdued.
-                draw.rectangle([x0, y0, x1, y1], outline=pending_border, width=1)
+            if kind == "new":
+                draw.rounded_rectangle(box, radius=3, fill=new_bg, outline=new_border, width=2)
+                _room28_draw_centered_kana(draw, kana, box, font, gold)
                 continue
+            if kind == "learned":
+                draw.rounded_rectangle(box, radius=3, fill=learned_bg, outline=learned_border, width=2)
+                _room28_draw_centered_kana(draw, kana, box, font, ivory)
+                continue
+            # pending: always a cell + ghost of the future kana
+            draw.rounded_rectangle(box, radius=3, fill=pending_bg, outline=pending_border, width=2)
+            _room28_draw_centered_kana(draw, kana, box, font, ghost)
 
-            bbox = draw.textbbox((0, 0), kana, font=font)
-            tw = bbox[2] - bbox[0]
-            th = bbox[3] - bbox[1]
-            draw.text(
-                (x0 + (cell - tw) / 2, y0 + (cell - th) / 2 - 2),
-                kana,
-                font=font,
-                fill=text_color,
-            )
-
+    if counts["learned"] + counts["new"] != 34 or counts["pending"] != 12 or counts["void"] != 4:
+        raise SystemExit(f"Room 28 grid cell counts unexpected: {counts}")
     img.save(path)
 
 
