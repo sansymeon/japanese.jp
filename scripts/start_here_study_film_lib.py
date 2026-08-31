@@ -707,15 +707,15 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
     gold = (245, 214, 130, 255)
     ivory = (252, 250, 244, 255)
     # Keep pending ghosts quiet even on the darker box.
-    ghost = (243, 241, 235, 28)
-    learned_border = (210, 175, 100, 160)
-    learned_bg = (36, 30, 22, 110)
-    pending_border = (214, 202, 178, 70)
-    pending_bg = (16, 14, 12, 45)
-    void_fill = (14, 12, 10, 220)
-    void_border = (48, 42, 36, 230)
+    ghost = (243, 241, 235, 36)
+    learned_border = (210, 175, 100, 200)
+    learned_bg = (28, 24, 18, 230)
+    pending_border = (214, 202, 178, 90)
+    pending_bg = (14, 12, 10, 210)
+    void_fill = (12, 10, 8, 245)
+    void_border = (48, 42, 36, 240)
     new_border = (245, 214, 130, 255)
-    new_bg = (42, 32, 16, 110)
+    new_bg = (42, 32, 16, 235)
 
     def draw_kana(kana: str, box: tuple[int, int, int, int], fill: tuple[int, int, int, int]) -> None:
         x0, y0, x1, y1 = box
