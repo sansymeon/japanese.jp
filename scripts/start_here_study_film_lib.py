@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -184,6 +185,23 @@ INK_QUIET = "0x9A958C"
 SHADOW = "0x171512@0.65"
 GOLD = "0xC9A458"
 TEXT_BOX = "0x171512@0.78"
+
+# Picture-sentence glosses for これは〜です exhibits.
+KORE_WA_EN: dict[str, str] = {
+    "ほん": "This is a book.",
+    "ねこ": "This is a cat.",
+    "やま": "This is a mountain.",
+    "いぬ": "This is a dog.",
+    "すし": "This is sushi.",
+}
+
+
+def kore_wa_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("　", " ")
+    m = re.search(r"これは\s*(.+?)\s*です", cleaned)
+    if not m:
+        return None
+    return KORE_WA_EN.get(m.group(1).strip())
 
 
 def run(cmd: list[str]) -> None:
@@ -380,29 +398,59 @@ def beat_lines(beat: dict) -> list[dict]:
         kana = beat.get("kana") or ""
         if kana:
             fs = 156 if len(kana) <= 4 else 128 if len(kana) <= 8 else 96
-            lines.append({"text": kana, "fontsize": fs, "y": "h*0.32", "color": INK})
+            lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
         romaji = beat.get("romaji")
         if romaji:
             lines.append(
-                {"text": romaji, "fontsize": 64, "y": "h*0.46", "color": INK_SOFT, "borderw": 2}
+                {"text": romaji, "fontsize": 64, "y": "h*0.40", "color": INK_SOFT, "borderw": 2}
             )
-        en = beat.get("en")
-        if en:
-            fs = 54
-            wrapped = wrap_instruction_text(en, fontsize=fs, max_width=1180)
-            if max(estimate_text_width(part, fs) for part in wrapped) > 1180:
-                fs = 50
-                wrapped = wrap_instruction_text(en, fontsize=fs, max_width=1180)
+        # Sentence English (This is a cat.) — fades in/out on each picture.
+        gloss = kore_wa_english(kana) or (
+            None if (beat.get("en") or "").startswith("New:") else beat.get("en")
+        )
+        note = beat.get("en") if (beat.get("en") or "").startswith("New:") else None
+        if gloss:
+            lines.append(
+                {
+                    "text": gloss,
+                    "fontsize": 58,
+                    "y": "h*0.54",
+                    "color": INK,
+                    "borderw": 3,
+                    "fade": True,
+                }
+            )
+        if note:
+            fs = 50
+            wrapped = wrap_instruction_text(note, fontsize=fs, max_width=1180)
             if len(wrapped) == 1:
                 lines.append(
-                    {"text": wrapped[0], "fontsize": fs, "y": "h*0.78", "color": INK_SOFT, "borderw": 3}
+                    {
+                        "text": wrapped[0],
+                        "fontsize": fs,
+                        "y": "h*0.78",
+                        "color": INK_SOFT,
+                        "borderw": 3,
+                    }
                 )
             else:
                 lines.append(
-                    {"text": wrapped[0], "fontsize": fs, "y": "h*0.72", "color": INK_SOFT, "borderw": 3}
+                    {
+                        "text": wrapped[0],
+                        "fontsize": fs,
+                        "y": "h*0.72",
+                        "color": INK_SOFT,
+                        "borderw": 3,
+                    }
                 )
                 lines.append(
-                    {"text": wrapped[1], "fontsize": fs, "y": "h*0.80", "color": INK_SOFT, "borderw": 3}
+                    {
+                        "text": wrapped[1],
+                        "fontsize": fs,
+                        "y": "h*0.80",
+                        "color": INK_SOFT,
+                        "borderw": 3,
+                    }
                 )
     elif kind == "unpack":
         kana = beat.get("kana") or ""
@@ -495,15 +543,26 @@ def drawtext_filter(
     color: str = INK,
     borderw: int = 3,
     box: bool = True,
+    fade: bool = False,
+    fade_in: float = 1.0,
+    fade_out: float = 1.0,
 ) -> str:
     t = escape_drawtext(text)
-    box_part = (
-        f":box=1:boxcolor={TEXT_BOX}:boxborderw=18" if box else ""
-    )
+    box_part = f":box=1:boxcolor={TEXT_BOX}:boxborderw=18" if box else ""
+    alpha_part = ""
+    if fade:
+        dur = max(0.05, end - start)
+        fi = min(fade_in, dur * 0.35)
+        fo = min(fade_out, dur * 0.35)
+        # Relative timeline inside this drawtext enable window uses absolute t.
+        alpha_part = (
+            f":alpha='if(lt(t\\,{start + fi:.3f})\\,(t-{start:.3f})/{fi:.3f}\\,"
+            f"if(gt(t\\,{end - fo:.3f})\\,({end:.3f}-t)/{fo:.3f}\\,1))'"
+        )
     return (
         f"drawtext=fontfile={FONT}:text='{t}':fontsize={fontsize}:"
         f"fontcolor={color}:borderw={borderw}:bordercolor={SHADOW}:"
-        f"x=(w-text_w)/2:y={y}{box_part}:"
+        f"x=(w-text_w)/2:y={y}{box_part}{alpha_part}:"
         f"enable='between(t,{start:.2f},{end:.2f})'"
     )
 
@@ -603,16 +662,24 @@ def render_image_group(
     for beat in group_beats:
         rel_start = max(0.0, beat["start"] - group_start)
         rel_end = min(group_duration, beat["end"] - group_start)
+        beat_dur = max(0.05, rel_end - rel_start)
         for line in beat_lines(beat):
+            line_start = rel_start
+            line_end = rel_end
+            # Sentence English arrives after kana has settled, then fades out.
+            if line.get("fade"):
+                line_start = rel_start + beat_dur * 0.18
+                line_end = rel_end - beat_dur * 0.08
             filters.append(
                 drawtext_filter(
                     line["text"],
-                    rel_start,
-                    rel_end,
+                    line_start,
+                    line_end,
                     fontsize=int(line.get("fontsize") or 72),
                     y=str(line.get("y") or "h*0.48"),
                     color=str(line.get("color") or INK),
                     borderw=int(line.get("borderw") or 3),
+                    fade=bool(line.get("fade")),
                 )
             )
     filters.append("format=yuv420p")
