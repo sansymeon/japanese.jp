@@ -193,6 +193,7 @@ KORE_WA_NOUN_EN: dict[str, str] = {
     "やま": "mountain",
     "いぬ": "dog",
     "すし": "sushi",
+    "いす": "chair",
 }
 
 # Short answers: はなです。 → It is a flower.
@@ -230,6 +231,46 @@ def ga_imasu_ka_english(kana: str) -> str | None:
     return f"Is there a {noun}?" if noun else None
 
 
+# いすが あります / ほしが あります (plural gloss for stars)
+GA_ARIMASU_EN: dict[str, str] = {
+    "いす": "There is a chair.",
+    "ほん": "There is a book.",
+    "やま": "There is a mountain.",
+    "ほし": "These are stars.",
+}
+
+GA_ARIMASU_KA_EN: dict[str, str] = {
+    "いす": "Is there a chair?",
+    "ほん": "Is there a book?",
+    "やま": "Is there a mountain?",
+    "ほし": "Are there stars?",
+}
+
+
+def ga_arimasu_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    m = re.search(r"(.+?)が\s*あります$", cleaned)
+    if not m:
+        return None
+    noun = m.group(1).strip()
+    if noun in GA_ARIMASU_EN:
+        return GA_ARIMASU_EN[noun]
+    en_noun = KORE_WA_NOUN_EN.get(noun)
+    return f"There is a {en_noun}." if en_noun else None
+
+
+def ga_arimasu_ka_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    m = re.search(r"(.+?)が\s*ありますか", cleaned)
+    if not m:
+        return None
+    noun = m.group(1).strip()
+    if noun in GA_ARIMASU_KA_EN:
+        return GA_ARIMASU_KA_EN[noun]
+    en_noun = KORE_WA_NOUN_EN.get(noun)
+    return f"Is there a {en_noun}?" if en_noun else None
+
+
 def kore_wa_english(kana: str) -> str | None:
     cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
     if re.search(r"これは\s*なん\s*ですか", cleaned):
@@ -256,7 +297,8 @@ def reply_desu_english(kana: str) -> str | None:
 
 def puzzle_note_for_film(text: str) -> str:
     """Drop progress counts from puzzle notes — the chart is enough."""
-    cleaned = re.sub(r"\d+ of 46 is not unfinished work —\s*", "", text or "").strip()
+    cleaned = re.sub(r"\d+ of 46 is not unfinished work\.?\s*", "", text or "").strip()
+    cleaned = re.sub(r"\d+ of 46 is not unfinished work —\s*", "", cleaned).strip()
     cleaned = re.sub(r"(?<=\. )([a-z])", lambda m: m.group(1).upper(), cleaned)
     return cleaned
 
@@ -333,18 +375,22 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return 0.55
     if kind == "exhibit" and "がいます" in kana_compact:
         return 0.55
+    if kind == "exhibit" and "があります" in kana_compact:
+        return 0.55
     if kind == "exhibit" and kore_wa_english(kana):
         return 0.65
     if kind == "reply" and reply_desu_english(kana):
         return 0.75
-    if kind == "reply" and kana.startswith("はい") and "います" in kana:
+    if kind == "reply" and kana.startswith("はい") and ("います" in kana or "あります" in kana):
         return 0.65
-    if kind == "kana_return" and kana.strip() in {"なん", "います"}:
+    if kind == "kana_return" and kana.strip() in {"なん", "います", "あります"}:
         return 0.38
-    if kind == "unpack" and len(kana_compact) <= 3:
+    if kind == "unpack" and len(kana_compact) <= 4:
         return 0.42
     if kind == "prose" and not text_has_kana(beat.get("text") or ""):
         return 0.35
+    if kind == "prose" and text_mentions_new_kana(beat.get("text") or "", new_kana):
+        return 0.45
     if kind == "grid":
         return PACE["grid"]
     if kind == "pause":
@@ -364,9 +410,7 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
     if kind == "puzzle_heading":
         return PACE["english"]
     if kind == "puzzle_note":
-        if text_has_kana(beat.get("text") or ""):
-            return PACE["kana_note"]
-        return PACE["english"]
+        return 0.35
     if kind == "puzzle_count":
         return 0.0  # omitted from films — chart is enough
     return PACE["kana_note"]
@@ -398,8 +442,16 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
         if b.get("kind") == "exhibit"
         and "がいます" in (b.get("kana") or "").replace(" ", "").replace("　", "")
     )
+    arimasu_count = sum(
+        1
+        for b in lesson
+        if b.get("kind") == "exhibit"
+        and "があります" in (b.get("kana") or "").replace(" ", "").replace("　", "")
+    )
     if content_seconds is None:
-        sec_per_weight = 14.0 if nan_q_count >= 3 or imasu_count >= 2 else LESSON_SECONDS_PER_WEIGHT
+        sec_per_weight = (
+            14.0 if nan_q_count >= 3 or imasu_count >= 2 or arimasu_count >= 2 else LESSON_SECONDS_PER_WEIGHT
+        )
         content_seconds = total_w * sec_per_weight
         content_seconds = max(45.0, min(content_seconds, 220.0))
 
@@ -416,8 +468,6 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
             dur = PUZZLE_HEADING_DURATION
         elif kind == "puzzle_note":
             dur = PUZZLE_NOTE_DURATION
-            if text_has_kana(beat.get("text") or ""):
-                dur = min(14.0, PUZZLE_NOTE_DURATION + 4.0)
         elif kind == "grid":
             dur = GRID_DURATION
         else:
@@ -506,6 +556,20 @@ def beat_lines(beat: dict) -> list[dict]:
                     lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
             else:
                 lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
+        # Long が います / が あります sentences read better on two lines.
+        ga_verb = "が います" if "が います" in kana else "が あります" if "が あります" in kana else None
+        if (
+            ga_verb
+            and len(lines) == 1
+            and estimate_text_width(kana, int(lines[0].get("fontsize") or fs)) > 1100
+        ):
+            m = re.match(r"(.+が)\s*(います[。]?|あります[。]?)", kana)
+            if m:
+                fs = int(lines[0]["fontsize"])
+                lines = [
+                    {"text": m.group(1), "fontsize": fs, "y": "h*0.22", "color": INK},
+                    {"text": m.group(2), "fontsize": fs, "y": "h*0.34", "color": INK},
+                ]
         romaji = beat.get("romaji")
         romaji_y = "h*0.48" if len(lines) > 1 else "h*0.40"
         if romaji:
@@ -517,6 +581,8 @@ def beat_lines(beat: dict) -> list[dict]:
             kore_wa_english(kana)
             or ga_imasu_ka_english(kana)
             or ga_imasu_english(kana)
+            or ga_arimasu_ka_english(kana)
+            or ga_arimasu_english(kana)
             or (None if (beat.get("en") or "").startswith("New:") else beat.get("en") or None)
         )
         note = beat.get("en") if (beat.get("en") or "").startswith("New:") else None
@@ -723,6 +789,18 @@ def beat_lines(beat: dict) -> list[dict]:
             lines.append(
                 {
                     "text": "is",
+                    "fontsize": 64,
+                    "y": "h*0.70",
+                    "color": INK,
+                    "borderw": 3,
+                    "fade": True,
+                    "box": True,
+                }
+            )
+        elif kana.strip() == "あります":
+            lines.append(
+                {
+                    "text": "is/are",
                     "fontsize": 64,
                     "y": "h*0.70",
                     "color": INK,
