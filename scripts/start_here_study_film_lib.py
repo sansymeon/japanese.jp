@@ -338,7 +338,7 @@ def beat_lines(beat: dict) -> list[dict]:
         en = beat.get("en")
         if en:
             lines.append(
-                {"text": en, "fontsize": 54, "y": "h*0.58", "color": INK_QUIET, "borderw": 2}
+                {"text": en, "fontsize": 54, "y": "h*0.86", "color": INK_SOFT, "borderw": 3}
             )
     elif kind == "unpack":
         kana = beat.get("kana") or ""
@@ -441,28 +441,38 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
 
     cell = 108
     gap = 10
+    pad = 28
     cols = list(reversed(GOJUON))
     rows = 5
-    width = len(cols) * cell + (len(cols) - 1) * gap
-    height = rows * cell + (rows - 1) * gap
+    inner_w = len(cols) * cell + (len(cols) - 1) * gap
+    inner_h = rows * cell + (rows - 1) * gap
+    width = inner_w + pad * 2
+    height = inner_h + pad * 2
     img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(FONT, 58)
 
-    # Pending / void styling restored to the quieter original look.
-    # Learned / new cells keep a darker fill so ivory and gold still read
-    # on bright landscapes without raising pending visibility.
+    # Opaque dark image box behind the chart.
+    draw.rounded_rectangle(
+        (0, 0, width - 1, height - 1),
+        radius=16,
+        fill=(14, 11, 9, 255),
+        outline=(52, 44, 36, 255),
+        width=2,
+    )
+
     gold = (240, 205, 120, 255)
     ivory = (248, 246, 240, 255)
-    ghost = (243, 241, 235, 28)
+    # Keep pending ghosts quiet even on the darker box.
+    ghost = (243, 241, 235, 20)
     learned_border = (201, 164, 88, 120)
-    learned_bg = (16, 14, 12, 185)
-    pending_border = (214, 202, 178, 130)
-    pending_bg = (16, 14, 12, 72)
-    void_fill = (22, 19, 16, 236)
-    void_border = (52, 46, 40, 255)
+    learned_bg = (28, 24, 18, 80)
+    pending_border = (214, 202, 178, 55)
+    pending_bg = (16, 14, 12, 35)
+    void_fill = (18, 15, 12, 200)
+    void_border = (48, 42, 36, 220)
     new_border = (240, 205, 120, 255)
-    new_bg = (16, 14, 12, 210)
+    new_bg = (36, 28, 14, 90)
 
     def draw_kana(kana: str, box: tuple[int, int, int, int], fill: tuple[int, int, int, int]) -> None:
         x0, y0, x1, y1 = box
@@ -474,8 +484,8 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
     for cx, column in enumerate(cols):
         for ry in range(rows):
             kana = column[ry] if ry < len(column) else None
-            x0 = cx * (cell + gap)
-            y0 = ry * (cell + gap)
+            x0 = pad + cx * (cell + gap)
+            y0 = pad + ry * (cell + gap)
             box = (x0, y0, x0 + cell, y0 + cell)
             if kana is None:
                 draw.rounded_rectangle(box, radius=3, fill=void_fill, outline=void_border, width=2)
