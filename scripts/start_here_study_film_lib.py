@@ -706,16 +706,16 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
 
     gold = (245, 214, 130, 255)
     ivory = (252, 250, 244, 255)
-    # Keep pending ghosts quiet even on the darker box.
-    ghost = (243, 241, 235, 36)
-    learned_border = (210, 175, 100, 200)
-    learned_bg = (28, 24, 18, 230)
-    pending_border = (214, 202, 178, 90)
-    pending_bg = (14, 12, 10, 210)
-    void_fill = (12, 10, 8, 245)
-    void_border = (48, 42, 36, 240)
+    # Ghost kana stay quiet; cell fills must stay opaque or ffmpeg shows the photo through.
+    ghost = (243, 241, 235, 40)
+    learned_border = (210, 175, 100, 255)
+    learned_bg = (32, 28, 22, 255)
+    pending_border = (90, 82, 72, 255)
+    pending_bg = (18, 16, 14, 255)
+    void_fill = (14, 12, 10, 255)
+    void_border = (48, 42, 36, 255)
     new_border = (245, 214, 130, 255)
-    new_bg = (42, 32, 16, 235)
+    new_bg = (48, 36, 18, 255)
 
     def draw_kana(kana: str, box: tuple[int, int, int, int], fill: tuple[int, int, int, int]) -> None:
         x0, y0, x1, y1 = box
