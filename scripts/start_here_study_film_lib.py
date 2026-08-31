@@ -236,7 +236,7 @@ GA_ARIMASU_EN: dict[str, str] = {
     "いす": "There is a chair.",
     "ほん": "There is a book.",
     "やま": "There is a mountain.",
-    "ほし": "These are stars.",
+    "ほし": "There are stars.",
 }
 
 GA_ARIMASU_KA_EN: dict[str, str] = {
