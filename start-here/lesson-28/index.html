@@ -7,6 +7,12 @@
   Do not show 胃. Do not mention 部屋 as kanji. No KML doorway.
   Visual: kml/assets/studies/room.png throughout (the interior from Rooms 12–13).
   Atmosphere: shuffle lesson-6–11. No song.
+
+  Prototype (YouTube media layer):
+  Read = this page. Watch & Listen = unlisted YouTube embed of the same
+  intellectual content (“page performs itself”). Fill watchYoutubeId in
+  beginner-course.js after uploading exports/start-here-prototypes/room-28-heya.mp4.
+  Puzzle + Sensei + nav stay on the website either way.
 -->
 <html lang="en" class="museum-page">
 <head>
@@ -30,9 +36,10 @@
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page" data-beginner-lesson="28">
+<body class="museum-page is-read-mode" data-beginner-lesson="28">
   <a class="skip-link" href="#lesson">Skip to lesson</a>
 
   <header class="museum-header">
@@ -80,43 +87,74 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-29/">Continue to Room 29 →</a>
         </nav>
 
+        <div
+          class="pathway-mode reveal"
+          data-watch-mode
+          role="group"
+          aria-label="How to take this room"
+        >
+          <button type="button" data-watch-select="read" aria-pressed="true">Read</button>
+          <button type="button" data-watch-select="watch" aria-pressed="false">
+            Watch &amp; Listen
+          </button>
+        </div>
+
         <div class="beginner-assist reveal">
           <button type="button" data-study-music hidden>♪ Play room music</button>
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">Look</p>
-          <h2>へや</h2>
-          <p>Look into the scene.</p>
-        </header>
+        <div data-watch-read>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Look</p>
+            <h2>へや</h2>
+            <p>Look into the scene.</p>
+          </header>
 
-        <article class="beginner-exhibit reveal">
-          <img
-            src="../../kml/assets/studies/room.png"
-            alt=""
-            width="1672"
-            height="941"
-          />
-          <figure class="jp-block jp-block--solo">
+          <article class="beginner-exhibit reveal">
+            <img
+              src="../../kml/assets/studies/room.png"
+              alt=""
+              width="1672"
+              height="941"
+            />
+            <figure class="jp-block jp-block--solo">
+              <p class="jp-kana" lang="ja">へや</p>
+              <p class="jp-romaji">heya</p>
+              <p class="jp-en">room</p>
+            </figure>
+          </article>
+
+          <figure class="jp-block jp-block--solo jp-unpack reveal">
+            <p class="jp-kana" lang="ja">へ　や</p>
+            <p class="jp-romaji">he　ya</p>
+          </figure>
+          <div class="room-prose reveal">
+            <p>や you already have. へ is new.</p>
+          </div>
+
+          <figure class="jp-block jp-block--solo reveal">
             <p class="jp-kana" lang="ja">へや</p>
             <p class="jp-romaji">heya</p>
-            <p class="jp-en">room</p>
           </figure>
-        </article>
-
-        <figure class="jp-block jp-block--solo jp-unpack reveal">
-          <p class="jp-kana" lang="ja">へ　や</p>
-          <p class="jp-romaji">he　ya</p>
-        </figure>
-        <div class="room-prose reveal">
-          <p>や you already have. へ is new.</p>
         </div>
 
-        <figure class="jp-block jp-block--solo reveal">
-          <p class="jp-kana" lang="ja">へや</p>
-          <p class="jp-romaji">heya</p>
-        </figure>
+        <div data-watch-watch hidden>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Watch &amp; Listen</p>
+            <h2>へや</h2>
+            <p>The same room, performed quietly.</p>
+          </header>
+          <article class="beginner-exhibit pathway-film-exhibit reveal">
+            <div data-watch-film></div>
+            <p class="pathway-watch-pending" data-watch-pending hidden>
+              Film ready for unlisted upload —
+              <code>exports/start-here-prototypes/room-28-heya.mp4</code>.
+              After YouTube accepts it, set <code>watchYoutubeId</code> for Room 28
+              in <code>start-here/js/beginner-course.js</code>.
+            </p>
+          </article>
+        </div>
 
           <div
             data-chat-sensei

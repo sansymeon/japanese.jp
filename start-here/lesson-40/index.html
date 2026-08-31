@@ -34,6 +34,7 @@
   <script src="../data/rooms/40.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
   <script src="../js/beginner-guided-song.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page beginner-guided-page" data-beginner-lesson="40">
@@ -55,6 +56,37 @@
   </header>
 
   <main>
+    <!-- YouTube primary path (shown when watchYoutubeId is set). -->
+    <section
+      class="room-section"
+      id="listen-youtube"
+      data-watch-youtube-primary
+      hidden
+      aria-labelledby="youtube-listen-heading"
+    >
+      <div class="room-container">
+        <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
+          <a class="pathway-nav-back" data-room-nav="prev" href="../lesson-39/">← Room 39</a>
+          <span class="pathway-nav-status" data-room-nav="current">Room 40</span>
+          <a class="pathway-nav-next" href="../rooms/">Room Index →</a>
+        </nav>
+
+        <header class="room-section-head reveal">
+          <p class="room-eyebrow">Listen</p>
+          <h1 id="youtube-listen-heading">ことばが さく</h1>
+          <p>You have learned the pieces. Now simply read Japanese.</p>
+        </header>
+
+        <article class="beginner-exhibit pathway-film-exhibit reveal">
+          <div data-watch-film></div>
+        </article>
+
+        <p class="room-prose reveal">
+          <a class="museum-btn museum-btn--quiet" href="#after">Continue</a>
+        </p>
+      </div>
+    </section>
+
     <section class="guided-stage" data-guided-song aria-label="ことばが さく">
       <div class="guided-stage-frame">
         <div class="guided-stage-layers">
