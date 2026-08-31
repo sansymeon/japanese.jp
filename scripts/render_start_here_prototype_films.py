@@ -306,6 +306,10 @@ ROOM28_ENCOUNTERED = {
 }
 ROOM28_NEW = {"へ"}
 
+# Teaching beats end before a short hold + fade-out (film does not run full BGM tail).
+ROOM28_HOLD_AFTER_CONTENT = 5.0
+ROOM28_FADE_OUT = 4.0
+
 
 def room28_typography() -> dict[str, str]:
     return {
@@ -316,7 +320,7 @@ def room28_typography() -> dict[str, str]:
     }
 
 
-def room28_timeline(total: float) -> list[dict]:
+def room28_timeline(content_seconds: float) -> list[dict]:
     """Pedagogical beats from start-here/lesson-28/index.html (no nav/chrome)."""
     colors = room28_typography()
     ink = colors["ink"]
@@ -417,24 +421,15 @@ def room28_timeline(total: float) -> list[dict]:
             ],
         },
         {"weight": 2.35, "grid": True},
-        {
-            "weight": 1.05,
-            "lines": [
-                {"text": "へや", "fontsize": 188, "y": "h*0.40", "color": ink},
-                {"text": "heya", "fontsize": 64, "y": "h*0.56", "color": soft, "borderw": 2},
-            ],
-        },
     ]
 
     weight_sum = sum(float(b["weight"]) for b in beats)
     cursor = 0.0
     scheduled: list[dict] = []
     for beat in beats:
-        dur = total * (float(beat["weight"]) / weight_sum)
+        dur = content_seconds * (float(beat["weight"]) / weight_sum)
         scheduled.append({**beat, "start": cursor, "end": cursor + dur})
         cursor += dur
-    if scheduled:
-        scheduled[-1]["end"] = total
     return scheduled
 
 
@@ -460,6 +455,7 @@ def room28_drawtext(
 
 
 def room28_kana_grid_png(path: Path) -> None:
+    """Full 46-box gojūon: learned, pending, void, and new (へ) states."""
     if Image is None:
         raise SystemExit("Pillow is required for Room 28 kana grid rendering.")
 
@@ -475,9 +471,12 @@ def room28_kana_grid_png(path: Path) -> None:
 
     gold = (201, 164, 88, 255)
     ivory = (243, 241, 235, 255)
-    faint_border = (201, 164, 88, 40)
-    empty_border = (201, 164, 88, 26)
-    cell_bg = (201, 164, 88, 10)
+    learned_border = (201, 164, 88, 42)
+    learned_bg = (201, 164, 88, 10)
+    pending_border = (201, 164, 88, 18)
+    void_fill = (23, 21, 18, 168)
+    void_border = (23, 21, 18, 210)
+    new_border = (201, 164, 88, 140)
 
     for cx, column in enumerate(cols):
         for ry in range(rows):
@@ -486,18 +485,27 @@ def room28_kana_grid_png(path: Path) -> None:
             y0 = ry * (cell + gap)
             x1 = x0 + cell
             y1 = y0 + cell
+
             if kana is None:
+                # Structurally absent slot — not “still to come”.
+                draw.rectangle([x0, y0, x1, y1], fill=void_fill, outline=void_border, width=1)
                 continue
-            if kana not in ROOM28_ENCOUNTERED:
-                draw.rectangle([x0, y0, x1, y1], outline=empty_border, width=1)
-                continue
-            fill = cell_bg
-            outline = faint_border
-            text_color = ivory
+
             if kana in ROOM28_NEW:
+                draw.rectangle(
+                    [x0, y0, x1, y1], fill=learned_bg, outline=new_border, width=1
+                )
                 text_color = gold
-                outline = (201, 164, 88, 140)
-            draw.rectangle([x0, y0, x1, y1], fill=fill, outline=outline, width=1)
+            elif kana in ROOM28_ENCOUNTERED:
+                draw.rectangle(
+                    [x0, y0, x1, y1], fill=learned_bg, outline=learned_border, width=1
+                )
+                text_color = ivory
+            else:
+                # Valid box, not yet learned — empty, subdued.
+                draw.rectangle([x0, y0, x1, y1], outline=pending_border, width=1)
+                continue
+
             bbox = draw.textbbox((0, 0), kana, font=font)
             tw = bbox[2] - bbox[0]
             th = bbox[3] - bbox[1]
@@ -519,10 +527,15 @@ def render_room_28(out: Path) -> None:
     if not audio.exists():
         raise SystemExit(f"Missing room audio: {audio}")
 
-    total = duration(audio)
+    audio_total = duration(audio)
+    # Pace teaching across most of the track; end with hold + fade (no repeat coda).
+    content_seconds = max(120.0, audio_total - ROOM28_HOLD_AFTER_CONTENT - ROOM28_FADE_OUT - 8.0)
     colors = room28_typography()
     shadow = colors["shadow"]
-    beats = room28_timeline(total)
+    beats = room28_timeline(content_seconds)
+    content_end = beats[-1]["end"] if beats else content_seconds
+    fade_start = content_end + ROOM28_HOLD_AFTER_CONTENT
+    film_total = fade_start + ROOM28_FADE_OUT
 
     draw_filters: list[str] = [
         "scale=1920:1080:force_original_aspect_ratio=increase",
@@ -548,6 +561,7 @@ def render_room_28(out: Path) -> None:
                     shadow=shadow,
                 )
             )
+    draw_filters.append(f"fade=t=out:st={fade_start:.3f}:d={ROOM28_FADE_OUT:.3f}")
     draw_filters.append("format=yuv420p")
     vf = ",".join(draw_filters)
 
@@ -566,7 +580,7 @@ def render_room_28(out: Path) -> None:
                 "-vf",
                 vf,
                 "-t",
-                f"{total:.3f}",
+                f"{film_total:.3f}",
                 "-an",
                 "-c:v",
                 "libx264",
@@ -586,7 +600,7 @@ def render_room_28(out: Path) -> None:
             room28_kana_grid_png(grid_png)
             overlay_out = tmp_path / "with-grid.mp4"
             start = grid_beat["start"]
-            end = grid_beat["end"]
+            end = fade_start  # hold full grid through post-lesson pause
             run(
                 [
                     "ffmpeg",
@@ -605,7 +619,7 @@ def render_room_28(out: Path) -> None:
                     "-map",
                     "[v]",
                     "-t",
-                    f"{total:.3f}",
+                    f"{film_total:.3f}",
                     "-an",
                     "-c:v",
                     "libx264",
@@ -628,10 +642,14 @@ def render_room_28(out: Path) -> None:
                 str(video_in),
                 "-i",
                 str(audio),
+                "-filter_complex",
+                (
+                    f"[1:a]afade=t=out:st={fade_start:.3f}:d={ROOM28_FADE_OUT:.3f}[a]"
+                ),
                 "-map",
                 "0:v:0",
                 "-map",
-                "1:a:0",
+                "[a]",
                 "-c:v",
                 "libx264",
                 "-preset",
@@ -643,7 +661,7 @@ def render_room_28(out: Path) -> None:
                 "-b:a",
                 "192k",
                 "-t",
-                f"{total:.3f}",
+                f"{film_total:.3f}",
                 "-movflags",
                 "+faststart",
                 str(out),
