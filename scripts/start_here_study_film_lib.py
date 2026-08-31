@@ -159,12 +159,17 @@ AUDIO_OVERRIDES: dict[int, int] = {
 }
 ATMOSPHERE_AUDIO_ROOMS = {2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 37}
 
-HOLD_AFTER_CONTENT = 5.0
+HOLD_AFTER_CONTENT = 8.0
 FADE_OUT = 4.0
 PAUSE_WEIGHT = 0.55
+GRID_DURATION = 25.0
+PUZZLE_HEADING_DURATION = 5.0
+PUZZLE_NOTE_DURATION = 10.0
+# Seconds per pace-weight unit for lesson beats (generous for kana; not soundtrack-fill).
+LESSON_SECONDS_PER_WEIGHT = 24.0
 
 PACE = {
-    "grid": 3.0,
+    "grid": 3.0,  # unused for absolute grid timing; kept for reference
     "kana": 1.65,
     "verse": 1.85,
     "new_kana": 1.2,
@@ -259,19 +264,50 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
             return PACE["kana_note"]
         return PACE["english"]
     if kind == "puzzle_count":
-        return PACE["english"] * 0.85
+        return 0.0  # omitted from films — chart is enough
     return PACE["kana_note"]
 
 
-def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float) -> list[dict]:
-    weights = [pace_weight(b, new_kana) for b in beats]
-    total_w = sum(weights)
-    cursor = 0.0
+CHART_KINDS = {"puzzle_heading", "puzzle_note", "puzzle_count", "grid"}
+
+
+def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float | None = None) -> list[dict]:
+    """Schedule lesson beats generously; keep the progress chart brief (~25s).
+
+    Instructional content is not stretched to fill the soundtrack. After the
+    chart, the renderer holds a clean background with music.
+    """
+    lesson = [b for b in beats if b.get("kind") not in CHART_KINDS]
+    chart = [b for b in beats if b.get("kind") in CHART_KINDS and b.get("kind") != "puzzle_count"]
+
+    lesson_weights = [pace_weight(b, new_kana) for b in lesson]
+    total_w = sum(lesson_weights) or 1.0
+    if content_seconds is None:
+        content_seconds = total_w * LESSON_SECONDS_PER_WEIGHT
+        content_seconds = max(45.0, min(content_seconds, 220.0))
+
     out: list[dict] = []
-    for beat, w in zip(beats, weights):
+    cursor = 0.0
+    for beat, w in zip(lesson, lesson_weights):
         dur = content_seconds * (w / total_w)
         out.append({**beat, "start": cursor, "end": cursor + dur, "duration": dur})
         cursor += dur
+
+    for beat in chart:
+        kind = beat.get("kind")
+        if kind == "puzzle_heading":
+            dur = PUZZLE_HEADING_DURATION
+        elif kind == "puzzle_note":
+            dur = PUZZLE_NOTE_DURATION
+            if text_has_kana(beat.get("text") or ""):
+                dur = min(14.0, PUZZLE_NOTE_DURATION + 4.0)
+        elif kind == "grid":
+            dur = GRID_DURATION
+        else:
+            continue
+        out.append({**beat, "start": cursor, "end": cursor + dur, "duration": dur})
+        cursor += dur
+
     return out
 
 
@@ -607,18 +643,18 @@ def render_study_room_film(
     audio = audio_path_for_room(room_id)
     audio_len = duration(audio)
 
-    content_seconds = max(90.0, min(audio_len * 1.35, audio_len + 45.0))
-    if len(beats) > 14:
-        content_seconds = max(content_seconds, len(beats) * 7.5)
-
-    scheduled = schedule_beats(beats, new_kana, content_seconds)
-    content_end = scheduled[-1]["end"] if scheduled else content_seconds
-    fade_start = content_end + HOLD_AFTER_CONTENT
+    # Lesson beats keep generous kana pacing; chart is brief and not soundtrack-fill.
+    scheduled = schedule_beats(beats, new_kana)
+    content_end = scheduled[-1]["end"] if scheduled else 90.0
+    # After the chart: clean background + music. Ride out remaining track when longer.
+    fade_start = max(content_end + HOLD_AFTER_CONTENT, audio_len - FADE_OUT)
+    fade_start = max(fade_start, content_end + HOLD_AFTER_CONTENT)
     film_total = fade_start + FADE_OUT
 
     if audio_len < film_total:
         review_flags.append(f"audio_loop ({audio_len:.0f}s track, {film_total:.0f}s film)")
     review_flags.append("batch_static_background")
+    review_flags.append(f"grid_cap ({GRID_DURATION:.0f}s)")
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=f"room{room_id}-") as tmp:
@@ -691,6 +727,38 @@ def render_study_room_film(
                 group_beats = [beat]
         flush_group()
 
+        # Clean background hold after instruction (music continues; no more text/chart).
+        if scheduled:
+            last_img = resolve_beat_image(scheduled[-1], default_image)
+            post = max(0.0, fade_start - scheduled[-1]["end"])
+            if post > 0.05:
+                seg = tmp_path / f"seg_{len(segments):03d}.mp4"
+                run(
+                    [
+                        "ffmpeg",
+                        "-y",
+                        "-loop",
+                        "1",
+                        "-i",
+                        str(last_img),
+                        "-vf",
+                        "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,format=yuv420p",
+                        "-t",
+                        f"{post:.3f}",
+                        "-an",
+                        "-c:v",
+                        "libx264",
+                        "-pix_fmt",
+                        "yuv420p",
+                        "-preset",
+                        FFMPEG_PRESET,
+                        "-crf",
+                        str(FFMPEG_CRF),
+                        str(seg),
+                    ]
+                )
+                segments.append(seg)
+
         silent = tmp_path / "silent.mp4"
         concat_segments(segments, silent)
 
@@ -700,6 +768,7 @@ def render_study_room_film(
             grid_png = tmp_path / "grid.png"
             kana_grid_png(grid_png, encountered, new_kana)
             overlay_out = tmp_path / "with-grid.mp4"
+            grid_end = grid_beat["end"]
             run(
                 [
                     "ffmpeg",
@@ -713,7 +782,7 @@ def render_study_room_film(
                     "-filter_complex",
                     (
                         f"[0:v][1:v]overlay=x=(W-w)/2:y=(H-h)/2:"
-                        f"enable='between(t,{grid_beat['start']:.2f},{fade_start:.2f})',"
+                        f"enable='between(t,{grid_beat['start']:.2f},{grid_end:.2f})',"
                         f"fade=t=out:st={fade_start:.3f}:d={FADE_OUT:.3f},format=yuv420p[v]"
                     ),
                     "-map",

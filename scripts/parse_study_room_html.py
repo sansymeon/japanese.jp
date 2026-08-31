@@ -191,13 +191,10 @@ def parse_lesson(room_id: int) -> dict:
 
         if el.name == "section" and "kana-puzzle-section" in cls:
             note = _text(el.select_one(".kana-puzzle-note"))
-            from start_here_study_film_lib import ENCOUNTERED_BY_ROOM
-
-            count = len(ENCOUNTERED_BY_ROOM[room_id])
             add_beat({"kind": "puzzle_heading", "text": "Your Hiragana"})
             if note:
                 add_beat({"kind": "puzzle_note", "text": note})
-            add_beat({"kind": "puzzle_count", "text": f"Hiragana: {count} / 46"})
+            # Count line omitted in films — the chart itself is the progress update.
             add_beat({"kind": "grid"})
             continue
 
