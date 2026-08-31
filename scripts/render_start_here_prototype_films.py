@@ -55,16 +55,31 @@ def render_room_17(out: Path) -> None:
 
     # Build concat list of still segments with crossfades approximated as holds
     # that start at each cue (incoming painting begins to appear).
-    starts = [float(item["start"]) for item in film] + [total]
+    starts = [float(item["start"]) for item in film]
     images = [
         (ROOT / "start-here/data/rooms" / item["image"]).resolve() for item in film
     ]
+    # Each still must extend through the outgoing crossfade so xfade offsets
+    # land on the JSON "incoming begins to appear" times.
+    crossfades = []
+    for i, item in enumerate(film):
+        if i == 0:
+            crossfades.append(0.0)
+        else:
+            crossfades.append(
+                float(item.get("crossfade") or data.get("imageCrossfade") or 2.0)
+            )
 
     with tempfile.TemporaryDirectory(prefix="room17-") as tmp:
         tmp_path = Path(tmp)
         clips = []
         for i, img in enumerate(images):
-            seg_dur = max(0.2, starts[i + 1] - starts[i])
+            if i + 1 < len(starts):
+                # Hold until next cue, plus the crossfade into the next painting.
+                seg_dur = (starts[i + 1] - starts[i]) + crossfades[i + 1]
+            else:
+                seg_dur = max(0.2, total - starts[i])
+            seg_dur = max(0.2, seg_dur)
             clip = tmp_path / f"clip_{i:02d}.mp4"
             # Scale/crop to 1920x1080, slow push-in via zoompan for presence.
             filt = (
@@ -108,8 +123,36 @@ def render_room_17(out: Path) -> None:
             acc_dur = duration(current)
             for i in range(1, len(clips)):
                 nxt = clips[i]
-                xf = float(film[i].get("crossfade") or data.get("imageCrossfade") or 2.0)
+                xf = crossfades[i]
                 xf = min(xf, acc_dur * 0.45, duration(nxt) * 0.45)
+                if xf <= 0.05:
+                    # Hard cut fallback
+                    merged = tmp_path / f"merge_{i:02d}.mp4"
+                    run(
+                        [
+                            "ffmpeg",
+                            "-y",
+                            "-i",
+                            str(current),
+                            "-i",
+                            str(nxt),
+                            "-filter_complex",
+                            "[0:v][1:v]concat=n=2:v=1:a=0,format=yuv420p[v]",
+                            "-map",
+                            "[v]",
+                            "-an",
+                            "-c:v",
+                            "libx264",
+                            "-preset",
+                            "medium",
+                            "-crf",
+                            "18",
+                            str(merged),
+                        ]
+                    )
+                    current = merged
+                    acc_dur = duration(current)
+                    continue
                 merged = tmp_path / f"merge_{i:02d}.mp4"
                 offset = max(0.0, acc_dur - xf)
                 run(
@@ -139,6 +182,7 @@ def render_room_17(out: Path) -> None:
             video_only = current
 
         out.parent.mkdir(parents=True, exist_ok=True)
+        aud_dur = duration(audio)
         run(
             [
                 "ffmpeg",
@@ -152,12 +196,17 @@ def render_room_17(out: Path) -> None:
                 "-map",
                 "1:a:0",
                 "-c:v",
-                "copy",
+                "libx264",
+                "-preset",
+                "medium",
+                "-crf",
+                "18",
                 "-c:a",
                 "aac",
                 "-b:a",
                 "192k",
-                "-shortest",
+                "-t",
+                f"{aud_dur:.3f}",
                 "-movflags",
                 "+faststart",
                 str(out),
