@@ -443,8 +443,8 @@
       newKana: [],
       prev: "16",
       next: "18",
-      /* Unlisted YouTube id after upload of exports/start-here-prototypes/room-17-nureta-hashi.mp4 */
-      watchYoutubeId: "",
+      /* Unlisted YouTube: https://youtu.be/lbWTROa_PN8 */
+      watchYoutubeId: "lbWTROa_PN8",
     },
     "18": {
       id: "18",
@@ -602,8 +602,8 @@
       /* Prototype: Read page / Watch & Listen film (unlisted YouTube). */
       watchModes: ["read", "watch"],
       watchDefault: "read",
-      /* Unlisted YouTube id after upload of exports/start-here-prototypes/room-28-heya.mp4 */
-      watchYoutubeId: "",
+      /* Unlisted YouTube: https://youtu.be/EuQffj738xw */
+      watchYoutubeId: "EuQffj738xw",
     },
     "29": {
       id: "29",
@@ -771,6 +771,8 @@
       newKana: [],
       prev: "39",
       next: null,
+      /* Unlisted YouTube: https://youtu.be/VqCrT25rCl4 */
+      watchYoutubeId: "VqCrT25rCl4",
     },
   };
 
