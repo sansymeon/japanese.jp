@@ -226,7 +226,7 @@ def reply_desu_english(kana: str) -> str | None:
     if not m:
         return None
     noun = DESU_REPLY_EN.get(m.group(1).strip())
-    return f"It's a {noun}." if noun else None
+    return f"It is a {noun}." if noun else None
 
 
 def puzzle_note_for_film(text: str) -> str:
