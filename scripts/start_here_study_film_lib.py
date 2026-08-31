@@ -275,6 +275,51 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
     return out
 
 
+def estimate_text_width(text: str, fontsize: int) -> float:
+    """Rough pixel width for mixed Latin / kana instructional copy."""
+    width = 0.0
+    for ch in text:
+        code = ord(ch)
+        if ch == " ":
+            width += fontsize * 0.33
+        elif 0x3040 <= code <= 0x30FF or 0x4E00 <= code <= 0x9FFF or 0xFF00 <= code <= 0xFFEF:
+            width += fontsize * 1.02
+        else:
+            width += fontsize * 0.58
+    return width
+
+
+def wrap_instruction_text(text: str, fontsize: int = 64, max_width: float = 1580.0) -> list[str]:
+    """Split long instructional copy onto at most two centered lines."""
+    text = " ".join(text.split())
+    if estimate_text_width(text, fontsize) <= max_width:
+        return [text]
+
+    words = text.split(" ")
+    if len(words) == 1:
+        return [text]
+
+    # Build first line until the next word would overflow the safe width.
+    first_words: list[str] = []
+    for word in words:
+        candidate = " ".join(first_words + [word])
+        if first_words and estimate_text_width(candidate, fontsize) > max_width:
+            break
+        first_words.append(word)
+
+    # Keep at least one word on each line when possible.
+    if not first_words:
+        first_words = [words[0]]
+    if len(first_words) >= len(words):
+        first_words = words[: max(1, len(words) // 2)]
+
+    first = " ".join(first_words).strip()
+    second = " ".join(words[len(first_words) :]).strip()
+    if not second:
+        return [first]
+    return [first, second]
+
+
 def beat_lines(beat: dict) -> list[dict]:
     """Convert a beat dict into drawtext line specs."""
     lines: list[dict] = []
@@ -323,8 +368,21 @@ def beat_lines(beat: dict) -> list[dict]:
     elif kind in {"prose", "puzzle_heading", "puzzle_note"}:
         text = beat.get("text") or ""
         if text:
-            fs = 72 if len(text) < 42 else 64
-            lines.append({"text": text, "fontsize": fs, "y": "h*0.48", "color": INK})
+            # Choose a font size that keeps two wrapped lines inside the safe width.
+            fs = 72
+            wrapped = wrap_instruction_text(text, fontsize=fs)
+            if len(wrapped) > 1 or estimate_text_width(text, fs) > 1580:
+                fs = 64
+                wrapped = wrap_instruction_text(text, fontsize=fs)
+            if max(estimate_text_width(part, fs) for part in wrapped) > 1580:
+                fs = 56
+                wrapped = wrap_instruction_text(text, fontsize=fs)
+            if len(wrapped) == 1:
+                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.48", "color": INK})
+            else:
+                # Two lines centered as a pair so long copy stays on screen.
+                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK})
+                lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK})
     elif kind == "puzzle_count":
         text = beat.get("text") or ""
         if text:
@@ -359,25 +417,37 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
 
     cell = 108
     gap = 10
+    pad = 28
     cols = list(reversed(GOJUON))
     rows = 5
-    width = len(cols) * cell + (len(cols) - 1) * gap
-    height = rows * cell + (rows - 1) * gap
+    inner_w = len(cols) * cell + (len(cols) - 1) * gap
+    inner_h = rows * cell + (rows - 1) * gap
+    width = inner_w + pad * 2
+    height = inner_h + pad * 2
     img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(FONT, 58)
 
-    gold = (201, 164, 88, 255)
-    ivory = (243, 241, 235, 255)
-    ghost = (243, 241, 235, 28)
-    learned_border = (201, 164, 88, 90)
-    learned_bg = (201, 164, 88, 22)
-    pending_border = (214, 202, 178, 130)
-    pending_bg = (16, 14, 12, 72)
-    void_fill = (22, 19, 16, 236)
-    void_border = (52, 46, 40, 255)
-    new_border = (201, 164, 88, 220)
-    new_bg = (201, 164, 88, 32)
+    # Dark scrim so ivory / gold stay readable on bright landscapes (e.g. Room 2 sunset).
+    draw.rounded_rectangle(
+        (0, 0, width - 1, height - 1),
+        radius=18,
+        fill=(10, 8, 6, 210),
+        outline=(48, 40, 32, 220),
+        width=2,
+    )
+
+    gold = (240, 205, 120, 255)
+    ivory = (248, 246, 240, 255)
+    ghost = (214, 202, 178, 55)
+    learned_border = (210, 180, 110, 160)
+    learned_bg = (22, 18, 14, 235)
+    pending_border = (90, 80, 68, 180)
+    pending_bg = (12, 10, 8, 230)
+    void_fill = (14, 12, 10, 240)
+    void_border = (36, 30, 26, 255)
+    new_border = (240, 205, 120, 255)
+    new_bg = (28, 22, 10, 240)
 
     def draw_kana(kana: str, box: tuple[int, int, int, int], fill: tuple[int, int, int, int]) -> None:
         x0, y0, x1, y1 = box
@@ -389,13 +459,13 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
     for cx, column in enumerate(cols):
         for ry in range(rows):
             kana = column[ry] if ry < len(column) else None
-            x0 = cx * (cell + gap)
-            y0 = ry * (cell + gap)
+            x0 = pad + cx * (cell + gap)
+            y0 = pad + ry * (cell + gap)
             box = (x0, y0, x0 + cell, y0 + cell)
             if kana is None:
                 draw.rounded_rectangle(box, radius=3, fill=void_fill, outline=void_border, width=2)
             elif kana in new_kana:
-                draw.rounded_rectangle(box, radius=3, fill=new_bg, outline=new_border, width=2)
+                draw.rounded_rectangle(box, radius=3, fill=new_bg, outline=new_border, width=3)
                 draw_kana(kana, box, gold)
             elif kana in encountered:
                 draw.rounded_rectangle(box, radius=3, fill=learned_bg, outline=learned_border, width=2)
@@ -551,6 +621,36 @@ def render_study_room_film(
 
         for beat in scheduled:
             if beat.get("kind") == "grid":
+                # Hold a clean image under the grid so prior text does not freeze underneath.
+                flush_group()
+                img_path = resolve_beat_image(beat, default_image)
+                seg = tmp_path / f"seg_{len(segments):03d}.mp4"
+                hold = max(0.1, beat["end"] - beat["start"])
+                run(
+                    [
+                        "ffmpeg",
+                        "-y",
+                        "-loop",
+                        "1",
+                        "-i",
+                        str(img_path),
+                        "-vf",
+                        "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,format=yuv420p",
+                        "-t",
+                        f"{hold:.3f}",
+                        "-an",
+                        "-c:v",
+                        "libx264",
+                        "-pix_fmt",
+                        "yuv420p",
+                        "-preset",
+                        FFMPEG_PRESET,
+                        "-crf",
+                        str(FFMPEG_CRF),
+                        str(seg),
+                    ]
+                )
+                segments.append(seg)
                 continue
             img_path = resolve_beat_image(beat, default_image)
             if group_image is None:
