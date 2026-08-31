@@ -417,37 +417,28 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
 
     cell = 108
     gap = 10
-    pad = 28
     cols = list(reversed(GOJUON))
     rows = 5
-    inner_w = len(cols) * cell + (len(cols) - 1) * gap
-    inner_h = rows * cell + (rows - 1) * gap
-    width = inner_w + pad * 2
-    height = inner_h + pad * 2
+    width = len(cols) * cell + (len(cols) - 1) * gap
+    height = rows * cell + (rows - 1) * gap
     img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(FONT, 58)
 
-    # Dark scrim so ivory / gold stay readable on bright landscapes (e.g. Room 2 sunset).
-    draw.rounded_rectangle(
-        (0, 0, width - 1, height - 1),
-        radius=18,
-        fill=(10, 8, 6, 210),
-        outline=(48, 40, 32, 220),
-        width=2,
-    )
-
+    # Pending / void styling restored to the quieter original look.
+    # Learned / new cells keep a darker fill so ivory and gold still read
+    # on bright landscapes without raising pending visibility.
     gold = (240, 205, 120, 255)
     ivory = (248, 246, 240, 255)
-    ghost = (214, 202, 178, 55)
-    learned_border = (210, 180, 110, 160)
-    learned_bg = (22, 18, 14, 235)
-    pending_border = (90, 80, 68, 180)
-    pending_bg = (12, 10, 8, 230)
-    void_fill = (14, 12, 10, 240)
-    void_border = (36, 30, 26, 255)
+    ghost = (243, 241, 235, 28)
+    learned_border = (201, 164, 88, 120)
+    learned_bg = (16, 14, 12, 185)
+    pending_border = (214, 202, 178, 130)
+    pending_bg = (16, 14, 12, 72)
+    void_fill = (22, 19, 16, 236)
+    void_border = (52, 46, 40, 255)
     new_border = (240, 205, 120, 255)
-    new_bg = (28, 22, 10, 240)
+    new_bg = (16, 14, 12, 210)
 
     def draw_kana(kana: str, box: tuple[int, int, int, int], fill: tuple[int, int, int, int]) -> None:
         x0, y0, x1, y1 = box
@@ -459,8 +450,8 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
     for cx, column in enumerate(cols):
         for ry in range(rows):
             kana = column[ry] if ry < len(column) else None
-            x0 = pad + cx * (cell + gap)
-            y0 = pad + ry * (cell + gap)
+            x0 = cx * (cell + gap)
+            y0 = ry * (cell + gap)
             box = (x0, y0, x0 + cell, y0 + cell)
             if kana is None:
                 draw.rounded_rectangle(box, radius=3, fill=void_fill, outline=void_border, width=2)
