@@ -195,7 +195,7 @@ KORE_WA_NOUN_EN: dict[str, str] = {
     "すし": "sushi",
 }
 
-# Short answers: はなです。 → It's a flower.
+# Short answers: はなです。 → It is a flower.
 DESU_REPLY_EN: dict[str, str] = {
     "はな": "flower",
     "いす": "chair",
@@ -203,6 +203,31 @@ DESU_REPLY_EN: dict[str, str] = {
     "さかな": "fish",
     "ほし": "star",
 }
+
+# ねこが います / ねこが いますか
+GA_IMARU_NOUN_EN: dict[str, str] = {
+    "ねこ": "cat",
+    "いぬ": "dog",
+    "さかな": "fish",
+}
+
+
+def ga_imasu_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    m = re.search(r"(.+?)が\s*います$", cleaned)
+    if not m:
+        return None
+    noun = GA_IMARU_NOUN_EN.get(m.group(1).strip())
+    return f"There is a {noun}." if noun else None
+
+
+def ga_imasu_ka_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    m = re.search(r"(.+?)が\s*いますか", cleaned)
+    if not m:
+        return None
+    noun = GA_IMARU_NOUN_EN.get(m.group(1).strip())
+    return f"Is there a {noun}?" if noun else None
 
 
 def kore_wa_english(kana: str) -> str | None:
@@ -303,14 +328,23 @@ def text_mentions_new_kana(text: str, new_kana: set[str]) -> bool:
 def pace_weight(beat: dict, new_kana: set[str]) -> float:
     kind = beat.get("kind")
     kana = beat.get("kana") or ""
-    if kind == "exhibit" and "なんですか" in kana.replace(" ", "").replace("　", ""):
+    kana_compact = kana.replace(" ", "").replace("　", "")
+    if kind == "exhibit" and "なんですか" in kana_compact:
         return 0.55
+    if kind == "exhibit" and "がいます" in kana_compact:
+        return 0.55
+    if kind == "exhibit" and kore_wa_english(kana):
+        return 0.65
     if kind == "reply" and reply_desu_english(kana):
         return 0.75
-    if kind == "kana_return" and kana.strip() == "なん":
+    if kind == "reply" and kana.startswith("はい") and "います" in kana:
+        return 0.65
+    if kind == "kana_return" and kana.strip() in {"なん", "います"}:
         return 0.38
-    if kind == "unpack" and len(kana.replace(" ", "").replace("　", "")) <= 3:
+    if kind == "unpack" and len(kana_compact) <= 3:
         return 0.42
+    if kind == "prose" and not text_has_kana(beat.get("text") or ""):
+        return 0.35
     if kind == "grid":
         return PACE["grid"]
     if kind == "pause":
@@ -358,8 +392,14 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
         if b.get("kind") == "exhibit"
         and "なんですか" in (b.get("kana") or "").replace(" ", "").replace("　", "")
     )
+    imasu_count = sum(
+        1
+        for b in lesson
+        if b.get("kind") == "exhibit"
+        and "がいます" in (b.get("kana") or "").replace(" ", "").replace("　", "")
+    )
     if content_seconds is None:
-        sec_per_weight = 14.0 if nan_q_count >= 3 else LESSON_SECONDS_PER_WEIGHT
+        sec_per_weight = 14.0 if nan_q_count >= 3 or imasu_count >= 2 else LESSON_SECONDS_PER_WEIGHT
         content_seconds = total_w * sec_per_weight
         content_seconds = max(45.0, min(content_seconds, 220.0))
 
@@ -473,8 +513,11 @@ def beat_lines(beat: dict) -> list[dict]:
                 {"text": romaji, "fontsize": 64, "y": romaji_y, "color": INK_SOFT, "borderw": 2}
             )
         # Question/statement English — fades in/out on each picture.
-        gloss = kore_wa_english(kana) or (
-            None if (beat.get("en") or "").startswith("New:") else beat.get("en")
+        gloss = (
+            kore_wa_english(kana)
+            or ga_imasu_ka_english(kana)
+            or ga_imasu_english(kana)
+            or (None if (beat.get("en") or "").startswith("New:") else beat.get("en") or None)
         )
         note = beat.get("en") if (beat.get("en") or "").startswith("New:") else None
         gloss_y = "h*0.60" if len([ln for ln in lines if "h*0.34" in str(ln.get("y"))]) else "h*0.54"
@@ -487,6 +530,7 @@ def beat_lines(beat: dict) -> list[dict]:
                     "color": INK,
                     "borderw": 3,
                     "fade": True,
+                    "box": True,
                 }
             )
         if note:
@@ -672,6 +716,19 @@ def beat_lines(beat: dict) -> list[dict]:
                     "color": INK,
                     "borderw": 3,
                     "fade": True,
+                    "box": True,
+                }
+            )
+        elif kana.strip() == "います":
+            lines.append(
+                {
+                    "text": "is",
+                    "fontsize": 64,
+                    "y": "h*0.70",
+                    "color": INK,
+                    "borderw": 3,
+                    "fade": True,
+                    "box": True,
                 }
             )
     elif kind == "verse":
@@ -698,10 +755,10 @@ def beat_lines(beat: dict) -> list[dict]:
                 fs = 50
                 wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
             if len(wrapped) == 1:
-                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.48", "color": INK})
+                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.48", "color": INK, "box": True})
             elif len(wrapped) == 2:
-                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK})
-                lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK})
+                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK, "box": True})
+                lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK, "box": True})
             else:
                 y0 = 0.40
                 for i, part in enumerate(wrapped[:3]):
@@ -711,6 +768,7 @@ def beat_lines(beat: dict) -> list[dict]:
                             "fontsize": fs,
                             "y": f"h*{y0 + i * 0.08:.2f}",
                             "color": INK,
+                            "box": True,
                         }
                     )
     elif kind == "puzzle_count":
@@ -868,6 +926,7 @@ def render_image_group(
                     y=str(line.get("y") or "h*0.48"),
                     color=str(line.get("color") or INK),
                     borderw=int(line.get("borderw") or 3),
+                    box=bool(line.get("box", True)),
                     fade=bool(line.get("fade")),
                 )
             )
