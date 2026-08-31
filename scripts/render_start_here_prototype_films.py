@@ -263,18 +263,18 @@ def render_room_28(out: Path) -> None:
         # Gentle hold — background stays atmosphere, not spectacle.
         "zoompan=z='min(1.03,1+0.00004*on)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30",
         # Beat 1 — word arrives (6–18s)
-        dt("へや", 6, 18, fontsize=156, y="h*0.38"),
-        dt("heya", 10, 18, fontsize=54, y="h*0.52", color=ink_soft, borderw=2),
-        dt("room", 12, 18, fontsize=46, y="h*0.58", color=ink_quiet, borderw=2),
+        dt("へや", 6, 18, fontsize=188, y="h*0.36"),
+        dt("heya", 10, 18, fontsize=64, y="h*0.52", color=ink_soft, borderw=2),
+        dt("room", 12, 18, fontsize=54, y="h*0.58", color=ink_quiet, borderw=2),
         # Beat 2 — unpack (20–32s)
-        dt("へ　や", 20, 32, fontsize=132, y="h*0.42"),
-        dt("he　ya", 24, 32, fontsize=50, y="h*0.54", color=ink_soft, borderw=2),
+        dt("へ　や", 20, 32, fontsize=156, y="h*0.40"),
+        dt("he　ya", 24, 32, fontsize=58, y="h*0.54", color=ink_soft, borderw=2),
         # Beat 3 — instructional note, centered and readable (34–50s)
-        dt("や you already have.", 34, 50, fontsize=50, y="h*0.44", color=ink_soft),
-        dt("へ is new.", 38, 50, fontsize=50, y="h*0.52", color=ink_soft),
+        dt("や you already have.", 34, 50, fontsize=72, y="h*0.43", color=ink),
+        dt("へ is new.", 38, 50, fontsize=72, y="h*0.52", color=ink),
         # Beat 4 — return (52–66s)
-        dt("へや", 52, 66, fontsize=156, y="h*0.42"),
-        dt("heya", 56, 66, fontsize=54, y="h*0.56", color=ink_soft, borderw=2),
+        dt("へや", 52, 66, fontsize=188, y="h*0.40"),
+        dt("heya", 56, 66, fontsize=64, y="h*0.56", color=ink_soft, borderw=2),
         "format=yuv420p",
     ]
     vf = ",".join(filters)
