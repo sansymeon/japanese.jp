@@ -163,7 +163,7 @@ ATMOSPHERE_AUDIO_ROOMS = {2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 37}
 HOLD_AFTER_CONTENT = 3.0
 FADE_OUT = 4.0
 PAUSE_WEIGHT = 0.55
-GRID_DURATION = 25.0
+GRID_DURATION = 20.0
 PUZZLE_HEADING_DURATION = 5.0
 PUZZLE_NOTE_DURATION = 10.0
 # Seconds per pace-weight unit for lesson beats (generous for kana; not soundtrack-fill).
@@ -186,22 +186,37 @@ SHADOW = "0x171512@0.65"
 GOLD = "0xC9A458"
 TEXT_BOX = "0x171512@0.78"
 
-# Picture-sentence glosses for これは〜です exhibits.
-KORE_WA_EN: dict[str, str] = {
-    "ほん": "This is a book.",
-    "ねこ": "This is a cat.",
-    "やま": "This is a mountain.",
-    "いぬ": "This is a dog.",
-    "すし": "This is sushi.",
+# Picture-sentence glosses for これは〜です / これは〜ですか exhibits.
+KORE_WA_NOUN_EN: dict[str, str] = {
+    "ほん": "book",
+    "ねこ": "cat",
+    "やま": "mountain",
+    "いぬ": "dog",
+    "すし": "sushi",
 }
 
 
 def kore_wa_english(kana: str) -> str | None:
-    cleaned = (kana or "").replace("。", "").replace("　", " ")
+    cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    m = re.search(r"これは\s*(.+?)\s*ですか", cleaned)
+    if m:
+        noun = KORE_WA_NOUN_EN.get(m.group(1).strip())
+        return f"Is this a {noun}?" if noun else None
     m = re.search(r"これは\s*(.+?)\s*です", cleaned)
-    if not m:
-        return None
-    return KORE_WA_EN.get(m.group(1).strip())
+    if m:
+        noun = KORE_WA_NOUN_EN.get(m.group(1).strip())
+        return f"This is a {noun}." if noun else None
+    return None
+
+
+def reply_yes_no(kana: str) -> tuple[str, str] | None:
+    """Return (はい/いいえ display focus, Yes/No) for answer lines."""
+    text = (kana or "").strip()
+    if text.startswith("はい"):
+        return ("はい", "Yes")
+    if text.startswith("いいえ"):
+        return ("いいえ", "No")
+    return None
 
 
 def run(cmd: list[str]) -> None:
@@ -266,7 +281,7 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return PACE["pause"]
     if kind == "verse":
         return PACE["verse"]
-    if kind in {"exhibit", "unpack", "kana_return"}:
+    if kind in {"exhibit", "reply", "unpack", "kana_return"}:
         return PACE["new_kana"] if text_mentions_new_kana(
             beat.get("kana") or "", new_kana
         ) else PACE["kana"]
@@ -344,8 +359,10 @@ def estimate_text_width(text: str, fontsize: int) -> float:
     return width
 
 
-def wrap_instruction_text(text: str, fontsize: int = 64, max_width: float = 1500.0) -> list[str]:
-    """Split long instructional copy onto at most two centered lines."""
+def wrap_instruction_text(
+    text: str, fontsize: int = 64, max_width: float = 1500.0, max_lines: int = 3
+) -> list[str]:
+    """Split long instructional copy onto centered lines (default up to three)."""
     text = " ".join(text.split())
     if estimate_text_width(text, fontsize) <= max_width:
         return [text]
@@ -368,25 +385,22 @@ def wrap_instruction_text(text: str, fontsize: int = 64, max_width: float = 1500
     if len(words) == 1:
         return [text]
 
-    # Build first line until the next word would overflow the safe width.
-    first_words: list[str] = []
-    for word in words:
-        candidate = " ".join(first_words + [word])
-        if first_words and estimate_text_width(candidate, fontsize) > max_width:
-            break
-        first_words.append(word)
-
-    # Keep at least one word on each line when possible.
-    if not first_words:
-        first_words = [words[0]]
-    if len(first_words) >= len(words):
-        first_words = words[: max(1, len(words) // 2)]
-
-    first = " ".join(first_words).strip()
-    second = " ".join(words[len(first_words) :]).strip()
-    if not second:
-        return [first]
-    return [first, second]
+    lines: list[str] = []
+    current: list[str] = []
+    for i, word in enumerate(words):
+        candidate = " ".join(current + [word])
+        if current and estimate_text_width(candidate, fontsize) > max_width:
+            lines.append(" ".join(current))
+            current = [word]
+            if len(lines) >= max_lines - 1:
+                # Dump the remainder onto the last line.
+                lines.append(" ".join(words[i:]))
+                return [ln for ln in lines if ln]
+        else:
+            current.append(word)
+    if current:
+        lines.append(" ".join(current))
+    return [ln for ln in lines if ln] or [text]
 
 
 def beat_lines(beat: dict) -> list[dict]:
@@ -398,23 +412,35 @@ def beat_lines(beat: dict) -> list[dict]:
         kana = beat.get("kana") or ""
         if kana:
             fs = 156 if len(kana) <= 4 else 128 if len(kana) <= 8 else 96
-            lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
+            while fs > 72 and estimate_text_width(kana, fs) > 1500:
+                fs -= 12
+            if " " in kana and estimate_text_width(kana, fs) > 1200:
+                parts = wrap_instruction_text(kana, fontsize=fs, max_width=1200, max_lines=2)
+                if len(parts) > 1:
+                    lines.append({"text": parts[0], "fontsize": fs, "y": "h*0.22", "color": INK})
+                    lines.append({"text": parts[1], "fontsize": fs, "y": "h*0.34", "color": INK})
+                else:
+                    lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
+            else:
+                lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
         romaji = beat.get("romaji")
+        romaji_y = "h*0.48" if len(lines) > 1 else "h*0.40"
         if romaji:
             lines.append(
-                {"text": romaji, "fontsize": 64, "y": "h*0.40", "color": INK_SOFT, "borderw": 2}
+                {"text": romaji, "fontsize": 64, "y": romaji_y, "color": INK_SOFT, "borderw": 2}
             )
-        # Sentence English (This is a cat.) — fades in/out on each picture.
+        # Question/statement English — fades in/out on each picture.
         gloss = kore_wa_english(kana) or (
             None if (beat.get("en") or "").startswith("New:") else beat.get("en")
         )
         note = beat.get("en") if (beat.get("en") or "").startswith("New:") else None
+        gloss_y = "h*0.60" if len([ln for ln in lines if "h*0.34" in str(ln.get("y"))]) else "h*0.54"
         if gloss:
             lines.append(
                 {
                     "text": gloss,
                     "fontsize": 58,
-                    "y": "h*0.54",
+                    "y": gloss_y,
                     "color": INK,
                     "borderw": 3,
                     "fade": True,
@@ -434,22 +460,69 @@ def beat_lines(beat: dict) -> list[dict]:
                     }
                 )
             else:
+                y0 = 0.70
+                for i, part in enumerate(wrapped[:3]):
+                    lines.append(
+                        {
+                            "text": part,
+                            "fontsize": fs,
+                            "y": f"h*{y0 + i * 0.08:.2f}",
+                            "color": INK_SOFT,
+                            "borderw": 3,
+                        }
+                    )
+    elif kind == "reply":
+        kana = beat.get("kana") or ""
+        yn = reply_yes_no(kana)
+        if yn:
+            focus, en = yn
+            lines.append(
+                {
+                    "text": focus,
+                    "fontsize": 168,
+                    "y": "h*0.30",
+                    "color": INK,
+                    "fade": True,
+                }
+            )
+            # Remainder after はい、 / いいえ、 when present.
+            rest = ""
+            for sep in ("、", ","):
+                if sep in kana:
+                    rest = kana.split(sep, 1)[1].strip()
+                    break
+            if rest:
                 lines.append(
                     {
-                        "text": wrapped[0],
-                        "fontsize": fs,
-                        "y": "h*0.72",
+                        "text": rest,
+                        "fontsize": 96,
+                        "y": "h*0.48",
                         "color": INK_SOFT,
-                        "borderw": 3,
+                        "borderw": 2,
                     }
                 )
+            lines.append(
+                {
+                    "text": en,
+                    "fontsize": 72,
+                    "y": "h*0.64" if rest else "h*0.52",
+                    "color": INK,
+                    "borderw": 3,
+                    "fade": True,
+                }
+            )
+        else:
+            if kana:
+                lines.append({"text": kana, "fontsize": 128, "y": "h*0.36", "color": INK})
+            romaji = beat.get("romaji")
+            if romaji:
                 lines.append(
                     {
-                        "text": wrapped[1],
-                        "fontsize": fs,
-                        "y": "h*0.80",
+                        "text": romaji,
+                        "fontsize": 58,
+                        "y": "h*0.52",
                         "color": INK_SOFT,
-                        "borderw": 3,
+                        "borderw": 2,
                     }
                 )
     elif kind == "unpack":
@@ -469,6 +542,7 @@ def beat_lines(beat: dict) -> list[dict]:
     elif kind == "kana_return":
         kana = beat.get("kana") or ""
         romaji = beat.get("romaji")
+        en = beat.get("en") or ""
         if kana:
             # Scale long returns down; prefer a two-line break on spaces.
             if len(kana) <= 4:
@@ -480,7 +554,7 @@ def beat_lines(beat: dict) -> list[dict]:
             while fs > 72 and estimate_text_width(kana, fs) > 1500:
                 fs -= 12
             if " " in kana and estimate_text_width(kana, fs) > 1200:
-                parts = wrap_instruction_text(kana, fontsize=fs, max_width=1200)
+                parts = wrap_instruction_text(kana, fontsize=fs, max_width=1200, max_lines=2)
                 if len(parts) > 1:
                     lines.append({"text": parts[0], "fontsize": fs, "y": "h*0.34", "color": INK})
                     lines.append({"text": parts[1], "fontsize": fs, "y": "h*0.48", "color": INK})
@@ -494,11 +568,35 @@ def beat_lines(beat: dict) -> list[dict]:
                                 "borderw": 2,
                             }
                         )
+                    if en:
+                        gloss = en[:1].upper() + en[1:] if en else en
+                        lines.append(
+                            {
+                                "text": gloss,
+                                "fontsize": 58,
+                                "y": "h*0.74",
+                                "color": INK,
+                                "borderw": 3,
+                                "fade": True,
+                            }
+                        )
                     return lines
             lines.append({"text": kana, "fontsize": fs, "y": "h*0.40", "color": INK})
         if romaji:
             lines.append(
                 {"text": romaji, "fontsize": 64, "y": "h*0.56", "color": INK_SOFT, "borderw": 2}
+            )
+        if en:
+            gloss = en[:1].upper() + en[1:] if en else en
+            lines.append(
+                {
+                    "text": gloss,
+                    "fontsize": 64,
+                    "y": "h*0.70",
+                    "color": INK,
+                    "borderw": 3,
+                    "fade": True,
+                }
             )
     elif kind == "verse":
         text = beat.get("text") or ""
@@ -509,21 +607,34 @@ def beat_lines(beat: dict) -> list[dict]:
     elif kind in {"prose", "puzzle_heading", "puzzle_note"}:
         text = beat.get("text") or ""
         if text:
-            # Choose a font size that keeps two wrapped lines inside the safe width.
+            # Choose a font size that keeps wrapped lines inside the safe width.
             fs = 72
-            wrapped = wrap_instruction_text(text, fontsize=fs)
-            if len(wrapped) > 1 or estimate_text_width(text, fs) > 1500:
+            wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
+            if len(wrapped) > 1 or estimate_text_width(text, fs) > 1400:
                 fs = 64
-                wrapped = wrap_instruction_text(text, fontsize=fs)
-            if max(estimate_text_width(part, fs) for part in wrapped) > 1500:
+                wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
+            if max(estimate_text_width(part, fs) for part in wrapped) > 1400 or len(wrapped) > 2:
                 fs = 56
-                wrapped = wrap_instruction_text(text, fontsize=fs)
+                wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
+            if max(estimate_text_width(part, fs) for part in wrapped) > 1400:
+                fs = 50
+                wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
             if len(wrapped) == 1:
                 lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.48", "color": INK})
-            else:
-                # Two lines centered as a pair so long copy stays on screen.
+            elif len(wrapped) == 2:
                 lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK})
                 lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK})
+            else:
+                y0 = 0.40
+                for i, part in enumerate(wrapped[:3]):
+                    lines.append(
+                        {
+                            "text": part,
+                            "fontsize": fs,
+                            "y": f"h*{y0 + i * 0.08:.2f}",
+                            "color": INK,
+                        }
+                    )
     elif kind == "puzzle_count":
         text = beat.get("text") or ""
         if text:
@@ -571,9 +682,9 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
     if Image is None:
         raise SystemExit("Pillow required for kana grid rendering.")
 
-    cell = 108
+    cell = 112
     gap = 10
-    pad = 28
+    pad = 32
     cols = list(reversed(GOJUON))
     rows = 5
     inner_w = len(cols) * cell + (len(cols) - 1) * gap
@@ -582,29 +693,29 @@ def kana_grid_png(path: Path, encountered: set[str], new_kana: set[str]) -> None
     height = inner_h + pad * 2
     img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype(FONT, 58)
+    font = ImageFont.truetype(FONT, 62)
 
-    # Opaque dark image box behind the chart.
+    # Fully opaque dark panel so chart reads clearly over any photograph.
     draw.rounded_rectangle(
         (0, 0, width - 1, height - 1),
-        radius=16,
-        fill=(12, 10, 8, 255),
-        outline=(58, 48, 38, 255),
+        radius=18,
+        fill=(8, 7, 6, 255),
+        outline=(70, 58, 44, 255),
         width=3,
     )
 
-    gold = (240, 205, 120, 255)
-    ivory = (248, 246, 240, 255)
+    gold = (245, 214, 130, 255)
+    ivory = (252, 250, 244, 255)
     # Keep pending ghosts quiet even on the darker box.
-    ghost = (243, 241, 235, 20)
-    learned_border = (201, 164, 88, 120)
-    learned_bg = (28, 24, 18, 80)
-    pending_border = (214, 202, 178, 55)
-    pending_bg = (16, 14, 12, 35)
-    void_fill = (18, 15, 12, 200)
-    void_border = (48, 42, 36, 220)
-    new_border = (240, 205, 120, 255)
-    new_bg = (36, 28, 14, 90)
+    ghost = (243, 241, 235, 28)
+    learned_border = (210, 175, 100, 160)
+    learned_bg = (36, 30, 22, 110)
+    pending_border = (214, 202, 178, 70)
+    pending_bg = (16, 14, 12, 45)
+    void_fill = (14, 12, 10, 220)
+    void_border = (48, 42, 36, 230)
+    new_border = (245, 214, 130, 255)
+    new_bg = (42, 32, 16, 110)
 
     def draw_kana(kana: str, box: tuple[int, int, int, int], fill: tuple[int, int, int, int]) -> None:
         x0, y0, x1, y1 = box

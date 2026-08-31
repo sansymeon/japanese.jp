@@ -123,17 +123,23 @@ def parse_lesson(room_id: int) -> dict:
                         }
                     )
                 continue
-            block = el.select_one(".jp-block")
-            if block:
-                add_beat(
-                    {
-                        "kind": "exhibit",
-                        "kana": _text(block.select_one(".jp-kana")),
-                        "romaji": _text(block.select_one(".jp-romaji")),
-                        "en": _text(block.select_one(".jp-en")),
-                        "image": img_src,
-                    }
-                )
+            blocks = el.select(".jp-block")
+            if blocks:
+                # Question (and optional answer on the same picture).
+                for bi, block in enumerate(blocks):
+                    kana = _text(block.select_one(".jp-kana"))
+                    if not kana:
+                        continue
+                    kind = "exhibit" if bi == 0 else "reply"
+                    add_beat(
+                        {
+                            "kind": kind,
+                            "kana": kana,
+                            "romaji": _text(block.select_one(".jp-romaji")),
+                            "en": _text(block.select_one(".jp-en")),
+                            "image": img_src,
+                        }
+                    )
             elif img_src:
                 add_beat({"kind": "pause", "image": img_src})
             continue
