@@ -7,7 +7,9 @@ Outputs (gitignored / artifacts — not for Netlify deploy):
 
 Room 17: listen-only master film from data/rooms/17.json timings,
   with hiragana-only captions synced to vocals[].
-Room 28: calm “page performs itself” still + timed text + BGM.
+Room 28: full lesson film from the static page — sequential beats on the
+  complete room soundtrack (~lesson-7.mp3). Instrumental rooms use unused
+  musical time for teaching; lyrics would take priority where present.
 """
 
 from __future__ import annotations
@@ -17,6 +19,13 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+try:
+    from PIL import Image, ImageDraw, ImageFont
+except ImportError:  # pragma: no cover
+    Image = None  # type: ignore[misc, assignment]
+    ImageDraw = None  # type: ignore[misc, assignment]
+    ImageFont = None  # type: ignore[misc, assignment]
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "exports" / "start-here-prototypes"
@@ -277,61 +286,270 @@ def render_room_17(out: Path) -> None:
         )
 
 
+ROOM28_GOJUON = [
+    ["あ", "い", "う", "え", "お"],
+    ["か", "き", "く", "け", "こ"],
+    ["さ", "し", "す", "せ", "そ"],
+    ["た", "ち", "つ", "て", "と"],
+    ["な", "に", "ぬ", "ね", "の"],
+    ["は", "ひ", "ふ", "へ", "ほ"],
+    ["ま", "み", "む", "め", "も"],
+    ["や", None, "ゆ", None, "よ"],
+    ["ら", "り", "る", "れ", "ろ"],
+    ["わ", None, "を", None, "ん"],
+]
+# L28 encountered kana (34/46); へ is new in this room.
+ROOM28_ENCOUNTERED = {
+    "あ", "い", "う", "え", "お", "は", "す", "か", "し", "た", "の", "な", "ま", "ん",
+    "さ", "こ", "れ", "ほ", "ね", "や", "ぬ", "り", "ひ", "に", "つ", "く", "を", "わ",
+    "と", "け", "て", "き", "ち", "へ",
+}
+ROOM28_NEW = {"へ"}
+
+
+def room28_typography() -> dict[str, str]:
+    return {
+        "ink": "0xF3F1EB",
+        "ink_soft": "0xD8D4CB",
+        "ink_quiet": "0x9A958C",
+        "shadow": "0x171512@0.42",
+    }
+
+
+def room28_timeline(total: float) -> list[dict]:
+    """Pedagogical beats from start-here/lesson-28/index.html (no nav/chrome)."""
+    colors = room28_typography()
+    ink = colors["ink"]
+    soft = colors["ink_soft"]
+    quiet = colors["ink_quiet"]
+
+    beats = [
+        {
+            "weight": 1.1,
+            "lines": [
+                {"text": "Look into the picture.", "fontsize": 72, "y": "h*0.48", "color": ink},
+            ],
+        },
+        {
+            "weight": 0.75,
+            "lines": [
+                {"text": "Look", "fontsize": 58, "y": "h*0.44", "color": quiet, "borderw": 2},
+            ],
+        },
+        {
+            "weight": 1.0,
+            "lines": [
+                {"text": "Look into the scene.", "fontsize": 72, "y": "h*0.48", "color": ink},
+            ],
+        },
+        {
+            "weight": 1.45,
+            "lines": [
+                {"text": "へや", "fontsize": 188, "y": "h*0.36", "color": ink},
+                {"text": "heya", "fontsize": 64, "y": "h*0.52", "color": soft, "borderw": 2},
+                {"text": "room", "fontsize": 54, "y": "h*0.58", "color": quiet, "borderw": 2},
+            ],
+        },
+        {
+            "weight": 1.25,
+            "lines": [
+                {"text": "へ　や", "fontsize": 156, "y": "h*0.40", "color": ink},
+                {"text": "he　ya", "fontsize": 58, "y": "h*0.54", "color": soft, "borderw": 2},
+            ],
+        },
+        {
+            "weight": 1.05,
+            "lines": [
+                {"text": "や you already have.", "fontsize": 72, "y": "h*0.48", "color": ink},
+            ],
+        },
+        {
+            "weight": 1.05,
+            "lines": [
+                {"text": "へ is new.", "fontsize": 72, "y": "h*0.48", "color": ink},
+            ],
+        },
+        {
+            "weight": 1.25,
+            "lines": [
+                {"text": "へや", "fontsize": 188, "y": "h*0.40", "color": ink},
+                {"text": "heya", "fontsize": 64, "y": "h*0.56", "color": soft, "borderw": 2},
+            ],
+        },
+        {
+            "weight": 0.95,
+            "lines": [
+                {"text": "Your Hiragana", "fontsize": 72, "y": "h*0.48", "color": ink},
+            ],
+        },
+        {
+            "weight": 1.15,
+            "lines": [
+                {
+                    "text": "へ joins because へや needed it.",
+                    "fontsize": 72,
+                    "y": "h*0.48",
+                    "color": ink,
+                },
+            ],
+        },
+        {
+            "weight": 1.15,
+            "lines": [
+                {
+                    "text": "34 of 46 is not unfinished work.",
+                    "fontsize": 72,
+                    "y": "h*0.48",
+                    "color": ink,
+                },
+            ],
+        },
+        {
+            "weight": 0.85,
+            "lines": [
+                {
+                    "text": "Hiragana: 34 / 46",
+                    "fontsize": 58,
+                    "y": "h*0.44",
+                    "color": "0xC9A458",
+                    "borderw": 2,
+                },
+            ],
+        },
+        {"weight": 2.35, "grid": True},
+        {
+            "weight": 1.05,
+            "lines": [
+                {"text": "へや", "fontsize": 188, "y": "h*0.40", "color": ink},
+                {"text": "heya", "fontsize": 64, "y": "h*0.56", "color": soft, "borderw": 2},
+            ],
+        },
+    ]
+
+    weight_sum = sum(float(b["weight"]) for b in beats)
+    cursor = 0.0
+    scheduled: list[dict] = []
+    for beat in beats:
+        dur = total * (float(beat["weight"]) / weight_sum)
+        scheduled.append({**beat, "start": cursor, "end": cursor + dur})
+        cursor += dur
+    if scheduled:
+        scheduled[-1]["end"] = total
+    return scheduled
+
+
+def room28_drawtext(
+    text: str,
+    start: float,
+    end: float,
+    *,
+    fontsize: int = 72,
+    y: str = "h*0.48",
+    color: str,
+    borderw: int = 3,
+    shadow: str,
+    font: str = FONT,
+) -> str:
+    t = escape_drawtext(text)
+    return (
+        f"drawtext=fontfile={font}:text='{t}':fontsize={fontsize}:"
+        f"fontcolor={color}:borderw={borderw}:bordercolor={shadow}:"
+        f"x=(w-text_w)/2:y={y}:"
+        f"enable='between(t,{start:.2f},{end:.2f})'"
+    )
+
+
+def room28_kana_grid_png(path: Path) -> None:
+    if Image is None:
+        raise SystemExit("Pillow is required for Room 28 kana grid rendering.")
+
+    cell = 72
+    gap = 6
+    cols = list(reversed(ROOM28_GOJUON))  # row-reverse on the site
+    rows = 5
+    width = len(cols) * cell + (len(cols) - 1) * gap
+    height = rows * cell + (rows - 1) * gap
+    img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype(FONT, 42)
+
+    gold = (201, 164, 88, 255)
+    ivory = (243, 241, 235, 255)
+    faint_border = (201, 164, 88, 40)
+    empty_border = (201, 164, 88, 26)
+    cell_bg = (201, 164, 88, 10)
+
+    for cx, column in enumerate(cols):
+        for ry in range(rows):
+            kana = column[ry] if ry < len(column) else None
+            x0 = cx * (cell + gap)
+            y0 = ry * (cell + gap)
+            x1 = x0 + cell
+            y1 = y0 + cell
+            if kana is None:
+                continue
+            if kana not in ROOM28_ENCOUNTERED:
+                draw.rectangle([x0, y0, x1, y1], outline=empty_border, width=1)
+                continue
+            fill = cell_bg
+            outline = faint_border
+            text_color = ivory
+            if kana in ROOM28_NEW:
+                text_color = gold
+                outline = (201, 164, 88, 140)
+            draw.rectangle([x0, y0, x1, y1], fill=fill, outline=outline, width=1)
+            bbox = draw.textbbox((0, 0), kana, font=font)
+            tw = bbox[2] - bbox[0]
+            th = bbox[3] - bbox[1]
+            draw.text(
+                (x0 + (cell - tw) / 2, y0 + (cell - th) / 2 - 2),
+                kana,
+                font=font,
+                fill=text_color,
+            )
+
+    img.save(path)
+
+
 def render_room_28(out: Path) -> None:
     image = ROOT / "kml/assets/studies/room.png"
     audio = ROOT / "start-here/audio/lesson-7.mp3"
     if not image.exists() or image.stat().st_size < 1000:
         raise SystemExit(f"Missing room image: {image}")
+    if not audio.exists():
+        raise SystemExit(f"Missing room audio: {audio}")
 
-    # Calm ~75s “page performs itself”. Typography v2: instructional content
-    # is the visual focus — centered, generous space, museum hierarchy.
-    # Colors align with museum-room.css (--ink, --ink-soft, --ink-quiet).
-    total = 75.0
-    font = FONT
-    ink = "0xF3F1EB"
-    ink_soft = "0xD8D4CB"
-    ink_quiet = "0x9A958C"
-    shadow = "0x171512@0.42"
+    total = duration(audio)
+    colors = room28_typography()
+    shadow = colors["shadow"]
+    beats = room28_timeline(total)
 
-    def dt(
-        text: str,
-        start: float,
-        end: float,
-        *,
-        fontsize: int = 72,
-        y: str = "h*0.48",
-        color: str = ink,
-        borderw: int = 3,
-    ) -> str:
-        t = escape_drawtext(text)
-        return (
-            f"drawtext=fontfile={font}:text='{t}':fontsize={fontsize}:"
-            f"fontcolor={color}:borderw={borderw}:bordercolor={shadow}:"
-            f"x=(w-text_w)/2:y={y}:"
-            f"enable='between(t,{start:.2f},{end:.2f})'"
-        )
-
-    filters = [
+    draw_filters: list[str] = [
         "scale=1920:1080:force_original_aspect_ratio=increase",
         "crop=1920:1080",
-        # Gentle hold — background stays atmosphere, not spectacle.
         "zoompan=z='min(1.03,1+0.00004*on)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30",
-        # Beat 1 — word arrives (6–18s)
-        dt("へや", 6, 18, fontsize=188, y="h*0.36"),
-        dt("heya", 10, 18, fontsize=64, y="h*0.52", color=ink_soft, borderw=2),
-        dt("room", 12, 18, fontsize=54, y="h*0.58", color=ink_quiet, borderw=2),
-        # Beat 2 — unpack (20–32s)
-        dt("へ　や", 20, 32, fontsize=156, y="h*0.40"),
-        dt("he　ya", 24, 32, fontsize=58, y="h*0.54", color=ink_soft, borderw=2),
-        # Beat 3 — instructional note, centered and readable (34–50s)
-        dt("や you already have.", 34, 50, fontsize=72, y="h*0.43", color=ink),
-        dt("へ is new.", 38, 50, fontsize=72, y="h*0.52", color=ink),
-        # Beat 4 — return (52–66s)
-        dt("へや", 52, 66, fontsize=188, y="h*0.40"),
-        dt("heya", 56, 66, fontsize=64, y="h*0.56", color=ink_soft, borderw=2),
-        "format=yuv420p",
     ]
-    vf = ",".join(filters)
+
+    grid_beat: dict | None = None
+    for beat in beats:
+        if beat.get("grid"):
+            grid_beat = beat
+            continue
+        for line in beat.get("lines") or []:
+            draw_filters.append(
+                room28_drawtext(
+                    line["text"],
+                    beat["start"],
+                    beat["end"],
+                    fontsize=int(line.get("fontsize") or 72),
+                    y=str(line.get("y") or "h*0.48"),
+                    color=str(line.get("color") or colors["ink"]),
+                    borderw=int(line.get("borderw") or 3),
+                    shadow=shadow,
+                )
+            )
+    draw_filters.append("format=yuv420p")
+    vf = ",".join(draw_filters)
 
     out.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="room28-") as tmp:
@@ -348,7 +566,7 @@ def render_room_28(out: Path) -> None:
                 "-vf",
                 vf,
                 "-t",
-                f"{total:.2f}",
+                f"{total:.3f}",
                 "-an",
                 "-c:v",
                 "libx264",
@@ -361,28 +579,71 @@ def render_room_28(out: Path) -> None:
                 str(silent),
             ]
         )
+
+        video_in = silent
+        if grid_beat:
+            grid_png = tmp_path / "kana-grid.png"
+            room28_kana_grid_png(grid_png)
+            overlay_out = tmp_path / "with-grid.mp4"
+            start = grid_beat["start"]
+            end = grid_beat["end"]
+            run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-i",
+                    str(silent),
+                    "-loop",
+                    "1",
+                    "-i",
+                    str(grid_png),
+                    "-filter_complex",
+                    (
+                        f"[0:v][1:v]overlay=x=(W-w)/2:y=(H-h)/2:"
+                        f"enable='between(t,{start:.2f},{end:.2f})',format=yuv420p[v]"
+                    ),
+                    "-map",
+                    "[v]",
+                    "-t",
+                    f"{total:.3f}",
+                    "-an",
+                    "-c:v",
+                    "libx264",
+                    "-pix_fmt",
+                    "yuv420p",
+                    "-preset",
+                    "medium",
+                    "-crf",
+                    "18",
+                    str(overlay_out),
+                ]
+            )
+            video_in = overlay_out
+
         run(
             [
                 "ffmpeg",
                 "-y",
                 "-i",
-                str(silent),
+                str(video_in),
                 "-i",
                 str(audio),
-                "-filter_complex",
-                f"[1:a]afade=t=in:st=0:d=2,afade=t=out:st={total-3:.1f}:d=3,volume=0.55[a]",
                 "-map",
                 "0:v:0",
                 "-map",
-                "[a]",
+                "1:a:0",
                 "-c:v",
-                "copy",
+                "libx264",
+                "-preset",
+                "medium",
+                "-crf",
+                "18",
                 "-c:a",
                 "aac",
                 "-b:a",
                 "192k",
                 "-t",
-                f"{total:.2f}",
+                f"{total:.3f}",
                 "-movflags",
                 "+faststart",
                 str(out),
