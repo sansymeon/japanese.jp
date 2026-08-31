@@ -229,16 +229,30 @@ def render_room_28(out: Path) -> None:
     if not image.exists() or image.stat().st_size < 1000:
         raise SystemExit(f"Missing room image: {image}")
 
-    # Calm ~75s page performance. Text holds match the room's intellectual content.
-    # Beats (seconds): open still → へや → heya/room → unpack → note → へや → rest
+    # Calm ~75s “page performs itself”. Typography v2: instructional content
+    # is the visual focus — centered, generous space, museum hierarchy.
+    # Colors align with museum-room.css (--ink, --ink-soft, --ink-quiet).
     total = 75.0
     font = FONT
+    ink = "0xF3F1EB"
+    ink_soft = "0xD8D4CB"
+    ink_quiet = "0x9A958C"
+    shadow = "0x171512@0.42"
 
-    def dt(text: str, start: float, end: float, fontsize: int = 72, y: str = "h*0.72") -> str:
+    def dt(
+        text: str,
+        start: float,
+        end: float,
+        *,
+        fontsize: int = 72,
+        y: str = "h*0.48",
+        color: str = ink,
+        borderw: int = 3,
+    ) -> str:
         t = escape_drawtext(text)
         return (
             f"drawtext=fontfile={font}:text='{t}':fontsize={fontsize}:"
-            f"fontcolor=white:borderw=2:bordercolor=0x080809@0.55:"
+            f"fontcolor={color}:borderw={borderw}:bordercolor={shadow}:"
             f"x=(w-text_w)/2:y={y}:"
             f"enable='between(t,{start:.2f},{end:.2f})'"
         )
@@ -246,17 +260,21 @@ def render_room_28(out: Path) -> None:
     filters = [
         "scale=1920:1080:force_original_aspect_ratio=increase",
         "crop=1920:1080",
-        "zoompan=z='min(1.05,1+0.00006*on)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30",
-        # Soft bottom veil for readable type
-        "drawbox=x=0:y=ih*0.58:w=iw:h=ih*0.42:color=0x080809@0.42:t=fill",
-        dt("へや", 6, 18, 96),
-        dt("heya", 10, 18, 42, "h*0.82"),
-        dt("room", 12, 18, 36, "h*0.88"),
-        dt("へ　や", 20, 32, 84),
-        dt("he　ya", 24, 32, 40, "h*0.82"),
-        dt("や you already have. へ is new.", 34, 50, 36, "h*0.76"),
-        dt("へや", 52, 66, 96),
-        dt("heya", 56, 66, 42, "h*0.82"),
+        # Gentle hold — background stays atmosphere, not spectacle.
+        "zoompan=z='min(1.03,1+0.00004*on)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30",
+        # Beat 1 — word arrives (6–18s)
+        dt("へや", 6, 18, fontsize=156, y="h*0.38"),
+        dt("heya", 10, 18, fontsize=54, y="h*0.52", color=ink_soft, borderw=2),
+        dt("room", 12, 18, fontsize=46, y="h*0.58", color=ink_quiet, borderw=2),
+        # Beat 2 — unpack (20–32s)
+        dt("へ　や", 20, 32, fontsize=132, y="h*0.42"),
+        dt("he　ya", 24, 32, fontsize=50, y="h*0.54", color=ink_soft, borderw=2),
+        # Beat 3 — instructional note, centered and readable (34–50s)
+        dt("や you already have.", 34, 50, fontsize=50, y="h*0.44", color=ink_soft),
+        dt("へ is new.", 38, 50, fontsize=50, y="h*0.52", color=ink_soft),
+        # Beat 4 — return (52–66s)
+        dt("へや", 52, 66, fontsize=156, y="h*0.42"),
+        dt("heya", 56, 66, fontsize=54, y="h*0.56", color=ink_soft, borderw=2),
         "format=yuv420p",
     ]
     vf = ",".join(filters)
