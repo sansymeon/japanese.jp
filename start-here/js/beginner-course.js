@@ -821,7 +821,7 @@
       displayName: "静かな部屋に",
       mode: "study-room",
       romajiDefault: "on",
-      showPuzzle: true,
+      showPuzzle: false,
       showReferenceChart: false,
       encounteredKana: L37,
       newKana: [],
