@@ -1034,14 +1034,16 @@ def beat_lines(beat: dict) -> list[dict]:
             fs = 58 if any(len(ln) > 18 for ln in explicit) else 64
             if len(explicit) == 2:
                 y_positions = ["h*0.40", "h*0.52"]
-            else:
+            elif len(explicit) == 3:
                 y_positions = ["h*0.36", "h*0.44", "h*0.52"]
-            for i, part in enumerate(explicit[:3]):
+            else:
+                y_positions = ["h*0.34", "h*0.41", "h*0.48", "h*0.55"]
+            for i, part in enumerate(explicit[:4]):
                 lines.append(
                     {
                         "text": part,
                         "fontsize": fs,
-                        "y": y_positions[i] if i < len(y_positions) else f"h*{0.36 + i * 0.08:.2f}",
+                        "y": y_positions[i] if i < len(y_positions) else f"h*{0.34 + i * 0.07:.2f}",
                         "color": INK,
                         "box": True,
                     }
