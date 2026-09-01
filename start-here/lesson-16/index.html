@@ -29,9 +29,10 @@
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page" data-beginner-lesson="16">
+<body class="museum-page is-watch-mode" data-beginner-lesson="16">
   <a class="skip-link" href="#lesson">Skip to lesson</a>
 
   <header class="museum-header">
@@ -50,26 +51,6 @@
   </header>
 
   <main>
-    <section class="room-hero" aria-labelledby="lesson-heading">
-      <div class="room-hero-media" aria-hidden="true">
-        <img
-          src="../assets/images/desk.png"
-          alt=""
-          width="1920"
-          height="1080"
-          fetchpriority="high"
-        />
-        <div class="room-hero-veil"></div>
-      </div>
-      <div class="room-hero-inner">
-        <p class="room-hero-brand">Beginner pathway</p>
-        <h1 id="lesson-heading">Room 16 — つくえ</h1>
-        <p class="room-hero-lead">Look into the picture.</p>
-      </div>
-      <a class="room-hero-scroll" href="#lesson" aria-label="Continue into the lesson">
-        <span class="room-hero-scroll-line" aria-hidden="true"></span>
-      </a>
-    </section>
 
     <section class="room-section" id="lesson">
       <div class="room-container">
@@ -79,11 +60,29 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-17/">Continue to Room 17 →</a>
         </nav>
 
+        <header class="room-section-head reveal room-page-head">
+          <p class="room-eyebrow">Beginner pathway</p>
+          <h1 id="lesson-heading">Room 16 — つくえ</h1>
+          <p>Look into the picture.</p>
+        </header>
+
+        <div
+          class="pathway-mode reveal"
+          data-watch-mode
+          role="group"
+          aria-label="Watch &amp; Listen or Read"
+        >
+          <button type="button" data-watch-select="watch" aria-pressed="true">
+            Watch &amp; Listen
+          </button>
+          <button type="button" data-watch-select="read" aria-pressed="false">Read</button>
+        </div>
+
         <div class="beginner-assist reveal">
-          <button type="button" data-study-music hidden>♪ Play room music</button>
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
+        <div data-watch-read hidden>
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Look</p>
           <h2>つくえ</h2>
@@ -100,6 +99,7 @@
           <figure class="jp-block jp-block--solo">
             <p class="jp-kana" lang="ja">つくえ。</p>
             <p class="jp-romaji">tsukue.</p>
+            <p class="jp-en">desk</p>
           </figure>
         </article>
 
@@ -113,7 +113,7 @@
 
         <article class="beginner-exhibit reveal">
           <img
-            src="../../kml/assets/studies/sparkle.png"
+            src="../../kml/assets/studies/sparkle.jpg"
             alt=""
             width="1920"
             height="1080"
@@ -121,17 +121,30 @@
           <figure class="jp-block jp-block--solo">
             <p class="jp-kana" lang="ja">つくえの うえ。</p>
             <p class="jp-romaji">tsukue no ue.</p>
+            <p class="jp-en">on the desk</p>
           </figure>
         </article>
+        </div>
 
-        <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
-          <h2 id="puzzle-heading">Your Hiragana</h2>
-          <p class="kana-puzzle-note">
-            く joins because つくえ needed it. 26 of 46 is not unfinished work.
-          </p>
-          <p class="kana-puzzle-count" data-kana-puzzle-count></p>
-          <div class="kana-puzzle" data-kana-puzzle lang="ja"></div>
-        </section>
+        <div data-watch-watch>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Watch &amp; Listen</p>
+            <h2>つくえ</h2>
+            <p>The same room, performed quietly.</p>
+          </header>
+          <article class="beginner-exhibit pathway-film-exhibit reveal">
+                        <div class="pathway-film">
+              <iframe
+                src="https://www.youtube.com/embed/Z3sbTWtAMng?rel=0&modestbranding=1"
+                title="Room 16 — つくえ — Kanji・Music・Landscape"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </article>
+        </div>
+
 
         <div class="room-prose pathway-door reveal">
           <p>You have stood in front of this before.</p>
@@ -140,7 +153,7 @@
 
         <article class="beginner-exhibit pathway-kml-verse reveal">
           <img
-            src="../../kml/assets/studies/nine.png"
+            src="../../kml/assets/studies/nine.jpg"
             alt=""
             width="1920"
             height="1080"

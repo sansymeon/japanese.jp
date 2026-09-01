@@ -33,9 +33,10 @@
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page" data-beginner-lesson="38">
+<body class="museum-page is-watch-mode" data-beginner-lesson="38">
   <a class="skip-link" href="#lesson">Skip to lesson</a>
 
   <header class="museum-header">
@@ -54,26 +55,6 @@
   </header>
 
   <main>
-    <section class="room-hero" aria-labelledby="lesson-heading">
-      <div class="room-hero-media" aria-hidden="true">
-        <img
-          src="../assets/images/room_3/maria_bows.png"
-          alt=""
-          width="1672"
-          height="941"
-          fetchpriority="high"
-        />
-        <div class="room-hero-veil"></div>
-      </div>
-      <div class="room-hero-inner">
-        <p class="room-hero-brand">Beginner pathway</p>
-        <h1 id="lesson-heading">Room 38 — よろしく</h1>
-        <p class="room-hero-lead">You already know this.</p>
-      </div>
-      <a class="room-hero-scroll" href="#lesson" aria-label="Continue into the lesson">
-        <span class="room-hero-scroll-line" aria-hidden="true"></span>
-      </a>
-    </section>
 
     <section class="room-section" id="lesson">
       <div class="room-container">
@@ -83,11 +64,29 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-39/">Continue to Room 39 →</a>
         </nav>
 
+        <header class="room-section-head reveal room-page-head">
+          <p class="room-eyebrow">Beginner pathway</p>
+          <h1 id="lesson-heading">Room 38 — よろしく</h1>
+          <p>You already know this.</p>
+        </header>
+
+        <div
+          class="pathway-mode reveal"
+          data-watch-mode
+          role="group"
+          aria-label="Watch &amp; Listen or Read"
+        >
+          <button type="button" data-watch-select="watch" aria-pressed="true">
+            Watch &amp; Listen
+          </button>
+          <button type="button" data-watch-select="read" aria-pressed="false">Read</button>
+        </div>
+
         <div class="beginner-assist reveal">
-          <button type="button" data-study-music hidden>♪ Play room music</button>
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
+        <div data-watch-read hidden>
         <header class="room-section-head reveal">
           <p class="room-eyebrow">A word you already say</p>
           <h2>よろしく</h2>
@@ -119,6 +118,26 @@
           <p class="jp-kana" lang="ja">よろしく。</p>
           <p class="jp-romaji">yoroshiku.</p>
         </figure>
+        </div>
+
+        <div data-watch-watch>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Watch &amp; Listen</p>
+            <h2>よろしく</h2>
+            <p>The same room, performed quietly.</p>
+          </header>
+          <article class="beginner-exhibit pathway-film-exhibit reveal">
+                        <div class="pathway-film">
+              <iframe
+                src="https://www.youtube.com/embed/Ay7Wig4Xtbk?rel=0&modestbranding=1"
+                title="Room 38 — よろしく — Kanji・Music・Landscape"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </article>
+        </div>
 
           <div
             data-chat-sensei
@@ -127,15 +146,6 @@
             data-source="start-here"
           ></div>
 
-        <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
-          <h2 id="puzzle-heading">Your Hiragana</h2>
-          <p class="kana-puzzle-note">
-            よ and ろ join because よろしく needed them.
-          </p>
-          <p class="kana-puzzle-count" data-kana-puzzle-count></p>
-          <div class="kana-puzzle" data-kana-puzzle lang="ja"></div>
-          <p class="kana-puzzle-complete">Every box is yours.</p>
-        </section>
 
         <div class="room-forward reveal">
           <div class="room-actions">

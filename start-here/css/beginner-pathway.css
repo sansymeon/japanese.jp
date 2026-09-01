@@ -789,6 +789,178 @@ button.museum-btn {
     );
 }
 
+/* Room pages: learning content → Sensei → Continue (puzzle removed from HTML). */
+.museum-page [data-chat-sensei] + .room-forward {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.museum-page .beginner-after > .room-container > .room-forward {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+/* Start Here: no full-bleed hero — useful content begins under site header. */
+.museum-page[data-beginner-lesson] .room-section#lesson,
+.museum-page[data-beginner-lesson] .room-section#listen-youtube,
+.museum-page[data-beginner-lesson] .room-section.beginner-after {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.museum-page[data-beginner-lesson] .room-page-head {
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.museum-page[data-beginner-lesson] .pathway-nav--top + .room-page-head {
+  margin-top: 0.25rem;
+}
+
+.museum-page[data-beginner-lesson] .room-page-head + .pathway-mode,
+.museum-page[data-beginner-lesson] .room-page-head + .beginner-assist {
+  margin-top: 0;
+}
+
+.museum-page[data-beginner-lesson] .beginner-assist {
+  margin-bottom: 1.25rem;
+}
+
+/* Room 37 prototype: film first, Read reveals written lesson below. */
+[data-beginner-lesson="37"] .room-section#lesson {
+  padding-top: clamp(0.65rem, 1.8vw, 1rem);
+}
+
+[data-beginner-lesson="37"] .room-page-head--stream {
+  margin-bottom: clamp(0.55rem, 1.5vw, 0.85rem);
+}
+
+[data-beginner-lesson="37"] .room-page-id {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+}
+
+[data-beginner-lesson="37"] .room-page-head--stream h1 {
+  margin: 0.2rem 0 0;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  line-height: 1.2;
+}
+
+[data-beginner-lesson="37"] .room-page-lead {
+  margin: 0.35rem 0 0;
+  max-width: 34rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--ink-quiet);
+}
+
+[data-beginner-lesson="37"] .pathway-film-exhibit {
+  margin: 0 0 0.85rem;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control {
+  margin: 0 0 1rem;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control button {
+  min-height: 2.5rem;
+  padding: 0.55rem 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(201, 164, 88, 0.35);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control button:hover,
+[data-beginner-lesson="37"] .pathway-read-control button:focus-visible {
+  color: var(--gold);
+  border-color: rgba(201, 164, 88, 0.55);
+  background: rgba(201, 164, 88, 0.06);
+  outline: none;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control button[aria-expanded="true"] {
+  color: var(--ivory);
+  border-color: rgba(201, 164, 88, 0.45);
+  background: rgba(201, 164, 88, 0.12);
+}
+
+[data-beginner-lesson="37"] [data-read-panel] {
+  margin-top: 0.25rem;
+}
+
+[data-beginner-lesson="37"] .pathway-kml-verse {
+  margin-bottom: 1.5rem;
+}
+
+[data-beginner-lesson="37"] .pathway-kml-verse.beginner-exhibit {
+  margin-bottom: 1.25rem;
+}
+
+[data-beginner-lesson="37"] .pathway-source {
+  margin-top: 1.5rem;
+}
+
+[data-beginner-lesson="37"] .pathway-source .room-section-head {
+  margin-bottom: 0.75rem;
+}
+
+[data-beginner-lesson="37"] .pathway-source .room-prose p + p {
+  margin-top: 0.85rem;
+}
+
+[data-beginner-lesson="37"] [data-chat-sensei] {
+  margin-top: 1.25rem;
+}
+
+[data-beginner-lesson="37"] .room-forward--stream {
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+[data-beginner-lesson="37"] .room-forward--stream .museum-btn--primary {
+  display: inline-flex;
+  min-width: min(100%, 18rem);
+}
+
+[data-beginner-lesson="37"] .pathway-escape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink-quiet);
+}
+
+[data-beginner-lesson="37"] .pathway-escape a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[data-beginner-lesson="37"] .pathway-escape a:hover,
+[data-beginner-lesson="37"] .pathway-escape a:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+[data-beginner-lesson="37"] .pathway-escape-sep {
+  opacity: 0.45;
+}
+
+[data-beginner-lesson="37"] .museum-footer {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+[data-beginner-lesson="37"] .museum-footer-inner {
+  justify-content: center;
+}
+
 /* Room 38: give the completed 46/46 grid a little air.
    The filled chart is the event; do not decorate it. */
 [data-beginner-lesson="38"] .kana-puzzle-section {
@@ -806,6 +978,99 @@ button.museum-btn {
   font-family: var(--font-display);
   font-size: 1.05rem;
   letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+/* Watch & Listen | Read — dual delivery for study rooms. Watch is primary. */
+.pathway-mode {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 0 1.75rem;
+  padding: 0.3rem;
+  max-width: 38rem;
+  border: 1px solid rgba(201, 164, 88, 0.38);
+  border-radius: 2px;
+  background: rgba(8, 7, 6, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(201, 164, 88, 0.08);
+}
+
+.pathway-mode[hidden] {
+  display: none;
+}
+
+.pathway-mode button {
+  flex: 1 1 9.5rem;
+  min-height: 2.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(0.88rem, 1.6vw, 1rem);
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  color: var(--ink-quiet);
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  padding: 0.7rem 1.1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.pathway-mode button + button {
+  box-shadow: inset 1px 0 0 rgba(201, 164, 88, 0.18);
+}
+
+.pathway-mode button:hover,
+.pathway-mode button:focus-visible {
+  color: var(--gold);
+  outline: none;
+  background: rgba(201, 164, 88, 0.06);
+}
+
+.pathway-mode button.is-active,
+.pathway-mode button[aria-pressed="true"] {
+  color: var(--ivory);
+  background: rgba(201, 164, 88, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(201, 164, 88, 0.22);
+}
+
+.pathway-mode button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pathway-watch-pending {
+  margin: 1rem 0 0;
+  max-width: 36rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-quiet);
+}
+
+.pathway-watch-pending code {
+  font-size: 0.84em;
+  color: var(--ink);
+}
+
+body.is-watch-mode .beginner-assist [data-study-music] {
+  display: none;
+}
+
+body.is-watch-youtube .guided-stage[hidden] {
+  display: none !important;
+}
+
+.interlude-static-verses {
+  margin: 0 0 2rem;
+  max-width: 34rem;
+}
+
+.interlude-static-verses .guided-verse {
+  margin: 1.25rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.7;
   color: var(--ink);
 }
 

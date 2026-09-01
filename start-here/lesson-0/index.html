@@ -3,6 +3,7 @@
   Room 0 — The Genkan. URL remains /start-here/lesson-0/.
   Guided-song: JSON in ../data/rooms/0.json conducts images + lyrics.
   Puzzle fills あいうえお only. Scenery kana do not fill.
+  Upload source: exports/start-here-prototypes/room-00-the-genkan.mp4
 -->
 <html lang="en" class="museum-page">
 <head>
@@ -24,11 +25,9 @@
   <link rel="stylesheet" href="../css/beginner-pathway.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/0.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="0">
+<body class="museum-page" data-beginner-lesson="0">
   <a class="skip-link" href="#listen">Skip to Listen & Follow</a>
 
   <header class="museum-header">
@@ -47,79 +46,11 @@
   </header>
 
   <main>
-    <section class="guided-stage" data-guided-song aria-label="The Genkan">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/intro.png"
-            alt=""
-            width="1920"
-            height="1080"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/intro.png"
-            alt=""
-            width="1920"
-            height="1080"
-          />
-        </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
-          <button type="button" class="guided-chrome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>The Genkan</h1>
-          <p class="guided-welcome-lead" data-guided-lead>
-            Welcome to your Japanese journey.
-          </p>
-          <p class="guided-welcome-hint" data-guided-hint>
-            Relax your mouth. Listen first. Then imitate the singer.
-          </p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen & Follow
-          </button>
-          <button type="button" class="guided-welcome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div
-          class="guided-lyric"
-          data-guided-lyric
-          hidden
-          aria-live="polite"
-        >
-          <p class="jp-kana" lang="ja" data-guided-ja></p>
-          <p class="jp-romaji" data-guided-romaji></p>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Song position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
-      </div>
-    </section>
-
+    <!-- Film on YouTube — no local MP3 player. -->
     <section
-      class="room-section beginner-after"
-      id="after"
-      data-guided-after
-      aria-labelledby="puzzle-heading"
+      class="room-section"
+      id="listen-youtube"
+      aria-labelledby="youtube-listen-heading"
     >
       <div class="room-container">
         <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
@@ -128,23 +59,46 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-1/">Continue to Room 1 →</a>
         </nav>
 
-        <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
-          <h2 id="puzzle-heading">Your Hiragana</h2>
-          <p class="kana-puzzle-note">
-            Five pieces, earned. The rest of each phrase can wait — you already have
-            the feeling.
-          </p>
-          <p class="kana-puzzle-count" data-kana-puzzle-count></p>
-          <div class="kana-puzzle" data-kana-puzzle lang="ja"></div>
-        </section>
+        <header class="room-section-head reveal">
+          <p class="room-eyebrow">Listen &amp; Follow</p>
+          <h1 id="youtube-listen-heading">The Genkan</h1>
+          <p>Welcome to your Japanese journey.</p>
+        </header>
+
+        <article class="beginner-exhibit pathway-film-exhibit reveal">
+            <div class="pathway-film">
+              <iframe
+                src="https://www.youtube.com/embed/hdMZBbYnY_U?rel=0&modestbranding=1"
+                title="Room 0 — The Genkan — Kanji・Music・Landscape"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+        </article>
+
+        <p class="room-prose reveal">
+          <a class="museum-btn museum-btn--quiet" href="#after">Continue</a>
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="room-section beginner-after"
+      id="after"
+    >
+      <div class="room-container">
+        <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
+          <a class="pathway-nav-back" href="../">← Start Here</a>
+          <span class="pathway-nav-status" data-room-nav="current">Room 0</span>
+          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-1/">Continue to Room 1 →</a>
+        </nav>
+
 
         <div class="room-forward reveal">
           <p>Next: a slow question, and a yes.</p>
           <div class="room-actions">
             <a class="museum-btn museum-btn--primary" href="../lesson-1/">Continue to Room 1</a>
-            <button type="button" class="museum-btn museum-btn--ghost" data-guided-replay>
-              Listen again
-            </button>
             <a class="museum-btn museum-btn--ghost" href="../">Back to Start Here</a>
             <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
           </div>

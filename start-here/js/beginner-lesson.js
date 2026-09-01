@@ -240,8 +240,28 @@
     });
   }
 
+  function bindStaticVerseToggles() {
+    if (!document.querySelector("[data-static-verse-select]")) return;
+    document.querySelectorAll("[data-static-verse-select]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var view = btn.getAttribute("data-static-verse-select") || "none";
+        document.querySelectorAll("[data-static-verse]").forEach(function (panel) {
+          var match = panel.getAttribute("data-static-verse") === view;
+          panel.hidden = view === "none" ? true : !match;
+        });
+        document.querySelectorAll("[data-static-verse-select]").forEach(function (b) {
+          b.setAttribute(
+            "aria-pressed",
+            b.getAttribute("data-static-verse-select") === view ? "true" : "false"
+          );
+        });
+      });
+    });
+  }
+
   function bindStudyMusic() {
     if (lesson.mode !== "study-room") return;
+    if (String(lesson.watchYoutubeId || "").trim()) return;
     var pool = lesson.atmospherePool;
     var single = lesson.atmosphereAudio;
     if ((!pool || !pool.length) && !single) return;
@@ -314,6 +334,7 @@
   bindToggle();
   bindAudio();
   bindStudyMusic();
+  bindStaticVerseToggles();
   fillNav();
   renderPuzzle();
   renderReference();

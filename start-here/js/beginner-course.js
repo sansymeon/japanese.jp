@@ -6,8 +6,8 @@
  *
  * mode:
  *   "guided-song" — Listen & Follow; JSON scenes follow audio time; no loop
- *   "study-room"  — learner-paced; optional looping atmosphereAudio,
- *                   or atmospherePool (shuffle; no single-file loop)
+ *   "study-room"  — learner-paced; optional looping atmosphereAudio
+ *                   (study rooms without YouTube only)
  *
  * romajiDefault is per room ("on" | "off"). The learner's explicit toggle
  * is stored separately and, once set, overrides the room default.
@@ -34,6 +34,14 @@
  * Room 40 is the hiragana reading epilogue after 46/46. Not a teaching
  * lesson, not an appendix, not a mashup. Hiragana-only song; no new kana.
  * Timed lyrics preserve sung Japanese exactly (みちても). No Room 41.
+ *
+ * YouTube media layer:
+ *   watchYoutubeId — unlisted embed id; sole audiovisual source when set
+ *   watchModes     — dual UI when substantial Read content exists: ["read","watch"]
+ *   watchDefault   — "watch" | "read" (watch is primary when both exist)
+ * Rooms with watchYoutubeId embed YouTube directly in HTML (Room 39 pattern).
+ * No local MP3 player, no atmosphere loop, no external watch link as primary.
+ * See start-here/js/beginner-watch.js for Read / Watch panel toggling.
  *
  * Slice: Rooms 0–40. Opening song order:
  *   0 conversational あいうえお jazz (guided-song)
@@ -98,7 +106,8 @@
  *       Do not show 冬. Do not teach ゆき. Do not review ねむる.
  *       No verse. No doorway. No song.
  *   37 静かな部屋に — recognition; 0 new kana (44/46). Return to the
- *       Rooms 12–13 胃 verse, now readable. Visual: stomach.png.
+ *       Rooms 12–13 胃 verse, now readable. Visual: stomach.jpg.
+ *       Compact Read: one image, one verse, source note. No puzzle.
  *       Exact original verse. No English/romaji under the verse.
  *       No vocabulary breakdown. No 胃 lesson. Doorway to Lesson 2
  *       #kanji-stomach.
@@ -198,6 +207,8 @@
       newKana: L0,
       prev: null,
       next: "1",
+      /* Unlisted YouTube: https://youtu.be/hdMZBbYnY_U */
+      watchYoutubeId: "hdMZBbYnY_U",
     },
     "1": {
       id: "1",
@@ -212,13 +223,16 @@
       newKana: ["は", "す", "か", "し", "た", "の"],
       prev: "0",
       next: "2",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/wMzT4WbGbpY */
+      watchYoutubeId: "wMzT4WbGbpY",
     },
     "2": {
       id: "2",
       roomLabel: "Room 2",
       displayName: "Begin seeing Japanese",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-2.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -226,6 +240,10 @@
       newKana: ["は", "す", "か", "し"],
       prev: "1",
       next: "3",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/bOIWwSUSuVU */
+      watchYoutubeId: "bOIWwSUSuVU",
     },
     "3": {
       id: "3",
@@ -240,13 +258,16 @@
       newKana: [],
       prev: "2",
       next: "4",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/nl8vBOgPLjE */
+      watchYoutubeId: "nl8vBOgPLjE",
     },
     "4": {
       id: "4",
       roomLabel: "Room 4",
       displayName: "Reading names",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-4.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -254,6 +275,10 @@
       newKana: ["な", "ま", "ん", "さ", "こ"],
       prev: "3",
       next: "5",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/YHwmkzt1xzs */
+      watchYoutubeId: "YHwmkzt1xzs",
     },
     "5": {
       id: "5",
@@ -268,13 +293,16 @@
       newKana: [],
       prev: "4",
       next: "6",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/H09lWLQY9Rg */
+      watchYoutubeId: "H09lWLQY9Rg",
     },
     "6": {
       id: "6",
       roomLabel: "Room 6",
       displayName: "This is sushi",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-6.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -282,13 +310,16 @@
       newKana: ["れ"],
       prev: "5",
       next: "7",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/eugosPkh6lw */
+      watchYoutubeId: "eugosPkh6lw",
     },
     "7": {
       id: "7",
       roomLabel: "Room 7",
       displayName: "Four pictures",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -296,13 +327,16 @@
       newKana: ["ほ", "ね", "や", "ぬ"],
       prev: "6",
       next: "8",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/xPnZZiNakEQ */
+      watchYoutubeId: "xPnZZiNakEQ",
     },
     "8": {
       id: "8",
       roomLabel: "Room 8",
       displayName: "これは ねこですか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-8.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -310,13 +344,16 @@
       newKana: [],
       prev: "7",
       next: "9",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/ndd6DTzSArM */
+      watchYoutubeId: "ndd6DTzSArM",
     },
     "9": {
       id: "9",
       roomLabel: "Room 9",
       displayName: "これは なんですか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-9.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -324,13 +361,16 @@
       newKana: [],
       prev: "8",
       next: "10",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/JVDY9WuwVAE */
+      watchYoutubeId: "JVDY9WuwVAE",
     },
     "10": {
       id: "10",
       roomLabel: "Room 10",
       displayName: "ねこが います",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-10.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -338,13 +378,16 @@
       newKana: [],
       prev: "9",
       next: "11",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/uRvdyJLWRus */
+      watchYoutubeId: "uRvdyJLWRus",
     },
     "11": {
       id: "11",
       roomLabel: "Room 11",
       displayName: "いすが あります",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-11.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -352,13 +395,16 @@
       newKana: ["り"],
       prev: "10",
       next: "12",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/O_mGmOI7OxY */
+      watchYoutubeId: "O_mGmOI7OxY",
     },
     "12": {
       id: "12",
       roomLabel: "Room 12",
       displayName: "しずか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -366,13 +412,16 @@
       newKana: [],
       prev: "11",
       next: "13",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/eEYuKSTxEVQ */
+      watchYoutubeId: "eEYuKSTxEVQ",
     },
     "13": {
       id: "13",
       roomLabel: "Room 13",
       displayName: "ひかり",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-8.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -380,13 +429,16 @@
       newKana: ["ひ"],
       prev: "12",
       next: "14",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/fl4Ei1ae0c4 */
+      watchYoutubeId: "fl4Ei1ae0c4",
     },
     "14": {
       id: "14",
       roomLabel: "Room 14",
       displayName: "はしに",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-9.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -394,13 +446,16 @@
       newKana: ["に"],
       prev: "13",
       next: "15",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/JCKDaBA6v4c */
+      watchYoutubeId: "JCKDaBA6v4c",
     },
     "15": {
       id: "15",
       roomLabel: "Room 15",
       displayName: "つりがね",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-6.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -408,13 +463,16 @@
       newKana: ["つ"],
       prev: "14",
       next: "16",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/ehG3GfBtsPM */
+      watchYoutubeId: "ehG3GfBtsPM",
     },
     "16": {
       id: "16",
       roomLabel: "Room 16",
       displayName: "つくえ",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-11.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -422,6 +480,10 @@
       newKana: ["く"],
       prev: "15",
       next: "17",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/Z3sbTWtAMng */
+      watchYoutubeId: "Z3sbTWtAMng",
     },
     "17": {
       id: "17",
@@ -436,6 +498,10 @@
       newKana: [],
       prev: "16",
       next: "18",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/bCEEh4vydVI */
+      watchYoutubeId: "bCEEh4vydVI",
     },
     "18": {
       id: "18",
@@ -450,13 +516,16 @@
       newKana: ["を"],
       prev: "17",
       next: "19",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/Ap9sX9cwa1g */
+      watchYoutubeId: "Ap9sX9cwa1g",
     },
     "19": {
       id: "19",
       roomLabel: "Room 19",
       displayName: "いしを こえ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -464,13 +533,16 @@
       newKana: [],
       prev: "18",
       next: "20",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/OZht_7jxSlg */
+      watchYoutubeId: "OZht_7jxSlg",
     },
     "20": {
       id: "20",
       roomLabel: "Room 20",
       displayName: "かわ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -478,13 +550,16 @@
       newKana: ["わ"],
       prev: "19",
       next: "21",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/QY9dQia1wqM */
+      watchYoutubeId: "QY9dQia1wqM",
     },
     "21": {
       id: "21",
       roomLabel: "Room 21",
       displayName: "おと",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -492,13 +567,16 @@
       newKana: ["と"],
       prev: "20",
       next: "22",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/1dnFc8gnqtk */
+      watchYoutubeId: "1dnFc8gnqtk",
     },
     "22": {
       id: "22",
       roomLabel: "Room 22",
       displayName: "まど",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -506,13 +584,16 @@
       newKana: [],
       prev: "21",
       next: "23",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/XL3GdJsIC70 */
+      watchYoutubeId: "XL3GdJsIC70",
     },
     "23": {
       id: "23",
       roomLabel: "Room 23",
       displayName: "かねひとつ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -520,6 +601,10 @@
       newKana: [],
       prev: "22",
       next: "24",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/bEt2ANdYl6k */
+      watchYoutubeId: "bEt2ANdYl6k",
     },
     "24": {
       id: "24",
@@ -534,6 +619,10 @@
       newKana: ["け", "て"],
       prev: "23",
       next: "25",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/DyrWcHptIck */
+      watchYoutubeId: "DyrWcHptIck",
     },
     "25": {
       id: "25",
@@ -548,13 +637,16 @@
       newKana: [],
       prev: "24",
       next: "26",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/s-MtpLw_Jzo */
+      watchYoutubeId: "s-MtpLw_Jzo",
     },
     "26": {
       id: "26",
       roomLabel: "Room 26",
       displayName: "げんき",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -562,13 +654,16 @@
       newKana: ["き"],
       prev: "25",
       next: "27",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/WB3HRfXg13U */
+      watchYoutubeId: "WB3HRfXg13U",
     },
     "27": {
       id: "27",
       roomLabel: "Room 27",
       displayName: "こんにちは",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -576,13 +671,16 @@
       newKana: ["ち"],
       prev: "26",
       next: "28",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/qjLhfXWJEu0 */
+      watchYoutubeId: "qjLhfXWJEu0",
     },
     "28": {
       id: "28",
       roomLabel: "Room 28",
       displayName: "へや",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -590,13 +688,17 @@
       newKana: ["へ"],
       prev: "27",
       next: "29",
+      /* Prototype: Read page / Watch & Listen film (unlisted YouTube). */
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/EuQffj738xw */
+      watchYoutubeId: "EuQffj738xw",
     },
     "29": {
       id: "29",
       roomLabel: "Room 29",
       displayName: "しあわせ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -604,13 +706,16 @@
       newKana: ["せ"],
       prev: "28",
       next: "30",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/FDaYx57khhM */
+      watchYoutubeId: "FDaYx57khhM",
     },
     "30": {
       id: "30",
       roomLabel: "Room 30",
       displayName: "みず",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -618,13 +723,16 @@
       newKana: ["み"],
       prev: "29",
       next: "31",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/xwAGvYsMre4 */
+      watchYoutubeId: "xwAGvYsMre4",
     },
     "31": {
       id: "31",
       roomLabel: "Room 31",
       displayName: "さくら",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -632,13 +740,16 @@
       newKana: ["ら"],
       prev: "30",
       next: "32",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/74gwg2yCZxU */
+      watchYoutubeId: "74gwg2yCZxU",
     },
     "32": {
       id: "32",
       roomLabel: "Room 32",
       displayName: "そら",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -646,13 +757,16 @@
       newKana: ["そ"],
       prev: "31",
       next: "33",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/LIcZXG1qqv0 */
+      watchYoutubeId: "LIcZXG1qqv0",
     },
     "33": {
       id: "33",
       roomLabel: "Room 33",
       displayName: "くも",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -660,13 +774,16 @@
       newKana: ["も"],
       prev: "32",
       next: "34",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/Oh1aMNPjnYM */
+      watchYoutubeId: "Oh1aMNPjnYM",
     },
     "34": {
       id: "34",
       roomLabel: "Room 34",
       displayName: "ゆめ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -674,13 +791,16 @@
       newKana: ["ゆ", "め"],
       prev: "33",
       next: "35",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/z7R5kUhBxOM */
+      watchYoutubeId: "z7R5kUhBxOM",
     },
     "35": {
       id: "35",
       roomLabel: "Room 35",
       displayName: "ねむる",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -688,13 +808,16 @@
       newKana: ["む", "る"],
       prev: "34",
       next: "36",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/g6OBP7LkSLc */
+      watchYoutubeId: "g6OBP7LkSLc",
     },
     "36": {
       id: "36",
       roomLabel: "Room 36",
       displayName: "ふゆ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -702,27 +825,33 @@
       newKana: ["ふ"],
       prev: "35",
       next: "37",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/9giwZaUPRVU */
+      watchYoutubeId: "9giwZaUPRVU",
     },
     "37": {
       id: "37",
       roomLabel: "Room 37",
       displayName: "静かな部屋に",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
-      showPuzzle: true,
+      showPuzzle: false,
       showReferenceChart: false,
       encounteredKana: L37,
       newKana: [],
       prev: "36",
       next: "38",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/aZWBy2dnvbw */
+      watchYoutubeId: "aZWBy2dnvbw",
     },
     "38": {
       id: "38",
       roomLabel: "Room 38",
       displayName: "よろしく",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -730,6 +859,10 @@
       newKana: ["よ", "ろ"],
       prev: "37",
       next: "39",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/Ay7Wig4Xtbk */
+      watchYoutubeId: "Ay7Wig4Xtbk",
     },
     "39": {
       id: "39",
@@ -757,12 +890,17 @@
       newKana: [],
       prev: "39",
       next: null,
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
+      /* Unlisted YouTube: https://youtu.be/VqCrT25rCl4 */
+      watchYoutubeId: "VqCrT25rCl4",
     },
   };
 
   window.KmlBeginnerCourse = {
     romajiStorageKey: "kml-beginner-romaji",
     musicStorageKey: "kml-beginner-study-music",
+    watchStorageKey: "kml-beginner-watch-mode",
     gojuonColumns: GOJUON_COLUMNS,
     boxCount: 46,
     lessons: lessons,
