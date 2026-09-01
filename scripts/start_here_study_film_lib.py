@@ -289,6 +289,7 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "いし": "stone",
     "あさひ": "morning sun",
     "かわ": "river",
+    "おと": "sound",
 }
 
 # Short picture phrases.
@@ -305,6 +306,8 @@ PHRASE_EXHIBIT_EN: dict[str, str] = {
     "あさひをうつし": "Reflecting the morning sun.",
     "やまの かわ": "mountain river",
     "やまのかわ": "mountain river",
+    "かわの おと": "the sound of the river",
+    "かわのおと": "the sound of the river",
 }
 
 # Solo unpack glosses — keep tiny; do not teach grammar.
