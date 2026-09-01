@@ -91,12 +91,27 @@ def parse_lesson(room_id: int) -> dict:
             exhibit_images.append(src)
         beats.append(beat)
 
-    # Walk direct pedagogical children of .room-container
+    # Walk pedagogical children; unwrap Read-mode panels so dual-mode rooms still parse.
     container = lesson.find(class_="room-container")
     if not container:
         container = lesson
 
+    walk_roots: list[Tag] = []
     for el in container.children:
+        if not isinstance(el, Tag):
+            continue
+        if el.name == "div" and el.has_attr("data-watch-read"):
+            walk_roots.extend(c for c in el.children if isinstance(c, Tag))
+            continue
+        if el.name == "div" and (
+            el.has_attr("data-watch-watch") or el.has_attr("data-watch-mode")
+        ):
+            continue
+        if el.name == "div" and "pathway-mode" in " ".join(el.get("class") or []):
+            continue
+        walk_roots.append(el)
+
+    for el in walk_roots:
         if not isinstance(el, Tag):
             continue
         cls = " ".join(el.get("class") or [])

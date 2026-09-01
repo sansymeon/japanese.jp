@@ -459,6 +459,10 @@
       newKana: ["つ"],
       prev: "14",
       next: "16",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/ehG3GfBtsPM */
+      watchYoutubeId: "ehG3GfBtsPM",
     },
     "16": {
       id: "16",
