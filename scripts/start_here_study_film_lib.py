@@ -294,6 +294,7 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "とおい": "distant",
     "かね": "bell",
     "ひとつ": "one",
+    "げんき": "fine",
 }
 
 # Short picture phrases.
