@@ -597,6 +597,27 @@ def beat_lines(beat: dict) -> list[dict]:
 
     if kind == "exhibit":
         kana = beat.get("kana") or ""
+        word_gloss = word_exhibit_english(kana)
+        if word_gloss and " " not in kana.replace("　", " "):
+            # Single-word exhibits (ひかり。 / あかり。) — stack with room for text boxes.
+            lines.append({"text": kana, "fontsize": 156, "y": "h*0.16", "color": INK})
+            romaji = beat.get("romaji")
+            if romaji:
+                lines.append(
+                    {"text": romaji, "fontsize": 64, "y": "h*0.34", "color": INK_SOFT, "borderw": 2}
+                )
+            lines.append(
+                {
+                    "text": word_gloss,
+                    "fontsize": 58,
+                    "y": "h*0.52",
+                    "color": INK,
+                    "borderw": 3,
+                    "fade": True,
+                    "box": True,
+                }
+            )
+            return lines
         if kana:
             fs = 156 if len(kana) <= 4 else 128 if len(kana) <= 8 else 96
             while fs > 72 and estimate_text_width(kana, fs) > 1500:
@@ -626,8 +647,6 @@ def beat_lines(beat: dict) -> list[dict]:
                 ]
         romaji = beat.get("romaji")
         romaji_y = "h*0.48" if len(lines) > 1 else "h*0.40"
-        if (kana or "").replace("。", "").strip() == "ひかり" and len(lines) == 1:
-            romaji_y = "h*0.50"
         if romaji:
             lines.append(
                 {"text": romaji, "fontsize": 64, "y": romaji_y, "color": INK_SOFT, "borderw": 2}
@@ -645,8 +664,6 @@ def beat_lines(beat: dict) -> list[dict]:
         )
         note = beat.get("en") if (beat.get("en") or "").startswith("New:") else None
         gloss_y = "h*0.60" if len([ln for ln in lines if "h*0.34" in str(ln.get("y"))]) else "h*0.54"
-        if (kana or "").replace("。", "").strip() == "ひかり" and len(lines) == 1:
-            gloss_y = "h*0.72"
         if gloss:
             lines.append(
                 {
