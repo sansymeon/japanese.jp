@@ -400,7 +400,31 @@ def duration(path: Path) -> float:
     return float(out)
 
 
+def normalize_film_text(text: str) -> str:
+    """Latin punctuation that draws safely with the CJK film font.
+
+    Curly quotes render overly wide; ASCII apostrophe breaks ffmpeg
+    drawtext single-quoting. Prefer a narrow modifier apostrophe.
+    """
+    return (
+        (text or "")
+        .replace("\u2019", "\u02bc")
+        .replace("\u2018", "\u02bc")
+        .replace("'", "\u02bc")
+        .replace("\u201c", '"')
+        .replace("\u201d", '"')
+        .replace("\u2014", " - ")
+        .replace("\u2013", "-")
+    )
+
+
+def display_vocab_kana(kana: str) -> str:
+    """Vocabulary overlays omit the trailing Japanese period."""
+    return (kana or "").rstrip("。．")
+
+
 def escape_drawtext(text: str) -> str:
+    text = normalize_film_text(text)
     return (
         text.replace("\\", "\\\\")
         .replace(":", "\\:")
@@ -671,10 +695,11 @@ def beat_lines(beat: dict) -> list[dict]:
 
     if kind == "exhibit":
         kana = beat.get("kana") or ""
+        shown = display_vocab_kana(kana)
         word_gloss = word_exhibit_english(kana)
         if word_gloss and " " not in kana.replace("　", " "):
             # Single-word exhibits (ひかり。 / あかり。) — stack with room for text boxes.
-            lines.append({"text": kana, "fontsize": 156, "y": "h*0.16", "color": INK})
+            lines.append({"text": shown, "fontsize": 156, "y": "h*0.16", "color": INK})
             romaji = beat.get("romaji")
             if romaji:
                 lines.append(
@@ -692,32 +717,32 @@ def beat_lines(beat: dict) -> list[dict]:
                 }
             )
             return lines
-        if kana:
-            fs = 156 if len(kana) <= 4 else 128 if len(kana) <= 8 else 96
-            while fs > 72 and estimate_text_width(kana, fs) > 1500:
+        if shown:
+            fs = 156 if len(shown) <= 4 else 128 if len(shown) <= 8 else 96
+            while fs > 72 and estimate_text_width(shown, fs) > 1500:
                 fs -= 12
-            if " " in kana and estimate_text_width(kana, fs) > 1200:
-                parts = wrap_instruction_text(kana, fontsize=fs, max_width=1200, max_lines=2)
+            if " " in shown and estimate_text_width(shown, fs) > 1200:
+                parts = wrap_instruction_text(shown, fontsize=fs, max_width=1200, max_lines=2)
                 if len(parts) > 1:
                     lines.append({"text": parts[0], "fontsize": fs, "y": "h*0.22", "color": INK})
                     lines.append({"text": parts[1], "fontsize": fs, "y": "h*0.34", "color": INK})
                 else:
-                    lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
+                    lines.append({"text": shown, "fontsize": fs, "y": "h*0.28", "color": INK})
             else:
-                lines.append({"text": kana, "fontsize": fs, "y": "h*0.28", "color": INK})
+                lines.append({"text": shown, "fontsize": fs, "y": "h*0.28", "color": INK})
         # Long が います / が あります sentences read better on two lines.
-        ga_verb = "が います" if "が います" in kana else "が あります" if "が あります" in kana else None
+        ga_verb = "が います" if "が います" in shown else "が あります" if "が あります" in shown else None
         if (
             ga_verb
             and len(lines) == 1
-            and estimate_text_width(kana, int(lines[0].get("fontsize") or fs)) > 1100
+            and estimate_text_width(shown, int(lines[0].get("fontsize") or fs)) > 1100
         ):
-            m = re.match(r"(.+が)\s*(います[。]?|あります[。]?)", kana)
+            m = re.match(r"(.+が)\s*(います[。]?|あります[。]?)", shown)
             if m:
                 fs = int(lines[0]["fontsize"])
                 lines = [
                     {"text": m.group(1), "fontsize": fs, "y": "h*0.22", "color": INK},
-                    {"text": m.group(2), "fontsize": fs, "y": "h*0.34", "color": INK},
+                    {"text": display_vocab_kana(m.group(2)), "fontsize": fs, "y": "h*0.34", "color": INK},
                 ]
         romaji = beat.get("romaji")
         romaji_y = "h*0.48" if len(lines) > 1 else "h*0.40"
@@ -864,7 +889,7 @@ def beat_lines(beat: dict) -> list[dict]:
                         }
                     )
     elif kind == "unpack":
-        kana = beat.get("kana") or ""
+        kana = display_vocab_kana(beat.get("kana") or "")
         if kana:
             lines.append({"text": kana, "fontsize": 156, "y": "h*0.30", "color": INK})
         romaji = beat.get("romaji")
@@ -872,7 +897,7 @@ def beat_lines(beat: dict) -> list[dict]:
             lines.append(
                 {"text": romaji, "fontsize": 58, "y": "h*0.46", "color": INK_SOFT, "borderw": 2}
             )
-        en = beat.get("en") or unpack_english(kana)
+        en = beat.get("en") or unpack_english(beat.get("kana") or "")
         if en:
             lines.append(
                 {
@@ -886,7 +911,7 @@ def beat_lines(beat: dict) -> list[dict]:
                 }
             )
     elif kind == "kana_return":
-        kana = beat.get("kana") or ""
+        kana = display_vocab_kana(beat.get("kana") or "")
         romaji = beat.get("romaji")
         en = beat.get("en") or ""
         if kana:
@@ -978,7 +1003,7 @@ def beat_lines(beat: dict) -> list[dict]:
             lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.40", "color": INK, "box": True})
             lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK, "box": True})
     elif kind in {"prose", "puzzle_heading", "puzzle_note"}:
-        text = beat.get("text") or ""
+        text = normalize_film_text(beat.get("text") or "")
         if kind == "puzzle_note":
             text = puzzle_note_for_film(text)
         if text:
