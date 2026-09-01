@@ -279,16 +279,18 @@ SHIZUKA_NA_EN: dict[str, str] = {
     "ひかり": "A quiet light.",
 }
 
-# Single-word picture exhibits: ひかり。 / あかり。 / はし。 / つりがね。 / つくえ。
+# Single-word picture exhibits: ひかり。 / あかり。 / はし。 / つりがね。 / つくえ。 / いし。 / あさひ。
 WORD_EXHIBIT_EN: dict[str, str] = {
     "ひかり": "light",
     "あかり": "lamp",
     "はし": "bridge",
     "つりがね": "Temple Bell",
     "つくえ": "desk",
+    "いし": "stone",
+    "あさひ": "morning sun",
 }
 
-# Short picture phrases (Room 14 bridge sequence, Room 16 desk, etc.).
+# Short picture phrases (Room 14 bridge, Room 16 desk, Room 19 stones / morning sun).
 PHRASE_EXHIBIT_EN: dict[str, str] = {
     "ぬれた はし": "a wet bridge",
     "ぬれたはし": "a wet bridge",
@@ -296,6 +298,10 @@ PHRASE_EXHIBIT_EN: dict[str, str] = {
     "ぬれたはしに": "on the wet bridge",
     "つくえの うえ": "on the desk",
     "つくえのうえ": "on the desk",
+    "いしを こえ": "over the stones",
+    "いしをこえ": "over the stones",
+    "あさひを うつし": "Reflecting the morning sun.",
+    "あさひをうつし": "Reflecting the morning sun.",
 }
 
 # Solo unpack glosses — keep tiny; do not teach grammar.
@@ -444,17 +450,29 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return 0.65
     if kind == "kana_return" and kana.strip() in {"なん", "います", "あります"}:
         return 0.38
+    if kind == "kana_return" and (
+        phrase_exhibit_english(kana) or word_exhibit_english(kana) or (beat.get("en") or "").strip()
+    ):
+        return 0.55
     if kind == "unpack" and len(kana_compact) <= 4:
         return 0.42
     if kind == "prose" and not text_has_kana(beat.get("text") or ""):
-        return 0.35
+        text = beat.get("text") or ""
+        # Longer door / recognition copy needs a little more air than a short cue.
+        return 0.7 if len(text) > 80 else 0.35
     if kind == "prose" and text_mentions_new_kana(beat.get("text") or "", new_kana):
         return 0.45
     if kind == "prose" and text_has_kana(beat.get("text") or ""):
-        return 0.45
+        text = beat.get("text") or ""
+        # Room 19 を recognition beat — keep readable after the faster track.
+        return 0.9 if len(text) > 80 else 0.45
     if kind == "exhibit" and word_exhibit_english(kana):
         return 0.45
     if kind == "exhibit" and phrase_exhibit_english(kana):
+        return 0.55
+    if kind == "exhibit" and (beat.get("en") or "").strip() and " " not in kana.replace("　", " "):
+        return 0.45
+    if kind == "exhibit" and (beat.get("en") or "").strip():
         return 0.55
     if kind == "exhibit" and kana.strip() == "しずか":
         return 0.45
@@ -897,15 +915,15 @@ def beat_lines(beat: dict) -> list[dict]:
                             }
                         )
                     if en:
-                        gloss = en[:1].upper() + en[1:] if en else en
                         lines.append(
                             {
-                                "text": gloss,
+                                "text": en,
                                 "fontsize": 58,
                                 "y": "h*0.74",
                                 "color": INK,
                                 "borderw": 3,
                                 "fade": True,
+                                "box": True,
                             }
                         )
                     return lines
@@ -915,10 +933,9 @@ def beat_lines(beat: dict) -> list[dict]:
                 {"text": romaji, "fontsize": 64, "y": "h*0.56", "color": INK_SOFT, "borderw": 2}
             )
         if en:
-            gloss = en[:1].upper() + en[1:] if en else en
             lines.append(
                 {
-                    "text": gloss,
+                    "text": en,
                     "fontsize": 64,
                     "y": "h*0.70",
                     "color": INK,
