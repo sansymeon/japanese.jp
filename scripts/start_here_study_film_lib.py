@@ -624,6 +624,8 @@ def beat_lines(beat: dict) -> list[dict]:
                 ]
         romaji = beat.get("romaji")
         romaji_y = "h*0.48" if len(lines) > 1 else "h*0.40"
+        if (kana or "").replace("。", "").strip() == "ひかり" and len(lines) == 1:
+            romaji_y = "h*0.50"
         if romaji:
             lines.append(
                 {"text": romaji, "fontsize": 64, "y": romaji_y, "color": INK_SOFT, "borderw": 2}
@@ -641,6 +643,8 @@ def beat_lines(beat: dict) -> list[dict]:
         )
         note = beat.get("en") if (beat.get("en") or "").startswith("New:") else None
         gloss_y = "h*0.60" if len([ln for ln in lines if "h*0.34" in str(ln.get("y"))]) else "h*0.54"
+        if (kana or "").replace("。", "").strip() == "ひかり" and len(lines) == 1:
+            gloss_y = "h*0.64"
         if gloss:
             lines.append(
                 {
