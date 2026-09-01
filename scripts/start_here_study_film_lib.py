@@ -465,9 +465,9 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return PACE["pause"]
     if kind == "verse":
         verse_text = (beat.get("text") or "").replace(" ", "").replace("　", "")
-        # Room 15 temple-bell verse: keep readable, but do not use the long quiet hold.
+        # Two-line temple-bell verse — enough time to read, without the longest quiet hold.
         if "つりがね" in verse_text:
-            return 0.55
+            return 1.25
         if "しずかなへや" in verse_text or "ぬれたはしに" in verse_text:
             return 1.35
         if "しずかな" in verse_text:
@@ -505,6 +505,14 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
     chart = [b for b in beats if b.get("kind") in CHART_KINDS and b.get("kind") != "puzzle_count"]
 
     lesson_weights = [pace_weight(b, new_kana) for b in lesson]
+    # Door cue already points at the verse — keep only a short breath before it.
+    for i, b in enumerate(lesson):
+        if (
+            b.get("kind") == "pause"
+            and i + 1 < len(lesson)
+            and lesson[i + 1].get("kind") == "verse"
+        ):
+            lesson_weights[i] = 0.12
     total_w = sum(lesson_weights) or 1.0
     nan_q_count = sum(
         1
