@@ -303,6 +303,7 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "くも": "cloud",
     "ゆめ": "dream",
     "ねむる": "sleep",
+    "ふゆ": "winter",
 }
 
 # Short picture phrases.
