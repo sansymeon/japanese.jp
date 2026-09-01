@@ -525,6 +525,10 @@
       newKana: [],
       prev: "18",
       next: "20",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/OZht_7jxSlg */
+      watchYoutubeId: "OZht_7jxSlg",
     },
     "20": {
       id: "20",
