@@ -543,6 +543,10 @@
       newKana: ["わ"],
       prev: "19",
       next: "21",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/QY9dQia1wqM */
+      watchYoutubeId: "QY9dQia1wqM",
     },
     "21": {
       id: "21",
