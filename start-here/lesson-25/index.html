@@ -33,6 +33,7 @@
   <script src="../data/rooms/25.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
   <script src="../js/beginner-guided-song.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page beginner-guided-page" data-beginner-lesson="25">
@@ -54,6 +55,37 @@
   </header>
 
   <main>
+    <!-- YouTube primary path (shown when watchYoutubeId is set). -->
+    <section
+      class="room-section"
+      id="listen-youtube"
+      data-watch-youtube-primary
+      hidden
+      aria-labelledby="youtube-listen-heading"
+    >
+      <div class="room-container">
+        <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
+          <a class="pathway-nav-back" data-room-nav="prev" href="../lesson-24/">← Room 24</a>
+          <span class="pathway-nav-status" data-room-nav="current">Room 25</span>
+          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-26/">Continue to Room 26 →</a>
+        </nav>
+
+        <header class="room-section-head reveal">
+          <p class="room-eyebrow">Listen</p>
+          <h1 id="youtube-listen-heading">山の川</h1>
+          <p>Listen.</p>
+        </header>
+
+        <article class="beginner-exhibit pathway-film-exhibit reveal">
+          <div data-watch-film></div>
+        </article>
+
+        <p class="room-prose reveal">
+          <a class="museum-btn museum-btn--quiet" href="#after">Continue</a>
+        </p>
+      </div>
+    </section>
+
     <section class="guided-stage" data-guided-song aria-label="山の川">
       <div class="guided-stage-frame">
         <div class="guided-stage-layers">

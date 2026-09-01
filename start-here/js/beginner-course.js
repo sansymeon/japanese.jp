@@ -219,6 +219,8 @@
       newKana: ["は", "す", "か", "し", "た", "の"],
       prev: "0",
       next: "2",
+      /* Unlisted YouTube: https://youtu.be/wMzT4WbGbpY */
+      watchYoutubeId: "wMzT4WbGbpY",
     },
     "2": {
       id: "2",
@@ -251,6 +253,8 @@
       newKana: [],
       prev: "2",
       next: "4",
+      /* Unlisted YouTube: https://youtu.be/nl8vBOgPLjE */
+      watchYoutubeId: "nl8vBOgPLjE",
     },
     "4": {
       id: "4",
@@ -283,6 +287,8 @@
       newKana: [],
       prev: "4",
       next: "6",
+      /* Unlisted YouTube: https://youtu.be/H09lWLQY9Rg */
+      watchYoutubeId: "H09lWLQY9Rg",
     },
     "6": {
       id: "6",
@@ -495,8 +501,8 @@
       newKana: [],
       prev: "16",
       next: "18",
-      /* Unlisted YouTube: https://youtu.be/lbWTROa_PN8 */
-      watchYoutubeId: "lbWTROa_PN8",
+      /* Unlisted YouTube: https://youtu.be/bCEEh4vydVI */
+      watchYoutubeId: "bCEEh4vydVI",
     },
     "18": {
       id: "18",
@@ -511,6 +517,8 @@
       newKana: ["を"],
       prev: "17",
       next: "19",
+      /* Unlisted YouTube: https://youtu.be/Ap9sX9cwa1g */
+      watchYoutubeId: "Ap9sX9cwa1g",
     },
     "19": {
       id: "19",
@@ -615,6 +623,8 @@
       newKana: ["け", "て"],
       prev: "23",
       next: "25",
+      /* Unlisted YouTube: https://youtu.be/DyrWcHptIck */
+      watchYoutubeId: "DyrWcHptIck",
     },
     "25": {
       id: "25",
@@ -629,6 +639,8 @@
       newKana: [],
       prev: "24",
       next: "26",
+      /* Unlisted YouTube: https://youtu.be/s-MtpLw_Jzo */
+      watchYoutubeId: "s-MtpLw_Jzo",
     },
     "26": {
       id: "26",
