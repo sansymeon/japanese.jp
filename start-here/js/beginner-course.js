@@ -39,8 +39,9 @@
  *   watchYoutubeId — unlisted embed id; sole audiovisual source when set
  *   watchModes     — study-room dual UI: ["read","watch"]
  *   watchDefault   — "read" | "watch"
- * Rooms with watchYoutubeId do not serve film audio from Netlify (no local
- * MP3 player, no atmosphere loop). See start-here/js/beginner-watch.js.
+ * Rooms with watchYoutubeId embed YouTube directly in HTML (Room 39 pattern).
+ * No local MP3 player, no atmosphere loop, no external watch link as primary.
+ * See start-here/js/beginner-watch.js for Read / Watch panel toggling.
  *
  * Slice: Rooms 0–40. Opening song order:
  *   0 conversational あいうえお jazz (guided-song)
