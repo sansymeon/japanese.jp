@@ -33,7 +33,7 @@ SKIP_ROOMS: dict[int, str] = {
     5: "guided-song",
     17: "guided-song interlude — already rendered (hiragana captions)",
     18: "guided-song — lyrics take priority during sung sections",
-    24: "guided-song landscape song",
+    24: "guided-song — after-section recap film rendered on request",
     25: "guided-song listen-only interlude — painting crossfade film (Room 17 pattern)",
     28: "approved prototype — already rendered",
     39: "curtain-call YouTube film — existing embed, not a study-room lesson",
@@ -46,12 +46,13 @@ def main() -> int:
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
 
     targets = [int(x) for x in sys.argv[1:]] if len(sys.argv) > 1 else STUDY_ROOMS
+    explicit = {str(x) for x in sys.argv[1:]}
     rendered: list[dict] = []
     failed: list[dict] = []
     skipped: list[dict] = [{"room": k, "reason": v} for k, v in SKIP_ROOMS.items()]
 
     for room_id in targets:
-        if room_id in SKIP_ROOMS and room_id not in sys.argv[1:]:
+        if room_id in SKIP_ROOMS and str(room_id) not in explicit:
             continue
         print(f"\n=== Room {room_id} ===", flush=True)
         try:

@@ -74,13 +74,17 @@ def parse_lesson(room_id: int) -> dict:
     soup = BeautifulSoup(raw, "html.parser")
     lesson = soup.find("section", id="lesson")
     if not lesson:
-        raise ValueError(f"Room {room_id}: no #lesson section")
+        lesson = soup.find("section", id="after")
+    if not lesson:
+        raise ValueError(f"Room {room_id}: no #lesson or #after section")
 
     beats: list[dict] = []
     review_flags: list[str] = []
     exhibit_images: list[str] = []
 
     hero = soup.select_one(".room-hero-media img")
+    if not hero or not hero.get("src"):
+        hero = soup.select_one(".guided-stage-layers img, .guided-layer")
     hero_src = hero["src"] if hero and hero.get("src") else None
     default_image = resolve_image(hero_src) if hero_src else ROOT / "kml/assets/studies/room.png"
 
@@ -176,17 +180,44 @@ def parse_lesson(room_id: int) -> dict:
             )
             continue
 
+        if el.name == "figure" and "pathway-verse" in cls:
+            verse_el = el.select_one(".jp-verse")
+            img = el.find("img")
+            img_src = img["src"] if img and img.get("src") else None
+            if verse_el:
+                add_beat(
+                    {
+                        "kind": "verse",
+                        "text": _hiragana_from_verse(verse_el),
+                        "image": img_src,
+                    }
+                )
+            continue
+
         if el.name == "figure" and "jp-block" in cls:
             kana = _text(el.select_one(".jp-kana"))
             if kana:
-                add_beat(
-                    {
-                        "kind": "kana_return",
-                        "kana": kana,
-                        "romaji": _text(el.select_one(".jp-romaji")),
-                        "en": _text(el.select_one(".jp-en")),
-                    }
-                )
+                en = _text(el.select_one(".jp-en"))
+                romaji = _text(el.select_one(".jp-romaji"))
+                if room_id == 24 and en and "jp-unpack" not in cls:
+                    add_beat(
+                        {
+                            "kind": "exhibit",
+                            "kana": kana,
+                            "romaji": romaji,
+                            "en": en,
+                            "image": hero_src,
+                        }
+                    )
+                else:
+                    add_beat(
+                        {
+                            "kind": "kana_return",
+                            "kana": kana,
+                            "romaji": romaji,
+                            "en": en,
+                        }
+                    )
             continue
 
         if el.name == "div" and "room-prose" in cls:

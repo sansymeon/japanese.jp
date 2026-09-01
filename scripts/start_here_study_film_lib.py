@@ -292,6 +292,8 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "おと": "sound",
     "まど": "window",
     "とおい": "distant",
+    "かね": "bell",
+    "ひとつ": "one",
 }
 
 # Short picture phrases.
@@ -312,6 +314,11 @@ PHRASE_EXHIBIT_EN: dict[str, str] = {
     "かわのおと": "the sound of the river",
     "とおい ひかり": "distant light",
     "とおいひかり": "distant light",
+    "たけのおと": "the sound of bamboo",
+    "たけの おと": "the sound of bamboo",
+    "やまのこえ": "the voice of the mountain",
+    "やまの こえ": "the voice of the mountain",
+    "はてまで": "to the horizon",
 }
 
 # Solo unpack glosses — keep tiny; do not teach grammar.
