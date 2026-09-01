@@ -432,6 +432,8 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
     if kind == "pause":
         return PACE["pause"]
     if kind == "verse":
+        if "しずかな" in (beat.get("text") or "").replace(" ", "").replace("　", ""):
+            return 1.35
         return 0.75
     if kind in {"exhibit", "reply", "unpack", "kana_return"}:
         return PACE["new_kana"] if text_mentions_new_kana(
