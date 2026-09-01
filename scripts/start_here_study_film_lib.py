@@ -290,6 +290,8 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "あさひ": "morning sun",
     "かわ": "river",
     "おと": "sound",
+    "まど": "window",
+    "とおい": "distant",
 }
 
 # Short picture phrases.
@@ -308,6 +310,8 @@ PHRASE_EXHIBIT_EN: dict[str, str] = {
     "やまのかわ": "mountain river",
     "かわの おと": "the sound of the river",
     "かわのおと": "the sound of the river",
+    "とおい ひかり": "distant light",
+    "とおいひかり": "distant light",
 }
 
 # Solo unpack glosses — keep tiny; do not teach grammar.
@@ -368,8 +372,9 @@ def reply_desu_english(kana: str) -> str | None:
 
 def puzzle_note_for_film(text: str) -> str:
     """Drop progress counts from puzzle notes — the chart is enough."""
-    cleaned = re.sub(r"\d+ of 46 is not unfinished work\.?\s*", "", text or "").strip()
-    cleaned = re.sub(r"\d+ of 46 is not unfinished work —\s*", "", cleaned).strip()
+    cleaned = re.sub(r"\d+ of 46 is not unfinished work(?:\.|[ —-]\s*)?", "", text or "").strip()
+    cleaned = re.sub(r"\s*[—-]\s*", " ", cleaned).strip()
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
     cleaned = re.sub(r"(?<=\. )([a-z])", lambda m: m.group(1).upper(), cleaned)
     return cleaned
 
@@ -427,6 +432,11 @@ def normalize_film_text(text: str) -> str:
 def display_vocab_kana(kana: str) -> str:
     """Vocabulary overlays omit the trailing Japanese period."""
     return (kana or "").rstrip("。．")
+
+
+def display_vocab_romaji(romaji: str) -> str:
+    """Vocabulary romaji overlays omit the trailing Latin period."""
+    return (romaji or "").rstrip(".")
 
 
 def escape_drawtext(text: str) -> str:
@@ -706,7 +716,7 @@ def beat_lines(beat: dict) -> list[dict]:
         if word_gloss and " " not in kana.replace("　", " "):
             # Single-word exhibits (ひかり。 / あかり。) — stack with room for text boxes.
             lines.append({"text": shown, "fontsize": 156, "y": "h*0.16", "color": INK})
-            romaji = beat.get("romaji")
+            romaji = display_vocab_romaji(beat.get("romaji") or "")
             if romaji:
                 lines.append(
                     {"text": romaji, "fontsize": 64, "y": "h*0.34", "color": INK_SOFT, "borderw": 2}
@@ -750,7 +760,7 @@ def beat_lines(beat: dict) -> list[dict]:
                     {"text": m.group(1), "fontsize": fs, "y": "h*0.22", "color": INK},
                     {"text": display_vocab_kana(m.group(2)), "fontsize": fs, "y": "h*0.34", "color": INK},
                 ]
-        romaji = beat.get("romaji")
+        romaji = display_vocab_romaji(beat.get("romaji") or "")
         romaji_y = "h*0.48" if len(lines) > 1 else "h*0.40"
         if romaji:
             lines.append(
@@ -860,7 +870,7 @@ def beat_lines(beat: dict) -> list[dict]:
                         "fade": True,
                     }
                 )
-                romaji = beat.get("romaji")
+                romaji = display_vocab_romaji(beat.get("romaji") or "")
                 if romaji:
                     lines.append(
                         {
@@ -883,7 +893,7 @@ def beat_lines(beat: dict) -> list[dict]:
                 )
             elif kana:
                 lines.append({"text": kana, "fontsize": 128, "y": "h*0.36", "color": INK})
-                romaji = beat.get("romaji")
+                romaji = display_vocab_romaji(beat.get("romaji") or "")
                 if romaji:
                     lines.append(
                         {
@@ -898,7 +908,7 @@ def beat_lines(beat: dict) -> list[dict]:
         kana = display_vocab_kana(beat.get("kana") or "")
         if kana:
             lines.append({"text": kana, "fontsize": 156, "y": "h*0.30", "color": INK})
-        romaji = beat.get("romaji")
+        romaji = display_vocab_romaji(beat.get("romaji") or "")
         if romaji:
             lines.append(
                 {"text": romaji, "fontsize": 58, "y": "h*0.46", "color": INK_SOFT, "borderw": 2}
@@ -918,7 +928,7 @@ def beat_lines(beat: dict) -> list[dict]:
             )
     elif kind == "kana_return":
         kana = display_vocab_kana(beat.get("kana") or "")
-        romaji = beat.get("romaji")
+        romaji = display_vocab_romaji(beat.get("romaji") or "")
         en = beat.get("en") or ""
         if kana:
             # Scale long returns down; prefer a two-line break on spaces.
