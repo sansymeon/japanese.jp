@@ -260,6 +260,12 @@ def parse_lesson(room_id: int) -> dict:
             reordered.insert(idx, prose_beat)
         final = reordered
 
+    if room_id == 12:
+        chart_kinds = {"puzzle_heading", "puzzle_note", "grid"}
+        chart_beats = [b for b in final if b.get("kind") in chart_kinds]
+        body = [b for b in final if b.get("kind") not in chart_kinds]
+        final = body + chart_beats
+
     if exhibit_images:
         default_image = resolve_image(exhibit_images[0])
     elif hero_src:

@@ -271,6 +271,22 @@ def ga_arimasu_ka_english(kana: str) -> str | None:
     return f"Is there a {en_noun}?" if en_noun else None
 
 
+# しずかな やま / ほし / あかり
+SHIZUKA_NA_EN: dict[str, str] = {
+    "やま": "A quiet mountain.",
+    "ほし": "Quiet stars.",
+    "あかり": "A quiet light.",
+}
+
+
+def shizuka_na_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    m = re.match(r"しずかな\s*(.+)", cleaned)
+    if not m:
+        return None
+    return SHIZUKA_NA_EN.get(m.group(1).strip())
+
+
 def kore_wa_english(kana: str) -> str | None:
     cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
     if re.search(r"これは\s*なん\s*ですか", cleaned):
@@ -391,12 +407,18 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return 0.35
     if kind == "prose" and text_mentions_new_kana(beat.get("text") or "", new_kana):
         return 0.45
+    if kind == "prose" and text_has_kana(beat.get("text") or ""):
+        return 0.45
+    if kind == "exhibit" and kana.strip() == "しずか":
+        return 0.45
+    if kind == "exhibit" and "しずかな" in kana:
+        return 0.55
     if kind == "grid":
         return PACE["grid"]
     if kind == "pause":
         return PACE["pause"]
     if kind == "verse":
-        return PACE["verse"]
+        return 0.75
     if kind in {"exhibit", "reply", "unpack", "kana_return"}:
         return PACE["new_kana"] if text_mentions_new_kana(
             beat.get("kana") or "", new_kana
@@ -448,9 +470,16 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
         if b.get("kind") == "exhibit"
         and "があります" in (b.get("kana") or "").replace(" ", "").replace("　", "")
     )
+    shizuka_count = sum(
+        1
+        for b in lesson
+        if b.get("kind") == "exhibit" and "しずか" in (b.get("kana") or "")
+    )
     if content_seconds is None:
         sec_per_weight = (
-            14.0 if nan_q_count >= 3 or imasu_count >= 2 or arimasu_count >= 2 else LESSON_SECONDS_PER_WEIGHT
+            14.0
+            if nan_q_count >= 3 or imasu_count >= 2 or arimasu_count >= 2 or shizuka_count >= 3
+            else LESSON_SECONDS_PER_WEIGHT
         )
         content_seconds = total_w * sec_per_weight
         content_seconds = max(45.0, min(content_seconds, 220.0))
@@ -579,6 +608,7 @@ def beat_lines(beat: dict) -> list[dict]:
         # Question/statement English — fades in/out on each picture.
         gloss = (
             kore_wa_english(kana)
+            or shizuka_na_english(kana)
             or ga_imasu_ka_english(kana)
             or ga_imasu_english(kana)
             or ga_arimasu_ka_english(kana)
@@ -810,11 +840,14 @@ def beat_lines(beat: dict) -> list[dict]:
                 }
             )
     elif kind == "verse":
-        text = beat.get("text") or ""
-        # Multi-line verse: show as one centered block (smaller if long)
+        text = (beat.get("text") or "").replace("\n", " ")
         fs = 72 if len(text) <= 28 else 58
-        y = "h*0.44" if "\n" not in text else "h*0.40"
-        lines.append({"text": text.replace("\n", " "), "fontsize": fs, "y": y, "color": INK})
+        wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1500, max_lines=2)
+        if len(wrapped) == 1:
+            lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK, "box": True})
+        else:
+            lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.40", "color": INK, "box": True})
+            lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK, "box": True})
     elif kind in {"prose", "puzzle_heading", "puzzle_note"}:
         text = beat.get("text") or ""
         if kind == "puzzle_note":
@@ -963,6 +996,18 @@ FFMPEG_PRESET = "fast"
 FFMPEG_CRF = "19"
 
 
+def resolve_chart_background(scheduled: list[dict], default_image: Path) -> Path:
+    """Image under the kana chart — prefer the quiet-light exhibit when present."""
+    grid_idx = next((i for i, b in enumerate(scheduled) if b.get("kind") == "grid"), len(scheduled))
+    for b in reversed(scheduled[:grid_idx]):
+        if b.get("kind") == "exhibit" and "あかり" in (b.get("kana") or ""):
+            return resolve_beat_image(b, default_image)
+    for b in reversed(scheduled[:grid_idx]):
+        if b.get("kind") == "exhibit" and b.get("image"):
+            return resolve_beat_image(b, default_image)
+    return default_image
+
+
 def resolve_beat_image(beat: dict, default_image: Path) -> Path:
     raw = beat.get("image")
     if raw:
@@ -1085,6 +1130,9 @@ def render_study_room_film(
     review_flags.append("batch_static_background")
     review_flags.append(f"grid_cap ({GRID_DURATION:.0f}s)")
 
+    chart_bg = resolve_chart_background(scheduled, default_image)
+    grid_beat = next((b for b in scheduled if b.get("kind") == "grid"), None)
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=f"room{room_id}-") as tmp:
         tmp_path = Path(tmp)
@@ -1111,9 +1159,9 @@ def render_study_room_film(
 
         for beat in scheduled:
             if beat.get("kind") == "grid":
-                # Hold a clean image under the grid so prior text does not freeze underneath.
+                # Hold the quiet-light (or last exhibit) image under the chart.
                 flush_group()
-                img_path = resolve_beat_image(beat, default_image)
+                img_path = chart_bg
                 seg = tmp_path / f"seg_{len(segments):03d}.mp4"
                 hold = max(0.1, beat["end"] - beat["start"])
                 run(
@@ -1156,9 +1204,9 @@ def render_study_room_film(
                 group_beats = [beat]
         flush_group()
 
-        # Clean background hold after instruction (music continues; no more text/chart).
+        # Clean background hold after the chart, then fade image + music.
         if scheduled:
-            last_img = resolve_beat_image(scheduled[-1], default_image)
+            last_img = chart_bg if grid_beat else resolve_beat_image(scheduled[-1], default_image)
             post = max(0.0, fade_start - scheduled[-1]["end"])
             if post > 0.05:
                 seg = tmp_path / f"seg_{len(segments):03d}.mp4"
@@ -1191,7 +1239,6 @@ def render_study_room_film(
         silent = tmp_path / "silent.mp4"
         concat_segments(segments, silent)
 
-        grid_beat = next((b for b in scheduled if b.get("kind") == "grid"), None)
         video_in = silent
         if grid_beat:
             grid_png = tmp_path / "grid.png"
