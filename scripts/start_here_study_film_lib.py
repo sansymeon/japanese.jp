@@ -279,11 +279,12 @@ SHIZUKA_NA_EN: dict[str, str] = {
     "ひかり": "A quiet light.",
 }
 
-# Single-word picture exhibits: ひかり。 / あかり。 / はし。
+# Single-word picture exhibits: ひかり。 / あかり。 / はし。 / つりがね。
 WORD_EXHIBIT_EN: dict[str, str] = {
     "ひかり": "light",
     "あかり": "lamp",
     "はし": "bridge",
+    "つりがね": "Temple Bell",
 }
 
 # Short picture phrases (Room 14 bridge sequence, etc.).
@@ -464,7 +465,12 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return PACE["pause"]
     if kind == "verse":
         verse_text = (beat.get("text") or "").replace(" ", "").replace("　", "")
-        if "しずかな" in verse_text or "ぬれたはしに" in verse_text:
+        # Room 15 temple-bell verse: keep readable, but do not use the long quiet hold.
+        if "つりがね" in verse_text:
+            return 0.55
+        if "しずかなへや" in verse_text or "ぬれたはしに" in verse_text:
+            return 1.35
+        if "しずかな" in verse_text:
             return 1.35
         return 0.75
     if kind in {"exhibit", "reply", "unpack", "kana_return"}:
@@ -534,13 +540,14 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
         if b.get("kind") == "exhibit" and phrase_exhibit_english(b.get("kana") or "")
     )
     if content_seconds is None:
+        # Single glossed word rooms (e.g. Room 15 つりがね) use the faster track too.
         sec_per_weight = (
             14.0
             if nan_q_count >= 3
             or imasu_count >= 2
             or arimasu_count >= 2
             or shizuka_count >= 3
-            or word_exhibit_count >= 2
+            or word_exhibit_count >= 1
             or phrase_exhibit_count >= 2
             else LESSON_SECONDS_PER_WEIGHT
         )
