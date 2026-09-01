@@ -279,20 +279,23 @@ SHIZUKA_NA_EN: dict[str, str] = {
     "ひかり": "A quiet light.",
 }
 
-# Single-word picture exhibits: ひかり。 / あかり。 / はし。 / つりがね。
+# Single-word picture exhibits: ひかり。 / あかり。 / はし。 / つりがね。 / つくえ。
 WORD_EXHIBIT_EN: dict[str, str] = {
     "ひかり": "light",
     "あかり": "lamp",
     "はし": "bridge",
     "つりがね": "Temple Bell",
+    "つくえ": "desk",
 }
 
-# Short picture phrases (Room 14 bridge sequence, etc.).
+# Short picture phrases (Room 14 bridge sequence, Room 16 desk, etc.).
 PHRASE_EXHIBIT_EN: dict[str, str] = {
     "ぬれた はし": "a wet bridge",
     "ぬれたはし": "a wet bridge",
     "ぬれた はしに": "on the wet bridge",
     "ぬれたはしに": "on the wet bridge",
+    "つくえの うえ": "on the desk",
+    "つくえのうえ": "on the desk",
 }
 
 # Solo unpack glosses — keep tiny; do not teach grammar.
