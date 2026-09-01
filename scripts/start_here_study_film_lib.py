@@ -304,6 +304,7 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "ゆめ": "dream",
     "ねむる": "sleep",
     "ふゆ": "winter",
+    "よろしく": "Nice to meet you",
 }
 
 # Short picture phrases.
@@ -1027,14 +1028,33 @@ def beat_lines(beat: dict) -> list[dict]:
                 }
             )
     elif kind == "verse":
-        text = (beat.get("text") or "").replace("\n", " ")
-        fs = 72 if len(text) <= 28 else 58
-        wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1500, max_lines=2)
-        if len(wrapped) == 1:
-            lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK, "box": True})
+        raw = (beat.get("text") or "").strip()
+        explicit = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+        if len(explicit) >= 2:
+            fs = 58 if any(len(ln) > 18 for ln in explicit) else 64
+            if len(explicit) == 2:
+                y_positions = ["h*0.40", "h*0.52"]
+            else:
+                y_positions = ["h*0.36", "h*0.44", "h*0.52"]
+            for i, part in enumerate(explicit[:3]):
+                lines.append(
+                    {
+                        "text": part,
+                        "fontsize": fs,
+                        "y": y_positions[i] if i < len(y_positions) else f"h*{0.36 + i * 0.08:.2f}",
+                        "color": INK,
+                        "box": True,
+                    }
+                )
         else:
-            lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.40", "color": INK, "box": True})
-            lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK, "box": True})
+            text = raw.replace("\n", " ")
+            fs = 72 if len(text) <= 28 else 58
+            wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1500, max_lines=2)
+            if len(wrapped) == 1:
+                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK, "box": True})
+            else:
+                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.40", "color": INK, "box": True})
+                lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK, "box": True})
     elif kind in {"prose", "puzzle_heading", "puzzle_note"}:
         text = normalize_film_text(beat.get("text") or "")
         if kind == "puzzle_note":
