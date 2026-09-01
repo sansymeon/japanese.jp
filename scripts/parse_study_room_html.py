@@ -249,7 +249,17 @@ def parse_lesson(room_id: int) -> dict:
             continue
 
         if el.name == "section" and "kana-puzzle-section" in cls:
-            note = _text(el.select_one(".kana-puzzle-note"))
+            note_el = el.select_one(".kana-puzzle-note")
+            note = ""
+            if note_el:
+                if note_el.name == "p":
+                    note = _text(note_el)
+                else:
+                    paragraphs = [_text(p) for p in note_el.find_all("p")]
+                    if paragraphs:
+                        note = ". ".join(p for p in paragraphs if p)
+                    else:
+                        note = _text(note_el)
             add_beat({"kind": "puzzle_heading", "text": "Your Hiragana"})
             if note:
                 add_beat({"kind": "puzzle_note", "text": note})

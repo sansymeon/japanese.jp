@@ -300,6 +300,8 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "みず": "water",
     "さくら": "cherry blossom",
     "そら": "sky",
+    "くも": "cloud",
+    "ゆめ": "dream",
 }
 
 # Short picture phrases.
@@ -1035,17 +1037,28 @@ def beat_lines(beat: dict) -> list[dict]:
         text = normalize_film_text(beat.get("text") or "")
         if kind == "puzzle_note":
             text = puzzle_note_for_film(text)
+        forced_two_line: list[str] | None = None
+        if kind == "puzzle_note" and ". " in text:
+            head, tail = text.split(". ", 1)
+            if head and tail:
+                forced_two_line = [
+                    head if head.endswith(".") else head + ".",
+                    tail,
+                ]
         if text:
             # Choose a font size that keeps wrapped lines inside the safe width.
             fs = 72
-            wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
-            if len(wrapped) > 1 or estimate_text_width(text, fs) > 1400:
+            wrapped = forced_two_line or wrap_instruction_text(text, fontsize=fs, max_width=1400)
+            if forced_two_line is None and (len(wrapped) > 1 or estimate_text_width(text, fs) > 1400):
                 fs = 64
                 wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
-            if max(estimate_text_width(part, fs) for part in wrapped) > 1400 or len(wrapped) > 2:
+            if (
+                forced_two_line is None
+                and (max(estimate_text_width(part, fs) for part in wrapped) > 1400 or len(wrapped) > 2)
+            ):
                 fs = 56
                 wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
-            if max(estimate_text_width(part, fs) for part in wrapped) > 1400:
+            if forced_two_line is None and max(estimate_text_width(part, fs) for part in wrapped) > 1400:
                 fs = 50
                 wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1400)
             if len(wrapped) == 1:
