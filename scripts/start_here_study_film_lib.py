@@ -185,6 +185,15 @@ INK_QUIET = "0x9A958C"
 SHADOW = "0x171512@0.65"
 GOLD = "0xC9A458"
 TEXT_BOX = "0x171512@0.78"
+# Museum verse overlay — warm ivory poetry, lower third, no caption boxes.
+VERSE_INK = "0xE8E2D6"
+VERSE_SHADOW = "0x120f0c@0.50"
+VERSE_FONT_SIZE = 50
+VERSE_FONT_SIZE_SHORT = 54
+VERSE_Y = ["h*0.61", "h*0.71"]
+VERSE_FONT_URL = (
+    "https://github.com/notofonts/noto-cjk/raw/main/Serif/OTF/Japanese/NotoSerifCJKjp-Regular.otf"
+)
 
 # Picture-sentence glosses for これは〜です / これは〜ですか exhibits.
 KORE_WA_NOUN_EN: dict[str, str] = {
@@ -465,6 +474,79 @@ def escape_drawtext(text: str) -> str:
         .replace("'", "\\'")
         .replace("%", "%%")
     )
+
+
+def resolve_verse_font() -> str:
+    """Noto Serif JP for museum verse overlays; falls back to the CJK body font."""
+    candidates = [
+        ROOT / "scripts/fonts/NotoSerifCJKjp-Regular.otf",
+        ROOT / "kml/tools/ambient/fonts/noto-serif-jp/NotoSerifCJKjp-Regular.otf",
+        Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
+        Path("/usr/share/fonts/opentype/noto/NotoSerifCJKjp-Regular.otf"),
+    ]
+    for path in candidates:
+        if path.exists() and path.stat().st_size >= 500:
+            return str(path)
+    target = ROOT / "scripts/fonts/NotoSerifCJKjp-Regular.otf"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if not target.exists():
+        run(["curl", "-fsSL", "-o", str(target), VERSE_FONT_URL])
+    return str(target)
+
+
+def verse_draw_lines(beat: dict) -> list[dict]:
+    """Lay verse text as paired lines in the lower third — max two lines visible at once."""
+    raw = (beat.get("text") or "").strip()
+    explicit = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+    font = resolve_verse_font()
+    fs = VERSE_FONT_SIZE if explicit and any(len(ln) > 18 for ln in explicit) else VERSE_FONT_SIZE_SHORT
+
+    def spec(text: str, row: int, start_frac: float, end_frac: float) -> dict:
+        return {
+            "text": text,
+            "fontsize": fs,
+            "y": VERSE_Y[row],
+            "color": VERSE_INK,
+            "box": False,
+            "borderw": 2,
+            "bordercolor": VERSE_SHADOW,
+            "font": font,
+            "verse_start_frac": start_frac,
+            "verse_end_frac": end_frac,
+        }
+
+    if len(explicit) >= 2:
+        pairs: list[list[str]] = []
+        idx = 0
+        while idx < len(explicit):
+            pairs.append(explicit[idx : idx + 2])
+            idx += 2
+        out: list[dict] = []
+        for pi, pair in enumerate(pairs):
+            start = pi / len(pairs)
+            end = (pi + 1) / len(pairs)
+            for row, part in enumerate(pair[:2]):
+                out.append(spec(part, row, start, end))
+        return out
+
+    text = raw.replace("\n", " ")
+    fs_wrap = VERSE_FONT_SIZE_SHORT if len(text) <= 28 else VERSE_FONT_SIZE
+    wrapped = wrap_instruction_text(text, fontsize=fs_wrap, max_width=1320, max_lines=2)
+    return [
+        {
+            "text": part,
+            "fontsize": fs_wrap,
+            "y": VERSE_Y[i],
+            "color": VERSE_INK,
+            "box": False,
+            "borderw": 2,
+            "bordercolor": VERSE_SHADOW,
+            "font": font,
+            "verse_start_frac": 0.0,
+            "verse_end_frac": 1.0,
+        }
+        for i, part in enumerate(wrapped[:2])
+    ]
 
 
 def audio_path_for_room(room_id: int) -> Path:
@@ -1028,35 +1110,7 @@ def beat_lines(beat: dict) -> list[dict]:
                 }
             )
     elif kind == "verse":
-        raw = (beat.get("text") or "").strip()
-        explicit = [ln.strip() for ln in raw.split("\n") if ln.strip()]
-        if len(explicit) >= 2:
-            fs = 58 if any(len(ln) > 18 for ln in explicit) else 64
-            if len(explicit) == 2:
-                y_positions = ["h*0.40", "h*0.52"]
-            elif len(explicit) == 3:
-                y_positions = ["h*0.36", "h*0.44", "h*0.52"]
-            else:
-                y_positions = ["h*0.34", "h*0.41", "h*0.48", "h*0.55"]
-            for i, part in enumerate(explicit[:4]):
-                lines.append(
-                    {
-                        "text": part,
-                        "fontsize": fs,
-                        "y": y_positions[i] if i < len(y_positions) else f"h*{0.34 + i * 0.07:.2f}",
-                        "color": INK,
-                        "box": True,
-                    }
-                )
-        else:
-            text = raw.replace("\n", " ")
-            fs = 72 if len(text) <= 28 else 58
-            wrapped = wrap_instruction_text(text, fontsize=fs, max_width=1500, max_lines=2)
-            if len(wrapped) == 1:
-                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.44", "color": INK, "box": True})
-            else:
-                lines.append({"text": wrapped[0], "fontsize": fs, "y": "h*0.40", "color": INK, "box": True})
-                lines.append({"text": wrapped[1], "fontsize": fs, "y": "h*0.52", "color": INK, "box": True})
+        lines.extend(verse_draw_lines(beat))
     elif kind in {"prose", "puzzle_heading", "puzzle_note"}:
         text = normalize_film_text(beat.get("text") or "")
         if kind == "puzzle_note":
@@ -1120,10 +1174,12 @@ def drawtext_filter(
     y: str = "h*0.48",
     color: str = INK,
     borderw: int = 3,
+    bordercolor: str = SHADOW,
     box: bool = True,
     fade: bool = False,
     fade_in: float = 1.0,
     fade_out: float = 1.0,
+    fontfile: str = FONT,
 ) -> str:
     t = escape_drawtext(text)
     box_part = f":box=1:boxcolor={TEXT_BOX}:boxborderw=18" if box else ""
@@ -1138,8 +1194,8 @@ def drawtext_filter(
             f"if(gt(t\\,{end - fo:.3f})\\,({end:.3f}-t)/{fo:.3f}\\,1))'"
         )
     return (
-        f"drawtext=fontfile={FONT}:text='{t}':fontsize={fontsize}:"
-        f"fontcolor={color}:borderw={borderw}:bordercolor={SHADOW}:"
+        f"drawtext=fontfile={fontfile}:text='{t}':fontsize={fontsize}:"
+        f"fontcolor={color}:borderw={borderw}:bordercolor={bordercolor}:"
         f"x=(w-text_w)/2:y={y}{box_part}{alpha_part}:"
         f"enable='between(t,{start:.2f},{end:.2f})'"
     )
@@ -1260,8 +1316,12 @@ def render_image_group(
         for line in beat_lines(beat):
             line_start = rel_start
             line_end = rel_end
+            beat_dur = max(0.05, rel_end - rel_start)
+            if line.get("verse_start_frac") is not None:
+                line_start = rel_start + beat_dur * float(line["verse_start_frac"])
+                line_end = rel_start + beat_dur * float(line["verse_end_frac"])
             # Sentence English arrives after kana has settled, then fades out.
-            if line.get("fade"):
+            elif line.get("fade"):
                 line_start = rel_start + beat_dur * 0.18
                 line_end = rel_end - beat_dur * 0.08
             filters.append(
@@ -1273,8 +1333,10 @@ def render_image_group(
                     y=str(line.get("y") or "h*0.48"),
                     color=str(line.get("color") or INK),
                     borderw=int(line.get("borderw") or 3),
+                    bordercolor=str(line.get("bordercolor") or SHADOW),
                     box=bool(line.get("box", True)),
                     fade=bool(line.get("fade")),
+                    fontfile=str(line.get("font") or FONT),
                 )
             )
     filters.append("format=yuv420p")
