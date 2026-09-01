@@ -58,7 +58,7 @@
     if (!readPanel && !watchPanel) return;
 
     var next = mode;
-    if (next !== "read" && next !== "watch") next = "read";
+    if (next !== "read" && next !== "watch") next = "watch";
 
     document.body.classList.toggle("is-watch-mode", next === "watch");
     document.body.classList.toggle("is-read-mode", next === "read");
@@ -79,10 +79,10 @@
   modeRoot.hidden = false;
   modeRoot.querySelectorAll("[data-watch-select]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      applyStudyDualMode(btn.getAttribute("data-watch-select") || "read");
+      applyStudyDualMode(btn.getAttribute("data-watch-select") || "watch");
     });
   });
 
-  var initial = storedMode() || lesson.watchDefault || "read";
+  var initial = storedMode() || lesson.watchDefault || "watch";
   applyStudyDualMode(initial);
 })();

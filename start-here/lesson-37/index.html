@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   Beginner Room 37 — 静かな部屋に.
-  Zero-new-kana recognition. Puzzle stays 44/46.
+  Zero-new-kana recognition (44/46). No puzzle on this page.
   Return to the Rooms 12–13 胃 verse, now readable.
   Visual: kml/assets/studies/stomach.jpg (the original 胃 encounter).
   Read panel: one image, one verse, compact source note — no duplicate hero.
@@ -36,7 +36,7 @@
   <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page" data-beginner-lesson="37">
+<body class="museum-page is-watch-mode" data-beginner-lesson="37">
   <a class="skip-link" href="#lesson">Skip to lesson</a>
 
   <header class="museum-header">
@@ -74,19 +74,19 @@
           class="pathway-mode reveal"
           data-watch-mode
           role="group"
-          aria-label="How to take this room"
+          aria-label="Watch &amp; Listen or Read"
         >
-          <button type="button" data-watch-select="read" aria-pressed="true">Read</button>
-          <button type="button" data-watch-select="watch" aria-pressed="false">
+          <button type="button" data-watch-select="watch" aria-pressed="true">
             Watch &amp; Listen
           </button>
+          <button type="button" data-watch-select="read" aria-pressed="false">Read</button>
         </div>
 
         <div class="beginner-assist reveal">
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
-        <div data-watch-read>
+        <div data-watch-read hidden>
         <article class="beginner-exhibit pathway-kml-verse reveal">
           <img
             src="../../kml/assets/studies/stomach.jpg"
@@ -129,7 +129,7 @@
         </aside>
         </div>
 
-        <div data-watch-watch hidden>
+        <div data-watch-watch>
           <header class="room-section-head reveal">
             <p class="room-eyebrow">Watch &amp; Listen</p>
             <h2>静かな部屋に</h2>

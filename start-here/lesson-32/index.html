@@ -33,7 +33,7 @@
   <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page" data-beginner-lesson="32">
+<body class="museum-page is-watch-mode" data-beginner-lesson="32">
   <a class="skip-link" href="#lesson">Skip to lesson</a>
 
   <header class="museum-header">
@@ -71,19 +71,19 @@
           class="pathway-mode reveal"
           data-watch-mode
           role="group"
-          aria-label="How to take this room"
+          aria-label="Watch &amp; Listen or Read"
         >
-          <button type="button" data-watch-select="read" aria-pressed="true">Read</button>
-          <button type="button" data-watch-select="watch" aria-pressed="false">
+          <button type="button" data-watch-select="watch" aria-pressed="true">
             Watch &amp; Listen
           </button>
+          <button type="button" data-watch-select="read" aria-pressed="false">Read</button>
         </div>
 
         <div class="beginner-assist reveal">
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
-        <div data-watch-read>
+        <div data-watch-read hidden>
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Look</p>
           <h2>そら</h2>
@@ -118,7 +118,7 @@
         </figure>
         </div>
 
-        <div data-watch-watch hidden>
+        <div data-watch-watch>
           <header class="room-section-head reveal">
             <p class="room-eyebrow">Watch &amp; Listen</p>
             <h2>そら</h2>

@@ -38,7 +38,7 @@
  * YouTube media layer:
  *   watchYoutubeId — unlisted embed id; sole audiovisual source when set
  *   watchModes     — study-room dual UI: ["read","watch"]
- *   watchDefault   — "read" | "watch"
+ *   watchDefault   — "watch" | "read" (watch is primary when both exist)
  * Rooms with watchYoutubeId embed YouTube directly in HTML (Room 39 pattern).
  * No local MP3 player, no atmosphere loop, no external watch link as primary.
  * See start-here/js/beginner-watch.js for Read / Watch panel toggling.
@@ -106,7 +106,8 @@
  *       Do not show 冬. Do not teach ゆき. Do not review ねむる.
  *       No verse. No doorway. No song.
  *   37 静かな部屋に — recognition; 0 new kana (44/46). Return to the
- *       Rooms 12–13 胃 verse, now readable. Visual: stomach.png.
+ *       Rooms 12–13 胃 verse, now readable. Visual: stomach.jpg.
+ *       Compact Read: one image, one verse, source note. No puzzle.
  *       Exact original verse. No English/romaji under the verse.
  *       No vocabulary breakdown. No 胃 lesson. Doorway to Lesson 2
  *       #kanji-stomach.
@@ -238,7 +239,7 @@
       prev: "1",
       next: "3",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/bOIWwSUSuVU */
       watchYoutubeId: "bOIWwSUSuVU",
     },
@@ -271,7 +272,7 @@
       prev: "3",
       next: "5",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/YHwmkzt1xzs */
       watchYoutubeId: "YHwmkzt1xzs",
     },
@@ -304,7 +305,7 @@
       prev: "5",
       next: "7",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/eugosPkh6lw */
       watchYoutubeId: "eugosPkh6lw",
     },
@@ -321,7 +322,7 @@
       prev: "6",
       next: "8",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/xPnZZiNakEQ */
       watchYoutubeId: "xPnZZiNakEQ",
     },
@@ -338,7 +339,7 @@
       prev: "7",
       next: "9",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/ndd6DTzSArM */
       watchYoutubeId: "ndd6DTzSArM",
     },
@@ -355,7 +356,7 @@
       prev: "8",
       next: "10",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/JVDY9WuwVAE */
       watchYoutubeId: "JVDY9WuwVAE",
     },
@@ -372,7 +373,7 @@
       prev: "9",
       next: "11",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/uRvdyJLWRus */
       watchYoutubeId: "uRvdyJLWRus",
     },
@@ -389,7 +390,7 @@
       prev: "10",
       next: "12",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/O_mGmOI7OxY */
       watchYoutubeId: "O_mGmOI7OxY",
     },
@@ -406,7 +407,7 @@
       prev: "11",
       next: "13",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/eEYuKSTxEVQ */
       watchYoutubeId: "eEYuKSTxEVQ",
     },
@@ -423,7 +424,7 @@
       prev: "12",
       next: "14",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/fl4Ei1ae0c4 */
       watchYoutubeId: "fl4Ei1ae0c4",
     },
@@ -440,7 +441,7 @@
       prev: "13",
       next: "15",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/JCKDaBA6v4c */
       watchYoutubeId: "JCKDaBA6v4c",
     },
@@ -457,7 +458,7 @@
       prev: "14",
       next: "16",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/ehG3GfBtsPM */
       watchYoutubeId: "ehG3GfBtsPM",
     },
@@ -474,7 +475,7 @@
       prev: "15",
       next: "17",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/Z3sbTWtAMng */
       watchYoutubeId: "Z3sbTWtAMng",
     },
@@ -523,7 +524,7 @@
       prev: "18",
       next: "20",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/OZht_7jxSlg */
       watchYoutubeId: "OZht_7jxSlg",
     },
@@ -540,7 +541,7 @@
       prev: "19",
       next: "21",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/QY9dQia1wqM */
       watchYoutubeId: "QY9dQia1wqM",
     },
@@ -557,7 +558,7 @@
       prev: "20",
       next: "22",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/1dnFc8gnqtk */
       watchYoutubeId: "1dnFc8gnqtk",
     },
@@ -574,7 +575,7 @@
       prev: "21",
       next: "23",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/XL3GdJsIC70 */
       watchYoutubeId: "XL3GdJsIC70",
     },
@@ -591,7 +592,7 @@
       prev: "22",
       next: "24",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/bEt2ANdYl6k */
       watchYoutubeId: "bEt2ANdYl6k",
     },
@@ -640,7 +641,7 @@
       prev: "25",
       next: "27",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/WB3HRfXg13U */
       watchYoutubeId: "WB3HRfXg13U",
     },
@@ -657,7 +658,7 @@
       prev: "26",
       next: "28",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/qjLhfXWJEu0 */
       watchYoutubeId: "qjLhfXWJEu0",
     },
@@ -675,7 +676,7 @@
       next: "29",
       /* Prototype: Read page / Watch & Listen film (unlisted YouTube). */
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/EuQffj738xw */
       watchYoutubeId: "EuQffj738xw",
     },
@@ -692,7 +693,7 @@
       prev: "28",
       next: "30",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/FDaYx57khhM */
       watchYoutubeId: "FDaYx57khhM",
     },
@@ -709,7 +710,7 @@
       prev: "29",
       next: "31",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/xwAGvYsMre4 */
       watchYoutubeId: "xwAGvYsMre4",
     },
@@ -726,7 +727,7 @@
       prev: "30",
       next: "32",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/74gwg2yCZxU */
       watchYoutubeId: "74gwg2yCZxU",
     },
@@ -743,7 +744,7 @@
       prev: "31",
       next: "33",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/LIcZXG1qqv0 */
       watchYoutubeId: "LIcZXG1qqv0",
     },
@@ -760,7 +761,7 @@
       prev: "32",
       next: "34",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/Oh1aMNPjnYM */
       watchYoutubeId: "Oh1aMNPjnYM",
     },
@@ -777,7 +778,7 @@
       prev: "33",
       next: "35",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/z7R5kUhBxOM */
       watchYoutubeId: "z7R5kUhBxOM",
     },
@@ -794,7 +795,7 @@
       prev: "34",
       next: "36",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/g6OBP7LkSLc */
       watchYoutubeId: "g6OBP7LkSLc",
     },
@@ -811,7 +812,7 @@
       prev: "35",
       next: "37",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/9giwZaUPRVU */
       watchYoutubeId: "9giwZaUPRVU",
     },
@@ -828,7 +829,7 @@
       prev: "36",
       next: "38",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/aZWBy2dnvbw */
       watchYoutubeId: "aZWBy2dnvbw",
     },
@@ -845,7 +846,7 @@
       prev: "37",
       next: "39",
       watchModes: ["read", "watch"],
-      watchDefault: "read",
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/Ay7Wig4Xtbk */
       watchYoutubeId: "Ay7Wig4Xtbk",
     },
