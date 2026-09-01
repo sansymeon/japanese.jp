@@ -798,6 +798,30 @@ button.museum-btn {
   margin-top: clamp(2rem, 4vw, 3rem);
 }
 
+/* Start Here: no full-bleed hero — useful content begins under site header. */
+.museum-page[data-beginner-lesson] .room-section#lesson,
+.museum-page[data-beginner-lesson] .room-section#listen-youtube,
+.museum-page[data-beginner-lesson] .room-section.beginner-after {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.museum-page[data-beginner-lesson] .room-page-head {
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.museum-page[data-beginner-lesson] .pathway-nav--top + .room-page-head {
+  margin-top: 0.25rem;
+}
+
+.museum-page[data-beginner-lesson] .room-page-head + .pathway-mode,
+.museum-page[data-beginner-lesson] .room-page-head + .beginner-assist {
+  margin-top: 0;
+}
+
+.museum-page[data-beginner-lesson] .beginner-assist {
+  margin-bottom: 1.25rem;
+}
+
 /* Room 38: give the completed 46/46 grid a little air.
    The filled chart is the event; do not decorate it. */
 [data-beginner-lesson="38"] .kana-puzzle-section {
