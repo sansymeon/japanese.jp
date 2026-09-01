@@ -477,6 +477,10 @@
       newKana: ["く"],
       prev: "15",
       next: "17",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/Z3sbTWtAMng */
+      watchYoutubeId: "Z3sbTWtAMng",
     },
     "17": {
       id: "17",
