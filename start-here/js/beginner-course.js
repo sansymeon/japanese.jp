@@ -752,6 +752,10 @@
       newKana: ["そ"],
       prev: "31",
       next: "33",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/LIcZXG1qqv0 */
+      watchYoutubeId: "LIcZXG1qqv0",
     },
     "33": {
       id: "33",
