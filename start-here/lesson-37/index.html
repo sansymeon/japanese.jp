@@ -57,15 +57,10 @@
 
     <section class="room-section" id="lesson">
       <div class="room-container">
-        <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
-          <a class="pathway-nav-back" data-room-nav="prev" href="../lesson-36/">← Room 36</a>
-          <span class="pathway-nav-status" data-room-nav="current">Room 37</span>
-          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-38/">Continue to Room 38 →</a>
-        </nav>
-
-        <header class="room-section-head reveal room-page-head">
-          <h1 id="lesson-heading">Room 37 — 静かな部屋に</h1>
-          <p>You have been here before.</p>
+        <header class="room-section-head reveal room-page-head room-page-head--stream">
+          <p class="room-page-id">Room 37</p>
+          <h1 id="lesson-heading">静かな部屋に</h1>
+          <p class="room-page-lead">You have been here before.</p>
         </header>
 
         <article class="beginner-exhibit pathway-film-exhibit reveal">
@@ -146,26 +141,23 @@
           data-known-pieces='[{"jp":"しずかな","note":"from an earlier room"},{"jp":"ひかり","note":"from an earlier room"},{"jp":"やま","note":"a mountain you already know"},{"jp":"へや","note":"from an earlier room"},{"jp":"まど","note":"from an earlier room"},{"jp":"が","note":"you have been seeing this"},{"jp":"の","note":"you can already read this"}]'
         ></div>
 
-        <div class="room-forward reveal">
-          <div class="room-actions">
-            <a class="museum-btn museum-btn--primary" href="../lesson-38/">Continue to Room 38</a>
-            <a class="museum-btn museum-btn--ghost" href="../lesson-36/">Previous: Room 36</a>
-            <a class="museum-btn museum-btn--ghost" href="../">Back to Start Here</a>
-            <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
-          </div>
+        <div class="room-forward room-forward--stream reveal">
+          <a class="museum-btn museum-btn--primary" href="../lesson-38/">Continue to Room 38</a>
         </div>
+
+        <nav class="pathway-escape reveal" aria-label="Other paths">
+          <a href="../lesson-36/">← Room 36</a>
+          <span class="pathway-escape-sep" aria-hidden="true">·</span>
+          <a href="../">Start Here</a>
+          <span class="pathway-escape-sep" aria-hidden="true">·</span>
+          <a href="../rooms/">Index</a>
+        </nav>
       </div>
     </section>
   </main>
 
   <footer class="museum-footer">
     <div class="museum-footer-inner">
-      <nav aria-label="Footer">
-        <a href="../../index.html">Home</a>
-        <a href="../">Start Here</a>
-        <a href="../lesson-36/">Room 36</a>
-        <a href="../lesson-38/">Room 38</a>
-      </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>
   </footer>
