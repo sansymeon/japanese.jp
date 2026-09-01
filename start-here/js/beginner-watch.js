@@ -1,8 +1,8 @@
 /**
- * Start Here — Read / Watch mode chrome for study rooms.
+ * Start Here — Read / Watch mode chrome for dual-mode rooms.
  *
- * Study rooms with watchYoutubeId embed YouTube directly in HTML (Room 39
- * pattern). This script only toggles visibility between Read and Watch panels.
+ * Rooms with watchModes embed YouTube directly in HTML (Room 39 pattern).
+ * This script toggles visibility between Read and Watch panels. No autoplay.
  */
 (function () {
   "use strict";
@@ -18,7 +18,7 @@
   if (!lesson) return;
 
   var modes = lesson.watchModes || null;
-  if (!(lesson.mode === "study-room" && modes && modes.indexOf("watch") !== -1)) {
+  if (!(modes && modes.indexOf("watch") !== -1 && modes.indexOf("read") !== -1)) {
     return;
   }
 

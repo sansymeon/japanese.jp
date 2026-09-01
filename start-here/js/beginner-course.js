@@ -37,7 +37,7 @@
  *
  * YouTube media layer:
  *   watchYoutubeId — unlisted embed id; sole audiovisual source when set
- *   watchModes     — study-room dual UI: ["read","watch"]
+ *   watchModes     — dual UI when substantial Read content exists: ["read","watch"]
  *   watchDefault   — "watch" | "read" (watch is primary when both exist)
  * Rooms with watchYoutubeId embed YouTube directly in HTML (Room 39 pattern).
  * No local MP3 player, no atmosphere loop, no external watch link as primary.
@@ -223,6 +223,8 @@
       newKana: ["は", "す", "か", "し", "た", "の"],
       prev: "0",
       next: "2",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/wMzT4WbGbpY */
       watchYoutubeId: "wMzT4WbGbpY",
     },
@@ -256,6 +258,8 @@
       newKana: [],
       prev: "2",
       next: "4",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/nl8vBOgPLjE */
       watchYoutubeId: "nl8vBOgPLjE",
     },
@@ -289,6 +293,8 @@
       newKana: [],
       prev: "4",
       next: "6",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/H09lWLQY9Rg */
       watchYoutubeId: "H09lWLQY9Rg",
     },
@@ -492,6 +498,8 @@
       newKana: [],
       prev: "16",
       next: "18",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/bCEEh4vydVI */
       watchYoutubeId: "bCEEh4vydVI",
     },
@@ -508,6 +516,8 @@
       newKana: ["を"],
       prev: "17",
       next: "19",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/Ap9sX9cwa1g */
       watchYoutubeId: "Ap9sX9cwa1g",
     },
@@ -609,6 +619,8 @@
       newKana: ["け", "て"],
       prev: "23",
       next: "25",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/DyrWcHptIck */
       watchYoutubeId: "DyrWcHptIck",
     },
@@ -625,6 +637,8 @@
       newKana: [],
       prev: "24",
       next: "26",
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/s-MtpLw_Jzo */
       watchYoutubeId: "s-MtpLw_Jzo",
     },
@@ -876,6 +890,8 @@
       newKana: [],
       prev: "39",
       next: null,
+      watchModes: ["read", "watch"],
+      watchDefault: "watch",
       /* Unlisted YouTube: https://youtu.be/VqCrT25rCl4 */
       watchYoutubeId: "VqCrT25rCl4",
     },
