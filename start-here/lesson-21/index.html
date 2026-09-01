@@ -7,7 +7,7 @@
   Do not show 川 line 2. Do not introduce だけが or ていた.
   Do not add a KML-source doorway — the complete 川 verse is not readable yet.
   Do not bring 声 / こえ into this room (Room 19's こえ was 越え).
-  Atmosphere: shuffle lesson-6–11. No song. No film.
+  Atmosphere: shuffle lesson-6–11. No song.
 -->
 <html lang="en" class="museum-page">
 <head>
@@ -31,6 +31,7 @@
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="21">
@@ -81,11 +82,24 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-22/">Continue to Room 22 →</a>
         </nav>
 
+        <div
+          class="pathway-mode reveal"
+          data-watch-mode
+          role="group"
+          aria-label="How to take this room"
+        >
+          <button type="button" data-watch-select="read" aria-pressed="true">Read</button>
+          <button type="button" data-watch-select="watch" aria-pressed="false">
+            Watch &amp; Listen
+          </button>
+        </div>
+
         <div class="beginner-assist reveal">
           <button type="button" data-study-music hidden>♪ Play room music</button>
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
+        <div data-watch-read>
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Look</p>
           <h2>おと</h2>
@@ -127,13 +141,29 @@
             <p class="jp-en">the sound of the river</p>
           </figure>
         </article>
+        </div>
 
-          <div
-            data-chat-sensei
-            data-prompt-set="already-read"
-            data-pathway-room="21"
-            data-source="start-here"
-          ></div>
+        <div data-watch-watch hidden>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Watch &amp; Listen</p>
+            <h2>おと</h2>
+            <p>The same room, performed quietly.</p>
+          </header>
+          <article class="beginner-exhibit pathway-film-exhibit reveal">
+            <div data-watch-film></div>
+            <p class="pathway-watch-pending" data-watch-pending hidden>
+              Film ready for unlisted upload —
+              <code>exports/start-here-prototypes/room-21-おと.mp4</code>.
+            </p>
+          </article>
+        </div>
+
+        <div
+          data-chat-sensei
+          data-prompt-set="already-read"
+          data-pathway-room="21"
+          data-source="start-here"
+        ></div>
 
         <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
           <h2 id="puzzle-heading">Your Hiragana</h2>
