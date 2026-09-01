@@ -32,6 +32,7 @@
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="37">
@@ -82,11 +83,24 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-38/">Continue to Room 38 →</a>
         </nav>
 
+        <div
+          class="pathway-mode reveal"
+          data-watch-mode
+          role="group"
+          aria-label="How to take this room"
+        >
+          <button type="button" data-watch-select="read" aria-pressed="true">Read</button>
+          <button type="button" data-watch-select="watch" aria-pressed="false">
+            Watch &amp; Listen
+          </button>
+        </div>
+
         <div class="beginner-assist reveal">
           <button type="button" data-study-music hidden>♪ Play room music</button>
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
+        <div data-watch-read>
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Look</p>
           <h2>静かな部屋に</h2>
@@ -108,29 +122,7 @@
               <ruby>窓<rt>まど</rt></ruby>の<ruby>外<rt>そと</rt></ruby>に<ruby>続<rt>つづ</rt></ruby>いた
             </p>
           </figure>
-          <div
-            data-chat-sensei
-            data-prompt-set="already-read"
-            data-pathway-room="37"
-            data-source="start-here"
-            data-kml-lesson="2"
-            data-kanji="胃"
-            data-slug="stomach"
-            data-keyword="stomach"
-            data-known-pieces='[{"jp":"しずかな","note":"from an earlier room"},{"jp":"ひかり","note":"from an earlier room"},{"jp":"やま","note":"a mountain you already know"},{"jp":"へや","note":"from an earlier room"},{"jp":"まど","note":"from an earlier room"},{"jp":"が","note":"you have been seeing this"},{"jp":"の","note":"you can already read this"}]'
-          ></div>
-
         </article>
-
-        <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
-          <h2 id="puzzle-heading">Your Hiragana</h2>
-          <div class="kana-puzzle-note">
-            <p>No new boxes</p>
-            <p>You already know how to write this.</p>
-          </div>
-          <p class="kana-puzzle-count" data-kana-puzzle-count></p>
-          <div class="kana-puzzle" data-kana-puzzle lang="ja"></div>
-        </section>
 
         <aside
           class="pathway-source reveal"
@@ -165,6 +157,44 @@
             </a>
           </p>
         </aside>
+        </div>
+
+        <div data-watch-watch hidden>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Watch &amp; Listen</p>
+            <h2>静かな部屋に</h2>
+            <p>The same room, performed quietly.</p>
+          </header>
+          <article class="beginner-exhibit pathway-film-exhibit reveal">
+            <div data-watch-film></div>
+            <p class="pathway-watch-pending" data-watch-pending hidden>
+              Film ready for unlisted upload —
+              <code>exports/start-here-prototypes/room-37-静かな部屋に.mp4</code>.
+            </p>
+          </article>
+        </div>
+
+          <div
+            data-chat-sensei
+            data-prompt-set="already-read"
+            data-pathway-room="37"
+            data-source="start-here"
+            data-kml-lesson="2"
+            data-kanji="胃"
+            data-slug="stomach"
+            data-keyword="stomach"
+            data-known-pieces='[{"jp":"しずかな","note":"from an earlier room"},{"jp":"ひかり","note":"from an earlier room"},{"jp":"やま","note":"a mountain you already know"},{"jp":"へや","note":"from an earlier room"},{"jp":"まど","note":"from an earlier room"},{"jp":"が","note":"you have been seeing this"},{"jp":"の","note":"you can already read this"}]'
+          ></div>
+
+        <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
+          <h2 id="puzzle-heading">Your Hiragana</h2>
+          <div class="kana-puzzle-note">
+            <p>No new boxes</p>
+            <p>You already know how to write this.</p>
+          </div>
+          <p class="kana-puzzle-count" data-kana-puzzle-count></p>
+          <div class="kana-puzzle" data-kana-puzzle lang="ja"></div>
+        </section>
 
         <div class="room-forward reveal">
           <div class="room-actions">
