@@ -260,7 +260,7 @@ def parse_lesson(room_id: int) -> dict:
             reordered.insert(idx, prose_beat)
         final = reordered
 
-    if room_id == 12:
+    if room_id in {12, 13}:
         chart_kinds = {"puzzle_heading", "puzzle_note", "grid"}
         chart_beats = [b for b in final if b.get("kind") in chart_kinds]
         body = [b for b in final if b.get("kind") not in chart_kinds]

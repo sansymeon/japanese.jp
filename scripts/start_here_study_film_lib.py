@@ -271,12 +271,24 @@ def ga_arimasu_ka_english(kana: str) -> str | None:
     return f"Is there a {en_noun}?" if en_noun else None
 
 
-# しずかな やま / ほし / あかり
+# しずかな やま / ほし / あかり / ひかり
 SHIZUKA_NA_EN: dict[str, str] = {
     "やま": "A quiet mountain.",
     "ほし": "Quiet stars.",
     "あかり": "A quiet light.",
+    "ひかり": "A quiet light.",
 }
+
+# Single-word picture exhibits: ひかり。 / あかり。
+WORD_EXHIBIT_EN: dict[str, str] = {
+    "ひかり": "light",
+    "あかり": "lamp",
+}
+
+
+def word_exhibit_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").strip()
+    return WORD_EXHIBIT_EN.get(cleaned)
 
 
 def shizuka_na_english(kana: str) -> str | None:
@@ -409,6 +421,8 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return 0.45
     if kind == "prose" and text_has_kana(beat.get("text") or ""):
         return 0.45
+    if kind == "exhibit" and word_exhibit_english(kana):
+        return 0.45
     if kind == "exhibit" and kana.strip() == "しずか":
         return 0.45
     if kind == "exhibit" and "しずかな" in kana:
@@ -475,10 +489,19 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
         for b in lesson
         if b.get("kind") == "exhibit" and "しずか" in (b.get("kana") or "")
     )
+    word_exhibit_count = sum(
+        1
+        for b in lesson
+        if b.get("kind") == "exhibit" and word_exhibit_english(b.get("kana") or "")
+    )
     if content_seconds is None:
         sec_per_weight = (
             14.0
-            if nan_q_count >= 3 or imasu_count >= 2 or arimasu_count >= 2 or shizuka_count >= 3
+            if nan_q_count >= 3
+            or imasu_count >= 2
+            or arimasu_count >= 2
+            or shizuka_count >= 3
+            or word_exhibit_count >= 2
             else LESSON_SECONDS_PER_WEIGHT
         )
         content_seconds = total_w * sec_per_weight
@@ -608,6 +631,7 @@ def beat_lines(beat: dict) -> list[dict]:
         # Question/statement English — fades in/out on each picture.
         gloss = (
             kore_wa_english(kana)
+            or word_exhibit_english(kana)
             or shizuka_na_english(kana)
             or ga_imasu_ka_english(kana)
             or ga_imasu_english(kana)
@@ -997,8 +1021,12 @@ FFMPEG_CRF = "19"
 
 
 def resolve_chart_background(scheduled: list[dict], default_image: Path) -> Path:
-    """Image under the kana chart — prefer the quiet-light exhibit when present."""
+    """Image under the kana chart — prefer quiet-light / hikari exhibits when present."""
     grid_idx = next((i for i, b in enumerate(scheduled) if b.get("kind") == "grid"), len(scheduled))
+    for b in reversed(scheduled[:grid_idx]):
+        kana = b.get("kana") or ""
+        if b.get("kind") == "exhibit" and "しずかな" in kana and "ひかり" in kana:
+            return resolve_beat_image(b, default_image)
     for b in reversed(scheduled[:grid_idx]):
         if b.get("kind") == "exhibit" and "あかり" in (b.get("kana") or ""):
             return resolve_beat_image(b, default_image)
