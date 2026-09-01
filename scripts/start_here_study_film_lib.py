@@ -279,16 +279,43 @@ SHIZUKA_NA_EN: dict[str, str] = {
     "ひかり": "A quiet light.",
 }
 
-# Single-word picture exhibits: ひかり。 / あかり。
+# Single-word picture exhibits: ひかり。 / あかり。 / はし。
 WORD_EXHIBIT_EN: dict[str, str] = {
     "ひかり": "light",
     "あかり": "lamp",
+    "はし": "bridge",
+}
+
+# Short picture phrases (Room 14 bridge sequence, etc.).
+PHRASE_EXHIBIT_EN: dict[str, str] = {
+    "ぬれた はし": "a wet bridge",
+    "ぬれたはし": "a wet bridge",
+    "ぬれた はしに": "on the wet bridge",
+    "ぬれたはしに": "on the wet bridge",
+}
+
+# Solo unpack glosses — keep tiny; do not teach grammar.
+UNPACK_EN: dict[str, str] = {
+    "に": "on",
 }
 
 
 def word_exhibit_english(kana: str) -> str | None:
     cleaned = (kana or "").replace("。", "").strip()
     return WORD_EXHIBIT_EN.get(cleaned)
+
+
+def phrase_exhibit_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("？", "").replace("　", " ").strip()
+    if cleaned in PHRASE_EXHIBIT_EN:
+        return PHRASE_EXHIBIT_EN[cleaned]
+    compact = cleaned.replace(" ", "")
+    return PHRASE_EXHIBIT_EN.get(compact)
+
+
+def unpack_english(kana: str) -> str | None:
+    cleaned = (kana or "").replace("。", "").replace("　", " ").strip()
+    return UNPACK_EN.get(cleaned)
 
 
 def shizuka_na_english(kana: str) -> str | None:
@@ -423,16 +450,21 @@ def pace_weight(beat: dict, new_kana: set[str]) -> float:
         return 0.45
     if kind == "exhibit" and word_exhibit_english(kana):
         return 0.45
+    if kind == "exhibit" and phrase_exhibit_english(kana):
+        return 0.55
     if kind == "exhibit" and kana.strip() == "しずか":
         return 0.45
     if kind == "exhibit" and "しずかな" in kana:
         return 0.55
+    if kind == "unpack" and unpack_english(kana):
+        return 0.38
     if kind == "grid":
         return PACE["grid"]
     if kind == "pause":
         return PACE["pause"]
     if kind == "verse":
-        if "しずかな" in (beat.get("text") or "").replace(" ", "").replace("　", ""):
+        verse_text = (beat.get("text") or "").replace(" ", "").replace("　", "")
+        if "しずかな" in verse_text or "ぬれたはしに" in verse_text:
             return 1.35
         return 0.75
     if kind in {"exhibit", "reply", "unpack", "kana_return"}:
@@ -496,6 +528,11 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
         for b in lesson
         if b.get("kind") == "exhibit" and word_exhibit_english(b.get("kana") or "")
     )
+    phrase_exhibit_count = sum(
+        1
+        for b in lesson
+        if b.get("kind") == "exhibit" and phrase_exhibit_english(b.get("kana") or "")
+    )
     if content_seconds is None:
         sec_per_weight = (
             14.0
@@ -504,6 +541,7 @@ def schedule_beats(beats: list[dict], new_kana: set[str], content_seconds: float
             or arimasu_count >= 2
             or shizuka_count >= 3
             or word_exhibit_count >= 2
+            or phrase_exhibit_count >= 2
             else LESSON_SECONDS_PER_WEIGHT
         )
         content_seconds = total_w * sec_per_weight
@@ -655,6 +693,7 @@ def beat_lines(beat: dict) -> list[dict]:
         gloss = (
             kore_wa_english(kana)
             or word_exhibit_english(kana)
+            or phrase_exhibit_english(kana)
             or shizuka_na_english(kana)
             or ga_imasu_ka_english(kana)
             or ga_imasu_english(kana)
@@ -791,16 +830,24 @@ def beat_lines(beat: dict) -> list[dict]:
     elif kind == "unpack":
         kana = beat.get("kana") or ""
         if kana:
-            lines.append({"text": kana, "fontsize": 156, "y": "h*0.36", "color": INK})
+            lines.append({"text": kana, "fontsize": 156, "y": "h*0.30", "color": INK})
         romaji = beat.get("romaji")
         if romaji:
             lines.append(
-                {"text": romaji, "fontsize": 58, "y": "h*0.52", "color": INK_SOFT, "borderw": 2}
+                {"text": romaji, "fontsize": 58, "y": "h*0.46", "color": INK_SOFT, "borderw": 2}
             )
-        en = beat.get("en")
+        en = beat.get("en") or unpack_english(kana)
         if en:
             lines.append(
-                {"text": en, "fontsize": 54, "y": "h*0.62", "color": INK_SOFT, "borderw": 3}
+                {
+                    "text": en,
+                    "fontsize": 58,
+                    "y": "h*0.62",
+                    "color": INK,
+                    "borderw": 3,
+                    "fade": True,
+                    "box": True,
+                }
             )
     elif kind == "kana_return":
         kana = beat.get("kana") or ""
