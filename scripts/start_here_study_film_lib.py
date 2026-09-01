@@ -302,6 +302,7 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "そら": "sky",
     "くも": "cloud",
     "ゆめ": "dream",
+    "ねむる": "sleep",
 }
 
 # Short picture phrases.
@@ -1357,37 +1358,80 @@ def render_study_room_film(
             group_beats = []
             group_image = None
 
+        grid_png: Path | None = None
+        if grid_beat:
+            grid_png = tmp_path / "grid.png"
+            kana_grid_png(grid_png, encountered, new_kana)
+
         for beat in scheduled:
-            if beat.get("kind") == "grid":
-                # Hold the quiet-light (or last exhibit) image under the chart.
+            if beat.get("kind") == "puzzle_heading":
+                # Chart intro copy must not share a segment with lesson beats — otherwise
+                # drawtext from "Your Hiragana" can bleed into the kana chart window.
                 flush_group()
-                img_path = chart_bg
+            if beat.get("kind") == "grid":
+                flush_group()
                 seg = tmp_path / f"seg_{len(segments):03d}.mp4"
                 hold = max(0.1, beat["end"] - beat["start"])
-                run(
-                    [
-                        "ffmpeg",
-                        "-y",
-                        "-loop",
-                        "1",
-                        "-i",
-                        str(img_path),
-                        "-vf",
-                        "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,format=yuv420p",
-                        "-t",
-                        f"{hold:.3f}",
-                        "-an",
-                        "-c:v",
-                        "libx264",
-                        "-pix_fmt",
-                        "yuv420p",
-                        "-preset",
-                        FFMPEG_PRESET,
-                        "-crf",
-                        str(FFMPEG_CRF),
-                        str(seg),
-                    ]
-                )
+                if grid_png is not None:
+                    run(
+                        [
+                            "ffmpeg",
+                            "-y",
+                            "-loop",
+                            "1",
+                            "-i",
+                            str(chart_bg),
+                            "-loop",
+                            "1",
+                            "-i",
+                            str(grid_png),
+                            "-filter_complex",
+                            (
+                                "[0:v]scale=1920:1080:force_original_aspect_ratio=increase,"
+                                "crop=1920:1080[bg];"
+                                "[bg][1:v]overlay=x=(W-w)/2:y=(H-h)/2,format=yuv420p[v]"
+                            ),
+                            "-map",
+                            "[v]",
+                            "-t",
+                            f"{hold:.3f}",
+                            "-an",
+                            "-c:v",
+                            "libx264",
+                            "-pix_fmt",
+                            "yuv420p",
+                            "-preset",
+                            FFMPEG_PRESET,
+                            "-crf",
+                            str(FFMPEG_CRF),
+                            str(seg),
+                        ]
+                    )
+                else:
+                    run(
+                        [
+                            "ffmpeg",
+                            "-y",
+                            "-loop",
+                            "1",
+                            "-i",
+                            str(chart_bg),
+                            "-vf",
+                            "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,format=yuv420p",
+                            "-t",
+                            f"{hold:.3f}",
+                            "-an",
+                            "-c:v",
+                            "libx264",
+                            "-pix_fmt",
+                            "yuv420p",
+                            "-preset",
+                            FFMPEG_PRESET,
+                            "-crf",
+                            str(FFMPEG_CRF),
+                            str(seg),
+                        ]
+                    )
                 segments.append(seg)
                 continue
             img_path = resolve_beat_image(beat, default_image)
@@ -1439,70 +1483,30 @@ def render_study_room_film(
         silent = tmp_path / "silent.mp4"
         concat_segments(segments, silent)
 
-        video_in = silent
-        if grid_beat:
-            grid_png = tmp_path / "grid.png"
-            kana_grid_png(grid_png, encountered, new_kana)
-            overlay_out = tmp_path / "with-grid.mp4"
-            grid_end = grid_beat["end"]
-            run(
-                [
-                    "ffmpeg",
-                    "-y",
-                    "-i",
-                    str(silent),
-                    "-loop",
-                    "1",
-                    "-i",
-                    str(grid_png),
-                    "-filter_complex",
-                    (
-                        f"[0:v][1:v]overlay=x=(W-w)/2:y=(H-h)/2:"
-                        f"enable='between(t,{grid_beat['start']:.2f},{grid_end:.2f})',"
-                        f"fade=t=out:st={fade_start:.3f}:d={FADE_OUT:.3f},format=yuv420p[v]"
-                    ),
-                    "-map",
-                    "[v]",
-                    "-t",
-                    f"{film_total:.3f}",
-                    "-an",
-                    "-c:v",
-                    "libx264",
-                    "-pix_fmt",
-                    "yuv420p",
-                    "-preset",
-                    FFMPEG_PRESET,
-                    "-crf",
-                    str(FFMPEG_CRF),
-                    str(overlay_out),
-                ]
-            )
-            video_in = overlay_out
-        else:
-            faded = tmp_path / "faded.mp4"
-            run(
-                [
-                    "ffmpeg",
-                    "-y",
-                    "-i",
-                    str(silent),
-                    "-vf",
-                    f"fade=t=out:st={fade_start:.3f}:d={FADE_OUT:.3f},format=yuv420p",
-                    "-t",
-                    f"{film_total:.3f}",
-                    "-an",
-                    "-c:v",
-                    "libx264",
-                    "-pix_fmt",
-                    "yuv420p",
-                    "-preset",
-                    FFMPEG_PRESET,
-                    "-crf",
-                    str(FFMPEG_CRF),
-                    str(faded),
-                ]
-            )
-            video_in = faded
+        faded = tmp_path / "faded.mp4"
+        run(
+            [
+                "ffmpeg",
+                "-y",
+                "-i",
+                str(silent),
+                "-vf",
+                f"fade=t=out:st={fade_start:.3f}:d={FADE_OUT:.3f},format=yuv420p",
+                "-t",
+                f"{film_total:.3f}",
+                "-an",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                "-preset",
+                FFMPEG_PRESET,
+                "-crf",
+                str(FFMPEG_CRF),
+                str(faded),
+            ]
+        )
+        video_in = faded
 
         loop_n = max(0, int(film_total / audio_len) + 1)
         run(
