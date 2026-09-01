@@ -28,6 +28,7 @@
   <script src="../data/rooms/0.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
   <script src="../js/beginner-guided-song.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
 </head>
 <body class="museum-page beginner-guided-page" data-beginner-lesson="0">
   <a class="skip-link" href="#listen">Skip to Listen & Follow</a>
@@ -48,6 +49,37 @@
   </header>
 
   <main>
+    <!-- YouTube primary path (shown when watchYoutubeId is set). -->
+    <section
+      class="room-section"
+      id="listen-youtube"
+      data-watch-youtube-primary
+      hidden
+      aria-labelledby="youtube-listen-heading"
+    >
+      <div class="room-container">
+        <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
+          <a class="pathway-nav-back" href="../">← Start Here</a>
+          <span class="pathway-nav-status" data-room-nav="current">Room 0</span>
+          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-1/">Continue to Room 1 →</a>
+        </nav>
+
+        <header class="room-section-head reveal">
+          <p class="room-eyebrow">Listen &amp; Follow</p>
+          <h1 id="youtube-listen-heading">The Genkan</h1>
+          <p>Welcome to your Japanese journey.</p>
+        </header>
+
+        <article class="beginner-exhibit pathway-film-exhibit reveal">
+          <div data-watch-film></div>
+        </article>
+
+        <p class="room-prose reveal">
+          <a class="museum-btn museum-btn--quiet" href="#after">Continue</a>
+        </p>
+      </div>
+    </section>
+
     <section class="guided-stage" data-guided-song aria-label="The Genkan">
       <div class="guided-stage-frame">
         <div class="guided-stage-layers">

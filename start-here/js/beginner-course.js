@@ -205,6 +205,8 @@
       newKana: L0,
       prev: null,
       next: "1",
+      /* Unlisted YouTube: https://youtu.be/hdMZBbYnY_U */
+      watchYoutubeId: "hdMZBbYnY_U",
     },
     "1": {
       id: "1",
