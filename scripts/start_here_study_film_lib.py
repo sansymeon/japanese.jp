@@ -186,12 +186,16 @@ SHADOW = "0x171512@0.65"
 GOLD = "0xC9A458"
 TEXT_BOX = "0x171512@0.78"
 # Museum verse overlay — warm ivory poetry, lower third, no caption boxes.
-VERSE_INK = "0xE8E2D6"
-VERSE_SHADOW = "0x120f0c@0.50"
-VERSE_FONT_SIZE = 50
-VERSE_FONT_SIZE_SHORT = 54
+VERSE_INK = "0xF0EBDF"
+VERSE_SHADOW = "0x120f0c@0.62"
+VERSE_BORDERW = 3
+VERSE_FONT_SIZE = 52
+VERSE_FONT_SIZE_SHORT = 56
 VERSE_Y = ["h*0.61", "h*0.71"]
-VERSE_FONT_URL = (
+VERSE_FONT_MEDIUM_URL = (
+    "https://github.com/notofonts/noto-cjk/raw/main/Serif/OTF/Japanese/NotoSerifCJKjp-Medium.otf"
+)
+VERSE_FONT_REGULAR_URL = (
     "https://github.com/notofonts/noto-cjk/raw/main/Serif/OTF/Japanese/NotoSerifCJKjp-Regular.otf"
 )
 
@@ -477,21 +481,35 @@ def escape_drawtext(text: str) -> str:
 
 
 def resolve_verse_font() -> str:
-    """Noto Serif JP for museum verse overlays; falls back to the CJK body font."""
-    candidates = [
+    """Noto Serif JP Medium for museum verse overlays; falls back to Regular then body font."""
+    medium = ROOT / "scripts/fonts/NotoSerifCJKjp-Medium.otf"
+    medium_candidates = [
+        medium,
+        ROOT / "kml/tools/ambient/fonts/noto-serif-jp/NotoSerifCJKjp-Medium.otf",
+        Path("/usr/share/fonts/opentype/noto/NotoSerifCJKjp-Medium.otf"),
+    ]
+    for path in medium_candidates:
+        if path.exists() and path.stat().st_size >= 500:
+            return str(path)
+    medium.parent.mkdir(parents=True, exist_ok=True)
+    if not medium.exists() or medium.stat().st_size < 500:
+        run(["curl", "-fsSL", "-o", str(medium), VERSE_FONT_MEDIUM_URL])
+    if medium.exists() and medium.stat().st_size >= 500:
+        return str(medium)
+
+    regular_candidates = [
         ROOT / "scripts/fonts/NotoSerifCJKjp-Regular.otf",
         ROOT / "kml/tools/ambient/fonts/noto-serif-jp/NotoSerifCJKjp-Regular.otf",
         Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
         Path("/usr/share/fonts/opentype/noto/NotoSerifCJKjp-Regular.otf"),
     ]
-    for path in candidates:
+    for path in regular_candidates:
         if path.exists() and path.stat().st_size >= 500:
             return str(path)
-    target = ROOT / "scripts/fonts/NotoSerifCJKjp-Regular.otf"
-    target.parent.mkdir(parents=True, exist_ok=True)
-    if not target.exists():
-        run(["curl", "-fsSL", "-o", str(target), VERSE_FONT_URL])
-    return str(target)
+    regular = ROOT / "scripts/fonts/NotoSerifCJKjp-Regular.otf"
+    if not regular.exists():
+        run(["curl", "-fsSL", "-o", str(regular), VERSE_FONT_REGULAR_URL])
+    return str(regular)
 
 
 def verse_draw_lines(beat: dict) -> list[dict]:
@@ -508,7 +526,7 @@ def verse_draw_lines(beat: dict) -> list[dict]:
             "y": VERSE_Y[row],
             "color": VERSE_INK,
             "box": False,
-            "borderw": 2,
+            "borderw": VERSE_BORDERW,
             "bordercolor": VERSE_SHADOW,
             "font": font,
             "verse_start_frac": start_frac,
@@ -539,7 +557,7 @@ def verse_draw_lines(beat: dict) -> list[dict]:
             "y": VERSE_Y[i],
             "color": VERSE_INK,
             "box": False,
-            "borderw": 2,
+            "borderw": VERSE_BORDERW,
             "bordercolor": VERSE_SHADOW,
             "font": font,
             "verse_start_frac": 0.0,
