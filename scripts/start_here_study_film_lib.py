@@ -297,6 +297,7 @@ WORD_EXHIBIT_EN: dict[str, str] = {
     "げんき": "fine",
     "こんにちは": "hello",
     "しあわせ": "happiness",
+    "みず": "water",
 }
 
 # Short picture phrases.
