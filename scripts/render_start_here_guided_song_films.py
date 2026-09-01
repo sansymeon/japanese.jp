@@ -4,7 +4,7 @@
 Reads timing from start-here/data/rooms/{id}.json (same conductor as the web
 player). Outputs to exports/start-here-prototypes/ and artifacts.
 
-  scenes[]  — Rooms 1, 3, 5, 18, 24 (image dissolves + ja/romaji overlays)
+  scenes[]  — Rooms 0, 1, 3, 5, 18, 24 (image dissolves + ja/romaji overlays)
   film[]    — Rooms 17, 25 (painting sequence; 17 adds timed hiragana vocals)
 """
 
@@ -28,6 +28,7 @@ SHADOW = "0x171512@0.55"
 
 # Full guided-song listen exports (Room 24 recap stays room-24-竹の音.mp4).
 OUTPUT_NAMES: dict[str, str] = {
+    "0": "room-00-the-genkan.mp4",
     "1": "room-01-nihongo-ga-tanoshii.mp4",
     "3": "room-03-whats-your-name.mp4",
     "5": "room-05-japanese-food-is-good.mp4",
@@ -37,7 +38,7 @@ OUTPUT_NAMES: dict[str, str] = {
     "25": "room-25-yama-no-kawa.mp4",
 }
 
-LISTEN_ROOMS = ["1", "3", "5", "17", "18", "24", "25"]
+LISTEN_ROOMS = ["0", "1", "3", "5", "17", "18", "24", "25"]
 
 
 def run(cmd: list[str]) -> None:

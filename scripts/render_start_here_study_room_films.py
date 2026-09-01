@@ -27,7 +27,7 @@ STUDY_ROOMS = [
 ]
 
 SKIP_ROOMS: dict[int, str] = {
-    0: "guided-song — lyrics/scenes need sung-section timing",
+    0: "guided-song — render via scripts/render_start_here_guided_song_films.py",
     1: "guided-song — render via scripts/render_start_here_guided_song_films.py",
     3: "guided-song — render via scripts/render_start_here_guided_song_films.py",
     5: "guided-song — render via scripts/render_start_here_guided_song_films.py",
