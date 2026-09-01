@@ -789,6 +789,15 @@ button.museum-btn {
     );
 }
 
+/* Room pages: learning content → Sensei → Continue (puzzle removed from HTML). */
+.museum-page [data-chat-sensei] + .room-forward {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.museum-page .beginner-after > .room-container > .room-forward {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
 /* Room 38: give the completed 46/46 grid a little air.
    The filled chart is the event; do not decorate it. */
 [data-beginner-lesson="38"] .kana-puzzle-section {
