@@ -29,6 +29,9 @@ def _hiragana_from_verse(el: Tag) -> str:
             return
         if node.name == "rt":
             return
+        if node.name == "br":
+            parts.append("\n")
+            return
         if node.name == "ruby":
             rt = node.find("rt")
             if rt:
@@ -44,7 +47,8 @@ def _hiragana_from_verse(el: Tag) -> str:
     for child in el.children:
         walk(child)
     text = "".join(parts)
-    text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r" *\n *", "\n", text).strip()
     return text
 
 
