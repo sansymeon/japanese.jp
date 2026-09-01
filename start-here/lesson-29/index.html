@@ -30,6 +30,7 @@
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="29">
@@ -80,11 +81,24 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-30/">Continue to Room 30 →</a>
         </nav>
 
+        <div
+          class="pathway-mode reveal"
+          data-watch-mode
+          role="group"
+          aria-label="How to take this room"
+        >
+          <button type="button" data-watch-select="read" aria-pressed="true">Read</button>
+          <button type="button" data-watch-select="watch" aria-pressed="false">
+            Watch &amp; Listen
+          </button>
+        </div>
+
         <div class="beginner-assist reveal">
           <button type="button" data-study-music hidden>♪ Play room music</button>
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
+        <div data-watch-read>
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Look</p>
           <h2>しあわせ</h2>
@@ -118,6 +132,22 @@
           <p class="jp-kana" lang="ja">しあわせ</p>
           <p class="jp-romaji">shiawase</p>
         </figure>
+        </div>
+
+        <div data-watch-watch hidden>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Watch &amp; Listen</p>
+            <h2>しあわせ</h2>
+            <p>The same room, performed quietly.</p>
+          </header>
+          <article class="beginner-exhibit pathway-film-exhibit reveal">
+            <div data-watch-film></div>
+            <p class="pathway-watch-pending" data-watch-pending hidden>
+              Film ready for unlisted upload —
+              <code>exports/start-here-prototypes/room-29-しあわせ.mp4</code>.
+            </p>
+          </article>
+        </div>
 
           <div
             data-chat-sensei

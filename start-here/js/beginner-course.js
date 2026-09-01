@@ -698,6 +698,10 @@
       newKana: ["せ"],
       prev: "28",
       next: "30",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/FDaYx57khhM */
+      watchYoutubeId: "FDaYx57khhM",
     },
     "30": {
       id: "30",
@@ -712,6 +716,10 @@
       newKana: ["み"],
       prev: "29",
       next: "31",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/xwAGvYsMre4 */
+      watchYoutubeId: "xwAGvYsMre4",
     },
     "31": {
       id: "31",
