@@ -30,6 +30,7 @@
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="33">
@@ -85,6 +86,7 @@
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
+        <div data-watch-read>
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Look</p>
           <h2>くも</h2>
@@ -117,6 +119,22 @@
           <p class="jp-kana" lang="ja">くも</p>
           <p class="jp-romaji">kumo</p>
         </figure>
+        </div>
+
+        <div data-watch-watch hidden>
+          <header class="room-section-head reveal">
+            <p class="room-eyebrow">Watch &amp; Listen</p>
+            <h2>くも</h2>
+            <p>The same room, performed quietly.</p>
+          </header>
+          <article class="beginner-exhibit pathway-film-exhibit reveal">
+            <div data-watch-film></div>
+            <p class="pathway-watch-pending" data-watch-pending hidden>
+              Film ready for unlisted upload —
+              <code>exports/start-here-prototypes/room-33-くも.mp4</code>.
+            </p>
+          </article>
+        </div>
 
           <div
             data-chat-sensei

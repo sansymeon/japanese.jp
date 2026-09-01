@@ -770,6 +770,10 @@
       newKana: ["も"],
       prev: "32",
       next: "34",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/Oh1aMNPjnYM */
+      watchYoutubeId: "Oh1aMNPjnYM",
     },
     "34": {
       id: "34",
@@ -784,6 +788,10 @@
       newKana: ["ゆ", "め"],
       prev: "33",
       next: "35",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/z7R5kUhBxOM */
+      watchYoutubeId: "z7R5kUhBxOM",
     },
     "35": {
       id: "35",
@@ -798,6 +806,10 @@
       newKana: ["む", "る"],
       prev: "34",
       next: "36",
+      watchModes: ["read", "watch"],
+      watchDefault: "read",
+      /* Unlisted YouTube: https://youtu.be/g6OBP7LkSLc */
+      watchYoutubeId: "g6OBP7LkSLc",
     },
     "36": {
       id: "36",
