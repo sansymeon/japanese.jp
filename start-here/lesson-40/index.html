@@ -31,13 +31,10 @@
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/40.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
-  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="40">
+<body class="museum-page" data-beginner-lesson="40">
   <a class="skip-link" href="#listen">Skip to Listen</a>
 
   <header class="museum-header">
@@ -56,12 +53,10 @@
   </header>
 
   <main>
-    <!-- YouTube primary path (shown when watchYoutubeId is set). -->
+    <!-- Film on YouTube — no local MP3 player. -->
     <section
       class="room-section"
       id="listen-youtube"
-      data-watch-youtube-primary
-      hidden
       aria-labelledby="youtube-listen-heading"
     >
       <div class="room-container">
@@ -78,7 +73,15 @@
         </header>
 
         <article class="beginner-exhibit pathway-film-exhibit reveal">
-          <div data-watch-film></div>
+                    <div class="pathway-film">
+            <iframe
+              src="https://www.youtube.com/embed/VqCrT25rCl4?rel=0&modestbranding=1"
+              title="Room 40 — ことばが さく — Kanji・Music・Landscape"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </article>
 
         <p class="room-prose reveal">
@@ -87,73 +90,9 @@
       </div>
     </section>
 
-    <section class="guided-stage" data-guided-song aria-label="ことばが さく">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/lesson_40/genki_desuka.png"
-            alt=""
-            width="1672"
-            height="941"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/lesson_40/genki_desuka.png"
-            alt=""
-            width="1672"
-            height="941"
-          />
-        </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <button type="button" class="guided-chrome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>ことばが さく</h1>
-          <p class="guided-welcome-lead" data-guided-lead>
-            You have learned the pieces. Now simply read Japanese.
-          </p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen
-          </button>
-          <button type="button" class="guided-welcome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div
-          class="guided-lyric"
-          data-guided-lyric
-          hidden
-          aria-live="polite"
-        >
-          <p class="jp-kana" lang="ja" data-guided-ja></p>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Song position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
-      </div>
-    </section>
-
     <section
       class="room-section beginner-after"
       id="after"
-      data-guided-after
       aria-labelledby="after-heading"
     >
       <div class="room-container">
@@ -222,9 +161,6 @@
         <div class="room-forward reveal">
           <div class="room-actions">
             <a class="museum-btn museum-btn--primary" href="../">Back to Start Here</a>
-            <button type="button" class="museum-btn museum-btn--ghost" data-guided-replay>
-              Listen again
-            </button>
             <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
             <a class="museum-btn museum-btn--ghost" href="../lesson-39/">Previous: Room 39</a>
             <a

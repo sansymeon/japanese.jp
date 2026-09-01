@@ -6,8 +6,8 @@
  *
  * mode:
  *   "guided-song" — Listen & Follow; JSON scenes follow audio time; no loop
- *   "study-room"  — learner-paced; optional looping atmosphereAudio,
- *                   or atmospherePool (shuffle; no single-file loop)
+ *   "study-room"  — learner-paced; optional looping atmosphereAudio
+ *                   (study rooms without YouTube only)
  *
  * romajiDefault is per room ("on" | "off"). The learner's explicit toggle
  * is stored separately and, once set, overrides the room default.
@@ -35,12 +35,12 @@
  * lesson, not an appendix, not a mashup. Hiragana-only song; no new kana.
  * Timed lyrics preserve sung Japanese exactly (みちても). No Room 41.
  *
- * YouTube media layer (prototypes Rooms 17 + 28):
- *   watchYoutubeId — unlisted embed id; empty keeps local delivery
+ * YouTube media layer:
+ *   watchYoutubeId — unlisted embed id; sole audiovisual source when set
  *   watchModes     — study-room dual UI: ["read","watch"]
  *   watchDefault   — "read" | "watch"
- * See start-here/js/beginner-watch.js. Do not delete local AV until dual
- * delivery is verified on production.
+ * Rooms with watchYoutubeId do not serve film audio from Netlify (no local
+ * MP3 player, no atmosphere loop). See start-here/js/beginner-watch.js.
  *
  * Slice: Rooms 0–40. Opening song order:
  *   0 conversational あいうえお jazz (guided-song)
@@ -229,7 +229,6 @@
       roomLabel: "Room 2",
       displayName: "Begin seeing Japanese",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-2.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -263,7 +262,6 @@
       roomLabel: "Room 4",
       displayName: "Reading names",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-4.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -297,7 +295,6 @@
       roomLabel: "Room 6",
       displayName: "This is sushi",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-6.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -315,7 +312,6 @@
       roomLabel: "Room 7",
       displayName: "Four pictures",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -333,7 +329,6 @@
       roomLabel: "Room 8",
       displayName: "これは ねこですか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-8.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -351,7 +346,6 @@
       roomLabel: "Room 9",
       displayName: "これは なんですか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-9.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -369,7 +363,6 @@
       roomLabel: "Room 10",
       displayName: "ねこが います",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-10.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -387,7 +380,6 @@
       roomLabel: "Room 11",
       displayName: "いすが あります",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-11.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -405,7 +397,6 @@
       roomLabel: "Room 12",
       displayName: "しずか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -423,7 +414,6 @@
       roomLabel: "Room 13",
       displayName: "ひかり",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-8.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -441,7 +431,6 @@
       roomLabel: "Room 14",
       displayName: "はしに",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-9.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -459,7 +448,6 @@
       roomLabel: "Room 15",
       displayName: "つりがね",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-6.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -477,7 +465,6 @@
       roomLabel: "Room 16",
       displayName: "つくえ",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-11.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -527,7 +514,6 @@
       roomLabel: "Room 19",
       displayName: "いしを こえ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -545,7 +531,6 @@
       roomLabel: "Room 20",
       displayName: "かわ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -563,7 +548,6 @@
       roomLabel: "Room 21",
       displayName: "おと",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -581,7 +565,6 @@
       roomLabel: "Room 22",
       displayName: "まど",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -599,7 +582,6 @@
       roomLabel: "Room 23",
       displayName: "かねひとつ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -649,7 +631,6 @@
       roomLabel: "Room 26",
       displayName: "げんき",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -667,7 +648,6 @@
       roomLabel: "Room 27",
       displayName: "こんにちは",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -685,7 +665,6 @@
       roomLabel: "Room 28",
       displayName: "へや",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -704,7 +683,6 @@
       roomLabel: "Room 29",
       displayName: "しあわせ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -722,7 +700,6 @@
       roomLabel: "Room 30",
       displayName: "みず",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -740,7 +717,6 @@
       roomLabel: "Room 31",
       displayName: "さくら",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -758,7 +734,6 @@
       roomLabel: "Room 32",
       displayName: "そら",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -776,7 +751,6 @@
       roomLabel: "Room 33",
       displayName: "くも",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -794,7 +768,6 @@
       roomLabel: "Room 34",
       displayName: "ゆめ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -812,7 +785,6 @@
       roomLabel: "Room 35",
       displayName: "ねむる",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -830,7 +802,6 @@
       roomLabel: "Room 36",
       displayName: "ふゆ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -848,7 +819,6 @@
       roomLabel: "Room 37",
       displayName: "静かな部屋に",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -866,7 +836,6 @@
       roomLabel: "Room 38",
       displayName: "よろしく",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,

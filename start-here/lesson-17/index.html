@@ -34,13 +34,10 @@
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/17.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
-  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="17">
+<body class="museum-page" data-beginner-lesson="17">
   <a class="skip-link" href="#listen">Skip to listen</a>
 
   <header class="museum-header">
@@ -59,12 +56,10 @@
   </header>
 
   <main>
-    <!-- YouTube primary path (shown when watchYoutubeId is set). -->
+    <!-- Film on YouTube — no local MP3 player. -->
     <section
       class="room-section"
       id="listen-youtube"
-      data-watch-youtube-primary
-      hidden
       aria-labelledby="youtube-listen-heading"
     >
       <div class="room-container">
@@ -81,7 +76,15 @@
         </header>
 
         <article class="beginner-exhibit pathway-film-exhibit reveal">
-          <div data-watch-film></div>
+                    <div class="pathway-film">
+            <iframe
+              src="https://www.youtube.com/embed/bCEEh4vydVI?rel=0&modestbranding=1"
+              title="Room 17 — 濡れた橋 — Kanji・Music・Landscape"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </article>
 
         <p class="room-prose reveal">
@@ -90,85 +93,9 @@
       </div>
     </section>
 
-    <section class="guided-stage" data-guided-song aria-label="濡れた橋">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/room_17/nine_lantern.png"
-            alt=""
-            width="1536"
-            height="1024"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/room_17/nine_lantern.png"
-            alt=""
-            width="1536"
-            height="1024"
-          />
-        </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <a class="guided-chrome-next" href="../lesson-18/">Room 18 →</a>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>濡れた橋</h1>
-          <p class="guided-welcome-lead" data-guided-lead>Listen.</p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen
-          </button>
-          <a class="guided-welcome-next" href="../lesson-18/">Continue to Room 18</a>
-        </div>
-
-        <div class="guided-lyric guided-lyric--verse" data-guided-lyric hidden>
-          <div class="guided-verse" data-verse-panel="romaji" hidden>
-            <p>nureta hashi ni</p>
-            <p>akari ga tsuzuku</p>
-          </div>
-          <div class="guided-verse" data-verse-panel="hiragana" hidden lang="ja">
-            <p>ぬれた はしに</p>
-            <p>あかりが つづく</p>
-          </div>
-          <div class="guided-verse guided-verse--furigana" data-verse-panel="furigana" hidden>
-            <p class="jp-verse" lang="ja">
-              <ruby>濡<rt>ぬ</rt></ruby>れた<ruby>橋<rt>はし</rt></ruby>に<br>
-              <ruby>灯<rt>あか</rt></ruby>りが<ruby>続<rt>つづ</rt></ruby>く
-            </p>
-          </div>
-          <div class="guided-verse" data-verse-panel="japanese" hidden lang="ja">
-            <p>濡れた橋に</p>
-            <p>灯りが続く</p>
-          </div>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Music position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
-
-        <a class="guided-continue" href="#after" data-guided-continue hidden>Continue</a>
-      </div>
-    </section>
-
     <section
       class="room-section beginner-after"
       id="after"
-      data-guided-after
       aria-labelledby="after-heading"
     >
       <div class="room-container">
@@ -181,38 +108,7 @@
         <header class="room-section-head reveal">
           <h2 id="after-heading">Listen another way</h2>
         </header>
-
-        <!-- Local guided-song replay views (active when page film is local). -->
-        <ul class="interlude-view-list reveal" data-guided-view-list>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="romaji">
-              Romaji
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="hiragana">
-              Hiragana
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="furigana">
-              Kanji + Furigana
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="japanese">
-              Japanese
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="none">
-              No lyrics
-            </button>
-          </li>
-        </ul>
-
-        <!-- Static verse views for YouTube-primary mode (no local film replay). -->
-        <ul class="interlude-view-list reveal" data-static-verse-list hidden>
+        <ul class="interlude-view-list reveal" data-static-verse-list>
           <li>
             <button type="button" class="museum-btn museum-btn--quiet" data-static-verse-select="romaji" aria-pressed="false">
               Romaji
@@ -259,15 +155,6 @@
             <p>濡れた橋に</p>
             <p>灯りが続く</p>
           </div>
-        </div>
-
-        <div class="interlude-keep reveal">
-          <p>Take this one with you.</p>
-          <a
-            class="museum-btn museum-btn--quiet"
-            href="../audio/雨の橋の灯.mp3"
-            download="濡れた橋.mp3"
-          >Download song</a>
         </div>
 
         <aside

@@ -25,12 +25,9 @@
   <link rel="stylesheet" href="../css/beginner-pathway.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/3.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
-  <script src="../js/beginner-watch.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="3">
+<body class="museum-page" data-beginner-lesson="3">
   <a class="skip-link" href="#listen">Skip to Listen & Follow</a>
 
   <header class="museum-header">
@@ -49,12 +46,10 @@
   </header>
 
   <main>
-    <!-- YouTube primary path (shown when watchYoutubeId is set). -->
+    <!-- Film on YouTube — no local MP3 player. -->
     <section
       class="room-section"
       id="listen-youtube"
-      data-watch-youtube-primary
-      hidden
       aria-labelledby="youtube-listen-heading"
     >
       <div class="room-container">
@@ -71,7 +66,15 @@
         </header>
 
         <article class="beginner-exhibit pathway-film-exhibit reveal">
-          <div data-watch-film></div>
+                    <div class="pathway-film">
+            <iframe
+              src="https://www.youtube.com/embed/nl8vBOgPLjE?rel=0&modestbranding=1"
+              title="Room 3 — What’s your name? — Kanji・Music・Landscape"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </article>
 
         <p class="room-prose reveal">
@@ -80,78 +83,9 @@
       </div>
     </section>
 
-    <section class="guided-stage" data-guided-song aria-label="What’s your name?">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/room_3/intro.png"
-            alt=""
-            width="1920"
-            height="1080"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/room_3/intro.png"
-            alt=""
-            width="1920"
-            height="1080"
-          />
-        </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
-          <button type="button" class="guided-chrome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>What’s your name?</h1>
-          <p class="guided-welcome-lead" data-guided-lead>
-            A vast hall. A name.
-          </p>
-          <p class="guided-welcome-hint" data-guided-hint>
-            Names may stay as they are. です and ですか you already know.
-          </p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen & Follow
-          </button>
-          <button type="button" class="guided-welcome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div
-          class="guided-lyric"
-          data-guided-lyric
-          hidden
-          aria-live="polite"
-        >
-          <p class="jp-kana" lang="ja" data-guided-ja></p>
-          <p class="jp-romaji" data-guided-romaji></p>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Song position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
-      </div>
-    </section>
-
     <section
       class="room-section beginner-after"
       id="after"
-      data-guided-after
       aria-labelledby="puzzle-heading"
     >
       <div class="room-container">
@@ -180,9 +114,6 @@
           <p>Next: look at おなまえ, one hiragana at a time.</p>
           <div class="room-actions">
             <a class="museum-btn museum-btn--primary" href="../lesson-4/">Continue to Room 4</a>
-            <button type="button" class="museum-btn museum-btn--ghost" data-guided-replay>
-              Listen again
-            </button>
             <a class="museum-btn museum-btn--ghost" href="../lesson-2/">Previous: Room 2</a>
             <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
           </div>

@@ -30,13 +30,10 @@
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/25.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
-  <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="25">
+<body class="museum-page" data-beginner-lesson="25">
   <a class="skip-link" href="#listen">Skip to listen</a>
 
   <header class="museum-header">
@@ -55,12 +52,10 @@
   </header>
 
   <main>
-    <!-- YouTube primary path (shown when watchYoutubeId is set). -->
+    <!-- Film on YouTube — no local MP3 player. -->
     <section
       class="room-section"
       id="listen-youtube"
-      data-watch-youtube-primary
-      hidden
       aria-labelledby="youtube-listen-heading"
     >
       <div class="room-container">
@@ -77,7 +72,15 @@
         </header>
 
         <article class="beginner-exhibit pathway-film-exhibit reveal">
-          <div data-watch-film></div>
+                    <div class="pathway-film">
+            <iframe
+              src="https://www.youtube.com/embed/s-MtpLw_Jzo?rel=0&modestbranding=1"
+              title="Room 25 — 山の川 — Kanji・Music・Landscape"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </article>
 
         <p class="room-prose reveal">
@@ -86,85 +89,9 @@
       </div>
     </section>
 
-    <section class="guided-stage" data-guided-song aria-label="山の川">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../../kml/assets/studies/river.png"
-            alt=""
-            width="1535"
-            height="1024"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../../kml/assets/studies/river.png"
-            alt=""
-            width="1535"
-            height="1024"
-          />
-        </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <a class="guided-chrome-next" href="../lesson-26/">Room 26 →</a>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>山の川</h1>
-          <p class="guided-welcome-lead" data-guided-lead>Listen.</p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen
-          </button>
-          <a class="guided-welcome-next" href="../lesson-26/">Continue to Room 26</a>
-        </div>
-
-        <div class="guided-lyric guided-lyric--verse" data-guided-lyric hidden>
-          <div class="guided-verse" data-verse-panel="romaji" hidden>
-            <p>yama no kawa ga ishi o koe</p>
-            <p>taenu oto dake ga tani ni hibiite ita</p>
-          </div>
-          <div class="guided-verse" data-verse-panel="hiragana" hidden lang="ja">
-            <p>やまの かわが　いしを こえ</p>
-            <p>たえぬ おとだけが　たにに ひびいていた</p>
-          </div>
-          <div class="guided-verse guided-verse--furigana" data-verse-panel="furigana" hidden>
-            <p class="jp-verse" lang="ja">
-              <ruby>山<rt>やま</rt></ruby>の<ruby>川<rt>かわ</rt></ruby>が　<ruby>石<rt>いし</rt></ruby>を<ruby>越<rt>こ</rt></ruby>え<br>
-              <ruby>絶<rt>た</rt></ruby>えぬ<ruby>音<rt>おと</rt></ruby>だけが　<ruby>谷<rt>たに</rt></ruby>に<ruby>響<rt>ひび</rt></ruby>いていた
-            </p>
-          </div>
-          <div class="guided-verse" data-verse-panel="japanese" hidden lang="ja">
-            <p>山の川が　石を越え</p>
-            <p>絶えぬ音だけが　谷に響いていた</p>
-          </div>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Music position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
-
-        <a class="guided-continue" href="#after" data-guided-continue hidden>Continue</a>
-      </div>
-    </section>
-
     <section
       class="room-section beginner-after"
       id="after"
-      data-guided-after
       aria-labelledby="after-heading"
     >
       <div class="room-container">
@@ -180,41 +107,52 @@
 
         <ul class="interlude-view-list reveal">
           <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="romaji">
+            <button type="button" class="museum-btn museum-btn--quiet" data-static-verse-select="romaji" aria-pressed="false">
               Romaji
             </button>
           </li>
           <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="hiragana">
+            <button type="button" class="museum-btn museum-btn--quiet" data-static-verse-select="hiragana" aria-pressed="false">
               Hiragana
             </button>
           </li>
           <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="furigana">
+            <button type="button" class="museum-btn museum-btn--quiet" data-static-verse-select="furigana" aria-pressed="false">
               Kanji + Furigana
             </button>
           </li>
           <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="japanese">
+            <button type="button" class="museum-btn museum-btn--quiet" data-static-verse-select="japanese" aria-pressed="false">
               Japanese
             </button>
           </li>
           <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="none">
+            <button type="button" class="museum-btn museum-btn--quiet" data-static-verse-select="none" aria-pressed="true">
               No lyrics
             </button>
           </li>
         </ul>
 
-        <div class="interlude-keep reveal">
-          <p>Take this one with you.</p>
-          <a
-            class="museum-btn museum-btn--quiet"
-            href="../audio/山の川が 石を越え.mp3"
-            download="山の川が 石を越え.mp3"
-          >Download song</a>
+        <div class="interlude-static-verses reveal">
+          <div class="guided-verse" data-static-verse="romaji" hidden>
+            <p>yama no kawa ga ishi o koe</p>
+            <p>taenu oto dake ga tani ni hibiite ita</p>
+          </div>
+          <div class="guided-verse" data-static-verse="hiragana" hidden lang="ja">
+            <p>やまの かわが　いしを こえ</p>
+            <p>たえぬ おとだけが　たにに ひびいていた</p>
+          </div>
+          <div class="guided-verse guided-verse--furigana" data-static-verse="furigana" hidden>
+            <p class="jp-verse" lang="ja">
+              <ruby>山<rt>やま</rt></ruby>の<ruby>川<rt>かわ</rt></ruby>が　<ruby>石<rt>いし</rt></ruby>を<ruby>越<rt>こ</rt></ruby>え<br>
+              <ruby>絶<rt>た</rt></ruby>えぬ<ruby>音<rt>おと</rt></ruby>だけが　<ruby>谷<rt>たに</rt></ruby>に<ruby>響<rt>ひび</rt></ruby>いていた
+            </p>
+          </div>
+          <div class="guided-verse" data-static-verse="japanese" hidden lang="ja">
+            <p>山の川が　石を越え</p>
+            <p>絶えぬ音だけが　谷に響いていた</p>
+          </div>
         </div>
-
         <aside
           class="pathway-source reveal"
           data-pathway-source
