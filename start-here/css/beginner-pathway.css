@@ -822,9 +822,59 @@ button.museum-btn {
   margin-bottom: 1.25rem;
 }
 
-/* Room 37: return visit — one image, one verse, quiet source note. */
-[data-beginner-lesson="37"] .beginner-assist {
-  margin-bottom: 1rem;
+/* Room 37 prototype: film first, Read reveals written lesson below. */
+[data-beginner-lesson="37"] .room-page-head {
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+}
+
+[data-beginner-lesson="37"] .room-page-head h1 {
+  font-size: clamp(1.45rem, 3.2vw, 1.85rem);
+  line-height: 1.25;
+}
+
+[data-beginner-lesson="37"] .room-page-head p {
+  margin-top: 0.45rem;
+  max-width: 36rem;
+}
+
+[data-beginner-lesson="37"] .pathway-film-exhibit {
+  margin: 0 0 0.85rem;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control {
+  margin: 0 0 1rem;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control button {
+  min-height: 2.5rem;
+  padding: 0.55rem 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(201, 164, 88, 0.35);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control button:hover,
+[data-beginner-lesson="37"] .pathway-read-control button:focus-visible {
+  color: var(--gold);
+  border-color: rgba(201, 164, 88, 0.55);
+  background: rgba(201, 164, 88, 0.06);
+  outline: none;
+}
+
+[data-beginner-lesson="37"] .pathway-read-control button[aria-expanded="true"] {
+  color: var(--ivory);
+  border-color: rgba(201, 164, 88, 0.45);
+  background: rgba(201, 164, 88, 0.12);
+}
+
+[data-beginner-lesson="37"] [data-read-panel] {
+  margin-top: 0.25rem;
 }
 
 [data-beginner-lesson="37"] .pathway-kml-verse {
@@ -836,7 +886,7 @@ button.museum-btn {
 }
 
 [data-beginner-lesson="37"] .pathway-source {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 [data-beginner-lesson="37"] .pathway-source .room-section-head {
@@ -848,11 +898,11 @@ button.museum-btn {
 }
 
 [data-beginner-lesson="37"] [data-chat-sensei] {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 [data-beginner-lesson="37"] [data-chat-sensei] + .room-forward {
-  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 /* Room 38: give the completed 46/46 grid a little air.

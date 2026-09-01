@@ -1,8 +1,10 @@
 /**
- * Start Here — Read / Watch mode chrome for dual-mode rooms.
+ * Start Here — lesson media chrome.
  *
- * Rooms with watchModes embed YouTube directly in HTML (Room 39 pattern).
- * This script toggles visibility between Read and Watch panels. No autoplay.
+ * Film-first rooms (Room 37 prototype): YouTube stays visible; Read toggles
+ * written content below the film. No autoplay.
+ *
+ * Dual-mode rooms: legacy Watch & Listen | Read segmented control.
  */
 (function () {
   "use strict";
@@ -16,6 +18,46 @@
   var lessonId = String(root.getAttribute("data-beginner-lesson") || "");
   var lesson = course.lessons[lessonId];
   if (!lesson) return;
+
+  var readToggle = document.querySelector("[data-read-toggle]");
+  var readRevealPanel = document.querySelector("[data-read-panel]");
+  if (readToggle && readRevealPanel) {
+    var readStorageKey =
+      (course.watchStorageKey || "kml-beginner-watch-mode") + ":read-open:" + lessonId;
+
+    function storedReadOpen() {
+      try {
+        return localStorage.getItem(readStorageKey) === "true";
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function persistReadOpen(open) {
+      try {
+        localStorage.setItem(readStorageKey, open ? "true" : "false");
+      } catch (err) {
+        /* private mode */
+      }
+    }
+
+    function setReadOpen(open) {
+      readToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      readToggle.textContent = open ? "Hide Read" : "Read";
+      document.body.classList.toggle("is-read-open", open);
+      persistReadOpen(open);
+
+      if (open) readRevealPanel.removeAttribute("hidden");
+      else readRevealPanel.setAttribute("hidden", "");
+    }
+
+    readToggle.addEventListener("click", function () {
+      setReadOpen(readToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    setReadOpen(storedReadOpen());
+    return;
+  }
 
   var modes = lesson.watchModes || null;
   if (!(modes && modes.indexOf("watch") !== -1 && modes.indexOf("read") !== -1)) {

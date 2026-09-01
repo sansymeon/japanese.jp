@@ -4,12 +4,11 @@
   Zero-new-kana recognition (44/46). No puzzle on this page.
   Return to the Rooms 12–13 胃 verse, now readable.
   Visual: kml/assets/studies/stomach.jpg (the original 胃 encounter).
-  Read panel: one image, one verse, compact source note — no duplicate hero.
+  Film-first prototype: YouTube on load; Read reveals verse + source note.
   Verse text is copied exactly from Rooms 12–13. Do not rewrite it.
   No English or romaji under the verse. No vocabulary breakdown.
   No 胃 explanation. No grammar. No new kana. No song.
   Complete-verse doorway to Lesson 2 #kanji-stomach.
-  Atmosphere: lesson-7.mp3 (same quiet loop as Room 12).
 -->
 <html lang="en" class="museum-page">
 <head>
@@ -36,7 +35,7 @@
   <script src="../js/beginner-watch.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page is-watch-mode" data-beginner-lesson="37">
+<body class="museum-page" data-beginner-lesson="37">
   <a class="skip-link" href="#lesson">Skip to lesson</a>
 
   <header class="museum-header">
@@ -65,101 +64,87 @@
         </nav>
 
         <header class="room-section-head reveal room-page-head">
-          <p class="room-eyebrow">Beginner pathway</p>
           <h1 id="lesson-heading">Room 37 — 静かな部屋に</h1>
           <p>You have been here before.</p>
         </header>
 
-        <div
-          class="pathway-mode reveal"
-          data-watch-mode
-          role="group"
-          aria-label="Watch &amp; Listen or Read"
-        >
-          <button type="button" data-watch-select="watch" aria-pressed="true">
-            Watch &amp; Listen
-          </button>
-          <button type="button" data-watch-select="read" aria-pressed="false">Read</button>
-        </div>
-
-        <div class="beginner-assist reveal">
-          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
-        </div>
-
-        <div data-watch-read hidden>
-        <article class="beginner-exhibit pathway-kml-verse reveal">
-          <img
-            src="../../kml/assets/studies/stomach.jpg"
-            alt=""
-            width="1537"
-            height="1023"
-          />
-          <figure class="pathway-verse">
-            <p class="jp-verse" lang="ja">
-              <ruby>静<rt>しず</rt></ruby>かな<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>に<br>
-              <ruby>碗<rt>わん</rt></ruby>から<ruby>光<rt>ひかり</rt></ruby>が<ruby>溢<rt>あふ</rt></ruby>れ<br>
-              <ruby>夕<rt>ゆう</rt></ruby>の<ruby>山<rt>やま</rt></ruby>だけが<br>
-              <ruby>窓<rt>まど</rt></ruby>の<ruby>外<rt>そと</rt></ruby>に<ruby>続<rt>つづ</rt></ruby>いた
-            </p>
-          </figure>
+        <article class="beginner-exhibit pathway-film-exhibit reveal">
+          <div class="pathway-film">
+            <iframe
+              src="https://www.youtube.com/embed/aZWBy2dnvbw?rel=0&modestbranding=1"
+              title="Room 37 — 静かな部屋に — Kanji・Music・Landscape"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </article>
 
-        <aside
-          class="pathway-source reveal"
-          data-pathway-source
-          data-kml-lesson="2"
-          data-kanji="胃"
-          data-slug="stomach"
-          aria-labelledby="source-heading"
-        >
-          <header class="room-section-head">
-            <h2 id="source-heading">Where this came from</h2>
-          </header>
-          <div class="room-prose">
-            <p>You can read this now.</p>
-            <p>
-              This verse comes from <span lang="ja">胃</span> in the KML Kanji Studies.
-            </p>
-          </div>
-          <p class="pathway-source-link">
-            <a href="../../kml/contents/books/book_01/lessons/lesson_02.html#kanji-stomach">
-              See it in the original lesson →
-            </a>
-          </p>
-        </aside>
+        <div class="pathway-read-control reveal">
+          <button
+            type="button"
+            data-read-toggle
+            aria-expanded="false"
+            aria-controls="room-37-read-panel"
+          >
+            Read
+          </button>
         </div>
 
-        <div data-watch-watch>
-          <header class="room-section-head reveal">
-            <p class="room-eyebrow">Watch &amp; Listen</p>
-            <h2>静かな部屋に</h2>
-            <p>The same room, performed quietly.</p>
-          </header>
-          <article class="beginner-exhibit pathway-film-exhibit reveal">
-                        <div class="pathway-film">
-              <iframe
-                src="https://www.youtube.com/embed/aZWBy2dnvbw?rel=0&modestbranding=1"
-                title="Room 37 — 静かな部屋に — Kanji・Music・Landscape"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
+        <div id="room-37-read-panel" data-read-panel hidden>
+          <article class="beginner-exhibit pathway-kml-verse reveal">
+            <img
+              src="../../kml/assets/studies/stomach.jpg"
+              alt=""
+              width="1537"
+              height="1023"
+            />
+            <figure class="pathway-verse">
+              <p class="jp-verse" lang="ja">
+                <ruby>静<rt>しず</rt></ruby>かな<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>に<br>
+                <ruby>碗<rt>わん</rt></ruby>から<ruby>光<rt>ひかり</rt></ruby>が<ruby>溢<rt>あふ</rt></ruby>れ<br>
+                <ruby>夕<rt>ゆう</rt></ruby>の<ruby>山<rt>やま</rt></ruby>だけが<br>
+                <ruby>窓<rt>まど</rt></ruby>の<ruby>外<rt>そと</rt></ruby>に<ruby>続<rt>つづ</rt></ruby>いた
+              </p>
+            </figure>
           </article>
-        </div>
 
-          <div
-            data-chat-sensei
-            data-prompt-set="already-read"
-            data-pathway-room="37"
-            data-source="start-here"
+          <aside
+            class="pathway-source reveal"
+            data-pathway-source
             data-kml-lesson="2"
             data-kanji="胃"
             data-slug="stomach"
-            data-keyword="stomach"
-            data-known-pieces='[{"jp":"しずかな","note":"from an earlier room"},{"jp":"ひかり","note":"from an earlier room"},{"jp":"やま","note":"a mountain you already know"},{"jp":"へや","note":"from an earlier room"},{"jp":"まど","note":"from an earlier room"},{"jp":"が","note":"you have been seeing this"},{"jp":"の","note":"you can already read this"}]'
-          ></div>
+            aria-labelledby="source-heading"
+          >
+            <header class="room-section-head">
+              <h2 id="source-heading">Where this came from</h2>
+            </header>
+            <div class="room-prose">
+              <p>You can read this now.</p>
+              <p>
+                This verse comes from <span lang="ja">胃</span> in the KML Kanji Studies.
+              </p>
+            </div>
+            <p class="pathway-source-link">
+              <a href="../../kml/contents/books/book_01/lessons/lesson_02.html#kanji-stomach">
+                See it in the original lesson →
+              </a>
+            </p>
+          </aside>
+        </div>
 
+        <div
+          data-chat-sensei
+          data-prompt-set="already-read"
+          data-pathway-room="37"
+          data-source="start-here"
+          data-kml-lesson="2"
+          data-kanji="胃"
+          data-slug="stomach"
+          data-keyword="stomach"
+          data-known-pieces='[{"jp":"しずかな","note":"from an earlier room"},{"jp":"ひかり","note":"from an earlier room"},{"jp":"やま","note":"a mountain you already know"},{"jp":"へや","note":"from an earlier room"},{"jp":"まど","note":"from an earlier room"},{"jp":"が","note":"you have been seeing this"},{"jp":"の","note":"you can already read this"}]'
+        ></div>
 
         <div class="room-forward reveal">
           <div class="room-actions">
