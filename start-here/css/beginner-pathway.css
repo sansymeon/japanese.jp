@@ -809,7 +809,7 @@ button.museum-btn {
   color: var(--ink);
 }
 
-/* Simplified room: 3:2 film thumbnail opens YouTube in a new tab. */
+/* Simplified room: large 3:2 film thumbnail opens YouTube in a new tab. */
 .pathway-film-link {
   display: block;
   position: relative;
@@ -954,7 +954,12 @@ button.museum-btn {
 }
 
 .beginner-room-simple .room-container--narrow {
-  width: min(100% - 2.5rem, 36rem);
+  width: min(100% - 2.5rem, 56rem);
+}
+
+.beginner-room-simple .pathway-film-link {
+  max-width: none;
+  margin-bottom: 1.75rem;
 }
 
 .beginner-room-simple .pathway-nav {

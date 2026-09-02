@@ -101,6 +101,14 @@
       section.setAttribute("data-script", unit.script || "");
     }
 
+    if (lesson.displayName) {
+      document.title =
+        lesson.roomLabel +
+        " — " +
+        lesson.displayName +
+        " — Kanji・Music・Landscape";
+    }
+
     var titleEl = document.querySelector("[data-static-study-title]");
     if (titleEl) {
       titleEl.lang = "ja";
