@@ -41,6 +41,11 @@ build/
 *.bak.png
 *.vertical.bak.png
 
+# Media safety — no new source media files may enter Git.
+# Existing tracked files remain until a separate cleanup pass.
+*.png
+*.mp3
+
 # Ambient recording / QA junk (local only)
 *.nohup.out
 nohup.out

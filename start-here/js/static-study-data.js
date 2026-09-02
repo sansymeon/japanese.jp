@@ -20,6 +20,7 @@
       id: "h-a",
       script: "hiragana",
       label: "あ行",
+      pronunciationNote: "Think Spanish rather than English.",
       kana: [
         { kana: "あ", romaji: "a" },
         { kana: "い", romaji: "i" },
@@ -28,10 +29,10 @@
         { kana: "お", romaji: "o" }
       ],
       vocabulary: [
-        { word: "あい", meaning: "love" },
-        { word: "いえ", meaning: "house" },
-        { word: "うえ", meaning: "above" },
-        { word: "あお", meaning: "blue" }
+        { word: "あい", romaji: "ai", meaning: "love" },
+        { word: "いえ", romaji: "ie", meaning: "house" },
+        { word: "うえ", romaji: "ue", meaning: "above" },
+        { word: "あお", romaji: "ao", meaning: "blue" }
       ]
     },
     "h-ka": {

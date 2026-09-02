@@ -3,6 +3,10 @@
  *
  * Rooms opt in with `staticStudy` (a unit id from KmlStaticStudy).
  * The same renderer serves hiragana and later katakana units.
+ *
+ * Pronunciation: lesson.staticStudyPronunciation
+ *   "always" — alphabet visible, no toggle (Room 0)
+ *   "toggle" — learner can show/hide (default for later rooms)
  */
 (function () {
   "use strict";
@@ -18,12 +22,61 @@
   var unit = study.units[lesson.staticStudy];
   if (!unit) return;
 
-  function unitTitle(unitData) {
-    return unitData.kana
-      .map(function (item) {
-        return item.kana;
-      })
-      .join("　");
+  var pronunciationMode = lesson.staticStudyPronunciation || "toggle";
+  var pronunciationStorageKey = "kml-static-study-pronunciation";
+
+  function storedPronunciation() {
+    try {
+      var value = localStorage.getItem(pronunciationStorageKey);
+      if (value === "on" || value === "off") return value;
+    } catch (err) {
+      /* private mode */
+    }
+    return null;
+  }
+
+  function persistPronunciation(value) {
+    try {
+      localStorage.setItem(pronunciationStorageKey, value);
+    } catch (err) {
+      /* private mode */
+    }
+  }
+
+  function pronunciationDefaultOn() {
+    if (lesson.staticStudyPronunciationDefault === "off") return false;
+    if (lesson.staticStudyPronunciationDefault === "on") return true;
+    return (lesson.romajiDefault || "on") === "on";
+  }
+
+  function applyPronunciation(on) {
+    document.documentElement.classList.toggle("is-static-pronunciation-on", on);
+    document.documentElement.classList.toggle("is-static-pronunciation-off", !on);
+    document.querySelectorAll("[data-static-study-pronunciation-toggle]").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.textContent = on ? "Pronunciation: ON" : "Pronunciation: OFF";
+    });
+  }
+
+  function setupPronunciation() {
+    if (pronunciationMode === "always") {
+      document.documentElement.classList.add("is-static-pronunciation-always");
+      applyPronunciation(true);
+      return;
+    }
+
+    var stored = storedPronunciation();
+    var on = stored ? stored === "on" : pronunciationDefaultOn();
+    applyPronunciation(on);
+
+    document.querySelectorAll("[data-static-study-pronunciation-toggle]").forEach(function (btn) {
+      btn.hidden = false;
+      btn.addEventListener("click", function () {
+        var next = !document.documentElement.classList.contains("is-static-pronunciation-on");
+        persistPronunciation(next ? "on" : "off");
+        applyPronunciation(next);
+      });
+    });
   }
 
   function fillNav() {
@@ -95,6 +148,16 @@
     mount.appendChild(hit);
   }
 
+  function renderPronunciationNote() {
+    var mount = document.querySelector("[data-static-study-pronunciation-note]");
+    if (!mount || !unit.pronunciationNote) return;
+    mount.replaceChildren();
+    var note = document.createElement("p");
+    note.className = "static-study-pronunciation-note";
+    note.textContent = unit.pronunciationNote;
+    mount.appendChild(note);
+  }
+
   function renderStudy() {
     var section = document.querySelector("[data-static-study]");
     if (section) {
@@ -109,11 +172,7 @@
         " — Kanji・Music・Landscape";
     }
 
-    var titleEl = document.querySelector("[data-static-study-title]");
-    if (titleEl) {
-      titleEl.lang = "ja";
-      titleEl.textContent = unitTitle(unit);
-    }
+    renderPronunciationNote();
 
     var kanaMount = document.querySelector("[data-static-study-kana]");
     if (kanaMount) {
@@ -162,11 +221,19 @@
         word.lang = "ja";
         word.textContent = item.word;
 
+        li.appendChild(word);
+
+        if (item.romaji) {
+          var wordRomaji = document.createElement("p");
+          wordRomaji.className = "static-study-vocab-romaji";
+          wordRomaji.textContent = item.romaji;
+          li.appendChild(wordRomaji);
+        }
+
         var meaning = document.createElement("p");
         meaning.className = "static-study-vocab-meaning";
         meaning.textContent = item.meaning;
 
-        li.appendChild(word);
         li.appendChild(meaning);
         list.appendChild(li);
       });
@@ -175,6 +242,7 @@
     }
   }
 
+  setupPronunciation();
   fillNav();
   renderFilmLink();
   renderStudy();
