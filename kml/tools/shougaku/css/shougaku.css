@@ -1,0 +1,193 @@
+:root {
+  --shougaku-bg: #0f0e12;
+  --shougaku-fade: 2200ms;
+  --shougaku-font: "Yuji Syuku", "Noto Serif JP", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--shougaku-bg);
+  color: #f5f0e8;
+  font-family: system-ui, sans-serif;
+}
+
+.shougaku-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.shougaku-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(72, 149, 239, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(247, 37, 133, 0.1), transparent 40%),
+    linear-gradient(160deg, #121018 0%, #0b0a0f 55%, #15121a 100%);
+}
+
+.shougaku-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+.shougaku-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.shougaku-loading,
+.shougaku-error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.shougaku-error {
+  color: #ffb4b4;
+}
+
+.shougaku-title-screen {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 12;
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity var(--shougaku-fade) ease-in-out;
+}
+
+.shougaku-title-screen.is-visible {
+  opacity: 1;
+}
+
+.shougaku-title-main {
+  margin: 0;
+  font-family: var(--shougaku-font);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.shougaku-title-sub {
+  margin: 1rem 0 0;
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  opacity: 0.72;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.shougaku-grid-wrap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  padding: clamp(1rem, 3vw, 3rem);
+}
+
+.shougaku-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--shougaku-cols, 4), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--shougaku-rows, 10), minmax(0, 1fr));
+  gap: clamp(0.35rem, 1.2vw, 1rem);
+  width: min(92vw, 1100px);
+  height: min(88vh, 900px);
+}
+
+.shougaku-cell {
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity var(--shougaku-fade) ease-in-out,
+    transform var(--shougaku-fade) ease-in-out,
+    color 600ms ease;
+}
+
+.shougaku-cell.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.shougaku-kanji {
+  font-family: var(--shougaku-font);
+  font-size: clamp(1.6rem, 4.2vw, 3.4rem);
+  line-height: 1;
+  text-shadow: 0 0 24px currentColor;
+  user-select: none;
+}
+
+.shougaku-autoplay-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  background: rgba(8, 7, 10, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.shougaku-autoplay-gate button {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.shougaku-autoplay-gate button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.shougaku-chrome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.shougaku-chrome button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.shougaku-capture .shougaku-chrome,
+.shougaku-capture .shougaku-autoplay-gate {
+  display: none;
+}
