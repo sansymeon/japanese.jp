@@ -124,6 +124,9 @@
  *   ordered by content — hiragana, then later katakana — and is not
  *   sized to the number of Start Here rooms. Prototype: Room 0 only
  *   (h-a). Do not wire remaining rooms until review.
+ *
+ *   staticStudyPronunciation: "always" (no toggle; Room 0) or "toggle"
+ *   (default for later static-study rooms).
  */
 (function () {
   "use strict";
@@ -203,6 +206,7 @@
       encounteredKana: L0,
       newKana: L0,
       staticStudy: "h-a",
+      staticStudyPronunciation: "always",
       filmImage: "../assets/images/intro.png",
       youtubeUrl: null,
       prev: null,
