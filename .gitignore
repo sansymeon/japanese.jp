@@ -41,9 +41,10 @@ build/
 *.bak.png
 *.vertical.bak.png
 
-# PNG safety — no new PNG files may enter Git (2026-03 policy).
-# Existing tracked PNGs remain until a separate cleanup pass.
+# Media safety — no new source media files may enter Git.
+# Existing tracked files remain until a separate cleanup pass.
 *.png
+*.mp3
 
 # Ambient recording / QA junk (local only)
 *.nohup.out
