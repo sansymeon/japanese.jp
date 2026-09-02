@@ -809,6 +809,163 @@ button.museum-btn {
   color: var(--ink);
 }
 
+/* Simplified room: 3:2 film thumbnail opens YouTube in a new tab. */
+.pathway-film-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto 3rem;
+  aspect-ratio: 3 / 2;
+  background: #0b0b0c;
+  border-radius: 2px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(201, 164, 88, 0.14);
+  transition: border-color var(--ease), transform var(--ease);
+}
+
+.pathway-film-link:hover,
+.pathway-film-link:focus-visible {
+  border-color: rgba(201, 164, 88, 0.42);
+  outline: none;
+}
+
+.pathway-film-link.is-pending {
+  cursor: default;
+}
+
+.pathway-film-link-hit {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pathway-film-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pathway-film-link-label {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translateX(-50%);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: rgba(8, 8, 9, 0.72);
+  border: 1px solid rgba(201, 164, 88, 0.28);
+  border-radius: 2px;
+}
+
+.pathway-film-link.is-pending .pathway-film-link-label {
+  color: var(--ink-quiet);
+  border-color: rgba(201, 164, 88, 0.14);
+}
+
+/* Conventional hiragana study block beneath the room film. */
+.hiragana-study {
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+}
+
+.hiragana-study-title {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 4.5vw, 2.35rem);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-align: center;
+  color: color-mix(in srgb, var(--gold) 82%, var(--ink));
+}
+
+.hiragana-study-kana {
+  margin-bottom: clamp(2.75rem, 6vw, 3.75rem);
+}
+
+.hiragana-study-kana-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.25rem, 4vw, 2.75rem);
+}
+
+.hiragana-study-kana-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 3.5rem;
+}
+
+.hiragana-study-kana-glyph {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 8vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.hiragana-study-kana-romaji {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  letter-spacing: 0.06em;
+  color: var(--ink-quiet);
+  text-transform: lowercase;
+}
+
+.hiragana-study-vocab-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.65rem;
+}
+
+.hiragana-study-vocab-item {
+  text-align: center;
+}
+
+.hiragana-study-vocab-word {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  letter-spacing: 0.12em;
+  color: var(--ink);
+}
+
+.hiragana-study-vocab-meaning {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--ink-quiet);
+}
+
+.beginner-room-simple .room-section {
+  padding-top: clamp(5.5rem, 12vw, 7.5rem);
+}
+
+.beginner-room-simple .room-container--narrow {
+  width: min(100% - 2.5rem, 36rem);
+}
+
+.beginner-room-simple .room-section-head {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.beginner-room-simple .room-forward {
+  text-align: center;
+}
+
 .pathway-film {
   position: relative;
   width: 100%;

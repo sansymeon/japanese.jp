@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-  Room 0 — The Genkan. URL remains /start-here/lesson-0/.
-  Guided-song: JSON in ../data/rooms/0.json conducts images + lyrics.
-  Puzzle fills あいうえお only. Scenery kana do not fill.
+  Room 0 — The Genkan. Simplified room layout:
+  3:2 film thumbnail (YouTube) → conventional hiragana study → Continue.
+  Prototype: hiragana row 1 (あいうえお).
 -->
 <html lang="en" class="museum-page">
 <head>
@@ -11,7 +11,7 @@
   <title>Room 0 — The Genkan — Kanji・Music・Landscape</title>
   <meta
     name="description"
-    content="The Genkan — welcome to your Japanese journey. Listen and follow a first conversation in sound."
+    content="Room 0 — The Genkan. Watch the room film, or study あいうえお directly."
   />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,14 +24,13 @@
   <link rel="stylesheet" href="../css/beginner-pathway.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/0.js" defer></script>
-  <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
+  <script src="../js/hiragana-study-data.js" defer></script>
+  <script src="../js/hiragana-study.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="0">
-  <a class="skip-link" href="#listen">Skip to Listen & Follow</a>
+<body class="museum-page beginner-room-simple" data-beginner-lesson="0">
+  <a class="skip-link" href="#lesson">Skip to lesson</a>
 
-  <header class="museum-header">
+  <header class="museum-header museum-header--solid">
     <div class="museum-header-inner">
       <a class="museum-brand" href="../../index.html">Kanji・Music・Landscape</a>
       <nav aria-label="Primary">
@@ -47,106 +46,30 @@
   </header>
 
   <main>
-    <section class="guided-stage" data-guided-song aria-label="The Genkan">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/intro.png"
-            alt=""
-            width="1920"
-            height="1080"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/intro.png"
-            alt=""
-            width="1920"
-            height="1080"
-          />
-        </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
-          <button type="button" class="guided-chrome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>The Genkan</h1>
-          <p class="guided-welcome-lead" data-guided-lead>
-            Welcome to your Japanese journey.
-          </p>
-          <p class="guided-welcome-hint" data-guided-hint>
-            Relax your mouth. Listen first. Then imitate the singer.
-          </p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen & Follow
-          </button>
-          <button type="button" class="guided-welcome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div
-          class="guided-lyric"
-          data-guided-lyric
-          hidden
-          aria-live="polite"
-        >
-          <p class="jp-kana" lang="ja" data-guided-ja></p>
-          <p class="jp-romaji" data-guided-romaji></p>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Song position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="room-section beginner-after"
-      id="after"
-      data-guided-after
-      aria-labelledby="puzzle-heading"
-    >
-      <div class="room-container">
+    <section class="room-section" id="lesson">
+      <div class="room-container room-container--narrow">
         <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
-          <a class="pathway-nav-back" href="../">← Start Here</a>
+          <a class="pathway-nav-back" data-room-nav="prev" href="../">← Start Here</a>
           <span class="pathway-nav-status" data-room-nav="current">Room 0</span>
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-1/">Continue to Room 1 →</a>
         </nav>
 
-        <section class="kana-puzzle-section reveal" aria-labelledby="puzzle-heading">
-          <h2 id="puzzle-heading">Your Hiragana</h2>
-          <p class="kana-puzzle-note">
-            Five pieces, earned. The rest of each phrase can wait — you already have
-            the feeling.
-          </p>
-          <p class="kana-puzzle-count" data-kana-puzzle-count></p>
-          <div class="kana-puzzle" data-kana-puzzle lang="ja"></div>
+        <header class="room-section-head reveal">
+          <p class="room-eyebrow">Beginner pathway</p>
+          <h1>The Genkan</h1>
+        </header>
+
+        <div class="pathway-film-link reveal" data-room-film></div>
+
+        <section class="hiragana-study reveal" aria-labelledby="hiragana-study-title">
+          <h2 class="hiragana-study-title" id="hiragana-study-title" data-hiragana-study-title></h2>
+          <div class="hiragana-study-kana" data-hiragana-study-kana></div>
+          <div class="hiragana-study-vocab" data-hiragana-study-vocab></div>
         </section>
 
         <div class="room-forward reveal">
-          <p>Next: a slow question, and a yes.</p>
           <div class="room-actions">
-            <a class="museum-btn museum-btn--primary" href="../lesson-1/">Continue to Room 1</a>
-            <button type="button" class="museum-btn museum-btn--ghost" data-guided-replay>
-              Listen again
-            </button>
-            <a class="museum-btn museum-btn--ghost" href="../">Back to Start Here</a>
-            <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
+            <a class="museum-btn museum-btn--primary" data-room-continue href="../lesson-1/">Continue</a>
           </div>
         </div>
       </div>
