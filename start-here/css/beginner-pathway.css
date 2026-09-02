@@ -872,13 +872,13 @@ button.museum-btn {
   border-color: rgba(201, 164, 88, 0.14);
 }
 
-/* Conventional hiragana study block beneath the room film. */
-.hiragana-study {
+/* Conventional static study block (hiragana now; katakana later). */
+.static-study {
   max-width: 36rem;
   margin: 0 auto 3rem;
 }
 
-.hiragana-study-title {
+.static-study-title {
   margin: 0 0 1.75rem;
   font-family: var(--font-display);
   font-size: clamp(1.65rem, 4.5vw, 2.35rem);
@@ -888,18 +888,18 @@ button.museum-btn {
   color: color-mix(in srgb, var(--gold) 82%, var(--ink));
 }
 
-.hiragana-study-kana {
+.static-study-kana {
   margin-bottom: clamp(2.75rem, 6vw, 3.75rem);
 }
 
-.hiragana-study-kana-grid {
+.static-study-kana-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: clamp(1.25rem, 4vw, 2.75rem);
 }
 
-.hiragana-study-kana-cell {
+.static-study-kana-cell {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -907,7 +907,7 @@ button.museum-btn {
   min-width: 3.5rem;
 }
 
-.hiragana-study-kana-glyph {
+.static-study-kana-glyph {
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 8vw, 4rem);
   line-height: 1;
@@ -915,7 +915,7 @@ button.museum-btn {
   color: var(--ink);
 }
 
-.hiragana-study-kana-romaji {
+.static-study-kana-romaji {
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   letter-spacing: 0.06em;
@@ -923,7 +923,7 @@ button.museum-btn {
   text-transform: lowercase;
 }
 
-.hiragana-study-vocab-list {
+.static-study-vocab-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -931,11 +931,11 @@ button.museum-btn {
   gap: 1.65rem;
 }
 
-.hiragana-study-vocab-item {
+.static-study-vocab-item {
   text-align: center;
 }
 
-.hiragana-study-vocab-word {
+.static-study-vocab-word {
   margin: 0 0 0.2rem;
   font-family: var(--font-display);
   font-size: clamp(1.55rem, 4vw, 2rem);
@@ -943,7 +943,7 @@ button.museum-btn {
   color: var(--ink);
 }
 
-.hiragana-study-vocab-meaning {
+.static-study-vocab-meaning {
   margin: 0;
   font-size: 1rem;
   color: var(--ink-quiet);

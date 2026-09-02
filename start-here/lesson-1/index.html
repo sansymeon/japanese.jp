@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
   Room 1 — 日本語が楽しい. Simplified room layout:
-  site header → 3:2 film → Previous / Index / Next → hiragana study.
-  Prototype: hiragana row 2 (かきくけこ).
+  site header → 3:2 film → Previous / Index / Next → static study.
+  Prototype: static study unit h-ka (かきくけこ).
 -->
 <html lang="en" class="museum-page">
 <head>
@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="../css/beginner-pathway.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../js/hiragana-study-data.js" defer></script>
-  <script src="../js/hiragana-study.js" defer></script>
+  <script src="../js/static-study-data.js" defer></script>
+  <script src="../js/static-study.js" defer></script>
 </head>
 <body class="museum-page beginner-room-simple" data-beginner-lesson="1">
   <a class="skip-link" href="#lesson">Skip to lesson</a>
@@ -56,10 +56,14 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-2/">Next Lesson →</a>
         </nav>
 
-        <section class="hiragana-study reveal" aria-labelledby="hiragana-study-title">
-          <h1 class="hiragana-study-title" id="hiragana-study-title" data-hiragana-study-title></h1>
-          <div class="hiragana-study-kana" data-hiragana-study-kana></div>
-          <div class="hiragana-study-vocab" data-hiragana-study-vocab></div>
+        <section
+          class="static-study reveal"
+          data-static-study
+          aria-labelledby="static-study-title"
+        >
+          <h1 class="static-study-title" id="static-study-title" data-static-study-title></h1>
+          <div class="static-study-kana" data-static-study-kana></div>
+          <div class="static-study-vocab" data-static-study-vocab></div>
         </section>
       </div>
     </section>

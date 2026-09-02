@@ -1,25 +1,29 @@
 /**
- * Renders conventional hiragana study content inside Start Here rooms.
- * Expects data-beginner-lesson on body and hiraganaStudy on the room registry entry.
+ * Renders the static study block inside Start Here rooms.
+ *
+ * Rooms opt in with `staticStudy` (a unit id from KmlStaticStudy).
+ * The same renderer serves hiragana and later katakana units.
  */
 (function () {
   "use strict";
 
   var course = window.KmlBeginnerCourse;
-  var study = window.KmlHiraganaStudy;
+  var study = window.KmlStaticStudy;
   if (!course || !study) return;
 
   var lessonId = document.body.getAttribute("data-beginner-lesson");
   var lesson = lessonId ? course.lessons[lessonId] : null;
-  if (!lesson || !lesson.hiraganaStudy) return;
+  if (!lesson || !lesson.staticStudy) return;
 
-  var row = study.rows[lesson.hiraganaStudy];
-  if (!row) return;
+  var unit = study.units[lesson.staticStudy];
+  if (!unit) return;
 
-  function rowTitle(rowData) {
-    return rowData.kana.map(function (item) {
-      return item.kana;
-    }).join("　");
+  function unitTitle(unitData) {
+    return unitData.kana
+      .map(function (item) {
+        return item.kana;
+      })
+      .join("　");
   }
 
   function fillNav() {
@@ -92,31 +96,39 @@
   }
 
   function renderStudy() {
-    var titleEl = document.querySelector("[data-hiragana-study-title]");
-    if (titleEl) {
-      titleEl.lang = "ja";
-      titleEl.textContent = rowTitle(row);
+    var section = document.querySelector("[data-static-study]");
+    if (section) {
+      section.setAttribute("data-script", unit.script || "");
     }
 
-    var kanaMount = document.querySelector("[data-hiragana-study-kana]");
+    var titleEl = document.querySelector("[data-static-study-title]");
+    if (titleEl) {
+      titleEl.lang = "ja";
+      titleEl.textContent = unitTitle(unit);
+    }
+
+    var kanaMount = document.querySelector("[data-static-study-kana]");
     if (kanaMount) {
       kanaMount.replaceChildren();
       var grid = document.createElement("div");
-      grid.className = "hiragana-study-kana-grid";
+      grid.className = "static-study-kana-grid";
       grid.setAttribute("role", "group");
-      grid.setAttribute("aria-label", "New kana");
+      grid.setAttribute(
+        "aria-label",
+        unit.script === "katakana" ? "New katakana" : "New hiragana"
+      );
 
-      row.kana.forEach(function (item) {
+      unit.kana.forEach(function (item) {
         var cell = document.createElement("div");
-        cell.className = "hiragana-study-kana-cell";
+        cell.className = "static-study-kana-cell";
 
         var glyph = document.createElement("span");
-        glyph.className = "hiragana-study-kana-glyph";
+        glyph.className = "static-study-kana-glyph";
         glyph.lang = "ja";
         glyph.textContent = item.kana;
 
         var romaji = document.createElement("span");
-        romaji.className = "hiragana-study-kana-romaji";
+        romaji.className = "static-study-kana-romaji";
         romaji.textContent = item.romaji;
 
         cell.appendChild(glyph);
@@ -127,23 +139,23 @@
       kanaMount.appendChild(grid);
     }
 
-    var vocabMount = document.querySelector("[data-hiragana-study-vocab]");
+    var vocabMount = document.querySelector("[data-static-study-vocab]");
     if (vocabMount) {
       vocabMount.replaceChildren();
       var list = document.createElement("ul");
-      list.className = "hiragana-study-vocab-list";
+      list.className = "static-study-vocab-list";
 
-      row.vocabulary.forEach(function (item) {
+      unit.vocabulary.forEach(function (item) {
         var li = document.createElement("li");
-        li.className = "hiragana-study-vocab-item";
+        li.className = "static-study-vocab-item";
 
         var word = document.createElement("p");
-        word.className = "hiragana-study-vocab-word";
+        word.className = "static-study-vocab-word";
         word.lang = "ja";
         word.textContent = item.word;
 
         var meaning = document.createElement("p");
-        meaning.className = "hiragana-study-vocab-meaning";
+        meaning.className = "static-study-vocab-meaning";
         meaning.textContent = item.meaning;
 
         li.appendChild(word);

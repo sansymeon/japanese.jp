@@ -117,6 +117,13 @@
  * Reading: you don't have to understand everything to understand something.
  * Help learners notice known pieces and signals. Unknown material can wait.
  * Do not repeat this as a slogan on every page.
+ *
+ * Static study track (simplified rooms):
+ *   Room pages may mount conventional kana study via `staticStudy`
+ *   (a unit id from start-here/js/static-study-data.js). That track is
+ *   ordered by content — hiragana, then later katakana — and is not
+ *   sized to the number of Start Here rooms. Prototype: Rooms 0–1
+ *   only (h-a, h-ka). Do not wire remaining rooms until review.
  */
 (function () {
   "use strict";
@@ -195,7 +202,7 @@
       showReferenceChart: false,
       encounteredKana: L0,
       newKana: L0,
-      hiraganaStudy: "1",
+      staticStudy: "h-a",
       filmImage: "../assets/images/intro.png",
       youtubeUrl: null,
       prev: null,
@@ -211,7 +218,7 @@
       showReferenceChart: false,
       encounteredKana: L1,
       newKana: ["は", "す", "か", "し", "た", "の"],
-      hiraganaStudy: "2",
+      staticStudy: "h-ka",
       filmImage: "../assets/images/matsuri.png",
       youtubeUrl: null,
       prev: "0",
