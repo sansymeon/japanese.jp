@@ -1065,12 +1065,47 @@ html:not(.is-static-pronunciation-always)
   color: var(--ink-soft);
 }
 
+[data-beginner-lesson="0"] .static-study {
+  max-width: min(100% - 2.5rem, 56rem);
+}
+
+[data-beginner-lesson="0"] .static-study-vocab-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.75rem, 5vw, 2.75rem);
+  justify-items: center;
+  align-items: start;
+}
+
+@media (min-width: 40rem) {
+  [data-beginner-lesson="0"] .static-study-vocab-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+[data-beginner-lesson="0"] .static-study-vocab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  max-width: 12rem;
+}
+
+[data-beginner-lesson="0"] .static-study-vocab-word {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  letter-spacing: 0.1em;
+}
+
 [data-beginner-lesson="0"] .static-study-vocab-romaji {
+  margin: 0;
   font-size: clamp(1.375rem, 2.2vw, 1.625rem); /* 22–26px */
   color: var(--ink-soft);
 }
 
 [data-beginner-lesson="0"] .static-study-vocab-meaning {
+  margin: 0;
   font-size: clamp(1.375rem, 2.2vw, 1.625rem); /* 22–26px */
   color: var(--ink-soft);
 }
