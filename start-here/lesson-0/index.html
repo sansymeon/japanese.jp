@@ -47,22 +47,76 @@
   <main>
     <section class="room-section" id="lesson">
       <div class="room-container room-container--narrow">
-        <div class="pathway-film-link reveal" data-room-film></div>
+        <div class="pathway-film-link is-pending" data-room-film>
+          <div class="pathway-film-link-hit">
+            <img
+              src="../assets/images/intro.png"
+              alt=""
+              width="1200"
+              height="800"
+              fetchpriority="high"
+            />
+            <span class="pathway-film-link-label">Film coming soon</span>
+          </div>
+        </div>
 
-        <nav class="pathway-nav reveal" aria-label="Lesson sequence">
+        <nav class="pathway-nav" aria-label="Lesson sequence">
           <a class="pathway-nav-back" data-room-nav="prev" hidden>← Previous Lesson</a>
           <a class="pathway-nav-index" data-room-nav="index" href="../rooms/">Index</a>
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-1/">Next Lesson →</a>
         </nav>
 
         <section
-          class="static-study reveal"
+          class="static-study"
           data-static-study
+          data-script="hiragana"
           aria-labelledby="static-study-title"
         >
-          <h1 class="static-study-title" id="static-study-title" data-static-study-title></h1>
-          <div class="static-study-kana" data-static-study-kana></div>
-          <div class="static-study-vocab" data-static-study-vocab></div>
+          <h1 class="static-study-title" id="static-study-title" lang="ja" data-static-study-title>あ　い　う　え　お</h1>
+          <div class="static-study-kana" data-static-study-kana>
+            <div class="static-study-kana-grid" role="group" aria-label="New hiragana">
+              <div class="static-study-kana-cell">
+                <span class="static-study-kana-glyph" lang="ja">あ</span>
+                <span class="static-study-kana-romaji">a</span>
+              </div>
+              <div class="static-study-kana-cell">
+                <span class="static-study-kana-glyph" lang="ja">い</span>
+                <span class="static-study-kana-romaji">i</span>
+              </div>
+              <div class="static-study-kana-cell">
+                <span class="static-study-kana-glyph" lang="ja">う</span>
+                <span class="static-study-kana-romaji">u</span>
+              </div>
+              <div class="static-study-kana-cell">
+                <span class="static-study-kana-glyph" lang="ja">え</span>
+                <span class="static-study-kana-romaji">e</span>
+              </div>
+              <div class="static-study-kana-cell">
+                <span class="static-study-kana-glyph" lang="ja">お</span>
+                <span class="static-study-kana-romaji">o</span>
+              </div>
+            </div>
+          </div>
+          <div class="static-study-vocab" data-static-study-vocab>
+            <ul class="static-study-vocab-list">
+              <li class="static-study-vocab-item">
+                <p class="static-study-vocab-word" lang="ja">あい</p>
+                <p class="static-study-vocab-meaning">love</p>
+              </li>
+              <li class="static-study-vocab-item">
+                <p class="static-study-vocab-word" lang="ja">いえ</p>
+                <p class="static-study-vocab-meaning">house</p>
+              </li>
+              <li class="static-study-vocab-item">
+                <p class="static-study-vocab-word" lang="ja">うえ</p>
+                <p class="static-study-vocab-meaning">above</p>
+              </li>
+              <li class="static-study-vocab-item">
+                <p class="static-study-vocab-word" lang="ja">あお</p>
+                <p class="static-study-vocab-meaning">blue</p>
+              </li>
+            </ul>
+          </div>
         </section>
       </div>
     </section>

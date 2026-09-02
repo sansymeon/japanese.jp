@@ -122,8 +122,8 @@
  *   Room pages may mount conventional kana study via `staticStudy`
  *   (a unit id from start-here/js/static-study-data.js). That track is
  *   ordered by content — hiragana, then later katakana — and is not
- *   sized to the number of Start Here rooms. Prototype: Rooms 0–1
- *   only (h-a, h-ka). Do not wire remaining rooms until review.
+ *   sized to the number of Start Here rooms. Prototype: Room 0 only
+ *   (h-a). Do not wire remaining rooms until review.
  */
 (function () {
   "use strict";
@@ -212,15 +212,13 @@
       id: "1",
       roomLabel: "Room 1",
       displayName: "日本語が楽しい",
-      mode: "study-room",
+      mode: "guided-song",
+      dataSrc: "../data/rooms/1.json",
       romajiDefault: "on",
-      showPuzzle: false,
+      showPuzzle: true,
       showReferenceChart: false,
       encounteredKana: L1,
       newKana: ["は", "す", "か", "し", "た", "の"],
-      staticStudy: "h-ka",
-      filmImage: "../assets/images/matsuri.png",
-      youtubeUrl: null,
       prev: "0",
       next: "2",
     },
