@@ -111,8 +111,7 @@
 
     var titleEl = document.querySelector("[data-static-study-title]");
     if (titleEl) {
-      titleEl.lang = "ja";
-      titleEl.textContent = unitTitle(unit);
+      titleEl.remove();
     }
 
     var kanaMount = document.querySelector("[data-static-study-kana]");
