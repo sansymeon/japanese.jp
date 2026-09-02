@@ -815,7 +815,7 @@ button.museum-btn {
   position: relative;
   width: 100%;
   max-width: 42rem;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1.35rem;
   aspect-ratio: 3 / 2;
   background: #0b0b0c;
   border-radius: 2px;
@@ -957,13 +957,33 @@ button.museum-btn {
   width: min(100% - 2.5rem, 36rem);
 }
 
-.beginner-room-simple .room-section-head {
-  text-align: center;
-  margin-bottom: 2.25rem;
+.beginner-room-simple .pathway-nav {
+  margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
 }
 
-.beginner-room-simple .room-forward {
-  text-align: center;
+.beginner-room-simple .pathway-nav-index {
+  justify-self: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 72%, transparent);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--ease);
+}
+
+.beginner-room-simple .pathway-nav-index:hover,
+.beginner-room-simple .pathway-nav-index:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.beginner-room-simple .pathway-nav-back[hidden],
+.beginner-room-simple .pathway-nav-next[hidden] {
+  display: block !important;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .pathway-film {

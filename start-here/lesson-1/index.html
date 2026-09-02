@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   Room 1 — 日本語が楽しい. Simplified room layout:
-  3:2 film thumbnail (YouTube) → conventional hiragana study → Continue.
+  site header → 3:2 film → Previous / Index / Next → hiragana study.
   Prototype: hiragana row 2 (かきくけこ).
 -->
 <html lang="en" class="museum-page">
@@ -48,30 +48,19 @@
   <main>
     <section class="room-section" id="lesson">
       <div class="room-container room-container--narrow">
-        <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
-          <a class="pathway-nav-back" data-room-nav="prev" href="../lesson-0/">← The Genkan</a>
-          <span class="pathway-nav-status" data-room-nav="current">Room 1</span>
-          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-2/">Continue to Room 2 →</a>
-        </nav>
-
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">Beginner pathway</p>
-          <h1>日本語が楽しい</h1>
-        </header>
-
         <div class="pathway-film-link reveal" data-room-film></div>
 
+        <nav class="pathway-nav reveal" aria-label="Lesson sequence">
+          <a class="pathway-nav-back" data-room-nav="prev" href="../lesson-0/">← Previous Lesson</a>
+          <a class="pathway-nav-index" data-room-nav="index" href="../rooms/">Index</a>
+          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-2/">Next Lesson →</a>
+        </nav>
+
         <section class="hiragana-study reveal" aria-labelledby="hiragana-study-title">
-          <h2 class="hiragana-study-title" id="hiragana-study-title" data-hiragana-study-title></h2>
+          <h1 class="hiragana-study-title" id="hiragana-study-title" data-hiragana-study-title></h1>
           <div class="hiragana-study-kana" data-hiragana-study-kana></div>
           <div class="hiragana-study-vocab" data-hiragana-study-vocab></div>
         </section>
-
-        <div class="room-forward reveal">
-          <div class="room-actions">
-            <a class="museum-btn museum-btn--primary" data-room-continue href="../lesson-2/">Continue</a>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -81,8 +70,8 @@
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
         <a href="../">Start Here</a>
-        <a href="../lesson-0/">The Genkan</a>
-        <a href="../lesson-2/">Room 2</a>
+        <a href="../../kml/contents/books/">Kanji Studies</a>
+        <a href="../../collections/">Video Collections</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>
