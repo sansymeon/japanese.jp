@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_129_strokes",
+  "title": "Lesson 129 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:17).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 129,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 11.3,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 737000,
+    "estimatedExhibitRuntimeMs": 727000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L129_bellflower",
+      "kanji": "桔",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bellflower.html",
+        "strokeCount": 10,
+        "kanji": "桔"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "bellflower",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_temple_grove",
+      "kanji": "杜",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/temple_grove.html",
+        "strokeCount": 7,
+        "kanji": "杜"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "temple_grove",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_grain_rake",
+      "kanji": "杷",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/grain_rake.html",
+        "strokeCount": 8,
+        "kanji": "杷"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "grain_rake",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_oar",
+      "kanji": "梶",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/oar.html",
+        "strokeCount": 11,
+        "kanji": "梶"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "oar",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_wooden_pestle",
+      "kanji": "杵",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wooden_pestle.html",
+        "strokeCount": 8,
+        "kanji": "杵"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "wooden_pestle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_cane",
+      "kanji": "杖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cane.html",
+        "strokeCount": 7,
+        "kanji": "杖"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "cane",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_barrel",
+      "kanji": "樽",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/barrel.html",
+        "strokeCount": 16,
+        "kanji": "樽"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "barrel",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_turret",
+      "kanji": "櫓",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/turret.html",
+        "strokeCount": 19,
+        "kanji": "櫓"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "turret",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_sturdy_oak",
+      "kanji": "橿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sturdy_oak.html",
+        "strokeCount": 17,
+        "kanji": "橿"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "sturdy_oak",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_wooden_ladle",
+      "kanji": "杓",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wooden_ladle.html",
+        "strokeCount": 7,
+        "kanji": "杓"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "wooden_ladle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_damson",
+      "kanji": "李",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/damson.html",
+        "strokeCount": 7,
+        "kanji": "李"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "damson",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_raw_cotton",
+      "kanji": "棉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/raw_cotton.html",
+        "strokeCount": 12,
+        "kanji": "棉"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "raw_cotton",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_escutcheon",
+      "kanji": "楯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/escutcheon.html",
+        "strokeCount": 13,
+        "kanji": "楯"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "escutcheon",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_hackberry",
+      "kanji": "榎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/hackberry.html",
+        "strokeCount": 14,
+        "kanji": "榎"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "hackberry",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_birch",
+      "kanji": "樺",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/birch.html",
+        "strokeCount": 14,
+        "kanji": "樺"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "birch",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_lance",
+      "kanji": "槍",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lance.html",
+        "strokeCount": 14,
+        "kanji": "槍"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "lance",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_wild_mulberry",
+      "kanji": "柘",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wild_mulberry.html",
+        "strokeCount": 9,
+        "kanji": "柘"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "wild_mulberry",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_bale",
+      "kanji": "梱",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bale.html",
+        "strokeCount": 11,
+        "kanji": "梱"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "bale",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_loquat",
+      "kanji": "枇",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/loquat.html",
+        "strokeCount": 8,
+        "kanji": "枇"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "loquat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L129_downspout",
+      "kanji": "樋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/downspout.html",
+        "strokeCount": 15,
+        "kanji": "樋"
+      },
+      "meta": {
+        "lesson": 129,
+        "slug": "downspout",
+        "prototype": true
+      }
+    }
+  ]
+}

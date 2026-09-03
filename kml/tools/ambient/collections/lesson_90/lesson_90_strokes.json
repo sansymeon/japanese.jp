@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_90_strokes",
+  "title": "Lesson 90 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~11:45).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 90,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 10.3,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 705500,
+    "estimatedExhibitRuntimeMs": 695500,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L90_sweat",
+      "kanji": "汗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sweat.html",
+        "strokeCount": 6,
+        "kanji": "汗"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "sweat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_flats",
+      "kanji": "軒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/flats.html",
+        "strokeCount": 10,
+        "kanji": "軒"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "flats",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_beach",
+      "kanji": "岸",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/beach.html",
+        "strokeCount": 8,
+        "kanji": "岸"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "beach",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_tree_trunk",
+      "kanji": "幹",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/tree_trunk.html",
+        "strokeCount": 13,
+        "kanji": "幹"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "tree_trunk",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_potato",
+      "kanji": "芋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/potato.html",
+        "strokeCount": 6,
+        "kanji": "芋"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "potato",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_eaves",
+      "kanji": "宇",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eaves.html",
+        "strokeCount": 6,
+        "kanji": "宇"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "eaves",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_too_much",
+      "kanji": "余",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/too_much.html",
+        "strokeCount": 7,
+        "kanji": "余"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "too_much",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_exclude",
+      "kanji": "除",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/exclude.html",
+        "strokeCount": 10,
+        "kanji": "除"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "exclude",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_gradually",
+      "kanji": "徐",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/gradually.html",
+        "strokeCount": 10,
+        "kanji": "徐"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "gradually",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_confer",
+      "kanji": "叙",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/confer.html",
+        "strokeCount": 9,
+        "kanji": "叙"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "confer",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_route",
+      "kanji": "途",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/route.html",
+        "strokeCount": 10,
+        "kanji": "途"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "route",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_diagonal",
+      "kanji": "斜",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/diagonal.html",
+        "strokeCount": 11,
+        "kanji": "斜"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "diagonal",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_paint",
+      "kanji": "塗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/paint.html",
+        "strokeCount": 13,
+        "kanji": "塗"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "paint",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_bundle",
+      "kanji": "束",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bundle.html",
+        "strokeCount": 7,
+        "kanji": "束"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "bundle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_trust",
+      "kanji": "頼",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/trust.html",
+        "strokeCount": 16,
+        "kanji": "頼"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "trust",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_rapids",
+      "kanji": "瀬",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rapids.html",
+        "strokeCount": 19,
+        "kanji": "瀬"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "rapids",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_imperial_order",
+      "kanji": "勅",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/imperial_order.html",
+        "strokeCount": 9,
+        "kanji": "勅"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "imperial_order",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_alienate",
+      "kanji": "疎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/alienate.html",
+        "strokeCount": 12,
+        "kanji": "疎"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "alienate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_bitter",
+      "kanji": "辣",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bitter.html",
+        "strokeCount": 14,
+        "kanji": "辣"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "bitter",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L90_quick",
+      "kanji": "速",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/quick.html",
+        "strokeCount": 10,
+        "kanji": "速"
+      },
+      "meta": {
+        "lesson": 90,
+        "slug": "quick",
+        "prototype": true
+      }
+    }
+  ]
+}

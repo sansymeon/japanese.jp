@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_43_strokes",
+  "title": "Lesson 43 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~11:20).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 43,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 9.4,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 680000,
+    "estimatedExhibitRuntimeMs": 670000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L43_promontory",
+      "kanji": "崎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/promontory.html",
+        "strokeCount": 11,
+        "kanji": "崎"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "promontory",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_cliff",
+      "kanji": "崖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cliff.html",
+        "strokeCount": 11,
+        "kanji": "崖"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "cliff",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_enter",
+      "kanji": "入",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/enter.html",
+        "strokeCount": 2,
+        "kanji": "入"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "enter",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_crowded",
+      "kanji": "込",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/crowded.html",
+        "strokeCount": 5,
+        "kanji": "込"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "crowded",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_part",
+      "kanji": "分",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/part.html",
+        "strokeCount": 4,
+        "kanji": "分"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "part",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_poverty",
+      "kanji": "貧",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/poverty.html",
+        "strokeCount": 11,
+        "kanji": "貧"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "poverty",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_partition",
+      "kanji": "頒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/partition.html",
+        "strokeCount": 13,
+        "kanji": "頒"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "partition",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_public",
+      "kanji": "公",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/public.html",
+        "strokeCount": 4,
+        "kanji": "公"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "public",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_pine_tree",
+      "kanji": "松",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pine_tree.html",
+        "strokeCount": 8,
+        "kanji": "松"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "pine_tree",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_elderly_man",
+      "kanji": "翁",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/elderly_man.html",
+        "strokeCount": 10,
+        "kanji": "翁"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "elderly_man",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_litigation",
+      "kanji": "訟",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/litigation.html",
+        "strokeCount": 11,
+        "kanji": "訟"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "litigation",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_valley",
+      "kanji": "谷",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/valley.html",
+        "strokeCount": 7,
+        "kanji": "谷"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "valley",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_bathe",
+      "kanji": "浴",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bathe.html",
+        "strokeCount": 10,
+        "kanji": "浴"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "bathe",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_contain",
+      "kanji": "容",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/contain.html",
+        "strokeCount": 10,
+        "kanji": "容"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "contain",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_melt",
+      "kanji": "溶",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/melt.html",
+        "strokeCount": 13,
+        "kanji": "溶"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "melt",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_longing",
+      "kanji": "欲",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/longing.html",
+        "strokeCount": 11,
+        "kanji": "欲"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "longing",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_abundant",
+      "kanji": "裕",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/abundant.html",
+        "strokeCount": 12,
+        "kanji": "裕"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "abundant",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_lead",
+      "kanji": "鉛",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lead.html",
+        "strokeCount": 13,
+        "kanji": "鉛"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "lead",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_run_alongside",
+      "kanji": "沿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/run_alongside.html",
+        "strokeCount": 8,
+        "kanji": "沿"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "run_alongside",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L43_prize",
+      "kanji": "賞",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/prize.html",
+        "strokeCount": 15,
+        "kanji": "賞"
+      },
+      "meta": {
+        "lesson": 43,
+        "slug": "prize",
+        "prototype": true
+      }
+    }
+  ]
+}

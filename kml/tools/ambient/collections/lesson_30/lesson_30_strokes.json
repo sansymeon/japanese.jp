@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_30_strokes",
+  "title": "Lesson 30 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:30).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 30,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 11.8,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 750500,
+    "estimatedExhibitRuntimeMs": 740500,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L30_house",
+      "kanji": "家",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/house.html",
+        "strokeCount": 10,
+        "kanji": "家"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "house",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_marry_into",
+      "kanji": "嫁",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/marry_into.html",
+        "strokeCount": 13,
+        "kanji": "嫁"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "marry_into",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_overpowering",
+      "kanji": "豪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/overpowering.html",
+        "strokeCount": 14,
+        "kanji": "豪"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "overpowering",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_intestines",
+      "kanji": "腸",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/intestines.html",
+        "strokeCount": 13,
+        "kanji": "腸"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "intestines",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_location",
+      "kanji": "場",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/location.html",
+        "strokeCount": 12,
+        "kanji": "場"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "location",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_hot_water",
+      "kanji": "湯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/hot_water.html",
+        "strokeCount": 12,
+        "kanji": "湯"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "hot_water",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_sheep",
+      "kanji": "羊",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sheep.html",
+        "strokeCount": 6,
+        "kanji": "羊"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "sheep",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_beauty",
+      "kanji": "美",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/beauty.html",
+        "strokeCount": 9,
+        "kanji": "美"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "beauty",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_ocean",
+      "kanji": "洋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/ocean.html",
+        "strokeCount": 9,
+        "kanji": "洋"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "ocean",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_detailed",
+      "kanji": "詳",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/detailed.html",
+        "strokeCount": 13,
+        "kanji": "詳"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "detailed",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_fresh",
+      "kanji": "鮮",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/fresh.html",
+        "strokeCount": 17,
+        "kanji": "鮮"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "fresh",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_attain",
+      "kanji": "達",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/attain.html",
+        "strokeCount": 12,
+        "kanji": "達"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "attain",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_envious",
+      "kanji": "羨",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/envious.html",
+        "strokeCount": 13,
+        "kanji": "羨"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "envious",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_distinction",
+      "kanji": "差",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/distinction.html",
+        "strokeCount": 10,
+        "kanji": "差"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "distinction",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_wear",
+      "kanji": "着",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wear.html",
+        "strokeCount": 12,
+        "kanji": "着"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "wear",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_solely",
+      "kanji": "唯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/solely.html",
+        "strokeCount": 11,
+        "kanji": "唯"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "solely",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_piled_high",
+      "kanji": "堆",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/piled_high.html",
+        "strokeCount": 11,
+        "kanji": "堆"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "piled_high",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_sweet_oak",
+      "kanji": "椎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sweet_oak.html",
+        "strokeCount": 12,
+        "kanji": "椎"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "sweet_oak",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_who",
+      "kanji": "誰",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/who.html",
+        "strokeCount": 15,
+        "kanji": "誰"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "who",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L30_char",
+      "kanji": "焦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/char.html",
+        "strokeCount": 12,
+        "kanji": "焦"
+      },
+      "meta": {
+        "lesson": 30,
+        "slug": "char",
+        "prototype": true
+      }
+    }
+  ]
+}

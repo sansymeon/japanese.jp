@@ -1,0 +1,230 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "proto_lesson_art_gallery_31_panorama",
+  "title": "Lesson Art Gallery — Lesson 31 + Miyajima panorama (prototype)",
+  "notes": "Short-form Lesson Art Gallery prototype with one ultra-wide Miyajima panorama walk (shrine → water → great torii). Other scenes remain still. ~22.3s avg hold · 3750ms dissolve · crest 8.8s within soundtrack (190.9s). Prototype only — do not propagate yet.",
+  "soundtrack": {
+    "main": "audio/art_exhibit_3.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true,
+      "silentAfterSoundtrack": false
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 3750,
+    "exhibitionBlackBeforeMs": 0,
+    "artworkAloneMs": 22265,
+    "kanjiRevealMs": 0,
+    "imageVerseKanjiHoldMs": 0,
+    "imageVerseKanjiFadeMs": 0,
+    "titleFadeMs": 0,
+    "verseJpRevealMs": 0,
+    "verseJpHoldMs": 0,
+    "verseJpFadeMs": 0,
+    "verseEnRevealMs": 0,
+    "verseEnHoldMs": 0,
+    "verseEnFadeMs": 0,
+    "exhibitTransitionMs": 3750,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 26015,
+    "closingBlackBeforeMs": 0,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingFadeToBlackMs": 4000,
+    "closingBlackAfterMs": 800,
+    "closingSilenceHoldMs": 0,
+    "blackHoldMs": 0,
+    "seamlessExhibitHandoff": true
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "lessonArtGallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest",
+    "typography": "mobile-refine"
+  },
+  "meta": {
+    "family": "lessonArtGallery",
+    "prototype": true,
+    "lesson": 31,
+    "sceneCount": 7,
+    "soundtrackDurationMs": 190903,
+    "crestDurationMs": 8800,
+    "transitionMs": 3750,
+    "avgHoldMs": 22265,
+    "selectedImages": [
+      "reef",
+      "gather",
+      "noon",
+      "miyajima_panorama",
+      "observe",
+      "feathers",
+      "assurance"
+    ],
+    "panorama": true,
+    "estimatedContentRuntimeMs": 194653
+  },
+  "scenes": [
+    {
+      "id": "L31_reef",
+      "kanji": "",
+      "keyword": "reef",
+      "image": "studies/reef.jpg",
+      "galleryCamera": {
+        "motion": "still"
+      },
+      "artworkAloneMs": 18976,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "lesson": 31,
+        "slug": "reef",
+        "lessonArtGallery": true,
+        "camera": "still"
+      },
+      "imageRev": 1786221470
+    },
+    {
+      "id": "L31_gather",
+      "kanji": "",
+      "keyword": "gather",
+      "image": "studies/gather.jpg",
+      "galleryCamera": {
+        "motion": "still"
+      },
+      "artworkAloneMs": 18976,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "lesson": 31,
+        "slug": "gather",
+        "lessonArtGallery": true,
+        "camera": "still"
+      },
+      "imageRev": 1786223857
+    },
+    {
+      "id": "L31_noon",
+      "kanji": "",
+      "keyword": "noon",
+      "image": "studies/noon.jpg",
+      "galleryCamera": {
+        "motion": "still"
+      },
+      "artworkAloneMs": 18976,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "lesson": 31,
+        "slug": "noon",
+        "lessonArtGallery": true,
+        "camera": "still"
+      },
+      "imageRev": 1786225177
+    },
+    {
+      "id": "L31_miyajima_panorama",
+      "kanji": "",
+      "keyword": "Miyajima",
+      "image": "lesson_art_gallery/miyajima_panorama.png",
+      "galleryCamera": {
+        "motion": "panorama-walk",
+        "direction": "ltr"
+      },
+      "artworkAloneMs": 42000,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "lesson": 31,
+        "slug": "miyajima_panorama",
+        "lessonArtGallery": true,
+        "camera": "panorama-walk"
+      },
+      "imageRev": 1786483879
+    },
+    {
+      "id": "L31_observe",
+      "kanji": "",
+      "keyword": "observe",
+      "image": "studies/observe.jpg",
+      "galleryCamera": {
+        "motion": "still"
+      },
+      "artworkAloneMs": 18975,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "lesson": 31,
+        "slug": "observe",
+        "lessonArtGallery": true,
+        "camera": "still"
+      },
+      "imageRev": 1786226100
+    },
+    {
+      "id": "L31_feathers",
+      "kanji": "",
+      "keyword": "feathers",
+      "image": "studies/feathers.jpg",
+      "galleryCamera": {
+        "motion": "still"
+      },
+      "artworkAloneMs": 18975,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "lesson": 31,
+        "slug": "feathers",
+        "lessonArtGallery": true,
+        "camera": "still"
+      },
+      "imageRev": 1786226333
+    },
+    {
+      "id": "L31_assurance",
+      "kanji": "",
+      "keyword": "assurance",
+      "image": "studies/assurance.jpg",
+      "galleryCamera": {
+        "motion": "still"
+      },
+      "artworkAloneMs": 18975,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "lesson": 31,
+        "slug": "assurance",
+        "lessonArtGallery": true,
+        "camera": "still"
+      },
+      "imageRev": 1786224997
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_96_strokes",
+  "title": "Lesson 96 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:26).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 96,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 11.7,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 746000,
+    "estimatedExhibitRuntimeMs": 736000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L96_chess_piece",
+      "kanji": "棋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/chess_piece.html",
+        "strokeCount": 12,
+        "kanji": "棋"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "chess_piece",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_national_flag",
+      "kanji": "旗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/national_flag.html",
+        "strokeCount": 14,
+        "kanji": "旗"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "national_flag",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_period_of_time",
+      "kanji": "期",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/period_of_time.html",
+        "strokeCount": 12,
+        "kanji": "期"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "period_of_time",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_go_game",
+      "kanji": "碁",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/go_game.html",
+        "strokeCount": 13,
+        "kanji": "碁"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "go_game",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_foundation",
+      "kanji": "基",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/foundation.html",
+        "strokeCount": 11,
+        "kanji": "基"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "foundation",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_tremendously",
+      "kanji": "甚",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/tremendously.html",
+        "strokeCount": 9,
+        "kanji": "甚"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "tremendously",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_intuition",
+      "kanji": "勘",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/intuition.html",
+        "strokeCount": 11,
+        "kanji": "勘"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "intuition",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_withstand",
+      "kanji": "堪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/withstand.html",
+        "strokeCount": 12,
+        "kanji": "堪"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "withstand",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_precious",
+      "kanji": "貴",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/precious.html",
+        "strokeCount": 12,
+        "kanji": "貴"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "precious",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_bequeath",
+      "kanji": "遺",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bequeath.html",
+        "strokeCount": 15,
+        "kanji": "遺"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "bequeath",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_dispatch",
+      "kanji": "遣",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dispatch.html",
+        "strokeCount": 13,
+        "kanji": "遣"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "dispatch",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_defile",
+      "kanji": "潰",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/defile.html",
+        "strokeCount": 15,
+        "kanji": "潰"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "defile",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_dance",
+      "kanji": "舞",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dance.html",
+        "strokeCount": 15,
+        "kanji": "舞"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "dance",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_nothingness",
+      "kanji": "無",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/nothingness.html",
+        "strokeCount": 12,
+        "kanji": "無"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "nothingness",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_association",
+      "kanji": "組",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/association.html",
+        "strokeCount": 11,
+        "kanji": "組"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "association",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_coarse",
+      "kanji": "粗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/coarse.html",
+        "strokeCount": 11,
+        "kanji": "粗"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "coarse",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_tariff",
+      "kanji": "租",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/tariff.html",
+        "strokeCount": 10,
+        "kanji": "租"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "tariff",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_aim_at",
+      "kanji": "狙",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/aim_at.html",
+        "strokeCount": 8,
+        "kanji": "狙"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "aim_at",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_ancestor",
+      "kanji": "祖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/ancestor.html",
+        "strokeCount": 9,
+        "kanji": "祖"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "ancestor",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L96_thwart",
+      "kanji": "阻",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/thwart.html",
+        "strokeCount": 8,
+        "kanji": "阻"
+      },
+      "meta": {
+        "lesson": 96,
+        "slug": "thwart",
+        "prototype": true
+      }
+    }
+  ]
+}

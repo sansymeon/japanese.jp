@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_29_gallery",
+  "title": "KML Gallery — Lesson 29 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (480s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9679,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3739,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3739,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 19958,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 29,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_2",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L29_butterfly",
+      "kanji": "蝶",
+      "keyword": "butterfly",
+      "image": "studies/butterfly.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>蝶<rt>ちょう</rt></ruby>は　<ruby>夕暮<rt>ゆうぐ</rt></ruby>れの<ruby>庭<rt>にわ</rt></ruby>を<br>    <ruby>音<rt>おと</rt></ruby>もなく　<ruby>漂<rt>ただよ</rt></ruby>っていた",
+        "en": "The butterfly drifted\nthrough the evening garden without a sound."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "butterfly"
+      },
+      "imageRev": 1787630080
+    },
+    {
+      "id": "L29_alone",
+      "kanji": "独",
+      "keyword": "alone",
+      "image": "studies/alone.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>廊下<rt>ろうか</rt></ruby>に<br>    ただ<ruby>一人<rt>ひとり</rt></ruby>　<ruby>灯<rt>ひ</rt></ruby>を<ruby>見<rt>み</rt></ruby>つめていた",
+        "en": "In the rainy corridor,\none person quietly watched the lantern glow."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "alone"
+      },
+      "imageRev": 1787630078
+    },
+    {
+      "id": "L29_silkworm",
+      "kanji": "蚕",
+      "keyword": "silkworm",
+      "image": "studies/silkworm.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>白<rt>しろ</rt></ruby>い<ruby>糸<rt>いと</rt></ruby>は<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>夜<rt>よる</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で　<ruby>生<rt>う</rt></ruby>まれていた",
+        "en": "White thread was being born\nwithin the silence of the night."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "silkworm"
+      },
+      "imageRev": 1787630111
+    },
+    {
+      "id": "L29_wind",
+      "kanji": "風",
+      "keyword": "wind",
+      "image": "studies/wind.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>風<rt>かぜ</rt></ruby>は<ruby>見<rt>み</rt></ruby>えず<br>    <ruby>竹<rt>たけ</rt></ruby>と<ruby>布<rt>ぬの</rt></ruby>だけを　<ruby>揺<rt>ゆ</rt></ruby>らしていた",
+        "en": "The wind could not be seen,\nonly the bamboo and cloth moving softly."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "wind"
+      },
+      "imageRev": 1787630119
+    },
+    {
+      "id": "L29_self",
+      "kanji": "己",
+      "keyword": "self",
+      "image": "studies/self.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>曇<rt>くも</rt></ruby>る<ruby>鏡<rt>かがみ</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>に<br>    まだ<ruby>名<rt>な</rt></ruby>のない<ruby>自分<rt>じぶん</rt></ruby>がいた",
+        "en": "Beyond the clouded mirror\nstood a self not yet fully named."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "self"
+      },
+      "imageRev": 1787630111
+    },
+    {
+      "id": "L29_wake_up",
+      "kanji": "起",
+      "keyword": "wake up",
+      "image": "studies/wake_up.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>石段<rt>いしだん</rt></ruby>の<ruby>霧<rt>きり</rt></ruby>に<br>    <ruby>最初<rt>さいしょ</rt></ruby>の<ruby>灯<rt>ひ</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>灯<rt>とも</rt></ruby>った",
+        "en": "Within the mist on the stone steps,\nthe first lantern quietly came alive."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "wake_up"
+      },
+      "imageRev": 1787630119
+    },
+    {
+      "id": "L29_queen",
+      "kanji": "妃",
+      "keyword": "queen",
+      "image": "studies/queen.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>薄紫<rt>うすむらさき</rt></ruby>の<ruby>袖<rt>そで</rt></ruby>は<br>    <ruby>遠<rt>とお</rt></ruby>い<ruby>庭<rt>にわ</rt></ruby>の<ruby>風<rt>かぜ</rt></ruby>を　<ruby>待<rt>ま</rt></ruby>っていた",
+        "en": "The pale plum sleeves\nwaited for the distant garden wind."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "queen"
+      },
+      "imageRev": 1787630106
+    },
+    {
+      "id": "L29_reformation",
+      "kanji": "改",
+      "keyword": "reformation",
+      "image": "studies/reformation.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>頁<rt>ページ</rt></ruby>に<br>    <ruby>新<rt>あたら</rt></ruby>しい<ruby>線<rt>せん</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>加<rt>くわ</rt></ruby>わった",
+        "en": "Upon the old page,\na new line was quietly added."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "reformation"
+      },
+      "imageRev": 1787630107
+    },
+    {
+      "id": "L29_scribe",
+      "kanji": "記",
+      "keyword": "scribe",
+      "image": "studies/scribe.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>記録<rt>きろく</rt></ruby>だけが<br>    <ruby>時<rt>とき</rt></ruby>の<ruby>沈黙<rt>ちんもく</rt></ruby>を　<ruby>知<rt>し</rt></ruby>っていた",
+        "en": "Only the records\nunderstood the silence of time."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "scribe"
+      },
+      "imageRev": 1787630110
+    },
+    {
+      "id": "L29_wrap",
+      "kanji": "包",
+      "keyword": "wrap",
+      "image": "studies/wrap.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>柔<rt>やわ</rt></ruby>らかな<ruby>布<rt>ぬの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<br>    <ruby>言葉<rt>ことば</rt></ruby>にならない<ruby>温<rt>ぬく</rt></ruby>もりがあった",
+        "en": "Within the soft cloth\nrested a warmth beyond words."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "wrap"
+      },
+      "imageRev": 1787630120
+    },
+    {
+      "id": "L29_placenta",
+      "kanji": "胞",
+      "keyword": "placenta",
+      "image": "studies/placenta.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>深<rt>ふか</rt></ruby>い<ruby>光<rt>ひかり</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>命<rt>いのち</rt></ruby>が　<ruby>眠<rt>ねむ</rt></ruby>っていた",
+        "en": "Within the deep glow,\na small life slept quietly."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "placenta"
+      },
+      "imageRev": 1787630104
+    },
+    {
+      "id": "L29_cannon",
+      "kanji": "砲",
+      "keyword": "cannon",
+      "image": "studies/cannon.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>海霧<rt>うみぎり</rt></ruby>の<ruby>砲<rt>ほう</rt></ruby>は<br>    もう<ruby>誰<rt>だれ</rt></ruby>も<ruby>傷<rt>きず</rt></ruby>つけようとはしなかった",
+        "en": "The cannon in the sea fog\nno longer wished to harm anyone."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "cannon"
+      },
+      "imageRev": 1787630080
+    },
+    {
+      "id": "L29_bubbles",
+      "kanji": "泡",
+      "keyword": "bubbles",
+      "image": "studies/bubbles.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>月<rt>つき</rt></ruby>の<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>水面<rt>みなも</rt></ruby>に<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>泡<rt>あわ</rt></ruby>が　<ruby>光<rt>ひか</rt></ruby>っていた",
+        "en": "Upon the moonlit water,\nsmall bubbles shimmered softly."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "bubbles"
+      },
+      "imageRev": 1787630080
+    },
+    {
+      "id": "L29_turtle",
+      "kanji": "亀",
+      "keyword": "turtle",
+      "image": "studies/turtle.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>亀<rt>かめ</rt></ruby>は<br>    <ruby>霧<rt>きり</rt></ruby>の<ruby>池<rt>いけ</rt></ruby>で　<ruby>時<rt>とき</rt></ruby>を<ruby>止<rt>と</rt></ruby>めていた",
+        "en": "The ancient turtle\nseemed to stop time beside the misty pond."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "turtle"
+      },
+      "imageRev": 1787630117
+    },
+    {
+      "id": "L29_electricity",
+      "kanji": "電",
+      "keyword": "electricity",
+      "image": "studies/electricity.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>遠<rt>とお</rt></ruby>い<ruby>山<rt>やま</rt></ruby>の<ruby>雲<rt>くも</rt></ruby>が<br>    <ruby>青白<rt>あおじろ</rt></ruby>い<ruby>光<rt>ひかり</rt></ruby>を　<ruby>抱<rt>だ</rt></ruby>いていた",
+        "en": "The distant mountain clouds\nheld a pale blue light within them."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "electricity"
+      },
+      "imageRev": 1787630087
+    },
+    {
+      "id": "L29_dragon",
+      "kanji": "竜",
+      "keyword": "dragon",
+      "image": "studies/dragon.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>空<rt>そら</rt></ruby>に<br>    <ruby>竜<rt>りゅう</rt></ruby>の<ruby>気配<rt>けはい</rt></ruby>だけが　<ruby>浮<rt>う</rt></ruby>かんでいた",
+        "en": "Within the misty sky,\nonly the presence of the dragon emerged."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "dragon"
+      },
+      "imageRev": 1787630086
+    },
+    {
+      "id": "L29_waterfall",
+      "kanji": "滝",
+      "keyword": "waterfall",
+      "image": "studies/waterfall.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>白銀<rt>しろがね</rt></ruby>の<ruby>滝<rt>たき</rt></ruby>は<br>    <ruby>闇<rt>やみ</rt></ruby>の<ruby>岩<rt>いわ</rt></ruby>を　<ruby>裂<rt>さ</rt></ruby>きながら<ruby>落<rt>お</rt></ruby>ちていた",
+        "en": "The silver waterfall\nfell through the dark stone gorge."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "waterfall"
+      },
+      "imageRev": 1787630119
+    },
+    {
+      "id": "L29_pork",
+      "kanji": "豚",
+      "keyword": "pork",
+      "image": "studies/pork.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>農場<rt>のうじょう</rt></ruby>で<br>    <ruby>豚<rt>ぶた</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>土<rt>つち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>いていた",
+        "en": "On the rainy farm,\nthe pig walked quietly through the earth."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "pork"
+      },
+      "imageRev": 1787630105
+    },
+    {
+      "id": "L29_pursue",
+      "kanji": "逐",
+      "keyword": "pursue",
+      "image": "studies/pursue.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>へ<ruby>続<rt>つづ</rt></ruby>く<ruby>道<rt>みち</rt></ruby>を<br>    <ruby>旅人<rt>たびびと</rt></ruby>は　<ruby>止<rt>と</rt></ruby>まらず<ruby>進<rt>すす</rt></ruby>んでいた",
+        "en": "Along the road fading into mist,\nthe traveler continued onward."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "pursue"
+      },
+      "imageRev": 1787630106
+    },
+    {
+      "id": "L29_consummate",
+      "kanji": "遂",
+      "keyword": "consummate",
+      "image": "studies/consummate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>星図<rt>せいず</rt></ruby>の<ruby>下<rt>した</rt></ruby>で<br>    <ruby>学者<rt>がくしゃ</rt></ruby>は　<ruby>静<rt>しず</rt></ruby>かな<ruby>答<rt>こた</rt></ruby>えに<ruby>辿<rt>たど</rt></ruby>り<ruby>着<rt>つ</rt></ruby>いた",
+        "en": "Beneath the star charts,\nthe scholar arrived at a quiet answer."
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "consummate"
+      },
+      "imageRev": 1787630082
+    }
+  ]
+}

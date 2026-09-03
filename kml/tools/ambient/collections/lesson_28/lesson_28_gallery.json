@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_28_gallery",
+  "title": "KML Gallery — Lesson 28 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (488s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_1_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9870,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3840,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3840,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 20351,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 28,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_1",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L28_formerly",
+      "kanji": "曽",
+      "keyword": "formerly",
+      "image": "studies/formerly.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>鏡<rt>かがみ</rt></ruby>に　<ruby>香<rt>こう</rt></ruby>の<ruby>煙<rt>けむり</rt></ruby>が<ruby>漂<rt>ただよ</rt></ruby>い<br>    <ruby>忘<rt>わす</rt></ruby>れられた<ruby>時<rt>とき</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>残<rt>のこ</rt></ruby>っていた",
+        "en": "Incense drifted across the old mirror,\nand forgotten time remained in silence."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "formerly"
+      },
+      "imageRev": 1787630090
+    },
+    {
+      "id": "L28_increase",
+      "kanji": "増",
+      "keyword": "increase",
+      "image": "studies/increase.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>石<rt>いし</rt></ruby>の<ruby>水盤<rt>すいばん</rt></ruby>に　<ruby>水<rt>みず</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>満<rt>み</rt></ruby>ち<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>溢<rt>あふ</rt></ruby>れが　<ruby>夜<rt>よる</rt></ruby>を<ruby>深<rt>ふか</rt></ruby>くしていた",
+        "en": "Water slowly filled the stone basin,\nand the gentle overflow deepened the night."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "increase"
+      },
+      "imageRev": 1787630094
+    },
+    {
+      "id": "L28_presents",
+      "kanji": "贈",
+      "keyword": "presents",
+      "image": "studies/presents.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>折<rt>お</rt></ruby>り<ruby>重<rt>かさ</rt></ruby>ねた<ruby>布<rt>ぬの</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>差<rt>さ</rt></ruby>し<ruby>出<rt>だ</rt></ruby>され<br>    <ruby>言葉<rt>ことば</rt></ruby>より<ruby>先<rt>さき</rt></ruby>に　<ruby>心<rt>こころ</rt></ruby>が<ruby>届<rt>とど</rt></ruby>いていた",
+        "en": "Folded cloth was offered quietly,\nand the heart arrived before words."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "presents"
+      },
+      "imageRev": 1787630105
+    },
+    {
+      "id": "L28_east",
+      "kanji": "東",
+      "keyword": "east",
+      "image": "studies/east.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>障子<rt>しょうじ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに　<ruby>淡<rt>あわ</rt></ruby>い<ruby>朝<rt>あさ</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>がり<br>    <ruby>東<rt>ひがし</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が　<ruby>長<rt>なが</rt></ruby>い<ruby>廊下<rt>ろうか</rt></ruby>を<ruby>満<rt>み</rt></ruby>たしていた",
+        "en": "Pale morning spread beyond the shoji,\nand eastern light filled the long corridor."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "east"
+      },
+      "imageRev": 1787630087
+    },
+    {
+      "id": "L28_ridgepole",
+      "kanji": "棟",
+      "keyword": "ridgepole",
+      "image": "studies/ridgepole.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>空気<rt>くうき</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で　<ruby>古<rt>ふる</rt></ruby>い<ruby>棟木<rt>むなぎ</rt></ruby>が<ruby>伸<rt>の</rt></ruby>び<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>屋根<rt>やね</rt></ruby>が　<ruby>空<rt>そら</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>えていた",
+        "en": "In the winter air, the old ridgepole rose,\nand the quiet roof supported the sky."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "ridgepole"
+      },
+      "imageRev": 1787630108
+    },
+    {
+      "id": "L28_frozen",
+      "kanji": "凍",
+      "keyword": "frozen",
+      "image": "studies/frozen.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>凍<rt>こお</rt></ruby>った<ruby>水盤<rt>すいばん</rt></ruby>に　<ruby>薄<rt>うす</rt></ruby>い<ruby>氷<rt>こおり</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>がり<br>    <ruby>冷<rt>つめ</rt></ruby>たい<ruby>静寂<rt>せいじゃく</rt></ruby>が　<ruby>石<rt>いし</rt></ruby>に<ruby>染<rt>し</rt></ruby>み<ruby>込<rt>こ</rt></ruby>んでいた",
+        "en": "Thin ice spread across the frozen basin,\nand cold silence soaked into the stone."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "frozen"
+      },
+      "imageRev": 1787630091
+    },
+    {
+      "id": "L28_pregnancy",
+      "kanji": "妊",
+      "keyword": "pregnancy",
+      "image": "studies/pregnancy.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>障子<rt>しょうじ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうで　<ruby>両手<rt>りょうて</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>重<rt>かさ</rt></ruby>なり<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>命<rt>いのち</rt></ruby>が　<ruby>灯<rt>あか</rt></ruby>りの<ruby>中<rt>なか</rt></ruby>で<ruby>眠<rt>ねむ</rt></ruby>っていた",
+        "en": "Behind the shoji, quiet hands rested together,\nand a small life slept within the light."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "pregnancy"
+      },
+      "imageRev": 1787630105
+    },
+    {
+      "id": "L28_courts",
+      "kanji": "廷",
+      "keyword": "courts",
+      "image": "studies/courts.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>長<rt>なが</rt></ruby>い<ruby>広間<rt>ひろま</rt></ruby>に　<ruby>足音<rt>あしおと</rt></ruby>だけが<ruby>響<rt>ひび</rt></ruby>き<br>    <ruby>遠<rt>とお</rt></ruby>い<ruby>権威<rt>けんい</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>座<rt>すわ</rt></ruby>っていた",
+        "en": "Only footsteps echoed through the long hall,\nand distant authority sat in silence."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "courts"
+      },
+      "imageRev": 1787630083
+    },
+    {
+      "id": "L28_dye",
+      "kanji": "染",
+      "keyword": "dye",
+      "image": "studies/dye.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>藍<rt>あい</rt></ruby>の<ruby>水<rt>みず</rt></ruby>に　<ruby>布<rt>ぬの</rt></ruby>がゆっくり<ruby>沈<rt>しず</rt></ruby>み<br>    <ruby>深<rt>ふか</rt></ruby>い<ruby>色<rt>いろ</rt></ruby>が　<ruby>指先<rt>ゆびさき</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>っていた",
+        "en": "Cloth slowly sank into indigo water,\nand deep color remained upon the fingertips."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "dye"
+      },
+      "imageRev": 1787630086
+    },
+    {
+      "id": "L28_burn",
+      "kanji": "燃",
+      "keyword": "burn",
+      "image": "studies/burn.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>暗<rt>くら</rt></ruby>い<ruby>部屋<rt>へや</rt></ruby>で　<ruby>炭<rt>すみ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>赤<rt>あか</rt></ruby>く<ruby>燃<rt>も</rt></ruby>え<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>熱<rt>ねつ</rt></ruby>だけが　<ruby>夜<rt>よる</rt></ruby>を<ruby>守<rt>まも</rt></ruby>っていた",
+        "en": "In the dark room, charcoal glowed softly red,\nand only a small warmth guarded the night."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "burn"
+      },
+      "imageRev": 1787630080
+    },
+    {
+      "id": "L28_vip",
+      "kanji": "賓",
+      "keyword": "VIP",
+      "image": "studies/vip.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>石道<rt>いしみち</rt></ruby>に　<ruby>迎<rt>むか</rt></ruby>えの<ruby>灯<rt>あか</rt></ruby>りが<ruby>並<rt>なら</rt></ruby>び<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>客人<rt>きゃくじん</rt></ruby>が　<ruby>奥<rt>おく</rt></ruby>へ<ruby>迎<rt>むか</rt></ruby>えられていた",
+        "en": "Welcoming lanterns lined the wet stone path,\nand the quiet guest was led within."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "vip"
+      },
+      "imageRev": 1787630119
+    },
+    {
+      "id": "L28_year_end",
+      "kanji": "歳",
+      "keyword": "year end",
+      "image": "studies/year_end.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうで　<ruby>除夜<rt>じょや</rt></ruby>の<ruby>鐘<rt>かね</rt></ruby>が<ruby>響<rt>ひび</rt></ruby>き<br>    <ruby>過<rt>す</rt></ruby>ぎた<ruby>一年<rt>いちねん</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>沈<rt>しず</rt></ruby>んでいった",
+        "en": "Beyond the snow, the year-end bell echoed,\nand the passing year slowly sank away."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "year_end"
+      },
+      "imageRev": 1787630120
+    },
+    {
+      "id": "L28_prefecture",
+      "kanji": "県",
+      "keyword": "prefecture",
+      "image": "studies/prefecture.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>谷<rt>たに</rt></ruby>の<ruby>下<rt>した</rt></ruby>に　<ruby>小<rt>ちい</rt></ruby>さな<ruby>町<rt>まち</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>がり<br>    <ruby>遠<rt>とお</rt></ruby>い<ruby>景色<rt>けしき</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>呼吸<rt>こきゅう</rt></ruby>していた",
+        "en": "Below the misted valley, a small town spread outward,\nand the distant landscape breathed quietly."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "prefecture"
+      },
+      "imageRev": 1787630105
+    },
+    {
+      "id": "L28_horse_chestnut",
+      "kanji": "栃",
+      "keyword": "horse chestnut",
+      "image": "studies/horse_chestnut.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>山<rt>やま</rt></ruby>の<ruby>雨<rt>あめ</rt></ruby>に　<ruby>栃<rt>とち</rt></ruby>の<ruby>葉<rt>は</rt></ruby>が<ruby>濡<rt>ぬ</rt></ruby>れ<br>    <ruby>深<rt>ふか</rt></ruby>い<ruby>森<rt>もり</rt></ruby>だけが　<ruby>静<rt>しず</rt></ruby>かに<ruby>残<rt>のこ</rt></ruby>っていた",
+        "en": "Horse chestnut leaves glistened in mountain rain,\nand only the deep forest remained."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "horse_chestnut"
+      },
+      "imageRev": 1787630093
+    },
+    {
+      "id": "L28_ground",
+      "kanji": "地",
+      "keyword": "ground",
+      "image": "studies/ground.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>土<rt>つち</rt></ruby>と　<ruby>石道<rt>いしみち</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>き<br>    <ruby>足元<rt>あしもと</rt></ruby>の<ruby>静<rt>しず</rt></ruby>けさが　<ruby>世界<rt>せかい</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>えていた",
+        "en": "Wet earth and stone pathway continued onward,\nand the silence beneath supported the world."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "ground"
+      },
+      "imageRev": 1787630092
+    },
+    {
+      "id": "L28_pond",
+      "kanji": "池",
+      "keyword": "pond",
+      "image": "studies/pond.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>池<rt>いけ</rt></ruby>に　<ruby>淡<rt>あわ</rt></ruby>い<ruby>空<rt>そら</rt></ruby>が<ruby>映<rt>うつ</rt></ruby>り<br>    <ruby>浮<rt>う</rt></ruby>かぶ<ruby>葉<rt>は</rt></ruby>だけが　<ruby>時<rt>とき</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かしていた",
+        "en": "The pale sky reflected upon the quiet pond,\nand only floating leaves moved time forward."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "pond"
+      },
+      "imageRev": 1787630105
+    },
+    {
+      "id": "L28_insect",
+      "kanji": "虫",
+      "keyword": "insect",
+      "image": "studies/insect.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>暗<rt>くら</rt></ruby>い<ruby>草<rt>くさ</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>で　<ruby>小<rt>ちい</rt></ruby>さな<ruby>命<rt>いのち</rt></ruby>が<ruby>動<rt>うご</rt></ruby>き<br>    <ruby>露<rt>つゆ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>だけが　<ruby>静<rt>しず</rt></ruby>かに<ruby>揺<rt>ゆ</rt></ruby>れていた",
+        "en": "Among the dark grass, tiny life stirred,\nand only dew-light trembled softly."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "insect"
+      },
+      "imageRev": 1787630095
+    },
+    {
+      "id": "L28_lightning_bug",
+      "kanji": "蛍",
+      "keyword": "lightning bug",
+      "image": "studies/lightning_bug.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>深<rt>ふか</rt></ruby>い<ruby>川辺<rt>かわべ</rt></ruby>に　<ruby>蛍<rt>ほたる</rt></ruby>の<ruby>灯<rt>ひ</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かび<br>    <ruby>青黒<rt>あおぐろ</rt></ruby>い<ruby>夜<rt>よる</rt></ruby>が　<ruby>静<rt>しず</rt></ruby>かに<ruby>呼吸<rt>こきゅう</rt></ruby>していた",
+        "en": "Firefly lights floated along the dark riverside,\nand the blue-black night breathed softly."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "lightning_bug"
+      },
+      "imageRev": 1787630097
+    },
+    {
+      "id": "L28_snake",
+      "kanji": "蛇",
+      "keyword": "snake",
+      "image": "studies/snake.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>石<rt>いし</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>で　<ruby>蛇<rt>へび</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>身<rt>み</rt></ruby>を<ruby>巻<rt>ま</rt></ruby>き<br>    <ruby>森<rt>もり</rt></ruby>の<ruby>気配<rt>けはい</rt></ruby>だけが　<ruby>雨<rt>あめ</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>っていた",
+        "en": "Upon the wet stone, the serpent coiled quietly,\nand only the forest's presence remained in the rain."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "snake"
+      },
+      "imageRev": 1787630112
+    },
+    {
+      "id": "L28_rainbow",
+      "kanji": "虹",
+      "keyword": "rainbow",
+      "image": "studies/rainbow.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨上<rt>あめあ</rt></ruby>がりの<ruby>霧<rt>きり</rt></ruby>に　<ruby>淡<rt>あわ</rt></ruby>い<ruby>虹<rt>にじ</rt></ruby>が<ruby>現<rt>あらわ</rt></ruby>れ<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>水面<rt>みなも</rt></ruby>が　<ruby>空<rt>そら</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>していた",
+        "en": "Within the mist after rain, a pale rainbow appeared,\nand the quiet water reflected the sky."
+      },
+      "meta": {
+        "lesson": 28,
+        "slug": "rainbow"
+      },
+      "imageRev": 1787630106
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "woman_child_exhibition",
+  "title": "女・子 — Woman & Child | A Quiet Japanese Art Exhibition",
+  "notes": "Curated 10-work gallery. Gold-foil Lesson 6 好 crest opens and closes. 好 is the hinge (exhibit 3); 母 resolves last. Heart v5 choreography with longer artwork/verse holds. Soundtrack: audio/mother_child_exhibition.mp3.",
+  "soundtrack": {
+    "main": "audio/mother_child_exhibition.mp3"
+  },
+  "bookends": {
+    "opening": {
+      "image": "bookends/lesson_06.jpg",
+      "audio": "audio/exhibition_flute_intro.mp3",
+      "holdUntilAudioEnds": true
+    },
+    "closing": {
+      "image": "bookends/lesson_06.jpg",
+      "holdUntilSoundtrackEnds": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 8000,
+    "artworkAloneMs": 20000,
+    "kanjiRevealMs": 5500,
+    "keywordDelayMs": 3000,
+    "keywordFadeMs": 5000,
+    "titleHoldMs": 10000,
+    "titleFadeMs": 5500,
+    "verseJpRevealMs": 6500,
+    "verseEnDelayMs": 10000,
+    "verseEnFadeMs": 5500,
+    "reflectionHoldMs": 14000,
+    "versesFadeMs": 5500,
+    "essenceKanjiRevealMs": 7000,
+    "essenceHoldMs": 18000,
+    "imageExhaleFadeMs": 16000,
+    "kanjiAloneHoldMs": 0,
+    "kanjiExhaleFadeMs": 20000,
+    "blackHoldMs": 3500,
+    "kenBurnsDurationMs": 300000,
+    "openingBlackBeforeMs": 2000,
+    "openingRevealMs": 6000,
+    "openingHoldMs": 4000,
+    "openingExhaleMs": 6000,
+    "closingRevealMs": 9000,
+    "closingHoldMs": 0,
+    "closingExhaleMs": 20000,
+    "closingBlackAfterMs": 1000,
+    "imageHandoffExhaleMs": 20000,
+    "imageHandoffArrivalMs": 18000,
+    "kanjiBridgeFadeMs": 10000,
+    "finalKanjiAloneHoldMs": 6000,
+    "kanjiHandoffFadeMs": 10000,
+    "openingFluteMs": 16000,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 4500,
+    "closingPostSoundtrackHoldMs": 0,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 13000,
+    "exhibitBlackHoldMs": 0,
+    "seamlessExhibitHandoff": true,
+    "exhibitTransitionMs": 18000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "fixedKanji": true,
+    "showKeyword": true,
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "camera": "guardian"
+  },
+  "meta": {
+    "theme": "womanChild",
+    "family": "ambientKanjiGallery",
+    "presentation": "exhibition",
+    "fixedKanji": true,
+    "bookendArtwork": "bookends/lesson_06.jpg",
+    "sourcePaintings": "existing studies only; no new generation",
+    "sceneCount": 10,
+    "sceneOrder": "女 → 子 → 好 (hinge) → 妹 → 姉 → 安 → 妊 → 乳 → 婆 → 母 (resolution)",
+    "sceneRoles": {
+      "L06_woman": "element",
+      "L05_child": "element",
+      "L06_fond_of": "hinge",
+      "L12_younger_sister": "kinship",
+      "L23_older_sister": "kinship",
+      "L11_relax": "sanctuary",
+      "L28_pregnancy": "becoming",
+      "L40_milk": "nourishment",
+      "L44_old_woman": "generations",
+      "L06_mother": "resolution"
+    },
+    "publicTitle": "女・子 — Woman & Child | A Quiet Japanese Art Exhibition"
+  },
+  "scenes": [
+    {
+      "id": "L06_woman",
+      "lesson": 6,
+      "kanji": "女",
+      "keyword": "woman",
+      "image": "studies/woman.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>花<rt>はな</rt></ruby>のそばに<ruby>立<rt>た</rt></ruby>つ　<ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby>の<ruby>女<rt>おんな</rt></ruby><br>    <ruby>柔<rt>やわ</rt></ruby>らかな<ruby>風<rt>かぜ</rt></ruby>が　<ruby>袖<rt>そで</rt></ruby>を<ruby>揺<rt>ゆ</rt></ruby>らしていた",
+        "en": "A woman stood beside the blossoms,\nwhile a gentle breeze softly stirred the sleeves of her kimono."
+      },
+      "imageRev": 1787630120,
+      "role": "element"
+    },
+    {
+      "id": "L05_child",
+      "lesson": 5,
+      "kanji": "子",
+      "keyword": "child",
+      "image": "studies/child.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>足<rt>あし</rt></ruby>で　<ruby>石<rt>いし</rt></ruby><ruby>畳<rt>だたみ</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>き<br>    <ruby>知<rt>し</rt></ruby>らない<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>が　<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>広<rt>ひろ</rt></ruby>がった",
+        "en": "With tiny feet she walked the stone road,\nand the unknown world slowly grew wider."
+      },
+      "imageRev": 1787630081,
+      "role": "element"
+    },
+    {
+      "id": "L06_fond_of",
+      "lesson": 6,
+      "kanji": "好",
+      "keyword": "fond of",
+      "image": "studies/fond_of.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>縁<rt>えん</rt></ruby><ruby>側<rt>がわ</rt></ruby>で　<ruby>猫<rt>ねこ</rt></ruby>を<ruby>抱<rt>だ</rt></ruby>く<ruby>人<rt>ひと</rt></ruby><br>    <ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>より<ruby>先<rt>さき</rt></ruby>に　<ruby>心<rt>こころ</rt></ruby>が<ruby>微<rt>ほほ</rt></ruby><ruby>笑<rt>え</rt></ruby>んでいた",
+        "en": "Holding a cat upon the veranda, she needed no words;\nher heart had already begun to smile."
+      },
+      "imageRev": 1787630090,
+      "role": "hinge"
+    },
+    {
+      "id": "L12_younger_sister",
+      "lesson": 12,
+      "kanji": "妹",
+      "keyword": "younger sister",
+      "image": "studies/younger_sister.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>手<rt>て</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>く　<ruby>秋<rt>あき</rt></ruby>の<ruby>道<rt>みち</rt></ruby><br>    <ruby>背<rt>せ</rt></ruby><ruby>中<rt>なか</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>るのは　やさしい<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>",
+        "en": "Along the autumn road\na small hand is held—\ngentle time remains behind them."
+      },
+      "imageRev": 1787630120,
+      "role": "kinship"
+    },
+    {
+      "id": "L23_older_sister",
+      "lesson": 23,
+      "kanji": "姉",
+      "keyword": "older sister",
+      "image": "studies/older_sister.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>姉<rt>あね</rt></ruby>は<ruby>褒<rt>ほ</rt></ruby>められずとも<ruby>前<rt>まえ</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>いた。<br>    <ruby>幼<rt>おさな</rt></ruby>い<ruby>者<rt>もの</rt></ruby>たちはその<ruby>影<rt>かげ</rt></ruby>を<ruby>追<rt>お</rt></ruby>って<ruby>帰<rt>かえ</rt></ruby>った。",
+        "en": "She walked ahead without needing praise.\nThe younger ones followed her shadow home."
+      },
+      "imageRev": 1787630101,
+      "role": "kinship"
+    },
+    {
+      "id": "L11_relax",
+      "lesson": 11,
+      "kanji": "安",
+      "keyword": "relax",
+      "image": "studies/relax.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>灯<rt>あかり</rt></ruby>のそばで、<br>    <ruby>心<rt>こころ</rt></ruby>はようやく<ruby>眠<rt>ねむ</rt></ruby>りを<ruby>許<rt>ゆる</rt></ruby>す。<br>    <ruby>夜<rt>よる</rt></ruby>はやさしく<ruby>包<rt>つつ</rt></ruby>みこむ。",
+        "en": "Beside a small lantern,\nthe heart finally allows itself to rest.\nNight wraps everything gently."
+      },
+      "imageRev": 1787630107,
+      "role": "sanctuary"
+    },
+    {
+      "id": "L28_pregnancy",
+      "lesson": 28,
+      "kanji": "妊",
+      "keyword": "pregnancy",
+      "image": "studies/pregnancy.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>障子<rt>しょうじ</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうで　<ruby>両手<rt>りょうて</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>重<rt>かさ</rt></ruby>なり<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>命<rt>いのち</rt></ruby>が　<ruby>灯<rt>あか</rt></ruby>りの<ruby>中<rt>なか</rt></ruby>で<ruby>眠<rt>ねむ</rt></ruby>っていた",
+        "en": "Behind the shoji, quiet hands rested together,\nand a small life slept within the light."
+      },
+      "imageRev": 1787630105,
+      "role": "becoming"
+    },
+    {
+      "id": "L40_milk",
+      "lesson": 40,
+      "kanji": "乳",
+      "keyword": "milk",
+      "image": "studies/milk.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>乳<rt>ちち</rt></ruby>のような<ruby>泉<rt>いずみ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>流<rt>なが</rt></ruby>れ、<br>    <ruby>命<rt>いのち</rt></ruby>を<ruby>潤<rt>うるお</rt></ruby>した。",
+        "en": "The milk-white spring flowed quietly,\ngiving refreshment to life."
+      },
+      "imageRev": 1787630099,
+      "role": "nourishment"
+    },
+    {
+      "id": "L44_old_woman",
+      "lesson": 44,
+      "kanji": "婆",
+      "keyword": "old woman",
+      "image": "studies/old_woman.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>婆<rt>ばあ</rt></ruby>ちゃんの<ruby>笑顔<rt>えがお</rt></ruby>は、<br>    <ruby>家族<rt>かぞく</rt></ruby>の<ruby>灯<rt>あか</rt></ruby>りのよう。<br>    <ruby>優<rt>やさ</rt></ruby>しさは<ruby>受<rt>う</rt></ruby>け<ruby>継<rt>つ</rt></ruby>がれる。",
+        "en": "Grandmother's smile\nis the lamp of the family.\nKindness is passed on."
+      },
+      "imageRev": 1787630101,
+      "role": "generations"
+    },
+    {
+      "id": "L06_mother",
+      "lesson": 6,
+      "kanji": "母",
+      "keyword": "mother",
+      "image": "studies/mother.jpg",
+      "video": null,
+      "verse": {
+        "jpHtml": "<ruby>眠<rt>ねむ</rt></ruby>る<ruby>命<rt>いのち</rt></ruby>を　<ruby>腕<rt>うで</rt></ruby>に<ruby>抱<rt>だ</rt></ruby>きながら<br>    <ruby>夜<rt>よる</rt></ruby>の<ruby>静<rt>しず</rt></ruby>けさが　<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>み<ruby>込<rt>こ</rt></ruby>んでいた",
+        "en": "Holding sleeping life within her arms,\nthe silence of night gently filled the room."
+      },
+      "imageRev": 1787630099,
+      "role": "resolution"
+    }
+  ]
+}

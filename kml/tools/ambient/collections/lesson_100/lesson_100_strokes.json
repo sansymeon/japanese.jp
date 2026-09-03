@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_100_strokes",
+  "title": "Lesson 100 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:02).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 100,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 10.8,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 722000,
+    "estimatedExhibitRuntimeMs": 712000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L100_bay",
+      "kanji": "浦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bay.html",
+        "strokeCount": 10,
+        "kanji": "浦"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "bay",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_cattail",
+      "kanji": "蒲",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cattail.html",
+        "strokeCount": 13,
+        "kanji": "蒲"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "cattail",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_shop",
+      "kanji": "舗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/shop.html",
+        "strokeCount": 15,
+        "kanji": "舗"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "shop",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_supplement",
+      "kanji": "補",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/supplement.html",
+        "strokeCount": 12,
+        "kanji": "補"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "supplement",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_residence",
+      "kanji": "邸",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/residence.html",
+        "strokeCount": 8,
+        "kanji": "邸"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "residence",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_enclosure",
+      "kanji": "郭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/enclosure.html",
+        "strokeCount": 11,
+        "kanji": "郭"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "enclosure",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_county",
+      "kanji": "郡",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/county.html",
+        "strokeCount": 10,
+        "kanji": "郡"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "county",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_outskirts",
+      "kanji": "郊",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/outskirts.html",
+        "strokeCount": 9,
+        "kanji": "郊"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "outskirts",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_department",
+      "kanji": "部",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/department.html",
+        "strokeCount": 11,
+        "kanji": "部"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "department",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_metropolis",
+      "kanji": "都",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/metropolis.html",
+        "strokeCount": 11,
+        "kanji": "都"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "metropolis",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_mail",
+      "kanji": "郵",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mail.html",
+        "strokeCount": 11,
+        "kanji": "郵"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "mail",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_home_country",
+      "kanji": "邦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/home_country.html",
+        "strokeCount": 7,
+        "kanji": "邦"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "home_country",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_that",
+      "kanji": "那",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/that.html",
+        "strokeCount": 7,
+        "kanji": "那"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "that",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_hometown",
+      "kanji": "郷",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/hometown.html",
+        "strokeCount": 11,
+        "kanji": "郷"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "hometown",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_echo",
+      "kanji": "響",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/echo.html",
+        "strokeCount": 20,
+        "kanji": "響"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "echo",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_son",
+      "kanji": "郎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/son.html",
+        "strokeCount": 9,
+        "kanji": "郎"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "son",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_corridor",
+      "kanji": "廊",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/corridor.html",
+        "strokeCount": 12,
+        "kanji": "廊"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "corridor",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_shield",
+      "kanji": "盾",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/shield.html",
+        "strokeCount": 9,
+        "kanji": "盾"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "shield",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_sequential",
+      "kanji": "循",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sequential.html",
+        "strokeCount": 12,
+        "kanji": "循"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "sequential",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L100_faction",
+      "kanji": "派",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/faction.html",
+        "strokeCount": 9,
+        "kanji": "派"
+      },
+      "meta": {
+        "lesson": 100,
+        "slug": "faction",
+        "prototype": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_153_strokes",
+  "title": "Lesson 153 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~9:29).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 153,
+    "stage": "strokes",
+    "sceneCount": 18,
+    "prototype": true,
+    "avgStrokeCount": 7.8,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 569600,
+    "estimatedExhibitRuntimeMs": 559600,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L153_elegant",
+      "kanji": "郁",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/elegant.html",
+        "strokeCount": 9,
+        "kanji": "郁"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "elegant",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_arrowhead",
+      "kanji": "鏑",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/arrowhead.html",
+        "strokeCount": 19,
+        "kanji": "鏑"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "arrowhead",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_rat_zodiac",
+      "kanji": "子",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rat_zodiac.html",
+        "strokeCount": 3,
+        "kanji": "子"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "rat_zodiac",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_horse_zodiac",
+      "kanji": "午",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/horse_zodiac.html",
+        "strokeCount": 4,
+        "kanji": "午"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "horse_zodiac",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_sheep_zodiac",
+      "kanji": "未",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sheep_zodiac.html",
+        "strokeCount": 5,
+        "kanji": "未"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "sheep_zodiac",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_monkey_zodiac",
+      "kanji": "申",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/monkey_zodiac.html",
+        "strokeCount": 5,
+        "kanji": "申"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "monkey_zodiac",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_rooster_zodiac",
+      "kanji": "酉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rooster_zodiac.html",
+        "strokeCount": 7,
+        "kanji": "酉"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "rooster_zodiac",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_dog_zodiac",
+      "kanji": "戌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dog_zodiac.html",
+        "strokeCount": 6,
+        "kanji": "戌"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "dog_zodiac",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_boar_zodiac",
+      "kanji": "亥",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/boar_zodiac.html",
+        "strokeCount": 6,
+        "kanji": "亥"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "boar_zodiac",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_if_at_all",
+      "kanji": "苟",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/if_at_all.html",
+        "strokeCount": 8,
+        "kanji": "苟"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "if_at_all",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_axe_old",
+      "kanji": "戉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/axe_old.html",
+        "strokeCount": 5,
+        "kanji": "戉"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "axe_old",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_thicket",
+      "kanji": "楚",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/thicket.html",
+        "strokeCount": 13,
+        "kanji": "楚"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "thicket",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_this_old",
+      "kanji": "此",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/this_old.html",
+        "strokeCount": 6,
+        "kanji": "此"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "this_old",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_that_old",
+      "kanji": "其",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/that_old.html",
+        "strokeCount": 8,
+        "kanji": "其"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "that_old",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_shop_old",
+      "kanji": "肆",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/shop_old.html",
+        "strokeCount": 13,
+        "kanji": "肆"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "shop_old",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_shine_old",
+      "kanji": "昜",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/shine_old.html",
+        "strokeCount": 9,
+        "kanji": "昜"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "shine_old",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_divination_old",
+      "kanji": "卦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/divination_old.html",
+        "strokeCount": 8,
+        "kanji": "卦"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "divination_old",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L153_sincere",
+      "kanji": "孚",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sincere.html",
+        "strokeCount": 7,
+        "kanji": "孚"
+      },
+      "meta": {
+        "lesson": 153,
+        "slug": "sincere",
+        "prototype": true
+      }
+    }
+  ]
+}

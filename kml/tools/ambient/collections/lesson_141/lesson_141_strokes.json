@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_141_strokes",
+  "title": "Lesson 141 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~14:24).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 141,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 15.6,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 864500,
+    "estimatedExhibitRuntimeMs": 854500,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L141_quill",
+      "kanji": "翰",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/quill.html",
+        "strokeCount": 16,
+        "kanji": "翰"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "quill",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_auspices",
+      "kanji": "斡",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/auspices.html",
+        "strokeCount": 14,
+        "kanji": "斡"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "auspices",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_saddle",
+      "kanji": "鞍",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/saddle.html",
+        "strokeCount": 15,
+        "kanji": "鞍"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "saddle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_whip",
+      "kanji": "鞭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/whip.html",
+        "strokeCount": 18,
+        "kanji": "鞭"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "whip",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_saddle_straps",
+      "kanji": "鞘",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/saddle_straps.html",
+        "strokeCount": 16,
+        "kanji": "鞘"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "saddle_straps",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_briefcase",
+      "kanji": "鞄",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/briefcase.html",
+        "strokeCount": 14,
+        "kanji": "鞄"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "briefcase",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_pliable",
+      "kanji": "靭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pliable.html",
+        "strokeCount": 12,
+        "kanji": "靭"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "pliable",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_terminate",
+      "kanji": "鞠",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/terminate.html",
+        "strokeCount": 17,
+        "kanji": "鞠"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "terminate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_overturn",
+      "kanji": "顛",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/overturn.html",
+        "strokeCount": 19,
+        "kanji": "顛"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "overturn",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_brush_tip",
+      "kanji": "穎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/brush_tip.html",
+        "strokeCount": 16,
+        "kanji": "穎"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "brush_tip",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_exceedingly",
+      "kanji": "頗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/exceedingly.html",
+        "strokeCount": 14,
+        "kanji": "頗"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "exceedingly",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_accolade",
+      "kanji": "頌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/accolade.html",
+        "strokeCount": 13,
+        "kanji": "頌"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "accolade",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_cervical",
+      "kanji": "頚",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cervical.html",
+        "strokeCount": 14,
+        "kanji": "頚"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "cervical",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_repast",
+      "kanji": "餐",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/repast.html",
+        "strokeCount": 16,
+        "kanji": "餐"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "repast",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_feast",
+      "kanji": "饗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/feast.html",
+        "strokeCount": 22,
+        "kanji": "饗"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "feast",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_eclipse",
+      "kanji": "蝕",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eclipse.html",
+        "strokeCount": 15,
+        "kanji": "蝕"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "eclipse",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_sweets",
+      "kanji": "飴",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sweets.html",
+        "strokeCount": 14,
+        "kanji": "飴"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "sweets",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_stretcher",
+      "kanji": "駕",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/stretcher.html",
+        "strokeCount": 15,
+        "kanji": "駕"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "stretcher",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_dappled_horse",
+      "kanji": "騨",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dappled_horse.html",
+        "strokeCount": 19,
+        "kanji": "騨"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "dappled_horse",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L141_rush",
+      "kanji": "馳",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rush.html",
+        "strokeCount": 13,
+        "kanji": "馳"
+      },
+      "meta": {
+        "lesson": 141,
+        "slug": "rush",
+        "prototype": true
+      }
+    }
+  ]
+}

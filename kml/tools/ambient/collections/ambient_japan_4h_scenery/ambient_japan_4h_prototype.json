@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "ambient_japan_4h_prototype",
+  "title": "Ambient Japan 4h — playback prototype",
+  "notes": "Approved sequence 001–012 at final 4-hour holds (98.908s). Same exhibition pipeline as Four Seasons / Ambient Movies. Prototype only — do not use this JSON to render the full film.",
+  "soundtrack": {
+    "main": "audio/ambient_japan_4_seasons.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "silentAfterSoundtrack": false,
+      "holdUntilSoundtrackEnds": false
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2500,
+    "exhibitionBlackBeforeMs": 0,
+    "artworkAloneMs": 98908,
+    "kanjiRevealMs": 0,
+    "imageVerseKanjiHoldMs": 0,
+    "imageVerseKanjiFadeMs": 0,
+    "titleFadeMs": 0,
+    "verseJpRevealMs": 0,
+    "verseJpHoldMs": 0,
+    "verseJpFadeMs": 0,
+    "verseEnRevealMs": 0,
+    "verseEnHoldMs": 0,
+    "verseEnFadeMs": 0,
+    "exhibitTransitionMs": 2500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 101408,
+    "closingBlackBeforeMs": 0,
+    "closingRevealMs": 5000,
+    "closingHoldMs": 7000,
+    "closingExhaleMs": 12000,
+    "closingFadeToBlackMs": 12000,
+    "closingBlackAfterMs": 2000,
+    "closingSilenceHoldMs": 0,
+    "blackHoldMs": 0,
+    "seamlessExhibitHandoff": true
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "ambientGalleryJapan",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "bookendStyle": "galleryCrest",
+    "ambientMove": "v2",
+    "cameraMotionScale": 2.5
+  },
+  "meta": {
+    "family": "ambientGalleryJapan",
+    "edition": "Ambient Japan 4h prototype",
+    "sequenceSource": "collections/ambient_japan_4h_scenery/playback_sequence.json",
+    "prototypeSlice": {
+      "start": "001",
+      "end": "012",
+      "stems": [
+        "morning",
+        "road",
+        "room_7/mountain",
+        "car",
+        "home_village",
+        "creek",
+        "village",
+        "country_station",
+        "magome",
+        "tea_shop",
+        "dagashiya",
+        "younger_sister"
+      ]
+    },
+    "sceneCount": 12,
+    "fullImageCount": 142,
+    "holdMs": 98908,
+    "transitionMs": 2500,
+    "arrivalFadeMs": 2500,
+    "cameraMotionScale": 2.5,
+    "peopleMotionScale": 1.15,
+    "seed": 20260827,
+    "soundtrackDurationMs": 7188610,
+    "soundtrackPlan": "Loop ambient_japan_4_seasons.mp3 once with a long crossfade to cover the 4-hour picture journey. Prototype uses the opening of the same bed; no new audio file.",
+    "prototypePictureRuntimeMs": 1216896,
+    "prototypeClosingMs": 26000,
+    "estimatedContentRuntimeMs": 1242896,
+    "fullPictureRuntimeMs": 14399936,
+    "fullEstimatedRuntimeMs": 14425936,
+    "viewport": {
+      "width": 1920,
+      "height": 1080,
+      "frameRate": 25
+    }
+  },
+  "scenes": [
+    {
+      "id": "ambient_japan_4h_001",
+      "kanji": "",
+      "keyword": "morning",
+      "image": "studies/morning.jpg",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 1,
+        "sequenceId": "001",
+        "slug": "morning"
+      },
+      "imageRev": 1787630099
+    },
+    {
+      "id": "ambient_japan_4h_002",
+      "kanji": "",
+      "keyword": "road",
+      "image": "studies/road.jpg",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 2,
+        "sequenceId": "002",
+        "slug": "road"
+      },
+      "imageRev": 1787630109
+    },
+    {
+      "id": "ambient_japan_4h_003",
+      "kanji": "",
+      "keyword": "room 7 / mountain",
+      "image": "start_here/room_7/mountain.jpg",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 3,
+        "sequenceId": "003",
+        "slug": "room_7/mountain"
+      },
+      "imageRev": 1787634413
+    },
+    {
+      "id": "ambient_japan_4h_004",
+      "kanji": "",
+      "keyword": "car",
+      "image": "studies/car.jpg",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 4,
+        "sequenceId": "004",
+        "slug": "car"
+      },
+      "imageRev": 1787630081
+    },
+    {
+      "id": "ambient_japan_4h_005",
+      "kanji": "",
+      "keyword": "home village",
+      "image": "studies/home_village.jpg",
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 5,
+        "sequenceId": "005",
+        "slug": "home_village"
+      },
+      "imageRev": 1787630093
+    },
+    {
+      "id": "ambient_japan_4h_006",
+      "kanji": "",
+      "keyword": "creek",
+      "image": "studies/creek.jpg",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 6,
+        "sequenceId": "006",
+        "slug": "creek"
+      },
+      "imageRev": 1787630083
+    },
+    {
+      "id": "ambient_japan_4h_007",
+      "kanji": "",
+      "keyword": "village",
+      "image": "studies/village.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 7,
+        "sequenceId": "007",
+        "slug": "village"
+      },
+      "imageRev": 1787630118
+    },
+    {
+      "id": "ambient_japan_4h_008",
+      "kanji": "",
+      "keyword": "country station",
+      "image": "ambient_japan_4_seasons/country_station.png",
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 8,
+        "sequenceId": "008",
+        "slug": "country_station"
+      },
+      "imageRev": 1785277177
+    },
+    {
+      "id": "ambient_japan_4h_009",
+      "kanji": "",
+      "keyword": "magome",
+      "image": "studies/add_to_ambient_japan_4_seasons/magome.jpg",
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 9,
+        "sequenceId": "009",
+        "slug": "magome"
+      },
+      "imageRev": 1787630078
+    },
+    {
+      "id": "ambient_japan_4h_010",
+      "kanji": "",
+      "keyword": "tea shop",
+      "image": "studies/add_to_ambient_japan_4_seasons/tea_shop.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 10,
+        "sequenceId": "010",
+        "slug": "tea_shop"
+      },
+      "imageRev": 1787630078
+    },
+    {
+      "id": "ambient_japan_4h_011",
+      "kanji": "",
+      "keyword": "dagashiya",
+      "image": "studies/add_to_ambient_japan_4_seasons/dagashiya.jpg",
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 11,
+        "sequenceId": "011",
+        "slug": "dagashiya"
+      },
+      "imageRev": 1787630077
+    },
+    {
+      "id": "ambient_japan_4h_012",
+      "kanji": "",
+      "keyword": "younger sister",
+      "image": "studies/younger_sister.jpg",
+      "galleryCamera": {
+        "motion": "rise",
+        "motionScale": 1.15
+      },
+      "artworkAloneMs": 98908,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
+      "meta": {
+        "source": "ambient_japan_4h",
+        "sequenceIndex": 12,
+        "sequenceId": "012",
+        "slug": "younger_sister"
+      },
+      "imageRev": 1787630120
+    }
+  ]
+}

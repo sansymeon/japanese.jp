@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_116_strokes",
+  "title": "Lesson 116 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:03).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 116,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 10.9,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 723500,
+    "estimatedExhibitRuntimeMs": 713500,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L116_receptive",
+      "kanji": "坤",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/receptive.html",
+        "strokeCount": 8,
+        "kanji": "坤"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "receptive",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_dugout",
+      "kanji": "壕",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dugout.html",
+        "strokeCount": 17,
+        "kanji": "壕"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "dugout",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_grime",
+      "kanji": "垢",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/grime.html",
+        "strokeCount": 9,
+        "kanji": "垢"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "grime",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_flat_level",
+      "kanji": "坦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/flat_level.html",
+        "strokeCount": 8,
+        "kanji": "坦"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "flat_level",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_wharf",
+      "kanji": "埠",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wharf.html",
+        "strokeCount": 11,
+        "kanji": "埠"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "wharf",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_dam",
+      "kanji": "堰",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dam.html",
+        "strokeCount": 12,
+        "kanji": "堰"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "dam",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_railing",
+      "kanji": "堵",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/railing.html",
+        "strokeCount": 12,
+        "kanji": "堵"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "railing",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_suckling_infant",
+      "kanji": "嬰",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/suckling_infant.html",
+        "strokeCount": 17,
+        "kanji": "嬰"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "suckling_infant",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_violate",
+      "kanji": "姦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/violate.html",
+        "strokeCount": 9,
+        "kanji": "姦"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "violate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_handmaiden",
+      "kanji": "婢",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/handmaiden.html",
+        "strokeCount": 11,
+        "kanji": "婢"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "handmaiden",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_well_finished",
+      "kanji": "婉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/well_finished.html",
+        "strokeCount": 11,
+        "kanji": "婉"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "well_finished",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_harlot",
+      "kanji": "娼",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/harlot.html",
+        "strokeCount": 11,
+        "kanji": "娼"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "harlot",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_courtesan",
+      "kanji": "妓",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/courtesan.html",
+        "strokeCount": 7,
+        "kanji": "妓"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "courtesan",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_fair",
+      "kanji": "娃",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/fair.html",
+        "strokeCount": 9,
+        "kanji": "娃"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "fair",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_niece",
+      "kanji": "姪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/niece.html",
+        "strokeCount": 9,
+        "kanji": "姪"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "niece",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_mistress",
+      "kanji": "嬬",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mistress.html",
+        "strokeCount": 17,
+        "kanji": "嬬"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "mistress",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_aged_woman",
+      "kanji": "姥",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/aged_woman.html",
+        "strokeCount": 9,
+        "kanji": "姥"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "aged_woman",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_motherinlaw",
+      "kanji": "姑",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/motherinlaw.html",
+        "strokeCount": 8,
+        "kanji": "姑"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "motherinlaw",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_young_miss",
+      "kanji": "姐",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/young_miss.html",
+        "strokeCount": 8,
+        "kanji": "姐"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "young_miss",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L116_overjoyed",
+      "kanji": "嬉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/overjoyed.html",
+        "strokeCount": 15,
+        "kanji": "嬉"
+      },
+      "meta": {
+        "lesson": 116,
+        "slug": "overjoyed",
+        "prototype": true
+      }
+    }
+  ]
+}

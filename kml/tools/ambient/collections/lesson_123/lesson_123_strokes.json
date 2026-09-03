@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_123_strokes",
+  "title": "Lesson 123 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:56).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 123,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 12.7,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 776000,
+    "estimatedExhibitRuntimeMs": 766000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L123_trim",
+      "kanji": "薙",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/trim.html",
+        "strokeCount": 16,
+        "kanji": "薙"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "trim",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_straw_raincoat",
+      "kanji": "蓑",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/straw_raincoat.html",
+        "strokeCount": 13,
+        "kanji": "蓑"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "straw_raincoat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_moss",
+      "kanji": "苔",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/moss.html",
+        "strokeCount": 8,
+        "kanji": "苔"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "moss",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_prodigal",
+      "kanji": "蕩",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/prodigal.html",
+        "strokeCount": 15,
+        "kanji": "蕩"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "prodigal",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_tendril",
+      "kanji": "蔓",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/tendril.html",
+        "strokeCount": 14,
+        "kanji": "蔓"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "tendril",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_lotus",
+      "kanji": "蓮",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lotus.html",
+        "strokeCount": 13,
+        "kanji": "蓮"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "lotus",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_lotus_flower",
+      "kanji": "芙",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lotus_flower.html",
+        "strokeCount": 7,
+        "kanji": "芙"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "lotus_flower",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_lotus_blossom",
+      "kanji": "蓉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lotus_blossom.html",
+        "strokeCount": 13,
+        "kanji": "蓉"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "lotus_blossom",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_orchid",
+      "kanji": "蘭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/orchid.html",
+        "strokeCount": 19,
+        "kanji": "蘭"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "orchid",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_hollow_reed",
+      "kanji": "芦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/hollow_reed.html",
+        "strokeCount": 7,
+        "kanji": "芦"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "hollow_reed",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_yam",
+      "kanji": "薯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/yam.html",
+        "strokeCount": 17,
+        "kanji": "薯"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "yam",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_iris",
+      "kanji": "菖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/iris.html",
+        "strokeCount": 11,
+        "kanji": "菖"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "iris",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_banana",
+      "kanji": "蕉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/banana.html",
+        "strokeCount": 15,
+        "kanji": "蕉"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "banana",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_buckwheat",
+      "kanji": "蕎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/buckwheat.html",
+        "strokeCount": 15,
+        "kanji": "蕎"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "buckwheat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_butterbur",
+      "kanji": "蕗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/butterbur.html",
+        "strokeCount": 16,
+        "kanji": "蕗"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "butterbur",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_eggplant",
+      "kanji": "茄",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eggplant.html",
+        "strokeCount": 8,
+        "kanji": "茄"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "eggplant",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_behind_the_scenes",
+      "kanji": "蔭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/behind_the_scenes.html",
+        "strokeCount": 14,
+        "kanji": "蔭"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "behind_the_scenes",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_wormwood",
+      "kanji": "蓬",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wormwood.html",
+        "strokeCount": 14,
+        "kanji": "蓬"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "wormwood",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_mustard",
+      "kanji": "芥",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mustard.html",
+        "strokeCount": 7,
+        "kanji": "芥"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "mustard",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L123_germinate",
+      "kanji": "萌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/germinate.html",
+        "strokeCount": 11,
+        "kanji": "萌"
+      },
+      "meta": {
+        "lesson": 123,
+        "slug": "germinate",
+        "prototype": true
+      }
+    }
+  ]
+}

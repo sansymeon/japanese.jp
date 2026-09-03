@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_134_strokes",
+  "title": "Lesson 134 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:57).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 134,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 12.7,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 777500,
+    "estimatedExhibitRuntimeMs": 767500,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L134_drill",
+      "kanji": "穿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/drill.html",
+        "strokeCount": 9,
+        "kanji": "穿"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "drill",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_kitchen_stove",
+      "kanji": "竃",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/kitchen_stove.html",
+        "strokeCount": 17,
+        "kanji": "竃"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "kitchen_stove",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_longness",
+      "kanji": "竪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/longness.html",
+        "strokeCount": 14,
+        "kanji": "竪"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "longness",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_rustling",
+      "kanji": "颯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rustling.html",
+        "strokeCount": 14,
+        "kanji": "颯"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "rustling",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_outpost",
+      "kanji": "站",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/outpost.html",
+        "strokeCount": 10,
+        "kanji": "站"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "outpost",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_repose",
+      "kanji": "靖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/repose.html",
+        "strokeCount": 13,
+        "kanji": "靖"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "repose",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_concubine",
+      "kanji": "妾",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/concubine.html",
+        "strokeCount": 8,
+        "kanji": "妾"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "concubine",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_lapel",
+      "kanji": "衿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lapel.html",
+        "strokeCount": 9,
+        "kanji": "衿"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "lapel",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_lined_kimono",
+      "kanji": "袷",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lined_kimono.html",
+        "strokeCount": 11,
+        "kanji": "袷"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "lined_kimono",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_pleated_skirt",
+      "kanji": "袴",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pleated_skirt.html",
+        "strokeCount": 11,
+        "kanji": "袴"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "pleated_skirt",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_sliding_door",
+      "kanji": "襖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sliding_door.html",
+        "strokeCount": 18,
+        "kanji": "襖"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "sliding_door",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_panpipe",
+      "kanji": "笙",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/panpipe.html",
+        "strokeCount": 11,
+        "kanji": "笙"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "panpipe",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_raft",
+      "kanji": "筏",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/raft.html",
+        "strokeCount": 12,
+        "kanji": "筏"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "raft",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_bamboo_blinds",
+      "kanji": "簾",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bamboo_blinds.html",
+        "strokeCount": 19,
+        "kanji": "簾"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "bamboo_blinds",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_rattan_box",
+      "kanji": "箪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rattan_box.html",
+        "strokeCount": 15,
+        "kanji": "箪"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "rattan_box",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_pole",
+      "kanji": "竿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pole.html",
+        "strokeCount": 9,
+        "kanji": "竿"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "pole",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_spatula",
+      "kanji": "箆",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/spatula.html",
+        "strokeCount": 14,
+        "kanji": "箆"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "spatula",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_foil",
+      "kanji": "箔",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/foil.html",
+        "strokeCount": 14,
+        "kanji": "箔"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "foil",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_wardrobe",
+      "kanji": "笥",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wardrobe.html",
+        "strokeCount": 11,
+        "kanji": "笥"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "wardrobe",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L134_arrow_shaft",
+      "kanji": "箭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/arrow_shaft.html",
+        "strokeCount": 15,
+        "kanji": "箭"
+      },
+      "meta": {
+        "lesson": 134,
+        "slug": "arrow_shaft",
+        "prototype": true
+      }
+    }
+  ]
+}

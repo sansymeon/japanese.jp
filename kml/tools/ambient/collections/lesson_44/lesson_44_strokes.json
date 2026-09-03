@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_44_strokes",
+  "title": "Lesson 44 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~11:33).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 44,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 9.9,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 693500,
+    "estimatedExhibitRuntimeMs": 683500,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L44_political_party",
+      "kanji": "党",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/political_party.html",
+        "strokeCount": 10,
+        "kanji": "党"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "political_party",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_public_hall",
+      "kanji": "堂",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/public_hall.html",
+        "strokeCount": 11,
+        "kanji": "堂"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "public_hall",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_usual",
+      "kanji": "常",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/usual.html",
+        "strokeCount": 11,
+        "kanji": "常"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "usual",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_robe",
+      "kanji": "裳",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/robe.html",
+        "strokeCount": 14,
+        "kanji": "裳"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "robe",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_manipulate",
+      "kanji": "掌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/manipulate.html",
+        "strokeCount": 12,
+        "kanji": "掌"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "manipulate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_pelt",
+      "kanji": "皮",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pelt.html",
+        "strokeCount": 5,
+        "kanji": "皮"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "pelt",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_waves",
+      "kanji": "波",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/waves.html",
+        "strokeCount": 8,
+        "kanji": "波"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "waves",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_old_woman",
+      "kanji": "婆",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/old_woman.html",
+        "strokeCount": 11,
+        "kanji": "婆"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "old_woman",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_reveal",
+      "kanji": "披",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/reveal.html",
+        "strokeCount": 8,
+        "kanji": "披"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "reveal",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_rend",
+      "kanji": "破",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rend.html",
+        "strokeCount": 10,
+        "kanji": "破"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "rend",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_incur",
+      "kanji": "被",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/incur.html",
+        "strokeCount": 10,
+        "kanji": "被"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "incur",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_remainder",
+      "kanji": "残",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/remainder.html",
+        "strokeCount": 10,
+        "kanji": "残"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "remainder",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_martyrdom",
+      "kanji": "殉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/martyrdom.html",
+        "strokeCount": 10,
+        "kanji": "殉"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "martyrdom",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_particularly",
+      "kanji": "殊",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/particularly.html",
+        "strokeCount": 10,
+        "kanji": "殊"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "particularly",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_augment",
+      "kanji": "殖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/augment.html",
+        "strokeCount": 12,
+        "kanji": "殖"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "augment",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_file",
+      "kanji": "列",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/file.html",
+        "strokeCount": 6,
+        "kanji": "列"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "file",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_split",
+      "kanji": "裂",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/split.html",
+        "strokeCount": 12,
+        "kanji": "裂"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "split",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_ardent",
+      "kanji": "烈",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/ardent.html",
+        "strokeCount": 10,
+        "kanji": "烈"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "ardent",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_death",
+      "kanji": "死",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/death.html",
+        "strokeCount": 6,
+        "kanji": "死"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "death",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L44_burial",
+      "kanji": "葬",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/burial.html",
+        "strokeCount": 12,
+        "kanji": "葬"
+      },
+      "meta": {
+        "lesson": 44,
+        "slug": "burial",
+        "prototype": true
+      }
+    }
+  ]
+}

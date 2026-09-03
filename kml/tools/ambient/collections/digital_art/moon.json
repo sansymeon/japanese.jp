@@ -1,0 +1,77 @@
+{
+  "format": "digitalArtExhibition",
+  "id": "moon",
+  "title": "MOON",
+  "notes": "Digital Art Exhibition prototype. Gold-leaf Lesson 1 moon crest, then six nocturnal paintings. No kanji, verse, captions, or Ken Burns. Soundtrack is the master duration.",
+  "assetsBase": "../../assets",
+  "soundtrack": {
+    "src": "audio/digital_art_moon.mp3",
+    "durationMs": 169221
+  },
+  "opening": {
+    "image": "covers/lesson_01.jpg",
+    "title": "MOON",
+    "titleMode": "label",
+    "blackBeforeMs": 1000,
+    "revealMs": 4500,
+    "holdMs": 4500,
+    "dissolveMs": 9000,
+    "titleDelayMs": 200,
+    "titleRevealMs": 2200
+  },
+  "room": {
+    "motion": "still"
+  },
+  "timing": {
+    "dissolveMs": 10000,
+    "endingFadeMs": 12000,
+    "endingBlackAfterMs": 1600
+  },
+  "ending": {
+    "fadeMs": 12000,
+    "blackAfterMs": 1600
+  },
+  "artworks": [
+    {
+      "id": "moonlight",
+      "image": "digital_art_gallery/moon/1_moon.png",
+      "holdMs": 14003,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "interior",
+      "image": "digital_art_gallery/moon/2_interior.png",
+      "holdMs": 15004,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "tree",
+      "image": "digital_art_gallery/moon/3_tree.png",
+      "holdMs": 13003,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "horizon",
+      "image": "digital_art_gallery/moon/4_horizon.png",
+      "holdMs": 15004,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "ripples",
+      "image": "digital_art_gallery/moon/5_ripples.png",
+      "holdMs": 12003,
+      "dissolveMs": 12000
+    },
+    {
+      "id": "mist",
+      "image": "digital_art_gallery/moon/6_mist.png",
+      "holdMs": 17204
+    }
+  ],
+  "meta": {
+    "family": "digitalArtExhibition",
+    "prototype": true,
+    "sceneCount": 6,
+    "soundtrackDurationMs": 169221
+  }
+}

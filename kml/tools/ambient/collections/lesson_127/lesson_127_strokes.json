@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_127_strokes",
+  "title": "Lesson 127 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:08).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 127,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 11.1,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 728000,
+    "estimatedExhibitRuntimeMs": 718000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L127_bleaching",
+      "kanji": "晒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bleaching.html",
+        "strokeCount": 10,
+        "kanji": "晒"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "bleaching",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_limpid",
+      "kanji": "晃",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/limpid.html",
+        "strokeCount": 10,
+        "kanji": "晃"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "limpid",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_expose",
+      "kanji": "曝",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/expose.html",
+        "strokeCount": 19,
+        "kanji": "曝"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "expose",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_daybreak",
+      "kanji": "曙",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/daybreak.html",
+        "strokeCount": 17,
+        "kanji": "曙"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "daybreak",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_elevate",
+      "kanji": "昂",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/elevate.html",
+        "strokeCount": 8,
+        "kanji": "昂"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "elevate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_dusk",
+      "kanji": "昏",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dusk.html",
+        "strokeCount": 8,
+        "kanji": "昏"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "dusk",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_dark",
+      "kanji": "晦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dark.html",
+        "strokeCount": 11,
+        "kanji": "晦"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "dark",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_pus",
+      "kanji": "膿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pus.html",
+        "strokeCount": 17,
+        "kanji": "膿"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "pus",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_viscera",
+      "kanji": "腑",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/viscera.html",
+        "strokeCount": 12,
+        "kanji": "腑"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "viscera",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_bladder",
+      "kanji": "胱",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bladder.html",
+        "strokeCount": 10,
+        "kanji": "胱"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "bladder",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_embryo",
+      "kanji": "胚",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/embryo.html",
+        "strokeCount": 9,
+        "kanji": "胚"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "embryo",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_anus",
+      "kanji": "肛",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/anus.html",
+        "strokeCount": 7,
+        "kanji": "肛"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "anus",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_fragile",
+      "kanji": "脆",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/fragile.html",
+        "strokeCount": 10,
+        "kanji": "脆"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "fragile",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_rib",
+      "kanji": "肋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rib.html",
+        "strokeCount": 6,
+        "kanji": "肋"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "rib",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_body_cavity",
+      "kanji": "腔",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/body_cavity.html",
+        "strokeCount": 12,
+        "kanji": "腔"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "body_cavity",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_armrest",
+      "kanji": "肱",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/armrest.html",
+        "strokeCount": 8,
+        "kanji": "肱"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "armrest",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_waning_moon",
+      "kanji": "胡",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/waning_moon.html",
+        "strokeCount": 9,
+        "kanji": "胡"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "waning_moon",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_maple",
+      "kanji": "楓",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/maple.html",
+        "strokeCount": 13,
+        "kanji": "楓"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "maple",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_purple_willow",
+      "kanji": "楊",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/purple_willow.html",
+        "strokeCount": 13,
+        "kanji": "楊"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "purple_willow",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L127_elm",
+      "kanji": "椋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/elm.html",
+        "strokeCount": 12,
+        "kanji": "椋"
+      },
+      "meta": {
+        "lesson": 127,
+        "slug": "elm",
+        "prototype": true
+      }
+    }
+  ]
+}

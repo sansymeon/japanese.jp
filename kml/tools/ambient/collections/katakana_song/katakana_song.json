@@ -1,0 +1,54 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "katakana_song",
+  "title": "Katakana Song",
+  "notes": "Fuji intro, black + dual-line SBV-timed katakana (current + next preview), sunset outro on final ワヲン. Captions: data/katakana_song_captions.sbv. Same soundtrack as Hiragana Song. Preview: exhibition.html?collection=katakana_song",
+  "soundtrack": {
+    "main": "audio/kana_song.mp3"
+  },
+  "bookends": {
+    "mode": "none"
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 1200,
+    "chartRevealMs": 1800,
+    "chartFadeOutMs": 2800,
+    "captionFadeMs": 220,
+    "dualCaptionTransitionMs": 550,
+    "fujiFadeMs": 4500,
+    "fujiExhaleMs": 2800,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2800,
+    "closingHoldMs": 4500,
+    "closingExhaleMs": 3500,
+    "closingBlackAfterMs": 800,
+    "closingSilenceHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "hiraganaSong",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "hiraganaSong",
+    "captionLayout": "dual",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "hiraganaSong",
+    "stage": "katakanaSong",
+    "captionsFile": "data/katakana_song_captions.sbv",
+    "captionsRev": 1,
+    "soundtrackDurationMs": 209789
+  },
+  "scenes": [
+    {
+      "id": "katakana_song_captions",
+      "captionsFile": "data/katakana_song_captions.sbv",
+      "captionsRev": 1,
+      "fujiImage": "studies/mt_fuji_2.jpg",
+      "closingImage": "images/hiragana_song_sunset.jpg"
+    }
+  ]
+}

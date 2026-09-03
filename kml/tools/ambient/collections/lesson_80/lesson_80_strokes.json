@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_80_strokes",
+  "title": "Lesson 80 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:29).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 80,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 11.8,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 749000,
+    "estimatedExhibitRuntimeMs": 739000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L80_wandering",
+      "kanji": "浪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wandering.html",
+        "strokeCount": 10,
+        "kanji": "浪"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "wandering",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_daughter",
+      "kanji": "娘",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/daughter.html",
+        "strokeCount": 10,
+        "kanji": "娘"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "daughter",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_eat",
+      "kanji": "食",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eat.html",
+        "strokeCount": 9,
+        "kanji": "食"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "eat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_meal",
+      "kanji": "飯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/meal.html",
+        "strokeCount": 12,
+        "kanji": "飯"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "meal",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_drink",
+      "kanji": "飲",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/drink.html",
+        "strokeCount": 12,
+        "kanji": "飲"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "drink",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_hungry",
+      "kanji": "飢",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/hungry.html",
+        "strokeCount": 10,
+        "kanji": "飢"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "hungry",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_starve",
+      "kanji": "餓",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/starve.html",
+        "strokeCount": 15,
+        "kanji": "餓"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "starve",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_decorate",
+      "kanji": "飾",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/decorate.html",
+        "strokeCount": 13,
+        "kanji": "飾"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "decorate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_feed",
+      "kanji": "餌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/feed.html",
+        "strokeCount": 15,
+        "kanji": "餌"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "feed",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_public_building",
+      "kanji": "館",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/public_building.html",
+        "strokeCount": 16,
+        "kanji": "館"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "public_building",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_mochi",
+      "kanji": "餅",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mochi.html",
+        "strokeCount": 15,
+        "kanji": "餅"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "mochi",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_foster",
+      "kanji": "養",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/foster.html",
+        "strokeCount": 15,
+        "kanji": "養"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "foster",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_sated",
+      "kanji": "飽",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sated.html",
+        "strokeCount": 13,
+        "kanji": "飽"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "sated",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_previously",
+      "kanji": "既",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/previously.html",
+        "strokeCount": 10,
+        "kanji": "既"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "previously",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_outline",
+      "kanji": "概",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/outline.html",
+        "strokeCount": 14,
+        "kanji": "概"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "outline",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_rue",
+      "kanji": "慨",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rue.html",
+        "strokeCount": 13,
+        "kanji": "慨"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "rue",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_flat",
+      "kanji": "平",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/flat.html",
+        "strokeCount": 5,
+        "kanji": "平"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "flat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_call",
+      "kanji": "呼",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/call.html",
+        "strokeCount": 8,
+        "kanji": "呼"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "call",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_two_mats",
+      "kanji": "坪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/two_mats.html",
+        "strokeCount": 8,
+        "kanji": "坪"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "two_mats",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L80_evaluate",
+      "kanji": "評",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/evaluate.html",
+        "strokeCount": 12,
+        "kanji": "評"
+      },
+      "meta": {
+        "lesson": 80,
+        "slug": "evaluate",
+        "prototype": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_29_strokes",
+  "title": "Lesson 29 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~11:23).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 29,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 9.6,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 683000,
+    "estimatedExhibitRuntimeMs": 673000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L29_butterfly",
+      "kanji": "蝶",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/butterfly.html",
+        "strokeCount": 15,
+        "kanji": "蝶"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "butterfly",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_alone",
+      "kanji": "独",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/alone.html",
+        "strokeCount": 9,
+        "kanji": "独"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "alone",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_silkworm",
+      "kanji": "蚕",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/silkworm.html",
+        "strokeCount": 10,
+        "kanji": "蚕"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "silkworm",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_wind",
+      "kanji": "風",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wind.html",
+        "strokeCount": 9,
+        "kanji": "風"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "wind",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_self",
+      "kanji": "己",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/self.html",
+        "strokeCount": 3,
+        "kanji": "己"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "self",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_wake_up",
+      "kanji": "起",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wake_up.html",
+        "strokeCount": 10,
+        "kanji": "起"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "wake_up",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_queen",
+      "kanji": "妃",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/queen.html",
+        "strokeCount": 6,
+        "kanji": "妃"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "queen",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_reformation",
+      "kanji": "改",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/reformation.html",
+        "strokeCount": 7,
+        "kanji": "改"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "reformation",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_scribe",
+      "kanji": "記",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/scribe.html",
+        "strokeCount": 10,
+        "kanji": "記"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "scribe",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_wrap",
+      "kanji": "包",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wrap.html",
+        "strokeCount": 5,
+        "kanji": "包"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "wrap",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_placenta",
+      "kanji": "胞",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/placenta.html",
+        "strokeCount": 9,
+        "kanji": "胞"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "placenta",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_cannon",
+      "kanji": "砲",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cannon.html",
+        "strokeCount": 10,
+        "kanji": "砲"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "cannon",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_bubbles",
+      "kanji": "泡",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bubbles.html",
+        "strokeCount": 8,
+        "kanji": "泡"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "bubbles",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_turtle",
+      "kanji": "亀",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/turtle.html",
+        "strokeCount": 11,
+        "kanji": "亀"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "turtle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_electricity",
+      "kanji": "電",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/electricity.html",
+        "strokeCount": 13,
+        "kanji": "電"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "electricity",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_dragon",
+      "kanji": "竜",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dragon.html",
+        "strokeCount": 10,
+        "kanji": "竜"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "dragon",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_waterfall",
+      "kanji": "滝",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/waterfall.html",
+        "strokeCount": 13,
+        "kanji": "滝"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "waterfall",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_pork",
+      "kanji": "豚",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pork.html",
+        "strokeCount": 11,
+        "kanji": "豚"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "pork",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_pursue",
+      "kanji": "逐",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pursue.html",
+        "strokeCount": 10,
+        "kanji": "逐"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "pursue",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L29_consummate",
+      "kanji": "遂",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/consummate.html",
+        "strokeCount": 12,
+        "kanji": "遂"
+      },
+      "meta": {
+        "lesson": 29,
+        "slug": "consummate",
+        "prototype": true
+      }
+    }
+  ]
+}

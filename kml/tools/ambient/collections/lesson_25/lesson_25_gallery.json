@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_25_gallery",
+  "title": "KML Gallery — Lesson 25 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (488s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_1_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9870,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3840,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3840,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 20351,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 25,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_1",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L25_north",
+      "kanji": "北",
+      "keyword": "north",
+      "image": "studies/north.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>北<rt>きた</rt></ruby><ruby>風<rt>かぜ</rt></ruby>は<ruby>海<rt>うみ</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>り、<ruby>影<rt>かげ</rt></ruby>だけを<ruby>残<rt>のこ</rt></ruby>す。",
+        "en": "The north wind crosses the sea, leaving only shadows behind."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "north"
+      },
+      "imageRev": 1787630101
+    },
+    {
+      "id": "L25_back",
+      "kanji": "背",
+      "keyword": "back",
+      "image": "studies/back.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>背<rt>せ</rt></ruby>を<ruby>向<rt>む</rt></ruby>ける<ruby>人<rt>ひと</rt></ruby>の<ruby>袖<rt>そで</rt></ruby>に、<ruby>言<rt>い</rt></ruby>えぬ<ruby>思<rt>おも</rt></ruby>いが<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "In the sleeve of one turning away, unspoken feelings remain."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "back"
+      },
+      "imageRev": 1787630079
+    },
+    {
+      "id": "L25_compare",
+      "kanji": "比",
+      "keyword": "compare",
+      "image": "studies/compare.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>灯<rt>あかり</rt></ruby>の<ruby>下<rt>もと</rt></ruby>で、<ruby>人<rt>ひと</rt></ruby>は<ruby>己<rt>おのれ</rt></ruby>を<ruby>量<rt>はか</rt></ruby>る。",
+        "en": "Beneath quiet lamps, people measure themselves against others."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "compare"
+      },
+      "imageRev": 1787630082
+    },
+    {
+      "id": "L25_descendants",
+      "kanji": "昆",
+      "keyword": "descendants",
+      "image": "studies/descendants.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>き<ruby>道<rt>みち</rt></ruby>を<ruby>子<rt>こ</rt></ruby>らが<ruby>歩<rt>ある</rt></ruby>き、<ruby>足<rt>あし</rt></ruby><ruby>音<rt>おと</rt></ruby>は<ruby>続<rt>つづ</rt></ruby>いてゆく。",
+        "en": "Children walk the ancient road, and the footsteps continue onward."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "descendants"
+      },
+      "imageRev": 1787630085
+    },
+    {
+      "id": "L25_everyone",
+      "kanji": "皆",
+      "keyword": "everyone",
+      "image": "studies/everyone.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>に<ruby>集<rt>つど</rt></ruby>う<ruby>影<rt>かげ</rt></ruby>、<ruby>皆<rt>みな</rt></ruby>ひとつの<ruby>灯<rt>あかり</rt></ruby>を<ruby>見<rt>み</rt></ruby>つめる。",
+        "en": "In the rainy garden, every shadow gazes toward the same light."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "everyone"
+      },
+      "imageRev": 1787630088
+    },
+    {
+      "id": "L25_block_letters",
+      "kanji": "楷",
+      "keyword": "block letters",
+      "image": "studies/block_letters.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>筆<rt>ふで</rt></ruby>は<ruby>乱<rt>みだ</rt></ruby>れず、<ruby>心<rt>こころ</rt></ruby>もまた<ruby>姿<rt>すがた</rt></ruby>を<ruby>整<rt>ととの</rt></ruby>える。",
+        "en": "The brush does not waver, and the heart too finds its form."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "block_letters"
+      },
+      "imageRev": 1787630079
+    },
+    {
+      "id": "L25_orderliness",
+      "kanji": "諧",
+      "keyword": "orderliness",
+      "image": "studies/orderliness.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>石<rt>せき</rt></ruby><ruby>庭<rt>てい</rt></ruby>の<ruby>音<rt>おと</rt></ruby>は<ruby>争<rt>あらそ</rt></ruby>わず、<ruby>静<rt>しず</rt></ruby>かに<ruby>調<rt>ちょう</rt></ruby><ruby>和<rt>わ</rt></ruby>している。",
+        "en": "The sounds of the stone garden do not compete, but rest in harmony."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "orderliness"
+      },
+      "imageRev": 1787630102
+    },
+    {
+      "id": "L25_mix",
+      "kanji": "混",
+      "keyword": "mix",
+      "image": "studies/mix.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>墨<rt>すみ</rt></ruby>は<ruby>水<rt>みず</rt></ruby>に<ruby>溶<rt>と</rt></ruby>け、<ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby>は<ruby>夜<rt>よる</rt></ruby>に<ruby>溶<rt>と</rt></ruby>けてゆく。",
+        "en": "Ink dissolves into water, and memories dissolve into night."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "mix"
+      },
+      "imageRev": 1787630099
+    },
+    {
+      "id": "L25_thirst",
+      "kanji": "渇",
+      "keyword": "thirst",
+      "image": "studies/thirst.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>空<rt>そら</rt></ruby>の<ruby>柄<rt>ひ</rt></ruby><ruby>杓<rt>しゃく</rt></ruby>に、<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>息<rt>いき</rt></ruby>だけが<ruby>残<rt>のこ</rt></ruby>る。",
+        "en": "In the empty ladle, only winter breath remains."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "thirst"
+      },
+      "imageRev": 1787630116
+    },
+    {
+      "id": "L25_audience",
+      "kanji": "謁",
+      "keyword": "audience",
+      "image": "studies/audience.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>石<rt>いし</rt></ruby><ruby>段<rt>だん</rt></ruby>を<ruby>登<rt>のぼ</rt></ruby>る<ruby>足<rt>あし</rt></ruby>に、<ruby>祈<rt>いの</rt></ruby>りは<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "Prayer dwells in feet ascending the wet stone steps."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "audience"
+      },
+      "imageRev": 1787630079
+    },
+    {
+      "id": "L25_brown",
+      "kanji": "褐",
+      "keyword": "brown",
+      "image": "studies/brown.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>木<rt>き</rt></ruby><ruby>箱<rt>はこ</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>に、<ruby>長<rt>なが</rt></ruby>い<ruby>年<rt>とし</rt></ruby><ruby>月<rt>つき</rt></ruby>が<ruby>沈<rt>しず</rt></ruby>んでいる。",
+        "en": "In the color of the old wooden chest, long years have settled."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "brown"
+      },
+      "imageRev": 1787630080
+    },
+    {
+      "id": "L25_hoarse",
+      "kanji": "喝",
+      "keyword": "hoarse",
+      "image": "studies/hoarse.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>声<rt>こえ</rt></ruby>はかすれ、<ruby>夜<rt>よる</rt></ruby>だけが<ruby>続<rt>つづ</rt></ruby>きを<ruby>歌<rt>うた</rt></ruby>っている。",
+        "en": "The voice grows hoarse, and only the night continues the song."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "hoarse"
+      },
+      "imageRev": 1787630093
+    },
+    {
+      "id": "L25_kudzu",
+      "kanji": "葛",
+      "keyword": "kudzu",
+      "image": "studies/kudzu.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>蔦<rt>つた</rt></ruby>は<ruby>石<rt>いし</rt></ruby>を<ruby>覆<rt>おお</rt></ruby>い、<ruby>忘<rt>わす</rt></ruby>れられた<ruby>道<rt>みち</rt></ruby>を<ruby>守<rt>まも</rt></ruby>っている。",
+        "en": "Vines cover the stones, guarding the forgotten path."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "kudzu"
+      },
+      "imageRev": 1787630095
+    },
+    {
+      "id": "L25_delicious",
+      "kanji": "旨",
+      "keyword": "delicious",
+      "image": "studies/delicious.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>湯<rt>ゆ</rt></ruby><ruby>気<rt>き</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうで、<ruby>心<rt>こころ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かにほどけてゆく。",
+        "en": "Beyond the rising steam, the heart slowly loosens."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "delicious"
+      },
+      "imageRev": 1787630084
+    },
+    {
+      "id": "L25_fat",
+      "kanji": "脂",
+      "keyword": "fat",
+      "image": "studies/fat.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>笑<rt>わら</rt></ruby>う<ruby>腹<rt>はら</rt></ruby>には、<ruby>冬<rt>ふゆ</rt></ruby>を<ruby>越<rt>こ</rt></ruby>える<ruby>豊<rt>ゆた</rt></ruby>かさが<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "Within the laughing belly dwells enough richness to survive the winter."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "fat"
+      },
+      "imageRev": 1787630089
+    },
+    {
+      "id": "L25_visit_shrine",
+      "kanji": "詣",
+      "keyword": "visit shrine",
+      "image": "studies/visit_shrine.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>灯<rt>とう</rt></ruby><ruby>籠<rt>ろう</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>に<ruby>導<rt>みちび</rt></ruby>かれ、<ruby>人<rt>ひと</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>門<rt>もん</rt></ruby>をくぐる。",
+        "en": "Guided by lantern light, one quietly passes through the gate."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "visit_shrine"
+      },
+      "imageRev": 1787630119
+    },
+    {
+      "id": "L25_formal_one",
+      "kanji": "壱",
+      "keyword": "formal one",
+      "image": "studies/formal_one.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つ<ruby>目<rt>め</rt></ruby>の<ruby>印<rt>しるし</rt></ruby>にも、<ruby>礼<rt>れい</rt></ruby>は<ruby>変<rt>か</rt></ruby>わらず<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "Even in the second seal, dignity remains unchanged."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "formal_one"
+      },
+      "imageRev": 1787630090
+    },
+    {
+      "id": "L25_every",
+      "kanji": "毎",
+      "keyword": "every",
+      "image": "studies/every.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>毎<rt>まい</rt></ruby><ruby>朝<rt>あさ</rt></ruby>の<ruby>湯<rt>ゆ</rt></ruby><ruby>気<rt>き</rt></ruby>は、<ruby>同<rt>おな</rt></ruby>じようで<ruby>少<rt>すこ</rt></ruby>し<ruby>違<rt>ちが</rt></ruby>う。",
+        "en": "Each morning's steam seems the same, yet slightly different."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "every"
+      },
+      "imageRev": 1787630088
+    },
+    {
+      "id": "L25_cleverness",
+      "kanji": "敏",
+      "keyword": "cleverness",
+      "image": "studies/cleverness.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>気<rt>き</rt></ruby>づく<ruby>人<rt>ひと</rt></ruby>だけが、<ruby>沈<rt>ちん</rt></ruby><ruby>黙<rt>もく</rt></ruby>の<ruby>変<rt>へん</rt></ruby><ruby>化<rt>か</rt></ruby>を<ruby>知<rt>し</rt></ruby>っている。",
+        "en": "Only the attentive notice the changes hidden in silence."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "cleverness"
+      },
+      "imageRev": 1787630081
+    },
+    {
+      "id": "L25_ume",
+      "kanji": "梅",
+      "keyword": "ume",
+      "image": "studies/ume.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>寒<rt>さむ</rt></ruby>さの<ruby>奥<rt>おく</rt></ruby>で、<ruby>白<rt>しろ</rt></ruby>い<ruby>梅<rt>うめ</rt></ruby>がそっと<ruby>開<rt>ひら</rt></ruby>き<ruby>始<rt>はじ</rt></ruby>める。",
+        "en": "Deep within the cold, the white plum quietly begins to bloom."
+      },
+      "meta": {
+        "lesson": 25,
+        "slug": "ume"
+      },
+      "imageRev": 1787630117
+    }
+  ]
+}

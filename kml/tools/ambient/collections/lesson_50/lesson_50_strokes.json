@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_50_strokes",
+  "title": "Lesson 50 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:29).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 50,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 11.8,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 749000,
+    "estimatedExhibitRuntimeMs": 739000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L50_excel",
+      "kanji": "秀",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/excel.html",
+        "strokeCount": 7,
+        "kanji": "秀"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "excel",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_transparent",
+      "kanji": "透",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/transparent.html",
+        "strokeCount": 10,
+        "kanji": "透"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "transparent",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_entice",
+      "kanji": "誘",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/entice.html",
+        "strokeCount": 14,
+        "kanji": "誘"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "entice",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_examine",
+      "kanji": "稽",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/examine.html",
+        "strokeCount": 15,
+        "kanji": "稽"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "examine",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_cereals",
+      "kanji": "穀",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cereals.html",
+        "strokeCount": 14,
+        "kanji": "穀"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "cereals",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_germ",
+      "kanji": "菌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/germ.html",
+        "strokeCount": 11,
+        "kanji": "菌"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "germ",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_numb",
+      "kanji": "萎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/numb.html",
+        "strokeCount": 11,
+        "kanji": "萎"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "numb",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_rice",
+      "kanji": "米",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rice.html",
+        "strokeCount": 6,
+        "kanji": "米"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "rice",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_flour",
+      "kanji": "粉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/flour.html",
+        "strokeCount": 10,
+        "kanji": "粉"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "flour",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_sticky",
+      "kanji": "粘",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sticky.html",
+        "strokeCount": 11,
+        "kanji": "粘"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "sticky",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_grains",
+      "kanji": "粒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/grains.html",
+        "strokeCount": 11,
+        "kanji": "粒"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "grains",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_cosmetics",
+      "kanji": "粧",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cosmetics.html",
+        "strokeCount": 12,
+        "kanji": "粧"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "cosmetics",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_astray",
+      "kanji": "迷",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/astray.html",
+        "strokeCount": 9,
+        "kanji": "迷"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "astray",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_chic",
+      "kanji": "粋",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/chic.html",
+        "strokeCount": 10,
+        "kanji": "粋"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "chic",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_riddle",
+      "kanji": "謎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/riddle.html",
+        "strokeCount": 17,
+        "kanji": "謎"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "riddle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_provisions",
+      "kanji": "糧",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/provisions.html",
+        "strokeCount": 18,
+        "kanji": "糧"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "provisions",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_chrysanthemum",
+      "kanji": "菊",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/chrysanthemum.html",
+        "strokeCount": 11,
+        "kanji": "菊"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "chrysanthemum",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_inner",
+      "kanji": "奥",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/inner.html",
+        "strokeCount": 12,
+        "kanji": "奥"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "inner",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_number",
+      "kanji": "数",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/number.html",
+        "strokeCount": 13,
+        "kanji": "数"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "number",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L50_watchtower",
+      "kanji": "楼",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/watchtower.html",
+        "strokeCount": 13,
+        "kanji": "楼"
+      },
+      "meta": {
+        "lesson": 50,
+        "slug": "watchtower",
+        "prototype": true
+      }
+    }
+  ]
+}

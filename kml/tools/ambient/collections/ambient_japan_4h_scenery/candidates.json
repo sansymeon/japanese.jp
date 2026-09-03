@@ -1,0 +1,3397 @@
+{
+  "id": "ambient_japan_4h_scenery",
+  "title": "Ambient Japan \u2014 4-hour scenery (candidate index)",
+  "notes": "Reference-only index after curatorial exclusions. No image copies. Source assets unchanged.",
+  "library": {
+    "uniqueStemsAudited": 1019,
+    "landscape": 972,
+    "portrait": 15,
+    "squareish": 32,
+    "fourSeasonsSelected": 147,
+    "fourSeasonsKeepers": 143
+  },
+  "exclusions": {
+    "path": "kml/tools/ambient/collections/ambient_gallery_japan/exclusions.json",
+    "pass": 6,
+    "count": 168,
+    "appliedToCore": 168
+  },
+  "counts": {
+    "corePoolBeforeExclusions": 293,
+    "corePool": 142,
+    "groups": {
+      "strong_japan_anchors": 72,
+      "countryside_nature": 32,
+      "spring": 15,
+      "summer": 17,
+      "autumn": 13,
+      "winter": 17,
+      "castles_temples_shrines": 40,
+      "rural_cultural_japan": 43,
+      "people": 14,
+      "modern_japan_rail": 12,
+      "possible_fantasy_exceptions": 2
+    },
+    "secondLook": 3,
+    "startHereAccepted": 9,
+    "startHereRecommended": 3,
+    "newAdditions": 8
+  },
+  "pacing": {
+    "targetDurationMin": 240,
+    "holdSeconds": "50\u201360 (signature images 65\u201375)",
+    "transitionSeconds": 2.5,
+    "recommendedImageCount": "230\u2013250",
+    "fourSeasonsReference": "147 images / 120 min / ~46s hold"
+  },
+  "audio": {
+    "primary": "kml/tools/ambient/audio/ambient_japan_4_seasons.mp3",
+    "primaryMinutes": 119.8,
+    "plan": "Loop once with a long crossfade to reach ~4 hours. Do not create or modify audio yet.",
+    "alternates": [
+      {
+        "file": "137_minute_ambient.mp3",
+        "minutes": 137.3
+      },
+      {
+        "file": "ambient_kanji_full.mp3",
+        "minutes": 98.1
+      },
+      {
+        "file": "ambient_kanji_exhibition.mp3",
+        "minutes": 98.1
+      }
+    ]
+  },
+  "missingJapan": [
+    {
+      "id": "shinkansen_rice",
+      "need": "Shinkansen passing through countryside / rice fields \u2014 train small in the landscape",
+      "priority": "high",
+      "notes": "Filled by shinkansen.png (viaduct through a misty rice-and-village valley). Fuji pairing still open."
+    },
+    {
+      "id": "shinkansen_fuji",
+      "need": "Shinkansen with Mount Fuji (classic railway-landscape composition)",
+      "priority": "high",
+      "notes": "We have Fuji (mt_fuji_2, apple_blossoms, acknowledge) but never with a train."
+    },
+    {
+      "id": "shinkansen_sakura_or_tea",
+      "need": "One more Shinkansen in seasonal landscape (sakura or tea country)",
+      "priority": "medium",
+      "notes": "Optional if the two high-priority Shinkansen images are strong. train_cherry_blossoms already covers local rail + sakura."
+    },
+    {
+      "id": "kiyomizu",
+      "need": "Kiyomizu-dera hillside / wooden stage overlooking Kyoto",
+      "priority": "medium",
+      "notes": "Kyoto pagoda / Higashiyama street is strong; the Kiyomizu veranda view is absent."
+    },
+    {
+      "id": "byodoin",
+      "need": "By\u014dd\u014d-in Phoenix Hall across the pond (Uji)",
+      "priority": "medium",
+      "notes": "No phoenix-hall silhouette identified."
+    },
+    {
+      "id": "fushimi_senbon",
+      "need": "Fushimi Inari senbon torii as a landscape tunnel (quiet, not tourist crush)",
+      "priority": "medium",
+      "notes": "Filled by fushimi.png."
+    },
+    {
+      "id": "todaiji_hall",
+      "need": "T\u014ddai-ji Great Buddha Hall as a wide architectural landscape",
+      "priority": "low",
+      "notes": "nara_deer already shows the hall behind deer \u2014 may be enough."
+    },
+    {
+      "id": "nachi",
+      "need": "Nachi waterfall with the red pagoda (one of Japan\u2019s unique stacked landscapes)",
+      "priority": "medium",
+      "notes": "Filled by nachi_falls.png."
+    },
+    {
+      "id": "sakura_tunnel",
+      "need": "2\u20133 wide sakura-row / river-tunnel landscapes (not close-up blossoms)",
+      "priority": "medium",
+      "notes": "Filled by sakura_river.png (one wide riverside row). Additional tunnels optional."
+    },
+    {
+      "id": "seto_islands",
+      "need": "One more Seto Inland Sea / island-sea panorama (optional Matsushima-class)",
+      "priority": "low",
+      "notes": "wink already suggests this; only fill if we want a clearer iconic view."
+    },
+    {
+      "id": "matsuri_distance",
+      "need": "A distant summer festival or fireworks over a river \u2014 people small, landscape first",
+      "priority": "low",
+      "notes": "Filled in spirit by matsuri.png (quiet shrine-path stalls) and yatai.png (night riverside stalls). Not a distant fireworks landscape."
+    },
+    {
+      "id": "showa_rural_modern",
+      "need": "One quiet Showa/modern-rural cue (vending machine at dusk, rural bus, concrete coast with tetrapods) beautifully integrated",
+      "priority": "low",
+      "notes": "kei truck (car, transport) and wet modern street (patrol) already cover some modern-rural ground."
+    },
+    {
+      "id": "hoshi_rice_night",
+      "need": "Starry night over flooded rice paddies \u2014 Milky Way reflected in tanada",
+      "priority": "medium",
+      "notes": "Filled by starlight.png (village and flooded paddies under the Milky Way). Replaces Start Here room_9/hoshi."
+    }
+  ],
+  "corePool": [
+    {
+      "stem": "apple_blossoms",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/apple_blossoms.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "apple_tree",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/apple_tree.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "bamboo_forest",
+      "rel": "../ambient_gallery_japan_4_seasons/images/bamboo_forest.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "capital",
+      "rel": "../../../../assets/studies/capital.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "castle",
+      "rel": "../../../../assets/studies/castle.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "castle_2",
+      "rel": "../../../../assets/studies/castle_2.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "chant",
+      "rel": "../../../../assets/studies/chant.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "country_station",
+      "rel": "../ambient_gallery_japan_4_seasons/images/country_station.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "country_train_summer",
+      "rel": "../ambient_gallery_japan_4_seasons/images/country_train_summer.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "country_train_winter",
+      "rel": "../ambient_gallery_japan_4_seasons/images/country_train_winter.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "creek",
+      "rel": "../../../../assets/studies/creek.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "dagashiya",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/dagashiya.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "dazaifu_shopping",
+      "rel": "../ambient_gallery_japan_4_seasons/images/dazaifu_shopping.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "evening",
+      "rel": "../../../../assets/studies/evening.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "eventide",
+      "rel": "../../../../assets/studies/eventide.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "field",
+      "rel": "../../../../assets/studies/field.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "fishing_village",
+      "rel": "../ambient_gallery_japan_4_seasons/images/fishing_village.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "fishing_village_2",
+      "rel": "../ambient_gallery_japan_4_seasons/images/fishing_village_2.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "futamigaura",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/futamigaura.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "garden",
+      "rel": "../../../../assets/studies/garden.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "gokayama_winter",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/gokayama_winter.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "good_luck",
+      "rel": "../../../../assets/studies/good_luck.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "hida_furukawa",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/hida_furukawa.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "home_village",
+      "rel": "../../../../assets/studies/home_village.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "ice",
+      "rel": "../../../../assets/studies/ice.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "imperial_gardens",
+      "rel": "../ambient_gallery_japan_4_seasons/images/imperial_gardens.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "japan_alps_summer_2",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/japan_alps_summer_2.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "japan_alps_winter",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/japan_alps_winter.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "kumamoto",
+      "rel": "../../../../assets/studies/kumamoto.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "kyoto",
+      "rel": "../../../../assets/studies/kyoto.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "kyoto_autumn",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/kyoto_autumn.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "kyoto_pagoda",
+      "rel": "../../../../assets/studies/kyoto_pagoda.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "lake_toya",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/lake_toya.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "lavendar",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/lavendar.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "magome",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/magome.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "miyajima",
+      "rel": "../ambient_gallery_japan_4_seasons/images/miyajima.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "monkey_hotspring",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/monkey_hotspring.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "morning",
+      "rel": "../../../../assets/studies/morning.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "mt_fuji_2",
+      "rel": "../../../../assets/studies/mt_fuji_2.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "nara_deer",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nara_deer.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "nikko_2",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_2.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "nikko_3",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_3.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "nikko_fall_colors",
+      "rel": "../../../../assets/studies/nikko_fall_colors.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "okinawa_temple",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/okinawa_temple.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "pagoda",
+      "rel": "../../../../assets/studies/pagoda.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "pavilion",
+      "rel": "../../../../assets/studies/pavilion.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "peach_tree",
+      "rel": "../../../../assets/studies/peach_tree.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "plantation",
+      "rel": "../../../../assets/studies/plantation.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "raizan",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/raizan.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "rice",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "rice_post_harvest",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice_post_harvest.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "road",
+      "rel": "../../../../assets/studies/road.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "saga_koinobori",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/saga_koinobori.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "sakurajima",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/sakurajima.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "senso_ji_temple",
+      "rel": "../../../../assets/studies/senso_ji_temple.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "shirakawa_spring",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_spring.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "shirakawa_winter",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_winter.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "shiretoko_ice",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shiretoko_ice.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "shopping_street",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shopping_street.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "sun",
+      "rel": "../../../../assets/studies/sun.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "takayama",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/takayama.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "tanuki",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tanuki.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "tea_fields",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tea_fields.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "tea_shop",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tea_shop.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "temple",
+      "rel": "../../../../assets/studies/temple.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "thatched_roof",
+      "rel": "../../../../assets/studies/thatched_roof.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "thatched_roof_winter",
+      "rel": "../../../../assets/studies/thatched_roof_winter.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "town",
+      "rel": "../../../../assets/studies/town.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "train_cherry_blossoms",
+      "rel": "../ambient_gallery_japan_4_seasons/images/train_cherry_blossoms.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "train_hydrangea",
+      "rel": "../ambient_gallery_japan_4_seasons/images/train_hydrangea.png",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "tsumago",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tsumago.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "villa",
+      "rel": "../../../../assets/studies/villa.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "village",
+      "rel": "../../../../assets/studies/village.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "wagashi_shop",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/wagashi_shop.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "winter_cranes",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_cranes.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "winter_evening",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_evening.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "winter_honshu",
+      "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_honshu.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "woods",
+      "rel": "../../../../assets/studies/woods.jpg",
+      "inFourSeasons": true,
+      "rareInterior": false
+    },
+    {
+      "stem": "acknowledge",
+      "rel": "../../../../assets/studies/acknowledge.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "assurance",
+      "rel": "../../../../assets/studies/assurance.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "beguile",
+      "rel": "../../../../assets/studies/beguile.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "bell",
+      "rel": "../../../../assets/studies/bell.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "busy",
+      "rel": "../../../../assets/studies/busy.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "car",
+      "rel": "../../../../assets/studies/car.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "courtyard",
+      "rel": "../../../../assets/studies/courtyard.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "dike",
+      "rel": "../../../../assets/studies/dike.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "dog",
+      "rel": "../../../../assets/studies/dog.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "east",
+      "rel": "../../../../assets/studies/east.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "endure_silently",
+      "rel": "../../../../assets/studies/endure_silently.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "enlightenment",
+      "rel": "../../../../assets/studies/enlightenment.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "few",
+      "rel": "../../../../assets/studies/few.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "hedge",
+      "rel": "../../../../assets/studies/hedge.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "hot_water",
+      "rel": "../../../../assets/studies/hot_water.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "incur",
+      "rel": "../../../../assets/studies/incur.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "kudzu",
+      "rel": "../../../../assets/studies/kudzu.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "location",
+      "rel": "../../../../assets/studies/location.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "mediocre",
+      "rel": "../../../../assets/studies/mediocre.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "melt",
+      "rel": "../../../../assets/studies/melt.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "mulberry",
+      "rel": "../../../../assets/studies/mulberry.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "next",
+      "rel": "../../../../assets/studies/next.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "noon",
+      "rel": "../../../../assets/studies/noon.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "orderliness",
+      "rel": "../../../../assets/studies/orderliness.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "permit",
+      "rel": "../../../../assets/studies/permit.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "persimmon",
+      "rel": "../../../../assets/studies/persimmon.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "pond",
+      "rel": "../../../../assets/studies/pond.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "public_hall",
+      "rel": "../../../../assets/studies/public_hall.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "rain",
+      "rel": "../../../../assets/studies/rain.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "remainder",
+      "rel": "../../../../assets/studies/remainder.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "respond",
+      "rel": "../../../../assets/studies/respond.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "righteousness",
+      "rel": "../../../../assets/studies/righteousness.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "run_alongside",
+      "rel": "../../../../assets/studies/run_alongside.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "rut",
+      "rel": "../../../../assets/studies/rut.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "safeguard",
+      "rel": "../../../../assets/studies/safeguard.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "slope",
+      "rel": "../../../../assets/studies/slope.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "stop",
+      "rel": "../../../../assets/studies/stop.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "store",
+      "rel": "../../../../assets/studies/store.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "sulfur",
+      "rel": "../../../../assets/studies/sulfur.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "tea",
+      "rel": "../../../../assets/studies/tea.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "transport",
+      "rel": "../../../../assets/studies/transport.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "ume",
+      "rel": "../../../../assets/studies/ume.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "visit_shrine",
+      "rel": "../../../../assets/studies/visit_shrine.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "weekday",
+      "rel": "../../../../assets/studies/weekday.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "winter",
+      "rel": "../../../../assets/studies/winter.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "year_end",
+      "rel": "../../../../assets/studies/year_end.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "younger_sister",
+      "rel": "../../../../assets/studies/younger_sister.jpg",
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room_7/mountain",
+      "rel": "../../../../../start-here/assets/images/room_7/mountain.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_24/bamboo_2",
+      "rel": "../../../../../start-here/assets/images/lesson_24/bamboo_2.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room_9/kasa",
+      "rel": "../../../../../start-here/assets/images/room_9/kasa.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room-15",
+      "rel": "../../../../../start-here/assets/images/room-15.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_40/kazega_yowai",
+      "rel": "../../../../../start-here/assets/images/lesson_40/kazega_yowai.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_40/kotobaga_saku_2",
+      "rel": "../../../../../start-here/assets/images/lesson_40/kotobaga_saku_2.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_40/genki_desuka",
+      "rel": "../../../../../start-here/assets/images/lesson_40/genki_desuka.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room-10",
+      "rel": "../../../../../start-here/assets/images/room-10.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room-9",
+      "rel": "../../../../../start-here/assets/images/room-9.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "shinkansen",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/shinkansen.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Shinkansen on a viaduct through a misty rice-and-village valley"
+    },
+    {
+      "stem": "starlight",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/starlight.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Starry night over flooded rice paddies and a village"
+    },
+    {
+      "stem": "nachi_falls",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/nachi_falls.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Nachi waterfall with the red Seiganto-ji pagoda"
+    },
+    {
+      "stem": "fushimi",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/fushimi.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Fushimi Inari senbon torii as a quiet landscape tunnel"
+    },
+    {
+      "stem": "skytree_view_fuji",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/skytree_view_fuji.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Tokyo twilight cityscape with Fuji on the horizon"
+    },
+    {
+      "stem": "sakura_river",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/sakura_river.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Wide sakura-lined river with a path and incidental walkers"
+    },
+    {
+      "stem": "yatai",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/yatai.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Night riverside yatai row \u2014 urban Japan after dark"
+    },
+    {
+      "stem": "matsuri",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/matsuri.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Shrine-path festival stalls in late-afternoon light, empty of crowds"
+    }
+  ],
+  "groups": {
+    "strong_japan_anchors": [
+      {
+        "stem": "castle",
+        "rel": "../../../../assets/studies/castle.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "castle_2",
+        "rel": "../../../../assets/studies/castle_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kumamoto",
+        "rel": "../../../../assets/studies/kumamoto.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "miyajima",
+        "rel": "../ambient_gallery_japan_4_seasons/images/miyajima.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "futamigaura",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/futamigaura.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kyoto",
+        "rel": "../../../../assets/studies/kyoto.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kyoto_pagoda",
+        "rel": "../../../../assets/studies/kyoto_pagoda.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kyoto_autumn",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/kyoto_autumn.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "capital",
+        "rel": "../../../../assets/studies/capital.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "town",
+        "rel": "../../../../assets/studies/town.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "weekday",
+        "rel": "../../../../assets/studies/weekday.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "senso_ji_temple",
+        "rel": "../../../../assets/studies/senso_ji_temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nara_deer",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nara_deer.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_2",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_3",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_3.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_fall_colors",
+        "rel": "../../../../assets/studies/nikko_fall_colors.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "mt_fuji_2",
+        "rel": "../../../../assets/studies/mt_fuji_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "apple_blossoms",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/apple_blossoms.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "acknowledge",
+        "rel": "../../../../assets/studies/acknowledge.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pagoda",
+        "rel": "../../../../assets/studies/pagoda.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "temple",
+        "rel": "../../../../assets/studies/temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "okinawa_temple",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/okinawa_temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "chant",
+        "rel": "../../../../assets/studies/chant.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "good_luck",
+        "rel": "../../../../assets/studies/good_luck.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "bamboo_forest",
+        "rel": "../ambient_gallery_japan_4_seasons/images/bamboo_forest.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "imperial_gardens",
+        "rel": "../ambient_gallery_japan_4_seasons/images/imperial_gardens.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "garden",
+        "rel": "../../../../assets/studies/garden.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pavilion",
+        "rel": "../../../../assets/studies/pavilion.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shirakawa_spring",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_spring.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shirakawa_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "gokayama_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/gokayama_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "thatched_roof",
+        "rel": "../../../../assets/studies/thatched_roof.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "thatched_roof_winter",
+        "rel": "../../../../assets/studies/thatched_roof_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "morning",
+        "rel": "../../../../assets/studies/morning.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter",
+        "rel": "../../../../assets/studies/winter.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "melt",
+        "rel": "../../../../assets/studies/melt.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "mulberry",
+        "rel": "../../../../assets/studies/mulberry.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "magome",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/magome.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "tsumago",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tsumago.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "takayama",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/takayama.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "hida_furukawa",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/hida_furukawa.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "dazaifu_shopping",
+        "rel": "../ambient_gallery_japan_4_seasons/images/dazaifu_shopping.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shopping_street",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shopping_street.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "busy",
+        "rel": "../../../../assets/studies/busy.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "beguile",
+        "rel": "../../../../assets/studies/beguile.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "tea_fields",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tea_fields.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rice",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "field",
+        "rel": "../../../../assets/studies/field.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "raizan",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/raizan.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "sun",
+        "rel": "../../../../assets/studies/sun.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "saga_koinobori",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/saga_koinobori.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "woods",
+        "rel": "../../../../assets/studies/woods.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "ice",
+        "rel": "../../../../assets/studies/ice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "monkey_hotspring",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/monkey_hotspring.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "sakurajima",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/sakurajima.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "assurance",
+        "rel": "../../../../assets/studies/assurance.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "endure_silently",
+        "rel": "../../../../assets/studies/endure_silently.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "visit_shrine",
+        "rel": "../../../../assets/studies/visit_shrine.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "righteousness",
+        "rel": "../../../../assets/studies/righteousness.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "location",
+        "rel": "../../../../assets/studies/location.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "permit",
+        "rel": "../../../../assets/studies/permit.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "public_hall",
+        "rel": "../../../../assets/studies/public_hall.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "safeguard",
+        "rel": "../../../../assets/studies/safeguard.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "year_end",
+        "rel": "../../../../assets/studies/year_end.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "hedge",
+        "rel": "../../../../assets/studies/hedge.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "few",
+        "rel": "../../../../assets/studies/few.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "bell",
+        "rel": "../../../../assets/studies/bell.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "noon",
+        "rel": "../../../../assets/studies/noon.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pond",
+        "rel": "../../../../assets/studies/pond.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "hot_water",
+        "rel": "../../../../assets/studies/hot_water.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "remainder",
+        "rel": "../../../../assets/studies/remainder.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "courtyard",
+        "rel": "../../../../assets/studies/courtyard.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "countryside_nature": [
+      {
+        "stem": "creek",
+        "rel": "../../../../assets/studies/creek.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "eventide",
+        "rel": "../../../../assets/studies/eventide.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "japan_alps_summer_2",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/japan_alps_summer_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "japan_alps_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/japan_alps_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "lake_toya",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/lake_toya.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "lavendar",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/lavendar.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter_cranes",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_cranes.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shiretoko_ice",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shiretoko_ice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "apple_tree",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/apple_tree.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "peach_tree",
+        "rel": "../../../../assets/studies/peach_tree.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rice_post_harvest",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice_post_harvest.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "plantation",
+        "rel": "../../../../assets/studies/plantation.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "home_village",
+        "rel": "../../../../assets/studies/home_village.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "road",
+        "rel": "../../../../assets/studies/road.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "village",
+        "rel": "../../../../assets/studies/village.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "evening",
+        "rel": "../../../../assets/studies/evening.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "dike",
+        "rel": "../../../../assets/studies/dike.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rain",
+        "rel": "../../../../assets/studies/rain.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "stone",
+        "rel": "../../../../assets/studies/stone.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "leaf",
+        "rel": "../../../../assets/studies/leaf.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "lumber",
+        "rel": "../../../../assets/studies/lumber.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "run_alongside",
+        "rel": "../../../../assets/studies/run_alongside.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rut",
+        "rel": "../../../../assets/studies/rut.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "sulfur",
+        "rel": "../../../../assets/studies/sulfur.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "sheep",
+        "rel": "../../../../assets/studies/sheep.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "signal",
+        "rel": "../../../../assets/studies/signal.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "grains_of_sand",
+        "rel": "../../../../assets/studies/grains_of_sand.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "horse_chestnut",
+        "rel": "../../../../assets/studies/horse_chestnut.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kudzu",
+        "rel": "../../../../assets/studies/kudzu.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "prosperous",
+        "rel": "../../../../assets/studies/prosperous.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pursue",
+        "rel": "../../../../assets/studies/pursue.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "selfish",
+        "rel": "../../../../assets/studies/selfish.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "spring": [
+      {
+        "stem": "castle",
+        "rel": "../../../../assets/studies/castle.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "apple_blossoms",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/apple_blossoms.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "peach_tree",
+        "rel": "../../../../assets/studies/peach_tree.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shirakawa_spring",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_spring.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "train_cherry_blossoms",
+        "rel": "../ambient_gallery_japan_4_seasons/images/train_cherry_blossoms.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "saga_koinobori",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/saga_koinobori.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "woods",
+        "rel": "../../../../assets/studies/woods.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "plantation",
+        "rel": "../../../../assets/studies/plantation.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "ume",
+        "rel": "../../../../assets/studies/ume.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "orderliness",
+        "rel": "../../../../assets/studies/orderliness.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "hedge",
+        "rel": "../../../../assets/studies/hedge.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "incur",
+        "rel": "../../../../assets/studies/incur.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "metaphor",
+        "rel": "../../../../assets/studies/metaphor.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "core",
+        "rel": "../../../../assets/studies/core.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "plump",
+        "rel": "../../../../assets/studies/plump.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "summer": [
+      {
+        "stem": "bamboo_forest",
+        "rel": "../ambient_gallery_japan_4_seasons/images/bamboo_forest.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "tea_fields",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tea_fields.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rice",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "field",
+        "rel": "../../../../assets/studies/field.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "miyajima",
+        "rel": "../ambient_gallery_japan_4_seasons/images/miyajima.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pagoda",
+        "rel": "../../../../assets/studies/pagoda.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "temple",
+        "rel": "../../../../assets/studies/temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "thatched_roof",
+        "rel": "../../../../assets/studies/thatched_roof.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "train_hydrangea",
+        "rel": "../ambient_gallery_japan_4_seasons/images/train_hydrangea.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "country_train_summer",
+        "rel": "../ambient_gallery_japan_4_seasons/images/country_train_summer.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "country_station",
+        "rel": "../ambient_gallery_japan_4_seasons/images/country_station.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "japan_alps_summer_2",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/japan_alps_summer_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "lavendar",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/lavendar.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "okinawa_temple",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/okinawa_temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "creek",
+        "rel": "../../../../assets/studies/creek.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "hot_water",
+        "rel": "../../../../assets/studies/hot_water.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "noon",
+        "rel": "../../../../assets/studies/noon.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "autumn": [
+      {
+        "stem": "kyoto_autumn",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/kyoto_autumn.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_fall_colors",
+        "rel": "../../../../assets/studies/nikko_fall_colors.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_2",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_3",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_3.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "lake_toya",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/lake_toya.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rice",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rice_post_harvest",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice_post_harvest.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "persimmon",
+        "rel": "../../../../assets/studies/persimmon.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pond",
+        "rel": "../../../../assets/studies/pond.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "recess",
+        "rel": "../../../../assets/studies/recess.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "younger_sister",
+        "rel": "../../../../assets/studies/younger_sister.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "widow",
+        "rel": "../../../../assets/studies/widow.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "apple_tree",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/apple_tree.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "winter": [
+      {
+        "stem": "mt_fuji_2",
+        "rel": "../../../../assets/studies/mt_fuji_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "gokayama_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/gokayama_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shirakawa_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "thatched_roof_winter",
+        "rel": "../../../../assets/studies/thatched_roof_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "country_train_winter",
+        "rel": "../ambient_gallery_japan_4_seasons/images/country_train_winter.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "japan_alps_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/japan_alps_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shiretoko_ice",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shiretoko_ice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "ice",
+        "rel": "../../../../assets/studies/ice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "monkey_hotspring",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/monkey_hotspring.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter_cranes",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_cranes.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter_evening",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_evening.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter_honshu",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_honshu.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "apple_tree",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/apple_tree.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter",
+        "rel": "../../../../assets/studies/winter.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "melt",
+        "rel": "../../../../assets/studies/melt.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "endure_silently",
+        "rel": "../../../../assets/studies/endure_silently.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "year_end",
+        "rel": "../../../../assets/studies/year_end.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "castles_temples_shrines": [
+      {
+        "stem": "castle",
+        "rel": "../../../../assets/studies/castle.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "castle_2",
+        "rel": "../../../../assets/studies/castle_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kumamoto",
+        "rel": "../../../../assets/studies/kumamoto.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pagoda",
+        "rel": "../../../../assets/studies/pagoda.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kyoto_pagoda",
+        "rel": "../../../../assets/studies/kyoto_pagoda.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kyoto_autumn",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/kyoto_autumn.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "capital",
+        "rel": "../../../../assets/studies/capital.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "town",
+        "rel": "../../../../assets/studies/town.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "temple",
+        "rel": "../../../../assets/studies/temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "senso_ji_temple",
+        "rel": "../../../../assets/studies/senso_ji_temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "okinawa_temple",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/okinawa_temple.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nara_deer",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nara_deer.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "chant",
+        "rel": "../../../../assets/studies/chant.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "good_luck",
+        "rel": "../../../../assets/studies/good_luck.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "miyajima",
+        "rel": "../ambient_gallery_japan_4_seasons/images/miyajima.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "futamigaura",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/futamigaura.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_2",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_2.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_3",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/nikko_3.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "nikko_fall_colors",
+        "rel": "../../../../assets/studies/nikko_fall_colors.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "imperial_gardens",
+        "rel": "../ambient_gallery_japan_4_seasons/images/imperial_gardens.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "garden",
+        "rel": "../../../../assets/studies/garden.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pavilion",
+        "rel": "../../../../assets/studies/pavilion.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "woods",
+        "rel": "../../../../assets/studies/woods.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "ice",
+        "rel": "../../../../assets/studies/ice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "visit_shrine",
+        "rel": "../../../../assets/studies/visit_shrine.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "righteousness",
+        "rel": "../../../../assets/studies/righteousness.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "assurance",
+        "rel": "../../../../assets/studies/assurance.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "endure_silently",
+        "rel": "../../../../assets/studies/endure_silently.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "location",
+        "rel": "../../../../assets/studies/location.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "permit",
+        "rel": "../../../../assets/studies/permit.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "public_hall",
+        "rel": "../../../../assets/studies/public_hall.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "safeguard",
+        "rel": "../../../../assets/studies/safeguard.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "year_end",
+        "rel": "../../../../assets/studies/year_end.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "few",
+        "rel": "../../../../assets/studies/few.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "bell",
+        "rel": "../../../../assets/studies/bell.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "noon",
+        "rel": "../../../../assets/studies/noon.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "pond",
+        "rel": "../../../../assets/studies/pond.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "courtyard",
+        "rel": "../../../../assets/studies/courtyard.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "respond",
+        "rel": "../../../../assets/studies/respond.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "ridgepole",
+        "rel": "../../../../assets/studies/ridgepole.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "rural_cultural_japan": [
+      {
+        "stem": "thatched_roof",
+        "rel": "../../../../assets/studies/thatched_roof.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "thatched_roof_winter",
+        "rel": "../../../../assets/studies/thatched_roof_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shirakawa_spring",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_spring.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shirakawa_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shirakawa_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "gokayama_winter",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/gokayama_winter.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "magome",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/magome.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "tsumago",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tsumago.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "takayama",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/takayama.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "hida_furukawa",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/hida_furukawa.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "dazaifu_shopping",
+        "rel": "../ambient_gallery_japan_4_seasons/images/dazaifu_shopping.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "dagashiya",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/dagashiya.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "tea_shop",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tea_shop.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "wagashi_shop",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/wagashi_shop.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "tanuki",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tanuki.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "shopping_street",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/shopping_street.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "kyoto",
+        "rel": "../../../../assets/studies/kyoto.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "home_village",
+        "rel": "../../../../assets/studies/home_village.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "village",
+        "rel": "../../../../assets/studies/village.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "road",
+        "rel": "../../../../assets/studies/road.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "plantation",
+        "rel": "../../../../assets/studies/plantation.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "field",
+        "rel": "../../../../assets/studies/field.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rice",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/rice.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "tea_fields",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/tea_fields.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "fishing_village",
+        "rel": "../ambient_gallery_japan_4_seasons/images/fishing_village.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "fishing_village_2",
+        "rel": "../ambient_gallery_japan_4_seasons/images/fishing_village_2.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "evening",
+        "rel": "../../../../assets/studies/evening.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter_evening",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_evening.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter_honshu",
+        "rel": "../../../../assets/studies/add_to_ambient_japan_4_seasons/winter_honshu.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "morning",
+        "rel": "../../../../assets/studies/morning.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "villa",
+        "rel": "../../../../assets/studies/villa.jpg",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "beguile",
+        "rel": "../../../../assets/studies/beguile.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "busy",
+        "rel": "../../../../assets/studies/busy.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "store",
+        "rel": "../../../../assets/studies/store.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "slope",
+        "rel": "../../../../assets/studies/slope.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "weekday",
+        "rel": "../../../../assets/studies/weekday.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "remainder",
+        "rel": "../../../../assets/studies/remainder.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "run_alongside",
+        "rel": "../../../../assets/studies/run_alongside.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "rut",
+        "rel": "../../../../assets/studies/rut.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "soil",
+        "rel": "../../../../assets/studies/soil.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "cottage",
+        "rel": "../../../../assets/studies/cottage.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "mulberry",
+        "rel": "../../../../assets/studies/mulberry.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "melt",
+        "rel": "../../../../assets/studies/melt.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "winter",
+        "rel": "../../../../assets/studies/winter.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "people": [
+      {
+        "stem": "visit_shrine",
+        "rel": "../../../../assets/studies/visit_shrine.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "craft",
+        "rel": "../../../../assets/studies/craft.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "voiced",
+        "rel": "../../../../assets/studies/voiced.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "accept",
+        "rel": "../../../../assets/studies/accept.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "descendants",
+        "rel": "../../../../assets/studies/descendants.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "particularly",
+        "rel": "../../../../assets/studies/particularly.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "younger_sister",
+        "rel": "../../../../assets/studies/younger_sister.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "soil",
+        "rel": "../../../../assets/studies/soil.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "matrimony",
+        "rel": "../../../../assets/studies/matrimony.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "surpass",
+        "rel": "../../../../assets/studies/surpass.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "renunciation",
+        "rel": "../../../../assets/studies/renunciation.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "light_weight",
+        "rel": "../../../../assets/studies/light_weight.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "leave",
+        "rel": "../../../../assets/studies/leave.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "juvenile",
+        "rel": "../../../../assets/studies/juvenile.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "modern_japan_rail": [
+      {
+        "stem": "country_station",
+        "rel": "../ambient_gallery_japan_4_seasons/images/country_station.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "country_train_summer",
+        "rel": "../ambient_gallery_japan_4_seasons/images/country_train_summer.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "country_train_winter",
+        "rel": "../ambient_gallery_japan_4_seasons/images/country_train_winter.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "train_cherry_blossoms",
+        "rel": "../ambient_gallery_japan_4_seasons/images/train_cherry_blossoms.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "train_hydrangea",
+        "rel": "../ambient_gallery_japan_4_seasons/images/train_hydrangea.png",
+        "inFourSeasons": true,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "stop",
+        "rel": "../../../../assets/studies/stop.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "transport",
+        "rel": "../../../../assets/studies/transport.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "dog",
+        "rel": "../../../../assets/studies/dog.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "mediocre",
+        "rel": "../../../../assets/studies/mediocre.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "next",
+        "rel": "../../../../assets/studies/next.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "car",
+        "rel": "../../../../assets/studies/car.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      },
+      {
+        "stem": "patrol",
+        "rel": "../../../../assets/studies/patrol.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": false
+      }
+    ],
+    "possible_fantasy_exceptions": [
+      {
+        "stem": "challenge",
+        "rel": "../../../../assets/studies/challenge.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": true
+      },
+      {
+        "stem": "bewitched",
+        "rel": "../../../../assets/studies/bewitched.jpg",
+        "inFourSeasons": false,
+        "rareInterior": false,
+        "softExclude": false,
+        "fantasyCaution": true
+      }
+    ]
+  },
+  "unresolvedStems": [],
+  "startHereAccepted": [
+    {
+      "stem": "room_7/mountain",
+      "rel": "../../../../../start-here/assets/images/room_7/mountain.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_24/bamboo_2",
+      "rel": "../../../../../start-here/assets/images/lesson_24/bamboo_2.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room_9/kasa",
+      "rel": "../../../../../start-here/assets/images/room_9/kasa.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room-15",
+      "rel": "../../../../../start-here/assets/images/room-15.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_40/kazega_yowai",
+      "rel": "../../../../../start-here/assets/images/lesson_40/kazega_yowai.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_40/kotobaga_saku_2",
+      "rel": "../../../../../start-here/assets/images/lesson_40/kotobaga_saku_2.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "lesson_40/genki_desuka",
+      "rel": "../../../../../start-here/assets/images/lesson_40/genki_desuka.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room-10",
+      "rel": "../../../../../start-here/assets/images/room-10.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    },
+    {
+      "stem": "room-9",
+      "rel": "../../../../../start-here/assets/images/room-9.jpg",
+      "fromStartHere": true,
+      "inFourSeasons": false,
+      "rareInterior": false
+    }
+  ],
+  "newAdditions": [
+    {
+      "stem": "shinkansen",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/shinkansen.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Shinkansen on a viaduct through a misty rice-and-village valley"
+    },
+    {
+      "stem": "starlight",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/starlight.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Starry night over flooded rice paddies and a village"
+    },
+    {
+      "stem": "nachi_falls",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/nachi_falls.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Nachi waterfall with the red Seiganto-ji pagoda"
+    },
+    {
+      "stem": "fushimi",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/fushimi.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Fushimi Inari senbon torii as a quiet landscape tunnel"
+    },
+    {
+      "stem": "skytree_view_fuji",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/skytree_view_fuji.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Tokyo twilight cityscape with Fuji on the horizon"
+    },
+    {
+      "stem": "sakura_river",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/sakura_river.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Wide sakura-lined river with a path and incidental walkers"
+    },
+    {
+      "stem": "yatai",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/yatai.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Night riverside yatai row \u2014 urban Japan after dark"
+    },
+    {
+      "stem": "matsuri",
+      "rel": "../ambient_gallery_japan_4_seasons/images/new_images/matsuri.png",
+      "fromNewAddition": true,
+      "inFourSeasons": false,
+      "rareInterior": false,
+      "reason": "Shrine-path festival stalls in late-afternoon light, empty of crowds"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_132_strokes",
+  "title": "Lesson 132 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~12:53).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 132,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 12.6,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 773000,
+    "estimatedExhibitRuntimeMs": 763000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L132_paddyfield",
+      "kanji": "畦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/paddyfield.html",
+        "strokeCount": 11,
+        "kanji": "畦"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "paddyfield",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_itch",
+      "kanji": "痒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/itch.html",
+        "strokeCount": 11,
+        "kanji": "痒"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "itch",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_phlegm",
+      "kanji": "痰",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/phlegm.html",
+        "strokeCount": 13,
+        "kanji": "痰"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "phlegm",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_measles",
+      "kanji": "疹",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/measles.html",
+        "strokeCount": 10,
+        "kanji": "疹"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "measles",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_hemorrhoids",
+      "kanji": "痔",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/hemorrhoids.html",
+        "strokeCount": 11,
+        "kanji": "痔"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "hemorrhoids",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_cancer",
+      "kanji": "癌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cancer.html",
+        "strokeCount": 17,
+        "kanji": "癌"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "cancer",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_paralysis",
+      "kanji": "痺",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/paralysis.html",
+        "strokeCount": 13,
+        "kanji": "痺"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "paralysis",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_eye_pupil",
+      "kanji": "眸",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eye_pupil.html",
+        "strokeCount": 11,
+        "kanji": "眸"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "eye_pupil",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_dizzy",
+      "kanji": "眩",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dizzy.html",
+        "strokeCount": 10,
+        "kanji": "眩"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "dizzy",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_pheasant",
+      "kanji": "雉",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pheasant.html",
+        "strokeCount": 13,
+        "kanji": "雉"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "pheasant",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_carpenters_square",
+      "kanji": "矩",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/carpenters_square.html",
+        "strokeCount": 10,
+        "kanji": "矩"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "carpenters_square",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_bedrock",
+      "kanji": "磐",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bedrock.html",
+        "strokeCount": 15,
+        "kanji": "磐"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "bedrock",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_grapnel",
+      "kanji": "碇",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/grapnel.html",
+        "strokeCount": 13,
+        "kanji": "碇"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "grapnel",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_blue_green",
+      "kanji": "碧",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/blue_green.html",
+        "strokeCount": 14,
+        "kanji": "碧"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "blue_green",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_inkstone",
+      "kanji": "硯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/inkstone.html",
+        "strokeCount": 12,
+        "kanji": "硯"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "inkstone",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_grindstone",
+      "kanji": "砥",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/grindstone.html",
+        "strokeCount": 10,
+        "kanji": "砥"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "grindstone",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_teacup",
+      "kanji": "碗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/teacup.html",
+        "strokeCount": 13,
+        "kanji": "碗"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "teacup",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_obstacle",
+      "kanji": "碍",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/obstacle.html",
+        "strokeCount": 13,
+        "kanji": "碍"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "obstacle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_illustrious",
+      "kanji": "碩",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/illustrious.html",
+        "strokeCount": 14,
+        "kanji": "碩"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "illustrious",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L132_rocky_beach",
+      "kanji": "磯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rocky_beach.html",
+        "strokeCount": 17,
+        "kanji": "磯"
+      },
+      "meta": {
+        "lesson": 132,
+        "slug": "rocky_beach",
+        "prototype": true
+      }
+    }
+  ]
+}

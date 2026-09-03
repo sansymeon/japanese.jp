@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_101_strokes",
+  "title": "Lesson 101 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~11:44).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 101,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 10.2,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 704000,
+    "estimatedExhibitRuntimeMs": 694000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L101_vein",
+      "kanji": "脈",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/vein.html",
+        "strokeCount": 10,
+        "kanji": "脈"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "vein",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_masses",
+      "kanji": "衆",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/masses.html",
+        "strokeCount": 12,
+        "kanji": "衆"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "masses",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_relay",
+      "kanji": "逓",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/relay.html",
+        "strokeCount": 10,
+        "kanji": "逓"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "relay",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_grade",
+      "kanji": "段",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/grade.html",
+        "strokeCount": 9,
+        "kanji": "段"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "grade",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_forge",
+      "kanji": "鍛",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/forge.html",
+        "strokeCount": 17,
+        "kanji": "鍛"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "forge",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_empress",
+      "kanji": "后",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/empress.html",
+        "strokeCount": 6,
+        "kanji": "后"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "empress",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_phantasm",
+      "kanji": "幻",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/phantasm.html",
+        "strokeCount": 4,
+        "kanji": "幻"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "phantasm",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_director",
+      "kanji": "司",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/director.html",
+        "strokeCount": 5,
+        "kanji": "司"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "director",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_pay_respects",
+      "kanji": "伺",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/pay_respects.html",
+        "strokeCount": 7,
+        "kanji": "伺"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "pay_respects",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_parts_of_speech",
+      "kanji": "詞",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/parts_of_speech.html",
+        "strokeCount": 12,
+        "kanji": "詞"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "parts_of_speech",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_domesticate",
+      "kanji": "飼",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/domesticate.html",
+        "strokeCount": 13,
+        "kanji": "飼"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "domesticate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_heir",
+      "kanji": "嗣",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/heir.html",
+        "strokeCount": 13,
+        "kanji": "嗣"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "heir",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_boat",
+      "kanji": "舟",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/boat.html",
+        "strokeCount": 6,
+        "kanji": "舟"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "boat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_liner",
+      "kanji": "舶",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/liner.html",
+        "strokeCount": 11,
+        "kanji": "舶"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "liner",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_navigate",
+      "kanji": "航",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/navigate.html",
+        "strokeCount": 10,
+        "kanji": "航"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "navigate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_gunwale",
+      "kanji": "舷",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/gunwale.html",
+        "strokeCount": 11,
+        "kanji": "舷"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "gunwale",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_carrier",
+      "kanji": "般",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/carrier.html",
+        "strokeCount": 10,
+        "kanji": "般"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "carrier",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_tray",
+      "kanji": "盤",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/tray.html",
+        "strokeCount": 15,
+        "kanji": "盤"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "tray",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_conveyor",
+      "kanji": "搬",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/conveyor.html",
+        "strokeCount": 13,
+        "kanji": "搬"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "conveyor",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L101_ship",
+      "kanji": "船",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/ship.html",
+        "strokeCount": 11,
+        "kanji": "船"
+      },
+      "meta": {
+        "lesson": 101,
+        "slug": "ship",
+        "prototype": true
+      }
+    }
+  ]
+}

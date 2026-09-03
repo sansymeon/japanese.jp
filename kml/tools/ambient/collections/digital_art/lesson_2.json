@@ -1,0 +1,77 @@
+{
+  "format": "digitalArtExhibition",
+  "id": "lesson_2",
+  "title": "BRIGHT",
+  "notes": "Digital Art Exhibition prototype. Gold-leaf Lesson 2 明 crest (日 over 月), then six studies of light. No kanji, verse, captions, or Ken Burns. Soundtrack is the master duration.",
+  "assetsBase": "../../assets",
+  "soundtrack": {
+    "src": "audio/digital_art_2.mp3",
+    "durationMs": 182387
+  },
+  "opening": {
+    "image": "covers/lesson_02.jpg",
+    "title": "BRIGHT",
+    "titleMode": "label",
+    "blackBeforeMs": 1000,
+    "revealMs": 4500,
+    "holdMs": 4500,
+    "dissolveMs": 9000,
+    "titleDelayMs": 200,
+    "titleRevealMs": 2200
+  },
+  "room": {
+    "motion": "still"
+  },
+  "timing": {
+    "dissolveMs": 10000,
+    "endingFadeMs": 12000,
+    "endingBlackAfterMs": 1600
+  },
+  "ending": {
+    "fadeMs": 12000,
+    "blackAfterMs": 1600
+  },
+  "artworks": [
+    {
+      "id": "two_lights",
+      "image": "digital_art_gallery/lesson_2/1_two_lights.png",
+      "holdMs": 13647,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "refraction",
+      "image": "digital_art_gallery/lesson_2/2_refraction.png",
+      "holdMs": 14537,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "first_light",
+      "image": "digital_art_gallery/lesson_2/3_first_light.png",
+      "holdMs": 15427,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "old_light",
+      "image": "digital_art_gallery/lesson_2/4_old_light.png",
+      "holdMs": 16317,
+      "dissolveMs": 10000
+    },
+    {
+      "id": "center",
+      "image": "digital_art_gallery/lesson_2/5_center.png",
+      "holdMs": 17207,
+      "dissolveMs": 12000
+    },
+    {
+      "id": "thousand",
+      "image": "digital_art_gallery/lesson_2/6_thousand.png",
+      "holdMs": 22252
+    }
+  ],
+  "meta": {
+    "family": "digitalArtExhibition",
+    "prototype": true,
+    "sceneCount": 6,
+    "soundtrackDurationMs": 182387
+  }
+}

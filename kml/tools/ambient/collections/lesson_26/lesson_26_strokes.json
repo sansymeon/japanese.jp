@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_26_strokes",
+  "title": "Lesson 26 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~11:44).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 26,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 10.2,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 704000,
+    "estimatedExhibitRuntimeMs": 694000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L26_sea",
+      "kanji": "海",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sea.html",
+        "strokeCount": 9,
+        "kanji": "海"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "sea",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_beg",
+      "kanji": "乞",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/beg.html",
+        "strokeCount": 3,
+        "kanji": "乞"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "beg",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_drought",
+      "kanji": "乾",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/drought.html",
+        "strokeCount": 11,
+        "kanji": "乾"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "drought",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_abdomen",
+      "kanji": "腹",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/abdomen.html",
+        "strokeCount": 13,
+        "kanji": "腹"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "abdomen",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_duplicate",
+      "kanji": "複",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/duplicate.html",
+        "strokeCount": 14,
+        "kanji": "複"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "duplicate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_lack",
+      "kanji": "欠",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/lack.html",
+        "strokeCount": 4,
+        "kanji": "欠"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "lack",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_blow",
+      "kanji": "吹",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/blow.html",
+        "strokeCount": 7,
+        "kanji": "吹"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "blow",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_cook",
+      "kanji": "炊",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cook.html",
+        "strokeCount": 8,
+        "kanji": "炊"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "cook",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_song",
+      "kanji": "歌",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/song.html",
+        "strokeCount": 14,
+        "kanji": "歌"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "song",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_soft",
+      "kanji": "軟",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/soft.html",
+        "strokeCount": 11,
+        "kanji": "軟"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "soft",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_next",
+      "kanji": "次",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/next.html",
+        "strokeCount": 6,
+        "kanji": "次"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "next",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_briar",
+      "kanji": "茨",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/briar.html",
+        "strokeCount": 9,
+        "kanji": "茨"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "briar",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_assets",
+      "kanji": "資",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/assets.html",
+        "strokeCount": 13,
+        "kanji": "資"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "assets",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_figure",
+      "kanji": "姿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/figure.html",
+        "strokeCount": 9,
+        "kanji": "姿"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "figure",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_consult_with",
+      "kanji": "諮",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/consult_with.html",
+        "strokeCount": 16,
+        "kanji": "諮"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "consult_with",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_compensation",
+      "kanji": "賠",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/compensation.html",
+        "strokeCount": 15,
+        "kanji": "賠"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "compensation",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_cultivate",
+      "kanji": "培",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cultivate.html",
+        "strokeCount": 11,
+        "kanji": "培"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "cultivate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_divide",
+      "kanji": "剖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/divide.html",
+        "strokeCount": 10,
+        "kanji": "剖"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "divide",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_sound",
+      "kanji": "音",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sound.html",
+        "strokeCount": 9,
+        "kanji": "音"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "sound",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L26_darkness",
+      "kanji": "暗",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/darkness.html",
+        "strokeCount": 13,
+        "kanji": "暗"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "darkness",
+        "prototype": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_113_strokes",
+  "title": "Lesson 113 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~11:08).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 113,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 9.1,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 668000,
+    "estimatedExhibitRuntimeMs": 658000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L113_mandala",
+      "kanji": "曼",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mandala.html",
+        "strokeCount": 11,
+        "kanji": "曼"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "mandala",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_quote",
+      "kanji": "云",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/quote.html",
+        "strokeCount": 4,
+        "kanji": "云"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "quote",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_shalt",
+      "kanji": "莫",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/shalt.html",
+        "strokeCount": 10,
+        "kanji": "莫"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "shalt",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_and_then",
+      "kanji": "而",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/and_then.html",
+        "strokeCount": 6,
+        "kanji": "而"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "and_then",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_yamato",
+      "kanji": "倭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/yamato.html",
+        "strokeCount": 10,
+        "kanji": "倭"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "yamato",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_chivalry",
+      "kanji": "侠",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/chivalry.html",
+        "strokeCount": 8,
+        "kanji": "侠"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "chivalry",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_fed_up",
+      "kanji": "倦",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/fed_up.html",
+        "strokeCount": 10,
+        "kanji": "倦"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "fed_up",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_abrupt",
+      "kanji": "俄",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/abrupt.html",
+        "strokeCount": 9,
+        "kanji": "俄"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "abrupt",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_work_a_field",
+      "kanji": "佃",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/work_a_field.html",
+        "strokeCount": 7,
+        "kanji": "佃"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "work_a_field",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_animal_offspring",
+      "kanji": "仔",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/animal_offspring.html",
+        "strokeCount": 5,
+        "kanji": "仔"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "animal_offspring",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_foe",
+      "kanji": "仇",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/foe.html",
+        "strokeCount": 4,
+        "kanji": "仇"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "foe",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_look_after",
+      "kanji": "伽",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/look_after.html",
+        "strokeCount": 7,
+        "kanji": "伽"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "look_after",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_make_a_profit",
+      "kanji": "儲",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/make_a_profit.html",
+        "strokeCount": 18,
+        "kanji": "儲"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "make_a_profit",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_emigrant",
+      "kanji": "僑",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/emigrant.html",
+        "strokeCount": 14,
+        "kanji": "僑"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "emigrant",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_mate",
+      "kanji": "倶",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mate.html",
+        "strokeCount": 10,
+        "kanji": "倶"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "mate",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_forthright",
+      "kanji": "侃",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/forthright.html",
+        "strokeCount": 8,
+        "kanji": "侃"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "forthright",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_memorial",
+      "kanji": "偲",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/memorial.html",
+        "strokeCount": 11,
+        "kanji": "偲"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "memorial",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_as_is",
+      "kanji": "侭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/as_is.html",
+        "strokeCount": 8,
+        "kanji": "侭"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "as_is",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_dried_meat",
+      "kanji": "脩",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dried_meat.html",
+        "strokeCount": 11,
+        "kanji": "脩"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "dried_meat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L113_my_son",
+      "kanji": "倅",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/my_son.html",
+        "strokeCount": 10,
+        "kanji": "倅"
+      },
+      "meta": {
+        "lesson": 113,
+        "slug": "my_son",
+        "prototype": true
+      }
+    }
+  ]
+}

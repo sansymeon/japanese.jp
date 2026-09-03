@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_143_strokes",
+  "title": "Lesson 143 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~15:32).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 143,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 17.9,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 932000,
+    "estimatedExhibitRuntimeMs": 922000,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L143_sushi",
+      "kanji": "鮨",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sushi.html",
+        "strokeCount": 17,
+        "kanji": "鮨"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "sushi",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_fish_fin",
+      "kanji": "鰭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/fish_fin.html",
+        "strokeCount": 21,
+        "kanji": "鰭"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "fish_fin",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_seagull",
+      "kanji": "鴎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/seagull.html",
+        "strokeCount": 15,
+        "kanji": "鴎"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "seagull",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_roc",
+      "kanji": "鵬",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/roc.html",
+        "strokeCount": 19,
+        "kanji": "鵬"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "roc",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_parakeet",
+      "kanji": "鸚",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/parakeet.html",
+        "strokeCount": 28,
+        "kanji": "鸚"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "parakeet",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_parrot",
+      "kanji": "鵡",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/parrot.html",
+        "strokeCount": 19,
+        "kanji": "鵡"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "parrot",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_cormorant",
+      "kanji": "鵜",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cormorant.html",
+        "strokeCount": 18,
+        "kanji": "鵜"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "cormorant",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_heron",
+      "kanji": "鷺",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/heron.html",
+        "strokeCount": 24,
+        "kanji": "鷺"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "heron",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_eagle",
+      "kanji": "鷲",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eagle.html",
+        "strokeCount": 23,
+        "kanji": "鷲"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "eagle",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_wild_duck",
+      "kanji": "鴨",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/wild_duck.html",
+        "strokeCount": 16,
+        "kanji": "鴨"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "wild_duck",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_black_kite",
+      "kanji": "鳶",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/black_kite.html",
+        "strokeCount": 14,
+        "kanji": "鳶"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "black_kite",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_owl",
+      "kanji": "梟",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/owl.html",
+        "strokeCount": 11,
+        "kanji": "梟"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "owl",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_dust",
+      "kanji": "塵",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/dust.html",
+        "strokeCount": 14,
+        "kanji": "塵"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "dust",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_giraffe",
+      "kanji": "麒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/giraffe.html",
+        "strokeCount": 19,
+        "kanji": "麒"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "giraffe",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_fatherinlaw",
+      "kanji": "舅",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/fatherinlaw.html",
+        "strokeCount": 13,
+        "kanji": "舅"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "fatherinlaw",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_mouse",
+      "kanji": "鼠",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mouse.html",
+        "strokeCount": 13,
+        "kanji": "鼠"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "mouse",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_bore",
+      "kanji": "鑿",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bore.html",
+        "strokeCount": 28,
+        "kanji": "鑿"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "bore",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_small_craft",
+      "kanji": "艘",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/small_craft.html",
+        "strokeCount": 16,
+        "kanji": "艘"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "small_craft",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_close_eyes",
+      "kanji": "瞑",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/close_eyes.html",
+        "strokeCount": 15,
+        "kanji": "瞑"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "close_eyes",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L143_murky",
+      "kanji": "暝",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/murky.html",
+        "strokeCount": 14,
+        "kanji": "暝"
+      },
+      "meta": {
+        "lesson": 143,
+        "slug": "murky",
+        "prototype": true
+      }
+    }
+  ]
+}

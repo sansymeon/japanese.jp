@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_32_gallery",
+  "title": "KML Gallery — Lesson 32 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (480s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9679,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3739,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3739,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 19958,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 32,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_2",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L32_sayeth",
+      "kanji": "曰",
+      "keyword": "sayeth",
+      "image": "studies/sayeth.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>曰<rt>いわ</rt></ruby>くことばは<br>    まだ<ruby>紙<rt>かみ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>で<ruby>眠<rt>ねむ</rt></ruby>り<br>    <ruby>朝<rt>あさ</rt></ruby>の<ruby>霧<rt>きり</rt></ruby>だけが<br>    その<ruby>意味<rt>いみ</rt></ruby>を<ruby>知<rt>し</rt></ruby>っていた",
+        "en": "The spoken words\nstill slept upon the page,\nand only the morning mist\nknew what they meant."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "sayeth"
+      },
+      "imageRev": 1787630110
+    },
+    {
+      "id": "L32_quandary",
+      "kanji": "困",
+      "keyword": "quandary",
+      "image": "studies/quandary.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>囲<rt>かこ</rt></ruby>まれた<ruby>木<rt>き</rt></ruby>は<br>    <ruby>急<rt>いそ</rt></ruby>がず<ruby>空<rt>そら</rt></ruby>を<ruby>見<rt>み</rt></ruby>る<br>    <ruby>霧<rt>きり</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>集<rt>あつ</rt></ruby>まり<br>    <ruby>答<rt>こた</rt></ruby>えを<ruby>急<rt>せ</rt></ruby>かさない",
+        "en": "The enclosed tree\nlooked upward without haste.\nMist gathered quietly,\nnever demanding an answer."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "quandary"
+      },
+      "imageRev": 1787630106
+    },
+    {
+      "id": "L32_hard",
+      "kanji": "固",
+      "keyword": "hard",
+      "image": "studies/hard.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>幾世紀<rt>いくせいき</rt></ruby>の<ruby>雨<rt>あめ</rt></ruby>が<br>    <ruby>石<rt>いし</rt></ruby>を<ruby>撫<rt>な</rt></ruby>で<ruby>続<rt>つづ</rt></ruby>けても<br>    その<ruby>沈黙<rt>ちんもく</rt></ruby>だけは<br>    <ruby>変<rt>か</rt></ruby>わらなかった",
+        "en": "Though centuries of rain\nstroked the stone,\nits silence remained\nunchanged."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "hard"
+      },
+      "imageRev": 1787630092
+    },
+    {
+      "id": "L32_weld",
+      "kanji": "錮",
+      "keyword": "weld",
+      "image": "studies/weld.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>錆<rt>さ</rt></ruby>びた<ruby>門<rt>もん</rt></ruby>は<br>    <ruby>開<rt>ひら</rt></ruby>くことを<ruby>忘<rt>わす</rt></ruby>れたが<br>    <ruby>時<rt>とき</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る<ruby>術<rt>すべ</rt></ruby>を<br>    <ruby>覚<rt>おぼ</rt></ruby>えていた",
+        "en": "The rusted gate\nforgot how to open,\nyet remembered\nhow to keep time."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "weld"
+      },
+      "imageRev": 1787630119
+    },
+    {
+      "id": "L32_country",
+      "kanji": "国",
+      "keyword": "country",
+      "image": "studies/country.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>谷<rt>たに</rt></ruby>の<ruby>家々<rt>いえいえ</rt></ruby>を<br>    <ruby>朝霧<rt>あさぎり</rt></ruby>が<ruby>結<rt>むす</rt></ruby>ぶ<br>    <ruby>遠<rt>とお</rt></ruby>く<ruby>離<rt>はな</rt></ruby>れていても<br>    <ruby>同<rt>おな</rt></ruby>じ<ruby>朝<rt>あさ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>",
+        "en": "Morning mist joined\nthe homes in the valley.\nThough far apart,\nthey shared the same dawn."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "country"
+      },
+      "imageRev": 1787630083
+    },
+    {
+      "id": "L32_group",
+      "kanji": "団",
+      "keyword": "group",
+      "image": "studies/group.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>灯<rt>あか</rt></ruby>りは<ruby>一<rt>ひと</rt></ruby>つずつ<br>    <ruby>小<rt>ちい</rt></ruby>さく<ruby>揺<rt>ゆ</rt></ruby>れていた<br>    けれど<ruby>気<rt>き</rt></ruby>づけば<br>    ひとつの<ruby>光<rt>ひかり</rt></ruby>になっていた",
+        "en": "Each lantern flickered\non its own,\nyet somehow\nthey became a single glow."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "group"
+      },
+      "imageRev": 1787630092
+    },
+    {
+      "id": "L32_reason",
+      "kanji": "因",
+      "keyword": "reason",
+      "image": "studies/reason.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "ひとつの<ruby>足跡<rt>あしあと</rt></ruby>が<br>    <ruby>次<rt>つぎ</rt></ruby>の<ruby>足跡<rt>あしあと</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>ぶ<br>    <ruby>波<rt>なみ</rt></ruby>の<ruby>届<rt>とど</rt></ruby>かぬ<ruby>場所<rt>ばしょ</rt></ruby>で<br>    <ruby>理由<rt>りゆう</rt></ruby>が<ruby>生<rt>う</rt></ruby>まれていた",
+        "en": "One footprint\ncalled forth another.\nBeyond the reach of waves,\na reason was born."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "reason"
+      },
+      "imageRev": 1787630107
+    },
+    {
+      "id": "L32_matrimony",
+      "kanji": "姻",
+      "keyword": "matrimony",
+      "image": "studies/matrimony.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>道<rt>みち</rt></ruby>で<br>    <ruby>二<rt>ふた</rt></ruby>つの<ruby>傘<rt>かさ</rt></ruby>が<ruby>触<rt>ふ</rt></ruby>れあう<br>    <ruby>顔<rt>かお</rt></ruby>は<ruby>見<rt>み</rt></ruby>えずとも<br>    <ruby>心<rt>こころ</rt></ruby>は<ruby>並<rt>なら</rt></ruby>んでいた",
+        "en": "On a rainy road\ntwo umbrellas touched.\nThough no faces were seen,\ntheir hearts walked together."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "matrimony"
+      },
+      "imageRev": 1787630098
+    },
+    {
+      "id": "L32_gullet",
+      "kanji": "咽",
+      "keyword": "gullet",
+      "image": "studies/gullet.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>湯気<rt>ゆげ</rt></ruby>は<ruby>空<rt>そら</rt></ruby>へ<br>    <ruby>茶<rt>ちゃ</rt></ruby>は<ruby>胸<rt>むね</rt></ruby>へ<br>    その<ruby>短<rt>みじか</rt></ruby>い<ruby>旅<rt>たび</rt></ruby>に<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>温<rt>ぬく</rt></ruby>もりがある",
+        "en": "Steam rose to the sky,\ntea descended within.\nIn that brief journey\nlived a quiet warmth."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "gullet"
+      },
+      "imageRev": 1787630092
+    },
+    {
+      "id": "L32_garden",
+      "kanji": "園",
+      "keyword": "garden",
+      "image": "studies/garden.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨上<rt>あめあ</rt></ruby>がりの<ruby>庭<rt>にわ</rt></ruby>を<br>    <ruby>石道<rt>いしみち</rt></ruby>が<ruby>奥<rt>おく</rt></ruby>へ<ruby>続<rt>つづ</rt></ruby>く<br>    <ruby>霧<rt>きり</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうには<br>    まだ<ruby>見<rt>み</rt></ruby>ぬ<ruby>静寂<rt>せいじゃく</rt></ruby>",
+        "en": "A stone path wound inward\nthrough the rain-washed garden.\nBeyond the mist\nwaited an unseen silence."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "garden"
+      },
+      "imageRev": 1787630091
+    },
+    {
+      "id": "L32_occurrences",
+      "kanji": "回",
+      "keyword": "occurrences",
+      "image": "studies/occurrences.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>水面<rt>みなも</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちた<ruby>一滴<rt>ひとしずく</rt></ruby>は<br>    <ruby>輪<rt>わ</rt></ruby>となって<ruby>広<rt>ひろ</rt></ruby>がる<br>    <ruby>出来事<rt>できごと</rt></ruby>もまた<br>    そうして<ruby>巡<rt>めぐ</rt></ruby>ってゆく",
+        "en": "A single drop\nspread into circles.\nSo too do events\ntravel outward through time."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "occurrences"
+      },
+      "imageRev": 1787630101
+    },
+    {
+      "id": "L32_podium",
+      "kanji": "壇",
+      "keyword": "podium",
+      "image": "studies/podium.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>誰<rt>だれ</rt></ruby>も<ruby>立<rt>た</rt></ruby>たぬ<ruby>壇<rt>だん</rt></ruby>に<br>    <ruby>風<rt>かぜ</rt></ruby>だけが<ruby>訪<rt>おとず</rt></ruby>れる<br>    まだ<ruby>語<rt>かた</rt></ruby>られぬ<ruby>言葉<rt>ことば</rt></ruby>が<br>    そこで<ruby>待<rt>ま</rt></ruby>っていた",
+        "en": "No one stood upon the platform.\nOnly the wind arrived.\nUnspoken words\nwaited there."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "podium"
+      },
+      "imageRev": 1787630104
+    },
+    {
+      "id": "L32_store",
+      "kanji": "店",
+      "keyword": "store",
+      "image": "studies/store.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>夕暮<rt>ゆうぐ</rt></ruby>れの<ruby>灯<rt>ひ</rt></ruby>が<br>    <ruby>雨道<rt>あまみち</rt></ruby>を<ruby>照<rt>て</rt></ruby>らす<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>店<rt>みせ</rt></ruby>には<br>    <ruby>帰<rt>かえ</rt></ruby>るような<ruby>温<rt>ぬく</rt></ruby>もり",
+        "en": "An evening lantern\nlit the rainy street.\nWithin the small shop\nwas the warmth of returning."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "store"
+      },
+      "imageRev": 1787630114
+    },
+    {
+      "id": "L32_storage",
+      "kanji": "庫",
+      "keyword": "storage",
+      "image": "studies/storage.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>少<rt>すこ</rt></ruby>し<ruby>開<rt>ひら</rt></ruby>いた<ruby>扉<rt>とびら</rt></ruby>から<br>    <ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し<ruby>込<rt>こ</rt></ruby>む<br>    <ruby>忘<rt>わす</rt></ruby>れられた<ruby>時<rt>とき</rt></ruby>が<br>    まだ<ruby>息<rt>いき</rt></ruby>をしていた",
+        "en": "Through the partly opened door\nlight entered softly.\nForgotten years\nstill breathed within."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "storage"
+      },
+      "imageRev": 1787630114
+    },
+    {
+      "id": "L32_courtyard",
+      "kanji": "庭",
+      "keyword": "courtyard",
+      "image": "studies/courtyard.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>した<ruby>水鉢<rt>みずばち</rt></ruby>に<br>    <ruby>雲<rt>くも</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>浮<rt>う</rt></ruby>かぶ<br>    その<ruby>沈黙<rt>ちんもく</rt></ruby>こそが<br>    <ruby>庭<rt>にわ</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>",
+        "en": "Clouds drifted quietly\nwithin the stone basin.\nThat silence itself\nwas the voice of the courtyard."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "courtyard"
+      },
+      "imageRev": 1787630083
+    },
+    {
+      "id": "L32_government_office",
+      "kanji": "庁",
+      "keyword": "government office",
+      "image": "studies/government_office.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>長<rt>なが</rt></ruby>い<ruby>廊下<rt>ろうか</rt></ruby>を<br>    <ruby>光<rt>ひかり</rt></ruby>が<ruby>歩<rt>ある</rt></ruby>いてゆく<br>    <ruby>権威<rt>けんい</rt></ruby>ではなく<br>    <ruby>秩序<rt>ちつじょ</rt></ruby>のために",
+        "en": "Light walked\nthe long corridor,\nnot for authority,\nbut for order."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "government_office"
+      },
+      "imageRev": 1787630092
+    },
+    {
+      "id": "L32_bed",
+      "kanji": "床",
+      "keyword": "bed",
+      "image": "studies/bed.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>月明<rt>つきあ</rt></ruby>かりが<br>    <ruby>床板<rt>ゆかいた</rt></ruby>に<ruby>眠<rt>ねむ</rt></ruby>る<br>    <ruby>休<rt>やす</rt></ruby>みとは<br>    <ruby>何<rt>なに</rt></ruby>もしない<ruby>勇気<rt>ゆうき</rt></ruby>",
+        "en": "Moonlight rested\nupon the floorboards.\nRest is the courage\nto do nothing."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "bed"
+      },
+      "imageRev": 1787630079
+    },
+    {
+      "id": "L32_hemp",
+      "kanji": "麻",
+      "keyword": "hemp",
+      "image": "studies/hemp.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>海風<rt>うみかぜ</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>麻<rt>あさ</rt></ruby>は<br>    <ruby>急<rt>いそ</rt></ruby>ぐことを<ruby>知<rt>し</rt></ruby>らない<br>    <ruby>繰<rt>く</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>す<ruby>動<rt>うご</rt></ruby>きの<ruby>中<rt>なか</rt></ruby>に<br>    <ruby>自然<rt>しぜん</rt></ruby>の<ruby>拍子<rt>ひょうし</rt></ruby>",
+        "en": "The hemp swayed\nin the sea wind,\nfinding rhythm\nin repetition."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "hemp"
+      },
+      "imageRev": 1787630093
+    },
+    {
+      "id": "L32_grind",
+      "kanji": "磨",
+      "keyword": "grind",
+      "image": "studies/grind.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>水<rt>みず</rt></ruby>は<ruby>流<rt>なが</rt></ruby>れ<br>    <ruby>石<rt>いし</rt></ruby>は<ruby>磨<rt>みが</rt></ruby>かれる<br>    <ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねた<ruby>歳月<rt>さいげつ</rt></ruby>が<br>    <ruby>刃<rt>やいば</rt></ruby>より<ruby>鋭<rt>するど</rt></ruby>い",
+        "en": "Water flowed,\nthe stone was worn smooth.\nYears of practice\nsharpened more than any blade."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "grind"
+      },
+      "imageRev": 1787630092
+    },
+    {
+      "id": "L32_heart",
+      "kanji": "心",
+      "keyword": "heart",
+      "image": "studies/heart.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>湖<rt>みずうみ</rt></ruby>に<br>    <ruby>紅<rt>くれない</rt></ruby>の<ruby>葉<rt>は</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かぶ<br>    すべての<ruby>旅<rt>たび</rt></ruby>は<br>    ここで<ruby>静<rt>しず</rt></ruby>かに<ruby>沈<rt>しず</rt></ruby>む",
+        "en": "Upon the quiet lake\nfloated a crimson leaf.\nEvery journey\ncame gently to rest here."
+      },
+      "meta": {
+        "lesson": 32,
+        "slug": "heart"
+      },
+      "imageRev": 1787630093
+    }
+  ]
+}

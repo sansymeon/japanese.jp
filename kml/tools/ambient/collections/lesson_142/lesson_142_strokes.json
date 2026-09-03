@@ -1,0 +1,358 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_142_strokes",
+  "title": "Lesson 142 — Stroke Order",
+  "notes": "Quiet calligraphy studio: matte black, kanji only — no labels or readings. Recognition → stroke animation → recognition → fade to black per kanji. Stroke SVG from kml/tools/strokes/pages at runtime. Outro: short gold gallery crest; soundtrack fades with crest (no pad to bed 18:20). Runtime follows content (~16:03).",
+  "soundtrack": {
+    "main": "audio/stroke_order_extended_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 2500,
+    "strokeOrderRecognitionRevealMs": 2200,
+    "strokeOrderRecognitionHoldMs": 2800,
+    "strokeOrderKanjiFadeOutMs": 3200,
+    "strokeOrderStrokeFadeMs": 1600,
+    "strokeOrderPreDrawPauseMs": 500,
+    "strokeOrderDrawMs": 1200,
+    "strokeOrderStrokeGapMs": 1500,
+    "strokeOrderPostDrawPauseMs": 1600,
+    "strokeOrderCompletionRevealMs": 1400,
+    "strokeOrderCompletionHoldMs": 3000,
+    "strokeOrderExhibitFadeMs": 3200,
+    "strokeOrderDrawColor": "rgba(232, 224, 212, 0.92)",
+    "strokeOrderFinalColor": "rgba(245, 240, 232, 0.96)",
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 0,
+    "artworkAloneMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 4000
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "strokeOrder",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 142,
+    "stage": "strokes",
+    "sceneCount": 20,
+    "prototype": true,
+    "avgStrokeCount": 18.9,
+    "bookendMode": "silentCrest",
+    "soundtrackDurationMs": 1100617,
+    "estimatedContentRuntimeMs": 963500,
+    "estimatedExhibitRuntimeMs": 953500,
+    "estimatedClosingRuntimeMs": 10000,
+    "strokeDataRoot": "kml/tools/strokes"
+  },
+  "scenes": [
+    {
+      "id": "L142_cheat",
+      "kanji": "騙",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cheat.html",
+        "strokeCount": 19,
+        "kanji": "騙"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "cheat",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_tame",
+      "kanji": "馴",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/tame.html",
+        "strokeCount": 13,
+        "kanji": "馴"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "tame",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_rebuttal",
+      "kanji": "駁",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/rebuttal.html",
+        "strokeCount": 14,
+        "kanji": "駁"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "rebuttal",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_gallop",
+      "kanji": "駈",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/gallop.html",
+        "strokeCount": 15,
+        "kanji": "駈"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "gallop",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_donkey",
+      "kanji": "驢",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/donkey.html",
+        "strokeCount": 26,
+        "kanji": "驢"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "donkey",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_eel",
+      "kanji": "鰻",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/eel.html",
+        "strokeCount": 22,
+        "kanji": "鰻"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "eel",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_sea_bream",
+      "kanji": "鯛",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sea_bream.html",
+        "strokeCount": 19,
+        "kanji": "鯛"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "sea_bream",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_sardine",
+      "kanji": "鰯",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/sardine.html",
+        "strokeCount": 21,
+        "kanji": "鰯"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "sardine",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_trout",
+      "kanji": "鱒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/trout.html",
+        "strokeCount": 23,
+        "kanji": "鱒"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "trout",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_salmon",
+      "kanji": "鮭",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/salmon.html",
+        "strokeCount": 17,
+        "kanji": "鮭"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "salmon",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_tuna",
+      "kanji": "鮪",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/tuna.html",
+        "strokeCount": 17,
+        "kanji": "鮪"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "tuna",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_smelt",
+      "kanji": "鮎",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/smelt.html",
+        "strokeCount": 16,
+        "kanji": "鮎"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "smelt",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_horse_mackeral",
+      "kanji": "鯵",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/horse_mackeral.html",
+        "strokeCount": 19,
+        "kanji": "鯵"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "horse_mackeral",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_cod",
+      "kanji": "鱈",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/cod.html",
+        "strokeCount": 22,
+        "kanji": "鱈"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "cod",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_mackerel",
+      "kanji": "鯖",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/mackerel.html",
+        "strokeCount": 19,
+        "kanji": "鯖"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "mackerel",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_shark",
+      "kanji": "鮫",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/shark.html",
+        "strokeCount": 17,
+        "kanji": "鮫"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "shark",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_bonito",
+      "kanji": "鰹",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bonito.html",
+        "strokeCount": 23,
+        "kanji": "鰹"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "bonito",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_bullhead",
+      "kanji": "鰍",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/bullhead.html",
+        "strokeCount": 20,
+        "kanji": "鰍"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "bullhead",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_alligator",
+      "kanji": "鰐",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/alligator.html",
+        "strokeCount": 20,
+        "kanji": "鰐"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "alligator",
+        "prototype": true
+      }
+    },
+    {
+      "id": "L142_crucian",
+      "kanji": "鮒",
+      "strokeOrder": {
+        "strokePage": "strokes/pages/crucian.html",
+        "strokeCount": 16,
+        "kanji": "鮒"
+      },
+      "meta": {
+        "lesson": 142,
+        "slug": "crucian",
+        "prototype": true
+      }
+    }
+  ]
+}

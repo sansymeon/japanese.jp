@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_26_gallery",
+  "title": "KML Gallery — Lesson 26 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (480s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9679,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3739,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3739,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 19958,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 26,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_2",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L26_sea",
+      "kanji": "海",
+      "keyword": "sea",
+      "image": "studies/sea.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>海<rt>うみ</rt></ruby>は<br>    <ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れ<br>    <ruby>霧<rt>きり</rt></ruby>だけ<ruby>残<rt>のこ</rt></ruby>る",
+        "en": "The winter sea\nforgets all language\nand leaves only mist"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "sea"
+      },
+      "imageRev": 1787630110
+    },
+    {
+      "id": "L26_beg",
+      "kanji": "乞",
+      "keyword": "beg",
+      "image": "studies/beg.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雪<rt>ゆき</rt></ruby>の<ruby>路<rt>ろ</rt></ruby><ruby>地<rt>ち</rt></ruby>で<br>    <ruby>手<rt>て</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>く<ruby>人<rt>ひと</rt></ruby>に<br>    <ruby>風<rt>かぜ</rt></ruby>も<ruby>静<rt>しず</rt></ruby>か",
+        "en": "In the snowy alley\neven the wind softens\naround open hands"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "beg"
+      },
+      "imageRev": 1787630079
+    },
+    {
+      "id": "L26_drought",
+      "kanji": "乾",
+      "keyword": "drought",
+      "image": "studies/drought.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>布<rt>ぬの</rt></ruby>が<br>    <ruby>光<rt>ひかり</rt></ruby>を<ruby>薄<rt>うす</rt></ruby>く<br>    <ruby>空<rt>そら</rt></ruby>へ<ruby>返<rt>かえ</rt></ruby>す",
+        "en": "Winter cloth\nreturns pale sunlight\nback into the sky"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "drought"
+      },
+      "imageRev": 1787630086
+    },
+    {
+      "id": "L26_abdomen",
+      "kanji": "腹",
+      "keyword": "abdomen",
+      "image": "studies/abdomen.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>息<rt>いき</rt></ruby>ひとつ<br>    <ruby>静<rt>しず</rt></ruby>かな<ruby>腹<rt>はら</rt></ruby>に<br>    <ruby>冬<rt>ふゆ</rt></ruby>が<ruby>宿<rt>やど</rt></ruby>る",
+        "en": "A single breath\nsettles in the abdomen\nwhere winter rests"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "abdomen"
+      },
+      "imageRev": 1787630077
+    },
+    {
+      "id": "L26_duplicate",
+      "kanji": "複",
+      "keyword": "duplicate",
+      "image": "studies/duplicate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>障<rt>しょうじ</rt></ruby><ruby>子<rt>こ</rt></ruby><ruby>越<rt>ご</rt></ruby>し<br>    <ruby>似<rt>に</rt></ruby>た<ruby>影<rt>かげ</rt></ruby>たちが<br>    <ruby>少<rt>すこ</rt></ruby>し<ruby>違<rt>ちが</rt></ruby>う",
+        "en": "Beyond the screens\nthe echoed figures\ndiffer slightly"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "duplicate"
+      },
+      "imageRev": 1787630086
+    },
+    {
+      "id": "L26_lack",
+      "kanji": "欠",
+      "keyword": "lack",
+      "image": "studies/lack.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>空<rt>そら</rt></ruby>の<ruby>椅<rt>いす</rt></ruby><ruby>子<rt>こ</rt></ruby>に<br>    <ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>だけ<br>    <ruby>座<rt>すわ</rt></ruby>っている",
+        "en": "In the empty chair\nonly morning light\nremains seated"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "lack"
+      },
+      "imageRev": 1787630096
+    },
+    {
+      "id": "L26_blow",
+      "kanji": "吹",
+      "keyword": "blow",
+      "image": "studies/blow.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>葦<rt>あし</rt></ruby>を<ruby>越<rt>こ</rt></ruby>え<br>    <ruby>雪<rt>ゆき</rt></ruby>の<ruby>風<rt>かぜ</rt></ruby>だけ<br>    <ruby>急<rt>いそ</rt></ruby>いでゆく",
+        "en": "Across the reeds\nonly the snow wind\nmoves quickly onward"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "blow"
+      },
+      "imageRev": 1787630079
+    },
+    {
+      "id": "L26_cook",
+      "kanji": "炊",
+      "keyword": "cook",
+      "image": "studies/cook.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>暗<rt>くら</rt></ruby>い<ruby>台<rt>だいどころ</rt></ruby><ruby>所<rt>しょ</rt></ruby><br>    <ruby>米<rt>まい</rt></ruby>の<ruby>湯<rt>ゆ</rt></ruby><ruby>気<rt>き</rt></ruby>だけ<br>    <ruby>白<rt>しろ</rt></ruby>く<ruby>生<rt>い</rt></ruby>きる",
+        "en": "In the dark kitchen\nonly the rice steam\nlives in white light"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "cook"
+      },
+      "imageRev": 1787630082
+    },
+    {
+      "id": "L26_song",
+      "kanji": "歌",
+      "keyword": "song",
+      "image": "studies/song.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>広<rt>ひろ</rt></ruby>い<ruby>堂<rt>どう</rt></ruby>に<br>    ひとりの<ruby>歌<rt>うた</rt></ruby>が<br>    <ruby>冬<rt>ふゆ</rt></ruby>へ<ruby>消<rt>き</rt></ruby>える",
+        "en": "Inside the hall\na solitary song\nvanishes into winter"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "song"
+      },
+      "imageRev": 1787630112
+    },
+    {
+      "id": "L26_soft",
+      "kanji": "軟",
+      "keyword": "soft",
+      "image": "studies/soft.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>折<rt>お</rt></ruby>れぬよう<br>    <ruby>柔<rt>やわ</rt></ruby>らかな<ruby>布<rt>ぬの</rt></ruby>は<br>    <ruby>静<rt>しず</rt></ruby>かに<ruby>沈<rt>しず</rt></ruby>む",
+        "en": "So it will not break\nthe softened cloth\nsettles quietly"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "soft"
+      },
+      "imageRev": 1787630112
+    },
+    {
+      "id": "L26_next",
+      "kanji": "次",
+      "keyword": "next",
+      "image": "studies/next.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>霧<rt>きり</rt></ruby>の<ruby>駅<rt>えき</rt></ruby><br>    <ruby>来<rt>き</rt></ruby>ぬ<ruby>列<rt>れっ</rt></ruby><ruby>車<rt>しゃ</rt></ruby>まで<br>    <ruby>時<rt>とき</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>く",
+        "en": "At the foggy station\ntime continues onward\nuntil the train arrives"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "next"
+      },
+      "imageRev": 1787630101
+    },
+    {
+      "id": "L26_briar",
+      "kanji": "茨",
+      "keyword": "briar",
+      "image": "studies/briar.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>凍<rt>こお</rt></ruby>る<ruby>枝<rt>えだ</rt></ruby><br>    <ruby>触<rt>ふ</rt></ruby>れぬ<ruby>痛<rt>いた</rt></ruby>みを<br>    <ruby>空<rt>そら</rt></ruby>へ<ruby>向<rt>む</rt></ruby>ける",
+        "en": "Frozen branches\nraise untouched pain\ntoward the sky"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "briar"
+      },
+      "imageRev": 1787630080
+    },
+    {
+      "id": "L26_assets",
+      "kanji": "資",
+      "keyword": "assets",
+      "image": "studies/assets.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>紙<rt>かみ</rt></ruby>に<br>    <ruby>眠<rt>ねむ</rt></ruby>る<ruby>重<rt>おも</rt></ruby>さを<br>    <ruby>灯<rt>あかり</rt></ruby>が<ruby>守<rt>まも</rt></ruby>る",
+        "en": "Within old papers\na quiet weight sleeps\nguarded by lamplight"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "assets"
+      },
+      "imageRev": 1787630079
+    },
+    {
+      "id": "L26_figure",
+      "kanji": "姿",
+      "keyword": "figure",
+      "image": "studies/figure.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>障<rt>しょうじ</rt></ruby><ruby>子<rt>こ</rt></ruby><ruby>越<rt>ご</rt></ruby>し<br>    <ruby>姿<rt>すがた</rt></ruby>だけ<ruby>残<rt>のこ</rt></ruby>り<br>    <ruby>名<rt>な</rt></ruby>は<ruby>消<rt>き</rt></ruby>える",
+        "en": "Beyond the shoji\nonly the figure remains\nthe name disappears"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "figure"
+      },
+      "imageRev": 1787630089
+    },
+    {
+      "id": "L26_consult_with",
+      "kanji": "諮",
+      "keyword": "consult with",
+      "image": "studies/consult_with.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>灯<rt>あかり</rt></ruby><br>    <ruby>低<rt>ひく</rt></ruby>い<ruby>声<rt>こえ</rt></ruby>だけ<br>    <ruby>夜<rt>よる</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かす",
+        "en": "A small candle\nand quiet voices alone\nmove the night"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "consult_with"
+      },
+      "imageRev": 1787630082
+    },
+    {
+      "id": "L26_compensation",
+      "kanji": "賠",
+      "keyword": "compensation",
+      "image": "studies/compensation.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>重<rt>おも</rt></ruby>い<ruby>紙<rt>かみ</rt></ruby>を<br>    <ruby>開<rt>ひら</rt></ruby>く<ruby>指<rt>ゆび</rt></ruby><ruby>先<rt>さき</rt></ruby>に<br>    <ruby>冬<rt>ふゆ</rt></ruby>の<ruby>責<rt>せめ</rt></ruby>",
+        "en": "At the opened document\nwinter responsibility\nrests in the fingers"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "compensation"
+      },
+      "imageRev": 1787630082
+    },
+    {
+      "id": "L26_cultivate",
+      "kanji": "培",
+      "keyword": "cultivate",
+      "image": "studies/cultivate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>寒<rt>さむ</rt></ruby>い<ruby>土<rt>つち</rt></ruby>に<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>緑<rt>みどり</rt></ruby>を<br>    <ruby>手<rt>て</rt></ruby>が<ruby>守<rt>まも</rt></ruby>る",
+        "en": "Within the cold soil\ncareful hands protect\na fragile green"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "cultivate"
+      },
+      "imageRev": 1787630084
+    },
+    {
+      "id": "L26_divide",
+      "kanji": "剖",
+      "keyword": "divide",
+      "image": "studies/divide.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>刃<rt>は</rt></ruby><br>    <ruby>分<rt>わ</rt></ruby>けるためだけに<br>    <ruby>光<rt>ひかり</rt></ruby>を<ruby>持<rt>も</rt></ruby>つ",
+        "en": "The quiet blade\nholds its light only\nto separate clearly"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "divide"
+      },
+      "imageRev": 1787630086
+    },
+    {
+      "id": "L26_sound",
+      "kanji": "音",
+      "keyword": "sound",
+      "image": "studies/sound.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>鐘<rt>かね</rt></ruby>ひとつ<br>    <ruby>空<rt>そら</rt></ruby>の<ruby>広<rt>ひろ</rt></ruby><ruby>間<rt>あいだ</rt></ruby>を<br>    <ruby>波<rt>なみ</rt></ruby>のように",
+        "en": "One temple bell\ncrosses the empty hall\nlike widening water"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "sound"
+      },
+      "imageRev": 1787630112
+    },
+    {
+      "id": "L26_darkness",
+      "kanji": "暗",
+      "keyword": "darkness",
+      "image": "studies/darkness.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>灯<rt>あかり</rt></ruby>が<ruby>消<rt>き</rt></ruby>え<br>    <ruby>湖<rt>こ</rt></ruby>の<ruby>闇<rt>やみ</rt></ruby>だけ<br>    <ruby>深<rt>ふか</rt></ruby>く<ruby>残<rt>のこ</rt></ruby>る",
+        "en": "After the lamp fades\nonly the darkness of the lake\nremains deep and still"
+      },
+      "meta": {
+        "lesson": 26,
+        "slug": "darkness"
+      },
+      "imageRev": 1787630084
+    }
+  ]
+}
