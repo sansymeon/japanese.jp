@@ -203,7 +203,7 @@
       encounteredKana: L0,
       newKana: L0,
       staticStudy: "h-a",
-      filmImage: "../assets/images/intro.png",
+      filmImage: "../assets/images/intro.jpg",
       youtubeUrl: null,
       prev: null,
       next: "1",
