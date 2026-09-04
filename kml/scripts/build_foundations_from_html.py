@@ -53,7 +53,7 @@ def make_foundations(lesson: int, scenes: list[dict]) -> dict:
         "source": "lesson_html",
         "ending": {"type": "gallerySeal", "sealImage": "images/gold_closing.png"},
         "intro": {
-            "image": f"covers/lesson_{pad}.png",
+            "image": f"covers/lesson_{pad}.jpg",
             "title": f"Lesson {lesson}",
             "holdBeforeMs": 1000,
             "durationMs": 9000,
@@ -102,7 +102,7 @@ def build_lesson(lesson: int, force: bool) -> Path | None:
                 "id": slug,
                 "kanji": d.kanji,
                 "keyword": d.keyword,
-                "image": f"studies/{slug}.png",
+                "image": f"studies/{slug}.jpg",
                 "video": None,
                 "verse": {"jpHtml": "", "en": ""},
             }

@@ -78,8 +78,9 @@ def parse_section(
     keyword_m = re.search(r'<span class="kanji-keyword">([^<]+)</span>', section)
     keyword = keyword_m.group(1) if keyword_m else ""
 
-    img_m = re.search(r'assets/studies/([^"]+\.png)', section)
-    image_file = img_m.group(1).split("/")[-1] if img_m else f"{slug}.png"
+    img_m = re.search(r'assets/studies/([^"]+\.(?:png|jpe?g))', section)
+    raw_image = img_m.group(1).split("/")[-1] if img_m else f"{slug}.jpg"
+    image_file = raw_image.rsplit(".", 1)[0] + ".jpg"
     if not (ASSETS_DIR / image_file).exists():
         return None
 
@@ -173,8 +174,9 @@ def list_gaps(
 
             slug_m = re.search(r'data-slug="([^"]+)"', section)
             slug = slug_m.group(1) if slug_m else ""
-            img_m = re.search(r'assets/studies/([^"]+\.png)', section)
-            image_file = img_m.group(1).split("/")[-1] if img_m else f"{slug}.png"
+            img_m = re.search(r'assets/studies/([^"]+\.(?:png|jpe?g))', section)
+            raw_image = img_m.group(1).split("/")[-1] if img_m else f"{slug}.jpg"
+            image_file = raw_image.rsplit(".", 1)[0] + ".jpg"
             has_art = (ASSETS_DIR / image_file).exists()
             has_jp = bool(re.search(r'<p class="jp-verse', section))
             has_en = bool(re.search(r'<p class="en-verse">', section))

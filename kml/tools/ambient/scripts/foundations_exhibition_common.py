@@ -92,7 +92,7 @@ def exhibition_foundations_config(
         "notes": notes,
         "ending": gallery_seal_ending(),
         "intro": {
-            "image": f"covers/lesson_{lesson}.png",
+            "image": f"covers/lesson_{lesson}.jpg",
             "title": f"Lesson {lesson}",
             "holdBeforeMs": INTRO_HOLD_MS,
             "durationMs": INTRO_DURATION_MS,
@@ -131,7 +131,7 @@ def youtube_foundations_config(
         "assetsBase": assets_base,
         "notes": notes,
         "intro": {
-            "image": f"covers/lesson_{lesson}.png",
+            "image": f"covers/lesson_{lesson}.jpg",
             "title": f"Lesson {lesson}",
             "holdBeforeMs": INTRO_HOLD_MS,
             "durationMs": INTRO_DURATION_MS,

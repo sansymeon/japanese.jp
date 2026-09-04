@@ -67,9 +67,10 @@ PEOPLE_MOTION_SCALE = 1.15
 
 # Filename aliases when playlist typos / bare stems appear.
 PLAYLIST_ALIASES: dict[str, str] = {
-    "fold_of.png": "fond_of.png",
-    "fold_of": "fond_of.png",
-    "specialty": "specialty.png",
+    "fold_of.png": "fond_of.jpg",
+    "fold_of.jpg": "fond_of.jpg",
+    "fold_of": "fond_of.jpg",
+    "specialty": "specialty.jpg",
 }
 
 # Visual categories for interleaving.
@@ -523,9 +524,11 @@ def normalize_playlist_line(line: str) -> str:
         return ""
     if raw in PLAYLIST_ALIASES:
         return PLAYLIST_ALIASES[raw]
-    if raw.endswith((".png", ".jpg", ".jpeg", ".webp")):
+    if raw.endswith(".png"):
+        raw = f"{raw[:-4]}.jpg"
+    if raw.endswith((".jpg", ".jpeg", ".webp")):
         return raw
-    return f"{raw}.png"
+    return f"{raw}.jpg"
 
 
 def load_playlist_filenames() -> list[str]:

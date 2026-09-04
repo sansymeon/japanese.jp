@@ -48,7 +48,7 @@ def parse_scenes(html: str) -> list[dict]:
             "id": slug,
             "kanji": kanji_m.group(1),
             "keyword": keyword,
-            "image": f"studies/{slug}.png",
+            "image": f"studies/{slug}.jpg",
             "video": None,
             "verse": {
                 "jpHtml": jp_m.group(1).strip(),
@@ -83,7 +83,7 @@ def study_config(*, lesson: int, title: str, scenes: list[dict]) -> dict:
             f"{FIRST_SCENE.title()} opens; {LAST_SCENE.title()} closes with concert fade."
         ),
         "intro": {
-            "image": f"covers/lesson_{lesson}.png",
+            "image": f"covers/lesson_{lesson}.jpg",
             "title": f"Lesson {lesson}",
             "holdBeforeMs": INTRO_HOLD_MS,
             "durationMs": INTRO_DURATION_MS,

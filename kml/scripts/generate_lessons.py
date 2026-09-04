@@ -93,7 +93,7 @@ def build_nav_links(lesson):
 def build_lesson_art(lesson_number):
     pad = str(lesson_number).zfill(2)
     img = (
-        f'<img src="../../../../assets/covers/lesson_{pad}.png"\n'
+        f'<img src="../../../../assets/covers/lesson_{pad}.jpg"\n'
         f'       alt="Lesson {lesson_number} cover"\n'
         f'       width="380" height="250"\n'
         f'       fetchpriority="high">'

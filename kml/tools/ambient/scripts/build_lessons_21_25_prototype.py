@@ -91,7 +91,7 @@ def parse_lesson_scenes(lesson: int) -> list[dict]:
 
         slug = slug_m.group(1)
         keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
-        image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.jpg"
+        image = f"studies/{(img_m.group(1).rsplit('.', 1)[0] if img_m else slug)}.jpg"
         en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
         scene = {
             "id": f"L{lesson:02d}_{slug}",

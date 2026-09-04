@@ -39,8 +39,9 @@ def parse_section(section: str, lesson_num: int, *, require_heart: bool = True) 
     if require_heart and kanji not in HEART_PARTS and not heart_parts:
         return None
 
-    img_m = re.search(r'assets/studies/([^"]+\.png)', section)
-    image_file = img_m.group(1).split("/")[-1] if img_m else f"{slug}.png"
+    img_m = re.search(r'assets/studies/([^"]+\.(?:png|jpe?g))', section)
+    raw_image = img_m.group(1).split("/")[-1] if img_m else f"{slug}.jpg"
+    image_file = raw_image.rsplit(".", 1)[0] + ".jpg"
     if not (ASSETS_DIR / image_file).exists():
         return None
 

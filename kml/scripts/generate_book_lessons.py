@@ -59,7 +59,7 @@ def pad(n):
 def build_lesson_art(lesson_number: int) -> str:
     pad_n = pad(lesson_number)
     img = (
-        f'<img src="../../../../assets/covers/lesson_{pad_n}.png"\n'
+        f'<img src="../../../../assets/covers/lesson_{pad_n}.jpg"\n'
         f'       alt="Lesson {lesson_number} cover"\n'
         f'       width="380" height="250"\n'
         f'       fetchpriority="high">'
@@ -243,7 +243,7 @@ def make_kanji_block(r):
     # ===== KANJI STUDY (auto-hide via onerror)
     study_html = f"""
   <div class="kanji-study">
-    <img src="../../../../assets/studies/{slug}.png"
+    <img src="../../../../assets/studies/{slug}.jpg"
          alt="Kanji study for {kanji}"
          loading="lazy"
          onerror="this.style.display='none'">

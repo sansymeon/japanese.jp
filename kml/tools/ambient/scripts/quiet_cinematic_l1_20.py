@@ -141,7 +141,7 @@ def parse_lesson(lesson: int) -> list[dict]:
             continue
         slug = slug_m.group(1)
         keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
-        image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.jpg"
+        image = f"studies/{(img_m.group(1).rsplit('.', 1)[0] if img_m else slug)}.jpg"
         items.append(
             {
                 "id": f"L{lesson:02d}_{slug}",

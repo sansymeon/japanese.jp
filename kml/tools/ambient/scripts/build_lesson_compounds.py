@@ -47,14 +47,14 @@ def parse_lesson_scenes(lesson: int) -> list[dict]:
         kanji_m = re.search(r'data-kanji="([^"]+)"', block)
         slug_m = re.search(r'data-slug="([^"]+)"', block)
         keyword_m = re.search(r'<span class="kanji-keyword">([^<]+)</span>', block)
-        img_m = re.search(r"assets/studies/([^\"']+\.png)", block)
+        img_m = re.search(r"assets/studies/([^\"']+\.(?:png|jpe?g))", block)
         if not (kanji_m and slug_m):
             continue
 
         slug = slug_m.group(1)
         kanji = kanji_m.group(1)
         keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
-        image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.png"
+        image = f"studies/{(img_m.group(1).rsplit('.', 1)[0] if img_m else slug)}.jpg"
         steps = [dict(item) for item in by_kanji.get(kanji, [])[:MAX_COMPOUNDS]]
         if not steps:
             raise KeyError(f"No compounds found for kanji {kanji} ({slug})")

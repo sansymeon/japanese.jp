@@ -13,7 +13,7 @@ REPO_ASSETS = ROOT.parents[1] / "assets" / "studies"
 HEART_V4 = ROOT / "collections" / "heart_v4.json"
 OUT_PATH = ROOT / "collections" / "heart_v5.json"
 
-BOOKEND_IMAGE = "bookends/lesson_32.png"
+BOOKEND_IMAGE = "covers/lesson_32.jpg"
 FLUTE_AUDIO = "audio/exhibition_flute_intro.mp3"
 SOUNDTRACK = "audio/ambient_kanji_exhibition.mp3"
 

@@ -27,7 +27,7 @@ def build() -> dict:
         ),
         scenes=load_scenes(),
     )
-    config["intro"]["image"] = "covers/lesson_03.png"
+    config["intro"]["image"] = "covers/lesson_03.jpg"
     config["soundtrack"] = {"main": STUDY_LESSON}
     return config
 

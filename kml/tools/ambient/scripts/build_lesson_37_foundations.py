@@ -36,7 +36,7 @@ def parse_scenes(html: str) -> list[dict]:
         kanji_m = re.search(r'data-kanji="([^"]+)"', block)
         slug_m = re.search(r'data-slug="([^"]+)"', block)
         keyword_m = re.search(r'<span class="kanji-keyword">([^<]+)</span>', block)
-        img_m = re.search(r"assets/studies/([^\"']+\.png)", block)
+        img_m = re.search(r"assets/studies/([^\"']+\.(?:png|jpe?g))", block)
         jp_m = re.search(r'<p class="jp-verse[^"]*">(.*?)</p>', block, re.DOTALL)
         en_m = re.search(r'<p class="en-verse">(.*?)</p>', block, re.DOTALL)
         if not (kanji_m and slug_m and jp_m and en_m):
@@ -44,7 +44,7 @@ def parse_scenes(html: str) -> list[dict]:
 
         slug = slug_m.group(1)
         keyword = keyword_m.group(1).strip() if keyword_m else slug.replace("_", " ")
-        image = f"studies/{img_m.group(1)}" if img_m else f"studies/{slug}.png"
+        image = f"studies/{(img_m.group(1).rsplit('.', 1)[0] if img_m else slug)}.jpg"
         en = re.sub(r"<br\s*/?>", "\n", en_m.group(1), flags=re.IGNORECASE).strip()
         scene = {
             "id": slug,
@@ -74,7 +74,7 @@ def study_config(*, lesson: int, title: str, scenes: list[dict]) -> dict:
             "Original lesson order; last card concert fade until music ends."
         ),
         "intro": {
-            "image": f"covers/lesson_{lesson}.png",
+            "image": f"covers/lesson_{lesson}.jpg",
             "title": f"Lesson {lesson}",
             "holdBeforeMs": INTRO_HOLD_MS,
             "durationMs": INTRO_DURATION_MS,
