@@ -17,7 +17,7 @@
     "note": "Vocal timestamps are when image+lyric must already be established. Image changes pre-roll (2.8s after instrumentals; ~0.8–1.2s on tight Q&A). Empty ja clears cards for all instrumental passages. balcony.png is the 1:55 reprise only — John and Maria already together. Ending: enjoying_concert → first_exit → final_exit into ~2:38 fade."
   },
   "opening": {
-    "image": "../../assets/images/room_3/intro.png",
+    "image": "../../assets/images/room_3/intro.jpg",
     "title": "What’s your name?",
     "lead": "A vast hall. A name.",
     "cta": "Listen & Follow",
@@ -27,7 +27,7 @@
     {
       "id": "intro-hall",
       "start": 0,
-      "image": "../../assets/images/room_3/intro.png",
+      "image": "../../assets/images/room_3/intro.jpg",
       "ja": "",
       "romaji": "",
       "transition": "crossfade"
@@ -35,7 +35,7 @@
     {
       "id": "intro-band",
       "start": 6,
-      "image": "../../assets/images/room_3/band_1.png",
+      "image": "../../assets/images/room_3/band_1.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -43,7 +43,7 @@
     {
       "id": "intro-hall-2",
       "start": 12,
-      "image": "../../assets/images/room_3/intro.png",
+      "image": "../../assets/images/room_3/intro.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -51,7 +51,7 @@
     {
       "id": "pre-john-q1",
       "start": 19.2,
-      "image": "../../assets/images/room_3/whats_name_john.png",
+      "image": "../../assets/images/room_3/whats_name_john.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -59,14 +59,14 @@
     {
       "id": "name-q-john-1",
       "start": 22,
-      "image": "../../assets/images/room_3/whats_name_john.png",
+      "image": "../../assets/images/room_3/whats_name_john.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?"
     },
     {
       "id": "pre-john-a1",
       "start": 26,
-      "image": "../../assets/images/room_3/john_desu.png",
+      "image": "../../assets/images/room_3/john_desu.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?",
       "crossfade": 1
@@ -74,14 +74,14 @@
     {
       "id": "john-a-1",
       "start": 27,
-      "image": "../../assets/images/room_3/john_desu.png",
+      "image": "../../assets/images/room_3/john_desu.jpg",
       "ja": "Johnです。",
       "romaji": "John desu."
     },
     {
       "id": "pre-maria-q1",
       "start": 32,
-      "image": "../../assets/images/room_3/whats_name_maria.png",
+      "image": "../../assets/images/room_3/whats_name_maria.jpg",
       "ja": "Johnです。",
       "romaji": "John desu.",
       "crossfade": 1
@@ -89,14 +89,14 @@
     {
       "id": "name-q-maria-1",
       "start": 33,
-      "image": "../../assets/images/room_3/whats_name_maria.png",
+      "image": "../../assets/images/room_3/whats_name_maria.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?"
     },
     {
       "id": "pre-maria-a1",
       "start": 37,
-      "image": "../../assets/images/room_3/maria_desu.png",
+      "image": "../../assets/images/room_3/maria_desu.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?",
       "crossfade": 1
@@ -104,21 +104,21 @@
     {
       "id": "maria-a-1",
       "start": 38,
-      "image": "../../assets/images/room_3/maria_desu.png",
+      "image": "../../assets/images/room_3/maria_desu.jpg",
       "ja": "Mariaです。",
       "romaji": "Maria desu."
     },
     {
       "id": "breath-1",
       "start": 41,
-      "image": "../../assets/images/room_3/maria_desu.png",
+      "image": "../../assets/images/room_3/maria_desu.jpg",
       "ja": "",
       "romaji": ""
     },
     {
       "id": "pre-john-q2",
       "start": 43.2,
-      "image": "../../assets/images/room_3/whats_name_john.png",
+      "image": "../../assets/images/room_3/whats_name_john.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -126,14 +126,14 @@
     {
       "id": "name-q-john-2",
       "start": 46,
-      "image": "../../assets/images/room_3/whats_name_john.png",
+      "image": "../../assets/images/room_3/whats_name_john.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?"
     },
     {
       "id": "pre-john-a2",
       "start": 49,
-      "image": "../../assets/images/room_3/john_desu.png",
+      "image": "../../assets/images/room_3/john_desu.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?",
       "crossfade": 1
@@ -141,14 +141,14 @@
     {
       "id": "john-a-2",
       "start": 50,
-      "image": "../../assets/images/room_3/john_desu.png",
+      "image": "../../assets/images/room_3/john_desu.jpg",
       "ja": "Johnです。",
       "romaji": "John desu."
     },
     {
       "id": "pre-onamae",
       "start": 53.8,
-      "image": "../../assets/images/room_3/whats_name_maria.png",
+      "image": "../../assets/images/room_3/whats_name_maria.jpg",
       "ja": "Johnです。",
       "romaji": "John desu.",
       "crossfade": 1.2
@@ -156,14 +156,14 @@
     {
       "id": "onamae-split",
       "start": 55,
-      "image": "../../assets/images/room_3/whats_name_maria.png",
+      "image": "../../assets/images/room_3/whats_name_maria.jpg",
       "ja": "おなまえは",
       "romaji": "Onamae wa"
     },
     {
       "id": "pre-nan-desu-ka",
       "start": 58.2,
-      "image": "../../assets/images/room_3/maria_desu.png",
+      "image": "../../assets/images/room_3/maria_desu.jpg",
       "ja": "おなまえは",
       "romaji": "Onamae wa",
       "crossfade": 2.8
@@ -171,21 +171,21 @@
     {
       "id": "nan-desu-ka",
       "start": 61,
-      "image": "../../assets/images/room_3/maria_desu.png",
+      "image": "../../assets/images/room_3/maria_desu.jpg",
       "ja": "なんですか？",
       "romaji": "Nan desu ka?"
     },
     {
       "id": "clear-nan",
       "start": 64,
-      "image": "../../assets/images/room_3/maria_desu.png",
+      "image": "../../assets/images/room_3/maria_desu.jpg",
       "ja": "",
       "romaji": ""
     },
     {
       "id": "pre-handshake",
       "start": 65.2,
-      "image": "../../assets/images/room_3/shaking_hands.png",
+      "image": "../../assets/images/room_3/shaking_hands.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -193,14 +193,14 @@
     {
       "id": "konnichiwa",
       "start": 68,
-      "image": "../../assets/images/room_3/shaking_hands.png",
+      "image": "../../assets/images/room_3/shaking_hands.jpg",
       "ja": "こんにちは、Johnさん。こんにちは、Mariaさん。",
       "romaji": "Konnichiwa, John-san. Konnichiwa, Maria-san."
     },
     {
       "id": "pre-maria-bow",
       "start": 79,
-      "image": "../../assets/images/room_3/maria_bows.png",
+      "image": "../../assets/images/room_3/maria_bows.jpg",
       "ja": "こんにちは、Johnさん。こんにちは、Mariaさん。",
       "romaji": "Konnichiwa, John-san. Konnichiwa, Maria-san.",
       "crossfade": 1
@@ -208,14 +208,14 @@
     {
       "id": "yoroshiku-john",
       "start": 80,
-      "image": "../../assets/images/room_3/maria_bows.png",
+      "image": "../../assets/images/room_3/maria_bows.jpg",
       "ja": "よろしく、Johnさん！",
       "romaji": "Yoroshiku, John-san!"
     },
     {
       "id": "pre-john-bow",
       "start": 83.2,
-      "image": "../../assets/images/room_3/john_bows.png",
+      "image": "../../assets/images/room_3/john_bows.jpg",
       "ja": "よろしく、Johnさん！",
       "romaji": "Yoroshiku, John-san!",
       "crossfade": 0.8
@@ -223,21 +223,21 @@
     {
       "id": "yoroshiku-maria",
       "start": 84,
-      "image": "../../assets/images/room_3/john_bows.png",
+      "image": "../../assets/images/room_3/john_bows.jpg",
       "ja": "よろしく、Mariaさん！",
       "romaji": "Yoroshiku, Maria-san!"
     },
     {
       "id": "clear-bows",
       "start": 88,
-      "image": "../../assets/images/room_3/john_bows.png",
+      "image": "../../assets/images/room_3/john_bows.jpg",
       "ja": "",
       "romaji": ""
     },
     {
       "id": "together-watch",
       "start": 90,
-      "image": "../../assets/images/room_3/enjoying_concert.png",
+      "image": "../../assets/images/room_3/enjoying_concert.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -245,7 +245,7 @@
     {
       "id": "concert-band",
       "start": 100,
-      "image": "../../assets/images/room_3/band_1.png",
+      "image": "../../assets/images/room_3/band_1.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -253,7 +253,7 @@
     {
       "id": "concert-stage",
       "start": 108,
-      "image": "../../assets/images/room_3/intro.png",
+      "image": "../../assets/images/room_3/intro.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -261,7 +261,7 @@
     {
       "id": "pre-balcony",
       "start": 112.2,
-      "image": "../../assets/images/room_3/balcony.png",
+      "image": "../../assets/images/room_3/balcony.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -269,14 +269,14 @@
     {
       "id": "reprise-q",
       "start": 115,
-      "image": "../../assets/images/room_3/balcony.png",
+      "image": "../../assets/images/room_3/balcony.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?"
     },
     {
       "id": "pre-reprise-john",
       "start": 120.8,
-      "image": "../../assets/images/room_3/enjoying_concert.png",
+      "image": "../../assets/images/room_3/enjoying_concert.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?",
       "crossfade": 1.2
@@ -284,14 +284,14 @@
     {
       "id": "reprise-john",
       "start": 122,
-      "image": "../../assets/images/room_3/enjoying_concert.png",
+      "image": "../../assets/images/room_3/enjoying_concert.jpg",
       "ja": "Johnです。",
       "romaji": "John desu."
     },
     {
       "id": "pre-reprise-q2",
       "start": 126.2,
-      "image": "../../assets/images/room_3/band_1.png",
+      "image": "../../assets/images/room_3/band_1.jpg",
       "ja": "Johnです。",
       "romaji": "John desu.",
       "crossfade": 1.8
@@ -299,14 +299,14 @@
     {
       "id": "reprise-q2",
       "start": 128,
-      "image": "../../assets/images/room_3/band_1.png",
+      "image": "../../assets/images/room_3/band_1.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?"
     },
     {
       "id": "pre-reprise-maria",
       "start": 132,
-      "image": "../../assets/images/room_3/enjoying_concert.png",
+      "image": "../../assets/images/room_3/enjoying_concert.jpg",
       "ja": "おなまえは なんですか？",
       "romaji": "Onamae wa nan desu ka?",
       "crossfade": 1
@@ -314,21 +314,21 @@
     {
       "id": "reprise-maria",
       "start": 133,
-      "image": "../../assets/images/room_3/enjoying_concert.png",
+      "image": "../../assets/images/room_3/enjoying_concert.jpg",
       "ja": "Mariaです。",
       "romaji": "Maria desu."
     },
     {
       "id": "clear-reprise",
       "start": 137,
-      "image": "../../assets/images/room_3/enjoying_concert.png",
+      "image": "../../assets/images/room_3/enjoying_concert.jpg",
       "ja": "",
       "romaji": ""
     },
     {
       "id": "ending-leave-hall",
       "start": 146,
-      "image": "../../assets/images/room_3/first_exit.png",
+      "image": "../../assets/images/room_3/first_exit.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -336,7 +336,7 @@
     {
       "id": "ending-exterior",
       "start": 151,
-      "image": "../../assets/images/room_3/final_exit.png",
+      "image": "../../assets/images/room_3/final_exit.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8

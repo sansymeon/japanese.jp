@@ -17,7 +17,7 @@
     "note": "Landmarks are musical, not karaoke cuts. Lyrics appear 1s before vocal onsets. Image dissolves are independent and unchanged. Verse images begin dissolving during たべます so the next dish is already arriving when its name is sung. Chorus holds washoku across all three おいしい lines. Interlude 0:42–1:48 is unlabeled and leisurely (3.6s dissolves). Reprise pre-rolls sushi before 1:48. Fade returns to the restaurant."
   },
   "opening": {
-    "image": "../../assets/images/room-5.png",
+    "image": "../../assets/images/room-5.jpg",
     "title": "すしを たべます",
     "lead": "Food you already know.",
     "cta": "Listen & Follow",
@@ -27,7 +27,7 @@
     {
       "id": "intro-restaurant",
       "start": 0,
-      "image": "../../assets/images/room-5.png",
+      "image": "../../assets/images/room-5.jpg",
       "ja": "",
       "romaji": "",
       "transition": "crossfade"
@@ -35,7 +35,7 @@
     {
       "id": "v1-sushi-arrive",
       "start": 6,
-      "image": "../../assets/images/room_5/sushi.png",
+      "image": "../../assets/images/room_5/sushi.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 2.8
@@ -43,14 +43,14 @@
     {
       "id": "v1-sushi",
       "start": 9,
-      "image": "../../assets/images/room_5/sushi.png",
+      "image": "../../assets/images/room_5/sushi.jpg",
       "ja": "すしを たべます。",
       "romaji": "Sushi o tabemasu."
     },
     {
       "id": "v1-sukiyaki-arrive",
       "start": 13,
-      "image": "../../assets/images/room_5/sukiyaki.png",
+      "image": "../../assets/images/room_5/sukiyaki.jpg",
       "ja": "すしを たべます。",
       "romaji": "Sushi o tabemasu.",
       "crossfade": 2.8
@@ -58,14 +58,14 @@
     {
       "id": "v1-sukiyaki",
       "start": 14,
-      "image": "../../assets/images/room_5/sukiyaki.png",
+      "image": "../../assets/images/room_5/sukiyaki.jpg",
       "ja": "すきやきを たべます。",
       "romaji": "Sukiyaki o tabemasu."
     },
     {
       "id": "v1-onigiri-arrive",
       "start": 17.2,
-      "image": "../../assets/images/room_5/onigiri.png",
+      "image": "../../assets/images/room_5/onigiri.jpg",
       "ja": "すきやきを たべます。",
       "romaji": "Sukiyaki o tabemasu.",
       "crossfade": 2.8
@@ -73,14 +73,14 @@
     {
       "id": "v1-onigiri",
       "start": 18,
-      "image": "../../assets/images/room_5/onigiri.png",
+      "image": "../../assets/images/room_5/onigiri.jpg",
       "ja": "おにぎりを たべます。",
       "romaji": "Onigiri o tabemasu."
     },
     {
       "id": "v1-tamago-arrive",
       "start": 21.8,
-      "image": "../../assets/images/room_5/tamago.png",
+      "image": "../../assets/images/room_5/tamago.jpg",
       "ja": "おにぎりを たべます。",
       "romaji": "Onigiri o tabemasu.",
       "crossfade": 2.8
@@ -88,14 +88,14 @@
     {
       "id": "v1-tamago",
       "start": 23,
-      "image": "../../assets/images/room_5/tamago.png",
+      "image": "../../assets/images/room_5/tamago.jpg",
       "ja": "たまごを たべます。",
       "romaji": "Tamago o tabemasu."
     },
     {
       "id": "v1-chorus-arrive",
       "start": 26.8,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "たまごを たべます。",
       "romaji": "Tamago o tabemasu.",
       "crossfade": 2.8
@@ -103,35 +103,35 @@
     {
       "id": "v1-chorus-a",
       "start": 28,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "おいしいです",
       "romaji": "Oishii desu"
     },
     {
       "id": "v1-chorus-b",
       "start": 33,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "おいしいです",
       "romaji": "Oishii desu"
     },
     {
       "id": "v1-chorus-c",
       "start": 37,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "おいしいですね",
       "romaji": "Oishii desu ne"
     },
     {
       "id": "interlude-hold-table",
       "start": 42,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "",
       "romaji": ""
     },
     {
       "id": "interlude-restaurant",
       "start": 52,
-      "image": "../../assets/images/room-5.png",
+      "image": "../../assets/images/room-5.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6
@@ -139,7 +139,7 @@
     {
       "id": "interlude-sashimi",
       "start": 64,
-      "image": "../../assets/images/room_5/sashimi.png",
+      "image": "../../assets/images/room_5/sashimi.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6
@@ -147,7 +147,7 @@
     {
       "id": "interlude-sukiyaki",
       "start": 76,
-      "image": "../../assets/images/room_5/sukiyaki.png",
+      "image": "../../assets/images/room_5/sukiyaki.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6
@@ -155,7 +155,7 @@
     {
       "id": "interlude-onigiri",
       "start": 88,
-      "image": "../../assets/images/room_5/onigiri.png",
+      "image": "../../assets/images/room_5/onigiri.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6
@@ -163,7 +163,7 @@
     {
       "id": "interlude-tamago",
       "start": 98,
-      "image": "../../assets/images/room_5/tamago.png",
+      "image": "../../assets/images/room_5/tamago.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6
@@ -171,7 +171,7 @@
     {
       "id": "reprise-sushi-arrive",
       "start": 104,
-      "image": "../../assets/images/room_5/sushi.png",
+      "image": "../../assets/images/room_5/sushi.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6
@@ -179,14 +179,14 @@
     {
       "id": "v2-sushi",
       "start": 107,
-      "image": "../../assets/images/room_5/sushi.png",
+      "image": "../../assets/images/room_5/sushi.jpg",
       "ja": "すしを たべます。",
       "romaji": "Sushi o tabemasu."
     },
     {
       "id": "v2-sukiyaki-arrive",
       "start": 110.5,
-      "image": "../../assets/images/room_5/sukiyaki.png",
+      "image": "../../assets/images/room_5/sukiyaki.jpg",
       "ja": "すしを たべます。",
       "romaji": "Sushi o tabemasu.",
       "crossfade": 2.8
@@ -194,14 +194,14 @@
     {
       "id": "v2-sukiyaki",
       "start": 111,
-      "image": "../../assets/images/room_5/sukiyaki.png",
+      "image": "../../assets/images/room_5/sukiyaki.jpg",
       "ja": "すきやきを たべます。",
       "romaji": "Sukiyaki o tabemasu."
     },
     {
       "id": "v2-onigiri-arrive",
       "start": 114.5,
-      "image": "../../assets/images/room_5/onigiri.png",
+      "image": "../../assets/images/room_5/onigiri.jpg",
       "ja": "すきやきを たべます。",
       "romaji": "Sukiyaki o tabemasu.",
       "crossfade": 2.8
@@ -209,14 +209,14 @@
     {
       "id": "v2-onigiri",
       "start": 116,
-      "image": "../../assets/images/room_5/onigiri.png",
+      "image": "../../assets/images/room_5/onigiri.jpg",
       "ja": "おにぎりを たべます。",
       "romaji": "Onigiri o tabemasu."
     },
     {
       "id": "v2-tamago-arrive",
       "start": 119.2,
-      "image": "../../assets/images/room_5/tamago.png",
+      "image": "../../assets/images/room_5/tamago.jpg",
       "ja": "おにぎりを たべます。",
       "romaji": "Onigiri o tabemasu.",
       "crossfade": 2.8
@@ -224,14 +224,14 @@
     {
       "id": "v2-tamago",
       "start": 120,
-      "image": "../../assets/images/room_5/tamago.png",
+      "image": "../../assets/images/room_5/tamago.jpg",
       "ja": "たまごを たべます。",
       "romaji": "Tamago o tabemasu."
     },
     {
       "id": "v2-chorus-arrive",
       "start": 123.2,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "たまごを たべます。",
       "romaji": "Tamago o tabemasu.",
       "crossfade": 2.8
@@ -239,35 +239,35 @@
     {
       "id": "v2-chorus-a",
       "start": 124,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "おいしいです",
       "romaji": "Oishii desu"
     },
     {
       "id": "v2-chorus-b",
       "start": 129,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "おいしいです",
       "romaji": "Oishii desu"
     },
     {
       "id": "v2-chorus-c",
       "start": 133,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "おいしいですね",
       "romaji": "Oishii desu ne"
     },
     {
       "id": "outro-table",
       "start": 138,
-      "image": "../../assets/images/room_5/washoku_spread.png",
+      "image": "../../assets/images/room_5/washoku_spread.jpg",
       "ja": "",
       "romaji": ""
     },
     {
       "id": "outro-restaurant",
       "start": 142,
-      "image": "../../assets/images/room-5.png",
+      "image": "../../assets/images/room-5.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6

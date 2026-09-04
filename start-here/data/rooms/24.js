@@ -17,7 +17,7 @@
     "note": "Landmarks are musical, not karaoke cuts. Lyrics appear 1s before vocal onsets (0:13 / 0:17 / 0:20 and 1:51 / 1:55 / 1:59). Image dissolves are independent: the next landscape begins arriving during the previous line (~2.8s). Long instrumental 0:24–1:51 is unlabeled landscape (3.6s dissolves), not a drill. Reprise pre-rolls the grove before 1:51. Fade stays at the horizon."
   },
   "opening": {
-    "image": "../../assets/images/lesson_24/bamboo_2.png",
+    "image": "../../assets/images/lesson_24/bamboo_2.jpg",
     "title": "竹の音",
     "lead": "Listen.",
     "cta": "Listen & Follow"
@@ -26,7 +26,7 @@
     {
       "id": "intro-grove",
       "start": 0,
-      "image": "../../assets/images/lesson_24/bamboo_2.png",
+      "image": "../../assets/images/lesson_24/bamboo_2.jpg",
       "ja": "",
       "romaji": "",
       "transition": "crossfade"
@@ -34,7 +34,7 @@
     {
       "id": "v1-take",
       "start": 12,
-      "image": "../../assets/images/lesson_24/bamboo_2.png",
+      "image": "../../assets/images/lesson_24/bamboo_2.jpg",
       "ja": "たけのおと",
       "romaji": "Take no oto"
     },
@@ -110,7 +110,7 @@
     {
       "id": "reprise-take-preroll",
       "start": 104,
-      "image": "../../assets/images/lesson_24/bamboo_2.png",
+      "image": "../../assets/images/lesson_24/bamboo_2.jpg",
       "ja": "",
       "romaji": "",
       "crossfade": 3.6
@@ -118,7 +118,7 @@
     {
       "id": "v2-take",
       "start": 110,
-      "image": "../../assets/images/lesson_24/bamboo_2.png",
+      "image": "../../assets/images/lesson_24/bamboo_2.jpg",
       "ja": "たけのおと",
       "romaji": "Take no oto"
     },

@@ -23,7 +23,7 @@
     { "start": 176, "text": "絶えぬ音だけが　谷に響いていた" }
   ],
   "opening": {
-    "image": "../../../kml/assets/studies/river.png",
+    "image": "../../../kml/assets/studies/river.jpg",
     "title": "山の川",
     "lead": "Listen.",
     "cta": "Listen"
@@ -32,7 +32,7 @@
     {
       "id": "river",
       "start": 0,
-      "image": "../../../kml/assets/studies/river.png"
+      "image": "../../../kml/assets/studies/river.jpg"
     }
   ],
   "lyrics": []
