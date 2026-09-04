@@ -203,6 +203,25 @@ def sha256_short(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
 
 
+def _spoken_vocab_sort_key(meta: dict, stem: str) -> tuple[int, int]:
+    """Foundation F1, F2, … before ordinary numeric lessons."""
+    raw = meta.get("lesson")
+    if isinstance(raw, str):
+        token = raw.strip()
+        m = re.fullmatch(r"[Ff](\d+)", token)
+        if m:
+            return (0, int(m.group(1)))
+        if token.isdigit():
+            return (1, int(token))
+    elif isinstance(raw, int):
+        return (1, raw)
+    m = re.search(r"_f(\d+)$", stem, re.I)
+    if m:
+        return (0, int(m.group(1)))
+    m = re.search(r"(\d+)", stem)
+    return (1, int(m.group(1)) if m else 0)
+
+
 def load_lessons() -> tuple[list[dict], list[Path]]:
     pattern = str(REPO_ROOT / CONFIG["sources"]["lesson_glob"])
     paths = sorted(Path(p) for p in glob.glob(pattern))
@@ -210,12 +229,10 @@ def load_lessons() -> tuple[list[dict], list[Path]]:
     for path in paths:
         data = json.loads(path.read_text(encoding="utf-8"))
         meta = data.get("meta", {})
-        number = meta.get("lesson")
-        if number is None:
-            m = re.search(r"(\d+)", path.stem)
-            number = int(m.group(1)) if m else 0
+        group, n = _spoken_vocab_sort_key(meta, path.stem)
         entry = {
-            "number": int(number),
+            "number": n,
+            "_sort": (group, n),
             "id": data.get("id", path.stem),
             "title": data.get("title", path.stem),
             "file": str(path.relative_to(REPO_ROOT)),
@@ -235,7 +252,10 @@ def load_lessons() -> tuple[list[dict], list[Path]]:
                     {"jp": bw["jp"], "reading": bw.get("reading", ""),
                      "en": bw.get("en", "")})
         lessons.append(entry)
-    lessons.sort(key=lambda x: x["number"])
+    lessons.sort(key=lambda x: x["_sort"])
+    for seq, lesson in enumerate(lessons, start=1):
+        lesson["number"] = seq
+        del lesson["_sort"]
     return lessons, paths
 
 

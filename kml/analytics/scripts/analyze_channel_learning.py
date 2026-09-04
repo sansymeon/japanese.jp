@@ -97,12 +97,35 @@ def _num_from_stem(stem: str, pattern: str) -> int:
     return int(m.group(1)) if m else 0
 
 
+def _spoken_vocab_sort_key(meta: dict, stem: str) -> tuple[int, int]:
+    """Order spoken vocabulary modules without requiring a numeric lesson id.
+
+    Foundation modules (F1, F2, … / vocabulary_f01) come first, then ordinary
+    numeric lessons. Returns (group, sequence) where group 0 is Foundation.
+    """
+    raw = meta.get("lesson")
+    if isinstance(raw, str):
+        token = raw.strip()
+        m = re.fullmatch(r"[Ff](\d+)", token)
+        if m:
+            return (0, int(m.group(1)))
+        if token.isdigit():
+            return (1, int(token))
+    elif isinstance(raw, int):
+        return (1, raw)
+
+    m = re.search(r"_f(\d+)$", stem, re.I)
+    if m:
+        return (0, int(m.group(1)))
+    return (1, _num_from_stem(stem, r"(\d+)"))
+
+
 def discover_vocabulary() -> list[dict]:
     paths = sorted(Path(p) for p in glob.glob(str(COLLECTIONS / "vocabulary/vocabulary_*.json")))
     lessons = []
     for path in paths:
         data = json.loads(path.read_text(encoding="utf-8"))
-        n = int(data.get("meta", {}).get("lesson") or _num_from_stem(path.stem, r"(\d+)"))
+        group, n = _spoken_vocab_sort_key(data.get("meta") or {}, path.stem)
         words = []
         for scene in data.get("scenes", []):
             for step in scene.get("compounds", {}).get("steps", []):
@@ -111,17 +134,26 @@ def discover_vocabulary() -> list[dict]:
             if bw and bw.get("jp"):
                 words.append((bw["jp"], bw.get("reading", ""), bw.get("en", ""), "beautiful_word"))
         kanji = sorted({k for jp, *_ in words for k in KANJI_RE.findall(jp)})
+        label = (
+            f"Spoken Vocabulary Lesson F{n}"
+            if group == 0
+            else f"Spoken Vocabulary Lesson {n}"
+        )
         lessons.append({
             "order": n,
+            "_sort": (group, n),
             "id": data.get("id", path.stem),
             "title": data.get("title", path.stem),
-            "label": f"Spoken Vocabulary Lesson {n}",
+            "label": label,
             "file": str(path.relative_to(REPO_ROOT)),
             "words": words,
             "kanji": kanji,
             "kind": "vocabulary",
         })
-    lessons.sort(key=lambda x: x["order"])
+    lessons.sort(key=lambda x: x["_sort"])
+    for seq, lesson in enumerate(lessons, start=1):
+        lesson["order"] = seq
+        del lesson["_sort"]
     return lessons
 
 
