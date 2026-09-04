@@ -103,3 +103,28 @@ kml/data/kanji/outputs/
 
 # KML V2 large media (metadata references only)
 kml_v2/media/
+
+# PNG masters — web delivery uses production assets elsewhere
+kml/assets/covers_png/
+kml/assets/studies_png/
+kml/assets/images_png/
+start-here/assets/images_png/
+
+# Local visual-review / conversion tests
+_png_review/
+_jpeg_q90_visual_test/
+
+# Local tooling scratch
+kml/tools/tmp/
+
+# Ambient throwaway captures
+kml/tools/ambient/collections/**/.timing_probe*/
+kml/tools/ambient/collections/**/.preview/
+
+# Generated contact-sheet output
+kml/tools/ambient/collections/**/contact_sheets/*.jpg
+kml/tools/ambient/collections/**/playback_contact_sheets/*.jpg
+kml/tools/ambient/collections/**/playback_contact_sheets/*.txt
+kml/tools/ambient/collections/**/review_contact_sheets/*.jpg
+kml/tools/ambient/collections/**/review_contact_sheets/*.txt
+kml/tools/ambient/quiet_cinematic_review/contact_sheets/
