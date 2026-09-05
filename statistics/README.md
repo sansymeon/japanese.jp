@@ -2,17 +2,19 @@
 
 Public statistics for Kanji・Music・Landscape.
 
-The page describes the **published** KML collection — not the private
-development repository. Visitors see the project grow as lessons are completed.
+The page describes published KML materials across the website and YouTube
+collections, with curriculum coverage kept separate from the rest of the
+ecosystem.
 
 ## Sections
 
-1. **Interesting Statistics** — library scope + key published progress
-2. **Permanent Library** — full collection size (Kanji Collection, Planned Lessons)
-3. **Published Progress** — derived from completed lessons
-4. **Curriculum Coverage** — JLPT / grades / Jōyō from published kanji only
-5. **Learning Resources** — vocabulary, compounds, readings, components, strokes
-6. **Media Library** — published exhibitions, ambient films, videos, audio
+1. **Interesting Statistics** — library scale + published curriculum + YouTube
+2. **Permanent Library** — designed KML resources (3,094 one-per-kanji items,
+   plus full vocabulary / compound / component totals)
+3. **Published Curriculum** — completed lesson sequence (currently 1–50)
+4. **Curriculum Coverage** — JLPT / grades / Jōyō from Lessons 1–50 only
+5. **Learning Resources** — lesson-sequence totals, then other site series
+6. **Media Library** — exhibitions, ambient collections, audio, YouTube channel
 
 ## Refresh counts
 
@@ -22,14 +24,20 @@ python3 scripts/build_project_stats.py
 
 Writes `statistics/data/project_stats.json`.
 
-### Permanent (occasional updates)
+### Permanent library
 
-- **Kanji Collection (3,094)** — complete KML library scope
-- **Planned Lessons (153)** — full lesson curriculum
+- **Kanji / verses / stroke-order pages (3,094)** — one resource per kanji in
+  the designed master collection
+- **Vocabulary / compounds / components** — counted from production
+  collections; not assumed to be 3,094
 
-### Published progress (automatic)
+### Published curriculum
 
-**Lessons Completed** counts fully illustrated lessons. From that set the
-builder derives kanji, verses, illustrations, components, vocabulary,
-compounds, readings, and educational coverage. Future-lesson material is
-excluded until those lessons are completed.
+**Lessons Completed** is the published curriculum range (currently lessons
+1–50). A lesson is complete when its production HTML exists.
+
+### YouTube
+
+The public YouTube figure is the live `@ambientkanji` channel total
+(551 as of 2026-09-05). Local `.mp4` files and the 222-film learning-path
+analytics subset are not the channel library.

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <!--
-  Start Here room index. Reference map for Rooms 0–40.
+  Start Here room index. Reference map for Rooms 0–42.
   Titles and new kana follow the audited pathway data.
   Room 2 has no New kana. Room 39 title is Listen.
-  Room 40 is ことばが さく. No new kana. No Room 41.
+  Room 40 is すらすら言える. Room 41 is 言葉が咲く. Room 42 is Shiba-kun Overture.
 -->
 <html lang="en" class="museum-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room index — Start Here — Kanji・Music・Landscape</title>
+  <title>Room Map — Start Here — Kanji・Music・Landscape</title>
   <meta
     name="description"
-    content="A map of Start Here Rooms 0–40, with the hiragana each room first introduces."
+    content="A map of Start Here Rooms 0–42, with the hiragana each room first introduces."
   />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,10 +23,10 @@
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
   <link rel="stylesheet" href="../css/beginner-pathway.css" />
-  <script src="../../assets/js/museum-room.js" defer></script>
+  <script src="../../assets/js/museum-room.js?no-current-start-here-footer" defer></script>
 </head>
 <body class="museum-page room-index-page">
-  <a class="skip-link" href="#index">Skip to room index</a>
+  <a class="skip-link" href="#index">Skip to Room Map</a>
 
   <header class="museum-header">
     <div class="museum-header-inner">
@@ -34,7 +34,7 @@
       <nav aria-label="Primary">
         <ul class="museum-nav">
           <li><a href="../">Start Here</a></li>
-          <li><a href="../../journey/">Journey</a></li>
+          <li><a href="../../journey/">About KML</a></li>
           <li><a href="../../kml/contents/books/">Kanji Studies</a></li>
           <li><a href="../../collections/">Video Collections</a></li>
           <li><a href="../../index.html">Home</a></li>
@@ -47,9 +47,33 @@
     <section class="room-section" id="index" aria-labelledby="index-heading">
       <div class="room-container">
         <header class="room-section-head reveal">
-          <p class="room-eyebrow">Start Here</p>
-          <h1 id="index-heading">Room index</h1>
+          <p class="room-eyebrow">The runway</p>
+          <h1 id="index-heading">Room Map</h1>
+          <p>Rooms 0–42 are the first stretch.</p>
         </header>
+
+        <div class="room-prose reveal">
+          <p>
+            Start Here gives you enough structure to begin. You will learn hiragana,
+            words, and sentence patterns as Japanese needs them — not because a checklist
+            says they must come next.
+          </p>
+          <p>
+            Soon you will meet Japanese that contains things you have not formally studied.
+            That is intentional. Read what you can. Notice what you recognize.
+            When you need help, Ask ChatGPT Sensei can sit with a reading, a word, or a
+            sentence — then you continue.
+          </p>
+          <p>
+            The goal is not to finish studying Japanese.
+            The goal is for more and more of it to light up.
+          </p>
+        </div>
+
+        <div class="room-motto reveal">
+          There is a path, and you can follow it. You don’t have to understand all of it
+          yet. You can already read some of it.
+        </div>
 
         <ol class="room-index-list reveal" start="0">
           <li>
@@ -402,7 +426,25 @@
             <a href="../lesson-40/">
               <span class="room-index-num">Room 40</span>
               <span class="room-index-body">
-                <span class="room-index-title" lang="ja">ことばが さく</span>
+                <span class="room-index-title">すらすら言える-Hiragana in Rhythm</span>
+                <span class="room-index-kana"><span class="room-index-kana-label">New kana:</span> —</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="../lesson-41/">
+              <span class="room-index-num">Room 41</span>
+              <span class="room-index-body">
+                <span class="room-index-title">言葉が咲く | Words in Bloom</span>
+                <span class="room-index-kana"><span class="room-index-kana-label">New kana:</span> —</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="../lesson-42/">
+              <span class="room-index-num">Room 42</span>
+              <span class="room-index-body">
+                <span class="room-index-title">Shiba-kun Overture</span>
                 <span class="room-index-kana"><span class="room-index-kana-label">New kana:</span> —</span>
               </span>
             </a>
@@ -420,10 +462,10 @@
 
   <footer class="museum-footer">
     <div class="museum-footer-inner">
-      <nav aria-label="Footer">
+      <nav aria-label="Footer" data-no-start-here>
         <a href="../../index.html">Home</a>
-        <a href="../">Start Here</a>
-        <a href="../lesson-0/">The Genkan</a>
+        <a href="../../kml/contents/books/">Kanji Studies</a>
+        <a href="../../collections/">Video Collections</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>

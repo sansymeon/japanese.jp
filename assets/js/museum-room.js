@@ -34,8 +34,24 @@
     list.insertBefore(li, list.firstChild);
   }
 
+  function pathWithoutSlash(pathname) {
+    return (pathname || "").split("?")[0].split("#")[0].replace(/\/+$/, "");
+  }
+
+  function isStartHereLandingPath(pathname) {
+    var path = pathWithoutSlash(pathname);
+    return /(^|\/)start-here$/i.test(path) || /(^|\/)start-here\/index\.html$/i.test(path);
+  }
+
+  function isStartHereRoomsIndexPath(pathname) {
+    var path = pathWithoutSlash(pathname);
+    return /(^|\/)start-here\/rooms(\/index\.html)?$/i.test(path);
+  }
+
   function ensureStartHereFooter(nav) {
-    if (!nav) return;
+    if (!nav || nav.hasAttribute("data-no-start-here")) return;
+    if (isStartHereLandingPath(window.location.pathname)) return;
+    if (isStartHereRoomsIndexPath(window.location.pathname)) return;
     var anchors = nav.querySelectorAll("a");
     var i;
     for (i = 0; i < anchors.length; i++) {

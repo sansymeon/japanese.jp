@@ -27,13 +27,11 @@
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/17.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="17">
-  <a class="skip-link" href="#listen">Skip to listen</a>
+<body class="museum-page" data-beginner-lesson="17">
+  <a class="skip-link" href="#film">Skip to film</a>
 
   <header class="museum-header">
     <div class="museum-header-inner">
@@ -41,7 +39,7 @@
       <nav aria-label="Primary">
         <ul class="museum-nav">
           <li><a href="../">Start Here</a></li>
-          <li><a href="../../journey/">Journey</a></li>
+          <li><a href="../../journey/">About KML</a></li>
           <li><a href="../../kml/contents/books/">Kanji Studies</a></li>
           <li><a href="../../collections/">Video Collections</a></li>
           <li><a href="../../index.html">Home</a></li>
@@ -51,78 +49,19 @@
   </header>
 
   <main>
-    <section class="guided-stage" data-guided-song aria-label="濡れた橋">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/room_17/nine_lantern.jpg"
-            alt=""
-            width="1536"
-            height="1024"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/room_17/nine_lantern.jpg"
-            alt=""
-            width="1536"
-            height="1024"
-          />
+    <section class="room-section room-section--film-top" id="film" aria-label="Room film">
+      <div class="room-container">
+        <header class="room-film-heading">
+          <h1>Room 17</h1>
+          <p>濡れた橋</p>
+          <p class="room-film-lead">Listen.</p>
+        </header>
+        <div class="pathway-film-link">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=bCEEh4vydVI" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+            <img src="../assets/images/room_17.jpg" alt="" width="1672" height="941" fetchpriority="high" />
+          </a>
         </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <a class="guided-chrome-next" href="../lesson-18/">Room 18 →</a>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>濡れた橋</h1>
-          <p class="guided-welcome-lead" data-guided-lead>Listen.</p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen
-          </button>
-          <a class="guided-welcome-next" href="../lesson-18/">Continue to Room 18</a>
-        </div>
-
-        <div class="guided-lyric guided-lyric--verse" data-guided-lyric hidden>
-          <div class="guided-verse" data-verse-panel="romaji" hidden>
-            <p>nureta hashi ni</p>
-            <p>akari ga tsuzuku</p>
-          </div>
-          <div class="guided-verse" data-verse-panel="hiragana" hidden lang="ja">
-            <p>ぬれた はしに</p>
-            <p>あかりが つづく</p>
-          </div>
-          <div class="guided-verse guided-verse--furigana" data-verse-panel="furigana" hidden>
-            <p class="jp-verse" lang="ja">
-              <ruby>濡<rt>ぬ</rt></ruby>れた<ruby>橋<rt>はし</rt></ruby>に<br>
-              <ruby>灯<rt>あか</rt></ruby>りが<ruby>続<rt>つづ</rt></ruby>く
-            </p>
-          </div>
-          <div class="guided-verse" data-verse-panel="japanese" hidden lang="ja">
-            <p>濡れた橋に</p>
-            <p>灯りが続く</p>
-          </div>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Music position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
-
-        <a class="guided-continue" href="#after" data-guided-continue hidden>Continue</a>
+        <p class="room-doorway-hint">Click the doorway to enter.</p>
       </div>
     </section>
 
@@ -130,7 +69,7 @@
       class="room-section beginner-after"
       id="after"
       data-guided-after
-      aria-labelledby="after-heading"
+      aria-labelledby="source-heading"
     >
       <div class="room-container">
         <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
@@ -139,37 +78,6 @@
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-18/">Continue to Room 18 →</a>
         </nav>
 
-        <header class="room-section-head reveal">
-          <h2 id="after-heading">Listen another way</h2>
-        </header>
-
-        <ul class="interlude-view-list reveal">
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="romaji">
-              Romaji
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="hiragana">
-              Hiragana
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="furigana">
-              Kanji + Furigana
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="japanese">
-              Japanese
-            </button>
-          </li>
-          <li>
-            <button type="button" class="museum-btn museum-btn--quiet" data-guided-view="none">
-              No lyrics
-            </button>
-          </li>
-        </ul>
 
         <div class="interlude-keep reveal">
           <p>Take this one with you.</p>
@@ -229,7 +137,7 @@
             <a class="museum-btn museum-btn--primary" href="../lesson-18/">Continue to Room 18</a>
             <a class="museum-btn museum-btn--ghost" href="../lesson-16/">Previous: Room 16</a>
             <a class="museum-btn museum-btn--ghost" href="../">Back to Start Here</a>
-            <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
+            <a class="museum-btn museum-btn--ghost" href="../rooms/">Room Map</a>
           </div>
         </div>
       </div>

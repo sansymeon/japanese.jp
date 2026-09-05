@@ -26,13 +26,11 @@
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/5.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="5">
-  <a class="skip-link" href="#listen">Skip to Listen & Follow</a>
+<body class="museum-page" data-beginner-lesson="5">
+  <a class="skip-link" href="#film">Skip to film</a>
 
   <header class="museum-header">
     <div class="museum-header-inner">
@@ -40,7 +38,7 @@
       <nav aria-label="Primary">
         <ul class="museum-nav">
           <li><a href="../">Start Here</a></li>
-          <li><a href="../../journey/">Journey</a></li>
+          <li><a href="../../journey/">About KML</a></li>
           <li><a href="../../kml/contents/books/">Kanji Studies</a></li>
           <li><a href="../../collections/">Video Collections</a></li>
           <li><a href="../../index.html">Home</a></li>
@@ -50,71 +48,20 @@
   </header>
 
   <main>
-    <section class="guided-stage" data-guided-song aria-label="Japanese food is good">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/room-5.jpg"
-            alt=""
-            width="1920"
-            height="1080"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/room-5.jpg"
-            alt=""
-            width="1920"
-            height="1080"
-          />
+    <section class="room-section room-section--film-top" id="film" aria-label="Room film">
+      <div class="room-container">
+        <header class="room-film-heading">
+          <h1>Room 5</h1>
+          <p>Japanese food is good</p>
+          <p class="room-film-lead">The same question — now about taste.</p>
+          <p class="room-film-hint">おいしい and すし you can already read. The other foods can stay as scenery.</p>
+        </header>
+        <div class="pathway-film-link">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=H09lWLQY9Rg" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+            <img src="../assets/images/room_05.jpg" alt="" width="1672" height="941" fetchpriority="high" />
+          </a>
         </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
-          <button type="button" class="guided-chrome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>Japanese food is good</h1>
-          <p class="guided-welcome-lead" data-guided-lead>
-            The same question — now about taste.
-          </p>
-          <p class="guided-welcome-hint" data-guided-hint>
-            おいしい and すし you can already read. The other foods can stay as scenery.
-          </p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen & Follow
-          </button>
-          <button type="button" class="guided-welcome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div
-          class="guided-lyric"
-          data-guided-lyric
-          hidden
-          aria-live="polite"
-        >
-          <p class="jp-kana" lang="ja" data-guided-ja></p>
-          <p class="jp-romaji" data-guided-romaji></p>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Song position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
+        <p class="room-doorway-hint">Click the doorway to enter.</p>
       </div>
     </section>
 
@@ -204,11 +151,9 @@
           <p>Next: pictures. これは すしです。</p>
           <div class="room-actions">
             <a class="museum-btn museum-btn--primary" href="../lesson-6/">Continue to Room 6</a>
-            <button type="button" class="museum-btn museum-btn--ghost" data-guided-replay>
-              Listen again
-            </button>
+            <a class="museum-btn museum-btn--ghost" href="https://www.youtube.com/watch?v=H09lWLQY9Rg" target="_blank" rel="noopener noreferrer">Watch the film again</a>
             <a class="museum-btn museum-btn--ghost" href="../lesson-4/">Previous: Room 4</a>
-            <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
+            <a class="museum-btn museum-btn--ghost" href="../rooms/">Room Map</a>
           </div>
         </div>
       </div>

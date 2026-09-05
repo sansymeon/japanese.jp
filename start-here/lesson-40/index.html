@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <!--
-  Beginner Room 40 — ことばが さく.
-  Final Start Here room. Hiragana reading epilogue, not a teaching lesson.
-  No new kana. Timed lyrics are hiragana only: no kanji, no romaji, no English.
-  Preserve sung Japanese exactly, including みちても.
-  Audio: start-here/audio/hiragana_song.mp3 (Version 2, ~4:24).
-  Images: start-here/assets/images/lesson_40/ — do not rename or replace.
-  kotobaga_saku_2.png is reserved for 4:15. nemuru.png is the existing Shiba-kun.
-  After listen / Skip listening: distinct hiragana from the sung lyrics, once each.
-  No Room 41.
+  Room 40 — すらすら言える-Hiragana in Rhythm.
 -->
 <html lang="en" class="museum-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room 40 — ことばが さく — Kanji・Music・Landscape</title>
-  <meta
-    name="description"
-    content="ことばが さく. You have learned the pieces. Now simply read Japanese."
-  />
+  <title>Room 40 — すらすら言える-Hiragana in Rhythm — Kanji・Music・Landscape</title>
+  <meta name="description" content="すらすら言える. Hiragana in rhythm — what you just heard." />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,16 +17,12 @@
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
   <link rel="stylesheet" href="../css/beginner-pathway.css" />
-  <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
   <script src="../js/beginner-course.js" defer></script>
-  <script src="../data/rooms/40.js" defer></script>
   <script src="../js/beginner-lesson.js" defer></script>
-  <script src="../js/beginner-guided-song.js" defer></script>
-  <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
-<body class="museum-page beginner-guided-page" data-beginner-lesson="40">
-  <a class="skip-link" href="#listen">Skip to Listen</a>
+<body class="museum-page" data-beginner-lesson="40">
+  <a class="skip-link" href="#film">Skip to film</a>
 
   <header class="museum-header">
     <div class="museum-header-inner">
@@ -45,7 +30,7 @@
       <nav aria-label="Primary">
         <ul class="museum-nav">
           <li><a href="../">Start Here</a></li>
-          <li><a href="../../journey/">Journey</a></li>
+          <li><a href="../../journey/">About KML</a></li>
           <li><a href="../../kml/contents/books/">Kanji Studies</a></li>
           <li><a href="../../collections/">Video Collections</a></li>
           <li><a href="../../index.html">Home</a></li>
@@ -55,160 +40,79 @@
   </header>
 
   <main>
-    <section class="guided-stage" data-guided-song aria-label="ことばが さく">
-      <div class="guided-stage-frame">
-        <div class="guided-stage-layers">
-          <img
-            class="guided-layer is-active"
-            src="../assets/images/lesson_40/genki_desuka.jpg"
-            alt=""
-            width="1672"
-            height="941"
-            fetchpriority="high"
-          />
-          <img
-            class="guided-layer"
-            src="../assets/images/lesson_40/genki_desuka.jpg"
-            alt=""
-            width="1672"
-            height="941"
-          />
+    <section class="room-section room-section--film-top" id="film" aria-label="Room film">
+      <div class="room-container">
+        <header class="room-film-heading">
+          <h1>Room 40</h1>
+          <p>すらすら言える-Hiragana in Rhythm</p>
+        </header>
+        <div class="pathway-film-link">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=XKzuVYryXrU" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+            <img src="../assets/images/room_40.jpg" alt="" width="1536" height="1024" fetchpriority="high" />
+          </a>
         </div>
-        <div class="guided-stage-shade" aria-hidden="true"></div>
-
-        <div class="guided-chrome">
-          <button type="button" class="guided-chrome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div class="guided-welcome" data-guided-welcome>
-          <h1 id="listen" data-guided-title>ことばが さく</h1>
-          <p class="guided-welcome-lead" data-guided-lead>
-            You have learned the pieces. Now simply read Japanese.
-          </p>
-          <button type="button" class="guided-start" data-guided-start>
-            <span class="guided-start-icon" aria-hidden="true">▶</span>
-            Listen
-          </button>
-          <button type="button" class="guided-welcome-next" data-guided-skip>Skip listening</button>
-        </div>
-
-        <div
-          class="guided-lyric"
-          data-guided-lyric
-          hidden
-          aria-live="polite"
-        >
-          <p class="jp-kana" lang="ja" data-guided-ja></p>
-        </div>
-
-        <div class="guided-transport" data-guided-transport hidden>
-          <button type="button" data-guided-pause aria-pressed="false">Play</button>
-          <input
-            class="guided-seek"
-            data-guided-seek
-            type="range"
-            min="0"
-            max="1000"
-            value="0"
-            step="1"
-            aria-label="Song position"
-          />
-          <span class="guided-time" data-guided-time></span>
-        </div>
+        <p class="room-doorway-hint">Click the doorway to enter.</p>
       </div>
     </section>
 
-    <section
-      class="room-section beginner-after"
-      id="after"
-      data-guided-after
-      aria-labelledby="after-heading"
-    >
+    <section class="room-section beginner-after" id="after" aria-labelledby="after-heading">
       <div class="room-container">
         <nav class="pathway-nav pathway-nav--top reveal" aria-label="Room sequence">
-          <a class="pathway-nav-back" data-room-nav="prev" href="../lesson-39/">← Room 39</a>
-          <span class="pathway-nav-status" data-room-nav="current">Room 40</span>
-          <a class="pathway-nav-next" href="../rooms/">Room Index →</a>
+          <a class="pathway-nav-back" href="../lesson-39/">← Room 39</a>
+          <span class="pathway-nav-status">Room 40</span>
+          <a class="pathway-nav-next" href="../lesson-41/">Continue to Room 41 →</a>
         </nav>
 
         <header class="room-section-head reveal">
-          <h2 id="after-heading">ことばが さく</h2>
+          <h2 id="after-heading">すらすら言える</h2>
         </header>
 
         <article class="beginner-exhibit reveal">
           <section class="kana-complete kana-reference-section" aria-labelledby="map-heading">
-            <h2 id="map-heading">You just read and heard all of these.</h2>
+            <h2 id="map-heading">You just heard these.</h2>
             <div class="kana-puzzle" data-kana-chart-full lang="ja"></div>
-            <p class="kana-complete-note">
-              Four minutes of Japanese — and you read it in hiragana.
-            </p>
           </section>
 
-          <figure class="pathway-verse room40-song-verse">
+          <figure class="pathway-verse">
             <p class="jp-verse" lang="ja">
-              こんにちは、げんきですか<br>
-              わたしは げんきです<br>
-              あしたは あめですか<br>
-              かぜが よわいです<br>
-              ゆっくり、おねがい<br>
-              もう いちど<br>
-              きかせて ください<br>
-              こたえは ひくい こえで<br>
-              こんにちは、げんきですか<br>
-              げんきです、げんきです<br>
-              わたしは げんきです<br>
-              すこしずつ、おぼえる<br>
-              おはよう、ありがとう<br>
-              ことばが さく<br>
-              これは ほんです<br>
-              これは みずです<br>
-              あかい はなが あります<br>
-              しずかに ねむれます<br>
-              ひらがなで やさしく よんで<br>
-              だいじょうぶ<br>
-              みちても<br>
-              また ならえる<br>
-              きみの こえで
+              あいうえお<br>
+              あかさたな<br>
+              はまやらわ<br>
+              かきくけこ<br>
+              さしすせそ<br>
+              たちつてと<br>
+              なにぬねの<br>
+              はひふへほ<br>
+              まみむめも<br>
+              やゆよ<br>
+              らりるれろ<br>
+              わをん<br>
+              すらすら いえる<br>
+              やさしく<br>
+              おぼえる<br>
+              きれいに ならぶ<br>
+              がぎぐげご<br>
+              だじずぜぞ<br>
+              ばびぶべぼ<br>
+              ぱぴぷぺぽ<br>
+              ひとつずつ ゆっくりで いい<br>
+              こえに のせて<br>
+              また あした
             </p>
           </figure>
-
-          <div
-            data-chat-sensei
-            data-prompt-set="already-read"
-            data-pathway-room="40"
-            data-source="start-here"
-            data-known-pieces='[{"jp":"こんにちは"},{"jp":"げんきですか"},{"jp":"わたしは げんきです"},{"jp":"おはよう"},{"jp":"ありがとう"},{"jp":"これは ほんです"},{"jp":"みず"},{"jp":"はな"},{"jp":"ねむる"},{"jp":"ひらがな"}]'
-          ></div>
         </article>
-
-        <!--
-          Optional later appendix: Learn the song / What is it saying?
-          Do not add a translation lesson to the main Room 40 experience.
-          The sung Japanese is preserved as sung, including unusual lines.
-        -->
 
         <div class="room-forward reveal">
           <div class="room-actions">
-            <a class="museum-btn museum-btn--primary" href="../">Back to Start Here</a>
-            <button type="button" class="museum-btn museum-btn--ghost" data-guided-replay>
-              Listen again
-            </button>
-            <a class="museum-btn museum-btn--ghost" href="../rooms/">Index</a>
+            <a class="museum-btn museum-btn--primary" href="../lesson-41/">Continue to Room 41</a>
+            <a class="museum-btn museum-btn--ghost" href="https://www.youtube.com/watch?v=XKzuVYryXrU" target="_blank" rel="noopener noreferrer">Watch the film again</a>
+            <a class="museum-btn museum-btn--ghost" href="../rooms/">Room Map</a>
             <a class="museum-btn museum-btn--ghost" href="../lesson-39/">Previous: Room 39</a>
-            <a
-              class="museum-btn museum-btn--ghost"
-              href="../../kml/contents/books/"
-            >Continue the KML Journey</a>
-            <a
-              class="museum-btn museum-btn--ghost"
-              href="https://www.youtube.com/@ambientkanji"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Ambient Kanji Gallery</a>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="museum-footer">
@@ -216,8 +120,7 @@
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
         <a href="../">Start Here</a>
-        <a href="../rooms/">Room Index</a>
-        <a href="../lesson-39/">Room 39</a>
+        <a href="../rooms/">Room Map</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>

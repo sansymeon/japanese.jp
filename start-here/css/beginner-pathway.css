@@ -809,14 +809,14 @@ button.museum-btn {
   color: var(--ink);
 }
 
-/* Simplified room: large 3:2 film thumbnail opens YouTube in a new tab. */
+/* Film doorway: 16:9 stage. Mixed-aspect stills sit fully inside (no crop). */
 .pathway-film-link {
   display: block;
   position: relative;
   width: 100%;
   max-width: 42rem;
   margin: 0 auto 1.35rem;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   background: #0b0b0c;
   border-radius: 2px;
   overflow: hidden;
@@ -848,7 +848,8 @@ button.museum-btn {
 .pathway-film-link img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .pathway-film-link-label {
@@ -1173,7 +1174,8 @@ button.museum-btn {
   animation: room40-drift 36s ease-in-out infinite alternate;
 }
 
-[data-beginner-lesson="40"] .kana-complete .kana-puzzle-voiced {
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle-voiced,
+[data-beginner-lesson="41"] .kana-complete .kana-puzzle-voiced {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -1195,11 +1197,13 @@ button.museum-btn {
   animation-duration: 48s;
 }
 
-[data-beginner-lesson="40"] .kana-complete {
+[data-beginner-lesson="40"] .kana-complete,
+[data-beginner-lesson="41"] .kana-complete {
   margin: 1.25rem 0 2.75rem;
 }
 
-[data-beginner-lesson="40"] .kana-complete h2 {
+[data-beginner-lesson="40"] .kana-complete h2,
+[data-beginner-lesson="41"] .kana-complete h2 {
   margin: 0 0 1.15rem;
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.3vw, 1.45rem);
@@ -1208,23 +1212,27 @@ button.museum-btn {
   color: var(--ink);
 }
 
-[data-beginner-lesson="40"] .kana-complete .kana-puzzle {
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle,
+[data-beginner-lesson="41"] .kana-complete .kana-puzzle {
   margin: 1.35rem 0 0;
   max-width: 44rem;
 }
 
-[data-beginner-lesson="40"] .kana-complete .kana-puzzle-cell:not(.is-empty):not(.is-void) {
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle-cell:not(.is-empty):not(.is-void),
+[data-beginner-lesson="41"] .kana-complete .kana-puzzle-cell:not(.is-empty):not(.is-void) {
   color: var(--ivory);
   border-color: rgba(201, 164, 88, 0.22);
   background: rgba(201, 164, 88, 0.05);
 }
 
-[data-beginner-lesson="40"] .kana-complete .kana-puzzle-voiced .kana-puzzle-cell {
+[data-beginner-lesson="40"] .kana-complete .kana-puzzle-voiced .kana-puzzle-cell,
+[data-beginner-lesson="41"] .kana-complete .kana-puzzle-voiced .kana-puzzle-cell {
   width: clamp(1.85rem, 5.6vw, 2.55rem);
   flex: 0 0 auto;
 }
 
-[data-beginner-lesson="40"] .kana-complete-note {
+[data-beginner-lesson="40"] .kana-complete-note,
+[data-beginner-lesson="41"] .kana-complete-note {
   margin: 1.75rem 0 0;
   max-width: 36rem;
   color: var(--ink-quiet);
@@ -1232,12 +1240,14 @@ button.museum-btn {
   line-height: 1.7;
 }
 
-[data-beginner-lesson="40"] .room40-song-verse {
+[data-beginner-lesson="40"] .room40-song-verse,
+[data-beginner-lesson="41"] .room40-song-verse {
   margin: 2.75rem 0 1.5rem;
   text-align: left;
 }
 
-[data-beginner-lesson="40"] .room40-song-verse .jp-verse {
+[data-beginner-lesson="40"] .room40-song-verse .jp-verse,
+[data-beginner-lesson="41"] .room40-song-verse .jp-verse {
   font-size: clamp(1.05rem, 2vw, 1.22rem);
   line-height: 2.05;
   letter-spacing: 0.1em;
@@ -1255,7 +1265,8 @@ button.museum-btn {
     letter-spacing: 0.08em;
   }
 
-  [data-beginner-lesson="40"] .kana-complete .kana-puzzle {
+  [data-beginner-lesson="40"] .kana-complete .kana-puzzle,
+  [data-beginner-lesson="41"] .kana-complete .kana-puzzle {
     max-width: none;
   }
 }
@@ -1288,3 +1299,63 @@ button.museum-btn {
   }
 }
 
+
+
+/* Film doorway above preserved Start Here lesson material */
+.room-section--film-top {
+  padding-top: clamp(5.5rem, 12vw, 7.5rem);
+  padding-bottom: 0.5rem;
+}
+.room-film-heading {
+  text-align: center;
+  margin: 0 auto 1.25rem;
+  max-width: 40rem;
+}
+.room-film-heading h1 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.room-film-heading > p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--ink-quiet);
+}
+.room-film-lead,
+.room-film-hint {
+  margin: 0.85rem 0 0;
+  color: var(--ink-quiet);
+}
+.room-section--film-top .room-doorway-hint {
+  text-align: center;
+  margin: 0.85rem 0 0;
+  color: var(--ink-quiet);
+}
+.room-section--film-top .pathway-film-link {
+  max-width: none;
+}
+.room-hero-film {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 0;
+  cursor: pointer;
+}
+.room-hero:has(.room-hero-film) .room-hero-media {
+  background: #0b0b0c;
+}
+.room-hero:has(.room-hero-film) .room-hero-media img,
+.room-hero-film img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+  animation: none;
+}
+/* Title overlay stays visible; clicks reach the film doorway. */
+.room-hero:has(.room-hero-film) .room-hero-inner {
+  pointer-events: none;
+}

@@ -42,7 +42,7 @@
     var indexLink = document.querySelector("[data-room-nav='index']");
     if (indexLink) {
       indexLink.href = "../rooms/";
-      indexLink.textContent = "Index";
+      indexLink.textContent = "Room Map";
     }
 
     var nextLink = document.querySelector("[data-room-nav='next']");
@@ -71,8 +71,8 @@
     var image = document.createElement("img");
     image.src = lesson.filmImage;
     image.alt = "";
-    image.width = 1200;
-    image.height = 800;
+    image.width = 1672;
+    image.height = 941;
     image.loading = "eager";
     image.decoding = "async";
 

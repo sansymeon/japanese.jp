@@ -10,11 +10,11 @@
 
   const HERO_ORDER = [
     "kanjiCollection",
+    "verses",
     "plannedLessons",
     "lessonsCompleted",
     "kanjiPublished",
-    "versesPublished",
-    "latestRelease",
+    "youtubeVideos",
   ];
 
   function fmtInt(n) {
@@ -98,7 +98,7 @@
     HERO_ORDER.forEach(function (key) {
       const item = hero[key];
       if (!item) return;
-      const isText = key === "latestRelease" || typeof item.value === "string";
+      const isText = typeof item.value === "string";
       const value = isText ? String(item.value) : fmtInt(item.value);
       grid.appendChild(
         card(value, item.label, item.detail || "", item.note || "", isText)
@@ -107,23 +107,31 @@
   }
 
   function renderPermanent(permanent, hero) {
-    const source = permanent || {
-      kanjiCollection: hero && hero.kanjiCollection,
-      plannedLessons: hero && hero.plannedLessons,
-    };
+    const source = permanent || {};
+    const order = source.order || [
+      "kanjiCollection",
+      "verses",
+      "strokeOrderPages",
+      "plannedLessons",
+      "vocabularyUnique",
+      "compoundsUnique",
+      "components",
+    ];
     const items = [];
-    if (source.kanjiCollection) {
+    order.forEach(function (key) {
+      const card = source[key];
+      if (!card || card.value == null) return;
       items.push({
-        value: fmtInt(source.kanjiCollection.value),
-        label: source.kanjiCollection.label,
-        detail: source.kanjiCollection.detail || "Total KML library",
+        value: fmtInt(card.value),
+        label: card.label,
+        detail: card.detail || "",
       });
-    }
-    if (source.plannedLessons) {
+    });
+    if (!items.length && hero && hero.kanjiCollection) {
       items.push({
-        value: fmtInt(source.plannedLessons.value),
-        label: source.plannedLessons.label,
-        detail: source.plannedLessons.detail || "Full lesson curriculum",
+        value: fmtInt(hero.kanjiCollection.value),
+        label: hero.kanjiCollection.label,
+        detail: hero.kanjiCollection.detail || "",
       });
     }
     fillGrid("permanentGrid", items);
@@ -131,6 +139,8 @@
 
   function renderPublished(published) {
     if (!published) return;
+
+    const scope = published.curriculumScope || "Completed lessons";
 
     fillGrid("progressGrid", [
       {
@@ -142,31 +152,46 @@
       },
       {
         value: fmtInt(published.kanjiPublished),
-        label: "Kanji Published",
+        label: "Lesson Kanji Published",
+        detail: scope,
       },
       {
         value: fmtInt(published.versesPublished),
-        label: "Verses Published",
+        label: "Lesson Verses Published",
+        detail: scope,
       },
       {
         value: fmtInt(published.heroIllustrations),
         label: "Hero Illustrations",
+        detail: scope,
       },
       {
         value: fmtInt(published.verseIllustrations),
         label: "Verse Illustrations",
+        detail: scope,
       },
       {
         value: fmtInt(published.componentsPublished),
         label: "Component Entries",
+        detail: scope,
       },
     ]);
 
     const coverage = published.coverage || {};
-    fillGrid(
-      "jlptGrid",
-      coverageCards(coverage.jlpt || {}, ["N5", "N4", "N3", "N2", "N1"])
-    );
+    const jlptCards = coverageCards(coverage.jlpt || {}, [
+      "N5",
+      "N4",
+      "N3",
+      "N2",
+      "N1",
+    ]).map(function (item) {
+      return {
+        value: item.value,
+        label: item.label,
+        detail: item.detail + " · " + scope,
+      };
+    });
+    fillGrid("jlptGrid", jlptCards);
     fillGrid(
       "gradesGrid",
       coverageCards(coverage.grades || {}, [
@@ -177,7 +202,13 @@
         "5",
         "6",
         "S",
-      ])
+      ]).map(function (item) {
+        return {
+          value: item.value,
+          label: item.label,
+          detail: item.detail + " · " + scope,
+        };
+      })
     );
 
     const joyo = coverage.joyo;
@@ -188,63 +219,111 @@
             {
               value: fmtPercent(joyo.percent),
               label: "Jōyō Coverage",
-              detail: fmtOf(joyo.covered, joyo.total),
+              detail: fmtOf(joyo.covered, joyo.total) + " · " + scope,
             },
             {
               value: fmtInt(joyo.covered),
               label: "Jōyō Kanji Published",
-              detail: "From completed lessons",
+              detail: scope,
             },
           ]
         : []
     );
+  }
 
-    fillGrid("resourcesGrid", [
+  function fmtResourceItems(items) {
+    return (items || [])
+      .filter(function (item) {
+        return item && item.value != null;
+      })
+      .map(function (item) {
+        return {
+          value: fmtInt(item.value),
+          label: item.label,
+          detail: item.detail || "",
+        };
+      });
+  }
+
+  function curriculumResourceCards(published, scope) {
+    return [
       {
         value: fmtInt(published.vocabularyPublished),
-        label: "Vocabulary Published",
+        label: "Lesson Vocabulary",
+        detail: scope,
       },
       {
         value: fmtInt(published.compoundEntries),
-        label: "Compound Entries",
+        label: "Lesson Compounds",
+        detail: scope,
       },
       {
         value: fmtInt(published.readingEntries),
-        label: "Reading Entries",
+        label: "Lesson Readings",
+        detail: scope,
       },
       {
         value: fmtInt(published.componentsPublished),
-        label: "Component Entries",
+        label: "Lesson Components",
+        detail: scope,
       },
       {
         value: fmtInt(published.strokeOrderPages),
-        label: "Stroke Order Pages",
+        label: "Lesson Stroke Pages",
+        detail: scope,
       },
       {
         value: fmtInt(published.lessonCovers),
         label: "Lesson Covers",
+        detail: scope,
       },
-    ]);
+    ];
+  }
+
+  function renderResources(data) {
+    const published = data.published || {};
+    const scope = published.curriculumScope || "Completed lessons";
+    const resources = data.resources || {};
+    fillGrid(
+      "resourcesGrid",
+      resources.curriculum && resources.curriculum.length
+        ? fmtResourceItems(resources.curriculum)
+        : curriculumResourceCards(published, scope)
+    );
+    fillGrid("ecosystemResourcesGrid", fmtResourceItems(resources.ecosystem));
   }
 
   function renderMedia(media) {
     if (!media) return;
+    const youtube = media.youtube || {};
     fillGrid("mediaGrid", [
+      {
+        value: fmtInt(youtube.value),
+        label: youtube.label || "YouTube Videos",
+        detail:
+          youtube.note ||
+          youtube.detail ||
+          (youtube.asOf ? "Channel total as of " + youtube.asOf : ""),
+      },
+      {
+        value: fmtInt(media.videoCollectionCount),
+        label: "Video Collections",
+        detail: media.videoCollectionDetail || "Website playlist galleries",
+      },
       {
         value: fmtInt(media.galleryExhibitionCount),
         label: "Gallery Exhibitions",
+        detail: media.galleryDetail || "Published exhibition films",
       },
       {
         value: fmtInt(media.ambientCollectionCount),
         label: "Ambient Collections",
-      },
-      {
-        value: fmtInt(media.videos),
-        label: "Videos",
+        detail: media.ambientDetail || "Published ambient collections",
       },
       {
         value: fmtInt(media.audioTracks),
         label: "Audio Tracks",
+        detail: media.audioDetail || "Website soundtrack files",
       },
     ]);
   }
@@ -266,6 +345,7 @@
     renderHero(data.hero);
     renderPermanent(data.permanent, data.hero);
     renderPublished(data.published);
+    renderResources(data);
     renderMedia(data.media);
 
     const genEl = document.getElementById("statsGeneratedAt");
@@ -273,7 +353,7 @@
       const d = new Date(data.generatedAt);
       genEl.textContent = Number.isNaN(d.getTime())
         ? ""
-        : "Published progress as of " + d.toLocaleString();
+        : "Curriculum figures as of " + d.toLocaleString();
     }
   }
 
