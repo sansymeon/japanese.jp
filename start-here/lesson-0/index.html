@@ -20,16 +20,17 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
-  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css?v=romaji-hide" />
   <script src="../../assets/js/museum-room.js" defer></script>
-  <script src="../js/beginner-course.js" defer></script>
+  <script src="../js/beginner-course.js?v=romaji-hide" defer></script>
   <script src="../js/static-study-data.js" defer></script>
-  <script src="../js/static-study.js" defer></script>
+  <script src="../js/static-study.js?v=romaji-hide" defer></script>
+  <script src="../js/beginner-lesson.js?v=romaji-hide" defer></script>
 </head>
 <body class="museum-page beginner-room-simple" data-beginner-lesson="0">
-  <a class="skip-link" href="#lesson">Skip to lesson</a>
+  <a class="skip-link" href="#film">Skip to film</a>
 
-  <header class="museum-header museum-header--solid">
+  <header class="museum-header">
     <div class="museum-header-inner">
       <a class="museum-brand" href="../../index.html">Kanji・Music・Landscape</a>
       <nav aria-label="Primary">
@@ -45,10 +46,14 @@
   </header>
 
   <main>
-    <section class="room-section" id="lesson">
-      <div class="room-container room-container--narrow">
+    <section class="room-section room-section--film-top" id="film" aria-label="Room film">
+      <div class="room-container">
+        <header class="room-film-heading">
+          <p class="room-film-room">Room 0</p>
+          <h1>The Genkan</h1>
+        </header>
         <div class="pathway-film-link" data-room-film>
-          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=hdMZBbYnY_U" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=hdMZBbYnY_U" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
             <img
               src="../assets/images/room_00.jpg"
               alt=""
@@ -56,24 +61,32 @@
               height="941"
               fetchpriority="high"
             />
+            <span class="pathway-film-affordance" aria-hidden="true"><span class="pathway-film-affordance-icon">▶</span> Watch on YouTube</span>
           </a>
         </div>
+      </div>
+    </section>
 
-        <nav class="pathway-nav" aria-label="Lesson sequence">
+    <section class="room-section" id="lesson">
+      <div class="room-container room-container--narrow">
+        <nav class="pathway-nav pathway-nav--top" aria-label="Lesson sequence">
           <a class="pathway-nav-back" data-room-nav="prev" hidden>← Previous Lesson</a>
           <a class="pathway-nav-index" data-room-nav="index" href="../rooms/">Room Map</a>
-          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-1/">Next Lesson →</a>
+          <a class="pathway-nav-next" data-room-nav="next" href="../lesson-1/">Continue to Room 1 →</a>
         </nav>
 
         <section
           class="static-study"
           data-static-study
           data-script="hiragana"
-          aria-labelledby="static-study-title"
+          aria-labelledby="static-study-next"
         >
-          <h1 class="static-study-title" id="static-study-title" lang="ja" data-static-study-title>あ　い　う　え　お</h1>
+          <p class="static-study-lead" id="static-study-next">
+            In this room, you’ll meet these five hiragana.
+          </p>
+          <h2 class="static-study-title" id="static-study-title" lang="ja" data-static-study-title>あ　い　う　え　お</h2>
           <div class="static-study-kana" data-static-study-kana>
-            <div class="static-study-kana-grid" role="group" aria-label="New hiragana">
+            <div class="static-study-kana-grid" role="group" aria-label="Hiragana you will meet in this room">
               <div class="static-study-kana-cell">
                 <span class="static-study-kana-glyph" lang="ja">あ</span>
                 <span class="static-study-kana-romaji">a</span>

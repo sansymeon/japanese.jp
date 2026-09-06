@@ -1,12 +1,12 @@
 /**
- * Beginner lesson chrome: Romaji ON/OFF + Your Hiragana puzzle + study-room music.
+ * Beginner lesson chrome: Romaji ON/OFF + Your Hiragana puzzle.
  *
  * Romaji and the puzzle are independent. The puzzle only fills.
  * Romaji is a global line under Japanese, never mixed per-kana ruby.
  *
- * Study-room atmosphere audio loops only after an explicit press.
- * It never autoplays. Preference is remembered; the next room still
- * waits for a click.
+ * Room film is the YouTube doorway. Local MP3 atmosphere is not a
+ * page control (files remain on disk). Visitor-facing song/audio
+ * download links are stripped; YouTube remains the listening path.
  */
 (function () {
   "use strict";
@@ -34,14 +34,6 @@
   function persistRomaji(value) {
     try {
       localStorage.setItem(course.romajiStorageKey, value);
-    } catch (err) {
-      /* private mode */
-    }
-  }
-
-  function persistMusic(value) {
-    try {
-      localStorage.setItem(course.musicStorageKey, value);
     } catch (err) {
       /* private mode */
     }
@@ -131,6 +123,21 @@
     if (!mount || !lesson.showPuzzle) return;
     renderGrid(mount, lesson.encounteredKana, lesson.newKana, "learner");
 
+    var newcomers = lesson.newKana || [];
+    var meetEl = document.querySelector("[data-kana-meet]");
+    if (newcomers.length) {
+      if (!meetEl) {
+        meetEl = document.createElement("p");
+        meetEl.className = "kana-meet-label";
+        meetEl.setAttribute("data-kana-meet", "");
+        mount.parentNode.insertBefore(meetEl, mount);
+      }
+      meetEl.hidden = false;
+      meetEl.textContent = "In this room, you’ll meet:";
+    } else if (meetEl) {
+      meetEl.hidden = true;
+    }
+
     var countEl = document.querySelector("[data-kana-puzzle-count]");
     if (countEl) {
       var n = (lesson.encounteredKana || []).length;
@@ -212,109 +219,241 @@
     renderGrid(mount, null, null, "reference");
   }
 
-  function fillNav() {
-    var status = document.querySelector("[data-room-nav='current']");
-    if (status) status.textContent = lesson.roomLabel || ("Room " + lesson.id);
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
 
-    var prevLink = document.querySelector("[data-room-nav='prev']");
-    if (prevLink && lesson.prev != null && course.lessons[lesson.prev]) {
-      var prev = course.lessons[lesson.prev];
-      var prevName = prev.id === "0" ? prev.displayName : prev.roomLabel;
-      prevLink.textContent = "← " + prevName;
+  function splitHeroTitle(text) {
+    var t = String(text || "").replace(/\s+/g, " ").trim();
+    var m = t.match(/^(Room\s+\d+)\s*[—–-]\s*(.+)$/);
+    if (m) return { room: m[1], title: m[2] };
+    return { room: t, title: "" };
+  }
+
+  function youtubeWatchFromEmbed(src) {
+    var m = String(src || "").match(/embed\/([^?&/]+)/);
+    return m ? "https://www.youtube.com/watch?v=" + m[1] : "";
+  }
+
+  function pathwayRoomNumber() {
+    var n = parseInt(lessonId, 10);
+    return n >= 1 && n <= 42 ? n : null;
+  }
+
+  var WATCH_ON_YOUTUBE = "Watch on YouTube";
+
+  function convertHeroFilmToDoorway() {
+    var hero = document.querySelector(".room-hero");
+    if (!hero || document.querySelector(".room-section--film-top")) return;
+    var film = hero.querySelector("a.room-hero-film");
+    var img = hero.querySelector(".room-hero-media img");
+    var h1 = hero.querySelector("h1");
+    if (!img || !h1) return;
+    var href = film ? film.getAttribute("href") : "";
+    if (!href) {
+      var iframe = document.querySelector("iframe[src*='youtube.com/embed']");
+      if (iframe) href = youtubeWatchFromEmbed(iframe.getAttribute("src"));
     }
+    if (!href) return;
 
-    var nextLink = document.querySelector("[data-room-nav='next']");
-    if (nextLink && lesson.next != null && course.lessons[lesson.next]) {
-      var next = course.lessons[lesson.next];
-      nextLink.textContent = "Continue to " + next.roomLabel + " →";
+    var parts = splitHeroTitle(h1.textContent || "");
+    var roomKicker = "Room " + (pathwayRoomNumber() != null ? pathwayRoomNumber() : lessonId);
+    var titleText = parts.title;
+    if (!titleText) {
+      var raw = (h1.textContent || "").replace(/\s+/g, " ").trim();
+      if (!/^Room\s+\d+$/i.test(raw)) titleText = raw;
+      else titleText = parts.room;
+    }
+    var section = document.createElement("section");
+    section.className = "room-section room-section--film-top";
+    section.id = "film";
+    section.setAttribute("aria-label", "Room film");
+    section.innerHTML =
+      '<div class="room-container">' +
+      '<header class="room-film-heading">' +
+      '<p class="room-film-room">' +
+      escapeHtml(roomKicker) +
+      "</p>" +
+      "<h1>" +
+      escapeHtml(titleText) +
+      "</h1>" +
+      "</header>" +
+      '<div class="pathway-film-link">' +
+      '<a class="pathway-film-link-hit" href="' +
+      escapeHtml(href) +
+      '" target="_blank" rel="noopener noreferrer" aria-label="' +
+      WATCH_ON_YOUTUBE +
+      '">' +
+      img.outerHTML +
+      "</a></div></div>";
+    hero.replaceWith(section);
+
+    document.querySelectorAll(".pathway-film-exhibit").forEach(function (el) {
+      el.remove();
+    });
+    var skip = document.querySelector(".skip-link");
+    if (skip) {
+      skip.setAttribute("href", "#film");
+      skip.textContent = "Skip to film";
     }
   }
 
-  function bindAudio() {
-    document.querySelectorAll("[data-beginner-audio]").forEach(function (audio) {
-      function hide() {
-        audio.hidden = true;
-      }
-      audio.addEventListener("error", hide);
-      if (audio.error) hide();
+  function normalizeFilmHeading() {
+    var n = pathwayRoomNumber();
+    if (n == null) return;
+    var heading = document.querySelector(
+      ".room-section--film-top .room-film-heading"
+    );
+    if (!heading) return;
+
+    var roomLabel = "Room " + n;
+    var h1 = heading.querySelector("h1");
+    var kicker = heading.querySelector(".room-film-room");
+    var titleText = "";
+
+    if (h1) {
+      var h1Text = (h1.textContent || "").replace(/\s+/g, " ").trim();
+      if (!/^Room\s+\d+$/i.test(h1Text)) titleText = h1Text;
+    }
+    if (!titleText) {
+      var extra = heading.querySelector("p:not(.room-film-room)");
+      if (extra) titleText = extra.textContent.replace(/\s+/g, " ").trim();
+    }
+
+    if (!kicker) {
+      kicker = document.createElement("p");
+      kicker.className = "room-film-room";
+    }
+    kicker.textContent = roomLabel;
+
+    if (!h1) {
+      h1 = document.createElement("h1");
+    }
+    if (titleText) h1.textContent = titleText;
+
+    heading.innerHTML = "";
+    heading.appendChild(kicker);
+    heading.appendChild(h1);
+  }
+
+  function stripFilmTopExtras() {
+    if (pathwayRoomNumber() == null) return;
+    var top = document.querySelector(".room-section--film-top .room-container");
+    if (!top) return;
+    Array.prototype.slice.call(top.children).forEach(function (el) {
+      if (el.classList.contains("room-film-heading")) return;
+      if (el.classList.contains("pathway-film-link")) return;
+      el.remove();
     });
   }
 
-  function bindStudyMusic() {
-    if (lesson.mode !== "study-room") return;
-    var pool = lesson.atmospherePool;
-    var single = lesson.atmosphereAudio;
-    if ((!pool || !pool.length) && !single) return;
-    var btn = document.querySelector("[data-study-music]");
-    if (!btn) return;
-
-    var audio = new Audio();
-    audio.preload = "metadata";
-    var currentSrc = "";
-    var shuffle = pool && pool.length > 1;
-
-    function pickNext() {
-      if (!shuffle) return single;
-      var choices = pool.filter(function (src) {
-        return src !== currentSrc;
-      });
-      if (!choices.length) choices = pool.slice();
-      return choices[Math.floor(Math.random() * choices.length)];
+  function setWatchAffordance(hit) {
+    hit.setAttribute("aria-label", WATCH_ON_YOUTUBE);
+    var badge = hit.querySelector(
+      ".pathway-film-affordance, .pathway-film-link-label"
+    );
+    if (!badge) {
+      badge = document.createElement("span");
+      hit.appendChild(badge);
     }
+    badge.className = "pathway-film-affordance";
+    badge.setAttribute("aria-hidden", "true");
+    badge.innerHTML =
+      '<span class="pathway-film-affordance-icon">▶</span> ' + WATCH_ON_YOUTUBE;
+  }
 
-    function loadNext() {
-      currentSrc = pickNext();
-      audio.src = currentSrc;
-    }
-
-    if (shuffle) {
-      audio.loop = false;
-      loadNext();
-      audio.addEventListener("ended", function () {
-        if (btn.getAttribute("aria-pressed") !== "true") return;
-        loadNext();
-        audio.play().catch(function () {
-          setPlaying(false);
-        });
-      });
-    } else {
-      audio.loop = true;
-      audio.src = single;
-    }
-
-    btn.hidden = false;
-
-    function setPlaying(on) {
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.textContent = on ? "♪ Room music on" : "♪ Play room music";
-    }
-
-    setPlaying(false);
-
-    btn.addEventListener("click", function () {
-      if (audio.paused) {
-        audio
-          .play()
-          .then(function () {
-            persistMusic("on");
-            setPlaying(true);
-          })
-          .catch(function () {
-            setPlaying(false);
-          });
-      } else {
-        audio.pause();
-        persistMusic("off");
-        setPlaying(false);
+  function enhanceFilmDoorways() {
+    var scope =
+      pathwayRoomNumber() != null
+        ? ".room-section--film-top .pathway-film-link-hit"
+        : ".pathway-film-link-hit";
+    document.querySelectorAll(scope).forEach(function (hit) {
+      if (pathwayRoomNumber() != null) {
+        setWatchAffordance(hit);
+        return;
       }
+      if (hit.querySelector(".pathway-film-affordance, .pathway-film-link-label")) {
+        return;
+      }
+      setWatchAffordance(hit);
+    });
+    document.querySelectorAll(".room-doorway-hint").forEach(function (el) {
+      el.remove();
     });
   }
 
+  function removeStudyMusicControls() {
+    document.querySelectorAll("[data-study-music]").forEach(function (el) {
+      el.remove();
+    });
+    document.querySelectorAll("a[href*='.mp3']").forEach(function (el) {
+      el.remove();
+    });
+    document.querySelectorAll(".interlude-keep").forEach(function (el) {
+      if (!el.querySelector("a, button")) el.remove();
+    });
+    document.querySelectorAll(".beginner-assist").forEach(function (el) {
+      if (!el.querySelector("button, a")) el.remove();
+    });
+  }
+
+  function installRomajiControl() {
+    var n = parseInt(lessonId, 10);
+    if (!(n >= 0 && n <= 42)) return;
+
+    document
+      .querySelectorAll(".room-section--film-top .pathway-learner-controls")
+      .forEach(function (el) {
+        el.remove();
+      });
+
+    var teaching = document.querySelector(
+      ".room-section--film-top + .room-section .room-container"
+    );
+    if (!teaching) return;
+
+    var bar = teaching.querySelector(".pathway-learner-controls");
+    if (!bar) {
+      bar = document.createElement("div");
+      bar.className = "pathway-learner-controls";
+      bar.innerHTML =
+        '<button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>';
+    }
+    teaching.insertBefore(bar, teaching.firstChild);
+
+    document.querySelectorAll("[data-romaji-toggle]").forEach(function (btn) {
+      if (!btn.closest(".pathway-learner-controls")) btn.remove();
+    });
+    document.querySelectorAll(".beginner-assist").forEach(function (el) {
+      if (!el.querySelector("button, a")) el.remove();
+    });
+  }
+
+  function installPathwayShell() {
+    convertHeroFilmToDoorway();
+    normalizeFilmHeading();
+    stripFilmTopExtras();
+    enhanceFilmDoorways();
+    removeStudyMusicControls();
+    if (typeof course.installRoomNavigation === "function") {
+      course.installRoomNavigation();
+    }
+    installRomajiControl();
+    if (typeof course.installSongLyrics === "function") {
+      course.installSongLyrics();
+    }
+    if (typeof course.installPathwayRomaji === "function") {
+      course.installPathwayRomaji();
+    }
+  }
+
+  installPathwayShell();
   applyRomaji(romajiIsOn());
   bindToggle();
-  bindAudio();
-  bindStudyMusic();
-  fillNav();
   renderPuzzle();
   renderReference();
 })();

@@ -14,7 +14,7 @@
   "timing": {
     "status": "listened",
     "audioDuration": 264.75,
-    "note": "Hiragana-only reading epilogue. Film holds images across lyric lines; do not cut on every timestamp. kotobaga_saku_2.png is reserved for 4:15. Bridge line is みちても exactly. Version 2 recording."
+    "note": "Hiragana-only reading epilogue. Film holds images across lyric lines; do not cut on every timestamp. kotobaga_saku_2.png is reserved for 4:15. Bridge line is いっても exactly. Version 2 recording."
   },
   "opening": {
     "image": "../../assets/images/lesson_40/genki_desuka.jpg",
@@ -241,7 +241,7 @@
     { "id": "morning-2", "start": 180, "ja": "おはよう、ありがとう" },
     { "id": "words-bloom-2", "start": 186, "ja": "ことばが さく" },
     { "id": "its-alright", "start": 193, "ja": "だいじょうぶ" },
-    { "id": "even-so", "start": 197, "ja": "みちても" },
+    { "id": "even-so", "start": 197, "ja": "いっても" },
     { "id": "can-learn", "start": 201, "ja": "また ならえる" },
     { "id": "your-voice", "start": 203, "ja": "きみの こえで" },
     { "id": "hello-6", "start": 207, "ja": "こんにちは、げんきですか" },

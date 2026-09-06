@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room 3 — What’s your name? — Kanji・Music・Landscape</title>
+  <title>Room 3 — What’s Your Name? — Kanji・Music・Landscape</title>
   <meta
     name="description"
     content="おなまえは なんですか — a name exchange built on ですか and です you already know."
@@ -21,10 +21,10 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
-  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css?v=romaji-hide" />
   <script src="../../assets/js/museum-room.js" defer></script>
-  <script src="../js/beginner-course.js" defer></script>
-  <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-course.js?v=romaji-hide" defer></script>
+  <script src="../js/beginner-lesson.js?v=romaji-hide" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="3">
   <a class="skip-link" href="#film">Skip to film</a>
@@ -48,24 +48,21 @@
     <section class="room-section room-section--film-top" id="film" aria-label="Room film">
       <div class="room-container">
         <header class="room-film-heading">
-          <h1>Room 3</h1>
-          <p>What’s your name?</p>
-          <p class="room-film-lead">A vast hall. A name.</p>
-          <p class="room-film-hint">Names may stay as they are. です and ですか you already know.</p>
+          <p class="room-film-room">Room 3</p>
+          <h1>What’s Your Name?</h1>
         </header>
         <div class="pathway-film-link">
-          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=nl8vBOgPLjE" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=nl8vBOgPLjE" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
             <img src="../assets/images/room_03.jpg" alt="" width="1672" height="941" fetchpriority="high" />
+            <span class="pathway-film-affordance" aria-hidden="true"><span class="pathway-film-affordance-icon">▶</span> Watch on YouTube</span>
           </a>
         </div>
-        <p class="room-doorway-hint">Click the doorway to enter.</p>
       </div>
     </section>
 
     <section
       class="room-section beginner-after"
       id="after"
-      data-guided-after
       aria-labelledby="puzzle-heading"
     >
       <div class="room-container">
@@ -74,6 +71,9 @@
           <span class="pathway-nav-status" data-room-nav="current">Room 3</span>
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-4/">Continue to Room 4 →</a>
         </nav>
+        <div class="pathway-learner-controls">
+          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
+        </div>
 
         <figure class="jp-block jp-block--solo reveal">
           <p class="jp-kana" lang="ja">＿＿＿です。</p>
@@ -108,8 +108,6 @@
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
         <a href="../">Start Here</a>
-        <a href="../lesson-2/">Room 2</a>
-        <a href="../lesson-4/">Room 4</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>

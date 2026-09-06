@@ -26,38 +26,6 @@
       .join("　");
   }
 
-  function fillNav() {
-    var prevLink = document.querySelector("[data-room-nav='prev']");
-    if (prevLink) {
-      if (lesson.prev != null && course.lessons[lesson.prev]) {
-        prevLink.href = "../lesson-" + lesson.prev + "/";
-        prevLink.textContent = "← Previous Lesson";
-        prevLink.hidden = false;
-      } else {
-        prevLink.removeAttribute("href");
-        prevLink.hidden = true;
-      }
-    }
-
-    var indexLink = document.querySelector("[data-room-nav='index']");
-    if (indexLink) {
-      indexLink.href = "../rooms/";
-      indexLink.textContent = "Room Map";
-    }
-
-    var nextLink = document.querySelector("[data-room-nav='next']");
-    if (nextLink) {
-      if (lesson.next != null && course.lessons[lesson.next]) {
-        nextLink.href = "../lesson-" + lesson.next + "/";
-        nextLink.textContent = "Next Lesson →";
-        nextLink.hidden = false;
-      } else {
-        nextLink.removeAttribute("href");
-        nextLink.hidden = true;
-      }
-    }
-  }
-
   function renderFilmLink() {
     var mount = document.querySelector("[data-room-film]");
     if (!mount || !lesson.filmImage) return;
@@ -77,16 +45,19 @@
     image.decoding = "async";
 
     var label = document.createElement("span");
-    label.className = "pathway-film-link-label";
+    label.setAttribute("aria-hidden", "true");
 
     if (lesson.youtubeUrl) {
       hit.href = lesson.youtubeUrl;
       hit.target = "_blank";
       hit.rel = "noopener noreferrer";
-      hit.setAttribute("aria-label", "Watch room film on YouTube");
-      label.textContent = "Watch on YouTube";
+      hit.setAttribute("aria-label", "Watch on YouTube");
+      label.className = "pathway-film-affordance";
+      label.innerHTML =
+        '<span class="pathway-film-affordance-icon">▶</span> Watch on YouTube';
     } else {
       mount.classList.add("is-pending");
+      label.className = "pathway-film-link-label";
       label.textContent = "Film coming soon";
     }
 
@@ -123,7 +94,11 @@
       grid.setAttribute("role", "group");
       grid.setAttribute(
         "aria-label",
-        unit.script === "katakana" ? "New katakana" : "New hiragana"
+        lessonId === "0"
+          ? "Hiragana you will meet in this room"
+          : unit.script === "katakana"
+            ? "New katakana"
+            : "New hiragana"
       );
 
       unit.kana.forEach(function (item) {
@@ -175,7 +150,15 @@
     }
   }
 
-  fillNav();
+  if (typeof course.installRoomNavigation === "function") {
+    course.installRoomNavigation();
+  }
+  if (typeof course.installSongLyrics === "function") {
+    course.installSongLyrics();
+  }
   renderFilmLink();
   renderStudy();
+  if (typeof course.installPathwayRomaji === "function") {
+    course.installPathwayRomaji();
+  }
 })();

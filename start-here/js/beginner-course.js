@@ -5,9 +5,8 @@
  * Room 0 is The Genkan (romaji only — no げんかん / 玄関).
  *
  * mode:
- *   "guided-song" — Listen & Follow; JSON scenes follow audio time; no loop
- *   "study-room"  — learner-paced; optional looping atmosphereAudio,
- *                   or atmospherePool (shuffle; no single-file loop)
+ *   "guided-song" — historically Listen & Follow JSON; room film is YouTube
+ *   "study-room"  — learner-paced study below the YouTube doorway
  *
  * romajiDefault is per room ("on" | "off"). The learner's explicit toggle
  * is stored separately and, once set, overrides the room default.
@@ -31,7 +30,7 @@
  * After Room 25: no more teaching songs before 46/46. Ordinary rooms only.
  * Do not change the approved 31/46 → 46/46 vocabulary path to make a finale.
  *
- * Room 40 is すらすら言える-Hiragana in Rhythm. Room 41 is 言葉が咲く |
+ * Room 40 is すらすら言える / Hiragana in Rhythm. Room 41 is 言葉が咲く |
  * Words in Bloom (production Room 40 lower lesson, under the film).
  * Room 42 is Shiba-kun Overture, the Start Here terminus.
  *
@@ -112,8 +111,7 @@
  *   41 ことばが さく / Words in Bloom — production Room 40 lower lesson
  *       under the film. Continues to Room 42.
  *   42 Shiba-kun Overture. Start Here terminus. No Room 43.
- *       Outward doors to Start Here, Room Index, Kanji Studies, and
- *       Ambient Kanji Gallery.
+ *       Pathway nav is previous + Room Map only.
  *
  * Reading: you don't have to understand everything to understand something.
  * Help learners notice known pieces and signals. Unknown material can wait.
@@ -185,14 +183,6 @@
   var L41 = L40;
   var L42 = L41;
 
-  var ATMOSPHERE_6_11 = [
-    "../audio/lesson-6.mp3",
-    "../audio/lesson-7.mp3",
-    "../audio/lesson-8.mp3",
-    "../audio/lesson-9.mp3",
-    "../audio/lesson-10.mp3",
-    "../audio/lesson-11.mp3",
-  ];
 
   var lessons = {
     "0": {
@@ -206,6 +196,7 @@
       encounteredKana: L0,
       newKana: L0,
       staticStudy: "h-a",
+      dataSrc: "../data/rooms/0.json",
       filmImage: "../assets/images/room_00.jpg",
       youtubeUrl: "https://www.youtube.com/watch?v=hdMZBbYnY_U",
       prev: null,
@@ -232,7 +223,6 @@
       roomLabel: "Room 2",
       displayName: "Begin seeing Japanese",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-2.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -264,7 +254,6 @@
       roomLabel: "Room 4",
       displayName: "Reading names",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-4.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -296,7 +285,6 @@
       roomLabel: "Room 6",
       displayName: "This is sushi",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-6.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -312,7 +300,6 @@
       roomLabel: "Room 7",
       displayName: "Four pictures",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -328,7 +315,6 @@
       roomLabel: "Room 8",
       displayName: "これは ねこですか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-8.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -344,7 +330,6 @@
       roomLabel: "Room 9",
       displayName: "これは なんですか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-9.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -360,7 +345,6 @@
       roomLabel: "Room 10",
       displayName: "ねこが います",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-10.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -376,7 +360,6 @@
       roomLabel: "Room 11",
       displayName: "いすが あります",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-11.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -392,7 +375,6 @@
       roomLabel: "Room 12",
       displayName: "しずか",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -408,7 +390,6 @@
       roomLabel: "Room 13",
       displayName: "ひかり",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-8.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -424,7 +405,6 @@
       roomLabel: "Room 14",
       displayName: "はしに",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-9.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -440,7 +420,6 @@
       roomLabel: "Room 15",
       displayName: "つりがね",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-6.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -456,7 +435,6 @@
       roomLabel: "Room 16",
       displayName: "つくえ",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-11.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -504,7 +482,6 @@
       roomLabel: "Room 19",
       displayName: "いしを こえ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -520,7 +497,6 @@
       roomLabel: "Room 20",
       displayName: "かわ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -536,7 +512,6 @@
       roomLabel: "Room 21",
       displayName: "おと",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -552,7 +527,6 @@
       roomLabel: "Room 22",
       displayName: "まど",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -568,7 +542,6 @@
       roomLabel: "Room 23",
       displayName: "かねひとつ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -616,7 +589,6 @@
       roomLabel: "Room 26",
       displayName: "げんき",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -632,7 +604,6 @@
       roomLabel: "Room 27",
       displayName: "こんにちは",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -648,7 +619,6 @@
       roomLabel: "Room 28",
       displayName: "へや",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -664,7 +634,6 @@
       roomLabel: "Room 29",
       displayName: "しあわせ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -680,7 +649,6 @@
       roomLabel: "Room 30",
       displayName: "みず",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -696,7 +664,6 @@
       roomLabel: "Room 31",
       displayName: "さくら",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -712,7 +679,6 @@
       roomLabel: "Room 32",
       displayName: "そら",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -728,7 +694,6 @@
       roomLabel: "Room 33",
       displayName: "くも",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -744,7 +709,6 @@
       roomLabel: "Room 34",
       displayName: "ゆめ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -760,7 +724,6 @@
       roomLabel: "Room 35",
       displayName: "ねむる",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -776,7 +739,6 @@
       roomLabel: "Room 36",
       displayName: "ふゆ",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -792,7 +754,6 @@
       roomLabel: "Room 37",
       displayName: "静かな部屋に",
       mode: "study-room",
-      atmosphereAudio: "../audio/lesson-7.mp3",
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -808,7 +769,6 @@
       roomLabel: "Room 38",
       displayName: "よろしく",
       mode: "study-room",
-      atmospherePool: ATMOSPHERE_6_11,
       romajiDefault: "on",
       showPuzzle: true,
       showReferenceChart: false,
@@ -837,7 +797,7 @@
     "40": {
       id: "40",
       roomLabel: "Room 40",
-      displayName: "すらすら言える-Hiragana in Rhythm",
+      displayName: "すらすら言える / Hiragana in Rhythm",
       mode: "study-room",
       romajiDefault: "off",
       showPuzzle: false,
@@ -881,11 +841,900 @@
     },
   };
 
+  function teachingContainer() {
+    return document.querySelector(
+      ".room-section--film-top + .room-section .room-container"
+    );
+  }
+
+  function lessonHref(id) {
+    return "../lesson-" + id + "/";
+  }
+
+  function asNavAnchor(el, className, role) {
+    var anchor = el;
+    if (!anchor || anchor.tagName !== "A") {
+      anchor = document.createElement("a");
+      if (el) el.replaceWith(anchor);
+    }
+    anchor.className = className;
+    anchor.setAttribute("data-room-nav", role);
+    return anchor;
+  }
+
+  function normalizeNav(nav) {
+    nav.setAttribute("aria-label", "Room sequence");
+
+    var back =
+      nav.querySelector("[data-room-nav='prev']") ||
+      nav.querySelector(".pathway-nav-back");
+    var next =
+      nav.querySelector("[data-room-nav='next']") ||
+      nav.querySelector(".pathway-nav-next");
+    var index =
+      nav.querySelector("[data-room-nav='index']") ||
+      nav.querySelector(".pathway-nav-index");
+    var status =
+      nav.querySelector("[data-room-nav='current']") ||
+      nav.querySelector(".pathway-nav-status");
+
+    back = asNavAnchor(back, "pathway-nav-back", "prev");
+    if (!back.parentNode) nav.insertBefore(back, nav.firstChild);
+
+    if (!index) {
+      index = document.createElement("a");
+      if (status) status.replaceWith(index);
+      else if (next) nav.insertBefore(index, next);
+      else nav.appendChild(index);
+    }
+    index = asNavAnchor(index, "pathway-nav-index", "index");
+    if (status && status.parentNode) status.remove();
+
+    next = asNavAnchor(next, "pathway-nav-next", "next");
+    if (!next.parentNode) nav.appendChild(next);
+  }
+
+  function removeTopRoomNav(lesson) {
+    var n = parseInt(lesson.id, 10);
+    if (!(n >= 1 && n <= 42)) return;
+    document
+      .querySelectorAll(
+        ".room-section:not(.room-section--film-top) .pathway-nav--top"
+      )
+      .forEach(function (nav) {
+        nav.remove();
+      });
+  }
+
+  function fillRoomNav(lesson) {
+    document.querySelectorAll(".pathway-nav").forEach(normalizeNav);
+
+    document.querySelectorAll("[data-room-nav='prev']").forEach(function (prevLink) {
+      if (lesson.prev != null && lessons[lesson.prev]) {
+        var prev = lessons[lesson.prev];
+        prevLink.href = lessonHref(prev.id);
+        prevLink.hidden = false;
+        prevLink.textContent = "← " + prev.roomLabel;
+      } else {
+        prevLink.removeAttribute("href");
+        prevLink.hidden = true;
+        prevLink.textContent = "";
+      }
+    });
+
+    document.querySelectorAll("[data-room-nav='index']").forEach(function (indexLink) {
+      indexLink.href = "../rooms/";
+      indexLink.hidden = false;
+      indexLink.textContent = "Room Map";
+    });
+
+    document.querySelectorAll("[data-room-nav='next']").forEach(function (nextLink) {
+      if (lesson.next != null && lessons[lesson.next]) {
+        var next = lessons[lesson.next];
+        nextLink.href = lessonHref(next.id);
+        nextLink.hidden = false;
+        nextLink.textContent = "Continue to " + next.roomLabel + " →";
+      } else {
+        nextLink.removeAttribute("href");
+        nextLink.hidden = true;
+        nextLink.textContent = "";
+      }
+    });
+  }
+
+  function isRedundantRoomControl(anchor, lessonNum) {
+    var text = String(anchor.textContent || "").replace(/\s+/g, " ").trim();
+    if (/^Watch the film again$/i.test(text)) return true;
+    if (/^Continue to Room\s+\d+/i.test(text)) return true;
+    if (/^Previous:/i.test(text)) return true;
+    if (/^←\s+Room\s+\d+/i.test(text)) return true;
+    if (/^←\s+The Genkan$/i.test(text)) return true;
+    if (text === "Room Map") return true;
+    if (/^(Next Lesson|← Previous Lesson)/i.test(text)) return true;
+    if (/^Continue the KML Journey$/i.test(text)) return true;
+    if (/^Ambient Kanji Gallery$/i.test(text)) return true;
+    if (/^Back to Start Here$/i.test(text)) return true;
+    return false;
+  }
+
+  function installBottomRoomNav(lesson) {
+    var n = parseInt(lesson.id, 10);
+    if (!(n >= 1 && n <= 42)) return;
+
+    var teaching = teachingContainer();
+    if (!teaching) return;
+
+    var extras = [];
+    teaching
+      .querySelectorAll(
+        ".room-actions a, .pathway-close-actions a, .pathway-close-back a"
+      )
+      .forEach(function (anchor) {
+        if (isRedundantRoomControl(anchor, n)) anchor.remove();
+        else extras.push(anchor);
+      });
+
+    var nav = teaching.querySelector(".pathway-nav--bottom");
+    if (!nav) {
+      nav = document.createElement("nav");
+      nav.className = "pathway-nav pathway-nav--bottom";
+      nav.innerHTML =
+        '<a class="pathway-nav-back" data-room-nav="prev"></a>' +
+        '<a class="pathway-nav-index" data-room-nav="index" href="../rooms/">Room Map</a>' +
+        '<a class="pathway-nav-next" data-room-nav="next"></a>';
+    }
+
+    var host =
+      teaching.querySelector(".room-forward, .pathway-close") || teaching;
+    host.appendChild(nav);
+
+    var extrasWrap = host.querySelector(".room-actions");
+    if (extras.length) {
+      if (!extrasWrap) {
+        extrasWrap = document.createElement("div");
+        extrasWrap.className = "room-actions";
+      }
+      extras.forEach(function (anchor) {
+        extrasWrap.appendChild(anchor);
+      });
+      nav.insertAdjacentElement("afterend", extrasWrap);
+    } else if (extrasWrap && !extrasWrap.querySelector("a, button")) {
+      extrasWrap.remove();
+    }
+
+    teaching.querySelectorAll(".pathway-close-back, .pathway-close-actions").forEach(
+      function (el) {
+        if (!el.querySelector("a, button")) el.remove();
+      }
+    );
+
+    unwrapEmptyNavHost(host, nav);
+  }
+
+  function unwrapEmptyNavHost(host, nav) {
+    if (!host || !nav || host === teachingContainer()) return;
+    if (
+      !host.classList.contains("room-forward") &&
+      !host.classList.contains("pathway-close")
+    ) {
+      return;
+    }
+    var leftover = false;
+    Array.prototype.forEach.call(host.children, function (child) {
+      if (child === nav) return;
+      leftover = true;
+    });
+    if (leftover) return;
+    host.replaceWith(nav);
+  }
+
+  function stripFooterRoomNav(lesson) {
+    var n = parseInt(lesson.id, 10);
+    document.querySelectorAll(".museum-footer nav a").forEach(function (anchor) {
+      var href = String(anchor.getAttribute("href") || "");
+      var text = String(anchor.textContent || "").replace(/\s+/g, " ").trim();
+      if (/lesson-\d+\/?$/.test(href)) anchor.remove();
+      if (text === "Room Map") anchor.remove();
+      if (n >= 1 && n <= 42 && text !== "Home" && text !== "Start Here") {
+        anchor.remove();
+      }
+    });
+  }
+
+  function kanaToRomaji(input) {
+    var EXCEPTIONS = {
+      こんにちは: "konnichiwa",
+      こんばんは: "konbanwa",
+      です: "desu",
+      ですか: "desu ka",
+    };
+    var DIGRAPH = {
+      きゃ: "kya",
+      きゅ: "kyu",
+      きょ: "kyo",
+      しゃ: "sha",
+      しゅ: "shu",
+      しょ: "sho",
+      ちゃ: "cha",
+      ちゅ: "chu",
+      ちょ: "cho",
+      にゃ: "nya",
+      にゅ: "nyu",
+      にょ: "nyo",
+      ひゃ: "hya",
+      ひゅ: "hyu",
+      ひょ: "hyo",
+      みゃ: "mya",
+      みゅ: "myu",
+      みょ: "myo",
+      りゃ: "rya",
+      りゅ: "ryu",
+      りょ: "ryo",
+      ぎゃ: "gya",
+      ぎゅ: "gyu",
+      ぎょ: "gyo",
+      じゃ: "ja",
+      じゅ: "ju",
+      じょ: "jo",
+      びゃ: "bya",
+      びゅ: "byu",
+      びょ: "byo",
+      ぴゃ: "pya",
+      ぴゅ: "pyu",
+      ぴょ: "pyo",
+    };
+    var MONO = {
+      あ: "a",
+      い: "i",
+      う: "u",
+      え: "e",
+      お: "o",
+      か: "ka",
+      き: "ki",
+      く: "ku",
+      け: "ke",
+      こ: "ko",
+      さ: "sa",
+      し: "shi",
+      す: "su",
+      せ: "se",
+      そ: "so",
+      た: "ta",
+      ち: "chi",
+      つ: "tsu",
+      て: "te",
+      と: "to",
+      な: "na",
+      に: "ni",
+      ぬ: "nu",
+      ね: "ne",
+      の: "no",
+      は: "ha",
+      ひ: "hi",
+      ふ: "fu",
+      へ: "he",
+      ほ: "ho",
+      ま: "ma",
+      み: "mi",
+      む: "mu",
+      め: "me",
+      も: "mo",
+      や: "ya",
+      ゆ: "yu",
+      よ: "yo",
+      ら: "ra",
+      り: "ri",
+      る: "ru",
+      れ: "re",
+      ろ: "ro",
+      わ: "wa",
+      を: "o",
+      ん: "n",
+      が: "ga",
+      ぎ: "gi",
+      ぐ: "gu",
+      げ: "ge",
+      ご: "go",
+      ざ: "za",
+      じ: "ji",
+      ず: "zu",
+      ぜ: "ze",
+      ぞ: "zo",
+      だ: "da",
+      ぢ: "ji",
+      づ: "zu",
+      で: "de",
+      ど: "do",
+      ば: "ba",
+      び: "bi",
+      ぶ: "bu",
+      べ: "be",
+      ぼ: "bo",
+      ぱ: "pa",
+      ぴ: "pi",
+      ぷ: "pu",
+      ぺ: "pe",
+      ぽ: "po",
+      ぁ: "a",
+      ぃ: "i",
+      ぅ: "u",
+      ぇ: "e",
+      ぉ: "o",
+    };
+    var PARTICLES = { は: "wa", へ: "e", を: "o" };
+
+    function convertWord(word) {
+      if (EXCEPTIONS[word]) return EXCEPTIONS[word];
+      if (PARTICLES[word]) return PARTICLES[word];
+      var out = "";
+      var i = 0;
+      while (i < word.length) {
+        var ch = word.charAt(i);
+        if (ch === "っ" || ch === "ッ") {
+          var next = word.slice(i + 1, i + 3);
+          var pair = DIGRAPH[next] || MONO[word.charAt(i + 1)] || "";
+          out += pair.charAt(0) || "";
+          i += 1;
+          continue;
+        }
+        var two = word.slice(i, i + 2);
+        if (DIGRAPH[two]) {
+          out += DIGRAPH[two];
+          i += 2;
+          continue;
+        }
+        if (ch === "ー" && out) {
+          var last = out.charAt(out.length - 1);
+          if ("aiueo".indexOf(last) >= 0) out += last;
+          i += 1;
+          continue;
+        }
+        if (ch === "＿") {
+          out += "__";
+          i += 1;
+          continue;
+        }
+        if (ch === "。") {
+          out += ".";
+          i += 1;
+          continue;
+        }
+        if (ch === "？" || ch === "?") {
+          out += "?";
+          i += 1;
+          continue;
+        }
+        if (ch === "！" || ch === "!") {
+          out += "!";
+          i += 1;
+          continue;
+        }
+        if (MONO[ch]) {
+          out += MONO[ch];
+          i += 1;
+          continue;
+        }
+        out += ch;
+        i += 1;
+      }
+      return out;
+    }
+
+    return String(input || "")
+      .split(/(\n)/)
+      .map(function (chunk) {
+        if (chunk === "\n") return "\n";
+        return chunk
+          .split(/([ 　]+)/)
+          .map(function (part) {
+            if (/^[ 　]+$/.test(part)) return " ";
+            return convertWord(part);
+          })
+          .join("");
+      })
+      .join("");
+  }
+
+  function romajiForKanaLine(ja) {
+    return kanaToRomaji(ja);
+  }
+
+  function indexJaKey(value) {
+    return String(value || "")
+      .replace(/[。．.？?！!、，,]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function rememberRomaji(map, ja, romaji) {
+    var key = String(ja || "").replace(/\s+/g, " ").trim();
+    var ro = String(romaji || "").replace(/\s+/g, " ").trim();
+    if (!key || !ro) return;
+    map[key] = ro;
+    map[indexJaKey(key)] = ro;
+  }
+
+  function pageRomajiMap() {
+    var map = {};
+    document.querySelectorAll(".jp-kana").forEach(function (jaEl) {
+      var roEl = jaEl.nextElementSibling;
+      if (!roEl || !roEl.classList.contains("jp-romaji")) {
+        var block = jaEl.closest(".jp-block");
+        roEl = block ? block.querySelector(".jp-romaji") : null;
+      }
+      if (!roEl) return;
+      rememberRomaji(map, jaEl.textContent, roEl.textContent);
+    });
+    document.querySelectorAll(".jp-verse").forEach(function (verse) {
+      var roEl = verse.nextElementSibling;
+      if (!roEl || !roEl.classList.contains("jp-romaji")) return;
+      rememberRomaji(map, verse.textContent, roEl.textContent);
+    });
+    return map;
+  }
+
+  function pageKanjiReadings() {
+    var map = {};
+    document.querySelectorAll("ruby").forEach(function (ruby) {
+      var rt = ruby.querySelector("rt");
+      if (!rt) return;
+      var reading = String(rt.textContent || "").replace(/\s+/g, "").trim();
+      var clone = ruby.cloneNode(true);
+      Array.prototype.forEach.call(clone.querySelectorAll("rt, rp"), function (node) {
+        node.remove();
+      });
+      var written = String(clone.textContent || "").replace(/\s+/g, "").trim();
+      if (written && reading) map[written] = reading;
+    });
+    return map;
+  }
+
+  function lookupRomaji(map, jaKey, reading) {
+    var keys = [jaKey, indexJaKey(jaKey), reading, indexJaKey(reading)];
+    var i;
+    for (i = 0; i < keys.length; i += 1) {
+      if (keys[i] && map[keys[i]]) return map[keys[i]];
+    }
+    var compact = indexJaKey(jaKey).replace(/ /g, "");
+    for (var key in map) {
+      if (!Object.prototype.hasOwnProperty.call(map, key)) continue;
+      if (indexJaKey(key).replace(/ /g, "") === compact) return map[key];
+    }
+    return "";
+  }
+
+  function verseReadingKana(verse, kanjiMap) {
+    var words = [];
+    var buf = "";
+    var particles = "にがのをはへも";
+    kanjiMap = kanjiMap || {};
+
+    function flush() {
+      if (buf) words.push(buf);
+      buf = "";
+    }
+
+    function appendReading(reading) {
+      if (!reading) return;
+      buf += reading;
+    }
+
+    var lastWasRuby = false;
+
+    function walkText(text, allowParticleSplit) {
+      var i = 0;
+      while (i < text.length) {
+        var ch = text.charAt(i);
+        if (ch === "\n") {
+          flush();
+          words.push("\n");
+          lastWasRuby = false;
+          i += 1;
+          continue;
+        }
+        if (ch === " " || ch === "　") {
+          flush();
+          words.push(" ");
+          lastWasRuby = false;
+          i += 1;
+          continue;
+        }
+        if ("。．.？?！!、，,".indexOf(ch) >= 0) {
+          flush();
+          words.push(ch);
+          lastWasRuby = false;
+          i += 1;
+          continue;
+        }
+        if (ch === "＿" || ch === "_") {
+          flush();
+          var blank = "";
+          while (i < text.length && (text.charAt(i) === "＿" || text.charAt(i) === "_")) {
+            blank += text.charAt(i);
+            i += 1;
+          }
+          words.push(blank);
+          lastWasRuby = false;
+          continue;
+        }
+        var mapped = "";
+        var len = 2;
+        while (len >= 1) {
+          var slice = text.slice(i, i + len);
+          if (kanjiMap[slice]) {
+            mapped = kanjiMap[slice];
+            i += len;
+            break;
+          }
+          len -= 1;
+        }
+        if (mapped) {
+          appendReading(mapped);
+          lastWasRuby = false;
+          continue;
+        }
+        if (allowParticleSplit && particles.indexOf(ch) >= 0 && buf) {
+          flush();
+          words.push(ch);
+        } else {
+          buf += ch;
+        }
+        lastWasRuby = false;
+        i += 1;
+      }
+    }
+
+    function walk(node) {
+      if (!node) return;
+      if (node.nodeType === 3) {
+        var text = node.nodeValue || "";
+        if (/^\s*$/.test(text)) return;
+        walkText(text, true);
+        return;
+      }
+      if (node.nodeType !== 1) return;
+      var tag = node.tagName;
+      if (tag === "BR") {
+        flush();
+        words.push("\n");
+        lastWasRuby = false;
+        return;
+      }
+      if (tag === "RT" || tag === "RP") return;
+      if (tag === "RUBY") {
+        if (buf && !lastWasRuby) flush();
+        appendReading(rtReading(node));
+        lastWasRuby = true;
+        return;
+      }
+      Array.prototype.forEach.call(node.childNodes, walk);
+    }
+
+    walk(verse);
+    flush();
+    return words;
+  }
+
+  function wordsToRomaji(words) {
+    var parts = [];
+    (words || []).forEach(function (word) {
+      if (word === "\n") {
+        parts.push("\n");
+        return;
+      }
+      if (word === " ") return;
+      var converted = kanaToRomaji(word);
+      if (!converted) return;
+      if (parts.length && parts[parts.length - 1] !== "\n") parts.push(" ");
+      parts.push(converted);
+    });
+    return parts
+      .join("")
+      .replace(/[ \t]+\n/g, "\n")
+      .replace(/\n[ \t]+/g, "\n")
+      .replace(/ +([.?!])/g, "$1")
+      .trim();
+  }
+
+  function rtReading(ruby) {
+    var rt = ruby.querySelector("rt");
+    return rt ? String(rt.textContent || "") : String(ruby.textContent || "");
+  }
+
+  function sentenceCaseRomaji(romaji, ja) {
+    var text = String(romaji || "").trim();
+    if (!text) return text;
+    if (!/[。．.？?！!]|です/.test(String(ja || ""))) return text;
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+
+  function hostAlreadyHasRomaji(host) {
+    if (host.querySelector(":scope > .jp-verse-line > .jp-romaji")) return true;
+    var sib = host.nextElementSibling;
+    return !!(sib && sib.classList.contains("jp-romaji"));
+  }
+
+  function romajiIsComplete(romaji) {
+    var text = String(romaji || "").trim();
+    if (!text) return false;
+    return !/[\u3040-\u30ff\u4e00-\u9fff]/.test(text);
+  }
+
+  function isJapaneseLessonText(text) {
+    var compact = String(text || "").replace(/\s+/g, "");
+    if (!compact) return false;
+    var jp = (compact.match(/[\u3040-\u30ff\u4e00-\u9fff＿]/g) || []).length;
+    return jp > 0 && jp >= compact.length * 0.6;
+  }
+
+  function shouldSkipRomajiHost(host) {
+    if (!host || host.closest(".kana-puzzle, [data-kana-puzzle], [data-kana-chart-full]")) {
+      return true;
+    }
+    if (host.closest(".museum-header, .museum-footer, .museum-nav, .pathway-nav, .room-actions")) {
+      return true;
+    }
+    if (host.closest(".static-study-kana")) return true;
+    if (host.classList.contains("static-study-title")) return true;
+    if (host.classList.contains("jp-romaji") || host.classList.contains("jp-en")) return true;
+    return false;
+  }
+
+  function readingForHost(host, map, kanjiMap) {
+    var jaKey = String(host.textContent || "").replace(/\s+/g, " ").trim();
+    var words = verseReadingKana(host, kanjiMap);
+    var reading = words
+      .filter(function (w) {
+        return w !== "\n" && w !== " ";
+      })
+      .join(" ");
+    var mapped = lookupRomaji(map, jaKey, reading);
+    if (mapped) return mapped;
+    if (!/\s/.test(jaKey) && /^[\u3041-\u3096ー]+$/.test(jaKey)) {
+      return kanaToRomaji(jaKey);
+    }
+    return sentenceCaseRomaji(
+      wordsToRomaji(words) || kanaToRomaji(jaKey),
+      jaKey
+    );
+  }
+
+  function verseLinesFromBr(verse) {
+    var lines = [[]];
+    Array.prototype.forEach.call(Array.prototype.slice.call(verse.childNodes), function (node) {
+      if (node.nodeType === 1 && node.tagName === "BR") {
+        lines.push([]);
+        return;
+      }
+      if (node.nodeType === 3 && /^\s*$/.test(node.nodeValue || "")) return;
+      lines[lines.length - 1].push(node);
+    });
+    return lines.filter(function (nodes) {
+      return nodes.length > 0;
+    });
+  }
+
+  function pairVerseLineRomaji(verse, map, kanjiMap) {
+    if (verse.querySelector(".jp-verse-line")) return;
+    var sibling = verse.nextElementSibling;
+    if (sibling && sibling.classList.contains("jp-romaji")) sibling.remove();
+    var lines = verseLinesFromBr(verse);
+    if (lines.length <= 1) {
+      attachRomajiToHost(verse, map, kanjiMap);
+      return;
+    }
+    var frag = document.createDocumentFragment();
+    lines.forEach(function (nodes) {
+      var row = document.createElement("span");
+      row.className = "jp-verse-line";
+      var ja = document.createElement("span");
+      ja.className = "jp-verse-ja";
+      ja.lang = "ja";
+      nodes.forEach(function (node) {
+        ja.appendChild(node);
+      });
+      row.appendChild(ja);
+      var romaji = readingForHost(ja, map, kanjiMap);
+      if (romajiIsComplete(romaji)) {
+        var ro = document.createElement("span");
+        ro.className = "jp-romaji";
+        ro.textContent = romaji;
+        row.appendChild(ro);
+        rememberRomaji(map, ja.textContent, romaji);
+      } else {
+        ja.setAttribute("data-romaji-missing", "");
+      }
+      frag.appendChild(row);
+    });
+    verse.replaceChildren(frag);
+  }
+
+  function attachRomajiToHost(host, map, kanjiMap) {
+    if (!host || hostAlreadyHasRomaji(host) || shouldSkipRomajiHost(host)) return;
+    var romaji = readingForHost(host, map, kanjiMap);
+    if (!romajiIsComplete(romaji)) {
+      host.setAttribute("data-romaji-missing", "");
+      return;
+    }
+    host.removeAttribute("data-romaji-missing");
+    var el = document.createElement("p");
+    el.className = "jp-romaji";
+    el.textContent = romaji;
+    host.insertAdjacentElement("afterend", el);
+    rememberRomaji(map, host.textContent, romaji);
+  }
+
+  function japaneseHeadingHosts() {
+    var out = [];
+    document
+      .querySelectorAll(
+        ".room-section:not(.room-section--film-top) h1, .room-section:not(.room-section--film-top) h2, .room-section:not(.room-section--film-top) h3"
+      )
+      .forEach(function (heading) {
+        if (shouldSkipRomajiHost(heading)) return;
+        if (heading.id === "puzzle-heading" || heading.id === "source-heading" || heading.id === "map-heading") {
+          return;
+        }
+        if (!isJapaneseLessonText(heading.textContent)) return;
+        out.push(heading);
+      });
+    return out;
+  }
+
+  function installPathwayRomaji() {
+    var kanjiMap = pageKanjiReadings();
+    var map = pageRomajiMap();
+    document.querySelectorAll(".jp-verse").forEach(function (verse) {
+      if (verse.querySelector("br")) pairVerseLineRomaji(verse, map, kanjiMap);
+      else attachRomajiToHost(verse, map, kanjiMap);
+    });
+    map = pageRomajiMap();
+    document.querySelectorAll(".jp-kana, .static-study-vocab-word").forEach(function (host) {
+      attachRomajiToHost(host, map, kanjiMap);
+    });
+    japaneseHeadingHosts().forEach(function (heading) {
+      attachRomajiToHost(heading, map, kanjiMap);
+    });
+  }
+
+  function uniqueLyricLines(config) {
+    var rows = [];
+    if (config && config.scenes && config.scenes.length) rows = config.scenes;
+    else if (config && config.lyrics && config.lyrics.length) rows = config.lyrics;
+    var seen = {};
+    var out = [];
+    rows.forEach(function (row) {
+      var ja = String((row && row.ja) || "").replace(/\s+/g, " ").trim();
+      if (!ja || seen[ja]) return;
+      seen[ja] = true;
+      out.push({
+        ja: String(row.ja).trim(),
+        romaji: String((row && row.romaji) || "").trim(),
+      });
+    });
+    return out;
+  }
+
+  function englishByJaFromPage() {
+    var map = {};
+    document.querySelectorAll(".jp-block").forEach(function (block) {
+      var jaEl = block.querySelector(".jp-kana");
+      var enEl = block.querySelector(".jp-en");
+      if (!jaEl || !enEl) return;
+      var key = String(jaEl.textContent || "").replace(/\s+/g, " ").trim();
+      var en = String(enEl.textContent || "").replace(/\s+/g, " ").trim();
+      if (key && en) map[key] = en;
+    });
+    return map;
+  }
+
+  function placeSongLyricsSection(section) {
+    var teaching = teachingContainer();
+    if (!teaching) return;
+    var after = teaching.querySelector(".pathway-learner-controls");
+    if (after) {
+      after.insertAdjacentElement("afterend", section);
+      return;
+    }
+    var before = teaching.querySelector(
+      ".static-study, .room-section-head, .jp-block, .beginner-exhibit"
+    );
+    if (before) teaching.insertBefore(section, before);
+    else teaching.insertBefore(section, teaching.firstChild);
+  }
+
+  function renderSongLyricLines(lines) {
+    if (!lines.length || document.querySelector("[data-song-lyrics]")) return;
+    var english = englishByJaFromPage();
+    var section = document.createElement("section");
+    section.className = "beginner-song";
+    section.setAttribute("data-song-lyrics", "");
+    section.setAttribute("aria-label", "Song lyrics");
+
+    var label = document.createElement("p");
+    label.className = "beginner-song-label";
+    label.textContent = "Lyrics";
+    section.appendChild(label);
+
+    lines.forEach(function (line) {
+      var figure = document.createElement("figure");
+      figure.className = "jp-block jp-block--solo";
+
+      var ja = document.createElement("p");
+      ja.className = "jp-kana";
+      ja.lang = "ja";
+      ja.textContent = line.ja;
+      figure.appendChild(ja);
+
+      var romajiText = line.romaji || romajiForKanaLine(line.ja);
+      if (romajiText) {
+        var romaji = document.createElement("p");
+        romaji.className = "jp-romaji";
+        romaji.textContent = romajiText;
+        figure.appendChild(romaji);
+      }
+
+      var enText = english[String(line.ja).replace(/\s+/g, " ").trim()];
+      if (enText) {
+        var en = document.createElement("p");
+        en.className = "jp-en";
+        en.textContent = enText;
+        figure.appendChild(en);
+      }
+
+      section.appendChild(figure);
+    });
+
+    placeSongLyricsSection(section);
+  }
+
+  var songLyricsRequested = false;
+
+  function installSongLyrics() {
+    var lessonId = document.body.getAttribute("data-beginner-lesson");
+    var lesson = lessonId != null ? lessons[lessonId] : null;
+    if (!lesson) return;
+
+    var n = parseInt(lesson.id, 10);
+    if (n === 17 || n === 25) return;
+    if (songLyricsRequested || document.querySelector("[data-song-lyrics]")) return;
+
+    var src = lesson.dataSrc;
+    if (!src) return;
+    if (!(n === 0 || n === 1 || n === 3 || n === 5)) return;
+
+    songLyricsRequested = true;
+    fetch(src)
+      .then(function (res) {
+        if (!res.ok) throw new Error("lyrics");
+        return res.json();
+      })
+      .then(function (config) {
+        renderSongLyricLines(uniqueLyricLines(config));
+        if (typeof installPathwayRomaji === "function") installPathwayRomaji();
+      })
+      .catch(function () {
+        /* keep teaching content if lyrics file is unavailable */
+      });
+  }
+
+  function installRoomNavigation() {
+    var lessonId = document.body.getAttribute("data-beginner-lesson");
+    var lesson = lessonId != null ? lessons[lessonId] : null;
+    if (!lesson) return;
+    removeTopRoomNav(lesson);
+    installBottomRoomNav(lesson);
+    stripFooterRoomNav(lesson);
+    fillRoomNav(lesson);
+  }
+
   window.KmlBeginnerCourse = {
     romajiStorageKey: "kml-beginner-romaji",
-    musicStorageKey: "kml-beginner-study-music",
     gojuonColumns: GOJUON_COLUMNS,
     boxCount: 46,
     lessons: lessons,
+    installRoomNavigation: installRoomNavigation,
+    installSongLyrics: installSongLyrics,
+    installPathwayRomaji: installPathwayRomaji,
   };
 })();

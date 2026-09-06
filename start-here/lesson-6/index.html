@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room 6 — This is sushi — Kanji・Music・Landscape</title>
+  <title>Room 6 — This Is Sushi — Kanji・Music・Landscape</title>
   <meta
     name="description"
     content="これは すしです。 One new hiragana — れ."
@@ -20,15 +20,15 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
-  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css?v=romaji-hide" />
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
-  <script src="../js/beginner-course.js" defer></script>
-  <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-course.js?v=romaji-hide" defer></script>
+  <script src="../js/beginner-lesson.js?v=romaji-hide" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="6">
-  <a class="skip-link" href="#lesson">Skip to lesson</a>
+  <a class="skip-link" href="#film">Skip to film</a>
 
   <header class="museum-header">
     <div class="museum-header-inner">
@@ -46,27 +46,19 @@
   </header>
 
   <main>
-    <section class="room-hero" aria-labelledby="lesson-heading">
-      <div class="room-hero-media">
-        <a class="room-hero-film" href="https://www.youtube.com/watch?v=eugosPkh6lw" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
-          <img
-            src="../assets/images/room_06.jpg"
-            alt=""
-            width="1672"
-            height="941"
-            fetchpriority="high"
-          />
-        </a>
-        <div class="room-hero-veil"></div>
+    <section class="room-section room-section--film-top" id="film" aria-label="Room film">
+      <div class="room-container">
+        <header class="room-film-heading">
+          <p class="room-film-room">Room 6</p>
+          <h1>This Is Sushi</h1>
+        </header>
+        <div class="pathway-film-link">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=eugosPkh6lw" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
+            <img src="../assets/images/room_06.jpg" alt="" width="1672" height="941" fetchpriority="high" />
+            <span class="pathway-film-affordance" aria-hidden="true"><span class="pathway-film-affordance-icon">▶</span> Watch on YouTube</span>
+          </a>
+        </div>
       </div>
-      <div class="room-hero-inner">
-        <p class="room-hero-brand">Beginner pathway</p>
-        <h1 id="lesson-heading">Room 6 — This is sushi</h1>
-        <p class="room-hero-lead">A picture. A sentence. One new hiragana.</p>
-      </div>
-      <a class="room-hero-scroll" href="#lesson" aria-label="Continue into the lesson">
-        <span class="room-hero-scroll-line" aria-hidden="true"></span>
-      </a>
     </section>
 
     <section class="room-section" id="lesson">
@@ -76,12 +68,9 @@
           <span class="pathway-nav-status" data-room-nav="current">Room 6</span>
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-7/">Continue to Room 7 →</a>
         </nav>
-
-        <div class="beginner-assist reveal">
-          <button type="button" data-study-music hidden>♪ Play room music</button>
+        <div class="pathway-learner-controls">
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
-
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Pictures</p>
           <h2>これは すしです。</h2>
@@ -141,8 +130,6 @@
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
         <a href="../">Start Here</a>
-        <a href="../lesson-5/">Room 5</a>
-        <a href="../lesson-7/">Room 7</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>

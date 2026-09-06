@@ -12,10 +12,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room 36 — ふゆ — Kanji・Music・Landscape</title>
+  <title>Room 36 — Winter — Kanji・Music・Landscape</title>
   <meta
     name="description"
-    content="ふゆ. Look into the picture."
+    content="ふゆ."
   />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,15 +25,15 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
-  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css?v=romaji-hide" />
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
   <script src="../../assets/js/museum-room.js" defer></script>
-  <script src="../js/beginner-course.js" defer></script>
-  <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-course.js?v=romaji-hide" defer></script>
+  <script src="../js/beginner-lesson.js?v=romaji-hide" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="36">
-  <a class="skip-link" href="#lesson">Skip to lesson</a>
+  <a class="skip-link" href="#film">Skip to film</a>
 
   <header class="museum-header">
     <div class="museum-header-inner">
@@ -51,27 +51,19 @@
   </header>
 
   <main>
-    <section class="room-hero" aria-labelledby="lesson-heading">
-      <div class="room-hero-media">
-        <a class="room-hero-film" href="https://www.youtube.com/watch?v=9giwZaUPRVU" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
-          <img
-            src="../assets/images/room_36.jpg"
-            alt=""
-            width="1672"
-            height="941"
-            fetchpriority="high"
-          />
-        </a>
-        <div class="room-hero-veil"></div>
+    <section class="room-section room-section--film-top" id="film" aria-label="Room film">
+      <div class="room-container">
+        <header class="room-film-heading">
+          <p class="room-film-room">Room 36</p>
+          <h1>Winter</h1>
+        </header>
+        <div class="pathway-film-link">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=9giwZaUPRVU" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
+            <img src="../assets/images/room_36.jpg" alt="" width="1672" height="941" fetchpriority="high" />
+            <span class="pathway-film-affordance" aria-hidden="true"><span class="pathway-film-affordance-icon">▶</span> Watch on YouTube</span>
+          </a>
+        </div>
       </div>
-      <div class="room-hero-inner">
-        <p class="room-hero-brand">Beginner pathway</p>
-        <h1 id="lesson-heading">Room 36 — ふゆ</h1>
-        <p class="room-hero-lead">Look into the picture.</p>
-      </div>
-      <a class="room-hero-scroll" href="#lesson" aria-label="Continue into the lesson">
-        <span class="room-hero-scroll-line" aria-hidden="true"></span>
-      </a>
     </section>
 
     <section class="room-section" id="lesson">
@@ -81,16 +73,12 @@
           <span class="pathway-nav-status" data-room-nav="current">Room 36</span>
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-37/">Continue to Room 37 →</a>
         </nav>
-
-        <div class="beginner-assist reveal">
-          <button type="button" data-study-music hidden>♪ Play room music</button>
+        <div class="pathway-learner-controls">
           <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
-
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Look</p>
           <h2>ふゆ</h2>
-          <p>Look into the scene.</p>
         </header>
 
         <article class="beginner-exhibit reveal">
@@ -153,8 +141,6 @@
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
         <a href="../">Start Here</a>
-        <a href="../lesson-35/">Room 35</a>
-        <a href="../lesson-37/">Room 37</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>

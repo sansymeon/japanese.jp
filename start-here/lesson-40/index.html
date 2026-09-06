@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--
-  Room 40 — すらすら言える-Hiragana in Rhythm.
+  Room 40 — すらすら言える / Hiragana in Rhythm.
 -->
 <html lang="en" class="museum-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room 40 — すらすら言える-Hiragana in Rhythm — Kanji・Music・Landscape</title>
+  <title>Room 40 — すらすら言える / Hiragana in Rhythm — Kanji・Music・Landscape</title>
   <meta name="description" content="すらすら言える. Hiragana in rhythm — what you just heard." />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,10 +16,10 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
-  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css?v=romaji-hide" />
   <script src="../../assets/js/museum-room.js" defer></script>
-  <script src="../js/beginner-course.js" defer></script>
-  <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../js/beginner-course.js?v=romaji-hide" defer></script>
+  <script src="../js/beginner-lesson.js?v=romaji-hide" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="40">
   <a class="skip-link" href="#film">Skip to film</a>
@@ -43,15 +43,15 @@
     <section class="room-section room-section--film-top" id="film" aria-label="Room film">
       <div class="room-container">
         <header class="room-film-heading">
-          <h1>Room 40</h1>
-          <p>すらすら言える-Hiragana in Rhythm</p>
+          <p class="room-film-room">Room 40</p>
+          <h1>すらすら言える / Hiragana in Rhythm</h1>
         </header>
         <div class="pathway-film-link">
-          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=XKzuVYryXrU" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=XKzuVYryXrU" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
             <img src="../assets/images/room_40.jpg" alt="" width="1536" height="1024" fetchpriority="high" />
+            <span class="pathway-film-affordance" aria-hidden="true"><span class="pathway-film-affordance-icon">▶</span> Watch on YouTube</span>
           </a>
         </div>
-        <p class="room-doorway-hint">Click the doorway to enter.</p>
       </div>
     </section>
 
@@ -62,17 +62,15 @@
           <span class="pathway-nav-status">Room 40</span>
           <a class="pathway-nav-next" href="../lesson-41/">Continue to Room 41 →</a>
         </nav>
+        <div class="pathway-learner-controls">
+          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
+        </div>
 
         <header class="room-section-head reveal">
-          <h2 id="after-heading">すらすら言える</h2>
+          <h2 id="after-heading" lang="ja">すらすら<ruby>言<rt>い</rt></ruby>える</h2>
         </header>
 
         <article class="beginner-exhibit reveal">
-          <section class="kana-complete kana-reference-section" aria-labelledby="map-heading">
-            <h2 id="map-heading">You just heard these.</h2>
-            <div class="kana-puzzle" data-kana-chart-full lang="ja"></div>
-          </section>
-
           <figure class="pathway-verse">
             <p class="jp-verse" lang="ja">
               あいうえお<br>
@@ -100,6 +98,11 @@
               また あした
             </p>
           </figure>
+
+          <section class="kana-complete kana-reference-section" aria-labelledby="map-heading">
+            <h2 id="map-heading">You just heard these.</h2>
+            <div class="kana-puzzle" data-kana-chart-full lang="ja"></div>
+          </section>
         </article>
 
         <div class="room-forward reveal">
@@ -120,7 +123,6 @@
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
         <a href="../">Start Here</a>
-        <a href="../rooms/">Room Map</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>
