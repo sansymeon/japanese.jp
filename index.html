@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css?v=gallery-rooms" />
   <script src="./assets/js/homepage.js" defer></script>
 </head>
 <body>
@@ -36,7 +36,8 @@
 
       <nav class="site-nav" id="siteNav" aria-label="Primary">
         <ul>
-          <li><a href="./start-here/">Start Here</a></li>
+          <li><a href="./start-here/rooms/">Start Here</a></li>
+          <li><a href="./kml/vocabulary/">Vocabulary</a></li>
           <li><a href="./journey/">About KML</a></li>
           <li><a href="./kml/contents/books/">Kanji Studies</a></li>
           <li><a href="./collections/">Video Collections</a></li>
@@ -83,100 +84,110 @@
         </div>
       </div>
 
-      <a class="hero-scroll" href="#entrance" aria-label="Continue to Start Here">
+      <a class="hero-scroll" href="#rooms" aria-label="Continue to the gallery">
         <span class="hero-scroll-line" aria-hidden="true"></span>
       </a>
-    </section>
-
-    <section class="beginner-invite" id="entrance" aria-labelledby="beginner-invite-heading">
-      <div class="container beginner-invite-inner reveal">
-        <h2 id="beginner-invite-heading" class="beginner-invite-title">New to Japanese?</h2>
-        <p class="beginner-invite-lead">You don’t have to learn Japanese before you can enter Japanese.</p>
-        <a class="beginner-invite-link" href="./start-here/">Start Here →</a>
-      </div>
     </section>
 
     <section class="section destinations" id="rooms" aria-labelledby="rooms-heading">
       <div class="container">
         <header class="section-head section-head--left reveal">
           <p class="section-eyebrow">The Gallery</p>
-          <h2 id="rooms-heading">Four rooms of the museum</h2>
+          <h2 id="rooms-heading">Five rooms of the museum</h2>
           <p>Each door leads forward — enter wherever you feel drawn.</p>
         </header>
-      </div>
 
-      <div class="destination-list">
+        <div class="destination-list">
         <article class="destination reveal">
           <figure class="destination-visual">
             <img
               src="./kml/assets/studies/mountain_pass.jpg"
               alt="Quiet path through a mountain pass in Japan"
-              width="1600"
-              height="1000"
+              width="1672"
+              height="941"
               loading="lazy"
             />
           </figure>
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">01</p>
-            <h3>About KML</h3>
-            <p>Why this museum exists — the story behind a quieter way of seeing Japanese.</p>
-            <a class="btn btn-quiet" href="./journey/">Read About KML</a>
+            <h3>New to Japanese?</h3>
+            <p>You don’t have to learn Japanese before you can enter Japanese.</p>
+            <a class="btn btn-quiet" href="./start-here/rooms/">Start Here</a>
           </div>
         </article>
 
         <article class="destination destination--flip reveal">
           <figure class="destination-visual">
             <img
-              src="./kml/assets/studies/thatched_roof.jpg"
-              alt="Traditional thatched farmhouses in a mountain village"
-              width="1600"
-              height="1000"
+              src="./kml/assets/images/vocabulary_intro.jpg"
+              alt="Tea room opening onto a garden, with a kettle, tea utensils, and a hanging scroll"
+              width="1672"
+              height="941"
               loading="lazy"
             />
           </figure>
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">02</p>
+            <h3>Vocabulary</h3>
+            <p>Build practical Japanese — from first words to everyday situations.</p>
+            <a class="btn btn-quiet" href="./kml/vocabulary/">Enter Vocabulary</a>
+          </div>
+        </article>
+
+        <article class="destination reveal">
+          <figure class="destination-visual">
+            <img
+              src="./kml/assets/studies/thatched_roof.jpg"
+              alt="Traditional thatched farmhouses in a mountain village"
+              width="1536"
+              height="1024"
+              loading="lazy"
+            />
+          </figure>
+          <div class="destination-copy">
+            <p class="destination-index" aria-hidden="true">03</p>
             <h3>Kanji Studies</h3>
             <p>Fifteen volumes on the Bookshelf — enter one room at a time.</p>
             <a class="btn btn-quiet" href="./kml/contents/books/">Enter the Bookshelf</a>
           </div>
         </article>
 
-        <article class="destination reveal">
+        <article class="destination destination--flip reveal">
           <figure class="destination-visual">
             <img
               src="./kml/assets/studies/evening.jpg"
               alt="Soft evening light over a Japanese landscape"
-              width="1600"
-              height="1000"
+              width="1536"
+              height="1024"
               loading="lazy"
             />
           </figure>
           <div class="destination-copy">
-            <p class="destination-index" aria-hidden="true">03</p>
+            <p class="destination-index" aria-hidden="true">04</p>
             <h3>Video Collections</h3>
             <p>Quiet video galleries — ambient Japan, kanji, vocabulary, and first steps in reading.</p>
             <a class="btn btn-quiet" href="./collections/">Browse Collections</a>
           </div>
         </article>
 
-        <article class="destination destination--flip reveal">
+        <article class="destination reveal">
           <figure class="destination-visual">
             <img
               src="./kml/assets/studies/shelf.jpg"
               alt="Quiet bookshelf in soft light"
-              width="1600"
-              height="1000"
+              width="1535"
+              height="1024"
               loading="lazy"
             />
           </figure>
           <div class="destination-copy">
-            <p class="destination-index" aria-hidden="true">04</p>
+            <p class="destination-index" aria-hidden="true">05</p>
             <h3>Publications</h3>
             <p>Books and companions for visitors who prefer the page.</p>
             <a class="btn btn-quiet" href="./publications/">Enter Publications</a>
           </div>
         </article>
+        </div>
       </div>
     </section>
   </main>
@@ -198,7 +209,8 @@
       </div>
 
       <nav class="footer-nav" aria-label="Footer">
-        <a href="./start-here/">Start Here</a>
+        <a href="./start-here/rooms/">Start Here</a>
+        <a href="./kml/vocabulary/">Vocabulary</a>
         <a href="./journey/">About KML</a>
         <a href="./kml/contents/books/">Kanji Studies</a>
         <a href="./collections/">Video Collections</a>

@@ -1,0 +1,99 @@
+/* Vocabulary pathway — same row language as kana, two curricula on one page. */
+
+.vocab-section {
+  scroll-margin-top: 5.5rem;
+}
+
+.vocab-section + .vocab-section {
+  margin-top: clamp(3.5rem, 9vw, 5.75rem);
+}
+
+.vocab-section-head {
+  text-align: center;
+  margin-bottom: 1.65rem;
+}
+
+.vocab-section-head h2 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.1vw, 1.22rem);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 78%, transparent);
+}
+
+.vocab-section-head p {
+  margin: 0 auto;
+  max-width: 28rem;
+  color: var(--ink-quiet);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.vocab-group-label {
+  margin: 0 auto 0.85rem;
+  max-width: 32rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink-quiet) 78%, transparent);
+}
+
+.vocab-index-rows + .vocab-group-label {
+  margin-top: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.vocab-index-rows {
+  width: min(100%, 32rem);
+}
+
+.vocab-index-rows .kana-index-ja {
+  letter-spacing: 0.08em;
+  font-size: clamp(1.35rem, 5.2vw, 1.85rem);
+}
+
+.vocab-index-rows--everyday {
+  width: min(100%, 36rem);
+}
+
+.vocab-index-num {
+  grid-column: 1;
+  justify-self: end;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink-quiet) 82%, transparent);
+  white-space: nowrap;
+}
+
+.vocab-index-row--soon {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.vocab-index-row--soon:hover,
+.vocab-index-row--soon:focus-visible {
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 520px) {
+  .kana-index-row--video {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 0.2rem;
+    padding-top: 1.05rem;
+    padding-bottom: 1.15rem;
+  }
+
+  .kana-index-row--video .vocab-index-num,
+  .kana-index-row--video .kana-index-ja,
+  .kana-index-row--video .kana-index-cue {
+    grid-column: 1;
+  }
+}

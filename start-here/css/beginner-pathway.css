@@ -336,34 +336,6 @@ button.museum-btn {
   cursor: pointer;
 }
 
-.beginner-assist {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.65rem;
-  margin: 0 0 1.75rem;
-}
-
-.beginner-assist [data-study-music] {
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  color: var(--ink-quiet);
-  background: transparent;
-  border: 1px solid rgba(201, 164, 88, 0.28);
-  border-radius: 2px;
-  padding: 0.45rem 0.8rem;
-  cursor: pointer;
-}
-
-.beginner-assist [data-study-music]:hover,
-.beginner-assist [data-study-music]:focus-visible,
-.beginner-assist [data-study-music][aria-pressed="true"] {
-  color: var(--gold);
-  border-color: var(--gold);
-  outline: none;
-}
-
 @media (max-width: 720px) {
   .guided-stage {
     padding-top: 3.25rem;
@@ -635,6 +607,44 @@ button.museum-btn {
   text-align: center;
 }
 
+.pathway-verse .jp-romaji {
+  margin-top: 0.65rem;
+  white-space: pre-line;
+}
+
+.jp-verse .jp-verse-line {
+  display: block;
+}
+
+.jp-verse .jp-verse-ja {
+  display: block;
+  letter-spacing: inherit;
+}
+
+.jp-verse .jp-verse-line > .jp-romaji {
+  display: block;
+  white-space: normal;
+  margin: 0.15rem 0 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+}
+
+html.is-romaji-off .jp-verse .jp-verse-line > .jp-romaji {
+  display: none;
+  margin: 0;
+}
+
+.room-section-head .jp-romaji,
+.static-study-vocab-word + .jp-romaji {
+  margin-top: 0.35rem;
+}
+
+html.is-romaji-off .static-study-kana-romaji {
+  display: none;
+}
+
 .pathway-verse .jp-verse {
   margin: 0;
   font-family: var(--font-display);
@@ -789,6 +799,14 @@ button.museum-btn {
     );
 }
 
+.kana-meet-label {
+  margin: 0.85rem 0 0.15rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-quiet);
+}
+
 /* Room 38: give the completed 46/46 grid a little air.
    The filled chart is the event; do not decorate it. */
 [data-beginner-lesson="38"] .kana-puzzle-section {
@@ -814,7 +832,7 @@ button.museum-btn {
   display: block;
   position: relative;
   width: 100%;
-  max-width: 42rem;
+  max-width: min(100%, 52rem);
   margin: 0 auto 1.35rem;
   aspect-ratio: 16 / 9;
   background: #0b0b0c;
@@ -822,13 +840,16 @@ button.museum-btn {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  border: 1px solid rgba(201, 164, 88, 0.14);
-  transition: border-color var(--ease), transform var(--ease);
+  border: 1px solid rgba(201, 164, 88, 0.28);
+  box-sizing: border-box;
+  transition: border-color var(--ease), box-shadow var(--ease);
 }
 
 .pathway-film-link:hover,
-.pathway-film-link:focus-visible {
-  border-color: rgba(201, 164, 88, 0.42);
+.pathway-film-link:focus-visible,
+.pathway-film-link:has(.pathway-film-link-hit:hover),
+.pathway-film-link:has(.pathway-film-link-hit:focus-visible) {
+  border-color: rgba(201, 164, 88, 0.55);
   outline: none;
 }
 
@@ -843,6 +864,7 @@ button.museum-btn {
   height: 100%;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .pathway-film-link img {
@@ -852,20 +874,43 @@ button.museum-btn {
   object-position: center;
 }
 
-.pathway-film-link-label {
+.pathway-film-link-label,
+.pathway-film-affordance {
   position: absolute;
   left: 50%;
-  bottom: 1.1rem;
+  bottom: 0.85rem;
   transform: translateX(-50%);
-  padding: 0.45rem 0.85rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink);
-  background: rgba(8, 8, 9, 0.72);
-  border: 1px solid rgba(201, 164, 88, 0.28);
+  z-index: 1;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 2.05rem;
+  box-sizing: border-box;
+  padding: 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #f4ead8;
+  background: rgba(12, 11, 9, 0.72);
+  border: 1px solid rgba(201, 164, 88, 0.55);
   border-radius: 2px;
+  white-space: nowrap;
+}
+
+.pathway-film-affordance-icon {
+  font-size: 0.62rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.pathway-film-link:hover .pathway-film-affordance,
+.pathway-film-link-hit:hover .pathway-film-affordance,
+.pathway-film-link-hit:focus-visible .pathway-film-affordance {
+  border-color: rgba(201, 164, 88, 0.85);
+  color: #fbf6ea;
 }
 
 .pathway-film-link.is-pending .pathway-film-link-label {
@@ -877,6 +922,15 @@ button.museum-btn {
 .static-study {
   max-width: 36rem;
   margin: 0 auto 3rem;
+}
+
+.static-study-lead {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--ink-quiet);
 }
 
 .static-study-title {
@@ -954,42 +1008,26 @@ button.museum-btn {
   padding-top: clamp(5.5rem, 12vw, 7.5rem);
 }
 
+.beginner-room-simple .room-section--film-top {
+  padding-top: 4.4rem;
+  padding-bottom: 0.65rem;
+}
+
+.beginner-room-simple .room-section--film-top + .room-section {
+  padding-top: 1.05rem;
+}
+
 .beginner-room-simple .room-container--narrow {
   width: min(100% - 2.5rem, 56rem);
 }
 
-.beginner-room-simple .pathway-film-link {
+.beginner-room-simple .room-section:not(.room-section--film-top) .pathway-film-link {
   max-width: none;
   margin-bottom: 1.75rem;
 }
 
 .beginner-room-simple .pathway-nav {
   margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
-}
-
-.beginner-room-simple .pathway-nav-index {
-  justify-self: center;
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--gold) 72%, transparent);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color var(--ease);
-}
-
-.beginner-room-simple .pathway-nav-index:hover,
-.beginner-room-simple .pathway-nav-index:focus-visible {
-  color: var(--gold);
-  outline: none;
-}
-
-.beginner-room-simple .pathway-nav-back[hidden],
-.beginner-room-simple .pathway-nav-next[hidden] {
-  display: block !important;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .pathway-film {
@@ -1303,38 +1341,258 @@ button.museum-btn {
 
 /* Film doorway above preserved Start Here lesson material */
 .room-section--film-top {
-  padding-top: clamp(5.5rem, 12vw, 7.5rem);
-  padding-bottom: 0.5rem;
+  padding-top: 4.4rem;
+  padding-bottom: 0.65rem;
 }
 .room-film-heading {
   text-align: center;
-  margin: 0 auto 1.25rem;
-  max-width: 40rem;
+  margin: 0 auto 0.7rem;
+  max-width: 42rem;
 }
 .room-film-heading h1 {
-  margin: 0 0 0.35rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 4vw, 2.15rem);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-}
-.room-film-heading > p {
   margin: 0;
-  font-size: 1.05rem;
-  color: var(--ink-quiet);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3.2vw, 1.95rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
 }
-.room-film-lead,
-.room-film-hint {
-  margin: 0.85rem 0 0;
-  color: var(--ink-quiet);
+.room-film-room {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 78%, transparent);
 }
-.room-section--film-top .room-doorway-hint {
-  text-align: center;
-  margin: 0.85rem 0 0;
-  color: var(--ink-quiet);
+.room-section--film-top .room-film-heading > :not(.room-film-room):not(h1) {
+  display: none;
+}
+.room-section--film-top .room-doorway-hint,
+.room-section--film-top .pathway-learner-controls,
+.room-section--film-top .pathway-nav {
+  display: none;
 }
 .room-section--film-top .pathway-film-link {
-  max-width: none;
+  width: min(100%, 46rem, calc((100svh - 12.25rem) * 16 / 9));
+  max-width: min(100%, 46rem);
+  max-height: calc(100svh - 12.25rem);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+}
+
+/* Under the film: Japanese teaching sits in the center; prose stays readable. */
+body[data-beginner-lesson] .room-section:not(.room-section--film-top) > .room-container > .room-section-head {
+  text-align: center;
+}
+
+body[data-beginner-lesson] .room-section:not(.room-section--film-top) > .room-container > .room-section-head p {
+  margin-inline: auto;
+}
+
+body[data-beginner-lesson] .jp-unpack + .room-prose {
+  text-align: center;
+}
+
+body[data-beginner-lesson] .jp-unpack + .room-prose p {
+  margin-inline: auto;
+}
+
+/* Teaching stills sit under the film as study prompts, not a second hero.
+   Override museum-room .beginner-exhibit img (full-bleed 16:10 crop). */
+.museum-page .room-section:not(.room-section--film-top) .beginner-exhibit:not(.pathway-kml-verse) img {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin-inline: auto;
+  margin-bottom: 1.1rem;
+}
+
+.museum-page .room-section:not(.room-section--film-top) .beginner-exhibit.pathway-kml-verse img {
+  max-width: min(100%, 36rem);
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+
+.room-section:not(.room-section--film-top) .room-film-lead {
+  margin: 0.85rem 0 0;
+  color: var(--ink-quiet);
+}
+
+.room-section--film-top + .room-section {
+  padding-top: 1.05rem;
+}
+
+.pathway-nav .pathway-nav-back {
+  color: var(--ink);
+}
+
+.pathway-nav .pathway-nav-index {
+  justify-self: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold) 78%, transparent);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--ease);
+}
+
+.pathway-nav .pathway-nav-index:hover,
+.pathway-nav .pathway-nav-index:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+.pathway-nav .pathway-nav-next {
+  color: var(--gold);
+}
+
+body[data-beginner-lesson]:not([data-beginner-lesson="0"])
+  .room-section--film-top
+  + .room-section
+  .pathway-nav--top {
+  display: none;
+}
+
+.pathway-nav .pathway-nav-back[hidden],
+.pathway-nav .pathway-nav-next[hidden] {
+  display: block !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.museum-page .room-forward {
+  margin-top: 1.35rem;
+  padding-top: 0.85rem;
+}
+
+.pathway-nav--bottom {
+  margin-top: 1.15rem;
+  margin-bottom: 0;
+  padding-top: 0.7rem;
+  padding-bottom: 0;
+  border-top: 1px solid rgba(201, 164, 88, 0.14);
+  border-bottom: none;
+}
+
+.room-forward .pathway-nav--bottom,
+.pathway-close .pathway-nav--bottom {
+  margin-top: 0.2rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.room-forward > p + .pathway-nav--bottom {
+  margin-top: 0.1rem;
+}
+
+.pathway-nav--bottom + .room-actions {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .museum-page .pathway-nav {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0.35rem 0.55rem;
+    text-align: center;
+  }
+
+  .museum-page .pathway-nav .pathway-nav-back {
+    order: 0;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .museum-page .pathway-nav .pathway-nav-index,
+  .museum-page .pathway-nav .pathway-nav-status {
+    order: 0;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .museum-page .pathway-nav .pathway-nav-next {
+    order: 0;
+    justify-self: end;
+    text-align: right;
+  }
+}
+
+.pathway-learner-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 1.15rem;
+}
+
+.pathway-learner-controls + .beginner-song {
+  margin-top: 0.15rem;
+}
+
+.beginner-room-simple .beginner-song {
+  margin-bottom: 1.5rem;
+}
+
+.beginner-song .jp-block--solo {
+  margin: 0.45rem 0 0.7rem;
+}
+
+.beginner-song .jp-kana {
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+}
+
+/*
+  Museum .reveal starts at opacity: 0 until IntersectionObserver adds
+  .is-visible. Injected Start Here lyrics used class "reveal" but were
+  inserted AFTER museum-room.js had already observed the page, so the
+  lyric sheet stayed invisible while keeping its full height — a dark
+  empty stage. That was leftover gallery-reveal machinery, not a 100vh
+  guided-song player (the player is not mounted on these rooms).
+*/
+body[data-beginner-lesson] .room-section:not(.room-section--film-top) .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.pathway-learner-controls [data-romaji-toggle] {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft, var(--ink-quiet));
+  background: transparent;
+  border: 1px solid rgba(201, 164, 88, 0.32);
+  border-radius: 2px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+.pathway-learner-controls [data-romaji-toggle]:hover,
+.pathway-learner-controls [data-romaji-toggle]:focus-visible,
+.pathway-learner-controls [data-romaji-toggle][aria-pressed="true"] {
+  color: var(--gold);
+  border-color: var(--gold);
+  outline: none;
+}
+
+@media (max-width: 420px) {
+  .room-section--film-top .room-container {
+    width: min(100% - 1.5rem, 56rem);
+  }
+
+  .pathway-film-affordance {
+    font-size: 0.72rem;
+    height: 1.95rem;
+    padding: 0 0.75rem;
+  }
 }
 .room-hero-film {
   position: absolute;

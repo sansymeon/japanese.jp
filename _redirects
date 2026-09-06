@@ -5,3 +5,9 @@
 # Museum phase: curriculum landing retired — Kanji Studies opens at the Bookshelf.
 /kml/index.html  /kml/contents/books/  301
 /kml/  /kml/contents/books/  301
+
+# Beginners enter at the Room Map. Force 301 because start-here/index.html
+# still exists on disk this release. Exact paths only — do not splat
+# /start-here/* or /start-here/rooms/ would loop.
+/start-here/index.html  /start-here/rooms/  301!
+/start-here             /start-here/rooms/  301!

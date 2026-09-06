@@ -1,5 +1,6 @@
 /**
- * Shared museum-room UI: copyright year, mobile nav, Start Here link, reveal-on-scroll.
+ * Shared museum-room UI: copyright year, mobile nav, Start Here and
+ * Vocabulary links, reveal-on-scroll.
  */
 (function () {
   "use strict";
@@ -7,12 +8,22 @@
   var year = document.getElementById("copyrightYear");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  var START_HERE_HREF = "/start-here/";
+  var START_HERE_HREF = "/start-here/rooms/";
+  var VOCABULARY_HREF = "/kml/vocabulary/";
 
   function isStartHereHref(href) {
     if (!href) return false;
     var path = href.split("?")[0].split("#")[0].replace(/\/+$/, "");
-    return /(^|\/)start-here(\/index\.html)?$/i.test(path);
+    return (
+      /(^|\/)start-here(\/index\.html)?$/i.test(path) ||
+      /(^|\/)start-here\/rooms(\/index\.html)?$/i.test(path)
+    );
+  }
+
+  function isVocabularyHref(href) {
+    if (!href) return false;
+    var path = href.split("?")[0].split("#")[0].replace(/\/+$/, "");
+    return /(^|\/)kml\/vocabulary(\/index\.html)?$/i.test(path);
   }
 
   function ensureStartHereLink(list) {
@@ -32,6 +43,43 @@
     }
     li.appendChild(a);
     list.insertBefore(li, list.firstChild);
+  }
+
+  function ensureVocabularyLink(list) {
+    if (!list) return;
+    var anchors = list.querySelectorAll("a");
+    var i;
+    var startHereItem = null;
+    for (i = 0; i < anchors.length; i++) {
+      if (isVocabularyHref(anchors[i].getAttribute("href"))) return;
+      if ((anchors[i].textContent || "").trim() === "Vocabulary") return;
+      if (
+        !startHereItem &&
+        (isStartHereHref(anchors[i].getAttribute("href")) ||
+          (anchors[i].textContent || "").trim() === "Start Here")
+      ) {
+        startHereItem = anchors[i].closest("li") || anchors[i];
+      }
+    }
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.href = VOCABULARY_HREF;
+    a.textContent = "Vocabulary";
+    if (/(^|\/)kml\/vocabulary(\/|$)/i.test(window.location.pathname)) {
+      a.setAttribute("aria-current", "page");
+    }
+    li.appendChild(a);
+    if (startHereItem && startHereItem.parentNode === list) {
+      if (startHereItem.nextSibling) {
+        list.insertBefore(li, startHereItem.nextSibling);
+      } else {
+        list.appendChild(li);
+      }
+    } else if (list.firstChild) {
+      list.insertBefore(li, list.firstChild.nextSibling);
+    } else {
+      list.appendChild(li);
+    }
   }
 
   function pathWithoutSlash(pathname) {
@@ -73,6 +121,7 @@
 
   if (inner && links) {
     ensureStartHereLink(links);
+    ensureVocabularyLink(links);
 
     if (panel && !header.querySelector(".museum-nav-toggle")) {
       if (!panel.id) panel.id = "museumNav";

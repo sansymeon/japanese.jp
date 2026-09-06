@@ -12,7 +12,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room 25 — 山の川 — Kanji・Music・Landscape</title>
+  <title>Room 25 — The Mountain River — Kanji・Music・Landscape</title>
   <meta
     name="description"
     content="山の川. Listen."
@@ -25,11 +25,11 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
-  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css?v=quiet-center" />
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
-  <script src="../../assets/js/museum-room.js" defer></script>
-  <script src="../js/beginner-course.js" defer></script>
-  <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../../assets/js/museum-room.js?v=vocab-nav" defer></script>
+  <script src="../js/beginner-course.js?v=romaji-hide" defer></script>
+  <script src="../js/beginner-lesson.js?v=romaji-hide" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="25">
@@ -40,7 +40,7 @@
       <a class="museum-brand" href="../../index.html">Kanji・Music・Landscape</a>
       <nav aria-label="Primary">
         <ul class="museum-nav">
-          <li><a href="../">Start Here</a></li>
+          <li><a href="../rooms/">Start Here</a></li>
           <li><a href="../../journey/">About KML</a></li>
           <li><a href="../../kml/contents/books/">Kanji Studies</a></li>
           <li><a href="../../collections/">Video Collections</a></li>
@@ -54,23 +54,21 @@
     <section class="room-section room-section--film-top" id="film" aria-label="Room film">
       <div class="room-container">
         <header class="room-film-heading">
-          <h1>Room 25</h1>
-          <p>山の川</p>
-          <p class="room-film-lead">Listen.</p>
+          <p class="room-film-room">Room 25</p>
+          <h1>The Mountain River</h1>
         </header>
         <div class="pathway-film-link">
-          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=s-MtpLw_Jzo" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=s-MtpLw_Jzo" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
             <img src="../assets/images/room_25.jpg" alt="" width="1672" height="941" fetchpriority="high" />
+            <span class="pathway-film-affordance" aria-hidden="true"><span class="pathway-film-affordance-icon">▶</span> Watch on YouTube</span>
           </a>
         </div>
-        <p class="room-doorway-hint">Click the doorway to enter.</p>
       </div>
     </section>
 
     <section
       class="room-section beginner-after"
       id="after"
-      data-guided-after
       aria-labelledby="source-heading"
     >
       <div class="room-container">
@@ -79,15 +77,8 @@
           <span class="pathway-nav-status" data-room-nav="current">Room 25</span>
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-26/">Continue to Room 26 →</a>
         </nav>
-
-
-        <div class="interlude-keep reveal">
-          <p>Take this one with you.</p>
-          <a
-            class="museum-btn museum-btn--quiet"
-            href="../audio/山の川が 石を越え.mp3"
-            download="山の川が 石を越え.mp3"
-          >Download song</a>
+        <div class="pathway-learner-controls">
+          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
         </div>
 
         <aside
@@ -138,7 +129,7 @@
           <div class="room-actions">
             <a class="museum-btn museum-btn--primary" href="../lesson-26/">Continue to Room 26</a>
             <a class="museum-btn museum-btn--ghost" href="../lesson-24/">Previous: Room 24</a>
-            <a class="museum-btn museum-btn--ghost" href="../">Back to Start Here</a>
+            <a class="museum-btn museum-btn--ghost" href="../rooms/">Back to Start Here</a>
             <a class="museum-btn museum-btn--ghost" href="../rooms/">Room Map</a>
           </div>
         </div>
@@ -150,9 +141,7 @@
     <div class="museum-footer-inner">
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
-        <a href="../">Start Here</a>
-        <a href="../lesson-24/">Room 24</a>
-        <a href="../lesson-26/">Room 26</a>
+        <a href="../rooms/">Start Here</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>

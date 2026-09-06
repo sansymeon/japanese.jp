@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room 5 — Japanese food is good — Kanji・Music・Landscape</title>
+  <title>Room 5 — Japanese Food — Kanji・Music・Landscape</title>
   <meta
     name="description"
     content="すしは おいしいですか。 The same question, now about food."
@@ -22,11 +22,11 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/museum-room.css" />
-  <link rel="stylesheet" href="../css/beginner-pathway.css" />
+  <link rel="stylesheet" href="../css/beginner-pathway.css?v=quiet-center" />
   <link rel="stylesheet" href="../../kml/assets/site/css/chat-sensei.css" />
-  <script src="../../assets/js/museum-room.js" defer></script>
-  <script src="../js/beginner-course.js" defer></script>
-  <script src="../js/beginner-lesson.js" defer></script>
+  <script src="../../assets/js/museum-room.js?v=vocab-nav" defer></script>
+  <script src="../js/beginner-course.js?v=romaji-hide" defer></script>
+  <script src="../js/beginner-lesson.js?v=romaji-hide" defer></script>
   <script src="../../kml/assets/site/js/chat-sensei.js" defer></script>
 </head>
 <body class="museum-page" data-beginner-lesson="5">
@@ -37,7 +37,7 @@
       <a class="museum-brand" href="../../index.html">Kanji・Music・Landscape</a>
       <nav aria-label="Primary">
         <ul class="museum-nav">
-          <li><a href="../">Start Here</a></li>
+          <li><a href="../rooms/">Start Here</a></li>
           <li><a href="../../journey/">About KML</a></li>
           <li><a href="../../kml/contents/books/">Kanji Studies</a></li>
           <li><a href="../../collections/">Video Collections</a></li>
@@ -51,24 +51,21 @@
     <section class="room-section room-section--film-top" id="film" aria-label="Room film">
       <div class="room-container">
         <header class="room-film-heading">
-          <h1>Room 5</h1>
-          <p>Japanese food is good</p>
-          <p class="room-film-lead">The same question — now about taste.</p>
-          <p class="room-film-hint">おいしい and すし you can already read. The other foods can stay as scenery.</p>
+          <p class="room-film-room">Room 5</p>
+          <h1>Japanese Food</h1>
         </header>
         <div class="pathway-film-link">
-          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=H09lWLQY9Rg" target="_blank" rel="noopener noreferrer" aria-label="Watch room film on YouTube">
+          <a class="pathway-film-link-hit" href="https://www.youtube.com/watch?v=H09lWLQY9Rg" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
             <img src="../assets/images/room_05.jpg" alt="" width="1672" height="941" fetchpriority="high" />
+            <span class="pathway-film-affordance" aria-hidden="true"><span class="pathway-film-affordance-icon">▶</span> Watch on YouTube</span>
           </a>
         </div>
-        <p class="room-doorway-hint">Click the doorway to enter.</p>
       </div>
     </section>
 
     <section
       class="room-section beginner-after"
       id="after"
-      data-guided-after
       aria-labelledby="after-heading"
     >
       <div class="room-container">
@@ -77,17 +74,15 @@
           <span class="pathway-nav-status" data-room-nav="current">Room 5</span>
           <a class="pathway-nav-next" data-room-nav="next" href="../lesson-6/">Continue to Room 6 →</a>
         </nav>
+        <div class="pathway-learner-controls">
+          <button type="button" data-romaji-toggle aria-pressed="true">Romaji: ON</button>
+        </div>
 
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Return</p>
           <h2 id="after-heading">たのしい</h2>
           <p>The whole word is already on your map — from the festival song.</p>
         </header>
-
-        <figure class="jp-block jp-block--solo reveal">
-          <p class="jp-kana" lang="ja">たのしい</p>
-          <p class="jp-romaji">tanoshii</p>
-        </figure>
         <figure class="jp-block jp-block--solo jp-unpack reveal">
           <p class="jp-kana" lang="ja">た　の　し　い</p>
           <p class="jp-romaji">ta　no　shi　i</p>
@@ -164,9 +159,7 @@
     <div class="museum-footer-inner">
       <nav aria-label="Footer">
         <a href="../../index.html">Home</a>
-        <a href="../">Start Here</a>
-        <a href="../lesson-4/">Room 4</a>
-        <a href="../lesson-6/">Room 6</a>
+        <a href="../rooms/">Start Here</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>
