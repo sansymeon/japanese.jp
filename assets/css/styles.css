@@ -632,64 +632,6 @@ button:focus-visible {
   border-radius: 0;
 }
 
-/* ---------- Beginner entrance ---------- */
-
-.beginner-invite {
-  position: relative;
-  z-index: 1;
-  padding: clamp(2.75rem, 6vw, 4rem) 0;
-  border-top: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
-  background:
-    radial-gradient(
-      ellipse 70% 80% at 50% 50%,
-      color-mix(in srgb, var(--green) 14%, transparent),
-      transparent 72%
-    ),
-    var(--bg-elevated);
-  text-align: center;
-}
-
-.beginner-invite-inner {
-  max-width: 28rem;
-  margin: 0 auto;
-}
-
-.beginner-invite-title {
-  margin: 0 0 0.65rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: var(--paper-warm);
-}
-
-.beginner-invite-lead {
-  margin: 0 0 1.35rem;
-  font-size: 1.02rem;
-  line-height: 1.65;
-  color: var(--ink-secondary);
-}
-
-.beginner-invite-link {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-  padding-bottom: 0.15rem;
-  transition: color var(--ease), border-color var(--ease);
-}
-
-.beginner-invite-link:hover,
-.beginner-invite-link:focus-visible {
-  color: color-mix(in srgb, var(--accent) 78%, white);
-  border-bottom-color: var(--accent);
-  outline: none;
-}
-
 /* ---------- Destination invitations ---------- */
 
 .destinations {
@@ -707,19 +649,21 @@ button:focus-visible {
 .destination-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: clamp(2.25rem, 5.5vw, 3.75rem);
   margin-top: clamp(2rem, 5vw, 3.5rem);
 }
 
 .destination {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  min-height: min(78vh, 38rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(1.25rem, 3.5vw, 2.75rem);
+  min-height: 0;
   background: var(--bg);
 }
 
 .destination--flip {
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .destination--flip .destination-visual {
@@ -728,56 +672,33 @@ button:focus-visible {
 
 .destination--flip .destination-copy {
   order: 1;
+  margin-inline-start: auto;
 }
 
 .destination-visual {
   margin: 0;
-  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
   overflow: hidden;
-  min-height: 22rem;
-}
-
-.destination-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 55%,
-    color-mix(in srgb, var(--bg) 55%, transparent)
-  );
-  pointer-events: none;
-  opacity: 0.55;
-}
-
-.destination--flip .destination-visual::after {
-  background: linear-gradient(
-    270deg,
-    transparent 55%,
-    color-mix(in srgb, var(--bg) 55%, transparent)
-  );
+  background: var(--bg);
 }
 
 .destination-visual img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transition: transform 1.4s var(--ease-slow);
-}
-
-.destination:hover .destination-visual img,
-.destination:focus-within .destination-visual img {
-  transform: scale(1.035);
 }
 
 .destination-copy {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2.25rem, 5vw, 4rem) clamp(1.75rem, 4.5vw, 4.5rem);
-  max-width: 28rem;
-  margin-inline: auto;
+  padding: 0.35rem 0.15rem;
+  max-width: 22rem;
+  margin-inline: 0;
   width: 100%;
 }
 
@@ -1368,6 +1289,7 @@ button:focus-visible {
   .destination--flip {
     grid-template-columns: 1fr;
     min-height: 0;
+    row-gap: 1rem;
   }
 
   .destination--flip .destination-visual,
@@ -1375,30 +1297,17 @@ button:focus-visible {
     order: unset;
   }
 
+  .destination--flip .destination-copy {
+    margin-inline-start: 0;
+  }
+
   .destination-visual {
-    min-height: min(52vw, 22rem);
-  }
-
-  .destination-visual::after {
-    background: linear-gradient(
-      180deg,
-      transparent 40%,
-      color-mix(in srgb, var(--bg) 70%, transparent)
-    );
-    opacity: 0.85;
-  }
-
-  .destination--flip .destination-visual::after {
-    background: linear-gradient(
-      180deg,
-      transparent 40%,
-      color-mix(in srgb, var(--bg) 70%, transparent)
-    );
+    width: 100%;
+    max-width: none;
   }
 
   .destination-copy {
-    padding-top: 1.75rem;
-    padding-bottom: clamp(3rem, 8vw, 4.5rem);
+    padding: 0.15rem 0 0.5rem;
     max-width: 36rem;
   }
 

@@ -1382,8 +1382,26 @@ html.is-romaji-off .static-study-kana-romaji {
   margin: 0 auto;
 }
 
-/* Teaching stills sit under the film as study prompts, not a second hero. */
-.museum-page .room-section:not(.room-section--film-top) .beginner-exhibit img {
+/* Under the film: Japanese teaching sits in the center; prose stays readable. */
+body[data-beginner-lesson] .room-section:not(.room-section--film-top) > .room-container > .room-section-head {
+  text-align: center;
+}
+
+body[data-beginner-lesson] .room-section:not(.room-section--film-top) > .room-container > .room-section-head p {
+  margin-inline: auto;
+}
+
+body[data-beginner-lesson] .jp-unpack + .room-prose {
+  text-align: center;
+}
+
+body[data-beginner-lesson] .jp-unpack + .room-prose p {
+  margin-inline: auto;
+}
+
+/* Teaching stills sit under the film as study prompts, not a second hero.
+   Override museum-room .beginner-exhibit img (full-bleed 16:10 crop). */
+.museum-page .room-section:not(.room-section--film-top) .beginner-exhibit:not(.pathway-kml-verse) img {
   display: block;
   width: 100%;
   max-width: 450px;
@@ -1391,6 +1409,7 @@ html.is-romaji-off .static-study-kana-romaji {
   aspect-ratio: auto;
   object-fit: contain;
   margin-inline: auto;
+  margin-bottom: 1.1rem;
 }
 
 .museum-page .room-section:not(.room-section--film-top) .beginner-exhibit.pathway-kml-verse img {

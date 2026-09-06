@@ -8,12 +8,9 @@
   The older /kml/lesson_00.html Foundations/philosophy hub is a separate page;
   do not conflate the two until a later rename/redirect pass.
 
-  Kana pathway — principles:
-  The chart records the learning. It does not dictate the learning.
-  Your Hiragana only fills (empty → complete). It never develops holes.
-  Romaji is a learner-controlled ON/OFF, independent of the puzzle.
-  romajiDefault is per lesson in start-here/js/beginner-course.js.
-  Vertical slice: Rooms 0–42. Do not send Route A to Kanji Lesson 1.
+  Direct beginner entrance after the homepage “New to Japanese?” room.
+  The Room Map is the next choice (begin at Room 0 or pick a room).
+  Do not send this page to Kanji Lesson 1, Vocabulary, or Collections.
 -->
 <html lang="en" class="museum-page">
 <head>
@@ -31,18 +28,19 @@
     href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="../assets/css/museum-room.css" />
-  <script src="../assets/js/museum-room.js?no-current-start-here-footer" defer></script>
+  <link rel="stylesheet" href="../assets/css/museum-room.css?v=start-direct" />
+  <script src="../assets/js/museum-room.js?no-current-start-here-footer&v=vocab-nav" defer></script>
 </head>
 <body class="museum-page">
-  <a class="skip-link" href="#pathways">Skip to pathways</a>
+  <a class="skip-link" href="#room-map">Skip to the Room Map</a>
 
   <header class="museum-header">
     <div class="museum-header-inner">
       <a class="museum-brand" href="../index.html">Kanji・Music・Landscape</a>
       <nav aria-label="Primary">
         <ul class="museum-nav">
-          <li><a href="./" aria-current="page">Start Here</a></li>
+          <li><a href="./rooms/">Start Here</a></li>
+          <li><a href="../kml/vocabulary/">Vocabulary</a></li>
           <li><a href="../journey/">About KML</a></li>
           <li><a href="../kml/contents/books/">Kanji Studies</a></li>
           <li><a href="../collections/">Video Collections</a></li>
@@ -74,62 +72,9 @@
           We’ll begin with the sounds of the language, your first conversation,
           and writing that appears as Japanese needs it.
         </p>
-      </div>
-
-      <a class="room-hero-scroll" href="#pathways" aria-label="Continue to pathways">
-        <span class="room-hero-scroll-line" aria-hidden="true"></span>
-      </a>
-    </section>
-
-    <section class="room-section" id="pathways" aria-labelledby="pathways-heading">
-      <div class="room-container">
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">Choose your entrance</p>
-          <h2 id="pathways-heading">Three quiet doors</h2>
-          <p>Pick the path that matches where you are — then follow it forward.</p>
-        </header>
-
-        <ul class="guidance-list">
-          <li class="guidance-item reveal">
-            <a class="guidance-link" href="./rooms/">
-              <span class="guidance-label">Route A</span>
-              <span>
-                <h3 class="guidance-title">I’m completely new</h3>
-                <p class="guidance-meta">
-                  Explore the beginner pathway — start at the beginning, or choose the room that feels right for you.
-                </p>
-                <span class="pathway-cta">Open the Room Map →</span>
-              </span>
-            </a>
-          </li>
-          <li class="guidance-item reveal">
-            <a class="guidance-link" href="../kml/contents/books/book_01/lessons/lesson_01.html">
-              <span class="guidance-label">Route B</span>
-              <span>
-                <h3 class="guidance-title">I already know hiragana and katakana</h3>
-                <p class="guidance-meta">
-                  Enter the kanji sequence directly — no need to walk the beginner runway first.
-                </p>
-                <span class="pathway-cta">Begin Kanji Lesson 1 →</span>
-              </span>
-            </a>
-          </li>
-          <li class="guidance-item reveal">
-            <div class="guidance-link guidance-link--plain">
-              <span class="guidance-label">Route C</span>
-              <span>
-                <h3 class="guidance-title">I just want to explore</h3>
-                <p class="guidance-meta">
-                  Wander the galleries — video collections and quiet study spaces.
-                </p>
-                <ul class="guidance-explore">
-                  <li><a href="../collections/">Video Collections</a></li>
-                  <li><a href="../kml/contents/books/">The Bookshelf</a></li>
-                </ul>
-              </span>
-            </div>
-          </li>
-        </ul>
+        <div class="room-actions">
+          <a class="museum-btn museum-btn--ghost" id="room-map" href="./rooms/">Open the Room Map →</a>
+        </div>
       </div>
     </section>
   </main>
@@ -139,8 +84,6 @@
       <nav aria-label="Footer" data-no-start-here>
         <a href="../index.html">Home</a>
         <a href="./rooms/">Room Map</a>
-        <a href="../kml/contents/books/">Kanji Studies</a>
-        <a href="../collections/">Video Collections</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>
