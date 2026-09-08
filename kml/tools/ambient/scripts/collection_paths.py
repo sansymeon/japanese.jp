@@ -47,6 +47,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return "katakana_origins"
     if collection_id.startswith("katakana_song"):
         return "katakana_song"
+    if collection_id.startswith("katakana_cookie"):
+        return "katakana_cookie"
     if collection_id.startswith("grade_1"):
         return "grade_1"
     if collection_id.startswith("grade_2"):

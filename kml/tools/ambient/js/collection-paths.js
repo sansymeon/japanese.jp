@@ -30,6 +30,7 @@
     if (/^hiragana_origins/.test(name)) return "hiragana_origins";
     if (/^katakana_origins/.test(name)) return "katakana_origins";
     if (/^katakana_song/.test(name)) return "katakana_song";
+    if (/^katakana_cookie/.test(name)) return "katakana_cookie";
     if (/^grade_1/.test(name)) return "grade_1";
     if (/^grade_2/.test(name)) return "grade_2";
     if (/^grade_3/.test(name)) return "grade_3";

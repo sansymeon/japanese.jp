@@ -1,0 +1,142 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "katakana_cookie",
+  "title": "Katakana Opus 1 — クッキーの中に",
+  "notes": "Cookie song lyric film. 0:00–0:16 intro.png (no lyrics); fade to black starts 0:16. 0:16–2:36 lyrics on black (Rooms 43–56 clean style). 2:36 begin slow 7s crossfade to outro.png (guilty Shiba-kun); fully visible by 2:43 for カタカナのクッキーのなかに; hold through ヲ climax and かえりましょう (3:25), then gentle fade to black. Drop soundtrack mp3, intro.png, and outro.png into this folder. Preview once lyricFilm playback is wired: exhibition.html?collection=katakana_cookie",
+  "soundtrack": {
+    "main": "collections/katakana_cookie/katakana_cookie.mp3"
+  },
+  "bookends": {
+    "mode": "none"
+  },
+  "imageCrossfade": 2.8,
+  "exhibition": {
+    "exhibitionBlackBeforeMs": 0,
+    "captionFadeMs": 220,
+    "dualCaptionTransitionMs": 550,
+    "fujiFadeMs": 2500,
+    "fujiExhaleMs": 2800,
+    "closingRevealMs": 7000,
+    "closingHoldMs": 8000,
+    "closingExhaleMs": 3000,
+    "closingFadeToBlackMs": 3000,
+    "closingBlackAfterMs": 800,
+    "closingSilenceHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "lyricFilm",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": false,
+    "exhibitProfile": "lyricFilm",
+    "captionLayout": "single",
+    "bookendStyle": "none"
+  },
+  "meta": {
+    "family": "lyricFilm",
+    "stage": "katakanaCookie",
+    "captionsFile": "data/katakana_cookie_captions.sbv",
+    "captionsRev": 1,
+    "soundtrackDurationMs": 220000,
+    "japaneseOnly": true,
+    "shotList": [
+      "0:00–0:16 intro.png — no lyrics",
+      "0:16 start fade to black; first lyric",
+      "0:16–2:32 black + lyrics only",
+      "2:32 さいごのこった クッキーを on black",
+      "2:36 そっとのぞいて — begin slow crossfade to outro.png",
+      "2:43 outro fully visible for カタカナのクッキーのなかに",
+      "2:53–end hold outro through ヲ climax",
+      "3:25 hold guilty Shiba-kun after かえりましょう, then fade to black"
+    ]
+  },
+  "film": [
+    {
+      "id": "intro",
+      "start": 0,
+      "image": "collections/katakana_cookie/intro.png",
+      "crossfade": 0
+    },
+    {
+      "id": "lyrics-black",
+      "start": 16,
+      "image": "collections/katakana_cookie/black.png",
+      "crossfade": 2.5
+    },
+    {
+      "id": "outro-shiba",
+      "start": 156,
+      "image": "collections/katakana_cookie/outro.png",
+      "crossfade": 7
+    },
+    {
+      "id": "fade-black",
+      "start": 213,
+      "image": "collections/katakana_cookie/black.png",
+      "crossfade": 3
+    }
+  ],
+  "lyrics": [
+    { "id": "intro-silence", "start": 0, "ja": "", "overlay": "none" },
+    { "id": "v1-1", "start": 16, "ja": "あさのカフェの まどぎわで" },
+    { "id": "v1-2", "start": 21, "ja": "コーヒーのゆげを みていたら" },
+    { "id": "v1-3", "start": 25, "ja": "ノンファットラッテ ミルク ウインナー" },
+    { "id": "v1-4", "start": 29, "ja": "いいにおいに しっぽがゆれる" },
+    { "id": "v2-1", "start": 33, "ja": "きょうはどこへ いこうかな" },
+    { "id": "v2-2", "start": 38, "ja": "かぜにさそわれ あるきだす" },
+    { "id": "v2-3", "start": 42, "ja": "サラダ シチューに エビフライ" },
+    { "id": "v2-4", "start": 46, "ja": "ハンバーガーも いいかもね" },
+    { "id": "c1-1", "start": 51, "ja": "アイスクリーム ケーキ" },
+    { "id": "c1-2", "start": 53, "ja": "メロン マンゴー タルト モンブラン" },
+    { "id": "c1-3", "start": 59, "ja": "ヘーゼルナッツの ガナッシュ" },
+    { "id": "c1-4", "start": 64, "ja": "あまいじかんは ゆっくりすぎる" },
+    { "id": "v3-1", "start": 72, "ja": "ゆうぐれどきの みせさきに" },
+    { "id": "v3-2", "start": 76, "ja": "ヤキトリのけむりが のぼってる" },
+    { "id": "v3-3", "start": 81, "ja": "ユッケ ヌードル ソーセージ" },
+    { "id": "v3-4", "start": 85, "ja": "ホットドッグも いいですね" },
+    { "id": "v4-1", "start": 89, "ja": "ワッフルひとつ もらったら" },
+    { "id": "v4-2", "start": 93, "ja": "ヨーグルトまで ほしくなる" },
+    { "id": "v4-3", "start": 98, "ja": "オムレツ セロリ ニンジン" },
+    { "id": "v4-4", "start": 103, "ja": "ネギトロだって おいしいね" },
+    { "id": "b-1", "start": 107, "ja": "だけどなぜか きになって" },
+    { "id": "b-2", "start": 116, "ja": "なにかひとつが たりないよ" },
+    { "id": "b-3", "start": 125, "ja": "アからンまで かぞえたら" },
+    { "id": "b-4", "start": 134, "ja": "どこかにひとつ かくれてる" },
+    { "id": "v5-1", "start": 143, "ja": "テーブルのした いすのした" },
+    { "id": "v5-2", "start": 147, "ja": "おさらのうしろも さがしたよ" },
+    { "id": "v5-3", "start": 152, "ja": "さいごのこった クッキーを" },
+    { "id": "v5-4", "start": 156, "ja": "そっとのぞいて みたならば" },
+    { "id": "c2-1", "start": 163, "ja": "カタカナのクッキーのなかに" },
+    { "id": "c2-2", "start": 173, "ja": "ヲをみつけた" },
+    { "id": "c3-1", "start": 177, "ja": "ヲをみつけた" },
+    { "id": "c3-2", "start": 181, "ja": "ずっとそこに いたんだね" },
+    { "id": "c4-1", "start": 189, "ja": "カタカナのクッキーのなかに" },
+    { "id": "c4-2", "start": 198, "ja": "ヲをみつけた" },
+    { "id": "c4-3", "start": 202, "ja": "しっぽをふって" },
+    { "id": "c4-4", "start": 205, "ja": "かえりましょう" }
+  ],
+  "scenes": [
+    {
+      "id": "intro",
+      "startMs": 0,
+      "artworkAloneMs": 16000,
+      "image": "collections/katakana_cookie/intro.png",
+      "captionsFile": "data/katakana_cookie_captions.sbv",
+      "captionsRev": 1
+    },
+    {
+      "id": "lyrics_black",
+      "startMs": 16000,
+      "image": "collections/katakana_cookie/black.png"
+    },
+    {
+      "id": "outro_shiba",
+      "startMs": 156000,
+      "image": "collections/katakana_cookie/outro.png",
+      "crossfadeMs": 7000
+    }
+  ]
+}
