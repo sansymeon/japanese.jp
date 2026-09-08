@@ -32,7 +32,11 @@
  *
  * Room 40 is すらすら言える / Hiragana in Rhythm. Room 41 is 言葉が咲く |
  * Words in Bloom (production Room 40 lower lesson, under the film).
- * Room 42 is Shiba-kun Overture, the Start Here terminus.
+ * Room 42 is Shiba-kun Overture (hiragana close). Katakana continues
+ * at Room 43 as static-study units — show, play, read, continue.
+ * Room 57 is the reading checkpoint. Room 58 is the katakana-song
+ * page: Katakana Cookie song, Katakana Song, すらすら言える / Katakana in Rhythm,
+ * Katakana Foods Song. Room 58 is the Start Here close.
  *
  * Slice: Rooms 0–42. Opening song order:
  *   0 conversational あいうえお jazz (guided-song)
@@ -110,8 +114,12 @@
  *   40 すらすら言える / Hiragana in Rhythm. Continues to Room 41.
  *   41 ことばが さく / Words in Bloom — production Room 40 lower lesson
  *       under the film. Continues to Room 42.
- *   42 Shiba-kun Overture. Start Here terminus. No Room 43.
- *       Pathway nav is previous + Room Map only.
+ *   42 Shiba-kun Overture. Hiragana close. Continues to Room 43.
+ *   43–52 katakana gojūon rows (ワヲン together). 53 ー  54 ゛゜
+ *       55 ッ  56 ャュョ. Room 57 is a reading payoff, not new kana.
+ *       No teaching prose. No hero/film image — the black field is
+ *       the look. Room 58 is the close: four YouTube song doorways,
+ *       no local poster. Do not explain the ヲ joke in copy.
  *
  * Reading: you don't have to understand everything to understand something.
  * Help learners notice known pieces and signals. Unknown material can wait.
@@ -120,9 +128,11 @@
  * Static study track (simplified rooms):
  *   Room pages may mount conventional kana study via `staticStudy`
  *   (a unit id from start-here/js/static-study-data.js). That track is
- *   ordered by content — hiragana, then later katakana — and is not
- *   sized to the number of Start Here rooms. Prototype: Room 0 only
- *   (h-a). Do not wire remaining rooms until review.
+ *   ordered by content — hiragana, then katakana — and is not sized
+ *   to the number of Start Here rooms. Room 0 is h-a. Rooms 43–56
+ *   are k-a … k-youon. Room 57 is k-reading. Room 58 is YouTube
+ *   songs, not a static-study unit. Teaching rooms have no
+ *   soundtrack or hero image.
  */
 (function () {
   "use strict";
@@ -837,9 +847,59 @@
       filmImage: "../assets/images/room_42.jpg",
       youtubeUrl: "https://www.youtube.com/watch?v=VqCrT25rCl4",
       prev: "41",
-      next: null,
+      next: "43",
     },
   };
+
+  var katakanaRooms = [
+    { id: "43", displayName: "ア　イ　ウ　エ　オ", staticStudy: "k-a" },
+    { id: "44", displayName: "カ　キ　ク　ケ　コ", staticStudy: "k-ka" },
+    { id: "45", displayName: "サ　シ　ス　セ　ソ", staticStudy: "k-sa" },
+    { id: "46", displayName: "タ　チ　ツ　テ　ト", staticStudy: "k-ta" },
+    { id: "47", displayName: "ナ　ニ　ヌ　ネ　ノ", staticStudy: "k-na" },
+    { id: "48", displayName: "ハ　ヒ　フ　ヘ　ホ", staticStudy: "k-ha" },
+    { id: "49", displayName: "マ　ミ　ム　メ　モ", staticStudy: "k-ma" },
+    { id: "50", displayName: "ヤ　ユ　ヨ", staticStudy: "k-ya" },
+    { id: "51", displayName: "ラ　リ　ル　レ　ロ", staticStudy: "k-ra" },
+    { id: "52", displayName: "ワ　ヲ　ン", staticStudy: "k-wa" },
+    { id: "53", displayName: "ー", staticStudy: "k-choon" },
+    { id: "54", displayName: "゛　゜", staticStudy: "k-dakuten" },
+    { id: "55", displayName: "ッ", staticStudy: "k-sokuon" },
+    { id: "56", displayName: "ャ　ュ　ョ", staticStudy: "k-youon" },
+    {
+      id: "57",
+      displayName: "How many can you read?",
+      staticStudy: "k-reading",
+      romajiDefault: "off",
+      glossToggle: "english"
+    },
+    {
+      id: "58",
+      displayName: "Katakana songs",
+      youtubeUrl: "https://www.youtube.com/watch?v=V9s8kvei-ks",
+      romajiDefault: "off"
+    }
+  ];
+  katakanaRooms.forEach(function (spec, index) {
+    var prevId = index === 0 ? "42" : katakanaRooms[index - 1].id;
+    var nextId = katakanaRooms[index + 1] ? katakanaRooms[index + 1].id : null;
+    lessons[spec.id] = {
+      id: spec.id,
+      roomLabel: "Room " + spec.id,
+      displayName: spec.displayName,
+      mode: "study-room",
+      romajiDefault: spec.romajiDefault || "on",
+      glossToggle: spec.glossToggle || null,
+      showPuzzle: false,
+      showReferenceChart: false,
+      encounteredKana: L42,
+      newKana: [],
+      staticStudy: spec.staticStudy || null,
+      youtubeUrl: spec.youtubeUrl || null,
+      prev: prevId,
+      next: nextId
+    };
+  });
 
   function teachingContainer() {
     return document.querySelector(
@@ -1163,9 +1223,20 @@
     };
     var PARTICLES = { は: "wa", へ: "e", を: "o" };
 
+    function kataToHira(text) {
+      return String(text || "").replace(/[\u30A1-\u30F6]/g, function (ch) {
+        return String.fromCharCode(ch.charCodeAt(0) - 0x60);
+      });
+    }
+
     function convertWord(word) {
+      var source = word;
+      word = kataToHira(word);
       if (EXCEPTIONS[word]) return EXCEPTIONS[word];
-      if (PARTICLES[word]) return PARTICLES[word];
+      /* Topic/direction は・へ are hiragana-only. Katakana ハ・ヘ are ha/he. */
+      if (PARTICLES[word] && !/[\u30A1-\u30F6]/.test(source)) {
+        return PARTICLES[word];
+      }
       var out = "";
       var i = 0;
       while (i < word.length) {
@@ -1475,6 +1546,7 @@
       return true;
     }
     if (host.closest(".static-study-kana")) return true;
+    if (host.closest("[data-gloss='english']")) return true;
     if (host.classList.contains("static-study-title")) return true;
     if (host.classList.contains("jp-romaji") || host.classList.contains("jp-en")) return true;
     return false;
@@ -1490,7 +1562,7 @@
       .join(" ");
     var mapped = lookupRomaji(map, jaKey, reading);
     if (mapped) return mapped;
-    if (!/\s/.test(jaKey) && /^[\u3041-\u3096ー]+$/.test(jaKey)) {
+    if (!/\s/.test(jaKey) && /^[\u3041-\u3096\u30A0-\u30FFー]+$/.test(jaKey)) {
       return kanaToRomaji(jaKey);
     }
     return sentenceCaseRomaji(
