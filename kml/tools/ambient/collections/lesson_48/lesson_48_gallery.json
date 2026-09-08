@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_48_gallery",
+  "title": "KML Gallery — Lesson 48 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (490s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_3_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9926,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3871,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3871,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 20468,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 48,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_3",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L48_restore",
+      "kanji": "復",
+      "keyword": "restore",
+      "image": "studies/restore.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>夜<rt>よる</rt></ruby>が<ruby>明<rt>あ</rt></ruby>ければ、<br>    <ruby>希望<rt>きぼう</rt></ruby>はまた<ruby>帰<rt>かえ</rt></ruby>ってくる。<br>    <ruby>人生<rt>じんせい</rt></ruby>は<ruby>何度<rt>なんど</rt></ruby>でも<ruby>始<rt>はじ</rt></ruby>められる。",
+        "en": "When night gives way to dawn,\nhope returns once more.\nLife always offers another beginning."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "restore"
+      },
+      "imageRev": 1788256011
+    },
+    {
+      "id": "L48_acquire",
+      "kanji": "得",
+      "keyword": "acquire",
+      "image": "studies/acquire.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>得<rt>え</rt></ruby>た<ruby>知恵<rt>ちえ</rt></ruby>は、<br>    <ruby>分<rt>わ</rt></ruby>かち<ruby>合<rt>あ</rt></ruby>うほど<ruby>豊<rt>ゆた</rt></ruby>かになる。<br>    <ruby>学<rt>まな</rt></ruby>びは<ruby>宝<rt>たから</rt></ruby>。",
+        "en": "Wisdom once gained\ngrows richer when shared.\nLearning is a treasure."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "acquire"
+      },
+      "imageRev": 1788256011
+    },
+    {
+      "id": "L48_obey",
+      "kanji": "従",
+      "keyword": "obey",
+      "image": "studies/obey.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>正<rt>ただ</rt></ruby>しい<ruby>道<rt>みち</rt></ruby>に<ruby>従<rt>したが</rt></ruby>えば、<br>    <ruby>心<rt>こころ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>安<rt>やす</rt></ruby>らぐ。<br>    <ruby>真実<rt>しんじつ</rt></ruby>は<ruby>導<rt>みちび</rt></ruby>きとなる。",
+        "en": "Follow the right path,\nand the heart finds peace.\nTruth becomes a guide."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "obey"
+      },
+      "imageRev": 1788256012
+    },
+    {
+      "id": "L48_junior",
+      "kanji": "徒",
+      "keyword": "junior",
+      "image": "studies/junior.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>徒<rt>いたず</rt></ruby>らに<ruby>時<rt>とき</rt></ruby>を<ruby>過<rt>す</rt></ruby>ごさず、<br>    <ruby>今日<rt>きょう</rt></ruby>の<ruby>一歩<rt>いっぽ</rt></ruby>を<ruby>大切<rt>たいせつ</rt></ruby>に。<br>    <ruby>毎日<rt>まいにち</rt></ruby>が<ruby>未来<rt>みらい</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てる。",
+        "en": "Do not spend your days in vain.\nTreasure today's small step.\nEach day shapes tomorrow."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "junior"
+      },
+      "imageRev": 1788256012
+    },
+    {
+      "id": "L48_wait",
+      "kanji": "待",
+      "keyword": "wait",
+      "image": "studies/wait.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>花<rt>はな</rt></ruby>は<ruby>急<rt>いそ</rt></ruby>がず、<br>    <ruby>春<rt>はる</rt></ruby>を<ruby>待<rt>ま</rt></ruby>って<ruby>咲<rt>さ</rt></ruby>く。<br>    <ruby>忍耐<rt>にんたい</rt></ruby>は<ruby>美<rt>うつく</rt></ruby>しい。",
+        "en": "Flowers never hurry,\nbut wait for spring.\nPatience is beautiful."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "wait"
+      },
+      "imageRev": 1788256012
+    },
+    {
+      "id": "L48_journey",
+      "kanji": "往",
+      "keyword": "journey",
+      "image": "studies/journey.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>行<rt>ゆ</rt></ruby>く<ruby>道<rt>みち</rt></ruby>があるから、<br>    <ruby>帰<rt>かえ</rt></ruby>る<ruby>喜<rt>よろこ</rt></ruby>びも<ruby>生<rt>う</rt></ruby>まれる。<br>    <ruby>旅<rt>たび</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てる。",
+        "en": "Because there is a road outward,\nthere is joy in returning.\nJourneys shape the heart."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "journey"
+      },
+      "imageRev": 1788256012
+    },
+    {
+      "id": "L48_subjugate",
+      "kanji": "征",
+      "keyword": "subjugate",
+      "image": "studies/subjugate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>真<rt>まこと</rt></ruby>の<ruby>征服<rt>せいふく</rt></ruby>とは、<br>    <ruby>自分<rt>じぶん</rt></ruby>の<ruby>弱<rt>よわ</rt></ruby>さを<ruby>越<rt>こ</rt></ruby>えること。<br>    <ruby>勇気<rt>ゆうき</rt></ruby>は<ruby>内<rt>うち</rt></ruby>にある。",
+        "en": "The greatest conquest\nis overcoming yourself.\nTrue courage is within."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "subjugate"
+      },
+      "imageRev": 1788256013
+    },
+    {
+      "id": "L48_diameter",
+      "kanji": "径",
+      "keyword": "diameter",
+      "image": "studies/diameter.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>細<rt>ほそ</rt></ruby>い<ruby>径<rt>こみち</rt></ruby>にも、<br>    <ruby>美<rt>うつく</rt></ruby>しい<ruby>景色<rt>けしき</rt></ruby>が<ruby>待<rt>ま</rt></ruby>っている。<br>    <ruby>近道<rt>ちかみち</rt></ruby>より<ruby>豊<rt>ゆた</rt></ruby>かな<ruby>道<rt>みち</rt></ruby>。",
+        "en": "Even a narrow path\nholds beautiful scenery.\nThe quiet way is often the richer one."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "diameter"
+      },
+      "imageRev": 1788256013
+    },
+    {
+      "id": "L48_he",
+      "kanji": "彼",
+      "keyword": "he",
+      "image": "studies/he.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>彼<rt>かれ</rt></ruby>もまた、<br>    あなたと<ruby>同<rt>おな</rt></ruby>じ<ruby>空<rt>そら</rt></ruby>を<ruby>見上<rt>みあ</rt></ruby>げている。<br>    <ruby>心<rt>こころ</rt></ruby>は<ruby>遠<rt>とお</rt></ruby>くてもつながる。",
+        "en": "He too\nlooks up at the same sky.\nHearts remain connected across distance."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "he"
+      },
+      "imageRev": 1788256013
+    },
+    {
+      "id": "L48_role",
+      "kanji": "役",
+      "keyword": "role",
+      "image": "studies/role.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>役<rt>やく</rt></ruby>にも、<br>    <ruby>世界<rt>せかい</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>える<ruby>意味<rt>いみ</rt></ruby>がある。<br>    <ruby>奉仕<rt>ほうし</rt></ruby>は<ruby>尊<rt>とうと</rt></ruby>い。",
+        "en": "Even the smallest role\nhelps uphold the world.\nService is noble."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "role"
+      },
+      "imageRev": 1788256014
+    },
+    {
+      "id": "L48_benevolence",
+      "kanji": "徳",
+      "keyword": "benevolence",
+      "image": "studies/benevolence.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>徳<rt>とく</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>香<rt>かお</rt></ruby>りのように、<br>    <ruby>人<rt>ひと</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>へ<ruby>届<rt>とど</rt></ruby>く。<br>    <ruby>善<rt>よ</rt></ruby>い<ruby>行<rt>おこな</rt></ruby>いは<ruby>語<rt>かた</rt></ruby>り<ruby>続<rt>つづ</rt></ruby>ける。",
+        "en": "Virtue is like a gentle fragrance\nthat reaches every heart.\nGoodness speaks without words."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "benevolence"
+      },
+      "imageRev": 1788256014
+    },
+    {
+      "id": "L48_penetrate",
+      "kanji": "徹",
+      "keyword": "penetrate",
+      "image": "studies/penetrate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>雲<rt>くも</rt></ruby>が<ruby>晴<rt>は</rt></ruby>れれば、<br>    <ruby>空<rt>そら</rt></ruby>はどこまでも<ruby>徹<rt>とお</rt></ruby>く<ruby>澄<rt>す</rt></ruby>んでいる。<br>    <ruby>真実<rt>しんじつ</rt></ruby>は<ruby>光<rt>ひかり</rt></ruby>のよう。",
+        "en": "When the clouds clear,\nthe sky shines through completely.\nTruth is like clear light."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "penetrate"
+      },
+      "imageRev": 1788256014
+    },
+    {
+      "id": "L48_indications",
+      "kanji": "徴",
+      "keyword": "indications",
+      "image": "studies/indications.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>徴<rt>しるし</rt></ruby>を<ruby>見逃<rt>みのが</rt></ruby>さなければ、<br>    <ruby>春<rt>はる</rt></ruby>はもう<ruby>近<rt>ちか</rt></ruby>い。<br>    <ruby>希望<rt>きぼう</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>訪<rt>おとず</rt></ruby>れる。",
+        "en": "Notice the smallest signs,\nand you will know spring is near.\nHope arrives quietly."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "indications"
+      },
+      "imageRev": 1788256014
+    },
+    {
+      "id": "L48_penal",
+      "kanji": "懲",
+      "keyword": "penal",
+      "image": "studies/penal.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>過<rt>あやま</rt></ruby>ちから<ruby>学<rt>まな</rt></ruby>べば、<br>    <ruby>失敗<rt>しっぱい</rt></ruby>も<ruby>先生<rt>せんせい</rt></ruby>になる。<br>    <ruby>知恵<rt>ちえ</rt></ruby>は<ruby>経験<rt>けいけん</rt></ruby>に<ruby>育<rt>そだ</rt></ruby>つ。",
+        "en": "When we learn from mistakes,\nfailure becomes a teacher.\nWisdom grows through experience."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "penal"
+      },
+      "imageRev": 1788256015
+    },
+    {
+      "id": "L48_delicate",
+      "kanji": "微",
+      "keyword": "delicate",
+      "image": "studies/delicate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>微<rt>かす</rt></ruby>かな<ruby>風<rt>かぜ</rt></ruby>にも、<br>    <ruby>季節<rt>きせつ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>息<rt>いき</rt></ruby>づいている。<br>    <ruby>小<rt>ちい</rt></ruby>さな<ruby>変化<rt>へんか</rt></ruby>を<ruby>喜<rt>よろこ</rt></ruby>ぼう。",
+        "en": "Even in the faintest breeze,\nthe seasons are breathing.\nRejoice in small changes."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "delicate"
+      },
+      "imageRev": 1788256015
+    },
+    {
+      "id": "L48_boulevard",
+      "kanji": "街",
+      "keyword": "boulevard",
+      "image": "studies/boulevard.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>街<rt>まち</rt></ruby>の<ruby>灯<rt>あか</rt></ruby>り<ruby>一<rt>ひと</rt></ruby>つ<ruby>一<rt>ひと</rt></ruby>つに、<br>    <ruby>誰<rt>だれ</rt></ruby>かの<ruby>物語<rt>ものがたり</rt></ruby>がある。<br>    <ruby>人生<rt>じんせい</rt></ruby>は<ruby>寄<rt>よ</rt></ruby>り<ruby>添<rt>そ</rt></ruby>って<ruby>輝<rt>かがや</rt></ruby>く。",
+        "en": "Every light in the city\nholds someone's story.\nLives shine together."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "boulevard"
+      },
+      "imageRev": 1788256015
+    },
+    {
+      "id": "L48_beam",
+      "kanji": "桁",
+      "keyword": "beam",
+      "image": "studies/beam.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>大<rt>おお</rt></ruby>きな<ruby>橋<rt>はし</rt></ruby>も、<br>    <ruby>一本<rt>いっぽん</rt></ruby>の<ruby>桁<rt>けた</rt></ruby>が<ruby>支<rt>ささ</rt></ruby>えている。<br>    <ruby>見<rt>み</rt></ruby>えない<ruby>働<rt>はたら</rt></ruby>きを<ruby>忘<rt>わす</rt></ruby>れない。",
+        "en": "Even the largest bridge\nrests upon its beams.\nHonor the unseen support."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "beam"
+      },
+      "imageRev": 1788256015
+    },
+    {
+      "id": "L48_equilibrium",
+      "kanji": "衡",
+      "keyword": "equilibrium",
+      "image": "studies/equilibrium.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>衡<rt>はかり</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>揺<rt>ゆ</rt></ruby>れ、<br>    やがて<ruby>真<rt>ま</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>に<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>く。<br>    <ruby>心<rt>こころ</rt></ruby>にも<ruby>調和<rt>ちょうわ</rt></ruby>を。",
+        "en": "The balance sways,\nthen settles at the center.\nMay the heart find equilibrium."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "equilibrium"
+      },
+      "imageRev": 1788256016
+    },
+    {
+      "id": "L48_draft",
+      "kanji": "稿",
+      "keyword": "draft",
+      "image": "studies/draft.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>一枚<rt>いちまい</rt></ruby>の<ruby>原稿<rt>げんこう</rt></ruby>も、<br>    <ruby>一文字<rt>ひともじ</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる。<br>    <ruby>創造<rt>そうぞう</rt></ruby>は<ruby>最初<rt>さいしょ</rt></ruby>の<ruby>一筆<rt>ひとふで</rt></ruby>。",
+        "en": "Every manuscript\nbegins with a single character.\nCreation starts with the first stroke."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "draft"
+      },
+      "imageRev": 1788256016
+    },
+    {
+      "id": "L48_earnings",
+      "kanji": "稼",
+      "keyword": "earnings",
+      "image": "studies/earnings.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>稼<rt>かせ</rt></ruby>ぐことだけでなく、<br>    <ruby>人<rt>ひと</rt></ruby>を<ruby>豊<rt>ゆた</rt></ruby>かにすることを<ruby>忘<rt>わす</rt></ruby>れない。<br>    <ruby>本当<rt>ほんとう</rt></ruby>の<ruby>富<rt>とみ</rt></ruby>は<ruby>分<rt>わ</rt></ruby>かち<ruby>合<rt>あ</rt></ruby>い。",
+        "en": "Do not seek only to earn,\nbut to enrich the lives of others.\nTrue wealth is shared."
+      },
+      "meta": {
+        "lesson": 48,
+        "slug": "earnings"
+      },
+      "imageRev": 1788256016
+    }
+  ]
+}

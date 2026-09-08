@@ -3,9 +3,9 @@
   "assetsBase": "../../assets",
   "id": "vocabulary_f03",
   "title": "Japanese Vocabulary — Foundation 3",
-  "notes": "Japanese Vocabulary Foundation 3 — Foundation III — へやの なか (Everyday Spoken Japanese, Foundation module). Tea-ceremony intro on vocabulary_intro.png: atmosphere → two-column 縦書き proverb → English quotation, then lesson. house and things — rooms, objects, in and out. Beautiful Word 灯火, hold until soundtrack ends → 漢 crest hold → fade out → cut. Soundtrack: Start Here atmosphere group lesson-6–11 (lesson-8.mp3, looped to exhibition length). Vocabulary in context: each target may be followed by short Japanese; each line is a valid stopping point. Each step is optional. Follow the Japanese as far as you like. Only coverage=target steps count as taught.",
+  "notes": "Japanese Vocabulary Foundation 3 — Foundation III — へやの なか (Everyday Spoken Japanese, Foundation module). Tea-ceremony intro on vocabulary_intro.png: atmosphere → two-column 縦書き proverb → English quotation, then lesson. house and things — rooms, objects, in and out. Beautiful Word 灯火, then fade when the lesson ends → 漢 crest hold → fade out → cut. Soundtrack: vocabulary_f1_series.mp3 (F1–F6; fade with content, do not loop). Vocabulary in context: each target may be followed by short Japanese; each line is a valid stopping point. Each step is optional. Follow the Japanese as far as you like. Only coverage=target steps count as taught.",
   "soundtrack": {
-    "main": "audio/lesson-8.mp3"
+    "main": "audio/vocabulary_f1_series.mp3"
   },
   "bookends": {
     "mode": "silentCrest",
@@ -34,7 +34,8 @@
     "closing": {
       "image": "images/gold_closing.png",
       "bookendSize": "small",
-      "silentAfterSoundtrack": true
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
     }
   },
   "beautifulWord": {
@@ -154,11 +155,11 @@
       "target": "prominent",
       "exposure": "regular"
     },
-    "soundtrackDurationMs": 716591,
+    "soundtrackDurationMs": 1251553,
     "estimatedContentRuntimeMs": 507300,
-    "ending": "holdFinalSceneUntilSoundtrackEnds",
+    "ending": "fadeWhenContentEnds",
     "pendingAssets": [],
-    "note": "Foundation module lesson 3/6 — everyday spoken Japanese. Hiragana/katakana headwords. Does not collide with vocabulary_01–22. Deliberate Start Here reviews: へや、まど、つくえ、いす、ほん、かさ、うえ. Vocabulary in context: 32 exposure exhibits (2 from Start Here wording). Ending: crest holds a few seconds after music, then fade out and cut."
+    "note": "Foundation module lesson 3/6 — everyday spoken Japanese. Hiragana/katakana headwords. Does not collide with vocabulary_01–22. Deliberate Start Here reviews: へや、まど、つくえ、いす、ほん、かさ、うえ. Vocabulary in context: 32 exposure exhibits (2 from Start Here wording). Ending: fade soundtrack when the lesson ends, then 漢 crest, fade out and cut."
   },
   "scenes": [
     {

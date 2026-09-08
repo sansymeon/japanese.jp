@@ -2,11 +2,11 @@
   "meta": {
     "title": "KML Component Database",
     "policy": "Reviewed lesson HTML is the canonical source for approved KML decompositions. Original component data (including v4c) was placeholder content for scaffolding lessons and is not editorial intent. Self-reference parts are placeholder remnants. v4c is legacy: comparison/recovery only when HTML is missing. See data/kanji/KML_COMPONENT_SOURCE_POLICY.md.",
-    "generatedAt": "2026-08-06T05:38:50.008376+00:00",
+    "generatedAt": "2026-09-05T04:29:45.612271+00:00",
     "lessonsDir": "contents/books/book_01/lessons",
     "maxLesson": null,
     "stats": {
-      "lessonsScanned": 153,
+      "lessonsScanned": 154,
       "kanjiFromHtml": 3058,
       "withBox": 3058,
       "absentBox": 0,
@@ -16,7 +16,7 @@
     },
     "kanjiCount": 3051,
     "componentCount": 881,
-    "inconsistencyCount": 565
+    "inconsistencyCount": 566
   },
   "kanji": {
     "一": {
@@ -30099,6 +30099,28 @@
         "夂"
       ]
     },
+    "山": {
+      "kanji": "山",
+      "keyword": "mountain",
+      "slug": "mountain",
+      "lesson": 42,
+      "source": "html",
+      "hasBox": true,
+      "layoutType": "anchor-box",
+      "layoutCode": "a",
+      "renderLayout": null,
+      "partsFlat": [
+        "山"
+      ],
+      "tree": {
+        "type": "part",
+        "glyph": "山"
+      },
+      "notes": [],
+      "partsFlatRaw": [
+        "山"
+      ]
+    },
     "出": {
       "kanji": "出",
       "keyword": "exit",
@@ -30131,28 +30153,6 @@
       "notes": [],
       "partsFlatRaw": [
         "山",
-        "山"
-      ]
-    },
-    "山": {
-      "kanji": "山",
-      "keyword": "mountain",
-      "slug": "mountain",
-      "lesson": 42,
-      "source": "html",
-      "hasBox": true,
-      "layoutType": "anchor-box",
-      "layoutCode": "a",
-      "renderLayout": null,
-      "partsFlat": [
-        "山"
-      ],
-      "tree": {
-        "type": "part",
-        "glyph": "山"
-      },
-      "notes": [],
-      "partsFlatRaw": [
         "山"
       ]
     },
@@ -38239,7 +38239,7 @@
     },
     "伎": {
       "kanji": "伎",
-      "keyword": "pering artist",
+      "keyword": "performing artist",
       "slug": "performing artist",
       "lesson": 53,
       "source": "html",
@@ -78188,19 +78188,70 @@
       "lesson": 107,
       "source": "html",
       "hasBox": true,
-      "layoutType": "anchor-box",
-      "layoutCode": "a",
-      "renderLayout": null,
+      "layoutType": "stack-vertical",
+      "layoutCode": "v",
+      "renderLayout": "v",
       "partsFlat": [
-        "鬱"
+        "木",
+        "缶",
+        "木",
+        "冖",
+        "鬯",
+        "彡"
       ],
       "tree": {
-        "type": "part",
-        "glyph": "鬱"
+        "type": "layout",
+        "layout": "stack-vertical",
+        "children": [
+          {
+            "type": "layout",
+            "layout": "stack-horizontal",
+            "children": [
+              {
+                "type": "part",
+                "glyph": "木"
+              },
+              {
+                "type": "part",
+                "glyph": "缶"
+              },
+              {
+                "type": "part",
+                "glyph": "木"
+              }
+            ]
+          },
+          {
+            "type": "part",
+            "glyph": "冖"
+          },
+          {
+            "type": "layout",
+            "layout": "stack-horizontal",
+            "children": [
+              {
+                "type": "part",
+                "glyph": "鬯"
+              },
+              {
+                "type": "part",
+                "glyph": "彡"
+              }
+            ]
+          }
+        ],
+        "renderLayout": "v"
       },
-      "notes": [],
+      "notes": [
+        "nested_component_layout"
+      ],
       "partsFlatRaw": [
-        "鬱"
+        "木",
+        "缶",
+        "木",
+        "冖",
+        "鬯",
+        "彡"
       ]
     },
     "就": {
@@ -118314,7 +118365,7 @@
         {
           "kanji": "伎",
           "lesson": 53,
-          "keyword": "pering artist"
+          "keyword": "performing artist"
         },
         {
           "kanji": "伯",
@@ -120871,7 +120922,7 @@
       "glyph": "冖",
       "firstLesson": 17,
       "firstParent": "冗",
-      "reuseCount": 33,
+      "reuseCount": 34,
       "parentKanji": [
         "冗",
         "冥",
@@ -120905,6 +120956,7 @@
         "写",
         "索",
         "畳",
+        "鬱",
         "牽"
       ],
       "parentDetails": [
@@ -121067,6 +121119,11 @@
           "kanji": "畳",
           "lesson": 97,
           "keyword": "tatami mat"
+        },
+        {
+          "kanji": "鬱",
+          "lesson": 107,
+          "keyword": "depression"
         },
         {
           "kanji": "牽",
@@ -133475,11 +133532,11 @@
     "山": {
       "glyph": "山",
       "firstLesson": 42,
-      "firstParent": "出",
+      "firstParent": "山",
       "reuseCount": 37,
       "parentKanji": [
-        "出",
         "山",
+        "出",
         "岩",
         "炭",
         "岐",
@@ -133518,14 +133575,14 @@
       ],
       "parentDetails": [
         {
-          "kanji": "出",
-          "lesson": 42,
-          "keyword": "exit"
-        },
-        {
           "kanji": "山",
           "lesson": 42,
           "keyword": "mountain"
+        },
+        {
+          "kanji": "出",
+          "lesson": 42,
+          "keyword": "exit"
         },
         {
           "kanji": "岩",
@@ -135916,7 +135973,7 @@
       "glyph": "彡",
       "firstLesson": 93,
       "firstParent": "彫",
-      "reuseCount": 20,
+      "reuseCount": 21,
       "parentKanji": [
         "彫",
         "形",
@@ -135932,6 +135989,7 @@
         "珍",
         "診",
         "繊",
+        "鬱",
         "厖",
         "彬",
         "疹",
@@ -136009,6 +136067,11 @@
           "kanji": "繊",
           "lesson": 97,
           "keyword": "slender"
+        },
+        {
+          "kanji": "鬱",
+          "lesson": 107,
+          "keyword": "depression"
         },
         {
           "kanji": "厖",
@@ -138792,7 +138855,7 @@
         {
           "kanji": "伎",
           "lesson": 53,
-          "keyword": "pering artist"
+          "keyword": "performing artist"
         },
         {
           "kanji": "鼓",
@@ -141923,7 +141986,7 @@
       "glyph": "木",
       "firstLesson": 11,
       "firstParent": "木",
-      "reuseCount": 182,
+      "reuseCount": 183,
       "parentKanji": [
         "木",
         "林",
@@ -142038,6 +142101,7 @@
         "枕",
         "極",
         "桜",
+        "鬱",
         "藻",
         "柴",
         "檎",
@@ -142673,6 +142737,11 @@
           "kanji": "桜",
           "lesson": 105,
           "keyword": "cherry blossom"
+        },
+        {
+          "kanji": "鬱",
+          "lesson": 107,
+          "keyword": "depression"
         },
         {
           "kanji": "藻",
@@ -152979,12 +153048,13 @@
       "glyph": "缶",
       "firstLesson": 106,
       "firstParent": "缶",
-      "reuseCount": 7,
+      "reuseCount": 8,
       "parentKanji": [
         "缶",
         "陶",
         "揺",
         "謡",
+        "鬱",
         "萄",
         "遥",
         "瑶"
@@ -153009,6 +153079,11 @@
           "kanji": "謡",
           "lesson": 106,
           "keyword": "noh chanting"
+        },
+        {
+          "kanji": "鬱",
+          "lesson": 107,
+          "keyword": "depression"
         },
         {
           "kanji": "萄",
@@ -162690,8 +162765,8 @@
       "childComponents": [],
       "isLessonKanji": false
     },
-    "鬱": {
-      "glyph": "鬱",
+    "鬯": {
+      "glyph": "鬯",
       "firstLesson": 107,
       "firstParent": "鬱",
       "reuseCount": 1,
@@ -162706,7 +162781,7 @@
         }
       ],
       "childComponents": [],
-      "isLessonKanji": true
+      "isLessonKanji": false
     },
     "鬼": {
       "glyph": "鬼",
@@ -170546,6 +170621,29 @@
         "缶"
       ],
       "layoutType": "stack-horizontal",
+      "editorial": null
+    },
+    {
+      "type": "nested_component_layout",
+      "kanji": "鬱",
+      "lesson": 107,
+      "partsRaw": [
+        "木",
+        "缶",
+        "木",
+        "冖",
+        "鬯",
+        "彡"
+      ],
+      "partsUsable": [
+        "木",
+        "缶",
+        "木",
+        "冖",
+        "鬯",
+        "彡"
+      ],
+      "layoutType": "stack-vertical",
       "editorial": null
     },
     {
