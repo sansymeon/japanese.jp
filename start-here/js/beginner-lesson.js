@@ -21,9 +21,14 @@
   var lesson = course.lessons[lessonId];
   if (!lesson) return;
 
+  var glossKey =
+    lesson.glossToggle === "english"
+      ? "kml-beginner-english"
+      : course.romajiStorageKey;
+
   function storedRomaji() {
     try {
-      var value = localStorage.getItem(course.romajiStorageKey);
+      var value = localStorage.getItem(glossKey);
       if (value === "on" || value === "off") return value;
     } catch (err) {
       /* private mode */
@@ -33,7 +38,7 @@
 
   function persistRomaji(value) {
     try {
-      localStorage.setItem(course.romajiStorageKey, value);
+      localStorage.setItem(glossKey, value);
     } catch (err) {
       /* private mode */
     }
@@ -45,13 +50,20 @@
     return (lesson.romajiDefault || "on") === "on";
   }
 
+  function glossButtonLabel(on) {
+    if (lesson.glossToggle === "english") {
+      return on ? "English: ON" : "English: OFF";
+    }
+    return on ? "Romaji: ON" : "Romaji: OFF";
+  }
+
   function applyRomaji(on) {
     document.documentElement.classList.toggle("is-romaji-on", on);
     document.documentElement.classList.toggle("is-romaji-off", !on);
     var buttons = document.querySelectorAll("[data-romaji-toggle]");
     buttons.forEach(function (btn) {
       btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.textContent = on ? "Romaji: ON" : "Romaji: OFF";
+      btn.textContent = glossButtonLabel(on);
     });
   }
 
@@ -403,7 +415,7 @@
 
   function installRomajiControl() {
     var n = parseInt(lessonId, 10);
-    if (!(n >= 0 && n <= 42)) return;
+    if (!(n >= 0 && n <= 57)) return;
 
     document
       .querySelectorAll(".room-section--film-top .pathway-learner-controls")
@@ -414,6 +426,11 @@
     var teaching = document.querySelector(
       ".room-section--film-top + .room-section .room-container"
     );
+    if (!teaching) {
+      teaching = document.querySelector(
+        ".room-section .room-container.room-container--narrow"
+      );
+    }
     if (!teaching) return;
 
     var bar = teaching.querySelector(".pathway-learner-controls");

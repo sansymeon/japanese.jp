@@ -954,12 +954,40 @@ html.is-romaji-off .static-study-kana-romaji {
   gap: clamp(1.25rem, 4vw, 2.75rem);
 }
 
+.static-study[data-script="katakana"] .static-study-kana-grid {
+  gap: clamp(0.85rem, 2.5vw, 1.75rem);
+}
+
+.static-study[data-script="katakana"] .static-study-kana-cell {
+  min-width: 2.75rem;
+}
+
 .static-study-kana-cell {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.55rem;
   min-width: 3.5rem;
+}
+
+button.static-study-kana-cell,
+button.static-study-vocab-word {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: center;
+}
+
+button.static-study-kana-cell:focus-visible,
+button.static-study-vocab-word:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
+  outline-offset: 6px;
 }
 
 .static-study-kana-glyph {
@@ -1002,6 +1030,55 @@ html.is-romaji-off .static-study-kana-romaji {
   margin: 0;
   font-size: 1rem;
   color: var(--ink-quiet);
+}
+
+.static-study[data-gloss="english"] {
+  max-width: 34rem;
+}
+
+.static-study[data-gloss="english"] .static-study-lead {
+  margin-bottom: 2rem;
+}
+
+.static-study-vocab-list--reading {
+  gap: 0.55rem;
+}
+
+.static-study-vocab-item--reading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  justify-content: start;
+  gap: 0.35rem 1.35rem;
+  text-align: left;
+}
+
+.static-study-vocab-item--reading .static-study-vocab-word {
+  margin: 0;
+  font-size: clamp(1.28rem, 3.2vw, 1.7rem);
+  letter-spacing: 0.08em;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.static-study-vocab-item--reading .static-study-vocab-meaning {
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  white-space: normal;
+  text-align: right;
+}
+
+html.is-romaji-off [data-gloss="english"] .static-study-vocab-meaning {
+  display: none;
+}
+
+.static-study-close {
+  margin: 2.75rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: color-mix(in srgb, var(--gold) 82%, var(--ink));
 }
 
 .beginner-room-simple .room-section {
@@ -1616,4 +1693,30 @@ body[data-beginner-lesson] .room-section:not(.room-section--film-top) .reveal {
 /* Title overlay stays visible; clicks reach the film doorway. */
 .room-hero:has(.room-hero-film) .room-hero-inner {
   pointer-events: none;
+}
+
+/* Katakana song stack (Room 58). Black 16:9 doorways; more songs append. */
+.katakana-songs {
+  margin: 0 auto 3rem;
+}
+
+.katakana-song + .katakana-song {
+  margin-top: 2.75rem;
+}
+
+.katakana-song h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--ink);
+}
+
+.katakana-song .pathway-film-link {
+  width: min(100%, 42rem, calc((100svh - 20rem) * 16 / 9));
+  max-width: min(100%, 42rem);
+  max-height: calc(100svh - 20rem);
+  margin: 0 auto;
 }
