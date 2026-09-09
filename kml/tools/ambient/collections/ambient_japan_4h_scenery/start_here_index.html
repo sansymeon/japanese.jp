@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ambient Japan 4h — Start Here review</title>
+<style>
+  :root {
+    --bg: #141414;
+    --fg: #ececec;
+    --muted: #9a9a9a;
+    --line: #2a2a2a;
+    --accent: #c4a574;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 14px/1.45 system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  header {
+    padding: 28px 28px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+  .lede { color: var(--muted); max-width: 78ch; }
+  .lede a { color: var(--accent); }
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 16px 0 0;
+  }
+  .stat span { display: block; color: var(--muted); font-size: 12px; }
+  .stat b { font-size: 20px; font-weight: 600; }
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    z-index: 2;
+  }
+  .tab {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  .tab.active { color: var(--fg); border-color: var(--accent); }
+  .panel { display: none; padding: 20px 24px 48px; }
+  .panel.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 18px;
+  }
+  .card { margin: 0; }
+  .card a { display: block; }
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #000;
+    display: block;
+  }
+  figcaption {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .id { color: var(--fg); }
+  .reason, .notes {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #b8b8b8;
+    line-height: 1.4;
+  }
+  .notes { color: #8f8f8f; }
+  .empty { color: var(--muted); }
+  .flag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 5px;
+    border: 1px solid var(--line);
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ambient Japan — Start Here review</h1>
+  <p class="lede">
+    Photoreal Start Here scenes. Accepted images are in the core pool by
+    reference (no copies). Pending images are not. Source files unchanged.
+    Back to the <a href="index.html">core pool index</a>.
+  </p>
+  <div class="stats">
+    <div class="stat"><span>Accepted in pool</span><b>9</b></div>
+    <div class="stat"><span>Pending</span><b>3</b></div>
+    <div class="stat"><span>Also considered</span><b>14</b></div>
+  </div>
+</header>
+<nav>
+<button type="button" class="tab active" data-tab="accepted">Accepted in pool (9)</button>
+<button type="button" class="tab" data-tab="all">Pending (3)</button>
+<button type="button" class="tab" data-tab="also">Also considered (14)</button>
+</nav>
+<section class="panel active" data-tab="accepted"><figure class="card"><a href="../../../../../start-here/assets/images/room_7/mountain.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_7/mountain.jpg" alt="room_7/mountain"></a><figcaption><span class="id">room_7/mountain</span><span class="flag">accepted</span><div class="reason">Satoyama: village, rice, mountain, rural road — outdoor everyday Japan</div><div class="notes">Does not look like a mnemonic. One of the best Start Here landscapes.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/lesson_24/bamboo_2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_24/bamboo_2.jpg" alt="lesson_24/bamboo_2"></a><figcaption><span class="id">lesson_24/bamboo_2</span><span class="flag">accepted</span><div class="reason">Second bamboo grove (survivors have only bamboo_forest)</div><div class="notes">Stone path, moss, bamboo spout. Photographically plausible Kyoto-grove.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_9/kasa.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_9/kasa.jpg" alt="room_9/kasa"></a><figcaption><span class="id">room_9/kasa</span><span class="flag">accepted</span><div class="reason">Rainy machiya street with wagasa — quiet cultural cue, no people required</div><div class="notes">Red umbrella leaning on an engawa. Atmosphere, not a lesson about 傘.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-15.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-15.jpg" alt="room-15"></a><figcaption><span class="id">room-15</span><span class="flag">accepted</span><div class="reason">Temple bell as a landscape overlook, not a close object</div><div class="notes">View from a shōrō across mist and a temple roof at sunrise.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/lesson_40/kazega_yowai.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/kazega_yowai.jpg" alt="lesson_40/kazega_yowai"></a><figcaption><span class="id">lesson_40/kazega_yowai</span><span class="flag">accepted</span><div class="reason">Everyday modern Japan: riverside path, houses, utility poles, incidental person</div><div class="notes">Kamo-like. Person inhabits the scene; not a glamour portrait.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/lesson_40/kotobaga_saku_2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/kotobaga_saku_2.jpg" alt="lesson_40/kotobaga_saku_2"></a><figcaption><span class="id">lesson_40/kotobaga_saku_2</span><span class="flag">accepted</span><div class="reason">Fuji + pagoda + sakura in one frame (Chūreito-class)</div><div class="notes">Visitable typology, but maximalist postcard. Use once as an anchor, not a cluster.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/lesson_40/genki_desuka.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/genki_desuka.jpg" alt="lesson_40/genki_desuka"></a><figcaption><span class="id">lesson_40/genki_desuka</span><span class="flag">accepted</span><div class="reason">Historic street with incidental modern people passing</div><div class="notes">Machiya already abundant; this one adds lived-in passing rather than an empty set.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-10.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-10.jpg" alt="room-10"></a><figcaption><span class="id">room-10</span><span class="flag">accepted</span><div class="reason">Neighborhood dusk with a cat on a kawara-roof wall</div><div class="notes">Charming and plausible. Animal is the subject; use sparingly.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-9.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-9.jpg" alt="room-9"></a><figcaption><span class="id">room-9</span><span class="flag">accepted</span><div class="reason">Dusk satoyama from an engawa: rice paddies, village lights, sunset</div><div class="notes">Landscape-first despite the porch frame. Same village family as mountain.jpg; this is the night version. Sequence away from other dusk villages.</div></figcaption></figure></section><section class="panel" data-tab="all"><figure class="card"><a href="../../../../../start-here/assets/images/room_17/nine_mist.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_17/nine_mist.jpg" alt="room_17/nine_mist"></a><figcaption><span class="id">room_17/nine_mist</span><span class="flag">strong</span><div class="reason">Traditional wooden bridge in mist — different from the cut KML nine (counted lanterns)</div><div class="notes">Giboshi railings, willow, fog. Looks visitable.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_9/sakana.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_9/sakana.jpg" alt="room_9/sakana"></a><figcaption><span class="id">room_9/sakana</span><span class="flag">strong</span><div class="reason">Mountain stream + working watermill — typology the KML pool does not have</div><div class="notes">Split-level yamame/iwana in a clear river, suisha turning, village behind. Visitable satoyama. Unusual composition, but photographic.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/lesson_40/watashiwa_genki.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/watashiwa_genki.jpg" alt="lesson_40/watashiwa_genki"></a><figcaption><span class="id">lesson_40/watashiwa_genki</span><span class="flag">medium</span><div class="reason">Kamogawa riverside walk — Kyoto everyday</div><div class="notes">Sign reads かもがわ. Face more toward camera than kazega_yowai; slightly more portrait.</div></figcaption></figure></section><section class="panel" data-tab="also"><figure class="card"><a href="../../../../../start-here/assets/images/room-7.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-7.jpg" alt="room-7"></a><figcaption><span class="id">room-7</span><span class="flag">skip-unless</span><div class="reason">Same satoyama as mountain.jpg, framed from a tatami room</div><div class="notes">Interior-to-landscape. Prefer the outdoor mountain.jpg unless you want a rare washitsu exception.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-8.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-8.jpg" alt="room-8"></a><figcaption><span class="id">room-8</span><span class="flag">skip-unless</span><div class="reason">Same village and mountain, slightly different garden/engawa frame</div><div class="notes">Duplicate of room-7 / mountain.jpg.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_7/dog.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_7/dog.jpg" alt="room_7/dog"></a><figcaption><span class="id">room_7/dog</span><span class="flag">skip-unless</span><div class="reason">Shiba on a satoyama path — same village as mountain.jpg</div><div class="notes">Pet is the subject. Use only if you want an animal beat.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_7/cat.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_7/cat.jpg" alt="room_7/cat"></a><figcaption><span class="id">room_7/cat</span><span class="flag">skip-unless</span><div class="reason">Cat on the engawa looking at the same village</div><div class="notes">Duplicate village; room-10 already covers cat-at-dusk.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-11.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-11.jpg" alt="room-11"></a><figcaption><span class="id">room-11</span><span class="flag">skip-unless</span><div class="reason">Golden-hour washitsu looking onto a garden and hills</div><div class="notes">Interior first. Landscape is secondary.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-12.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-12.jpg" alt="room-12"></a><figcaption><span class="id">room-12</span><span class="flag">skip-unless</span><div class="reason">Twilight valley from a tatami room with tea</div><div class="notes">Beautiful, but room-with-view rather than scenery.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-13.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-13.jpg" alt="room-13"></a><figcaption><span class="id">room-13</span><span class="flag">skip-unless</span><div class="reason">Kimono figure on a lantern-lit shrine path with god rays</div><div class="notes">Lantern-forest cluster is already thick in the KML pool.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room-14.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room-14.jpg" alt="room-14"></a><figcaption><span class="id">room-14</span><span class="flag">skip-unless</span><div class="reason">Lantern-lit wet wooden bridge at night</div><div class="notes">Same empty-night-street / lantern cluster as room-13.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_17/nine_outro.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_17/nine_outro.jpg" alt="room_17/nine_outro"></a><figcaption><span class="id">room_17/nine_outro</span><span class="flag">skip-unless</span><div class="reason">Night taiko-bashi and misty village</div><div class="notes">Cousin of nine_mist (already recommended). Extra dusk-village.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_17/nine_rain.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_17/nine_rain.jpg" alt="room_17/nine_rain"></a><figcaption><span class="id">room_17/nine_rain</span><span class="flag">skip-unless</span><div class="reason">Rainy lantern bridge — counted-nine family</div><div class="notes">Painterly cousin of the cut KML nine.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_17/nine_lantern.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_17/nine_lantern.jpg" alt="room_17/nine_lantern"></a><figcaption><span class="id">room_17/nine_lantern</span><span class="flag">skip-unless</span><div class="reason">Lantern still life / count mnemonic</div><div class="notes">Object, not a place.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/outro_3.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/outro_3.jpg" alt="outro_3"></a><figcaption><span class="id">outro_3</span><span class="flag">skip-unless</span><div class="reason">Dusk shopping street, Japanese shop signs, sea at the end</div><div class="notes">Believable townscape, but empty night streets are already thick, and it sits in The Genkan sequence.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/lesson_23/oto.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_23/oto.jpg" alt="lesson_23/oto"></a><figcaption><span class="id">lesson_23/oto</span><span class="flag">skip-unless</span><div class="reason">Temple bell interior, sunbeam on bronze</div><div class="notes">Object close-up. room-15 is the landscape version of the same idea.</div></figcaption></figure>
+<figure class="card"><a href="../../../../../start-here/assets/images/room_9/isu.jpg" target="_blank" rel="noopener"><img loading="lazy" src="../../../../../start-here/assets/images/room_9/isu.jpg" alt="room_9/isu"></a><figcaption><span class="id">room_9/isu</span><span class="flag">skip-unless</span><div class="reason">Chair in a sunlit kominka, garden through the window</div><div class="notes">Interior still life.</div></figcaption></figure></section>
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".panel");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.querySelector('.panel[data-tab="' + tab.dataset.tab + '"]').classList.add("active");
+      window.scrollTo(0, 0);
+    });
+  });
+</script>
+</body>
+</html>

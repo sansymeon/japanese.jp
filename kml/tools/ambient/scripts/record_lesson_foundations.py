@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """Record Lesson N foundations exhibition MP4 (Lesson 5 mobile-refine standard).
 
-Output: collections/lesson_NN/foundations_lesson_NN.mp4
-
-Usage:
-  python3 scripts/record_lesson_foundations.py --lesson 33 --rebuild
+Output: ambient-study-japanese-reflections/individual-lessons/foundations_lesson_NN.mp4
 """
 
 from __future__ import annotations
@@ -20,10 +17,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PORT = 8790
 VIEWPORT = {"width": 1920, "height": 1080}
-SUPPORTED = [6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24] + list(range(33, 39)) + [41]
 BUILD_SCRIPT = "build_lesson_foundations_exhibition.py"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ambient_video_paths import (  # noqa: E402
+    ensure_compat_symlink,
+    foundations_legacy_mp4,
+    foundations_mp4,
+)
 from exhibition_record_common import (  # noqa: E402
     assert_local_noto_serif_files,
     assert_local_yuji_syuku_files,
@@ -86,10 +87,9 @@ def record(*, lesson: int, port: int) -> Path:
     if not soundtrack.is_file():
         raise FileNotFoundError(f"Missing soundtrack: {soundtrack}")
 
-    out_dir = ROOT / "collections" / f"lesson_{lesson:02d}"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / f"foundations_lesson_{lesson:02d}.mp4"
-    tmp_dir = out_dir / f".tmp_foundations_lesson_{lesson:02d}"
+    out_path = foundations_mp4(lesson)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_dir = out_path.parent / f".tmp_foundations_lesson_{lesson:02d}"
     if tmp_dir.exists():
         shutil.rmtree(tmp_dir)
     tmp_dir.mkdir(parents=True)
@@ -179,13 +179,14 @@ def record(*, lesson: int, port: int) -> Path:
     for f in tmp_dir.iterdir():
         f.unlink()
     tmp_dir.rmdir()
+    ensure_compat_symlink(foundations_legacy_mp4(lesson), out_path)
     print(f"  → {out_path}")
     return out_path
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--lesson", type=int, required=True, choices=SUPPORTED)
+    parser.add_argument("--lesson", type=int, required=True)
     parser.add_argument("--port", type=int, default=DEFAULT_PORT)
     parser.add_argument("--rebuild", action="store_true")
     args = parser.parse_args()

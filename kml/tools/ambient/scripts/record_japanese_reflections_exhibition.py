@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Record Japanese Reflections prototype exhibitions (Lessons 1–5, 6–10, 11–15, or 16–20).
+Record Japanese Reflections five-lesson prototype exhibitions.
 
 Uses exhibition.html?collection=lessons_*_prototype with intro + main + outro mux.
 
-Output: extended_exhibitions/{collection_id}.mp4
+Output: ambient-study-japanese-reflections/five-lesson-reflections/lessons_*_exhibition.mp4
 """
 
 from __future__ import annotations
@@ -16,10 +16,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_DIR = ROOT / "extended_exhibitions"
 DEFAULT_PORT = 8767
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ambient_video_paths import FIVE_LESSON_REFLECTIONS  # noqa: E402
 from exhibition_record_common import (  # noqa: E402
     capture_exhibition_webm,
     ensure_deps,
@@ -31,12 +31,27 @@ from exhibition_record_common import (  # noqa: E402
     stop_server,
 )
 
+OUTPUT_DIR = FIVE_LESSON_REFLECTIONS
+
 BUILDERS = {
-    "lessons_1_5_prototype": "build_lessons_1_5_prototype.py",
-    "lessons_6_10_prototype": "build_lessons_6_10_prototype.py",
-    "lessons_11_15_prototype": "build_lessons_11_15_prototype.py",
-    "lessons_16_20_prototype": "build_lessons_16_20_prototype.py",
+    f"lessons_{a}_{b}_prototype": f"build_lessons_{a}_{b}_prototype.py"
+    for a, b in (
+        (1, 5),
+        (6, 10),
+        (11, 15),
+        (16, 20),
+        (21, 25),
+        (26, 30),
+        (31, 35),
+        (36, 40),
+        (41, 45),
+        (46, 50),
+    )
 }
+
+
+def exhibition_mp4_name(collection_id: str) -> str:
+    return f"{collection_id.replace('_prototype', '_exhibition')}.mp4"
 
 
 def record(*, collection_id: str, port: int, output_dir: Path) -> Path:
@@ -60,7 +75,7 @@ def record(*, collection_id: str, port: int, output_dir: Path) -> Path:
         f"http://127.0.0.1:{port}/exhibition.html"
         f"?collection={collection_id}&typography={typo}&verseMode={verse_mode}"
     )
-    out_path = output_dir / f"{collection_id}.mp4"
+    out_path = output_dir / exhibition_mp4_name(collection_id)
     tmp_dir = output_dir / f".tmp_{collection_id}"
     tmp_dir.mkdir(parents=True, exist_ok=True)
 
