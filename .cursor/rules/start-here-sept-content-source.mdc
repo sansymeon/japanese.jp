@@ -1,0 +1,31 @@
+---
+description: Recover Sept 1–4 Start Here copy from prototype/audit/stash, not Git HEAD
+alwaysApply: true
+---
+
+# Start Here historical copy (Sept 1–4)
+
+Work on **http://127.0.0.1:8765/start-here/** (`start-here/`). Do not restore or replace it wholesale.
+
+The **next push** should include this working-tree Start Here (titles, copy, room HTML/CSS/JS as they stand locally), not Git HEAD’s older production pages and not the doorway prototype.
+
+`start-here-youtube-doorway-prototype/` is an **archive** (pretty, not a workstream). Do not iterate on it, link it as the live path, or rebuild the site from it unless the user explicitly asks to recover a single piece of copy. Do not include that folder in a deploy (it is gitignored).
+
+The Sep 4 JPEG deploy staged **PNG→JPG hunks only**. Room titles, subtitles, intros, teaching copy, and doorway/static-study structure from Sept 1–4 lived in the dirty tree and were **not** in that commit. Git/`HEAD` for those pages is often the **older production lesson** plus JPEG paths.
+
+## When asked for earlier Start Here wording or structure
+
+Do **not** treat `HEAD` / `origin/main` as the Sept 1–4 source.
+
+Check, in order, the most recent **authored** version you can recover:
+
+1. `start-here-youtube-doorway-prototype/` (gitignored; film-based `js/static-study-data.js`; reconstructed doorway HTML)
+2. Contemporaneous audit/transcript diffs (esp. mixed-file split before `2a8cc124`)
+3. `stash@{0}` / `cursor/batch-study-room-films-bd94` / `origin/cursor/room-0-pronunciation-5bd3` if the piece predates the doorway rewrite
+4. Git/`HEAD` only as an **older production fallback**
+
+Recover **individual pieces** when asked (e.g. Room 12 title). Do not reconstruct the whole Sept 1–4 site unless asked.
+
+## Citation
+
+Say briefly **where** the text came from and whether it is **definitely Sept 1–4** or only a **fallback**.

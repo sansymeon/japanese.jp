@@ -1,0 +1,20 @@
+---
+description: KML images must be native 16:9 for YouTube; JPEG on the live site to cut Netlify bandwidth
+alwaysApply: true
+---
+
+# KML images are 16:9
+
+All KML site images (covers, study/entry art, vocabulary stills used on the site) must be **native 16:9**. Portrait, 3:2, 5:4, and square frames do not hold up in YouTube movies.
+
+- Prefer the project's 16:9 size **1672×941** when that is what the new art is.
+- Do not crop, letterbox, or stretch a non-16:9 image to fake the ratio.
+- If a file is not 16:9, do not install it as the live image. Find the 16:9 replacement first.
+- Never overwrite a 16:9 master with a legacy file from `covers/` or `studies/` just because hashes differ.
+
+# Delivery
+
+- PNG = production master in `*_png/` (`covers_png`, `studies_png`, `images_png`).
+- JPEG Q90 = what the site and films use (`covers/`, `studies/`, `images/`). Use `kml/scripts/publish_web_jpeg.py` (no resize, crop, or recolor).
+- The live site must request `.jpg`, not `.png`. Do not put PNG back in the delivery folders.
+- PNGs are too large for Netlify bandwidth. Serving them from the live site is not allowed.
