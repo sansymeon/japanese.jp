@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Art Exhibition</title>
+  <link rel="stylesheet" href="./css/gallery-fonts-local.css?v=2">
+  <link rel="stylesheet" href="./css/digital-art-exhibition.css?v=4">
+</head>
+<body>
+
+<!--
+  Digital Art Exhibition — prototype player (separate from Ambient Kanji / Quiet Exhibition)
+
+  Preview:  digital-art-exhibition.html?collection=moon
+            digital-art-exhibition.html?collection=lesson_2
+            digital-art-exhibition.html?collection=lesson_3
+  QA:       &debug=1
+  Record:   python3 scripts/record_digital_art_exhibition.py --id moon
+            python3 scripts/record_digital_art_exhibition.py --id lesson_2
+            python3 scripts/record_digital_art_exhibition.py --id lesson_3
+            → collections/digital_art/<id>.mp4
+  Faster:   &timingScale=0.25   (audio playbackRate follows)
+  Capture:  &recordPipeline=1   (skips the enter gate)
+  Pause:    Space
+
+  New exhibitions: supply title, artwork sequence, soundtrack, optional opening
+  crest, and per-image holdMs / dissolveMs in collections/digital_art/<id>.json
+  Rebuild: python3 scripts/build_digital_art_exhibition.py
+-->
+
+<div class="dae-root" data-dae-root>
+  <div class="dae-room" aria-hidden="true"></div>
+
+  <div class="dae-artwork" data-dae-artwork="a">
+    <img data-dae-artwork-img="a" alt="">
+  </div>
+  <div class="dae-artwork" data-dae-artwork="b">
+    <img data-dae-artwork-img="b" alt="">
+  </div>
+
+  <div class="dae-opening" data-dae-opening aria-hidden="true">
+    <img class="dae-opening-card" data-dae-opening-img alt="">
+    <p class="dae-opening-title is-empty" data-dae-opening-title></p>
+  </div>
+
+  <div class="dae-brand" data-dae-brand aria-hidden="true">
+    <p class="dae-brand-mark" data-dae-brand-mark></p>
+  </div>
+
+  <div class="dae-vignette" aria-hidden="true"></div>
+
+  <p class="dae-debug" data-dae-debug hidden></p>
+  <p class="dae-error" data-dae-error hidden></p>
+
+  <button
+    type="button"
+    class="dae-autoplay-gate"
+    data-dae-autoplay-gate
+    hidden
+    aria-label="Begin"
+  >Begin</button>
+
+  <div class="dae-audio">
+    <audio data-dae-audio preload="auto"></audio>
+  </div>
+</div>
+
+<script src="./js/digital-art-exhibition-engine.js?v=3"></script>
+</body>
+</html>
