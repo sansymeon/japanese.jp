@@ -31,13 +31,7 @@ SEED_PATH = HERE / "foundation_module.json"
 LESSON_DIR = REPO / "kml/tools/ambient/collections/vocabulary"
 
 SOUNDTRACK_MS = {
-    # Start Here rooms 6–11 atmosphere group, each looped 4× to cover the exhibition.
-    "audio/lesson-6.mp3": 766642,
-    "audio/lesson-7.mp3": 798720,
-    "audio/lesson-8.mp3": 716591,
-    "audio/lesson-9.mp3": 794854,
-    "audio/lesson-10.mp3": 769881,
-    "audio/lesson-11.mp3": 753894,
+    "audio/vocabulary_f1_series.mp3": 1251553,
 }
 
 RUBY_BW = {
@@ -296,9 +290,8 @@ def build_collection(seed: dict, ldef: dict) -> dict:
             f"(Everyday Spoken Japanese, Foundation module). Tea-ceremony intro on "
             f"vocabulary_intro.png: atmosphere → two-column 縦書き proverb → English "
             f"quotation, then lesson. {ldef['scene_theme']}. Beautiful Word "
-            f"{bw['jp']}, hold until soundtrack ends → 漢 crest hold → fade out → cut. "
-            f"Soundtrack: Start Here atmosphere group lesson-6–11 "
-            f"({track.split('/')[-1]}, looped to exhibition length). "
+            f"{bw['jp']}, then fade when the lesson ends → 漢 crest hold → fade out → cut. "
+            f"Soundtrack: vocabulary_f1_series.mp3 (F1–F6; fade with content, do not loop). "
             "Vocabulary in context: each target may be followed by short "
             "Japanese; each line is a valid stopping point. "
             f"{LEARNER_NOTE} "
@@ -329,7 +322,8 @@ def build_collection(seed: dict, ldef: dict) -> dict:
             "closing": {
                 "image": "images/gold_closing.png",
                 "bookendSize": "small",
-                "silentAfterSoundtrack": True,
+                "holdUntilSoundtrackEnds": False,
+                "fadeWithSoundtrackEnd": True,
             },
         },
         "beautifulWord": bw_block,
@@ -377,7 +371,7 @@ def build_collection(seed: dict, ldef: dict) -> dict:
             },
             "soundtrackDurationMs": SOUNDTRACK_MS[track],
             "estimatedContentRuntimeMs": estimate_runtime_ms(steps),
-            "ending": "holdFinalSceneUntilSoundtrackEnds",
+            "ending": "fadeWhenContentEnds",
             "pendingAssets": [ldef["image"]],
             "note": (
                 f"Foundation module lesson {n}/6 — everyday spoken Japanese. "
@@ -385,7 +379,7 @@ def build_collection(seed: dict, ldef: dict) -> dict:
                 f"Deliberate Start Here reviews: {'、'.join(reviews) if reviews else 'none'}. "
                 f"Vocabulary in context: {exposure_n} exposure exhibits "
                 f"({start_here_n} from Start Here wording). "
-                "Ending: crest holds a few seconds after music, then fade out and cut."
+                "Ending: fade soundtrack when the lesson ends, then 漢 crest, fade out and cut."
             ),
         },
         "scenes": [
