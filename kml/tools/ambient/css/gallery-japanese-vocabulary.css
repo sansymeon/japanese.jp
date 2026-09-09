@@ -14,8 +14,214 @@
 
 .exhibition-root.is-japanese-vocabulary {
   --kml-compounds-jp: clamp(4.2rem, 14vmin, 8.2rem);
-  /* Larger English than elementary compounds */
-  --kml-compounds-en: clamp(2.35rem, 6.3vmin, 3.75rem);
+  /* Learner-facing English: 60px at 1920×1080, never below 48px. */
+  --kml-vocab-en-floor: 3rem;
+  --kml-compounds-en: max(3rem, min(3.75rem, 5.56vmin));
+}
+
+/*
+ * Foundation / Everyday Japanese Vocabulary: keep Japanese at the single-item
+ * size. Longer example sentences wrap instead of shrinking via
+ * --kml-compound-word-scale. Kanji-compound Ambient exhibitions are unchanged
+ * — they do not carry is-japanese-vocabulary.
+ *
+ * Notes width is widened here so wrapping uses the 1920×1080 frame, not the
+ * 44rem compounds column (that column forced early wraps at a still-large size).
+ */
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary
+  .exhibition-notes {
+  width: 94vw;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-en {
+  max-width: 94vw;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: var(--kml-compounds-en);
+  white-space: normal;
+}
+
+.exhibition-root.is-japanese-vocabulary .kml-compound-jp {
+  --kml-compound-word-scale: 1;
+  font-size: var(--kml-compounds-jp);
+  white-space: normal;
+  line-break: strict;
+  text-wrap: pretty;
+  text-align: center;
+  max-width: 100%;
+  line-height: 1.28;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.show-furigana
+  .kml-compound-jp:has(ruby):not(:has(.kml-dialogue-turn)) {
+  line-height: 2.18;
+  padding-top: 0.72em;
+}
+
+.exhibition-root.is-japanese-vocabulary .kml-compound-jp:has(.kml-dialogue-turn) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55em;
+  line-height: 1.28;
+  padding-top: 0.58em;
+}
+
+.exhibition-root.is-japanese-vocabulary .kml-dialogue-turn {
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+  text-align: center;
+}
+
+.exhibition-root.is-japanese-vocabulary .kml-compound-reading:empty,
+.exhibition-root.is-japanese-vocabulary .kml-compound-hint:empty {
+  display: none;
+}
+
+.exhibition-root.is-japanese-vocabulary .kml-compound-hint {
+  display: block;
+  margin-top: 0.35em;
+  font-family: var(--kml-font-heart-verse-jp);
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(235, 226, 210, 0.9);
+  opacity: 0;
+  transition: opacity var(--ex-verse-fade, 1.4s) ease-in-out;
+}
+
+.exhibition-root.is-japanese-vocabulary .kml-compound-hint.is-visible {
+  opacity: 1;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.show-furigana
+  .kml-dialogue-turn:has(ruby) {
+  line-height: 1.78;
+  padding-top: 0;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .kml-compound-jp.is-dialogue-compact:has(.kml-dialogue-turn) {
+  gap: 0.42em;
+  padding-top: 0.42em;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.show-furigana
+  .kml-compound-jp.is-dialogue-compact
+  .kml-dialogue-turn:has(ruby) {
+  line-height: 1.58;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .kml-compound-jp.is-dialogue-dense:has(.kml-dialogue-turn) {
+  gap: 0.22em;
+  padding-top: 0.24em;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.show-furigana
+  .kml-compound-jp.is-dialogue-dense
+  .kml-dialogue-turn:has(ruby) {
+  line-height: 1.42;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.show-furigana
+  .kml-compound-jp.is-dialogue-dense
+  ruby
+  rt {
+  font-size: 0.4em;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.show-furigana
+  .kml-compound-jp.is-dialogue-compact:has(ruby):not(:has(.kml-dialogue-turn)) {
+  line-height: 1.72;
+  padding-top: 0.48em;
+}
+
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.show-furigana
+  .kml-compound-jp.is-dialogue-dense:has(ruby):not(:has(.kml-dialogue-turn)) {
+  line-height: 1.52;
+  padding-top: 0.4em;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary.is-vocabulary-dialogue
+  .exhibition-notes {
+  gap: 0.38em;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-en.is-dialogue-en {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12em;
+  width: 100%;
+  max-width: 94vw;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+  white-space: normal;
+  font-size: var(--kml-compounds-en);
+  line-height: 1.2;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-en.is-dialogue-en
+  .kml-dialogue-en-turn {
+  display: block;
+  max-width: 94vw;
+  text-align: center;
+  white-space: nowrap;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-en.is-dialogue-en.is-dialogue-en-inline {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  column-gap: 0.85em;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-en.is-dialogue-en.is-dialogue-en-inline
+  .kml-dialogue-en-turn {
+  display: inline-block;
+  max-width: none;
+  flex: 0 0 auto;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential
+  .exhibition-root.is-japanese-vocabulary.is-dialogue-dense
+  .exhibition-notes {
+  gap: 0.28em;
+}
+
+.exhibition-root.is-japanese-vocabulary.is-beautiful-word .kml-compound-jp,
+.exhibition-root.is-japanese-vocabulary
+  .exhibition-verse-jp.is-beautiful-word-jp
+  .kml-compound-jp {
+  white-space: nowrap;
+}
+
+.exhibition-root.is-japanese-vocabulary.is-compound-reward .kml-compound-jp,
+.exhibition-root.is-japanese-vocabulary.is-compound-celebration .kml-compound-jp {
+  white-space: nowrap;
 }
 
 .exhibition-root.is-japanese-vocabulary .exhibition-kanji {
@@ -126,13 +332,13 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   top: 38%;
   left: 61%;
   transform: translate(-50%, -50%);
-  width: min(48vw, 26rem);
+  width: min(94vw, 52rem);
   text-align: center;
   font-family: var(--kml-font-heart-voice);
-  font-size: clamp(1.85rem, 4.6vmin, 3.05rem);
+  font-size: max(3rem, min(3.75rem, 5.56vmin));
   font-weight: 500;
   font-style: italic;
-  line-height: 1.62;
+  line-height: 1.45;
   letter-spacing: 0.02em;
   color: var(--vocab-intro-ivory);
   text-shadow:

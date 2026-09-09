@@ -25,22 +25,24 @@
     if (/^beyond_joyo/.test(name)) return "beyond_joyo";
     if (/^ambient_gallery_film/.test(name)) return "ambient_gallery_film";
     if (/^ambient_gallery_japan/.test(name)) return "ambient_gallery_japan_4_seasons";
-    if (/^vocabulary_\d+/.test(name)) return "vocabulary";
+    if (/^vocabulary_/.test(name)) return "vocabulary";
     if (/^hiragana_song/.test(name)) return "hiragana_song";
     if (/^hiragana_origins/.test(name)) return "hiragana_origins";
     if (/^katakana_origins/.test(name)) return "katakana_origins";
     if (/^katakana_song/.test(name)) return "katakana_song";
+    if (/^katakana_cookie/.test(name)) return "katakana_cookie";
     if (/^grade_1/.test(name)) return "grade_1";
     if (/^grade_2/.test(name)) return "grade_2";
     if (/^grade_3/.test(name)) return "grade_3";
     if (/^grade_4/.test(name)) return "grade_4";
     if (/^grade_5/.test(name)) return "grade_5";
     if (/^grade_6/.test(name)) return "grade_6";
+    const block = name.match(/^lessons_(\d+)_/);
+    if (block) return lessonFolder(parseInt(block[1], 10));
     const m = name.match(/^lesson_(\d+)/);
     if (!m) return null;
     const n = parseInt(m[1], 10);
-    // Nest Heisig lesson collections (1–30; 33–38; 41).
-    if ((n >= 1 && n <= 30) || (n >= 33 && n <= 38) || n === 41) return lessonFolder(n);
+    if (n >= 1 && n <= 153) return lessonFolder(n);
     return null;
   }
 
