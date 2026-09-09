@@ -9,11 +9,13 @@ Examples:
   python3 kml/scripts/publish_web_jpeg.py kml/assets/covers_png/lesson_46.png
   python3 kml/scripts/publish_web_jpeg.py kml/assets/images_png/vocabulary_7.png
   python3 kml/scripts/publish_web_jpeg.py start-here/assets/images_png/intro.png
+  python3 kml/scripts/publish_web_jpeg.py kml/assets/youtube_thumbnails_png/ambient_japan.png
 
 The web path is inferred by mapping:
   studies_png/ → studies/
   covers_png/  → covers/
   images_png/  → images/
+  youtube_thumbnails_png/ → youtube_thumbnails/
 and writing the same stem with a .jpg suffix.
 """
 
@@ -29,6 +31,7 @@ MAPPINGS = (
     ("/studies_png/", "/studies/"),
     ("/covers_png/", "/covers/"),
     ("/images_png/", "/images/"),
+    ("/youtube_thumbnails_png/", "/youtube_thumbnails/"),
 )
 
 
@@ -39,7 +42,7 @@ def infer_web_path(master: Path) -> Path:
             return Path(posix.replace(src, dst, 1)).with_suffix(".jpg")
     raise SystemExit(
         f"Cannot infer web path from {master}. "
-        "Expected a path containing studies_png, covers_png, or images_png."
+        "Expected a path containing studies_png, covers_png, images_png, or youtube_thumbnails_png."
     )
 
 
