@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/gallery-fonts-local.css?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/gallery-typography.css?v=6">
   <link rel="stylesheet" href="./css/gallery-mobile-verses.css?v=3">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./css/gallery-assisted-reading.css?v=8">
   <link rel="stylesheet" href="./css/gallery-vocabulary-exhibition.css?v=9">
   <link rel="stylesheet" href="./css/gallery-compounds-exhibition.css?v=5">
-  <link rel="stylesheet" href="./css/gallery-japanese-vocabulary.css?v=13">
+  <link rel="stylesheet" href="./css/gallery-japanese-vocabulary.css?v=21">
   <link rel="stylesheet" href="./css/gallery-anchor-compounds-exhibition.css?v=9">
   <link rel="stylesheet" href="./css/gallery-stroke-order.css?v=8">
   <link rel="stylesheet" href="./css/gallery-grade1-stroke-order.css?v=1">
@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="./css/gallery-grade6-kanji-soundtrack.css?v=1">
   <link rel="stylesheet" href="./css/gallery-party-kanji.css?v=6">
   <link rel="stylesheet" href="./css/gallery-hiragana-song.css?v=5">
+  <link rel="stylesheet" href="./css/gallery-lyric-film.css?v=2">
   <link rel="stylesheet" href="./css/gallery-hiragana-song-typography.css?v=9">
   <link rel="stylesheet" href="./css/gallery-hiragana-origins.css?v=3">
   <link rel="stylesheet" href="./css/gallery-lesson.css?v=2">
@@ -133,6 +134,10 @@
               ?collection=vocabulary_21
   Japanese Vocabulary Lesson 22 (Restaurants II — during & after the meal):
               ?collection=vocabulary_22
+  Everyday Japanese 13 (stance, evaluation, core verbs):
+              ?collection=vocabulary_ej13
+  Japanese Vocabulary Lesson 23 (Health I — Clinic):
+              ?collection=vocabulary_23
   Vocabulary QA: add &timingScale=0.05  (or &skipBookends=1&timingScale=0.05)
   Grade 1 Compounds school prototype (学 → 学校, stacked):
               ?collection=grade_1_compounds_school&skipBookends=1
@@ -260,6 +265,10 @@
     </div>
   </div>
 
+  <div class="lyric-film-layer exhibition-hidden" data-lyric-film-layer aria-hidden="true">
+    <p class="lyric-film-line" data-lyric-film-line lang="ja"></p>
+  </div>
+
   <div class="hiragana-song-layer exhibition-hidden" data-hiragana-song-layer aria-hidden="true">
     <div class="hiragana-song-paper" aria-hidden="true"></div>
     <div class="hiragana-song-vignette" aria-hidden="true"></div>
@@ -367,7 +376,7 @@
 
 </div>
 
-<script src="./js/collection-paths.js?v=4"></script>
+<script src="./js/collection-paths.js?v=5"></script>
 <script src="./js/verse-display.js?v=1"></script>
 <script src="./js/gallery-guardian.js?v=6"></script>
 <script src="./strokes/js/stroke-page-loader.js?v=1"></script>
@@ -377,6 +386,6 @@
 <script src="./js/hiragana-song-typography.js?v=12"></script>
 <script src="./js/hiragana-origins.js?v=6"></script>
 <script src="./js/anchor-compounds-layout.js?v=1"></script>
-<script src="./js/exhibition-engine.js?v=134"></script>
+<script src="./js/exhibition-engine.js?v=148"></script>
 </body>
 </html>

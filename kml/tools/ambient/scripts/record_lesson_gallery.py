@@ -116,7 +116,7 @@ def record(*, lesson: int, port: int) -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--lesson", type=int, required=True, choices=sorted(BUILDERS))
+    parser.add_argument("--lesson", type=int, required=True)
     parser.add_argument("--port", type=int, default=DEFAULT_PORT)
     parser.add_argument("--rebuild", action="store_true")
     args = parser.parse_args()
@@ -124,7 +124,7 @@ def main() -> int:
     ensure_deps()
 
     if args.rebuild:
-        script = BUILDERS[args.lesson]
+        script = BUILDERS.get(args.lesson, SHARED_GALLERY_BUILDER)
         cmd = [sys.executable, str(ROOT / "scripts" / script)]
         if script == SHARED_GALLERY_BUILDER:
             cmd.extend(["--lesson", str(args.lesson)])

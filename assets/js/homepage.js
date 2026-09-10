@@ -39,37 +39,37 @@
       vocabulary: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLJemcdjLRw4w",
-        image: "kml/assets/youtube_thumbnails/vocabulary.png",
+        image: "kml/assets/youtube_thumbnails/vocabulary.jpg",
       },
       postElementaryKanji: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLI-ULFjSKz58",
-        image: "kml/assets/youtube_thumbnails/joyo_kanji_vol_1.png",
+        image: "kml/assets/youtube_thumbnails/joyo_kanji_vol_1.jpg",
       },
       rememberingKanji: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLBv0xLsm4RBo",
-        image: "kml/assets/youtube_thumbnails/foundations.png",
+        image: "kml/assets/youtube_thumbnails/foundations.jpg",
       },
       elementaryKanji: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLZocopP--8p0",
-        image: "kml/assets/youtube_thumbnails/grade_1_.png",
+        image: "kml/assets/youtube_thumbnails/grade_1_.jpg",
       },
       kanaPreschool: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLIX7jswPySk0",
-        image: "kml/assets/images/kana_song_image.png",
+        image: "kml/assets/youtube_thumbnails/kana_song_image.jpg",
       },
       beyondJoyoKanji: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLFcXrI1lQAqI",
-        image: "kml/assets/images/beyond_joyo.png",
+        image: "kml/assets/youtube_thumbnails/beyond_joyo.jpg",
       },
       ambientJapan: {
         playlistUrl:
           "https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU",
-        image: "kml/assets/youtube_thumbnails/ambient_japan.png",
+        image: "kml/assets/youtube_thumbnails/ambient_japan.jpg",
       },
     },
 
@@ -103,7 +103,7 @@
         description:
           "Begin with elementary school kanji through calm imagery and music.",
         type: "Elementary Kanji",
-        thumbnail: "./kml/assets/youtube_thumbnails/grade_1_.png",
+        thumbnail: "./kml/assets/youtube_thumbnails/grade_1_.jpg",
         watchUrl: null, // PLACEHOLDER
       },
       {
@@ -112,7 +112,7 @@
         description:
           "High-frequency spoken vocabulary presented in natural contexts.",
         type: "Spoken Vocabulary",
-        thumbnail: "./kml/assets/youtube_thumbnails/gallery.png",
+        thumbnail: "./kml/assets/youtube_thumbnails/gallery.jpg",
         watchUrl: null, // PLACEHOLDER
       },
       {
@@ -121,7 +121,7 @@
         description:
           "Story-driven foundations that prepare the eye and memory for kanji.",
         type: "Foundations",
-        thumbnail: "./kml/assets/youtube_thumbnails/foundations.png",
+        thumbnail: "./kml/assets/youtube_thumbnails/foundations.jpg",
         watchUrl: null, // PLACEHOLDER
       },
       {
@@ -130,7 +130,7 @@
         description:
           "Build reading fluency with school-grade compound words.",
         type: "Elementary Compounds",
-        thumbnail: "./kml/assets/youtube_thumbnails/grade_2_jukugo_1.png",
+        thumbnail: "./kml/assets/youtube_thumbnails/grade_2_jukugo_1.jpg",
         watchUrl: null, // PLACEHOLDER
       },
     ],

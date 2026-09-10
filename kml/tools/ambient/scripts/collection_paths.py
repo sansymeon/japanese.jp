@@ -33,7 +33,7 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return "ambient_gallery_film"
     if collection_id.startswith("ambient_gallery_japan"):
         return "ambient_gallery_japan_4_seasons"
-    if re.match(r"vocabulary_\d+", collection_id):
+    if collection_id.startswith("vocabulary_"):
         return "vocabulary"
     if collection_id.startswith("hiragana_song"):
         return "hiragana_song"
@@ -47,6 +47,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return "katakana_origins"
     if collection_id.startswith("katakana_song"):
         return "katakana_song"
+    if collection_id.startswith("katakana_cookie"):
+        return "katakana_cookie"
     if collection_id.startswith("grade_1"):
         return "grade_1"
     if collection_id.startswith("grade_2"):
@@ -59,12 +61,14 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return "grade_5"
     if collection_id.startswith("grade_6"):
         return "grade_6"
+    m_block = re.match(r"lessons_(\d+)_", collection_id)
+    if m_block:
+        return lesson_folder(int(m_block.group(1)))
     m = re.match(r"lesson_(\d+)", collection_id)
     if not m:
         return None
     n = int(m.group(1))
-    # Nest Heisig lesson collections (1–30; 33–38; 41; others as added).
-    if 1 <= n <= 30 or 33 <= n <= 38 or n == 41:
+    if 1 <= n <= 153:
         return lesson_folder(n)
     return None
 

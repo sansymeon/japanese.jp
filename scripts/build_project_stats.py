@@ -8,8 +8,8 @@ Layers (do not mix meanings):
     3,094 (kanji, verses, stroke-order pages). Vocabulary, compounds, and
     components are counted from the full production collections, not assumed
     to be 3,094.
-  - Published curriculum — completed lesson sequence (currently 1–50)
-  - Curriculum coverage — JLPT / Jōyō / school grades vs Lessons 1–50 only
+  - Published curriculum — completed lesson sequence (currently 1–60)
+  - Curriculum coverage — JLPT / Jōyō / school grades vs Lessons 1–60 only
   - Learning resources — curriculum totals plus separately labeled ecosystem
     materials (Start Here, vocabulary series, kana)
   - Media — the published KML media ecosystem, including the YouTube channel
@@ -44,7 +44,7 @@ YOUTUBE_COUNT_AS_OF = "2026-09-05"
 YOUTUBE_CHANNEL_HANDLE = "@ambientkanji"
 # Public Statistics: published Book 1 curriculum currently complete through here.
 # Raise this when the next lesson is released. Do not gate it on study-file globs.
-COMPLETED_THROUGH_LESSON = 50
+COMPLETED_THROUGH_LESSON = 60
 START_HERE_ROOMS = 43  # Rooms 0–42
 CHANNEL_LEARNING_JSON = KML / "analytics/output/kml_channel_learning.json"
 CHANNEL_STATS_JSON = KML / "analytics/output/kml_channel_statistics.json"
@@ -359,7 +359,7 @@ def spoken_vocabulary_unique() -> int | None:
     """Unique words in the Japanese Vocabulary YouTube/learning path.
 
     That path is Foundation F1–F6 plus Everyday Vocabulary 1–22. It is not
-    the same pool as lesson-page vocabulary in Lessons 1–50.
+    the same pool as lesson-page vocabulary in Lessons 1–60.
     """
     data = load_json(CHANNEL_LEARNING_JSON) or {}
     path = (data.get("paths") or {}).get("japanese_vocabulary") or {}

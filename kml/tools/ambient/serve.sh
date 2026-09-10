@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Serve the ambient player from this directory.
-# Requires ./assets -> ../../assets (symlink) so /assets/studies/*.png resolves.
+# Requires ./assets -> ../../assets (symlink) so /assets/studies/*.jpg resolves.
 set -euo pipefail
 cd "$(dirname "$0")"
 if [[ ! -e assets/studies ]]; then
@@ -11,8 +11,8 @@ if [[ ! -e strokes/pages ]]; then
   echo "Missing strokes link. Run: ln -s ../strokes strokes" >&2
   exit 1
 fi
-if [[ ! -e bookends/lesson_32.png ]]; then
-  echo "Missing bookend artwork. Run: ln -s ../../../assets/covers/lesson_32.png bookends/lesson_32.png" >&2
+if [[ ! -e assets/covers/lesson_32.jpg ]]; then
+  echo "Missing lesson 32 cover JPEG at assets/covers/lesson_32.jpg" >&2
   exit 1
 fi
 PORT="${1:-8765}"
@@ -120,6 +120,8 @@ echo "Vocabulary Lesson 19: http://localhost:${PORT}/exhibition.html?collection=
 echo "Vocabulary Lesson 20: http://localhost:${PORT}/exhibition.html?collection=vocabulary_20"
 echo "Vocabulary Lesson 21: http://localhost:${PORT}/exhibition.html?collection=vocabulary_21"
 echo "Vocabulary Lesson 22: http://localhost:${PORT}/exhibition.html?collection=vocabulary_22"
+echo "Everyday Japanese 13: http://localhost:${PORT}/exhibition.html?collection=vocabulary_ej13"
+echo "Vocabulary Lesson 23 (Clinic): http://localhost:${PORT}/exhibition.html?collection=vocabulary_23"
 echo "  QA:         add &timingScale=0.05   (or &skipBookends=1&timingScale=0.05)"
 echo ""
 echo "Jōyō Soundtrack part 1 (100): http://localhost:${PORT}/exhibition.html?collection=post_elementary_01"

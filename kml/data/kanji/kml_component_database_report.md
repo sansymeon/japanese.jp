@@ -1,6 +1,6 @@
 # KML Component Database Report
 
-Generated: `2026-08-06T05:38:50.008376+00:00`
+Generated: `2026-09-05T04:29:45.612271+00:00`
 
 ## Policy
 
@@ -8,7 +8,7 @@ Reviewed lesson HTML is the canonical source for approved KML decompositions. Or
 
 ## Coverage
 
-- Lessons scanned: **153**
+- Lessons scanned: **154**
 - Kanji entries: **3051**
 - Distinct component glyphs: **881**
 - With component-box: **3058**
@@ -16,7 +16,7 @@ Reviewed lesson HTML is the canonical source for approved KML decompositions. Or
 - Filled from v4c fallback: **0**
 - Still absent: **0**
 - Placeholder remnants (self-ref, not editorial): **0**
-- Inconsistency records: **565**
+- Inconsistency records: **566**
 
 Placeholder self-references are **not** approved decompositions — they are leftover scaffolding from the original placeholder dataset.
 
@@ -83,7 +83,7 @@ Placeholder self-references are **not** approved decompositions — they are lef
 - L28 贈 html=['貝', '曽'] v4c=['月', '曽']
 - L28 賓 html=['宀', '一', '少', '貝'] v4c=['宀']
 
-### `nested_component_layout` (510)
+### `nested_component_layout` (511)
 
 - L9 涯
 - L9 均
@@ -165,13 +165,13 @@ Placeholder self-references are **not** approved decompositions — they are lef
 - L46 腎
 - L46 堅
 - L46 臨
-- … 430 more
+- … 431 more
 
 ## Top reused components
 
 | Glyph | First lesson | Reuse | First parent | Children |
 |-------|-------------:|------:|--------------|----------|
-| 木 | 11 | 182 | 木 | — |
+| 木 | 11 | 183 | 木 | — |
 | 氵 | 6 | 169 | 汐 | — |
 | 口 | 1 | 154 | 四 | — |
 | 艹 | 12 | 132 | 若 | — |
@@ -201,18 +201,18 @@ Placeholder self-references are **not** approved decompositions — they are lef
 | 米 | 50 | 41 | 米 | — |
 | 大 | 6 | 40 | 大 | — |
 | 人 | 14 | 40 | 茶 | — |
-| 山 | 42 | 37 | 出 | — |
+| 山 | 42 | 37 | 山 | — |
 | 虫 | 28 | 36 | 虫 | — |
 | 阝 | 70 | 36 | 阪 | — |
+| 冖 | 17 | 34 | 冗 | — |
 | 刂 | 5 | 33 | 則 | — |
 | 火 | 9 | 33 | 火 | — |
-| 冖 | 17 | 33 | 冗 | — |
 | 尸 | 57 | 33 | 尿 | — |
 | 目 | 1 | 32 | 目 | — |
 | 頁 | 4 | 32 | 頑 | 百 ㇵ |
 | 力 | 20 | 32 | 成 | — |
 
-## Single-use non-kanji components (42)
+## Single-use non-kanji components (43)
 
 - ノ — L6 in 少
 - 卂 — L15 in 迅
@@ -236,6 +236,7 @@ Placeholder self-references are **not** approved decompositions — they are lef
 - 奚 — L105 in 鶏
 - 寉 — L105 in 鶴
 - 禹 — L106 in 属
+- 鬯 — L107 in 鬱
 - 丽 — L108 in 麗
 - 廌 — L108 in 薦
 - 舄 — L110 in 潟

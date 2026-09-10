@@ -1,0 +1,67 @@
+/* Lyric film: black field + Shippori Mincho, matching Start Here Rooms 43–56. */
+
+.exhibition-root.is-lyric-film .exhibition-title,
+.exhibition-root.is-lyric-film .exhibition-notes,
+.exhibition-root.is-lyric-film .exhibition-vignette {
+  display: none;
+}
+
+.exhibition-root.is-lyric-film .exhibition-artwork {
+  inset: 0;
+}
+
+.exhibition-root.is-lyric-film .exhibition-artwork img {
+  filter: none;
+  object-fit: contain;
+  background: #000;
+}
+
+.lyric-film-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  padding: 8vh 8vw;
+}
+
+.lyric-film-layer.exhibition-hidden {
+  display: none;
+}
+
+.lyric-film-line {
+  margin: 0;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.62em;
+  row-gap: 0.32em;
+  font-family: "Shippori Mincho", "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  font-weight: 400;
+  font-size: clamp(2.7rem, 7.6vw, 9.25rem);
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #fcf8f0;
+  opacity: 0;
+  transition: opacity var(--lyric-film-caption-fade, 450ms) ease;
+}
+
+.lyric-film-item {
+  display: inline-block;
+  white-space: nowrap;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.lyric-film-line.is-visible {
+  opacity: 1;
+}
+
+.exhibition-root.is-lyric-film.is-lyric-on-image .lyric-film-line {
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.72);
+}

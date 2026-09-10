@@ -3,7 +3,7 @@
 # Ambient Gallery Film (Ambient Move V2 — ~137 min scenic Ken Burns).
 #
 # This is the ~2-hour film (Heart + Lessons 1–10 galleries, scenic-filtered)
-# with updated study art (incl. love.png) and the shared soundtrack end-fade
+# with updated study art (incl. love.jpg) and the shared soundtrack end-fade
 # protocol (8s afade to silence on the final video frame).
 #
 # Output: collections/ambient_gallery_film/ambient_gallery_film_v2.mp4
@@ -59,7 +59,7 @@ mkdir -p collections/ambient_gallery_film
   "$PY" - <<'PY'
 import json
 from pathlib import Path
-love = Path("../../assets/studies/love.png")
+love = Path("../../assets/studies/love.jpg")
 d = json.loads(Path("collections/ambient_gallery_film/ambient_gallery_film.json").read_text())
 removed = {"gallbladder", "convex", "concave"}
 slugs = {(s.get("meta") or {}).get("slug") or Path(s.get("image", "")).stem for s in d["scenes"]}
@@ -67,7 +67,7 @@ assert len(d["scenes"]) == 184, len(d["scenes"])
 assert not (slugs & removed), sorted(slugs & removed)
 scene = next(s for s in d["scenes"] if s.get("id") == "L40_love")
 mtime = int(love.stat().st_mtime)
-print(f"  love.png mtime={mtime} imageRev={scene.get('imageRev')} match={scene.get('imageRev')==mtime}")
+print(f"  love.jpg mtime={mtime} imageRev={scene.get('imageRev')} match={scene.get('imageRev')==mtime}")
 print(f"  scenes={len(d['scenes'])} soundtrack={d.get('soundtrack')}")
 print(f"  closing={((d.get('bookends') or {}).get('closing'))}")
 PY

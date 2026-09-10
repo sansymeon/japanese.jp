@@ -876,7 +876,7 @@
     {
       id: "58",
       displayName: "Katakana songs",
-      youtubeUrl: "https://www.youtube.com/watch?v=V9s8kvei-ks",
+      youtubeUrl: "https://www.youtube.com/watch?v=xb69M44X1q0",
       romajiDefault: "off"
     }
   ];

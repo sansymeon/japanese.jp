@@ -1,0 +1,124 @@
+/**
+ * Hiragana Song — dual-line caption prototype (current + upcoming preview).
+ * Same SBV timings; only the visual stack changes.
+ */
+
+.exhibition-root.is-hiragana-song.is-caption-dual {
+  --hiragana-song-dual-transition: 550ms;
+  --hiragana-song-dual-step: clamp(7.5rem, 24vh, 15rem);
+  --hiragana-song-dual-preview-opacity: 0.65;
+}
+
+.hiragana-song-chart.is-caption-dual {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: min(72vh, 760px);
+}
+
+.hiragana-song-dual-stack {
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.hiragana-song-dual-track {
+  position: relative;
+  width: 100%;
+  min-height: calc(var(--hiragana-song-dual-step) * 2 + clamp(1rem, 3vh, 2rem));
+}
+
+.hiragana-song-chart.is-caption-dual .hiragana-song-dual-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 100%;
+}
+
+.hiragana-song-chart.is-caption-dual .hiragana-song-dual-line.is-slot-current {
+  top: 0;
+  opacity: 1;
+}
+
+.hiragana-song-chart.is-caption-dual .hiragana-song-dual-line.is-slot-preview {
+  top: var(--hiragana-song-dual-step);
+  opacity: var(--hiragana-song-dual-preview-opacity);
+}
+
+.hiragana-song-chart.is-caption-dual .hiragana-song-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hiragana-song-caption-gap, clamp(1.1rem, 4.2vw, 3.2rem));
+  opacity: 1;
+  transition: none;
+}
+
+.hiragana-song-chart.is-caption-dual .hiragana-song-kana {
+  font-family: var(--hiragana-song-font-kana);
+  font-weight: 600;
+  font-size: min(
+    20vh,
+    12.5rem,
+    calc(
+      (90vw - (var(--caption-count, 5) - 1) * var(--hiragana-song-caption-gap)) /
+        var(--caption-count, 5)
+    )
+  );
+  line-height: 1;
+  color: var(--hiragana-song-kana);
+  text-shadow: var(--hiragana-song-kana-shadow);
+  -webkit-text-stroke: 0.018em rgba(10, 8, 6, 0.5);
+  paint-order: stroke fill;
+}
+
+.hiragana-song-chart.is-caption-dual .is-departing {
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition:
+    top var(--hiragana-song-dual-transition) ease,
+    opacity var(--hiragana-song-dual-transition) ease;
+}
+
+.hiragana-song-chart.is-caption-dual .is-departing.is-active {
+  top: calc(-1 * var(--hiragana-song-dual-step) * 0.55);
+  opacity: 0;
+}
+
+.hiragana-song-chart.is-caption-dual.is-dual-advancing .is-promoting {
+  z-index: 1;
+  transition:
+    top var(--hiragana-song-dual-transition) ease,
+    opacity var(--hiragana-song-dual-transition) ease;
+  top: 0;
+  opacity: 1;
+}
+
+.hiragana-song-chart.is-caption-dual.is-dual-advancing .is-entering {
+  animation: hiragana-song-dual-preview-enter var(--hiragana-song-dual-transition) ease
+    forwards;
+}
+
+@keyframes hiragana-song-dual-preview-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0.35rem);
+  }
+  to {
+    opacity: var(--hiragana-song-dual-preview-opacity);
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .exhibition-root.is-hiragana-song.is-caption-dual {
+    --hiragana-song-dual-step: clamp(5.5rem, 22vw, 8rem);
+  }
+
+  .hiragana-song-chart.is-caption-dual .hiragana-song-kana {
+    font-size: clamp(2.6rem, 13vw, 5.2rem);
+  }
+}

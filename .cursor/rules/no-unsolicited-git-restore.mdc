@@ -1,0 +1,12 @@
+---
+description: Do not restore or overwrite working files from git unless the user asked
+alwaysApply: true
+---
+
+# Do not go to git on your own
+
+Do not `git checkout`, `git restore`, `git reset`, or otherwise copy committed files onto the working tree unless the user explicitly asked.
+
+New art is often untracked and never pushed. Git history is frequently older, not-16:9 PNG. Pulling it in overwrites current work.
+
+Read-only git (`status`, `log`, `diff`, `ls-files`) is fine. Changing files from git is not, unless asked.

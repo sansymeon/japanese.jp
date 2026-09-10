@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ambient Japan 4h — candidate index</title>
+<style>
+  :root {
+    --bg: #141414;
+    --fg: #ececec;
+    --muted: #9a9a9a;
+    --line: #2a2a2a;
+    --accent: #c4a574;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 14px/1.45 system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  header {
+    padding: 28px 28px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+  .lede { color: var(--muted); max-width: 72ch; }
+  .lede a { color: var(--accent); }
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 16px 0 0;
+  }
+  .stat span { display: block; color: var(--muted); font-size: 12px; }
+  .stat b { font-size: 20px; font-weight: 600; }
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    z-index: 2;
+  }
+  .tab {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  .tab.active { color: var(--fg); border-color: var(--accent); }
+  .panel { display: none; padding: 20px 24px 48px; }
+  .panel.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .card { margin: 0; }
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background: #000;
+    display: block;
+  }
+  figcaption {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .reason {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #b8b8b8;
+    line-height: 1.35;
+  }
+  .flag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 5px;
+    border: 1px solid var(--line);
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ambient Japan — 4-hour scenery candidates</h1>
+  <p class="lede">
+    Working visual index after curatorial exclusions.
+    References only — source images were not deleted. Open locally.
+    Core pool is the surviving working set (142 images),
+    including 9 accepted Start Here scenes.
+    Start Here review: <a href="start_here_index.html">start_here_index.html</a>
+  </p>
+  <div class="stats">
+    <div class="stat"><span>Exclusions</span><b>168</b></div>
+    <div class="stat"><span>Core before cuts</span><b>293</b></div>
+    <div class="stat"><span>Surviving core pool</span><b>142</b></div>
+    <div class="stat"><span>Recommended for 4h</span><b>230–250</b></div>
+  </div>
+</header>
+<nav>
+<button type="button" class="tab active" data-tab="core">Core pool (142)</button>
+<button type="button" class="tab" data-tab="new_additions">New (8)</button>
+<button type="button" class="tab" data-tab="second_look">Second look (3)</button>
+<button type="button" class="tab" data-tab="start_here">Start Here (3)</button>
+<button type="button" class="tab" data-tab="strong_japan_anchors">strong japan anchors (72)</button>
+<button type="button" class="tab" data-tab="countryside_nature">countryside nature (32)</button>
+<button type="button" class="tab" data-tab="spring">spring (15)</button>
+<button type="button" class="tab" data-tab="summer">summer (17)</button>
+<button type="button" class="tab" data-tab="autumn">autumn (13)</button>
+<button type="button" class="tab" data-tab="winter">winter (17)</button>
+<button type="button" class="tab" data-tab="castles_temples_shrines">castles temples shrines (40)</button>
+<button type="button" class="tab" data-tab="rural_cultural_japan">rural cultural japan (43)</button>
+<button type="button" class="tab" data-tab="people">people (14)</button>
+<button type="button" class="tab" data-tab="modern_japan_rail">modern japan rail (12)</button>
+<button type="button" class="tab" data-tab="possible_fantasy_exceptions">possible fantasy exceptions (2)</button>
+</nav>
+<section class="panel active" data-tab="core"><figure class="card"><img loading="lazy" src="../../../../assets/studies/apple_blossoms.jpg" alt="apple_blossoms"><figcaption>apple_blossoms<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/apple_tree.jpg" alt="apple_tree"><figcaption>apple_tree<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/bamboo_forest.png" alt="bamboo_forest"><figcaption>bamboo_forest<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/capital.jpg" alt="capital"><figcaption>capital<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/castle.jpg" alt="castle"><figcaption>castle<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/castle_2.jpg" alt="castle_2"><figcaption>castle_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/chant.jpg" alt="chant"><figcaption>chant<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_station.png" alt="country_station"><figcaption>country_station<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_train_summer.png" alt="country_train_summer"><figcaption>country_train_summer<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_train_winter.png" alt="country_train_winter"><figcaption>country_train_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/creek.jpg" alt="creek"><figcaption>creek<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/dagashiya.jpg" alt="dagashiya"><figcaption>dagashiya<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/dazaifu_shopping.png" alt="dazaifu_shopping"><figcaption>dazaifu_shopping<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/evening.jpg" alt="evening"><figcaption>evening<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/eventide.jpg" alt="eventide"><figcaption>eventide<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/field.jpg" alt="field"><figcaption>field<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/fishing_village.png" alt="fishing_village"><figcaption>fishing_village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/fishing_village_2.png" alt="fishing_village_2"><figcaption>fishing_village_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/futamigaura.jpg" alt="futamigaura"><figcaption>futamigaura<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/garden.jpg" alt="garden"><figcaption>garden<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/gokayama_winter.jpg" alt="gokayama_winter"><figcaption>gokayama_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/good_luck.jpg" alt="good_luck"><figcaption>good_luck<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hida_furukawa.jpg" alt="hida_furukawa"><figcaption>hida_furukawa<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/home_village.jpg" alt="home_village"><figcaption>home_village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/ice.jpg" alt="ice"><figcaption>ice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/imperial_gardens.png" alt="imperial_gardens"><figcaption>imperial_gardens<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/japan_alps_summer_2.jpg" alt="japan_alps_summer_2"><figcaption>japan_alps_summer_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/japan_alps_winter.jpg" alt="japan_alps_winter"><figcaption>japan_alps_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kumamoto.jpg" alt="kumamoto"><figcaption>kumamoto<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto.jpg" alt="kyoto"><figcaption>kyoto<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto_autumn.jpg" alt="kyoto_autumn"><figcaption>kyoto_autumn<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto_pagoda.jpg" alt="kyoto_pagoda"><figcaption>kyoto_pagoda<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/lake_toya.jpg" alt="lake_toya"><figcaption>lake_toya<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/lavendar.jpg" alt="lavendar"><figcaption>lavendar<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/magome.jpg" alt="magome"><figcaption>magome<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/miyajima.png" alt="miyajima"><figcaption>miyajima<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/monkey_hotspring.jpg" alt="monkey_hotspring"><figcaption>monkey_hotspring<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/morning.jpg" alt="morning"><figcaption>morning<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/mt_fuji_2.jpg" alt="mt_fuji_2"><figcaption>mt_fuji_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nara_deer.jpg" alt="nara_deer"><figcaption>nara_deer<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_2.jpg" alt="nikko_2"><figcaption>nikko_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_3.jpg" alt="nikko_3"><figcaption>nikko_3<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_fall_colors.jpg" alt="nikko_fall_colors"><figcaption>nikko_fall_colors<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/okinawa_temple.jpg" alt="okinawa_temple"><figcaption>okinawa_temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pagoda.jpg" alt="pagoda"><figcaption>pagoda<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pavilion.jpg" alt="pavilion"><figcaption>pavilion<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/peach_tree.jpg" alt="peach_tree"><figcaption>peach_tree<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/plantation.jpg" alt="plantation"><figcaption>plantation<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/raizan.jpg" alt="raizan"><figcaption>raizan<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice.jpg" alt="rice"><figcaption>rice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice_post_harvest.jpg" alt="rice_post_harvest"><figcaption>rice_post_harvest<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/road.jpg" alt="road"><figcaption>road<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/saga_koinobori.jpg" alt="saga_koinobori"><figcaption>saga_koinobori<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/sakurajima.jpg" alt="sakurajima"><figcaption>sakurajima<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/senso_ji_temple.jpg" alt="senso_ji_temple"><figcaption>senso_ji_temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_spring.jpg" alt="shirakawa_spring"><figcaption>shirakawa_spring<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_winter.jpg" alt="shirakawa_winter"><figcaption>shirakawa_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shiretoko_ice.jpg" alt="shiretoko_ice"><figcaption>shiretoko_ice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shopping_street.jpg" alt="shopping_street"><figcaption>shopping_street<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/sun.jpg" alt="sun"><figcaption>sun<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/takayama.jpg" alt="takayama"><figcaption>takayama<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tanuki.jpg" alt="tanuki"><figcaption>tanuki<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tea_fields.jpg" alt="tea_fields"><figcaption>tea_fields<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tea_shop.jpg" alt="tea_shop"><figcaption>tea_shop<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/temple.jpg" alt="temple"><figcaption>temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof.jpg" alt="thatched_roof"><figcaption>thatched_roof<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof_winter.jpg" alt="thatched_roof_winter"><figcaption>thatched_roof_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/town.jpg" alt="town"><figcaption>town<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/train_cherry_blossoms.png" alt="train_cherry_blossoms"><figcaption>train_cherry_blossoms<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/train_hydrangea.png" alt="train_hydrangea"><figcaption>train_hydrangea<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tsumago.jpg" alt="tsumago"><figcaption>tsumago<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/villa.jpg" alt="villa"><figcaption>villa<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/village.jpg" alt="village"><figcaption>village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/wagashi_shop.jpg" alt="wagashi_shop"><figcaption>wagashi_shop<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_cranes.jpg" alt="winter_cranes"><figcaption>winter_cranes<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_evening.jpg" alt="winter_evening"><figcaption>winter_evening<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_honshu.jpg" alt="winter_honshu"><figcaption>winter_honshu<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/woods.jpg" alt="woods"><figcaption>woods<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/acknowledge.jpg" alt="acknowledge"><figcaption>acknowledge</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/assurance.jpg" alt="assurance"><figcaption>assurance</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/beguile.jpg" alt="beguile"><figcaption>beguile</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/bell.jpg" alt="bell"><figcaption>bell</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/busy.jpg" alt="busy"><figcaption>busy</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/car.jpg" alt="car"><figcaption>car</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/courtyard.jpg" alt="courtyard"><figcaption>courtyard</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/dike.jpg" alt="dike"><figcaption>dike</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/dog.jpg" alt="dog"><figcaption>dog</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/east.jpg" alt="east"><figcaption>east</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/endure_silently.jpg" alt="endure_silently"><figcaption>endure_silently</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/enlightenment.jpg" alt="enlightenment"><figcaption>enlightenment</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/few.jpg" alt="few"><figcaption>few</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hedge.jpg" alt="hedge"><figcaption>hedge</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hot_water.jpg" alt="hot_water"><figcaption>hot_water</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/incur.jpg" alt="incur"><figcaption>incur</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kudzu.jpg" alt="kudzu"><figcaption>kudzu</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/location.jpg" alt="location"><figcaption>location</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/mediocre.jpg" alt="mediocre"><figcaption>mediocre</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/melt.jpg" alt="melt"><figcaption>melt</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/mulberry.jpg" alt="mulberry"><figcaption>mulberry</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/next.jpg" alt="next"><figcaption>next</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/noon.jpg" alt="noon"><figcaption>noon</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/orderliness.jpg" alt="orderliness"><figcaption>orderliness</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/permit.jpg" alt="permit"><figcaption>permit</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/persimmon.jpg" alt="persimmon"><figcaption>persimmon</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pond.jpg" alt="pond"><figcaption>pond</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/public_hall.jpg" alt="public_hall"><figcaption>public_hall</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rain.jpg" alt="rain"><figcaption>rain</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/remainder.jpg" alt="remainder"><figcaption>remainder</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/respond.jpg" alt="respond"><figcaption>respond</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/righteousness.jpg" alt="righteousness"><figcaption>righteousness</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/run_alongside.jpg" alt="run_alongside"><figcaption>run_alongside</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rut.jpg" alt="rut"><figcaption>rut</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/safeguard.jpg" alt="safeguard"><figcaption>safeguard</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/slope.jpg" alt="slope"><figcaption>slope</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/stop.jpg" alt="stop"><figcaption>stop</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/store.jpg" alt="store"><figcaption>store</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/sulfur.jpg" alt="sulfur"><figcaption>sulfur</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tea.jpg" alt="tea"><figcaption>tea</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/transport.jpg" alt="transport"><figcaption>transport</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/ume.jpg" alt="ume"><figcaption>ume</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/visit_shrine.jpg" alt="visit_shrine"><figcaption>visit_shrine</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/weekday.jpg" alt="weekday"><figcaption>weekday</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter.jpg" alt="winter"><figcaption>winter</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/year_end.jpg" alt="year_end"><figcaption>year_end</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/younger_sister.jpg" alt="younger_sister"><figcaption>younger_sister</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/room_7/mountain.jpg" alt="room_7/mountain"><figcaption>room_7/mountain<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_24/bamboo_2.jpg" alt="lesson_24/bamboo_2"><figcaption>lesson_24/bamboo_2<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/room_9/kasa.jpg" alt="room_9/kasa"><figcaption>room_9/kasa<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/room-15.jpg" alt="room-15"><figcaption>room-15<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/kazega_yowai.jpg" alt="lesson_40/kazega_yowai"><figcaption>lesson_40/kazega_yowai<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/kotobaga_saku_2.jpg" alt="lesson_40/kotobaga_saku_2"><figcaption>lesson_40/kotobaga_saku_2<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/genki_desuka.jpg" alt="lesson_40/genki_desuka"><figcaption>lesson_40/genki_desuka<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/room-10.jpg" alt="room-10"><figcaption>room-10<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/room-9.jpg" alt="room-9"><figcaption>room-9<span class="flag">start-here</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/shinkansen.png" alt="shinkansen"><figcaption>shinkansen<span class="flag">new</span><div class="reason">Shinkansen on a viaduct through a misty rice-and-village valley</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/starlight.png" alt="starlight"><figcaption>starlight<span class="flag">new</span><div class="reason">Starry night over flooded rice paddies and a village</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/nachi_falls.png" alt="nachi_falls"><figcaption>nachi_falls<span class="flag">new</span><div class="reason">Nachi waterfall with the red Seiganto-ji pagoda</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/fushimi.png" alt="fushimi"><figcaption>fushimi<span class="flag">new</span><div class="reason">Fushimi Inari senbon torii as a quiet landscape tunnel</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/skytree_view_fuji.png" alt="skytree_view_fuji"><figcaption>skytree_view_fuji<span class="flag">new</span><div class="reason">Tokyo twilight cityscape with Fuji on the horizon</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/sakura_river.png" alt="sakura_river"><figcaption>sakura_river<span class="flag">new</span><div class="reason">Wide sakura-lined river with a path and incidental walkers</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/yatai.png" alt="yatai"><figcaption>yatai<span class="flag">new</span><div class="reason">Night riverside yatai row — urban Japan after dark</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/matsuri.png" alt="matsuri"><figcaption>matsuri<span class="flag">new</span><div class="reason">Shrine-path festival stalls in late-afternoon light, empty of crowds</div></figcaption></figure></section><section class="panel" data-tab="new_additions"><figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/shinkansen.png" alt="shinkansen"><figcaption>shinkansen<span class="flag">new</span><div class="reason">Shinkansen on a viaduct through a misty rice-and-village valley</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/starlight.png" alt="starlight"><figcaption>starlight<span class="flag">new</span><div class="reason">Starry night over flooded rice paddies and a village</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/nachi_falls.png" alt="nachi_falls"><figcaption>nachi_falls<span class="flag">new</span><div class="reason">Nachi waterfall with the red Seiganto-ji pagoda</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/fushimi.png" alt="fushimi"><figcaption>fushimi<span class="flag">new</span><div class="reason">Fushimi Inari senbon torii as a quiet landscape tunnel</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/skytree_view_fuji.png" alt="skytree_view_fuji"><figcaption>skytree_view_fuji<span class="flag">new</span><div class="reason">Tokyo twilight cityscape with Fuji on the horizon</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/sakura_river.png" alt="sakura_river"><figcaption>sakura_river<span class="flag">new</span><div class="reason">Wide sakura-lined river with a path and incidental walkers</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/yatai.png" alt="yatai"><figcaption>yatai<span class="flag">new</span><div class="reason">Night riverside yatai row — urban Japan after dark</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/new_images/matsuri.png" alt="matsuri"><figcaption>matsuri<span class="flag">new</span><div class="reason">Shrine-path festival stalls in late-afternoon light, empty of crowds</div></figcaption></figure></section><section class="panel" data-tab="second_look"><figure class="card"><img loading="lazy" src="../../../../assets/studies/enlightenment.jpg" alt="enlightenment"><figcaption>enlightenment<span class="flag">borderline</span><div class="reason">God-rays hitting stone monuments on a forest path. The light is performing the keyword.</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/woods.jpg" alt="woods"><figcaption>woods<span class="flag">4S</span><span class="flag">probably-keep</span><div class="reason">Shimenawa between two huge trunks. Meoto-sugi / sacred-cedar pairs exist; glance to confirm it does not feel like a made-up monument.</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/dog.jpg" alt="dog"><figcaption>dog<span class="flag">probably-keep</span><div class="reason">Black dog waiting on a rural platform. A story beat, but also a completely ordinary Japan scene.</div></figcaption></figure></section><section class="panel" data-tab="start_here"><figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/room_17/nine_mist.jpg" alt="room_17/nine_mist"><figcaption>room_17/nine_mist<span class="flag">strong</span><div class="reason">Traditional wooden bridge in mist — different from the cut KML nine (counted lanterns)</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/room_9/sakana.jpg" alt="room_9/sakana"><figcaption>room_9/sakana<span class="flag">strong</span><div class="reason">Mountain stream + working watermill — typology the KML pool does not have</div></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../../start-here/assets/images/lesson_40/watashiwa_genki.jpg" alt="lesson_40/watashiwa_genki"><figcaption>lesson_40/watashiwa_genki<span class="flag">medium</span><div class="reason">Kamogawa riverside walk — Kyoto everyday</div></figcaption></figure></section><section class="panel" data-tab="strong_japan_anchors"><figure class="card"><img loading="lazy" src="../../../../assets/studies/castle.jpg" alt="castle"><figcaption>castle<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/castle_2.jpg" alt="castle_2"><figcaption>castle_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kumamoto.jpg" alt="kumamoto"><figcaption>kumamoto<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/miyajima.png" alt="miyajima"><figcaption>miyajima<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/futamigaura.jpg" alt="futamigaura"><figcaption>futamigaura<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto.jpg" alt="kyoto"><figcaption>kyoto<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto_pagoda.jpg" alt="kyoto_pagoda"><figcaption>kyoto_pagoda<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto_autumn.jpg" alt="kyoto_autumn"><figcaption>kyoto_autumn<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/capital.jpg" alt="capital"><figcaption>capital<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/town.jpg" alt="town"><figcaption>town<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/weekday.jpg" alt="weekday"><figcaption>weekday</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/senso_ji_temple.jpg" alt="senso_ji_temple"><figcaption>senso_ji_temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nara_deer.jpg" alt="nara_deer"><figcaption>nara_deer<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_2.jpg" alt="nikko_2"><figcaption>nikko_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_3.jpg" alt="nikko_3"><figcaption>nikko_3<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_fall_colors.jpg" alt="nikko_fall_colors"><figcaption>nikko_fall_colors<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/mt_fuji_2.jpg" alt="mt_fuji_2"><figcaption>mt_fuji_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/apple_blossoms.jpg" alt="apple_blossoms"><figcaption>apple_blossoms<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/acknowledge.jpg" alt="acknowledge"><figcaption>acknowledge</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pagoda.jpg" alt="pagoda"><figcaption>pagoda<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/temple.jpg" alt="temple"><figcaption>temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/okinawa_temple.jpg" alt="okinawa_temple"><figcaption>okinawa_temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/chant.jpg" alt="chant"><figcaption>chant<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/good_luck.jpg" alt="good_luck"><figcaption>good_luck<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/bamboo_forest.png" alt="bamboo_forest"><figcaption>bamboo_forest<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/imperial_gardens.png" alt="imperial_gardens"><figcaption>imperial_gardens<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/garden.jpg" alt="garden"><figcaption>garden<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pavilion.jpg" alt="pavilion"><figcaption>pavilion<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_spring.jpg" alt="shirakawa_spring"><figcaption>shirakawa_spring<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_winter.jpg" alt="shirakawa_winter"><figcaption>shirakawa_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/gokayama_winter.jpg" alt="gokayama_winter"><figcaption>gokayama_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof.jpg" alt="thatched_roof"><figcaption>thatched_roof<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof_winter.jpg" alt="thatched_roof_winter"><figcaption>thatched_roof_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/morning.jpg" alt="morning"><figcaption>morning<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter.jpg" alt="winter"><figcaption>winter</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/melt.jpg" alt="melt"><figcaption>melt</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/mulberry.jpg" alt="mulberry"><figcaption>mulberry</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/magome.jpg" alt="magome"><figcaption>magome<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tsumago.jpg" alt="tsumago"><figcaption>tsumago<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/takayama.jpg" alt="takayama"><figcaption>takayama<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hida_furukawa.jpg" alt="hida_furukawa"><figcaption>hida_furukawa<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/dazaifu_shopping.png" alt="dazaifu_shopping"><figcaption>dazaifu_shopping<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shopping_street.jpg" alt="shopping_street"><figcaption>shopping_street<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/busy.jpg" alt="busy"><figcaption>busy</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/beguile.jpg" alt="beguile"><figcaption>beguile</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tea_fields.jpg" alt="tea_fields"><figcaption>tea_fields<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice.jpg" alt="rice"><figcaption>rice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/field.jpg" alt="field"><figcaption>field<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/raizan.jpg" alt="raizan"><figcaption>raizan<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/sun.jpg" alt="sun"><figcaption>sun<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/saga_koinobori.jpg" alt="saga_koinobori"><figcaption>saga_koinobori<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/woods.jpg" alt="woods"><figcaption>woods<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/ice.jpg" alt="ice"><figcaption>ice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/monkey_hotspring.jpg" alt="monkey_hotspring"><figcaption>monkey_hotspring<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/sakurajima.jpg" alt="sakurajima"><figcaption>sakurajima<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/assurance.jpg" alt="assurance"><figcaption>assurance</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/endure_silently.jpg" alt="endure_silently"><figcaption>endure_silently</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/visit_shrine.jpg" alt="visit_shrine"><figcaption>visit_shrine</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/righteousness.jpg" alt="righteousness"><figcaption>righteousness</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/location.jpg" alt="location"><figcaption>location</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/permit.jpg" alt="permit"><figcaption>permit</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/public_hall.jpg" alt="public_hall"><figcaption>public_hall</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/safeguard.jpg" alt="safeguard"><figcaption>safeguard</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/year_end.jpg" alt="year_end"><figcaption>year_end</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hedge.jpg" alt="hedge"><figcaption>hedge</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/few.jpg" alt="few"><figcaption>few</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/bell.jpg" alt="bell"><figcaption>bell</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/noon.jpg" alt="noon"><figcaption>noon</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pond.jpg" alt="pond"><figcaption>pond</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hot_water.jpg" alt="hot_water"><figcaption>hot_water</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/remainder.jpg" alt="remainder"><figcaption>remainder</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/courtyard.jpg" alt="courtyard"><figcaption>courtyard</figcaption></figure></section><section class="panel" data-tab="countryside_nature"><figure class="card"><img loading="lazy" src="../../../../assets/studies/creek.jpg" alt="creek"><figcaption>creek<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/eventide.jpg" alt="eventide"><figcaption>eventide<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/japan_alps_summer_2.jpg" alt="japan_alps_summer_2"><figcaption>japan_alps_summer_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/japan_alps_winter.jpg" alt="japan_alps_winter"><figcaption>japan_alps_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/lake_toya.jpg" alt="lake_toya"><figcaption>lake_toya<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/lavendar.jpg" alt="lavendar"><figcaption>lavendar<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_cranes.jpg" alt="winter_cranes"><figcaption>winter_cranes<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shiretoko_ice.jpg" alt="shiretoko_ice"><figcaption>shiretoko_ice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/apple_tree.jpg" alt="apple_tree"><figcaption>apple_tree<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/peach_tree.jpg" alt="peach_tree"><figcaption>peach_tree<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice_post_harvest.jpg" alt="rice_post_harvest"><figcaption>rice_post_harvest<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/plantation.jpg" alt="plantation"><figcaption>plantation<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/home_village.jpg" alt="home_village"><figcaption>home_village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/road.jpg" alt="road"><figcaption>road<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/village.jpg" alt="village"><figcaption>village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/evening.jpg" alt="evening"><figcaption>evening<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/dike.jpg" alt="dike"><figcaption>dike</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rain.jpg" alt="rain"><figcaption>rain</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/stone.jpg" alt="stone"><figcaption>stone</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/leaf.jpg" alt="leaf"><figcaption>leaf</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/lumber.jpg" alt="lumber"><figcaption>lumber</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/run_alongside.jpg" alt="run_alongside"><figcaption>run_alongside</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rut.jpg" alt="rut"><figcaption>rut</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/sulfur.jpg" alt="sulfur"><figcaption>sulfur</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/sheep.jpg" alt="sheep"><figcaption>sheep</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/signal.jpg" alt="signal"><figcaption>signal</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/grains_of_sand.jpg" alt="grains_of_sand"><figcaption>grains_of_sand</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/horse_chestnut.jpg" alt="horse_chestnut"><figcaption>horse_chestnut</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kudzu.jpg" alt="kudzu"><figcaption>kudzu</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/prosperous.jpg" alt="prosperous"><figcaption>prosperous</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pursue.jpg" alt="pursue"><figcaption>pursue</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/selfish.jpg" alt="selfish"><figcaption>selfish</figcaption></figure></section><section class="panel" data-tab="spring"><figure class="card"><img loading="lazy" src="../../../../assets/studies/castle.jpg" alt="castle"><figcaption>castle<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/apple_blossoms.jpg" alt="apple_blossoms"><figcaption>apple_blossoms<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/peach_tree.jpg" alt="peach_tree"><figcaption>peach_tree<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_spring.jpg" alt="shirakawa_spring"><figcaption>shirakawa_spring<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/train_cherry_blossoms.png" alt="train_cherry_blossoms"><figcaption>train_cherry_blossoms<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/saga_koinobori.jpg" alt="saga_koinobori"><figcaption>saga_koinobori<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/woods.jpg" alt="woods"><figcaption>woods<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/plantation.jpg" alt="plantation"><figcaption>plantation<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/ume.jpg" alt="ume"><figcaption>ume</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/orderliness.jpg" alt="orderliness"><figcaption>orderliness</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hedge.jpg" alt="hedge"><figcaption>hedge</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/incur.jpg" alt="incur"><figcaption>incur</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/metaphor.jpg" alt="metaphor"><figcaption>metaphor</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/core.jpg" alt="core"><figcaption>core</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/plump.jpg" alt="plump"><figcaption>plump</figcaption></figure></section><section class="panel" data-tab="summer"><figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/bamboo_forest.png" alt="bamboo_forest"><figcaption>bamboo_forest<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tea_fields.jpg" alt="tea_fields"><figcaption>tea_fields<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice.jpg" alt="rice"><figcaption>rice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/field.jpg" alt="field"><figcaption>field<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/miyajima.png" alt="miyajima"><figcaption>miyajima<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pagoda.jpg" alt="pagoda"><figcaption>pagoda<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/temple.jpg" alt="temple"><figcaption>temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof.jpg" alt="thatched_roof"><figcaption>thatched_roof<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/train_hydrangea.png" alt="train_hydrangea"><figcaption>train_hydrangea<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_train_summer.png" alt="country_train_summer"><figcaption>country_train_summer<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_station.png" alt="country_station"><figcaption>country_station<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/japan_alps_summer_2.jpg" alt="japan_alps_summer_2"><figcaption>japan_alps_summer_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/lavendar.jpg" alt="lavendar"><figcaption>lavendar<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/okinawa_temple.jpg" alt="okinawa_temple"><figcaption>okinawa_temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/creek.jpg" alt="creek"><figcaption>creek<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hot_water.jpg" alt="hot_water"><figcaption>hot_water</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/noon.jpg" alt="noon"><figcaption>noon</figcaption></figure></section><section class="panel" data-tab="autumn"><figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto_autumn.jpg" alt="kyoto_autumn"><figcaption>kyoto_autumn<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_fall_colors.jpg" alt="nikko_fall_colors"><figcaption>nikko_fall_colors<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_2.jpg" alt="nikko_2"><figcaption>nikko_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_3.jpg" alt="nikko_3"><figcaption>nikko_3<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/lake_toya.jpg" alt="lake_toya"><figcaption>lake_toya<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice.jpg" alt="rice"><figcaption>rice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice_post_harvest.jpg" alt="rice_post_harvest"><figcaption>rice_post_harvest<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/persimmon.jpg" alt="persimmon"><figcaption>persimmon</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pond.jpg" alt="pond"><figcaption>pond</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/recess.jpg" alt="recess"><figcaption>recess</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/younger_sister.jpg" alt="younger_sister"><figcaption>younger_sister</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/widow.jpg" alt="widow"><figcaption>widow</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/apple_tree.jpg" alt="apple_tree"><figcaption>apple_tree<span class="flag">4S</span></figcaption></figure></section><section class="panel" data-tab="winter"><figure class="card"><img loading="lazy" src="../../../../assets/studies/mt_fuji_2.jpg" alt="mt_fuji_2"><figcaption>mt_fuji_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/gokayama_winter.jpg" alt="gokayama_winter"><figcaption>gokayama_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_winter.jpg" alt="shirakawa_winter"><figcaption>shirakawa_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof_winter.jpg" alt="thatched_roof_winter"><figcaption>thatched_roof_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_train_winter.png" alt="country_train_winter"><figcaption>country_train_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/japan_alps_winter.jpg" alt="japan_alps_winter"><figcaption>japan_alps_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shiretoko_ice.jpg" alt="shiretoko_ice"><figcaption>shiretoko_ice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/ice.jpg" alt="ice"><figcaption>ice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/monkey_hotspring.jpg" alt="monkey_hotspring"><figcaption>monkey_hotspring<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_cranes.jpg" alt="winter_cranes"><figcaption>winter_cranes<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_evening.jpg" alt="winter_evening"><figcaption>winter_evening<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_honshu.jpg" alt="winter_honshu"><figcaption>winter_honshu<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/apple_tree.jpg" alt="apple_tree"><figcaption>apple_tree<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter.jpg" alt="winter"><figcaption>winter</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/melt.jpg" alt="melt"><figcaption>melt</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/endure_silently.jpg" alt="endure_silently"><figcaption>endure_silently</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/year_end.jpg" alt="year_end"><figcaption>year_end</figcaption></figure></section><section class="panel" data-tab="castles_temples_shrines"><figure class="card"><img loading="lazy" src="../../../../assets/studies/castle.jpg" alt="castle"><figcaption>castle<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/castle_2.jpg" alt="castle_2"><figcaption>castle_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kumamoto.jpg" alt="kumamoto"><figcaption>kumamoto<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pagoda.jpg" alt="pagoda"><figcaption>pagoda<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto_pagoda.jpg" alt="kyoto_pagoda"><figcaption>kyoto_pagoda<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto_autumn.jpg" alt="kyoto_autumn"><figcaption>kyoto_autumn<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/capital.jpg" alt="capital"><figcaption>capital<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/town.jpg" alt="town"><figcaption>town<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/temple.jpg" alt="temple"><figcaption>temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/senso_ji_temple.jpg" alt="senso_ji_temple"><figcaption>senso_ji_temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/okinawa_temple.jpg" alt="okinawa_temple"><figcaption>okinawa_temple<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nara_deer.jpg" alt="nara_deer"><figcaption>nara_deer<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/chant.jpg" alt="chant"><figcaption>chant<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/good_luck.jpg" alt="good_luck"><figcaption>good_luck<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/miyajima.png" alt="miyajima"><figcaption>miyajima<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/futamigaura.jpg" alt="futamigaura"><figcaption>futamigaura<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_2.jpg" alt="nikko_2"><figcaption>nikko_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_3.jpg" alt="nikko_3"><figcaption>nikko_3<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/nikko_fall_colors.jpg" alt="nikko_fall_colors"><figcaption>nikko_fall_colors<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/imperial_gardens.png" alt="imperial_gardens"><figcaption>imperial_gardens<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/garden.jpg" alt="garden"><figcaption>garden<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pavilion.jpg" alt="pavilion"><figcaption>pavilion<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/woods.jpg" alt="woods"><figcaption>woods<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/ice.jpg" alt="ice"><figcaption>ice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/visit_shrine.jpg" alt="visit_shrine"><figcaption>visit_shrine</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/righteousness.jpg" alt="righteousness"><figcaption>righteousness</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/assurance.jpg" alt="assurance"><figcaption>assurance</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/endure_silently.jpg" alt="endure_silently"><figcaption>endure_silently</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/location.jpg" alt="location"><figcaption>location</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/permit.jpg" alt="permit"><figcaption>permit</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/public_hall.jpg" alt="public_hall"><figcaption>public_hall</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/safeguard.jpg" alt="safeguard"><figcaption>safeguard</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/year_end.jpg" alt="year_end"><figcaption>year_end</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/few.jpg" alt="few"><figcaption>few</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/bell.jpg" alt="bell"><figcaption>bell</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/noon.jpg" alt="noon"><figcaption>noon</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/pond.jpg" alt="pond"><figcaption>pond</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/courtyard.jpg" alt="courtyard"><figcaption>courtyard</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/respond.jpg" alt="respond"><figcaption>respond</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/ridgepole.jpg" alt="ridgepole"><figcaption>ridgepole</figcaption></figure></section><section class="panel" data-tab="rural_cultural_japan"><figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof.jpg" alt="thatched_roof"><figcaption>thatched_roof<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/thatched_roof_winter.jpg" alt="thatched_roof_winter"><figcaption>thatched_roof_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_spring.jpg" alt="shirakawa_spring"><figcaption>shirakawa_spring<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shirakawa_winter.jpg" alt="shirakawa_winter"><figcaption>shirakawa_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/gokayama_winter.jpg" alt="gokayama_winter"><figcaption>gokayama_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/magome.jpg" alt="magome"><figcaption>magome<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tsumago.jpg" alt="tsumago"><figcaption>tsumago<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/takayama.jpg" alt="takayama"><figcaption>takayama<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/hida_furukawa.jpg" alt="hida_furukawa"><figcaption>hida_furukawa<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/dazaifu_shopping.png" alt="dazaifu_shopping"><figcaption>dazaifu_shopping<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/dagashiya.jpg" alt="dagashiya"><figcaption>dagashiya<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tea_shop.jpg" alt="tea_shop"><figcaption>tea_shop<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/wagashi_shop.jpg" alt="wagashi_shop"><figcaption>wagashi_shop<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tanuki.jpg" alt="tanuki"><figcaption>tanuki<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/shopping_street.jpg" alt="shopping_street"><figcaption>shopping_street<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/kyoto.jpg" alt="kyoto"><figcaption>kyoto<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/home_village.jpg" alt="home_village"><figcaption>home_village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/village.jpg" alt="village"><figcaption>village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/road.jpg" alt="road"><figcaption>road<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/plantation.jpg" alt="plantation"><figcaption>plantation<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/field.jpg" alt="field"><figcaption>field<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rice.jpg" alt="rice"><figcaption>rice<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/tea_fields.jpg" alt="tea_fields"><figcaption>tea_fields<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/fishing_village.png" alt="fishing_village"><figcaption>fishing_village<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/fishing_village_2.png" alt="fishing_village_2"><figcaption>fishing_village_2<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/evening.jpg" alt="evening"><figcaption>evening<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_evening.jpg" alt="winter_evening"><figcaption>winter_evening<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter_honshu.jpg" alt="winter_honshu"><figcaption>winter_honshu<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/morning.jpg" alt="morning"><figcaption>morning<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/villa.jpg" alt="villa"><figcaption>villa<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/beguile.jpg" alt="beguile"><figcaption>beguile</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/busy.jpg" alt="busy"><figcaption>busy</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/store.jpg" alt="store"><figcaption>store</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/slope.jpg" alt="slope"><figcaption>slope</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/weekday.jpg" alt="weekday"><figcaption>weekday</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/remainder.jpg" alt="remainder"><figcaption>remainder</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/run_alongside.jpg" alt="run_alongside"><figcaption>run_alongside</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/rut.jpg" alt="rut"><figcaption>rut</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/soil.jpg" alt="soil"><figcaption>soil</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/cottage.jpg" alt="cottage"><figcaption>cottage</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/mulberry.jpg" alt="mulberry"><figcaption>mulberry</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/melt.jpg" alt="melt"><figcaption>melt</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/winter.jpg" alt="winter"><figcaption>winter</figcaption></figure></section><section class="panel" data-tab="people"><figure class="card"><img loading="lazy" src="../../../../assets/studies/visit_shrine.jpg" alt="visit_shrine"><figcaption>visit_shrine</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/craft.jpg" alt="craft"><figcaption>craft</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/voiced.jpg" alt="voiced"><figcaption>voiced</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/accept.jpg" alt="accept"><figcaption>accept</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/descendants.jpg" alt="descendants"><figcaption>descendants</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/particularly.jpg" alt="particularly"><figcaption>particularly</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/younger_sister.jpg" alt="younger_sister"><figcaption>younger_sister</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/soil.jpg" alt="soil"><figcaption>soil</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/matrimony.jpg" alt="matrimony"><figcaption>matrimony</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/surpass.jpg" alt="surpass"><figcaption>surpass</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/renunciation.jpg" alt="renunciation"><figcaption>renunciation</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/light_weight.jpg" alt="light_weight"><figcaption>light_weight</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/leave.jpg" alt="leave"><figcaption>leave</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/juvenile.jpg" alt="juvenile"><figcaption>juvenile</figcaption></figure></section><section class="panel" data-tab="modern_japan_rail"><figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_station.png" alt="country_station"><figcaption>country_station<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_train_summer.png" alt="country_train_summer"><figcaption>country_train_summer<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/country_train_winter.png" alt="country_train_winter"><figcaption>country_train_winter<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/train_cherry_blossoms.png" alt="train_cherry_blossoms"><figcaption>train_cherry_blossoms<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../ambient_gallery_japan_4_seasons/images/train_hydrangea.png" alt="train_hydrangea"><figcaption>train_hydrangea<span class="flag">4S</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/stop.jpg" alt="stop"><figcaption>stop</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/transport.jpg" alt="transport"><figcaption>transport</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/dog.jpg" alt="dog"><figcaption>dog</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/mediocre.jpg" alt="mediocre"><figcaption>mediocre</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/next.jpg" alt="next"><figcaption>next</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/car.jpg" alt="car"><figcaption>car</figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/patrol.jpg" alt="patrol"><figcaption>patrol</figcaption></figure></section><section class="panel" data-tab="possible_fantasy_exceptions"><figure class="card"><img loading="lazy" src="../../../../assets/studies/challenge.jpg" alt="challenge"><figcaption>challenge<span class="flag">caution</span></figcaption></figure>
+<figure class="card"><img loading="lazy" src="../../../../assets/studies/bewitched.jpg" alt="bewitched"><figcaption>bewitched<span class="flag">caution</span></figcaption></figure></section>
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".panel");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.querySelector('.panel[data-tab="' + tab.dataset.tab + '"]').classList.add("active");
+      window.scrollTo(0, 0);
+    });
+  });
+</script>
+</body>
+</html>

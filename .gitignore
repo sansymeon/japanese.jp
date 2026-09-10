@@ -132,3 +132,31 @@ kml/tools/ambient/collections/**/playback_contact_sheets/*.txt
 kml/tools/ambient/collections/**/review_contact_sheets/*.jpg
 kml/tools/ambient/collections/**/review_contact_sheets/*.txt
 kml/tools/ambient/quiet_cinematic_review/contact_sheets/
+
+# Accidental / machine-local (not live site assets)
+/*.png
+/tudy images through Lesson 55"
+kml/assets/start_here
+* (Copy).*
+*(Copy)*
+.gitignore.save
+start-here/assets/images/room 40.jpg
+
+# PNG masters / source stills — live site uses JPEG delivery folders
+kml/assets/digital_art_gallery/
+kml/tools/ambient/collections/**/images/new_images/
+kml/tools/ambient/collections/**/*.png
+
+# Archive working copies. KanjiVG stays tracked: kml/kana fetches those SVGs.
+data/archive/*
+!data/archive/kanjivg/
+!data/archive/kanjivg/**
+
+# Staging stills for ambient films, not live kml/assets/studies/
+kml/assets/studies/add_to_ambient_japan_4_seasons/
+
+# Collection audio (same policy as kml/tools/ambient/audio/)
+kml/tools/ambient/collections/**/*.mp3
+
+# Room 40 Arianna capture-only player (not the public lesson page)
+start-here/lesson-40/record-arianna*

@@ -1,0 +1,228 @@
+/**
+ * Digital Art Exhibition — museum room, not slideshow.
+ * Paintings hang in a dark gallery. Transitions must not attract attention.
+ */
+
+:root {
+  --dae-room: #050506;
+  --dae-gold: rgba(196, 160, 82, 0.58);
+  --dae-gold-dim: rgba(196, 160, 82, 0.38);
+  --dae-label: rgba(232, 220, 196, 0.42);
+  --dae-ease: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--dae-room);
+  color: var(--dae-label);
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", Georgia, serif;
+}
+
+.dae-root {
+  position: fixed;
+  inset: 0;
+  background: var(--dae-room);
+  isolation: isolate;
+}
+
+.dae-room {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--dae-room);
+}
+
+.dae-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 52%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
+}
+
+.dae-opening {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.dae-opening-card {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(46vw, 52vh);
+  max-height: 58vh;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 36px rgba(0, 0, 0, 0.55));
+}
+
+.dae-opening-title {
+  margin: 1.35rem 0 0;
+  padding: 0;
+  max-width: 90vw;
+  /* Muted antique gold. Solid enough to read at plaque size; still below 月. */
+  color: rgb(196, 166, 108);
+  font-size: clamp(0.80rem, 1.35vw, 1.02rem);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.58em;
+  line-height: 1;
+  text-indent: 0.58em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
+
+.dae-opening-title.is-empty {
+  display: none;
+}
+
+.dae-artwork {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6vh 1.1vw;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.dae-artwork img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 97%;
+  max-height: 96%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.dae-artwork.is-breath img {
+  transform-origin: center center;
+  animation: dae-breath var(--dae-breath-ms, 40000ms) linear forwards;
+}
+
+@keyframes dae-breath {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.012);
+  }
+}
+
+.dae-brand {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dae-brand-mark {
+  margin: 0;
+  color: var(--dae-gold-dim);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-transform: uppercase;
+}
+
+.dae-error {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: rgba(232, 220, 196, 0.7);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.dae-error[hidden],
+.dae-debug[hidden],
+.dae-autoplay-gate[hidden] {
+  display: none;
+}
+
+.dae-debug {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.7rem;
+  z-index: 15;
+  margin: 0;
+  color: rgba(232, 220, 196, 0.38);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.dae-autoplay-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 2rem;
+  border: 0;
+  background: rgba(5, 5, 6, 0.55);
+  color: var(--dae-gold);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.48em;
+  text-indent: 0.48em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.dae-autoplay-gate:focus-visible {
+  outline: 1px solid rgba(196, 160, 82, 0.35);
+  outline-offset: -8px;
+}
+
+.dae-audio {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dae-artwork.is-breath img {
+    animation: none;
+  }
+}
