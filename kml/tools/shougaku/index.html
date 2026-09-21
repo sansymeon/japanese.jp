@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shougaku Kanji Exhibition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/shougaku.css">
+</head>
+<body>
+
+<!--
+  Shougaku Kanji Exhibition
+
+  Grade 1 (80 kanji, 2 groups of 40):
+    ?collection=grade_1
+
+  Grade 2 (160 kanji, 4 groups of 40):
+    ?collection=grade_2
+
+  OBS / capture mode (autoplay, no chrome):
+    ?collection=grade_2&capture=1
+
+  Soundtracks (drop your MP3 here):
+    audio/grade_1_soundtrack.mp3
+    audio/grade_2_soundtrack.mp3
+
+  Rebuild collections from kanji_master.csv:
+    python3 scripts/build_grade_collections.py
+
+  Serve locally:
+    ./serve.sh
+-->
+
+<div class="shougaku-root" data-shougaku-root>
+  <div class="shougaku-bg" aria-hidden="true"></div>
+  <div class="shougaku-overlay" aria-hidden="true"></div>
+
+  <div class="shougaku-loading" data-shougaku-loading>Loading collection…</div>
+  <div class="shougaku-error shougaku-hidden" data-shougaku-error></div>
+
+  <div class="shougaku-title-screen" data-shougaku-title-screen>
+    <div>
+      <h1 class="shougaku-title-main" data-shougaku-title-main></h1>
+      <p class="shougaku-title-sub" data-shougaku-title-sub></p>
+    </div>
+  </div>
+
+  <div class="shougaku-grid-wrap shougaku-hidden" data-shougaku-grid-wrap>
+    <div class="shougaku-grid" data-shougaku-grid></div>
+  </div>
+
+  <div class="shougaku-autoplay-gate shougaku-hidden" data-shougaku-autoplay-gate>
+    <button type="button" data-shougaku-start>Start exhibition</button>
+  </div>
+
+  <div class="shougaku-chrome">
+    <span data-shougaku-status></span>
+    <button type="button" data-shougaku-toggle>Pause</button>
+  </div>
+</div>
+
+<script src="./js/shougaku-engine.js" defer></script>
+</body>
+</html>
