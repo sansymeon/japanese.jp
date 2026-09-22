@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="bookshelf-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book 16 — Kanji・Music・Landscape</title>
+  <meta
+    name="description"
+    content="Book 16: Heisig 3001–3060. Lessons 151–153 in the Kanji・Music・Landscape library."
+  />
+  <meta name="theme-color" content="#171512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../../assets/css/museum-room.css" />
+  <link rel="stylesheet" href="../../../assets/site/css/bookshelf.css" />
+  <script src="../../../../assets/js/museum-room.js" defer></script>
+</head>
+<body class="bookshelf-page">
+  <a class="skip-link" href="#lessons">Skip to lessons</a>
+
+  <header class="books-header books-header--solid">
+    <div class="books-header-inner">
+      <a class="books-brand" href="../../../../index.html">Kanji・Music・Landscape</a>
+      <nav aria-label="Primary">
+        <ul class="books-nav">
+          <li><a href="../../../../journey/">About KML</a></li>
+          <li><a href="../">Kanji Studies</a></li>
+          <li><a href="../../../../collections/">Video Collections</a></li>
+          <li><a href="../../../../publications/">Publications</a></li>
+          <li><a href="../../../../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="book-room">
+    <header class="book-room-intro reveal">
+      <p class="book-room-crumb">
+        <a href="../">Bookshelf</a>
+        <span aria-hidden="true"> · </span>
+        Book 16
+      </p>
+      <p class="book-room-eyebrow">Book 16 · Growing</p>
+      <h1>Book 16</h1>
+      <p class="book-room-lead">
+        The closing volume of the planned lesson sequence.
+        Heisig 3001–3060 · Lessons 151–153.
+      </p>
+    </header>
+
+    <ol class="lesson-exhibit" id="lessons">
+        <li id="lesson-151">
+          <a class="lesson-card reveal" href="../book_01/lessons/lesson_151.html">
+          <div class="lesson-card-art lesson-card-art--empty" aria-hidden="true">
+            <span>151</span>
+          </div>
+            <p class="lesson-card-label">Lesson 151</p>
+            <span class="lesson-card-rule" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li id="lesson-152">
+          <a class="lesson-card reveal" href="../book_01/lessons/lesson_152.html">
+          <div class="lesson-card-art lesson-card-art--empty" aria-hidden="true">
+            <span>152</span>
+          </div>
+            <p class="lesson-card-label">Lesson 152</p>
+            <span class="lesson-card-rule" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li id="lesson-153">
+          <a class="lesson-card reveal" href="../book_01/lessons/lesson_153.html">
+          <div class="lesson-card-art lesson-card-art--empty" aria-hidden="true">
+            <span>153</span>
+          </div>
+            <p class="lesson-card-label">Lesson 153</p>
+            <span class="lesson-card-rule" aria-hidden="true"></span>
+          </a>
+        </li>
+    </ol>
+
+    <nav class="book-room-footer-nav" aria-label="Adjacent books">
+      <a href="../15/">← Book 15</a>
+      <a href="../">Bookshelf</a>
+    </nav>
+  </main>
+
+  <footer class="books-footer">
+    <div class="books-footer-inner">
+      <p>
+        <a href="../">Bookshelf</a>
+        ·
+        <a href="../../../../index.html">Home</a>
+      </p>
+      <p style="margin-top: 0.65rem">© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+    var year = document.getElementById("copyrightYear");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    var nodes = document.querySelectorAll(".reveal");
+    if (!nodes.length) return;
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" }
+    );
+    nodes.forEach(function (el) { observer.observe(el); });
+  })();
+  </script>
+</body>
+</html>

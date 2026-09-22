@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Apply / refresh Lesson bottom YouTube media-card CTAs from lesson_media_urls.json.
 
-Does not embed players or link local ambient/compounds media. Empty slots use
-the matching placeholder until real YouTube URLs are filled in.
+Does not embed players or link local ambient/compounds media. Empty playlist and
+gallery slots use the matching YouTube placeholder until real URLs are filled in.
+The compounds card always points at the internal KML compound page. Optional
+YouTube compound-film URLs belong on that page, via the `compounds` field.
 
 After editing kml/data/lesson_media_urls.json, run this script to bake URLs
 and labels into all classic lesson pages.
@@ -62,13 +64,17 @@ def url_for(media, placeholder, gallery_placeholder, lesson_num: int, slot: str)
     return placeholder
 
 
+def compound_page_href(lesson_num: int) -> str:
+    return f"../compounds/lesson_{lesson_num:02d}.html"
+
+
 def build_cta(lesson_num: int, media, placeholder: str, gallery_placeholder: str) -> str:
+    # Compounds land on the KML compound page. YouTube film URLs live on that page
+    # (lesson_media_urls.json → compounds) when a recording exists.
     return f"""<!-- CTA — YouTube media cards (no local video/audio) -->
 <div class="cta">
   <a class="btn-compounds"
-     href="{url_for(media, placeholder, gallery_placeholder, lesson_num, "compounds")}"
-     target="_blank"
-     rel="noopener noreferrer">
+     href="{compound_page_href(lesson_num)}">
     ▶️ View Common Compounds for Lesson {lesson_num}
   </a>
   <a class="btn-compounds"

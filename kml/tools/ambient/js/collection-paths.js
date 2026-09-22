@@ -24,7 +24,7 @@
     if (/^post_elementary/.test(name)) return "post_elementary";
     if (/^beyond_joyo/.test(name)) return "beyond_joyo";
     if (/^ambient_gallery_film/.test(name)) return "ambient_gallery_film";
-    if (/^ambient_gallery_japan/.test(name)) return "ambient_gallery_japan_4_seasons";
+    if (/^borneo_/.test(name)) return "borneo_exhibition";
     if (/^vocabulary_/.test(name)) return "vocabulary";
     if (/^hiragana_song/.test(name)) return "hiragana_song";
     if (/^hiragana_origins/.test(name)) return "hiragana_origins";

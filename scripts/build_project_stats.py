@@ -5,11 +5,11 @@ Writes: statistics/data/project_stats.json
 
 Layers (do not mix meanings):
   - Permanent library — designed KML resources. One-per-kanji items are
-    3,094 (kanji, verses, stroke-order pages). Vocabulary, compounds, and
+    3,096 (kanji, verses, stroke-order pages). Vocabulary, compounds, and
     components are counted from the full production collections, not assumed
-    to be 3,094.
-  - Published curriculum — completed lesson sequence (currently 1–60)
-  - Curriculum coverage — JLPT / Jōyō / school grades vs Lessons 1–60 only
+    to be 3,096.
+  - Published curriculum — completed lesson sequence (currently 1–111)
+  - Curriculum coverage — JLPT / Jōyō / school grades vs Lessons 1–111 only
   - Learning resources — curriculum totals plus separately labeled ecosystem
     materials (Start Here, vocabulary series, kana)
   - Media — the published KML media ecosystem, including the YouTube channel
@@ -37,14 +37,14 @@ OUT = ROOT / "statistics" / "data" / "project_stats.json"
 # Permanent library scope — designed KML collection (not progress).
 # One-per-kanji resources follow this total even when a checkout has fewer
 # generated HTML/study files.
-KANJI_COLLECTION_TOTAL = 3094
+KANJI_COLLECTION_TOTAL = 3096
 PLANNED_LESSONS = 153
 YOUTUBE_CHANNEL_VIDEOS = 551
 YOUTUBE_COUNT_AS_OF = "2026-09-05"
 YOUTUBE_CHANNEL_HANDLE = "@ambientkanji"
 # Public Statistics: published Book 1 curriculum currently complete through here.
 # Raise this when the next lesson is released. Do not gate it on study-file globs.
-COMPLETED_THROUGH_LESSON = 60
+COMPLETED_THROUGH_LESSON = 111
 START_HERE_ROOMS = 43  # Rooms 0–42
 CHANNEL_LEARNING_JSON = KML / "analytics/output/kml_channel_learning.json"
 CHANNEL_STATS_JSON = KML / "analytics/output/kml_channel_statistics.json"
@@ -520,7 +520,7 @@ def build_ecosystem_resources() -> dict:
         "startHereRooms": {
             "value": count_start_here_rooms(),
             "label": "Start Here Rooms",
-            "detail": "Rooms 0–42 on the website",
+            "detail": "Published Start Here rooms on the website",
         },
         "foundationVocabularyLessons": {
             "value": foundation,
