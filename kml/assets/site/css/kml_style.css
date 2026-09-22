@@ -5,7 +5,7 @@
 /* ===== Layout / Vars ===== */
 :root {
   --content-max: 800px;
-  --card-max: 600px;
+  --card-max: 640px;
   --card-radius: 12px;
   /* Gallery wall + paper cards */
   --gallery-wall: #171512;
@@ -304,11 +304,13 @@ h1 {
   margin: 2rem auto 1.5rem;
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .kanji-study img {
-  max-width: 280px;
-  width: auto;
+  width: 100%;
+  max-width: 600px;
   height: auto;
   display: block;
 }
@@ -717,6 +719,16 @@ h1 {
 }
 
 
+.compound-film {
+  max-width: var(--content-max);
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.compound-film a.btn-compounds {
+  display: inline-block;
+}
+
 .kanji-compound-font {
   display: block;
 
@@ -762,7 +774,7 @@ h1 {
   }
 
   .kanji-study img {
-    max-width: 240px;
+    max-width: 100%;
   }
 
   .kanji-med {
