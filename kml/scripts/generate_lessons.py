@@ -95,7 +95,7 @@ def build_lesson_art(lesson_number):
     img = (
         f'<img src="../../../../assets/covers/lesson_{pad}.jpg"\n'
         f'       alt="Lesson {lesson_number} cover"\n'
-        f'       width="380" height="250"\n'
+        f'       width="1672" height="941"\n'
         f'       fetchpriority="high">'
     )
     url = GALLERY_URLS.get(str(lesson_number))
