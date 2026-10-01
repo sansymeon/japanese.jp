@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml/data/compounds/compound_master.schema.json",
+  "title": "KML Compound Master",
+  "description": "A glossary and index. Teaching files stay authoritative for their own curriculum and order. This master does not make Compounds, school Jōyō, beyond-Jōyō, and vocabulary exhibitions hold the same words. It does not copy the Kanji Master. kml/data/vocabulary/kml_master_vocabulary.v1.json is named by analytics config and is not in the tree; do not treat that missing file as this master. Do not hand-maintain used_in arrays. index_compound_usage.py rebuilds the usage index by scanning curriculum files.",
+  "type": "object",
+  "required": ["schema", "identity", "documents"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "kml.compounds.master.v1" },
+    "identity": { "$ref": "#/$defs/identity" },
+    "documents": { "$ref": "#/$defs/documents" },
+    "linkToKanjiMaster": { "$ref": "#/$defs/kanjiLink" }
+  },
+  "$defs": {
+    "identity": {
+      "type": "object",
+      "required": ["key"],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "string" },
+          "description": "surface + reading. 古寺/ふるでら and 古寺/こじ are different entries. The written form may include kana, as in 唆す or 峠茶屋."
+        },
+        "sense": {
+          "type": "string",
+          "description": "Add a sense id only when the same surface and the same reading are genuinely different words. Disagreeing English glosses are not a new sense. Variant spellings are aliases on one entry, unless a curriculum treats the spelling as a different word."
+        }
+      }
+    },
+    "documents": {
+      "type": "object",
+      "required": ["lexicalOverlay", "usageIndex"],
+      "additionalProperties": false,
+      "properties": {
+        "lexicalOverlay": {
+          "type": "object",
+          "required": ["path", "curated", "whenToAddARow"],
+          "additionalProperties": false,
+          "properties": {
+            "path": { "const": "kml/data/compounds/lexical_overlay.json" },
+            "curated": { "const": true },
+            "whenToAddARow": {
+              "type": "string",
+              "description": "Sparse. A row is for a chosen meaning where sources disagree, a real second sense, or an alias. A word that appears in only one curriculum needs no overlay row. The index still lists it."
+            },
+            "record": { "$ref": "#/$defs/overlayRecord" }
+          }
+        },
+        "usageIndex": {
+          "type": "object",
+          "required": ["path", "generated", "scanner"],
+          "additionalProperties": false,
+          "properties": {
+            "path": { "const": "kml/data/compounds/usage_index.json" },
+            "generated": { "const": true },
+            "scanner": { "const": "kml/data/compounds/index_compound_usage.py" },
+            "record": { "$ref": "#/$defs/indexRecord" }
+          }
+        }
+      }
+    },
+    "overlayRecord": {
+      "type": "object",
+      "required": ["id", "surface", "reading"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "surface": { "type": "string" },
+        "reading": { "type": "string" },
+        "sense": { "type": "string" },
+        "meaning": {
+          "type": "string",
+          "description": "One concise English gloss, chosen by hand when sources disagree. Omit the row entirely when no choice is required."
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Other written forms that should resolve to this entry."
+        }
+      }
+    },
+    "indexRecord": {
+      "type": "object",
+      "required": ["id", "surface", "reading", "appearances"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "Stable key derived from surface and reading. Regenerating the index must keep the same id for the same pair." },
+        "surface": { "type": "string" },
+        "reading": { "type": "string" },
+        "kanji": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Constituent characters only, so a reader can join kml/data/kanji/kanji_master.csv on the kanji column. Do not copy keyword, grade, strokes, or character JLPT onto this record."
+        },
+        "jlptCalibration": {
+          "type": ["string", "null"],
+          "description": "Optional lookup against kml/analytics/reference/jlpt_n*.csv by surface and reading. Unofficial. Never a curriculum constraint. Null when the lists disagree or do not contain the word."
+        },
+        "appearances": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/appearance" }
+        }
+      }
+    },
+    "appearance": {
+      "type": "object",
+      "required": ["system", "role", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "system": {
+          "type": "string",
+          "enum": [
+            "book_compounds",
+            "grade_jukugo",
+            "post_elementary_jukugo",
+            "beyond_joyo_jukugo"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "enum": ["target", "incidental"],
+          "description": "target: the curriculum presents this word as the item being taught. incidental: the word occurs inside an example sentence and is not that sentence's target. Incidental hits are reliable only where the sentence has ruby segments. Do not infer them by parsing unmarked prose."
+        },
+        "source": { "type": "string", "description": "Repo-relative path of the curriculum file." },
+        "lesson": { "type": "integer" },
+        "anchorKanji": { "type": "string" },
+        "gloss": { "type": "string", "description": "The English in that curriculum file. The index does not merge glosses." },
+        "sentenceRef": {
+          "type": "string",
+          "description": "Pointer to the single example record, such as a compound id inside a lesson JSON file. The index does not copy Japanese, English, or ruby."
+        }
+      }
+    },
+    "kanjiLink": {
+      "type": "object",
+      "required": ["file", "join"],
+      "additionalProperties": false,
+      "properties": {
+        "file": { "const": "kml/data/kanji/kanji_master.csv" },
+        "join": { "const": "indexRecord.kanji[] = kanji_master.kanji" },
+        "notCopied": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "keyword, readings, grade, strokes, joyo index, heisig number, character-level jlpt, slug, primitives"
+        }
+      }
+    }
+  }
+}

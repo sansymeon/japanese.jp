@@ -1,0 +1,149 @@
+{
+  "removed": [
+    {
+      "lesson": 12,
+      "kanji": "昧",
+      "original": "昧昧",
+      "reading": "まいまい",
+      "meaning": "Dim, obscure (rare, literary)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Rare literary reduplication; same padding pattern as 明晶."
+    },
+    {
+      "lesson": 12,
+      "kanji": "昧",
+      "original": "昧心",
+      "reading": "まいしん",
+      "meaning": "Dark heart, lack of conscience (rare)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Chinese-style pad under 昧; not ordinary Japanese."
+    },
+    {
+      "lesson": 12,
+      "kanji": "昧",
+      "original": "昧弱",
+      "reading": "まいじゃく",
+      "meaning": "Weak understanding (very rare)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Labeled very rare; invented 昧 + 弱 pad."
+    },
+    {
+      "lesson": 12,
+      "kanji": "沫",
+      "original": "沫沫",
+      "reading": "まつまつ",
+      "meaning": "Bubbling, foaming (rare, poetic)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Reduplicated pad under 沫."
+    },
+    {
+      "lesson": 12,
+      "kanji": "妹",
+      "original": "妹弟",
+      "reading": "まいてい",
+      "meaning": "Younger siblings (rare, literary)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Chinese order; Japanese is 弟妹. Rare-literary label is padding."
+    },
+    {
+      "lesson": 13,
+      "kanji": "漠",
+      "original": "漠土",
+      "reading": "ばくど",
+      "meaning": "Desert land (very rare, classical)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Labeled very rare classical; pad beside 砂漠/漠然."
+    },
+    {
+      "lesson": 11,
+      "kanji": "梢",
+      "original": "梢雲",
+      "reading": "しょううん",
+      "meaning": "Cloud touching the treetops (poetic term)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Poetic-term label; 梢 + 雲 on-yomi pad, not an established word. Absent from jukugo lists and selection."
+    },
+    {
+      "lesson": 11,
+      "kanji": "梢",
+      "original": "梢鳴",
+      "reading": "しょうめい",
+      "meaning": "Sound of the treetops rustling (literary)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Literary label; 梢 + 鳴 on-yomi pad, not an established word. Absent from jukugo lists and selection."
+    },
+    {
+      "lesson": 12,
+      "kanji": "沫",
+      "original": "沫酒",
+      "reading": "まつしゅ",
+      "meaning": "Foaming sake (literary usage)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Literary-usage label beside already-removed 沫沫; not established 発泡酒/泡."
+    },
+    {
+      "lesson": 12,
+      "kanji": "沫",
+      "original": "沫状",
+      "reading": "まつじょう",
+      "meaning": "Foamy, bubble-shaped (technical term)",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Technical-term label; productive 状 glue rather than a lexical unit."
+    }
+  ],
+  "lexicalCloseout": [
+    {
+      "target": "除夜の宵",
+      "classification": "VALID_LITERARY",
+      "decision": "Kept with literary/seasonal register.",
+      "reason": "Genuine seasonal phrasing for New Year's Eve evening; not padding. Ordinary Japanese more often uses 除夜 or 大晦日."
+    },
+    {
+      "target": "梢雲",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no replacement.",
+      "reason": "Same 梢 on-yomi padding pattern as 明晶/昧昧; no repository lexical support."
+    },
+    {
+      "target": "梢鳴",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no replacement.",
+      "reason": "Invented literary blend 梢+鳴; no repository lexical support."
+    },
+    {
+      "target": "沫酒",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no replacement.",
+      "reason": "Pedagogical 沫+酒; not an established word."
+    },
+    {
+      "target": "沫状",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no replacement.",
+      "reason": "Plausible 状 construction, not a taught lexical unit."
+    },
+    {
+      "target": "匕",
+      "classification": "VALID_SPECIALIZED",
+      "decision": "Kept as historical character-word, not an ordinary compound.",
+      "reason": "Legacy lesson listed the isolated kanji 匕/ひ ‘spoon (classical)’. Genuine character vocabulary; qa.migrationNote records that it is not a compound."
+    }
+  ],
+  "review": [],
+  "stats": {
+    "inspected": 2400,
+    "retained": 2390,
+    "removed": 10,
+    "unresolvedHumanReview": 0
+  }
+}

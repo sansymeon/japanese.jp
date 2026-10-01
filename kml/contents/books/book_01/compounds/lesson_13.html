@@ -1,317 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<script>
+try {
+  if (localStorage.getItem("kml-compounds-furigana") === "off") {
+    document.documentElement.classList.add("furigana-off");
+  }
+} catch (err) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Mai&display=swap" rel="stylesheet">
-
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>KML - Lesson 13 Compounds</title>
  <link rel="stylesheet" href="../../../../assets/site/css/kml_style.css" />
+ <link rel="stylesheet" href="../../../../assets/site/css/compounds-lesson.css" />
 </head>
-<body>
+<body class="compounds-lesson" data-compounds="../../../../data/compounds/lesson_13.json" data-kml-base="../../../../">
  <div class="navbar">
    <a href="../index.html">🏠 Home</a>
    <a href="../lessons/lesson_01.html">📚 Lesson 1 Index</a>
+   <a href="./lesson_12.html">⬅️ Previous Lesson</a>
    <a href="./lesson_14.html">➡️ Next Lesson</a>
  </div>
-  
+
 <!-- compound-film -->
 <div class="compound-film" data-youtube="" hidden></div>
-<h1>Compound Words – Lesson 13</h1>
 
- <div class="page-container">
-    <div class="content-wrapper">
+<figure class="compounds-hero" id="compounds-hero" hidden></figure>
 
-      <div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">苛</span>
-</div> 
-<h2>苛（か）– bullying</h2>
-<ul>
-<li>苛酷【かこく】<br>– Severe, harsh, cruel</li>
-<li>苛烈【かれつ】<br>– Fierce, intense, brutal</li>
-<li>苛政【かせい】<br>– Tyranny, oppressive government (classical)</li>
-<li>苛立つ【いらだつ】<br>– To be irritated, annoyed</li>
-<li>苛責【かせき】<br>– Harsh blame, severe criticism</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">寛</span>
-</div> 
-<h2>寛（かん）– tolerant</h2>
-<ul>
-<li>寛大【かんだい】<br>– Generous, tolerant</li>
-<li>寛容【かんよう】<br>– Tolerance, broad-mindedness</li>
-<li>寛政【かんせい】<br>– Kansei era (Japanese historical period)</li>
-<li>寛恕【かんじょ】<br>– Forgiveness, leniency (literary)</li>
-<li>寛厳【かんげん】<br>– Leniency and severity (legal/philosophical term)</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">薄</span>
-</div> 
-<h2>薄（はく／うすい）– dilute</h2>
-<ul>
-<li>薄い【うすい】<br>– Thin, light, weak</li>
-<li>薄暗い【うすぐらい】<br>– Dim, gloomy</li>
-<li>薄味【うすあじ】<br>– Light flavor</li>
-<li>薄幸【はっこう】<br>– Unfortunate (literary: "thin happiness")</li>
-<li>希薄【きはく】<br>– Thin, sparse (abstract things: air, relationships, etc.)</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">葉</span>
-</div> 
-<h2>葉（よう／は）– leaf</h2>
-<ul>
-<li>葉【は】<br>– Leaf</li>
-<li>紅葉【こうよう／もみじ】<br>– Autumn leaves (red/yellow foliage)</li>
-<li>葉書【はがき】<br>– Postcard (lit. "leaf writing")</li>
-<li>若葉【わかば】<br>– Fresh young leaves</li>
-<li>落葉【らくよう】<br>– Fallen leaves</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">模</span>
-</div> 
-<h2>模（も）– imitation</h2>
-<ul>
-<li>模様【もよう】<br>– Pattern, design</li>
-<li>模倣【もほう】<br>– Imitation, copying</li>
-<li>模型【もけい】<br>– Model, replica</li>
-<li>模試【もし】<br>– Mock exam</li>
-<li>模範【もはん】<br>– Model, example (to follow)</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">漠</span>
-</div> 
-<h2>漠（ばく）– vague</h2>
-<ul>
-<li>砂漠【さばく】<br>– Desert</li>
-<li>漠然【ばくぜん】<br>– Vague, hazy, unclear</li>
-<li>広漠【こうばく】<br>– Vast, wide and empty</li>
-<li>茫漠【ぼうばく】<br>– Boundless, endless (literary)</li>
-<li>漠土【ばくど】<br>– Desert land (very rare, classical)</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">墓</span>
-</div> 
-<h2>墓（ぼ／はか）– grave</h2>
-<ul>
-<li>墓【はか】<br>– Grave, tomb</li>
-<li>墓地【ぼち】<br>– Cemetery</li>
-<li>墓参り【はかまいり】<br>– Visiting a grave</li>
-<li>墓石【はかいし／ぼせき】<br>– Gravestone</li>
-<li>先祖の墓【せんぞのはか】<br>– Ancestor’s grave</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">暮</span>
-</div> 
-<h2>暮（ぼ／くれる・くらす）– livelihood</h2>
-<ul>
-<li>暮れる【くれる】<br>– To get dark (sunset)</li>
-<li>暮らす【くらす】<br>– To live, to spend one’s life</li>
-<li>暮らし【くらし】<br>– Livelihood, daily life</li>
-<li>夕暮れ【ゆうぐれ】<br>– Evening, dusk</li>
-<li>年暮れ【としくれ】<br>– Year-end</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">膜</span>
-</div> 
-<h2>膜（まく）– membrane</h2>
-<ul>
-<li>粘膜【ねんまく】<br>– Mucous membrane</li>
-<li>角膜【かくまく】<br>– Cornea (eye membrane)</li>
-<li>鼓膜【こまく】<br>– Eardrum</li>
-<li>膜構造【まくこうぞう】<br>– Membrane structure (architecture/biology)</li>
-<li>腹膜【ふくまく】<br>– Peritoneum (abdominal membrane)</li>
-</ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">苗</span>
-</div> 
-<h2>苗（びょう／なえ・なわ）– seedling</h2>
-<ul>
-<li>苗【なえ】<br>– Seedling, young plant</li>
-<li>苗木【なえぎ】<br>– Sapling, young tree</li>
-<li>苗字【みょうじ】<br>– Surname, family name (note the different reading & origin)</li>
-<li>苗床【なえどこ】<br>– Seedbed, nursery bed</li>
-<li>苗場【なえば】<br>– Nursery field (also place name: Naeba)</li>
-  </ul>
-</div>
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">兆</span>
-</div> 
-<h2>兆（ちょう／きざ-す）– portent</h2>
-<ul>
-<li>兆【きざし】<br>– Sign, omen</li>
-<li>兆候【ちょうこう】<br>– Symptom, indication</li>
-<li>予兆【よちょう】<br>– Premonition, forewarning</li>
-<li>兆円【ちょうえん】<br>– Trillion yen</li>
-<li>兆し【きざし】<br>– Indication, sign</li>
-</ul>
+<h1>Lesson 13 — Compounds</h1>
+
+<div class="furigana-bar">
+  <button type="button" class="furigana-toggle" id="furigana-toggle" aria-pressed="true" aria-label="Furigana on">
+    Furigana
+    <span class="furigana-mark" aria-hidden="true"></span>
+  </button>
 </div>
 
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">桃</span>
-</div> 
-<h2>桃（とう／もも）– peach tree</h2>
-<ul>
-<li>桃【もも】<br>– Peach</li>
-<li>桃色【ももいろ】<br>– Pink, peach color</li>
-<li>桃太郎【ももたろう】<br>– Momotarō (folk hero)</li>
-<li>桃園【とうえん】<br>– Peach orchard</li>
-<li>桃の節句【もものせっく】<br>– Girls’ Day festival</li>
-</ul>
+<div id="compounds-root" class="compounds-sheet">
+  <p class="compounds-status">Loading compounds…</p>
 </div>
+<noscript>
+  <p class="compounds-status">Compounds for this lesson need JavaScript to load.</p>
+</noscript>
 
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">眺</span>
-</div> 
-<h2>眺（ちょう／なが-める）– stare</h2>
-<ul>
-<li>眺める【ながめる】<br>– To gaze at</li>
-<li>眺望【ちょうぼう】<br>– View, outlook</li>
-<li>遠眺【えんちょう】<br>– Distant view (literary)</li>
-<li>絶景眺望【ぜっけいちょうぼう】<br>– Magnificent view</li>
-<li>眺め【ながめ】<br>– View, prospect</li>
-</ul>
-</div>
-
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">犬</span>
-</div> 
-<h2>犬（けん／いぬ）– dog</h2>
-<ul>
-<li>犬【いぬ】<br>– Dog</li>
-<li>子犬【こいぬ】<br>– Puppy</li>
-<li>野犬【やけん】<br>– Stray dog</li>
-<li>番犬【ばんけん】<br>– Watchdog</li>
-<li>犬小屋【いぬごや】<br>– Doghouse</li>
-</ul>
-</div>
-
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">状</span>
-</div> 
-<h2>状（じょう）– status quo</h2>
-<ul>
-<li>状態【じょうたい】<br>– Condition, state</li>
-<li>現状【げんじょう】<br>– Present condition</li>
-<li>状況【じょうきょう】<br>– Situation</li>
-<li>症状【しょうじょう】<br>– Symptom</li>
-<li>手紙状【てがみじょう】<br>– Letter form</li>
-</ul>
-</div>
-
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">黙</span>
-</div> 
-<h2>黙（もく／だま-る）– silence</h2>
-<ul>
-<li>黙る【だまる】<br>– To be silent</li>
-<li>沈黙【ちんもく】<br>– Silence</li>
-<li>黙認【もくにん】<br>– Tacit approval</li>
-<li>黙想【もくそう】<br>– Silent prayer, meditation</li>
-<li>黙秘【もくひ】<br>– Refusal to answer</li>
-</ul>
-</div>
-
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">然</span>
-</div> 
-<h2>然（ぜん／しか）– sort of thing</h2>
-<ul>
-<li>自然【しぜん】<br>– Nature</li>
-<li>当然【とうぜん】<br>– Natural, obvious</li>
-<li>突然【とつぜん】<br>– Suddenly</li>
-<li>偶然【ぐうぜん】<br>– By chance</li>
-<li>全然【ぜんぜん】<br>– Not at all / entirely</li>
-</ul>
-</div>
-
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">荻</span>
-</div> 
-<h2>荻（てき／おぎ）– reed</h2>
-<ul>
-<li>荻【おぎ】<br>– Reed grass</li>
-<li>荻原【おぎわら】<br>– Surname (Ogiwara)</li>
-<li>荻野【おぎの】<br>– Surname (Ogino)</li>
-<li>荻町【おぎまち】<br>– Place name</li>
-<li>荻草【おぎくさ】<br>– Reed grass (variant)</li>
-</ul>
-</div>
-
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">狩</span>
-</div> 
-<h2>狩（しゅ／か-る）– hunt</h2>
-<ul>
-<li>狩る【かる】<br>– To hunt</li>
-<li>狩猟【しゅりょう】<br>– Hunting</li>
-<li>狩人【かりゅうど】<br>– Hunter</li>
-<li>紅葉狩り【もみじがり】<br>– Viewing autumn leaves</li>
-<li>狩場【かりば】<br>– Hunting ground</li>
-</ul>
-</div>
-
-<div class="compound-block">
-<div class="centered-image">
-  <span class="kanji-compound-font">猫</span>
-</div> 
-<h2>猫（びょう／ねこ）– cat</h2>
-<ul>
-<li>猫【ねこ】<br>– Cat</li>
-<li>子猫【こねこ】<br>– Kitten</li>
-<li>黒猫【くろねこ】<br>– Black cat</li>
-<li>野良猫【のらねこ】<br>– Stray cat</li>
-<li>猫舌【ねこじた】<br>– Sensitive to hot food</li>
-</ul>
-</div>
-
-   </div>
+ <div class="stamps">
+  <img src="../../../../assets/site/stamps/symeon_stamp.png" alt="Symeon Stamp" width="48" loading="lazy" decoding="async">
+  <img src="../../../../assets/site/stamps/chatgpt_stamp.png" alt="ChatGPT Stamp" width="48" loading="lazy" decoding="async">
  </div>
-
-
- <!-- Spacer -->
- <div style="height: 3em;"></div>
-
-
- <!-- Stamp Footer -->
- <div style="display: flex; justify-content: center; align-items: center; gap: 2em; margin-top: 2em; margin-bottom: 1em;">
-   <img src="../../../../assets/site/stamps/symeon_stamp.png" alt="Symeon Inkan" style="height: 48px; width: auto; border-radius: 6px; opacity: 0.9;" />
-   <img src="../../../../assets/site/stamps/chatgpt_stamp.png" alt="ChatGPT Inkan" style="height: 48px; width: auto; border-radius: 6px; opacity: 0.9;" />
- </div>
-
-
+<script src="../../../../assets/site/js/compounds-lesson.js"></script>
 </body>
 </html>

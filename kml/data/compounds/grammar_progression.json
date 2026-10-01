@@ -1,0 +1,152 @@
+{
+  "schema": "kml.compounds.grammar.v1",
+  "lessonCount": 153,
+  "model": "expanding-repertoire",
+  "notes": "A generator looks up one band from the lesson number. That band says what may newly appear, how long and how abstract a sentence should tend to be, and what to avoid. Every structure from earlier bands stays available. JLPT labels calibrate complexity. They are not lesson boundaries, and the unofficial word lists in kml/analytics/reference/ are not an official JLPT syllabus. Lesson 42's prototype sentences tested the layout. Regenerate them when sequential generation reaches lesson 42. They do not define this file.",
+  "lookup": "Choose the band where fromLesson <= lesson <= throughLesson. The legal pool is that band's entering list plus every earlier band's entering list. generallyAvoid is a caution. Drop it when the compound is ordinarily said that way.",
+  "rules": [
+    "Natural Japanese comes first. Never add a structure only because the band allows it.",
+    "The compound decides the situation. The band limits how complex that situation's sentence should be.",
+    "Earlier structures remain available in every later lesson. Bands widen a repertoire. They do not assign one new grammar point per lesson.",
+    "Vary sentence shape. Do not reuse one template across a lesson.",
+    "The compound's ordinary register overrides the band. A legal or literary word may use that register early. An everyday word stays everyday late.",
+    "One example per compound in the Compounds series. Web pages and films read that same lesson record. Do not author a second sentence for video.",
+    "Examples may use kanji the lesson has not introduced. Full-sentence furigana covers them.",
+    "Previously available structures are not retired."
+  ],
+  "bands": [
+    {
+      "id": "early",
+      "fromProgress": 0,
+      "toProgress": 0.22,
+      "fromLesson": 1,
+      "throughLesson": 34,
+      "calibration": "Mostly N5",
+      "sentenceLength": "One clause. A short extra phrase only when it is a request or a plain description.",
+      "clauseComplexity": "One predicate.",
+      "abstraction": "Concrete and pictorial.",
+      "register": "Everyday plain or polite speech.",
+      "entering": [
+        "basic particles は が を に で と の も へ から まで",
+        "noun and adjective predicates, です / だ",
+        "dictionary form and ます",
+        "past た / ました",
+        "ある / いる",
+        "a simple request or a short て sequence when the situation needs it"
+      ],
+      "generallyAvoid": [
+        "relative clauses",
+        "ので / から as a habit",
+        "ながら / ても",
+        "comparisons",
+        "conditionals",
+        "passive",
+        "causative",
+        "nominalization",
+        "written modality and literary grammar"
+      ]
+    },
+    {
+      "id": "early-middle",
+      "fromProgress": 0.22,
+      "toProgress": 0.4,
+      "fromLesson": 35,
+      "throughLesson": 61,
+      "calibration": "N5 continuing, N4 gradually entering",
+      "sentenceLength": "Often two clauses joined by one link.",
+      "clauseComplexity": "One connection: reason, sequence, a simple relative, or simultaneous action.",
+      "abstraction": "Still everyday. Slightly wider situations.",
+      "register": "Everyday speech, including slightly more connected talk.",
+      "entering": [
+        "connected clauses",
+        "reasons with ので / から",
+        "sequencing with てから and たり",
+        "ている / ていた",
+        "ながら",
+        "ても",
+        "one simple relative clause",
+        "より / ほうが",
+        "たい"
+      ],
+      "generallyAvoid": [
+        "conditionals as a default",
+        "passive",
+        "causative",
+        "こと / の nominalization as a habit",
+        "わけ / はず / べき",
+        "formal written grammar",
+        "literary grammar"
+      ]
+    },
+    {
+      "id": "middle",
+      "fromProgress": 0.4,
+      "toProgress": 0.62,
+      "fromLesson": 62,
+      "throughLesson": 95,
+      "calibration": "Increasing N3",
+      "sentenceLength": "A connected sentence. Two moves are enough.",
+      "clauseComplexity": "Richer relationships: condition, purpose, result, voice, or a reported clause. Not all of them at once.",
+      "abstraction": "Situations can be less immediate, still grounded in a real event.",
+      "register": "Natural connected Japanese. News or workplace tone only when the word lives there.",
+      "entering": [
+        "conditionals, one of と / ば / たら / なら",
+        "nominalization with こと / の",
+        "passive",
+        "causative where that is how the word is used",
+        "reported thought or speech",
+        "purpose and result with ように / ために / ことになる",
+        "のに",
+        "てしまう / ておく / てみる"
+      ],
+      "generallyAvoid": [
+        "stacking passive and causative to sound advanced",
+        "N1 written chains",
+        "literary or official style unless the word is literary or official"
+      ]
+    },
+    {
+      "id": "late-middle",
+      "fromProgress": 0.62,
+      "toProgress": 0.8,
+      "fromLesson": 96,
+      "throughLesson": 122,
+      "calibration": "Increasing N2",
+      "sentenceLength": "As long as the thought needs. No length quota.",
+      "clauseComplexity": "Deeper relatives and qualification when the word calls for them.",
+      "abstraction": "Abstract relationships are welcome when they are the real topic.",
+      "register": "Broader. Formal and written constructions enter when the sentence is actually written or formal.",
+      "entering": [
+        "nuanced modality such as わけ / はず / べき",
+        "formal and written connectors",
+        "more complex relative clauses",
+        "qualification and concession beyond a single ても or のに"
+      ],
+      "generallyAvoid": [
+        "archaic or ceremonial grammar unless the word is archaic or ceremonial",
+        "a stack of advanced markers in one sentence"
+      ]
+    },
+    {
+      "id": "later",
+      "fromProgress": 0.8,
+      "toProgress": 1,
+      "fromLesson": 123,
+      "throughLesson": 153,
+      "calibration": "Advanced N2 and N1 where natural",
+      "sentenceLength": "Mature prose length when the context is written. Speech stays speech.",
+      "clauseComplexity": "Complex clause relationships, including nuanced conditions and qualifications.",
+      "abstraction": "Abstract argument and description are appropriate.",
+      "register": "Formal written Japanese, and advanced register, where the word supports it.",
+      "entering": [
+        "mature written grammar such as である and における",
+        "passive-causative when it is the ordinary way to say the thing",
+        "advanced qualification such as にもかかわらず or に違いない",
+        "literary or official register for literary or official words"
+      ],
+      "generallyAvoid": [
+        "difficulty added to an everyday word that does not need it"
+      ]
+    }
+  ]
+}

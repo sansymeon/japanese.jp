@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+try {
+  if (localStorage.getItem("kml-compounds-furigana") === "off") {
+    document.documentElement.classList.add("furigana-off");
+  }
+} catch (err) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
@@ -10,207 +17,41 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>KML - Lesson 48 Compounds</title>
  <link rel="stylesheet" href="../../../../assets/site/css/kml_style.css" />
+ <link rel="stylesheet" href="../../../../assets/site/css/compounds-lesson.css" />
 </head>
-<body>
+<body class="compounds-lesson" data-compounds="../../../../data/compounds/lesson_48.json" data-kml-base="../../../../">
  <div class="navbar">
-   <a href="../../">← Bookshelf</a>
-   <a href="../lessons/lesson_48.html">📚 Lesson 48</a>
+   <a href="../index.html">🏠 Home</a>
+   <a href="../lessons/lesson_01.html">📚 Lesson 1 Index</a>
    <a href="./lesson_47.html">⬅️ Previous Lesson</a>
    <a href="./lesson_49.html">➡️ Next Lesson</a>
  </div>
 
-
 <!-- compound-film -->
 <div class="compound-film" data-youtube="" hidden></div>
-<h1>Compound Words - Lesson 48</h1>
- <div class="page-container">
-   <div class="content-wrapper">
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">復</span>
-  </div>
-       <div class="kanji-label">復（フク ・ また） – restore</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">得</span>
-  </div>
-       <div class="kanji-label">得（トク ・ え-る） – acquire</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">従</span>
-  </div>
-       <div class="kanji-label">従（ジュウ ・ したが-う） – obey</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">徒</span>
-  </div>
-       <div class="kanji-label">徒（ト ・ いたずら） – junior</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">待</span>
-  </div>
-       <div class="kanji-label">待（タイ ・ ま-つ） – wait</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">往</span>
-  </div>
-       <div class="kanji-label">往（オウ ・ い-く） – journey</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">征</span>
-  </div>
-       <div class="kanji-label">征（セイ） – subjugate</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">径</span>
-  </div>
-       <div class="kanji-label">径（ケイ ・ みち） – diameter</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">彼</span>
-  </div>
-       <div class="kanji-label">彼（ヒ ・ かれ） – he</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">役</span>
-  </div>
-       <div class="kanji-label">役（ヤク） – role</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">徳</span>
-  </div>
-       <div class="kanji-label">徳（トク） – benevolence</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">徹</span>
-  </div>
-       <div class="kanji-label">徹（テツ） – penetrate</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">徴</span>
-  </div>
-       <div class="kanji-label">徴（チョウ ・ しるし） – indications</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">懲</span>
-  </div>
-       <div class="kanji-label">懲（チョウ ・ こ-りる） – penal</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">微</span>
-  </div>
-       <div class="kanji-label">微（ビ ・ かす-か） – delicate</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">街</span>
-  </div>
-       <div class="kanji-label">街（ガイ ・ まち） – boulevard</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">桁</span>
-  </div>
-       <div class="kanji-label">桁（コウ ・ けた） – beam</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">衡</span>
-  </div>
-       <div class="kanji-label">衡（コウ） – equilibrium</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">稿</span>
-  </div>
-       <div class="kanji-label">稿（コウ ・ わら） – draft</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
-     <div class="compound-block">
-  <div class="kanji-img-center">
-    <span class="kanji-compound-font">稼</span>
-  </div>
-       <div class="kanji-label">稼（カ ・ かせ-ぐ） – earnings</div>
-       <ul>
-    <li>Common compounds for this character will be added here.</li>
-       </ul>
-     </div>
 
-   </div>
- </div>
+<figure class="compounds-hero" id="compounds-hero" hidden></figure>
+
+<h1>Lesson 48 — Compounds</h1>
+
+<div class="furigana-bar">
+  <button type="button" class="furigana-toggle" id="furigana-toggle" aria-pressed="true" aria-label="Furigana on">
+    Furigana
+    <span class="furigana-mark" aria-hidden="true"></span>
+  </button>
+</div>
+
+<div id="compounds-root" class="compounds-sheet">
+  <p class="compounds-status">Loading compounds…</p>
+</div>
+<noscript>
+  <p class="compounds-status">Compounds for this lesson need JavaScript to load.</p>
+</noscript>
+
  <div class="stamps">
   <img src="../../../../assets/site/stamps/symeon_stamp.png" alt="Symeon Stamp" width="48" loading="lazy" decoding="async">
   <img src="../../../../assets/site/stamps/chatgpt_stamp.png" alt="ChatGPT Stamp" width="48" loading="lazy" decoding="async">
  </div>
+<script src="../../../../assets/site/js/compounds-lesson.js"></script>
 </body>
 </html>
