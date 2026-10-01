@@ -1,0 +1,350 @@
+{
+  "removed": [
+    {
+      "lesson": 62,
+      "kanji": "昨",
+      "original": "昨",
+      "reading": "さく",
+      "meaning": "last",
+      "classification": "NON_LEXICAL",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Combining prefix (昨年, 昨夜) presented as a standalone word."
+    },
+    {
+      "lesson": 62,
+      "kanji": "掃",
+      "original": "掃除",
+      "reading": "そうじ (する)",
+      "meaning": "cleaning, sweeping",
+      "classification": "VALID_BUT_METADATA_PROBLEM",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Duplicate of 掃除 そうじ; parenthetical する is not a reading."
+    },
+    {
+      "lesson": 63,
+      "kanji": "両",
+      "original": "両~",
+      "reading": "りょう",
+      "meaning": "both ~",
+      "classification": "MALFORMED",
+      "decision": "Removed; no automatic replacement.",
+      "cause": "Combining-form stub, not a lexical word; 両手/両方 remain."
+    }
+  ],
+  "corrections": [
+    {
+      "lesson": 63,
+      "kanji": "曲",
+      "original": "曲る",
+      "reading": "まがる",
+      "new": "曲がる",
+      "newReading": "まがる",
+      "classification": "VALID_BUT_METADATA_PROBLEM",
+      "decision": "Corrected okurigana 曲る → 曲がる.",
+      "cause": "Standard modern spelling is 曲がる."
+    }
+  ],
+  "review": [
+    {
+      "lesson": 62,
+      "surface": "剥す",
+      "reading": "はがす",
+      "meaning": "to tear off, to peel off, to rip off",
+      "issue": "lexical-review",
+      "ja": "箱のテープを剥しました。"
+    },
+    {
+      "lesson": 62,
+      "surface": "看護婦",
+      "reading": "かんごふ",
+      "meaning": "(female) nurse",
+      "issue": "lexical-review",
+      "ja": "昔、伯母は看護婦でした。"
+    },
+    {
+      "lesson": 64,
+      "surface": "庸俗",
+      "reading": "ようぞく",
+      "meaning": "vulgar / commonplace",
+      "issue": "lexical-review",
+      "ja": "その記事は庸俗だと評されました。"
+    },
+    {
+      "lesson": 64,
+      "surface": "廿",
+      "reading": "にじゅう",
+      "meaning": "twenty",
+      "issue": "lexical-review",
+      "ja": "古い帳簿に廿と書いてありました。"
+    },
+    {
+      "lesson": 65,
+      "surface": "之",
+      "reading": "これ",
+      "meaning": "this / of",
+      "issue": "lexical-review",
+      "ja": "之を見て、彼はしばらく黙った。"
+    }
+  ],
+  "missing": [],
+  "stats": {
+    "inspected": 285,
+    "retained": 282,
+    "removed": 3,
+    "corrected": 7,
+    "names": 2,
+    "exceptions": 1,
+    "ruby_err": 0,
+    "empty_sets": [],
+    "short_sets": [
+      [
+        62,
+        "斥",
+        2
+      ],
+      [
+        62,
+        "昨",
+        4
+      ],
+      [
+        62,
+        "詐",
+        2
+      ],
+      [
+        62,
+        "尋",
+        2
+      ],
+      [
+        62,
+        "穏",
+        2
+      ],
+      [
+        62,
+        "侵",
+        4
+      ],
+      [
+        62,
+        "浸",
+        3
+      ],
+      [
+        62,
+        "掃",
+        4
+      ],
+      [
+        62,
+        "彙",
+        2
+      ],
+      [
+        62,
+        "浄",
+        2
+      ],
+      [
+        63,
+        "唐",
+        2
+      ],
+      [
+        63,
+        "糖",
+        3
+      ],
+      [
+        63,
+        "康",
+        2
+      ],
+      [
+        63,
+        "逮",
+        2
+      ],
+      [
+        63,
+        "伊",
+        2
+      ],
+      [
+        63,
+        "君",
+        4
+      ],
+      [
+        63,
+        "耐",
+        3
+      ],
+      [
+        63,
+        "需",
+        2
+      ],
+      [
+        63,
+        "儒",
+        2
+      ],
+      [
+        63,
+        "両",
+        4
+      ],
+      [
+        63,
+        "曹",
+        2
+      ],
+      [
+        63,
+        "遭",
+        3
+      ],
+      [
+        63,
+        "漕",
+        1
+      ],
+      [
+        64,
+        "槽",
+        2
+      ],
+      [
+        64,
+        "斗",
+        2
+      ],
+      [
+        64,
+        "庸",
+        2
+      ],
+      [
+        64,
+        "昔",
+        2
+      ],
+      [
+        64,
+        "錯",
+        2
+      ],
+      [
+        64,
+        "惜",
+        3
+      ],
+      [
+        64,
+        "措",
+        2
+      ],
+      [
+        64,
+        "散",
+        4
+      ],
+      [
+        64,
+        "廿",
+        1
+      ],
+      [
+        64,
+        "庶",
+        2
+      ],
+      [
+        64,
+        "遮",
+        3
+      ],
+      [
+        65,
+        "奔",
+        2
+      ],
+      [
+        65,
+        "噴",
+        3
+      ],
+      [
+        65,
+        "墳",
+        2
+      ],
+      [
+        65,
+        "憤",
+        4
+      ],
+      [
+        65,
+        "暁",
+        2
+      ],
+      [
+        65,
+        "伴",
+        2
+      ],
+      [
+        65,
+        "畔",
+        3
+      ],
+      [
+        65,
+        "拳",
+        2
+      ],
+      [
+        65,
+        "圏",
+        2
+      ],
+      [
+        65,
+        "藤",
+        3
+      ],
+      [
+        65,
+        "謄",
+        2
+      ],
+      [
+        65,
+        "之",
+        1
+      ]
+    ],
+    "literary": 10,
+    "specialized": 7,
+    "by_lesson": {
+      "62": 77,
+      "63": 67,
+      "64": 70,
+      "65": 68
+    },
+    "missing": []
+  },
+  "len_min": 8,
+  "len_avg": 13.9,
+  "len_max": 21,
+  "by_lesson": {
+    "62": 77,
+    "63": 67,
+    "64": 70,
+    "65": 68
+  }
+}

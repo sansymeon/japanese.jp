@@ -1,333 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<script>
+try {
+  if (localStorage.getItem("kml-compounds-furigana") === "off") {
+    document.documentElement.classList.add("furigana-off");
+  }
+} catch (err) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Mai&display=swap" rel="stylesheet">
-
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>KML - Lesson 3 Compounds</title>
  <link rel="stylesheet" href="../../../../assets/site/css/kml_style.css" />
+ <link rel="stylesheet" href="../../../../assets/site/css/compounds-lesson.css" />
 </head>
-<body>
+<body class="compounds-lesson" data-compounds="../../../../data/compounds/lesson_03.json" data-kml-base="../../../../">
  <div class="navbar">
    <a href="../index.html">🏠 Home</a>
    <a href="../lessons/lesson_01.html">📚 Lesson 1 Index</a>
+   <a href="./lesson_02.html">⬅️ Previous Lesson</a>
    <a href="./lesson_04.html">➡️ Next Lesson</a>
  </div>
 
-  
 <!-- compound-film -->
 <div class="compound-film" data-youtube="" hidden></div>
-<h1>Compound Words – Lesson 3</h1>
 
- <div class="page-container">
-    <div class="content-wrapper">
+<figure class="compounds-hero" id="compounds-hero" hidden></figure>
 
- 
-  <div class="compound-block">
- <div class="kanji-img-center">
-        <span class="kanji-compound-font">舌</span>
-      </div> 
-  <div class="kanji-label">舌 (ゼツ / した) - Tongue</div>
-  <ul>
-    <li><strong>舌</strong>【した】– Tongue</li>
-    <li><strong>毒舌</strong>【どくぜつ】– Sharp tongue, sarcastic remark</li>
-    <li><strong>舌打ち</strong>【したうち】– Clicking one's tongue</li>
-    <li><strong>二枚舌</strong>【にまいじた】– Forked tongue; duplicity</li>
-    <li><strong>早口舌</strong>【はやくちした】– Fast-talking tongue</li>
-    <li><strong>甘舌</strong>【あまじた】– Sweet tongue (sweet talker)</li>
-  </ul>
-</div>
-  <div class="compound-block">
- <div class="kanji-img-center">
-        <span class="kanji-compound-font">升</span>
-      </div> 
-  <div class="kanji-label">升 (ショウ / ます) - Measuring Box</div>
-  <ul>
-    <li><strong>升</strong>【ます】– Traditional measuring cup</li>
-    <li><strong>一升</strong>【いっしょう】– 1.8 liters (traditional measure)</li>
-    <li><strong>升酒</strong>【ますざけ】– Sake served in a wooden box</li>
-    <li><strong>升形</strong>【ますがた】– Square shape (like a measuring box)</li>
-    <li><strong>升目</strong>【ますめ】– Grid square (graph paper, shogi board)</li>
-    <li><strong>升売り</strong>【ますうり】– Selling by the measure</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">昇</span>
-      </div> 
-  <div class="kanji-label">昇 (ショウ / のぼる) - Rise Up</div>
-  <ul>
-    <li><strong>昇進</strong>【しょうしん】– Promotion (in rank/job)</li>
-    <li><strong>昇格</strong>【しょうかく】– Upgrading, promotion</li>
-    <li><strong>昇る</strong>【のぼる】– To rise (sun, smoke, etc.)</li>
-    <li><strong>上昇</strong>【じょうしょう】– Rise, increase (temperature, stock, etc.)</li>
-    <li><strong>昇天</strong>【しょうてん】– Ascension to heaven</li>
-    <li><strong>昇竜</strong>【しょうりゅう】– Rising dragon (common in game/fantasy context)</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">        
-  <span class="kanji-compound-font">丸</span>
-      </div> 
-  <div class="kanji-label">丸 (ガン / まる) - Round</div>
-  <ul>
-    <li><strong>丸</strong>【まる】– Circle, round (Kunyomi)</li>
-    <li><strong>弾丸</strong>【だんがん】– Bullet</li>
-    <li><strong>丸薬</strong>【がんやく】– Pill, tablet</li>
-    <li><strong>日の丸</strong>【ひのまる】– Japan's national flag</li>
-    <li><strong>丸ごと</strong>【まるごと】– Whole, entirely</li>
-    <li><strong>丸太</strong>【まるた】– Log, timber</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">  
-  <span class="kanji-compound-font">寸</span>
-</div> 
-  <div class="kanji-label">寸 (スン) – Measurement</div>
-  <ul>
-    <li><strong>寸法</strong>【すんぽう】– Measurement, dimensions</li>
-    <li><strong>寸前</strong>【すんぜん】– Just before, on the verge of</li>
-    <li><strong>寸断</strong>【すんだん】– Cut into pieces</li>
-    <li><strong>寸劇</strong>【すんげき】– Short sketch or play</li>
-    <li><strong>寸志</strong>【すんし】– Small token of appreciation</li>
-    <li><strong>一寸</strong>【ちょっと】– Just a little (colloquial expression, also uses the kanji for “inch”)</li>
-  </ul>
+<h1>Lesson 3 — Compounds</h1>
+
+<div class="furigana-bar">
+  <button type="button" class="furigana-toggle" id="furigana-toggle" aria-pressed="true" aria-label="Furigana on">
+    Furigana
+    <span class="furigana-mark" aria-hidden="true"></span>
+  </button>
 </div>
 
-<div class="compound-block">
- <div class="kanji-img-center">  
-  <span class="kanji-compound-font">肘</span>
-</div> 
-  <div class="kanji-label">肘 (チュウ / ひじ) – Elbow</div>
-  <ul>
-    <li><strong>肘</strong>【ひじ】– Elbow (Kunyomi standalone)</li>
-    <li><strong>肘掛け</strong>【ひじかけ】– Armrest</li>
-    <li><strong>脱臼肘</strong>【だっきゅうひじ】– Dislocated elbow (used in medical contexts)</li>
-    <li><strong>肘鉄砲</strong>【ひじでっぽう】– Elbow jab (also used figuratively to mean a snub)</li>
-  </ul>
+<div id="compounds-root" class="compounds-sheet">
+  <p class="compounds-status">Loading compounds…</p>
 </div>
-<div class="compound-block">
- <div class="kanji-img-center">  
-  <span class="kanji-compound-font">専</span>
-</div> 
-  <div class="kanji-label">専 (セン) – Specialty</div>
-  <ul>
-    <li><strong>専門</strong>【せんもん】– Specialty, field of expertise</li>
-    <li><strong>専用</strong>【せんよう】– Exclusive use</li>
-    <li><strong>専攻</strong>【せんこう】– Major (academic), subject of study</li>
-    <li><strong>専念</strong>【せんねん】– Devotion, dedication</li>
-    <li><strong>専制</strong>【せんせい】– Autocracy, despotism</li>
-    <li><strong>専売</strong>【せんばい】– Monopoly, exclusive sale</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">  
-  <span class="kanji-compound-font">博</span>
-</div> 
-  <div class="kanji-label">博 (ハク / バク) – Dr., Learned</div>
-  <ul>
-    <li><strong>博士</strong>【はかせ／はくし】– Doctor (PhD), learned person</li>
-    <li><strong>博物館</strong>【はくぶつかん】– Museum</li>
-    <li><strong>博識</strong>【はくしき】– Erudition, wide knowledge</li>
-    <li><strong>博覧会</strong>【はくらんかい】– Expo, exhibition</li>
-    <li><strong>博打</strong>【ばくち】– Gambling</li>
-  </ul>
-</div>
+<noscript>
+  <p class="compounds-status">Compounds for this lesson need JavaScript to load.</p>
+</noscript>
 
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">卜</span>
-</div> 
-<div class="kanji-label">卜 (ボク / うらな-う) – Divination</div>
-<ul>
-  <li><strong>占卜</strong>【せんぼく】– Divination, fortune-telling (Onyomi)</li>
-  <li><strong>卜占</strong>【ぼくせん】– Fortune-telling, augury (Onyomi)</li>
-  <li><strong>卜書</strong>【ぼくしょ】– Book of divination, oracle text (Onyomi, literary)</li>
-  <li><strong>卜者</strong>【ぼくしゃ】– Diviner, fortune-teller (Onyomi)</li>
-  <li><strong>卜う</strong>【うらなう】– To divine, to tell fortunes (Kunyomi)</li>
-  <li><strong>卜筮</strong>【ぼくぜい】– Divination using yarrow stalks or similar methods (Classical)</li>
-</ul>
-</div>
-
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">占</span>
-</div> 
-  <div class="kanji-label">占 (セン / うらな・う、し・める) – Fortune-Telling</div>
-  <ul>
-    <li><strong>占う</strong>【うらなう】– To tell a fortune, predict</li>
-    <li><strong>占い</strong>【うらない】– Fortune-telling</li>
-    <li><strong>独占</strong>【どくせん】– Monopoly, exclusive possession</li>
-    <li><strong>占有</strong>【せんゆう】– Possession, occupancy</li>
-    <li><strong>占拠</strong>【せんきょ】– Occupation (of territory, building, etc.)</li>
-    <li><strong>予占</strong>【よせん】– Prediction, forecast (less common term)</li>
-  </ul>
-</div>
-
-<div class="compound-block">
- <div class="kanji-img-center">  
-  <span class="kanji-compound-font">上</span>
-</div> 
-  <div class="kanji-label">上 (ジョウ / うえ、あ・げる、あ・がる、のぼ・る) – Above</div>
-  <ul>
-    <li><strong>上</strong>【うえ】– Above, up (Kunyomi standalone)</li>
-    <li><strong>上がる</strong>【あがる】– To rise, go up</li>
-    <li><strong>上げる</strong>【あげる】– To raise, lift up</li>
-    <li><strong>登上</strong>【とうじょう】– Ascend (formal/literary)</li>
-    <li><strong>向上</strong>【こうじょう】– Improvement, progress</li>
-    <li><strong>上手</strong>【じょうず】– Skillful, good at</li>
-  </ul>
-</div>
-
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">下</span>
-</div> 
-  <div class="kanji-label">下 (カ / ゲ / した、しも、さ・げる、さ・がる、くだ・る、くだ・さる、くだ・す、お・ろす、お・りる) – Below</div>
-  <ul>
-    <li><strong>下</strong>【した】– Below, under (Kunyomi standalone)</li>
-    <li><strong>下がる</strong>【さがる】– To go down, drop</li>
-    <li><strong>下げる</strong>【さげる】– To lower, reduce</li>
-    <li><strong>地下</strong>【ちか】– Underground, basement</li>
-    <li><strong>低下</strong>【ていか】– Decline, deterioration</li>
-    <li><strong>下手</strong>【へた】– Unskilled, poor at</li>
-  </ul>
-</div>
-
-<div class="compound-block">
- <div class="kanji-img-center">
-    <span class="kanji-compound-font">卓</span>
-</div> 
-  <div class="kanji-label">卓 (タク) – Eminent</div>
-  <ul>
-    <li><strong>卓球</strong>【たっきゅう】– Table tennis, ping-pong</li>
-    <li><strong>卓上</strong>【たくじょう】– On the table, desktop</li>
-    <li><strong>卓越</strong>【たくえつ】– Excellence, superiority</li>
-    <li><strong>卓見</strong>【たっけん】– Insightful opinion, excellent view</li>
-    <li><strong>卓抜</strong>【たくばつ】– Preeminence, distinction</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">朝</span>
-</div> 
-  <div class="kanji-label">朝 (チョウ / あさ) – Morning</div>
-  <ul>
-    <li><strong>朝</strong>【あさ】– Morning (Kunyomi standalone)</li>
-    <li><strong>今朝</strong>【けさ】– This morning</li>
-    <li><strong>毎朝</strong>【まいあさ】– Every morning</li>
-    <li><strong>朝食</strong>【ちょうしょく】– Breakfast</li>
-    <li><strong>朝日</strong>【あさひ】– Morning sun</li>
-    <li><strong>朝刊</strong>【ちょうかん】– Morning newspaper</li>
-  </ul>
-</div>
-
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">嘲</span>
-</div> 
-  <div class="kanji-label">嘲 (チョウ / あざけ・る) – Derision</div>
-  <ul>
-    <li><strong>嘲る</strong>【あざける】– To ridicule, mock, sneer at</li>
-    <li><strong>冷嘲</strong>【れいちょう】– Sarcastic ridicule, cold sneer</li>
-    <li><strong>嘲笑</strong>【ちょうしょう】– Derisive laughter, scornful laugh</li>
-    <li><strong>嘲弄</strong>【ちょうろう】– Mockery, teasing</li>
-  </ul>
-</div>
-
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">只</span>
-</div> 
-  <div class="kanji-label">只 (シ / ただ) – Only</div>
-  <ul>
-    <li><strong>只</strong>【ただ】– Only, just, merely (Kunyomi standalone)</li>
-    <li><strong>只今</strong>【ただいま】– Right now; I’m home! (greeting)</li>
-    <li><strong>只身</strong>【ただみ】– By oneself; traveling alone</li>
-    <li><strong>只管</strong>【ひたすら】– Earnestly, intently (rare usage)</li>
-    <li><strong>只一つ</strong>【ただひとつ】– The only one</li>
-    <li><strong>只手</strong>【ただて】– One hand; unaided</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">貝</span>
-</div> 
-  <div class="kanji-label">貝 (バイ / かい) – Shellfish</div>
-  <ul>
-    <li><strong>貝</strong>【かい】– Shellfish, shell (Kunyomi standalone)</li>
-    <li><strong>貝殻</strong>【かいがら】– Seashell</li>
-    <li><strong>巻貝</strong>【まきがい】– Spiral shell</li>
-    <li><strong>二枚貝</strong>【にまいがい】– Bivalve</li>
-    <li><strong>貝類</strong>【かいるい】– Shellfish (category)</li>
-    <li><strong>真珠貝</strong>【しんじゅがい】– Pearl oyster</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">唄</span>
-</div> 
-  <div class="kanji-label">唄 (バイ / うた) – Pop Song</div>
-  <ul>
-    <li><strong>唄</strong>【うた】– Song, folk song (Kunyomi standalone; often written 歌)</li>
-    <li><strong>民謡唄</strong>【みんよううた】– Folk song</li>
-    <li><strong>演歌唄</strong>【えんかうた】– Enka song</li>
-    <li><strong>唄声</strong>【うたごえ】– Singing voice</li>
-    <li><strong>子守唄</strong>【こもりうた】– Lullaby</li>
-    <li><strong>祝い唄</strong>【いわいうた】– Celebration song</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">貞</span>
-</div> 
-  <div class="kanji-label">貞 (テイ / さだ) – Upright</div>
-  <ul>
-    <li><strong>貞節</strong>【ていせつ】– Fidelity, chastity</li>
-    <li><strong>貞操</strong>【ていそう】– Virtue, moral integrity</li>
-    <li><strong>貞観</strong>【じょうがん】– Jōgan era (historical reference)</li>
-    <li><strong>貞明</strong>【ていめい】– Teimei (a Japanese empress; used in names)</li>
-    <li><strong>不貞</strong>【ふてい】– Infidelity, unfaithfulness</li>
-    <li><strong>貞女</strong>【ていじょ】– Chaste woman, virtuous lady</li>
-  </ul>
-</div>
-<div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">員</span>
-</div> 
-  <div class="kanji-label">員 (イン) – Employee</div>
-  <ul>
-    <li><strong>社員</strong>【しゃいん】– Company employee</li>
-    <li><strong>店員</strong>【てんいん】– Store clerk, shop staff</li>
-    <li><strong>職員</strong>【しょくいん】– Staff member, personnel</li>
-    <li><strong>全員</strong>【ぜんいん】– All members</li>
-    <li><strong>会員</strong>【かいいん】– Member (of a society or club)</li>
-    <li><strong>議員</strong>【ぎいん】– Assembly member, legislator</li>
-  </ul>
-</div>
-
-
-   </div>
+ <div class="stamps">
+  <img src="../../../../assets/site/stamps/symeon_stamp.png" alt="Symeon Stamp" width="48" loading="lazy" decoding="async">
+  <img src="../../../../assets/site/stamps/chatgpt_stamp.png" alt="ChatGPT Stamp" width="48" loading="lazy" decoding="async">
  </div>
-
-
- <!-- Spacer -->
- <div style="height: 3em;"></div>
-
-
- <!-- Stamp Footer -->
- <div style="display: flex; justify-content: center; align-items: center; gap: 2em; margin-top: 2em; margin-bottom: 1em;">
-   <img src="../../../../assets/site/stamps/symeon_stamp.png" alt="Symeon Inkan" style="height: 48px; width: auto; border-radius: 6px; opacity: 0.9;" />
-   <img src="../../../../assets/site/stamps/chatgpt_stamp.png" alt="ChatGPT Inkan" style="height: 48px; width: auto; border-radius: 6px; opacity: 0.9;" />
- </div>
-
-
+<script src="../../../../assets/site/js/compounds-lesson.js"></script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://japanese.jp/kml/data/compounds/lesson.schema.json",
+  "title": "KML Compounds lesson projection",
+  "description": "The file the website and the films both read for one Compounds lesson. Lesson 42 already follows this shape. Do not add usage arrays, school links, JLPT, or a second sentence for video. The usage index points at compound.id. Ruby segments are the only reliable source for incidental vocabulary.",
+  "type": "object",
+  "required": ["schema", "lesson", "title", "grammar", "background", "characters"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "kml.compounds.lesson.v1" },
+    "lesson": { "type": "integer", "minimum": 1, "maximum": 153 },
+    "title": { "type": "string" },
+    "grammar": {
+      "type": "object",
+      "required": ["position", "lessonCount", "band", "progression"],
+      "additionalProperties": false,
+      "properties": {
+        "position": { "type": "integer" },
+        "lessonCount": { "const": 153 },
+        "progress": { "type": "number" },
+        "band": { "type": "string" },
+        "progression": { "const": "grammar_progression.json" }
+      }
+    },
+    "background": {
+      "type": "object",
+      "description": "One image for the whole lesson. The source file stays native 16:9. The page crops it to a shallow banner. No compound has its own image.",
+      "required": ["image"],
+      "additionalProperties": false,
+      "properties": {
+        "image": { "type": "string" },
+        "alt": { "type": "string" },
+        "source": { "type": "string" },
+        "collection": { "type": "string" }
+      }
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kanji", "compounds"],
+        "additionalProperties": false,
+        "properties": {
+          "kanji": { "type": "string" },
+          "readings": { "type": "string", "description": "Display header copied from the lesson. Character readings live in the Kanji Master." },
+          "keyword": { "type": "string" },
+          "compounds": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/compound" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "compound": {
+      "type": "object",
+      "required": ["id", "surface", "reading", "meaning", "example"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "surface": { "type": "string" },
+        "reading": { "type": "string" },
+        "meaning": { "type": "string" },
+        "kind": {
+          "type": "string",
+          "enum": ["name"],
+          "description": "Set when the target is taught as a proper name, not ordinary vocabulary. The learner page may ignore this."
+        },
+        "sourceGloss": { "type": "string", "description": "Original page wording, kept until gloss conflicts are resolved in the lexical overlay." },
+        "qa": {
+          "type": "object",
+          "description": "Internal QA only. The learner page ignores this object.",
+          "additionalProperties": false,
+          "properties": {
+            "grammarException": { "type": "boolean", "description": "True when the example uses grammar materially beyond the lesson band because the target word requires it." },
+            "reason": { "type": "string" },
+            "review": { "type": "boolean", "description": "Genuine ambiguity left for human attention." },
+            "reviewNote": { "type": "string" },
+            "legacySurface": { "type": "string", "description": "Pre-cleanup surface, kept for migration traceability. Not a second taught word." },
+            "migrationNote": { "type": "string" }
+          }
+        },
+        "example": {
+          "type": "object",
+          "required": ["ja", "en", "segments"],
+          "additionalProperties": false,
+          "properties": {
+            "ja": { "type": "string" },
+            "en": { "type": "string" },
+            "segments": {
+              "type": "array",
+              "description": "One segment per ruby span or plain run. A segment with a reading that is not the target compound is incidental vocabulary. Generators should mark content words, not only the target.",
+              "items": {
+                "type": "object",
+                "required": ["text"],
+                "additionalProperties": false,
+                "properties": {
+                  "text": { "type": "string" },
+                  "reading": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,330 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<script>
+try {
+  if (localStorage.getItem("kml-compounds-furigana") === "off") {
+    document.documentElement.classList.add("furigana-off");
+  }
+} catch (err) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yuji+Mai&display=swap" rel="stylesheet">
-
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>KML - Lesson 9 Compounds</title>
  <link rel="stylesheet" href="../../../../assets/site/css/kml_style.css" />
+ <link rel="stylesheet" href="../../../../assets/site/css/compounds-lesson.css" />
 </head>
-<body>
+<body class="compounds-lesson" data-compounds="../../../../data/compounds/lesson_09.json" data-kml-base="../../../../">
  <div class="navbar">
    <a href="../index.html">🏠 Home</a>
    <a href="../lessons/lesson_01.html">📚 Lesson 1 Index</a>
+   <a href="./lesson_08.html">⬅️ Previous Lesson</a>
    <a href="./lesson_10.html">➡️ Next Lesson</a>
  </div>
-  
+
 <!-- compound-film -->
 <div class="compound-film" data-youtube="" hidden></div>
-<h1>Compound Words – Lesson 9</h1>
 
- <div class="page-container">
-    <div class="content-wrapper">
+<figure class="compounds-hero" id="compounds-hero" hidden></figure>
 
-           <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">測</span>
-</div> 
-  <h2>測（はか・る／そく）– fathom</h2>
-  <ul>
-    <li>測る【はかる】<br>– To measure, gauge</li>
-    <li>測定【そくてい】<br>– Measurement</li>
-    <li>予測【よそく】<br>– Forecast, prediction</li>
-    <li>観測【かんそく】<br>– Observation (e.g. weather)</li>
-    <li>計測【けいそく】<br>– Measurement (esp. in science)</li>
-  </ul>
-</div>
-  <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">土</span>
-</div> 
-  <h2>土（つち／ど・と）– soil</h2>
-  <ul>
-    <li>土曜日【どようび】<br>– Saturday</li>
-    <li>土地【とち】<br>– Land, property</li>
-    <li>土木【どぼく】<br>– Civil engineering</li>
-    <li>国土【こくど】<br>– National land</li>
-    <li>粘土【ねんど】<br>– Clay</li>
-  </ul>
+<h1>Lesson 9 — Compounds</h1>
+
+<div class="furigana-bar">
+  <button type="button" class="furigana-toggle" id="furigana-toggle" aria-pressed="true" aria-label="Furigana on">
+    Furigana
+    <span class="furigana-mark" aria-hidden="true"></span>
+  </button>
 </div>
 
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">吐</span>
-</div> 
-  <h2>吐（は・く／と）– spit</h2>
-  <ul>
-    <li>吐く【はく】<br>– To spit, vomit, breathe out</li>
-    <li>吐き気【はきけ】<br>– Nausea</li>
-    <li>嘔吐【おうと】<br>– Vomiting</li>
-    <li>吐露【とろ】<br>– To express (feelings)</li>
-    <li>過吐【かと】<br>– Excessive vomiting (medical term)</li>
-  </ul>
+<div id="compounds-root" class="compounds-sheet">
+  <p class="compounds-status">Loading compounds…</p>
 </div>
+<noscript>
+  <p class="compounds-status">Compounds for this lesson need JavaScript to load.</p>
+</noscript>
 
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">圧</span>
-</div> 
-  <h2>圧（あつ）– pressure</h2>
-  <ul>
-    <li>圧力【あつりょく】<br>– Pressure (physical or social)</li>
-    <li>気圧【きあつ】<br>– Atmospheric pressure</li>
-    <li>血圧【けつあつ】<br>– Blood pressure</li>
-    <li>圧倒【あっとう】<br>– Overwhelm, overpower</li>
-    <li>圧縮【あっしゅく】<br>– Compression</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">埼</span>
-</div> 
-  <h2>埼（さき／き）– cape</h2>
-  <ul>
-    <li>埼玉【さいたま】<br>– Saitama (prefecture near Tokyo)</li>
-    <li>半埼【はんさき】<br>– Peninsula cape</li>
-    <li>埼【さき】<br>– Cape (rarely used alone)</li>
-    <li>長埼【ながさき】<br>– Nagasaki (city name using variant 埼)</li>
-    <li>埼灯台【さきとうだい】<br>– Cape lighthouse</li>
-  </ul>
-</div>
-
-  <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">垣</span>
-</div> 
-  <h2>垣（かき）– hedge</h2>
-  <ul>
-    <li>垣根【かきね】<br>– Fence, hedge</li>
-    <li>石垣【いしがき】<br>– Stone wall</li>
-    <li>竹垣【たけがき】<br>– Bamboo fence</li>
-    <li>垣間見る【かいまみる】<br>– Glimpse, peep through</li>
-    <li>生垣【いけがき】<br>– Living hedge, green fence</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">填</span>
-</div> 
-  <h2>填（てん／し・める）– inlay</h2>
-  <ul>
-    <li>充填【じゅうてん】<br>– Filling (with fluid, material)</li>
-    <li>補填【ほてん】<br>– Compensation, supplementation</li>
-    <li>填める【はめる】<br>– To insert, fit into</li>
-    <li>填土【てんど】<br>– Earth fill</li>
-    <li>填込【てんこみ】<br>– Filling in (e.g., of gaps)</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">圭</span>
-</div> 
-  <h2>圭（けい）– jade</h2>
-  <ul>
-    <li>圭角【けいかく】<br>– Angularity, sharpness of character</li>
-    <li>圭玉【けいぎょく】<br>– Precious square jewel (literary)</li>
-    <li>圭璧【けいへき】<br>– Ceremonial jade (classical Chinese usage)</li>
-    <li>圭田【けいでん】<br>– Square paddy fields (archaic)</li>
-    <li>圭印【けいいん】<br>– Official seal (very rare)</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">封</span>
-</div> 
-  <h2>封（ふう／ほう）– seal</h2>
-  <ul>
-    <li>封筒【ふうとう】<br>– Envelope</li>
-    <li>開封【かいふう】<br>– Opening (a letter, package)</li>
-    <li>密封【みっぷう】<br>– Sealed tightly</li>
-    <li>封印【ふういん】<br>– Seal, sealing off</li>
-    <li>封建【ほうけん】<br>– Feudal (system)</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">涯</span>
-</div> 
-  <h2>涯（がい）– horizon</h2>
-  <ul>
-    <li>生涯【しょうがい】<br>– Lifetime, throughout life</li>
-    <li>無限の涯【むげんのがい】<br>– Infinite edge (poetic, philosophical)</li>
-    <li>天涯【てんがい】<br>– Distant land, horizon</li>
-    <li>涯てしない【はてしない】<br>– Endless, boundless</li>
-    <li>地の涯【ちのはて】<br>– Ends of the earth</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">寺</span>
-</div> 
-  <h2>寺（てら）– temple</h2>
-  <ul>
-    <li>お寺【おてら】<br>– Buddhist temple</li>
-    <li>寺院【じいん】<br>– Religious temple, shrine</li>
-    <li>古寺【こじ】<br>– Old temple</li>
-    <li>山寺【やまでら】<br>– Mountain temple</li>
-    <li>寺子屋【てらこや】<br>– Temple school (Edo period)</li>
-  </ul>
-  </div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">時</span>
-</div> 
-  <h2>時（じ／とき）– time</h2>
-  <ul>
-    <li>時間【じかん】<br>– Time, duration</li>
-    <li>時代【じだい】<br>– Era, period</li>
-    <li>一時【いちじ】<br>– One o'clock; temporary</li>
-    <li>時刻【じこく】<br>– Time, schedule</li>
-    <li>時々【ときどき】<br>– Sometimes, at times</li>
-  </ul>
-      </div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">均</span>
-</div> 
-  <h2>均（きん）– level</h2>
-  <ul>
-    <li>平均【へいきん】<br>– Average</li>
-    <li>均一【きんいつ】<br>– Uniformity, equality</li>
-    <li>均衡【きんこう】<br>– Balance, equilibrium</li>
-    <li>均等【きんとう】<br>– Evenness, equal distribution</li>
-    <li>均質【きんしつ】<br>– Homogeneity</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">火</span>
-</div> 
-  <h2>火（ひ／か）– fire</h2>
-  <ul>
-    <li>火事【かじ】<br>– Fire (disaster)</li>
-    <li>火山【かざん】<br>– Volcano</li>
-    <li>火曜日【かようび】<br>– Tuesday</li>
-    <li>出火【しゅっか】<br>– Outbreak of fire</li>
-    <li>火災【かさい】<br>– Conflagration, fire damage</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">炎</span>
-</div> 
-  <h2>炎（ほのお／えん）– inflammation</h2>
-  <ul>
-    <li>炎症【えんしょう】<br>– Inflammation</li>
-    <li>火炎【かえん】<br>– Flame, blaze</li>
-    <li>炎上【えんじょう】<br>– Going up in flames</li>
-    <li>白炎【はくえん】<br>– White flame</li>
-    <li>怒りの炎【いかりのほのお】<br>– Flames of anger</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">煩</span>
-</div> 
-  <h2>煩（はん／わずら）– anxiety</h2>
-  <ul>
-    <li>煩悩【ぼんのう】<br>– Earthly desires (Buddhist term)</li>
-    <li>煩雑【はんざつ】<br>– Complicated, troublesome</li>
-    <li>煩わしい【わずらわしい】<br>– Troublesome, annoying</li>
-    <li>気に煩う【きにわずらう】<br>– To worry about</li>
-    <li>煩熱【はんねつ】<br>– Feverishness</li>
-  </ul>
-      </div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">淡</span>
-</div> 
-  <h2>淡（たん／あわ）– faint</h2>
-  <ul>
-    <li>淡水【たんすい】<br>– Freshwater</li>
-    <li>冷淡【れいたん】<br>– Indifferent, cold</li>
-    <li>淡い【あわい】<br>– Pale, faint</li>
-    <li>淡々【たんたん】<br>– Calm, unconcerned</li>
-    <li>淡色【たんしょく】<br>– Light color</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">灯</span>
-</div> 
-  <h2>灯（とう／ひ）– lamp</h2>
-  <ul>
-    <li>灯台【とうだい】<br>– Lighthouse</li>
-    <li>電灯【でんとう】<br>– Electric light</li>
-    <li>灯油【とうゆ】<br>– Kerosene</li>
-    <li>明かりの灯【あかりのひ】<br>– Lit light</li>
-    <li>灯をともす【ひをともす】<br>– To light a lamp</li>
-  </ul>
-</div>
-
-      <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">畑</span>
-</div> 
-  <h2>畑（はたけ）– farm</h2>
-  <ul>
-    <li>畑仕事【はたけしごと】<br>– Farm work</li>
-    <li>畑道【はたけみち】<br>– Path between fields</li>
-    <li>麦畑【むぎばたけ】<br>– Wheat field</li>
-    <li>畑作【はたさく】<br>– Upland farming</li>
-    <li>野畑【のばたけ】<br>– Wild field</li>
-  </ul>
-</div>
-
-  <div class="compound-block">
- <div class="kanji-img-center">
-  <span class="kanji-compound-font">災</span>
-</div> 
-  <h2>災（さい／わざわ）– disaster</h2>
-  <ul>
-    <li>火災【かさい】<br>– Fire disaster</li>
-    <li>災害【さいがい】<br>– Natural disaster</li>
-    <li>天災【てんさい】<br>– Natural calamity</li>
-    <li>人災【じんさい】<br>– Man-made disaster</li>
-    <li>災難【さいなん】<br>– Misfortune, accident</li>
-  </ul>
-</div>
-
-
-
-
-
-   </div>
+ <div class="stamps">
+  <img src="../../../../assets/site/stamps/symeon_stamp.png" alt="Symeon Stamp" width="48" loading="lazy" decoding="async">
+  <img src="../../../../assets/site/stamps/chatgpt_stamp.png" alt="ChatGPT Stamp" width="48" loading="lazy" decoding="async">
  </div>
-
-
- <!-- Spacer -->
- <div style="height: 3em;"></div>
-
-
- <!-- Stamp Footer -->
- <div style="display: flex; justify-content: center; align-items: center; gap: 2em; margin-top: 2em; margin-bottom: 1em;">
-   <img src="../../../../assets/site/stamps/symeon_stamp.png" alt="Symeon Inkan" style="height: 48px; width: auto; border-radius: 6px; opacity: 0.9;" />
-   <img src="../../../../assets/site/stamps/chatgpt_stamp.png" alt="ChatGPT Inkan" style="height: 48px; width: auto; border-radius: 6px; opacity: 0.9;" />
- </div>
-
-
+<script src="../../../../assets/site/js/compounds-lesson.js"></script>
 </body>
 </html>
