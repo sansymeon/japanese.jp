@@ -50,17 +50,17 @@ def V(*xs):
 
 
 # Labeled / nested clusters (not new catalog unless listed in intros)
-AWNING_PEOPLE = V(H("人", "人"), "一", "人")  # ≈ 㑒 in 剣検険倹
-PI = H("尸", "辛")
+SIGN = "㑒"  # intact left of 剣 and right of 険検倹
+PI = "辟"  # intact; already used in 壁璧避
 
 
 STRUCTURES: dict[int, dict[str, object]] = {
     91: {
         "整": V("敕", "正"),  # or H("束","攵") + 正
-        "剣": H(AWNING_PEOPLE, "刂"),
-        "険": H("阝", AWNING_PEOPLE),
-        "検": H("木", AWNING_PEOPLE),
-        "倹": H("亻", AWNING_PEOPLE),
+        "剣": H(SIGN, "刂"),
+        "険": H("阝", SIGN),
+        "検": H("木", SIGN),
+        "倹": H("亻", SIGN),
         "重": "重",
         "動": H("重", "力"),
         "腫": H("月", "重"),
@@ -74,7 +74,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "痘": V("疒", "豆"),
         "症": V("疒", "正"),
         "瘍": V("疒", "昜"),
-        "痩": V("疒", V("米", "女")),
+        "痩": V("疒", "叟"),
         "疾": V("疒", "矢"),
     },
     92: {
@@ -112,11 +112,11 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "杉": H("木", "彡"),
         "彩": H("采", "彡"),
         "彰": H("章", "彡"),
-        "彦": V(H("立", "厂"), "彡"),
+        "彦": H("立", "厂", "彡"),
         "顔": H("彦", "頁"),
         "須": H("彡", "頁"),
-        "膨": H("月", H(V("十", "豆"), "彡")),
-        "参": V("ム", "大", "彡"),
+        "膨": H("月", H(V("土", "豆"), "彡")),
+        "参": V("厶", "大", "彡"),
         "惨": H("忄", "参"),
         "修": H("亻", "丨", "攵", "彡"),
         "珍": H("王", V("人", "彡")),
@@ -131,21 +131,21 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "斉": "斉",
         "剤": H("斉", "刂"),
         "済": H("氵", "斉"),
-        "斎": V("斉", "小"),
+        "斎": V("文", "示"),
         "粛": "粛",
-        "塁": V("田", "八", "土"),
-        "楽": V("⺍", "白", "木"),
+        "塁": V("田", "丷", "八", "土"),
+        "楽": "楽",
         "薬": V("艹", "楽"),
         "率": "率",
-        "渋": H("氵", V("止", "止", "止")),
-        "摂": H("扌", V("耳", H("丷", "丷"))),
+        "渋": H("氵", V("丷", "八", "止")),
+        "摂": H("扌", V("丷", "八", "耳")),
         "央": "央",
         "英": V("艹", "央"),
         "映": H("日", "央"),
     },
     95: {
         "赤": "赤",
-        "赦": H("赤", "夂"),
+        "赦": H("赤", "攵"),
         "変": V("亦", "夂"),
         "跡": H("足", "亦"),
         "蛮": V("亦", "虫"),
@@ -167,7 +167,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
     },
     96: {
         "棋": H("木", "其"),
-        "旗": H("方", "其"),
+        "旗": H("方", V("𠂉", "其")),
         "期": H("其", "月"),
         "碁": V("其", "石"),
         "基": V("其", "土"),
@@ -176,7 +176,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "堪": H("土", "甚"),
         "貴": "貴",
         "遺": H("⻌", "貴"),
-        "遣": H("⻌", V("中", "一", "㔾")),
+        "遣": H("⻌", V("中", "一", "𠂤")),
         "潰": H("氵", "貴"),
         "舞": V("無", "舛"),
         "無": "無",
@@ -195,16 +195,16 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "並": "並",
         "普": V("並", "日"),
         "譜": H("言", "普"),
-        "湿": H("氵", V("日", "业")),
-        "顕": H(V("日", "业"), "頁"),
-        "繊": H("糸", V("业", "㐱")),
-        "霊": V("雨", V("一", "二", "口", "口", "口")),
+        "湿": H("氵", "显"),
+        "顕": H("显", "頁"),
+        "繊": "繊",
+        "霊": "霊",
         "業": "業",
         "撲": H("扌", "菐"),
         "僕": H("亻", "菐"),
         "共": "共",
         "供": H("亻", "共"),
-        "異": "異",
+        "異": V("田", "共"),
         "翼": V("羽", "異"),
         "戴": H("異", "戈"),
         "洪": H("氵", "共"),
@@ -266,10 +266,10 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "都": H("者", "⻏"),
         "郵": H("垂", "⻏"),
         "邦": H("丰", "⻏"),
-        "那": H("二", "⻏"),
-        "郷": "郷",
-        "響": V("郷", "音"),
+        "那": H("冄", "⻏"),
         "郎": H("良", "⻏"),
+        "郷": H("乡", "郎"),
+        "響": V("郷", "音"),
         "廊": V("广", "郎"),
         "盾": "盾",
         "循": H("彳", "盾"),
@@ -283,8 +283,8 @@ STRUCTURES[91]["整"] = V(H("束", "攵"), "正")
 # 顕 appears in both 94 and 97 in lesson lists — keep same structure
 # (L94 list included 顕; L97 also has 顕 — verify coverage)
 
-# 繊: 㐱 = person+bristles
-STRUCTURES[97]["繊"] = H("糸", V("业", V("人", "彡")))
+# 繊 stays whole: the right-hand block has no codepoint of its own.
+STRUCTURES[97]["繊"] = "繊"
 
 
 def extract_component_box(section: str) -> tuple[int, int] | None:
@@ -383,6 +383,7 @@ def update_catalog() -> None:
     for g, lab in {
         "重": "heavy",
         "疒": "sickness",
+        "㑒": "assembly",
         "匚": "box",
         "匸": "hiding enclosure",
         "卬": "exalted",
@@ -422,6 +423,8 @@ def update_catalog() -> None:
         "民": "people",
         "甫": "dog tag",
         "⻏": "city walls",
+        "冄": "soft",
+        "乡": "countryside",
         "郷": "hometown",
         "盾": "shield",
         "菐": "bushes under",
@@ -429,7 +432,7 @@ def update_catalog() -> None:
         "享": "receive",
         "舎": "cottage",
         "𠂢": "water's edge",
-        "业": "business",
+        "显": "manifest",
         "若": "young",
         "采": "dice",
         "景": "scenery",
@@ -444,6 +447,12 @@ def update_catalog() -> None:
     intros = data.setdefault("introductions", [])
     existing = {(int(i["lesson"]), i["glyph"]) for i in intros}
     for item in [
+        {
+            "lesson": 91,
+            "beforeKanji": "剣",
+            "glyph": "㑒",
+            "label": "assembly",
+        },
         {
             "lesson": 91,
             "beforeKanji": "病",

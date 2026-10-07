@@ -39,8 +39,12 @@ OUT = ROOT / "statistics" / "data" / "project_stats.json"
 # generated HTML/study files.
 KANJI_COLLECTION_TOTAL = 3096
 PLANNED_LESSONS = 153
-YOUTUBE_CHANNEL_VIDEOS = 551
-YOUTUBE_COUNT_AS_OF = "2026-09-05"
+# YouTube content library snapshot (not local .mp4 files).
+# Channel total includes non-public uploads; publicVideos is the published count.
+YOUTUBE_CHANNEL_VIDEOS = 847
+YOUTUBE_PUBLIC_VIDEOS = 807
+YOUTUBE_PLAYLISTS = 189
+YOUTUBE_COUNT_AS_OF = "2026-10-07"
 YOUTUBE_CHANNEL_HANDLE = "@ambientkanji"
 # Public Statistics: published Book 1 curriculum currently complete through here.
 # Raise this when the next lesson is released. Do not gate it on study-file globs.
@@ -307,13 +311,19 @@ def youtube_library() -> dict:
     summary = data.get("summary") or {}
     return {
         "value": YOUTUBE_CHANNEL_VIDEOS,
+        "publicVideos": YOUTUBE_PUBLIC_VIDEOS,
+        "playlists": YOUTUBE_PLAYLISTS,
         "label": "YouTube Videos",
-        "detail": f"Published on {YOUTUBE_CHANNEL_HANDLE}",
+        "detail": f"{YOUTUBE_PUBLIC_VIDEOS} public on {YOUTUBE_CHANNEL_HANDLE}",
+        "playlistLabel": "YouTube Playlists",
+        "playlistDetail": f"On {YOUTUBE_CHANNEL_HANDLE}",
         "note": (
-            f"Channel total as of {YOUTUBE_COUNT_AS_OF}. "
+            f"Channel content as of {YOUTUBE_COUNT_AS_OF}: "
+            f"{YOUTUBE_CHANNEL_VIDEOS} videos ({YOUTUBE_PUBLIC_VIDEOS} public) "
+            f"and {YOUTUBE_PLAYLISTS} playlists. "
             "Not counted from local .mp4 files."
         ),
-        "source": "YouTube channel page",
+        "source": "YouTube content library",
         "asOf": YOUTUBE_COUNT_AS_OF,
         "learningPathVideos": summary.get("global_videos"),
         "learningPathSource": "kml/analytics/output/kml_channel_learning.json",

@@ -3,18 +3,18 @@
   "assetsBase": "../../assets",
   "id": "woman_child_exhibition",
   "title": "女・子 — Woman & Child | A Quiet Japanese Art Exhibition",
-  "notes": "Curated 10-work gallery. Gold-foil Lesson 6 好 crest opens and closes. 好 is the hinge (exhibit 3); 母 resolves last. Heart v5 choreography with longer artwork/verse holds. Soundtrack: audio/mother_child_exhibition.mp3.",
+  "notes": "Curated gallery. Gold 母 on black opens and closes. 好 is the hinge; 母 resolves last. 乳 is omitted. After each verse the painting holds, then dissolves into the next work. No kanji bridge between pictures. 妹 uses the two-sisters autumn-road study. Soundtrack: audio/mother_child_exhibition.mp3.",
   "soundtrack": {
     "main": "audio/mother_child_exhibition.mp3"
   },
   "bookends": {
     "opening": {
-      "image": "bookends/lesson_06.jpg",
+      "image": "bookends/lesson_06_mother_clear.png",
       "audio": "audio/exhibition_flute_intro.mp3",
       "holdUntilAudioEnds": true
     },
     "closing": {
-      "image": "bookends/lesson_06.jpg",
+      "image": "bookends/lesson_06_mother_clear.png",
       "holdUntilSoundtrackEnds": true
     }
   },
@@ -59,7 +59,9 @@
     "closingFadeToBlackMs": 13000,
     "exhibitBlackHoldMs": 0,
     "seamlessExhibitHandoff": true,
-    "exhibitTransitionMs": 18000
+    "exhibitTransitionMs": 19000,
+    "directArtworkHandoff": true,
+    "cleanArtworkHoldMs": 8000
   },
   "display": {
     "loop": false,
@@ -69,17 +71,19 @@
     "verseMode": "sequential",
     "typography": "mobile-refine",
     "typographyStyle": "foundations",
-    "camera": "guardian"
+    "camera": "guardian",
+    "cameraMotionScale": 0.55
   },
   "meta": {
     "theme": "womanChild",
     "family": "ambientKanjiGallery",
     "presentation": "exhibition",
     "fixedKanji": true,
-    "bookendArtwork": "bookends/lesson_06.jpg",
+    "bookendArtwork": "bookends/lesson_06_mother_clear.png",
     "sourcePaintings": "existing studies only; no new generation",
-    "sceneCount": 10,
-    "sceneOrder": "女 → 子 → 好 (hinge) → 妹 → 姉 → 安 → 妊 → 乳 → 婆 → 母 (resolution)",
+    "sceneCount": 9,
+    "sceneOrder": "女 → 子 → 好 (hinge) → 妹 → 姉 → 安 → 妊 → 婆 → 母 (resolution)",
+    "omitted": "乳 — lesson spring / nursing study does not belong in this gallery",
     "sceneRoles": {
       "L06_woman": "element",
       "L05_child": "element",
@@ -88,7 +92,6 @@
       "L23_older_sister": "kinship",
       "L11_relax": "sanctuary",
       "L28_pregnancy": "becoming",
-      "L40_milk": "nourishment",
       "L44_old_woman": "generations",
       "L06_mother": "resolution"
     },
@@ -107,6 +110,7 @@
         "en": "A woman stood beside the blossoms,\nwhile a gentle breeze softly stirred the sleeves of her kimono."
       },
       "imageRev": 1787630120,
+      "imageFocus": "42% 34%",
       "role": "element"
     },
     {
@@ -121,6 +125,7 @@
         "en": "With tiny feet she walked the stone road,\nand the unknown world slowly grew wider."
       },
       "imageRev": 1787630081,
+      "imageFocus": "50% 46%",
       "role": "element"
     },
     {
@@ -135,6 +140,7 @@
         "en": "Holding a cat upon the veranda, she needed no words;\nher heart had already begun to smile."
       },
       "imageRev": 1787630090,
+      "imageFocus": "50% 42%",
       "role": "hinge"
     },
     {
@@ -148,7 +154,7 @@
         "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>手<rt>て</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>く　<ruby>秋<rt>あき</rt></ruby>の<ruby>道<rt>みち</rt></ruby><br>    <ruby>背<rt>せ</rt></ruby><ruby>中<rt>なか</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>るのは　やさしい<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>",
         "en": "Along the autumn road\na small hand is held—\ngentle time remains behind them."
       },
-      "imageRev": 1787630120,
+      "imageRev": 1790604017,
       "role": "kinship"
     },
     {
@@ -162,7 +168,7 @@
         "jpHtml": "<ruby>姉<rt>あね</rt></ruby>は<ruby>褒<rt>ほ</rt></ruby>められずとも<ruby>前<rt>まえ</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>いた。<br>    <ruby>幼<rt>おさな</rt></ruby>い<ruby>者<rt>もの</rt></ruby>たちはその<ruby>影<rt>かげ</rt></ruby>を<ruby>追<rt>お</rt></ruby>って<ruby>帰<rt>かえ</rt></ruby>った。",
         "en": "She walked ahead without needing praise.\nThe younger ones followed her shadow home."
       },
-      "imageRev": 1787630101,
+      "imageRev": 1790566984,
       "role": "kinship"
     },
     {
@@ -176,7 +182,7 @@
         "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>灯<rt>あかり</rt></ruby>のそばで、<br>    <ruby>心<rt>こころ</rt></ruby>はようやく<ruby>眠<rt>ねむ</rt></ruby>りを<ruby>許<rt>ゆる</rt></ruby>す。<br>    <ruby>夜<rt>よる</rt></ruby>はやさしく<ruby>包<rt>つつ</rt></ruby>みこむ。",
         "en": "Beside a small lantern,\nthe heart finally allows itself to rest.\nNight wraps everything gently."
       },
-      "imageRev": 1787630107,
+      "imageRev": 1790604017,
       "role": "sanctuary"
     },
     {
@@ -192,20 +198,6 @@
       },
       "imageRev": 1787630105,
       "role": "becoming"
-    },
-    {
-      "id": "L40_milk",
-      "lesson": 40,
-      "kanji": "乳",
-      "keyword": "milk",
-      "image": "studies/milk.jpg",
-      "video": null,
-      "verse": {
-        "jpHtml": "<ruby>乳<rt>ちち</rt></ruby>のような<ruby>泉<rt>いずみ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>流<rt>なが</rt></ruby>れ、<br>    <ruby>命<rt>いのち</rt></ruby>を<ruby>潤<rt>うるお</rt></ruby>した。",
-        "en": "The milk-white spring flowed quietly,\ngiving refreshment to life."
-      },
-      "imageRev": 1787630099,
-      "role": "nourishment"
     },
     {
       "id": "L44_old_woman",
@@ -233,6 +225,7 @@
         "en": "Holding sleeping life within her arms,\nthe silence of night gently filled the room."
       },
       "imageRev": 1787630099,
+      "imageFocus": "50% 40%",
       "role": "resolution"
     }
   ]

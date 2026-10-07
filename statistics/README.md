@@ -38,6 +38,7 @@ Writes `statistics/data/project_stats.json`.
 
 ### YouTube
 
-The public YouTube figure is the live `@ambientkanji` channel total
-(551 as of 2026-09-05). Local `.mp4` files and the 222-film learning-path
-analytics subset are not the channel library.
+The public YouTube figure is the live `@ambientkanji` content library
+(847 videos, 807 public, 189 playlists, as of 2026-10-07). Local `.mp4`
+files and the 222-film learning-path analytics subset are not the channel
+library.

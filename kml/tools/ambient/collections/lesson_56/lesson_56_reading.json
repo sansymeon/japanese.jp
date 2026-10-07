@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_56_reading",
+  "title": "Lesson 56 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/reading_v2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 56,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v2",
+    "soundtrackTarget": "12:41",
+    "soundtrackDurationSec": 760.97,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L56_sit",
+      "kanji": "座",
+      "keyword": "sit",
+      "image": "studies/sit.jpg",
+      "verse": {
+        "jpHtml": "<ruby>縁側<rt>えんがわ</rt></ruby>の<ruby>座<rt>ざ</rt></ruby>に、　<ruby>静<rt>しず</rt></ruby>かな<ruby>午後<rt>ごご</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>差<rt>さ</rt></ruby>し<ruby>込<rt>こ</rt></ruby>む。<br><ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>く<ruby>場所<rt>ばしょ</rt></ruby>が<ruby>心<rt>こころ</rt></ruby>を<ruby>癒<rt>いや</rt></ruby>す。",
+        "en": "A seat on the veranda\n\nis filled with the quiet afternoon light.\n\nA peaceful place heals the heart."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_sprain",
+      "kanji": "挫",
+      "keyword": "sprain",
+      "image": "studies/sprain.jpg",
+      "verse": {
+        "jpHtml": "<ruby>夢<rt>ゆめ</rt></ruby>が<ruby>一度<rt>いちど</rt></ruby><ruby>挫<rt>くじ</rt></ruby>けても、　<ruby>春<rt>はる</rt></ruby>はまた<ruby>花<rt>はな</rt></ruby>を<ruby>咲<rt>さ</rt></ruby>かせる。<br><ruby>希望<rt>きぼう</rt></ruby>は<ruby>何度<rt>なんど</rt></ruby>でも<ruby>芽吹<rt>めぶ</rt></ruby>く。",
+        "en": "Though a dream is once broken,\n\nspring brings flowers again.\n\nHope always sprouts anew."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_graduate",
+      "kanji": "卒",
+      "keyword": "graduate",
+      "image": "studies/graduate.jpg",
+      "verse": {
+        "jpHtml": "<ruby>卒<rt>そつ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>道<rt>みち</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>始<rt>はじ</rt></ruby>まる。<br><ruby>学<rt>まな</rt></ruby>びは<ruby>一生<rt>いっしょう</rt></ruby><ruby>続<rt>つづ</rt></ruby>いてゆく。",
+        "en": "On graduation day,\n\na new road quietly begins.\n\nLearning lasts a lifetime."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_umbrella",
+      "kanji": "傘",
+      "keyword": "umbrella",
+      "image": "studies/umbrella.jpg",
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>の<ruby>音<rt>おと</rt></ruby>が、　<ruby>傘<rt>かさ</rt></ruby>を<ruby>優<rt>やさ</rt></ruby>しくたたいている。<br><ruby>雨<rt>あめ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>にも<ruby>美<rt>うつく</rt></ruby>しさがある。",
+        "en": "Raindrops\n\ngently tap the umbrella.\n\nEven rainy days have beauty."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_monme",
+      "kanji": "匁",
+      "keyword": "monme",
+      "image": "studies/monme.jpg",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>匁<rt>もんめ</rt></ruby>も、　<ruby>丁寧<rt>ていねい</rt></ruby>に<ruby>量<rt>はか</rt></ruby>れば<ruby>大切<rt>たいせつ</rt></ruby>になる。<br><ruby>細<rt>こま</rt></ruby>やかさが<ruby>信頼<rt>しんらい</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てる。",
+        "en": "Even a tiny measure\n\nmatters when weighed with care.\n\nAttention to detail builds trust."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_by_means_of",
+      "kanji": "以",
+      "keyword": "by means of",
+      "image": "studies/by_means_of.jpg",
+      "verse": {
+        "jpHtml": "<ruby>今日<rt>きょう</rt></ruby>を<ruby>以<rt>も</rt></ruby>って、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>一歩<rt>いっぽ</rt></ruby>を<ruby>踏<rt>ふ</rt></ruby>み<ruby>出<rt>だ</rt></ruby>そう。<br><ruby>始<rt>はじ</rt></ruby>まりは<ruby>今<rt>いま</rt></ruby>にある。",
+        "en": "Beginning today,\n\nlet us take a new step.\n\nEvery beginning starts now."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_resemble",
+      "kanji": "似",
+      "keyword": "resemble",
+      "image": "studies/resemble.jpg",
+      "verse": {
+        "jpHtml": "<ruby>湖<rt>みずうみ</rt></ruby>は<ruby>空<rt>そら</rt></ruby>に<ruby>似<rt>に</rt></ruby>て、　<ruby>静<rt>しず</rt></ruby>かに<ruby>雲<rt>くも</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>している。<br><ruby>自然<rt>しぜん</rt></ruby>は<ruby>互<rt>たが</rt></ruby>いを<ruby>映<rt>うつ</rt></ruby>し<ruby>合<rt>あ</rt></ruby>う。",
+        "en": "The lake resembles the sky,\n\nquietly reflecting the clouds.\n\nNature mirrors itself."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_join",
+      "kanji": "併",
+      "keyword": "join",
+      "image": "studies/join.jpg",
+      "verse": {
+        "jpHtml": "<ruby>二<rt>ふた</rt></ruby>つの<ruby>川<rt>かわ</rt></ruby>が<ruby>併<rt>あわ</rt></ruby>さり、　<ruby>大<rt>おお</rt></ruby>きな<ruby>流<rt>なが</rt></ruby>れとなる。<br><ruby>力<rt>ちから</rt></ruby>は<ruby>合<rt>あ</rt></ruby>わせて<ruby>育<rt>そだ</rt></ruby>つ。",
+        "en": "Two rivers join\n\nto become one great stream.\n\nStrength grows together."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_tile",
+      "kanji": "瓦",
+      "keyword": "tile",
+      "image": "studies/tile.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>瓦<rt>かわら</rt></ruby>に、　<ruby>雨<rt>あめ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かな<ruby>音<rt>おと</rt></ruby>を<ruby>刻<rt>きざ</rt></ruby>む。<br><ruby>年月<rt>としつき</rt></ruby>が<ruby>家<rt>いえ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ってきた。",
+        "en": "Rain falls softly\n\nupon the old roof tiles.\n\nThe years have guarded this home."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858198
+    },
+    {
+      "id": "L56_flower_pot",
+      "kanji": "瓶",
+      "keyword": "flower pot",
+      "image": "studies/flower_pot.jpg",
+      "verse": {
+        "jpHtml": "<ruby>瓶<rt>びん</rt></ruby>の<ruby>花<rt>はな</rt></ruby>が、　<ruby>部屋<rt>へや</rt></ruby>に<ruby>小<rt>ちい</rt></ruby>さな<ruby>春<rt>はる</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>ぶ。<br><ruby>一輪<rt>いちりん</rt></ruby>で<ruby>景色<rt>けしき</rt></ruby>は<ruby>変<rt>か</rt></ruby>わる。",
+        "en": "Flowers in a vase\n\nbring a little spring indoors.\n\nOne blossom changes the room."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788858197
+    },
+    {
+      "id": "L56_shinto_shrine",
+      "kanji": "宮",
+      "keyword": "shinto shrine",
+      "image": "studies/shinto_shrine.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>宮<rt>みや</rt></ruby>の<ruby>森<rt>もり</rt></ruby>に、　<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>り<ruby>注<rt>そそ</rt></ruby>ぐ。<br><ruby>祈<rt>いの</rt></ruby>りは<ruby>風<rt>かぜ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ってゆく。",
+        "en": "Morning light\n\nfalls upon the shrine grove.\n\nPrayers ride gently on the wind."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788859175
+    },
+    {
+      "id": "L56_occupation",
+      "kanji": "営",
+      "keyword": "occupation",
+      "image": "studies/occupation.jpg",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>店<rt>みせ</rt></ruby>を<ruby>営<rt>いとな</rt></ruby>み、　<ruby>毎日<rt>まいにち</rt></ruby>の<ruby>笑顔<rt>えがお</rt></ruby>を<ruby>迎<rt>むか</rt></ruby>える。<br><ruby>誠実<rt>せいじつ</rt></ruby>が<ruby>暮<rt>く</rt></ruby>らしを<ruby>支<rt>ささ</rt></ruby>える。",
+        "en": "Running a small shop,\n\neach day begins with welcoming smiles.\n\nSincerity supports daily life."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788859175
+    },
+    {
+      "id": "L56_virtuous",
+      "kanji": "善",
+      "keyword": "virtuous",
+      "image": "studies/virtuous.jpg",
+      "verse": {
+        "jpHtml": "<ruby>善<rt>よ</rt></ruby>い<ruby>行<rt>おこな</rt></ruby>いは、　<ruby>静<rt>しず</rt></ruby>かな<ruby>水面<rt>みなも</rt></ruby>に<ruby>広<rt>ひろ</rt></ruby>がる<ruby>波<rt>なみ</rt></ruby>。<br><ruby>優<rt>やさ</rt></ruby>しさは<ruby>遠<rt>とお</rt></ruby>くまで<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "A good deed\n\nspreads like ripples on still water.\n\nKindness travels far."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788859175
+    },
+    {
+      "id": "L56_dining_tray",
+      "kanji": "膳",
+      "keyword": "dining tray",
+      "image": "studies/dining_tray.jpg",
+      "verse": {
+        "jpHtml": "<ruby>温<rt>あたた</rt></ruby>かな<ruby>膳<rt>ぜん</rt></ruby>を<ruby>囲<rt>かこ</rt></ruby>み、　<ruby>家族<rt>かぞく</rt></ruby>の<ruby>笑顔<rt>えがお</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まる。<br><ruby>食卓<rt>しょくたく</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>の<ruby>故郷<rt>ふるさと</rt></ruby>。",
+        "en": "Gathered around a warm meal,\n\nthe family smiles together.\n\nThe table is the heart's home."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788859175
+    },
+    {
+      "id": "L56_year",
+      "kanji": "年",
+      "keyword": "year",
+      "image": "studies/year.jpg",
+      "verse": {
+        "jpHtml": "<ruby>年<rt>とし</rt></ruby>を<ruby>重<rt>かさ</rt></ruby>ねても、　<ruby>好奇心<rt>こうきしん</rt></ruby>は<ruby>若<rt>わか</rt></ruby>くありたい。<br><ruby>学<rt>まな</rt></ruby>びに<ruby>終<rt>お</rt></ruby>わりはない。",
+        "en": "Though the years pass,\n\nmay curiosity remain young.\n\nLearning has no end."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788859175
+    },
+    {
+      "id": "L56_night",
+      "kanji": "夜",
+      "keyword": "night",
+      "image": "studies/night.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>夜<rt>よる</rt></ruby>に、　<ruby>星<rt>ほし</rt></ruby>がひとつずつ<ruby>現<rt>あらわ</rt></ruby>れる。<br><ruby>闇<rt>やみ</rt></ruby>は<ruby>光<rt>ひかり</rt></ruby>を<ruby>美<rt>うつく</rt></ruby>しくする。",
+        "en": "In the quiet night,\n\nthe stars appear one by one.\n\nDarkness makes light more beautiful."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788859174
+    },
+    {
+      "id": "L56_fluid",
+      "kanji": "液",
+      "keyword": "fluid",
+      "image": "studies/fluid.jpg",
+      "verse": {
+        "jpHtml": "<ruby>葉<rt>は</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>の<ruby>液<rt>えき</rt></ruby>が、　<ruby>朝日<rt>あさひ</rt></ruby>を<ruby>受<rt>う</rt></ruby>けて<ruby>輝<rt>かがや</rt></ruby>く。<br><ruby>小<rt>ちい</rt></ruby>さな<ruby>雫<rt>しずく</rt></ruby>にも<ruby>空<rt>そら</rt></ruby>が<ruby>映<rt>うつ</rt></ruby>る。",
+        "en": "Drops of liquid\n\nshine upon the leaves in morning light.\n\nEven a tiny droplet reflects the sky."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788873988
+    },
+    {
+      "id": "L56_hillock",
+      "kanji": "塚",
+      "keyword": "hillock",
+      "image": "studies/hillock.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>塚<rt>つか</rt></ruby>には、　<ruby>静<rt>しず</rt></ruby>かな<ruby>時<rt>とき</rt></ruby>が<ruby>眠<rt>ねむ</rt></ruby>っている。<br><ruby>歴史<rt>れきし</rt></ruby>は<ruby>土<rt>つち</rt></ruby>の<ruby>中<rt>なか</rt></ruby>でも<ruby>息<rt>い</rt></ruby>づく。",
+        "en": "Within the ancient mound,\n\nquiet time sleeps.\n\nHistory still breathes beneath the earth."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788873988
+    },
+    {
+      "id": "L56_cash",
+      "kanji": "幣",
+      "keyword": "cash",
+      "image": "studies/cash.jpg",
+      "verse": {
+        "jpHtml": "<ruby>白<rt>しろ</rt></ruby>い<ruby>幣<rt>ぬさ</rt></ruby>が、　<ruby>神前<rt>しんぜん</rt></ruby>の<ruby>風<rt>かぜ</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>揺<rt>ゆ</rt></ruby>れる。<br><ruby>祈<rt>いの</rt></ruby>りは<ruby>見<rt>み</rt></ruby>えない<ruby>空<rt>そら</rt></ruby>へ<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "The sacred paper streamers\n\nsway gently before the shrine.\n\nPrayer reaches the unseen sky."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788873988
+    },
+    {
+      "id": "L56_cover_over",
+      "kanji": "蔽",
+      "keyword": "cover over",
+      "image": "studies/cover_over.jpg",
+      "verse": {
+        "jpHtml": "<ruby>朝霧<rt>あさぎり</rt></ruby>が<ruby>山<rt>やま</rt></ruby>を<ruby>蔽<rt>おお</rt></ruby>い、　<ruby>世界<rt>せかい</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>白<rt>しろ</rt></ruby>に<ruby>包<rt>つつ</rt></ruby>まれる。<br>やがて<ruby>光<rt>ひかり</rt></ruby>がすべてを<ruby>照<rt>て</rt></ruby>らし<ruby>出<rt>だ</rt></ruby>す。",
+        "en": "Morning mist covers the mountains,\n\nwrapping the world in quiet white.\n\nSoon the light reveals everything."
+      },
+      "meta": {
+        "lesson": 56,
+        "experimental": true
+      },
+      "imageRev": 1788873988
+    }
+  ]
+}

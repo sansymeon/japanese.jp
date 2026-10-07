@@ -17,6 +17,16 @@ def render(node, indent: int = 2) -> str:
     if isinstance(node, str):
         return f'{pad}<span class="kanji-part">{node}</span>\n'
     kind, children = node
+    if kind == "e":
+        outer, inner = children
+        return (
+            f'{pad}<div class="component-layout enclosure-layout">\n'
+            f'{pad}  <span class="kanji-part enclosure-part">{outer}</span>\n'
+            f'{pad}  <div class="enclosure-inner">\n'
+            f"{render(inner, indent + 4)}"
+            f"{pad}  </div>\n"
+            f"{pad}</div>\n"
+        )
     cls = "stack-horizontal" if kind == "h" else "stack-vertical"
     out = [f'{pad}<div class="component-layout {cls}">\n']
     for c in children:
@@ -33,9 +43,9 @@ def box(node) -> str:
             "</div>"
         )
     kind = node[0]
-    attr = ' data-render-layout="h"' if kind == "h" else ' data-render-layout="v"'
+    attr = {"h": "h", "v": "v", "e": "e"}[kind]
     return (
-        f'<div class="component-box"{attr}>\n'
+        f'<div class="component-box" data-render-layout="{attr}">\n'
         f"{render(node, 2)}"
         "</div>"
     )
@@ -49,10 +59,14 @@ def V(*xs):
     return ("v", list(xs))
 
 
+def E(outer, inner):
+    return ("e", [outer, inner])
+
+
 # Shared nested clusters
 BONSAI = "𡗗"  # catalog
 GROWING = "龶"  # catalog
-PI = H("尸", "辛")  # 辟 without new catalog
+PI = "辟"  # intact; already used in earlier related kanji
 
 
 STRUCTURES: dict[int, dict[str, object]] = {
@@ -74,7 +88,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "梓": H("木", "辛"),
         "宰": V("宀", "辛"),
         "壁": V(PI, "土"),
-        "璧": H(PI, "玉"),
+        "璧": V(PI, "玉"),
         "避": H("⻌", PI),
         "新": H(V("立", "木"), "斤"),
     },
@@ -90,12 +104,12 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "収": H("丩", "又"),
         "卑": "卑",
         "碑": H("石", "卑"),
-        "陸": H("阝", V("土", "儿")),
-        "睦": H("目", V("土", "儿")),
-        "勢": V(H(V("土", "儿"), "丸"), "力"),
-        "熱": V(H(V("土", "儿"), "丸"), "灬"),
-        "菱": V("艹", V("土", "夂")),
-        "陵": H("阝", V("土", "夂")),
+        "陸": H("阝", "坴"),
+        "睦": H("目", "坴"),
+        "勢": V("埶", "力"),
+        "熱": V("埶", "灬"),
+        "菱": V("艹", "夌"),
+        "陵": H("阝", "夌"),
         "亥": "亥",
         "核": H("木", "亥"),
         "刻": H("亥", "刂"),
@@ -129,7 +143,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "積": H("禾", "責"),
         "債": H("亻", "責"),
         "漬": H("氵", "責"),
-        "表": V(GROWING, "衣"),
+        "表": V(GROWING, "𧘇"),
         "俵": H("亻", "表"),
         "潔": H("氵", V(H("丰", "刀"), "糸")),
         "契": V(H("丰", "刀"), "大"),
@@ -147,11 +161,11 @@ STRUCTURES: dict[int, dict[str, object]] = {
     85: {
         "牲": H("牛", "生"),
         "産": V("立", "厂", "生"),
-        "隆": H("阝", V("夂", "生")),
+        "隆": H("阝", V("夂", "一", "生")),
         "峰": H("山", V("夂", "丰")),
         "蜂": H("虫", V("夂", "丰")),
         "縫": H("糸", H("⻌", V("夂", "丰"))),
-        "拝": H("扌", H("丰", "丰")),
+        "拝": H("扌", "𦘒"),
         "寿": V("丰", "寸"),
         "鋳": H("金", "寿"),
         "籍": V("竹", H("耒", "昔")),
@@ -168,9 +182,9 @@ STRUCTURES: dict[int, dict[str, object]] = {
     },
     86: {
         "勤": H("堇", "力"),
-        "漢": H("氵", "堇"),
-        "嘆": H("口", "堇"),
-        "難": H("堇", "隹"),
+        "漢": H("氵", "𦰩"),
+        "嘆": H("口", "𦰩"),
+        "難": H("𦰩", "隹"),
         "華": "華",
         "垂": "垂",
         "唾": H("口", "垂"),
@@ -199,36 +213,36 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "廉": V("广", "兼"),
         "西": "西",
         "価": H("亻", "西"),
-        "要": V("西", "女"),
+        "要": V("覀", "女"),
         "腰": H("月", "要"),
-        "票": V("西", "示"),
+        "票": V("覀", "示"),
         "漂": H("氵", "票"),
         "標": H("木", "票"),
-        "栗": V("西", "木"),
+        "栗": V("覀", "木"),
         "慄": H("忄", "栗"),
-        "遷": H("⻌", V("西", "大", "巳")),
-        "覆": V("西", "復"),
-        "煙": H("火", V("西", "土")),
+        "遷": H("⻌", V("覀", "大", "巳")),
+        "覆": V("覀", "復"),
+        "煙": H("火", V("覀", "土")),
     },
     88: {
         "南": "南",
         "楠": H("木", "南"),
         "献": H("南", "犬"),
         "門": "門",
-        "問": V("門", "口"),
-        "閲": V("門", "兌"),
-        "閥": V("門", "伐"),
-        "間": V("門", "日"),
-        "闇": V("門", "音"),
+        "問": E("門", "口"),
+        "閲": E("門", "兌"),
+        "閥": E("門", "伐"),
+        "間": E("門", "日"),
+        "闇": E("門", "音"),
         "簡": V("竹", "間"),
-        "開": V("門", V("一", "廾")),
-        "閉": V("門", "才"),
-        "閣": V("門", "各"),
-        "閑": V("門", "木"),
-        "聞": V("門", "耳"),
-        "潤": H("氵", V("門", "王")),
-        "欄": H("木", V("門", "東")),
-        "闘": V("門", H("豆", "寸")),
+        "開": E("門", "开"),
+        "閉": E("門", "才"),
+        "閣": E("門", "各"),
+        "閑": E("門", "木"),
+        "聞": E("門", "耳"),
+        "潤": H("氵", E("門", "王")),
+        "欄": H("木", "闌"),
+        "闘": E("門", H("豆", "寸")),
         "倉": "倉",
         "創": H("倉", "刂"),
     },
@@ -258,7 +272,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "汗": H("氵", "干"),
         "軒": H("車", "干"),
         "岸": V("山", "厂", "干"),
-        "幹": H(V("十", "早"), "干"),
+        "幹": H("十", V("𠦝", "干")),
         "芋": V("艹", "于"),
         "宇": V("宀", "于"),
         "余": "余",
@@ -381,6 +395,9 @@ def update_catalog() -> None:
         "干": "dry",
         "今": "now",
         "西": "west",
+        "覀": "west cover",
+        "𦘒": "pray",
+        "闌": "railing",
         "兼": "concurrently",
         "予": "beforehand",
         "余": "too much",
@@ -417,18 +434,29 @@ def update_catalog() -> None:
         "耒": "plow",
         "㐅": "mowed",
         "乂": "mowed",
+        "夌": "landslide",
+        "埶": "skill",
     }.items():
         labels.setdefault(g, lab)
 
     intros = data.setdefault("introductions", [])
     existing = {(int(i["lesson"]), i["glyph"]) for i in intros}
     for item in [
+        {"lesson": 82, "beforeKanji": "勢", "glyph": "埶", "label": "skill"},
+        {"lesson": 82, "beforeKanji": "菱", "glyph": "夌", "label": "landslide"},
         {
             "lesson": 83,
             "beforeKanji": "毒",
             "glyph": "龶",
             "label": "growing",
             "heisig": "growing",
+        },
+        {
+            "lesson": 85,
+            "beforeKanji": "拝",
+            "glyph": "𦘒",
+            "label": "pray",
+            "heisig": "pray",
         },
         {
             "lesson": 85,
@@ -443,6 +471,20 @@ def update_catalog() -> None:
             "glyph": "堇",
             "label": "celery",
             "heisig": "celery",
+        },
+        {
+            "lesson": 87,
+            "beforeKanji": "要",
+            "glyph": "覀",
+            "label": "west cover",
+            "heisig": "west cover",
+        },
+        {
+            "lesson": 88,
+            "beforeKanji": "欄",
+            "glyph": "闌",
+            "label": "railing",
+            "heisig": "railing",
         },
         {
             "lesson": 89,

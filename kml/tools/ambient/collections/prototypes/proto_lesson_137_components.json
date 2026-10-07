@@ -56,7 +56,7 @@
     "theme": "kanjiComponents",
     "stage": "components",
     "lesson": 137,
-    "sceneCount": 20,
+    "sceneCount": 22,
     "source": "lesson_html",
     "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
     "htmlDatabase": "data/kanji/kml_component_database.json",
@@ -68,14 +68,20 @@
   },
   "scenes": [
     {
+      "type": "newComponent",
+      "id": "L137_intro_forked",
+      "glyph": "叉",
+      "label": "forked"
+    },
+    {
       "type": "kanji",
       "id": "L137_flea",
       "kanji": "蚤",
       "keyword": "flea",
       "components": [
         {
-          "glyph": "又",
-          "label": "or again"
+          "glyph": "叉",
+          "label": "forked"
         },
         {
           "glyph": "虫",
@@ -138,16 +144,8 @@
       "keyword": "housefly",
       "components": [
         {
-          "glyph": "虫",
-          "label": "insect"
-        },
-        {
-          "glyph": "口",
-          "label": "mouth"
-        },
-        {
-          "glyph": "电",
-          "label": "eel"
+          "glyph": "蝿",
+          "label": "housefly"
         }
       ]
     },
@@ -168,6 +166,12 @@
       ]
     },
     {
+      "type": "newComponent",
+      "id": "L137_intro_vole",
+      "glyph": "鼡",
+      "label": "vole"
+    },
+    {
       "type": "kanji",
       "id": "L137_wax",
       "kanji": "蝋",
@@ -178,8 +182,8 @@
           "label": "insect"
         },
         {
-          "glyph": "昔",
-          "label": "once upon a time"
+          "glyph": "鼡",
+          "label": "vole"
         }
       ]
     },
@@ -322,8 +326,8 @@
           "label": "insect"
         },
         {
-          "glyph": "万",
-          "label": "ten thousand"
+          "glyph": "厉",
+          "label": "severe"
         }
       ]
     },
@@ -342,8 +346,8 @@
           "label": "squared jewel"
         },
         {
-          "glyph": "刂",
-          "label": "saber"
+          "glyph": "卜",
+          "label": "signal"
         }
       ]
     },

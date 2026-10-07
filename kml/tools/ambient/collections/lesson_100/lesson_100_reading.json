@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_100_reading",
+  "title": "Lesson 100 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/reading_v2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 100,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v2",
+    "soundtrackTarget": "12:41",
+    "soundtrackDurationSec": 760.97,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L100_bay",
+      "kanji": "浦",
+      "keyword": "bay",
+      "image": "studies/bay.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>浦<rt>うら</rt></ruby>に、　<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>がる。<br><ruby>波<rt>なみ</rt></ruby>は<ruby>一日<rt>いちにち</rt></ruby>の<ruby>始<rt>はじ</rt></ruby>まりを<ruby>運<rt>はこ</rt></ruby>ぶ。",
+        "en": "Morning light spreads across the quiet bay.\n\nThe waves carry the beginning of a new day."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731874
+    },
+    {
+      "id": "L100_cattail",
+      "kanji": "蒲",
+      "keyword": "cattail",
+      "image": "studies/cattail.jpg",
+      "verse": {
+        "jpHtml": "<ruby>蒲<rt>がま</rt></ruby>の<ruby>穂<rt>ほ</rt></ruby>が、　<ruby>風<rt>かぜ</rt></ruby>に<ruby>揺<rt>ゆ</rt></ruby>れて<ruby>水辺<rt>みずべ</rt></ruby>を<ruby>飾<rt>かざ</rt></ruby>る。<br><ruby>静<rt>しず</rt></ruby>けさは<ruby>自然<rt>しぜん</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>である。",
+        "en": "The cattails sway in the breeze,\n\nadorning the water's edge.\n\nSilence is the voice of nature."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731874
+    },
+    {
+      "id": "L100_shop",
+      "kanji": "舗",
+      "keyword": "shop",
+      "image": "studies/shop.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>店<rt>みせ</rt></ruby>が<ruby>朝<rt>あさ</rt></ruby>の<ruby>扉<rt>とびら</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>く。　<ruby>今日<rt>きょう</rt></ruby>も<ruby>人<rt>ひと</rt></ruby>との<ruby>出会<rt>であ</rt></ruby>いが<ruby>始<rt>はじ</rt></ruby>まる。<br><ruby>商<rt>あきな</rt></ruby>いは<ruby>信頼<rt>しんらい</rt></ruby>を<ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねること。",
+        "en": "An old shop opens its doors at dawn.\n\nAnother day of meeting people begins.\n\nCommerce is built one act of trust at a time."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731874
+    },
+    {
+      "id": "L100_supplement",
+      "kanji": "補",
+      "keyword": "supplement",
+      "image": "studies/supplement.jpg",
+      "verse": {
+        "jpHtml": "<ruby>欠<rt>か</rt></ruby>けたところを<ruby>補<rt>おぎな</rt></ruby>えば、　<ruby>全体<rt>ぜんたい</rt></ruby>はさらに<ruby>美<rt>うつく</rt></ruby>しくなる。<br><ruby>支<rt>ささ</rt></ruby>え<ruby>合<rt>あ</rt></ruby>うことが<ruby>調和<rt>ちょうわ</rt></ruby>を<ruby>生<rt>う</rt></ruby>む。",
+        "en": "When what is missing is restored,\n\nthe whole becomes more beautiful.\n\nSupporting one another creates harmony."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731874
+    },
+    {
+      "id": "L100_residence",
+      "kanji": "邸",
+      "keyword": "residence",
+      "image": "studies/residence.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>邸<rt>てい</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>で、　<ruby>椿<rt>つばき</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>咲<rt>さ</rt></ruby>いている。<br><ruby>時<rt>とき</rt></ruby>は<ruby>美<rt>うつく</rt></ruby>しいものを<ruby>育<rt>そだ</rt></ruby>てる。",
+        "en": "Camellias bloom quietly\n\nin the garden of an old residence.\n\nTime nurtures beauty."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731874
+    },
+    {
+      "id": "L100_enclosure",
+      "kanji": "郭",
+      "keyword": "enclosure",
+      "image": "studies/enclosure.jpg",
+      "verse": {
+        "jpHtml": "<ruby>城郭<rt>じょうかく</rt></ruby>の<ruby>石垣<rt>いしがき</rt></ruby>は、　<ruby>長<rt>なが</rt></ruby>い<ruby>歳月<rt>さいげつ</rt></ruby>を<ruby>見守<rt>みまも</rt></ruby>ってきた。<br><ruby>強<rt>つよ</rt></ruby>さは<ruby>忍耐<rt>にんたい</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にある。",
+        "en": "The castle walls\n\nhave watched over many generations.\n\nStrength is found in endurance."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731995
+    },
+    {
+      "id": "L100_county",
+      "kanji": "郡",
+      "keyword": "county",
+      "image": "studies/county.jpg",
+      "verse": {
+        "jpHtml": "<ruby>郡<rt>ぐん</rt></ruby>の<ruby>村々<rt>むらむら</rt></ruby>に、　<ruby>朝<rt>あさ</rt></ruby>の<ruby>鐘<rt>かね</rt></ruby>が<ruby>響<rt>ひび</rt></ruby>く。<br><ruby>離<rt>はな</rt></ruby>れていても<ruby>心<rt>こころ</rt></ruby>は<ruby>近<rt>ちか</rt></ruby>い。",
+        "en": "Morning bells echo\n\nthrough the villages of the district.\n\nThough separated, hearts remain close."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731873
+    },
+    {
+      "id": "L100_outskirts",
+      "kanji": "郊",
+      "keyword": "outskirts",
+      "image": "studies/outskirts.jpg",
+      "verse": {
+        "jpHtml": "<ruby>郊外<rt>こうがい</rt></ruby>の<ruby>道<rt>みち</rt></ruby>は、　<ruby>田畑<rt>たはた</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>続<rt>つづ</rt></ruby>く。<br><ruby>広<rt>ひろ</rt></ruby>い<ruby>空<rt>そら</rt></ruby>が<ruby>心<rt>こころ</rt></ruby>を<ruby>軽<rt>かる</rt></ruby>くする。",
+        "en": "A country road winds\n\nbetween fields and farms.\n\nThe open sky lightens the heart."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731873
+    },
+    {
+      "id": "L100_department",
+      "kanji": "部",
+      "keyword": "department",
+      "image": "studies/department.jpg",
+      "verse": {
+        "jpHtml": "それぞれの<ruby>部<rt>ぶ</rt></ruby>が、　<ruby>力<rt>ちから</rt></ruby>を<ruby>合<rt>あ</rt></ruby>わせて<ruby>一<rt>ひと</rt></ruby>つになる。<br><ruby>違<rt>ちが</rt></ruby>いが<ruby>全体<rt>ぜんたい</rt></ruby>を<ruby>豊<rt>ゆた</rt></ruby>かにする。",
+        "en": "Each part joins together\n\nto become one whole.\n\nDifferences enrich the whole."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731873
+    },
+    {
+      "id": "L100_metropolis",
+      "kanji": "都",
+      "keyword": "metropolis",
+      "image": "studies/metropolis.jpg",
+      "verse": {
+        "jpHtml": "<ruby>都<rt>みやこ</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>は、　<ruby>古<rt>ふる</rt></ruby>い<ruby>寺<rt>てら</rt></ruby>の<ruby>鐘<rt>かね</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる。<br><ruby>歴史<rt>れきし</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>息<rt>いき</rt></ruby>づいている。",
+        "en": "Morning in the capital\n\nbegins with the temple bell.\n\nHistory quietly breathes on."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789731873
+    },
+    {
+      "id": "L100_mail",
+      "kanji": "郵",
+      "keyword": "mail",
+      "image": "studies/mail.jpg",
+      "verse": {
+        "jpHtml": "<ruby>一通<rt>いっつう</rt></ruby>の<ruby>手紙<rt>てがみ</rt></ruby>が、　<ruby>遠<rt>とお</rt></ruby>く<ruby>離<rt>はな</rt></ruby>れた<ruby>心<rt>こころ</rt></ruby>を<ruby>結<rt>むす</rt></ruby>ぶ。<br><ruby>言葉<rt>ことば</rt></ruby>は<ruby>旅<rt>たび</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>ける。",
+        "en": "A single letter\n\nconnects hearts far apart.\n\nWords continue their journey."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_home_country",
+      "kanji": "邦",
+      "keyword": "home country",
+      "image": "studies/home_country.jpg",
+      "verse": {
+        "jpHtml": "この<ruby>邦<rt>くに</rt></ruby>の<ruby>山<rt>やま</rt></ruby>も<ruby>川<rt>かわ</rt></ruby>も、　<ruby>多<rt>おお</rt></ruby>くの<ruby>人<rt>ひと</rt></ruby>の<ruby>歩<rt>あゆ</rt></ruby>みを<ruby>知<rt>し</rt></ruby>っている。<br><ruby>故郷<rt>ふるさと</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にもある。",
+        "en": "The mountains and rivers of this land\n\nknow the footsteps of many people.\n\nHome also lives within the heart."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_that",
+      "kanji": "那",
+      "keyword": "that",
+      "image": "studies/that.jpg",
+      "verse": {
+        "jpHtml": "<ruby>那<rt>な</rt></ruby>だらかな<ruby>丘<rt>おか</rt></ruby>の<ruby>向<rt>む</rt></ruby>こうに、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>景色<rt>けしき</rt></ruby>が<ruby>待<rt>ま</rt></ruby>っている。<br><ruby>一歩<rt>いっぽ</rt></ruby>が<ruby>世界<rt>せかい</rt></ruby>を<ruby>広<rt>ひろ</rt></ruby>げる。",
+        "en": "Beyond the gentle hills\n\na new landscape awaits.\n\nOne step widens the world."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_hometown",
+      "kanji": "郷",
+      "keyword": "hometown",
+      "image": "studies/hometown.jpg",
+      "verse": {
+        "jpHtml": "<ruby>故郷<rt>ふるさと</rt></ruby>の<ruby>夕焼<rt>ゆうや</rt></ruby>けは、　いつまでも<ruby>心<rt>こころ</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る。<br><ruby>帰<rt>かえ</rt></ruby>る<ruby>場所<rt>ばしょ</rt></ruby>は<ruby>希望<rt>きぼう</rt></ruby>になる。",
+        "en": "The sunset of one's hometown\n\nremains forever in the heart.\n\nHaving a place to return to is hope."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_echo",
+      "kanji": "響",
+      "keyword": "echo",
+      "image": "studies/echo.jpg",
+      "verse": {
+        "jpHtml": "<ruby>山<rt>やま</rt></ruby>に<ruby>響<rt>ひび</rt></ruby>く<ruby>鐘<rt>かね</rt></ruby>の<ruby>音<rt>おと</rt></ruby>は、　<ruby>谷<rt>たに</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて<ruby>遠<rt>とお</rt></ruby>く<ruby>届<rt>とど</rt></ruby>く。<br><ruby>優<rt>やさ</rt></ruby>しさもまた<ruby>響<rt>ひび</rt></ruby>いてゆく。",
+        "en": "The sound of a bell echoes through the mountains,\n\nreaching across the valleys.\n\nKindness echoes as well."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_son",
+      "kanji": "郎",
+      "keyword": "son",
+      "image": "studies/son.jpg",
+      "verse": {
+        "jpHtml": "<ruby>若<rt>わか</rt></ruby>い<ruby>郎<rt>ろう</rt></ruby>は、　<ruby>朝日<rt>あさひ</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かって<ruby>歩<rt>ある</rt></ruby>き<ruby>出<rt>だ</rt></ruby>す。<br><ruby>希望<rt>きぼう</rt></ruby>は<ruby>足元<rt>あしもと</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる。",
+        "en": "A young man walks\n\ntoward the morning sun.\n\nHope begins beneath one's feet."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_corridor",
+      "kanji": "廊",
+      "keyword": "corridor",
+      "image": "studies/corridor.jpg",
+      "verse": {
+        "jpHtml": "<ruby>長<rt>なが</rt></ruby>い<ruby>廊下<rt>ろうか</rt></ruby>に、　<ruby>夕日<rt>ゆうひ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>差<rt>さ</rt></ruby>し<ruby>込<rt>こ</rt></ruby>む。<br><ruby>光<rt>ひかり</rt></ruby>は<ruby>奥<rt>おく</rt></ruby>まで<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "Evening sunlight\n\nquietly enters the long corridor.\n\nLight reaches even the farthest places."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_shield",
+      "kanji": "盾",
+      "keyword": "shield",
+      "image": "studies/shield.jpg",
+      "verse": {
+        "jpHtml": "<ruby>盾<rt>たて</rt></ruby>は<ruby>争<rt>あらそ</rt></ruby>うためではなく、　<ruby>大切<rt>たいせつ</rt></ruby>なものを<ruby>守<rt>まも</rt></ruby>るためにある。<br><ruby>真<rt>しん</rt></ruby>の<ruby>強<rt>つよ</rt></ruby>さは<ruby>優<rt>やさ</rt></ruby>しさを<ruby>守<rt>まも</rt></ruby>る。",
+        "en": "A shield exists\n\nnot to seek conflict,\n\nbut to protect what is precious.\n\nTrue strength protects kindness."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_sequential",
+      "kanji": "循",
+      "keyword": "sequential",
+      "image": "studies/sequential.jpg",
+      "verse": {
+        "jpHtml": "<ruby>季節<rt>きせつ</rt></ruby>は<ruby>循<rt>めぐ</rt></ruby>り、　<ruby>花<rt>はな</rt></ruby>は<ruby>毎年<rt>まいとし</rt></ruby><ruby>同<rt>おな</rt></ruby>じように<ruby>咲<rt>さ</rt></ruby>く。<br><ruby>自然<rt>しぜん</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>約束<rt>やくそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る。",
+        "en": "The seasons come full circle,\n\nand flowers bloom again each year.\n\nNature quietly keeps its promises."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732728
+    },
+    {
+      "id": "L100_faction",
+      "kanji": "派",
+      "keyword": "faction",
+      "image": "studies/faction.jpg",
+      "verse": {
+        "jpHtml": "<ruby>川<rt>かわ</rt></ruby>は<ruby>岩<rt>いわ</rt></ruby>で<ruby>分<rt>わ</rt></ruby>かれても、　やがて<ruby>海<rt>うみ</rt></ruby>で<ruby>一<rt>ひと</rt></ruby>つになる。<br><ruby>違<rt>ちが</rt></ruby>う<ruby>流<rt>なが</rt></ruby>れも<ruby>同<rt>おな</rt></ruby>じ<ruby>大海<rt>たいかい</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かう。",
+        "en": "Though a river divides around the rocks,\n\nit becomes one again in the sea.\n\nDifferent streams share the same destination."
+      },
+      "meta": {
+        "lesson": 100,
+        "experimental": true
+      },
+      "imageRev": 1789732727
+    }
+  ]
+}

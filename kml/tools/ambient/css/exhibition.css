@@ -96,6 +96,15 @@ html.kml-record-pipeline::before {
   opacity: 0;
 }
 
+/* Woman/Child direct dissolve: incoming layer must paint above the current painting. */
+.exhibition-root.is-direct-artwork-handoff .exhibition-artwork.is-on-top {
+  z-index: 2;
+}
+
+.exhibition-root.is-direct-artwork-handoff .exhibition-artwork.is-exhaling {
+  transition-timing-function: ease-in-out;
+}
+
 .exhibition-artwork img {
   width: 100%;
   height: 100%;

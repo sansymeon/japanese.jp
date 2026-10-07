@@ -1,0 +1,376 @@
+{
+  "id": "biang_song_visual",
+  "title": "Biáng — shared visual sequence",
+  "shared": true,
+  "referencedBy": [
+    "biang_song_japanese.json",
+    "biang_song_english.json"
+  ],
+  "engine": {
+    "wired": false,
+    "loadCollection": "exhibition-engine.js loadCollection fetches one JSON and does not include another file",
+    "note": "This file is the single visual source. The English and Japanese movie files point at it. The current player will not follow that pointer. No player changes in this pass."
+  },
+  "concept": "Verse 1 is a scattered teaching field. That field fades away on the parchment before Verse 2. Verse 2 then fades the full-canvas PNGs in, one lyric cue at a time, until 𰻞 is assembled. No flying, cropping, or per-layer scale.",
+  "assets": {
+    "dir": "../biang",
+    "background": "biang_background.png",
+    "backgroundSize": [
+      1920,
+      1080
+    ],
+    "completeReference": "biang_complete.png",
+    "completeNote": "QA reference only. The film builds 𰻞 from the eleven layer files. Do not show this file in place of the assembly.",
+    "intro": "biangbiang_noodles_16_9.jpg",
+    "introSize": [
+      1672,
+      941
+    ],
+    "introNote": "16:9 photograph for the intro only. It is not the brush painting.",
+    "finalArtwork": {
+      "repoPath": "kml/assets/studies/biang-brush.jpg",
+      "previewPath": "../../../../assets/studies/biang-brush.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fit": "fill",
+      "crop": false,
+      "note": "This file is now native 16:9. It fades in full-frame after the black pause. biang-brush_9_16.jpg in collections/biang is the portrait frame and is not used here."
+    },
+    "layerCanvas": [
+      1920,
+      1080
+    ],
+    "layerFit": "fill",
+    "alignment": "All layer PNGs and biang_complete.png are 1920×1080. Stacked, their ink bounds match the complete file at (391, 64, 1492, 1014). Soft overlapping edges stack slightly darker than the flattened complete; the canvases are not trimmed."
+  },
+  "style": {
+    "background": "../biang/biang_background.png",
+    "component": "black ink",
+    "keywordScale": 0.22,
+    "componentScale": 1,
+    "fadeInSec": 1.2,
+    "fadeOutSec": 1.4,
+    "motion": "fade-only",
+    "pairStaggerSec": 0.8,
+    "pairNote": "A line that names two components is one cue. pairStaggerSec is a slow offset inside that cue, not a second lyric time. Set it to 0 and the pair appears together.",
+    "verse1Exit": {
+      "fadeSec": 1.4,
+      "emptySec": 1.2,
+      "note": "Measured backward from that language's verse2.startSec. Scattered glyphs and bilingual labels fade out together. biang_background.png stays. The parchment is empty for emptySec, then Verse 2 fades the PNG layers in. Lyric clocks are not moved."
+    },
+    "highlight": {
+      "restOpacity": 0.78,
+      "emphasisOpacity": 1,
+      "emphasisScale": 1.04,
+      "flash": false,
+      "bounce": false
+    }
+  },
+  "frame": {
+    "aspect": "16:9",
+    "coordinateSpace": "Normalized 0–1. Origin top-left. x increases right, y increases down. x and y are the center of the component.",
+    "safeRegion": {
+      "x0": 0.32,
+      "y0": 0.2,
+      "x1": 0.68,
+      "y1": 0.8
+    },
+    "shorts": {
+      "built": true,
+      "note": "Portrait positions live on each component as shorts.x and shorts.y. They are a 9:16 teaching layout, not a crop of the 16:9 field. The assembly uses presentations.shorts.assembly, one transform for every PNG."
+    }
+  },
+  "presentations": {
+    "landscape": {
+      "id": "16:9",
+      "aspect": "16 / 9",
+      "stage": [
+        1920,
+        1080
+      ],
+      "background": "biang_background.png",
+      "intro": "biangbiang_noodles_16_9.jpg",
+      "finalArtwork": "../../../../assets/studies/biang-brush.jpg",
+      "finalFit": "fill",
+      "pieceFont": "18cqh",
+      "positions": "x,y",
+      "assembly": "The stage and the component canvases are both 16:9, so each PNG fills the stage. No extra transform."
+    },
+    "shorts": {
+      "id": "9:16",
+      "aspect": "9 / 16",
+      "stage": [
+        1080,
+        1920
+      ],
+      "background": "biang_background_9_16.jpg",
+      "backgroundSize": [
+        1080,
+        1920
+      ],
+      "intro": "biang_noodles_9_16.jpg",
+      "introSize": [
+        941,
+        1672
+      ],
+      "finalArtwork": "../biang/biang-brush_9_16.jpg",
+      "finalSize": [
+        1080,
+        1920
+      ],
+      "finalFit": "fill",
+      "pieceFont": "10.5cqw",
+      "keywordScale": 0.34,
+      "positions": "shorts",
+      "safe": {
+        "x0": 0.22,
+        "y0": 0.14,
+        "x1": 0.78,
+        "y1": 0.78
+      },
+      "introFade": {
+        "fadeInStartSec": 0.4,
+        "fadeInSec": 2.8,
+        "crossfadeSec": 2.0,
+        "settleSec": 1.4,
+        "note": "From black, the noodle image fades in and holds through the instrumental intro. It crossfades to the portrait parchment, which is settled for settleSec before verse1.startSec. Lyric clocks stay where they are. Both languages start verse 1 at 20s, so this opening is the same length on each clock."
+      },
+      "assembly": {
+        "uniform": true,
+        "source": [
+          1920,
+          1080
+        ],
+        "fit": "contain",
+        "anchor": "center",
+        "note": "Every component PNG shares one box: the 1920×1080 canvas fitted inside the 9:16 stage by width, aspect kept, centered on both axes. biang_complete.png would occupy that same box. No layer has its own scale or position."
+      }
+    }
+  },
+  "verse2Mode": "assembly",
+  "verse2Modes": {
+    "assembly": "The scattered field is already gone. Verse 2 fades each full-canvas PNG in on the empty parchment and leaves it. pairStaggerSec still offsets a pair inside one lyric line. No labels."
+  },
+  "chorus": {
+    "behavior": "assembly-hold-black-then-reveal",
+    "followsLyricLines": false,
+    "newComponents": false,
+    "fieldHoldSec": 4,
+    "clearFadeSec": 2,
+    "pauseSec": 1.5,
+    "revealFadeSec": 2,
+    "reveal": {
+      "repoPath": "kml/assets/studies/biang-brush.jpg",
+      "image": "studies/biang-brush.jpg",
+      "width": 1920,
+      "height": 1080,
+      "crop": false,
+      "fit": "fill",
+      "x": 0.5,
+      "y": 0.5,
+      "scale": 1
+    },
+    "end": "Hold the artwork, then a gentle fade to black with the closing audio. No cut."
+  },
+  "mappingNotes": [
+    "Each verse line is read left to right for KML component labels in kanji_components_catalog.json and kanji_master.csv.",
+    "くものあな → 穴 hole / あな, and つき → 月 moon / つき, are one line. They enter as a pair.",
+    "みじかいいと → 幺 short thread. 糸 is the catalog label thread, so it is not used.",
+    "いう → 言 say / いう.",
+    "もういっぽんのみじかいいと → a second 幺, its own position.",
+    "ながいよるをうまにのって → 長 long / ながい and 馬 horse / うま, as one pair. よる is not a component.",
+    "ながいたび → a second 長, its own position.",
+    "サーベル → 刂 saber / サーベル. The catalog label is saber.",
+    "こころ → 心 heart / こころ and みち → 辶 road / みち, as one pair.",
+    "The chorus names no new component."
+  ],
+  "components": [
+    {
+      "id": "ana",
+      "order": 1,
+      "glyph": "穴",
+      "en": "hole",
+      "ja": "あな",
+      "lyricJa": "くものあなからつきがみえる",
+      "x": 0.5,
+      "y": 0.24,
+      "scale": 1,
+      "shorts": {
+        "x": 0.64,
+        "y": 0.16,
+        "scale": 1
+      },
+      "layer": "hole.png"
+    },
+    {
+      "id": "tsuki",
+      "order": 2,
+      "glyph": "月",
+      "en": "moon",
+      "ja": "つき",
+      "lyricJa": "くものあなからつきがみえる",
+      "x": 0.36,
+      "y": 0.34,
+      "scale": 1,
+      "shorts": {
+        "x": 0.32,
+        "y": 0.16,
+        "scale": 1
+      },
+      "layer": "moon.png"
+    },
+    {
+      "id": "yao-1",
+      "order": 3,
+      "glyph": "幺",
+      "en": "short thread",
+      "ja": "みじかいいと",
+      "lyricJa": "みじかいいとがかぜにゆれる",
+      "x": 0.64,
+      "y": 0.3,
+      "scale": 1,
+      "shorts": {
+        "x": 0.5,
+        "y": 0.27,
+        "scale": 1
+      },
+      "layer": "short_thread_1.png"
+    },
+    {
+      "id": "gen",
+      "order": 4,
+      "glyph": "言",
+      "en": "say",
+      "ja": "いう",
+      "lyricJa": "まっているよときみがいう",
+      "x": 0.42,
+      "y": 0.46,
+      "scale": 1,
+      "shorts": {
+        "x": 0.3,
+        "y": 0.38,
+        "scale": 1
+      },
+      "layer": "say.png"
+    },
+    {
+      "id": "yao-2",
+      "order": 5,
+      "glyph": "幺",
+      "en": "short thread",
+      "ja": "みじかいいと",
+      "lyricJa": "もういっぽんのみじかいいと",
+      "x": 0.58,
+      "y": 0.42,
+      "scale": 1,
+      "shorts": {
+        "x": 0.5,
+        "y": 0.49,
+        "scale": 1
+      },
+      "layer": "short_thread_2.png"
+    },
+    {
+      "id": "cho-1",
+      "order": 6,
+      "glyph": "長",
+      "en": "long",
+      "ja": "ながい",
+      "lyricJa": "ながいよるをうまにのって",
+      "x": 0.36,
+      "y": 0.58,
+      "scale": 1,
+      "shorts": {
+        "x": 0.28,
+        "y": 0.6,
+        "scale": 1
+      },
+      "layer": "long_1.png"
+    },
+    {
+      "id": "uma",
+      "order": 7,
+      "glyph": "馬",
+      "en": "horse",
+      "ja": "うま",
+      "lyricJa": "ながいよるをうまにのって",
+      "x": 0.5,
+      "y": 0.6,
+      "scale": 1,
+      "shorts": {
+        "x": 0.7,
+        "y": 0.38,
+        "scale": 1
+      },
+      "layer": "horse.png"
+    },
+    {
+      "id": "cho-2",
+      "order": 8,
+      "glyph": "長",
+      "en": "long",
+      "ja": "ながい",
+      "lyricJa": "ながいたびをどこまでも",
+      "x": 0.64,
+      "y": 0.54,
+      "scale": 1,
+      "shorts": {
+        "x": 0.34,
+        "y": 0.71,
+        "scale": 1
+      },
+      "layer": "long_2.png"
+    },
+    {
+      "id": "saber",
+      "order": 9,
+      "glyph": "刂",
+      "en": "saber",
+      "ja": "サーベル",
+      "lyricJa": "サーベルをしずかにおさえ",
+      "x": 0.38,
+      "y": 0.74,
+      "scale": 1,
+      "shorts": {
+        "x": 0.66,
+        "y": 0.71,
+        "scale": 1
+      },
+      "layer": "saber.png"
+    },
+    {
+      "id": "kokoro",
+      "order": 10,
+      "glyph": "心",
+      "en": "heart",
+      "ja": "こころ",
+      "lyricJa": "こころのままにみちをゆく",
+      "x": 0.54,
+      "y": 0.76,
+      "scale": 1,
+      "shorts": {
+        "x": 0.5,
+        "y": 0.6,
+        "scale": 1
+      },
+      "layer": "heart.png"
+    },
+    {
+      "id": "road",
+      "order": 11,
+      "glyph": "辶",
+      "en": "road",
+      "ja": "みち",
+      "lyricJa": "こころのままにみちをゆく",
+      "x": 0.64,
+      "y": 0.7,
+      "scale": 1,
+      "shorts": {
+        "x": 0.72,
+        "y": 0.6,
+        "scale": 1
+      },
+      "layer": "road.png"
+    }
+  ]
+}

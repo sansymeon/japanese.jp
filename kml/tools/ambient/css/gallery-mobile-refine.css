@@ -346,6 +346,49 @@ html.kml-typography-mobile-refine.kml-verse-sequential
   font-size: var(--kml-foundations-exhibition-verse-en);
 }
 
+/* Opening 母 plate — about 2.4× the 560px bookend cap, still inside a black margin. */
+.exhibition-root.is-woman-child .exhibition-bookend.is-opening-bookend img {
+  max-width: min(70vw, 1344px);
+  max-height: min(70vh, 756px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Woman/Child verses stay inside the frame with equal side margins.
+   Foundations size is unchanged. Long lines wrap instead of running off the right edge.
+   A fine charcoal halo keeps ivory type readable on bright photographs. */
+html.kml-typography-mobile-refine .exhibition-root.is-woman-child .exhibition-notes,
+html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-root.is-woman-child .exhibition-notes {
+  --wc-frame: min(100vw, calc(100vh * 16 / 9));
+  width: min(62vw, calc(var(--wc-frame) - 8rem));
+  max-width: calc(100vw - 7rem);
+  left: 50%;
+  box-sizing: border-box;
+}
+
+html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-root.is-woman-child .exhibition-verse-jp,
+html.kml-typography-mobile-refine.kml-verse-sequential .exhibition-root.is-woman-child .exhibition-verse-en {
+  box-sizing: border-box;
+  padding-left: clamp(1rem, 2.4vw, 1.75rem);
+  padding-right: clamp(1rem, 2.4vw, 1.75rem);
+  word-break: normal;
+  overflow-wrap: break-word;
+  text-shadow:
+    0 0 1px rgba(42, 36, 30, 0.95),
+    0 0 2px rgba(36, 30, 26, 0.78),
+    0 0 7px rgba(28, 24, 20, 0.5);
+}
+
+html.kml-typography-mobile-refine.kml-verse-authored
+  .exhibition-root.is-woman-child
+  .exhibition-verse-jp.has-authored-lines
+  .kml-verse-line {
+  white-space: normal;
+  text-wrap: wrap;
+  max-width: 100%;
+}
+
 /* Staggered — JP first, EN fades in later as supporting translation */
 html.kml-typography-mobile-refine.kml-verse-staggered {
   --kml-verse-en-support-opacity: 0.55;

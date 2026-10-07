@@ -1,0 +1,425 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_59_gallery",
+  "title": "KML Gallery — Lesson 59 (Foundations)",
+  "notes": "Final learning stage: artwork and Foundations music only (~8 min). Exhibit pacing fits the soundtrack (480s runtime, 9s image hold per scene); composition-aware camera drift (~3–5% per exhibit). Same gallery display profile as Lessons 1–10.",
+  "soundtrack": {
+    "main": "audio/study_version_2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "exhibitionBlackBeforeMs": 3000,
+    "artworkAloneMs": 9679,
+    "kanjiRevealMs": 400,
+    "imageVerseKanjiHoldMs": 800,
+    "imageVerseKanjiFadeMs": 400,
+    "titleFadeMs": 400,
+    "verseJpRevealMs": 300,
+    "verseJpHoldMs": 3739,
+    "verseJpFadeMs": 300,
+    "verseEnRevealMs": 300,
+    "verseEnHoldMs": 3739,
+    "verseEnFadeMs": 300,
+    "exhibitTransitionMs": 3500,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 19958,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "gallery",
+    "showKeyword": false,
+    "showKanji": false,
+    "exhibitProfile": "gallery",
+    "verseMode": "sequential",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "gallery",
+    "lesson": 59,
+    "stage": "gallery",
+    "foundationsTrack": "study_version_2",
+    "sceneCount": 20
+  },
+  "scenes": [
+    {
+      "id": "L59_fan",
+      "kanji": "扇",
+      "keyword": "fan",
+      "image": "studies/fan.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>夏<rt>なつ</rt></ruby>の<ruby>扇<rt>おうぎ</rt></ruby>が、<br>\n    やさしい<ruby>風<rt>かぜ</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>んでくる。<br>\n    <ruby>小<rt>ちい</rt></ruby>さな<ruby>涼<rt>すず</rt></ruby>しさが<ruby>心<rt>こころ</rt></ruby>を<ruby>和<rt>なご</rt></ruby>ませる。",
+        "en": "A folding fan in summer\n\nbrings a gentle breeze.\n\nA little coolness brings peace to the heart."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "fan"
+      },
+      "imageRev": 1788925690
+    },
+    {
+      "id": "L59_hearth",
+      "kanji": "炉",
+      "keyword": "hearth",
+      "image": "studies/hearth.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>囲炉裏<rt>いろり</rt></ruby>の<ruby>炉<rt>ろ</rt></ruby>に、<br>\n    <ruby>静<rt>しず</rt></ruby>かな<ruby>火<rt>ひ</rt></ruby>が<ruby>赤<rt>あか</rt></ruby>く<ruby>灯<rt>とも</rt></ruby>る。<br>\n    ぬくもりは<ruby>人<rt>ひと</rt></ruby>を<ruby>集<rt>あつ</rt></ruby>める。",
+        "en": "In the hearth,\n\na quiet fire glows red.\n\nWarmth draws people together."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "hearth"
+      },
+      "imageRev": 1788925690
+    },
+    {
+      "id": "L59_revert",
+      "kanji": "戻",
+      "keyword": "revert",
+      "image": "studies/revert.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>旅<rt>たび</rt></ruby>から<ruby>戻<rt>もど</rt></ruby>れば、<br>\n    <ruby>見慣<rt>みな</rt></ruby>れた<ruby>空<rt>そら</rt></ruby>が<ruby>迎<rt>むか</rt></ruby>えてくれる。<br>\n    <ruby>帰<rt>かえ</rt></ruby>る<ruby>場所<rt>ばしょ</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>の<ruby>港<rt>みなと</rt></ruby>。",
+        "en": "Returning from a journey,\n\nthe familiar sky welcomes you home.\n\nHome is the harbor of the heart."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "revert"
+      },
+      "imageRev": 1788925690
+    },
+    {
+      "id": "L59_tears",
+      "kanji": "涙",
+      "keyword": "tears",
+      "image": "studies/tears.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>涙<rt>なみだ</rt></ruby>のあとに、<br>\n    <ruby>虹<rt>にじ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>空<rt>そら</rt></ruby>へ<ruby>架<rt>か</rt></ruby>かる。<br>\n    <ruby>悲<rt>かな</rt></ruby>しみも<ruby>希望<rt>きぼう</rt></ruby>へ<ruby>変<rt>か</rt></ruby>わる。",
+        "en": "After tears,\n\na rainbow quietly spans the sky.\n\nEven sorrow can become hope."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "tears"
+      },
+      "imageRev": 1788925690
+    },
+    {
+      "id": "L59_employ",
+      "kanji": "雇",
+      "keyword": "employ",
+      "image": "studies/employ.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>を<ruby>雇<rt>やと</rt></ruby>えば、<br>\n    <ruby>力<rt>ちから</rt></ruby>だけでなく<ruby>信頼<rt>しんらい</rt></ruby>も<ruby>育<rt>そだ</rt></ruby>てたい。<br>\n    <ruby>良<rt>よ</rt></ruby>い<ruby>仕事<rt>しごと</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まる。",
+        "en": "When hiring others,\n\ngrow trust as well as skill.\n\nGood work begins in the heart."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "employ"
+      },
+      "imageRev": 1788925690
+    },
+    {
+      "id": "L59_look_back",
+      "kanji": "顧",
+      "keyword": "look back",
+      "image": "studies/look_back.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>歩<rt>あゆ</rt></ruby>んだ<ruby>道<rt>みち</rt></ruby>を<ruby>顧<rt>かえり</rt></ruby>みれば、<br>\n    <ruby>小<rt>ちい</rt></ruby>さな<ruby>恵<rt>めぐ</rt></ruby>みに<ruby>気<rt>き</rt></ruby>づく。<br>\n    <ruby>感謝<rt>かんしゃ</rt></ruby>は<ruby>未来<rt>みらい</rt></ruby>を<ruby>照<rt>て</rt></ruby>らす。",
+        "en": "Looking back on the road you've walked,\n\nyou notice countless small blessings.\n\nGratitude lights the future."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "look_back"
+      },
+      "imageRev": 1788925690
+    },
+    {
+      "id": "L59_disclose",
+      "kanji": "啓",
+      "keyword": "disclose",
+      "image": "studies/disclose.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>鐘<rt>かね</rt></ruby>が、<br>\n    <ruby>新<rt>あたら</rt></ruby>しい<ruby>一日<rt>いちにち</rt></ruby>を<ruby>啓<rt>ひら</rt></ruby>く。<br>\n    <ruby>学<rt>まな</rt></ruby>ぶ<ruby>心<rt>こころ</rt></ruby>は<ruby>毎日<rt>まいにち</rt></ruby><ruby>生<rt>う</rt></ruby>まれ<ruby>変<rt>か</rt></ruby>わる。",
+        "en": "The morning bell\n\nopens a new day.\n\nA learning heart is renewed each morning."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "disclose"
+      },
+      "imageRev": 1788925689
+    },
+    {
+      "id": "L59_indicate",
+      "kanji": "示",
+      "keyword": "indicate",
+      "image": "studies/indicate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>山道<rt>やまみち</rt></ruby>の<ruby>石標<rt>せきひょう</rt></ruby>が、<br>\n    <ruby>静<rt>しず</rt></ruby>かに<ruby>行<rt>ゆ</rt></ruby>く<ruby>先<rt>さき</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>している。<br>\n    <ruby>小<rt>ちい</rt></ruby>さな<ruby>導<rt>みちび</rt></ruby>きが<ruby>旅<rt>たび</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>える。",
+        "en": "A stone marker on the mountain path\n\nquietly points the way.\n\nSmall guidance supports the journey."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "indicate"
+      },
+      "imageRev": 1788925689
+    },
+    {
+      "id": "L59_thanks",
+      "kanji": "礼",
+      "keyword": "thanks",
+      "image": "studies/thanks.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>礼<rt>れい</rt></ruby>を<ruby>尽<rt>つ</rt></ruby>くせば、<br>\n    <ruby>言葉<rt>ことば</rt></ruby>より<ruby>深<rt>ふか</rt></ruby>く<ruby>心<rt>こころ</rt></ruby>が<ruby>届<rt>とど</rt></ruby>く。<br>\n    <ruby>敬<rt>うやま</rt></ruby>う<ruby>心<rt>こころ</rt></ruby>は<ruby>美<rt>うつく</rt></ruby>しい。",
+        "en": "When respect is shown fully,\n\nit speaks deeper than words.\n\nA respectful heart is beautiful."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "thanks"
+      },
+      "imageRev": 1788925689
+    },
+    {
+      "id": "L59_auspicious",
+      "kanji": "祥",
+      "keyword": "auspicious",
+      "image": "studies/auspicious.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>祥<rt>しょう</rt></ruby>らかな<ruby>朝<rt>あさ</rt></ruby>が、<br>\n    <ruby>静<rt>しず</rt></ruby>かな<ruby>村<rt>むら</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>んでいる。<br>\n    <ruby>幸<rt>しあわ</rt></ruby>せは<ruby>穏<rt>おだ</rt></ruby>やかに<ruby>訪<rt>おとず</rt></ruby>れる。",
+        "en": "An auspicious morning\n\ngently embraces the quiet village.\n\nHappiness arrives softly."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "auspicious"
+      },
+      "imageRev": 1788925689
+    },
+    {
+      "id": "L59_celebrate",
+      "kanji": "祝",
+      "keyword": "celebrate",
+      "image": "studies/celebrate.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>春<rt>はる</rt></ruby>の<ruby>花<rt>はな</rt></ruby>とともに、<br>\n    <ruby>新<rt>あたら</rt></ruby>しい<ruby>門出<rt>かどで</rt></ruby>を<ruby>祝<rt>いわ</rt></ruby>う。<br>\n    <ruby>喜<rt>よろこ</rt></ruby>びは<ruby>皆<rt>みな</rt></ruby>で<ruby>分<rt>わ</rt></ruby>け<ruby>合<rt>あ</rt></ruby>うもの。",
+        "en": "With the flowers of spring,\n\nwe celebrate a new beginning.\n\nJoy is meant to be shared."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "celebrate"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_blessing",
+      "kanji": "福",
+      "keyword": "blessing",
+      "image": "studies/blessing.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>福<rt>ふく</rt></ruby>は、<br>\n    <ruby>感謝<rt>かんしゃ</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>宿<rt>やど</rt></ruby>る。<br>\n    <ruby>幸<rt>しあわ</rt></ruby>せは<ruby>身近<rt>みぢか</rt></ruby>なところにある。",
+        "en": "Good fortune\n\ndwells quietly in a grateful heart.\n\nHappiness is closer than we think."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "blessing"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_welfare",
+      "kanji": "祉",
+      "keyword": "welfare",
+      "image": "studies/welfare.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>祉<rt>し</rt></ruby>を<ruby>願<rt>ねが</rt></ruby>う<ruby>心<rt>こころ</rt></ruby>が、<br>\n    <ruby>町<rt>まち</rt></ruby>を<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>温<rt>あたた</rt></ruby>めてゆく。<br>\n    <ruby>思<rt>おも</rt></ruby>いやりは<ruby>皆<rt>みな</rt></ruby>の<ruby>力<rt>ちから</rt></ruby>。",
+        "en": "A wish for others' well-being\n\nslowly warms the whole town.\n\nCompassion belongs to everyone."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "welfare"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_company",
+      "kanji": "社",
+      "keyword": "company",
+      "image": "studies/company.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>森<rt>もり</rt></ruby>の<ruby>社<rt>やしろ</rt></ruby>に、<br>\n    <ruby>朝露<rt>あさつゆ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>光<rt>ひか</rt></ruby>る。<br>\n    <ruby>祈<rt>いの</rt></ruby>りは<ruby>自然<rt>しぜん</rt></ruby>と<ruby>結<rt>むす</rt></ruby>ばれている。",
+        "en": "Morning dew glistens\n\nat the woodland shrine.\n\nPrayer is woven into nature."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "company"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_inspection",
+      "kanji": "視",
+      "keyword": "inspection",
+      "image": "studies/inspection.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>広<rt>ひろ</rt></ruby>い<ruby>空<rt>そら</rt></ruby>を<ruby>視<rt>み</rt></ruby>れば、<br>\n    <ruby>悩<rt>なや</rt></ruby>みは<ruby>少<rt>すこ</rt></ruby>し<ruby>小<rt>ちい</rt></ruby>さくなる。<br>\n    <ruby>視野<rt>しや</rt></ruby>が<ruby>心<rt>こころ</rt></ruby>を<ruby>自由<rt>じゆう</rt></ruby>にする。",
+        "en": "When you look toward the wide sky,\n\nyour worries become a little smaller.\n\nA wider view frees the heart."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "inspection"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_nara",
+      "kanji": "奈",
+      "keyword": "nara",
+      "image": "studies/nara.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>奈<rt>な</rt></ruby>の<ruby>古都<rt>こと</rt></ruby>は、<br>\n    <ruby>静<rt>しず</rt></ruby>かな<ruby>鹿<rt>しか</rt></ruby>と<ruby>時<rt>とき</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>いている。<br>\n    <ruby>歴史<rt>れきし</rt></ruby>は<ruby>今<rt>いま</rt></ruby>も<ruby>息<rt>い</rt></ruby>づいている。",
+        "en": "The ancient city of Nara\n\nwalks through time with its quiet deer.\n\nHistory is still alive today."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "nara"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_military_officer",
+      "kanji": "尉",
+      "keyword": "military officer",
+      "image": "studies/military_officer.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>尉<rt>い</rt></ruby>として、<br>\n    <ruby>仲間<rt>なかま</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>支<rt>ささ</rt></ruby>え<ruby>続<rt>つづ</rt></ruby>ける。<br>\n    <ruby>責任<rt>せきにん</rt></ruby>は<ruby>信頼<rt>しんらい</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てる。",
+        "en": "As an officer,\n\nhe quietly supports those beside him.\n\nResponsibility builds trust."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "military_officer"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_consolation",
+      "kanji": "慰",
+      "keyword": "consolation",
+      "image": "studies/consolation.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "やさしい<ruby>言葉<rt>ことば</rt></ruby>が、<br>\n    <ruby>悲<rt>かな</rt></ruby>しい<ruby>心<rt>こころ</rt></ruby>を<ruby>慰<rt>なぐさ</rt></ruby>める。<br>\n    ぬくもりは<ruby>涙<rt>なみだ</rt></ruby>を<ruby>乾<rt>かわ</rt></ruby>かす。",
+        "en": "Gentle words\n\ncomfort a grieving heart.\n\nWarmth dries tears."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "consolation"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_goodwill",
+      "kanji": "款",
+      "keyword": "goodwill",
+      "image": "studies/goodwill.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>款<rt>かん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>めば、<br>\n    <ruby>約束<rt>やくそく</rt></ruby>の<ruby>重<rt>おも</rt></ruby>みが<ruby>伝<rt>つた</rt></ruby>わる。<br>\n    <ruby>誠実<rt>せいじつ</rt></ruby>は<ruby>時<rt>とき</rt></ruby>を<ruby>越<rt>こ</rt></ruby>える。",
+        "en": "Reading an old agreement,\n\nyou feel the weight of a promise.\n\nSincerity outlives time."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "goodwill"
+      },
+      "imageRev": 1788926660
+    },
+    {
+      "id": "L59_prohibition",
+      "kanji": "禁",
+      "keyword": "prohibition",
+      "image": "studies/prohibition.jpg",
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "verse": {
+        "jpHtml": "<ruby>禁<rt>きん</rt></ruby>じるだけでは、<br>\n    <ruby>本当<rt>ほんとう</rt></ruby>の<ruby>理解<rt>りかい</rt></ruby>は<ruby>育<rt>そだ</rt></ruby>たない。<br>\n    <ruby>知恵<rt>ちえ</rt></ruby>は<ruby>対話<rt>たいわ</rt></ruby>から<ruby>生<rt>う</rt></ruby>まれる。",
+        "en": "Simply forbidding something\n\ndoes not create understanding.\n\nWisdom grows through dialogue."
+      },
+      "meta": {
+        "lesson": 59,
+        "slug": "prohibition"
+      },
+      "imageRev": 1788926660
+    }
+  ]
+}

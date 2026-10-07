@@ -296,15 +296,24 @@
   function renderMedia(media) {
     if (!media) return;
     const youtube = media.youtube || {};
-    fillGrid("mediaGrid", [
+    const mediaCards = [
       {
         value: fmtInt(youtube.value),
         label: youtube.label || "YouTube Videos",
         detail:
           youtube.note ||
           youtube.detail ||
-          (youtube.asOf ? "Channel total as of " + youtube.asOf : ""),
+          (youtube.asOf ? "Channel content as of " + youtube.asOf : ""),
       },
+    ];
+    if (youtube.playlists != null) {
+      mediaCards.push({
+        value: fmtInt(youtube.playlists),
+        label: youtube.playlistLabel || "YouTube Playlists",
+        detail: youtube.playlistDetail || "On @ambientkanji",
+      });
+    }
+    fillGrid("mediaGrid", mediaCards.concat([
       {
         value: fmtInt(media.videoCollectionCount),
         label: "Video Collections",
@@ -325,7 +334,7 @@
         label: "Audio Tracks",
         detail: media.audioDetail || "Website soundtrack files",
       },
-    ]);
+    ]));
   }
 
   function showError(message) {

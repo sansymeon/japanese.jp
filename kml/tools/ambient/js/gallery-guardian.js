@@ -167,9 +167,9 @@
       motionScale = 1,
     } = options;
 
-    // Per-scene override (e.g. subtler people shots) wins over collection default.
+    // Per-scene override wins, including 0 (a still hold).
     const effectiveScale =
-      typeof cam.motionScale === "number" && cam.motionScale > 0
+      typeof cam.motionScale === "number" && cam.motionScale >= 0
         ? cam.motionScale
         : motionScale;
 

@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
 COMPOUNDS_DIR = REPO / "contents/books/book_01/compounds"
+COMPOUNDS_JSON_DIR = REPO / "data" / "compounds"
 
 BLOCK_RE = re.compile(
     r'<span class="kanji-compound-font">([^<]+)</span>.*?<ul>(.*?)</ul>',
@@ -59,8 +61,34 @@ def parse_compounds_html(path: Path) -> dict[str, list[dict]]:
     return out
 
 
+def parse_compounds_json(path: Path) -> dict[str, list[dict]]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    out: dict[str, list[dict]] = {}
+    for char in data.get("characters") or []:
+        kanji = (char.get("kanji") or "").strip()
+        if not kanji:
+            continue
+        items: list[dict] = []
+        for compound in char.get("compounds") or []:
+            jp = (compound.get("surface") or "").strip()
+            reading = _clean_reading(compound.get("reading") or "")
+            en = _clean_en(compound.get("meaning") or compound.get("sourceGloss") or "")
+            if jp and reading:
+                items.append({"jp": jp, "reading": reading, "en": en})
+        out[kanji] = items
+    return out
+
+
 def lesson_compounds(lesson: int) -> dict[str, list[dict]]:
-    path = COMPOUNDS_DIR / f"lesson_{lesson:02d}.html"
-    if not path.is_file():
-        raise FileNotFoundError(path)
-    return parse_compounds_html(path)
+    html_path = COMPOUNDS_DIR / f"lesson_{lesson:02d}.html"
+    json_path = COMPOUNDS_JSON_DIR / f"lesson_{lesson:02d}.json"
+    parsed: dict[str, list[dict]] = {}
+    if html_path.is_file():
+        parsed = parse_compounds_html(html_path)
+        if any(parsed.values()):
+            return parsed
+    if json_path.is_file():
+        return parse_compounds_json(json_path)
+    if html_path.is_file():
+        return parsed
+    raise FileNotFoundError(json_path)

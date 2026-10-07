@@ -51,7 +51,7 @@ def V(*xs):
 
 # Shared nests
 FENG = V("夂", "丰")  # 夆 / 逢 family
-YAO = V("爪", "缶")  # 遥 / 揺 family
+YAO = V("爫", "缶")  # 遥 / 揺 family
 FU = V("一", "口", "田")  # 畐
 
 
@@ -64,7 +64,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "浩": H("氵", "告"),
         "汀": H("氵", "丁"),
         "鴻": H("氵", V("工", "鳥")),
-        "潅": H("氵", V("艹", "隹")),
+        "潅": "潅",
         "溢": H("氵", "益"),
         "湛": H("氵", "甚"),
         "淳": H("氵", "享"),
@@ -72,11 +72,11 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "灘": H("氵", "難"),
         "汲": H("氵", "及"),
         "溜": H("氵", "留"),
-        "渕": H("氵", "淵"),
+        "渕": "渕",
         "沌": H("氵", "屯"),
         "濾": H("氵", "慮"),
         "濡": H("氵", "需"),
-        "淀": H("氵", "延"),
+        "淀": H("氵", "定"),
     },
     122: {
         "涅": H("氵", V("日", "土")),
@@ -98,7 +98,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "莉": V("艹", "利"),
         "苺": V("艹", "母"),
         "萩": V("艹", "秋"),
-        "藝": V("艹", H(V("土", "儿"), "丸"), "云"),
+        "藝": V("艹", "埶", "云"),
     },
     123: {
         "薙": V("艹", H("矢", "隹")),
@@ -109,12 +109,12 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "蓮": V("艹", "連"),
         "芙": V("艹", "夫"),
         "蓉": V("艹", "容"),
-        "蘭": V("艹", V("門", "東")),
+        "蘭": V("艹", "闌"),
         "芦": V("艹", "戸"),
         "薯": V("艹", "署"),
         "菖": V("艹", "昌"),
         "蕉": V("艹", "焦"),
-        "蕎": V("艹", V("夭", "高")),
+        "蕎": V("艹", "喬"),
         "蕗": V("艹", "路"),
         "茄": V("艹", "加"),
         "蔭": V("艹", "陰"),
@@ -142,7 +142,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "芹": V("艹", "斤"),
         "苫": V("艹", "占"),
         "蒼": V("艹", "倉"),
-        "藁": V("艹", H("木", "高")),
+        "藁": V("艹", "高", "木"),
     },
     125: {
         "蕪": V("艹", "無"),
@@ -157,7 +157,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "菅": V("艹", "官"),
         "葦": V("艹", "韋"),
         "迪": H("⻌", "由"),
-        "辿": H("⻌", "才"),
+        "辿": H("⻌", "山"),
         "這": H("⻌", "言"),
         "迂": H("⻌", "于"),
         "遁": H("⻌", "盾"),
@@ -180,7 +180,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "愈": V("俞", "心"),
         "恕": V("如", "心"),
         "昴": V("日", "卯"),
-        "晋": V("亜", "日"),
+        "晋": "晋",
         "晟": V("日", "成"),
         "暈": V("日", "軍"),
         "暉": H("日", "軍"),
@@ -241,7 +241,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "杖": H("木", "丈"),
         "樽": H("木", "尊"),
         "櫓": H("木", V("魚", "日")),
-        "橿": H("木", V("一", "田", "一", "田")),
+        "橿": H("木", "畺"),
         "杓": H("木", "勺"),
         "李": V("木", "子"),
         "棉": H("木", V("白", "巾")),
@@ -260,7 +260,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "栞": V(H("干", "干"), "木"),
         "椰": H("木", H("耳", "⻏")),
         "檀": H("木", V("亠", "回", "旦")),
-        "樗": H("木", "者"),
+        "樗": H("木", "雩"),
         "槻": H("木", "規"),
         "椙": H("木", "昌"),
         "彬": H("林", "彡"),
@@ -400,8 +400,10 @@ def update_catalog() -> None:
         "甫": "dog tag",
         "禾": "wheat",
         "云": "say",
-        "亚": "Asia",
         "亜": "Asia",
+        "畺": "border",
+        "雩": "rain rite",
+        "埶": "skill",
         "不": "negative",
         "工": "craft",
         "力": "power",
@@ -434,8 +436,19 @@ def update_catalog() -> None:
     }.items():
         labels.setdefault(g, lab)
 
+    intros = data.setdefault("introductions", [])
+    existing = {(int(i["lesson"]), i["glyph"]) for i in intros}
+    for item in [
+        {"lesson": 129, "beforeKanji": "橿", "glyph": "畺", "label": "border"},
+        {"lesson": 130, "beforeKanji": "樗", "glyph": "雩", "label": "rain rite"},
+    ]:
+        key = (item["lesson"], item["glyph"])
+        if key not in existing:
+            intros.append(item)
+            existing.add(key)
+
     CATALOG.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("updated catalog labels (no new intros)")
+    print("updated catalog")
 
 
 def main() -> None:

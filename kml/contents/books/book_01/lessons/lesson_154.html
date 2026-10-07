@@ -9,6 +9,29 @@
     content="A KML encore after the completed 153-lesson collection: the famously complex Chinese character 𰻞 (biáng), shown as a museum exhibit rather than a lesson to master."
   />
   <meta name="theme-color" content="#171512" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": "https://japanese.jp/kml/contents/books/book_01/lessons/lesson_154.html#biang-artwork",
+    "name": "Biáng (𰻞) — Brush Calligraphy",
+    "caption": "The complex Chinese character biáng (𰻞), presented as original brush-style artwork for Kanji・Music・Landscape.",
+    "description": "Original black ink brush-style rendering of the biáng character (𰻞) on a textured aged-gold background.",
+    "contentUrl": "https://japanese.jp/kml/assets/studies/biang-brush.jpg",
+    "url": "https://japanese.jp/kml/assets/studies/biang-brush.jpg",
+    "creator": {
+      "@type": "Person",
+      "name": "Stephen John Nelson"
+    },
+    "copyrightYear": 2026,
+    "copyrightHolder": {
+      "@type": "Person",
+      "name": "Stephen John Nelson"
+    },
+    "creditText": "Kanji・Music・Landscape",
+    "copyrightNotice": "© 2026 Stephen John Nelson"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -50,9 +73,18 @@
 
         <header class="encore-id reveal">
           <p class="room-eyebrow">Encore</p>
-          <h1 id="encore-glyph" lang="zh">𰻞</h1>
+          <h1 id="encore-glyph"><span lang="zh">𰻞</span></h1>
           <p class="encore-reading">biáng</p>
         </header>
+
+        <figure class="encore-artwork reveal">
+          <img
+            src="../../../../assets/studies/biang-brush.jpg"
+            alt="Brush-style rendering of the complex Chinese character biáng (𰻞) on an aged gold background"
+            width="2048"
+            height="2048"
+          />
+        </figure>
 
         <div class="encore-invitation reveal">
           <p class="encore-invitation-en">How many components can you find?</p>
@@ -121,6 +153,29 @@
           <p class="encore-reassurance-en">You don’t have to learn to write it.</p>
         </div>
 
+        <section class="encore-challenge reveal" aria-labelledby="encore-challenge-heading">
+          <h2 id="encore-challenge-heading">
+            <span class="encore-challenge-en">Now try it yourself</span>
+            <span class="encore-challenge-ja" lang="ja">今度は自分で書いてみましょう</span>
+          </h2>
+          <div class="encore-challenge-copy">
+            <p>
+              Take a pen and a blank sheet of paper. Without looking at the character, see if you can create biáng by following the hints in the song. Don’t worry about making it perfect — just listen, remember the components, and see how close you can get.
+            </p>
+            <p lang="ja">
+              ペンと白い紙を用意してください。字を見ないで、歌のヒントを聞きながら biáng の字を組み立ててみましょう。完璧に書けなくてもかまいません。歌を聞いて、覚えている部分をつなげながら、どこまで書けるか試してみてください。
+            </p>
+          </div>
+          <div class="encore-songs">
+            <a class="encore-song encore-song--en" href="https://youtu.be/cnwaQt0WJ8w" target="_blank" rel="noopener noreferrer">♪ Try it with the English song</a>
+            <a class="encore-song encore-song--ja" href="https://youtu.be/PDFGbXvzcDM" target="_blank" rel="noopener noreferrer" lang="ja">♪ 日本語の歌で挑戦</a>
+          </div>
+          <div class="encore-challenge-close">
+            <p>When you’re finished, look back at the character and compare. How much of its structure did you remember?</p>
+            <p lang="ja">書き終わったら、もう一度字を見て比べてみましょう。どのくらい構造を覚えていましたか。</p>
+          </div>
+        </section>
+
         <nav class="encore-nav" aria-label="Around the encore">
           <a href="lesson_153.html">← Lesson 153</a>
           <a href="../../15/">Book 15</a>
@@ -142,8 +197,13 @@
   </footer>
   <script>
   (function () {
+    /* The Encore is not a curriculum lesson. kml_last_lesson is read by the
+       bookshelf Continue link, which would otherwise label this page
+       "Continue Lesson 154". A previously stored 154 is returned to 153. */
     try {
-      localStorage.setItem("kml_last_lesson", "154");
+      if (localStorage.getItem("kml_last_lesson") === "154") {
+        localStorage.setItem("kml_last_lesson", "153");
+      }
     } catch (e) {}
   })();
   </script>

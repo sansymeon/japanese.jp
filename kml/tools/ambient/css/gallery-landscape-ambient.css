@@ -1,0 +1,110 @@
+/* Landscape ambient film overlays — title / Latin / brush inscriptions on artwork */
+
+.landscape-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landscape-overlay.exhibition-hidden {
+  display: none !important;
+}
+
+/*
+ * Latin titles are scaled to the 馬来西亜 brush plate (46vw wide; glyph block
+ * ~10–11vw tall). Room / restaurant readability via scale + contrast only —
+ * weight stays 400; fades stay slow. Brush plate rules below are untouched.
+ */
+.landscape-overlay-latin {
+  margin: 0;
+  max-width: min(92vw, 58rem);
+  text-align: center;
+  font-family: "Noto Serif JP", "Noto Serif CJK JP", "Source Serif 4", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(3.25rem, 7vw, 9.5rem);
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: rgba(18, 16, 12, 0.9);
+  text-shadow:
+    0 0 36px rgba(255, 236, 200, 0.28),
+    0 1px 14px rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  transition: opacity 6s ease-in-out;
+}
+
+/* Opening title (“Borneo Dreams”, “Borneo After Rain”) — long line, brush-comparable mass */
+.landscape-overlay-latin.is-opening-title {
+  max-width: min(94vw, 62rem);
+  font-size: clamp(3.5rem, 6.8vw, 9.25rem);
+  letter-spacing: 0.06em;
+  color: rgba(248, 244, 234, 0.95);
+  text-shadow:
+    0 0 48px rgba(0, 0, 0, 0.55),
+    0 2px 22px rgba(0, 0, 0, 0.48),
+    0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Latin “Malaysia” before the brush — short word, nearer to brush glyph height */
+.landscape-overlay-latin.is-malaysia-latin {
+  max-width: min(90vw, 54rem);
+  font-size: clamp(3.75rem, 8.5vw, 11rem);
+  letter-spacing: 0.14em;
+  color: rgba(12, 10, 8, 0.92);
+  text-shadow:
+    0 0 40px rgba(255, 220, 160, 0.48),
+    0 1px 14px rgba(0, 0, 0, 0.32),
+    0 0 2px rgba(255, 236, 200, 0.28);
+}
+
+/*
+ * Mid-film language verses (EN / MS / ZH / JA) — harness-approved treatment:
+ * ivory body size, open sea band below horizon, nudged off the sun reflection.
+ */
+.landscape-overlay-latin.is-language-verse {
+  position: absolute;
+  top: 62%;
+  left: 58%;
+  transform: translate(-50%, 0);
+  align-self: auto;
+  max-width: min(88vw, 44rem);
+  font-size: clamp(1.35rem, 3.2vw, 2.15rem);
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  color: #f4f0e6;
+  text-shadow:
+    0 0 28px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.landscape-overlay-latin.is-visible {
+  opacity: 1;
+}
+
+.landscape-overlay-brush {
+  position: absolute;
+  left: 58%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 46vw;
+  height: auto;
+  max-width: none;
+  opacity: 0;
+  transition: opacity 7s ease-in-out;
+  pointer-events: none;
+}
+
+.landscape-overlay-brush.is-visible {
+  opacity: var(--landscape-brush-peak, 0.78);
+}
+
+.exhibition-root.is-landscape-ambient .exhibition-title,
+.exhibition-root.is-landscape-ambient .exhibition-notes,
+.exhibition-root.is-landscape-ambient .exhibition-kanji,
+.exhibition-root.is-landscape-ambient .exhibition-keyword {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
