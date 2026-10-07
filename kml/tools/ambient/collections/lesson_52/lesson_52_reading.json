@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_52_reading",
+  "title": "Lesson 52 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/reading_v2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 52,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v2",
+    "soundtrackTarget": "12:41",
+    "soundtrackDurationSec": 760.97,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L52_register",
+      "kanji": "簿",
+      "keyword": "register",
+      "image": "studies/register.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>簿<rt>ぼ</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>けば、　<ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねた<ruby>日々<rt>ひび</rt></ruby>が<ruby>並<rt>なら</rt></ruby>んでいる。<br><ruby>記録<rt>きろく</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>時<rt>とき</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る。",
+        "en": "Opening an old ledger,\n\nthe days are lined up one by one.\n\nRecords quietly preserve time."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844990
+    },
+    {
+      "id": "L52_fabricate",
+      "kanji": "築",
+      "keyword": "fabricate",
+      "image": "studies/fabricate.jpg",
+      "verse": {
+        "jpHtml": "<ruby>石<rt>いし</rt></ruby>を<ruby>一<rt>ひと</rt></ruby>つずつ<ruby>積<rt>つ</rt></ruby>み、　<ruby>家<rt>いえ</rt></ruby>は<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>築<rt>きず</rt></ruby>かれる。<br><ruby>大<rt>おお</rt></ruby>きな<ruby>夢<rt>ゆめ</rt></ruby>は<ruby>小<rt>ちい</rt></ruby>さな<ruby>一歩<rt>いっぽ</rt></ruby>から。",
+        "en": "Stone by stone,\n\na house is built.\n\nGreat dreams begin with small steps."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844990
+    },
+    {
+      "id": "L52_basket",
+      "kanji": "篭",
+      "keyword": "basket",
+      "image": "studies/basket.jpg",
+      "verse": {
+        "jpHtml": "<ruby>竹<rt>たけ</rt></ruby>の<ruby>篭<rt>かご</rt></ruby>には、　<ruby>朝採<rt>あさど</rt></ruby>りの<ruby>野菜<rt>やさい</rt></ruby>が<ruby>並<rt>なら</rt></ruby>ぶ。<br><ruby>実<rt>み</rt></ruby>のりは<ruby>手<rt>て</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>微笑<rt>ほほえ</rt></ruby>む。",
+        "en": "A bamboo basket\n\nholds freshly picked vegetables.\n\nThe harvest smiles in your hands."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844990
+    },
+    {
+      "id": "L52_person",
+      "kanji": "人",
+      "keyword": "person",
+      "image": "studies/person.jpg",
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>は<ruby>一人<rt>ひとり</rt></ruby>では、　<ruby>歩<rt>ある</rt></ruby>けない<ruby>道<rt>みち</rt></ruby>がある。<br><ruby>出会<rt>であ</rt></ruby>いが<ruby>旅<rt>たび</rt></ruby>を<ruby>豊<rt>ゆた</rt></ruby>かにする。",
+        "en": "There are roads\n\nno one walks alone.\n\nMeeting others enriches the journey."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844990
+    },
+    {
+      "id": "L52_assistant",
+      "kanji": "佐",
+      "keyword": "assistant",
+      "image": "studies/assistant.jpg",
+      "verse": {
+        "jpHtml": "そっと<ruby>佐<rt>たす</rt></ruby>ける<ruby>手<rt>て</rt></ruby>は、　<ruby>大<rt>おお</rt></ruby>きな<ruby>声<rt>こえ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>さない。<br><ruby>優<rt>やさ</rt></ruby>しさは<ruby>静<rt>しず</rt></ruby>かに<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "A helping hand\n\nneeds no loud voice.\n\nKindness quietly reaches others."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844990
+    },
+    {
+      "id": "L52_partner",
+      "kanji": "侶",
+      "keyword": "partner",
+      "image": "studies/partner.jpg",
+      "verse": {
+        "jpHtml": "<ruby>旅<rt>たび</rt></ruby>の<ruby>侶<rt>りょ</rt></ruby>が、　<ruby>夕焼<rt>ゆうや</rt></ruby>けを<ruby>共<rt>とも</rt></ruby>に<ruby>眺<rt>なが</rt></ruby>める。<br><ruby>景色<rt>けしき</rt></ruby>は<ruby>分<rt>わ</rt></ruby>け<ruby>合<rt>あ</rt></ruby>うほど<ruby>美<rt>うつく</rt></ruby>しい。",
+        "en": "A traveling companion\n\nwatches the sunset beside you.\n\nBeauty grows when shared."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844990
+    },
+    {
+      "id": "L52_however",
+      "kanji": "但",
+      "keyword": "however",
+      "image": "studies/however.jpg",
+      "verse": {
+        "jpHtml": "<ruby>雲<rt>くも</rt></ruby>は<ruby>美<rt>うつく</rt></ruby>しい。　<ruby>但<rt>ただ</rt></ruby>し<ruby>雨<rt>あめ</rt></ruby>も<ruby>運<rt>はこ</rt></ruby>んでくる。<br>すべてには<ruby>二<rt>ふた</rt></ruby>つの<ruby>顔<rt>かお</rt></ruby>がある。",
+        "en": "Clouds are beautiful,\n\nyet they also bring rain.\n\nEverything has two sides."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844990
+    },
+    {
+      "id": "L52_dwelling",
+      "kanji": "住",
+      "keyword": "dwelling",
+      "image": "studies/dwelling.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>家<rt>いえ</rt></ruby>に<ruby>住<rt>す</rt></ruby>めば、　<ruby>四季<rt>しき</rt></ruby>の<ruby>音<rt>おと</rt></ruby>が<ruby>聞<rt>き</rt></ruby>こえる。<br><ruby>住<rt>す</rt></ruby>まいは<ruby>心<rt>こころ</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>になる。",
+        "en": "Living in an old house,\n\nyou hear the sounds of every season.\n\nA home becomes a garden for the heart."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844989
+    },
+    {
+      "id": "L52_rank",
+      "kanji": "位",
+      "keyword": "rank",
+      "image": "studies/rank.jpg",
+      "verse": {
+        "jpHtml": "<ruby>高<rt>たか</rt></ruby>い<ruby>位<rt>くらい</rt></ruby>より、　<ruby>深<rt>ふか</rt></ruby>い<ruby>思<rt>おも</rt></ruby>いやりが<ruby>尊<rt>とうと</rt></ruby>い。<br><ruby>人<rt>ひと</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>で<ruby>輝<rt>かがや</rt></ruby>く。",
+        "en": "More than high rank,\n\ndeep compassion is precious.\n\nPeople shine through their hearts."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844989
+    },
+    {
+      "id": "L52_go_between",
+      "kanji": "仲",
+      "keyword": "go between",
+      "image": "studies/go_between.jpg",
+      "verse": {
+        "jpHtml": "<ruby>仲<rt>なか</rt></ruby>の<ruby>良<rt>よ</rt></ruby>い<ruby>友<rt>とも</rt></ruby>と、　<ruby>静<rt>しず</rt></ruby>かな<ruby>道<rt>みち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>く。<br><ruby>語<rt>かた</rt></ruby>らない<ruby>時間<rt>じかん</rt></ruby>も<ruby>宝物<rt>たからもの</rt></ruby>。",
+        "en": "Walking a quiet path\n\nwith a close friend,\n\neven silence is a treasure."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788844989
+    },
+    {
+      "id": "L52_body",
+      "kanji": "体",
+      "keyword": "body",
+      "image": "studies/body.jpg",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>体<rt>からだ</rt></ruby>を<ruby>伸<rt>の</rt></ruby>ばせば、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>空気<rt>くうき</rt></ruby>が<ruby>満<rt>み</rt></ruby>ちてくる。<br><ruby>健<rt>すこ</rt></ruby>やかさは<ruby>毎日<rt>まいにち</rt></ruby>の<ruby>贈<rt>おく</rt></ruby>り<ruby>物<rt>もの</rt></ruby>。",
+        "en": "Stretching in the morning,\n\nfresh air fills the body.\n\nHealth is a daily gift."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_permanence",
+      "kanji": "悠",
+      "keyword": "permanence",
+      "image": "studies/permanence.jpg",
+      "verse": {
+        "jpHtml": "<ruby>悠<rt>ゆっ</rt></ruby>くり<ruby>流<rt>なが</rt></ruby>れる<ruby>川<rt>かわ</rt></ruby>は、　<ruby>急<rt>いそ</rt></ruby>がず<ruby>海<rt>うみ</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かう。<br>ゆとりは<ruby>遠<rt>とお</rt></ruby>くまで<ruby>届<rt>とど</rt></ruby>く<ruby>力<rt>ちから</rt></ruby>。",
+        "en": "The river flows unhurriedly\n\ntoward the sea.\n\nCalmness carries us far."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_affair",
+      "kanji": "件",
+      "keyword": "affair",
+      "image": "studies/affair.jpg",
+      "verse": {
+        "jpHtml": "<ruby>一件<rt>いっけん</rt></ruby>ずつ、　<ruby>丁寧<rt>ていねい</rt></ruby>に<ruby>向<rt>む</rt></ruby>き<ruby>合<rt>あ</rt></ruby>ってゆく。<br><ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねが<ruby>信頼<rt>しんらい</rt></ruby>になる。",
+        "en": "One matter at a time,\n\nhandled with care.\n\nSteady work becomes trust."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_attend_to",
+      "kanji": "仕",
+      "keyword": "attend to",
+      "image": "studies/attend_to.jpg",
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>に<ruby>仕<rt>つか</rt></ruby>える<ruby>心<rt>こころ</rt></ruby>は、　<ruby>見返<rt>みかえ</rt></ruby>りを<ruby>求<rt>もと</rt></ruby>めない。<br><ruby>誠実<rt>せいじつ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>育<rt>そだ</rt></ruby>つ。",
+        "en": "A heart that serves others\n\nasks for nothing in return.\n\nSincerity grows quietly."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_other",
+      "kanji": "他",
+      "keyword": "other",
+      "image": "studies/other.jpg",
+      "verse": {
+        "jpHtml": "<ruby>他<rt>ほか</rt></ruby>の<ruby>花<rt>はな</rt></ruby>も、　<ruby>自分<rt>じぶん</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じ<ruby>空<rt>そら</rt></ruby>の<ruby>下<rt>した</rt></ruby>で<ruby>咲<rt>さ</rt></ruby>く。<br><ruby>違<rt>ちが</rt></ruby>いは<ruby>豊<rt>ゆた</rt></ruby>かさになる。",
+        "en": "Other flowers bloom\n\nbeneath the same sky.\n\nDifferences become richness."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_prostrated",
+      "kanji": "伏",
+      "keyword": "prostrated",
+      "image": "studies/prostrated.jpg",
+      "verse": {
+        "jpHtml": "<ruby>風<rt>かぜ</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>い<ruby>日<rt>ひ</rt></ruby>は、　<ruby>草<rt>くさ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>伏<rt>ふ</rt></ruby>せて<ruby>待<rt>ま</rt></ruby>つ。<br><ruby>柔<rt>やわ</rt></ruby>らかさは<ruby>強<rt>つよ</rt></ruby>さでもある。",
+        "en": "On windy days,\n\nthe grass bends low and waits.\n\nGentleness is also strength."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_transmit",
+      "kanji": "伝",
+      "keyword": "transmit",
+      "image": "studies/transmit.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>歌<rt>うた</rt></ruby>は、　<ruby>世代<rt>せだい</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて<ruby>伝<rt>つた</rt></ruby>わる。<br><ruby>心<rt>こころ</rt></ruby>は<ruby>言葉<rt>ことば</rt></ruby>に<ruby>宿<rt>やど</rt></ruby>る。",
+        "en": "An old song\n\nis passed from generation to generation.\n\nThe heart lives within words."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_buddha",
+      "kanji": "仏",
+      "keyword": "buddha",
+      "image": "studies/buddha.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>仏<rt>ほとけ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に、　<ruby>一本<rt>いっぽん</rt></ruby>の<ruby>花<rt>はな</rt></ruby>を<ruby>供<rt>そな</rt></ruby>える。<br><ruby>感謝<rt>かんしゃ</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>を<ruby>穏<rt>おだ</rt></ruby>やかにする。",
+        "en": "Before the quiet Buddha,\n\na single flower is offered.\n\nGratitude brings peace to the heart."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_rest",
+      "kanji": "休",
+      "keyword": "rest",
+      "image": "studies/rest.jpg",
+      "verse": {
+        "jpHtml": "<ruby>木陰<rt>こかげ</rt></ruby>で<ruby>少<rt>すこ</rt></ruby>し<ruby>休<rt>やす</rt></ruby>めば、　<ruby>風<rt>かぜ</rt></ruby>が<ruby>疲<rt>つか</rt></ruby>れを<ruby>運<rt>はこ</rt></ruby>び<ruby>去<rt>さ</rt></ruby>る。<br><ruby>休<rt>やす</rt></ruby>むことも<ruby>前<rt>まえ</rt></ruby>へ<ruby>進<rt>すす</rt></ruby>む<ruby>力<rt>ちから</rt></ruby>。",
+        "en": "Resting beneath a tree,\n\nthe breeze carries away fatigue.\n\nRest is also a way forward."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845890
+    },
+    {
+      "id": "L52_temporary",
+      "kanji": "仮",
+      "keyword": "temporary",
+      "image": "studies/temporary.jpg",
+      "verse": {
+        "jpHtml": "<ruby>仮<rt>かり</rt></ruby>の<ruby>橋<rt>はし</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>り、　やがて<ruby>本当<rt>ほんとう</rt></ruby>の<ruby>道<rt>みち</rt></ruby>へ<ruby>着<rt>つ</rt></ruby>く。<br><ruby>始<rt>はじ</rt></ruby>まりは<ruby>小<rt>ちい</rt></ruby>さくてもよい。",
+        "en": "Crossing a temporary bridge,\n\none eventually reaches the true path.\n\nEvery beginning may be small."
+      },
+      "meta": {
+        "lesson": 52,
+        "experimental": true
+      },
+      "imageRev": 1788845889
+    }
+  ]
+}

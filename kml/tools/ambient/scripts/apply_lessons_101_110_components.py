@@ -17,6 +17,16 @@ def render(node, indent: int = 2) -> str:
     if isinstance(node, str):
         return f'{pad}<span class="kanji-part">{node}</span>\n'
     kind, children = node
+    if kind == "e":
+        outer, inner = children
+        return (
+            f'{pad}<div class="component-layout enclosure-layout">\n'
+            f'{pad}  <span class="kanji-part enclosure-part">{outer}</span>\n'
+            f'{pad}  <div class="enclosure-inner">\n'
+            f"{render(inner, indent + 4)}"
+            f"{pad}  </div>\n"
+            f"{pad}</div>\n"
+        )
     cls = "stack-horizontal" if kind == "h" else "stack-vertical"
     out = [f'{pad}<div class="component-layout {cls}">\n']
     for c in children:
@@ -33,7 +43,11 @@ def box(node) -> str:
             "</div>"
         )
     kind = node[0]
-    attr = ' data-render-layout="h"' if kind == "h" else ' data-render-layout="v"'
+    attr = {
+        "h": ' data-render-layout="h"',
+        "v": ' data-render-layout="v"',
+        "e": ' data-render-layout="e"',
+    }[kind]
     return (
         f'<div class="component-box"{attr}>\n'
         f"{render(node, 2)}"
@@ -49,22 +63,23 @@ def V(*xs):
     return ("v", list(xs))
 
 
-AWNING_PEOPLE = V(H("人", "人"), "一", "人")  # 㑒 nest (験 etc.)
+def E(outer, inner):
+    return ("e", [outer, inner])
 
 
 STRUCTURES: dict[int, dict[str, object]] = {
     101: {
-        "脈": H("月", "永"),
-        "衆": V("血", H("人", "人")),
+        "脈": H("月", "𠂢"),
+        "衆": "衆",
         "逓": H("⻌", V("厂", "䒑", "巾")),
-        "段": H(V("丨", "几"), "殳"),
+        "段": "段",
         "鍛": H("金", "段"),
         "后": V("厂", "口"),
         "幻": H("幺", "𠃌"),
         "司": V("𠃌", "一", "口"),
         "伺": H("亻", "司"),
         "詞": H("言", "司"),
-        "飼": H("食", "司"),
+        "飼": H("飠", "司"),
         "嗣": H(V("口", "冊"), "司"),
         "舟": "舟",
         "舶": H("舟", "白"),
@@ -81,7 +96,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "瓜": "瓜",
         "弧": H("弓", "瓜"),
         "孤": H("子", "瓜"),
-        "繭": V("艹", H("糸", "虫")),
+        "繭": V("艹", E("冂", H("糸", "丨", "虫"))),
         "益": V("丷", "八", "皿"),
         "暇": H("日", "叚"),
         "敷": H(V("甫", "方"), "攵"),
@@ -91,7 +106,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "飛": "飛",
         "沈": H("氵", "冘"),
         "枕": H("木", "冘"),
-        "妻": V("十", "ヨ", "女"),
+        "妻": V("十", "彐", "女"),
         "凄": H("冫", "妻"),
         "衰": "衰",
         "衷": V("亠", "中", "𧘇"),
@@ -101,7 +116,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "麺": H("麦", "面"),
         "革": "革",
         "靴": H("革", "化"),
-        "覇": V("西", H("革", "月")),
+        "覇": V("覀", H("革", "月")),
         "声": V("士", "尸"),
         "眉": V("𠃜", "目"),
         "呉": "呉",
@@ -145,7 +160,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "禅": H("礻", "単"),
         "弾": H("弓", "単"),
         "桜": H("木", V("⺍", "女")),
-        "獣": H("単", "犬"),
+        "獣": H("単", V("口", "犬")),
         "脳": H("月", V("⺍", "囟")),
         "悩": H("忄", V("⺍", "囟")),
         "厳": V("⺍", "厂", "敢"),
@@ -182,8 +197,8 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "剛": H("岡", "刂"),
         "缶": "缶",
         "陶": H("阝", V("勹", "缶")),
-        "揺": H("扌", V("爪", "缶")),
-        "謡": H("言", V("爪", "缶")),
+        "揺": H("扌", V("爫", "缶")),
+        "謡": H("言", V("爫", "缶")),
     },
     107: {
         "鬱": V(H("木", "缶", "木"), "冖", H("鬯", "彡")),
@@ -200,7 +215,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "像": H("亻", "象"),
         "馬": "馬",
         "駒": H("馬", "句"),
-        "験": H("馬", AWNING_PEOPLE),
+        "験": H("馬", "㑒"),
         "騎": H("馬", "奇"),
         "駐": H("馬", "主"),
         "駆": H("馬", "区"),
@@ -216,17 +231,17 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "虎": V("虍", "儿"),
         "虜": V("虍", "男"),
         "膚": V("虍", "胃"),
-        "虚": V("虍", "业"),
+        "虚": "虚",
         "戯": H("虚", "戈"),
         "虞": V("虍", "呉"),
         "慮": V("虍", "思"),
         "劇": H(V("虍", "豕"), "刂"),
-        "虐": V("虍", "乚"),
+        "虐": "虐",
         "鹿": "鹿",
         "麓": V("林", "鹿"),
         "薦": V("艹", "廌"),
         "慶": "慶",
-        "麗": V("丽", "鹿"),
+        "麗": "麗",
         "熊": V("能", "灬"),
     },
     109: {
@@ -417,7 +432,7 @@ def update_catalog() -> None:
         "舄": "magpie",
         "龙": "dragon",
         "龍": "dragon",
-        "丽": "lovely",
+        "㑒": "assembly",
         "廌": "unicorn",
         "敢": "daring",
         "亟": "urgency",

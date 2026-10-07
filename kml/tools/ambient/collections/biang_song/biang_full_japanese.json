@@ -1,0 +1,342 @@
+{
+  "id": "biang_full_japanese",
+  "title": "Biáng — The Long Road",
+  "language": "ja",
+  "kind": "full-movie",
+  "visual": "biang_visual.json",
+  "playable": false,
+  "production": "Preview only. Do not render the production MP4 until this timeline is approved.",
+  "audio": {
+    "path": "kml/tools/ambient/audio/Biáng_The_Long_Road_full_song_japanese.mp3",
+    "enginePath": "audio/Biáng_The_Long_Road_full_song_japanese.mp3",
+    "durationSec": 268.278,
+    "lyricClockEndSec": 263,
+    "note": "The file measures 268.278s. The lyric clock ends at 4:23 (263s). The picture is black from 4:23 through the untrimmed tail. The recording is not trimmed or stretched."
+  },
+  "timingNotes": [
+    "This timeline belongs only to the Japanese 16:9 full movie.",
+    "Lyric start times are the Japanese full-song cues. They are not retimed.",
+    "Verse 1 is scattered components with bilingual labels. The shared verse1Exit clears that field before 0:50.",
+    "Verse 2 assembles the shared full-canvas PNGs with one fill-frame transform.",
+    "The brush bridge at 1:55 is Japanese-only. The English full movie does not use brushBridge.",
+    "Journey times are visual holds, not lyric clocks. Later lines do not create captions."
+  ],
+  "presentation": {
+    "id": "full-16:9-ja",
+    "aspect": "16 / 9",
+    "dir": "../biang/biang_full_movie",
+    "background": "biang_background.jpg",
+    "intro": "biang_noodles_16_9.jpg",
+    "finalArtwork": "biang_brush_16_9.jpg",
+    "finalFit": "fill",
+    "positions": "x,y",
+    "assembly": "fill-frame",
+    "assemblyNote": "Component PNGs are the shared 1920×1080 canvases in collections/biang/. On this 16:9 stage every layer fills the same rectangle. No per-layer crop, scale, or position.",
+    "introFade": {
+      "fadeInStartSec": 0.3,
+      "fadeInSec": 3.4,
+      "crossfadeSec": 2.0,
+      "settleSec": 0.5,
+      "note": "From black into biang_noodles_16_9.jpg. The crossfade to biang_background.jpg runs 14.5–16.5s, settled before the 0:17 lyric."
+    }
+  },
+  "sections": {
+    "intro": {
+      "startSec": 0,
+      "endSec": 17
+    },
+    "verse1": {
+      "startSec": 17,
+      "endSec": 50
+    },
+    "verse2": {
+      "startSec": 50,
+      "endSec": 85
+    },
+    "fieldHold": {
+      "startSec": 85,
+      "durationSec": 30,
+      "note": "Complete 𰻞 holds across ひとつひとつつないでゆけば through ひとつのかたちにかわってゆく."
+    },
+    "clearComponents": {
+      "startSec": 115,
+      "durationSec": 8,
+      "note": "The PNG construction and parchment dissolve away as the brush artwork arrives, 1:55–2:03."
+    },
+    "brushBridge": {
+      "startSec": 115,
+      "fullSec": 123,
+      "holdUntilSec": 129,
+      "blackSec": 131,
+      "note": "1:55 dissolve begins, 2:03 brush is full, hold to 2:09, black at 2:11."
+    },
+    "pause": {
+      "startSec": 129,
+      "durationSec": 2
+    },
+    "journey": {
+      "startSec": 131
+    },
+    "shopFade": {
+      "startSec": 244,
+      "durationSec": 3,
+      "note": "Noodle shop fades to black across 4:04–4:07."
+    },
+    "reveal": {
+      "startSec": 250,
+      "durationSec": 3,
+      "note": "Final brush returns at 4:10 and is fully up at 4:13."
+    },
+    "artworkHold": {
+      "startSec": 253,
+      "endSec": 260
+    },
+    "endFade": {
+      "startSec": 260,
+      "endSec": 263,
+      "note": "Black at 4:23. Audio continues, untrimmed, to 268.278s."
+    }
+  },
+  "journey": [
+    {
+      "file": "biang_movie_1.jpg",
+      "title": "Moon",
+      "startSec": 131,
+      "fadeSec": 2
+    },
+    {
+      "file": "biang_movie_2.jpg",
+      "title": "Thread",
+      "startSec": 148,
+      "fadeSec": 2
+    },
+    {
+      "file": "biang_movie_3.jpg",
+      "title": "Horse",
+      "startSec": 165,
+      "fadeSec": 2
+    },
+    {
+      "file": "biang_movie_4.jpg",
+      "title": "Road",
+      "startSec": 183,
+      "fadeSec": 2
+    },
+    {
+      "file": "biang_movie_5.jpg",
+      "title": "Saber",
+      "startSec": 201,
+      "fadeSec": 2
+    },
+    {
+      "file": "biang_movie_6.jpg",
+      "title": "Noodle shop",
+      "startSec": 219,
+      "fadeSec": 2
+    }
+  ],
+  "laterLyrics": {
+    "drivesVisuals": false,
+    "note": "Kept so the clock can be checked. They do not create captions or component cues.",
+    "lines": [
+      { "startSec": 85, "text": "ひとつひとつつないでゆけば" },
+      { "startSec": 94, "text": "みえなかったものがみえてくる" },
+      { "startSec": 102, "text": "とおくはなれたかけらのすべて" },
+      { "startSec": 109, "text": "ひとつのかたちにかわってゆく" },
+      { "startSec": 131, "text": "ほしがきえてよるがあけても" },
+      { "startSec": 135, "text": "まだこのたびはおわらない" },
+      { "startSec": 139, "text": "おぼえたしるしをたどりながら" },
+      { "startSec": 144, "text": "まよわずさきへあるいてゆく" },
+      { "startSec": 150, "text": "ひとつひとつつないでゆけば" },
+      { "startSec": 158, "text": "みえなかったものがみえてくる" },
+      { "startSec": 166, "text": "とおくはなれたかけらのすべて" },
+      { "startSec": 173, "text": "ひとつのかたちにかわってゆく" },
+      { "startSec": 183, "text": "むずかしそうにみえるものでも" },
+      { "startSec": 191, "text": "ちいさくわければこわくない" },
+      { "startSec": 195, "text": "おぼえたけしきをうたにすれば" },
+      { "startSec": 199, "text": "わすれたときにもかえってこられる" },
+      { "startSec": 209, "text": "ひとつひとつつないでゆけば" },
+      { "startSec": 218, "text": "ながかったたびもおわりにちかづく" },
+      { "startSec": 227, "text": "こころにのこったじゅういちのしるし" },
+      { "startSec": 235, "text": "さいごにひとつのかたちになる" }
+    ]
+  },
+  "cues": [
+    {
+      "id": "v1-1",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 17,
+      "durationSec": 4,
+      "text": "くものあなからつきがみえる",
+      "components": ["ana", "tsuki"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-2",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 21,
+      "durationSec": 3,
+      "text": "みじかいいとがかぜにゆれる",
+      "components": ["yao-1"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-3",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 24,
+      "durationSec": 5,
+      "text": "「まっているよ」ときみがいう",
+      "components": ["gen"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-4",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 29,
+      "durationSec": 4,
+      "text": "もういっぽんのみじかいいと",
+      "components": ["yao-2"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-5",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 33,
+      "durationSec": 4,
+      "text": "ながいよるをうまにのって",
+      "components": ["cho-1", "uma"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-6",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 37,
+      "durationSec": 4,
+      "text": "ながいたびをどこまでも",
+      "components": ["cho-2"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-7",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 41,
+      "durationSec": 4,
+      "text": "サーベルをしずかにおさえ",
+      "components": ["saber"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-8",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 45,
+      "durationSec": 2.4,
+      "text": "こころのままにみちをゆく",
+      "components": ["kokoro", "road"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-1",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 50,
+      "durationSec": 3,
+      "text": "くものあなからつきがみえる",
+      "components": ["ana", "tsuki"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-2",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 53,
+      "durationSec": 5,
+      "text": "みじかいいとがかぜにゆれる",
+      "components": ["yao-1"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-3",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 58,
+      "durationSec": 5,
+      "text": "「まっているよ」ときみがいう",
+      "components": ["gen"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-4",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 63,
+      "durationSec": 5,
+      "text": "もういっぽんのみじかいいと",
+      "components": ["yao-2"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-5",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 68,
+      "durationSec": 3,
+      "text": "ながいよるをうまにのって",
+      "components": ["cho-1", "uma"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-6",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 71,
+      "durationSec": 4,
+      "text": "ながいたびをどこまでも",
+      "components": ["cho-2"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-7",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 75,
+      "durationSec": 4,
+      "text": "サーベルをしずかにおさえ",
+      "components": ["saber"],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-8",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 79,
+      "durationSec": 6,
+      "text": "こころのままにみちをゆく",
+      "components": ["kokoro", "road"],
+      "timingStatus": "line"
+    }
+  ]
+}

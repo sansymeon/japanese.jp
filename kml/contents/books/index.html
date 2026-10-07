@@ -323,8 +323,10 @@
 
     var last = localStorage.getItem("kml_last_lesson");
     if (last) {
-      var num = String(parseInt(last, 10)).padStart(2, "0");
       var n = parseInt(last, 10);
+      /* 154 is the optional Encore, not curriculum lesson 154 of 153. */
+      if (n === 154) n = 153;
+      var num = String(n).padStart(2, "0");
       var book = n >= 1 && n <= 153 ? Math.ceil(n / 10) : null;
       var box = document.getElementById("continue");
       if (box && book && book <= 16) {

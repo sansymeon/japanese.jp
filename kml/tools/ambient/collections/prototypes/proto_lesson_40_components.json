@@ -56,7 +56,7 @@
     "theme": "kanjiComponents",
     "stage": "components",
     "lesson": 40,
-    "sceneCount": 20,
+    "sceneCount": 21,
     "source": "lesson_html",
     "sourcePolicy": "Reviewed lesson HTML is canonical. Original component/v4c data was placeholder scaffolding, not editorial intent. Self-reference parts are stripped as placeholder remnants. v4c only if HTML has no usable parts.",
     "htmlDatabase": "data/kanji/kml_component_database.json",
@@ -67,30 +67,6 @@
     "schema": "kanji|newComponent|newFamily"
   },
   "scenes": [
-    {
-      "type": "kanji",
-      "id": "L40_love",
-      "kanji": "愛",
-      "keyword": "love",
-      "components": [
-        {
-          "glyph": "爫",
-          "label": "vulture"
-        },
-        {
-          "glyph": "冖",
-          "label": "cover"
-        },
-        {
-          "glyph": "心",
-          "label": "heart"
-        },
-        {
-          "glyph": "夂",
-          "label": "winter"
-        }
-      ]
-    },
     {
       "type": "kanji",
       "id": "L40_slope",
@@ -361,6 +337,30 @@
     },
     {
       "type": "kanji",
+      "id": "L40_love",
+      "kanji": "愛",
+      "keyword": "love",
+      "components": [
+        {
+          "glyph": "爫",
+          "label": "vulture"
+        },
+        {
+          "glyph": "冖",
+          "label": "cover"
+        },
+        {
+          "glyph": "心",
+          "label": "heart"
+        },
+        {
+          "glyph": "夂",
+          "label": "winter"
+        }
+      ]
+    },
+    {
+      "type": "kanji",
       "id": "L40_unclear",
       "kanji": "曖",
       "keyword": "unclear",
@@ -376,6 +376,12 @@
       ]
     },
     {
+      "type": "newComponent",
+      "id": "L40_intro_private",
+      "glyph": "厶",
+      "label": "private"
+    },
+    {
       "type": "kanji",
       "id": "L40_pay",
       "kanji": "払",
@@ -386,8 +392,8 @@
           "label": "fingers"
         },
         {
-          "glyph": "ム",
-          "label": "elbow"
+          "glyph": "厶",
+          "label": "private"
         }
       ]
     },
@@ -402,8 +408,8 @@
           "label": "cave"
         },
         {
-          "glyph": "ム",
-          "label": "elbow"
+          "glyph": "厶",
+          "label": "private"
         }
       ]
     }

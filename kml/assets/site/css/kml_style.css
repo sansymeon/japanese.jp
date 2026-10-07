@@ -501,6 +501,22 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
+/* A grouped interior needs a larger gate so both pieces sit in the opening. */
+.enclosure-layout:has(.enclosure-inner .stack-horizontal) > .enclosure-part,
+.enclosure-layout:has(.enclosure-inner .stack-vertical) > .enclosure-part {
+  font-size: 6.5rem;
+}
+
+.enclosure-inner .stack-horizontal,
+.enclosure-inner .stack-vertical {
+  gap: 0;
+}
+
+.enclosure-inner .stack-horizontal .kanji-part,
+.enclosure-inner .stack-vertical .kanji-part {
+  font-size: 1.05rem;
+}
 /* =====================================================
    SPECIAL SIMPLE SHAPES
    ===================================================== */
@@ -716,6 +732,60 @@ h1 {
   justify-content: center;
   gap: 12px; /* optional spacing between stamps */
   margin-top: 20px; /* optional breathing space */
+}
+
+/* Closing note on Lesson 153 — optional Encore, not a 154th lesson. */
+.encore-invite {
+  max-width: 34rem;
+  margin: 2.75rem auto 0.25rem;
+  padding: 1.65rem 0.5rem 0.35rem;
+  text-align: center;
+  border-top: 1px solid rgba(201, 164, 88, 0.28);
+}
+
+.encore-invite p {
+  margin: 0;
+}
+
+.encore-invite-en {
+  font-family: "Noto Serif JP", "Yuji Syuku", serif;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: var(--page-ink);
+}
+
+.encore-invite-en + .encore-invite-en {
+  margin-top: 0.35rem;
+}
+
+.encore-invite-ja {
+  margin-top: 0.85rem;
+  font-family: "Noto Serif JP", "Yuji Syuku", serif;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: rgba(243, 241, 235, 0.72);
+}
+
+.encore-invite-ja + .encore-invite-ja {
+  margin-top: 0.2rem;
+}
+
+.encore-invite-link {
+  display: inline-block;
+  margin-top: 1.45rem;
+  padding-bottom: 0.12rem;
+  color: var(--nav-gold);
+  font-family: "Noto Serif JP", "Yuji Syuku", serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 164, 88, 0.55);
+}
+
+.encore-invite-link:hover,
+.encore-invite-link:focus-visible {
+  color: #e4d3a4;
+  border-bottom-color: var(--nav-gold);
 }
 
 

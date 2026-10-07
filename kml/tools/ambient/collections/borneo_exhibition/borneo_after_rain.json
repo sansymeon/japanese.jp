@@ -3,29 +3,49 @@
   "assetsBase": "../../assets",
   "id": "borneo_after_rain",
   "title": "Borneo After Rain",
-  "notes": "Welcome to Borneo as it really exists — Sabah after rain. Natural landscape, not a tropical-resort fantasy. Soundtrack and YouTube links are placeholders until final recordings exist.",
+  "landscapeAmbient": true,
+  "notes": "One-hour Sabah ambient journey. Soundtrack ambient_borneo_1.mp3 (3599.464s measured). Opening title on first landscape. Sunset: Malaysia → 馬来西亜 (charcoal). Music ends with fade to black; gold 漢 crest silent after. No Jungle Spirit kanji overlays.",
   "soundtrack": {
-    "main": null
+    "main": "audio/ambient_borneo_1.mp3"
   },
   "youtube_url": null,
   "bookends": {
     "mode": "silentCrest",
     "closing": {
       "image": "images/gold_closing.png",
-      "bookendSize": "small"
+      "bookendSize": "small",
+      "silentAfterSoundtrack": true,
+      "holdUntilSoundtrackEnds": true
     }
   },
   "exhibition": {
     "artworkArrivalMs": 0,
     "artworkArrivalFadeMs": 2500,
-    "artworkAloneMs": 60000,
-    "exhibitTransitionMs": 2500,
-    "kenBurnsDurationMs": 65000,
+    "exhibitionBlackBeforeMs": 1500,
     "openingBlackBeforeMs": 1500,
-    "closingBlackBeforeMs": 800,
-    "closingRevealMs": 2500,
-    "closingHoldMs": 4000,
-    "closingExhaleMs": 4000
+    "artworkAloneMs": 63686,
+    "kanjiRevealMs": 0,
+    "imageVerseKanjiHoldMs": 0,
+    "imageVerseKanjiFadeMs": 0,
+    "titleFadeMs": 0,
+    "verseJpRevealMs": 0,
+    "verseJpHoldMs": 0,
+    "verseJpFadeMs": 0,
+    "verseEnRevealMs": 0,
+    "verseEnHoldMs": 0,
+    "verseEnFadeMs": 0,
+    "exhibitTransitionMs": 2800,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 66486,
+    "closingBlackBeforeMs": 1200,
+    "closingRevealMs": 4000,
+    "closingHoldMs": 5500,
+    "closingExhaleMs": 5000,
+    "closingFadeToBlackMs": 12000,
+    "closingBlackAfterMs": 2000,
+    "closingSilenceHoldMs": 0,
+    "blackHoldMs": 0,
+    "seamlessExhibitHandoff": true
   },
   "display": {
     "loop": false,
@@ -34,15 +54,33 @@
     "showKeyword": false,
     "showKanji": false,
     "exhibitProfile": "gallery",
+    "verseMode": "sequential",
     "typography": "mobile-refine",
-    "bookendStyle": "galleryCrest"
+    "bookendStyle": "galleryCrest",
+    "ambientMove": "v2",
+    "cameraMotionScale": 2.2
   },
   "meta": {
-    "status": "structure-ready",
-    "youtube_url": null,
-    "soundtrack": null,
+    "status": "recording-ready",
+    "family": "landscapeAmbient",
+    "edition": "Borneo After Rain · 1 hour",
+    "place": "Sabah, Borneo",
     "sceneCount": 54,
-    "place": "Sabah, Borneo"
+    "soundtrack": "audio/ambient_borneo_1.mp3",
+    "soundtrackDurationMs": 3599464,
+    "pictureRuntimeMs": 3591464,
+    "fadeToBlackMs": 12000,
+    "crestRuntimeMs": 17700,
+    "estimatedContentRuntimeMs": 3621164,
+    "musicStartToFadeEndMs": 3599464,
+    "musicVsFadeDeltaMs": 0,
+    "holdMsMin": 51874,
+    "holdMsMax": 112943,
+    "holdMsSunset": 112943,
+    "openingTitleMs": 20000,
+    "sunsetInscriptionMs": 50500,
+    "camerasPreserved": true,
+    "youtube_url": null
   },
   "scenes": [
     {
@@ -50,11 +88,26 @@
       "kanji": "",
       "keyword": "Mount Kinabalu",
       "image": "images/borneo/kinabalu.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 82390,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "kinabalu",
         "exhibitIndex": 1,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 82390
+      },
+      "openingTitle": {
+        "text": "Borneo After Rain",
+        "styleClass": "is-opening-title",
+        "fadeInMs": 6500,
+        "holdMs": 7000,
+        "fadeOutMs": 6500
       }
     },
     {
@@ -62,11 +115,19 @@
       "kanji": "",
       "keyword": "Crocker Range",
       "image": "images/borneo/crocker_mountains.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 73235,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "crocker_mountains",
         "exhibitIndex": 2,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 73235
       }
     },
     {
@@ -74,11 +135,19 @@
       "kanji": "",
       "keyword": "Rainforest",
       "image": "images/borneo/jungle_3.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_3",
         "exhibitIndex": 3,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -86,11 +155,19 @@
       "kanji": "",
       "keyword": "Rainforest interior",
       "image": "images/borneo/jungle_4.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_4",
         "exhibitIndex": 4,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -98,11 +175,19 @@
       "kanji": "",
       "keyword": "Orangutan",
       "image": "images/borneo/orangutan_4.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "orangutan_4",
         "exhibitIndex": 5,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -110,11 +195,19 @@
       "kanji": "",
       "keyword": "Rainforest",
       "image": "images/borneo/jungle_5.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_5",
         "exhibitIndex": 6,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -122,11 +215,19 @@
       "kanji": "",
       "keyword": "Rainforest",
       "image": "images/borneo/jungle_1.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_1",
         "exhibitIndex": 7,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -134,11 +235,19 @@
       "kanji": "",
       "keyword": "Orchids",
       "image": "images/borneo/orchids.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 54926,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "orchids",
         "exhibitIndex": 8,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 54926
       }
     },
     {
@@ -146,11 +255,19 @@
       "kanji": "",
       "keyword": "Orangutan",
       "image": "images/borneo/orangutan_3.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "orangutan_3",
         "exhibitIndex": 9,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -158,11 +275,19 @@
       "kanji": "",
       "keyword": "Rainforest",
       "image": "images/borneo/jungle_6.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_6",
         "exhibitIndex": 10,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -170,11 +295,19 @@
       "kanji": "",
       "keyword": "Pitcher plants",
       "image": "images/borneo/pitcher_plants.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 54926,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "pitcher_plants",
         "exhibitIndex": 11,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 54926
       }
     },
     {
@@ -182,11 +315,19 @@
       "kanji": "",
       "keyword": "Butterflies",
       "image": "images/borneo/butterflies.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 54926,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "butterflies",
         "exhibitIndex": 12,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 54926
       }
     },
     {
@@ -194,11 +335,19 @@
       "kanji": "",
       "keyword": "Rainforest light",
       "image": "images/borneo/jungle_7.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_7",
         "exhibitIndex": 13,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -206,11 +355,19 @@
       "kanji": "",
       "keyword": "Orangutan",
       "image": "images/borneo/orangutan_1.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "orangutan_1",
         "exhibitIndex": 14,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -218,11 +375,19 @@
       "kanji": "",
       "keyword": "Orangutan",
       "image": "images/borneo/orangutan_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "orangutan_2",
         "exhibitIndex": 15,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -230,11 +395,19 @@
       "kanji": "",
       "keyword": "Dark forest",
       "image": "images/borneo/jungle_8.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 76287,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_8",
         "exhibitIndex": 16,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 76287
       }
     },
     {
@@ -242,11 +415,19 @@
       "kanji": "",
       "keyword": "Green snake",
       "image": "images/borneo/snake.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 51874,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "snake",
         "exhibitIndex": 17,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 51874
       }
     },
     {
@@ -254,11 +435,19 @@
       "kanji": "",
       "keyword": "After rain",
       "image": "images/borneo/jungle_rain.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_rain",
         "exhibitIndex": 18,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -266,11 +455,19 @@
       "kanji": "",
       "keyword": "Vine-killed tree",
       "image": "images/borneo/dead_tree.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "dead_tree",
         "exhibitIndex": 19,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -278,11 +475,19 @@
       "kanji": "",
       "keyword": "Rain forest",
       "image": "images/borneo/jungle_rain_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_rain_2",
         "exhibitIndex": 20,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -290,11 +495,19 @@
       "kanji": "",
       "keyword": "Jungle mist",
       "image": "images/borneo/jungle_mist.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 79338,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_mist",
         "exhibitIndex": 21,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 79338
       }
     },
     {
@@ -302,11 +515,19 @@
       "kanji": "",
       "keyword": "Pygmy elephant",
       "image": "images/borneo/elephant.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "elephant",
         "exhibitIndex": 22,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -314,11 +535,19 @@
       "kanji": "",
       "keyword": "Jungle river",
       "image": "images/borneo/jungle_river.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_river",
         "exhibitIndex": 23,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -326,11 +555,19 @@
       "kanji": "",
       "keyword": "Macaques",
       "image": "images/borneo/macaques.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "macaques",
         "exhibitIndex": 24,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -338,11 +575,19 @@
       "kanji": "",
       "keyword": "Jungle river",
       "image": "images/borneo/jungle_river_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_river_2",
         "exhibitIndex": 25,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -350,11 +595,19 @@
       "kanji": "",
       "keyword": "Hornbills",
       "image": "images/borneo/hornbills.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "hornbills",
         "exhibitIndex": 26,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -362,11 +615,19 @@
       "kanji": "",
       "keyword": "Jungle river",
       "image": "images/borneo/jungle_river_3.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_river_3",
         "exhibitIndex": 27,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -374,11 +635,19 @@
       "kanji": "",
       "keyword": "Proboscis monkey",
       "image": "images/borneo/proboscis_monkeys.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "proboscis_monkeys",
         "exhibitIndex": 28,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -386,11 +655,19 @@
       "kanji": "",
       "keyword": "Winding river",
       "image": "images/borneo/winding_river.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 73235,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "winding_river",
         "exhibitIndex": 29,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 73235
       }
     },
     {
@@ -398,11 +675,19 @@
       "kanji": "",
       "keyword": "Proboscis monkey",
       "image": "images/borneo/proboscis_monkeys_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "proboscis_monkeys_2",
         "exhibitIndex": 30,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -410,11 +695,19 @@
       "kanji": "",
       "keyword": "Mangroves",
       "image": "images/borneo/mangrove_forest.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "mangrove_forest",
         "exhibitIndex": 31,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -422,11 +715,19 @@
       "kanji": "",
       "keyword": "Proboscis monkey",
       "image": "images/borneo/proboscis_monkeys_3.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "proboscis_monkeys_3",
         "exhibitIndex": 32,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -434,11 +735,19 @@
       "kanji": "",
       "keyword": "Mangroves",
       "image": "images/borneo/mangrove_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "mangrove_2",
         "exhibitIndex": 33,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -446,11 +755,19 @@
       "kanji": "",
       "keyword": "Clouded leopard",
       "image": "images/borneo/clouded_leopard.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "clouded_leopard",
         "exhibitIndex": 34,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -458,11 +775,19 @@
       "kanji": "",
       "keyword": "Papar muddy river",
       "image": "images/borneo/muddy_river.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "muddy_river",
         "exhibitIndex": 35,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -470,11 +795,19 @@
       "kanji": "",
       "keyword": "Durian",
       "image": "images/borneo/durian.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 51874,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "durian",
         "exhibitIndex": 36,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 51874
       }
     },
     {
@@ -482,11 +815,19 @@
       "kanji": "",
       "keyword": "Rubber",
       "image": "images/borneo/rubber_tree.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "rubber_tree",
         "exhibitIndex": 37,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -494,11 +835,19 @@
       "kanji": "",
       "keyword": "Water buffalo",
       "image": "images/borneo/water_buffalo.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "water_buffalo",
         "exhibitIndex": 38,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -506,11 +855,19 @@
       "kanji": "",
       "keyword": "Kampung",
       "image": "images/borneo/kampung.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "kampung",
         "exhibitIndex": 39,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -518,11 +875,19 @@
       "kanji": "",
       "keyword": "Longhouse",
       "image": "images/borneo/longhouse.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "longhouse",
         "exhibitIndex": 40,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -530,11 +895,19 @@
       "kanji": "",
       "keyword": "Floating village",
       "image": "images/borneo/floating_village.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "floating_village",
         "exhibitIndex": 41,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -542,11 +915,19 @@
       "kanji": "",
       "keyword": "Sabah railway",
       "image": "images/borneo/train.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "train",
         "exhibitIndex": 42,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -554,11 +935,19 @@
       "kanji": "",
       "keyword": "Kinarut / Papar coast",
       "image": "images/borneo/coastline.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "coastline",
         "exhibitIndex": 43,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -566,11 +955,19 @@
       "kanji": "",
       "keyword": "Coast",
       "image": "images/borneo/fishing_boats.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "fishing_boats",
         "exhibitIndex": 44,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -578,11 +975,19 @@
       "kanji": "",
       "keyword": "Coast",
       "image": "images/borneo/coastline_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "coastline_2",
         "exhibitIndex": 45,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -590,11 +995,19 @@
       "kanji": "",
       "keyword": "Fishing boats",
       "image": "images/borneo/fishing_boats_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "push-in"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "fishing_boats_2",
         "exhibitIndex": 46,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -602,11 +1015,19 @@
       "kanji": "",
       "keyword": "Coconut",
       "image": "images/borneo/coconuts.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 54926,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "coconuts",
         "exhibitIndex": 47,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 54926
       }
     },
     {
@@ -614,11 +1035,19 @@
       "kanji": "",
       "keyword": "Orchids",
       "image": "images/borneo/orchids_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-x"
+      },
+      "artworkAloneMs": 54926,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "orchids_2",
         "exhibitIndex": 48,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 54926
       }
     },
     {
@@ -626,11 +1055,19 @@
       "kanji": "",
       "keyword": "Islands",
       "image": "images/borneo/islands.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "pull-out"
+      },
+      "artworkAloneMs": 79338,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "islands",
         "exhibitIndex": 49,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 79338
       }
     },
     {
@@ -638,11 +1075,19 @@
       "kanji": "",
       "keyword": "Coast",
       "image": "images/borneo/turtle_hatchlings.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 61030,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "turtle_hatchlings",
         "exhibitIndex": 50,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 61030
       }
     },
     {
@@ -650,11 +1095,19 @@
       "kanji": "",
       "keyword": "Mount Kinabalu",
       "image": "images/borneo/kinabalu_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 76287,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "kinabalu_2",
         "exhibitIndex": 51,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 76287
       }
     },
     {
@@ -662,11 +1115,19 @@
       "kanji": "",
       "keyword": "Interior valley",
       "image": "images/borneo/jungle_2.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-diagonal"
+      },
+      "artworkAloneMs": 85442,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "jungle_2",
         "exhibitIndex": 52,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 85442
       }
     },
     {
@@ -674,11 +1135,19 @@
       "kanji": "",
       "keyword": "Sun bear",
       "image": "images/borneo/sun_bears.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "drift-y"
+      },
+      "artworkAloneMs": 64081,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "sun_bears",
         "exhibitIndex": 53,
-        "youtube_url": null
+        "youtube_url": null,
+        "holdMs": 64081
       }
     },
     {
@@ -686,12 +1155,43 @@
       "kanji": "",
       "keyword": "Sunset",
       "image": "images/borneo/sunset.jpg",
-      "artworkAloneMs": 60000,
+      "galleryCamera": {
+        "motion": "rise"
+      },
+      "artworkAloneMs": 112943,
+      "verse": {
+        "jpHtml": "",
+        "en": ""
+      },
       "meta": {
         "slug": "sunset",
         "exhibitIndex": 54,
-        "youtube_url": null
-      }
+        "youtube_url": null,
+        "holdMs": 112943
+      },
+      "inscriptions": [
+        {
+          "kind": "latin",
+          "text": "Malaysia",
+          "styleClass": "is-malaysia-latin",
+          "fadeInMs": 6000,
+          "holdMs": 7500,
+          "fadeOutMs": 6000,
+          "gapAfterMs": 5000
+        },
+        {
+          "kind": "brush",
+          "plate": "images/borneo_overlays/malaysia_charcoal.png",
+          "peakOpacity": 0.78,
+          "sizeVw": 46,
+          "xPercent": 58,
+          "yPercent": 30,
+          "fadeInMs": 7000,
+          "holdMs": 6000,
+          "fadeOutMs": 8000,
+          "gapAfterMs": 5000
+        }
+      ]
     }
   ]
 }

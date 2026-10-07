@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_85_reading",
+  "title": "Lesson 85 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 85,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v1",
+    "soundtrackTarget": "12:51",
+    "soundtrackDurationSec": 771.29,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L85_animal_sacrifice",
+      "kanji": "牲",
+      "keyword": "animal sacrifice",
+      "image": "studies/animal_sacrifice.jpg",
+      "verse": {
+        "jpHtml": "<ruby>昔<rt>むかし</rt></ruby>の<ruby>牲<rt>せい</rt></ruby>を<ruby>思<rt>おも</rt></ruby>えば、　<ruby>命<rt>いのち</rt></ruby>の<ruby>尊<rt>とうと</rt></ruby>さが<ruby>胸<rt>むね</rt></ruby>に<ruby>響<rt>ひび</rt></ruby>く。<br><ruby>今日<rt>きょう</rt></ruby>は<ruby>平和<rt>へいわ</rt></ruby>に<ruby>感謝<rt>かんしゃ</rt></ruby>したい。",
+        "en": "Thinking of ancient sacrifices,\n\nthe preciousness of life fills the heart.\n\nToday, I give thanks for peace."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_produce",
+      "kanji": "産",
+      "keyword": "produce",
+      "image": "studies/produce.jpg",
+      "verse": {
+        "jpHtml": "<ruby>春<rt>はる</rt></ruby>の<ruby>大地<rt>だいち</rt></ruby>は、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>命<rt>いのち</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>産<rt>う</rt></ruby>んでゆく。<br><ruby>希望<rt>きぼう</rt></ruby>は<ruby>毎年<rt>まいとし</rt></ruby><ruby>芽吹<rt>めぶ</rt></ruby>く。",
+        "en": "The spring earth\n\nquietly brings forth new life.\n\nHope sprouts anew each year."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_hump",
+      "kanji": "隆",
+      "keyword": "hump",
+      "image": "studies/hump.jpg",
+      "verse": {
+        "jpHtml": "<ruby>山里<rt>やまざと</rt></ruby>は<ruby>隆<rt>さか</rt></ruby>んに<ruby>栄<rt>さか</rt></ruby>え、　<ruby>人々<rt>ひとびと</rt></ruby>の<ruby>笑顔<rt>えがお</rt></ruby>が<ruby>行<rt>い</rt></ruby>き<ruby>交<rt>か</rt></ruby>う。<br><ruby>豊<rt>ゆた</rt></ruby>かさは<ruby>支<rt>ささ</rt></ruby>え<ruby>合<rt>あ</rt></ruby>いから<ruby>生<rt>う</rt></ruby>まれる。",
+        "en": "A mountain village flourishes,\n\nfilled with the smiles of its people.\n\nProsperity grows through mutual support."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_summit",
+      "kanji": "峰",
+      "keyword": "summit",
+      "image": "studies/summit.jpg",
+      "verse": {
+        "jpHtml": "<ruby>高<rt>たか</rt></ruby>い<ruby>峰<rt>みね</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>立<rt>た</rt></ruby>てば、　<ruby>空<rt>そら</rt></ruby>はどこまでも<ruby>青<rt>あお</rt></ruby>く<ruby>広<rt>ひろ</rt></ruby>がる。<br><ruby>努力<rt>どりょく</rt></ruby>の<ruby>先<rt>さき</rt></ruby>には<ruby>美<rt>うつく</rt></ruby>しい<ruby>景色<rt>けしき</rt></ruby>がある。",
+        "en": "Standing upon a high peak,\n\nthe blue sky stretches without end.\n\nBeautiful views await beyond effort."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_bee",
+      "kanji": "蜂",
+      "keyword": "bee",
+      "image": "studies/bee.jpg",
+      "verse": {
+        "jpHtml": "<ruby>蜂<rt>はち</rt></ruby>は<ruby>花<rt>はな</rt></ruby>から<ruby>花<rt>はな</rt></ruby>へ<ruby>飛<rt>と</rt></ruby>び、　<ruby>静<rt>しず</rt></ruby>かに<ruby>春<rt>はる</rt></ruby>の<ruby>実<rt>みの</rt></ruby>りを<ruby>育<rt>そだ</rt></ruby>てる。<br><ruby>小<rt>ちい</rt></ruby>さな<ruby>働<rt>はたら</rt></ruby>きが<ruby>世界<rt>せかい</rt></ruby>を<ruby>支<rt>ささ</rt></ruby>える。",
+        "en": "A bee flies from flower to flower,\n\nquietly preparing the harvest of spring.\n\nSmall efforts support the world."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_sew",
+      "kanji": "縫",
+      "keyword": "sew",
+      "image": "studies/sew.jpg",
+      "verse": {
+        "jpHtml": "<ruby>破<rt>やぶ</rt></ruby>れた<ruby>布<rt>ぬの</rt></ruby>を<ruby>縫<rt>ぬ</rt></ruby>えば、　<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>で</rt></ruby>もまたつながってゆく。<br><ruby>丁寧<rt>ていねい</rt></ruby>な<ruby>手<rt>て</rt></ruby>は<ruby>愛<rt>あい</rt></ruby>を<ruby>語<rt>かた</rt></ruby>る。",
+        "en": "Stitching torn cloth,\n\nmemories are mended as well.\n\nCareful hands speak of love."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_worship",
+      "kanji": "拝",
+      "keyword": "worship",
+      "image": "studies/worship.jpg",
+      "verse": {
+        "jpHtml": "<ruby>朝日<rt>あさひ</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>拝<rt>おが</rt></ruby>めば、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>一日<rt>いちにち</rt></ruby>への<ruby>感謝<rt>かんしゃ</rt></ruby>が<ruby>湧<rt>わ</rt></ruby>いてくる。<br><ruby>謙虚<rt>けんきょ</rt></ruby>な<ruby>心<rt>こころ</rt></ruby>は<ruby>豊<rt>ゆた</rt></ruby>かだ。",
+        "en": "When I quietly greet the morning sun,\n\ngratitude for the new day arises.\n\nA humble heart is a rich one."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_longevity",
+      "kanji": "寿",
+      "keyword": "longevity",
+      "image": "studies/longevity.jpg",
+      "verse": {
+        "jpHtml": "<ruby>寿<rt>ことぶき</rt></ruby>を<ruby>祝<rt>いわ</rt></ruby>う<ruby>席<rt>せき</rt></ruby>には、　<ruby>笑顔<rt>えがお</rt></ruby>と<ruby>幸<rt>しあわ</rt></ruby>せが<ruby>集<rt>あつ</rt></ruby>まる。<br><ruby>長<rt>なが</rt></ruby>い<ruby>人生<rt>じんせい</rt></ruby>は<ruby>愛<rt>あい</rt></ruby>の<ruby>実<rt>み</rt></ruby>。",
+        "en": "A celebration of long life\n\ngathers smiles and happiness.\n\nA long life is the fruit of love."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_casting",
+      "kanji": "鋳",
+      "keyword": "casting",
+      "image": "studies/casting.jpg",
+      "verse": {
+        "jpHtml": "<ruby>熱<rt>あつ</rt></ruby>い<ruby>鉄<rt>てつ</rt></ruby>を<ruby>鋳<rt>い</rt></ruby>れば、　<ruby>職人<rt>しょくにん</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>が<ruby>形<rt>かたち</rt></ruby>になる。<br><ruby>技<rt>わざ</rt></ruby>は<ruby>時<rt>とき</rt></ruby>とともに<ruby>磨<rt>みが</rt></ruby>かれる。",
+        "en": "As molten metal is cast,\n\nthe craftsman's heart takes shape.\n\nSkill is refined through time."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456298
+    },
+    {
+      "id": "L85_enroll",
+      "kanji": "籍",
+      "keyword": "enroll",
+      "image": "studies/enroll.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>籍<rt>せき</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>けば、　<ruby>昔<rt>むかし</rt></ruby>の<ruby>人々<rt>ひとびと</rt></ruby>の<ruby>暮<rt>く</rt></ruby>らしが<ruby>見<rt>み</rt></ruby>えてくる。<br><ruby>記録<rt>きろく</rt></ruby>は<ruby>時<rt>とき</rt></ruby>を<ruby>越<rt>こ</rt></ruby>える<ruby>橋<rt>はし</rt></ruby>。",
+        "en": "Open an old record,\n\nand the lives of earlier generations appear.\n\nRecords bridge the centuries."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789456297
+    },
+    {
+      "id": "L85_springtime",
+      "kanji": "春",
+      "keyword": "springtime",
+      "image": "studies/springtime.jpg",
+      "verse": {
+        "jpHtml": "<ruby>春風<rt>はるかぜ</rt></ruby>が<ruby>吹<rt>ふ</rt></ruby>けば、　<ruby>眠<rt>ねむ</rt></ruby>っていた<ruby>花<rt>はな</rt></ruby>が<ruby>目<rt>め</rt></ruby>を<ruby>覚<rt>さ</rt></ruby>ます。<br><ruby>新<rt>あたら</rt></ruby>しい<ruby>始<rt>はじ</rt></ruby>まりが<ruby>微笑<rt>ほほえ</rt></ruby>む。",
+        "en": "When the spring breeze blows,\n\nsleeping flowers awaken.\n\nA new beginning smiles."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457880
+    },
+    {
+      "id": "L85_camellia_tree",
+      "kanji": "椿",
+      "keyword": "camellia tree",
+      "image": "studies/camellia_tree.jpg",
+      "verse": {
+        "jpHtml": "<ruby>赤<rt>あか</rt></ruby>い<ruby>椿<rt>つばき</rt></ruby>が、　<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>咲<rt>さ</rt></ruby>いている。<br><ruby>寒<rt>さむ</rt></ruby>さの<ruby>中<rt>なか</rt></ruby>にも<ruby>美<rt>うつく</rt></ruby>しさがある。",
+        "en": "A red camellia\n\nblooms quietly in the winter garden.\n\nBeauty exists even in the cold."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457880
+    },
+    {
+      "id": "L85_peaceful",
+      "kanji": "泰",
+      "keyword": "peaceful",
+      "image": "studies/peaceful.jpg",
+      "verse": {
+        "jpHtml": "<ruby>山<rt>やま</rt></ruby>は<ruby>今日<rt>きょう</rt></ruby>も<ruby>泰<rt>やす</rt></ruby>らかに、　<ruby>青空<rt>あおぞら</rt></ruby>の<ruby>下<rt>した</rt></ruby>で<ruby>人々<rt>ひとびと</rt></ruby>を<ruby>見守<rt>みまも</rt></ruby>る。<br><ruby>平和<rt>へいわ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>より<ruby>尊<rt>とうと</rt></ruby>い。",
+        "en": "The mountains remain peaceful,\n\nwatching over all beneath the blue sky.\n\nPeace is life's greatest treasure."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457880
+    },
+    {
+      "id": "L85_play_music",
+      "kanji": "奏",
+      "keyword": "play music",
+      "image": "studies/play_music.jpg",
+      "verse": {
+        "jpHtml": "<ruby>小川<rt>おがわ</rt></ruby>は<ruby>石<rt>いし</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>を<ruby>流<rt>なが</rt></ruby>れ、　<ruby>静<rt>しず</rt></ruby>かな<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>奏<rt>かな</rt></ruby>でる。<br><ruby>自然<rt>しぜん</rt></ruby>は<ruby>終<rt>お</rt></ruby>わらない<ruby>演奏会<rt>えんそうかい</rt></ruby>。",
+        "en": "A small stream flows among the stones,\n\nplaying a quiet melody.\n\nNature performs an endless concert."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457880
+    },
+    {
+      "id": "L85_reality",
+      "kanji": "実",
+      "keyword": "reality",
+      "image": "studies/reality.jpg",
+      "verse": {
+        "jpHtml": "<ruby>秋<rt>あき</rt></ruby>の<ruby>田<rt>た</rt></ruby>は<ruby>黄金色<rt>こがねいろ</rt></ruby>に<ruby>実<rt>みの</rt></ruby>り、　<ruby>人々<rt>ひとびと</rt></ruby>は<ruby>笑顔<rt>えがお</rt></ruby>で<ruby>空<rt>そら</rt></ruby>を<ruby>見上<rt>みあ</rt></ruby>げる。<br><ruby>努力<rt>どりょく</rt></ruby>は<ruby>豊<rt>ゆた</rt></ruby>かな<ruby>実<rt>み</rt></ruby>を<ruby>結<rt>むす</rt></ruby>ぶ。",
+        "en": "The autumn fields ripen into gold,\n\nand people smile toward the sky.\n\nEffort bears abundant fruit."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457879
+    },
+    {
+      "id": "L85_dedicate",
+      "kanji": "奉",
+      "keyword": "dedicate",
+      "image": "studies/dedicate.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>祈<rt>いの</rt></ruby>りを<ruby>奉<rt>ささ</rt></ruby>げ、　<ruby>感謝<rt>かんしゃ</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てたい。<br><ruby>真心<rt>まごころ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>より<ruby>尊<rt>とうと</rt></ruby>い。",
+        "en": "Offering a quiet prayer,\n\nI wish to cultivate a grateful heart.\n\nA sincere heart is the greatest gift."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457879
+    },
+    {
+      "id": "L85_stipend",
+      "kanji": "俸",
+      "keyword": "stipend",
+      "image": "studies/stipend.jpg",
+      "verse": {
+        "jpHtml": "<ruby>初<rt>はじ</rt></ruby>めての<ruby>俸<rt>ほう</rt></ruby>を<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>り、　<ruby>家族<rt>かぞく</rt></ruby>へ<ruby>小<rt>ちい</rt></ruby>さな<ruby>贈<rt>おく</rt></ruby>り<ruby>物<rt>もの</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ。<br><ruby>働<rt>はたら</rt></ruby>く<ruby>喜<rt>よろこ</rt></ruby>びは<ruby>分<rt>わ</rt></ruby>け<ruby>合<rt>あ</rt></ruby>える。",
+        "en": "Receiving the first paycheck,\n\nI choose a small gift for my family.\n\nThe joy of work is meant to be shared."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457879
+    },
+    {
+      "id": "L85_rod",
+      "kanji": "棒",
+      "keyword": "rod",
+      "image": "studies/rod.jpg",
+      "verse": {
+        "jpHtml": "<ruby>一本<rt>いっぽん</rt></ruby>の<ruby>棒<rt>ぼう</rt></ruby>でも、　<ruby>旅人<rt>たびびと</rt></ruby>には<ruby>頼<rt>たよ</rt></ruby>もしい<ruby>友<rt>とも</rt></ruby>になる。<br><ruby>支<rt>ささ</rt></ruby>えは<ruby>身近<rt>みぢか</rt></ruby>なところにある。",
+        "en": "Even a simple walking stick\n\ncan become a faithful companion.\n\nSupport is often close at hand."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457879
+    },
+    {
+      "id": "L85_discreet",
+      "kanji": "謹",
+      "keyword": "discreet",
+      "image": "studies/discreet.jpg",
+      "verse": {
+        "jpHtml": "<ruby>言葉<rt>ことば</rt></ruby>を<ruby>謹<rt>つつし</rt></ruby>めば、　<ruby>心<rt>こころ</rt></ruby>にも<ruby>静<rt>しず</rt></ruby>かな<ruby>品格<rt>ひんかく</rt></ruby>が<ruby>宿<rt>やど</rt></ruby>る。<br><ruby>敬意<rt>けいい</rt></ruby>は<ruby>人<rt>ひと</rt></ruby>を<ruby>結<rt>むす</rt></ruby>ぶ。",
+        "en": "When we choose our words carefully,\n\nquiet dignity fills the heart.\n\nRespect brings people together."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457879
+    },
+    {
+      "id": "L85_trifle",
+      "kanji": "僅",
+      "keyword": "trifle",
+      "image": "studies/trifle.jpg",
+      "verse": {
+        "jpHtml": "<ruby>僅<rt>わず</rt></ruby>かな<ruby>光<rt>ひかり</rt></ruby>でも、　<ruby>暗<rt>くら</rt></ruby>い<ruby>夜道<rt>よみち</rt></ruby>を<ruby>照<rt>て</rt></ruby>らすことができる。<br><ruby>小<rt>ちい</rt></ruby>さな<ruby>希望<rt>きぼう</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きな<ruby>力<rt>ちから</rt></ruby>。",
+        "en": "Even a small light\n\ncan brighten a dark path.\n\nA little hope carries great strength."
+      },
+      "meta": {
+        "lesson": 85,
+        "experimental": true
+      },
+      "imageRev": 1789457879
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_94_reading",
+  "title": "Lesson 94 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/reading_v2_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 94,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v2",
+    "soundtrackTarget": "12:41",
+    "soundtrackDurationSec": 760.97,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L94_checkup",
+      "kanji": "診",
+      "keyword": "checkup",
+      "image": "studies/checkup.jpg",
+      "verse": {
+        "jpHtml": "<ruby>医師<rt>いし</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>診<rt>み</rt></ruby>れば、　<ruby>小<rt>ちい</rt></ruby>さな<ruby>変化<rt>へんか</rt></ruby>にも<ruby>気<rt>き</rt></ruby>づくことができる。<br><ruby>思<rt>おも</rt></ruby>いやりは<ruby>良<rt>よ</rt></ruby>い<ruby>診療<rt>しんりょう</rt></ruby>の<ruby>始<rt>はじ</rt></ruby>まり。",
+        "en": "When a doctor examines with care,\n\neven the smallest changes are noticed.\n\nCompassion is the beginning of good healing."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_sentence",
+      "kanji": "文",
+      "keyword": "sentence",
+      "image": "studies/sentence.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>文<rt>ふみ</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>けば、　<ruby>遠<rt>とお</rt></ruby>い<ruby>時代<rt>じだい</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かによみがえる。<br><ruby>言葉<rt>ことば</rt></ruby>は<ruby>時<rt>とき</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて<ruby>旅<rt>たび</rt></ruby>をする。",
+        "en": "Opening an old letter,\n\nvoices from another age quietly return.\n\nWords travel beyond time."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_opposite",
+      "kanji": "対",
+      "keyword": "opposite",
+      "image": "studies/opposite.jpg",
+      "verse": {
+        "jpHtml": "<ruby>互<rt>たが</rt></ruby>いに<ruby>向<rt>む</rt></ruby>き<ruby>合<rt>あ</rt></ruby>い<ruby>対<rt>たい</rt></ruby>せば、　<ruby>違<rt>ちが</rt></ruby>いも<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>理解<rt>りかい</rt></ruby>へ<ruby>変<rt>か</rt></ruby>わる。<br><ruby>対話<rt>たいわ</rt></ruby>は<ruby>平和<rt>へいわ</rt></ruby>の<ruby>橋<rt>はし</rt></ruby>。",
+        "en": "When we face one another,\n\ndifferences slowly become understanding.\n\nDialogue is a bridge to peace."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_family_crest",
+      "kanji": "紋",
+      "keyword": "family crest",
+      "image": "studies/family_crest.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>家紋<rt>かもん</rt></ruby>は、　<ruby>代々<rt>だいだい</rt></ruby>の<ruby>願<rt>ねが</rt></ruby>いを<ruby>静<rt>しず</rt></ruby>かに<ruby>伝<rt>つた</rt></ruby>えている。<br><ruby>伝統<rt>でんとう</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>の<ruby>宝<rt>たから</rt></ruby>。",
+        "en": "An old family crest\n\nquietly carries the hopes of generations.\n\nTradition is a treasure of the heart."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_mosquito",
+      "kanji": "蚊",
+      "keyword": "mosquito",
+      "image": "studies/mosquito.jpg",
+      "verse": {
+        "jpHtml": "<ruby>夕暮<rt>ゆうぐ</rt></ruby>れの<ruby>川辺<rt>かわべ</rt></ruby>では、　<ruby>小<rt>ちい</rt></ruby>さな<ruby>蚊<rt>か</rt></ruby>も<ruby>夏<rt>なつ</rt></ruby>の<ruby>訪<rt>おとず</rt></ruby>れを<ruby>告<rt>つ</rt></ruby>げている。<br><ruby>自然<rt>しぜん</rt></ruby>は<ruby>細<rt>こま</rt></ruby>かな<ruby>声<rt>こえ</rt></ruby>でも<ruby>語<rt>かた</rt></ruby>る。",
+        "en": "Beside the river at dusk,\n\neven tiny mosquitoes announce the summer.\n\nNature speaks in the smallest voices."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_blemish",
+      "kanji": "斑",
+      "keyword": "blemish",
+      "image": "studies/blemish.jpg",
+      "verse": {
+        "jpHtml": "<ruby>木漏<rt>こも</rt></ruby>れ<ruby>日<rt>び</rt></ruby>が<ruby>森<rt>もり</rt></ruby>の<ruby>道<rt>みち</rt></ruby>に、　<ruby>美<rt>うつく</rt></ruby>しい<ruby>斑<rt>まだら</rt></ruby>を<ruby>描<rt>えが</rt></ruby>いている。<br><ruby>光<rt>ひかり</rt></ruby>と<ruby>影<rt>かげ</rt></ruby>はともに<ruby>美<rt>うつく</rt></ruby>しい。",
+        "en": "Sunlight through the leaves\n\npaints gentle patterns upon the forest path.\n\nLight and shadow are beautiful together."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_adjusted",
+      "kanji": "斉",
+      "keyword": "adjusted",
+      "image": "studies/adjusted.jpg",
+      "verse": {
+        "jpHtml": "<ruby>春<rt>はる</rt></ruby>の<ruby>雨<rt>あめ</rt></ruby>は、　<ruby>野<rt>の</rt></ruby>にも<ruby>山<rt>やま</rt></ruby>にも<ruby>斉<rt>ひと</rt></ruby>しく<ruby>降<rt>ふ</rt></ruby>りそそぐ。<br><ruby>自然<rt>しぜん</rt></ruby>の<ruby>恵<rt>めぐ</rt></ruby>みは<ruby>皆<rt>みな</rt></ruby>に<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "Spring rain\n\nfalls equally on fields and mountains.\n\nNature's blessings reach everyone."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_dose",
+      "kanji": "剤",
+      "keyword": "dose",
+      "image": "studies/dose.jpg",
+      "verse": {
+        "jpHtml": "<ruby>薬剤<rt>やくざい</rt></ruby>は、　<ruby>正<rt>ただ</rt></ruby>しく<ruby>使<rt>つか</rt></ruby>えば<ruby>人<rt>ひと</rt></ruby>を<ruby>助<rt>たす</rt></ruby>ける。<br><ruby>知恵<rt>ちえ</rt></ruby>は<ruby>思<rt>おも</rt></ruby>いやりとともに<ruby>生<rt>い</rt></ruby>きる。",
+        "en": "Medicine,\n\nwhen used wisely, helps people.\n\nWisdom works best with compassion."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_settle",
+      "kanji": "済",
+      "keyword": "settle",
+      "image": "studies/settle.jpg",
+      "verse": {
+        "jpHtml": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>済<rt>す</rt></ruby>めば、　<ruby>空<rt>そら</rt></ruby>は<ruby>青<rt>あお</rt></ruby>く<ruby>澄<rt>す</rt></ruby>み<ruby>渡<rt>わた</rt></ruby>る。<br><ruby>嵐<rt>あらし</rt></ruby>の<ruby>後<rt>あと</rt></ruby>には<ruby>静<rt>しず</rt></ruby>けさが<ruby>訪<rt>おとず</rt></ruby>れる。",
+        "en": "When the rain is over,\n\nthe sky becomes clear and blue.\n\nAfter every storm comes peace."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649662
+    },
+    {
+      "id": "L94_purification",
+      "kanji": "斎",
+      "keyword": "purification",
+      "image": "studies/purification.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>斎<rt>さい</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>り、　<ruby>心<rt>こころ</rt></ruby>を<ruby>整<rt>ととの</rt></ruby>えて<ruby>朝<rt>あさ</rt></ruby>を<ruby>迎<rt>むか</rt></ruby>える。<br><ruby>静寂<rt>せいじゃく</rt></ruby>は<ruby>心<rt>こころ</rt></ruby>の<ruby>友<rt>とも</rt></ruby>。",
+        "en": "Sitting quietly in a place of devotion,\n\nI prepare my heart for the morning.\n\nSilence is a friend of the soul."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789649661
+    },
+    {
+      "id": "L94_solemn",
+      "kanji": "粛",
+      "keyword": "solemn",
+      "image": "studies/solemn.jpg",
+      "verse": {
+        "jpHtml": "<ruby>粛<rt>しゅく</rt></ruby>かな<ruby>朝<rt>あさ</rt></ruby>の<ruby>森<rt>もり</rt></ruby>には、　<ruby>鳥<rt>とり</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>だけが<ruby>静<rt>しず</rt></ruby>かに<ruby>響<rt>ひび</rt></ruby>く。<br><ruby>静<rt>しず</rt></ruby>けさは<ruby>自然<rt>しぜん</rt></ruby>の<ruby>祈<rt>いの</rt></ruby>り。",
+        "en": "In the solemn morning forest,\n\nonly birdsong quietly echoes.\n\nSilence is nature's prayer."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_bases",
+      "kanji": "塁",
+      "keyword": "bases",
+      "image": "studies/bases.jpg",
+      "verse": {
+        "jpHtml": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>塁<rt>るい</rt></ruby>も、　<ruby>一<rt>ひと</rt></ruby>つずつ<ruby>積<rt>つ</rt></ruby>めば<ruby>高<rt>たか</rt></ruby>くなる。<br><ruby>努力<rt>どりょく</rt></ruby>は<ruby>毎日<rt>まいにち</rt></ruby>の<ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ね。",
+        "en": "Even a small mound\n\ngrows high one layer at a time.\n\nSuccess is built through daily effort."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_music",
+      "kanji": "楽",
+      "keyword": "music",
+      "image": "studies/music.jpg",
+      "verse": {
+        "jpHtml": "<ruby>楽<rt>たの</rt></ruby>しい<ruby>時間<rt>じかん</rt></ruby>は、　<ruby>笑顔<rt>えがお</rt></ruby>とともに<ruby>心<rt>こころ</rt></ruby>へ<ruby>残<rt>のこ</rt></ruby>る。<br><ruby>喜<rt>よろこ</rt></ruby>びは<ruby>分<rt>わ</rt></ruby>けるほど<ruby>大<rt>おお</rt></ruby>きくなる。",
+        "en": "Joyful moments\n\nremain in the heart with every smile.\n\nHappiness grows when it is shared."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_medicine",
+      "kanji": "薬",
+      "keyword": "medicine",
+      "image": "studies/medicine.jpg",
+      "verse": {
+        "jpHtml": "<ruby>庭<rt>にわ</rt></ruby>の<ruby>薬草<rt>やくそう</rt></ruby>は、　<ruby>昔<rt>むかし</rt></ruby>から<ruby>人<rt>ひと</rt></ruby>を<ruby>静<rt>しず</rt></ruby>かに<ruby>支<rt>ささ</rt></ruby>えてきた。<br><ruby>自然<rt>しぜん</rt></ruby>は<ruby>優<rt>やさ</rt></ruby>しい<ruby>薬箱<rt>くすりばこ</rt></ruby>。",
+        "en": "Healing herbs in the garden\n\nhave quietly helped people for generations.\n\nNature is a gentle medicine chest."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_rate",
+      "kanji": "率",
+      "keyword": "rate",
+      "image": "studies/rate.jpg",
+      "verse": {
+        "jpHtml": "<ruby>先頭<rt>せんとう</rt></ruby>に<ruby>立<rt>た</rt></ruby>って<ruby>率<rt>ひき</rt></ruby>いれば、　<ruby>歩<rt>あゆ</rt></ruby>みは<ruby>一<rt>ひと</rt></ruby>つになってゆく。<br><ruby>良<rt>よ</rt></ruby>い<ruby>導<rt>みちび</rt></ruby>きは<ruby>信頼<rt>しんらい</rt></ruby>から<ruby>生<rt>う</rt></ruby>まれる。",
+        "en": "Leading from the front,\n\nmany footsteps become one.\n\nGood leadership is born from trust."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_astringent",
+      "kanji": "渋",
+      "keyword": "astringent",
+      "image": "studies/astringent.jpg",
+      "verse": {
+        "jpHtml": "<ruby>渋<rt>しぶ</rt></ruby>い<ruby>茶<rt>ちゃ</rt></ruby>を<ruby>味<rt>あじ</rt></ruby>わいながら、　<ruby>静<rt>しず</rt></ruby>かな<ruby>午後<rt>ごご</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しむ。<br><ruby>深<rt>ふか</rt></ruby>い<ruby>味<rt>あじ</rt></ruby>は<ruby>時<rt>とき</rt></ruby>とともに<ruby>育<rt>そだ</rt></ruby>つ。",
+        "en": "Savoring a pleasantly bitter tea,\n\nI enjoy a quiet afternoon.\n\nDeep flavor grows with time."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_vicarious",
+      "kanji": "摂",
+      "keyword": "vicarious",
+      "image": "studies/vicarious.jpg",
+      "verse": {
+        "jpHtml": "<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>と<ruby>新鮮<rt>しんせん</rt></ruby>な<ruby>野菜<rt>やさい</rt></ruby>を<ruby>摂<rt>と</rt></ruby>れば、　<ruby>体<rt>からだ</rt></ruby>も<ruby>心<rt>こころ</rt></ruby>も<ruby>元気<rt>げんき</rt></ruby>になる。<br><ruby>健<rt>すこ</rt></ruby>やかな<ruby>暮<rt>く</rt></ruby>らしは<ruby>毎日<rt>まいにち</rt></ruby>の<ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ね。",
+        "en": "Taking in morning light and fresh vegetables,\n\nboth body and heart grow stronger.\n\nHealthy living is built day by day."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_center",
+      "kanji": "央",
+      "keyword": "center",
+      "image": "studies/center.jpg",
+      "verse": {
+        "jpHtml": "<ruby>町<rt>まち</rt></ruby>の<ruby>央<rt>おう</rt></ruby>には、　<ruby>人々<rt>ひとびと</rt></ruby>の<ruby>笑顔<rt>えがお</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まってくる。<br><ruby>温<rt>あたた</rt></ruby>かな<ruby>場所<rt>ばしょ</rt></ruby>は<ruby>人<rt>ひと</rt></ruby>を<ruby>結<rt>むす</rt></ruby>ぶ。",
+        "en": "In the center of the town,\n\npeople gather with smiling faces.\n\nWarm places bring people together."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_england",
+      "kanji": "英",
+      "keyword": "england",
+      "image": "studies/england.jpg",
+      "verse": {
+        "jpHtml": "<ruby>野原<rt>のはら</rt></ruby>に<ruby>咲<rt>さ</rt></ruby>く<ruby>一輪<rt>いちりん</rt></ruby>の<ruby>花<rt>はな</rt></ruby>も、　<ruby>静<rt>しず</rt></ruby>かな<ruby>英<rt>えい</rt></ruby>しさを<ruby>持<rt>も</rt></ruby>っている。<br><ruby>本当<rt>ほんとう</rt></ruby>の<ruby>輝<rt>かがや</rt></ruby>きは<ruby>飾<rt>かざ</rt></ruby>らない。",
+        "en": "Even a single wildflower\n\npossesses quiet beauty.\n\nTrue brilliance needs no ornament."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650561
+    },
+    {
+      "id": "L94_reflect",
+      "kanji": "映",
+      "keyword": "reflect",
+      "image": "studies/reflect.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>湖<rt>みずうみ</rt></ruby>には、　<ruby>山<rt>やま</rt></ruby>も<ruby>空<rt>そら</rt></ruby>も<ruby>美<rt>うつく</rt></ruby>しく<ruby>映<rt>うつ</rt></ruby>っている。<br><ruby>澄<rt>す</rt></ruby>んだ<ruby>心<rt>こころ</rt></ruby>は<ruby>世界<rt>せかい</rt></ruby>の<ruby>美<rt>うつく</rt></ruby>しさを<ruby>映<rt>うつ</rt></ruby>す。",
+        "en": "In the quiet lake,\n\nthe mountains and sky are beautifully reflected.\n\nA clear heart reflects the beauty of the world."
+      },
+      "meta": {
+        "lesson": 94,
+        "experimental": true
+      },
+      "imageRev": 1789650560
+    }
+  ]
+}

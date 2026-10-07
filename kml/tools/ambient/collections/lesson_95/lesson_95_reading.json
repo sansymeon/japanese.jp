@@ -1,0 +1,390 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "./assets",
+  "id": "lesson_95_reading",
+  "title": "Lesson 95 — Reading",
+  "notes": "Reading: pause → natural Japanese → furigana in/out → English on gallery artwork. skipBookends=1 skips crest only (music still plays after gate).",
+  "soundtrack": {
+    "main": "audio/12_minutes_minus3db.mp3"
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 800,
+    "artworkAloneMs": 0,
+    "exhibitionBlackBeforeMs": 1500,
+    "readingPauseBeforeMs": 5000,
+    "readingAssistedRevealMs": 1800,
+    "readingFuriganaEnterDelayMs": 3000,
+    "readingFuriganaEnterMs": 3000,
+    "readingAssistedHoldMs": 9000,
+    "readingFuriganaFadeMs": 2500,
+    "readingNativeHoldMs": 3500,
+    "readingJpFadeMs": 1000,
+    "readingEnRevealMs": 1000,
+    "readingEnHoldMs": 5500,
+    "readingEnFadeMs": 1000,
+    "exhibitTransitionMs": 4000,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 45000,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingTitleRevealMs": 0,
+    "closingTitleFadeMs": 0,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "showFurigana": true,
+    "exhibitProfile": "assistedReading",
+    "verseMode": "sequential",
+    "verseLayout": "authored",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 95,
+    "stage": "reading",
+    "sceneCount": 20,
+    "readingStages": [
+      "pause",
+      "assisted",
+      "furiganaEnter",
+      "furiganaFade",
+      "native",
+      "en"
+    ],
+    "showEnglish": true,
+    "soundtrackVersion": "v1",
+    "soundtrackTarget": "12:51",
+    "soundtrackDurationSec": 771.29,
+    "bookendMode": "silentCrest"
+  },
+  "scenes": [
+    {
+      "id": "L95_red",
+      "kanji": "赤",
+      "keyword": "red",
+      "image": "studies/red.jpg",
+      "verse": {
+        "jpHtml": "<ruby>朝日<rt>あさひ</rt></ruby>が<ruby>空<rt>そら</rt></ruby>を<ruby>赤<rt>あか</rt></ruby>く<ruby>染<rt>そ</rt></ruby>め、　<ruby>新<rt>あたら</rt></ruby>しい<ruby>一日<rt>いちにち</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>始<rt>はじ</rt></ruby>まる。<br><ruby>希望<rt>きぼう</rt></ruby>は<ruby>夜明<rt>よあ</rt></ruby>けの<ruby>色<rt>いろ</rt></ruby>。",
+        "en": "The morning sun paints the sky red,\n\nand a new day quietly begins.\n\nHope is the color of dawn."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_pardon",
+      "kanji": "赦",
+      "keyword": "pardon",
+      "image": "studies/pardon.jpg",
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>を<ruby>赦<rt>ゆる</rt></ruby>せば、　<ruby>自分<rt>じぶん</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>にも<ruby>平和<rt>へいわ</rt></ruby>が<ruby>訪<rt>おとず</rt></ruby>れる。<br><ruby>赦<rt>ゆる</rt></ruby>しは<ruby>自由<rt>じゆう</rt></ruby>への<ruby>道<rt>みち</rt></ruby>。",
+        "en": "When we forgive others,\n\npeace also comes to our own hearts.\n\nForgiveness is the road to freedom."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_unusual",
+      "kanji": "変",
+      "keyword": "unusual",
+      "image": "studies/unusual.jpg",
+      "verse": {
+        "jpHtml": "<ruby>四季<rt>しき</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>変<rt>か</rt></ruby>わり、　<ruby>山<rt>やま</rt></ruby>も<ruby>川<rt>かわ</rt></ruby>も<ruby>新<rt>あたら</rt></ruby>しい<ruby>表情<rt>ひょうじょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>せる。<br><ruby>変化<rt>へんか</rt></ruby>は<ruby>命<rt>いのち</rt></ruby>の<ruby>証<rt>あかし</rt></ruby>。",
+        "en": "The seasons quietly change,\n\ngiving mountains and rivers new expressions.\n\nChange is the sign of life."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_tracks",
+      "kanji": "跡",
+      "keyword": "tracks",
+      "image": "studies/tracks.jpg",
+      "verse": {
+        "jpHtml": "<ruby>古<rt>ふる</rt></ruby>い<ruby>石畳<rt>いしだたみ</rt></ruby>には、　<ruby>旅人<rt>たびびと</rt></ruby>の<ruby>跡<rt>あと</rt></ruby>が<ruby>今<rt>いま</rt></ruby>も<ruby>残<rt>のこ</rt></ruby>っている。<br><ruby>歩<rt>あゆ</rt></ruby>みは<ruby>時<rt>とき</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えて<ruby>語<rt>かた</rt></ruby>る。",
+        "en": "Old stone paths\n\nstill bear the footprints of travelers.\n\nOur journeys speak across time."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_barbarian",
+      "kanji": "蛮",
+      "keyword": "barbarian",
+      "image": "studies/barbarian.jpg",
+      "verse": {
+        "jpHtml": "<ruby>遠<rt>とお</rt></ruby>い<ruby>蛮<rt>ばん</rt></ruby>の<ruby>地<rt>ち</rt></ruby>にも、　<ruby>人<rt>ひと</rt></ruby>は<ruby>家族<rt>かぞく</rt></ruby>を<ruby>愛<rt>あい</rt></ruby>し<ruby>空<rt>そら</rt></ruby>を<ruby>見上<rt>みあ</rt></ruby>げる。<br><ruby>思<rt>おも</rt></ruby>いやりは<ruby>国境<rt>こっきょう</rt></ruby>を<ruby>越<rt>こ</rt></ruby>える。",
+        "en": "Even in distant lands once called foreign,\n\npeople love their families and look to the sky.\n\nCompassion crosses every border."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_romance",
+      "kanji": "恋",
+      "keyword": "romance",
+      "image": "studies/romance.jpg",
+      "verse": {
+        "jpHtml": "<ruby>春風<rt>はるかぜ</rt></ruby>に<ruby>舞<rt>ま</rt></ruby>う<ruby>桜<rt>さくら</rt></ruby>は、　<ruby>恋<rt>こい</rt></ruby>する<ruby>心<rt>こころ</rt></ruby>のようにやさしく<ruby>揺<rt>ゆ</rt></ruby>れる。<br><ruby>美<rt>うつく</rt></ruby>しさは<ruby>静<rt>しず</rt></ruby>かに<ruby>胸<rt>むね</rt></ruby>へ<ruby>届<rt>とど</rt></ruby>く。",
+        "en": "Cherry blossoms dancing in the spring breeze\n\nsway like a heart in love.\n\nBeauty quietly reaches the soul."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_gulf",
+      "kanji": "湾",
+      "keyword": "gulf",
+      "image": "studies/gulf.jpg",
+      "verse": {
+        "jpHtml": "<ruby>静<rt>しず</rt></ruby>かな<ruby>湾<rt>わん</rt></ruby>には、　<ruby>朝<rt>あさ</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>が<ruby>穏<rt>おだ</rt></ruby>やかに<ruby>広<rt>ひろ</rt></ruby>がる。<br><ruby>海<rt>うみ</rt></ruby>は<ruby>今日<rt>きょう</rt></ruby>も<ruby>優<rt>やさ</rt></ruby>しく<ruby>迎<rt>むか</rt></ruby>えてくれる。",
+        "en": "Across the quiet bay,\n\nthe morning light spreads gently.\n\nThe sea welcomes us once again."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_yellow",
+      "kanji": "黄",
+      "keyword": "yellow",
+      "image": "studies/yellow.jpg",
+      "verse": {
+        "jpHtml": "<ruby>黄金色<rt>こがねいろ</rt></ruby>の<ruby>稲穂<rt>いなほ</rt></ruby>が、　<ruby>秋風<rt>あきかぜ</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>揺<rt>ゆ</rt></ruby>れている。<br><ruby>実<rt>みの</rt></ruby>りは<ruby>感謝<rt>かんしゃ</rt></ruby>の<ruby>季節<rt>きせつ</rt></ruby>。",
+        "en": "Golden rice heads\n\nsway softly in the autumn breeze.\n\nHarvest is the season of gratitude."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684507
+    },
+    {
+      "id": "L95_sideways",
+      "kanji": "横",
+      "keyword": "sideways",
+      "image": "studies/sideways.jpg",
+      "verse": {
+        "jpHtml": "<ruby>横<rt>よこ</rt></ruby>に<ruby>流<rt>なが</rt></ruby>れる<ruby>雲<rt>くも</rt></ruby>は、　<ruby>広<rt>ひろ</rt></ruby>い<ruby>空<rt>そら</rt></ruby>の<ruby>静<rt>しず</rt></ruby>けさを<ruby>運<rt>はこ</rt></ruby>んでゆく。<br><ruby>心<rt>こころ</rt></ruby>にも<ruby>広<rt>ひろ</rt></ruby>さを<ruby>持<rt>も</rt></ruby>ちたい。",
+        "en": "Clouds drifting sideways\n\ncarry the quietness of the wide sky.\n\nMay my heart also grow spacious."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789684506
+    },
+    {
+      "id": "L95_grasp",
+      "kanji": "把",
+      "keyword": "grasp",
+      "image": "studies/grasp.jpg",
+      "verse": {
+        "jpHtml": "<ruby>一本<rt>いっぽん</rt></ruby>の<ruby>花<rt>はな</rt></ruby>を<ruby>把<rt>たば</rt></ruby>れば、　<ruby>野原<rt>のはら</rt></ruby>の<ruby>香<rt>かお</rt></ruby>りまで<ruby>手<rt>て</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>届<rt>とど</rt></ruby>く。<br><ruby>自然<rt>しぜん</rt></ruby>は<ruby>小<rt>ちい</rt></ruby>さな<ruby>贈<rt>おく</rt></ruby>り<ruby>物<rt>もの</rt></ruby>をくれる。",
+        "en": "Holding a single flower,\n\nI seem to hold the fragrance of the meadow.\n\nNature offers simple gifts."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685592
+    },
+    {
+      "id": "L95_color",
+      "kanji": "色",
+      "keyword": "color",
+      "image": "studies/color.jpg",
+      "verse": {
+        "jpHtml": "<ruby>雨上<rt>あめあ</rt></ruby>がりの<ruby>虹<rt>にじ</rt></ruby>は、　<ruby>七<rt>なな</rt></ruby>つの<ruby>色<rt>いろ</rt></ruby>で<ruby>空<rt>そら</rt></ruby>を<ruby>結<rt>むす</rt></ruby>んでいる。<br><ruby>違<rt>ちが</rt></ruby>う<ruby>色<rt>いろ</rt></ruby>が<ruby>美<rt>うつく</rt></ruby>しさをつくる。",
+        "en": "After the rain,\n\na rainbow joins the sky with seven colors.\n\nDifferent colors create beauty."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685592
+    },
+    {
+      "id": "L95_discontinue",
+      "kanji": "絶",
+      "keyword": "discontinue",
+      "image": "studies/discontinue.jpg",
+      "verse": {
+        "jpHtml": "<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>枝<rt>えだ</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かでも、　<ruby>命<rt>いのち</rt></ruby>は<ruby>絶<rt>た</rt></ruby>えず<ruby>春<rt>はる</rt></ruby>を<ruby>待<rt>ま</rt></ruby>っている。<br><ruby>希望<rt>きぼう</rt></ruby>は<ruby>見<rt>み</rt></ruby>えなくても<ruby>生<rt>い</rt></ruby>きている。",
+        "en": "Though winter branches stand still,\n\nlife quietly waits for spring.\n\nHope lives even when unseen."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685592
+    },
+    {
+      "id": "L95_glossy",
+      "kanji": "艶",
+      "keyword": "glossy",
+      "image": "studies/glossy.jpg",
+      "verse": {
+        "jpHtml": "<ruby>朝露<rt>あさつゆ</rt></ruby>に<ruby>濡<rt>ぬ</rt></ruby>れた<ruby>花<rt>はな</rt></ruby>は、　<ruby>艶<rt>つや</rt></ruby>やかに<ruby>朝日<rt>あさひ</rt></ruby>を<ruby>映<rt>うつ</rt></ruby>している。<br><ruby>自然<rt>しぜん</rt></ruby>の<ruby>美<rt>うつく</rt></ruby>しさは<ruby>飾<rt>かざ</rt></ruby>らない。",
+        "en": "Flowers covered with morning dew\n\nshine with quiet elegance in the sunrise.\n\nNature's beauty needs no ornament."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685592
+    },
+    {
+      "id": "L95_fertilizer",
+      "kanji": "肥",
+      "keyword": "fertilizer",
+      "image": "studies/fertilizer.jpg",
+      "verse": {
+        "jpHtml": "<ruby>肥<rt>こ</rt></ruby>えた<ruby>土<rt>つち</rt></ruby>は、　<ruby>小<rt>ちい</rt></ruby>さな<ruby>種<rt>たね</rt></ruby>を<ruby>大<rt>おお</rt></ruby>きく<ruby>育<rt>そだ</rt></ruby>てる。<br><ruby>豊<rt>ゆた</rt></ruby>かな<ruby>実<rt>み</rt></ruby>りは<ruby>大地<rt>だいち</rt></ruby>の<ruby>恵<rt>めぐ</rt></ruby>み。",
+        "en": "Rich soil\n\nraises even the smallest seed.\n\nAbundant harvests are gifts of the earth."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685591
+    },
+    {
+      "id": "L95_sweet",
+      "kanji": "甘",
+      "keyword": "sweet",
+      "image": "studies/sweet.jpg",
+      "verse": {
+        "jpHtml": "<ruby>熟<rt>う</rt></ruby>れた<ruby>柿<rt>かき</rt></ruby>の<ruby>甘<rt>あま</rt></ruby>い<ruby>香<rt>かお</rt></ruby>りが、　<ruby>秋<rt>あき</rt></ruby>の<ruby>庭<rt>にわ</rt></ruby>に<ruby>静<rt>しず</rt></ruby>かに<ruby>広<rt>ひろ</rt></ruby>がる。<br><ruby>自然<rt>しぜん</rt></ruby>は<ruby>季節<rt>きせつ</rt></ruby>の<ruby>味<rt>あじ</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>ぶ。",
+        "en": "The sweet fragrance of ripe persimmons\n\nfills the autumn garden.\n\nNature brings the flavors of each season."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685591
+    },
+    {
+      "id": "L95_navy_blue",
+      "kanji": "紺",
+      "keyword": "navy blue",
+      "image": "studies/navy_blue.jpg",
+      "verse": {
+        "jpHtml": "<ruby>紺色<rt>こんいろ</rt></ruby>の<ruby>夜空<rt>よぞら</rt></ruby>には、　<ruby>無数<rt>むすう</rt></ruby>の<ruby>星<rt>ほし</rt></ruby>が<ruby>静<rt>しず</rt></ruby>かに<ruby>輝<rt>かがや</rt></ruby>く。<br><ruby>夜<rt>よる</rt></ruby>は<ruby>深<rt>ふか</rt></ruby>い<ruby>安<rt>やす</rt></ruby>らぎをくれる。",
+        "en": "In the deep indigo night sky,\n\ncountless stars quietly shine.\n\nNight offers profound peace."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685591
+    },
+    {
+      "id": "L95_so_and_so",
+      "kanji": "某",
+      "keyword": "so and so",
+      "image": "studies/so_and_so.jpg",
+      "verse": {
+        "jpHtml": "ある<ruby>某<rt>ぼう</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>、　<ruby>何気<rt>なにげ</rt></ruby>ない<ruby>出会<rt>であ</rt></ruby>いが<ruby>人生<rt>じんせい</rt></ruby>を<ruby>変<rt>か</rt></ruby>えた。<br><ruby>小<rt>ちい</rt></ruby>さな<ruby>出来事<rt>できごと</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きな<ruby>贈<rt>おく</rt></ruby>り<ruby>物<rt>もの</rt></ruby>。",
+        "en": "On a certain day,\n\nan ordinary meeting changed a life.\n\nSmall moments can become great gifts."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685591
+    },
+    {
+      "id": "L95_conspire",
+      "kanji": "謀",
+      "keyword": "conspire",
+      "image": "studies/conspire.jpg",
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>を<ruby>欺<rt>あざむ</rt></ruby>く<ruby>謀<rt>はか</rt></ruby>より、　<ruby>互<rt>たが</rt></ruby>いに<ruby>知恵<rt>ちえ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>し<ruby>合<rt>あ</rt></ruby>いたい。<br><ruby>誠実<rt>せいじつ</rt></ruby>は<ruby>信頼<rt>しんらい</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てる。",
+        "en": "Rather than plotting against others,\n\nlet us share wisdom together.\n\nSincerity builds trust."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685591
+    },
+    {
+      "id": "L95_mediator",
+      "kanji": "媒",
+      "keyword": "mediator",
+      "image": "studies/mediator.jpg",
+      "verse": {
+        "jpHtml": "<ruby>一冊<rt>いっさつ</rt></ruby>の<ruby>本<rt>ほん</rt></ruby>が、　<ruby>遠<rt>とお</rt></ruby>い<ruby>国<rt>くに</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>を<ruby>媒<rt>なかだち</rt></ruby>してくれる。<br><ruby>言葉<rt>ことば</rt></ruby>は<ruby>人<rt>ひと</rt></ruby>と<ruby>人<rt>ひと</rt></ruby>を<ruby>結<rt>むす</rt></ruby>ぶ。",
+        "en": "A single book\n\ncan become a bridge between distant hearts.\n\nWords connect people."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685591
+    },
+    {
+      "id": "L95_deceit",
+      "kanji": "欺",
+      "keyword": "deceit",
+      "image": "studies/deceit.jpg",
+      "verse": {
+        "jpHtml": "<ruby>人<rt>ひと</rt></ruby>を<ruby>欺<rt>あざむ</rt></ruby>くより、　<ruby>真実<rt>しんじつ</rt></ruby>を<ruby>語<rt>かた</rt></ruby>る<ruby>勇気<rt>ゆうき</rt></ruby>を<ruby>選<rt>えら</rt></ruby>びたい。<br><ruby>正直<rt>しょうじき</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かな<ruby>強<rt>つよ</rt></ruby>さ。",
+        "en": "Rather than deceiving others,\n\nI choose the courage to speak the truth.\n\nHonesty is a quiet strength."
+      },
+      "meta": {
+        "lesson": 95,
+        "experimental": true
+      },
+      "imageRev": 1789685591
+    }
+  ]
+}

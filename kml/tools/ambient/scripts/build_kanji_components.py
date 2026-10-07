@@ -403,6 +403,12 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--rebuild-html-db", action="store_true")
     ap.add_argument("--max-lesson", type=int, default=30)
+    ap.add_argument(
+        "--lessons",
+        type=int,
+        nargs="+",
+        help="Build only these lesson numbers. Default is 1..--max-lesson.",
+    )
     args = ap.parse_args()
 
     catalog = load_catalog()
@@ -410,7 +416,8 @@ def main() -> None:
     v4c = load_v4c_legacy()
     OUT_PROTO.mkdir(parents=True, exist_ok=True)
 
-    for lesson in range(1, args.max_lesson + 1):
+    lessons = args.lessons or list(range(1, args.max_lesson + 1))
+    for lesson in lessons:
         data = build_lesson(lesson, html_db, v4c, catalog)
         pad = f"{lesson:02d}"
         write_json(LESSON_DIRS / f"lesson_{pad}" / f"lesson_{pad}_components.json", data)

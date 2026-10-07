@@ -51,9 +51,9 @@ def V(*xs):
 
 # Shared clusters (nested; not new catalog glyphs)
 ROLL = V("丷", "夫")
-TRIPOD = V("一", "口", "冂", "儿")  # same approx as 融 left / 隔
+TRIPOD = V("一", "口", "冂", "儿")  # old approx for 隔; 隔 is now 鬲
 ZI = V(H("幺", "幺"))  # double short thread ≈ 兹
-BROOM = V("ヨ", "巾")
+BROOM = V("彐", "巾")
 
 
 STRUCTURES: dict[int, dict[str, object]] = {
@@ -63,14 +63,14 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "陣": H("阝", "車"),
         "隊": H("阝", V("丷", "豕")),
         "墜": V("隊", "土"),
-        "降": H("阝", V("夂", "ヰ")),
+        "降": H("阝", "夅"),
         "階": H("阝", "皆"),
         "陛": H("阝", V("比", "土")),
         "隣": H("阝", V("米", "舛")),
-        "隔": H("阝", TRIPOD),
-        "隠": H("阝", V("ヨ", "工", "心")),
+        "隔": H("阝", "鬲"),
+        "隠": H("阝", V("爫", "彐", "心")),
         "堕": V(H("阝", "有"), "土"),
-        "陥": H("阝", V("勹", "旧")),
+        "陥": H("阝", V("⺈", "旧")),
         "穴": "穴",
         "空": V("穴", "工"),
         "控": H("扌", "空"),
@@ -85,8 +85,8 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "搾": H("扌", V("穴", "乍")),
         "窯": V("穴", V("羊", "灬")),
         "窮": V("穴", H("身", "弓")),
-        "探": H("扌", V("⺍", "木")),
-        "深": H("氵", V("⺍", "木")),
+        "探": H("扌", "罙"),
+        "深": H("氵", "罙"),
         "丘": "丘",
         "岳": V("丘", "山"),
         "兵": V("丘", "八"),
@@ -105,7 +105,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "締": H("糸", "帝"),
         "維": H("糸", "隹"),
         "羅": V("罒", "維"),
-        "練": H("糸", "東"),
+        "練": H("糸", "柬"),
         "緒": H("糸", "者"),
         "続": H("糸", "売"),
         "絵": H("糸", "会"),
@@ -135,9 +135,9 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "絹": H("糸", V("口", "月")),
         "繰": H("糸", V("品", "木")),
         "継": H("糸", V("米", "乚")),
-        "緑": H("糸", V("ヨ", "水")),
-        "縁": H("糸", V("ヨ", "豕")),
-        "網": H("糸", V("冂", "亡")),
+        "緑": H("糸", V("彐", "水")),
+        "縁": H("糸", V("彐", "豕")),
+        "網": H("糸", "罔"),
         "緊": V(H("臣", "又"), "糸"),
         "紫": V("此", "糸"),
         "縛": H("糸", V("甫", "寸")),
@@ -170,8 +170,8 @@ STRUCTURES: dict[int, dict[str, object]] = {
     76: {
         "御": H("彳", "卸"),
         "服": H("月", V("卩", "又")),
-        "命": V("𠆢", H("卩", "口")),
-        "令": V("𠆢", "卩"),
+        "命": V("令", "口"),
+        "令": "令",
         "零": V("雨", "令"),
         "齢": H("歯", "令"),
         "冷": H("冫", "令"),
@@ -236,7 +236,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
     79: {
         "温": H("氵", V("日", "皿")),
         "蓋": V("艹", V("去", "皿")),
-        "監": V(H("臣", "丿"), "皿"),
+        "監": "監",
         "濫": H("氵", "監"),
         "鑑": H("金", "監"),
         "藍": V("艹", "監"),
@@ -246,7 +246,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "銀": H("金", "艮"),
         "恨": H("忄", "艮"),
         "根": H("木", "艮"),
-        "即": H("艮", "卩"),
+        "即": H("皀", "卩"),
         "爵": "爵",
         "節": V("竹", "即"),
         "退": H("⻌", "艮"),
@@ -259,16 +259,16 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "浪": H("氵", "良"),
         "娘": H("女", "良"),
         "食": "食",
-        "飯": H("食", "反"),
-        "飲": H("食", "欠"),
-        "飢": H("食", "几"),
-        "餓": H("食", "我"),
-        "飾": H("食", V("𠂉", "巾")),
-        "餌": H("食", "耳"),
-        "館": H("食", "官"),
-        "餅": H("食", V("丷", "开")),
+        "飯": H("飠", "反"),
+        "飲": H("飠", "欠"),
+        "飢": H("飠", "几"),
+        "餓": H("飠", "我"),
+        "飾": H("飠", V("𠂉", "巾")),
+        "餌": H("飠", "耳"),
+        "館": H("飠", "官"),
+        "餅": H("飠", V("丷", "开")),
         "養": V("羊", "食"),
-        "飽": H("食", "包"),
+        "飽": H("飠", "包"),
         "既": H("艮", "旡"),
         "概": H("木", "既"),
         "慨": H("忄", "既"),
@@ -395,11 +395,16 @@ def update_catalog() -> None:
         "艮": "stopping",
         "良": "good",
         "食": "eat",
+        "飠": "food",
+        "夅": "descend",
+        "罙": "probe",
+        "柬": "bundle",
+        "罔": "net",
+        "皀": "grain",
         "平": "flat",
         "乎": "question mark",
         "旡": "yawn",
         "甫": "dog tag",
-        "ヰ": "toothbrush",
         "丘": "hill",
         "爵": "baron",
         "興": "entertain",
@@ -407,6 +412,7 @@ def update_catalog() -> None:
         "臼": "mortar",
         "卵": "egg",
         "血": "blood",
+        "歯": "teeth",
         "殳": "missile",
     }.items():
         labels.setdefault(g, lab)
@@ -414,6 +420,10 @@ def update_catalog() -> None:
     intros = data.setdefault("introductions", [])
     existing = {(int(i["lesson"]), i["glyph"]) for i in intros}
     for item in [
+        {"lesson": 71, "beforeKanji": "降", "glyph": "夅", "label": "descend"},
+        {"lesson": 72, "beforeKanji": "探", "glyph": "罙", "label": "probe"},
+        {"lesson": 73, "beforeKanji": "練", "glyph": "柬", "label": "bundle"},
+        {"lesson": 74, "beforeKanji": "網", "glyph": "罔", "label": "net"},
         {
             "lesson": 74,
             "beforeKanji": "幼",
@@ -428,6 +438,9 @@ def update_catalog() -> None:
             "label": "stopping",
             "heisig": "stopping",
         },
+        {"lesson": 79, "beforeKanji": "即", "glyph": "皀", "label": "grain"},
+        {"lesson": 76, "beforeKanji": "齢", "glyph": "歯", "label": "teeth"},
+        {"lesson": 80, "beforeKanji": "飯", "glyph": "飠", "label": "food"},
     ]:
         key = (item["lesson"], item["glyph"])
         if key not in existing:

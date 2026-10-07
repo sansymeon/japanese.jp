@@ -1,0 +1,360 @@
+{
+  "id": "biang_song_english",
+  "title": "Biáng — The Long Road",
+  "language": "en",
+  "visual": "biang_visual.json",
+  "playable": false,
+  "audio": {
+    "path": "kml/tools/ambient/audio/Biáng_The_Long_Road_english.mp3",
+    "enginePath": "audio/Biáng_The_Long_Road_english.mp3",
+    "durationSec": 108.931
+  },
+  "timingNotes": [
+    "Cue starts are the English line timestamps. They are not copied from the Japanese recording.",
+    "The cue is the lyric line. Components named in one line share that start. pairStaggerSec in biang_visual.json is the slow offset inside the cue.",
+    "English packs the same eleven components into six verse lines. Positions stay in biang_visual.json.",
+    "Verse 2 assembles the shared PNG layers. Lyric cue times are unchanged and are not copied from Japanese.",
+    "After 1:28 the picture stops following lyric lines. Chorus words are reference only.",
+    "Resolution times are provisional. Durations live in biang_visual.json. The fade to black starts at 104s, where this recording's level falls away, and ends at 108.931s."
+  ],
+  "lineGroups": [
+    "There's a hole in the clouds where the moon shines through → 穴 hole and 月 moon.",
+    "And a short thread of silver leads me to you → 幺 short thread (first).",
+    "You say you will wait while that short thread holds → 言 say and 幺 short thread (second).",
+    "Through the long quiet night on a wild horse I ride → 長 long and 馬 horse.",
+    "It's a long way home, with the saber at my side → 長 long (second) and 刂 saber.",
+    "But my heart still remembers the road leading home → 心 heart and 辶 road."
+  ],
+  "sections": {
+    "intro": {
+      "startSec": 0,
+      "endSec": 20,
+      "status": "given"
+    },
+    "verse1": {
+      "startSec": 20,
+      "endSec": 53,
+      "status": "given"
+    },
+    "verse2": {
+      "startSec": 53,
+      "endSec": 88,
+      "status": "given"
+    },
+    "fieldHold": {
+      "startSec": 88,
+      "durationSec": 4,
+      "status": "provisional"
+    },
+    "clearComponents": {
+      "startSec": 92,
+      "durationSec": 2,
+      "status": "provisional"
+    },
+    "pause": {
+      "startSec": 94,
+      "durationSec": 1.5,
+      "status": "provisional"
+    },
+    "reveal": {
+      "startSec": 95.5,
+      "durationSec": 2,
+      "status": "provisional"
+    },
+    "artworkHold": {
+      "startSec": 97.5,
+      "endSec": 104,
+      "status": "provisional"
+    },
+    "endFade": {
+      "startSec": 104,
+      "endSec": 108.931,
+      "status": "provisional"
+    }
+  },
+  "chorusReference": {
+    "drivesVisuals": false,
+    "lines": [
+      "Follow the road, follow it home",
+      "Piece after piece, wherever we roam",
+      "What looked impossible starts to appear",
+      "One little journey, remembered and clear"
+    ]
+  },
+  "lines": [
+    {
+      "section": "verse1",
+      "startSec": 20,
+      "text": "There's a hole in the clouds where the moon shines through",
+      "components": [
+        "ana",
+        "tsuki"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 24,
+      "text": "And a short thread of silver leads me to you",
+      "components": [
+        "yao-1"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 30,
+      "text": "You say you will wait while that short thread holds",
+      "components": [
+        "gen",
+        "yao-2"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 35,
+      "text": "Through the long quiet night on a wild horse I ride",
+      "components": [
+        "cho-1",
+        "uma"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 42,
+      "text": "It's a long way home, with the saber at my side",
+      "components": [
+        "cho-2",
+        "saber"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 47,
+      "text": "But my heart still remembers the road leading home",
+      "components": [
+        "kokoro",
+        "road"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 53,
+      "text": "There's a hole in the clouds where the moon shines through",
+      "components": [
+        "ana",
+        "tsuki"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 58,
+      "text": "And a short thread of silver leads me to you",
+      "components": [
+        "yao-1"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 63,
+      "text": "You say you will wait while that short thread holds",
+      "components": [
+        "gen",
+        "yao-2"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 68,
+      "text": "Through the long quiet night on a wild horse I ride",
+      "components": [
+        "cho-1",
+        "uma"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 75,
+      "text": "It's a long way home, with the saber at my side",
+      "components": [
+        "cho-2",
+        "saber"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 81,
+      "text": "But my heart still remembers the road leading home",
+      "components": [
+        "kokoro",
+        "road"
+      ]
+    }
+  ],
+  "cues": [
+    {
+      "id": "v1-1",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 20,
+      "durationSec": 4,
+      "text": "There's a hole in the clouds where the moon shines through",
+      "components": [
+        "ana",
+        "tsuki"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-2",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 24,
+      "durationSec": 6,
+      "text": "And a short thread of silver leads me to you",
+      "components": [
+        "yao-1"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-3",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 30,
+      "durationSec": 5,
+      "text": "You say you will wait while that short thread holds",
+      "components": [
+        "gen",
+        "yao-2"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-4",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 35,
+      "durationSec": 7,
+      "text": "Through the long quiet night on a wild horse I ride",
+      "components": [
+        "cho-1",
+        "uma"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-5",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 42,
+      "durationSec": 5,
+      "text": "It's a long way home, with the saber at my side",
+      "components": [
+        "cho-2",
+        "saber"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-6",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 47,
+      "durationSec": 6,
+      "text": "But my heart still remembers the road leading home",
+      "components": [
+        "kokoro",
+        "road"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-1",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 53,
+      "durationSec": 5,
+      "text": "There's a hole in the clouds where the moon shines through",
+      "components": [
+        "ana",
+        "tsuki"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-2",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 58,
+      "durationSec": 5,
+      "text": "And a short thread of silver leads me to you",
+      "components": [
+        "yao-1"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-3",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 63,
+      "durationSec": 5,
+      "text": "You say you will wait while that short thread holds",
+      "components": [
+        "gen",
+        "yao-2"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-4",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 68,
+      "durationSec": 7,
+      "text": "Through the long quiet night on a wild horse I ride",
+      "components": [
+        "cho-1",
+        "uma"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-5",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 75,
+      "durationSec": 6,
+      "text": "It's a long way home, with the saber at my side",
+      "components": [
+        "cho-2",
+        "saber"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-6",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 81,
+      "durationSec": 7,
+      "text": "But my heart still remembers the road leading home",
+      "components": [
+        "kokoro",
+        "road"
+      ],
+      "timingStatus": "line"
+    }
+  ]
+}

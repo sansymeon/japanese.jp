@@ -1,0 +1,2525 @@
+{
+  "presentation": "exhibition",
+  "assetsBase": "../../assets",
+  "id": "lesson_01_compounds_curriculum",
+  "title": "Lesson 1 — Compounds (curriculum film prototype)",
+  "notes": "Prototype film from kml/data/compounds/lesson_01.json. One scenic study throughout; progressive identity → Japanese → all-hiragana reading → English. No sentence furigana. 106 compounds. Soundtrack is compounds_new.mp3 (1:10:47); film ends on the crest and fades the bed out — it does not run to the end of the file.",
+  "soundtrack": {
+    "main": "audio/compounds_new.mp3",
+    "loop": false
+  },
+  "bookends": {
+    "mode": "silentCrest",
+    "closing": {
+      "image": "images/gold_closing.png",
+      "bookendSize": "small",
+      "holdUntilSoundtrackEnds": false,
+      "fadeWithSoundtrackEnd": true
+    }
+  },
+  "exhibition": {
+    "artworkArrivalMs": 0,
+    "artworkArrivalFadeMs": 2000,
+    "artworkAloneMs": 800,
+    "exhibitionBlackBeforeMs": 3000,
+    "curriculumPauseBeforeMs": 1400,
+    "curriculumIdentityRevealMs": 1800,
+    "curriculumIdentityHoldMs": 3400,
+    "curriculumSentenceRevealMs": 1600,
+    "curriculumSentenceHoldMs": 5000,
+    "curriculumHiraganaRevealMs": 1500,
+    "curriculumHiraganaHoldMs": 5800,
+    "curriculumEnglishRevealMs": 1400,
+    "curriculumEnglishHoldMs": 5400,
+    "curriculumCardFadeMs": 1600,
+    "curriculumCardGapMs": 800,
+    "exhibitTransitionMs": 0,
+    "exhibitBlackHoldMs": 0,
+    "kenBurnsDurationMs": 0,
+    "openingBlackBeforeMs": 0,
+    "openingRevealMs": 0,
+    "openingHoldMs": 0,
+    "openingExhaleMs": 0,
+    "openingBlackAfterMs": 0,
+    "closingBlackBeforeMs": 800,
+    "closingRevealMs": 2500,
+    "closingHoldMs": 1500,
+    "closingExhaleMs": 4000,
+    "closingBlackAfterMs": 1200,
+    "closingSilenceHoldMs": 0,
+    "closingFadeToBlackMs": 0,
+    "blackHoldMs": 0
+  },
+  "display": {
+    "loop": false,
+    "hideChrome": true,
+    "family": "japaneseReflections",
+    "showKeyword": false,
+    "showKanji": false,
+    "showEnglish": true,
+    "exhibitProfile": "compoundsCurriculum",
+    "verseMode": "sequential",
+    "typography": "mobile-refine",
+    "typographyStyle": "foundations",
+    "bookendStyle": "galleryCrest",
+    "stillArtwork": true,
+    "disableCoverBoost": true,
+    "camera": "legacy"
+  },
+  "meta": {
+    "family": "japaneseReflections",
+    "lesson": 1,
+    "stage": "compoundsCurriculum",
+    "prototype": true,
+    "source": "kml/data/compounds/lesson_01.json",
+    "sceneCount": 106,
+    "compoundCount": 106,
+    "backgroundImage": "kml/assets/studies/rice.jpg",
+    "backgroundAlt": "Rice fields in Japan",
+    "soundtrackDurationMs": 4247510,
+    "estimatedContentRuntimeMs": 3041200,
+    "typicalCardMs": 28370,
+    "hiraganaMode": "segment-readings",
+    "hiraganaAmbiguities": []
+  },
+  "scenes": [
+    {
+      "id": "l01_一日",
+      "kanji": "一日",
+      "keyword": "one day",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_一日",
+        "hostKanji": "一",
+        "surface": "一日",
+        "reading": "いちにち",
+        "meaning": "one day",
+        "ja": "今日は一日うちにいます。",
+        "jaHiragana": "きょうはいちにちうちにいます。",
+        "en": "I am at home all day today."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "一",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_一番",
+      "kanji": "一番",
+      "keyword": "number one",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_一番",
+        "hostKanji": "一",
+        "surface": "一番",
+        "reading": "いちばん",
+        "meaning": "number one",
+        "ja": "このりんごが一番大きいです。",
+        "jaHiragana": "このりんごがいちばんおおきいです。",
+        "en": "This apple is the biggest."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "一",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_一生",
+      "kanji": "一生",
+      "keyword": "one's whole life",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_一生",
+        "hostKanji": "一",
+        "surface": "一生",
+        "reading": "いっしょう",
+        "meaning": "one's whole life",
+        "ja": "一生この町に住みます。",
+        "jaHiragana": "いっしょうこのまちにすみます。",
+        "en": "I will live in this town all my life."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "一",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_一人",
+      "kanji": "一人",
+      "keyword": "one person",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_一人",
+        "hostKanji": "一",
+        "surface": "一人",
+        "reading": "ひとり",
+        "meaning": "one person",
+        "ja": "駅の前に一人います。",
+        "jaHiragana": "えきのまえにひとりいます。",
+        "en": "There is one person in front of the station."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "一",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_一つ",
+      "kanji": "一つ",
+      "keyword": "one",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_一つ",
+        "hostKanji": "一",
+        "surface": "一つ",
+        "reading": "ひとつ",
+        "meaning": "one",
+        "ja": "机の上にりんごが一つあります。",
+        "jaHiragana": "つくえのうえにりんごがひとつあります。",
+        "en": "There is one apple on the desk."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "一",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_一息",
+      "kanji": "一息",
+      "keyword": "one breath / a short rest",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_一息",
+        "hostKanji": "一",
+        "surface": "一息",
+        "reading": "ひといき",
+        "meaning": "one breath / a short rest",
+        "ja": "ここで一息つきます。",
+        "jaHiragana": "ここでひといきつきます。",
+        "en": "I take a short rest here."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "一",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_二人",
+      "kanji": "二人",
+      "keyword": "two people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_二人",
+        "hostKanji": "二",
+        "surface": "二人",
+        "reading": "ふたり",
+        "meaning": "two people",
+        "ja": "公園に二人がいます。",
+        "jaHiragana": "こうえんにふたりがいます。",
+        "en": "Two people are in the park."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "二",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_二月",
+      "kanji": "二月",
+      "keyword": "February",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_二月",
+        "hostKanji": "二",
+        "surface": "二月",
+        "reading": "にがつ",
+        "meaning": "February",
+        "ja": "二月は寒いです。",
+        "jaHiragana": "にがつはさむいです。",
+        "en": "February is cold."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "二",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_二重",
+      "kanji": "二重",
+      "keyword": "double",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_二重",
+        "hostKanji": "二",
+        "surface": "二重",
+        "reading": "にじゅう",
+        "meaning": "double",
+        "ja": "窓は二重です。",
+        "jaHiragana": "まどはにじゅうです。",
+        "en": "The windows are double-layered."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "二",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_二度",
+      "kanji": "二度",
+      "keyword": "twice",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_二度",
+        "hostKanji": "二",
+        "surface": "二度",
+        "reading": "にど",
+        "meaning": "twice",
+        "ja": "その話を二度聞きました。",
+        "jaHiragana": "そのはなしをにどききました。",
+        "en": "I heard that story twice."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "二",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_第二",
+      "kanji": "第二",
+      "keyword": "second",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_第二",
+        "hostKanji": "二",
+        "surface": "第二",
+        "reading": "だいに",
+        "meaning": "second",
+        "ja": "これは第二の問題です。",
+        "jaHiragana": "これはだいにのもんだいです。",
+        "en": "This is the second question."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "二",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_三人",
+      "kanji": "三人",
+      "keyword": "three people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_三人",
+        "hostKanji": "三",
+        "surface": "三人",
+        "reading": "さんにん",
+        "meaning": "three people",
+        "ja": "教室に三人います。",
+        "jaHiragana": "きょうしつにさんにんいます。",
+        "en": "There are three people in the classroom."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "三",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_三日",
+      "kanji": "三日",
+      "keyword": "third day",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_三日",
+        "hostKanji": "三",
+        "surface": "三日",
+        "reading": "みっか",
+        "meaning": "third day",
+        "ja": "三日に友だちが来ます。",
+        "jaHiragana": "みっかにともだちがきます。",
+        "en": "A friend is coming on the third."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "三",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_三角",
+      "kanji": "三角",
+      "keyword": "triangle",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_三角",
+        "hostKanji": "三",
+        "surface": "三角",
+        "reading": "さんかく",
+        "meaning": "triangle",
+        "ja": "この看板は三角です。",
+        "jaHiragana": "このかんばんはさんかくです。",
+        "en": "This sign is a triangle."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "三",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_三年生",
+      "kanji": "三年生",
+      "keyword": "third-year student",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_三年生",
+        "hostKanji": "三",
+        "surface": "三年生",
+        "reading": "さんねんせい",
+        "meaning": "third-year student",
+        "ja": "妹は三年生です。",
+        "jaHiragana": "いもうとはさんねんせいです。",
+        "en": "My younger sister is a third-year student."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "三",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_三倍",
+      "kanji": "三倍",
+      "keyword": "triple",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_三倍",
+        "hostKanji": "三",
+        "surface": "三倍",
+        "reading": "さんばい",
+        "meaning": "triple",
+        "ja": "今年の客は去年の三倍です。",
+        "jaHiragana": "ことしのきゃくはきょねんのさんばいです。",
+        "en": "This year’s visitors are triple last year’s."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "三",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_四日",
+      "kanji": "四日",
+      "keyword": "fourth day",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_四日",
+        "hostKanji": "四",
+        "surface": "四日",
+        "reading": "よっか",
+        "meaning": "fourth day",
+        "ja": "四日は休みです。",
+        "jaHiragana": "よっかはやすみです。",
+        "en": "The fourth is a day off."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "四",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_四季",
+      "kanji": "四季",
+      "keyword": "four seasons",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_四季",
+        "hostKanji": "四",
+        "surface": "四季",
+        "reading": "しき",
+        "meaning": "four seasons",
+        "ja": "日本には四季があります。",
+        "jaHiragana": "にっぽんにはしきがあります。",
+        "en": "Japan has four seasons."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "四",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_四角",
+      "kanji": "四角",
+      "keyword": "square",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_四角",
+        "hostKanji": "四",
+        "surface": "四角",
+        "reading": "しかく",
+        "meaning": "square",
+        "ja": "この箱は四角です。",
+        "jaHiragana": "このばこはしかくです。",
+        "en": "This box is square."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "四",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_四年",
+      "kanji": "四年",
+      "keyword": "four years",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_四年",
+        "hostKanji": "四",
+        "surface": "四年",
+        "reading": "よねん",
+        "meaning": "four years",
+        "ja": "ここで四年住みます。",
+        "jaHiragana": "ここでよねんすみます。",
+        "en": "I live here for four years."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "四",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_四人",
+      "kanji": "四人",
+      "keyword": "four people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_四人",
+        "hostKanji": "四",
+        "surface": "四人",
+        "reading": "よにん",
+        "meaning": "four people",
+        "ja": "テーブルに四人が座ります。",
+        "jaHiragana": "テーブルによにんがすわります。",
+        "en": "Four people sit at the table."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "四",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_五月",
+      "kanji": "五月",
+      "keyword": "May",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_五月",
+        "hostKanji": "五",
+        "surface": "五月",
+        "reading": "ごがつ",
+        "meaning": "May",
+        "ja": "五月は花が多いです。",
+        "jaHiragana": "ごがつははながおおいです。",
+        "en": "There are many flowers in May."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "五",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_五人",
+      "kanji": "五人",
+      "keyword": "five people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_五人",
+        "hostKanji": "五",
+        "surface": "五人",
+        "reading": "ごにん",
+        "meaning": "five people",
+        "ja": "バスに五人乗ります。",
+        "jaHiragana": "バスにごにんのります。",
+        "en": "Five people get on the bus."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "五",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_五回",
+      "kanji": "五回",
+      "keyword": "five times",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_五回",
+        "hostKanji": "五",
+        "surface": "五回",
+        "reading": "ごかい",
+        "meaning": "five times",
+        "ja": "その歌を五回聞きました。",
+        "jaHiragana": "そのうたをごかいききました。",
+        "en": "I listened to that song five times."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "五",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_五感",
+      "kanji": "五感",
+      "keyword": "five senses",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_五感",
+        "hostKanji": "五",
+        "surface": "五感",
+        "reading": "ごかん",
+        "meaning": "five senses",
+        "ja": "五感で春を感じます。",
+        "jaHiragana": "ごかんではるをかんじます。",
+        "en": "I feel spring with the five senses."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "五",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_五百",
+      "kanji": "五百",
+      "keyword": "five hundred",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_五百",
+        "hostKanji": "五",
+        "surface": "五百",
+        "reading": "ごひゃく",
+        "meaning": "five hundred",
+        "ja": "この本は五百円です。",
+        "jaHiragana": "このほんはごひゃくえんです。",
+        "en": "This book is five hundred yen."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "五",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_六月",
+      "kanji": "六月",
+      "keyword": "June",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_六月",
+        "hostKanji": "六",
+        "surface": "六月",
+        "reading": "ろくがつ",
+        "meaning": "June",
+        "ja": "六月は雨が多いです。",
+        "jaHiragana": "ろくがつはあめがおおいです。",
+        "en": "There is a lot of rain in June."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "六",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_六人",
+      "kanji": "六人",
+      "keyword": "six people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_六人",
+        "hostKanji": "六",
+        "surface": "六人",
+        "reading": "ろくにん",
+        "meaning": "six people",
+        "ja": "部屋に六人います。",
+        "jaHiragana": "へやにろくにんいます。",
+        "en": "There are six people in the room."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "六",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_六回",
+      "kanji": "六回",
+      "keyword": "six times",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_六回",
+        "hostKanji": "六",
+        "surface": "六回",
+        "reading": "ろっかい",
+        "meaning": "six times",
+        "ja": "ベルが六回なりました。",
+        "jaHiragana": "ベルがろっかいなりました。",
+        "en": "The bell rang six times."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "六",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_第六",
+      "kanji": "第六",
+      "keyword": "sixth",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_第六",
+        "hostKanji": "六",
+        "surface": "第六",
+        "reading": "だいろく",
+        "meaning": "sixth",
+        "ja": "第六の選手が出ます。",
+        "jaHiragana": "だいろくのせんしゅがでます。",
+        "en": "The sixth athlete comes out."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "六",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_七月",
+      "kanji": "七月",
+      "keyword": "July",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_七月",
+        "hostKanji": "七",
+        "surface": "七月",
+        "reading": "しちがつ",
+        "meaning": "July",
+        "ja": "七月は暑いです。",
+        "jaHiragana": "しちがつはあついです。",
+        "en": "July is hot."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "七",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_七人",
+      "kanji": "七人",
+      "keyword": "seven people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_七人",
+        "hostKanji": "七",
+        "surface": "七人",
+        "reading": "しちにん",
+        "meaning": "seven people",
+        "ja": "船に七人乗ります。",
+        "jaHiragana": "ふねにしちにんのります。",
+        "en": "Seven people board the boat."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "七",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_七夕",
+      "kanji": "七夕",
+      "keyword": "Star Festival",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_七夕",
+        "hostKanji": "七",
+        "surface": "七夕",
+        "reading": "たなばた",
+        "meaning": "Star Festival",
+        "ja": "今夜は七夕です。",
+        "jaHiragana": "こんやはたなばたです。",
+        "en": "Tonight is Tanabata."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "七",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_第七",
+      "kanji": "第七",
+      "keyword": "seventh",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_第七",
+        "hostKanji": "七",
+        "surface": "第七",
+        "reading": "だいなな",
+        "meaning": "seventh",
+        "ja": "これは第七の部屋です。",
+        "jaHiragana": "これはだいななのへやです。",
+        "en": "This is the seventh room."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "七",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_八月",
+      "kanji": "八月",
+      "keyword": "August",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_八月",
+        "hostKanji": "八",
+        "surface": "八月",
+        "reading": "はちがつ",
+        "meaning": "August",
+        "ja": "八月に海へ行きます。",
+        "jaHiragana": "はちがつにうみへいきます。",
+        "en": "I go to the sea in August."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "八",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_八人",
+      "kanji": "八人",
+      "keyword": "eight people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_八人",
+        "hostKanji": "八",
+        "surface": "八人",
+        "reading": "はちにん",
+        "meaning": "eight people",
+        "ja": "店に八人並びます。",
+        "jaHiragana": "みせにはちにんならびます。",
+        "en": "Eight people line up at the shop."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "八",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_八百",
+      "kanji": "八百",
+      "keyword": "eight hundred",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_八百",
+        "hostKanji": "八",
+        "surface": "八百",
+        "reading": "はっぴゃく",
+        "meaning": "eight hundred",
+        "ja": "八百円ください。",
+        "jaHiragana": "はっぴゃくえんください。",
+        "en": "Eight hundred yen, please."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "八",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_第八",
+      "kanji": "第八",
+      "keyword": "eighth",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_第八",
+        "hostKanji": "八",
+        "surface": "第八",
+        "reading": "だいはち",
+        "meaning": "eighth",
+        "ja": "第八の箱を開けます。",
+        "jaHiragana": "だいはちのばこをあけます。",
+        "en": "I open the eighth box."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "八",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_九月",
+      "kanji": "九月",
+      "keyword": "September",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_九月",
+        "hostKanji": "九",
+        "surface": "九月",
+        "reading": "くがつ",
+        "meaning": "September",
+        "ja": "九月は風が涼しいです。",
+        "jaHiragana": "くがつはかぜがすずしいです。",
+        "en": "The wind is cool in September."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "九",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_九人",
+      "kanji": "九人",
+      "keyword": "nine people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_九人",
+        "hostKanji": "九",
+        "surface": "九人",
+        "reading": "きゅうにん",
+        "meaning": "nine people",
+        "ja": "九人で歌います。",
+        "jaHiragana": "きゅうにんでうたいます。",
+        "en": "Nine of us sing."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "九",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_九回",
+      "kanji": "九回",
+      "keyword": "nine times",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_九回",
+        "hostKanji": "九",
+        "surface": "九回",
+        "reading": "きゅうかい",
+        "meaning": "nine times",
+        "ja": "九回練習しました。",
+        "jaHiragana": "きゅうかいれんしゅうしました。",
+        "en": "I practiced nine times."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "九",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_第九",
+      "kanji": "第九",
+      "keyword": "ninth",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_第九",
+        "hostKanji": "九",
+        "surface": "第九",
+        "reading": "だいきゅう",
+        "meaning": "ninth",
+        "ja": "第九の曲が始まります。",
+        "jaHiragana": "だいきゅうのきょくがはじまります。",
+        "en": "The ninth piece begins."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "九",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_十月",
+      "kanji": "十月",
+      "keyword": "October",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_十月",
+        "hostKanji": "十",
+        "surface": "十月",
+        "reading": "じゅうがつ",
+        "meaning": "October",
+        "ja": "十月は赤い葉が多いです。",
+        "jaHiragana": "じゅうがつはあかいはがおおいです。",
+        "en": "There are many red leaves in October."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "十",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_十分",
+      "kanji": "十分",
+      "keyword": "enough",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_十分",
+        "hostKanji": "十",
+        "surface": "十分",
+        "reading": "じゅうぶん",
+        "meaning": "enough",
+        "ja": "もう時間は十分です。",
+        "jaHiragana": "もうじかんはじゅうぶんです。",
+        "en": "There is already enough time."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "十",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_十人",
+      "kanji": "十人",
+      "keyword": "ten people",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_十人",
+        "hostKanji": "十",
+        "surface": "十人",
+        "reading": "じゅうにん",
+        "meaning": "ten people",
+        "ja": "十人の子どもが走ります。",
+        "jaHiragana": "じゅうにんのこどもがはしります。",
+        "en": "Ten children run."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "十",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_十回",
+      "kanji": "十回",
+      "keyword": "ten times",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_十回",
+        "hostKanji": "十",
+        "surface": "十回",
+        "reading": "じゅっかい",
+        "meaning": "ten times",
+        "ja": "名前を十回書きました。",
+        "jaHiragana": "なまえをじゅっかいかきました。",
+        "en": "I wrote the name ten times."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "十",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_第十",
+      "kanji": "第十",
+      "keyword": "tenth",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_第十",
+        "hostKanji": "十",
+        "surface": "第十",
+        "reading": "だいじゅう",
+        "meaning": "tenth",
+        "ja": "第十の問題は易しいです。",
+        "jaHiragana": "だいじゅうのもんだいはやさしいです。",
+        "en": "The tenth question is easy."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "十",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_人口",
+      "kanji": "人口",
+      "keyword": "population",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_人口",
+        "hostKanji": "口",
+        "surface": "人口",
+        "reading": "じんこう",
+        "meaning": "population",
+        "ja": "この町の人口は少ないです。",
+        "jaHiragana": "このまちのじんこうはすくないです。",
+        "en": "This town has a small population."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "口",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_口調",
+      "kanji": "口調",
+      "keyword": "tone of voice, manner of speaking",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_口調",
+        "hostKanji": "口",
+        "surface": "口調",
+        "reading": "くちょう",
+        "meaning": "tone of voice, manner of speaking",
+        "ja": "先生の口調は穏やかです。",
+        "jaHiragana": "せんせいのくちょうはおだやかです。",
+        "en": "The teacher’s tone of voice is gentle."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "口",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_口実",
+      "kanji": "口実",
+      "keyword": "excuse, pretext",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_口実",
+        "hostKanji": "口",
+        "surface": "口実",
+        "reading": "こうじつ",
+        "meaning": "excuse, pretext",
+        "ja": "その口実は弱いです。",
+        "jaHiragana": "そのこうじつはよわいです。",
+        "en": "That excuse is weak."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "口",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_口",
+      "kanji": "口",
+      "keyword": "mouth",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_口",
+        "hostKanji": "口",
+        "surface": "口",
+        "reading": "くち",
+        "meaning": "mouth",
+        "ja": "口を大きく開けます。",
+        "jaHiragana": "くちをおおきくあけます。",
+        "en": "I open my mouth wide."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "口",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_入口",
+      "kanji": "入口",
+      "keyword": "entrance",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_入口",
+        "hostKanji": "口",
+        "surface": "入口",
+        "reading": "いりぐち",
+        "meaning": "entrance",
+        "ja": "駅の入口は右側です。",
+        "jaHiragana": "えきのいりぐちはみぎがわです。",
+        "en": "The station entrance is on the right."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "口",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_出口",
+      "kanji": "出口",
+      "keyword": "exit",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_出口",
+        "hostKanji": "口",
+        "surface": "出口",
+        "reading": "でぐち",
+        "meaning": "exit",
+        "ja": "出口は後ろにあります。",
+        "jaHiragana": "でぐちはうしろにあります。",
+        "en": "The exit is at the back."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "口",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_日本",
+      "kanji": "日本",
+      "keyword": "Japan",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_日本",
+        "hostKanji": "日",
+        "surface": "日本",
+        "reading": "にほん",
+        "meaning": "Japan",
+        "ja": "日本は島の国です。",
+        "jaHiragana": "にほんはしまのくにです。",
+        "en": "Japan is a country of islands."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "日",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_日記",
+      "kanji": "日記",
+      "keyword": "Diary, journal",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_日記",
+        "hostKanji": "日",
+        "surface": "日記",
+        "reading": "にっき",
+        "meaning": "Diary, journal",
+        "ja": "毎晩日記を書きます。",
+        "jaHiragana": "まいばんにっきをかきます。",
+        "en": "I write in a diary every night."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "日",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_祝日",
+      "kanji": "祝日",
+      "keyword": "National holiday",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_祝日",
+        "hostKanji": "日",
+        "surface": "祝日",
+        "reading": "しゅくじつ",
+        "meaning": "National holiday",
+        "ja": "明日は祝日です。",
+        "jaHiragana": "あすはしゅくじつです。",
+        "en": "Tomorrow is a national holiday."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "日",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_日",
+      "kanji": "日",
+      "keyword": "Sun, day",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_日",
+        "hostKanji": "日",
+        "surface": "日",
+        "reading": "ひ",
+        "meaning": "Sun, day",
+        "ja": "日が山から出ます。",
+        "jaHiragana": "ひがやまからでます。",
+        "en": "The sun comes up from the mountains."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "日",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_今日",
+      "kanji": "今日",
+      "keyword": "Today",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_今日",
+        "hostKanji": "日",
+        "surface": "今日",
+        "reading": "きょう",
+        "meaning": "Today",
+        "ja": "今日は風が強いです。",
+        "jaHiragana": "きょうはかぜがつよいです。",
+        "en": "The wind is strong today."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "日",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_日焼け",
+      "kanji": "日焼け",
+      "keyword": "Sunburn, suntan",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_日焼け",
+        "hostKanji": "日",
+        "surface": "日焼け",
+        "reading": "ひやけ",
+        "meaning": "Sunburn, suntan",
+        "ja": "海で日焼けしました。",
+        "jaHiragana": "うみでひやけしました。",
+        "en": "I got a sunburn at the sea."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "日",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_月曜日",
+      "kanji": "月曜日",
+      "keyword": "Monday",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_月曜日",
+        "hostKanji": "月",
+        "surface": "月曜日",
+        "reading": "げつようび",
+        "meaning": "Monday",
+        "ja": "月曜日から学校です。",
+        "jaHiragana": "げつようびからがっこうです。",
+        "en": "School starts on Monday."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "月",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_今月",
+      "kanji": "今月",
+      "keyword": "This month",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_今月",
+        "hostKanji": "月",
+        "surface": "今月",
+        "reading": "こんげつ",
+        "meaning": "This month",
+        "ja": "今月は忙しいです。",
+        "jaHiragana": "こんげつはいそがしいです。",
+        "en": "This month is busy."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "月",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_満月",
+      "kanji": "満月",
+      "keyword": "Full moon",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_満月",
+        "hostKanji": "月",
+        "surface": "満月",
+        "reading": "まんげつ",
+        "meaning": "Full moon",
+        "ja": "今夜は満月です。",
+        "jaHiragana": "こんやはまんげつです。",
+        "en": "There is a full moon tonight."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "月",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_月",
+      "kanji": "月",
+      "keyword": "Moon, month",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_月",
+        "hostKanji": "月",
+        "surface": "月",
+        "reading": "つき",
+        "meaning": "Moon, month",
+        "ja": "月が湖に映ります。",
+        "jaHiragana": "つきがみずうみにうつります。",
+        "en": "The moon is reflected in the lake."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "月",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_月明かり",
+      "kanji": "月明かり",
+      "keyword": "Moonlight",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_月明かり",
+        "hostKanji": "月",
+        "surface": "月明かり",
+        "reading": "つきあかり",
+        "meaning": "Moonlight",
+        "ja": "月明かりで道が見えます。",
+        "jaHiragana": "つきあかりでみちがみえます。",
+        "en": "The path is visible in the moonlight."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "月",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_お月見",
+      "kanji": "お月見",
+      "keyword": "Moon viewing",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_お月見",
+        "hostKanji": "月",
+        "surface": "お月見",
+        "reading": "おつきみ",
+        "meaning": "Moon viewing",
+        "ja": "庭でお月見をします。",
+        "jaHiragana": "にわでおつきみをします。",
+        "en": "We view the moon in the garden."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "月",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_目的",
+      "kanji": "目的",
+      "keyword": "Purpose, goal",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_目的",
+        "hostKanji": "目",
+        "surface": "目的",
+        "reading": "もくてき",
+        "meaning": "Purpose, goal",
+        "ja": "旅の目的は静かな寺です。",
+        "jaHiragana": "たびのもくてきはしずかなてらです。",
+        "en": "The purpose of the trip is a quiet temple."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "目",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_注目",
+      "kanji": "注目",
+      "keyword": "Attention, notice",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_注目",
+        "hostKanji": "目",
+        "surface": "注目",
+        "reading": "ちゅうもく",
+        "meaning": "Attention, notice",
+        "ja": "その絵は注目を集めます。",
+        "jaHiragana": "そのえはちゅうもくをあつめます。",
+        "en": "That painting draws attention."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "目",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_目標",
+      "kanji": "目標",
+      "keyword": "Target, aim",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_目標",
+        "hostKanji": "目",
+        "surface": "目標",
+        "reading": "もくひょう",
+        "meaning": "Target, aim",
+        "ja": "今年の目標は早起きです。",
+        "jaHiragana": "ことしのもくひょうははやおきです。",
+        "en": "This year’s goal is getting up early."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "目",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_目",
+      "kanji": "目",
+      "keyword": "Eye",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_目",
+        "hostKanji": "目",
+        "surface": "目",
+        "reading": "め",
+        "meaning": "Eye",
+        "ja": "目を閉じて聞きます。",
+        "jaHiragana": "めをとじてききます。",
+        "en": "I close my eyes and listen."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "目",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_目玉",
+      "kanji": "目玉",
+      "keyword": "Eyeball, a highlight",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_目玉",
+        "hostKanji": "目",
+        "surface": "目玉",
+        "reading": "めだま",
+        "meaning": "Eyeball, a highlight",
+        "ja": "この店の目玉はパンです。",
+        "jaHiragana": "このみせのめだまはパンです。",
+        "en": "This shop’s highlight is the bread."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "目",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_一目",
+      "kanji": "一目",
+      "keyword": "A glance, a glimpse",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_一目",
+        "hostKanji": "目",
+        "surface": "一目",
+        "reading": "ひとめ",
+        "meaning": "A glance, a glimpse",
+        "ja": "山を一目見ました。",
+        "jaHiragana": "やまをひとめみました。",
+        "en": "I caught a glimpse of the mountain."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "目",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_田園",
+      "kanji": "田園",
+      "keyword": "Countryside, rural district",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_田園",
+        "hostKanji": "田",
+        "surface": "田園",
+        "reading": "でんえん",
+        "meaning": "Countryside, rural district",
+        "ja": "電車から田園が見えます。",
+        "jaHiragana": "でんしゃからでんえんがみえます。",
+        "en": "You can see the countryside from the train."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "田",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_田畑",
+      "kanji": "田畑",
+      "keyword": "Fields and paddies",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_田畑",
+        "hostKanji": "田",
+        "surface": "田畑",
+        "reading": "たはた",
+        "meaning": "Fields and paddies",
+        "ja": "家の後ろに田畑があります。",
+        "jaHiragana": "いえのうしろにたはたがあります。",
+        "en": "There are fields behind the house."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "田",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_田舎",
+      "kanji": "田舎",
+      "keyword": "Countryside, hometown",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_田舎",
+        "hostKanji": "田",
+        "surface": "田舎",
+        "reading": "いなか",
+        "meaning": "Countryside, hometown",
+        "ja": "夏休みは田舎へ帰ります。",
+        "jaHiragana": "なつやすみはいなかへかえります。",
+        "en": "I go back to the countryside for summer vacation."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "田",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_水田",
+      "kanji": "水田",
+      "keyword": "Rice paddy (wet field)",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_水田",
+        "hostKanji": "田",
+        "surface": "水田",
+        "reading": "すいでん",
+        "meaning": "Rice paddy (wet field)",
+        "ja": "水田に水があります。",
+        "jaHiragana": "すいでんにみずがあります。",
+        "en": "There is water in the rice paddies."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "田",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_田んぼ",
+      "kanji": "田んぼ",
+      "keyword": "Rice field",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_田んぼ",
+        "hostKanji": "田",
+        "surface": "田んぼ",
+        "reading": "たんぼ",
+        "meaning": "Rice field",
+        "ja": "朝、田んぼに霧がかかります。",
+        "jaHiragana": "あさ、たんぼにきりがかかります。",
+        "en": "Mist settles on the rice fields in the morning."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "田",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_田中",
+      "kanji": "田中",
+      "keyword": "Tanaka",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_田中",
+        "hostKanji": "田",
+        "surface": "田中",
+        "reading": "たなか",
+        "meaning": "Tanaka",
+        "ja": "田中さんは隣に住みます。",
+        "jaHiragana": "たなかさんはとなりにすみます。",
+        "en": "Tanaka-san lives next door."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "田",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_古代",
+      "kanji": "古代",
+      "keyword": "Ancient times",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_古代",
+        "hostKanji": "古",
+        "surface": "古代",
+        "reading": "こだい",
+        "meaning": "Ancient times",
+        "ja": "この器は古代のものです。",
+        "jaHiragana": "このうつわはこだいのものです。",
+        "en": "This vessel is from ancient times."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "古",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_中古",
+      "kanji": "中古",
+      "keyword": "Secondhand / used",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_中古",
+        "hostKanji": "古",
+        "surface": "中古",
+        "reading": "ちゅうこ",
+        "meaning": "Secondhand / used",
+        "ja": "中古の机を買いました。",
+        "jaHiragana": "ちゅうこのつくえをかいました。",
+        "en": "I bought a used desk."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "古",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_古文",
+      "kanji": "古文",
+      "keyword": "Classical literature",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_古文",
+        "hostKanji": "古",
+        "surface": "古文",
+        "reading": "こぶん",
+        "meaning": "Classical literature",
+        "ja": "学校で古文を読みます。",
+        "jaHiragana": "がっこうでこぶんをよみます。",
+        "en": "We read classical literature at school."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "古",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_古い",
+      "kanji": "古い",
+      "keyword": "Old",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_古い",
+        "hostKanji": "古",
+        "surface": "古い",
+        "reading": "ふるい",
+        "meaning": "Old",
+        "ja": "この本は古いです。",
+        "jaHiragana": "このほんはふるいです。",
+        "en": "This book is old."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "古",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_古本",
+      "kanji": "古本",
+      "keyword": "Used book",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_古本",
+        "hostKanji": "古",
+        "surface": "古本",
+        "reading": "ふるほん",
+        "meaning": "Used book",
+        "ja": "駅前で古本を探します。",
+        "jaHiragana": "えきまえでふるほんをさがします。",
+        "en": "I look for used books in front of the station."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "古",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_古寺",
+      "kanji": "古寺",
+      "keyword": "Old temple",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_古寺",
+        "hostKanji": "古",
+        "surface": "古寺",
+        "reading": "ふるでら",
+        "meaning": "Old temple",
+        "ja": "山の中に古寺があります。",
+        "jaHiragana": "やまのなかにふるでらがあります。",
+        "en": "There is an old temple in the mountains."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "古",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_吾輩",
+      "kanji": "吾輩",
+      "keyword": "I, myself",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_吾輩",
+        "hostKanji": "吾",
+        "surface": "吾輩",
+        "reading": "わがはい",
+        "meaning": "I, myself",
+        "ja": "吾輩はこの庭の主である。",
+        "jaHiragana": "わがはいはこのにわのぬしである。",
+        "en": "I am the master of this garden."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "吾",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_吾人",
+      "kanji": "吾人",
+      "keyword": "We people, I",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_吾人",
+        "hostKanji": "吾",
+        "surface": "吾人",
+        "reading": "ごじん",
+        "meaning": "We people, I",
+        "ja": "吾人は同じ空を見ます。",
+        "jaHiragana": "ごじんはおなじそらをみます。",
+        "en": "We look at the same sky."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "吾",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_吾",
+      "kanji": "吾",
+      "keyword": "I",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_吾",
+        "hostKanji": "吾",
+        "surface": "吾",
+        "reading": "われ",
+        "meaning": "I",
+        "ja": "吾はここに立ちます。",
+        "jaHiragana": "われはここにたちます。",
+        "en": "I stand here."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "吾",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_吾子",
+      "kanji": "吾子",
+      "keyword": "My child",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_吾子",
+        "hostKanji": "吾",
+        "surface": "吾子",
+        "reading": "あこ",
+        "meaning": "My child",
+        "ja": "吾子はもう歩きます。",
+        "jaHiragana": "あこはもうあるきます。",
+        "en": "My child already walks."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "吾",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_吾妻",
+      "kanji": "吾妻",
+      "keyword": "My wife / eastern provinces",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_吾妻",
+        "hostKanji": "吾",
+        "surface": "吾妻",
+        "reading": "あづま",
+        "meaning": "My wife / eastern provinces",
+        "ja": "昔の人は東の国を吾妻と言いました。",
+        "jaHiragana": "むかしのひとはひがしのくにをあづまといいました。",
+        "en": "People of old called the eastern lands Azuma."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "吾",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_冒険",
+      "kanji": "冒険",
+      "keyword": "Adventure, risk",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_冒険",
+        "hostKanji": "冒",
+        "surface": "冒険",
+        "reading": "ぼうけん",
+        "meaning": "Adventure, risk",
+        "ja": "子どもは小さな冒険が好きです。",
+        "jaHiragana": "こどもはちいさなぼうけんがすきです。",
+        "en": "Children like a small adventure."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "冒",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_冒頭",
+      "kanji": "冒頭",
+      "keyword": "Beginning (of a speech, etc.)",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_冒頭",
+        "hostKanji": "冒",
+        "surface": "冒頭",
+        "reading": "ぼうとう",
+        "meaning": "Beginning (of a speech, etc.)",
+        "ja": "話の冒頭は静かでした。",
+        "jaHiragana": "はなしのぼうとうはしずかでした。",
+        "en": "The beginning of the talk was quiet."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "冒",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_冒涜",
+      "kanji": "冒涜",
+      "keyword": "Blasphemy, desecration",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_冒涜",
+        "hostKanji": "冒",
+        "surface": "冒涜",
+        "reading": "ぼうとく",
+        "meaning": "Blasphemy, desecration",
+        "ja": "その落書きは神への冒涜です。",
+        "jaHiragana": "そのらくがきはかみへのぼうとくです。",
+        "en": "That graffiti is a desecration of the gods."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "冒",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_冒す",
+      "kanji": "冒す",
+      "keyword": "To brave, to risk",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_冒す",
+        "hostKanji": "冒",
+        "surface": "冒す",
+        "reading": "おかす",
+        "meaning": "To brave, to risk",
+        "ja": "彼は危険を冒します。",
+        "jaHiragana": "かれはきけんをおかします。",
+        "en": "He takes a risk."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "冒",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_危険を冒す",
+      "kanji": "危険を冒す",
+      "keyword": "To take a risk",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_危険を冒す",
+        "hostKanji": "冒",
+        "surface": "危険を冒す",
+        "reading": "きけんをおかす",
+        "meaning": "To take a risk",
+        "ja": "彼女は危険を冒して山へ行きました。",
+        "jaHiragana": "かのじょはきけんをおかしてやまへいきました。",
+        "en": "She took a risk and went into the mountains."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "冒",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_病を冒す",
+      "kanji": "病を冒す",
+      "keyword": "To be afflicted by illness",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_病を冒す",
+        "hostKanji": "冒",
+        "surface": "病を冒す",
+        "reading": "やまいをおかす",
+        "meaning": "To be afflicted by illness",
+        "ja": "長旅で病を冒しました。",
+        "jaHiragana": "ながたびでやまいをおかしました。",
+        "en": "He fell ill on the long journey."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "冒",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_朋友",
+      "kanji": "朋友",
+      "keyword": "Friend, companion",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_朋友",
+        "hostKanji": "朋",
+        "surface": "朋友",
+        "reading": "ほうゆう",
+        "meaning": "Friend, companion",
+        "ja": "昔の朋友に会いました。",
+        "jaHiragana": "むかしのほうゆうにあいました。",
+        "en": "I met an old friend."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "朋",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_親朋",
+      "kanji": "親朋",
+      "keyword": "Close friend",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_親朋",
+        "hostKanji": "朋",
+        "surface": "親朋",
+        "reading": "しんぽう",
+        "meaning": "Close friend",
+        "ja": "親朋が家に来ます。",
+        "jaHiragana": "しんぽうがいえにきます。",
+        "en": "A close friend is coming to the house."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "朋",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_朋輩",
+      "kanji": "朋輩",
+      "keyword": "Peer, colleague",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_朋輩",
+        "hostKanji": "朋",
+        "surface": "朋輩",
+        "reading": "ほうばい",
+        "meaning": "Peer, colleague",
+        "ja": "朋輩と昼を食べます。",
+        "jaHiragana": "ほうばいとひるをたべます。",
+        "en": "I eat lunch with a colleague."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "朋",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_朋",
+      "kanji": "朋",
+      "keyword": "Companion",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_朋",
+        "hostKanji": "朋",
+        "surface": "朋",
+        "reading": "とも",
+        "meaning": "Companion",
+        "ja": "道で朋に会います。",
+        "jaHiragana": "みちでともにあいます。",
+        "en": "I meet a companion on the road."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "朋",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_朋党",
+      "kanji": "朋党",
+      "keyword": "Clique, faction",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_朋党",
+        "hostKanji": "朋",
+        "surface": "朋党",
+        "reading": "ほうとう",
+        "meaning": "Clique, faction",
+        "ja": "小さな朋党ができます。",
+        "jaHiragana": "ちいさなほうとうができます。",
+        "en": "A small clique forms."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "朋",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_友朋",
+      "kanji": "友朋",
+      "keyword": "Friends and companions",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_友朋",
+        "hostKanji": "朋",
+        "surface": "友朋",
+        "reading": "ゆうほう",
+        "meaning": "Friends and companions",
+        "ja": "友朋の手紙が届きました。",
+        "jaHiragana": "ゆうほうのてがみがとどきました。",
+        "en": "A letter from a friend arrived."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "朋",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_明日",
+      "kanji": "明日",
+      "keyword": "Tomorrow",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_明日",
+        "hostKanji": "明",
+        "surface": "明日",
+        "reading": "あした",
+        "meaning": "Tomorrow",
+        "ja": "明日は雨です。",
+        "jaHiragana": "あしたはあめです。",
+        "en": "It will rain tomorrow."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "明",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_説明",
+      "kanji": "説明",
+      "keyword": "Explanation",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_説明",
+        "hostKanji": "明",
+        "surface": "説明",
+        "reading": "せつめい",
+        "meaning": "Explanation",
+        "ja": "先生が説明をします。",
+        "jaHiragana": "せんせいがせつめいをします。",
+        "en": "The teacher gives an explanation."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "明",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_明るい",
+      "kanji": "明るい",
+      "keyword": "Bright, cheerful",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_明るい",
+        "hostKanji": "明",
+        "surface": "明るい",
+        "reading": "あかるい",
+        "meaning": "Bright, cheerful",
+        "ja": "この部屋は明るいです。",
+        "jaHiragana": "このへやはあかるいです。",
+        "en": "This room is bright."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "明",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_明白",
+      "kanji": "明白",
+      "keyword": "Clear, obvious",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_明白",
+        "hostKanji": "明",
+        "surface": "明白",
+        "reading": "めいはく",
+        "meaning": "Clear, obvious",
+        "ja": "答えは明白です。",
+        "jaHiragana": "こたえはめいはくです。",
+        "en": "The answer is clear."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "明",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_文明",
+      "kanji": "文明",
+      "keyword": "Civilization",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_文明",
+        "hostKanji": "明",
+        "surface": "文明",
+        "reading": "ぶんめい",
+        "meaning": "Civilization",
+        "ja": "古い文明の跡です。",
+        "jaHiragana": "ふるいぶんめいのあとです。",
+        "en": "It is a remnant of an old civilization."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "明",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    },
+    {
+      "id": "l01_明かり",
+      "kanji": "明かり",
+      "keyword": "Light, illumination",
+      "image": "studies/rice.jpg",
+      "imageScale": 1,
+      "compoundsCurriculum": {
+        "id": "l01_明かり",
+        "hostKanji": "明",
+        "surface": "明かり",
+        "reading": "あかり",
+        "meaning": "Light, illumination",
+        "ja": "窓の明かりが見えます。",
+        "jaHiragana": "まどのあかりがみえます。",
+        "en": "You can see a light in the window."
+      },
+      "meta": {
+        "lesson": 1,
+        "hostKanji": "明",
+        "prototype": true
+      },
+      "imageRev": 1788440802
+    }
+  ]
+}

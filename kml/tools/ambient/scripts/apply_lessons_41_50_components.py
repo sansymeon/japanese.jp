@@ -21,6 +21,16 @@ def render(node, indent: int = 2) -> str:
     if isinstance(node, str):
         return f'{pad}<span class="kanji-part">{node}</span>\n'
     kind, children = node
+    if kind == "e":
+        outer, inner = children
+        return (
+            f'{pad}<div class="component-layout enclosure-layout">\n'
+            f'{pad}  <span class="kanji-part enclosure-part">{outer}</span>\n'
+            f'{pad}  <div class="enclosure-inner">\n'
+            f"{render(inner, indent + 4)}"
+            f"{pad}  </div>\n"
+            f"{pad}</div>\n"
+        )
     cls = "stack-horizontal" if kind == "h" else "stack-vertical"
     out = [f'{pad}<div class="component-layout {cls}">\n']
     for c in children:
@@ -37,7 +47,11 @@ def box(node) -> str:
             "</div>"
         )
     kind = node[0]
-    attr = ' data-render-layout="h"' if kind == "h" else ' data-render-layout="v"'
+    attr = {
+        "h": ' data-render-layout="h"',
+        "v": ' data-render-layout="v"',
+        "e": ' data-render-layout="e"',
+    }[kind]
     return (
         f'<div class="component-box"{attr}>\n'
         f"{render(node, 2)}"
@@ -54,6 +68,10 @@ def V(*xs):
     return ("v", list(xs))
 
 
+def E(outer, inner):
+    return ("e", [outer, inner])
+
+
 # ---------------------------------------------------------------------------
 # Structures
 # ---------------------------------------------------------------------------
@@ -61,15 +79,16 @@ def V(*xs):
 STRUCTURES: dict[int, dict[str, object]] = {
     41: {
         # tidy + small upgrades
-        "勾": H("勹", "ム"),  # wrap + elbow (Heisig capture)
-        "弁": V("ム", "廾"),  # elbow + two hands
+        "勾": H("勹", "厶"),  # wrap + private
+        "弁": V("厶", "廾"),  # private + two hands
         "会": V("人", "云"),  # umbrella/person + quote (catalog 云)
         "互": "互",  # keep primitive
-        "窓": V("穴", "心"),  # largest familiar: hole + heart (穴 may be later; alt 宀儿ム心)
+        "窓": V("穴", "心"),  # largest familiar: hole + heart (穴 may be later; alt 宀儿厶心)
+        "雄": H("厷", "隹"),
     },
     42: {
         "棄": V("𠫓", "世", "木"),
-        "撤": H("扌", V("育", "夂")),
+        "撤": H("扌", V("育", "攵")),
         "唆": H("口", V("允", "夂")),
         "出": V("山", "山"),
         "峠": H("山", V("上", "下")),
@@ -82,7 +101,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "分": V("八", "刀"),
         "貧": V("分", "貝"),
         "頒": H("分", "頁"),
-        "公": V("八", "ム"),
+        "公": V("八", "厶"),
         "松": H("木", "公"),
         "翁": V("公", "羽"),
         "訟": H("言", "公"),
@@ -97,7 +116,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "賞": V("尚", "貝"),
     },
     44: {
-        "党": V("⺌", "冖", "儿"),
+        "党": V("⺌", "冖", "口", "儿"),
         "堂": V("尚", "土"),
         "常": V("尚", "巾"),
         "裳": V("尚", "衣"),
@@ -108,7 +127,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "披": H("扌", "皮"),
         "破": H("石", "皮"),
         "被": H("衤", "皮"),
-        "残": H("歹", "戈"),  # bones + float/spear-ish; see notes
+        "残": H("歹", "戋"),
         "殉": H("歹", V("勹", "日")),
         "殊": H("歹", "朱"),
         "殖": H("歹", "直"),
@@ -129,7 +148,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "恥": H("耳", "心"),
         "職": H("耳", V("音", "戈")),
         "聖": V("耳", "口", "王"),
-        "敢": H(V("乛", "耳"), "夂"),
+        "敢": H(V("乛", "耳"), "攵"),
         "聴": H("耳", V("十", "罒", "心")),
         "懐": H("忄", V("十", "罒", "衣")),
         "慢": H("忄", "曼"),
@@ -197,10 +216,10 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "彼": H("彳", "皮"),
         "役": H("彳", V("几", "又")),
         "徳": H("彳", V("十", "罒", "心")),
-        "徹": H("彳", V("育", "夂")),
-        "徴": H("彳", V("山", "王", "夂")),
+        "徹": H("彳", "育", "攵"),
+        "徴": H("彳", V("山", "王"), "攵"),
         "懲": V("徴", "心"),
-        "微": H("彳", V("山", "兀", "夂")),
+        "微": H("彳", V("山", "兀"), "攵"),
         "街": H("彳", "圭", "亍"),
         "桁": H("木", "行"),
         "衡": H("行", V("勹", "田", "大")),
@@ -216,7 +235,7 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "秒": H("禾", "少"),
         "秋": H("禾", "火"),
         "愁": V("秋", "心"),
-        "私": H("禾", "ム"),
+        "私": H("禾", "厶"),
         "秩": H("禾", "失"),
         "秘": H("禾", "必"),
         "称": H("禾", V("𠂉", "小")),
@@ -234,8 +253,8 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "透": H("⻌", "秀"),
         "誘": H("言", "秀"),
         "稽": H("禾", V("尤", "旨")),
-        "穀": H(V("士", "冖", "禾"), V("几", "又")),
-        "菌": V("艹", "禾"),  # Phase1 approx (no enclosure); flagged
+        "穀": H(V("士", "冖", "一", "禾"), V("几", "又")),
+        "菌": V("艹", E("囗", "禾")),
         "萎": V("艹", "委"),
         "米": "米",
         "粉": H("米", "分"),
@@ -247,8 +266,8 @@ STRUCTURES: dict[int, dict[str, object]] = {
         "謎": H("言", "迷"),
         "糧": H("米", "量"),
         "菊": V("艹", V("勹", "米")),
-        "奥": V("米", "大"),
-        "数": H(V("米", "女"), "夂"),
+        "奥": V(H("丿", "冂"), "米", "大"),
+        "数": H(V("米", "女"), "攵"),
         "楼": H("木", V("米", "女")),
     },
 }
@@ -256,16 +275,13 @@ STRUCTURES: dict[int, dict[str, object]] = {
 # Fix 趣 (was wrong above)
 STRUCTURES[45]["趣"] = H("走", "取")
 
-# 残: Japanese right is closer to 戋/戈 with marks; use 戈 as familiar spear for recognition
-# Keep 残 as H(歹, 戈) — flagged as imperfect glyph match
-
 # 窓: 穴 may not be taught yet — check. Prefer familiar from current L41 parts.
-# Revert 窓 to keep existing pedagogical 宀+儿+ム+心 if 穴 unknown
-STRUCTURES[41]["窓"] = V("宀", "儿", "ム", "心")
+# Revert 窓 to keep existing pedagogical 宀+儿+厶+心 if 穴 unknown
+STRUCTURES[41]["窓"] = V("宀", "儿", "厶", "心")
 
 # 敢: 乛 may not render well — use 耳+夂 with left as 耳 only? Heisig street+ear+taskmaster
 # Safer: H(V("十", "耳"), "夂") is wrong. Use H("耳", "夂") under-decomposed OR keep V("一","耳")+夂
-STRUCTURES[45]["敢"] = H(V("一", "耳"), "夂")
+STRUCTURES[45]["敢"] = H(V("一", "耳"), "攵")
 
 # 街: 亍 may be obscure — H(行 with 圭) better as H("彳", "圭", "亍") or nest
 # Alternative: H("行") split — use nested matching print: 彳 | 圭 | 亍
@@ -377,7 +393,7 @@ def update_catalog() -> None:
         "禾": "wheat",
         "扌": "fingers",
         "忄": "state of mind",
-        "ム": "elbow",
+        "厶": "private",
         "𠫓": "infant",
         "㐬": "stream",
         "廾": "two hands",
@@ -399,6 +415,7 @@ def update_catalog() -> None:
     intros = data.setdefault("introductions", [])
     existing = {(int(i["lesson"]), i["glyph"]) for i in intros}
     new_intros = [
+        {"lesson": 40, "beforeKanji": "払", "glyph": "厶", "label": "private"},
         {"lesson": 41, "beforeKanji": "弁", "glyph": "廾", "label": "two hands", "heisig": "two hands"},
         {"lesson": 42, "beforeKanji": "棄", "glyph": "𠫓", "label": "infant", "heisig": "infant"},
         {"lesson": 44, "beforeKanji": "残", "glyph": "歹", "label": "bones", "heisig": "bones"},

@@ -650,6 +650,25 @@ body.bookshelf-page {
   opacity: 0.7;
 }
 
+/* Closing curtain call. Same card as a lesson, outside the numbered sequence. */
+.lesson-card--encore {
+  margin-top: 0.85rem;
+  border-color: rgba(201, 164, 88, 0.28);
+  background: rgba(201, 164, 88, 0.045);
+}
+
+.lesson-card-subtitle {
+  margin: -0.35rem 0 0;
+  max-width: 22rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  text-align: center;
+  color: color-mix(in srgb, var(--gold) 84%, #f3f1eb);
+}
+
 .book-room-footer-nav {
   width: min(100% - 2.5rem, 28rem);
   margin: clamp(3.5rem, 8vw, 5.5rem) auto 0;

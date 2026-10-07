@@ -33,6 +33,8 @@ def collection_dir_for_id(collection_id: str) -> str | None:
         return "ambient_gallery_film"
     if collection_id.startswith("ambient_gallery_japan"):
         return "ambient_gallery_japan_4_seasons"
+    if collection_id.startswith("borneo_"):
+        return "borneo_exhibition"
     if collection_id.startswith("vocabulary_"):
         return "vocabulary"
     if collection_id.startswith("hiragana_song"):

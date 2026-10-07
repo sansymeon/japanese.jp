@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const ENGINE_VERSION = "2026-06-29-image-verse-crossfade";
+  const ENGINE_VERSION = "2026-10-02-compounds-curriculum";
 
   const DEFAULTS = {
     artworkArrivalMs: 8000,
@@ -107,6 +107,9 @@
       this.introPlayingFromGate = false;
       this.presentationEnded = false;
       this._soundtrackStarted = false;
+      this._soundtrackPlaylistIndex = 0;
+      this._soundtrackPlaylistFinished = false;
+      this._soundtrackEndedBound = null;
       this.finaleConfettiPending = false;
       this.confettiCodaActive = false;
 
@@ -142,6 +145,9 @@
         bookendImg: root.querySelector("[data-exhibition-bookend-img]"),
         bookendStamp: root.querySelector("[data-exhibition-bookend-stamp]"),
         bookendTitle: root.querySelector("[data-exhibition-bookend-title]"),
+        landscapeOverlay: root.querySelector("[data-landscape-overlay]"),
+        landscapeLatin: root.querySelector("[data-landscape-latin]"),
+        landscapeBrush: root.querySelector("[data-landscape-brush]"),
         vocabIntroOverlay: root.querySelector("[data-vocabulary-intro-overlay]"),
         vocabIntroJpBlock: root.querySelector("[data-vocabulary-intro-jp-block]"),
         vocabIntroJp: root.querySelector("[data-vocabulary-intro-jp]"),
@@ -217,6 +223,14 @@
         anchorCompoundsLayer: root.querySelector("[data-anchor-compounds-layer]"),
         anchorCompoundsWord: root.querySelector("[data-anchor-compounds-word]"),
         anchorCompoundsReading: root.querySelector("[data-anchor-compounds-reading]"),
+        ccLayer: root.querySelector("[data-compounds-curriculum-layer]"),
+        ccIdentity: root.querySelector("[data-cc-identity]"),
+        ccSurface: root.querySelector("[data-cc-surface]"),
+        ccReading: root.querySelector("[data-cc-reading]"),
+        ccMeaning: root.querySelector("[data-cc-meaning]"),
+        ccSentence: root.querySelector("[data-cc-sentence]"),
+        ccHiragana: root.querySelector("[data-cc-hiragana]"),
+        ccEnglish: root.querySelector("[data-cc-english]"),
       };
 
       this.soundtrackSlots = {
@@ -291,6 +305,10 @@
         "is-compounds-exhibition",
         profile === "compoundsExhibition" || profile === "japaneseVocabulary"
       );
+      this.root.classList.toggle(
+        "is-compounds-curriculum",
+        profile === "compoundsCurriculum"
+      );
       this.root.classList.toggle("is-japanese-vocabulary", profile === "japaneseVocabulary");
       this.root.classList.toggle(
         "is-anchor-compounds-exhibition",
@@ -343,11 +361,17 @@
         "is-gallery-crest-bookends",
         this.display.bookendStyle === "galleryCrest"
       );
+      this.root.classList.toggle(
+        "is-landscape-ambient",
+        family === "landscapeAmbient" || Boolean(this.collection.landscapeAmbient)
+      );
       const foundationsTypography =
         this.display.typographyStyle === "foundations" ||
         this.display.typographyStyle === "study" ||
         (typo === "mobile-refine" && this.meta?.theme === "heart");
       this.root.classList.toggle("is-foundations-typography", foundationsTypography);
+      this.root.classList.toggle("is-woman-child", this.isWomanChildExhibition);
+      this.root.classList.toggle("is-direct-artwork-handoff", this.directArtworkHandoff);
     }
 
     useAuthoredVerseLayout(typo) {
@@ -407,6 +431,10 @@
 
     get isCompoundsExhibitionProfile() {
       return this.display.exhibitProfile === "compoundsExhibition";
+    }
+
+    get isCompoundsCurriculumProfile() {
+      return this.display.exhibitProfile === "compoundsCurriculum";
     }
 
     get isJapaneseVocabularyProfile() {
@@ -521,6 +549,18 @@
       return this.display.showEnglish !== false;
     }
 
+    get isWomanChildExhibition() {
+      return (
+        (this.collection.id || "") === "woman_child_exhibition" ||
+        this.collection.meta?.theme === "womanChild"
+      );
+    }
+
+    /** Woman/Child: after verses, rest on the painting and dissolve into the next. */
+    get directArtworkHandoff() {
+      return this.timing.directArtworkHandoff === true;
+    }
+
     get seamlessExhibitHandoff() {
       const t = this.timing;
       if (t.seamlessExhibitHandoff === false) return false;
@@ -631,6 +671,7 @@
       if (this.isAssistedReadingProfile) return this.assistedReadingExhibitDurationMs(t);
       if (this.isVocabularyExhibitionProfile) return this.vocabularyExhibitionExhibitDurationMs(t);
       if (this.isCompoundsExhibitionProfile) return this.compoundsExhibitionExhibitDurationMs(t);
+      if (this.isCompoundsCurriculumProfile) return this.compoundsCurriculumExhibitDurationMs(t);
       if (this.isJapaneseVocabularyProfile) return this.japaneseVocabularyExhibitDurationMs(t);
       if (this.isAnchorCompoundsExhibitionProfile) {
         return this.anchorCompoundsExhibitDurationMs(t);
@@ -745,6 +786,44 @@
         (t.compoundsKanjiReturnFadeMs ?? 1400) +
         (t.exhibitTransitionMs ?? 3500)
       );
+    }
+
+    compoundsCurriculumCardHoldMs(step = {}, t = this.timing) {
+      const extra = (text, base, per) => Math.max(0, String(text || "").length - base) * per;
+      return {
+        sentence:
+          (t.curriculumSentenceHoldMs ?? 5000) + extra(step.ja, 12, 80),
+        hiragana:
+          (t.curriculumHiraganaHoldMs ?? 5800) + extra(step.jaHiragana, 14, 70),
+        english:
+          (t.curriculumEnglishHoldMs ?? 5400) + extra(step.en, 28, 35),
+      };
+    }
+
+    compoundsCurriculumCardMs(t = this.timing, step = {}) {
+      const holds = this.compoundsCurriculumCardHoldMs(step, t);
+      return (
+        (t.curriculumIdentityRevealMs ?? 1800) +
+        (t.curriculumIdentityHoldMs ?? 3400) +
+        (t.curriculumSentenceRevealMs ?? 1600) +
+        holds.sentence +
+        (t.curriculumHiraganaRevealMs ?? 1500) +
+        holds.hiragana +
+        (t.curriculumEnglishRevealMs ?? 1400) +
+        holds.english +
+        (t.curriculumCardFadeMs ?? 1600) +
+        (t.curriculumCardGapMs ?? 800)
+      );
+    }
+
+    compoundsCurriculumExhibitDurationMs(t = this.timing) {
+      const scene = this.scenes[this.sceneIndex] || this.scenes[0] || {};
+      const step = scene.compoundsCurriculum || {};
+      const intro =
+        this.sceneIndex === 0
+          ? (t.artworkAloneMs ?? 800) + (t.curriculumPauseBeforeMs ?? 1400)
+          : 0;
+      return intro + this.compoundsCurriculumCardMs(t, step);
     }
 
     japaneseVocabularyStepMs(t = this.timing, step = {}, options = {}) {
@@ -889,7 +968,7 @@
 
     get useGalleryGuardian() {
       if (this._cameraParam === "legacy") return false;
-      if (this._cameraParam === "guardian") return true;
+      if (this._cameraParam === "guardian" || this.display.camera === "guardian") return true;
       if (
         this.isGalleryProfile ||
         this.isVocabularyExhibitionProfile ||
@@ -1050,6 +1129,14 @@
           `${t.compoundsKanjiRevealMs ?? 1600}ms`
         );
         root.style.setProperty("--ken-burns-duration", `${t.kenBurnsDurationMs ?? 90000}ms`);
+      }
+      if (this.isCompoundsCurriculumProfile) {
+        root.style.setProperty(
+          "--ex-artwork-arrival",
+          `${t.artworkArrivalFadeMs ?? 2000}ms`
+        );
+        root.style.setProperty("--ex-cc-fade", `${t.curriculumIdentityRevealMs ?? 1800}ms`);
+        root.style.setProperty("--ken-burns-duration", "0ms");
       }
       if (this.isAnchorCompoundsExhibitionProfile) {
         this.setAnchorCompoundsFadeTiming(this.timing);
@@ -1248,7 +1335,8 @@
 
     initAudio() {
       const introPath = this.bookends?.opening?.audio || null;
-      const mainPath = this.soundtrack?.main || null;
+      const playlist = this.soundtrackPlaylist();
+      const mainPath = playlist[0] || this.soundtrack?.main || null;
 
       this.bookendAudio = this.mountAudioElement({
         kind: "intro",
@@ -1263,13 +1351,76 @@
         src: mainPath,
       });
 
+      this._soundtrackPlaylistIndex = 0;
+      this._soundtrackPlaylistFinished = false;
       if (mainPath && this.mainAudio) {
         this.mainAudio.load();
+        this.bindSoundtrackPlaylistAdvance();
       }
     }
 
+    soundtrackPlaylist() {
+      const s = this.soundtrack || {};
+      if (Array.isArray(s.playlist) && s.playlist.length) return s.playlist;
+      if (Array.isArray(s.files) && s.files.length) return s.files;
+      if (s.main) return [s.main];
+      return [];
+    }
+
+    soundtrackPlaylistDurationsMs() {
+      const s = this.soundtrack || {};
+      if (Array.isArray(s.playlistDurationsMs) && s.playlistDurationsMs.length) {
+        return s.playlistDurationsMs.map((n) => Number(n) || 0);
+      }
+      const meta = this.collection?.meta || {};
+      if (Array.isArray(meta.soundtrackPlayDurationsMs)) {
+        return meta.soundtrackPlayDurationsMs.map((n) => Number(n) || 0);
+      }
+      return [];
+    }
+
+    hasSoundtrackBed() {
+      return this.soundtrackPlaylist().length > 0 || Boolean(this.soundtrack?.main);
+    }
+
+    bindSoundtrackPlaylistAdvance() {
+      const audio = this.mainAudio;
+      if (!audio) return;
+      if (this._soundtrackEndedBound) {
+        audio.removeEventListener("ended", this._soundtrackEndedBound);
+        this._soundtrackEndedBound = null;
+      }
+      const files = this.soundtrackPlaylist();
+      if (files.length < 2) return;
+
+      this._soundtrackEndedBound = () => {
+        if (this.destroyed) return;
+        const list = this.soundtrackPlaylist();
+        const next = (this._soundtrackPlaylistIndex || 0) + 1;
+        if (next >= list.length) {
+          this._soundtrackPlaylistFinished = true;
+          return;
+        }
+        this._soundtrackPlaylistIndex = next;
+        const path = list[next];
+        audio.src = this.localUrl(path);
+        audio.loop = false;
+        audio.load();
+        const playPromise = audio.play();
+        if (playPromise) {
+          playPromise.catch((err) => {
+            this.audioError("soundtrack playlist advance error", err, { path, index: next });
+            this._soundtrackPlaylistFinished = true;
+          });
+        }
+        this.audioLog("soundtrack playlist advance", { path, index: next });
+      };
+      audio.addEventListener("ended", this._soundtrackEndedBound);
+    }
+
     ensureMainAudioSrc() {
-      const path = this.soundtrack?.main;
+      const files = this.soundtrackPlaylist();
+      const path = files[this._soundtrackPlaylistIndex || 0] || this.soundtrack?.main;
       if (!path) return null;
       const audio = this.audioEl("main");
       if (!this.audioSrcMatches(audio, path)) {
@@ -1282,9 +1433,12 @@
 
     /** Must run synchronously inside a user-gesture handler (click / key). */
     playSoundtrackFromUserGesture() {
-      const path = this.soundtrack?.main;
+      const files = this.soundtrackPlaylist();
+      const path = files[0] || this.soundtrack?.main;
       if (!path) return false;
 
+      this._soundtrackPlaylistIndex = 0;
+      this._soundtrackPlaylistFinished = false;
       const audio = this.ensureMainAudioSrc();
       if (!audio) return false;
       if (!audio.paused && !audio.ended) {
@@ -1363,7 +1517,7 @@
     }
 
     hasExhibitionAudio() {
-      return Boolean(this.bookends?.opening?.audio || this.soundtrack?.main);
+      return Boolean(this.bookends?.opening?.audio || this.hasSoundtrackBed());
     }
 
     isSilentGalleryCrestBookends() {
@@ -1375,7 +1529,7 @@
     }
 
     shouldStartSoundtrackDuringOpening(opening) {
-      if (!this.soundtrack?.main || !opening) return false;
+      if (!this.hasSoundtrackBed() || !opening) return false;
       const hasVisual = Boolean(opening.image || opening.images?.length);
       if (!hasVisual) return false;
       if (opening.startSoundtrackWithImage === false) return false;
@@ -1404,12 +1558,13 @@
     }
 
     shouldStartSoundtrackWithFirstScene() {
-      if (!this.soundtrack?.main) return false;
+      if (!this.hasSoundtrackBed()) return false;
       if (
         this.isAssistedReadingProfile ||
         this.isGalleryProfile ||
         this.isVocabularyExhibitionProfile ||
         this.isCompoundsExhibitionProfile ||
+        this.isCompoundsCurriculumProfile ||
         this.isJapaneseVocabularyProfile ||
         this.isAnchorCompoundsExhibitionProfile ||
         this.isStrokeOrderProfile ||
@@ -1432,7 +1587,7 @@
     }
 
     shouldDeferSoundtrackForOpening() {
-      if (!this.soundtrack?.main || this.skipBookends) return false;
+      if (!this.hasSoundtrackBed() || this.skipBookends) return false;
       return this.shouldStartSoundtrackDuringOpening(this.bookends?.opening);
     }
 
@@ -1465,10 +1620,30 @@
 
     getSoundtrackRemainingMs() {
       const audio = this.mainAudio;
-      if (!audio || audio.paused || audio.ended) return 0;
-      const duration = audio.duration;
-      if (!Number.isFinite(duration) || duration <= 0) return 0;
-      return Math.max(0, (duration - audio.currentTime) * 1000);
+      const durations = this.soundtrackPlaylistDurationsMs();
+      const files = this.soundtrackPlaylist();
+      const idx = this._soundtrackPlaylistIndex || 0;
+
+      if (this._soundtrackPlaylistFinished) return 0;
+
+      let rem = 0;
+      if (audio && !audio.paused && !audio.ended) {
+        const duration = audio.duration;
+        if (Number.isFinite(duration) && duration > 0) {
+          rem += Math.max(0, (duration - audio.currentTime) * 1000);
+        } else if (durations[idx]) {
+          rem += durations[idx];
+        }
+      } else if (audio && audio.ended) {
+        rem += 0;
+      } else if (durations[idx]) {
+        rem += durations[idx];
+      }
+
+      for (let i = idx + 1; i < Math.max(files.length, durations.length); i++) {
+        rem += durations[i] || 0;
+      }
+      return Math.max(0, rem);
     }
 
     ensureSoundtrackStarted() {
@@ -1731,7 +1906,8 @@
     }
 
     async startSoundtrack() {
-      const path = this.soundtrack?.main;
+      const files = this.soundtrackPlaylist();
+      const path = files[this._soundtrackPlaylistIndex || 0] || this.soundtrack?.main;
       if (!path) return false;
 
       const audio = this.ensureMainAudioSrc();
@@ -1744,6 +1920,7 @@
       await this.waitForAudioReady(audio);
 
       try {
+        if (this.soundtrack?.loop) audio.loop = true;
         await audio.play();
         this._soundtrackStarted = true;
         this.audioLog("soundtrack started", { path, src: audio.currentSrc || audio.src });
@@ -1758,10 +1935,32 @@
     }
 
     async waitForSoundtrackEnd() {
-      const audio = this.mainAudio;
-      if (!audio || audio.paused || audio.ended) return;
-      this.debugLog("waiting for soundtrack end");
-      await this.waitForAudioEnd(audio);
+      const files = this.soundtrackPlaylist();
+      if (!files.length) return;
+      this.debugLog("waiting for soundtrack end", { tracks: files.length });
+      while (!this.destroyed) {
+        if (this._soundtrackPlaylistFinished) return;
+        const audio = this.mainAudio;
+        if (!audio) return;
+        if (!audio.paused && !audio.ended) {
+          await this.waitForAudioEnd(audio);
+          continue;
+        }
+        if (audio.ended) {
+          // Allow ended handler to advance / mark finished
+          await this.wait(80);
+          if (this._soundtrackPlaylistFinished) return;
+          if ((this._soundtrackPlaylistIndex || 0) >= files.length - 1) {
+            this._soundtrackPlaylistFinished = true;
+            return;
+          }
+          // Next track should be playing; if not, bail
+          if (audio.paused) return;
+          continue;
+        }
+        if (this.getSoundtrackRemainingMs() <= 0) return;
+        await this.wait(200);
+      }
     }
 
     stopBookendAudio() {
@@ -1776,6 +1975,7 @@
         this.mainAudio.pause();
         this.mainAudio.currentTime = 0;
       }
+      this._soundtrackPlaylistFinished = true;
     }
 
     stopAllAudio() {
@@ -2086,6 +2286,99 @@
       this.setClass(this.els.veil, "is-clear", true);
     }
 
+    /**
+     * Simultaneous artwork dissolve. No kanji bridge and no black corridor.
+     * Duration is exhibitTransitionMs (Woman/Child aims at 18–20s).
+     */
+    async directArtworkCrossfade(nextScene, stillRunning, t = this.timing) {
+      const fadeMs = this.exhibitTransitionMs(t);
+      const scaled = Math.round(fadeMs * this.timingScale);
+      const rootStyle = document.documentElement.style;
+      const prevFade = rootStyle.getPropertyValue("--ex-fade");
+      const prevExhale = rootStyle.getPropertyValue("--ex-exhale");
+      rootStyle.setProperty("--ex-fade", `${scaled}ms`);
+      rootStyle.setProperty("--ex-exhale", `${scaled}ms`);
+      rootStyle.setProperty("--ex-transition", `${scaled}ms`);
+      this.setClass(this.els.kanji, "is-visible", false);
+      this.setClass(this.els.kanji, "is-exhaling", false);
+      this.setClass(this.els.keyword, "is-visible", false);
+      this.setKanjiCentered(false);
+      try {
+        await this.crossfadeArtworkLayers(nextScene, fadeMs, { holdOutgoing: true });
+      } finally {
+        if (prevFade) rootStyle.setProperty("--ex-fade", prevFade);
+        else rootStyle.setProperty("--ex-fade", `${t.kanjiRevealMs}ms`);
+        if (prevExhale) rootStyle.setProperty("--ex-exhale", prevExhale);
+        else rootStyle.setProperty("--ex-exhale", `${t.imageExhaleFadeMs}ms`);
+      }
+      if (!stillRunning()) return;
+    }
+
+    /** Last painting leaves; closing bookend follows. Kanji stays hidden. */
+    async directArtworkConclusion(stillRunning, t = this.timing) {
+      const exhaleMs = t.imageExhaleFadeMs;
+      const scaled = Math.round(exhaleMs * this.timingScale);
+      document.documentElement.style.setProperty("--ex-exhale", `${scaled}ms`);
+      this.setClass(this.els.kanji, "is-visible", false);
+      this.setClass(this.els.kanji, "is-exhaling", false);
+      this.setKanjiCentered(false);
+      this.setClass(this.els.artwork, "is-exhaling", true);
+      await this.wait(exhaleMs);
+      if (!stillRunning()) return;
+      this.setClass(this.els.artwork, "is-visible", false);
+      this.setClass(this.els.artwork, "is-exhaling", false);
+    }
+
+    async playDirectArtworkExit(stillRunning, count) {
+      const t = this.timing;
+      this.setClass(this.els.verseJp, "is-visible", false);
+      this.setClass(this.els.verseEn, "is-visible", false);
+      this.setClass(this.els.kanji, "is-visible", false);
+      this.setClass(this.els.kanji, "is-exhaling", false);
+      this.setClass(this.els.keyword, "is-visible", false);
+      this.setKanjiCentered(false);
+
+      const holdMs = this.cleanArtworkHoldMs(t);
+      if (holdMs > 0) {
+        await this.wait(holdMs);
+        if (!stillRunning()) return;
+      }
+
+      if (this.singleExhibit) {
+        await this.directArtworkConclusion(stillRunning, t);
+        if (!stillRunning()) return;
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: this.scenes[this.sceneIndex]?.id },
+          })
+        );
+        return;
+      }
+
+      const next = this.sceneIndex + 1;
+      if (next >= count) {
+        await this.directArtworkConclusion(stillRunning, t);
+        if (!stillRunning()) return;
+        this.setKanjiCentered(false);
+        if (this.display.loop) {
+          if (this.bookends?.opening) {
+            await this.playOpeningBookend();
+            if (!stillRunning()) return;
+          }
+          this.playExhibit(0);
+        } else if (this.bookends?.closing) {
+          await this.playClosingBookend();
+        }
+        return;
+      }
+
+      await this.directArtworkCrossfade(this.scenes[next], stillRunning, t);
+      if (!stillRunning()) return;
+      this.setKanjiCentered(false);
+      this._seamlessHandoffTo = next;
+      await this.playExhibit(next);
+    }
+
     async crossfadeArtworkLayers(nextScene, fadeMs, options = {}) {
       const inactiveKey = this.activeArtworkKey === "a" ? "b" : "a";
       const activeKey = this.activeArtworkKey;
@@ -2109,7 +2402,9 @@
       this.setClass(inactive.wrap, "is-exhaling", false);
       this.setClass(inactive.wrap, "is-on-top", true);
       this.setClass(inactive.wrap, "is-visible", true);
-      this.setClass(active.wrap, "is-exhaling", true);
+      if (!options.holdOutgoing) {
+        this.setClass(active.wrap, "is-exhaling", true);
+      }
 
       await this.wait(fadeMs);
 
@@ -2139,6 +2434,24 @@
       this.resetHiraganaTypoLayer();
       this.resetHiraganaOriginsLayer();
       this.resetLyricFilmLayer();
+      this.resetCompoundsCurriculumLayer();
+    }
+
+    resetCompoundsCurriculumLayer() {
+      const layer = this.els.ccLayer;
+      if (layer) {
+        layer.classList.add("exhibition-hidden");
+        layer.setAttribute("aria-hidden", "true");
+      }
+      for (const key of ["ccIdentity", "ccSentence", "ccHiragana", "ccEnglish"]) {
+        this.els[key]?.classList.remove("is-visible");
+      }
+      if (this.els.ccSurface) this.els.ccSurface.textContent = "";
+      if (this.els.ccReading) this.els.ccReading.textContent = "";
+      if (this.els.ccMeaning) this.els.ccMeaning.textContent = "";
+      if (this.els.ccSentence) this.els.ccSentence.textContent = "";
+      if (this.els.ccHiragana) this.els.ccHiragana.textContent = "";
+      if (this.els.ccEnglish) this.els.ccEnglish.textContent = "";
     }
 
     resetHiraganaSongLayer() {
@@ -3337,7 +3650,21 @@
       }
     }
 
+    cleanArtworkHoldMs(t = this.timing) {
+      if (t.cleanArtworkHoldMs != null) return t.cleanArtworkHoldMs;
+      return t.essenceHoldMs || 0;
+    }
+
     exhibitDurationMs(t = this.timing) {
+      const essenceReveal = this.directArtworkHandoff ? 0 : t.essenceKanjiRevealMs;
+      const quietHold = this.directArtworkHandoff
+        ? this.cleanArtworkHoldMs(t)
+        : t.essenceHoldMs || 0;
+      const handoff = this.directArtworkHandoff
+        ? this.exhibitTransitionMs(t)
+        : this.seamlessExhibitHandoff
+          ? this.galleryBridgeHandoffMs(t)
+          : t.imageExhaleFadeMs + t.kanjiAloneHoldMs + t.kanjiExhaleFadeMs;
       let ms =
         t.artworkArrivalMs +
         t.artworkAloneMs +
@@ -3345,11 +3672,9 @@
         t.keywordDelayMs +
         t.titleHoldMs +
         t.titleFadeMs +
-        t.essenceKanjiRevealMs +
-        (t.essenceHoldMs || 0) +
-        (this.seamlessExhibitHandoff
-          ? this.galleryBridgeHandoffMs(t)
-          : t.imageExhaleFadeMs + t.kanjiAloneHoldMs + t.kanjiExhaleFadeMs);
+        essenceReveal +
+        quietHold +
+        handoff;
       if (this.showKeyword) {
         ms += t.keywordFadeMs;
       }
@@ -3430,6 +3755,13 @@
           framingScale = scene.imageScale ?? 0.86;
           scaleMin = 0.82;
           motionScale = 1.45;
+        } else if (this.isWomanChildExhibition) {
+          // Keep the painted figure in the room. Dark margins are part of the
+          // picture, not a cue to zoom in, and the push stays under about 8%.
+          coverBoost = 1;
+          framingScale = scene.imageScale ?? 1;
+          scaleMin = 1.02;
+          motionScale = this.display.cameraMotionScale ?? 0.55;
         } else if (this.isJapaneseVocabularyProfile) {
           // Slight documentary drift across the full soundtrack (including coda hold).
           coverBoost = window.GalleryGuardian.measureCoverBoost(img);
@@ -3457,6 +3789,7 @@
         } else {
           coverBoost = window.GalleryGuardian.measureCoverBoost(img);
         }
+        if (this.display?.disableCoverBoost) coverBoost = 1;
         const plan = window.GalleryGuardian.plan(scene, {
           sceneIndex: this.sceneIndex,
           history: this.cameraHistory,
@@ -3484,7 +3817,7 @@
         return;
       }
 
-      if (!this.isImageVerseProfile) {
+      if (!this.isImageVerseProfile && !this.isCompoundsCurriculumProfile) {
         img.classList.add("ken-burns");
       }
     }
@@ -4950,6 +5283,161 @@
       await this.playCompoundsExhibit(next);
     }
 
+    setCompoundsCurriculumCard(step) {
+      if (this.els.ccSurface) this.els.ccSurface.textContent = step.surface || "";
+      if (this.els.ccReading) this.els.ccReading.textContent = step.reading || "";
+      if (this.els.ccMeaning) this.els.ccMeaning.textContent = step.meaning || "";
+      if (this.els.ccSentence) this.els.ccSentence.textContent = step.ja || "";
+      if (this.els.ccHiragana) this.els.ccHiragana.textContent = step.jaHiragana || "";
+      if (this.els.ccEnglish) this.els.ccEnglish.textContent = step.en || "";
+      this.els.ccIdentity?.classList.remove("is-visible");
+      this.els.ccSentence?.classList.remove("is-visible");
+      this.els.ccHiragana?.classList.remove("is-visible");
+      this.els.ccEnglish?.classList.remove("is-visible");
+    }
+
+    async fadeCurriculumEl(el, visible, ms) {
+      document.documentElement.style.setProperty("--ex-cc-fade", `${ms}ms`);
+      this.setClass(el, "is-visible", visible);
+      await this.wait(ms);
+    }
+
+    async playCompoundsCurriculumCard(stillRunning, step, t) {
+      const holds = this.compoundsCurriculumCardHoldMs(step, t);
+      this.setCompoundsCurriculumCard(step);
+
+      await this.fadeCurriculumEl(
+        this.els.ccIdentity,
+        true,
+        t.curriculumIdentityRevealMs ?? 1800
+      );
+      if (!stillRunning()) return;
+      await this.wait(t.curriculumIdentityHoldMs ?? 3400);
+      if (!stillRunning()) return;
+
+      await this.fadeCurriculumEl(
+        this.els.ccSentence,
+        true,
+        t.curriculumSentenceRevealMs ?? 1600
+      );
+      if (!stillRunning()) return;
+      await this.wait(holds.sentence);
+      if (!stillRunning()) return;
+
+      await this.fadeCurriculumEl(
+        this.els.ccHiragana,
+        true,
+        t.curriculumHiraganaRevealMs ?? 1500
+      );
+      if (!stillRunning()) return;
+      await this.wait(holds.hiragana);
+      if (!stillRunning()) return;
+
+      await this.fadeCurriculumEl(
+        this.els.ccEnglish,
+        true,
+        t.curriculumEnglishRevealMs ?? 1400
+      );
+      if (!stillRunning()) return;
+      await this.wait(holds.english);
+      if (!stillRunning()) return;
+
+      const fadeMs = t.curriculumCardFadeMs ?? 1600;
+      document.documentElement.style.setProperty("--ex-cc-fade", `${fadeMs}ms`);
+      this.setClass(this.els.ccIdentity, "is-visible", false);
+      this.setClass(this.els.ccSentence, "is-visible", false);
+      this.setClass(this.els.ccHiragana, "is-visible", false);
+      this.setClass(this.els.ccEnglish, "is-visible", false);
+      await this.wait(fadeMs);
+      if (!stillRunning()) return;
+      await this.wait(t.curriculumCardGapMs ?? 800);
+    }
+
+    async playCompoundsCurriculumExhibit(index) {
+      if (this.destroyed || !this.scenes.length) return;
+
+      const count = this.scenes.length;
+      if (index >= count && !this.display.loop) return;
+
+      this.clearRun();
+      const runId = this.runId;
+      const stillRunning = () => !this.destroyed && runId === this.runId;
+
+      this.sceneIndex = ((index % count) + count) % count;
+      const scene = this.scenes[this.sceneIndex];
+      const t = this.timing;
+      const step = scene.compoundsCurriculum || {};
+      const skippedArrival = this._curriculumArrived === true;
+
+      this.resetImageVerseForeground();
+      if (this.els.ccLayer) {
+        this.els.ccLayer.classList.remove("exhibition-hidden");
+        this.els.ccLayer.setAttribute("aria-hidden", "false");
+      }
+
+      if (!skippedArrival) {
+        await this.waitInitialExhibitionBlack(stillRunning, this.sceneIndex);
+        if (!stillRunning()) return;
+
+        const layer = this.artworkLayers[this.activeArtworkKey];
+        document.documentElement.style.setProperty(
+          "--ex-artwork-arrival",
+          `${t.artworkArrivalFadeMs ?? 2000}ms`
+        );
+        this.populateArtworkLayer(this.activeArtworkKey, scene);
+        this.syncLegacyArtworkRefs();
+        await this.applySceneCameraToImage(layer.img, scene);
+        if (!stillRunning()) return;
+
+        this.setClass(this.els.veil, "is-corridor", false);
+        this.setClass(this.els.veil, "is-clear", true);
+        this.setClass(layer.wrap, "is-exhaling", false);
+        this.setClass(layer.wrap, "is-on-top", true);
+        this.setClass(layer.wrap, "is-visible", true);
+        const arrivalFadeMs = t.artworkArrivalFadeMs ?? 0;
+        if (arrivalFadeMs > 0) {
+          await this.wait(arrivalFadeMs);
+          if (!stillRunning()) return;
+        }
+        this.maybeStartSoundtrackForScene(0);
+        await this.wait((t.artworkArrivalMs ?? 0) + (t.artworkAloneMs ?? 0));
+        if (!stillRunning()) return;
+        await this.wait(t.curriculumPauseBeforeMs ?? 1400);
+        if (!stillRunning()) return;
+        this._curriculumArrived = true;
+      }
+
+      await this.playCompoundsCurriculumCard(stillRunning, step, t);
+      if (!stillRunning()) return;
+
+      if (this.singleExhibit) {
+        document.dispatchEvent(
+          new CustomEvent("kml-exhibition-exhibit-end", {
+            detail: { index: this.sceneIndex, sceneId: scene.id },
+          })
+        );
+        return;
+      }
+
+      const next = this.sceneIndex + 1;
+      if (next >= count) {
+        this._curriculumArrived = false;
+        if (this.display.loop) {
+          this._soundtrackStarted = false;
+          this.stopSoundtrack();
+          await this.playCompoundsCurriculumExhibit(0);
+        } else if (this.bookends?.closing) {
+          if (this.els.ccLayer) {
+            this.els.ccLayer.classList.add("exhibition-hidden");
+          }
+          await this.playClosingBookend();
+        }
+        return;
+      }
+
+      await this.playCompoundsCurriculumExhibit(next);
+    }
+
     async playStrokeOrderExhibit(index) {
       if (this.destroyed || !this.scenes.length) return;
 
@@ -5854,6 +6342,184 @@
       await this.playImageVerseExhibit(next, { fromCrossfade: true });
     }
 
+    landscapeOverlayDurationMs(items) {
+      if (!items?.length) return 0;
+      let total = 0;
+      for (const item of items) {
+        total +=
+          (item.preMs ?? 0) +
+          (item.fadeInMs ?? 0) +
+          (item.holdMs ?? 0) +
+          (item.fadeOutMs ?? 0) +
+          (item.gapAfterMs ?? 0);
+      }
+      return total;
+    }
+
+    resetLandscapeOverlay() {
+      const overlay = this.els.landscapeOverlay;
+      const latin = this.els.landscapeLatin;
+      const brush = this.els.landscapeBrush;
+      if (latin) {
+        latin.textContent = "";
+        latin.className = "landscape-overlay-latin";
+        latin.style.transition = "";
+        latin.style.opacity = "";
+      }
+      if (brush) {
+        brush.removeAttribute("src");
+        brush.classList.remove("is-visible");
+        brush.style.transition = "";
+        brush.style.opacity = "";
+        brush.style.left = "";
+        brush.style.top = "";
+        brush.style.width = "";
+      }
+      if (overlay) {
+        overlay.classList.add("exhibition-hidden");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+    }
+
+    async playLandscapeOverlayItems(stillRunning, items) {
+      if (!items?.length) return;
+      const overlay = this.els.landscapeOverlay;
+      const latin = this.els.landscapeLatin;
+      const brush = this.els.landscapeBrush;
+      if (!overlay || !latin || !brush) return;
+
+      overlay.classList.remove("exhibition-hidden");
+      overlay.setAttribute("aria-hidden", "false");
+
+      for (const item of items) {
+        if (!stillRunning()) return;
+        const preMs = item.preMs ?? 0;
+        const fadeInMs = item.fadeInMs ?? 5000;
+        const holdMs = item.holdMs ?? 6000;
+        const fadeOutMs = item.fadeOutMs ?? 5000;
+        const gapAfterMs = item.gapAfterMs ?? 0;
+        const kind = item.kind || (item.plate ? "brush" : "latin");
+
+        if (preMs > 0) {
+          await this.wait(preMs);
+          if (!stillRunning()) return;
+        }
+
+        if (kind === "brush") {
+          latin.classList.remove("is-visible");
+          latin.textContent = "";
+          const peak = item.peakOpacity ?? 0.78;
+          document.documentElement.style.setProperty(
+            "--landscape-brush-peak",
+            String(peak)
+          );
+          brush.style.left = `${item.xPercent ?? 58}%`;
+          brush.style.top = `${item.yPercent ?? 30}%`;
+          if (item.heightVh != null) {
+            brush.style.width = "auto";
+            brush.style.height = `${item.heightVh}vh`;
+          } else {
+            brush.style.height = "auto";
+            brush.style.width = `${item.sizeVw ?? 46}vw`;
+          }
+          brush.style.transition = `opacity ${fadeInMs}ms ease-in-out`;
+          brush.style.opacity = "0";
+          brush.src = this.assetUrl(item.plate, item.imageRev);
+          // Force reflow so the fade-in transition runs.
+          void brush.offsetWidth;
+          brush.classList.add("is-visible");
+          // Clear inline opacity so .is-visible / --landscape-brush-peak can take effect
+          // (inline opacity:0 otherwise wins and the plate stays invisible).
+          brush.style.opacity = "";
+          await this.wait(fadeInMs);
+          if (!stillRunning()) return;
+          await this.wait(holdMs);
+          if (!stillRunning()) return;
+          brush.style.transition = `opacity ${fadeOutMs}ms ease-in-out`;
+          brush.classList.remove("is-visible");
+          await this.wait(fadeOutMs);
+          if (!stillRunning()) return;
+          brush.removeAttribute("src");
+        } else {
+          brush.classList.remove("is-visible");
+          brush.removeAttribute("src");
+          latin.className = "landscape-overlay-latin";
+          if (item.styleClass) latin.classList.add(item.styleClass);
+          if (item.lang) latin.lang = item.lang;
+          else latin.removeAttribute("lang");
+          latin.textContent = item.text || "";
+          latin.style.transition = `opacity ${fadeInMs}ms ease-in-out`;
+          latin.style.opacity = "0";
+          void latin.offsetWidth;
+          latin.classList.add("is-visible");
+          latin.style.opacity = "";
+          await this.wait(fadeInMs);
+          if (!stillRunning()) return;
+          await this.wait(holdMs);
+          if (!stillRunning()) return;
+          latin.style.transition = `opacity ${fadeOutMs}ms ease-in-out`;
+          latin.classList.remove("is-visible");
+          await this.wait(fadeOutMs);
+          if (!stillRunning()) return;
+          latin.textContent = "";
+          latin.removeAttribute("lang");
+        }
+
+        if (gapAfterMs > 0) {
+          await this.wait(gapAfterMs);
+          if (!stillRunning()) return;
+        }
+      }
+
+      this.resetLandscapeOverlay();
+    }
+
+    async playGalleryArtworkHold(stillRunning, scene, artworkAloneMs) {
+      const t = this.timing;
+      const arrivalPad = t.artworkArrivalMs ?? 0;
+      const overlays = [];
+      if (scene.openingTitle) overlays.push({ ...scene.openingTitle, kind: "latin" });
+      if (Array.isArray(scene.inscriptions)) {
+        for (const item of scene.inscriptions) overlays.push({ ...item });
+      }
+      const overlayMs = this.landscapeOverlayDurationMs(overlays);
+      const aloneMs = Math.max(0, artworkAloneMs - overlayMs);
+      // Place overlays in the latter part of the hold so the landscape leads.
+      // Opening title on scene 0: prefer early placement (after a short breath).
+      const isOpeningTitleOnly =
+        overlays.length === 1 && scene.openingTitle && !scene.inscriptions?.length;
+
+      if (arrivalPad > 0) {
+        await this.wait(arrivalPad);
+        if (!stillRunning()) return;
+      }
+
+      if (!overlays.length) {
+        await this.wait(aloneMs);
+        return;
+      }
+
+      if (isOpeningTitleOnly) {
+        const breath = Math.min(4500, Math.floor(aloneMs * 0.12));
+        const after = Math.max(0, aloneMs - breath);
+        await this.wait(breath);
+        if (!stillRunning()) return;
+        await this.playLandscapeOverlayItems(stillRunning, overlays);
+        if (!stillRunning()) return;
+        await this.wait(after);
+        return;
+      }
+
+      // Inscriptions (sunset): long untouched landscape, then text sequence, then brief alone.
+      const trailingAlone = Math.min(6000, Math.floor(aloneMs * 0.08));
+      const leadingAlone = Math.max(0, aloneMs - trailingAlone);
+      await this.wait(leadingAlone);
+      if (!stillRunning()) return;
+      await this.playLandscapeOverlayItems(stillRunning, overlays);
+      if (!stillRunning()) return;
+      await this.wait(trailingAlone);
+    }
+
     async playGalleryExhibit(index, options = {}) {
       if (this.destroyed || !this.scenes.length) return;
 
@@ -5907,10 +6573,10 @@
         if (this.sceneIndex === 0) {
           this.maybeStartSoundtrackForScene(0);
         }
-        await this.wait(t.artworkArrivalMs + artworkAloneMs);
+        await this.playGalleryArtworkHold(stillRunning, scene, artworkAloneMs);
         if (!stillRunning()) return;
       } else {
-        await this.wait(artworkAloneMs);
+        await this.playGalleryArtworkHold(stillRunning, scene, artworkAloneMs);
         if (!stillRunning()) return;
       }
 
@@ -5958,13 +6624,33 @@
           await this.playGalleryExhibit(0);
         } else if (this.bookends?.closing) {
           const closing = this.bookends.closing;
-          // Keep final artwork on screen until the soundtrack ends, then crest.
-          if (closing.silentAfterSoundtrack && this.soundtrack?.main) {
-            await this.waitForSoundtrackEnd();
+          // Keep final artwork until the soundtrack is nearly done, then fade
+          // image + music together to black. Crest that follows is silent.
+          if (closing.silentAfterSoundtrack && this.hasSoundtrackBed()) {
+            const fadeMs = t.closingFadeToBlackMs ?? t.closingExhaleMs ?? 10000;
+            while (stillRunning()) {
+              const remaining = this.getSoundtrackRemainingMs();
+              if (remaining <= 0 || remaining <= fadeMs) break;
+              await this.wait(Math.min(Math.max(100, remaining - fadeMs), 500));
+            }
+            if (!stillRunning()) return;
+            const layer = this.artworkLayers[this.activeArtworkKey];
+            document.documentElement.style.setProperty(
+              "--ex-transition",
+              `${fadeMs}ms`
+            );
+            document.documentElement.style.setProperty("--ex-exhale", `${fadeMs}ms`);
+            this.setClass(layer?.wrap, "is-exhaling", true);
+            this.setClass(layer?.wrap, "is-visible", false);
+            this.setClass(this.els.veil, "is-clear", false);
+            await Promise.all([
+              this.wait(fadeMs),
+              this.fadeOutSoundtrack(fadeMs),
+            ]);
             if (!stillRunning()) return;
           }
           await this.playClosingBookend();
-        } else if (this.soundtrack?.main) {
+        } else if (this.hasSoundtrackBed()) {
           // Ambient gallery film: keep final artwork until music ends, then soft fade.
           await this.waitForSoundtrackEnd();
           if (!stillRunning()) return;
@@ -6569,7 +7255,7 @@
         this.isJapaneseVocabularyProfile || closing.silentAfterSoundtrack === true;
       // Lesson vocabulary (and similar): honor explicit short close — do not pad to bed end.
       const holdUntilSoundtrackEnds = Boolean(
-        this.soundtrack?.main && closing.holdUntilSoundtrackEnds !== false
+        this.hasSoundtrackBed() && closing.holdUntilSoundtrackEnds !== false
       );
 
       this.resetLayers();
@@ -8037,6 +8723,9 @@
       if (this.isCompoundsExhibitionProfile) {
         return this.playCompoundsExhibit(index);
       }
+      if (this.isCompoundsCurriculumProfile) {
+        return this.playCompoundsCurriculumExhibit(index);
+      }
       if (this.isJapaneseVocabularyProfile) {
         return this.playJapaneseVocabularyExhibit(index);
       }
@@ -8143,6 +8832,12 @@
       }
 
       await this.playReflectionPhase(stillRunning);
+      if (!stillRunning()) return;
+
+      if (this.directArtworkHandoff) {
+        await this.playDirectArtworkExit(stillRunning, count);
+        return;
+      }
 
       // ── 4. Return to essence — kanji alone (centered before fade-in; avoids title→center jump)
       this.setClass(this.els.verseJp, "is-visible", false);
@@ -8317,6 +9012,7 @@
         profile === "verseReading" ||
         profile === "vocabularyExhibition" ||
         profile === "compoundsExhibition" ||
+        profile === "compoundsCurriculum" ||
         profile === "japaneseVocabulary" ||
         profile === "anchorCompoundsExhibition" ||
         profile === "imageVerse" ||

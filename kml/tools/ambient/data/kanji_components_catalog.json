@@ -1,7 +1,7 @@
 {
   "notes": "KML Kanji Components catalog (labels + New Component intros). Decompositions come from lesson HTML via data/kanji/kml_component_database.json — not v4c. See data/kanji/KML_COMPONENT_SOURCE_POLICY.md. Rebuild components: python3 scripts/build_kanji_components.py. L6–30 introductions provisional except where approved.",
   "glyphNormalize": {
-    "´": "丶",
+    "´": "丿",
     "ㇵ": "八",
     "エ": "工",
     "乚": "乙",
@@ -10,11 +10,16 @@
     "⻌": "辶",
     "兪": "俞",
     "每": "毎",
-    "兑": "兌"
+    "兑": "兌",
+    "ム": "厶",
+    "ヰ": "夅"
   },
   "componentLabels": {
     "丶": "drop",
     "儿": "legs",
+    "囗": "enclosure",
+    "丿": "slash",
+    "毌": "pierce",
     "⼇": "top hat",
     "亠": "top hat",
     "八": "eight",
@@ -57,7 +62,8 @@
     "⺍": "school",
     "聿": "brush",
     "戈": "spear",
-    "戔": "tiny",
+    "戋": "tiny",
+    "厷": "arm",
     "力": "power",
     "赤": "red",
     "吉": "good luck",
@@ -77,6 +83,7 @@
     "楚": "thicket",
     "呑": "quaff",
     "冫": "ice",
+    "⺀": "water",
     "复": "double back",
     "咅": "muzzle",
     "𠦝": "mist",
@@ -95,7 +102,6 @@
     "禾": "wheat",
     "扌": "fingers",
     "忄": "state of mind",
-    "ム": "elbow",
     "𠫓": "infant",
     "㐬": "stream",
     "廾": "two hands",
@@ -167,7 +173,7 @@
     "兹": "double mysterious",
     "雍": "pop song",
     "令": "orders",
-    "𠆢": "meeting",
+    "𠆢": "awning",
     "卩": "stamp",
     "㔾": "fingerprint",
     "甬": "chop-seal",
@@ -184,7 +190,6 @@
     "乎": "question mark",
     "旡": "yawn",
     "甫": "dog tag",
-    "ヰ": "toothbrush",
     "丘": "hill",
     "爵": "baron",
     "興": "entertain",
@@ -274,6 +279,8 @@
     "氐": "foundation",
     "民": "people",
     "⻏": "city walls",
+    "冄": "soft",
+    "乡": "countryside",
     "郷": "hometown",
     "盾": "shield",
     "菐": "bushes under",
@@ -281,7 +288,6 @@
     "享": "receive",
     "舎": "cottage",
     "𠂢": "water's edge",
-    "业": "business",
     "若": "young",
     "采": "dice",
     "景": "scenery",
@@ -336,7 +342,6 @@
     "舄": "magpie",
     "龙": "dragon",
     "龍": "dragon",
-    "丽": "lovely",
     "廌": "unicorn",
     "敢": "daring",
     "亟": "urgency",
@@ -442,7 +447,6 @@
     "台": "pedestal",
     "才": "genius",
     "韦": "tanned leather",
-    "亚": "Asia",
     "风": "wind",
     "風": "wind",
     "巨": "gigantic",
@@ -462,7 +466,7 @@
     "亨": "perfect",
     "它": "other",
     "夸": "boast",
-    "戎": "warrior",
+    "戎": "arms",
     "昔": "once upon a time",
     "牟": "moo",
     "貞": "upright",
@@ -549,7 +553,7 @@
     "卿": "minister",
     "犮": "dog's leg",
     "欝": "gloom",
-    "亏": "deficiency",
+    "亏": "deficit",
     "黒": "black",
     "香": "incense",
     "美": "beauty",
@@ -583,7 +587,60 @@
     "容": "contain",
     "官": "bureaucrat",
     "区": "ward",
-    "会": "meeting"
+    "会": "meeting",
+    "尃": "announce",
+    "攸": "distant",
+    "旁": "side",
+    "䒑": "sprout",
+    "冢": "barrow",
+    "奐": "exchange",
+    "鬲": "cauldron",
+    "𠂆": "top hook",
+    "彐": "broom",
+    "肀": "pen",
+    "帚": "whisk",
+    "厶": "private",
+    "咢": "quarrel",
+    "夅": "descend",
+    "罙": "probe",
+    "柬": "bundle",
+    "罔": "net",
+    "皀": "grain",
+    "飠": "food",
+    "𦘒": "pray",
+    "覀": "west cover",
+    "闌": "railing",
+    "叟": "elder",
+    "显": "manifest",
+    "丵": "bush",
+    "㑒": "assembly",
+    "夋": "amble",
+    "叕": "four hands",
+    "枼": "wood slip",
+    "豖": "dotted pig",
+    "刅": "nicked blade",
+    "夌": "landslide",
+    "喬": "lofty",
+    "歯": "teeth",
+    "畺": "border",
+    "雩": "rain rite",
+    "埶": "skill",
+    "㝵": "obtain",
+    "厉": "severe",
+    "廛": "market stall",
+    "鼡": "vole",
+    "賣": "vend",
+    "歺": "remains",
+    "盧": "hut",
+    "嬰": "baby",
+    "睿": "wise",
+    "玨": "paired jewels",
+    "會": "gathering",
+    "巠": "warp",
+    "區": "district",
+    "眞": "verity",
+    "彔": "inscribe",
+    "乑": "throng"
   },
   "componentOverrides": {
     "涯": [
@@ -968,6 +1025,12 @@
     {
       "lesson": 1,
       "beforeKanji": "四",
+      "glyph": "囗",
+      "label": "enclosure"
+    },
+    {
+      "lesson": 1,
+      "beforeKanji": "四",
       "glyph": "儿",
       "label": "legs",
       "heisig": "human legs",
@@ -981,9 +1044,22 @@
     },
     {
       "lesson": 2,
-      "beforeKanji": "自",
+      "beforeKanji": "呂",
+      "glyph": "丿",
+      "label": "slash"
+    },
+    {
+      "lesson": 3,
+      "beforeKanji": "丸",
       "glyph": "丶",
       "label": "drop"
+    },
+    {
+      "lesson": 3,
+      "beforeKanji": "博",
+      "glyph": "尃",
+      "label": "announce",
+      "heisig": "announce"
     },
     {
       "lesson": 4,
@@ -1033,6 +1109,12 @@
       "beforeKanji": "副",
       "glyph": "畐",
       "label": "wealth"
+    },
+    {
+      "lesson": 6,
+      "beforeKanji": "貫",
+      "glyph": "毌",
+      "label": "pierce"
     },
     {
       "lesson": 6,
@@ -1183,7 +1265,7 @@
     {
       "lesson": 20,
       "beforeKanji": "桟",
-      "glyph": "戔",
+      "glyph": "戋",
       "label": "tiny"
     },
     {
@@ -1359,11 +1441,24 @@
       "heisig": "turkey"
     },
     {
+      "lesson": 40,
+      "beforeKanji": "払",
+      "glyph": "厶",
+      "label": "private"
+    },
+    {
       "lesson": 41,
       "beforeKanji": "弁",
       "glyph": "廾",
       "label": "two hands",
       "heisig": "two hands"
+    },
+    {
+      "lesson": 41,
+      "beforeKanji": "雄",
+      "glyph": "厷",
+      "label": "arm",
+      "heisig": "arm"
     },
     {
       "lesson": 42,
@@ -1415,11 +1510,47 @@
       "heisig": "person"
     },
     {
+      "lesson": 52,
+      "beforeKanji": "悠",
+      "glyph": "攸",
+      "label": "distant"
+    },
+    {
+      "lesson": 55,
+      "beforeKanji": "傍",
+      "glyph": "旁",
+      "label": "side"
+    },
+    {
+      "lesson": 56,
+      "beforeKanji": "善",
+      "glyph": "䒑",
+      "label": "sprout"
+    },
+    {
+      "lesson": 56,
+      "beforeKanji": "塚",
+      "glyph": "冢",
+      "label": "barrow"
+    },
+    {
       "lesson": 56,
       "beforeKanji": "幣",
       "glyph": "敝",
       "label": "shredder",
       "heisig": "shredder"
+    },
+    {
+      "lesson": 57,
+      "beforeKanji": "喚",
+      "glyph": "奐",
+      "label": "exchange"
+    },
+    {
+      "lesson": 57,
+      "beforeKanji": "融",
+      "glyph": "鬲",
+      "label": "cauldron"
     },
     {
       "lesson": 57,
@@ -1434,6 +1565,66 @@
       "glyph": "礻",
       "label": "altar",
       "heisig": "altar"
+    },
+    {
+      "lesson": 61,
+      "beforeKanji": "捜",
+      "glyph": "叟",
+      "label": "elder"
+    },
+    {
+      "lesson": 61,
+      "beforeKanji": "断",
+      "glyph": "𠂆",
+      "label": "top hook"
+    },
+    {
+      "lesson": 62,
+      "beforeKanji": "雪",
+      "glyph": "彐",
+      "label": "broom"
+    },
+    {
+      "lesson": 63,
+      "beforeKanji": "唐",
+      "glyph": "肀",
+      "label": "pen"
+    },
+    {
+      "lesson": 63,
+      "beforeKanji": "康",
+      "glyph": "隶",
+      "label": "slave"
+    },
+    {
+      "lesson": 66,
+      "beforeKanji": "矯",
+      "glyph": "喬",
+      "label": "lofty"
+    },
+    {
+      "lesson": 66,
+      "beforeKanji": "帰",
+      "glyph": "帚",
+      "label": "whisk"
+    },
+    {
+      "lesson": 67,
+      "beforeKanji": "誇",
+      "glyph": "夸",
+      "label": "boast"
+    },
+    {
+      "lesson": 67,
+      "beforeKanji": "顎",
+      "glyph": "咢",
+      "label": "quarrel"
+    },
+    {
+      "lesson": 67,
+      "beforeKanji": "汚",
+      "glyph": "亏",
+      "label": "deficit"
     },
     {
       "lesson": 68,
@@ -1457,11 +1648,41 @@
       "heisig": "pinnacle"
     },
     {
+      "lesson": 71,
+      "beforeKanji": "降",
+      "glyph": "夅",
+      "label": "descend"
+    },
+    {
+      "lesson": 72,
+      "beforeKanji": "探",
+      "glyph": "罙",
+      "label": "probe"
+    },
+    {
+      "lesson": 73,
+      "beforeKanji": "練",
+      "glyph": "柬",
+      "label": "bundle"
+    },
+    {
+      "lesson": 74,
+      "beforeKanji": "網",
+      "glyph": "罔",
+      "label": "net"
+    },
+    {
       "lesson": 74,
       "beforeKanji": "幼",
       "glyph": "幺",
       "label": "short thread",
       "heisig": "short thread"
+    },
+    {
+      "lesson": 76,
+      "beforeKanji": "齢",
+      "glyph": "歯",
+      "label": "teeth"
     },
     {
       "lesson": 79,
@@ -1471,11 +1692,41 @@
       "heisig": "stopping"
     },
     {
+      "lesson": 79,
+      "beforeKanji": "即",
+      "glyph": "皀",
+      "label": "grain"
+    },
+    {
+      "lesson": 80,
+      "beforeKanji": "飯",
+      "glyph": "飠",
+      "label": "food"
+    },
+    {
+      "lesson": 82,
+      "beforeKanji": "勢",
+      "glyph": "埶",
+      "label": "skill"
+    },
+    {
+      "lesson": 82,
+      "beforeKanji": "菱",
+      "glyph": "夌",
+      "label": "landslide"
+    },
+    {
       "lesson": 83,
       "beforeKanji": "毒",
       "glyph": "龶",
       "label": "growing",
       "heisig": "growing"
+    },
+    {
+      "lesson": 85,
+      "beforeKanji": "拝",
+      "glyph": "𦘒",
+      "label": "pray"
     },
     {
       "lesson": 85,
@@ -1492,11 +1743,29 @@
       "heisig": "celery"
     },
     {
+      "lesson": 87,
+      "beforeKanji": "要",
+      "glyph": "覀",
+      "label": "west cover"
+    },
+    {
+      "lesson": 88,
+      "beforeKanji": "欄",
+      "glyph": "闌",
+      "label": "railing"
+    },
+    {
       "lesson": 89,
       "beforeKanji": "偉",
       "glyph": "韋",
       "label": "tanned leather",
       "heisig": "tanned leather"
+    },
+    {
+      "lesson": 91,
+      "beforeKanji": "剣",
+      "glyph": "㑒",
+      "label": "assembly"
     },
     {
       "lesson": 91,
@@ -1534,6 +1803,12 @@
       "heisig": "alongside"
     },
     {
+      "lesson": 97,
+      "beforeKanji": "湿",
+      "glyph": "显",
+      "label": "manifest"
+    },
+    {
       "lesson": 100,
       "beforeKanji": "邸",
       "glyph": "⻏",
@@ -1546,6 +1821,162 @@
       "glyph": "虍",
       "label": "tiger stripes",
       "heisig": "tiger"
+    },
+    {
+      "lesson": 111,
+      "beforeKanji": "悛",
+      "glyph": "夋",
+      "label": "amble"
+    },
+    {
+      "lesson": 112,
+      "beforeKanji": "畷",
+      "glyph": "叕",
+      "label": "four hands"
+    },
+    {
+      "lesson": 115,
+      "beforeKanji": "喋",
+      "glyph": "枼",
+      "label": "wood slip"
+    },
+    {
+      "lesson": 115,
+      "beforeKanji": "啄",
+      "glyph": "豖",
+      "label": "dotted pig"
+    },
+    {
+      "lesson": 120,
+      "beforeKanji": "梁",
+      "glyph": "刅",
+      "label": "nicked blade"
+    },
+    {
+      "lesson": 129,
+      "beforeKanji": "橿",
+      "glyph": "畺",
+      "label": "border"
+    },
+    {
+      "lesson": 130,
+      "beforeKanji": "樗",
+      "glyph": "雩",
+      "label": "rain rite"
+    },
+    {
+      "lesson": 132,
+      "beforeKanji": "碍",
+      "glyph": "㝵",
+      "label": "obtain"
+    },
+    {
+      "lesson": 133,
+      "beforeKanji": "砺",
+      "glyph": "厉",
+      "label": "severe"
+    },
+    {
+      "lesson": 135,
+      "beforeKanji": "絨",
+      "glyph": "戎",
+      "label": "arms"
+    },
+    {
+      "lesson": 136,
+      "beforeKanji": "纏",
+      "glyph": "廛",
+      "label": "market stall"
+    },
+    {
+      "lesson": 137,
+      "beforeKanji": "蚤",
+      "glyph": "叉",
+      "label": "forked"
+    },
+    {
+      "lesson": 137,
+      "beforeKanji": "蝋",
+      "glyph": "鼡",
+      "label": "vole"
+    },
+    {
+      "lesson": 139,
+      "beforeKanji": "贖",
+      "glyph": "賣",
+      "label": "vend"
+    },
+    {
+      "lesson": 141,
+      "beforeKanji": "翰",
+      "glyph": "𠆢",
+      "label": "awning"
+    },
+    {
+      "lesson": 141,
+      "beforeKanji": "餐",
+      "glyph": "歺",
+      "label": "remains"
+    },
+    {
+      "lesson": 142,
+      "beforeKanji": "驢",
+      "glyph": "盧",
+      "label": "hut"
+    },
+    {
+      "lesson": 143,
+      "beforeKanji": "鑿",
+      "glyph": "丵",
+      "label": "bush"
+    },
+    {
+      "lesson": 146,
+      "beforeKanji": "叡",
+      "glyph": "睿",
+      "label": "wise"
+    },
+    {
+      "lesson": 147,
+      "beforeKanji": "琵",
+      "glyph": "玨",
+      "label": "paired jewels"
+    },
+    {
+      "lesson": 149,
+      "beforeKanji": "檜",
+      "glyph": "會",
+      "label": "gathering"
+    },
+    {
+      "lesson": 150,
+      "beforeKanji": "脛",
+      "glyph": "巠",
+      "label": "warp"
+    },
+    {
+      "lesson": 150,
+      "beforeKanji": "嘔",
+      "glyph": "區",
+      "label": "district"
+    },
+    {
+      "lesson": 151,
+      "beforeKanji": "塡",
+      "glyph": "眞",
+      "label": "verity"
+    },
+    {
+      "lesson": 151,
+      "beforeKanji": "剝",
+      "glyph": "彔",
+      "label": "inscribe"
+    },
+    {
+      "lesson": 152,
+      "beforeKanji": "聚",
+      "glyph": "乑",
+      "label": "throng"
     }
   ],
   "namingPolicy": {

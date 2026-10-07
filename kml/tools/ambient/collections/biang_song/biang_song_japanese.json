@@ -1,0 +1,418 @@
+{
+  "id": "biang_song_japanese",
+  "title": "Biáng — ながいみち",
+  "language": "ja",
+  "visual": "biang_visual.json",
+  "playable": false,
+  "audio": {
+    "path": "kml/tools/ambient/audio/Biáng_The_Long_Road_japanese.mp3",
+    "enginePath": "audio/Biáng_The_Long_Road_japanese.mp3",
+    "durationSec": 136.594
+  },
+  "timingNotes": [
+    "The cue is the lyric line. A line that names two components is one cue.",
+    "pairStaggerSec in biang_visual.json is a slow visual offset inside that cue. It is not a word time.",
+    "Verse 2 assembles the shared PNG layers. Lyric cue times are unchanged. After 1:48 there are still no lyric clocks.",
+    "After 1:48 there are no lyric lines and no lyric clocks.",
+    "Resolution times are provisional and use the shared durations in biang_visual.json. The fade to black starts at 132s, where this recording's level falls away, and ends at 136.594s."
+  ],
+  "sections": {
+    "intro": {
+      "startSec": 0,
+      "endSec": 20,
+      "status": "given"
+    },
+    "verse1": {
+      "startSec": 20,
+      "endSec": 64,
+      "status": "given"
+    },
+    "verse2": {
+      "startSec": 64,
+      "endSec": 108,
+      "status": "given"
+    },
+    "fieldHold": {
+      "startSec": 108,
+      "durationSec": 4,
+      "status": "provisional"
+    },
+    "clearComponents": {
+      "startSec": 112,
+      "durationSec": 2,
+      "status": "provisional"
+    },
+    "pause": {
+      "startSec": 114,
+      "durationSec": 1.5,
+      "status": "provisional"
+    },
+    "reveal": {
+      "startSec": 115.5,
+      "durationSec": 2,
+      "status": "provisional"
+    },
+    "artworkHold": {
+      "startSec": 117.5,
+      "endSec": 132,
+      "status": "provisional"
+    },
+    "endFade": {
+      "startSec": 132,
+      "endSec": 136.594,
+      "status": "provisional"
+    }
+  },
+  "lines": [
+    {
+      "section": "verse1",
+      "startSec": 20,
+      "text": "くものあなからつきがみえる",
+      "components": [
+        "ana",
+        "tsuki"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 26,
+      "text": "みじかいいとがかぜにゆれる",
+      "components": [
+        "yao-1"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 30,
+      "text": "まっているよときみがいう",
+      "components": [
+        "gen"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 37,
+      "text": "もういっぽんのみじかいいと",
+      "components": [
+        "yao-2"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 41,
+      "text": "ながいよるをうまにのって",
+      "components": [
+        "cho-1",
+        "uma"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 46,
+      "text": "ながいたびをどこまでも",
+      "components": [
+        "cho-2"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 52,
+      "text": "サーベルをしずかにおさえ",
+      "components": [
+        "saber"
+      ]
+    },
+    {
+      "section": "verse1",
+      "startSec": 57,
+      "text": "こころのままにみちをゆく",
+      "components": [
+        "kokoro",
+        "road"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 64,
+      "text": "くものあなからつきがみえる",
+      "components": [
+        "ana",
+        "tsuki"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 69,
+      "text": "みじかいいとがかぜにゆれる",
+      "components": [
+        "yao-1"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 75,
+      "text": "まっているよときみがいう",
+      "components": [
+        "gen"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 81,
+      "text": "もういっぽんのみじかいいと",
+      "components": [
+        "yao-2"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 86,
+      "text": "ながいよるをうまにのって",
+      "components": [
+        "cho-1",
+        "uma"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 91,
+      "text": "ながいたびをどこまでも",
+      "components": [
+        "cho-2"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 97,
+      "text": "サーベルをしずかにおさえ",
+      "components": [
+        "saber"
+      ]
+    },
+    {
+      "section": "verse2",
+      "startSec": 102,
+      "text": "こころのままにみちをゆく",
+      "components": [
+        "kokoro",
+        "road"
+      ]
+    }
+  ],
+  "cues": [
+    {
+      "id": "v1-1",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 20,
+      "durationSec": 6,
+      "text": "くものあなからつきがみえる",
+      "components": [
+        "ana",
+        "tsuki"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-2",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 26,
+      "durationSec": 4,
+      "text": "みじかいいとがかぜにゆれる",
+      "components": [
+        "yao-1"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-3",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 30,
+      "durationSec": 7,
+      "text": "まっているよときみがいう",
+      "components": [
+        "gen"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-4",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 37,
+      "durationSec": 4,
+      "text": "もういっぽんのみじかいいと",
+      "components": [
+        "yao-2"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-5",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 41,
+      "durationSec": 5,
+      "text": "ながいよるをうまにのって",
+      "components": [
+        "cho-1",
+        "uma"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-6",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 46,
+      "durationSec": 6,
+      "text": "ながいたびをどこまでも",
+      "components": [
+        "cho-2"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-7",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 52,
+      "durationSec": 5,
+      "text": "サーベルをしずかにおさえ",
+      "components": [
+        "saber"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v1-8",
+      "section": "verse1",
+      "occurrence": 1,
+      "role": "introduce",
+      "startSec": 57,
+      "durationSec": 7,
+      "text": "こころのままにみちをゆく",
+      "components": [
+        "kokoro",
+        "road"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-1",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 64,
+      "durationSec": 5,
+      "text": "くものあなからつきがみえる",
+      "components": [
+        "ana",
+        "tsuki"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-2",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 69,
+      "durationSec": 6,
+      "text": "みじかいいとがかぜにゆれる",
+      "components": [
+        "yao-1"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-3",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 75,
+      "durationSec": 6,
+      "text": "まっているよときみがいう",
+      "components": [
+        "gen"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-4",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 81,
+      "durationSec": 5,
+      "text": "もういっぽんのみじかいいと",
+      "components": [
+        "yao-2"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-5",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 86,
+      "durationSec": 5,
+      "text": "ながいよるをうまにのって",
+      "components": [
+        "cho-1",
+        "uma"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-6",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 91,
+      "durationSec": 6,
+      "text": "ながいたびをどこまでも",
+      "components": [
+        "cho-2"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-7",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 97,
+      "durationSec": 5,
+      "text": "サーベルをしずかにおさえ",
+      "components": [
+        "saber"
+      ],
+      "timingStatus": "line"
+    },
+    {
+      "id": "v2-8",
+      "section": "verse2",
+      "occurrence": 2,
+      "role": "assemble",
+      "startSec": 102,
+      "durationSec": 6,
+      "text": "こころのままにみちをゆく",
+      "components": [
+        "kokoro",
+        "road"
+      ],
+      "timingStatus": "line"
+    }
+  ]
+}
