@@ -480,6 +480,17 @@ body.bookshelf-page {
   color: var(--ink-quiet);
 }
 
+.shelf-library-note a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+}
+
+.shelf-library-note a:hover,
+.shelf-library-note a:focus-visible {
+  border-bottom-color: var(--gold);
+}
+
 .book-entry--growing .book-entry-title {
   color: color-mix(in srgb, #f3f1eb 88%, var(--ink-quiet));
 }
