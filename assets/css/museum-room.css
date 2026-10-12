@@ -828,6 +828,10 @@ body.museum-page {
   color: var(--gold);
 }
 
+.guidance-link--plain {
+  cursor: default;
+}
+
 .guidance-link--plain:hover,
 .guidance-link--plain:focus-visible {
   transform: none;
@@ -1381,5 +1385,97 @@ html.is-romaji-off .jp-romaji {
 
   .pathway-nav-status {
     order: -1;
+  }
+}
+
+.kanken-notice {
+  margin: 0 0 1.75rem;
+  color: var(--ink-soft);
+}
+
+.kanken-index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 1.5rem;
+}
+
+.kanken-row {
+  border-bottom: 1px solid rgba(201, 164, 88, 0.18);
+  padding: 0.45rem 0 0.55rem;
+}
+
+.kanken-row-link {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
+  grid-template-areas:
+    "glyph keyword lesson"
+    "glyph readings lesson";
+  column-gap: 0.75rem;
+  row-gap: 0.05rem;
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+}
+
+.kanken-row-link:hover .kanken-glyph,
+.kanken-row-link:focus-visible .kanken-glyph {
+  color: var(--gold);
+}
+
+.kanken-glyph {
+  grid-area: glyph;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.kanken-keyword {
+  grid-area: keyword;
+}
+
+.kanken-readings {
+  grid-area: readings;
+  color: var(--ink-quiet);
+  font-size: 0.92rem;
+}
+
+.kanken-lesson {
+  grid-area: lesson;
+  color: var(--gold);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.kanken-stroke,
+.kanken-alt {
+  margin: 0.2rem 0 0 3.15rem;
+  color: var(--ink-quiet);
+  font-size: 0.92rem;
+}
+
+.kanken-stroke {
+  display: inline-block;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.kanken-alt a {
+  color: var(--gold);
+}
+
+@media (max-width: 720px) {
+  .kanken-index {
+    grid-template-columns: 1fr;
+  }
+
+  .kanken-row-link {
+    grid-template-columns: 2.4rem 1fr;
+    grid-template-areas:
+      "glyph keyword"
+      "glyph readings"
+      "glyph lesson";
   }
 }
