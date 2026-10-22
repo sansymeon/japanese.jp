@@ -4,6 +4,12 @@
 Reads the February 2020 級別漢字表 and existing KML records.
 Writes pointers only. Does not copy compounds, component trees, or verses,
 and does not modify lessons, films, or playlists.
+
+RETIRED PAGE OUTPUT. 漢検への道 is Japanese-only. The public pages under
+kanken/ are built by kml/scripts/build_kanken_level_pages.py. This script
+still writes the two JSON files, but it no longer writes or verifies pages:
+its page templates are the old bilingual ones with YouTube buttons, and
+running them would overwrite the current pages. write_pages() refuses to run.
 """
 
 from __future__ import annotations
@@ -409,8 +415,7 @@ def build() -> None:
     }
     OFFICIAL_PATH.write_text(json.dumps(official_doc, ensure_ascii=False, indent=2) + "\n")
     INDEX_PATH.write_text(json.dumps(index_doc, ensure_ascii=False, indent=2) + "\n")
-    write_pages(records)
-    verify_pages(records)
+    print("pages not written: run kml/scripts/build_kanken_level_pages.py")
     print(f"official {OFFICIAL_PATH.relative_to(ROOT)}")
     print(f"index {INDEX_PATH.relative_to(ROOT)} characters {len(records)}")
     print("membership", {key: sum(1 for record in records if record["filmMembership"] == key) for key in ("elementary", "post-elementary", "heisig-lesson-only", "table-form-filmed-as-alternate")})
@@ -427,7 +432,11 @@ def readings(record: dict) -> str:
 
 
 def write_pages(records: list[dict]) -> None:
-    """Public pages list only published resources. Activity ids stay in the index JSON."""
+    """Retired. Kept for reference only; see the module docstring."""
+    raise SystemExit(
+        "build_kanken_index.write_pages is retired. "
+        "Build the Japanese-only pages with kml/scripts/build_kanken_level_pages.py."
+    )
     by_level = {level: [record for record in records if record["introducedAt"] == level] for level in LEVEL_ORDER}
     for lang in ("en", "ja"):
         write_entrance(lang, by_level)

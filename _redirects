@@ -11,3 +11,8 @@
 # /start-here/* or /start-here/rooms/ would loop.
 /start-here/index.html  /start-here/rooms/  301!
 /start-here             /start-here/rooms/  301!
+
+# 漢検への道 is Japanese-only at /kanken/. The old /ja/kanken/ pages are
+# still on disk, so force. /kanken/ is outside /ja/kanken/, so no loop.
+/ja/kanken    /kanken/         301!
+/ja/kanken/*  /kanken/:splat   301!

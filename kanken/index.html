@@ -1,178 +1,133 @@
 <!DOCTYPE html>
-<html lang="en" class="museum-page">
+<html lang="ja" class="museum-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>漢検への道 — Kanji・Music・Landscape</title>
-  <meta name="description" content="Path through the 2,136 jōyō kanji of 漢検10級–2級, with music and image. KML is independent of the 日本漢字能力検定協会." />
+  <meta name="description" content="漢検への道。漢検10級から2級まで、常用漢字2,136字を級ごとに学びます。KMLは日本漢字能力検定協会とは関係がありません。" />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/museum-room.css" />
+  <script>
+    if (new URLSearchParams(location.search).get("lang") === "en") {
+      document.documentElement.setAttribute("data-kanken-lang", "en");
+    }
+  </script>
   <script src="../assets/js/museum-room.js" defer></script>
+  <script src="../assets/js/kanken-lang.js" defer></script>
 </head>
 <body class="museum-page">
-  <a class="skip-link" href="#levels">Skip to levels</a>
+  <a class="skip-link" href="#levels">級へスキップ</a>
   <header class="museum-header">
     <div class="museum-header-inner">
-      <a class="museum-brand" href="../index.html">Kanji・Music・Landscape</a>
-      <nav aria-label="Primary">
+      <a class="museum-brand" href="../ja/index.html">Kanji・Music・Landscape</a>
+      <nav aria-label="メインナビ">
         <ul class="museum-nav">
-          <li><a href="../journey/">About KML</a></li>
-          <li><a href="../kml/contents/books/">Kanji Studies</a></li>
-          <li><a href="../kanken/" aria-current="page">漢検への道</a></li>
-          <li><a href="../collections/">Video Collections</a></li>
-          <li><a href="../publications/">Publications</a></li>
-          <li><a href="../statistics/">Statistics</a></li>
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="/start-here/rooms/">はじめに</a></li>
+          <li><a href="/kml/vocabulary/">語彙</a></li>
+          <li><a href="/kanken/" aria-current="page">漢検への道</a></li>
+          <li><a href="/kml/contents/books/">漢字の学び</a></li>
+          <li><a href="/ja/collections/">映像コレクション</a></li>
+          <li><a href="/ja/">ホーム</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
-    <section class="room-hero" aria-labelledby="pathway-heading">
-      <div class="room-hero-media" aria-hidden="true">
-        <img src="/kanken/kanken_hero_image.jpg" alt="" width="1672" height="941" fetchpriority="high" />
-        <div class="room-hero-veil"></div>
-      </div>
-      <div class="room-hero-inner">
-        <p class="room-hero-brand">Kanji・Music・Landscape</p>
-        <p class="room-eyebrow">音楽と映像で楽しく学ぶ漢字</p>
+    <section class="kanken-entrance" aria-labelledby="pathway-heading">
+      <div class="room-container room-container--wide">
+        <p class="room-eyebrow">Kanji・Music・Landscape</p>
         <h1 id="pathway-heading">漢検への道</h1>
-        <p class="room-hero-lead">The 2,136 jōyō kanji through 漢検2級, with music and image.</p>
-      </div>
-      <a class="room-hero-scroll" href="#levels" aria-label="Continue">
-        <span class="room-hero-scroll-line" aria-hidden="true"></span>
-      </a>
-    </section>
-    <section class="room-section" id="levels" aria-labelledby="early-heading">
-      <div class="room-container">
-        <p class="kanken-notice">KML is independent of the 日本漢字能力検定協会. This path does not cover every exam task, and it does not guarantee a pass.</p>
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">10級–5級</p>
-          <h2 id="early-heading">漢検10級–5級</h2>
-          <p>Kanji, 熟語, and 書き順. 漢検10級 is the first set. The 漢検9級 films also include 朋, which is outside the table.</p>
-        </header>
-        <ul class="guidance-list">
-          <li class="guidance-item reveal">
-            <a class="guidance-link" href="../elementary/grade-1/">
-              <span class="guidance-label">80字</span>
-              <span>
-                <h3 class="guidance-title">漢検10級</h3>
-                <p class="guidance-meta">小学1年生の漢字</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="../elementary/grade-2/">
-              <span class="guidance-label">160字</span>
-              <span>
-                <h3 class="guidance-title">漢検9級</h3>
-                <p class="guidance-meta">小学2年生の漢字 · films include 朋</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="../elementary/grade-3/">
-              <span class="guidance-label">200字</span>
-              <span>
-                <h3 class="guidance-title">漢検8級</h3>
-                <p class="guidance-meta">小学3年生の漢字</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="../elementary/grade-4/">
-              <span class="guidance-label">202字</span>
-              <span>
-                <h3 class="guidance-title">漢検7級</h3>
-                <p class="guidance-meta">小学4年生の漢字</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="../elementary/grade-5/">
-              <span class="guidance-label">193字</span>
-              <span>
-                <h3 class="guidance-title">漢検6級</h3>
-                <p class="guidance-meta">小学5年生の漢字</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="../elementary/grade-6/">
-              <span class="guidance-label">191字</span>
-              <span>
-                <h3 class="guidance-title">漢検5級</h3>
-                <p class="guidance-meta">小学6年生の漢字</p>
-              </span>
-            </a>
-          </li>
-
-        </ul>
-        <header class="room-section-head reveal" id="upper">
-          <p class="room-eyebrow">4級–2級</p>
-          <h2>漢検4級–2級</h2>
-          <p>One published collection. Each character opens its existing lesson.</p>
-        </header>
-        <ul class="guidance-list">
-          <li class="guidance-item reveal">
-            <a class="guidance-link" href="./level-4/">
-              <span class="guidance-label">1,339</span>
-              <span>
-                <h3 class="guidance-title">漢検4級</h3>
-                <p class="guidance-meta">313 new characters</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="./level-3/">
-              <span class="guidance-label">1,623</span>
-              <span>
-                <h3 class="guidance-title">漢検3級</h3>
-                <p class="guidance-meta">284 new characters</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="./level-jun2/">
-              <span class="guidance-label">1,951</span>
-              <span>
-                <h3 class="guidance-title">漢検準2級</h3>
-                <p class="guidance-meta">328 new characters</p>
-              </span>
-            </a>
-          </li>
-<li class="guidance-item reveal">
-            <a class="guidance-link" href="./level-2/">
-              <span class="guidance-label">2,136</span>
-              <span>
-                <h3 class="guidance-title">漢検2級</h3>
-                <p class="guidance-meta">185 new characters</p>
-              </span>
-            </a>
-          </li>
-
-        </ul>
-        <header class="room-section-head reveal" id="beyond">
-          <p class="room-eyebrow">準1級 · 1級</p>
-          <h2>Beyond Jōyō</h2>
-          <p>Its own collection. Not a 準1級 or 1級 curriculum.</p>
-        </header>
-        <div class="room-actions">
-          <a class="museum-btn museum-btn--quiet" href="../collections/">Open the collection</a>
-          <a class="museum-btn museum-btn--quiet" href="https://www.youtube.com/playlist?list=PLFcXrI1lQAqI" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <p class="kanken-entrance-lead">漢検10級から2級まで、常用漢字2,136字を級ごとに学びます。字数は、その級で新しく学ぶ漢字の数です。</p>
+        <div class="kanken-en" lang="en">
+          <p class="kanken-en-title">Kanji Proficiency</p>
+          <p>Level 10 is the beginner level. Level 2 is the advanced end of this path. This is the Japanese study system. After you choose a level, the lessons and character lists are primarily in Japanese.</p>
+          <p class="kanken-en-links"><a href="/learn/">English learning choices</a></p>
         </div>
+        <ol class="kanken-levels" id="levels" aria-label="漢検の級">
+          <li>
+            <a class="kanken-level" href="../school-grade/grade-1/">
+              <span class="kanken-level-name">漢検10級</span>
+              <span class="kanken-level-count">80字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">全4課・学習する</span><span class="kanken-en kanken-level-en">Level 10 · Beginner · 4 lessons ready</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-9/">
+              <span class="kanken-level-name">漢検9級</span>
+              <span class="kanken-level-count">160字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">全8課・漢字一覧を見る</span>　<span class="kanken-level-note">読み方とことばは準備中</span><span class="kanken-en kanken-level-en">Level 9 · Character list · readings in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-8/">
+              <span class="kanken-level-name">漢検8級</span>
+              <span class="kanken-level-count">200字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level 8 · Character list · lessons in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-7/">
+              <span class="kanken-level-name">漢検7級</span>
+              <span class="kanken-level-count">202字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level 7 · Character list · lessons in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-6/">
+              <span class="kanken-level-name">漢検6級</span>
+              <span class="kanken-level-count">193字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level 6 · Character list · lessons in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-5/">
+              <span class="kanken-level-name">漢検5級</span>
+              <span class="kanken-level-count">191字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level 5 · Character list · lessons in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-4/">
+              <span class="kanken-level-name">漢検4級</span>
+              <span class="kanken-level-count">313字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level 4 · Character list · lessons in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-3/">
+              <span class="kanken-level-name">漢検3級</span>
+              <span class="kanken-level-count">284字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level 3 · Character list · lessons in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-jun2/">
+              <span class="kanken-level-name">漢検準2級</span>
+              <span class="kanken-level-count">328字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level Pre-2 · Character list · lessons in preparation</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="kanken-level" href="./level-2/">
+              <span class="kanken-level-name">漢検2級</span>
+              <span class="kanken-level-count">185字</span>
+              <span class="kanken-level-meta"><span class="kanken-level-material">漢字一覧を見る</span>　<span class="kanken-level-note">課は準備中</span><span class="kanken-en kanken-level-en">Level 2 · Advanced · character list · lessons in preparation</span></span>
+            </a>
+          </li>
+        </ol>
+        <p class="kanken-notice">KMLは日本漢字能力検定協会とは関係がありません。検定のすべての出題分野を教えるものではなく、合格を保証するものでもありません。</p>
       </div>
     </section>
   </main>
   <footer class="museum-footer">
     <div class="museum-footer-inner">
-      <nav aria-label="Footer">
-        <a href="../index.html">Home</a>
-        <a href="../kanken/" aria-current="page">漢検への道</a>
-        <a href="../ja/kanken/" hreflang="ja" lang="ja">日本語</a>
+      <nav aria-label="フッター">
+        <a href="/ja/journey/">学びの道</a>
+        <a href="/statistics/">統計</a>
+        <a href="../index.html" hreflang="en" lang="en">English site</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
     </div>

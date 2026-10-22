@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="漢検10級。小学1年生・80字。">
+<title>漢検10級</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Yomogi&family=Noto+Serif+JP&family=Yuji+Mai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../kml/assets/site/css/kml_style.css">
+<link rel="stylesheet" href="../../kml/assets/site/css/compounds-lesson.css">
+<link rel="stylesheet" href="../css/school-grade.css">
+<script>
+try {
+  if (localStorage.getItem("kml-compounds-furigana") === "off") {
+    document.documentElement.classList.add("furigana-off");
+  }
+} catch (err) {}
+</script>
+<script>
+  if (new URLSearchParams(location.search).get("lang") === "en") {
+    document.documentElement.setAttribute("data-kanken-lang", "en");
+  }
+</script>
+<script src="../../assets/js/kanken-lang.js" defer></script>
+</head>
+<body id="top">
+
+<div class="navbar">
+  <a href="../../kanken/">漢検への道</a>
+  <a href="../../kml/">Kanji・Music・Landscape</a>
+  <a href="#review">音楽と動画</a>
+</div>
+<div class="lesson-art">
+  <img src="../../kml/assets/covers/lesson_01.jpg" alt="月" width="1672" height="941">
+</div>
+<h1 class="school-title">漢検10級</h1>
+<p class="school-range">小学1年生・80字</p>
+<p class="school-path">漢字を学ぶ → 読み方とことば → 音楽と動画で復習</p>
+<p class="kanken-en" lang="en">Level 10, beginner. Four lessons are ready here. The lessons themselves are in Japanese.</p>
+<p class="kanken-en kanken-en-links" lang="en"><a href="../../kanken/?lang=en">All levels</a> · <a href="/learn/">English learning choices</a></p>
+<nav class="school-doors" aria-label="小学1年生の課">
+<a class="school-door" href="lesson-01.html">
+  <span class="school-door-kicker">第1課 · 20字</span>
+  <span class="school-door-title">一 〜 見</span>
+  <span class="school-door-kanji" lang="ja">一 右 雨 円 王 音 下 火 花 貝 学 気 九 休 玉 金 空 月 犬 見</span>
+</a>
+<a class="school-door" href="lesson-02.html">
+  <span class="school-door-kicker">第2課 · 20字</span>
+  <span class="school-door-title">五 〜 森</span>
+  <span class="school-door-kanji" lang="ja">五 口 校 左 三 山 子 四 糸 字 耳 七 車 手 十 出 女 小 上 森</span>
+</a>
+<a class="school-door" href="lesson-03.html">
+  <span class="school-door-kicker">第3課 · 20字</span>
+  <span class="school-door-title">人 〜 虫</span>
+  <span class="school-door-kanji" lang="ja">人 水 正 生 青 夕 石 赤 千 川 先 早 草 足 村 大 男 竹 中 虫</span>
+</a>
+<a class="school-door" href="lesson-04.html">
+  <span class="school-door-kicker">第4課 · 20字</span>
+  <span class="school-door-title">町 〜 六</span>
+  <span class="school-door-kanji" lang="ja">町 天 田 土 二 日 入 年 白 八 百 文 木 本 名 目 立 力 林 六</span>
+</a>
+</nav>
+<section class="school-review" id="review" aria-labelledby="review-heading">
+  <h2 id="review-heading"><span lang="ja">音楽と動画で復習</span></h2>
+  <p>勉強したあとで、この学年の歌と動画を見ます。</p>
+  <div class="cta">
+  <a class="btn-compounds" href="https://www.youtube.com/playlist?list=PLDqZ_saSB25k" target="_blank" rel="noopener noreferrer">1学年で学ぶ漢字<br><span style="font-size:0.82rem;font-weight:400">Kanji · musical review · 2 films</span></a>
+  <a class="btn-compounds" href="https://www.youtube.com/playlist?list=PLUK4NyqFdNMw" target="_blank" rel="noopener noreferrer">熟語<br><span style="font-size:0.82rem;font-weight:400">Compounds · 4 films</span></a>
+  <a class="btn-compounds" href="https://www.youtube.com/playlist?list=PLYpgcBuk0PGg" target="_blank" rel="noopener noreferrer">書き順<br><span style="font-size:0.82rem;font-weight:400">Stroke order · 4 films</span></a>
+  </div>
+</section>
+<p class="sg-disclaimer">本サイトは、漢検の級別配当漢字を参考に制作した独立した学習教材です。公益財団法人日本漢字能力検定協会が制作・監修・公認するものではありません。</p>
+
+<script src="../../kml/assets/site/js/kml.js"></script>
+<script>
+(function () {
+  var toggle = document.getElementById("furigana-toggle");
+  if (!toggle) return;
+  function on() { return !document.documentElement.classList.contains("furigana-off"); }
+  function set(next) {
+    document.documentElement.classList.toggle("furigana-off", !next);
+    toggle.setAttribute("aria-pressed", next ? "true" : "false");
+    toggle.setAttribute("aria-label", next ? "Furigana on" : "Furigana off");
+    try { localStorage.setItem("kml-compounds-furigana", next ? "on" : "off"); } catch (err) {}
+  }
+  toggle.addEventListener("click", function () { set(!on()); });
+  set(on());
+})();
+</script>
+</body>
+</html>

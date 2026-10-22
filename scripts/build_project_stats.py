@@ -8,8 +8,8 @@ Layers (do not mix meanings):
     3,096 (kanji, verses, stroke-order pages). Vocabulary, compounds, and
     components are counted from the full production collections, not assumed
     to be 3,096.
-  - Published curriculum — completed lesson sequence (currently 1–111)
-  - Curriculum coverage — JLPT / Jōyō / school grades vs Lessons 1–111 only
+  - Published curriculum — completed lesson sequence (currently 1–139)
+  - Curriculum coverage — JLPT / Jōyō / school grades vs Lessons 1–139 only
   - Learning resources — curriculum totals plus separately labeled ecosystem
     materials (Start Here, vocabulary series, kana)
   - Media — the published KML media ecosystem, including the YouTube channel
@@ -46,9 +46,10 @@ YOUTUBE_PUBLIC_VIDEOS = 807
 YOUTUBE_PLAYLISTS = 189
 YOUTUBE_COUNT_AS_OF = "2026-10-07"
 YOUTUBE_CHANNEL_HANDLE = "@ambientkanji"
-# Public Statistics: published Book 1 curriculum currently complete through here.
-# Raise this when the next lesson is released. Do not gate it on study-file globs.
-COMPLETED_THROUGH_LESSON = 111
+# Public Statistics: published curriculum through the last lesson whose
+# study images are complete. Production HTML must also exist. Lesson 140
+# still has no study images, so the range stops at 139.
+COMPLETED_THROUGH_LESSON = 139
 START_HERE_ROOMS = 43  # Rooms 0–42
 CHANNEL_LEARNING_JSON = KML / "analytics/output/kml_channel_learning.json"
 CHANNEL_STATS_JSON = KML / "analytics/output/kml_channel_statistics.json"
@@ -634,7 +635,8 @@ def build_published(completed_info: dict) -> dict:
         else "Completed lessons",
         "completionRule": (
             "Production HTML exists for each lesson in the published "
-            "curriculum range. Study-image presence is not a completion test."
+            "curriculum range, and each lesson's study images are present. "
+            "The range currently stops at lesson 139."
         ),
         "coverage": coverage,
     }

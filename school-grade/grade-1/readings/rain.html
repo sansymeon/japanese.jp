@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="雨の音読みと訓読み。">
+<title>雨の読み方 — 小学1年生</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../kml/assets/site/css/kml_style.css">
+<link rel="stylesheet" href="../../../school-grade/css/school-grade.css">
+<script>
+try {
+  if (localStorage.getItem("kml-compounds-furigana") === "off") {
+    document.documentElement.classList.add("furigana-off");
+  }
+} catch (err) {}
+</script>
+</head>
+<body class="sg-readings">
+<div class="navbar">
+  <a class="sg-back" href="../lesson-01.html#kanji-rain">← 第1課</a>
+</div>
+<p class="sg-kanji" lang="ja">雨</p>
+<h1>読み方とことば</h1>
+<div class="furigana-bar">
+  <button type="button" class="furigana-toggle" id="furigana-toggle" aria-pressed="true" aria-label="ふりがな オン">
+    ふりがな
+    <span class="furigana-mark" aria-hidden="true"></span>
+  </button>
+</div>
+<article class="sg-sheet">
+  <section class="sg-read-block" id="on">
+    <h2 lang="ja">音読み</h2>
+    <h3 class="sg-read-label" lang="ja">ウ</h3>
+<ul class="sg-words">
+<li><p class="sg-word" lang="ja"><ruby>雨天<rt>うてん</rt></ruby></p><p class="sg-kana" lang="ja">うてん</p></li>
+</ul>
+  </section>
+  <section class="sg-read-block" id="kun">
+    <h2 lang="ja">訓読み</h2>
+    <h3 class="sg-read-label" lang="ja">あめ</h3>
+<ul class="sg-words">
+<li><p class="sg-word" lang="ja"><ruby>雨<rt>あめ</rt></ruby></p><p class="sg-kana" lang="ja">あめ</p></li>
+<li><p class="sg-word" lang="ja"><ruby>大雨<rt>おおあめ</rt></ruby></p><p class="sg-kana" lang="ja">おおあめ</p></li>
+</ul>
+<h3 class="sg-read-label" lang="ja">あま</h3>
+<ul class="sg-words">
+<li><p class="sg-word" lang="ja"><ruby>雨具<rt>あまぐ</rt></ruby></p><p class="sg-kana" lang="ja">あまぐ</p></li>
+</ul>
+  </section>
+</article>
+<p><a class="sg-back" href="../lesson-01.html#kanji-rain">第1課にもどる</a></p>
+<p class="school-footer-note">読みの表記は KANJIDIC2（EDRDG）によります。ことばは一年生向けに選んだものです。</p>
+
+<script>
+(function () {
+  var toggle = document.getElementById("furigana-toggle");
+  if (!toggle) return;
+  function on() { return !document.documentElement.classList.contains("furigana-off"); }
+  function set(next) {
+    document.documentElement.classList.toggle("furigana-off", !next);
+    toggle.setAttribute("aria-pressed", next ? "true" : "false");
+    toggle.setAttribute("aria-label", next ? "ふりがな オン" : "ふりがな オフ");
+    try { localStorage.setItem("kml-compounds-furigana", next ? "on" : "off"); } catch (err) {}
+  }
+  toggle.addEventListener("click", function () { set(!on()); });
+  set(on());
+})();
+</script>
+
+</body>
+</html>

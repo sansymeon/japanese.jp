@@ -6,8 +6,8 @@
 # via scripts/pre-deploy.sh, then commit fresh outputs when they change.
 #
 # Loop avoidance: paths-ignore skips Action re-runs when only output/ changes.
-# Do NOT put [skip ci] on the bot commit — Netlify also honors that and will
-# skip deploying the regenerated JSON to the live site.
+# The bot commit uses [skip netlify] so that push does not start a second
+# production deploy. Do not use [skip ci]; GitHub Actions honors that too.
 
 name: Pre-deploy analytics
 
@@ -61,8 +61,7 @@ jobs:
             exit 0
           fi
 
-          # No [skip ci]: Netlify must deploy this commit so the homepage
-          # picks up the new generated_at. Action loops are prevented by
-          # paths-ignore on kml/analytics/output/** above.
-          git commit -m "chore(analytics): regenerate channel-learning stats"
+          # [skip netlify] only. paths-ignore above already keeps this push
+          # from running the workflow again.
+          git commit -m "chore(analytics): regenerate channel-learning stats [skip netlify]"
           git push

@@ -11,8 +11,8 @@ ecosystem.
 1. **Interesting Statistics** — library scale + published curriculum + YouTube
 2. **Permanent Library** — designed KML resources (3,096 one-per-kanji items,
    plus full vocabulary / compound / component totals)
-3. **Published Curriculum** — completed lesson sequence (currently 1–111)
-4. **Curriculum Coverage** — JLPT / grades / Jōyō from Lessons 1–111 only
+3. **Published Curriculum** — completed lesson sequence (currently 1–139)
+4. **Curriculum Coverage** — JLPT / grades / Jōyō from Lessons 1–139 only
 5. **Learning Resources** — lesson-sequence totals, then other site series
 6. **Media Library** — exhibitions, ambient collections, audio, YouTube channel
 
@@ -34,7 +34,8 @@ Writes `statistics/data/project_stats.json`.
 ### Published curriculum
 
 **Lessons Completed** is the published curriculum range (currently lessons
-1–111). A lesson is complete when its production HTML exists.
+1–139). A lesson is included when its production HTML exists and its study
+images are complete.
 
 ### YouTube
 

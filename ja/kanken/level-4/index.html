@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../../assets/css/museum-room.css" />
   <script src="../../../assets/js/museum-room.js" defer></script>
+  <script src="../../../assets/js/grade-index-hero.js" defer></script>
 </head>
 <body class="museum-page">
   <a class="skip-link" href="#characters">漢字一覧へスキップ</a>
@@ -19,18 +20,18 @@
       <a class="museum-brand" href="../../../ja/index.html">Kanji・Music・Landscape</a>
       <nav aria-label="メインナビ">
         <ul class="museum-nav">
-          <li><a href="../../../ja/journey/">学びの道</a></li>
-          <li><a href="../../../kml/contents/books/">漢字の学び</a></li>
-          <li><a href="../../../ja/kanken/" aria-current="page">漢検への道</a></li>
-          <li><a href="../../../ja/collections/">映像コレクション</a></li>
-          <li><a href="../../../ja/publications/">出版物</a></li>
-          <li><a href="../../../ja/index.html">ホーム</a></li>
+          <li><a href="/start-here/rooms/">はじめに</a></li>
+          <li><a href="/kml/vocabulary/">語彙</a></li>
+          <li><a href="/kanken/" aria-current="page">漢検への道</a></li>
+          <li><a href="/kml/contents/books/">漢字の学び</a></li>
+          <li><a href="/ja/collections/">映像コレクション</a></li>
+          <li><a href="/ja/">ホーム</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
-    <section class="room-hero" aria-labelledby="pathway-heading">
+    <section class="room-hero" data-grade-index="kanken/level-4" aria-labelledby="pathway-heading">
       <div class="room-hero-media" aria-hidden="true">
         <img src="/kanken/kanken_hero_image.jpg" alt="" width="1672" height="941" fetchpriority="high" />
         <div class="room-hero-veil"></div>
@@ -3202,8 +3203,8 @@
   <footer class="museum-footer">
     <div class="museum-footer-inner">
       <nav aria-label="フッター">
-        <a href="../../../ja/index.html">ホーム</a>
-        <a href="../">漢検への道</a>
+        <a href="/ja/journey/">学びの道</a>
+        <a href="/statistics/">統計</a>
         <a href="../../../kanken/level-4/" hreflang="en" lang="en">English</a>
       </nav>
       <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
