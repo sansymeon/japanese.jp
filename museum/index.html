@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="museum-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Museum — Kanji・Music・Landscape</title>
+  <meta
+    name="description"
+    content="Two galleries: Japanese landscapes with ambient music, and characters, stories, and songs beyond the regular collections."
+  />
+  <meta name="theme-color" content="#171512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../assets/css/museum-room.css" />
+  <style>
+    #galleries.room-section {
+      padding-top: clamp(1.75rem, 3vw, 2.5rem);
+      padding-bottom: clamp(1.75rem, 3vw, 2.75rem);
+    }
+
+    #galleries .room-section-head {
+      margin-bottom: 1.35rem;
+    }
+
+    #museum-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+
+    .museum-hall {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.35rem, 2.5vw, 2rem);
+    }
+
+    .museum-card {
+      display: grid;
+      grid-template-columns: minmax(0, 32.5rem) minmax(14rem, 1fr);
+      gap: clamp(1rem, 2vw, 1.75rem);
+      align-items: center;
+    }
+
+    .museum-plate {
+      display: block;
+      max-width: 32.5rem;
+      background: var(--gallery-deep);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .museum-plate img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: var(--gallery-deep);
+    }
+
+    .museum-hall h2 {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .museum-hall p {
+      margin: 0 0 0.9rem;
+      color: var(--ink-quiet);
+    }
+
+    @media (max-width: 720px) {
+      .museum-card {
+        grid-template-columns: 1fr;
+      }
+
+      .museum-plate {
+        max-width: none;
+      }
+    }
+  </style>
+  <script src="../assets/js/museum-room.js" defer></script>
+</head>
+<body class="museum-page">
+  <a class="skip-link" href="#galleries">Skip to galleries</a>
+
+  <header class="museum-header museum-header--solid">
+    <div class="museum-header-inner">
+      <a class="museum-brand" href="../index.html">Kanji・Music・Landscape</a>
+      <nav aria-label="Primary">
+        <ul class="museum-nav">
+          <li><a href="/start-here/rooms/">LEARN JAPANESE</a></li>
+          <li><a href="/study-kanji/">STUDY KANJI</a></li>
+          <li><a href="/museum/" aria-current="page">MUSEUM</a></li>
+          <li><a href="/">HOME</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="room-section" id="galleries" aria-labelledby="museum-heading">
+      <div class="room-container room-container--wide">
+        <header class="room-section-head">
+          <p class="room-eyebrow">Museum</p>
+          <h1 id="museum-heading">Two galleries</h1>
+          <p>Watch, listen, and enjoy. These rooms are not lessons.</p>
+        </header>
+
+        <div class="museum-hall">
+          <article class="museum-card">
+            <a
+              class="museum-plate"
+              href="https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../kml/assets/covers/lesson_32.jpg"
+                alt="A quiet Japanese landscape"
+                width="1672"
+                height="941"
+              />
+            </a>
+            <div>
+              <h2>KML Ambient Japan — Gallery Exhibitions</h2>
+              <p>Japanese landscapes, atmosphere, imagery, and ambient music.</p>
+              <a
+                class="museum-btn museum-btn--primary"
+                href="https://www.youtube.com/playlist?list=PLdjO5D7Hu6TU"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Watch on YouTube</a>
+            </div>
+          </article>
+
+          <article class="museum-card">
+            <a
+              class="museum-plate"
+              href="https://www.youtube.com/playlist?list=PLK9wadcjed30"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../collections/images/beyond_joyo.jpg"
+                alt="Characters beyond the regular collections"
+                width="1672"
+                height="941"
+                loading="lazy"
+              />
+            </a>
+            <div>
+              <h2>Beyond Kanji | Characters, Stories &amp; Songs</h2>
+              <p>Unusual characters, cultural stories, Borneo, Biáng, music, and creative journeys.</p>
+              <a
+                class="museum-btn museum-btn--primary"
+                href="https://www.youtube.com/playlist?list=PLK9wadcjed30"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Watch on YouTube</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="museum-footer">
+    <div class="museum-footer-inner">
+      <nav aria-label="Footer">
+        <a href="/journey/">About KML</a>
+        <a href="/statistics/">Statistics</a>
+        <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+      </nav>
+      <p>© <span id="copyrightYear">2026</span> SanSymeon Productions</p>
+    </div>
+  </footer>
+</body>
+</html>

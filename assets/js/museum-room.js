@@ -11,6 +11,43 @@
   var START_HERE_HREF = "/start-here/rooms/";
   var VOCABULARY_HREF = "/kml/vocabulary/";
 
+  var EN_NAV = [
+    { href: "/start-here/rooms/", label: "LEARN JAPANESE", current: function (path) { return /^\/start-here(\/|$)/.test(path) || /^\/kml\/vocabulary(\/|$)/.test(path); } },
+    { href: "/study-kanji/", label: "STUDY KANJI", current: function (path) { return /^\/study-kanji(\/|$)/.test(path) || /^\/kml\/contents\/books(\/|$)/.test(path); } },
+    { href: "/museum/", label: "MUSEUM", current: function (path) { return /^\/museum(\/|$)/.test(path); } },
+    { href: "/", label: "HOME", current: function (path) { return path === "" || path === "/index.html"; } },
+  ];
+
+  var JA_NAV = [
+    { href: "/start-here/rooms/", label: "はじめに", current: function (path) { return /^\/start-here(\/|$)/.test(path); } },
+    { href: "/kml/vocabulary/", label: "語彙", current: function (path) { return /^\/kml\/vocabulary(\/|$)/.test(path); } },
+    { href: "/kanken/", label: "漢検への道", current: function (path) { return /^\/kanken(\/|$)/.test(path) || /^\/ja\/kanken(\/|$)/.test(path); } },
+    { href: "/kml/contents/books/", label: "漢字の学び", current: function (path) { return /^\/kml\/contents\/books(\/|$)/.test(path); } },
+    { href: "/ja/collections/", label: "映像コレクション", current: function (path) { return /^\/ja\/collections(\/|$)/.test(path); } },
+    { href: "/ja/", label: "ホーム", current: function (path) { return path === "/ja" || path === "/ja/index.html"; } },
+  ];
+
+  function normalizeMuseumNav(list) {
+    if (!list) return;
+    var items = isJapanesePage() ? JA_NAV : EN_NAV;
+    var path = pathWithoutSlash(window.location.pathname);
+    list.textContent = "";
+    items.forEach(function (item) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = item.href;
+      a.textContent = item.label;
+      if (item.current(path)) a.setAttribute("aria-current", "page");
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  }
+
+  function isJapanesePage() {
+    var lang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+    return lang === "ja" || lang.indexOf("ja-") === 0;
+  }
+
   function isStartHereHref(href) {
     if (!href) return false;
     var path = href.split("?")[0].split("#")[0].replace(/\/+$/, "");
@@ -27,7 +64,7 @@
   }
 
   function ensureStartHereLink(list) {
-    if (!list) return;
+    if (!list || isJapanesePage()) return;
     var anchors = list.querySelectorAll("a");
     var i;
     for (i = 0; i < anchors.length; i++) {
@@ -46,7 +83,7 @@
   }
 
   function ensureVocabularyLink(list) {
-    if (!list) return;
+    if (!list || isJapanesePage()) return;
     var anchors = list.querySelectorAll("a");
     var i;
     var startHereItem = null;
@@ -86,32 +123,6 @@
     return (pathname || "").split("?")[0].split("#")[0].replace(/\/+$/, "");
   }
 
-  function isStartHereLandingPath(pathname) {
-    var path = pathWithoutSlash(pathname);
-    return /(^|\/)start-here$/i.test(path) || /(^|\/)start-here\/index\.html$/i.test(path);
-  }
-
-  function isStartHereRoomsIndexPath(pathname) {
-    var path = pathWithoutSlash(pathname);
-    return /(^|\/)start-here\/rooms(\/index\.html)?$/i.test(path);
-  }
-
-  function ensureStartHereFooter(nav) {
-    if (!nav || nav.hasAttribute("data-no-start-here")) return;
-    if (isStartHereLandingPath(window.location.pathname)) return;
-    if (isStartHereRoomsIndexPath(window.location.pathname)) return;
-    var anchors = nav.querySelectorAll("a");
-    var i;
-    for (i = 0; i < anchors.length; i++) {
-      if (isStartHereHref(anchors[i].getAttribute("href"))) return;
-      if ((anchors[i].textContent || "").trim() === "Start Here") return;
-    }
-    var a = document.createElement("a");
-    a.href = START_HERE_HREF;
-    a.textContent = "Start Here";
-    nav.insertBefore(a, nav.firstChild);
-  }
-
   var header = document.querySelector(".museum-header, .books-header");
   var inner = header && header.querySelector(".museum-header-inner, .books-header-inner");
   var panel = header && header.querySelector("nav");
@@ -120,18 +131,18 @@
     (header && header.querySelector(".museum-nav, .books-nav"));
 
   if (inner && links) {
-    ensureStartHereLink(links);
-    ensureVocabularyLink(links);
+    normalizeMuseumNav(links);
 
     if (panel && !header.querySelector(".museum-nav-toggle")) {
       if (!panel.id) panel.id = "museumNav";
+      var menuJa = isJapanesePage();
       var toggle = document.createElement("button");
       toggle.type = "button";
       toggle.className = "museum-nav-toggle";
       toggle.setAttribute("aria-controls", panel.id);
       toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open menu");
-      toggle.textContent = "Menu";
+      toggle.setAttribute("aria-label", menuJa ? "メニューを開く" : "Open menu");
+      toggle.textContent = menuJa ? "メニュー" : "Menu";
       inner.insertBefore(toggle, panel);
 
       function setOpen(open) {
@@ -142,7 +153,16 @@
           else panel.classList.remove("is-open");
         }
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        toggle.setAttribute(
+          "aria-label",
+          open
+            ? menuJa
+              ? "メニューを閉じる"
+              : "Close menu"
+            : menuJa
+              ? "メニューを開く"
+              : "Open menu"
+        );
       }
 
       toggle.addEventListener("click", function () {
@@ -153,8 +173,6 @@
       });
     }
   }
-
-  document.querySelectorAll(".museum-footer nav").forEach(ensureStartHereFooter);
 
   var nodes = document.querySelectorAll(".reveal");
   if (!nodes.length) return;

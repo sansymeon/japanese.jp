@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=rooms-5" />
   <script src="../assets/js/homepage.js" defer></script>
 </head>
 <body>
@@ -36,14 +36,10 @@
 
       <nav class="site-nav" id="siteNav" aria-label="メインナビ">
         <ul>
-          <li><a href="/start-here/rooms/">Start Here</a></li>
-          <li><a href="./journey/">学びの道</a></li>
-          <li><a href="./kanken/">漢検への道</a></li>
-          <li><a href="../kml/contents/books/">漢字の学び</a></li>
-          <li><a href="./collections/">映像コレクション</a></li>
-          <li><a href="./publications/">出版物</a></li>
-          <li><a href="../statistics/">統計</a></li>
-          <li><a href="./index.html" aria-current="page">ホーム</a></li>
+          <li><a href="/start-here/rooms/">日本語を学ぶ</a></li>
+          <li><a href="/kanken/">漢字を学ぶ</a></li>
+          <li><a href="#rooms">ミュージアム</a></li>
+          <li><a href="/ja/" aria-current="page">ホーム</a></li>
         </ul>
       </nav>
     </div>
@@ -79,12 +75,13 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" data-link="curriculum" href="../kml/contents/books/">本棚へ入る</a>
-          <a class="btn btn-ghost" href="./journey/">学びの道を読む</a>
+          <a class="btn btn-primary" href="/start-here/rooms/">ゼロから日本語を学ぶ</a>
+          <a class="btn btn-primary" href="/kanken/">漢検に挑戦する</a>
+          <a class="btn btn-ghost" href="#rooms">ミュージアムを楽しむ</a>
         </div>
       </div>
 
-      <a class="hero-scroll" href="#rooms" aria-label="ギャラリーへ進む">
+      <a class="hero-scroll" href="#rooms" aria-label="学びとコレクションへ進む">
         <span class="hero-scroll-line" aria-hidden="true"></span>
       </a>
     </section>
@@ -92,13 +89,12 @@
     <section class="section destinations" id="rooms" aria-labelledby="rooms-heading">
       <div class="container">
         <header class="section-head section-head--left reveal">
-          <p class="section-eyebrow">ギャラリー</p>
-          <h2 id="rooms-heading">美術館の五つの部屋</h2>
-          <p>どの扉も前へ——心が向くところから入れます。</p>
+          <p class="section-eyebrow">KMLを探る</p>
+          <h2 id="rooms-heading">KMLの学びとコレクション</h2>
+          <p>日本語の基礎から漢字学習、映像作品まで。興味のあるところから、自由にお楽しみください。</p>
         </header>
-      </div>
 
-      <div class="destination-list">
+        <div class="destination-list">
         <article class="destination reveal">
           <figure class="destination-visual">
             <img
@@ -112,7 +108,7 @@
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">01</p>
             <h3>学びの道</h3>
-            <p>この美術館が生まれた理由——静かに日本語を見るための物語。</p>
+            <p>KMLの考え方が生まれた物語です。レッスンは、ここから始まりません。</p>
             <a class="btn btn-quiet" href="./journey/">学びの道へ</a>
           </div>
         </article>
@@ -120,8 +116,8 @@
         <article class="destination destination--flip reveal">
           <figure class="destination-visual">
             <img
-              src="../kml/assets/youtube_thumbnails/grade_1_.jpg"
-              alt="小学1年の漢字映像の冒頭"
+              src="../collections/images/elementary_school_kanji.jpg"
+              alt="小学校の漢字"
               width="1672"
               height="941"
               loading="lazy"
@@ -130,12 +126,30 @@
           <div class="destination-copy">
             <p class="destination-index" aria-hidden="true">02</p>
             <h3>漢検への道</h3>
-            <p>音楽と映像で楽しく学ぶ漢字。漢検2級までの常用漢字2,136字を学べる。</p>
-            <a class="btn btn-quiet" href="./kanken/">級から入る</a>
+            <p>漢検10級から2級まで。級別の漢字一覧をもとに、読み方やことばを学びます。</p>
+            <a class="btn btn-quiet" href="../kanken/">級から入る</a>
           </div>
         </article>
 
         <article class="destination reveal">
+          <figure class="destination-visual">
+            <img
+              src="../kml/assets/images/vocabulary_intro.jpg"
+              alt="庭に開いた茶室。釜と茶道具、掛軸がある"
+              width="1672"
+              height="941"
+              loading="lazy"
+            />
+          </figure>
+          <div class="destination-copy">
+            <p class="destination-index" aria-hidden="true">03</p>
+            <h3>語彙</h3>
+            <p>はじめのことばから、ふだんの暮らしのことばまで。</p>
+            <a class="btn btn-quiet" href="../kml/vocabulary/">語彙へ入る</a>
+          </div>
+        </article>
+
+        <article class="destination destination--flip reveal">
           <figure class="destination-visual">
             <img
               src="../kml/assets/studies/thatched_roof.jpg"
@@ -146,14 +160,14 @@
             />
           </figure>
           <div class="destination-copy">
-            <p class="destination-index" aria-hidden="true">03</p>
+            <p class="destination-index" aria-hidden="true">04</p>
             <h3>漢字の学び</h3>
-            <p>十五冊の本棚——一室ずつ、ゆっくりと。</p>
+            <p>十六冊の本棚から、漢字の形・意味・音楽・風景を一課ずつ楽しめます。</p>
             <a class="btn btn-quiet" href="../kml/contents/books/">本棚へ入る</a>
           </div>
         </article>
 
-        <article class="destination destination--flip reveal">
+        <article class="destination reveal">
           <figure class="destination-visual">
             <img
               src="../kml/assets/studies/evening.jpg"
@@ -164,30 +178,13 @@
             />
           </figure>
           <div class="destination-copy">
-            <p class="destination-index" aria-hidden="true">04</p>
+            <p class="destination-index" aria-hidden="true">05</p>
             <h3>映像コレクション</h3>
-            <p>静かな映像ギャラリー——Ambient Japan・漢字・語彙・読む最初の一歩。</p>
+            <p>静かな映像作品——Ambient Japan・漢字・語彙・読む最初の一歩。</p>
             <a class="btn btn-quiet" href="./collections/">コレクションを見る</a>
           </div>
         </article>
-
-        <article class="destination reveal">
-          <figure class="destination-visual">
-            <img
-              src="../kml/assets/studies/shelf.jpg"
-              alt="柔らかな光の本棚"
-              width="1600"
-              height="1000"
-              loading="lazy"
-            />
-          </figure>
-          <div class="destination-copy">
-            <p class="destination-index" aria-hidden="true">05</p>
-            <h3>出版物</h3>
-            <p>ページで歩きたい方のための、書籍と伴走資料。</p>
-            <a class="btn btn-quiet" href="./publications/">出版物へ</a>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
   </main>
@@ -209,14 +206,8 @@
       </div>
 
       <nav class="footer-nav" aria-label="フッター">
-        <a href="/start-here/rooms/">Start Here</a>
         <a href="./journey/">学びの道</a>
-        <a href="./kanken/">漢検への道</a>
-        <a href="../kml/contents/books/">漢字の学び</a>
-        <a href="./collections/">映像コレクション</a>
-        <a href="./publications/">出版物</a>
         <a href="../statistics/">統計</a>
-        <a data-link="analytics" href="../kml/analytics/dashboard/">分析</a>
         <a href="../index.html" hreflang="en" lang="en">English</a>
       </nav>
 

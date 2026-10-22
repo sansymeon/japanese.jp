@@ -246,6 +246,10 @@ button:focus-visible {
   border-bottom: 1px solid color-mix(in srgb, var(--stroke) 35%, transparent);
 }
 
+.site-header .container {
+  width: min(100% - 2rem, 78rem);
+}
+
 .site-header-inner {
   display: flex;
   align-items: center;
@@ -272,8 +276,8 @@ button:focus-visible {
 
 .site-nav ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 1.5rem;
+  flex-wrap: nowrap;
+  gap: 0.15rem 0.75rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -282,8 +286,9 @@ button:focus-visible {
 .site-nav a {
   text-decoration: none;
   color: var(--ink-secondary);
-  font-size: 0.88rem;
-  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
   text-transform: uppercase;
   font-weight: 500;
   padding: 0.35rem 0;
@@ -722,6 +727,71 @@ button:focus-visible {
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--ink-secondary);
+}
+
+/* Homepage rooms: keep each picture near 480px, not the full column. */
+@media (min-width: 720px) {
+  html[lang="en"] .destinations,
+  html[lang="ja"] .destinations {
+    padding-top: clamp(2.75rem, 5vw, 4rem);
+    padding-bottom: clamp(2.25rem, 4vw, 3.25rem);
+  }
+
+  html[lang="en"] .destinations .section-head,
+  html[lang="ja"] .destinations .section-head {
+    margin-bottom: 1.35rem;
+  }
+
+  html[lang="en"] .destination-list,
+  html[lang="ja"] .destination-list {
+    gap: clamp(1.25rem, 2.4vw, 1.75rem);
+    margin-top: 1.15rem;
+  }
+
+  html[lang="en"] .destination,
+  html[lang="en"] .destination--flip,
+  html[lang="ja"] .destination,
+  html[lang="ja"] .destination--flip {
+    grid-template-columns: minmax(0, 30rem) minmax(14rem, 1fr);
+    row-gap: 0;
+  }
+
+  html[lang="en"] .destination--flip,
+  html[lang="ja"] .destination--flip {
+    grid-template-columns: minmax(14rem, 1fr) minmax(0, 30rem);
+  }
+
+  html[lang="en"] .destination--flip .destination-visual,
+  html[lang="ja"] .destination--flip .destination-visual {
+    order: 2;
+  }
+
+  html[lang="en"] .destination--flip .destination-copy,
+  html[lang="ja"] .destination--flip .destination-copy {
+    order: 1;
+    margin-inline-start: 0;
+  }
+
+  html[lang="en"] .destination-visual,
+  html[lang="ja"] .destination-visual {
+    width: 100%;
+    max-width: 31.25rem;
+  }
+
+  html[lang="en"] .destination-index,
+  html[lang="ja"] .destination-index {
+    margin-bottom: 0.45rem;
+  }
+
+  html[lang="en"] .destination-copy h3,
+  html[lang="ja"] .destination-copy h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  html[lang="en"] .destination-copy > p:not(.destination-index),
+  html[lang="ja"] .destination-copy > p:not(.destination-index) {
+    margin-bottom: 0.95rem;
+  }
 }
 
 /* ---------- YouTube cinema banner ---------- */
@@ -1347,6 +1417,45 @@ button:focus-visible {
 
   .book-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .site-header-inner {
+    position: relative;
+    justify-content: flex-start;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-left: 0;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--stroke);
+    padding: 0.75rem 0 1rem;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--stroke);
   }
 }
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Japanese — Kanji・Music・Landscape</title>
+  <meta name="description" content="Choose the KML Museum or 漢検への道." />
+  <meta name="theme-color" content="#0B0B0C" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=gallery-rooms" />
+  <style>
+    html:not([data-from="ja"]) .learn-ja { display: none; }
+    html[data-from="ja"] .learn-en { display: none; }
+  </style>
+  <script>
+    (function () {
+      if (new URLSearchParams(window.location.search).get("from") !== "ja") return;
+      document.documentElement.lang = "ja";
+      document.documentElement.setAttribute("data-from", "ja");
+      document.title = "日本語を学ぶ方 — Kanji・Music・Landscape";
+      var desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute("content", "KMLの美術館か、漢検への道を選ぶ。");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link learn-en" href="#choices">Skip to choices</a>
+  <a class="skip-link learn-ja" href="#choices">選択肢へスキップ</a>
+
+  <main id="main">
+    <section class="hero hero--cinematic" aria-labelledby="learn-heading">
+      <div class="hero-media" aria-hidden="true">
+        <img
+          class="hero-photo"
+          src="../kml/assets/studies/village.jpg"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+        <div class="hero-veil"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <img
+          class="hero-crest"
+          src="../assets/images/kml_japan_crest.png"
+          alt="Kanji・Music・Landscape"
+          width="800"
+          height="800"
+        />
+
+        <p class="hero-brand">Kanji・Music・Landscape</p>
+        <h1 id="learn-heading">
+          <span class="learn-en">Learning Japanese</span>
+          <span class="learn-ja">日本語を学ぶ方</span>
+        </h1>
+
+        <div class="hero-actions" id="choices">
+          <a class="btn btn-primary learn-en" href="/#rooms">KML Museum</a>
+          <a class="btn btn-primary learn-ja" href="/ja/#rooms">KMLの美術館</a>
+          <a class="btn btn-primary learn-en" href="/kanken/?lang=en">漢検への道</a>
+          <a class="btn btn-primary learn-ja" href="/kanken/">漢検への道</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
