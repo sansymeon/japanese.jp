@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T11:59:13Z",
+  "generatedAt": "2026-10-26T06:26:58Z",
   "scopeNote": "Statistics include published KML materials across the website and KML YouTube collections unless otherwise noted. Curriculum coverage refers specifically to the KML lesson sequence.",
   "permanent": {
     "order": [
@@ -71,14 +71,15 @@
       "detail": "Designed lesson curriculum"
     },
     "lessonsCompleted": {
-      "value": 139,
+      "value": 153,
       "label": "Lessons Completed",
-      "detail": "Curriculum through lesson 139"
+      "detail": "153 of 153 planned lessons",
+      "note": "Lesson 154 is the encore and is not part of this count. Gallery videos, stroke-order recordings, and compound videos are separate."
     },
     "kanjiPublished": {
-      "value": 2780,
+      "value": 3059,
       "label": "Lesson Kanji Published",
-      "detail": "In Lessons 1–139"
+      "detail": "In Lessons 1–153"
     },
     "youtubeVideos": {
       "value": 847,
@@ -88,8 +89,10 @@
     }
   },
   "published": {
-    "completedLessons": 139,
-    "highestCompletedLesson": 139,
+    "plannedLessons": 153,
+    "completedLessons": 153,
+    "highestCompletedLesson": 153,
+    "missingLessons": [],
     "completedLessonNumbers": [
       1,
       2,
@@ -229,27 +232,45 @@
       136,
       137,
       138,
-      139
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153
     ],
-    "kanjiPublished": 2780,
-    "uniqueKanjiPublished": 2780,
-    "versesPublished": 2781,
-    "heroIllustrations": 2780,
-    "verseIllustrations": 2781,
-    "lessonCovers": 139,
-    "componentsPublished": 5943,
-    "componentBoxes": 2780,
+    "encoreLesson": 154,
+    "encoreCover": true,
+    "kanjiPublished": 3059,
+    "uniqueKanjiPublished": 3052,
+    "versesPublished": 3060,
+    "heroIllustrations": 3059,
+    "verseIllustrations": 3060,
+    "lessonCovers": 153,
+    "availableCoverImages": 153,
+    "studyImages": 3057,
+    "componentsPublished": 6511,
+    "componentBoxes": 3059,
     "vocabularyPublished": 13603,
     "compoundEntries": 2556,
-    "readingEntries": 2780,
-    "strokeOrderPages": 2779,
-    "curriculumScope": "Lessons 1–139",
-    "completionRule": "Production HTML exists for each lesson in the published curriculum range, and each lesson's study images are present. The range currently stops at lesson 139.",
+    "readingEntries": 3059,
+    "strokeOrderPages": 3057,
+    "curriculumScope": "Lessons 1–153",
+    "completionRule": "A planned lesson is complete when its production HTML, JPEG cover, and every study image named in that HTML are present. The planned collection is lessons 1–153. Lesson 154 is the encore and is not part of that count. Gallery videos, stroke-order recordings, and compound videos are a separate production and are not part of lesson completion.",
     "coverage": {
       "joyo": {
-        "covered": 2131,
+        "covered": 2136,
         "total": 2136,
-        "percent": 99.77
+        "percent": 100.0
       },
       "grades": {
         "1": {
@@ -290,9 +311,9 @@
         },
         "S": {
           "label": "Secondary School",
-          "covered": 1105,
+          "covered": 1110,
           "total": 1110,
-          "percent": 99.55
+          "percent": 100.0
         }
       },
       "jlpt": {
@@ -322,45 +343,50 @@
         },
         "N1": {
           "label": "JLPT N1",
-          "covered": 1148,
+          "covered": 1204,
           "total": 1204,
-          "percent": 95.35
+          "percent": 100.0
         }
       }
     },
-    "latestCurriculumLesson": "Lesson 139"
+    "latestCurriculumLesson": "Lesson 153"
   },
   "resources": {
     "curriculum": [
       {
         "value": 13603,
         "label": "Lesson Vocabulary",
-        "detail": "Lessons 1–139"
+        "detail": "Lessons 1–153"
       },
       {
         "value": 2556,
         "label": "Lesson Compounds",
-        "detail": "Lessons 1–139"
+        "detail": "Lessons 1–153"
       },
       {
-        "value": 2780,
+        "value": 3059,
         "label": "Lesson Readings",
-        "detail": "Lessons 1–139"
+        "detail": "Lessons 1–153"
       },
       {
-        "value": 5943,
+        "value": 6511,
         "label": "Lesson Components",
-        "detail": "Lessons 1–139"
+        "detail": "Lessons 1–153"
       },
       {
-        "value": 2779,
+        "value": 3057,
         "label": "Lesson Stroke Pages",
-        "detail": "Linked from Lessons 1–139"
+        "detail": "Linked from Lessons 1–153. Not a count of stroke-order recordings."
       },
       {
-        "value": 139,
+        "value": 3057,
+        "label": "Study Images",
+        "detail": "Images named in Lessons 1–153"
+      },
+      {
+        "value": 153,
         "label": "Lesson Covers",
-        "detail": "Lessons 1–139"
+        "detail": "JPEG covers for Lessons 1–153"
       }
     ],
     "ecosystem": [
@@ -377,7 +403,7 @@
       {
         "value": 23,
         "label": "Everyday Vocabulary Lessons",
-        "detail": "Vocabulary series 1–22"
+        "detail": "Vocabulary series 1–23"
       },
       {
         "value": 1003,
@@ -453,7 +479,8 @@
     },
     "audioTracks": 157,
     "audioDetail": "Lesson, ambient, and Start Here soundtracks",
-    "galleryDetail": "Published exhibition films",
-    "ambientDetail": "Published ambient collections"
+    "galleryDetail": "Published exhibition films, not every lesson",
+    "ambientDetail": "Published ambient collections, not every lesson",
+    "productionNote": "Gallery videos, stroke-order recordings, and compound videos are a separate production. Completing the lesson pages and study images does not mean those films have been made."
   }
 }
