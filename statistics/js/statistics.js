@@ -142,13 +142,49 @@
 
     const scope = published.curriculumScope || "Completed lessons";
 
+    const planned = published.plannedLessons;
+    const lessonDetail = planned
+      ? published.completedLessons + " of " + planned + " planned lessons"
+      : published.highestCompletedLesson
+        ? "Through lesson " + published.highestCompletedLesson
+        : "";
+    const encoreNote = published.encoreLesson
+      ? "Lesson " + published.encoreLesson + " is the encore, outside this count."
+      : "";
+    const missing = published.missingLessons || [];
+    const openNote = missing.length
+      ? "Still open: " + missing.join(", ") + "."
+      : "";
+    const lead = document.getElementById("progressLead");
+    if (lead) {
+      lead.textContent =
+        (planned
+          ? published.completedLessons + " of " + planned + " planned lessons have their pages, covers, and study images. "
+          : "Lesson pages, covers, and study images in the completed sequence. ") +
+        (encoreNote ? encoreNote + " " : "") +
+        (openNote ? openNote + " " : "") +
+        "Gallery videos, stroke-order recordings, and compound videos are a separate production.";
+    }
+
     fillGrid("progressGrid", [
       {
         value: fmtInt(published.completedLessons),
         label: "Lessons Completed",
-        detail: published.highestCompletedLesson
-          ? "Through lesson " + published.highestCompletedLesson
-          : "",
+        detail: [lessonDetail, encoreNote, openNote].filter(Boolean).join(" "),
+      },
+      {
+        value: fmtInt(published.studyImages),
+        label: "Study Images",
+        detail: scope,
+      },
+      {
+        value: fmtInt(
+          published.availableCoverImages != null
+            ? published.availableCoverImages
+            : published.lessonCovers
+        ),
+        label: "Lesson Covers",
+        detail: scope,
       },
       {
         value: fmtInt(published.kanjiPublished),
@@ -313,6 +349,11 @@
         detail: youtube.playlistDetail || "On @ambientkanji",
       });
     }
+    const mediaNote = document.getElementById("mediaProductionNote");
+    if (mediaNote && media.productionNote) {
+      mediaNote.textContent = media.productionNote;
+    }
+
     fillGrid("mediaGrid", mediaCards.concat([
       {
         value: fmtInt(media.videoCollectionCount),

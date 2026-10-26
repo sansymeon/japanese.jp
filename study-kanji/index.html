@@ -16,6 +16,63 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../assets/css/museum-room.css" />
+  <style>
+    /* Both pathway buttons share the dark KML treatment. Scoped here so
+       gold primary buttons elsewhere stay unchanged. */
+    #choices .study-path-btn {
+      background: var(--gallery-deep);
+      color: var(--ivory);
+      border: 1px solid rgba(201, 164, 88, 0.55);
+      border-radius: 2px;
+      padding: 0.75rem 1.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(0.72rem, 4.6cqi, 0.92rem);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      line-height: 1.35;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    #choices .study-path-btn:hover,
+    #choices .study-path-btn:focus-visible {
+      background: var(--gallery-elevated);
+      color: var(--ivory);
+      border-color: var(--gold);
+    }
+
+    #choices .study-path-btn:focus-visible {
+      outline: 2px solid color-mix(in srgb, var(--gold) 70%, transparent);
+      outline-offset: 3px;
+    }
+
+    #choices .room-actions {
+      container-type: inline-size;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    @media (max-width: 720px) {
+      #choices .room-actions {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #choices .study-path-btn {
+        width: 100%;
+        box-sizing: border-box;
+        letter-spacing: 0.04em;
+        padding-inline: 0.9rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      #choices .study-path-btn {
+        padding-inline: 0.6rem;
+        letter-spacing: 0.02em;
+      }
+    }
+  </style>
   <script src="../assets/js/museum-room.js" defer></script>
 </head>
 <body class="museum-page">
@@ -43,8 +100,8 @@
           <h1 id="study-heading">Study Kanji</h1>
           <p>KML’s visual studies, or the Japanese proficiency levels.</p>
           <div class="room-actions">
-            <a class="museum-btn museum-btn--primary" href="/kml/contents/books/">KML Kanji Studies</a>
-            <a class="museum-btn museum-btn--ghost" href="/kanken/?lang=en">Japanese-Style Study / 漢検</a>
+            <a class="museum-btn study-path-btn" href="/kml/contents/books/">KML Kanji Studies</a>
+            <a class="museum-btn study-path-btn" href="/kanken/?lang=en">Japanese-Style Study / 漢検</a>
           </div>
         </header>
       </div>

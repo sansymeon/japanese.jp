@@ -8,17 +8,19 @@ Layers (do not mix meanings):
     3,096 (kanji, verses, stroke-order pages). Vocabulary, compounds, and
     components are counted from the full production collections, not assumed
     to be 3,096.
-  - Published curriculum — completed lesson sequence (currently 1–139)
-  - Curriculum coverage — JLPT / Jōyō / school grades vs Lessons 1–139 only
+  - Published curriculum — planned lessons whose HTML, covers, and study
+    images are present (designed range: 1–153; lesson 154 is the encore)
+  - Curriculum coverage — JLPT / Jōyō / school grades vs that completed range
   - Learning resources — curriculum totals plus separately labeled ecosystem
     materials (Start Here, vocabulary series, kana)
   - Media — the published KML media ecosystem, including the YouTube channel
 
-Completed lessons are the published curriculum range, not an asset-audit of
-study filenames. Production HTML is the authority for which kanji a lesson
-contains. Do not infer completion from `data-slug` matching a study file —
-that produced a Lesson 37 false negative (slug `suppose`, live image
-`remain.jpg`). Production study artwork is JPG.
+A planned lesson is complete when its production HTML, JPEG cover, and every
+study image named in that HTML are on disk. Do not infer a filename from
+`data-slug` — Lesson 37 uses slug `suppose` and serves `remain.jpg`.
+Production study artwork is JPG. Lesson 154 is the encore, outside the
+planned 153. Gallery videos, stroke-order recordings, and compound videos
+are not part of this completion figure.
 """
 
 from __future__ import annotations
@@ -46,10 +48,12 @@ YOUTUBE_PUBLIC_VIDEOS = 807
 YOUTUBE_PLAYLISTS = 189
 YOUTUBE_COUNT_AS_OF = "2026-10-07"
 YOUTUBE_CHANNEL_HANDLE = "@ambientkanji"
-# Public Statistics: published curriculum through the last lesson whose
-# study images are complete. Production HTML must also exist. Lesson 140
-# still has no study images, so the range stops at 139.
-COMPLETED_THROUGH_LESSON = 139
+# Lesson 154 is the optional encore. It is not one of the 153 planned lessons.
+ENCORE_LESSON = 154
+STUDY_REF_RE = re.compile(
+    r"assets/studies/([A-Za-z0-9_]+)\.(?:png|jpe?g)",
+    re.I,
+)
 START_HERE_ROOMS = 43  # Rooms 0–42
 CHANNEL_LEARNING_JSON = KML / "analytics/output/kml_channel_learning.json"
 CHANNEL_STATS_JSON = KML / "analytics/output/kml_channel_statistics.json"
@@ -98,21 +102,44 @@ def lesson_pad(n: int) -> str:
     return f"{n:02d}"
 
 
-def count_completed_lessons() -> dict:
-    """Lessons in the published curriculum range that have production HTML.
+def lesson_html_path(n: int) -> Path:
+    return LESSONS_DIR / f"lesson_{lesson_pad(n)}.html"
 
-    Study-file presence is not a completion test. Lesson 37's 存 is
-    `data-slug="suppose"` but the page serves `assets/studies/remain.jpg`.
+
+def lesson_study_stems(n: int) -> list[str]:
+    path = lesson_html_path(n)
+    if not path.is_file():
+        return []
+    html = path.read_text(encoding="utf-8", errors="ignore")
+    return STUDY_REF_RE.findall(html)
+
+
+def count_completed_lessons() -> dict:
+    """Planned lessons with production HTML, a JPEG cover, and study images.
+
+    Study files are the ones named in the lesson HTML, not names guessed
+    from data-slug.
     """
     completed: list[int] = []
-    for n in range(1, COMPLETED_THROUGH_LESSON + 1):
-        path = LESSONS_DIR / f"lesson_{lesson_pad(n)}.html"
-        if path.is_file():
+    missing: list[int] = []
+    for n in range(1, PLANNED_LESSONS + 1):
+        stems = lesson_study_stems(n)
+        ready = (
+            lesson_html_path(n).is_file()
+            and (COVERS_DIR / f"lesson_{lesson_pad(n)}.jpg").is_file()
+            and bool(stems)
+            and all(study_exists(stem) for stem in stems)
+        )
+        if ready:
             completed.append(n)
+        else:
+            missing.append(n)
     return {
         "count": len(completed),
         "lessons": completed,
         "highest": max(completed) if completed else 0,
+        "missing": missing,
+        "planned": PLANNED_LESSONS,
     }
 
 
@@ -382,16 +409,21 @@ def spoken_vocabulary_unique() -> int | None:
     return int(old) if isinstance(old, int) else None
 
 
-def count_vocabulary_series() -> tuple[int, int]:
+def count_vocabulary_series() -> tuple[int, int, str]:
     vocab_dir = COLLECTIONS_DIR / "vocabulary"
     if not vocab_dir.is_dir():
-        return 0, 0
+        return 0, 0, "Everyday vocabulary series"
     foundation = len(list(vocab_dir.glob("vocabulary_f*.json")))
-    everyday = 0
+    numbers = []
     for path in vocab_dir.glob("vocabulary_*.json"):
-        if re.fullmatch(r"vocabulary_\d+", path.stem):
-            everyday += 1
-    return foundation, everyday
+        match = re.fullmatch(r"vocabulary_(\d+)", path.stem)
+        if match:
+            numbers.append(int(match.group(1)))
+    if numbers:
+        detail = f"Vocabulary series {min(numbers)}–{max(numbers)}"
+    else:
+        detail = "Everyday vocabulary series"
+    return foundation, len(numbers), detail
 
 
 def count_start_here_rooms() -> int:
@@ -526,7 +558,7 @@ def build_permanent(library_compounds: dict, library_components: int) -> dict:
 
 def build_ecosystem_resources() -> dict:
     spoken_unique = spoken_vocabulary_unique()
-    foundation, everyday = count_vocabulary_series()
+    foundation, everyday, everyday_detail = count_vocabulary_series()
     return {
         "startHereRooms": {
             "value": count_start_here_rooms(),
@@ -541,7 +573,7 @@ def build_ecosystem_resources() -> dict:
         "vocabularyLessons": {
             "value": everyday,
             "label": "Everyday Vocabulary Lessons",
-            "detail": "Vocabulary series 1–22",
+            "detail": everyday_detail,
         },
         "spokenVocabularyUnique": {
             "value": spoken_unique,
@@ -614,29 +646,51 @@ def build_published(completed_info: dict) -> dict:
         if (KML / "tools/strokes/pages" / f"{s}.html").is_file()
     )
 
+    published_study_stems: set[str] = set()
+    for n in completed:
+        for stem in lesson_study_stems(n):
+            if study_exists(stem):
+                published_study_stems.add(stem)
+
+    encore_html = lesson_html_path(ENCORE_LESSON).is_file()
+    encore_cover = (COVERS_DIR / f"lesson_{lesson_pad(ENCORE_LESSON)}.jpg").is_file()
+    scope = (
+        f"Lessons 1–{completed_info['highest']}"
+        if completed_info.get("highest")
+        else "Completed lessons"
+    )
+
     return {
+        "plannedLessons": PLANNED_LESSONS,
         "completedLessons": completed_info["count"],
         "highestCompletedLesson": completed_info["highest"],
+        "missingLessons": completed_info.get("missing") or [],
         "completedLessonNumbers": completed,
+        "encoreLesson": ENCORE_LESSON if encore_html else None,
+        "encoreCover": encore_cover,
         "kanjiPublished": len(kanji_list),
         "uniqueKanjiPublished": len(published_kanji),
         "versesPublished": verses,
         "heroIllustrations": hero_illustrations,
         "verseIllustrations": verse_illustrations,
         "lessonCovers": covers,
+        "availableCoverImages": covers,
+        "studyImages": len(published_study_stems),
         "componentsPublished": components_published,
         "componentBoxes": component_boxes,
         "vocabularyPublished": vocab,
         "compoundEntries": compounds,
         "readingEntries": readings,
         "strokeOrderPages": stroke_pages,
-        "curriculumScope": f"Lessons 1–{completed_info['highest']}"
-        if completed_info.get("highest")
-        else "Completed lessons",
+        "curriculumScope": scope,
         "completionRule": (
-            "Production HTML exists for each lesson in the published "
-            "curriculum range, and each lesson's study images are present. "
-            "The range currently stops at lesson 139."
+            "A planned lesson is complete when its production HTML, JPEG "
+            f"cover, and every study image named in that HTML are present. "
+            f"The planned collection is lessons 1–{PLANNED_LESSONS}. "
+            f"Lesson {ENCORE_LESSON} is the encore and is not part of that "
+            "count. Gallery videos, stroke-order recordings, and compound "
+            "videos are a separate production and are not part of lesson "
+            "completion."
         ),
         "coverage": coverage,
     }
@@ -680,9 +734,15 @@ def build() -> dict:
             "lessonsCompleted": {
                 "value": published["completedLessons"],
                 "label": "Lessons Completed",
-                "detail": f"Curriculum through lesson {published['highestCompletedLesson']}"
-                if published["highestCompletedLesson"]
-                else "Completed curriculum lessons",
+                "detail": (
+                    f"{published['completedLessons']} of {PLANNED_LESSONS} planned lessons"
+                    if published["highestCompletedLesson"]
+                    else "Completed curriculum lessons"
+                ),
+                "note": (
+                    f"Lesson {ENCORE_LESSON} is the encore and is not part of this count. "
+                    "Gallery videos, stroke-order recordings, and compound videos are separate."
+                ),
             },
             "kanjiPublished": {
                 "value": published["kanjiPublished"],
@@ -722,12 +782,17 @@ def build() -> dict:
                 {
                     "value": published["strokeOrderPages"],
                     "label": "Lesson Stroke Pages",
-                    "detail": f"Linked from {scope_label}",
+                    "detail": f"Linked from {scope_label}. Not a count of stroke-order recordings.",
+                },
+                {
+                    "value": published["studyImages"],
+                    "label": "Study Images",
+                    "detail": f"Images named in {scope_label}",
                 },
                 {
                     "value": published["lessonCovers"],
                     "label": "Lesson Covers",
-                    "detail": scope_label,
+                    "detail": f"JPEG covers for {scope_label}",
                 },
             ],
             "ecosystem": [
@@ -750,8 +815,13 @@ def build() -> dict:
             "youtube": youtube,
             "audioTracks": audio["value"],
             "audioDetail": audio["detail"],
-            "galleryDetail": "Published exhibition films",
-            "ambientDetail": "Published ambient collections",
+            "galleryDetail": "Published exhibition films, not every lesson",
+            "ambientDetail": "Published ambient collections, not every lesson",
+            "productionNote": (
+                "Gallery videos, stroke-order recordings, and compound videos "
+                "are a separate production. Completing the lesson pages and "
+                "study images does not mean those films have been made."
+            ),
         },
     }
 
@@ -772,7 +842,11 @@ def main() -> int:
     print(f"  Permanent unique compounds: {perm['compoundsUnique']['value']}")
     print(f"  Permanent components: {perm['components']['value']}")
     print(f"  Planned Lessons: {perm['plannedLessons']['value']}")
-    print(f"  Lessons Completed: {hero['lessonsCompleted']['value']}")
+    print(f"  Lessons Completed: {hero['lessonsCompleted']['value']} of {pub.get('plannedLessons')}")
+    print(f"  Missing lessons: {pub.get('missingLessons')}")
+    print(f"  Study images: {pub.get('studyImages')}")
+    print(f"  Lesson covers: {pub.get('lessonCovers')}")
+    print(f"  Encore: {pub.get('encoreLesson')} cover={pub.get('encoreCover')}")
     print(f"  Lesson kanji published: {pub['kanjiPublished']}")
     print(f"  Lesson verses published: {pub['versesPublished']}")
     print(f"  Lesson vocabulary: {pub['vocabularyPublished']}")
