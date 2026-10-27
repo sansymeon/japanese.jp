@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-"""Write the four Grade 1 lesson pages and their compiled vocabulary pages.
+"""Write the 漢検10級 overview, four lesson pages, and compiled readings.
 
-Does not modify Heisig lessons, the 漢検 pathway, or readings/*.html.
+Output lives at kanken/level-10/. School grade stays explanatory context.
+The overview is the lesson doors and the music and video review. It does not
+include a character index.
+Does not modify Heisig lessons or the older readings/*.html pages.
 """
 
 from __future__ import annotations
@@ -14,7 +17,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-GRADE = REPO / "school-grade/grade-1"
+GRADE = REPO / "kanken/level-10"
 LESSON_DIR = REPO / "kml/contents/books/book_01/lessons"
 COMPOUND_DIR = REPO / "kml/data/compounds"
 KANJIDIC = REPO / "kml/kanjidic2.xml"
@@ -261,7 +264,7 @@ try {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Noto+Serif+JP&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../kml/assets/site/css/kml_style.css">
-<link rel="stylesheet" href="../css/school-grade.css">
+<link rel="stylesheet" href="../../school-grade/css/school-grade.css">
 {furigana}</head>
 """
 
@@ -296,11 +299,11 @@ def furigana_bar() -> str:
 
 
 def lesson_nav(number: int) -> str:
-    left = '<a href="./">← 小学1年生</a>' if number == 1 else f'<a href="lesson-{number - 1:02d}.html">← 第{number - 1}課</a>'
-    right = '<a href="./">小学1年生 →</a>' if number == 4 else f'<a href="lesson-{number + 1:02d}.html">第{number + 1}課 →</a>'
+    left = '<a href="./">← 漢検10級</a>' if number == 1 else f'<a href="lesson-{number - 1:02d}.html">← 第{number - 1}課</a>'
+    right = '<a href="../level-9/">漢検9級 →</a>' if number == 4 else f'<a href="lesson-{number + 1:02d}.html">第{number + 1}課 →</a>'
     return f"""<div class="navbar">
   {left}
-  <a href="./">小学1年生</a>
+  <a href="./">漢検10級</a>
   {right}
 </div>"""
 
@@ -309,9 +312,9 @@ def review_block() -> str:
     return """
 <section class="school-review" id="review" aria-labelledby="review-heading">
   <h2 id="review-heading"><span lang="ja">音楽と動画で復習</span></h2>
-  <p>勉強したあとで、この学年の歌と動画を見ます。</p>
+  <p>勉強したあとで、この級の歌と動画を見ます。</p>
   <div class="cta">
-  <a class="btn-compounds" href="https://www.youtube.com/playlist?list=PLDqZ_saSB25k" target="_blank" rel="noopener noreferrer">1学年で学ぶ漢字<br><span style="font-size:0.82rem;font-weight:400">Kanji · 2 films</span></a>
+  <a class="btn-compounds" href="https://www.youtube.com/playlist?list=PLDqZ_saSB25k" target="_blank" rel="noopener noreferrer">漢検10級の漢字<br><span style="font-size:0.82rem;font-weight:400">Kanji · 2 films</span></a>
   <a class="btn-compounds" href="https://www.youtube.com/playlist?list=PLUK4NyqFdNMw" target="_blank" rel="noopener noreferrer">熟語<br><span style="font-size:0.82rem;font-weight:400">Compounds · 4 films</span></a>
   <a class="btn-compounds" href="https://www.youtube.com/playlist?list=PLYpgcBuk0PGg" target="_blank" rel="noopener noreferrer">書き順<br><span style="font-size:0.82rem;font-weight:400">Stroke order · 4 films</span></a>
   </div>
@@ -432,7 +435,7 @@ def write_compiled(number: int, characters: list[dict], slug_of: dict[str, str],
     body = f"""<body class="sg-readings sg-compiled" id="top">
 <div class="navbar">
   <a href="lesson-{number:02d}.html">← 第{number}課</a>
-  <a href="./">小学1年生</a>
+  <a href="./">漢検10級</a>
 </div>
 <p class="school-kicker" lang="ja">漢検10級レベルの漢字を学ぶ</p>
 <p class="school-range" lang="ja">小学1年生で習う80字</p>
@@ -442,14 +445,14 @@ def write_compiled(number: int, characters: list[dict], slug_of: dict[str, str],
 {chr(10).join(entries)}
 <div class="navbar">
   <a href="lesson-{number:02d}.html">← 第{number}課</a>
-  <a href="./">小学1年生</a>
+  <a href="./">漢検10級</a>
 </div>
 {notice}
 {furigana_script()}
 </body>
 </html>
 """
-    text = page_head(title, f"小学1年生 第{number}課の読み方とことば。")
+    text = page_head(title, f"漢検10級 第{number}課の読み方とことば。小学1年生で習う80字。")
     (GRADE / f"lesson-{number:02d}-readings.html").write_text(text + body, encoding="utf-8")
 
 
@@ -465,7 +468,7 @@ def write_review(rows: list[dict], meta: dict) -> None:
         "Heisig appears only for 玉, 空, 月, and 日.",
         "",
         "Lessons 2–4 use the neutral scenic hero until gold-on-blue filenames are supplied. "
-        "The mapping is `school-grade/grade-1/heroes.json`.",
+        "The mapping is `kanken/level-10/heroes.json`.",
         "",
     ]
     for row in rows:
@@ -490,6 +493,78 @@ def write_review(rows: list[dict], meta: dict) -> None:
             lines.append(f"- {note}")
         lines.append("")
     REVIEW.write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_overview() -> None:
+    doors = []
+    for number in range(1, 5):
+        characters = vocab.LESSONS[number]
+        kanji = " ".join(item["kanji"] for item in characters)
+        title = f'{characters[0]["kanji"]} 〜 {characters[-1]["kanji"]}'
+        doors.append(
+            f'<a class="school-door" href="lesson-{number:02d}.html">\n'
+            f'  <span class="school-door-kicker">第{number}課 · 20字</span>\n'
+            f'  <span class="school-door-title">{esc(title)}</span>\n'
+            f'  <span class="school-door-kanji" lang="ja">{esc(kanji)}</span>\n'
+            "</a>"
+        )
+    notice = DISCLAIMER.read_text(encoding="utf-8").strip()
+    text = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="漢検10級。小学1年生で習う80字。">
+<title>漢検10級</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Yomogi&family=Noto+Serif+JP&family=Yuji+Mai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../kml/assets/site/css/kml_style.css">
+<link rel="stylesheet" href="../../kml/assets/site/css/compounds-lesson.css">
+<link rel="stylesheet" href="../../school-grade/css/school-grade.css?v=levelnav">
+<script>
+try {{
+  if (localStorage.getItem("kml-compounds-furigana") === "off") {{
+    document.documentElement.classList.add("furigana-off");
+  }}
+}} catch (err) {{}}
+</script>
+<script>
+  if (new URLSearchParams(location.search).get("lang") === "en") {{
+    document.documentElement.setAttribute("data-kanken-lang", "en");
+  }}
+</script>
+<script src="../../assets/js/kanken-lang.js" defer></script>
+</head>
+<body id="top">
+
+<div class="navbar navbar-levels">
+  <a href="../">漢検への道</a>
+  <a href="../../kml/">Kanji・Music・Landscape</a>
+  <a href="#review">音楽と動画</a>
+  <a href="../level-9/">漢検9級 →</a>
+</div>
+<div class="lesson-art">
+  <img src="../../kml/assets/covers/lesson_01.jpg" alt="月" width="1672" height="941">
+</div>
+<h1 class="school-title">漢検10級</h1>
+<p class="school-range">小学1年生で習う80字</p>
+<p class="school-path">漢字を学ぶ → 読み方とことば → 音楽と動画で復習</p>
+<p class="kanken-en" lang="en">Level 10, beginner. Four lessons are ready here. The lessons themselves are in Japanese.</p>
+<p class="kanken-en kanken-en-links" lang="en"><a href="../?lang=en">All levels</a> · <a href="/learn/">English learning choices</a></p>
+<nav class="school-doors" aria-label="漢検10級の課">
+{chr(10).join(doors)}
+</nav>
+{review_block()}
+<p class="sg-disclaimer">{notice}</p>
+
+<script src="../../kml/assets/site/js/kml.js"></script>
+</body>
+</html>
+"""
+    (GRADE / "index.html").write_text(text, encoding="utf-8")
+    print("Wrote 漢検10級 overview")
 
 
 def main() -> None:
@@ -569,6 +644,7 @@ def main() -> None:
     if only == {1, 2, 3, 4}:
         write_review(notes, meta)
         print(f"Wrote {REVIEW.name}")
+    write_overview()
 
 
 if __name__ == "__main__":
