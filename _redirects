@@ -16,3 +16,14 @@
 # still on disk, so force. /kanken/ is outside /ja/kanken/, so no loop.
 /ja/kanken    /kanken/         301!
 /ja/kanken/*  /kanken/:splat   301!
+
+# 漢検 lessons moved from school-grade paths. Force these because local
+# redirect stubs remain on disk so the preview server can follow them too.
+/school-grade/grade-1            /kanken/level-10/  301!
+/school-grade/grade-1/           /kanken/level-10/  301!
+/school-grade/grade-1/index.html /kanken/level-10/  301!
+/school-grade/grade-1/lesson-*   /kanken/level-10/lesson-:splat  301!
+/school-grade/grade-2            /kanken/level-9/  301!
+/school-grade/grade-2/           /kanken/level-9/  301!
+/school-grade/grade-2/index.html /kanken/level-9/  301!
+/school-grade/grade-2/lesson-*   /kanken/level-9/lesson-:splat  301!
