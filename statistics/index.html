@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Statistics — Kanji・Music・Landscape</title>
+  <title>Curriculum Coverage — Kanji・Music・Landscape</title>
   <meta
     name="description"
-    content="KML statistics — designed library, the completed lesson sequence, and published website and YouTube materials. Lesson completion is separate from film production."
+    content="JLPT, school-grade, and Jōyō coverage in the completed KML lesson sequence."
   />
   <meta name="theme-color" content="#171512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +21,7 @@
   <script src="./js/statistics.js" defer></script>
 </head>
 <body class="museum-page stats-page">
-  <a class="skip-link" href="#interesting">Skip to statistics</a>
+  <a class="skip-link" href="#coverage">Skip to curriculum coverage</a>
 
   <header class="museum-header museum-header--solid">
     <div class="museum-header-inner">
@@ -40,29 +40,6 @@
   </header>
 
   <main>
-    <!-- 1. Interesting Statistics -->
-    <section class="stats-hero" id="interesting" aria-labelledby="interesting-heading">
-      <div class="stats-hero-inner">
-        <header class="stats-hero-head reveal">
-          <p class="room-eyebrow">Scale</p>
-          <h1 id="interesting-heading">Interesting Statistics</h1>
-          <p class="stats-hero-lead">
-            The designed KML library, the completed lesson sequence, and the
-            wider published project.
-          </p>
-          <p class="stats-scope-note">
-            Statistics include published KML materials across the website and
-            KML YouTube collections unless otherwise noted. Curriculum coverage
-            refers specifically to the KML lesson sequence.
-          </p>
-        </header>
-
-        <div class="hero-stat-grid" id="heroStatGrid" aria-label="Project scale">
-          <!-- Filled by statistics.js -->
-        </div>
-      </div>
-    </section>
-
     <div
       id="statsStatus"
       class="stats-status room-container room-container--wide"
@@ -71,46 +48,11 @@
       hidden
     ></div>
 
-    <!-- 2. Permanent Library -->
-    <section class="room-section stats-section" id="library" aria-labelledby="library-heading">
-      <div class="room-container room-container--wide">
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">Full scope</p>
-          <h2 id="library-heading">Permanent Library</h2>
-          <p>
-            What KML is designed to contain. Kanji, verses, and stroke-order
-            pages are one resource each across the complete 3,096-kanji
-            library. Vocabulary, compounds, and components are the full
-            production totals — not the Lesson 1–70 subset.
-          </p>
-        </header>
-        <div class="detail-stat-grid detail-stat-grid--featured" id="permanentGrid" aria-label="Permanent library statistics"></div>
-      </div>
-    </section>
-
-    <!-- 3. Published Curriculum -->
-    <section class="room-section stats-section stats-section--alt" id="progress" aria-labelledby="progress-heading">
-      <div class="room-container room-container--wide">
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">Completed lesson sequence</p>
-          <h2 id="progress-heading">Published Curriculum</h2>
-          <p id="progressLead">
-            Lesson pages, covers, and study images in the planned sequence.
-            Lesson 154 is the encore. Gallery videos, stroke-order recordings,
-            and compound videos are a separate production.
-          </p>
-        </header>
-        <div class="detail-stat-grid" id="progressGrid" aria-label="Published progress statistics"></div>
-        <p class="stats-meta" id="statsGeneratedAt"></p>
-      </div>
-    </section>
-
-    <!-- 4. Curriculum Coverage -->
     <section class="room-section stats-section" id="coverage" aria-labelledby="coverage-heading">
       <div class="room-container room-container--wide">
         <header class="room-section-head reveal">
           <p class="room-eyebrow">Educational standards</p>
-          <h2 id="coverage-heading">Curriculum Coverage</h2>
+          <h1 id="coverage-heading">Curriculum Coverage</h1>
           <p>
             JLPT, Jōyō, and school-grade coverage measured against kanji in
             the completed KML lesson sequence — not against the full 3,096-kanji
@@ -132,51 +74,6 @@
           <h3 class="detail-block-title">Jōyō Kanji</h3>
           <div class="detail-stat-grid" id="joyoGrid" aria-label="Joyo coverage"></div>
         </div>
-      </div>
-    </section>
-
-    <!-- 5. Learning Resources -->
-    <section class="room-section stats-section stats-section--alt" id="resources" aria-labelledby="resources-heading">
-      <div class="room-container room-container--wide">
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">Study materials</p>
-          <h2 id="resources-heading">Learning Resources</h2>
-          <p>
-            Instructional material on the website and in related KML series.
-            Lesson totals and ecosystem totals are listed separately so they
-            are not mixed.
-          </p>
-        </header>
-        <div class="detail-block reveal">
-          <h3 class="detail-block-title">From the lesson sequence</h3>
-          <div class="detail-stat-grid" id="resourcesGrid" aria-label="Curriculum learning resources"></div>
-        </div>
-        <div class="detail-block reveal">
-          <h3 class="detail-block-title">Across the KML ecosystem</h3>
-          <div class="detail-stat-grid" id="ecosystemResourcesGrid" aria-label="Ecosystem learning resources"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Media Library -->
-    <section class="room-section stats-section" id="media" aria-labelledby="media-heading">
-      <div class="room-container room-container--wide">
-        <header class="room-section-head reveal">
-          <p class="room-eyebrow">Published work</p>
-          <h2 id="media-heading">Media Library</h2>
-          <p>
-            Published exhibition films, ambient collections, website playlist
-            galleries, audio, and the KML YouTube channel. These are not
-            implied by a completed lesson or study image. The YouTube total
-            is a dated content snapshot (847 videos, 807 public, 189 playlists,
-            as of 7 October 2026), not a count of local <code>.mp4</code> files.
-          </p>
-          <p class="stats-scope-note" id="mediaProductionNote">
-            Gallery videos, stroke-order recordings, and compound videos are
-            a separate production.
-          </p>
-        </header>
-        <div class="detail-stat-grid" id="mediaGrid" aria-label="Media library statistics"></div>
       </div>
     </section>
   </main>

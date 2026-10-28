@@ -245,6 +245,113 @@ h1 {
   font-weight: 600;
 }
 
+.kanji-lookup-wrap {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 100;
+  margin-bottom: 1.4rem;
+}
+
+.kanji-lookup-wrap > .anchor-list {
+  position: static;
+  top: auto;
+  margin-bottom: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-left: 2.6rem;
+  scrollbar-width: thin;
+}
+
+.kanji-lookup-wrap > .anchor-list a {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.kanji-lookup-open {
+  flex: 0 0 auto;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+  border: 0;
+  background: color-mix(in srgb, var(--card-bg) 92%, white);
+  color: #2f2a1f;
+  font-size: 1.05rem;
+  line-height: 1;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.kanji-lookup-open[aria-expanded="true"],
+.kanji-lookup-open:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.kanji-lookup-panel {
+  max-width: var(--content-max);
+  margin: 0.55rem auto 0;
+  padding: 0.75rem 0.9rem 0.85rem;
+  background: var(--card-bg);
+  color: #2a261f;
+  border: 1px solid rgba(201, 164, 88, 0.28);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.kanji-lookup-panel[hidden] {
+  display: none;
+}
+
+.kanji-lookup-form {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.kanji-lookup-label {
+  font-size: 0.95rem;
+}
+
+.kanji-lookup-form input {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: 1.25rem;
+  width: 6.5rem;
+  max-width: 46vw;
+  min-height: 2.75rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid rgba(42, 38, 31, 0.28);
+  border-radius: 4px;
+  background: #fffdf8;
+  color: #2a261f;
+}
+
+.kanji-lookup-char {
+  font-family: "Yuji Syuku", "Noto Serif JP", serif;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 0.45rem 0 0.1rem;
+}
+
+.kanji-lookup-meaning,
+.kanji-lookup-readings,
+.kanji-lookup-message {
+  margin: 0.15rem 0 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.kanji-lookup-link {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: #6d5420;
+  font-weight: 600;
+}
+
 /* ===== Cards — paper on the gallery wall ===== */
 .kanji-entry {
   max-width: var(--card-max);

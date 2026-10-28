@@ -2,19 +2,11 @@
 
 Public statistics for Kanji・Music・Landscape.
 
-The page describes published KML materials across the website and YouTube
-collections, with curriculum coverage kept separate from the rest of the
-ecosystem.
+The public page shows Curriculum Coverage: JLPT, school-grade, and Jōyō
+figures for the completed KML lesson sequence.
 
-## Sections
-
-1. **Interesting Statistics** — library scale + published curriculum + YouTube
-2. **Permanent Library** — designed KML resources (3,096 one-per-kanji items,
-   plus full vocabulary / compound / component totals)
-3. **Published Curriculum** — planned lessons whose pages, covers, and study images are present
-4. **Curriculum Coverage** — JLPT / grades / Jōyō from the completed planned lessons only
-5. **Learning Resources** — lesson-sequence totals, then other site series
-6. **Media Library** — exhibitions, ambient collections, audio, YouTube channel
+Library, production, and media counts stay in `data/project_stats.json` for
+other tools. They are not shown on the public page.
 
 ## Refresh counts
 
