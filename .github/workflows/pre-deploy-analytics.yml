@@ -1,21 +1,17 @@
-# Regenerate homepage / dashboard curriculum stats on every push to main.
+# Manual channel-learning refresh. Pushes do not run this workflow.
 #
-# Stats live in committed JSON (kml/analytics/output/). Nothing else in the
-# repo — no cron, Netlify scheduled function, or build step — regenerates them.
-# This workflow is the automated regenerator: run analyze_channel_learning.py
-# via scripts/pre-deploy.sh, then commit fresh outputs when they change.
+# The generator remains ./scripts/pre-deploy.sh, which calls
+# kml/analytics/scripts/analyze_channel_learning.py. Run that locally, or
+# start this workflow by hand. A manual run still commits changed files
+# under kml/analytics/output/ when they differ.
 #
-# Loop avoidance: paths-ignore skips Action re-runs when only output/ changes.
-# The bot commit uses [skip netlify] so that push does not start a second
-# production deploy. Do not use [skip ci]; GitHub Actions honors that too.
+# The committed report and JSON are left as they are until someone
+# regenerates them. Curriculum Coverage on the public statistics page
+# reads statistics/data/project_stats.json, which this workflow does not write.
 
 name: Pre-deploy analytics
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "kml/analytics/output/**"
   workflow_dispatch:
 
 permissions:
@@ -61,7 +57,7 @@ jobs:
             exit 0
           fi
 
-          # [skip netlify] only. paths-ignore above already keeps this push
-          # from running the workflow again.
+          # [skip netlify] keeps a later manual run from starting a production build
+          # if automatic Netlify builds are turned back on. Do not use [skip ci].
           git commit -m "chore(analytics): regenerate channel-learning stats [skip netlify]"
           git push
