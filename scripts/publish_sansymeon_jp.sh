@@ -32,10 +32,11 @@ DEST="/home/sjnelson/japanese-netlify-package-$SHORT"
 
 echo "Checking Netlify site $SITE_ID"
 SITE_JSON="$(netlify api getSite --data "{\"site_id\":\"$SITE_ID\"}")"
-python3 - "$SITE_ID" "$SITE_NAME" "$SITE_DOMAIN" <<'PY' <<<"$SITE_JSON"
-import json, sys
+export SITE_JSON
+python3 - "$SITE_ID" "$SITE_NAME" "$SITE_DOMAIN" <<'PY'
+import json, os, sys
 expected_id, expected_name, expected_domain = sys.argv[1:]
-site = json.loads(sys.stdin.read())
+site = json.loads(os.environ["SITE_JSON"])
 name = site.get("name")
 domain = site.get("custom_domain")
 repo = (site.get("build_settings") or {}).get("repo_url")
